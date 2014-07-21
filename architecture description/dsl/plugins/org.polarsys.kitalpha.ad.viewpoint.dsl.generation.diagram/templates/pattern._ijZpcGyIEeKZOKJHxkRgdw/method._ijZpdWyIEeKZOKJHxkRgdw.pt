@@ -1,0 +1,4 @@
+ToolSection section = ToolFactory.eINSTANCE.createToolSection();
+section.setName(CoreModelHelper.getViewpointShortName(parameter));
+section.setLabel(CoreModelHelper.getViewpointShortName(parameter));
+sectionObject = section;

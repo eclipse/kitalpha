@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launchConfiguration type="org.polarsys.kitalpha.transposer.ui.launch.TransposerConfigurationType">
+<stringAttribute key="mapping_id" value="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping.basic"/>
+<mapAttribute key="paramActivities">
+<mapEntry key="org.polarsys.kitalpha.transposer.after.rule.execution" value="org.polarsys.kitalpha.transposer.emf.toolbox.activities.models.saver;"/>
+<mapEntry key="org.polarsys.kitalpha.transposer.before.rule.execution" value=""/>
+<mapEntry key="org.polarsys.kitalpha.transposer.before.scheduling" value=""/>
+<mapEntry key="org.polarsys.kitalpha.transposer.before.analysis" value="org.polarsys.kitalpha.transposer.emf.toolbox.activities.models.initializer:nsUri=http://www.eclipse.org/emf/2002/Ecore,EClass name=EPackage;"/>
+</mapAttribute>
+<stringAttribute key="purpose_name" value="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping"/>
+</launchConfiguration>

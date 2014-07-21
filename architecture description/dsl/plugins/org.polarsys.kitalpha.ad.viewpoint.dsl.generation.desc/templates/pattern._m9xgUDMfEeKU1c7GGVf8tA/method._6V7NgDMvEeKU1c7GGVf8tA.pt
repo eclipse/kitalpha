@@ -1,0 +1,10 @@
+/*
+The newIconName depends on the nature of the currentObject
+ If currentObject is a Class then
+ 	newIconName = Class.getName()
+ 
+ If currentObject is a AbstractAssociation then 
+ 	 "Create" + parentClass.getName() + "_" + AbstractFeature.getName() + "_" + (Local/ExternalTarget).getName() + ".gif";
+ */
+ 
+ editIconName = parameter.getName();

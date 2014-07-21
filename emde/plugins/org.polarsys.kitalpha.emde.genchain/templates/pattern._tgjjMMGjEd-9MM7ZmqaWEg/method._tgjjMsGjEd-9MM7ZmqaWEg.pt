@@ -1,0 +1,6 @@
+// add initialisation of the pattern variables (declaration has been already done).
+this.modelActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.model.fcore#_fpAN4VhCEd-5FJ833LkcRA";
+this.editActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.edit.fcore#__rEKAFjjEd-5FJ833LkcRA";
+this.editorActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.editor.fcore#_AItvUFjkEd-5FJ833LkcRA";
+this.testActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.tests.fcore#_79dGwDYdEeGWF-mrFIsVzA";
+this.javadocActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/javadoc.fcore#_CycMIDYfEeGWF-mrFIsVzA";

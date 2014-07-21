@@ -1,0 +1,33 @@
+// Create the EReference
+
+if (containingEClass != null && targetEClass != null){
+		ref = EcoreFactory.eINSTANCE.createEReference();
+		ref.setContainment(abstractAssociation.getType() == Association_Types.CONTAINMENT);
+		ref.setEType(targetEClass);
+		
+		ref.setDerived(abstractAssociation.isDerived());
+		ref.setOrdered(abstractAssociation.isOrdered());
+		ref.setTransient(abstractAssociation.isTransient());
+		ref.setUnique(abstractAssociation.isUnique());
+		ref.setUnsettable(abstractAssociation.isUnsettable());
+		ref.setVolatile(abstractAssociation.isVolatile());
+		ref.setChangeable(abstractAssociation.isChangeable()); 
+		
+		ref.setLowerBound(associationLowerBound);
+		ref.setUpperBound(associationUpperBound);
+		ref.setName(abstractAssociation.getName());
+		containingEClass.getEStructuralFeatures().add(ref);
+		
+		
+		/* Set EReference description */
+		/**
+		if (description != null && description.trim().length() != 0){
+			ENamedElementAnnotationHelper.annotate(ref, 
+													ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
+													ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
+													description,
+													true);
+		}
+		**/
+		
+	}  

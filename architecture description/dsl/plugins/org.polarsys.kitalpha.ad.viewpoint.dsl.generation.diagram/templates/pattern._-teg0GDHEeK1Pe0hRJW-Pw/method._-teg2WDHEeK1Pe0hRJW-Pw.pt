@@ -1,0 +1,16 @@
+EObject vpParent = parameter.eContainer().eContainer();
+EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
+
+NodeMapping nodeMapping = (NodeMapping) dNodeMapping;
+
+if (currentParent instanceof ContainerMapping) {
+	// Add the generated bordered node Mapping (nodeMapping) in the Container Mapping
+	ContainerMapping owner = (ContainerMapping) currentParent;
+	owner.getBorderedNodeMappings().add(nodeMapping);
+}
+
+if (currentParent instanceof NodeMapping) {
+	// Add the generated bordered node Mapping (nodeMapping) in the NodeMapping
+	NodeMapping owner = (NodeMapping) currentParent;
+	owner.getBorderedNodeMappings().add(nodeMapping);
+}

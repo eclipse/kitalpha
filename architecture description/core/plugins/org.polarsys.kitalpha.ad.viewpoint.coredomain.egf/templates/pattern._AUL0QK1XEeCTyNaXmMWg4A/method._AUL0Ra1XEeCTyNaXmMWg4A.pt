@@ -1,0 +1,10 @@
+<%
+genModel.getImportedName("org.eclipse.emf.common.util.BasicEList");
+genModel.getImportedName("java.util.Map");
+genModel.getImportedName("java.util.HashMap");
+%>
+		BasicEList<Service> services = new BasicEList<Service>();
+		Map<String, Service> collector = new HashMap<String, Service>();
+		collectServices(collector);
+		services.addAll(collector.values());
+		return services;

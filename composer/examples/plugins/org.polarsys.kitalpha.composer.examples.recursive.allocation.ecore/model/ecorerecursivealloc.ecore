@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecorerecursivealloc"
+    nsURI="http://org.polarsys.kitalpha/composer/example/recursiveusecase/ecorerecursivealloc/1.0.0"
+    nsPrefix="ecorerecursivealloc">
+  <eClassifiers xsi:type="ecore:EClass" name="EcoreAllocRoot" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//Root"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EcoreAllocFile" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//File"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EcoreAllocType" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//Type"/>
+</ecore:EPackage>

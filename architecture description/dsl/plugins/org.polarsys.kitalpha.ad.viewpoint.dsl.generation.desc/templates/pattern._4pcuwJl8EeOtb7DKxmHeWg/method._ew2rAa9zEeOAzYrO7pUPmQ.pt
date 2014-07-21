@@ -1,0 +1,10 @@
+/* Get the specified Target Class */
+	vpEnumeration = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration) parameter.eContainer();
+	
+	/* Get the corresponding generated Target ECLass from the generated EPackage */
+	EPackage vpsPackage = ECoreResourceManager.INSTANCE.getEPackage();
+	for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) {
+		if (iEClassifier instanceof EEnum && iEClassifier.getName().equals(vpEnumeration.getName())){
+			eEnum = (EEnum) iEClassifier; 
+		}
+	}

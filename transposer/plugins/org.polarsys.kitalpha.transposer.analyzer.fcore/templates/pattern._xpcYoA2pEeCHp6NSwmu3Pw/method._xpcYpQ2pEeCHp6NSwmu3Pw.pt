@@ -1,0 +1,23 @@
+ /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+ @SuppressWarnings("unchecked")
+ public <%=genFeature.getImportedType(genClass)%> <%=genFeature.getGetAccessor()%><%if (genClass.hasCollidingGetAccessorOperation(genFeature)) {%>_<%}%>() 
+    {
+     if (!(content instanceof <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>))
+				return content;
+			else if (content != null && ((EObject) content).eIsProxy()) {
+			
+				InternalEObject oldContent = (<%=genModel.getImportedName("org.eclipse.emf.ecore.InternalEObject")%>) content;
+				content = (ContentClass) eResolveProxy(oldContent);
+				if (content != oldContent) {
+					if (eNotificationRequired())
+						eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+								GraphPackage.GRAPH_ELEMENT__CONTENT, oldContent,
+								content));
+				}
+			}
+		return content;
+    }

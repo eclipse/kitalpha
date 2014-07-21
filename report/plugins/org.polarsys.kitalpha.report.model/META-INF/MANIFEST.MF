@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.report.model;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.polarsys.kitalpha.report.model,
+ org.polarsys.kitalpha.report.model.impl,
+ org.polarsys.kitalpha.report.model.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

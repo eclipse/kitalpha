@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="coreConstraintContribution" name="coreConstraintContribution" schema="schema/coreConstraintContribution.exsd"/>
+   <extension-point id="additionalConstraint" name="additionalConstraint" schema="schema/additionalConstraint.exsd"/>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.models.category"
+            mandatory="true"
+            name="Viewpoint description rules">
+      </category>
+      <constraintProvider
+            cache="true">
+         <package
+               namespaceUri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0">
+         </package>
+         <package
+               namespaceUri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0">
+         </package>
+         <constraints
+               categories="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.models.category">
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.names.NameNotEmptyConstraint"
+                  id="vpNamedElement.NameNotEmpty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Empty Names"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0}
+               </message>
+               <description>
+                  Every Class, Attribute or Association object must have a valid name.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.names.NameNotValidConstraint"
+                  id="vpNamedElement.NameNotValid"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Valid Name"
+                  severity="ERROR"
+                  statusCode="2">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.names.ShortNameNotEmptyConstraint"
+                  id="vpShortNamedElement.ShortNameNotEmpty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Empty Short Name"
+                  severity="ERROR"
+                  statusCode="3">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.names.ShortNameNotValidConstraint"
+                  id="vpShortNamedElement.ShortNameNotValid"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Valid Short Name"
+                  severity="ERROR"
+                  statusCode="4">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.typeselements.AttrbuteTypeNotEmptyConstraint"
+                  id="vpAttribute.TypeNotEmpty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Empty Attribute Type "
+                  severity="ERROR"
+                  statusCode="5">
+               <message>
+                  {0}
+                  
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.typeselements.OperationTypeNotEmptyConstraint"
+                  id="vpOperation.TypeNotEmpty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Empty Operation Type"
+                  severity="ERROR"
+                  statusCode="6">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.typeselements.OperationParameterTypeNotEmptyConstraint"
+                  id="vpOperation.ParameterTypeNotEmpty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Empty Operation Parameter Type"
+                  severity="ERROR"
+                  statusCode="6">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.typeselements.LocalClassAssociationLocalTargetNotEmptyConstraint"
+                  id="vpAssociation.LocalTargetNotEmpty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Empty Association Local Target"
+                  severity="ERROR"
+                  statusCode="6">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.typeselements.ExternalClassAssociationExternalTargetNotEmptyConstraint"
+                  id="vpAssociation.EcternalTargetNotEmpty"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non Empty Association External Target"
+                  severity="ERROR"
+                  statusCode="7">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.names.UniqueValueConstraint"
+                  id="vpElement.UniqueValue"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Unique Name Value"
+                  severity="ERROR"
+                  statusCode="8">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.constraint.VpDescFreeAbstractModelConstraint"
+                  id="vpElement.FreeErrorConstraint"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="VPDesc personalized Error Constraints"
+                  severity="ERROR"
+                  statusCode="9">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+            
+              <constraint
+                  class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.association.ClassCantBeItSelfSupperClass"
+                  id="vpClass.SuperClass"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="A Class can't be it own super class"
+                  severity="ERROR"
+                  statusCode="10">
+               <message>
+                  {0}
+               </message>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+ 
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.utils.StartupClass">
+      </startup>
+   </extension>
+   
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="false"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.clientContext">
+         <selector
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.utils.ClientContextSelector">
+         </selector>
+      </clientContext>
+      <binding
+            context="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.clientContext">
+         <category
+               ref="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.models.category">
+         </category>
+      </binding>
+   </extension>
+
+</plugin>

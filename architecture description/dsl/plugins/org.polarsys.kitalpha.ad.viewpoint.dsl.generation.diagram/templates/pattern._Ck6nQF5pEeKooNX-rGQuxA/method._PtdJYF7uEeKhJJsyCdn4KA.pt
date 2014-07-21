@@ -1,0 +1,28 @@
+// Creation of the sirius Diagram element
+DiagramDescription dDiagram = DescriptionFactory.eINSTANCE.createDiagramDescription();
+dDiagram.setName(parameter.getName());
+dDiagram.setLabel(parameter.getName());
+dDiagram.setDomainClass(domainClass);
+
+EcoreProviderImpl eProvider = ViewpointResourceProviderRegistry.getInstance().getEcoreProvider();
+if (eProvider != null)
+{
+	EPackage ePackage = eProvider.getEPackage();
+	dDiagram.getMetamodel().add(ePackage);
+}
+
+// Creation of the default Layer
+Layer dLayer = DescriptionFactory.eINSTANCE.createLayer();
+String shortName = CoreModelHelper.getViewpointShortName(parameter);
+shortName = StringUtils.getDisplayableShortName(shortName);
+dLayer.setName(shortName);
+dDiagram.setDefaultLayer(dLayer);
+
+doremiParent = dLayer;
+		
+// Adding the diagram to the generated viewpoint
+DoremiResourceManager.generate_viewpoint.getOwnedRepresentations().add(dDiagram);
+
+// Get the reference SystemColorPalette.
+Group grp = (Group)dDiagram.eContainer().eContainer();
+GenerationUtil.setSytemColorsPalette(grp.getSystemColorsPalette());

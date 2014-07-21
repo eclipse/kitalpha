@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simplecomponent"
+    nsURI="http://www.polarsys.org/kitalpha/emde/example/simplecomponent" nsPrefix="simplecomponent">
+  <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/extension">
+    <details key="extensibleProviderFactory" value="true"/>
+    <details key="childCreationExtenders" value="true"/>
+    <details key="useUUIDs" value="true"/>
+    <details key="useIDAttributes" value="false"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentModel" eSuperTypes="#//ComponentElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractComponent" upperBound="-1"
+        eType="#//AbstractComponent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentElement" abstract="true" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComponent" abstract="true" eSuperTypes="#//ComponentElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareComponent" eSuperTypes="#//AbstractComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareComponent" eSuperTypes="#//AbstractComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractComponent" upperBound="-1"
+        eType="#//AbstractComponent" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

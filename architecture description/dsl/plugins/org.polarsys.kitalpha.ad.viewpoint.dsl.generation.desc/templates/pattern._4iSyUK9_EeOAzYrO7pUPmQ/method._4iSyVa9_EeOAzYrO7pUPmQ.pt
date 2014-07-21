@@ -1,0 +1,4 @@
+nsUri = VpDslConfigurationHelper.getNsURI(parameter);
+shortName = CoreModelHelper.getViewpointShortName(parameter); 
+modelFolder = (String)ctx.getValue(IContractProvider.MODEL_FOLDER); 
+rootProjectName =  VpDslConfigurationHelper.getRootProjectName(parameter);

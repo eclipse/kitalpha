@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="__VJysd44EeKJqJUhCNewAQ" name="lvpsBuildFactory">
+    <contractContainer xmi:id="_BGso0N45EeKJqJUhCNewAQ">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_DnxecN45EeKJqJUhCNewAQ"
+          name="vpdesc.model" invocationContracts="#_8J6aMN5CEeKJqJUhCNewAQ">
+        <type xmi:type="domain:TypeDomain" xmi:id="_G4FYoN45EeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_ZzqHcN5dEeKJqJUhCNewAQ"
+          name="root.project.name" invocationContracts="#_IvBvgN5iEeKJqJUhCNewAQ #_Pmhx0N5tEeKJqJUhCNewAQ #_jkx-EN5vEeKJqJUhCNewAQ #_zekSMN_YEeKLv5tRryH79A #_4qUTQOImEeK4btfrBfY1-Q">
+        <type xmi:type="types:TypeString" xmi:id="_oFE-oN5dEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Fa_L4N5iEeKJqJUhCNewAQ"
+          name="short.name" invocationContracts="#_OS3LgN5iEeKJqJUhCNewAQ #_ka0_0N5wEeKJqJUhCNewAQ #_9ST6sN8IEeKJqJUhCNewAQ #_U1AEsN_UEeKLv5tRryH79A #_0ZMcUOImEeK4btfrBfY1-Q">
+        <type xmi:type="types:TypeString" xmi:id="_HYKDMN5iEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Xtc2oN5iEeKJqJUhCNewAQ"
+          name="execution.environment" invocationContracts="#_xU_4kN5iEeKJqJUhCNewAQ">
+        <type xmi:type="types:TypeString" xmi:id="_bJPoEN5iEeKJqJUhCNewAQ" value="J2SE-1.5"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_XzrXEN45EeKJqJUhCNewAQ">
+      <invocations xmi:id="_-l_UsN46EeKJqJUhCNewAQ" name="Create Releng Plugin" invokedActivity="#_dVahUN45EeKJqJUhCNewAQ">
+        <invocationContractContainer xmi:id="_6oTdgN5CEeKJqJUhCNewAQ">
+          <invocationContracts xmi:id="_xU_4kN5iEeKJqJUhCNewAQ" factoryComponentContract="#_Xtc2oN5iEeKJqJUhCNewAQ"
+              invokedContract="#_KhZ-AN5gEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_8J6aMN5CEeKJqJUhCNewAQ" factoryComponentContract="#_DnxecN45EeKJqJUhCNewAQ"
+              invokedContract="#_UapT0N47EeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_IvBvgN5iEeKJqJUhCNewAQ" factoryComponentContract="#_ZzqHcN5dEeKJqJUhCNewAQ"
+              invokedContract="#_NhsRcN5bEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_OS3LgN5iEeKJqJUhCNewAQ" factoryComponentContract="#_Fa_L4N5iEeKJqJUhCNewAQ"
+              invokedContract="#_TzkfMN5bEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_W96BIN5DEeKJqJUhCNewAQ" targetInvocationContract="#_MUo8YN5DEeKJqJUhCNewAQ #_owyg4N_YEeKLv5tRryH79A"
+              invokedContract="#_OzRXcN5CEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_Y9TtEN5DEeKJqJUhCNewAQ" targetInvocationContract="#_hgUP8N5DEeKJqJUhCNewAQ"
+              invokedContract="#_J9AzIN5CEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_1V390N_zEeKLv5tRryH79A" targetInvocationContract="#_6MaO8N_zEeKLv5tRryH79A #_tOQYoOACEeKLv5tRryH79A"
+              invokedContract="#_qONF0N_zEeKLv5tRryH79A"/>
+          <invocationContracts xmi:id="_1OFDULpmEeOGg8kikocj6w" targetInvocationContract="#_oH1ecLppEeOGg8kikocj6w"
+              invokedContract="#_kEeeELpmEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_AsrYILpoEeOGg8kikocj6w" targetInvocationContract="#_18N0ULppEeOGg8kikocj6w"
+              invokedContract="#_3KfQMLpnEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_fRLcQLpoEeOGg8kikocj6w" targetInvocationContract="#_GigRILpqEeOGg8kikocj6w"
+              invokedContract="#_NNAsMLpoEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_oQ8zoLpoEeOGg8kikocj6w" targetInvocationContract="#_PTYQ4LpqEeOGg8kikocj6w"
+              invokedContract="#_iKP7ILpoEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_0ZcPcLpoEeOGg8kikocj6w" targetInvocationContract="#_ZXGYkLpqEeOGg8kikocj6w"
+              invokedContract="#_u7aggLpoEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_92RWQLpoEeOGg8kikocj6w" targetInvocationContract="#_gH0ecLpqEeOGg8kikocj6w"
+              invokedContract="#_4ElEcLpoEeOGg8kikocj6w"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_sdtnEN5CEeKJqJUhCNewAQ" name="Create Build Model" invokedActivity="#_jPvxwN45EeKJqJUhCNewAQ">
+        <invocationContractContainer xmi:id="_7BVokN5CEeKJqJUhCNewAQ">
+          <invocationContracts xmi:id="_hgUP8N5DEeKJqJUhCNewAQ" sourceInvocationContract="#_Y9TtEN5DEeKJqJUhCNewAQ"
+              invokedContract="#_Xn510N5CEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_Pmhx0N5tEeKJqJUhCNewAQ" factoryComponentContract="#_ZzqHcN5dEeKJqJUhCNewAQ"
+              invokedContract="#_IyOzgN5tEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_ka0_0N5wEeKJqJUhCNewAQ" factoryComponentContract="#_Fa_L4N5iEeKJqJUhCNewAQ"
+              invokedContract="#_g18j0N5wEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_lxwP8N5DEeKJqJUhCNewAQ" targetInvocationContract="#_o7qAIN5DEeKJqJUhCNewAQ"
+              invokedContract="#_g0p5QN5CEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_MUo8YN5DEeKJqJUhCNewAQ" sourceInvocationContract="#_W96BIN5DEeKJqJUhCNewAQ"
+              invokedContract="#_cx0V8N5CEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_6MaO8N_zEeKLv5tRryH79A" sourceInvocationContract="#_1V390N_zEeKLv5tRryH79A"
+              invokedContract="#_v_5XoN_zEeKLv5tRryH79A"/>
+          <invocationContracts xmi:id="_oH1ecLppEeOGg8kikocj6w" sourceInvocationContract="#_1OFDULpmEeOGg8kikocj6w"
+              invokedContract="#_h-wAULppEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_18N0ULppEeOGg8kikocj6w" sourceInvocationContract="#_AsrYILpoEeOGg8kikocj6w"
+              invokedContract="#_xqVIYLppEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_GigRILpqEeOGg8kikocj6w" sourceInvocationContract="#_fRLcQLpoEeOGg8kikocj6w"
+              invokedContract="#_CJnlULpqEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_PTYQ4LpqEeOGg8kikocj6w" sourceInvocationContract="#_oQ8zoLpoEeOGg8kikocj6w"
+              invokedContract="#_MKXRgLpqEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_ZXGYkLpqEeOGg8kikocj6w" sourceInvocationContract="#_0ZcPcLpoEeOGg8kikocj6w"
+              invokedContract="#_UaAMcLpqEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_gH0ecLpqEeOGg8kikocj6w" sourceInvocationContract="#_92RWQLpoEeOGg8kikocj6w"
+              invokedContract="#_dNHA0LpqEeOGg8kikocj6w"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_xJ0w4N5CEeKJqJUhCNewAQ" name="Create Build Model Runner"
+          invokedActivity="#_lmPvEN45EeKJqJUhCNewAQ">
+        <invocationContractContainer xmi:id="_7UHaoN5CEeKJqJUhCNewAQ">
+          <invocationContracts xmi:id="_o7qAIN5DEeKJqJUhCNewAQ" sourceInvocationContract="#_lxwP8N5DEeKJqJUhCNewAQ"
+              invokedContract="#_lrV7YN5CEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_jkx-EN5vEeKJqJUhCNewAQ" factoryComponentContract="#_ZzqHcN5dEeKJqJUhCNewAQ"
+              invokedContract="#_dSAYcN5vEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_9ST6sN8IEeKJqJUhCNewAQ" factoryComponentContract="#_Fa_L4N5iEeKJqJUhCNewAQ"
+              invokedContract="#_2q-aUN8IEeKJqJUhCNewAQ"/>
+          <invocationContracts xmi:id="_HrFAUN9AEeKJqJUhCNewAQ" targetInvocationContract="#_lKkkMN9AEeKJqJUhCNewAQ"
+              invokedContract="#_-3-L8N8_EeKJqJUhCNewAQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_fMD-YN9AEeKJqJUhCNewAQ" name="Run Build Model" invokedActivity="#_OMTRoN9AEeKJqJUhCNewAQ">
+        <invocationContractContainer xmi:id="_k0qloN9AEeKJqJUhCNewAQ">
+          <invocationContracts xmi:id="_lKkkMN9AEeKJqJUhCNewAQ" sourceInvocationContract="#_HrFAUN9AEeKJqJUhCNewAQ"
+              invokedContract="#_TuDC8N9AEeKJqJUhCNewAQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_KyeP0N_UEeKLv5tRryH79A" name="Create Build Documentation"
+          invokedActivity="#_YaDukd_OEeKLv5tRryH79A">
+        <invocationContractContainer xmi:id="_UhLw0N_UEeKLv5tRryH79A">
+          <invocationContracts xmi:id="_U1AEsN_UEeKLv5tRryH79A" factoryComponentContract="#_Fa_L4N5iEeKJqJUhCNewAQ"
+              invokedContract="#_44mEMN_TEeKLv5tRryH79A"/>
+          <invocationContracts xmi:id="_owyg4N_YEeKLv5tRryH79A" sourceInvocationContract="#_W96BIN5DEeKJqJUhCNewAQ"
+              invokedContract="#_PG-OEN_YEeKLv5tRryH79A"/>
+          <invocationContracts xmi:id="_zekSMN_YEeKLv5tRryH79A" factoryComponentContract="#_ZzqHcN5dEeKJqJUhCNewAQ"
+              invokedContract="#_vuWv8N_YEeKLv5tRryH79A"/>
+          <invocationContracts xmi:id="_tOQYoOACEeKLv5tRryH79A" sourceInvocationContract="#_1V390N_zEeKLv5tRryH79A"
+              invokedContract="#_jB5SUOACEeKLv5tRryH79A"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_YEuhIOImEeK4btfrBfY1-Q" name="Add Plugin Information"
+          invokedActivity="#_0BxQQOIlEeK4btfrBfY1-Q">
+        <invocationContractContainer xmi:id="_0HKRIOImEeK4btfrBfY1-Q">
+          <invocationContracts xmi:id="_0ZMcUOImEeK4btfrBfY1-Q" factoryComponentContract="#_Fa_L4N5iEeKJqJUhCNewAQ"
+              invokedContract="#_uK5uEOImEeK4btfrBfY1-Q"/>
+          <invocationContracts xmi:id="_4qUTQOImEeK4btfrBfY1-Q" factoryComponentContract="#_ZzqHcN5dEeKJqJUhCNewAQ"
+              invokedContract="#_wBgqYOImEeK4btfrBfY1-Q"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_dVahUN45EeKJqJUhCNewAQ" name="Create Releng Plugin" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks.CreateRelengPluginTask">
+    <contractContainer xmi:id="_MX3JIN47EeKJqJUhCNewAQ">
+      <contracts xmi:id="_KhZ-AN5gEeKJqJUhCNewAQ" name="execution.environment">
+        <type xmi:type="types:TypeString" xmi:id="_MXRTcN5gEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_UapT0N47EeKJqJUhCNewAQ" name="vpdesc.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_XUvtcN47EeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_NhsRcN5bEeKJqJUhCNewAQ" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_OigOMN5bEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_TzkfMN5bEeKJqJUhCNewAQ" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_X8W5gN5bEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_J9AzIN5CEeKJqJUhCNewAQ" name="target.location" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_N7PjQN5CEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_OzRXcN5CEeKJqJUhCNewAQ" name="repository.location" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_SSf3YN5CEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_qONF0N_zEeKLv5tRryH79A" name="repository.protocol" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_tEcTIN_zEeKLv5tRryH79A"/>
+      </contracts>
+      <contracts xmi:id="_kEeeELpmEeOGg8kikocj6w" description="repository folders"
+          name="source.folders" mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_QMgYoLpnEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_3KfQMLpnEeOGg8kikocj6w" description="Users whose can launch the build"
+          name="build.users" mode="Out">
+        <type xmi:type="types:TypeMap" xmi:id="_9obkALpnEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_NNAsMLpoEeOGg8kikocj6w" description="Hudson build configuration"
+          name="hudson.properties" mode="Out">
+        <type xmi:type="types:TypeMap" xmi:id="_RCuZgLpoEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_iKP7ILpoEeOGg8kikocj6w" name="cron.triggers" mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_nFQckLpoEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_u7aggLpoEeOGg8kikocj6w" name="scm.triggers" mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_CS4EcLppEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_4ElEcLpoEeOGg8kikocj6w" name="generation.location" mode="Out">
+        <type xmi:type="types:TypeMap" xmi:id="_8zzzsLpoEeOGg8kikocj6w"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_jPvxwN45EeKJqJUhCNewAQ" name="Create Build Model" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks.CreateBuildModelTask">
+    <contractContainer xmi:id="_Mz3vsN47EeKJqJUhCNewAQ">
+      <contracts xmi:id="_Xn510N5CEeKJqJUhCNewAQ" name="target.location">
+        <type xmi:type="types:TypeString" xmi:id="_cLq78N5CEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_g0p5QN5CEeKJqJUhCNewAQ" name="build.model.path" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_kYfMYN5CEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_IyOzgN5tEeKJqJUhCNewAQ" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_MjeQgN5tEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_g18j0N5wEeKJqJUhCNewAQ" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_jamR4N5wEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_cx0V8N5CEeKJqJUhCNewAQ" name="repository.location">
+        <type xmi:type="types:TypeString" xmi:id="_ezTskN5CEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_v_5XoN_zEeKLv5tRryH79A" name="repository.protocol">
+        <type xmi:type="types:TypeString" xmi:id="_yOWMMN_zEeKLv5tRryH79A"/>
+      </contracts>
+      <contracts xmi:id="_h-wAULppEeOGg8kikocj6w" name="source.folders">
+        <type xmi:type="types:TypeList" xmi:id="_mwEaQLppEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_xqVIYLppEeOGg8kikocj6w" name="build.users">
+        <type xmi:type="types:TypeMap" xmi:id="_-bMy0LppEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_CJnlULpqEeOGg8kikocj6w" name="hudson.properties">
+        <type xmi:type="types:TypeMap" xmi:id="_FoijQLpqEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_MKXRgLpqEeOGg8kikocj6w" name="cron.triggers">
+        <type xmi:type="types:TypeList" xmi:id="_RME34LpqEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_UaAMcLpqEeOGg8kikocj6w" name="scm.triggers">
+        <type xmi:type="types:TypeList" xmi:id="_XjwysLpqEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_dNHA0LpqEeOGg8kikocj6w" name="generation.location">
+        <type xmi:type="types:TypeMap" xmi:id="_fEBfILpqEeOGg8kikocj6w"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_lmPvEN45EeKJqJUhCNewAQ" name="Create Build Model Runner" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks.CreateBuildModelRunnerTask">
+    <contractContainer xmi:id="_NL2x4N47EeKJqJUhCNewAQ">
+      <contracts xmi:id="_lrV7YN5CEeKJqJUhCNewAQ" name="build.model.path">
+        <type xmi:type="types:TypeString" xmi:id="_nZKvIN5CEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_dSAYcN5vEeKJqJUhCNewAQ" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_hbPesN5vEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_2q-aUN8IEeKJqJUhCNewAQ" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_5QhgQN8IEeKJqJUhCNewAQ"/>
+      </contracts>
+      <contracts xmi:id="_-3-L8N8_EeKJqJUhCNewAQ" name="build.runner.uri" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_EsV-UN9AEeKJqJUhCNewAQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_OMTRoN9AEeKJqJUhCNewAQ" name="Run Build Model" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks.RunBuildModelTask">
+    <contractContainer xmi:id="_TV6PwN9AEeKJqJUhCNewAQ">
+      <contracts xmi:id="_TuDC8N9AEeKJqJUhCNewAQ" name="build.runner.uri">
+        <type xmi:type="types:TypeString" xmi:id="_a2nBEN9AEeKJqJUhCNewAQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_YaDukd_OEeKLv5tRryH79A" name="Create Build Documentation" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks.CreateBuildDocumentationTask">
+    <contractContainer xmi:id="_4mQ-EN_TEeKLv5tRryH79A">
+      <contracts xmi:id="_44mEMN_TEeKLv5tRryH79A" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_GsEbIN_UEeKLv5tRryH79A"/>
+      </contracts>
+      <contracts xmi:id="_PG-OEN_YEeKLv5tRryH79A" name="repository.location">
+        <type xmi:type="types:TypeString" xmi:id="_R9pgQN_YEeKLv5tRryH79A"/>
+      </contracts>
+      <contracts xmi:id="_jB5SUOACEeKLv5tRryH79A" name="repository.protocol">
+        <type xmi:type="types:TypeString" xmi:id="_mDT04OACEeKLv5tRryH79A"/>
+      </contracts>
+      <contracts xmi:id="_vuWv8N_YEeKLv5tRryH79A" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_ybNXwN_YEeKLv5tRryH79A"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_0BxQQOIlEeK4btfrBfY1-Q" name="Add Plugin Information" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks.AddPluginInformationTask">
+    <contractContainer xmi:id="_tqH8QOImEeK4btfrBfY1-Q">
+      <contracts xmi:id="_uK5uEOImEeK4btfrBfY1-Q" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_yibvAOImEeK4btfrBfY1-Q"/>
+      </contracts>
+      <contracts xmi:id="_wBgqYOImEeK4btfrBfY1-Q" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_zRqzkOImEeK4btfrBfY1-Q"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

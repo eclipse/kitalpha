@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.af.dsl.as.desc.model/src"
+    modelPluginID="org.polarsys.kitalpha.ad.af.dsl.as.desc.model" modelName="Afdesc"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore</foreignModel>
+  <genPackages prefix="Afdesc" basePackage="org.polarsys.kitalpha.ad.af.dsl.as.model"
+      disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#/">
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//ArchitectureFramework">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//ArchitectureFramework/af_aspects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//ArchitectureFramework/af_viewpoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//ArchitectureFramework/owned_configuration"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//Aspect"/>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//NamedElement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//NamedElement/shortName"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//Configuration/owned_element"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//ConfigurationElement"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//GenerationConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//GenerationConfiguration/rootProjectName"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//Viewpoints">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore#//Viewpoints/owned_viewpoints"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

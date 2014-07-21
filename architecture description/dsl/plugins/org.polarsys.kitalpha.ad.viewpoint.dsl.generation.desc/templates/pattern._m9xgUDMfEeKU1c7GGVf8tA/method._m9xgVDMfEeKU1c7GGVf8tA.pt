@@ -1,0 +1,1 @@
+return GenerateIconPrecondition.generateIcon() &&  parameter.getIcon() != null && parameter.getIcon().trim().length() > 0;

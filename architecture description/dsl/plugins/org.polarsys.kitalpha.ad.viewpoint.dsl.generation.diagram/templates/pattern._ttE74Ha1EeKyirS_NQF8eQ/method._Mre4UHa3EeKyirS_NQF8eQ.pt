@@ -1,0 +1,4 @@
+ if (parameter.getName() != null && parameter.getName().trim().length() > 0)
+ 	tool_name = parameter.getName();
+ else
+	tool_name =  "Delete_"+associated_mapping.getName(); 

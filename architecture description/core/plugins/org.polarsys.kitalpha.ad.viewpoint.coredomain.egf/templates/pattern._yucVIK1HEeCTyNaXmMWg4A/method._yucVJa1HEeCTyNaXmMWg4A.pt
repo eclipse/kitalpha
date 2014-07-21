@@ -1,0 +1,9 @@
+		RuleSet result = null;
+		for (RuleSet set : getRuleSets()) {
+			if (vp.equals(set.getTarget())) {
+				if (result != null)
+					throw new IllegalStateException("Multple ruleset is not expected");
+				result = set;
+			}
+		}
+		return result;

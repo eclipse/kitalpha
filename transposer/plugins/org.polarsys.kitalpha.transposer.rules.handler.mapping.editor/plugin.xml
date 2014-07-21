@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.polarsys.kitalpha.mdetoolkit"
+            name="%_UI_MDEToolkit_Wizard_category"/>
+      <wizard
+            id="org.polarsys.kitalpha.transposer.rules.handler.rules.common.presentation.CommonModelWizardID"
+            name="%_UI_CommonModelWizard_label"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.common.presentation.CommonModelWizard"
+            category="org.polarsys.kitalpha.mdetoolkit"
+            icon="icons/full/obj16/CommonModelFile.gif">
+         <description>%_UI_CommonModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.polarsys.kitalpha.transposer.rules.handler.rules.common.presentation.CommonEditorID"
+            name="%_UI_CommonEditor_label"
+            icon="icons/full/obj16/CommonModelFile.gif"
+            extensions="common"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.common.presentation.CommonEditor"
+            contributorClass="org.polarsys.kitalpha.transposer.rules.handler.rules.common.presentation.CommonActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.polarsys.kitalpha.mdetoolkit"
+            name="%_UI_MDEToolkit_Wizard_category"/>
+      <wizard
+            id="org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.presentation.RuntimeModelWizardID"
+            name="%_UI_RuntimeModelWizard_label"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.presentation.RuntimeModelWizard"
+            category="org.polarsys.kitalpha.mdetoolkit"
+            icon="icons/full/obj16/RuntimeModelFile.gif">
+         <description>%_UI_RuntimeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.presentation.RuntimeEditorID"
+            name="%_UI_RuntimeEditor_label"
+            icon="icons/full/obj16/RuntimeModelFile.gif"
+            extensions="runtime"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.presentation.RuntimeEditor"
+            contributorClass="org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.presentation.RuntimeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.polarsys.kitalpha.mdetoolkit"
+            name="%_UI_MDEToolkit_Wizard_category"/>
+      <wizard
+            id="org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.presentation.ContributionModelWizardID"
+            name="%_UI_ContributionModelWizard_label"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.presentation.ContributionModelWizard"
+            category="org.polarsys.kitalpha.mdetoolkit"
+            icon="icons/full/obj16/ContributionModelFile.gif">
+         <description>%_UI_ContributionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.presentation.ContributionEditorID"
+            name="%_UI_ContributionEditor_label"
+            icon="icons/full/obj16/ContributionModelFile.gif"
+            extensions="contribution"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.presentation.ContributionEditor"
+            contributorClass="org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.presentation.ContributionActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

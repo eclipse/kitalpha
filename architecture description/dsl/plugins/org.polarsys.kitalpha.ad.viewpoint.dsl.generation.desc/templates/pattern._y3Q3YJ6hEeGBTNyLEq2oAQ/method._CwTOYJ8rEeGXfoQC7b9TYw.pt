@@ -1,0 +1,13 @@
+//targetClasses = parameter.getExtends();
+
+for (EClass clazz : parameter.getExtends()) 
+{
+	EClass plateformClazz = PlatformEClassesManager.INSTANCE.getEClassesWithPlatformURI(clazz);
+	if (plateformClazz != null) 
+	{
+		if (targetClasses == null)
+			targetClasses = new BasicEList<EObject>();
+		
+		targetClasses.add(plateformClazz);
+	}
+}

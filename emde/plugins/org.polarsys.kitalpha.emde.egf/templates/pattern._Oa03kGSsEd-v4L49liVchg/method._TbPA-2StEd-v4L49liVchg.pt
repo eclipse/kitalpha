@@ -1,0 +1,80 @@
+<%if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {%>
+<%if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {%>
+		// begin-extension-code
+		<%=genFeature.getName()%>PropertyDescriptor = createItemPropertyDescriptor
+		// end-extension-code		
+<%} else {%>
+		// begin-extension-code
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+		// end-extension-code
+<%}%>
+<%} else {%>
+		// begin-extension-code
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+		// end-extension-code
+<%}%>
+				(((<%=genModel.getImportedName("org.eclipse.emf.edit.provider.ComposeableAdapterFactory")%>)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_<%=genFeature.getGenClass().getName()%>_<%=genFeature.getName()%>_feature"),<%=genModel.getNonNLS()%>
+  <%if (genFeature.getPropertyDescription() == null || genFeature.getPropertyDescription().length() == 0) {%>
+				 getString("_UI_PropertyDescriptor_description", "_UI_<%=genFeature.getGenClass().getName()%>_<%=genFeature.getName()%>_feature", "_UI_<%=genFeature.getGenClass().getName()%>_type"),<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%=genModel.getNonNLS(3)%>
+  <%} else {%>
+				 getString("_UI_<%=genFeature.getGenClass().getName()%>_<%=genFeature.getName()%>_description"),<%=genModel.getNonNLS()%>
+  <%}%>
+				 <%=genFeature.getQualifiedFeatureAccessor()%>,
+				 <%=genFeature.getProperty() == GenPropertyKind.EDITABLE_LITERAL ? "true" : "false"%>,
+				 <%=genFeature.isPropertyMultiLine() ? "true" : "false"%>,
+				 <%=genFeature.isPropertySortChoices() ? "true" : "false"%>,
+  <%if (genFeature.isReferenceType()) {%>
+				 null,
+  <%} else {%>
+				 <%=genModel.getImportedName("org.eclipse.emf.edit.provider.ItemPropertyDescriptor")%>.<%=genFeature.getPropertyImageName()%>,
+  <%}%>
+  <%if (genFeature.getPropertyCategory() == null || genFeature.getPropertyCategory().length() == 0) {%>
+				 null,
+  <%} else {%>
+				 getString("<%=genModel.getPropertyCategoryKey(genFeature.getPropertyCategory())%>"),<%=genModel.getNonNLS()%>
+  <%}%>
+  <%if (genFeature.getPropertyFilterFlags().isEmpty()) {%>
+<%if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {%>
+<%if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {%>
+		// begin-extension-code
+				 null);
+		itemPropertyDescriptors.add(<%=genFeature.getName()%>PropertyDescriptor);
+		// end-extension-code
+<%} else {%>
+		// begin-extension-code
+				 null));
+		// end-extension-code
+<%}%>
+<%} else {%>
+		// begin-extension-code
+				 null));
+		// end-extension-code
+<%}%>
+  <%} else {%>
+				 new String[] {
+    <%for (Iterator<String> j = genFeature.getPropertyFilterFlags().iterator(); j.hasNext();) { String filterFlag = j.next();%>
+      <%if (filterFlag != null && filterFlag.length() > 0) {%>
+					"<%=filterFlag%>"<%if (j.hasNext()) {%>,<%}%><%=genModel.getNonNLS()%>
+      <%}%>
+    <%}%>
+<%if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {%>
+<%if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {%>
+		// begin-extension-code
+				 });
+		itemPropertyDescriptors.add(<%=genFeature.getName()%>PropertyDescriptor);
+		// begin-extension-code
+<%} else {%>
+		// begin-extension-code
+				 }));
+		// end-extension-code
+<%}%>
+<%} else {%>
+		// begin-extension-code
+				 }));
+		// end-extension-code
+<%}%>
+  <%}%>

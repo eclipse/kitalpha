@@ -1,0 +1,51 @@
+<% if (java_service_data != null)%>
+<%{%>	
+<%for (JavaMethodData iJavaMethodData : java_service_data.getMethods())%>
+<%{%>
+<%	String return_type = "void";%>
+<%	switch (iJavaMethodData.getReturnType()) {%>
+<%	case Boolean:%>
+<%		return_type = "boolean";%>
+<%		break;%>
+<%	case EObject:%>
+<%		return_type = "EObject";%>
+<%		break;%>
+<%	case EObjectList:%>
+<%		return_type = "List<EObject>";%>
+<%		break;%>
+<%	case Integer:%>
+<%		return_type = "int";%>
+<%		break;%>
+<%	case String:%>
+<%		return_type = "String";%>
+<%		break;%>
+<%	case ConstructorType:%>
+<%		return_type = "";%>
+<%		break;%>
+<%	}%>
+	/**
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc --><%
+	for (MethodParameterData iMethodParameterData : iJavaMethodData.getMethodParameter())%>
+<%	{%>
+	* @param <%=iMethodParameterData.getName()%> : <%=iMethodParameterData.getDocumentation()%>
+<%  }%>
+	* @generated
+	*/
+public <%=return_type%> <%=iJavaMethodData.getName()%>(
+<%int length = iJavaMethodData.getMethodParameter().size();%>
+<%int current_index = 0;%>
+<%	for (MethodParameterData iMethodParameterData : iJavaMethodData.getMethodParameter())%>
+<%	{%>
+<%		current_index += 1;%>
+						<%=iMethodParameterData.getType()%> <%=iMethodParameterData.getName()%><%
+		if (current_index < iJavaMethodData.getMethodParameter().size()){%>,<%}%>
+<%	}%>){
+	// TODO Auto-generated method stub
+<% if (return_type.trim().length() > 0 && ! return_type.equals("void")){%>
+	// Ensure that you remove @generated or mark it @generated NOT
+	throw new UnsupportedOperationException();
+<% }%>
+}
+<%}%>
+<%}%>

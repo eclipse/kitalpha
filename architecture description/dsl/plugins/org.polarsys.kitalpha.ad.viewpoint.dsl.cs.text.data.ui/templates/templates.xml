@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (c) 2014 Thales Global Services S.A.S.
+   All rights reserved. This program and the accompanying materials
+   are made available under the terms of the Eclipse Public License v1.0
+   which accompanies this distribution, and is available at
+   http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+   Thales Global Services S.A.S - initial API and implementation
+-->
+<templates>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.kw_Data" deleted="false" description="New data" enabled="true" id="1" name="Data">Data ${fileName} {&#13;
+	${cursor}&#13;
+}
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Class" deleted="false" description="New empty class" enabled="true" id="2" name="Class">Class Empty {&#13;
+	${cursor}&#13;
+}
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Class" deleted="false" description="New class with attributes" enabled="true" id="3" name="Class">Class WithAttributes {&#13;
+	Attributes:&#13;
+		anAttribute type ecore.EString&#13;
+}
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Class" deleted="false" description="New class with attributes and associations" enabled="true" id="4" name="Class">Class WithAttributesAndAssociations {&#13;
+	Attributes:&#13;
+		anAttribute type ecore.EString&#13;
+	Associations:&#13;
+		internalAssociation contains[0,*] ${value:CrossReference('LocalClassAssociation.LocalTarget')}&#13;
+}
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Class" deleted="false" description="New class with operations" enabled="true" id="5" name="Class">Class WithOperations {&#13;
+	Operations:&#13;
+		anOperation(external ecore.EInt [0,*] inputs)&#13;
+}
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.kw_Enumeration" deleted="false" description="New Enumeration" enabled="true" id="7" name="Enumeration">Enumeration ${name} { 
+	${constant1}, ${constant2} 
+}</template> 
+
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation" deleted="false" description="New Annotation" enabled="true" id="6" name="Annotation">Annotation "http://" {&#13;
+	key: "key1" value: "value1"&#13;
+}&#13;
+</template>
+
+</templates>

@@ -1,0 +1,20 @@
+		DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
+		DocumentBuilder docBuilder = dbfac.newDocumentBuilder();
+		InternalPatternContext iictx = (InternalPatternContext) ctx;
+		Container node = iictx.getNode();
+		Container parent = (Container) node.getContainer(Container.class).getParent();
+		DataLeaf leaf = NodeHelper.findLeaf(parent, "<plugin>");
+		ctx.setValue("node", leaf);
+		String flatten = leaf.getData();
+		doc = docBuilder.parse(new InputSource(new StringReader(flatten)));
+
+		// add @generated comments
+		NodeList extensionList = doc.getElementsByTagName("extension");
+		for (int i = 0; i < extensionList.getLength(); i++) {
+			org.w3c.dom.Node item = extensionList.item(i);
+			org.w3c.dom.Node parentNode = item.getParentNode();
+			parentNode.insertBefore(doc.createTextNode("\n"), item);
+			parentNode.insertBefore(doc.createComment("@generated"), item);
+			parentNode.insertBefore(doc.createTextNode("\n  "), item);
+		}
+		root = (Element) doc.getElementsByTagName("plugin").item(0);

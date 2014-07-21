@@ -1,0 +1,20 @@
+[comment encoding = UTF-8 /]
+[module genEclass('http://org.polarsys.kitalpha/emf/ecoreX', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+[import org::polarsys::kitalpha::composer::examples::extended::ecorex::gen::generator::complex::genEattribute /]
+[import org::polarsys::kitalpha::composer::examples::basic::ecore::gen::generator::genFile /]
+[import org::polarsys::kitalpha::composer::examples::extended::ecorex::gen::generator::simple::genEclass /]
+
+[query public random(any : OclAny) : Integer = invoke('org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator.services.GenServices', 'random()', Sequence{})/]
+
+[template public gen(anEClass : ExtentedEClass) post(trim())]
+<h1>EClass [name/] - Num [random()/]</h1>
+
+<h4>Description :</h4>
+	[description.replaceAll('rn|r|n', '$0t')/]
+
+[for (it : EAttribute | eAttributes)]
+	[gen()/]
+
+[/for]
+[/template]

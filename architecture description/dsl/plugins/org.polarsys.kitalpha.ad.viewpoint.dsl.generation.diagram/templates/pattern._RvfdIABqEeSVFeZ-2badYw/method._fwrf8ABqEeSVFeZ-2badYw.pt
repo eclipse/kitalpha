@@ -1,0 +1,22 @@
+ContainerMapping currentContainerNode = (ContainerMapping) GenerationUtil.getDoremiElement(parameter);
+final EList<AbstractNode> reused_nodes = parameter.getChildren().getReused_nodes();
+for (AbstractNode abstractNode : reused_nodes) 
+{
+	if (abstractNode instanceof Container) 
+	{
+		ContainerMapping currentContainer = (ContainerMapping) GenerationUtil.getDoremiElement(abstractNode);
+		currentContainerNode.getReusedContainerMappings().add(currentContainer);	
+	}
+
+	if (abstractNode instanceof Node) 
+	{
+		NodeMapping currentNode = (NodeMapping) GenerationUtil.getDoremiElement(abstractNode);
+		currentContainerNode.getReusedNodeMappings().add(currentNode);
+	}
+	
+	if (abstractNode instanceof BorderedNode)
+	{
+		NodeMapping currentBNode = (NodeMapping) GenerationUtil.getDoremiElement(abstractNode);
+		currentContainerNode.getReusedBorderedNodeMappings().add(currentBNode);
+	}
+}

@@ -1,0 +1,5 @@
+		for (Viewpoint vp : getViewpoints()) {
+			if (id.equals(vp.getId()))
+				return vp;
+		}
+		return null;

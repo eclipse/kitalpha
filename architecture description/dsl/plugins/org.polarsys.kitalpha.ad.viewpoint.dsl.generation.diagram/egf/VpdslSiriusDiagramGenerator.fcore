@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:javapattern="http://www.eclipse.org/egf/1.0.0/javapattern"
+    xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_mNVd8FwIEeKooNX-rGQuxA" name="vpdslSiriusDiagramGenerator">
+    <contractContainer xmi:id="_4CsggFwJEeKooNX-rGQuxA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_CTrBEFwKEeKooNX-rGQuxA"
+          name="root.project.name" mandatory="true" invocationContracts="#_7Z6igl5PEeKooNX-rGQuxA #_9OJwYIgJEeKa19qygOxIRg">
+        <type xmi:type="types:TypeString" xmi:id="_CTrBEVwKEeKooNX-rGQuxA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_CTrBElwKEeKooNX-rGQuxA"
+          name="short.name" invocationContracts="#_8TCds15hEeKooNX-rGQuxA #_JdfF84gIEeKa19qygOxIRg">
+        <type xmi:type="types:TypeString" xmi:id="_CTrBE1wKEeKooNX-rGQuxA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_CTrBFFwKEeKooNX-rGQuxA"
+          name="vpdesc.model" invocationContracts="#_f2W24l7_EeKhJJsyCdn4KA #_GP9mw2rMEeK9Z8JXsm6Xcw #_koiyI6rIEeOZeaz3SaU3zA #_alBh8qrMEeOZeaz3SaU3zA #_8ZcTUgBuEeSVFeZ-2badYw #_UfNWsAwmEeSrwrl3LesBIA #_l0xiEQwrEeSj2eRa73Bl4w #_uSJdYAwzEeSj2eRa73Bl4w">
+        <type xmi:type="domain:TypeDomain" xmi:id="_CTrBFVwKEeKooNX-rGQuxA"/>
+      </contracts>
+    </contractContainer>
+    <viewpointContainer xmi:id="_4WzvUFwJEeKooNX-rGQuxA">
+      <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_rdRLsF5nEeKooNX-rGQuxA">
+        <libraries xmi:id="_r9TWoF5nEeKooNX-rGQuxA" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common">
+          <elements xmi:id="_Bys74AkTEeS0Ta9jP3S46g" name="AbstractDiagramPattern"
+              headerMethod="#_Bys74gkTEeS0Ta9jP3S46g" conditionMethod="#_Bys75AkTEeS0Ta9jP3S46g"
+              initMethod="#_Bys74wkTEeS0Ta9jP3S46g" footerMethod="#_Bys75gkTEeS0Ta9jP3S46g">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_Bys74QkTEeS0Ta9jP3S46g"
+                name="Java"/>
+            <methods xmi:id="_Bys74gkTEeS0Ta9jP3S46g" name="header" patternFilePath="templates/pattern._Bys74AkTEeS0Ta9jP3S46g/method._Bys74gkTEeS0Ta9jP3S46g.pt"/>
+            <methods xmi:id="_Bys74wkTEeS0Ta9jP3S46g" name="init" patternFilePath="templates/pattern._Bys74AkTEeS0Ta9jP3S46g/method._Bys74wkTEeS0Ta9jP3S46g.pt"/>
+            <methods xmi:id="_Bys75AkTEeS0Ta9jP3S46g" name="preCondition" patternFilePath="templates/pattern._Bys74AkTEeS0Ta9jP3S46g/method._Bys75AkTEeS0Ta9jP3S46g.pt"/>
+            <methods xmi:id="_Bys75gkTEeS0Ta9jP3S46g" name="footer" patternFilePath="templates/pattern._Bys74AkTEeS0Ta9jP3S46g/method._Bys75gkTEeS0Ta9jP3S46g.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Bys75wkTEeS0Ta9jP3S46g"/>
+          </elements>
+          <elements xmi:id="_7uPPUGyKEeKZOKJHxkRgdw" name="DoremiElementPattern" superPattern="#_Bys74AkTEeS0Ta9jP3S46g"
+              headerMethod="#_7uPPUmyKEeKZOKJHxkRgdw" conditionMethod="#_7uPPVGyKEeKZOKJHxkRgdw"
+              initMethod="#_7uPPU2yKEeKZOKJHxkRgdw" footerMethod="#_7uPPVmyKEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_7uPPUWyKEeKZOKJHxkRgdw"
+                name="Java"/>
+            <methods xmi:id="_7uPPUmyKEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._7uPPUmyKEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_7uPPU2yKEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._7uPPU2yKEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_7uPPVGyKEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._7uPPVGyKEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_HMQKwGyLEeKZOKJHxkRgdw" name="setParentMapping" patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._HMQKwGyLEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_7uPPVWyKEeKZOKJHxkRgdw" name="registerElementsInGenerationMap"
+                patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._7uPPVWyKEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_7uPPVmyKEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._7uPPVmyKEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_uYXk8GyLEeKZOKJHxkRgdw" name="addElementToODesign" patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._uYXk8GyLEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_zYvHgGyLEeKZOKJHxkRgdw" name="createDoremiElement" patternFilePath="templates/pattern._7uPPUGyKEeKZOKJHxkRgdw/method._zYvHgGyLEeKZOKJHxkRgdw.pt"/>
+            <variables xmi:id="_IUrLYGyLEeKZOKJHxkRgdw" name="dslvpElement" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_JvuNEGyLEeKZOKJHxkRgdw" name="doremiElement" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_7uPPV2yKEeKZOKJHxkRgdw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_zrENoGyLEeKZOKJHxkRgdw"
+                called="#_zYvHgGyLEeKZOKJHxkRgdw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_0p83wGyLEeKZOKJHxkRgdw"
+                called="#_uYXk8GyLEeKZOKJHxkRgdw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_NaQlIGyLEeKZOKJHxkRgdw"
+                called="#_HMQKwGyLEeKZOKJHxkRgdw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_NQRisGyLEeKZOKJHxkRgdw"
+                called="#_7uPPVWyKEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_ytbmoF5nEeKooNX-rGQuxA" name="DiagramElementPattern"
+              superPattern="#_7uPPUGyKEeKZOKJHxkRgdw" headerMethod="#_ytbmol5nEeKooNX-rGQuxA"
+              conditionMethod="#_ytbmpF5nEeKooNX-rGQuxA" initMethod="#_ytbmo15nEeKooNX-rGQuxA"
+              footerMethod="#_ytbmpl5nEeKooNX-rGQuxA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_ytbmoV5nEeKooNX-rGQuxA"
+                name="Java"/>
+            <methods xmi:id="_ytbmol5nEeKooNX-rGQuxA" name="header" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._ytbmol5nEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_ytbmo15nEeKooNX-rGQuxA" name="init" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._ytbmo15nEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_ytbmpF5nEeKooNX-rGQuxA" name="preCondition" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._ytbmpF5nEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_ytbmpl5nEeKooNX-rGQuxA" name="footer" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._ytbmpl5nEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_mg2KQGCyEeKiadLjZ_FAOQ" name="setStyle" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._mg2KQGCyEeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_neYwkGCyEeKiadLjZ_FAOQ" name="setSemanticData" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._neYwkGCyEeKiadLjZ_FAOQ.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_ytbmp15nEeKooNX-rGQuxA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_sYghMGCyEeKiadLjZ_FAOQ"
+                called="#_mg2KQGCyEeKiadLjZ_FAOQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_vvOlYGCyEeKiadLjZ_FAOQ"
+                called="#_neYwkGCyEeKiadLjZ_FAOQ"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_pAGNcIStEeKlgrb0i1zvPQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.utils">
+          <elements xmi:id="_MLHN4ISnEeKlgrb0i1zvPQ" name="ImportManagerRegistration"
+              headerMethod="#_MLHN4oSnEeKlgrb0i1zvPQ" conditionMethod="#_MLHN5ISnEeKlgrb0i1zvPQ"
+              initMethod="#_MLHN44SnEeKlgrb0i1zvPQ" footerMethod="#_MLHN5oSnEeKlgrb0i1zvPQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_MLHN4YSnEeKlgrb0i1zvPQ"
+                name="Java"/>
+            <methods xmi:id="_MLHN4oSnEeKlgrb0i1zvPQ" name="header" patternFilePath="templates/pattern._MLHN4ISnEeKlgrb0i1zvPQ/method._MLHN4oSnEeKlgrb0i1zvPQ.pt"/>
+            <methods xmi:id="_MLHN44SnEeKlgrb0i1zvPQ" name="init" patternFilePath="templates/pattern._MLHN4ISnEeKlgrb0i1zvPQ/method._MLHN44SnEeKlgrb0i1zvPQ.pt"/>
+            <methods xmi:id="_MLHN5ISnEeKlgrb0i1zvPQ" name="preCondition" patternFilePath="templates/pattern._MLHN4ISnEeKlgrb0i1zvPQ/method._MLHN5ISnEeKlgrb0i1zvPQ.pt"/>
+            <methods xmi:id="_MLHN5YSnEeKlgrb0i1zvPQ" name="RegisterMapping" patternFilePath="templates/pattern._MLHN4ISnEeKlgrb0i1zvPQ/method._MLHN5YSnEeKlgrb0i1zvPQ.pt"/>
+            <methods xmi:id="_MLHN5oSnEeKlgrb0i1zvPQ" name="footer" patternFilePath="templates/pattern._MLHN4ISnEeKlgrb0i1zvPQ/method._MLHN5oSnEeKlgrb0i1zvPQ.pt"/>
+            <methods xmi:id="_NAd98IfbEeKa19qygOxIRg" name="ReuseTools" patternFilePath="templates/pattern._MLHN4ISnEeKlgrb0i1zvPQ/method._NAd98IfbEeKa19qygOxIRg.pt"/>
+            <parameters xmi:id="_Osx5YISnEeKlgrb0i1zvPQ" name="original_m" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/AbstractNodeMapping"/>
+            <parameters xmi:id="_QVOd4ISnEeKlgrb0i1zvPQ" name="imported_m" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/AbstractNodeMapping"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_MLHN54SnEeKlgrb0i1zvPQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_XUhyUISnEeKlgrb0i1zvPQ"
+                called="#_MLHN5YSnEeKlgrb0i1zvPQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_OWJXcIfbEeKa19qygOxIRg"
+                called="#_NAd98IfbEeKa19qygOxIRg"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_AUrC8F5pEeKooNX-rGQuxA" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.diagrams">
+          <elements xmi:id="_VSLYYKXKEeKQpPNqCzCFoA" name="DiagramSetOpenJSPattern"
+              superPattern="#_Bys74AkTEeS0Ta9jP3S46g" headerMethod="#_VSLYYqXKEeKQpPNqCzCFoA"
+              conditionMethod="#_VSLYZKXKEeKQpPNqCzCFoA" initMethod="#_VSLYY6XKEeKQpPNqCzCFoA"
+              footerMethod="#_VSLYZqXKEeKQpPNqCzCFoA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_g3M6wKXKEeKQpPNqCzCFoA"
+                name="Java"/>
+            <methods xmi:id="_VSLYYqXKEeKQpPNqCzCFoA" name="header" patternFilePath="templates/pattern._VSLYYKXKEeKQpPNqCzCFoA/method._VSLYYqXKEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_VSLYY6XKEeKQpPNqCzCFoA" name="init" patternFilePath="templates/pattern._VSLYYKXKEeKQpPNqCzCFoA/method._VSLYY6XKEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_VSLYZKXKEeKQpPNqCzCFoA" name="preCondition" patternFilePath="templates/pattern._VSLYYKXKEeKQpPNqCzCFoA/method._VSLYZKXKEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_VSLYZqXKEeKQpPNqCzCFoA" name="footer" patternFilePath="templates/pattern._VSLYYKXKEeKQpPNqCzCFoA/method._VSLYZqXKEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_VSLYZ6XKEeKQpPNqCzCFoA" name="genOpenJavaService" patternFilePath="templates/pattern._VSLYYKXKEeKQpPNqCzCFoA/method._VSLYZ6XKEeKQpPNqCzCFoA.pt"/>
+            <parameters xmi:id="_VSLYaKXKEeKQpPNqCzCFoA" name="diagramSet" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//DiagramSet"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_VSLYaqXKEeKQpPNqCzCFoA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_VSLYaaXKEeKQpPNqCzCFoA"
+                called="#_VSLYZ6XKEeKQpPNqCzCFoA"/>
+          </elements>
+          <elements xmi:id="_Ck6nQF5pEeKooNX-rGQuxA" name="DiagramPattern" superPattern="#_ytbmoF5nEeKooNX-rGQuxA"
+              headerMethod="#_Ck6nQl5pEeKooNX-rGQuxA" conditionMethod="#_Ck6nRF5pEeKooNX-rGQuxA"
+              initMethod="#_Ck6nQ15pEeKooNX-rGQuxA" footerMethod="#_Ck6nRl5pEeKooNX-rGQuxA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_Ck6nQV5pEeKooNX-rGQuxA"
+                name="Java"/>
+            <methods xmi:id="_Ck6nQl5pEeKooNX-rGQuxA" name="header" patternFilePath="templates/pattern._Ck6nQF5pEeKooNX-rGQuxA/method._Ck6nQl5pEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_Ck6nQ15pEeKooNX-rGQuxA" name="init" patternFilePath="templates/pattern._Ck6nQF5pEeKooNX-rGQuxA/method._Ck6nQ15pEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_Ck6nRF5pEeKooNX-rGQuxA" name="preCondition" patternFilePath="templates/pattern._Ck6nQF5pEeKooNX-rGQuxA/method._Ck6nRF5pEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_Ck6nRV5pEeKooNX-rGQuxA" name="setParentMapping" patternFilePath="templates/pattern._Ck6nQF5pEeKooNX-rGQuxA/method._Ck6nRV5pEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_Ck6nRl5pEeKooNX-rGQuxA" name="footer" patternFilePath="templates/pattern._Ck6nQF5pEeKooNX-rGQuxA/method._Ck6nRl5pEeKooNX-rGQuxA.pt"/>
+            <methods xmi:id="_TjI_sF8pEeKhJJsyCdn4KA" name="computeDomainClass" patternFilePath="templates/pattern._Ck6nQF5pEeKooNX-rGQuxA/method._TjI_sF8pEeKhJJsyCdn4KA.pt"/>
+            <methods xmi:id="_PtdJYF7uEeKhJJsyCdn4KA" name="createDoremiElement" patternFilePath="templates/pattern._Ck6nQF5pEeKooNX-rGQuxA/method._PtdJYF7uEeKhJJsyCdn4KA.pt"/>
+            <parameters xmi:id="_3vNdcF5yEeKFMtibM2839w" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Diagram"/>
+            <variables xmi:id="_x1UcAV7tEeKhJJsyCdn4KA" name="doremiParent" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_RXqmoF8pEeKhJJsyCdn4KA" name="domainClass" type="java.lang.String"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_U7zbwF8pEeKhJJsyCdn4KA"
+                called="#_TjI_sF8pEeKhJJsyCdn4KA"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Ck6nR15pEeKooNX-rGQuxA"/>
+          </elements>
+          <elements xmi:id="_qPEvoF8qEeKhJJsyCdn4KA" name="DiagramExtensionPattern"
+              superPattern="#_ytbmoF5nEeKooNX-rGQuxA" headerMethod="#_qPEvol8qEeKhJJsyCdn4KA"
+              conditionMethod="#_qPEvpF8qEeKhJJsyCdn4KA" initMethod="#_qPEvo18qEeKhJJsyCdn4KA"
+              footerMethod="#_qPEvpl8qEeKhJJsyCdn4KA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_qPEvoV8qEeKhJJsyCdn4KA"
+                name="Java"/>
+            <methods xmi:id="_qPEvol8qEeKhJJsyCdn4KA" name="header" patternFilePath="templates/pattern._qPEvoF8qEeKhJJsyCdn4KA/method._qPEvol8qEeKhJJsyCdn4KA.pt"/>
+            <methods xmi:id="_qPEvo18qEeKhJJsyCdn4KA" name="init" patternFilePath="templates/pattern._qPEvoF8qEeKhJJsyCdn4KA/method._qPEvo18qEeKhJJsyCdn4KA.pt"/>
+            <methods xmi:id="_qPEvpF8qEeKhJJsyCdn4KA" name="preCondition" patternFilePath="templates/pattern._qPEvoF8qEeKhJJsyCdn4KA/method._qPEvpF8qEeKhJJsyCdn4KA.pt"/>
+            <methods xmi:id="_qPEvpV8qEeKhJJsyCdn4KA" name="setParentMapping" patternFilePath="templates/pattern._qPEvoF8qEeKhJJsyCdn4KA/method._qPEvpV8qEeKhJJsyCdn4KA.pt"/>
+            <methods xmi:id="_qPEvpl8qEeKhJJsyCdn4KA" name="footer" patternFilePath="templates/pattern._qPEvoF8qEeKhJJsyCdn4KA/method._qPEvpl8qEeKhJJsyCdn4KA.pt"/>
+            <methods xmi:id="_q6aWMF8rEeKiadLjZ_FAOQ" name="createDoremiElement" patternFilePath="templates/pattern._qPEvoF8qEeKhJJsyCdn4KA/method._q6aWMF8rEeKiadLjZ_FAOQ.pt"/>
+            <parameters xmi:id="_CJjLwF8rEeKhJJsyCdn4KA" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//DiagramExtension"/>
+            <variables xmi:id="_z2CC0F8qEeKhJJsyCdn4KA" name="doremiParent" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_qPEvp18qEeKhJJsyCdn4KA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_lkR_AV8rEeKiadLjZ_FAOQ"
+                called="#_qPEvpV8qEeKhJJsyCdn4KA"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_ugFl8F83EeKiadLjZ_FAOQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node">
+          <elements xmi:id="_yavdoF83EeKiadLjZ_FAOQ" name="ContainerPattern" superPattern="#_ytbmoF5nEeKooNX-rGQuxA"
+              headerMethod="#_yavdol83EeKiadLjZ_FAOQ" conditionMethod="#_yavdpF83EeKiadLjZ_FAOQ"
+              initMethod="#_yavdo183EeKiadLjZ_FAOQ" footerMethod="#_yavdpl83EeKiadLjZ_FAOQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_yavdoV83EeKiadLjZ_FAOQ"
+                name="Java"/>
+            <methods xmi:id="_yavdol83EeKiadLjZ_FAOQ" name="header" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._yavdol83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_yavdo183EeKiadLjZ_FAOQ" name="init" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._yavdo183EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_yavdpF83EeKiadLjZ_FAOQ" name="preCondition" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._yavdpF83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_yavdpl83EeKiadLjZ_FAOQ" name="footer" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._yavdpl83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_UyohgGABEeKiadLjZ_FAOQ" name="setSemanticData" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._UyohgGABEeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_yavdpV83EeKiadLjZ_FAOQ" name="addElementToODesign" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._yavdpV83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_oxXl8GCzEeKiadLjZ_FAOQ" name="createDoremiElement" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._oxXl8GCzEeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_7OpKkWFYEeKcCsBjzxvXlw" name="setStyle" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._7OpKkWFYEeKcCsBjzxvXlw.pt"/>
+            <methods xmi:id="_9SOqQGyNEeKZOKJHxkRgdw" name="setParentMapping" patternFilePath="templates/pattern._yavdoF83EeKiadLjZ_FAOQ/method._9SOqQGyNEeKZOKJHxkRgdw.pt"/>
+            <parameters xmi:id="_NehNAF84EeKiadLjZ_FAOQ" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Container"/>
+            <variables xmi:id="_C6Ig0F__EeKiadLjZ_FAOQ" name="dContainerMapping" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_WpnzkIHHEeKwg4W2q6P9qg" name="genDefaultSemanticCandidatesExpression"
+                type="java.lang.Boolean"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_yavdp183EeKiadLjZ_FAOQ"/>
+          </elements>
+          <elements xmi:id="_0k8rYF83EeKiadLjZ_FAOQ" name="NodePattern" superPattern="#_ytbmoF5nEeKooNX-rGQuxA"
+              headerMethod="#_0k8rYl83EeKiadLjZ_FAOQ" conditionMethod="#_0k8rZF83EeKiadLjZ_FAOQ"
+              initMethod="#_0k8rY183EeKiadLjZ_FAOQ" footerMethod="#_0k8rZl83EeKiadLjZ_FAOQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_0k8rYV83EeKiadLjZ_FAOQ"
+                name="Java"/>
+            <methods xmi:id="_0k8rYl83EeKiadLjZ_FAOQ" name="header" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._0k8rYl83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_0k8rY183EeKiadLjZ_FAOQ" name="init" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._0k8rY183EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_0k8rZF83EeKiadLjZ_FAOQ" name="preCondition" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._0k8rZF83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_0k8rZV83EeKiadLjZ_FAOQ" name="createDoremiElement" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._0k8rZV83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_0k8rZl83EeKiadLjZ_FAOQ" name="footer" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._0k8rZl83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_C8SPIGC-EeKiadLjZ_FAOQ" name="setSemanticData" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._C8SPIGC-EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_E42pgGC-EeKiadLjZ_FAOQ" name="setParentMapping" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._E42pgGC-EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_NwOLcWDBEeK1Pe0hRJW-Pw" name="addElementToODesign" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._NwOLcWDBEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_nJOBwGDGEeK1Pe0hRJW-Pw" name="setStyle" patternFilePath="templates/pattern._0k8rYF83EeKiadLjZ_FAOQ/method._nJOBwGDGEeK1Pe0hRJW-Pw.pt"/>
+            <parameters xmi:id="_R6rPQF84EeKiadLjZ_FAOQ" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Node"/>
+            <variables xmi:id="_T2SkEGC8EeKiadLjZ_FAOQ" name="dNodeMapping" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_6VmxoIJFEeKwg4W2q6P9qg" name="genDefaultSemanticCandidatesExpression"
+                type="java.lang.Boolean"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_0k8rZ183EeKiadLjZ_FAOQ"/>
+          </elements>
+          <elements xmi:id="_-teg0GDHEeK1Pe0hRJW-Pw" name="BorderedNodePattern" superPattern="#_ytbmoF5nEeKooNX-rGQuxA"
+              headerMethod="#_-teg0mDHEeK1Pe0hRJW-Pw" conditionMethod="#_-teg1GDHEeK1Pe0hRJW-Pw"
+              initMethod="#_-teg02DHEeK1Pe0hRJW-Pw" footerMethod="#_-teg1mDHEeK1Pe0hRJW-Pw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_-teg0WDHEeK1Pe0hRJW-Pw"
+                name="Java"/>
+            <methods xmi:id="_-teg0mDHEeK1Pe0hRJW-Pw" name="header" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg0mDHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg02DHEeK1Pe0hRJW-Pw" name="init" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg02DHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg1GDHEeK1Pe0hRJW-Pw" name="preCondition" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg1GDHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg1WDHEeK1Pe0hRJW-Pw" name="createDoremiElement" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg1WDHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg1mDHEeK1Pe0hRJW-Pw" name="footer" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg1mDHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg12DHEeK1Pe0hRJW-Pw" name="setSemanticData" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg12DHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg2GDHEeK1Pe0hRJW-Pw" name="setParentMapping" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg2GDHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg2WDHEeK1Pe0hRJW-Pw" name="addElementToODesign" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg2WDHEeK1Pe0hRJW-Pw.pt"/>
+            <methods xmi:id="_-teg2mDHEeK1Pe0hRJW-Pw" name="setStyle" patternFilePath="templates/pattern._-teg0GDHEeK1Pe0hRJW-Pw/method._-teg2mDHEeK1Pe0hRJW-Pw.pt"/>
+            <parameters xmi:id="_-teg22DHEeK1Pe0hRJW-Pw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//BorderedNode"/>
+            <variables xmi:id="_-teg3GDHEeK1Pe0hRJW-Pw" name="dNodeMapping" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_dSM3YIJGEeKwg4W2q6P9qg" name="genDefaultSemanticCandidatesExpression"
+                type="java.lang.Boolean"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_-teg3WDHEeK1Pe0hRJW-Pw"/>
+          </elements>
+          <elements xmi:id="_vf9RoGcFEeKU65N7JaBT3g" name="ContainerImportPattern"
+              superPattern="#_yavdoF83EeKiadLjZ_FAOQ" headerMethod="#_vf9RomcFEeKU65N7JaBT3g"
+              conditionMethod="#_vf9RpGcFEeKU65N7JaBT3g" initMethod="#_vf9Ro2cFEeKU65N7JaBT3g"
+              footerMethod="#_vf9RpmcFEeKU65N7JaBT3g">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_83R4EGcFEeKU65N7JaBT3g"
+                name="Java"/>
+            <methods xmi:id="_vf9RomcFEeKU65N7JaBT3g" name="header" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._vf9RomcFEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_vf9Ro2cFEeKU65N7JaBT3g" name="init" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._vf9Ro2cFEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_vf9RpGcFEeKU65N7JaBT3g" name="preCondition" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._vf9RpGcFEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_vf9RpWcFEeKU65N7JaBT3g" name="createDoremiElement" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._vf9RpWcFEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_vf9RpmcFEeKU65N7JaBT3g" name="footer" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._vf9RpmcFEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_x3qegIJREeKwg4W2q6P9qg" name="inheritLabelSpecification"
+                patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._x3qegIJREeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_srj8UIJtEeKwg4W2q6P9qg" name="inheritMappingReuse" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._srj8UIJtEeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_8WYPYIJtEeKwg4W2q6P9qg" name="inheritSemanticData" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._8WYPYIJtEeKwg4W2q6P9qg.pt"/>
+            <variables xmi:id="_MpIFIIJuEeKwg4W2q6P9qg" name="icm" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/ContainerMappingImport"/>
+            <variables xmi:id="_i8z5gYSmEeKlgrb0i1zvPQ" name="mapping" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/ContainerMapping"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_vf9Rp2cFEeKU65N7JaBT3g"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_yWXMsIJREeKwg4W2q6P9qg"
+                called="#_x3qegIJREeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_2ZhPYIJtEeKwg4W2q6P9qg"
+                called="#_srj8UIJtEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_88hpYIJtEeKwg4W2q6P9qg"
+                called="#_8WYPYIJtEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:PatternCall" xmi:id="_KBtb8ISoEeKlgrb0i1zvPQ"
+                called="#_MLHN4ISnEeKlgrb0i1zvPQ">
+              <parameterMatching xmi:id="_NLw9IISoEeKlgrb0i1zvPQ" value="#_i8z5gYSmEeKlgrb0i1zvPQ"
+                  key="#_Osx5YISnEeKlgrb0i1zvPQ"/>
+              <parameterMatching xmi:id="_N_eSAISoEeKlgrb0i1zvPQ" value="#_MpIFIIJuEeKwg4W2q6P9qg"
+                  key="#_QVOd4ISnEeKlgrb0i1zvPQ"/>
+            </orchestration>
+          </elements>
+          <elements xmi:id="_wXaooGcGEeKU65N7JaBT3g" name="NodeImportPattern" superPattern="#_0k8rYF83EeKiadLjZ_FAOQ"
+              headerMethod="#_wXaoomcGEeKU65N7JaBT3g" conditionMethod="#_wXaopGcGEeKU65N7JaBT3g"
+              initMethod="#_wXaoo2cGEeKU65N7JaBT3g" footerMethod="#_wXaopmcGEeKU65N7JaBT3g">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_wXaooWcGEeKU65N7JaBT3g"
+                name="Java"/>
+            <methods xmi:id="_wXaoomcGEeKU65N7JaBT3g" name="header" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._wXaoomcGEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_wXaoo2cGEeKU65N7JaBT3g" name="init" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._wXaoo2cGEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_wXaopGcGEeKU65N7JaBT3g" name="preCondition" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._wXaopGcGEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_wXaopWcGEeKU65N7JaBT3g" name="createDoremiElement" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._wXaopWcGEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_wXaopmcGEeKU65N7JaBT3g" name="footer" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._wXaopmcGEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_bXNwYIJREeKwg4W2q6P9qg" name="inheritLabelSpecification"
+                patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._bXNwYIJREeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_RC8voIJvEeKwg4W2q6P9qg" name="inheritMappingReuse" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._RC8voIJvEeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_VVHvcIJvEeKwg4W2q6P9qg" name="inheritSemanticData" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._VVHvcIJvEeKwg4W2q6P9qg.pt"/>
+            <variables xmi:id="_f2VrcIJvEeKwg4W2q6P9qg" name="inm" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMappingImport"/>
+            <variables xmi:id="_wtpzMISmEeKlgrb0i1zvPQ" name="mapping" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMapping"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_wXaop2cGEeKU65N7JaBT3g"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_cBYuwIJREeKwg4W2q6P9qg"
+                called="#_bXNwYIJREeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_WGvZoIJvEeKwg4W2q6P9qg"
+                called="#_RC8voIJvEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_WU5KYIJvEeKwg4W2q6P9qg"
+                called="#_VVHvcIJvEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:PatternCall" xmi:id="_Ux-gkISoEeKlgrb0i1zvPQ"
+                called="#_MLHN4ISnEeKlgrb0i1zvPQ">
+              <parameterMatching xmi:id="_WUnYAISoEeKlgrb0i1zvPQ" value="#_wtpzMISmEeKlgrb0i1zvPQ"
+                  key="#_Osx5YISnEeKlgrb0i1zvPQ"/>
+              <parameterMatching xmi:id="_Wr3aYISoEeKlgrb0i1zvPQ" value="#_f2VrcIJvEeKwg4W2q6P9qg"
+                  key="#_QVOd4ISnEeKlgrb0i1zvPQ"/>
+            </orchestration>
+          </elements>
+          <elements xmi:id="_Tw9wIGcHEeKU65N7JaBT3g" name="BorderedNodeImportPattern"
+              superPattern="#_-teg0GDHEeK1Pe0hRJW-Pw" headerMethod="#_Tw9wImcHEeKU65N7JaBT3g"
+              conditionMethod="#_Tw9wJGcHEeKU65N7JaBT3g" initMethod="#_Tw9wI2cHEeKU65N7JaBT3g"
+              footerMethod="#_Tw9wJmcHEeKU65N7JaBT3g">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_Tw9wIWcHEeKU65N7JaBT3g"
+                name="Java"/>
+            <methods xmi:id="_Tw9wImcHEeKU65N7JaBT3g" name="header" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._Tw9wImcHEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_Tw9wI2cHEeKU65N7JaBT3g" name="init" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._Tw9wI2cHEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_Tw9wJGcHEeKU65N7JaBT3g" name="preCondition" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._Tw9wJGcHEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_Tw9wJWcHEeKU65N7JaBT3g" name="createDoremiElement" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._Tw9wJWcHEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_Tw9wJmcHEeKU65N7JaBT3g" name="footer" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._Tw9wJmcHEeKU65N7JaBT3g.pt"/>
+            <methods xmi:id="_m8uF0IJPEeKwg4W2q6P9qg" name="inheritLabelSpecification"
+                patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._m8uF0IJPEeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_o5rUMIJvEeKwg4W2q6P9qg" name="inheritMappingReuse" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._o5rUMIJvEeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_5HgNsIJvEeKwg4W2q6P9qg" name="inheritSemanticData" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._5HgNsIJvEeKwg4W2q6P9qg.pt"/>
+            <variables xmi:id="_uB7ncIJvEeKwg4W2q6P9qg" name="inm" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMappingImport"/>
+            <variables xmi:id="_5YrpoISmEeKlgrb0i1zvPQ" name="mapping" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMapping"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Tw9wJ2cHEeKU65N7JaBT3g"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_ntJdMIJPEeKwg4W2q6P9qg"
+                called="#_m8uF0IJPEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_IVaiUIJwEeKwg4W2q6P9qg"
+                called="#_m8uF0IJPEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_ImZkoIJwEeKwg4W2q6P9qg"
+                called="#_o5rUMIJvEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_I8meIIJwEeKwg4W2q6P9qg"
+                called="#_5HgNsIJvEeKwg4W2q6P9qg"/>
+            <orchestration xmi:type="pattern:PatternCall" xmi:id="_aX5nQISoEeKlgrb0i1zvPQ"
+                called="#_MLHN4ISnEeKlgrb0i1zvPQ">
+              <parameterMatching xmi:id="_aX5nQYSoEeKlgrb0i1zvPQ" value="#_5YrpoISmEeKlgrb0i1zvPQ"
+                  key="#_Osx5YISnEeKlgrb0i1zvPQ"/>
+              <parameterMatching xmi:id="_aX5nQoSoEeKlgrb0i1zvPQ" value="#_uB7ncIJvEeKwg4W2q6P9qg"
+                  key="#_QVOd4ISnEeKlgrb0i1zvPQ"/>
+            </orchestration>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_9kMBcABpEeSVFeZ-2badYw" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.reuse">
+          <elements xmi:id="_RvfdIABqEeSVFeZ-2badYw" name="ContainerReusePattern"
+              superPattern="#_Bys74AkTEeS0Ta9jP3S46g" headerMethod="#_RvfdIgBqEeSVFeZ-2badYw"
+              conditionMethod="#_RvfdJABqEeSVFeZ-2badYw" initMethod="#_RvfdIwBqEeSVFeZ-2badYw"
+              footerMethod="#_RvfdJQBqEeSVFeZ-2badYw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_RvfdIQBqEeSVFeZ-2badYw"
+                name="Java"/>
+            <methods xmi:id="_RvfdIgBqEeSVFeZ-2badYw" name="header" patternFilePath="templates/pattern._RvfdIABqEeSVFeZ-2badYw/method._RvfdIgBqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_RvfdIwBqEeSVFeZ-2badYw" name="init" patternFilePath="templates/pattern._RvfdIABqEeSVFeZ-2badYw/method._RvfdIwBqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_RvfdJABqEeSVFeZ-2badYw" name="preCondition" patternFilePath="templates/pattern._RvfdIABqEeSVFeZ-2badYw/method._RvfdJABqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_RvfdJQBqEeSVFeZ-2badYw" name="footer" patternFilePath="templates/pattern._RvfdIABqEeSVFeZ-2badYw/method._RvfdJQBqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_fwrf8ABqEeSVFeZ-2badYw" name="doReuse" patternFilePath="templates/pattern._RvfdIABqEeSVFeZ-2badYw/method._fwrf8ABqEeSVFeZ-2badYw.pt"/>
+            <parameters xmi:id="_RvfdKwBqEeSVFeZ-2badYw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Container"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_RvfdLgBqEeSVFeZ-2badYw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_y2_pgABqEeSVFeZ-2badYw"
+                called="#_fwrf8ABqEeSVFeZ-2badYw"/>
+          </elements>
+          <elements xmi:id="_Rv8JEABqEeSVFeZ-2badYw" name="NodeReusePattern" superPattern="#_Bys74AkTEeS0Ta9jP3S46g"
+              headerMethod="#_Rv8JEgBqEeSVFeZ-2badYw" conditionMethod="#_Rv8JFABqEeSVFeZ-2badYw"
+              initMethod="#_Rv8JEwBqEeSVFeZ-2badYw" footerMethod="#_Rv8JFgBqEeSVFeZ-2badYw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_Rv8JEQBqEeSVFeZ-2badYw"
+                name="Java"/>
+            <methods xmi:id="_Rv8JEgBqEeSVFeZ-2badYw" name="header" patternFilePath="templates/pattern._Rv8JEABqEeSVFeZ-2badYw/method._Rv8JEgBqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_Rv8JEwBqEeSVFeZ-2badYw" name="init" patternFilePath="templates/pattern._Rv8JEABqEeSVFeZ-2badYw/method._Rv8JEwBqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_Rv8JFABqEeSVFeZ-2badYw" name="preCondition" patternFilePath="templates/pattern._Rv8JEABqEeSVFeZ-2badYw/method._Rv8JFABqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_Rv8JFgBqEeSVFeZ-2badYw" name="footer" patternFilePath="templates/pattern._Rv8JEABqEeSVFeZ-2badYw/method._Rv8JFgBqEeSVFeZ-2badYw.pt"/>
+            <methods xmi:id="_Rv8JGgBqEeSVFeZ-2badYw" name="doReuse" patternFilePath="templates/pattern._Rv8JEABqEeSVFeZ-2badYw/method._Rv8JGgBqEeSVFeZ-2badYw.pt"/>
+            <parameters xmi:id="_Rv8JGwBqEeSVFeZ-2badYw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Node"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Rv8JHgBqEeSVFeZ-2badYw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_ztFkAABqEeSVFeZ-2badYw"
+                called="#_Rv8JGgBqEeSVFeZ-2badYw"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_9AtegX87EeKMau0b_c3OtQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.edge">
+          <elements xmi:id="_7N2SAF83EeKiadLjZ_FAOQ" name="EdgePattern" superPattern="#_ytbmoF5nEeKooNX-rGQuxA"
+              headerMethod="#_7N2SAl83EeKiadLjZ_FAOQ" conditionMethod="#_7N2SBF83EeKiadLjZ_FAOQ"
+              initMethod="#_7N2SA183EeKiadLjZ_FAOQ" footerMethod="#_7N2SBl83EeKiadLjZ_FAOQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_7N2SAV83EeKiadLjZ_FAOQ"
+                name="Java"/>
+            <methods xmi:id="_7N2SAl83EeKiadLjZ_FAOQ" name="header" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._7N2SAl83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_7N2SA183EeKiadLjZ_FAOQ" name="init" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._7N2SA183EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_7N2SBF83EeKiadLjZ_FAOQ" name="preCondition" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._7N2SBF83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_7N2SBV83EeKiadLjZ_FAOQ" name="createDoremiElement" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._7N2SBV83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_7N2SBl83EeKiadLjZ_FAOQ" name="footer" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._7N2SBl83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_dygYQGRvEeKcCsBjzxvXlw" name="setSemanticData" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._dygYQGRvEeKcCsBjzxvXlw.pt"/>
+            <methods xmi:id="_ec-RkGRvEeKcCsBjzxvXlw" name="setStyle" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._ec-RkGRvEeKcCsBjzxvXlw.pt"/>
+            <methods xmi:id="_e8thkGRvEeKcCsBjzxvXlw" name="setParentMapping" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._e8thkGRvEeKcCsBjzxvXlw.pt"/>
+            <methods xmi:id="_fmoK0GR7EeKcCsBjzxvXlw" name="addElementToODesign" patternFilePath="templates/pattern._7N2SAF83EeKiadLjZ_FAOQ/method._fmoK0GR7EeKcCsBjzxvXlw.pt"/>
+            <parameters xmi:id="_X7e7IF84EeKiadLjZ_FAOQ" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Edge"/>
+            <variables xmi:id="_LzgtAGR4EeKcCsBjzxvXlw" name="dEdgeMapping" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_7N2SB183EeKiadLjZ_FAOQ"/>
+          </elements>
+          <elements xmi:id="_8ajVsF83EeKiadLjZ_FAOQ" name="EdgeImportPattern" superPattern="#_ytbmoF5nEeKooNX-rGQuxA"
+              headerMethod="#_8ajVsl83EeKiadLjZ_FAOQ" conditionMethod="#_8ajVtF83EeKiadLjZ_FAOQ"
+              initMethod="#_8ajVs183EeKiadLjZ_FAOQ" footerMethod="#_8ajVtl83EeKiadLjZ_FAOQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_8ajVsV83EeKiadLjZ_FAOQ"
+                name="Java"/>
+            <methods xmi:id="_8ajVsl83EeKiadLjZ_FAOQ" name="header" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._8ajVsl83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_8ajVs183EeKiadLjZ_FAOQ" name="init" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._8ajVs183EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_8ajVtF83EeKiadLjZ_FAOQ" name="preCondition" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._8ajVtF83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_8ajVtV83EeKiadLjZ_FAOQ" name="createDoremiElement" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._8ajVtV83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_8ajVtl83EeKiadLjZ_FAOQ" name="footer" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._8ajVtl83EeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_AA2qYGSQEeKcCsBjzxvXlw" name="setParentMapping" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._AA2qYGSQEeKcCsBjzxvXlw.pt"/>
+            <methods xmi:id="_ymscQGSYEeKcCsBjzxvXlw" name="addElementToODesign" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._ymscQGSYEeKcCsBjzxvXlw.pt"/>
+            <methods xmi:id="_SSMQIIc0EeKVDMJhdm0eng" name="setStyle" patternFilePath="templates/pattern._8ajVsF83EeKiadLjZ_FAOQ/method._SSMQIIc0EeKVDMJhdm0eng.pt"/>
+            <parameters xmi:id="_aPtnkF84EeKiadLjZ_FAOQ" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//EdgeImport"/>
+            <variables xmi:id="_9MtHwGSPEeKcCsBjzxvXlw" name="dEdgeImportMapping"
+                type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_8ajVt183EeKiadLjZ_FAOQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_BBMm4F_LEeKiadLjZ_FAOQ"
+                called="#_8ajVtV83EeKiadLjZ_FAOQ"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_idbuUHXeEeK7wK_Fhp2BAw" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common">
+          <elements xmi:id="_6EINAGyBEeKZOKJHxkRgdw" name="AbstractTool" superPattern="#_Bys74AkTEeS0Ta9jP3S46g"
+              headerMethod="#_6EINAmyBEeKZOKJHxkRgdw" conditionMethod="#_6EINBGyBEeKZOKJHxkRgdw"
+              initMethod="#_6EINA2yBEeKZOKJHxkRgdw" footerMethod="#_6EINBmyBEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_yyYLwGyDEeKZOKJHxkRgdw"
+                name="Java"/>
+            <methods xmi:id="_6EINAmyBEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._6EINAmyBEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_6EINA2yBEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._6EINA2yBEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_6EINBGyBEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._6EINBGyBEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_6EINBWyBEeKZOKJHxkRgdw" name="createConcretTool" patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._6EINBWyBEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_6EINBmyBEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._6EINBmyBEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_dwYYoGyDEeKZOKJHxkRgdw" name="addToolToToolSection"
+                patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._dwYYoGyDEeKZOKJHxkRgdw.pt"/>
+            <variables xmi:id="_9G4MUGyBEeKZOKJHxkRgdw" name="abstractToolDescription"
+                type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_jAiQYGyTEeKZOKJHxkRgdw" name="dslvpToolElement" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_6EINB2yBEeKZOKJHxkRgdw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_SriyMGyDEeKZOKJHxkRgdw"
+                called="#_6EINBWyBEeKZOKJHxkRgdw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_ekYocGyDEeKZOKJHxkRgdw"
+                called="#_dwYYoGyDEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_HBdJoGyDEeKZOKJHxkRgdw" name="AbstractCreationTool" superPattern="#_6EINAGyBEeKZOKJHxkRgdw"
+              headerMethod="#_HBdJomyDEeKZOKJHxkRgdw" conditionMethod="#_HBdJpGyDEeKZOKJHxkRgdw"
+              initMethod="#_HBdJo2yDEeKZOKJHxkRgdw" footerMethod="#_HBdJpmyDEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_z0ZCYGyDEeKZOKJHxkRgdw"
+                name="Java"/>
+            <methods xmi:id="_HBdJomyDEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._HBdJoGyDEeKZOKJHxkRgdw/method._HBdJomyDEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_HBdJo2yDEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._HBdJoGyDEeKZOKJHxkRgdw/method._HBdJo2yDEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_HBdJpGyDEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._HBdJoGyDEeKZOKJHxkRgdw/method._HBdJpGyDEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_HBdJpmyDEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._HBdJoGyDEeKZOKJHxkRgdw/method._HBdJpmyDEeKZOKJHxkRgdw.pt"/>
+            <parameters xmi:id="_f3KWsIECEeKCNoRzVHSQkQ" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Create"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_HBdJp2yDEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_z66NcXXAEeK7wK_Fhp2BAw" name="AbstractEdgeReconnectionTool"
+              superPattern="#_6EINAGyBEeKZOKJHxkRgdw" headerMethod="#_z66Nc3XAEeK7wK_Fhp2BAw"
+              conditionMethod="#_z66NdXXAEeK7wK_Fhp2BAw" initMethod="#_z66NdHXAEeK7wK_Fhp2BAw"
+              footerMethod="#_z66Nd3XAEeK7wK_Fhp2BAw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_z66NcnXAEeK7wK_Fhp2BAw"
+                name="Java"/>
+            <methods xmi:id="_z66Nc3XAEeK7wK_Fhp2BAw" name="header" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._z66Nc3XAEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_z66NdHXAEeK7wK_Fhp2BAw" name="init" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._z66NdHXAEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_z66NdXXAEeK7wK_Fhp2BAw" name="preCondition" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._z66NdXXAEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_z66NdnXAEeK7wK_Fhp2BAw" name="createConcretTool" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._z66NdnXAEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_z66Nd3XAEeK7wK_Fhp2BAw" name="footer" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._z66Nd3XAEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_787GoHXBEeK7wK_Fhp2BAw" name="setAssociatedMapping"
+                patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._787GoHXBEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_pnz7EHXCEeK7wK_Fhp2BAw" name="setToolName" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._pnz7EHXCEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_liRPwHXHEeK7wK_Fhp2BAw" name="setEdgeReconnectionType"
+                patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._liRPwHXHEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_IifUoHXxEeK7wK_Fhp2BAw" name="setJavaServiceName" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._IifUoHXxEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_f-IMwHX-EeK7wK_Fhp2BAw" name="createToolOperations"
+                patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._f-IMwHX-EeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_jmbJIHX-EeK7wK_Fhp2BAw" name="setAssociationsValues"
+                patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._jmbJIHX-EeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_YSff0HdIEeKNCKrmsm1I1w" name="createJavaService" patternFilePath="templates/pattern._z66NcXXAEeK7wK_Fhp2BAw/method._YSff0HdIEeKNCKrmsm1I1w.pt"/>
+            <parameters xmi:id="_yhNV8HXIEeK7wK_Fhp2BAw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//ReconnectEdge"/>
+            <variables xmi:id="_FNTiUHXBEeK7wK_Fhp2BAw" name="initial_operation" type="http://www.eclipse.org/sirius/1.1.0#//description/tool/InitialOperation"/>
+            <variables xmi:id="_1_HEYHXBEeK7wK_Fhp2BAw" name="associated_mapping"
+                type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//DiagramElement"/>
+            <variables xmi:id="_nmb5MHXCEeK7wK_Fhp2BAw" name="tool_name" type="java.lang.String"/>
+            <variables xmi:id="_aEblYHXFEeK7wK_Fhp2BAw" name="source_reconnection"
+                type="java.lang.Boolean"/>
+            <variables xmi:id="_FcAr4HXxEeK7wK_Fhp2BAw" name="java_service_name" type="java.lang.String"/>
+            <variables xmi:id="_b1C3gHX-EeK7wK_Fhp2BAw" name="t_association" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_dUtTcHX-EeK7wK_Fhp2BAw" name="s_association" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_9PlTMHaDEeK7wK_Fhp2BAw" name="generate_service" type="java.lang.Boolean"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_L0xwIHXCEeK7wK_Fhp2BAw"
+                called="#_787GoHXBEeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_c8VhoHX8EeK7wK_Fhp2BAw"
+                called="#_liRPwHXHEeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_qNW4IHXCEeK7wK_Fhp2BAw"
+                called="#_pnz7EHXCEeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_mkIVYHXHEeK7wK_Fhp2BAw"
+                called="#_liRPwHXHEeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_z66NeHXAEeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_kRopUHX-EeK7wK_Fhp2BAw"
+                called="#_jmbJIHX-EeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_eiZHIHbFEeKyirS_NQF8eQ"
+                called="#_IifUoHXxEeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_gvv28HX-EeK7wK_Fhp2BAw"
+                called="#_f-IMwHX-EeK7wK_Fhp2BAw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_ZpOCMHdIEeKNCKrmsm1I1w"
+                called="#_YSff0HdIEeKNCKrmsm1I1w"/>
+          </elements>
+          <elements xmi:id="_-xfqkHXCEeK7wK_Fhp2BAw" name="AbstractSourceEdgeReconnectionTool"
+              superPattern="#_z66NcXXAEeK7wK_Fhp2BAw" headerMethod="#_-xfqknXCEeK7wK_Fhp2BAw"
+              conditionMethod="#_-xfqlHXCEeK7wK_Fhp2BAw" initMethod="#_-xfqk3XCEeK7wK_Fhp2BAw"
+              footerMethod="#_-xfqlnXCEeK7wK_Fhp2BAw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_-xfqkXXCEeK7wK_Fhp2BAw"
+                name="Java"/>
+            <methods xmi:id="_-xfqknXCEeK7wK_Fhp2BAw" name="header" patternFilePath="templates/pattern._-xfqkHXCEeK7wK_Fhp2BAw/method._-xfqknXCEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_-xfqk3XCEeK7wK_Fhp2BAw" name="init" patternFilePath="templates/pattern._-xfqkHXCEeK7wK_Fhp2BAw/method._-xfqk3XCEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_-xfqlHXCEeK7wK_Fhp2BAw" name="preCondition" patternFilePath="templates/pattern._-xfqkHXCEeK7wK_Fhp2BAw/method._-xfqlHXCEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_-xfqlnXCEeK7wK_Fhp2BAw" name="footer" patternFilePath="templates/pattern._-xfqkHXCEeK7wK_Fhp2BAw/method._-xfqlnXCEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_s7C0IHXHEeK7wK_Fhp2BAw" name="setEdgeReconnectionType"
+                patternFilePath="templates/pattern._-xfqkHXCEeK7wK_Fhp2BAw/method._s7C0IHXHEeK7wK_Fhp2BAw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_-xfql3XCEeK7wK_Fhp2BAw"/>
+          </elements>
+          <elements xmi:id="_DuH8oHXDEeK7wK_Fhp2BAw" name="AbstractTargetEdgeReconnectionTool"
+              superPattern="#_z66NcXXAEeK7wK_Fhp2BAw" headerMethod="#_DuH8onXDEeK7wK_Fhp2BAw"
+              conditionMethod="#_DuH8pHXDEeK7wK_Fhp2BAw" initMethod="#_DuH8o3XDEeK7wK_Fhp2BAw"
+              footerMethod="#_DuH8pnXDEeK7wK_Fhp2BAw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_DuH8oXXDEeK7wK_Fhp2BAw"
+                name="Java"/>
+            <methods xmi:id="_DuH8onXDEeK7wK_Fhp2BAw" name="header" patternFilePath="templates/pattern._DuH8oHXDEeK7wK_Fhp2BAw/method._DuH8onXDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_DuH8o3XDEeK7wK_Fhp2BAw" name="init" patternFilePath="templates/pattern._DuH8oHXDEeK7wK_Fhp2BAw/method._DuH8o3XDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_DuH8pHXDEeK7wK_Fhp2BAw" name="preCondition" patternFilePath="templates/pattern._DuH8oHXDEeK7wK_Fhp2BAw/method._DuH8pHXDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_DuH8pnXDEeK7wK_Fhp2BAw" name="footer" patternFilePath="templates/pattern._DuH8oHXDEeK7wK_Fhp2BAw/method._DuH8pnXDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_AeLckHXIEeK7wK_Fhp2BAw" name="setEdgeReconnectionType"
+                patternFilePath="templates/pattern._DuH8oHXDEeK7wK_Fhp2BAw/method._AeLckHXIEeK7wK_Fhp2BAw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_DuH8p3XDEeK7wK_Fhp2BAw"/>
+          </elements>
+          <elements xmi:id="_ttE74Ha1EeKyirS_NQF8eQ" name="AbstractDeleteTool" superPattern="#_6EINAGyBEeKZOKJHxkRgdw"
+              headerMethod="#_ttE74na1EeKyirS_NQF8eQ" conditionMethod="#_ttE75Ha1EeKyirS_NQF8eQ"
+              initMethod="#_ttE743a1EeKyirS_NQF8eQ" footerMethod="#_ttE75na1EeKyirS_NQF8eQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_ttE74Xa1EeKyirS_NQF8eQ"
+                name="Java"/>
+            <methods xmi:id="_ttE74na1EeKyirS_NQF8eQ" name="header" patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._ttE74na1EeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_ttE743a1EeKyirS_NQF8eQ" name="init" patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._ttE743a1EeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_ttE75Ha1EeKyirS_NQF8eQ" name="preCondition" patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._ttE75Ha1EeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_Mre4UHa3EeKyirS_NQF8eQ" name="setToolName" patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._Mre4UHa3EeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_R3ecEHa3EeKyirS_NQF8eQ" name="setAssociatedMapping"
+                patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._R3ecEHa3EeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_ttE75Xa1EeKyirS_NQF8eQ" name="createConcretTool" patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._ttE75Xa1EeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_ttE75na1EeKyirS_NQF8eQ" name="footer" patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._ttE75na1EeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_ro3WgHa3EeKyirS_NQF8eQ" name="createSubVariables" patternFilePath="templates/pattern._ttE74Ha1EeKyirS_NQF8eQ/method._ro3WgHa3EeKyirS_NQF8eQ.pt"/>
+            <parameters xmi:id="_0tcnUHa1EeKyirS_NQF8eQ" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Delete"/>
+            <variables xmi:id="_D4OS8Ha3EeKyirS_NQF8eQ" name="initial_operation" type="org.eclipse.sirius.viewpoint.description.tool.InitialOperation"/>
+            <variables xmi:id="_GJXPIHa3EeKyirS_NQF8eQ" name="associated_mapping"
+                type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//DiagramElement"/>
+            <variables xmi:id="_ItuCQHa3EeKyirS_NQF8eQ" name="tool_name" type="java.lang.String"/>
+            <variables xmi:id="_b_OIIHa3EeKyirS_NQF8eQ" name="element_del_var" type="org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable"/>
+            <variables xmi:id="_i6X8YHa3EeKyirS_NQF8eQ" name="elementView_del_var"
+                type="org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable"/>
+            <variables xmi:id="_lM28YHa3EeKyirS_NQF8eQ" name="containerView_del_var"
+                type="org.eclipse.sirius.viewpoint.description.tool.ContainerViewVariable"/>
+            <variables xmi:id="_vZN-gHa-EeKyirS_NQF8eQ" name="delete_tool" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/tool/DeleteElementDescription"/>
+            <variables xmi:id="_fPS68IA9EeKXkLEixAIbfg" name="generateJavaService"
+                type="java.lang.Boolean"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_VHDWcHa3EeKyirS_NQF8eQ"
+                called="#_R3ecEHa3EeKyirS_NQF8eQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_VUKlYHa3EeKyirS_NQF8eQ"
+                called="#_Mre4UHa3EeKyirS_NQF8eQ"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_ttE753a1EeKyirS_NQF8eQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_siPOgHa3EeKyirS_NQF8eQ"
+                called="#_ro3WgHa3EeKyirS_NQF8eQ"/>
+          </elements>
+          <elements xmi:id="_xhhc4HbAEeKyirS_NQF8eQ" name="AbstractEdgeDeleteTool"
+              superPattern="#_ttE74Ha1EeKyirS_NQF8eQ" headerMethod="#_xhhc4nbAEeKyirS_NQF8eQ"
+              conditionMethod="#_xhhc5HbAEeKyirS_NQF8eQ" initMethod="#_xhhc43bAEeKyirS_NQF8eQ"
+              footerMethod="#_xhhc5nbAEeKyirS_NQF8eQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_xhhc4XbAEeKyirS_NQF8eQ"
+                name="Java"/>
+            <methods xmi:id="_xhhc4nbAEeKyirS_NQF8eQ" name="header" patternFilePath="templates/pattern._xhhc4HbAEeKyirS_NQF8eQ/method._xhhc4nbAEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_xhhc43bAEeKyirS_NQF8eQ" name="init" patternFilePath="templates/pattern._xhhc4HbAEeKyirS_NQF8eQ/method._xhhc43bAEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_xhhc5HbAEeKyirS_NQF8eQ" name="preCondition" patternFilePath="templates/pattern._xhhc4HbAEeKyirS_NQF8eQ/method._xhhc5HbAEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_xhhc5XbAEeKyirS_NQF8eQ" name="setAssociationsValues"
+                patternFilePath="templates/pattern._xhhc4HbAEeKyirS_NQF8eQ/method._xhhc5XbAEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_xhhc5nbAEeKyirS_NQF8eQ" name="footer" patternFilePath="templates/pattern._xhhc4HbAEeKyirS_NQF8eQ/method._xhhc5nbAEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_sq9GMIDqEeKCNoRzVHSQkQ" name="createToolOperations"
+                patternFilePath="templates/pattern._xhhc4HbAEeKyirS_NQF8eQ/method._sq9GMIDqEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_nCzK4IDqEeKCNoRzVHSQkQ" name="createJavaService" patternFilePath="templates/pattern._xhhc4HbAEeKyirS_NQF8eQ/method._nCzK4IDqEeKCNoRzVHSQkQ.pt"/>
+            <variables xmi:id="_2EPaIHbAEeKyirS_NQF8eQ" name="t_association" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <variables xmi:id="_3PV7UHbAEeKyirS_NQF8eQ" name="s_association" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_xhhc53bAEeKyirS_NQF8eQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_LvN40HbBEeKyirS_NQF8eQ"
+                called="#_xhhc5XbAEeKyirS_NQF8eQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_oc578IDrEeKCNoRzVHSQkQ"
+                called="#_sq9GMIDqEeKCNoRzVHSQkQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_on7gMIDrEeKCNoRzVHSQkQ"
+                called="#_nCzK4IDqEeKCNoRzVHSQkQ"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_aQkb8GxZEeKZOKJHxkRgdw" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools">
+          <elements xmi:id="_ijZpcGyIEeKZOKJHxkRgdw" name="SectionTool" superPattern="#_7uPPUGyKEeKZOKJHxkRgdw"
+              headerMethod="#_ijZpcmyIEeKZOKJHxkRgdw" conditionMethod="#_ijZpdGyIEeKZOKJHxkRgdw"
+              initMethod="#_ijZpc2yIEeKZOKJHxkRgdw" footerMethod="#_ijZpdmyIEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_ijZpcWyIEeKZOKJHxkRgdw"
+                name="Java"/>
+            <methods xmi:id="_ijZpcmyIEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._ijZpcGyIEeKZOKJHxkRgdw/method._ijZpcmyIEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_ijZpc2yIEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._ijZpcGyIEeKZOKJHxkRgdw/method._ijZpc2yIEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_ijZpdGyIEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._ijZpcGyIEeKZOKJHxkRgdw/method._ijZpdGyIEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_ijZpdWyIEeKZOKJHxkRgdw" name="createDoremiElement" patternFilePath="templates/pattern._ijZpcGyIEeKZOKJHxkRgdw/method._ijZpdWyIEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_ijZpdmyIEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._ijZpcGyIEeKZOKJHxkRgdw/method._ijZpdmyIEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_qoT7EGyIEeKZOKJHxkRgdw" name="addElementToODesign" patternFilePath="templates/pattern._ijZpcGyIEeKZOKJHxkRgdw/method._qoT7EGyIEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_km1ZcGyLEeKZOKJHxkRgdw" name="setParentMapping" patternFilePath="templates/pattern._ijZpcGyIEeKZOKJHxkRgdw/method._km1ZcGyLEeKZOKJHxkRgdw.pt"/>
+            <parameters xmi:id="_zwIbMGyIEeKZOKJHxkRgdw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//ActionSet"/>
+            <variables xmi:id="_A8kAQGyJEeKZOKJHxkRgdw" name="sectionObject" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_ijZpd2yIEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_hERkYGxZEeKZOKJHxkRgdw" name="CreateToolPattern" superPattern="#_HBdJoGyDEeKZOKJHxkRgdw"
+              headerMethod="#_hERkYmxZEeKZOKJHxkRgdw" conditionMethod="#_hERkZGxZEeKZOKJHxkRgdw"
+              initMethod="#_hERkY2xZEeKZOKJHxkRgdw" footerMethod="#_hERkZmxZEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_L1sMUGyREeKZOKJHxkRgdw"
+                name="Java"/>
+            <methods xmi:id="_hERkYmxZEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._hERkYGxZEeKZOKJHxkRgdw/method._hERkYmxZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_hERkY2xZEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._hERkYGxZEeKZOKJHxkRgdw/method._hERkY2xZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_hERkZGxZEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._hERkYGxZEeKZOKJHxkRgdw/method._hERkZGxZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_hERkZWxZEeKZOKJHxkRgdw" name="createConcretTool" patternFilePath="templates/pattern._hERkYGxZEeKZOKJHxkRgdw/method._hERkZWxZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_hERkZmxZEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._hERkYGxZEeKZOKJHxkRgdw/method._hERkZmxZEeKZOKJHxkRgdw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_hERkZ2xZEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_qzSAUGxZEeKZOKJHxkRgdw" name="DeleteToolForRelationBasedEdge"
+              superPattern="#_xhhc4HbAEeKyirS_NQF8eQ" headerMethod="#_qzSAUmxZEeKZOKJHxkRgdw"
+              conditionMethod="#_qzSAVGxZEeKZOKJHxkRgdw" initMethod="#_qzSAU2xZEeKZOKJHxkRgdw"
+              footerMethod="#_qzSAVmxZEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_QatmUHa7EeKyirS_NQF8eQ"
+                name="Java"/>
+            <methods xmi:id="_qzSAUmxZEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._qzSAUGxZEeKZOKJHxkRgdw/method._qzSAUmxZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_qzSAU2xZEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._qzSAUGxZEeKZOKJHxkRgdw/method._qzSAU2xZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_qzSAVGxZEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._qzSAUGxZEeKZOKJHxkRgdw/method._qzSAVGxZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_qzSAVmxZEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._qzSAUGxZEeKZOKJHxkRgdw/method._qzSAVmxZEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_eXId4Ha7EeKyirS_NQF8eQ" name="createToolOperations"
+                patternFilePath="templates/pattern._qzSAUGxZEeKZOKJHxkRgdw/method._eXId4Ha7EeKyirS_NQF8eQ.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_qzSAWGxZEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_-x9iwHbBEeKyirS_NQF8eQ" name="DeleteToolForElementBasedEdge"
+              superPattern="#_xhhc4HbAEeKyirS_NQF8eQ" headerMethod="#_-x9iwnbBEeKyirS_NQF8eQ"
+              conditionMethod="#_-x9ixHbBEeKyirS_NQF8eQ" initMethod="#_-x9iw3bBEeKyirS_NQF8eQ"
+              footerMethod="#_-x9ixXbBEeKyirS_NQF8eQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_-x9iwXbBEeKyirS_NQF8eQ"
+                name="Java"/>
+            <methods xmi:id="_-x9iwnbBEeKyirS_NQF8eQ" name="header" patternFilePath="templates/pattern._-x9iwHbBEeKyirS_NQF8eQ/method._-x9iwnbBEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_-x9iw3bBEeKyirS_NQF8eQ" name="init" patternFilePath="templates/pattern._-x9iwHbBEeKyirS_NQF8eQ/method._-x9iw3bBEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_-x9ixHbBEeKyirS_NQF8eQ" name="preCondition" patternFilePath="templates/pattern._-x9iwHbBEeKyirS_NQF8eQ/method._-x9ixHbBEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_-x9ixXbBEeKyirS_NQF8eQ" name="footer" patternFilePath="templates/pattern._-x9iwHbBEeKyirS_NQF8eQ/method._-x9ixXbBEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_-x9ixnbBEeKyirS_NQF8eQ" name="createToolOperations"
+                patternFilePath="templates/pattern._-x9iwHbBEeKyirS_NQF8eQ/method._-x9ixnbBEeKyirS_NQF8eQ.pt"/>
+            <methods xmi:id="_ZtQrkHbCEeKyirS_NQF8eQ" name="createSubVariables" patternFilePath="templates/pattern._-x9iwHbBEeKyirS_NQF8eQ/method._ZtQrkHbCEeKyirS_NQF8eQ.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_-x9ix3bBEeKyirS_NQF8eQ"/>
+          </elements>
+          <elements xmi:id="_Ayd_AGxbEeKZOKJHxkRgdw" name="OpenActionPattern" superPattern="#_6EINAGyBEeKZOKJHxkRgdw"
+              headerMethod="#_Ayd_AmxbEeKZOKJHxkRgdw" conditionMethod="#_Ayd_BGxbEeKZOKJHxkRgdw"
+              initMethod="#_Ayd_A2xbEeKZOKJHxkRgdw" footerMethod="#_Ayd_BmxbEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_XCfGUIsZEeKaMteAS7Xuew"
+                name="Java"/>
+            <methods xmi:id="_Ayd_AmxbEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._Ayd_AGxbEeKZOKJHxkRgdw/method._Ayd_AmxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_Ayd_A2xbEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._Ayd_AGxbEeKZOKJHxkRgdw/method._Ayd_A2xbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_Ayd_BGxbEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._Ayd_AGxbEeKZOKJHxkRgdw/method._Ayd_BGxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_Ayd_BWxbEeKZOKJHxkRgdw" name="createConcretTool" patternFilePath="templates/pattern._Ayd_AGxbEeKZOKJHxkRgdw/method._Ayd_BWxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_Ayd_BmxbEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._Ayd_AGxbEeKZOKJHxkRgdw/method._Ayd_BmxbEeKZOKJHxkRgdw.pt"/>
+            <parameters xmi:id="_YQfnAIsYEeKaMteAS7Xuew" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//OpenAction"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Ayd_CGxbEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_DVfVYGxbEeKZOKJHxkRgdw" name="DropToolPattern" superPattern="#_6EINAGyBEeKZOKJHxkRgdw"
+              headerMethod="#_DVfVYmxbEeKZOKJHxkRgdw" conditionMethod="#_DVfVZGxbEeKZOKJHxkRgdw"
+              initMethod="#_DVfVY2xbEeKZOKJHxkRgdw" footerMethod="#_DVfVZmxbEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_vuBq0XBxEeKjv847wYARgg"
+                name="Java"/>
+            <methods xmi:id="_DVfVYmxbEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._DVfVYGxbEeKZOKJHxkRgdw/method._DVfVYmxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_DVfVY2xbEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._DVfVYGxbEeKZOKJHxkRgdw/method._DVfVY2xbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_DVfVZGxbEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._DVfVYGxbEeKZOKJHxkRgdw/method._DVfVZGxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_DVfVZWxbEeKZOKJHxkRgdw" name="createConcretTool" patternFilePath="templates/pattern._DVfVYGxbEeKZOKJHxkRgdw/method._DVfVZWxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_DVfVZmxbEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._DVfVYGxbEeKZOKJHxkRgdw/method._DVfVZmxbEeKZOKJHxkRgdw.pt"/>
+            <parameters xmi:id="_DVfVZ2xbEeKZOKJHxkRgdw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Drop"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_DVfVaGxbEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_GxbQwGxbEeKZOKJHxkRgdw" name="ReconnectEdgeSource_RelationBasedTool"
+              superPattern="#_-xfqkHXCEeK7wK_Fhp2BAw" headerMethod="#_GxbQwmxbEeKZOKJHxkRgdw"
+              conditionMethod="#_GxbQxGxbEeKZOKJHxkRgdw" initMethod="#_GxbQw2xbEeKZOKJHxkRgdw"
+              footerMethod="#_GxbQxmxbEeKZOKJHxkRgdw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_7Od-AHEHEeKuPagoMUw0vw"
+                name="Java"/>
+            <methods xmi:id="_GxbQwmxbEeKZOKJHxkRgdw" name="header" patternFilePath="templates/pattern._GxbQwGxbEeKZOKJHxkRgdw/method._GxbQwmxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_GxbQw2xbEeKZOKJHxkRgdw" name="init" patternFilePath="templates/pattern._GxbQwGxbEeKZOKJHxkRgdw/method._GxbQw2xbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_GxbQxGxbEeKZOKJHxkRgdw" name="preCondition" patternFilePath="templates/pattern._GxbQwGxbEeKZOKJHxkRgdw/method._GxbQxGxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_GxbQxmxbEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._GxbQwGxbEeKZOKJHxkRgdw/method._GxbQxmxbEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_A8jokHXyEeK7wK_Fhp2BAw" name="createToolOperations"
+                patternFilePath="templates/pattern._GxbQwGxbEeKZOKJHxkRgdw/method._A8jokHXyEeK7wK_Fhp2BAw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_GxbQyGxbEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_c3UVMHXwEeK7wK_Fhp2BAw" name="ReconnectEdgeSource_ElementBasedTool"
+              superPattern="#_-xfqkHXCEeK7wK_Fhp2BAw" headerMethod="#_c3UVMnXwEeK7wK_Fhp2BAw"
+              conditionMethod="#_c3UVNHXwEeK7wK_Fhp2BAw" initMethod="#_c3UVM3XwEeK7wK_Fhp2BAw"
+              footerMethod="#_c3UVNnXwEeK7wK_Fhp2BAw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_c3UVMXXwEeK7wK_Fhp2BAw"
+                name="Java"/>
+            <methods xmi:id="_c3UVMnXwEeK7wK_Fhp2BAw" name="header" patternFilePath="templates/pattern._c3UVMHXwEeK7wK_Fhp2BAw/method._c3UVMnXwEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_c3UVM3XwEeK7wK_Fhp2BAw" name="init" patternFilePath="templates/pattern._c3UVMHXwEeK7wK_Fhp2BAw/method._c3UVM3XwEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_c3UVNHXwEeK7wK_Fhp2BAw" name="preCondition" patternFilePath="templates/pattern._c3UVMHXwEeK7wK_Fhp2BAw/method._c3UVNHXwEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_c3UVNXXwEeK7wK_Fhp2BAw" name="createToolOperations"
+                patternFilePath="templates/pattern._c3UVMHXwEeK7wK_Fhp2BAw/method._c3UVNXXwEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_c3UVNnXwEeK7wK_Fhp2BAw" name="footer" patternFilePath="templates/pattern._c3UVMHXwEeK7wK_Fhp2BAw/method._c3UVNnXwEeK7wK_Fhp2BAw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_c3UVOHXwEeK7wK_Fhp2BAw"/>
+          </elements>
+          <elements xmi:id="_1u-QoHYDEeK7wK_Fhp2BAw" name="ReconnectEdgeTarget_RelationBasedTool"
+              superPattern="#_DuH8oHXDEeK7wK_Fhp2BAw" headerMethod="#_1u-QonYDEeK7wK_Fhp2BAw"
+              conditionMethod="#_1u-QpHYDEeK7wK_Fhp2BAw" initMethod="#_1u-Qo3YDEeK7wK_Fhp2BAw"
+              footerMethod="#_1u-QpnYDEeK7wK_Fhp2BAw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_1u-QoXYDEeK7wK_Fhp2BAw"
+                name="Java"/>
+            <methods xmi:id="_1u-QonYDEeK7wK_Fhp2BAw" name="header" patternFilePath="templates/pattern._1u-QoHYDEeK7wK_Fhp2BAw/method._1u-QonYDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_1u-Qo3YDEeK7wK_Fhp2BAw" name="init" patternFilePath="templates/pattern._1u-QoHYDEeK7wK_Fhp2BAw/method._1u-Qo3YDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_1u-QpHYDEeK7wK_Fhp2BAw" name="preCondition" patternFilePath="templates/pattern._1u-QoHYDEeK7wK_Fhp2BAw/method._1u-QpHYDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_1u-QpXYDEeK7wK_Fhp2BAw" name="createToolOperations"
+                patternFilePath="templates/pattern._1u-QoHYDEeK7wK_Fhp2BAw/method._1u-QpXYDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_1u-QpnYDEeK7wK_Fhp2BAw" name="footer" patternFilePath="templates/pattern._1u-QoHYDEeK7wK_Fhp2BAw/method._1u-QpnYDEeK7wK_Fhp2BAw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_1u-Qp3YDEeK7wK_Fhp2BAw"/>
+          </elements>
+          <elements xmi:id="_7RmywHYDEeK7wK_Fhp2BAw" name="ReconnectEdgeTarget_ElementBasedTool"
+              superPattern="#_DuH8oHXDEeK7wK_Fhp2BAw" headerMethod="#_7RmywnYDEeK7wK_Fhp2BAw"
+              conditionMethod="#_7RmyxHYDEeK7wK_Fhp2BAw" initMethod="#_7Rmyw3YDEeK7wK_Fhp2BAw"
+              footerMethod="#_7RmyxnYDEeK7wK_Fhp2BAw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_7RmywXYDEeK7wK_Fhp2BAw"
+                name="Java"/>
+            <methods xmi:id="_7RmywnYDEeK7wK_Fhp2BAw" name="header" patternFilePath="templates/pattern._7RmywHYDEeK7wK_Fhp2BAw/method._7RmywnYDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_7Rmyw3YDEeK7wK_Fhp2BAw" name="init" patternFilePath="templates/pattern._7RmywHYDEeK7wK_Fhp2BAw/method._7Rmyw3YDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_7RmyxHYDEeK7wK_Fhp2BAw" name="preCondition" patternFilePath="templates/pattern._7RmywHYDEeK7wK_Fhp2BAw/method._7RmyxHYDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_7RmyxXYDEeK7wK_Fhp2BAw" name="createToolOperations"
+                patternFilePath="templates/pattern._7RmywHYDEeK7wK_Fhp2BAw/method._7RmyxXYDEeK7wK_Fhp2BAw.pt"/>
+            <methods xmi:id="_7RmyxnYDEeK7wK_Fhp2BAw" name="footer" patternFilePath="templates/pattern._7RmywHYDEeK7wK_Fhp2BAw/method._7RmyxnYDEeK7wK_Fhp2BAw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_7Rmyx3YDEeK7wK_Fhp2BAw"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_CqSMgG7dEeKzD-hky585QQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common">
+          <elements xmi:id="_Gr51gGrEEeK9Z8JXsm6Xcw" description="" name="GenJavaServiceCommonPattern"
+              superPattern="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/vpdslJavaFactory.fcore#_2Et6UBHuEeKPfPYeHptq8Q"
+              headerMethod="#_Gr51gmrEEeK9Z8JXsm6Xcw" conditionMethod="#_Gr51hGrEEeK9Z8JXsm6Xcw"
+              initMethod="#_Gr51g2rEEeK9Z8JXsm6Xcw" footerMethod="#_Gr51hWrEEeK9Z8JXsm6Xcw">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_Gr51gWrEEeK9Z8JXsm6Xcw"
+                name="JET"/>
+            <methods xmi:id="_Gr51gmrEEeK9Z8JXsm6Xcw" name="header" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._Gr51gmrEEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_Gr51g2rEEeK9Z8JXsm6Xcw" name="init" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._Gr51g2rEEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_Gr51hGrEEeK9Z8JXsm6Xcw" name="preCondition" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._Gr51hGrEEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_Gr51hWrEEeK9Z8JXsm6Xcw" name="footer" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._Gr51hWrEEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_hSbywGrFEeK9Z8JXsm6Xcw" name="setParameters" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._hSbywGrFEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_WdAPYGrHEeK9Z8JXsm6Xcw" name="addServiceToODesignModel"
+                patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._WdAPYGrHEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_YonyYGrHEeK9Z8JXsm6Xcw" name="generateJSCHeader" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._YonyYGrHEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_mzfVoGrHEeK9Z8JXsm6Xcw" name="generateJSCMethods" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._mzfVoGrHEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_nv1pIGrHEeK9Z8JXsm6Xcw" name="generateJSCEnd" patternFilePath="templates/pattern._Gr51gGrEEeK9Z8JXsm6Xcw/method._nv1pIGrHEeK9Z8JXsm6Xcw.pt"/>
+            <variables xmi:id="_S0lzsGrGEeK9Z8JXsm6Xcw" name="java_service_data" type="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData"/>
+            <variables xmi:id="_vfuQsGrtEeK9Z8JXsm6Xcw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Gr51h2rEEeK9Z8JXsm6Xcw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_Zd-GAGrHEeK9Z8JXsm6Xcw"
+                called="#_WdAPYGrHEeK9Z8JXsm6Xcw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_aPu6IGrHEeK9Z8JXsm6Xcw"
+                called="#_YonyYGrHEeK9Z8JXsm6Xcw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_xAUHQGrNEeK9Z8JXsm6Xcw"
+                called="#_mzfVoGrHEeK9Z8JXsm6Xcw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_xOK9EGrNEeK9Z8JXsm6Xcw"
+                called="#_nv1pIGrHEeK9Z8JXsm6Xcw"/>
+          </elements>
+          <elements xmi:id="_lisgkGohEeK9Z8JXsm6Xcw" name="JavaElementPattern" superPattern="#_Bys74AkTEeS0Ta9jP3S46g"
+              headerMethod="#_lisgkmohEeK9Z8JXsm6Xcw" conditionMethod="#_lisglGohEeK9Z8JXsm6Xcw"
+              initMethod="#_lisgk2ohEeK9Z8JXsm6Xcw" footerMethod="#_lisglmohEeK9Z8JXsm6Xcw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_aGClIGojEeK9Z8JXsm6Xcw"
+                name="Java"/>
+            <methods xmi:id="_lisgkmohEeK9Z8JXsm6Xcw" name="header" patternFilePath="templates/pattern._lisgkGohEeK9Z8JXsm6Xcw/method._lisgkmohEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_lisgk2ohEeK9Z8JXsm6Xcw" name="init" patternFilePath="templates/pattern._lisgkGohEeK9Z8JXsm6Xcw/method._lisgk2ohEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_lisglGohEeK9Z8JXsm6Xcw" name="preCondition" patternFilePath="templates/pattern._lisgkGohEeK9Z8JXsm6Xcw/method._lisglGohEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_lisglWohEeK9Z8JXsm6Xcw" name="RegisterJavaMethod" patternFilePath="templates/pattern._lisgkGohEeK9Z8JXsm6Xcw/method._lisglWohEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_lisglmohEeK9Z8JXsm6Xcw" name="footer" patternFilePath="templates/pattern._lisgkGohEeK9Z8JXsm6Xcw/method._lisglmohEeK9Z8JXsm6Xcw.pt"/>
+            <parameters xmi:id="_pI-DsGohEeK9Z8JXsm6Xcw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0#//JavaElement"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_lisgl2ohEeK9Z8JXsm6Xcw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_i13QcGotEeK9Z8JXsm6Xcw"
+                called="#_lisglWohEeK9Z8JXsm6Xcw"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_ZJVRsWklEeKb3MQGAKa6MQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.diagrams">
+          <elements xmi:id="_q-lR4aWzEeKQpPNqCzCFoA" name="GenOpenJavaServiceForDiagramSet"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_q-lR46WzEeKQpPNqCzCFoA"
+              conditionMethod="#_q-lR5aWzEeKQpPNqCzCFoA" initMethod="#_q-lR5KWzEeKQpPNqCzCFoA"
+              footerMethod="#_q-lR56WzEeKQpPNqCzCFoA">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_q-lR4qWzEeKQpPNqCzCFoA"
+                name="JET"/>
+            <methods xmi:id="_q-lR46WzEeKQpPNqCzCFoA" name="header" patternFilePath="templates/pattern._q-lR4aWzEeKQpPNqCzCFoA/method._q-lR46WzEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_q-lR5KWzEeKQpPNqCzCFoA" name="init" patternFilePath="templates/pattern._q-lR4aWzEeKQpPNqCzCFoA/method._q-lR5KWzEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_q-lR5aWzEeKQpPNqCzCFoA" name="preCondition" patternFilePath="templates/pattern._q-lR4aWzEeKQpPNqCzCFoA/method._q-lR5aWzEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_q-lR5qWzEeKQpPNqCzCFoA" name="setParameters" patternFilePath="templates/pattern._q-lR4aWzEeKQpPNqCzCFoA/method._q-lR5qWzEeKQpPNqCzCFoA.pt"/>
+            <methods xmi:id="_q-lR56WzEeKQpPNqCzCFoA" name="footer" patternFilePath="templates/pattern._q-lR4aWzEeKQpPNqCzCFoA/method._q-lR56WzEeKQpPNqCzCFoA.pt"/>
+            <parameters xmi:id="_8ceFEKWzEeKQpPNqCzCFoA" name="diagramSet" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//DiagramSet"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_q-lR6KWzEeKQpPNqCzCFoA"/>
+          </elements>
+          <elements xmi:id="_dfpKoGklEeKb3MQGAKa6MQ" name="GenJavaServiceForNodePattern"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_dfpKomklEeKb3MQGAKa6MQ"
+              conditionMethod="#_dfpKpGklEeKb3MQGAKa6MQ" initMethod="#_dfpKo2klEeKb3MQGAKa6MQ"
+              footerMethod="#_dfpKpmklEeKb3MQGAKa6MQ">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_YXNzMGogEeK9Z8JXsm6Xcw"
+                name="JET"/>
+            <methods xmi:id="_dfpKomklEeKb3MQGAKa6MQ" name="header" patternFilePath="templates/pattern._dfpKoGklEeKb3MQGAKa6MQ/method._dfpKomklEeKb3MQGAKa6MQ.pt"/>
+            <methods xmi:id="_dfpKo2klEeKb3MQGAKa6MQ" name="init" patternFilePath="templates/pattern._dfpKoGklEeKb3MQGAKa6MQ/method._dfpKo2klEeKb3MQGAKa6MQ.pt"/>
+            <methods xmi:id="_dfpKpGklEeKb3MQGAKa6MQ" name="preCondition" patternFilePath="templates/pattern._dfpKoGklEeKb3MQGAKa6MQ/method._dfpKpGklEeKb3MQGAKa6MQ.pt"/>
+            <methods xmi:id="_dfpKpmklEeKb3MQGAKa6MQ" name="footer" patternFilePath="templates/pattern._dfpKoGklEeKb3MQGAKa6MQ/method._dfpKpmklEeKb3MQGAKa6MQ.pt"/>
+            <methods xmi:id="_mofmwGrsEeK9Z8JXsm6Xcw" name="setParameters" patternFilePath="templates/pattern._dfpKoGklEeKb3MQGAKa6MQ/method._mofmwGrsEeK9Z8JXsm6Xcw.pt"/>
+            <parameters xmi:id="_f_0BUGklEeKb3MQGAKa6MQ" name="node" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Node"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_dfpKp2klEeKb3MQGAKa6MQ"/>
+          </elements>
+          <elements xmi:id="_G91L0GrsEeK9Z8JXsm6Xcw" name="GenJavaServiceForBorderedNodePattern"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_G91L0mrsEeK9Z8JXsm6Xcw"
+              conditionMethod="#_G91L1GrsEeK9Z8JXsm6Xcw" initMethod="#_G91L02rsEeK9Z8JXsm6Xcw"
+              footerMethod="#_G91L1WrsEeK9Z8JXsm6Xcw">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_G91L0WrsEeK9Z8JXsm6Xcw"
+                name="JET"/>
+            <methods xmi:id="_G91L0mrsEeK9Z8JXsm6Xcw" name="header" patternFilePath="templates/pattern._G91L0GrsEeK9Z8JXsm6Xcw/method._G91L0mrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_G91L02rsEeK9Z8JXsm6Xcw" name="init" patternFilePath="templates/pattern._G91L0GrsEeK9Z8JXsm6Xcw/method._G91L02rsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_G91L1GrsEeK9Z8JXsm6Xcw" name="preCondition" patternFilePath="templates/pattern._G91L0GrsEeK9Z8JXsm6Xcw/method._G91L1GrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_G91L1WrsEeK9Z8JXsm6Xcw" name="footer" patternFilePath="templates/pattern._G91L0GrsEeK9Z8JXsm6Xcw/method._G91L1WrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_GeV-AGrtEeK9Z8JXsm6Xcw" name="setParameters" patternFilePath="templates/pattern._G91L0GrsEeK9Z8JXsm6Xcw/method._GeV-AGrtEeK9Z8JXsm6Xcw.pt"/>
+            <parameters xmi:id="_G91L1mrsEeK9Z8JXsm6Xcw" name="bordered_node" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//BorderedNode"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_G91L12rsEeK9Z8JXsm6Xcw"/>
+          </elements>
+          <elements xmi:id="_MqwSYGrsEeK9Z8JXsm6Xcw" name="GenJavaServiceForContainerPattern"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_MqwSYmrsEeK9Z8JXsm6Xcw"
+              conditionMethod="#_MqwSZGrsEeK9Z8JXsm6Xcw" initMethod="#_MqwSY2rsEeK9Z8JXsm6Xcw"
+              footerMethod="#_MqwSZWrsEeK9Z8JXsm6Xcw">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_MqwSYWrsEeK9Z8JXsm6Xcw"
+                name="JET"/>
+            <methods xmi:id="_MqwSYmrsEeK9Z8JXsm6Xcw" name="header" patternFilePath="templates/pattern._MqwSYGrsEeK9Z8JXsm6Xcw/method._MqwSYmrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_MqwSY2rsEeK9Z8JXsm6Xcw" name="init" patternFilePath="templates/pattern._MqwSYGrsEeK9Z8JXsm6Xcw/method._MqwSY2rsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_MqwSZGrsEeK9Z8JXsm6Xcw" name="preCondition" patternFilePath="templates/pattern._MqwSYGrsEeK9Z8JXsm6Xcw/method._MqwSZGrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_MqwSZWrsEeK9Z8JXsm6Xcw" name="footer" patternFilePath="templates/pattern._MqwSYGrsEeK9Z8JXsm6Xcw/method._MqwSZWrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_JcntAGrtEeK9Z8JXsm6Xcw" name="setParameters" patternFilePath="templates/pattern._MqwSYGrsEeK9Z8JXsm6Xcw/method._JcntAGrtEeK9Z8JXsm6Xcw.pt"/>
+            <parameters xmi:id="_MqwSZmrsEeK9Z8JXsm6Xcw" name="container" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Container"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_MqwSZ2rsEeK9Z8JXsm6Xcw"/>
+          </elements>
+          <elements xmi:id="_THzOUGrsEeK9Z8JXsm6Xcw" name="GenJavaServiceForEdgePattern"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_THzOUmrsEeK9Z8JXsm6Xcw"
+              conditionMethod="#_THzOVGrsEeK9Z8JXsm6Xcw" initMethod="#_THzOU2rsEeK9Z8JXsm6Xcw"
+              footerMethod="#_THzOVWrsEeK9Z8JXsm6Xcw">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_THzOUWrsEeK9Z8JXsm6Xcw"
+                name="JET"/>
+            <methods xmi:id="_THzOUmrsEeK9Z8JXsm6Xcw" name="header" patternFilePath="templates/pattern._THzOUGrsEeK9Z8JXsm6Xcw/method._THzOUmrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_THzOU2rsEeK9Z8JXsm6Xcw" name="init" patternFilePath="templates/pattern._THzOUGrsEeK9Z8JXsm6Xcw/method._THzOU2rsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_THzOVGrsEeK9Z8JXsm6Xcw" name="preCondition" patternFilePath="templates/pattern._THzOUGrsEeK9Z8JXsm6Xcw/method._THzOVGrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_THzOVWrsEeK9Z8JXsm6Xcw" name="footer" patternFilePath="templates/pattern._THzOUGrsEeK9Z8JXsm6Xcw/method._THzOVWrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="__ggCIGrsEeK9Z8JXsm6Xcw" name="setParameters" patternFilePath="templates/pattern._THzOUGrsEeK9Z8JXsm6Xcw/method.__ggCIGrsEeK9Z8JXsm6Xcw.pt"/>
+            <parameters xmi:id="_THzOVmrsEeK9Z8JXsm6Xcw" name="edge" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Edge"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_THzOV2rsEeK9Z8JXsm6Xcw"/>
+          </elements>
+          <elements xmi:id="_WtuMIGrsEeK9Z8JXsm6Xcw" name="GenJavaServiceForEdgeImportPattern"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_WtuMImrsEeK9Z8JXsm6Xcw"
+              conditionMethod="#_WtuMJGrsEeK9Z8JXsm6Xcw" initMethod="#_WtuMI2rsEeK9Z8JXsm6Xcw"
+              footerMethod="#_WtuMJWrsEeK9Z8JXsm6Xcw">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_WtuMIWrsEeK9Z8JXsm6Xcw"
+                name="JET"/>
+            <methods xmi:id="_WtuMImrsEeK9Z8JXsm6Xcw" name="header" patternFilePath="templates/pattern._WtuMIGrsEeK9Z8JXsm6Xcw/method._WtuMImrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_WtuMI2rsEeK9Z8JXsm6Xcw" name="init" patternFilePath="templates/pattern._WtuMIGrsEeK9Z8JXsm6Xcw/method._WtuMI2rsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_WtuMJGrsEeK9Z8JXsm6Xcw" name="preCondition" patternFilePath="templates/pattern._WtuMIGrsEeK9Z8JXsm6Xcw/method._WtuMJGrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_WtuMJWrsEeK9Z8JXsm6Xcw" name="footer" patternFilePath="templates/pattern._WtuMIGrsEeK9Z8JXsm6Xcw/method._WtuMJWrsEeK9Z8JXsm6Xcw.pt"/>
+            <methods xmi:id="_2VaLkGrsEeK9Z8JXsm6Xcw" name="setParameters" patternFilePath="templates/pattern._WtuMIGrsEeK9Z8JXsm6Xcw/method._2VaLkGrsEeK9Z8JXsm6Xcw.pt"/>
+            <parameters xmi:id="_WtuMJmrsEeK9Z8JXsm6Xcw" name="edge_import" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//EdgeImport"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_WtuMJ2rsEeK9Z8JXsm6Xcw"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_QO95gG7dEeKzD-hky585QQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.tools">
+          <elements xmi:id="_gM3WEG7cEeKzD-hky585QQ" name="genJavaServiceForCreationTool"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_gM3WEm7cEeKzD-hky585QQ"
+              conditionMethod="#_gM3WFG7cEeKzD-hky585QQ" initMethod="#_gM3WE27cEeKzD-hky585QQ"
+              footerMethod="#_gM3WFW7cEeKzD-hky585QQ">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_gM3WEW7cEeKzD-hky585QQ"
+                name="JET"/>
+            <methods xmi:id="_gM3WEm7cEeKzD-hky585QQ" name="header" patternFilePath="templates/pattern._gM3WEG7cEeKzD-hky585QQ/method._gM3WEm7cEeKzD-hky585QQ.pt"/>
+            <methods xmi:id="_gM3WE27cEeKzD-hky585QQ" name="init" patternFilePath="templates/pattern._gM3WEG7cEeKzD-hky585QQ/method._gM3WE27cEeKzD-hky585QQ.pt"/>
+            <methods xmi:id="_gM3WFG7cEeKzD-hky585QQ" name="preCondition" patternFilePath="templates/pattern._gM3WEG7cEeKzD-hky585QQ/method._gM3WFG7cEeKzD-hky585QQ.pt"/>
+            <methods xmi:id="_gM3WFW7cEeKzD-hky585QQ" name="footer" patternFilePath="templates/pattern._gM3WEG7cEeKzD-hky585QQ/method._gM3WFW7cEeKzD-hky585QQ.pt"/>
+            <methods xmi:id="_gM3WFm7cEeKzD-hky585QQ" name="setParameters" patternFilePath="templates/pattern._gM3WEG7cEeKzD-hky585QQ/method._gM3WFm7cEeKzD-hky585QQ.pt"/>
+            <parameters xmi:id="_gM3WF27cEeKzD-hky585QQ" name="creationTool" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Create"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_gM3WGG7cEeKzD-hky585QQ"/>
+          </elements>
+          <elements xmi:id="_9h_AIXEEEeKuPagoMUw0vw" name="genJavaServiceForDropTool"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_9h_AI3EEEeKuPagoMUw0vw"
+              conditionMethod="#_9h_AJXEEEeKuPagoMUw0vw" initMethod="#_9h_AJHEEEeKuPagoMUw0vw"
+              footerMethod="#_9h_AJ3EEEeKuPagoMUw0vw">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_NR09IHEFEeKuPagoMUw0vw"
+                name="JET"/>
+            <methods xmi:id="_9h_AI3EEEeKuPagoMUw0vw" name="header" patternFilePath="templates/pattern._9h_AIXEEEeKuPagoMUw0vw/method._9h_AI3EEEeKuPagoMUw0vw.pt"/>
+            <methods xmi:id="_9h_AJHEEEeKuPagoMUw0vw" name="init" patternFilePath="templates/pattern._9h_AIXEEEeKuPagoMUw0vw/method._9h_AJHEEEeKuPagoMUw0vw.pt"/>
+            <methods xmi:id="_9h_AJXEEEeKuPagoMUw0vw" name="preCondition" patternFilePath="templates/pattern._9h_AIXEEEeKuPagoMUw0vw/method._9h_AJXEEEeKuPagoMUw0vw.pt"/>
+            <methods xmi:id="_9h_AJ3EEEeKuPagoMUw0vw" name="footer" patternFilePath="templates/pattern._9h_AIXEEEeKuPagoMUw0vw/method._9h_AJ3EEEeKuPagoMUw0vw.pt"/>
+            <methods xmi:id="_OHv4gHEFEeKuPagoMUw0vw" name="setParameters" patternFilePath="templates/pattern._9h_AIXEEEeKuPagoMUw0vw/method._OHv4gHEFEeKuPagoMUw0vw.pt"/>
+            <parameters xmi:id="_9h_AKHEEEeKuPagoMUw0vw" name="dropTool" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Drop"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_9h_AKXEEEeKuPagoMUw0vw"/>
+          </elements>
+          <elements xmi:id="_LdZqQIDsEeKCNoRzVHSQkQ" name="genJavaServiceForDeleteTool"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_LdZqQoDsEeKCNoRzVHSQkQ"
+              conditionMethod="#_LdZqRIDsEeKCNoRzVHSQkQ" initMethod="#_LdZqQ4DsEeKCNoRzVHSQkQ"
+              footerMethod="#_LdZqRYDsEeKCNoRzVHSQkQ">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_LdZqQYDsEeKCNoRzVHSQkQ"
+                name="JET"/>
+            <methods xmi:id="_LdZqQoDsEeKCNoRzVHSQkQ" name="header" patternFilePath="templates/pattern._LdZqQIDsEeKCNoRzVHSQkQ/method._LdZqQoDsEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_LdZqQ4DsEeKCNoRzVHSQkQ" name="init" patternFilePath="templates/pattern._LdZqQIDsEeKCNoRzVHSQkQ/method._LdZqQ4DsEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_LdZqRIDsEeKCNoRzVHSQkQ" name="preCondition" patternFilePath="templates/pattern._LdZqQIDsEeKCNoRzVHSQkQ/method._LdZqRIDsEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_LdZqRYDsEeKCNoRzVHSQkQ" name="footer" patternFilePath="templates/pattern._LdZqQIDsEeKCNoRzVHSQkQ/method._LdZqRYDsEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_LdZqRoDsEeKCNoRzVHSQkQ" name="setParameters" patternFilePath="templates/pattern._LdZqQIDsEeKCNoRzVHSQkQ/method._LdZqRoDsEeKCNoRzVHSQkQ.pt"/>
+            <parameters xmi:id="_LdZqR4DsEeKCNoRzVHSQkQ" name="deleteTool" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//Delete"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_LdZqSIDsEeKCNoRzVHSQkQ"/>
+          </elements>
+          <elements xmi:id="_oxIq0IGAEeKCNoRzVHSQkQ" name="genJavaServiceForReconnectTool"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_oxIq0oGAEeKCNoRzVHSQkQ"
+              conditionMethod="#_oxIq1IGAEeKCNoRzVHSQkQ" initMethod="#_oxIq04GAEeKCNoRzVHSQkQ"
+              footerMethod="#_oxIq1YGAEeKCNoRzVHSQkQ">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_oxIq0YGAEeKCNoRzVHSQkQ"
+                name="JET"/>
+            <methods xmi:id="_oxIq0oGAEeKCNoRzVHSQkQ" name="header" patternFilePath="templates/pattern._oxIq0IGAEeKCNoRzVHSQkQ/method._oxIq0oGAEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_oxIq04GAEeKCNoRzVHSQkQ" name="init" patternFilePath="templates/pattern._oxIq0IGAEeKCNoRzVHSQkQ/method._oxIq04GAEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_oxIq1IGAEeKCNoRzVHSQkQ" name="preCondition" patternFilePath="templates/pattern._oxIq0IGAEeKCNoRzVHSQkQ/method._oxIq1IGAEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_oxIq1YGAEeKCNoRzVHSQkQ" name="footer" patternFilePath="templates/pattern._oxIq0IGAEeKCNoRzVHSQkQ/method._oxIq1YGAEeKCNoRzVHSQkQ.pt"/>
+            <methods xmi:id="_oxIq1oGAEeKCNoRzVHSQkQ" name="setParameters" patternFilePath="templates/pattern._oxIq0IGAEeKCNoRzVHSQkQ/method._oxIq1oGAEeKCNoRzVHSQkQ.pt"/>
+            <parameters xmi:id="_oxIq14GAEeKCNoRzVHSQkQ" name="reconnectTool" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//ReconnectEdge"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_oxIq2IGAEeKCNoRzVHSQkQ"/>
+          </elements>
+          <elements xmi:id="_rik-4IscEeKaMteAS7Xuew" name="genJavaServiceForOpenActionTool"
+              superPattern="#_Gr51gGrEEeK9Z8JXsm6Xcw" headerMethod="#_rik-4oscEeKaMteAS7Xuew"
+              conditionMethod="#_rik-5IscEeKaMteAS7Xuew" initMethod="#_rik-44scEeKaMteAS7Xuew"
+              footerMethod="#_rik-5oscEeKaMteAS7Xuew">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_1pkdAIscEeKaMteAS7Xuew"
+                name="JET"/>
+            <methods xmi:id="_rik-4oscEeKaMteAS7Xuew" name="header" patternFilePath="templates/pattern._rik-4IscEeKaMteAS7Xuew/method._rik-4oscEeKaMteAS7Xuew.pt"/>
+            <methods xmi:id="_rik-44scEeKaMteAS7Xuew" name="init" patternFilePath="templates/pattern._rik-4IscEeKaMteAS7Xuew/method._rik-44scEeKaMteAS7Xuew.pt"/>
+            <methods xmi:id="_rik-5IscEeKaMteAS7Xuew" name="preCondition" patternFilePath="templates/pattern._rik-4IscEeKaMteAS7Xuew/method._rik-5IscEeKaMteAS7Xuew.pt"/>
+            <methods xmi:id="_rik-5YscEeKaMteAS7Xuew" name="setParameters" patternFilePath="templates/pattern._rik-4IscEeKaMteAS7Xuew/method._rik-5YscEeKaMteAS7Xuew.pt"/>
+            <methods xmi:id="_rik-5oscEeKaMteAS7Xuew" name="footer" patternFilePath="templates/pattern._rik-4IscEeKaMteAS7Xuew/method._rik-5oscEeKaMteAS7Xuew.pt"/>
+            <parameters xmi:id="_rik-54scEeKaMteAS7Xuew" name="openActionTool" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//OpenAction"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_rik-6IscEeKaMteAS7Xuew"/>
+          </elements>
+        </libraries>
+      </viewpoints>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_4oFskFwJEeKooNX-rGQuxA">
+      <invocations xmi:id="_7Z6igF5PEeKooNX-rGQuxA" name="Generate Viewpoint Specification Project Name"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIOq5EeGh0fmNAy-1lA">
+        <invocationContractContainer xmi:id="_7Z6igV5PEeKooNX-rGQuxA">
+          <invocationContracts xmi:id="_7Z6igl5PEeKooNX-rGQuxA" factoryComponentContract="#_CTrBEFwKEeKooNX-rGQuxA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIuq5EeGh0fmNAy-1lA"/>
+          <invocationContracts xmi:id="_7Z6ig15PEeKooNX-rGQuxA" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJOq5EeGh0fmNAy-1lA">
+            <type xmi:type="types:TypeString" xmi:id="_CCSksF5QEeKooNX-rGQuxA" value="design"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_qSzEMYgKEeKptpKqu9A0BQ" targetInvocationContract="#_8TCdsl5hEeKooNX-rGQuxA #_7u_F4GrMEeK9Z8JXsm6Xcw #_GP9mwmrMEeK9Z8JXsm6Xcw #_F4EAcnqsEeKZnLNBJ96SOA #_JdfF8ogIEeKa19qygOxIRg #_koiyJqrIEeOZeaz3SaU3zA #_alBh9arMEeOZeaz3SaU3zA #_HBy3k7W8EeOFXuRjYTUk8g"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJuq5EeGh0fmNAy-1lA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_JdfF8IgIEeKa19qygOxIRg" name="Create Diagram Project And Add it to the Representation Feature"
+          invokedActivity="#_oSlAQIgHEeKa19qygOxIRg">
+        <invocationContractContainer xmi:id="_JdfF8YgIEeKa19qygOxIRg">
+          <invocationContracts xmi:id="_JdfF8ogIEeKa19qygOxIRg" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_ruEPsYgHEeKa19qygOxIRg"/>
+          <invocationContracts xmi:id="_JdfF84gIEeKa19qygOxIRg" factoryComponentContract="#_CTrBElwKEeKooNX-rGQuxA"
+              invokedContract="#_0S27QIgHEeKa19qygOxIRg"/>
+          <invocationContracts xmi:id="_9OJwYIgJEeKa19qygOxIRg" factoryComponentContract="#_CTrBEFwKEeKooNX-rGQuxA"
+              invokedContract="#_-u2uIIgJEeKa19qygOxIRg"/>
+          <invocationContracts xmi:id="_UfNWsAwmEeSrwrl3LesBIA" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="#_RiuXcAwmEeSrwrl3LesBIA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_8TCdsF5hEeKooNX-rGQuxA" name="Load and init oDesign model"
+          invokedActivity="#_ixJX0F5hEeKooNX-rGQuxA">
+        <invocationContractContainer xmi:id="_8TCdsV5hEeKooNX-rGQuxA">
+          <invocationContracts xmi:id="_l0xiEQwrEeSj2eRa73Bl4w" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="#_HW05QAwoEeSrwrl3LesBIA"/>
+          <invocationContracts xmi:id="_8TCdsl5hEeKooNX-rGQuxA" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_3eSVQV5hEeKooNX-rGQuxA"/>
+          <invocationContracts xmi:id="_8TCds15hEeKooNX-rGQuxA" factoryComponentContract="#_CTrBElwKEeKooNX-rGQuxA"
+              invokedContract="#_3eSVQ15hEeKooNX-rGQuxA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_f2W24F7_EeKhJJsyCdn4KA" name="Generate doremi Nodes" invokedActivity="#_3At8AGo0EeK9Z8JXsm6Xcw">
+        <invocationContractContainer xmi:id="_f2W24V7_EeKhJJsyCdn4KA">
+          <invocationContracts xmi:id="_f2W24l7_EeKhJJsyCdn4KA" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_f2W2417_EeKhJJsyCdn4KA" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_ia3bAF7_EeKhJJsyCdn4KA"
+                elements="#_lisgkGohEeK9Z8JXsm6Xcw #_AUrC8F5pEeKooNX-rGQuxA #_ugFl8F83EeKiadLjZ_FAOQ"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_7u_F4GrMEeK9Z8JXsm6Xcw" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_9mQFkGo0EeK9Z8JXsm6Xcw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_8ZcTUABuEeSVFeZ-2badYw" name="Generate doremi Nodes reuses"
+          invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_8FZ3aof6eEd64XYPo3s6sPg">
+        <invocationContractContainer xmi:id="_8ZcTUQBuEeSVFeZ-2badYw">
+          <invocationContracts xmi:id="_8ZcTUgBuEeSVFeZ-2badYw" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_8ZcTUwBuEeSVFeZ-2badYw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_BxpuIABvEeSVFeZ-2badYw"
+                elements="#_9kMBcABpEeSVFeZ-2badYw"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_koiyIarIEeOZeaz3SaU3zA" name="Generate doremi Edge" invokedActivity="#_3At8AGo0EeK9Z8JXsm6Xcw">
+        <invocationContractContainer xmi:id="_koiyIqrIEeOZeaz3SaU3zA">
+          <invocationContracts xmi:id="_koiyI6rIEeOZeaz3SaU3zA" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_koiyJKrIEeOZeaz3SaU3zA" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_koiyJarIEeOZeaz3SaU3zA"
+                elements="#_9AtegX87EeKMau0b_c3OtQ"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_koiyJqrIEeOZeaz3SaU3zA" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_9mQFkGo0EeK9Z8JXsm6Xcw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_alBh8KrMEeOZeaz3SaU3zA" name="Generate doremi Tools" invokedActivity="#_3At8AGo0EeK9Z8JXsm6Xcw">
+        <invocationContractContainer xmi:id="_alBh8arMEeOZeaz3SaU3zA">
+          <invocationContracts xmi:id="_alBh8qrMEeOZeaz3SaU3zA" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_alBh86rMEeOZeaz3SaU3zA" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_alBh9KrMEeOZeaz3SaU3zA"
+                elements="#_aQkb8GxZEeKZOKJHxkRgdw"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_alBh9arMEeOZeaz3SaU3zA" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_9mQFkGo0EeK9Z8JXsm6Xcw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_GP9mwGrMEeK9Z8JXsm6Xcw" name="Generate DoReMi JavaExtensions"
+          invokedActivity="#_3At8AGo0EeK9Z8JXsm6Xcw">
+        <invocationContractContainer xmi:id="_GP9mwWrMEeK9Z8JXsm6Xcw">
+          <invocationContracts xmi:id="_GP9mwmrMEeK9Z8JXsm6Xcw" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_9mQFkGo0EeK9Z8JXsm6Xcw"/>
+          <invocationContracts xmi:id="_GP9mw2rMEeK9Z8JXsm6Xcw" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_GP9mxGrMEeK9Z8JXsm6Xcw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_L6JSwAHAEd-4faJMEplCjxw">
+            <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_MHA5sGrMEeK9Z8JXsm6Xcw"
+                value="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.JavaClassReporter"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_GP9mxWrMEeK9Z8JXsm6Xcw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_OZMXsGrMEeK9Z8JXsm6Xcw"
+                elements="#_ZJVRsWklEeKb3MQGAKa6MQ #_QO95gG7dEeKzD-hky585QQ"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Zi6tsF5hEeKooNX-rGQuxA" name="Save the generated oDesign model and Update Plugin Dependecies"
+          invokedActivity="#_9qq0cF5gEeKooNX-rGQuxA">
+        <invocationContractContainer xmi:id="_t37mkAwzEeSj2eRa73Bl4w">
+          <invocationContracts xmi:id="_uSJdYAwzEeSj2eRa73Bl4w" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="#_sFYD0AwzEeSj2eRa73Bl4w"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_YStoMIZwEeKea-DxxP2SSg" name="Compute and add auto import to the generated model"
+          invokedActivity="#_ROL1gYZwEeKea-DxxP2SSg"/>
+      <invocations xmi:id="_F4EAcHqsEeKZnLNBJ96SOA" name="Register generated artefacts in AF manager"
+          invokedActivity="#_3UgF0HqqEeKZnLNBJ96SOA">
+        <invocationContractContainer xmi:id="_F4EAcXqsEeKZnLNBJ96SOA">
+          <invocationContracts xmi:id="_F4EAcnqsEeKZnLNBJ96SOA" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_HdIWQHqrEeKZnLNBJ96SOA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_HBy3kbW8EeOFXuRjYTUk8g" name="Add icons folder in build.properties if it was created"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_p4AoULWXEeOctqkSHWZC9g">
+        <invocationContractContainer xmi:id="_HBy3krW8EeOFXuRjYTUk8g">
+          <invocationContracts xmi:id="_HBy3k7W8EeOFXuRjYTUk8g" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_wd1FwLWXEeOctqkSHWZC9g"/>
+          <invocationContracts xmi:id="_HBy3lLW8EeOFXuRjYTUk8g" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_z6D8ELWXEeOctqkSHWZC9g">
+            <type xmi:type="types:TypeString" xmi:id="_IhTigLW8EeOFXuRjYTUk8g" value="icons"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_HBy3lbW8EeOFXuRjYTUk8g" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_wtLJULWXEeOctqkSHWZC9g">
+            <type xmi:type="types:TypeBoolean" xmi:id="_JWpPELW8EeOFXuRjYTUk8g" value="true"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_oSlAQIgHEeKa19qygOxIRg" name="create.diagram.project">
+    <contractContainer xmi:id="_ruEPsIgHEeKa19qygOxIRg">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_RiuXcAwmEeSrwrl3LesBIA"
+          name="vpdesc.model" mandatory="true" invocationContracts="#_P8W2kAwmEeSrwrl3LesBIA">
+        <type xmi:type="domain:TypeDomain" xmi:id="_SJ6TQAwmEeSrwrl3LesBIA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_ruEPsYgHEeKa19qygOxIRg"
+          name="design.project.name" mandatory="true" invocationContracts="#_lsY5wlwYEeKooNX-rGQuxA #_dP5gkIgIEeKa19qygOxIRg">
+        <type xmi:type="types:TypeString" xmi:id="_ruEPsogHEeKa19qygOxIRg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_0S27QIgHEeKa19qygOxIRg"
+          name="model.name" mandatory="true" invocationContracts="#_lsY5w1wYEeKooNX-rGQuxA">
+        <type xmi:type="types:TypeString" xmi:id="_0wNloIgHEeKa19qygOxIRg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_-u2uIIgJEeKa19qygOxIRg"
+          name="root.project.name" mandatory="true" invocationContracts="#_dP5ggogIEeKa19qygOxIRg #_hVrmsIj8EeOBb_sT6NvaGg">
+        <type xmi:type="types:TypeString" xmi:id="_A5I0YIgKEeKa19qygOxIRg"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_uv7eMIgHEeKa19qygOxIRg">
+      <invocations xmi:id="_lsY5wFwYEeKooNX-rGQuxA" name="Create Viewpoint Specification Project"
+          invokedActivity="#_B76gAFwYEeKooNX-rGQuxA">
+        <invocationContractContainer xmi:id="_lsY5wVwYEeKooNX-rGQuxA">
+          <invocationContracts xmi:id="_P8W2kAwmEeSrwrl3LesBIA" factoryComponentContract="#_RiuXcAwmEeSrwrl3LesBIA"
+              invokedContract="#_MfGFgAwmEeSrwrl3LesBIA"/>
+          <invocationContracts xmi:id="_lsY5wlwYEeKooNX-rGQuxA" factoryComponentContract="#_ruEPsYgHEeKa19qygOxIRg"
+              invokedContract="#_EhT08FwYEeKooNX-rGQuxA"/>
+          <invocationContracts xmi:id="_lsY5w1wYEeKooNX-rGQuxA" factoryComponentContract="#_0S27QIgHEeKa19qygOxIRg"
+              invokedContract="#_EvBg0FwYEeKooNX-rGQuxA"/>
+          <invocationContracts xmi:id="_hVrmsIj8EeOBb_sT6NvaGg" factoryComponentContract="#_-u2uIIgJEeKa19qygOxIRg"
+              invokedContract="#_cXspwYj8EeOBb_sT6NvaGg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_dP5ggIgIEeKa19qygOxIRg" name="Generate Representation feature name"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIOq5EeGh0fmNAy-1lA">
+        <invocationContractContainer xmi:id="_dP5ggYgIEeKa19qygOxIRg">
+          <invocationContracts xmi:id="_dP5ggogIEeKa19qygOxIRg" factoryComponentContract="#_-u2uIIgJEeKa19qygOxIRg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIuq5EeGh0fmNAy-1lA"/>
+          <invocationContracts xmi:id="_dP5gg4gIEeKa19qygOxIRg" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJOq5EeGh0fmNAy-1lA">
+            <type xmi:type="types:TypeString" xmi:id="_dP5ghIgIEeKa19qygOxIRg" value="representation.feature"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_dP5ghYgIEeKa19qygOxIRg" targetInvocationContract="#_dP5gj4gIEeKa19qygOxIRg #_dP5giIgIEeKa19qygOxIRg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJuq5EeGh0fmNAy-1lA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_dP5ghogIEeKa19qygOxIRg" name="Create or get the representation feature project"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_NqCTsOq8EeGh0fmNAy-1lA">
+        <invocationContractContainer xmi:id="_dP5gh4gIEeKa19qygOxIRg">
+          <invocationContracts xmi:id="_dP5giIgIEeKa19qygOxIRg" sourceInvocationContract="#_dP5ghYgIEeKa19qygOxIRg"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZAppNEeO0BorZRiG7mg"/>
+          <invocationContracts xmi:id="_dP5giYgIEeKa19qygOxIRg" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZBJpNEeO0BorZRiG7mg">
+            <type xmi:type="types:TypeString" xmi:id="_dP5giogIEeKa19qygOxIRg" value="Representation feature"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_dP5gi4gIEeKa19qygOxIRg" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZBppNEeO0BorZRiG7mg">
+            <type xmi:type="types:TypeString" xmi:id="_dP5gjIgIEeKa19qygOxIRg" value="Polarsys"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_dP5gjYgIEeKa19qygOxIRg" name="Add Diagram plugin to the Representation feature "
+          invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZGppNEeO0BorZRiG7mg">
+        <invocationContractContainer xmi:id="_dP5gjogIEeKa19qygOxIRg">
+          <invocationContracts xmi:id="_dP5gj4gIEeKa19qygOxIRg" sourceInvocationContract="#_dP5ghYgIEeKa19qygOxIRg"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZHJpNEeO0BorZRiG7mg"/>
+          <invocationContracts xmi:id="_dP5gkIgIEeKa19qygOxIRg" factoryComponentContract="#_ruEPsYgHEeKa19qygOxIRg"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZHppNEeO0BorZRiG7mg"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_B76gAFwYEeKooNX-rGQuxA" name="Create.ViewpointSpecificationProject"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.task.CreateViewpointSpecificationProjectTask">
+    <contractContainer xmi:id="_ELtYYFwYEeKooNX-rGQuxA">
+      <contracts xmi:id="_MfGFgAwmEeSrwrl3LesBIA" name="vpdesc.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_O_3ZIAwmEeSrwrl3LesBIA"/>
+      </contracts>
+      <contracts xmi:id="_EhT08FwYEeKooNX-rGQuxA" name="design.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_JkqaEFwYEeKooNX-rGQuxA"/>
+      </contracts>
+      <contracts xmi:id="_EvBg0FwYEeKooNX-rGQuxA" name="model.name">
+        <type xmi:type="types:TypeString" xmi:id="_KIkYYFwYEeKooNX-rGQuxA"/>
+      </contracts>
+      <contracts xmi:id="_cXspwYj8EeOBb_sT6NvaGg" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_eF-JcIj8EeOBb_sT6NvaGg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_ixJX0F5hEeKooNX-rGQuxA" name="Load.And.Init.oDesign.Model"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.task.LoadAndInitOesignModel">
+    <contractContainer xmi:id="_3eSVQF5hEeKooNX-rGQuxA">
+      <contracts xmi:id="_HW05QAwoEeSrwrl3LesBIA" name="vpdesc.model" mandatory="true">
+        <type xmi:type="domain:TypeDomain" xmi:id="_NGHXUAwoEeSrwrl3LesBIA"/>
+      </contracts>
+      <contracts xmi:id="_3eSVQV5hEeKooNX-rGQuxA" name="design.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_3eSVQl5hEeKooNX-rGQuxA"/>
+      </contracts>
+      <contracts xmi:id="_3eSVQ15hEeKooNX-rGQuxA" name="design.model.name">
+        <type xmi:type="types:TypeString" xmi:id="_3eSVRF5hEeKooNX-rGQuxA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_9qq0cF5gEeKooNX-rGQuxA" name="Save.oDesign.Model" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.task.SaveODesignModelTask">
+    <contractContainer xmi:id="_qpnQcAwzEeSj2eRa73Bl4w">
+      <contracts xmi:id="_sFYD0AwzEeSj2eRa73Bl4w" name="vpdesc.model" mandatory="true">
+        <type xmi:type="domain:TypeDomain" xmi:id="_sFYD0QwzEeSj2eRa73Bl4w"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_3At8AGo0EeK9Z8JXsm6Xcw" name="Local.Domain.Driven.Pattern.strategy.Task"
+      kind="java" superTask="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_8FZ3aof6eEd64XYPo3s6sPg">
+    <contractContainer xmi:id="_9SSAsGo0EeK9Z8JXsm6Xcw">
+      <contracts xmi:id="_9mQFkGo0EeK9Z8JXsm6Xcw" name="design.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_-KA58Go0EeK9Z8JXsm6Xcw"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_3UgF0HqqEeKZnLNBJ96SOA" name="af.integration" kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.task.AFDiagramIntergrationTask">
+    <contractContainer xmi:id="_HJdzYHqrEeKZnLNBJ96SOA">
+      <contracts xmi:id="_HdIWQHqrEeKZnLNBJ96SOA" name="design.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_KTJEoHqsEeKZnLNBJ96SOA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_ROL1gYZwEeKea-DxxP2SSg" name="handle.auto.import" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.task.AutoImportHandlerTask"/>
+</xmi:XMI>

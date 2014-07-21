@@ -1,0 +1,13 @@
+	<target name="recompile_egf_patterns_<%=stepName%>" if="egf.exists_<%=stepName%>" >
+		<anteclipse target="do_recompile_egf_patterns_<%=stepName%>" />
+	</target>
+
+	<target name="do_recompile_egf_patterns_<%=stepName%>" >
+        <echo message="Invoking EGF Pattern Builder on workspace ${workspace}" />
+		<eclipse.incrementalBuild kind="incremental" builder="org.eclipse.jdt.core.javabuilder" />
+		<eclipse.incrementalBuild kind="incremental" builder="org.eclipse.pde.ManifestBuilder" />
+		<eclipse.incrementalBuild kind="incremental" builder="org.eclipse.pde.SchemaBuilder" />
+		<eclipse.incrementalBuild kind="incremental" builder="org.eclipse.egf.pattern.ui.PatternBuilder" />
+	</target>
+
+

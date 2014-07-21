@@ -1,0 +1,19 @@
+//ContainerMapping mapping = parameter.getImports();
+
+boolean inheritSemanticCandidatesExpression = false;
+		
+if (icm.getSemanticCandidatesExpression() == null ) {
+	inheritSemanticCandidatesExpression = true;
+}
+else
+{
+	if (icm.getSemanticCandidatesExpression().trim().length() == 0)
+	{
+		inheritSemanticCandidatesExpression = true;
+	}
+}
+		
+if (inheritSemanticCandidatesExpression)
+{
+	icm.setSemanticCandidatesExpression(mapping.getSemanticCandidatesExpression());
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+<extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.emf.toolbox.activities.ModelInitializer"
+            Identifier="org.polarsys.kitalpha.transposer.emf.toolbox.activities.models.initializer"
+            Multiple="false"
+            Name="Model Initializer"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Description body text
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.emf.toolbox.activities.ModelSaver"
+            Identifier="org.polarsys.kitalpha.transposer.emf.toolbox.activities.models.saver"
+            Multiple="false"
+            Name="Model Saver"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Description body text
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.emf.toolbox.activities.Logger"
+            Identifier="org.polarsys.kitalpha.transposer.emf.toolbox.activities.logger"
+            Multiple="false"
+            Name="Logger"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Logger
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.emf.toolbox.activities.Logger"
+            Identifier="org.polarsys.kitalpha.transposer.emf.toolbox.activities.logger"
+            Multiple="false"
+            Name="Logger"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.scheduling"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Logger
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.emf.toolbox.activities.Logger"
+            Identifier="org.polarsys.kitalpha.transposer.emf.toolbox.activities.loggers"
+            Multiple="false"
+            Name="Logger"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Logger
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.emf.toolbox.activities.Logger"
+            Identifier="org.polarsys.kitalpha.transposer.emf.toolbox.activities.logger"
+            Multiple="false"
+            Name="Logger"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Logger
+         </Description>
+      </ActivityDeclaration>
+   </extension>>
+</plugin>

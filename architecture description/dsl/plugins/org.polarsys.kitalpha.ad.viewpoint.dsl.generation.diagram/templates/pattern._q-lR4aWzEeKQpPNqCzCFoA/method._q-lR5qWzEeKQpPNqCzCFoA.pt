@@ -1,0 +1,2 @@
+<%super.parameter = diagramSet;%>
+<%super.method_setParameters(stringBuffer, ctx);%>

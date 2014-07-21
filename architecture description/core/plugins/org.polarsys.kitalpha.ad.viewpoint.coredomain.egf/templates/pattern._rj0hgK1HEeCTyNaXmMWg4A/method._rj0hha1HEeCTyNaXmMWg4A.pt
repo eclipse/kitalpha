@@ -1,0 +1,9 @@
+		PropertySet result = null;
+		for (PropertySet set : getPropertySets()) {
+			if (vp.equals(set.getTarget())) {
+				if (result != null)
+					throw new IllegalStateException("Multple propertyset is not expected");
+				result = set;
+			}
+		}
+		return result;

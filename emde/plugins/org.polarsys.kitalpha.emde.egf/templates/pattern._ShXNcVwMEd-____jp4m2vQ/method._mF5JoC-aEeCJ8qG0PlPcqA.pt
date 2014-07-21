@@ -1,0 +1,1 @@
+<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#LogicalName=org.polarsys.kitalpha.emde.egf.model.ModelPluginXMLExtensionHook" args="parameter:genModel,targetPathName:targetPathName"%>

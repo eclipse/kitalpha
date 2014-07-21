@@ -1,0 +1,11 @@
+	Edge edge = (Edge) associated_mapping;
+	EObject eO_Domain = edge.getThe_domain();
+
+	EdgeDomainAssociation domain = (EdgeDomainAssociation) eO_Domain;
+	t_association = domain.getTarget_Locator();
+	s_association = null;
+	if (domain instanceof EdgeDomainElement)
+	{
+		EdgeDomainElement domain_element = (EdgeDomainElement) domain;
+		s_association = domain_element.getSource_Locator();
+	}

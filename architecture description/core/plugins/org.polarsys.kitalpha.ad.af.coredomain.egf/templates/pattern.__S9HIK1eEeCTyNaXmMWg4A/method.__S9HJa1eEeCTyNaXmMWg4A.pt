@@ -1,0 +1,17 @@
+<%
+genModel.getImportedName("org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement");
+genModel.getImportedName("org.eclipse.emf.ecore.EObject");
+%>
+
+		if (object instanceof NameElement) {
+			NameElement elt = (NameElement) object;
+			String label = elt.getName();
+			if (label == null)
+				label = "";
+			String id = elt.getId();
+			if (id == null)
+				id = "no ID";
+			label = elt.eClass().getName() + " [" + id + "] " + label;
+			return label;
+		}
+		return ((EObject) object).eClass().getName();

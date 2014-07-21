@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.transposer.rules.handler/generated"
+    editDirectory="/org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/generated"
+    editorDirectory="/org.polarsys.kitalpha.transposer.rules.handler.mapping.editor/generated"
+    modelPluginID="org.polarsys.kitalpha.transposer.rules.handler" modelName="Mapping"
+    nonNLSMarkers="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>mapping.ecore</foreignModel>
+  <genPackages prefix="Rules" basePackage="org.polarsys.kitalpha.transposer.rules.handler"
+      disposableProviderFactory="true" ecorePackage="mapping.ecore#/">
+    <genDataTypes ecoreDataType="mapping.ecore#//Exception"/>
+    <genDataTypes ecoreDataType="mapping.ecore#//MappingPossibilityResolutionException"/>
+    <genDataTypes ecoreDataType="mapping.ecore#//MappingResolutionException"/>
+    <genDataTypes ecoreDataType="mapping.ecore#//AmbiguousMappingException"/>
+    <genDataTypes ecoreDataType="mapping.ecore#//RuleDefinitionException"/>
+    <genDataTypes ecoreDataType="mapping.ecore#//RuleExecutionException"/>
+    <genClasses image="false" ecoreClass="mapping.ecore#//PurposeRegistry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//PurposeRegistry/registeredPurposes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//PurposeRegistry/contributedPurposes"/>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/validateRegisteredPurposes"/>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/validateContributedPurposes"/>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/reset"/>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/init"/>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/getRegisteredPurpose">
+        <genParameters ecoreParameter="mapping.ecore#//PurposeRegistry/getRegisteredPurpose/purpose_p"/>
+        <genParameters ecoreParameter="mapping.ecore#//PurposeRegistry/getRegisteredPurpose/mappingId_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/registerPurpose">
+        <genParameters ecoreParameter="mapping.ecore#//PurposeRegistry/registerPurpose/purpose_p"/>
+        <genParameters ecoreParameter="mapping.ecore#//PurposeRegistry/registerPurpose/mappingId_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/getContributedPurpose">
+        <genParameters ecoreParameter="mapping.ecore#//PurposeRegistry/getContributedPurpose/purpose_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="mapping.ecore#//PurposeRegistry/getContributedMapping">
+        <genParameters ecoreParameter="mapping.ecore#//PurposeRegistry/getContributedMapping/purpose_p"/>
+        <genParameters ecoreParameter="mapping.ecore#//PurposeRegistry/getContributedMapping/mappingId_p"/>
+      </genOperations>
+    </genClasses>
+    <nestedGenPackages prefix="Api" basePackage="org.polarsys.kitalpha.transposer.rules.handler.rules"
+        disposableProviderFactory="true" ecorePackage="mapping.ecore#//api">
+      <genDataTypes ecoreDataType="mapping.ecore#//api/IFile"/>
+      <genDataTypes ecoreDataType="mapping.ecore#//api/IPremise"/>
+      <genDataTypes ecoreDataType="mapping.ecore#//api/IRule">
+        <genTypeParameters ecoreTypeParameter="mapping.ecore#//api/IRule/T"/>
+      </genDataTypes>
+      <genDataTypes ecoreDataType="mapping.ecore#//api/IDomainHelper"/>
+      <genDataTypes ecoreDataType="mapping.ecore#//api/IContext"/>
+      <genDataTypes ecoreDataType="mapping.ecore#//api/IStatus"/>
+      <genClasses image="false" ecoreClass="mapping.ecore#//api/IPurpose">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//api/IPurpose/name"/>
+        <genOperations ecoreOperation="mapping.ecore#//api/IPurpose/validate"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Common" basePackage="org.polarsys.kitalpha.transposer.rules.handler.rules"
+        disposableProviderFactory="true" ecorePackage="mapping.ecore#//common">
+      <genClasses ecoreClass="mapping.ecore#//common/Mapping">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mapping.ecore#//common/Mapping/extendedMapping"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mapping.ecore#//common/Mapping/extenders"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//common/Mapping/ownedPackages"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//common/Mapping/ownedMappingElements"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/ownedDomainHelper"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/domainHelper"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mapping.ecore#//common/Mapping/allOwnedMappingElements"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mapping.ecore#//common/Mapping/purpose"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/description"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/completeDescription"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/ownedContext"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/Mapping/context"/>
+        <genOperations ecoreOperation="mapping.ecore#//common/Mapping/validate"/>
+        <genOperations ecoreOperation="mapping.ecore#//common/Mapping/getOwnedMappingElement">
+          <genParameters ecoreParameter="mapping.ecore#//common/Mapping/getOwnedMappingElement/domainClass_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/Mapping/resolveApplicablePossibility">
+          <genParameters ecoreParameter="mapping.ecore#//common/Mapping/resolveApplicablePossibility/object_p"/>
+          <genParameters ecoreParameter="mapping.ecore#//common/Mapping/resolveApplicablePossibility/domainHelper_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/Mapping/resolveUniqueAvailableMappingElement">
+          <genParameters ecoreParameter="mapping.ecore#//common/Mapping/resolveUniqueAvailableMappingElement/object_p"/>
+          <genParameters ecoreParameter="mapping.ecore#//common/Mapping/resolveUniqueAvailableMappingElement/domainHelper_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/Mapping/resolveAllAvailableMappingElements">
+          <genParameters ecoreParameter="mapping.ecore#//common/Mapping/resolveAllAvailableMappingElements/domainClass_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/Mapping/getExtendersWithSamePurpose"/>
+      </genClasses>
+      <genClasses ecoreClass="mapping.ecore#//common/MappingPackage">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingPackage/ownedPackages"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingPackage/ownedMappingElements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingPackage/name"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingPackage/allMappingElements"/>
+      </genClasses>
+      <genClasses ecoreClass="mapping.ecore#//common/MappingElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingElement/ownedDefaultPossibility"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingElement/defaultPossibility"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingElement/ownedPossibilities"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingElement/allPossibilities"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingElement/domainMetaClass"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference mapping.ecore#//common/MappingElement/extendedMappingElement"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingElement/reuseSuperPossibilities"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingElement/reuseSuperDefaultPossibility"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference mapping.ecore#//common/MappingElement/extenders"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingElement/name"/>
+        <genOperations ecoreOperation="mapping.ecore#//common/MappingElement/getApplicablePossibility">
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingElement/getApplicablePossibility/object_p"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="mapping.ecore#//common/MappingPossibility">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingPossibility/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingPossibility/context"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingPossibility/completeRule"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EAttribute mapping.ecore#//common/MappingPossibility/incompleteRule"/>
+        <genOperations ecoreOperation="mapping.ecore#//common/MappingPossibility/checkRules">
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/checkRules/domainHelper_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/MappingPossibility/checkCompleteRule">
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/checkCompleteRule/domainHelper_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/MappingPossibility/checkIncompleteRule">
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/checkIncompleteRule/domainHelper_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/MappingPossibility/applyRule">
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/applyRule/object_p"/>
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/applyRule/context_p"/>
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/applyRule/complete_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/MappingPossibility/updateContext">
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/updateContext/object_p"/>
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/updateContext/context_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//common/MappingPossibility/isApplicableOn">
+          <genParameters ecoreParameter="mapping.ecore#//common/MappingPossibility/isApplicableOn/object_p"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Runtime" basePackage="org.polarsys.kitalpha.transposer.rules.handler.rules"
+        disposableProviderFactory="true" ecorePackage="mapping.ecore#//runtime">
+      <genClasses ecoreClass="mapping.ecore#//runtime/RuntimePurpose">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//runtime/RuntimePurpose/mapping"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//runtime/RuntimePurpose/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//runtime/RuntimePurpose/id"/>
+        <genOperations ecoreOperation="mapping.ecore#//runtime/RuntimePurpose/resolveApplicablePossibility">
+          <genParameters ecoreParameter="mapping.ecore#//runtime/RuntimePurpose/resolveApplicablePossibility/object_p"/>
+          <genParameters ecoreParameter="mapping.ecore#//runtime/RuntimePurpose/resolveApplicablePossibility/domainHelper_p"/>
+        </genOperations>
+        <genOperations ecoreOperation="mapping.ecore#//runtime/RuntimePurpose/getMappingElement">
+          <genParameters ecoreParameter="mapping.ecore#//runtime/RuntimePurpose/getMappingElement/domainClass_p"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Contribution" basePackage="org.polarsys.kitalpha.transposer.rules.handler.rules"
+        disposableProviderFactory="true" ecorePackage="mapping.ecore#//contribution">
+      <genClasses ecoreClass="mapping.ecore#//contribution/ContributedPurpose">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//contribution/ContributedPurpose/mappings"/>
+        <genOperations ecoreOperation="mapping.ecore#//contribution/ContributedPurpose/getMostGenericMapping"/>
+        <genOperations ecoreOperation="mapping.ecore#//contribution/ContributedPurpose/getMapping">
+          <genParameters ecoreParameter="mapping.ecore#//contribution/ContributedPurpose/getMapping/mappingId_p"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

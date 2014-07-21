@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.polarsys.kitalpha.transposer.m2m.simplecomponent.ecore.mapping"
+         name="Simplecomponent to Vpdesc model"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            description="Transformation of Simplecomponent ecore to Vpdesc model"
+            domainHelper="org.polarsys.kitalpha.transposer.m2t.simplecomponent.domain.SimplecomponentDomainHelper"
+            mappingName="Simplecomponent Ecore to VP DSL textual representation"
+            mappingPurpose="org.polarsys.kitalpha.transposer.m2m.simplecomponent.mapping"
+            private="false">
+         <mappingElement
+               domainMetaClass="org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentElement"
+               name="Component Element case"
+               reuseExtendedElementDefaultPossibility="true"
+               reuseExtendedElementPossibilities="true">
+            <defaultMappingPossibility
+                  completeRule="org.polarsys.kitalpha.transposer.m2t.simplecomponent.ecore.rules.SimplecomponentToVpTextClassRule"
+                  enabled="true"
+                  name="Component element rule">
+            </defaultMappingPossibility>
+         </mappingElement>
+      </mapping>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.m2t.simplecomponent.activities.Reader"
+            Identifier="org.polarsys.kitalpha.transposer.m2m.simplecomponent.ecore.reader"
+            Multiple="false"
+            Name="Simplecomponent model reader"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity allows adding a List of Vpdesc classes to the scope of Transposer
+            
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.m2t.simplecomponent.activities.Writer"
+            Identifier="org.polarsys.kitalpha.transposer.m2m.simplecomponent.ecore.writer"
+            Multiple="true"
+            Name="Simplecomponent model writer"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Description body text
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+
+</plugin>

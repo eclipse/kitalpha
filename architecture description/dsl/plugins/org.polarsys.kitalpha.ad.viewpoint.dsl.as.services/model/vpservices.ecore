@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vpservices" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0"
+    nsPrefix="vpservices">
+  <eClassifiers xsi:type="ecore:EClass" name="RuleSet" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpRules" upperBound="-1"
+        eType="#//Rule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceSet" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpServices" upperBound="-1"
+        eType="#//Service" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractServicesElement" abstract="true"
+      eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vpid" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//AbstractServicesElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Rules_Types"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//AbstractServicesElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedRules" upperBound="-1"
+        eType="#//Rule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Rules_Types">
+    <eLiterals name="Java"/>
+    <eLiterals name="EMFvalidation" value="1" literal="EMF validation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertySet" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpProperties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//AbstractServicesElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//PropertyType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PropertyType">
+    <eLiterals name="Integer" literal="Integer_Literal"/>
+    <eLiterals name="String" value="1" literal="String_Literal"/>
+    <eLiterals name="Boolean" value="2" literal="Boolean_Literal"/>
+    <eLiterals name="Float" value="3" literal="Float_Literal"/>
+  </eClassifiers>
+</ecore:EPackage>

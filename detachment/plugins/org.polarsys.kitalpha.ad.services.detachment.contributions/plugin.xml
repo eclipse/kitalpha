@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.services.detachment.core.unknownReferences">
+      <classes
+            class="org.polarsys.kitalpha.ad.services.detachment.contributions.unknownReferences.InvalidDMapping">
+      </classes>
+      <classes
+            class="org.polarsys.kitalpha.ad.services.detachment.contributions.unknownReferences.InvalidDRepresentationContainer">
+      </classes>
+      <classes
+            class="org.polarsys.kitalpha.ad.services.detachment.contributions.unknownReferences.InvalidFilterDescription">
+      </classes>
+      <classes
+            class="org.polarsys.kitalpha.ad.services.detachment.contributions.unknownReferences.InvalidLayer">
+      </classes>
+      <classes
+            class="org.polarsys.kitalpha.ad.services.detachment.contributions.unknownReferences.MissingEPackage">
+      </classes>
+   </extension>
+
+</plugin>

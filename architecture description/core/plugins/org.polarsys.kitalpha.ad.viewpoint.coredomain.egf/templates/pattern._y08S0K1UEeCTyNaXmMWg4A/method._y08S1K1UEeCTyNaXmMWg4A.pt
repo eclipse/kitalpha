@@ -1,0 +1,2 @@
+		String cls = genClass.getName();
+		return  "Viewpoint".equals(cls);

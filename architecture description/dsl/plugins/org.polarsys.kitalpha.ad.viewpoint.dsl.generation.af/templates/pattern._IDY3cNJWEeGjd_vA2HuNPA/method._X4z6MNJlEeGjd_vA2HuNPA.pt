@@ -1,0 +1,15 @@
+Service service = ViewpointFactory.eINSTANCE.createService();
+
+/*** From VPSpec Model ***/
+service.setName(parameter.getName());
+service.setDescription(parameter.getDescription());
+// The related rue will be added soon.
+
+/*** Generated ***/
+service.setId(AFModelUtils.getInstance().generateAFElementID(parameter));
+//service.setVpid(parameter.getVpid());
+service.setVpid(parameter.getVpid());
+service.setType("execute.rules");
+
+/*** Adding the new rule to the RuleSet ***/
+sS.getNewServices().add(service); 

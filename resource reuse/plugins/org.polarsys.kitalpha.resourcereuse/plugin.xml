@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="resources" name="%extension-point.resources.name" schema="schema/resources.exsd"/>
+   <extension-point id="concerns"  name="%extension-point.concerns.name"   schema="schema/concerns.exsd"/>
+
+</plugin>

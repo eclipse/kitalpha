@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecoreadvancedalloc"
+    nsURI="http://org.polarsys.kitalpha/composer/example/advancedusecase/ecoreadvancedalloc/1.0.0"
+    nsPrefix="ecoreadvancedalloc">
+  <eClassifiers xsi:type="ecore:EClass" name="GeneratedElement" abstract="true" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EcoreFile" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//File"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EcoreRoot" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//Root"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ForwardDeclaration" eSuperTypes="#//GeneratedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration" eSuperTypes="#//GeneratedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
+        eType="#//Reference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hyperlinkRef" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,6 @@
+<%
+GenModel genModel = parameter;
+targetPathName = genModel.getModelProjectDirectory() + "/plugin.xml";
+overwrite = true;
+encoding = "UTF-8";
+%>

@@ -1,0 +1,19 @@
+		if (getPropertySet() != null) {
+			// find Property inside the set
+			for (Property prop : getPropertySet().getNewProperties()) {
+				if (id.equals(prop.getId()))
+					return prop;
+			}
+			// if the Property is hidden return null
+			for (Property prop : getPropertySet().getHiddenProperties()) {
+				if (id.equals(prop.getId()))
+					return null;
+			}
+		}
+		// delegate to parents
+		for (Viewpoint vp : getParents()) {
+			Property prop = vp.getProperty(id);
+			if (prop != null)
+				return prop;
+		}
+		return null;

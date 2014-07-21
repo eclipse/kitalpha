@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %BundleName
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.egf.portfolio.genchain;bundle-version="1.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %BundleVendor
+Bundle-Localization: plugin
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.chain,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.element,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.global

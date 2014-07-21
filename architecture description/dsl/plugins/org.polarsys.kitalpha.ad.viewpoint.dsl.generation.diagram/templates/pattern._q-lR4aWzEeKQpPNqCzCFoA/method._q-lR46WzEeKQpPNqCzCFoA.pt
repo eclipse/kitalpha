@@ -1,0 +1,1 @@
+<%@ jet package="PACKAGE" class="CLASS" imports="java.util.* org.eclipse.egf.model.pattern.* org.eclipse.egf.pattern.execution.* org.eclipse.egf.pattern.query.*"  %>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %BundleName
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event
+Bundle-Version: 0.5.0.qualifier
+Bundle-Localization: plugin
+Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.Activator
+Bundle-Vendor: %BundleVendor
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.egf.model;bundle-version="1.1.0";visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.listener,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.manager,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.type

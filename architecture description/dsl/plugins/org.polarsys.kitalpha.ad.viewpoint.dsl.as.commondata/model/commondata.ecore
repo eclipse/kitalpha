@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="commondata" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0"
+    nsPrefix="commondata">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractClass" abstract="true">
+    <eOperations name="getAbstractAttributes" upperBound="-1" eType="#//AbstractAttribute"/>
+    <eOperations name="getAllAbstractAttributes" upperBound="-1" eType="#//AbstractAttribute"/>
+    <eOperations name="getAbstractAssociations" upperBound="-1" eType="#//AbstractAssociation"/>
+    <eOperations name="getAllAbstractAssociation" upperBound="-1" eType="#//AbstractAssociation"/>
+    <eOperations name="getSuperAbstractTypes" upperBound="-1" eType="#//AbstractClass"/>
+    <eOperations name="getAllSuperAbstractTypes" upperBound="-1" eType="#//AbstractClass"/>
+    <eOperations name="getName" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getEPackageName" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="getFQN" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalClass" eSuperTypes="#//AbstractClass">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalClass" eSuperTypes="#//AbstractClass">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="ecore:EClass platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractAssociation" abstract="true">
+    <eOperations name="getName" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="isMany" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalAssociation" eSuperTypes="#//AbstractAssociation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalAssociation" eSuperTypes="#//AbstractAssociation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//AbstractAssociation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractAttribute" abstract="true">
+    <eOperations name="getName" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalAttribute" eSuperTypes="#//AbstractAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalAttribute" eSuperTypes="#//AbstractAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+  </eClassifiers>
+</ecore:EPackage>

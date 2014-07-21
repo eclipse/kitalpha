@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contexts>
+   <context id="run_configuration_path_variables" title="The path variables">
+      <description>This section describles all the variables that are available for the  generation path.</description>
+      <topic href="html/modelDir.html" label="$modelDir"/>
+      <topic href="html/projectDir.html" label="$projectDir"/>
+      <topic href="html/contributing.html" label="How to contribute my own variable"/>
+   </context>
+</contexts>

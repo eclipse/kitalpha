@@ -1,0 +1,69 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+
+package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.task;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.egf.core.producer.InvocationException;
+import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
+import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
+import org.eclipse.emf.common.util.URI;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.constant.IContractNames;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.constant.Messages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.data.LauncherExtension;
+
+/**
+ * @author Boubekeur Zendagui
+ */
+
+public class FactoryComponentsCollectorTask implements ITaskProduction {
+	
+	@SuppressWarnings("unchecked")
+	public void doExecute(ITaskProductionContext productionContext,
+			IProgressMonitor monitor) throws InvocationException {
+		// Get the vales of the Input Contracts
+		List<LauncherExtension> extensionPointContributions_Value = productionContext.getInputValue(IContractNames.extensionPointContributions, List.class);
+		
+		if (extensionPointContributions_Value == null)
+			throw new IllegalArgumentException(Messages.Contract_ExtensionPointContributions);
+		
+		List<URI> collectedFactoryComponents = new ArrayList<URI>();
+		
+		if (extensionPointContributions_Value.size() > 0){
+			for (LauncherExtension taguableExtension : extensionPointContributions_Value) 
+			{
+				String fCoreURI =  taguableExtension.extensionFCoreAttributeValue;
+
+				if (fCoreURI != null && fCoreURI.trim().length() > 0)
+					collectedFactoryComponents.add(URI.createURI(fCoreURI));
+				else
+					throw new IllegalArgumentException(Messages.Contract_ExtensionFcore);
+			}
+		}
+		
+		productionContext.setOutputValue(IContractNames.factoryComponentsList, collectedFactoryComponents);
+	}
+
+	/******************
+	 ***** Unused *****
+	 ******************/
+	public void preExecute(ITaskProductionContext productionContext,
+			IProgressMonitor monitor) throws InvocationException {
+	}
+
+	public void postExecute(ITaskProductionContext productionContext,
+			IProgressMonitor monitor) throws InvocationException {
+	}
+
+}

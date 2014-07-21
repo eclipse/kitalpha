@@ -1,0 +1,115 @@
+	// Attribute initialization
+	final String iAtName = parameter.getName();
+	eAt = EcoreFactory.eINSTANCE.createEAttribute();
+	eAt.setName(iAtName);
+	eAt.setDerived(parameter.isDerived());
+	eAt.setOrdered(parameter.isOrdered());
+	eAt.setTransient(parameter.isTransient());
+	eAt.setUnique(parameter.isUnique());
+	eAt.setUnsettable(parameter.isUnsettable());
+	eAt.setVolatile(parameter.isVolatile());
+	eAt.setChangeable(parameter.isChangeable());
+	eAt.setID(parameter.isIsId());
+
+	// Attribute Bound initialization
+	int lowerBound = 0;
+	int upperBound = 1;
+	
+	switch (parameter.getCardinality()) {
+	case NOTHING_OR_MANY:
+		upperBound = -1;
+		break;
+	case ONE_OR_MANY:
+		lowerBound = 1;
+		upperBound = -1;
+		break;
+	case ONLY_ONE:
+		lowerBound = 1;
+		break;
+	case NOTHING_OR_ONE:
+		break;
+	}
+	eAt.setLowerBound(lowerBound);
+	eAt.setUpperBound(upperBound);
+
+	// Attribute Type generation
+	AbstractAttributeType abstractAttributeType = parameter.getOwned_type();
+	if (abstractAttributeType instanceof LocalAttributeType)
+	{// Handle cases of local type : vpdesc.Enumeration
+		final LocalAttributeType localType = (LocalAttributeType) abstractAttributeType;
+		final org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration enumeration = localType.getType();
+		final String enumerationName = enumeration.getName();
+		final EEnum eEnum = (EEnum) ECoreResourceManager.INSTANCE.getEPackage().getEClassifier(enumerationName);
+		eAt.setEType(eEnum);
+	}
+	else
+	{// Handle case of external type : a primitive type like EString, EInt, etc. or an EEnumerator
+		final ExternalAttributeType externalType = (ExternalAttributeType) abstractAttributeType;
+		final EDataType dataType = externalType.getType();
+		final String dataTypeName = dataType.getName();
+		if (dataTypeName.equals("EEnumerator")) 
+		{
+			EEnum eEnum = EcoreFactory.eINSTANCE.createEEnum();
+			eEnum.setName(iAtName + "_Type");
+			for (Value iValue : parameter.getOwned_values()) 
+			{
+				EEnumLiteral eEnumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+				eEnumLiteral.setLiteral(iValue.getLiteral());
+				eEnumLiteral.setName(iValue.getName().replaceAll("[^a-zA-Z0-9]", "_"));
+				eEnumLiteral.setValue(parameter.getOwned_values().indexOf(iValue));
+				eEnum.getELiterals().add(eEnumLiteral);
+			}
+
+			ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers().add(eEnum);
+			eAt.setEType(eEnum);
+		} 
+		else 
+		{
+			if (dataType instanceof EEnum) 
+			{
+				final EEnum ptEEnum = PlatformEClassesManager.INSTANCE.getEEnumWithPlatformURI((EEnum) dataType);
+				eAt.setEType(ptEEnum);
+			} 
+			else 
+			{
+				eAt.setEType(dataType);
+			}
+		}
+	}
+	
+	containingEClass.getEStructuralFeatures().add(eAt);
+	/**
+	if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
+	{
+		ENamedElementAnnotationHelper.annotate(eAt, 
+											ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
+											ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
+											parameter.getDescription(),
+											true);
+	}
+	**/
+	
+	/******************************************
+	if (parameter.getOwned_annotations().size() > 0)
+	{
+		for (Annotation iAnnotation : parameter.getOwned_annotations()) 
+		{
+			String source = iAnnotation.getSource();
+			EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+			eAnnotation.setSource(source);
+			if (iAnnotation.getOwned_details().size() > 0)
+			{
+				for (Detail iDetail : iAnnotation.getOwned_details()) 
+				{
+					EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE.create(
+																EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+					entry.setKey(iDetail.getKey());
+					if (iDetail.getValue() != null)
+						entry.setValue(iDetail.getValue());
+					eAnnotation.getDetails().add(entry);
+				}
+			}
+			eAt.getEAnnotations().add(eAnnotation);
+		}
+	}
+	******************************************/

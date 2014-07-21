@@ -1,0 +1,15 @@
+// EPackage creation
+gEPackage = EcoreFactory.eINSTANCE.createEPackage();
+gEPackage.setName(shortName);
+gEPackage.setNsPrefix(shortName);
+gEPackage.setNsURI(nsUri);
+		
+// Resource creation
+ResourceSet resourceSet = new ResourceSetImpl();
+URI uri = URI.createPlatformResourceURI(rootProjectName+"/"+modelFolder+"/"+shortName+".ecore", false);
+Resource resource = resourceSet.createResource(uri);
+resource.getContents().add(gEPackage);
+resource.save(Collections.EMPTY_MAP);
+		
+// Loading resource
+//ECoreResourceManager.INSTANCE.loadECoreResource(new ECoreFileInformation(rootProjectName, "models", shortName));

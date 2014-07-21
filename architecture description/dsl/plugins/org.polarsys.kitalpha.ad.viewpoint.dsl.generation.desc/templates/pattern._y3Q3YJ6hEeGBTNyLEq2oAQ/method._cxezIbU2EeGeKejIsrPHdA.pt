@@ -1,0 +1,23 @@
+if (targetClasses != null && targetClasses.size() > 0)
+{
+	for (Object iClazz : targetClasses) 
+	{
+		EClass clazz = (EClass) iClazz;
+		boolean throwEception = true;
+			
+		for (EClass itClass : clazz.getEAllSuperTypes()) 
+		{
+			if (itClass.getEPackage().getNsURI().equals(EmdePackageImpl.eINSTANCE.getNsURI()) && itClass.getClassifierID() == EmdePackageImpl.EXTENSIBLE_ELEMENT)
+			{
+				throwEception = false;
+				break;
+			}
+		}
+		
+		if (throwEception)
+		{
+			String shortName = CoreModelHelper.getViewpointShortName(parameter); 
+			throw new NotExtensibleEClassException(parameter, clazz, shortName);
+		}
+	}
+}

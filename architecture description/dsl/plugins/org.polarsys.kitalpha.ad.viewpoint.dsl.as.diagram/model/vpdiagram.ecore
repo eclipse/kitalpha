@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vpdiagram" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0"
+    nsPrefix="vpdiagram">
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramRepresentation" abstract="true"
+      eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="the_MappingSet" eType="#//MappingSet"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="the_ActionSet" eType="#//ActionSet"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" eSuperTypes="#//DiagramRepresentation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="the_domain" lowerBound="1"
+        eType="#//DomainContainer" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramExtension" eSuperTypes="#//DiagramRepresentation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extented_diagram" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/DiagramDescription"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="openActions" upperBound="-1"
+        eType="#//OpenAction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagram_Elements" upperBound="-1"
+        eType="#//DiagramChildren" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tool_For" lowerBound="1"
+        eType="#//DiagramElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//DiagramChildren #//AbstractNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" upperBound="-1"
+        eType="#//NodeDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/NodeMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" eType="#//NodeChildren"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="#//AbstractEdge">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        upperBound="-1" eType="#//DiagramElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        upperBound="-1" eType="#//DiagramElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="the_domain" lowerBound="1"
+        eType="#//EdgeDomainAssociation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramChildren" abstract="true" eSuperTypes="#//DiagramElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OpenAction" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconnectEdge" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Drop" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Label">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="italic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeImport" eSuperTypes="#//AbstractEdge">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/EdgeMapping"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EdgeStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="begin_Label" eType="#//Label"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="center_label" eType="#//Label"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end_label" eType="#//Label"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeDescription" eSuperTypes="#//AbstractDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//AbstractNodeStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label_position" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//LabelPosition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label_alignement" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//LabelAlignment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeStyle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineStyle" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//LineStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginDecorator" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//EdgeArrows"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDecorator" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//EdgeArrows"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicStyle" eSuperTypes="#//AbstractNodeStyle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="#//Node_Form"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeDomainElement" eSuperTypes="#//EdgeDomainAssociation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source_Locator" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata/model/commondata.ecore#//AbstractAssociation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="the_Domain" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata/model/commondata.ecore#//AbstractClass"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source_query" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Node_Form">
+    <eLiterals name="Square" literal="Square"/>
+    <eLiterals name="Lozenge" value="1" literal="Lozenge"/>
+    <eLiterals name="Eclipse" value="2" literal="Eclipse"/>
+    <eLiterals name="Note" value="3"/>
+    <eLiterals name="Dot" value="4"/>
+    <eLiterals name="Triangle" value="5"/>
+    <eLiterals name="Stroke" value="6"/>
+    <eLiterals name="Ring" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractNodeStyle" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderColor" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageStyle" eSuperTypes="#//AbstractNodeStyle #//AbstractContainerStyle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HistogramStyle" eSuperTypes="#//AbstractNodeStyle">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//HistogramSection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HistogramSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minValue" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ForeignExpressionElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maxValue" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ForeignExpressionElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ForeignExpressionElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forgroundColor" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//DiagramChildren #//AbstractNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" upperBound="-1"
+        eType="#//ContainerDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/ContainerMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" eType="#//ContainerChildren"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentLayout" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//ContainerLayout"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerDescription" eSuperTypes="#//AbstractDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//AbstractContainerStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlatStyle" eSuperTypes="#//AbstractContainerStyle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forgroundColor" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderColor" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundStyle" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//BackgroundStyle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BorderedNode" eSuperTypes="#//AbstractNode #//DiagramElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/NodeMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" upperBound="-1"
+        eType="#//NodeDescription" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramElement" abstract="true" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDescription" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node_Label" eType="#//Label"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractEdge" abstract="true" eSuperTypes="#//DiagramChildren">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e_description" upperBound="-1"
+        eType="#//EdgeDescription" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ForeignExpressionElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeDomainElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain_Class" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata/model/commondata.ecore#//AbstractClass"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chlidren_list" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata/model/commondata.ecore#//AbstractAssociation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeDomainAssociation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target_Locator" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata/model/commondata.ecore#//AbstractAssociation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target_query" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractContainerStyle" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerChildren">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owned_nodes" upperBound="-1"
+        eType="#//AbstractNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reused_nodes" upperBound="-1"
+        eType="#//AbstractNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractNode" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="the_domain" eType="#//NodeDomainElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeChildren">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owned_boderednodes" upperBound="-1"
+        eType="#//BorderedNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reused_boderednodes" upperBound="-1"
+        eType="#//BorderedNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="the_domain" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata/model/commondata.ecore#//AbstractClass"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramSet" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" upperBound="-1"
+        eType="#//DiagramRepresentation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalExternalGroup"
+        upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/Group"/>
+  </eClassifiers>
+  <eSubpackages name="configuration" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0"
+      nsPrefix="configuration">
+    <eClassifiers xsi:type="ecore:EClass" name="DiagramGenerationConfiguration" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf/model/vpconf.ecore#//ExtensionGeneratrionConfiguration">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="overwriteVSM" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

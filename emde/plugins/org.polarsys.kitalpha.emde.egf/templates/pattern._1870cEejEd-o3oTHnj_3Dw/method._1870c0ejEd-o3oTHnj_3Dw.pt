@@ -1,0 +1,1 @@
+	ManifestHelper.createModelHelper(genModel).updateFile(new NullProgressMonitor());

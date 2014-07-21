@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0"
+            class="org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage"
+            genModel="model/viewpoint.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.polarsys.org/kitalpha/ad/viewpoint/tools/1.0.0"
+            class="org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.ToolsPackage"
+            genModel="model/viewpoint.genmodel"/>
+   </extension>
+
+</plugin>

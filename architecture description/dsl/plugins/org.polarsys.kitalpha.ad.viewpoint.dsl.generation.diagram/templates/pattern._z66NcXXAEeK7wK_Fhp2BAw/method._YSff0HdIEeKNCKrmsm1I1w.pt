@@ -1,0 +1,28 @@
+if (generate_service != null && generate_service)
+{
+	JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(java_service_name);
+	if (javaServiceData != null) 
+	{
+		javaServiceData.setContext(parameter);
+		JavaMethodReturnType returnType = JavaMethodReturnType.Boolean;
+		JavaMethodData javaMethodData = new JavaMethodData(tool_name, returnType);
+		javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject","the semantic source element");
+		javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(),"EObject", "the source element view");
+		javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject","the semantic target element");
+		javaMethodData.addMethodParameter(VSMVariable.targetView.toString(),"EObject", "the target element view");
+		javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject","the semantic element behind the edge");
+		javaMethodData.addMethodParameter(VSMVariable.edgeView.toString(),"EObject", "the edge view");
+		javaServiceData.addMethod(javaMethodData);
+		
+		If iv = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
+		String mParameters = "("+ 
+									VSMVariable.sourceView.getInnerVariable() + "," + 
+									VSMVariable.target.getInnerVariable() + "," + 
+									VSMVariable.targetView.getInnerVariable() + "," + 
+									VSMVariable.element.getInnerVariable() + "," + 
+									VSMVariable.edgeView.getInnerVariable() 
+							 + ")";
+		iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(tool_name + mParameters, ExpressionInterpreter.Service));
+		initial_operation.setFirstModelOperations(iv);
+	}
+}

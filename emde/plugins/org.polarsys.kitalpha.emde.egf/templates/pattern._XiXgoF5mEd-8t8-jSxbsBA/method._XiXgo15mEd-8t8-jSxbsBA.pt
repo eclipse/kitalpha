@@ -1,0 +1,395 @@
+<%
+/**
+ * <copyright>
+ *
+ * Copyright (c) 2002-2007 IBM Corporation and others.
+ * All rights reserved.   This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   IBM - Initial API and implementation
+ *
+ * </copyright>
+ */
+%>
+<%GenClass genClass = (GenClass)argument; GenPackage genPackage = genClass.getGenPackage(); GenModel genModel=genPackage.getGenModel();%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#LogicalName=org.eclipse.egf.emf.pattern.base.HeaderJava" args="parameter:argument"%>
+package <%=genPackage.getProviderPackageName()%>;
+
+<% boolean hasNonManyEReferences = false; %>
+<%genModel.addImport("org.eclipse.emf.common.notify.AdapterFactory");%>
+<%genModel.addImport("org.eclipse.emf.common.notify.Notification");%>
+<%genModel.addImport("org.eclipse.emf.edit.provider.IEditingDomainItemProvider");%>
+<%genModel.addImport("org.eclipse.emf.edit.provider.IItemLabelProvider");%>
+<%genModel.addImport("org.eclipse.emf.edit.provider.IItemPropertySource");%>
+<%genModel.addImport("org.eclipse.emf.edit.provider.IStructuredItemContentProvider");%>
+<%genModel.addImport("org.eclipse.emf.edit.provider.ITreeItemContentProvider");%>
+<%String _List = genModel.getImportedName(genModel.useGenerics() ? "java.util.List<org.eclipse.emf.edit.provider.IItemPropertyDescriptor>" : "java.util.List");%>
+<%genModel.markImportLocation(stringBuffer);%>
+
+/**
+ * This is the item provider adapter for a {@link <%=genClass.getQualifiedInterfaceName()%>} object.
+ * <!-- begin-user-doc -->
+<%if ((genPackage.isExtensibleProviderFactory() || genPackage.isChildCreationExtenders()) && genClass.getProviderBaseClassName() == null) {%>
+ * @superClass ExtensionItemProviderAdapter
+<%}%>
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class <%=genClass.getProviderClassName()%>
+<%if ((genPackage.isExtensibleProviderFactory() || genPackage.isChildCreationExtenders()) && genClass.getProviderBaseClassName() == null) {%>
+	extends <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.edit.ExtensionItemProviderAdapter")%>
+<%}else{%>
+	extends <%=genClass.getProviderBaseClassName() != null ? genClass.getProviderBaseClassName() : genModel.getImportedName("org.eclipse.emf.edit.provider.ItemProviderAdapter")%>
+<%}%>
+	implements
+<%for (Iterator<String> i = genPackage.getProviderSupportedTypes().iterator(); i.hasNext(); ) {%>
+		<%=genModel.getImportedName(i.next())%><%if (i.hasNext()){%>,<%}%>
+<%}%>
+{
+<%if (genModel.hasCopyrightField()) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final <%=genModel.getImportedName("java.lang.String")%> copyright = <%=genModel.getCopyrightFieldLiteral()%>;<%=genModel.getNonNLS()%>
+
+<%}%>
+<%if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {%>
+<%for (GenFeature genFeature : genClass.getPropertyFeatures()) { %>
+<%if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {%>
+<% hasNonManyEReferences = true; %>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected <%=genModel.getImportedName("org.eclipse.emf.edit.provider.IItemPropertyDescriptor")%> <%=genFeature.getName()%>PropertyDescriptor;
+
+<%}%>
+<%}%>
+<%}%>
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public <%=genClass.getProviderClassName()%>(AdapterFactory adapterFactory)
+	{
+		super(adapterFactory);
+	}
+
+<%if (hasNonManyEReferences) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public void checkChildCreationExtender(Object object) {
+		super.checkChildCreationExtender(object);
+		if (object instanceof <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>) {
+			<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject = (EObject) object;
+<%for (GenFeature genFeature : genClass.getPropertyFeatures()) { %>
+<%if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {%>
+			// Process <%=genFeature.getQualifiedFeatureAccessor()%>
+			if (<%=genFeature.getName()%>PropertyDescriptor != null) {
+				Object <%=genFeature.getName()%>Value = eObject.eGet(<%=genFeature.getQualifiedFeatureAccessor()%>, true);
+				if (<%=genFeature.getName()%>Value != null && <%=genFeature.getName()%>Value instanceof <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> && <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance().isExtensionModelDisabled((EObject) <%=genFeature.getName()%>Value)) {
+					itemPropertyDescriptors.remove(<%=genFeature.getName()%>PropertyDescriptor);
+				} else if (<%=genFeature.getName()%>Value == null && <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ExtensionModelManager")%>.getAnyType(eObject, <%=genFeature.getQualifiedFeatureAccessor()%>) != null) {
+					itemPropertyDescriptors.remove(<%=genFeature.getName()%>PropertyDescriptor);				  					
+				} else if (itemPropertyDescriptors.contains(<%=genFeature.getName()%>PropertyDescriptor) == false) {
+					itemPropertyDescriptors.add(<%=genFeature.getName()%>PropertyDescriptor);
+				}
+			}
+<%}%>
+<%}%>
+		}		
+	}
+
+<%}%>
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public <%=_List%> getPropertyDescriptors(Object object)
+	{
+		if (itemPropertyDescriptors == null)
+		{
+			super.getPropertyDescriptors(object);
+
+<%for (GenFeature genFeature : genClass.getPropertyFeatures()) { %>
+			add<%=genFeature.getCapName()%>PropertyDescriptor(object);
+<%}%>
+		}
+<%if ((ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) && genClass.getProviderBaseClassName() != null) {%>
+		// begin-extension-code
+		checkChildCreationExtender(object);
+		// end-extension-code
+<%}%>
+		return itemPropertyDescriptors;
+	}
+
+<%for (GenFeature genFeature : genClass.getPropertyFeatures()) { %>
+	/**
+	 * This adds a property descriptor for the <%=genFeature.getFormattedName()%> feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void add<%=genFeature.getCapName()%>PropertyDescriptor(Object object)
+	{
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.addPropertyDescriptor.override" args="genFeature:genFeature,genClass:genClass,genPackage:genPackage,genModel:genModel,_List:_List"%><%//ItemProvider/addPropertyDescriptor.override.javajetinc%>
+	}
+
+<%}%>
+<%if (!genClass.getChildrenFeatures().isEmpty()) {%>
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public <%=genModel.getImportedName(genModel.useGenerics() ? "java.util.Collection<? extends org.eclipse.emf.ecore.EStructuralFeature>" : "java.util.Collection")%> getChildrenFeatures(Object object)
+	{
+		if (childrenFeatures == null)
+		{
+			super.getChildrenFeatures(object);
+<%for (GenFeature genFeature : genClass.getChildrenFeatures()) { %>
+			childrenFeatures.add(<%=genFeature.getQualifiedFeatureAccessor()%>);
+<%}%>
+		}
+		return childrenFeatures;
+	}
+
+<%if (!genClass.getChildrenFeatures().isEmpty()) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.EStructuralFeature")%> getChildFeature(Object object, Object child)
+	{
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+<%}%>
+<%}%>
+<%if (genClass.needsHasChildrenMethodOverride()) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public boolean hasChildren(Object object)
+	{
+		return hasChildren(object, <%=genModel.isOptimizedHasChildren()%>);
+	}
+
+<%}%>
+<%if (genClass.isImage()) {%>
+	/**
+	 * This returns <%=genClass.getName()%>.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/<%=genClass.getName()%>"));<%=genModel.getNonNLS()%>
+	}
+
+<%}%>
+<%if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF26_VALUE && !genModel.isCreationIcons()) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected boolean shouldComposeCreationImage() 
+	{
+		return true;
+	}
+
+<%}%>
+	/**
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public String getText(Object object)
+	{
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.getText.override" args="genClass:genClass,genPackage:genPackage,genModel:genModel,_List:_List"%><%//ItemProvider/getText.override.javajetinc%>
+	}
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public void notifyChanged(Notification notification)
+	{
+		updateChildren(notification);
+<%if (!genClass.getLabelNotifyFeatures().isEmpty() || !genClass.getContentNotifyFeatures().isEmpty() || !genClass.getLabelAndContentNotifyFeatures().isEmpty()) {%>
+
+		switch (notification.getFeatureID(<%=genClass.getRawImportedInterfaceName()%>.class))
+		{
+  <%if (!genClass.getLabelNotifyFeatures().isEmpty()) {%>
+    <%for (GenFeature genFeature : genClass.getLabelNotifyFeatures()) { %>
+			case <%=genClass.getQualifiedFeatureID(genFeature)%>:
+    <%}%>
+				fireNotifyChanged(new <%=genModel.getImportedName("org.eclipse.emf.edit.provider.ViewerNotification")%>(notification, notification.getNotifier(), false, true));
+				return;
+  <%}%>
+  <%if (!genClass.getContentNotifyFeatures().isEmpty()) {%>
+    <%for (GenFeature genFeature : genClass.getContentNotifyFeatures()) { %>
+			case <%=genClass.getQualifiedFeatureID(genFeature)%>:
+    <%}%>
+				fireNotifyChanged(new <%=genModel.getImportedName("org.eclipse.emf.edit.provider.ViewerNotification")%>(notification, notification.getNotifier(), true, false));
+				return;
+  <%}%>
+  <%if (!genClass.getLabelAndContentNotifyFeatures().isEmpty()) {%>
+    <%for (GenFeature genFeature : genClass.getLabelAndContentNotifyFeatures()) { %>
+			case <%=genClass.getQualifiedFeatureID(genFeature)%>:
+    <%}%>
+				fireNotifyChanged(new <%=genModel.getImportedName("org.eclipse.emf.edit.provider.ViewerNotification")%>(notification, notification.getNotifier(), true, true));
+				return;
+  <%}%>
+		}
+<%}%>
+		super.notifyChanged(notification);
+	}
+
+<%if (genModel.isCreationCommands()) {%>
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected void collectNewChildDescriptors(<%=genModel.getImportedName(genModel.useGenerics() ? "java.util.Collection<java.lang.Object>" : "java.util.Collection")%> newChildDescriptors, Object object)
+	{
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+    <%for (GenClass.ChildCreationData childCreationData : genClass.getChildCreationData()) { GenFeature createFeature = childCreationData.createFeature; GenFeature delegatedFeature = childCreationData.delegatedFeature; GenClassifier createClassifier = childCreationData.createClassifier;%>
+      <%if (createFeature.isFeatureMapType()) {%>
+        <%if (delegatedFeature.isReferenceType()) { GenClass createClass = (GenClass)createClassifier;%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsReferenceDelegatedFeature.override" args="createClass:createClass,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsReferenceDelegatedFeature.override.javajetinc%>
+        <%} else { GenDataType createDataType = (GenDataType)createClassifier;%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsAttributeDelegatedFeature.override" args="createDataType:createDataType,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsAttributeDelegatedFeature.override.javajetinc%>
+        <%}%>
+      <%} else if (createFeature.isReferenceType()) { GenClass createClass = (GenClass)createClassifier;%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsReferenceFeature.override" args="createClass:createClass,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsReferenceFeature.override.javajetinc %>
+      <%} else { GenDataType createDataType = (GenDataType)createClassifier;%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsAttributeFeature.override" args="createDataType:createDataType,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsAttributeFeature.override.javajetinc%>
+      <%}%>
+    <%}%>
+	}
+
+  <%if (!genClass.getSharedClassCreateChildFeatures().isEmpty()) {%>
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public String getCreateChildText(Object owner, Object feature, Object child, <%=genModel.getImportedName(genModel.useGenerics() ? "java.util.Collection<?>" : "java.util.Collection")%> selection)
+	{
+		Object childFeature = feature;
+		Object childObject = child;
+
+    <%if (genClass.hasFeatureMapCreateChildFeatures()) {%>
+		if (childFeature instanceof <%=genModel.getImportedName("org.eclipse.emf.ecore.EStructuralFeature")%> && <%=genModel.getImportedName("org.eclipse.emf.ecore.util.FeatureMapUtil")%>.isFeatureMap((EStructuralFeature)childFeature))
+		{
+			<%=genModel.getImportedName("org.eclipse.emf.ecore.util.FeatureMap")%>.Entry entry = (FeatureMap.Entry)childObject;
+			childFeature = entry.getEStructuralFeature();
+			childObject = entry.getValue();
+		}
+
+    <%}%>
+		boolean qualify =
+    <%for (Iterator<GenFeature> i = genClass.getSharedClassCreateChildFeatures().iterator(); i.hasNext();) { GenFeature createFeature = i.next();%>
+			childFeature == <%=createFeature.getQualifiedFeatureAccessor()%><%=i.hasNext() ? " ||" : ";"%>
+    <%}%>
+
+		if (qualify)
+		{
+			return getString
+				("_UI_CreateChild_text2",<%=genModel.getNonNLS()%>
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+  <%}%>
+<%}%>
+<%if (genClass.getProviderExtendsGenClass() == null || genClass.getProviderExtendsGenClass().getGenPackage() != genPackage && (!genPackage.isExtensibleProviderFactory() || genClass.getProviderExtendsGenClass().getGenPackage().isExtensibleProviderFactory() != genPackage.isExtensibleProviderFactory())) {%>
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	public <%=genModel.getImportedName("org.eclipse.emf.common.util.ResourceLocator")%> getResourceLocator()
+	{
+<%if (genPackage.isExtensibleProviderFactory()) {%>
+		return ((<%=genModel.getImportedName("org.eclipse.emf.edit.provider.IChildCreationExtender")%>)adapterFactory).getResourceLocator();
+<%} else {%>
+		return <%=genPackage.getImportedEditPluginClassName()%>.INSTANCE;
+<%}%>
+	}
+
+<%}%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.insert" args="genClass:genClass,genPackage:genPackage,genModel:genModel,_List:_List"%>
+}
+<%genModel.emitSortedImports();%>

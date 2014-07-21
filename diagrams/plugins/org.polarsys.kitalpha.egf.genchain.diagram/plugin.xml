@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.polarsys.kitalpha.egf.genchain.diagram.Activator"
+               id="org.polarsys.kitalpha.egf.genchain.diagram"
+	       name="genchain">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.AddElementAction"
+           id="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.AddElementAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.BuildAction"
+           id="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.BuildAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.CreateGenerationChainAction"
+           id="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.CreateGenerationChainAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.ReorderAction"
+           id="org.polarsys.kitalpha.egf.genchain.diagram.javaaction.ReorderAction">
+     </javaActions>
+  </extension>
+</plugin>

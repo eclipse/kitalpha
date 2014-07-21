@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.composer.cots.generators">
+      <cost
+            Class="org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.generator.launcher.AcceleoEcoreLauncher"
+            Description="Ecore recursive alloc HTML Documentation Acceleo Template"
+            Id="org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.generator"
+            Name="Ecore recursive allocation HTML Documentation Acceleo Template"
+            NsUri="http://org.polarsys.kitalpha/composer/example/recursiveusecase/ecorerecursivealloc/1.0.0">
+      </cost>
+   </extension>
+
+</plugin>

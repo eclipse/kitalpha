@@ -1,0 +1,53 @@
+/************************ Creation of the Edge Mapping ************************/ 
+		
+EdgeMapping edgeMapping = DescriptionFactory.eINSTANCE.createEdgeMapping();
+edgeMapping.setName(parameter.getName()+"_EM");
+edgeMapping.setLabel(parameter.getName());
+		
+/**
+ Setting mappings data
+for (EObject sourceMapping : parameter.getSource()) 
+	edgeMapping.getSourceMapping().add((DiagramElementMapping) GenerationUtil.getDoremiElement(sourceMapping));
+		
+for (EObject targetMapping : parameter.getTarget()) 
+	edgeMapping.getTargetMapping().add((DiagramElementMapping) GenerationUtil.getDoremiElement(targetMapping));
+*/
+// Setting mappings data
+
+/**
+* //TODO : todo 1 and todo 2 are Hacks. If one Edge side (source or Target) reference an imported Edge, 
+* so we link this side to the original Edge.
+**/
+for (EObject sourceMapping : parameter.getSource())
+{
+	EObject eObject = GenerationUtil.getDoremiElement(sourceMapping);
+	if (eObject instanceof DiagramElementMapping)
+	{
+		edgeMapping.getSourceMapping().add((DiagramElementMapping) eObject);
+	}
+	
+	// TODO: 1 
+	if (eObject instanceof EdgeMappingImport)
+	{
+		EdgeMappingImport edgeImport = (EdgeMappingImport) eObject;
+		edgeMapping.getSourceMapping().add((DiagramElementMapping)edgeImport.getImportedMapping());
+	}
+}
+			
+for (EObject targetMapping : parameter.getTarget())
+{
+	EObject eObject = GenerationUtil.getDoremiElement(targetMapping);
+	if (eObject instanceof DiagramElementMapping)
+	{
+		edgeMapping.getTargetMapping().add((DiagramElementMapping) eObject);
+	}
+	
+	// TODO: 2
+	if (eObject instanceof EdgeMappingImport)
+	{
+		EdgeMappingImport edgeImport = (EdgeMappingImport) eObject;
+		edgeMapping.getTargetMapping().add((DiagramElementMapping)edgeImport.getImportedMapping());
+	}
+}
+
+dEdgeMapping = edgeMapping;

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model/src"
+    editDirectory="/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model.edit/src"
+    editorDirectory="/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model.editor/src"
+    modelPluginID="org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model"
+    modelName="Ecorerecursivealloc" featureMapWrapperInternalInterface="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.6" usedGenPackages="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.genmodel#//base">
+  <foreignModel>ecorerecursivealloc.ecore</foreignModel>
+  <genPackages prefix="Ecorerecursivealloc" disposableProviderFactory="true" ecorePackage="ecorerecursivealloc.ecore#/">
+    <genClasses ecoreClass="ecorerecursivealloc.ecore#//EcoreAllocRoot"/>
+    <genClasses ecoreClass="ecorerecursivealloc.ecore#//EcoreAllocFile"/>
+    <genClasses ecoreClass="ecorerecursivealloc.ecore#//EcoreAllocType"/>
+  </genPackages>
+</genmodel:GenModel>

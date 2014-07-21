@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.polarsys.kitalpha.ad.viewpoint.ui.provider.selection" name="Selection provider" schema="schema/provider.selection.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.ad.viewpoint.ui.viewpointview.tab" name="Viewpoint View Tab" schema="schema/viewpointview.tab.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.ad.viewpoint.ui.rule.wizard.providers" name="Rule Wizard Providers" schema="schema/rule.wizard.providers.exsd"/>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.implementation.services">
+      <Implementation
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.integration.services.InfoServiceImplementation"
+            type="info"
+            label="Open info dialog">
+      </Implementation>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="%_UI_Viewpoint_manager"
+            icon="icons/ViewpointManager.gif"
+            category="org.polarsys.kitalpha.view.category"
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.views.ViewpointManagerView"
+            id="org.polarsys.kitalpha.ad.viewpoint.ui.views.viewpointmanagerview">
+      </view>
+   </extension>
+
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.ui.viewpointview.tab">
+      <tab
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.config.ConfigurationTab"
+            id="org.polarsys.kitalpha.ad.viewpoint.ui.config"
+            weight="100">
+      </tab>
+      <tab
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.metamodels.MetamodelTab"
+            id="org.polarsys.kitalpha.ad.viewpoint.ui.metamodel"
+            weight="40"
+            designOnly="true">
+      </tab>
+      <tab
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.overview.OverviewTab"
+            id="org.polarsys.kitalpha.ad.viewpoint.ui.overview"
+            weight="110">
+      </tab>
+      <tab
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.rules.RuleTab"
+            id="org.polarsys.kitalpha.ad.viewpoint.ui.rule"
+            weight="90">
+      </tab>
+      <tab
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.services.ServiceTab"
+            id="org.polarsys.kitalpha.ad.viewpoint.ui.service"
+            weight="80">
+      </tab>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.ui.rule.wizard.providers">
+      <RuleWizardProvider
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.integration.rules.JavaRuleProviderWizard">
+      </RuleWizardProvider>
+   </extension>
+
+
+</plugin>

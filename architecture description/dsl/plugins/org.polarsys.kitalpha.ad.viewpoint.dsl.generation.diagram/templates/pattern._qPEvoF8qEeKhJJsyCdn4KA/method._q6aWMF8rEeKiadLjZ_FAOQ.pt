@@ -1,0 +1,33 @@
+// Gathering informations
+String representationName = parameter.getExtented_diagram().getName();
+Viewpoint vp = ViewpointRegistry.getInstance().getViewpoint(parameter.getExtented_diagram());
+String plugin = vp.eResource().getURI().segments()[1];
+String vpName = vp.getName();
+String vpURI = "viewpoint:/"+plugin+"/"+vpName;
+String vpShortName = CoreModelHelper.getViewpointShortName(parameter);
+String extensionName = vpShortName +" Extension - " +representationName;
+
+String diagramExtensionName = parameter.getName();
+if (diagramExtensionName != null && diagramExtensionName.trim().length() > 0){
+	extensionName = diagramExtensionName;
+}
+
+// Creation of the DiagramExtensionDescription element
+DiagramExtensionDescription ddiagramED = DescriptionFactory.eINSTANCE.createDiagramExtensionDescription();
+ddiagramED.setName(extensionName);
+ddiagramED.setRepresentationName(representationName);
+ddiagramED.setViewpointURI(vpURI);
+
+// Creation of the optional Layer
+AdditionalLayer dLayer = DescriptionFactory.eINSTANCE.createAdditionalLayer();
+dLayer.setName(StringUtils.getDisplayableShortName(vpShortName));
+ddiagramED.getLayers().add(dLayer);
+
+doremiParent = dLayer;
+		
+// Adding the diagram extension to the generated viewpoint
+DoremiResourceManager.generate_viewpoint.getOwnedRepresentationExtensions().add(ddiagramED);
+
+// Get the reference SystemColorPalette.
+Group grp = (Group)ddiagramED.eContainer().eContainer();
+GenerationUtil.setSytemColorsPalette(grp.getSystemColorsPalette());

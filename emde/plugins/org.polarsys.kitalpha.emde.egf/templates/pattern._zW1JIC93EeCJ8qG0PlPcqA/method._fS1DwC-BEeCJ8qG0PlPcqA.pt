@@ -1,0 +1,12 @@
+		Transformer xformer = TransformerFactory.newInstance().newTransformer();
+		StringWriter writer = new StringWriter();
+		Result result = new StreamResult(writer);
+		xformer.transform(new DOMSource(doc), result);
+		DataLeaf leaf = (DataLeaf) ctx.getValue("node");
+		String text = writer.toString();
+		// drop PI
+		int index = text.indexOf("<plugin>");
+		if (index != -1)
+			text = "\n" + text.substring(index);
+		leaf.setData(text);
+		

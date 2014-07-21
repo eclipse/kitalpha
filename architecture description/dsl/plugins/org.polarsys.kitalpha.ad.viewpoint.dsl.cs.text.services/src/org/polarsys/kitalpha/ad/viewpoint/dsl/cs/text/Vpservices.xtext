@@ -1,0 +1,94 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ /**
+ * 
+ * @author Amine Lajmi
+ *
+ */
+grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpservices with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" as vpdesc
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" as vpservices
+
+generate services "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpservices/1.0.0"
+
+/********************************************************************
+ * 							vpservices
+ * 
+ ********************************************************************/
+
+//Aggregate services
+Services returns Services:
+	{Services}
+	(services+=Aspect)+
+;
+
+Aspect returns vpdesc::Aspect:
+	ServiceSet | RuleSet | PropertySet
+;
+
+ServiceSet returns vpdesc::Aspect:
+	{vpservices::ServiceSet}
+	'Services' name=FQN
+	'{'
+		('description:' description=EString)?
+		(vpServices+=Service (vpServices+=Service)*)?	
+	'}';
+
+RuleSet returns vpdesc::Aspect:
+	{vpservices::RuleSet}
+	'Rules' name=FQN
+	'{'
+		('description:' description=EString)?
+		(vpRules+=Rule (vpRules+=Rule)*)?	
+	'}';
+
+Service returns vpservices::Service:
+	{vpservices::Service}
+	'Service' name=FQN
+		//('id:' id = EString)?
+		//('vpid:' vpid = EString)?
+		('description:' description=EString ',')?
+		('orchestrates' relatedRules+=[vpservices::Rule | FQN] ( ',' relatedRules+=[vpservices::Rule | FQN])*)?	
+	;
+
+Rule returns vpservices::Rule:
+	{vpservices::Rule}
+	'Rule' name=FQN
+		//('id:' id = EString)?
+		//('vpid:' vpid = EString)?
+		('description:' description=EString ',')?
+		('type' type=Rules_Types)
+		(',' 'class' class= EString)?
+	;
+
+PropertySet returns vpdesc::Aspect:
+	{vpservices::PropertySet}
+	'Properties' name=FQN
+	'{'
+		(vpProperties+=Property)*
+	'}'
+;
+
+Property returns vpservices::Property:
+	{vpservices::Property}
+	'Property' name=EString 
+		('type' Type=PropertyType)?
+		('value' value=EString)?
+;
+
+enum Rules_Types returns vpservices::Rules_Types:
+	  Java='Java' | EMFvalidation='EMFvalidation';
+	
+enum PropertyType returns vpservices::PropertyType:
+	Integer='Integer' | String='String' | Boolean='Boolean' | Float='Float'
+;

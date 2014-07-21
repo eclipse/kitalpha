@@ -1,0 +1,18 @@
+// Association cardinality
+
+if (abstractAssociation.getCardinality() == Cardinalities.NOTHING_OR_MANY){
+	associationLowerBound = 0;
+	associationUpperBound = -1;
+}else
+if (abstractAssociation.getCardinality() == Cardinalities.NOTHING_OR_ONE){
+	associationLowerBound = 0;
+	associationUpperBound = 1;
+}else
+if (abstractAssociation.getCardinality() == Cardinalities.ONE_OR_MANY){
+	associationLowerBound = 1;
+	associationUpperBound = -1;
+}else
+if (abstractAssociation.getCardinality() == Cardinalities.ONLY_ONE){
+	associationLowerBound = 1;
+	associationUpperBound = 1;
+}

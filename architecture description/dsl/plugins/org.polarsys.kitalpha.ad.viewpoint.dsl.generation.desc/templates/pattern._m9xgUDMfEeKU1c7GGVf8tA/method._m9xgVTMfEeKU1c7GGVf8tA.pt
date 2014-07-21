@@ -1,0 +1,27 @@
+if (editProject != null && editProject.exists())
+{
+	WorkspaceModifyOperation wo = new WorkspaceModifyOperation() {
+		@Override
+		protected void execute(IProgressMonitor monitor)
+						throws CoreException, InvocationTargetException,
+						InterruptedException {
+	
+			IFolder vpIconFolder = vpdslProject.getFolder("icons");
+	 
+			IFile vpIconFile = vpIconFolder.getFile(iconName);
+					
+			if (vpIconFile.exists()){
+				IFile editIconFile = editProject.getFile(editIconFolder + "/" + editIconName + ".gif");
+	
+				if (editIconFile.exists())
+					editIconFile.setContents(vpIconFile.getContents(), IFile.REPLACE, null);
+			}
+			else
+			{
+				ViewpointDslLogger.doLogWarning("Unable to find the icon : " + iconName);
+			}
+		}
+	};
+	
+	wo.run(null);
+}

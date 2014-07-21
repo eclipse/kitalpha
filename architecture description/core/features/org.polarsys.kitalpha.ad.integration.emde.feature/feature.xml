@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.polarsys.kitalpha.ad.integration.emde.feature"
+      label="Kitalpha AD eMDE Integration Feature"
+      version="0.5.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.polarsys.kitalpha.emde.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.feature" version="0.5.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.integration.emde"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         name="UI, UIContainer and Field names not empty and valid Constraints contributions"
+         point="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.coreConstraintContribution">
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.ValidAndNotEmptyVPUIName"
+            constraint="vpNamedElement.NameNotValid"
+            name="Valid UI Name">
+      </contribution>
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.ValidAndNotEmptyVPUIName"
+            constraint="vpNamedElement.NameNotEmpty"
+            name="Not Empty UI Name">
+      </contribution>
+   </extension>
+   <extension
+         name="UI, UIContainer and Field unique names Constraints contributions"
+         point="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.coreConstraintContribution">
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.UniqueUIName"
+            constraint="vpElement.UniqueValue"
+            name="Unique UI Name">
+      </contribution>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.additionalConstraint">
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.UIFieldTypeMappingFreeValidator"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Validation of the compatibily between the UIField type (text, checkbox, ...) and the EMF type of Attribute or association mapped with">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.UniqueUIContainerNameInSection"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Unique UIContainer name in a section">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.UniqueUIFieldNameInSection"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Unique UIField name in a section">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.UIDataSourceAndMappingConsistency"
+            constraint="vpElement.FreeErrorConstraint"
+            name="UIDataSource And Field Mapping Consistency check">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints.NoUseOfCollectionAttributKind"
+            constraint="vpElement.FreeErrorConstraint"
+            name="No Use of Attribute with cardinalities not equals to 0..1 or 1..1">
+      </addition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.UIValidationStartup">
+      </startup>
+   </extension>
+
+</plugin>

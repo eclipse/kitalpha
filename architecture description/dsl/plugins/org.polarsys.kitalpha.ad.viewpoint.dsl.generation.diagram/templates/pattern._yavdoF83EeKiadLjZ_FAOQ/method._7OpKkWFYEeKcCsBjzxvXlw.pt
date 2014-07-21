@@ -1,0 +1,106 @@
+		ContainerMapping cm = (ContainerMapping) dContainerMapping;
+
+		for (ContainerDescription iContainerDescription : parameter.getStyle()) {
+			Condition condition = iContainerDescription.getCondition();
+			boolean conditionalStyle = false;
+			ConditionalContainerStyleDescription ccStyleDesc = null;
+			
+			if (condition != null) {
+				conditionalStyle = true;
+				ForeignExpressionElement fEE = condition.getExpression();
+				String acceleoExpression = "";
+				if (fEE instanceof JavaElement) 
+				{
+				// 
+					String javaMethodName = ((JavaElement) fEE).getMethod();
+					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
+					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
+				}
+				if (fEE instanceof DomainElement) 
+				{
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName(), ExpressionInterpreter.Feature);
+				}
+
+				ccStyleDesc = DescriptionFactory.eINSTANCE.createConditionalContainerStyleDescription();
+				ccStyleDesc.setPredicateExpression(acceleoExpression);
+
+				cm.getConditionnalStyles().add(ccStyleDesc);
+			}
+
+			AbstractContainerStyle vpStyle = iContainerDescription.getStyle();
+			
+			ContainerStyleDescription cStyleDesc = null;
+			
+			if (vpStyle != null) {
+				/************************ Case of Flat Style **************************/
+				if (vpStyle instanceof FlatStyle) {
+					FlatStyle vpFlatStyle = (FlatStyle) vpStyle;
+					// Creation of Doremi FlatStyle for Container Mapping 
+					cStyleDesc = StyleFactory.eINSTANCE.createFlatContainerStyleDescription();
+					FlatContainerStyleDescription doremiFlatStyle = (FlatContainerStyleDescription)cStyleDesc;
+					doremiFlatStyle.setBackgroundStyle(vpFlatStyle.getBackgroundStyle());
+						
+					doremiFlatStyle.setBackgroundColor(GenerationUtil.getSystemColor(vpFlatStyle.getBackgroundColor()));
+					doremiFlatStyle.setBorderColor(GenerationUtil.getSystemColor(vpFlatStyle.getBorderColor()));
+					doremiFlatStyle.setForegroundColor(GenerationUtil.getSystemColor(vpFlatStyle.getForgroundColor()));
+				}
+
+				/******************** Case of Workspace Image Style **********************/
+				if (vpStyle instanceof ImageStyle) {
+					ImageStyle vpImageStyle = (ImageStyle) vpStyle;
+					// Creation of Doremi WorkspaceImageStyle for Container Mapping
+					cStyleDesc =  StyleFactory.eINSTANCE.createWorkspaceImageDescription();
+					WorkspaceImageDescription doremiImageStyle =  (WorkspaceImageDescription)cStyleDesc;
+					
+					doremiImageStyle.setBorderColor(GenerationUtil.getSystemColor(vpImageStyle.getBorderColor()));	
+					
+					if (vpImageStyle.getImagePath() != null && vpImageStyle.getImagePath().trim().length() > 0) 
+					{
+						String icon_path = IconPathHelper.computeDslIconPath(vpImageStyle.getImagePath(), parameter);
+						if (icon_path != null && icon_path.trim().length() > 0) 
+						{
+							doremiImageStyle.setWorkspacePath(icon_path);
+							IconPathHelper.copyIconFile(vpImageStyle.getImagePath(), parameter);
+						}
+					}
+					//doremiImageStyle.setWorkspacePath(vpImageStyle.getImagePath());
+				}
+				
+				/********************** Setting Label properties ************************/
+				Label label = iContainerDescription.getNode_Label();
+				String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
+				
+				if (label != null) 
+				{
+					String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
+					((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
+					
+					if (label.getValue() != null)
+						labelExpression = label.getValue().getValue();
+				
+					cStyleDesc.setLabelExpression(labelExpression);
+					cStyleDesc.setLabelSize(label.getSize());
+					cStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));	
+					
+					if (label.isBold() && label.isItalic())
+					{
+						cStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
+					}
+					else
+					{
+						if (label.isBold())
+							cStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+						
+						if (label.isItalic())
+							cStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
+					}
+				}
+				
+				// Add the created container style to it parent
+				if (conditionalStyle)
+					ccStyleDesc.setStyle(cStyleDesc);
+				else
+					cm.setStyle(cStyleDesc);
+			}
+		}

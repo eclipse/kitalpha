@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider.VpdiagramItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider.VpdiagramItemProviderAdapterFactory$VpdescChildCreationExtender"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.provider.ConfigurationItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.provider.ConfigurationItemProviderAdapterFactory$VpconfChildCreationExtender"/>
+   </extension>
+
+</plugin>

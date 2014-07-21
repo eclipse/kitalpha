@@ -1,0 +1,16 @@
+		if (getServiceSet() != null) {
+			for (Service service : getServiceSet().getNewServices()) {
+				if (id.equals(service.getId()))
+					return service;
+			}
+			for (Service service : getServiceSet().getHiddenServices()) {
+				if (id.equals(service.getId()))
+					return null;
+			}
+		}
+		for (Viewpoint vp : getParents()) {
+			Service service = vp.getService(id);
+			if (service != null)
+				return service;
+		}
+		return null;

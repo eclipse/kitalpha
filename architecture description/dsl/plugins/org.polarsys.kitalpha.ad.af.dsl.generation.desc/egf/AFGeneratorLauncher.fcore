@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_fVL0kOoJEeKQgpgMDnmvmA"
+    name="AFGeneratorLauncher">
+  <contractContainer xmi:id="_knvTUOoJEeKQgpgMDnmvmA">
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_nMJlgIqWEeOuG7zgbF3xzA"
+        name="package.af" invocationContracts="#_n-EKoIqWEeOuG7zgbF3xzA">
+      <type xmi:type="types:TypeBoolean" xmi:id="_p9wxgIqWEeOuG7zgbF3xzA"/>
+    </contracts>
+  </contractContainer>
+  <viewpointContainer xmi:id="_gOZ7kOoJEeKQgpgMDnmvmA">
+    <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_gjRYUOoJEeKQgpgMDnmvmA">
+      <domains xmi:type="domain:EMFDomain" xmi:id="_gyxM4OoJEeKQgpgMDnmvmA" name="model"
+          helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"/>
+    </viewpoints>
+  </viewpointContainer>
+  <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_hVL9cOoJEeKQgpgMDnmvmA">
+    <invocations xmi:id="_ihoicOoJEeKQgpgMDnmvmA" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.af.dsl.generation.desc/egf/AFGenerator.fcore#_eC6K0On9EeKQgpgMDnmvmA">
+      <invocationContractContainer xmi:id="_ihoiceoJEeKQgpgMDnmvmA">
+        <invocationContracts xmi:id="_ihoicuoJEeKQgpgMDnmvmA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.af.dsl.generation.desc/egf/AFGenerator.fcore#_lUQ4kOn9EeKQgpgMDnmvmA">
+          <type xmi:type="domain:TypeDomain" xmi:id="_sLkRIOoJEeKQgpgMDnmvmA" domain="#_gyxM4OoJEeKQgpgMDnmvmA"/>
+        </invocationContracts>
+        <invocationContracts xmi:id="_n-EKoIqWEeOuG7zgbF3xzA" factoryComponentContract="#_nMJlgIqWEeOuG7zgbF3xzA"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.af.dsl.generation.desc/egf/AFGenerator.fcore#_kGHBoIqWEeOuG7zgbF3xzA"/>
+      </invocationContractContainer>
+    </invocations>
+  </orchestration>
+</fcore:FactoryComponent>

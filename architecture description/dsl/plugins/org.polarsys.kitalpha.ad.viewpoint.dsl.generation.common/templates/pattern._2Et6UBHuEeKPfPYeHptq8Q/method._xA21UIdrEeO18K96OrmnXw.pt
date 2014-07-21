@@ -1,0 +1,8 @@
+<%Calendar cal = Calendar.getInstance();
+SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' hh:mm:ss z");
+String genTime = sdf.format(cal.getTime());
+%>
+// Generated on <%=genTime%> by Viewpoint DSL Generator V 0.1
+
+<%if (copyright != null && copyright.trim().length() > 0){%><%=copyright%><%}%>
+

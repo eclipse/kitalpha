@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simplecomponent:ComponentModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:simplecomponent="http://www.polarsys.org/kitalpha/emde/example/simplecomponent"
+    xmi:id="_XLOgUah2EeOkx885OL-bBg" name="Computer" description="Description of computer">
+  <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_eGPKoKh2EeOkx885OL-bBg"
+      name="MB" description="Motherboard device">
+    <abstractComponent xmi:type="simplecomponent:SoftwareComponent" xmi:id="_kLTrcKh2EeOkx885OL-bBg"
+        name="MBDriver" description="Motherboard driver"/>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_HIWRQKnkEeOuYqsng36dpw"
+        name="MS1" description="Memory slot 1"/>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_KHrwMKnkEeOuYqsng36dpw"
+        name="MS2" description="Memory slot 2"/>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_Q4G7IKnkEeOuYqsng36dpw"
+        name="CPUS" description="CPU Slot"/>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_VSCIwKnkEeOuYqsng36dpw"
+        name="GPUS" description="GPU Slot"/>
+  </abstractComponent>
+  <abstractComponent xmi:type="simplecomponent:SoftwareComponent" xmi:id="_J-YlIakyEeO-Hb-4jiY0fg"
+      name="Linux" description="Operating System"/>
+  <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_NgCzIKnkEeOuYqsng36dpw"
+      name="CPU" description="Processor">
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_NgCzIankEeOuYqsng36dpw"
+        name="ALU" description="Arithmetic logical unit">
+      <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_NgCzIqnkEeOuYqsng36dpw"
+          name="FloatUnit" description="Float computation Unit"/>
+    </abstractComponent>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_NgCzI6nkEeOuYqsng36dpw"
+        name="L3" description="Memory cach Level 3"/>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_NgCzJKnkEeOuYqsng36dpw"
+        name="L2" description="Memory cach Level 2"/>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_NgCzJankEeOuYqsng36dpw"
+        name="L1" description="Memory cach Level 1"/>
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_NgCzJqnkEeOuYqsng36dpw"
+        name="Registers" description="Set of registers"/>
+  </abstractComponent>
+  <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_d05hsKnkEeOuYqsng36dpw"
+      name="GCard" description="Graphic Card">
+    <abstractComponent xmi:type="simplecomponent:HardwareComponent" xmi:id="_uipRYKnkEeOuYqsng36dpw"
+        name="VR" description="Vectorial Registers"/>
+  </abstractComponent>
+  <abstractComponent xmi:type="simplecomponent:SoftwareComponent" xmi:id="_iCT9UKnkEeOuYqsng36dpw"
+      name="GCDriver" description="Graphic Card Driver"/>
+</simplecomponent:ComponentModel>

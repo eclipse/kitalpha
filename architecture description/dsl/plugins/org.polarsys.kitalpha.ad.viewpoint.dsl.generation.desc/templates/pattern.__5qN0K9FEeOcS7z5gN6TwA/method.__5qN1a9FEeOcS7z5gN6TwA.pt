@@ -1,0 +1,9 @@
+EPackage vpsPackage = ECoreResourceManager.INSTANCE.getEPackage();
+
+for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) 
+{ 
+	if (iEClassifier.getName().equals(eClassName))
+	{
+		containingEClass = (EClass) iEClassifier; 
+	}
+}

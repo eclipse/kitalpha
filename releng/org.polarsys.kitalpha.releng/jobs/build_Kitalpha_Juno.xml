@@ -1,0 +1,7 @@
+<project name="Kitalpha_Juno">
+
+	<echo message="Running Job Kitalpha_Juno in Kitalpha_Juno/releng"/>
+	<ant dir="Kitalpha_Juno/releng"/>
+
+
+</project>

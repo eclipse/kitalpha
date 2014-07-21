@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.transposer.transformation
+Bundle-Version: 0.5.0.qualifier
+Bundle-Vendor: %providerName
+Require-Bundle: org.polarsys.kitalpha.transposer.core;visibility:=reexport
+Eclipse-LazyStart: false
+Export-Package: org.polarsys.kitalpha.transposer.transformation.context,
+ org.polarsys.kitalpha.transposer.transformation.rule,
+ org.polarsys.kitalpha.transposer.transformation.trace
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Localization: plugin

@@ -1,0 +1,17 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
+//import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.exception.EcoreNotAvailableException;
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

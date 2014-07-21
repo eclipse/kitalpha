@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-Version: 0.5.0.qualifier
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.example.simplecomponent.safety.viewpoint;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.ui,
+ org.polarsys.kitalpha.emde.example.simplecomponent.safety,
+ org.polarsys.kitalpha.emde.example.simplecomponent.safety.model,
+ org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.edit,
+ org.polarsys.kitalpha.ad.example.simplecomponent.safety.design
+

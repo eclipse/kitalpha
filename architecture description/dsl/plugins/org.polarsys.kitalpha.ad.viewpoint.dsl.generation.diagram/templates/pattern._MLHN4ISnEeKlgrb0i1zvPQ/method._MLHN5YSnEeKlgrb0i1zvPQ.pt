@@ -1,0 +1,2 @@
+
+MappingImportManager.getMappingImportAgentFor(imported_m).registerSpecifiedImport(original_m, imported_m);

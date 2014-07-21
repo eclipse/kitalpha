@@ -1,0 +1,11 @@
+String s_package_name = (String) ctx.getValue("design.project.name") + ".service";
+String short_name = CoreModelHelper.getViewpointShortName(diagramSet);
+String s_class_name = StringUtils.transformeFirstToUperCase(short_name)+"OpenJavaService";
+String s_service_name = s_package_name + "." + s_class_name;
+
+// This allows to create an EMPTY java service for the generated Viewpoint.
+JavaServiceData java_service_data = GenerationUtil.getJavaServiceData(s_service_name);
+java_service_data.setContext(diagramSet);
+
+JavaMethodData javaMethodData = new JavaMethodData(s_class_name, JavaMethodReturnType.ConstructorType);
+java_service_data.getMethods().add(javaMethodData);

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="org.polarsys.kitalpha.emde.extension.model.manager" name="Model Extension Manager" schema="schema/model.extension.manager.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.emde.extension.model.manager.delegate" name="Model Extension Manager Delegate" schema="schema/model.extension.manager.delegate.exsd"/>
+
+   <extension
+         point="org.eclipse.egf.core.fcore">
+      <fcore
+            id="egf/emde.fcore">
+      </fcore>
+   </extension>
+
+</plugin>

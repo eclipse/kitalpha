@@ -1,0 +1,8 @@
+<%java_service_data = GenerationUtil.getJavaServiceDataFor(parameter);%>
+<% if (java_service_data != null)%>
+<%{%>
+<%	projectname = (String) ctx.getValue("design.project.name");%>
+<%	packagename = java_service_data.getPackageName();%>
+<%	classname = java_service_data.getClassName();%>
+<%	savetime = JavaClassReporter.whenLoopFinished;%>
+<%}%>

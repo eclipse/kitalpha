@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emde"
+    nsURI="http://www.polarsys.org/kitalpha/emde/1.0.0" nsPrefix="emde">
+  <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/extension">
+    <details key="useUUIDs" value="true"/>
+    <details key="useIDAttributes" value="false"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensibleElement" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedExtensions" upperBound="-1"
+        eType="#//ElementExtension" containment="true">
+      <eAnnotations source="http://com.thalesgroup.mde/simplifiedM2/Navigable"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementExtension" abstract="true" eSuperTypes="#//ExtensibleElement"/>
+</ecore:EPackage>

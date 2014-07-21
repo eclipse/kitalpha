@@ -1,0 +1,8 @@
+URI uri = parameter.eResource().getURI();
+		
+if (uri == null)
+	return;
+	
+String vpdslProjectName = uri.segment(1);  
+
+vpdslProject = ResourcesPlugin.getWorkspace().getRoot().getProject(vpdslProjectName);

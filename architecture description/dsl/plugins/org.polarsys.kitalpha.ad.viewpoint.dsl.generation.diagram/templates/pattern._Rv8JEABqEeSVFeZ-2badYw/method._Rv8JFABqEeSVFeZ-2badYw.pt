@@ -1,0 +1,4 @@
+return DiagramGenerationConfigurationHelper.generateVSM(parameter)
+	   && parameter.getChildren() != null 
+	   && parameter.getChildren().getReused_boderednodes() != null 
+	   && ! parameter.getChildren().getReused_boderednodes().isEmpty();

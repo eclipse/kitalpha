@@ -1,0 +1,87 @@
+for (Parameter iParameter : operation.getParameters()) 
+{
+	EParameter parameter = EcoreFactory.eINSTANCE.createEParameter();
+	parameter.setName(iParameter.getName());
+			
+	AbstractType pAbstractType = iParameter.getParameter_type();
+	if (pAbstractType != null)
+	{
+		/**
+		 * Parameter Type
+		 */
+		// The EType to compute
+		EClassifier parameterType = null;
+		// Case of local type, then look for the EClass generated from the Local Type (vpspec.Class) 
+		if (pAbstractType instanceof LocalType) {
+			final LocalType localType = (LocalType) pAbstractType;
+			final ViewpointClassifier viewpointClassifier = localType.getType();
+
+			/* Get the corresponding generated Target ECLass from the generated EPackage */
+			for (EClassifier iEClassifier : vpsPackage.getEClassifiers())
+			{
+				if (iEClassifier.getName().equals(viewpointClassifier.getName()))
+					parameterType = iEClassifier;
+			}
+		}
+		// Case of external type, then look for the selected EClassifier
+		if (pAbstractType instanceof ExternalType) 
+		{
+			ExternalType extType = (ExternalType) pAbstractType;
+			parameterType = extType.getType();
+		}
+		// set the generated EOperation Etype
+		if (parameterType != null)
+			parameter.setEType(parameterType);
+
+		/**
+		 * Parameter Cardinalities
+		 */
+		Cardinalities cardinalities = pAbstractType.getCardinality();
+		int lower = 0;
+		int upper = -1;
+		switch (cardinalities) 
+		{
+			case NOTHING_OR_MANY:
+			break;
+			case NOTHING_OR_ONE:
+				upper = 1;
+			break;
+			case ONE_OR_MANY:
+				lower = 1;
+			break;
+			case ONLY_ONE:
+				lower = 1;
+				upper = 1;
+				break;
+			}
+			parameter.setLowerBound(lower);
+			parameter.setUpperBound(upper);
+		}
+			
+		eOperation.getEParameters().add(parameter);
+		
+		/******************************************/
+		if (iParameter.getOwned_annotations().size() > 0)
+		{
+			for (Annotation iAnnotation : iParameter.getOwned_annotations()) 
+			{
+				String source = iAnnotation.getSource();
+				EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+				eAnnotation.setSource(source);
+				if (iAnnotation.getOwned_details().size() > 0)
+				{
+					for (Detail iDetail : iAnnotation.getOwned_details()) 
+					{
+						EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE.create(
+																	EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+						entry.setKey(iDetail.getKey());
+						if (iDetail.getValue() != null)
+							entry.setValue(iDetail.getValue());
+						eAnnotation.getDetails().add(entry);
+					}
+				}
+				parameter.getEAnnotations().add(eAnnotation);
+			}
+		}
+		/******************************************/
+}

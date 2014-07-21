@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+ 	<extension point="org.eclipse.egf.portfolio.genchain.elements">
+    	<helper id="emde.emf.generation" class="org.polarsys.kitalpha.emde.genchain.EmdeGenerationExtension"/>
+    </extension>
+
+   <extension
+         point="org.eclipse.egf.core.fcore">
+      <fcore
+            id="egf/EmdeExtension.fcore">
+      </fcore>
+   </extension>
+
+
+</plugin>

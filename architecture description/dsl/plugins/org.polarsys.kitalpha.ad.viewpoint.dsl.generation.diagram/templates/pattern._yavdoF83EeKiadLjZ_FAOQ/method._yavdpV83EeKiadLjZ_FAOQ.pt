@@ -1,0 +1,16 @@
+EObject vpParent = parameter.eContainer().eContainer();
+EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
+
+ContainerMapping containerMapping = (ContainerMapping) dContainerMapping;
+
+if (currentParent instanceof Layer){
+	// Add the generated container Mapping (dContainer) in the Layer
+	Layer owner = (Layer) currentParent;
+	owner.getContainerMappings().add(containerMapping);
+}
+
+if (currentParent instanceof ContainerMapping){
+	// Add the generated container Mapping (dContainer) in the Container Mapping
+	ContainerMapping owner = (ContainerMapping) currentParent;
+	owner.getSubContainerMappings().add(containerMapping);
+}

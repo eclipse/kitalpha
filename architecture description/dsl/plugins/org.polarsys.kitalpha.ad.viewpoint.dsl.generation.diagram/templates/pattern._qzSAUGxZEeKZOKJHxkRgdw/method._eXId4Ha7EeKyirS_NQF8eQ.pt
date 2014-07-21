@@ -1,0 +1,23 @@
+	AbstractAssociation reference = (AbstractAssociation)t_association;
+	if (reference != null)
+	{
+		ChangeContext gotoElement = ToolFactory.eINSTANCE.createChangeContext();
+		String pElement = VSMVariable.element.getExpressionVariable() ;
+		gotoElement.setBrowseExpression(pElement);
+		
+		initial_operation.setFirstModelOperations(gotoElement);
+		
+		String pElementView = VSMVariable.elementView.getInnerVariable()+".targetNode.target" ;
+		String ref_name = reference.getName();
+		Unset unset = ToolFactory.eINSTANCE.createUnset();
+		unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementView));
+		unset.setFeatureName(ref_name);
+		
+		gotoElement.getSubModelOperations().add(unset);
+	}
+	else
+	{
+		generateJavaService = true;
+	}
+		
+	

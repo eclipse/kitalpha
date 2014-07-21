@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module genEattribute('http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[template public gen(anEAttribute : EAttribute)]
+<h4>Attribute [name/]</h4>
+[/template]

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:javapattern="http://www.eclipse.org/egf/1.0.0/javapattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmi:id="_g06MccGiEd-9MM7ZmqaWEg"
+    name="eMDE Genchain Extension">
+  <viewpointContainer xmi:id="_hXLzEMGiEd-9MM7ZmqaWEg">
+    <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_hwg5EMGiEd-9MM7ZmqaWEg">
+      <libraries xmi:id="_iZMpsMGiEd-9MM7ZmqaWEg" name="emde.genchain.extension">
+        <elements xmi:id="_tgjjMMGjEd-9MM7ZmqaWEg" name="EmdeGenerationPattern" headerMethod="#_tgjjMcGjEd-9MM7ZmqaWEg"
+            conditionMethod="#_tgjjM8GjEd-9MM7ZmqaWEg" initMethod="#_tgjjMsGjEd-9MM7ZmqaWEg"
+            footerMethod="#_tgjjNcGjEd-9MM7ZmqaWEg">
+          <nature xmi:type="javapattern:JavaNature" xmi:id="_ft52MMGkEd-9MM7ZmqaWEg"
+              name="Java"/>
+          <methods xmi:id="_tgjjMcGjEd-9MM7ZmqaWEg" name="header" patternFilePath="templates/pattern._tgjjMMGjEd-9MM7ZmqaWEg/method._tgjjMcGjEd-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_tgjjMsGjEd-9MM7ZmqaWEg" name="init" patternFilePath="templates/pattern._tgjjMMGjEd-9MM7ZmqaWEg/method._tgjjMsGjEd-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_tgjjM8GjEd-9MM7ZmqaWEg" name="preCondition" patternFilePath="templates/pattern._tgjjMMGjEd-9MM7ZmqaWEg/method._tgjjM8GjEd-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_tgjjNMGjEd-9MM7ZmqaWEg" name="body" patternFilePath="templates/pattern._tgjjMMGjEd-9MM7ZmqaWEg/method._tgjjNMGjEd-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_tgjjNcGjEd-9MM7ZmqaWEg" name="footer" patternFilePath="templates/pattern._tgjjMMGjEd-9MM7ZmqaWEg/method._tgjjNcGjEd-9MM7ZmqaWEg.pt"/>
+          <parameters xmi:id="_wMEuQMGjEd-9MM7ZmqaWEg" name="parameter" type="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0#//EmdeGeneration"/>
+          <variables xmi:id="_X2bgMMI_Ed-9MM7ZmqaWEg" name="modelActivity" type="java.lang.String"/>
+          <variables xmi:id="_Y_GYcMI_Ed-9MM7ZmqaWEg" name="editActivity" type="java.lang.String"/>
+          <variables xmi:id="_aNvV0MI_Ed-9MM7ZmqaWEg" name="editorActivity" type="java.lang.String"/>
+          <variables xmi:id="_AooZQTYaEeGWF-mrFIsVzA" name="testActivity" type="java.lang.String"/>
+          <variables xmi:id="_BaG5gDYaEeGWF-mrFIsVzA" name="javadocActivity" type="java.lang.String"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_tgjjNsGjEd-9MM7ZmqaWEg"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_29szEMGjEd-9MM7ZmqaWEg"
+              called="#_tgjjNMGjEd-9MM7ZmqaWEg"/>
+        </elements>
+        <elements xmi:id="_WEYlsMI9Ed-9MM7ZmqaWEg" name="EmdeGenmodelPattern" headerMethod="#_WEYlscI9Ed-9MM7ZmqaWEg"
+            conditionMethod="#_WEYls8I9Ed-9MM7ZmqaWEg" initMethod="#_WEYlssI9Ed-9MM7ZmqaWEg"
+            footerMethod="#_WEYltcI9Ed-9MM7ZmqaWEg">
+          <nature xmi:type="javapattern:JavaNature" xmi:id="__Z-N0MI9Ed-9MM7ZmqaWEg"
+              name="Java"/>
+          <methods xmi:id="_WEYlscI9Ed-9MM7ZmqaWEg" name="header" patternFilePath="templates/pattern._WEYlsMI9Ed-9MM7ZmqaWEg/method._WEYlscI9Ed-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_WEYlssI9Ed-9MM7ZmqaWEg" name="init" patternFilePath="templates/pattern._WEYlsMI9Ed-9MM7ZmqaWEg/method._WEYlssI9Ed-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_WEYls8I9Ed-9MM7ZmqaWEg" name="preCondition" patternFilePath="templates/pattern._WEYlsMI9Ed-9MM7ZmqaWEg/method._WEYls8I9Ed-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_WEYltMI9Ed-9MM7ZmqaWEg" name="create" patternFilePath="templates/pattern._WEYlsMI9Ed-9MM7ZmqaWEg/method._WEYltMI9Ed-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_WEYltcI9Ed-9MM7ZmqaWEg" name="footer" patternFilePath="templates/pattern._WEYlsMI9Ed-9MM7ZmqaWEg/method._WEYltcI9Ed-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_j1j2kMI9Ed-9MM7ZmqaWEg" name="save" patternFilePath="templates/pattern._WEYlsMI9Ed-9MM7ZmqaWEg/method._j1j2kMI9Ed-9MM7ZmqaWEg.pt"/>
+          <methods xmi:id="_lTP8kMI9Ed-9MM7ZmqaWEg" name="updateContent" patternFilePath="templates/pattern._WEYlsMI9Ed-9MM7ZmqaWEg/method._lTP8kMI9Ed-9MM7ZmqaWEg.pt"/>
+          <parameters xmi:id="_YjBLUMI9Ed-9MM7ZmqaWEg" name="parameter" type="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0#//EmdeGeneration"/>
+          <variables xmi:id="_mvl-wMI9Ed-9MM7ZmqaWEg" name="importer" type="org.eclipse.emf.importer.ecore.EcoreImporter"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_WEYltsI9Ed-9MM7ZmqaWEg"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_loi3IMI9Ed-9MM7ZmqaWEg"
+              called="#_WEYltMI9Ed-9MM7ZmqaWEg"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_mEZssMI9Ed-9MM7ZmqaWEg"
+              called="#_lTP8kMI9Ed-9MM7ZmqaWEg"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_mhJTEMI9Ed-9MM7ZmqaWEg"
+              called="#_j1j2kMI9Ed-9MM7ZmqaWEg"/>
+        </elements>
+      </libraries>
+    </viewpoints>
+  </viewpointContainer>
+</fcore:FactoryComponent>

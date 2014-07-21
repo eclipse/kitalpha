@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping.extended.1"
+         name="Basic Tranformation Example Extension"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            description="This Mapping extends the Basic UML to Ecore Mapping"
+            extendedMappingExtensionID="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping.basic"
+            mappingName="UML to ECORE Extended Mapping 1"
+            mappingPurpose="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping">
+         <mappingElement
+               domainMetaClass="org.eclipse.uml2.uml.Interface"
+               name="Interface Case"
+               reuseExtendedElementDefaultPossibility="true"
+               reuseExtendedElementPossibilities="true">
+            <defaultMappingPossibility
+                  completeRule="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.extended.rules.interfaces.CompleteInterfaceRule"
+                  enabled="true"
+                  name="extended interface rule">
+            </defaultMappingPossibility>
+         </mappingElement>
+         <mappingElement
+               domainMetaClass="org.eclipse.uml2.uml.Class"
+               name="Class case with one attribute"
+               reuseExtendedElementDefaultPossibility="true"
+               reuseExtendedElementPossibilities="false">
+            <mappingPossibility
+                  completeRule="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.extended.rules.classes.CompleteClassRule"
+                  enabled="true"
+                  name="Class Rule with one attribute">
+            </mappingPossibility>
+         </mappingElement>
+      </mapping>
+   </extension>
+   <extension
+         id="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping.extended.2"
+         name="Abstract Class Case Extension"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            description="This Mapping extends the first extended Mapping"
+            extendedMappingExtensionID="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping.extended.1"
+            mappingName="UML to ECORE Extended Mapping 2"
+            mappingPurpose="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.mapping">
+         <mappingElement
+               domainMetaClass="org.eclipse.uml2.uml.Class"
+               name="Abstract Class case"
+               reuseExtendedElementDefaultPossibility="true"
+               reuseExtendedElementPossibilities="false">
+            <mappingPossibility
+                  completeRule="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.extended.rules.classes.CompleteAbstractClassRule"
+                  enabled="true"
+                  name="Class Rule for abstract class">
+            </mappingPossibility>
+         </mappingElement>
+      </mapping>
+   </extension>
+
+</plugin>

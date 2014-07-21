@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.transposer.analyzer.fcore;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.egf.pattern;visibility:=reexport,
+ org.eclipse.egf.emf.pattern;visibility:=reexport,
+ org.eclipse.egf.pattern.ftask;visibility:=reexport,
+ org.polarsys.kitalpha.emde.egf
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.polarsys.kitalpha.transposer.analyser.extension

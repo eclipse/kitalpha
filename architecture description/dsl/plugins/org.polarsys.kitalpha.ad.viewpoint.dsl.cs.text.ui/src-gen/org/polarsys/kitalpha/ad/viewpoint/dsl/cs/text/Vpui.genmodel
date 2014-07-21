@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen"
+    editDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.edit/src" editorDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor/src"
+    modelPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui" forceOverwrite="true"
+    modelName="Vpui" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.edit"
+    editorPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor" runtimeVersion="2.6"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../../../../../../../../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc">
+  <genPackages prefix="Ui" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text"
+      disposableProviderFactory="true" ecorePackage="Vpui.ecore#/">
+    <genClasses ecoreClass="Vpui.ecore#//UserInterface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Vpui.ecore#//UserInterface/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Vpui.ecore#//UserInterface/uiDescription"/>
+    </genClasses>
+    <genClasses ecoreClass="Vpui.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpui.ecore#//Import/importedNamespace"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

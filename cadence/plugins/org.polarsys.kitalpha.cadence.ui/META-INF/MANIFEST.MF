@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.cadence.ui
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.cadence.ui.Activator
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.debug.ui,
+ org.polarsys.kitalpha.cadence.core;visibility:=reexport
+Eclipse-LazyStart: true
+Export-Package: org.polarsys.kitalpha.cadence.ui.api,
+ org.polarsys.kitalpha.cadence.ui.api.dialog,
+ org.polarsys.kitalpha.cadence.ui.api.launch
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Localization: plugin

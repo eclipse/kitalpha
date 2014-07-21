@@ -1,0 +1,24 @@
+	AbstractAssociation reference = (AbstractAssociation)t_association;
+	if (reference != null)
+	{
+		String ref_name = reference.getName();
+		
+		ChangeContext gotoElement = ToolFactory.eINSTANCE.createChangeContext();
+		initial_operation.setFirstModelOperations(gotoElement);
+		String pElement = VSMVariable.element.getExpressionVariable();
+		gotoElement.setBrowseExpression(pElement);
+		
+		SetValue t_setValue = ToolFactory.eINSTANCE.createSetValue();
+		t_setValue.setFeatureName(ref_name);
+		String pTarget = VSMVariable.target.getExpressionVariable();
+		t_setValue.setValueExpression(pTarget);
+		gotoElement.getSubModelOperations().add(t_setValue);		
+		
+		Unset t_unset = ToolFactory.eINSTANCE.createUnset();
+		t_unset.setFeatureName(ref_name);
+		String pSource = VSMVariable.source.getExpressionVariable();
+		t_unset.setElementExpression(pSource);
+		gotoElement.getSubModelOperations().add(t_unset);
+	}
+	else
+		generate_service = true;

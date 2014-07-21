@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.transposer.emf.toolbox;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.transposer.emf.toolbox.ToolboxPlugin
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.polarsys.kitalpha.transposer.core,
+ org.polarsys.kitalpha.transposer.transformation.emf
+Eclipse-LazyStart: true
+Export-Package: org.polarsys.kitalpha.transposer.emf.toolbox.activities,
+ org.polarsys.kitalpha.transposer.emf.toolbox.api,
+ org.polarsys.kitalpha.transposer.emf.toolbox.api.dangling
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Localization: plugin

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.emde.example.simplecomponent.safety.model/src"
+    modelPluginID="org.polarsys.kitalpha.emde.example.simplecomponent.safety.model"
+    modelName="Simple" modelPluginClass="org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SimplePlugin"
+    nonNLSMarkers="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" optimizedHasChildren="true" runtimeVersion="2.6"
+    usedGenPackages="platform:/plugin/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel#//emde ../../org.polarsys.kitalpha.emde.example.simplecomponent.model/model/simplecomponent.genmodel#//simplecomponent">
+  <foreignModel>../../../plugin/org.polarsys.kitalpha.emde.example.simplecomponent.safety/model/simple.safety.ecore</foreignModel>
+  <genPackages prefix="Safety" basePackage="org.polarsys.kitalpha.emde.example.simplecomponent.safety.model"
+      resource="XMI" disposableProviderFactory="true" generateExampleClass="false"
+      multipleEditorPages="false" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="platform:/plugin/org.polarsys.kitalpha.emde.example.simplecomponent.safety/model/simple.safety.ecore#/">
+    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.emde.example.simplecomponent.safety/model/simple.safety.ecore#//SimpleVPSafety">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.emde.example.simplecomponent.safety/model/simple.safety.ecore#//SimpleVPSafety/complexity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.emde.example.simplecomponent.safety/model/simple.safety.ecore#//SimpleVPSafety/cost"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

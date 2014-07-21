@@ -1,0 +1,29 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.emf.ecore.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+import org.eclipse.egf.common.helper.*;
+
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.core.runtime.NullProgressMonitor;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.project.AfProjectManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.viewpoint.PlatformViewpointHelper;
+
+
+public class CLASS { 
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

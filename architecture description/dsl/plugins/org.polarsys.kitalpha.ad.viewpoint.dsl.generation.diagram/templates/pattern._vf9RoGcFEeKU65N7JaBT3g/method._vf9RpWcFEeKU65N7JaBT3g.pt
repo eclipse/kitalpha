@@ -1,0 +1,14 @@
+genDefaultSemanticCandidatesExpression = false;
+
+icm = DescriptionFactory.eINSTANCE.createContainerMappingImport();
+
+mapping = parameter.getImports();
+
+icm.setName(parameter.getName() + "_Imported_CM");
+icm.setLabel(parameter.getName());
+icm.setChildrenPresentation(parameter.getContentLayout());
+icm.setImportedMapping(mapping);
+
+dContainerMapping = icm;
+
+//MappingAutoImportManager.INSTANCE.registerUserMappingImport(mapping, icm);

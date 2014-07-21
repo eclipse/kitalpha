@@ -1,0 +1,42 @@
+// Gather semantic data from the vpspec model
+String className = "";
+String semanticCandidateExpression = "";
+NodeDomainElement domain = parameter.getThe_domain();
+if (domain != null) 
+{
+	// Domain class
+	AbstractClass clazz = domain.getDomain_Class();
+	if (clazz != null) {
+		className = clazz.getFQN();
+	}
+		
+	// Semantic candidate expression
+	AbstractAssociation association = domain.getChlidren_list();
+	if (association != null)
+	{
+		semanticCandidateExpression =  SiriusExpressionHelper.getExpressoin(association.getName(), ExpressionInterpreter.Feature);
+	}
+	else
+	{
+		if (domain.getQuery() != null && domain.getQuery().trim().length() > 0)
+		{
+			semanticCandidateExpression = domain.getQuery();
+		}
+		else
+		{
+			if (genDefaultSemanticCandidatesExpression == null || genDefaultSemanticCandidatesExpression)
+			{
+				semanticCandidateExpression =  SiriusExpressionHelper.getExpressoin("eAllContents", ExpressionInterpreter.Feature);
+			}
+		}
+	}
+}
+
+// Set the Semantic data of the container mapping	
+NodeMapping cn = (NodeMapping) dNodeMapping;
+	
+if (className.trim().length() > 0)
+	cn.setDomainClass(className);
+		
+if (semanticCandidateExpression.trim().length() > 0)
+	cn.setSemanticCandidatesExpression(semanticCandidateExpression);  

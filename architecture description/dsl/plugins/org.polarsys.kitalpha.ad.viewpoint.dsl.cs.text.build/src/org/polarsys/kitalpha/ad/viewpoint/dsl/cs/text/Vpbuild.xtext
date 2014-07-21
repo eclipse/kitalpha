@@ -1,0 +1,110 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpbuild with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" as vpdesc
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" as vpbuild
+ /********************************************************************
+ * 							Build
+ * 
+ ********************************************************************/
+ 
+ /**
+ * 
+ * @author Amine Lajmi
+ *
+ */
+Build returns vpdesc::Aspect:
+	{vpbuild::Build}
+	'Build' name=FQN '{'
+		'target-platform:' target_platform=STRING
+		(mapped_repositories+=Repository)*
+		(hudsonDeployment=HudsonDeployment)?
+	'}';
+
+Repository returns vpbuild::Repository:
+	{vpbuild::Repository}
+	'repository:' protocol=ProtocolType location=STRING
+    ('{'
+		(folders+=SourceFoulder)*
+	'}')?
+	('features:' (features+=Feature)*)
+;
+
+SourceFoulder returns vpbuild::SourceFolder:
+	{vpbuild::SourceFolder}
+	'folder' name=STRING
+;
+
+
+HudsonDeployment returns vpbuild::HudsonDeployment:
+	{vpbuild::HudsonDeployment}
+	'hudson-deployment' '{'
+		('ant:' antName=STRING)?
+		('assigned-node:' assignedNode=STRING)?
+		('build-id:' build_id=STRING)?
+		('enable:' enabled=EBoolean)?
+		('jdk-name:' jdkName=STRING)?
+		('user-deploy-job-name:' userDeployJobName=STRING)?
+		('user-deploy-server-url:' userDeployServerUrl=STRING)?
+		
+		('users' '{'
+			(users+=User)*
+		'}')?
+		
+		('triggers' '{'
+			(triggers+=Trigger)*
+		'}')?
+		
+		(generationLocation=GenerationLocation)?
+		
+	'}'
+;
+
+
+GenerationLocation returns vpbuild::GenerationLocation:
+	{vpbuild::GenerationLocation}
+	'generation-location:' folder=STRING ('url:'url=STRING)?
+;
+
+Trigger returns vpbuild::Trigger:
+	SCM | Cron
+;
+
+SCM returns vpbuild::SCM:
+	{vpbuild::SCM}
+	'SCM' planning=STRING
+;
+
+Cron returns vpbuild::Cron:
+	{vpbuild::Cron}
+	'Cron' planning=STRING
+;
+
+
+User returns vpbuild::User:
+	{vpbuild::User}
+	'login:' login=STRING ('permission:' permission=UserPermission)?
+;
+
+
+enum ProtocolType returns vpbuild::ProtocolType:
+	svn='svn://' | svnssh='svn+ssh://'
+;
+
+enum UserPermission returns vpbuild::UserPermission:
+	WRITE = 'WRITE' | EXECUTE = 'EXECUTE' | READ = 'READ'
+;
+
+Feature returns vpbuild::Feature:
+	{vpbuild::Feature}
+	name=FQN;

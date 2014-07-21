@@ -1,0 +1,127 @@
+String s_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
+String s_class_name = "DropToolService";
+String s_service_name = s_package_name + "." + s_class_name;
+
+DiagramElement mapping = parameter.getTool_For();
+
+EObject d_mapping_container = GenerationUtil.getDoremiElement(mapping.eContainer().eContainer());
+
+if (! (d_mapping_container instanceof DragAndDropTargetDescription))
+{
+	return;
+}
+
+ContainerDropDescription drop = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE.createContainerDropDescription();
+drop.setName("Drop_" + mapping.getName());
+((DragAndDropTargetDescription) d_mapping_container).getDropDescriptions().add(drop);
+drop.getMappings().add((DiagramElementMapping)GenerationUtil.getDoremiElement(mapping));
+
+// Handle reusing nodes
+final ECrossReferenceAdapter eCrossReferenceAdapter = new ECrossReferenceAdapter();
+mapping.eAdapters().add(eCrossReferenceAdapter);
+final Collection<Setting> inverseReferences = eCrossReferenceAdapter.getInverseReferences(mapping);
+for (Setting setting : inverseReferences) 
+{
+	setting.getEStructuralFeature();
+	final EObject doremiElement = GenerationUtil.getDoremiElement(setting.getEObject().eContainer());
+	if (d_mapping_container != doremiElement && doremiElement instanceof DragAndDropTargetDescription) 
+	{
+		((DragAndDropTargetDescription) doremiElement).getDropDescriptions().add(drop);
+	}
+}
+								
+DropContainerVariable _old = ToolFactory.eINSTANCE.createDropContainerVariable();
+DropContainerVariable _new = ToolFactory.eINSTANCE.createDropContainerVariable();
+ElementDropVariable element = ToolFactory.eINSTANCE.createElementDropVariable();
+ContainerViewVariable c_view = ToolFactory.eINSTANCE.createContainerViewVariable();
+InitialContainerDropOperation init = ToolFactory.eINSTANCE.createInitialContainerDropOperation();
+						
+_old.setName("oldSemanticContainer");
+_new.setName("newSemanticContainer");
+element.setName("element");
+c_view.setName("newContainerView");
+						
+drop.setOldContainer(_old);
+drop.setNewContainer(_new);
+drop.setElement(element);
+drop.setNewViewContainer(c_view);
+drop.setInitialOperation(init);
+						
+ChangeContext gotoNewContainer = ToolFactory.eINSTANCE.createChangeContext();
+
+String pNewSemanticContainer = VSMVariable.getGenericExpressionVariable("newSemanticContainer");
+gotoNewContainer.setBrowseExpression(pNewSemanticContainer);
+init.setFirstModelOperations(gotoNewContainer);
+
+if (! (mapping.eContainer() instanceof MappingSet))
+{
+	if (mapping instanceof AbstractNode)	
+	{
+		NodeDomainElement domain = ((AbstractNode)mapping).getThe_domain();
+		if (domain != null)
+		{
+			if (domain.getChlidren_list() != null)
+			{
+				String ref_name = domain.getChlidren_list().getName(); 
+				SetValue setNewContainer = ToolFactory.eINSTANCE.createSetValue();
+				setNewContainer.setFeatureName(ref_name);
+				
+				String pElement = VSMVariable.element.getExpressionVariable();
+				
+				setNewContainer.setValueExpression(pElement);
+						
+				ChangeContext gotoOldContainer = ToolFactory.eINSTANCE.createChangeContext();
+				String pOldSemanticContainer = VSMVariable.getGenericExpressionVariable("oldSemanticContainer");
+				gotoOldContainer.setBrowseExpression(pOldSemanticContainer);
+						
+				Unset unsetOldContainer = ToolFactory.eINSTANCE.createUnset();
+				unsetOldContainer.setFeatureName(ref_name);
+				unsetOldContainer.setElementExpression(pElement);
+				gotoOldContainer.getSubModelOperations().add(unsetOldContainer);
+						
+				gotoNewContainer.getSubModelOperations().add(setNewContainer);
+				gotoNewContainer.getSubModelOperations().add(gotoOldContainer);
+			}
+			else
+			{
+				JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(s_service_name);
+
+				if (javaServiceData != null) 
+				{
+					String mappingParentName = ((DiagramElement)mapping.eContainer().eContainer()).getName();
+					javaServiceData.setContext(parameter);
+					String n_method_name = mappingParentName+ "Drop" + mapping.getName();
+					JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
+					JavaMethodData javaMethodData = new JavaMethodData(n_method_name, n_returnType);
+					javaMethodData.addMethodParameter("oldSemanticContainer", "EObject","the old semantic container");
+					javaMethodData.addMethodParameter("newSemanticContainer", "EObject","the new semantic container");
+					javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject","the semantic container of the mapping");
+					javaMethodData.addMethodParameter("newContainerView","EObject","the view of the new container");
+
+					javaServiceData.addMethod(javaMethodData);
+
+					If d_if = ToolFactory.eINSTANCE.createIf();
+					String mParameters = "("+ 
+											VSMVariable.getGenericInnerVariable("newSemanticContainer") + "," + 
+											VSMVariable.element.getInnerVariable() + "," + 
+											VSMVariable.getGenericInnerVariable("newContainerView") + 
+										  ")";
+											
+					d_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name + mParameters, ExpressionInterpreter.Service));
+					gotoNewContainer.getSubModelOperations().add(d_if);
+				}
+			}
+			dslvpToolElement = parameter;
+			abstractToolDescription = drop;
+		}
+	}
+	else
+	{
+		// TODO: Handle the case of Edge Drop ????
+	}
+}
+
+else
+{
+	// TODO: Handle the case of Edge Drop ????
+}

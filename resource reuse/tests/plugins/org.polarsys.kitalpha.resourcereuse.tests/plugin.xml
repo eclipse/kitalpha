@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.polarsys.kitalpha.resourcereuse.resources">
+      <resource
+            domain="test"
+            id="resource1.id"
+            name="My test resource 1"
+            path="path://test.resourcereuse.resource1"
+            tags="toto, titi">
+      </resource>
+      <resource
+            domain="test"
+            id="resource2.id"
+            name="My test resource 2"
+            path="path://test.resourcereuse.resource2"
+            tags="toto">
+      </resource>
+      <resource
+            domain="test"
+            id="resource3.id"
+            name="My test resource 3"
+            version="V2"
+            path="path://test.resourcereuse.resource3"
+            tags="titi">
+      </resource>
+      <resource
+            domain="re-test"
+            id="resource4.id"
+            name="My test resource 4"
+            version="V1"
+            path="path://test.resourcereuse.resource4"
+            tags="toto, titi">
+      </resource>
+      <resource
+            id="resource44.id"
+            name="My test resource 44"
+            version="V1"
+            path="path://test.resourcereuse.resource44"
+            tags="toto">
+      </resource>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.resourcereuse.concerns">
+      <concern
+            name="concern1"
+            usedResourceId="resource4.id"
+            userResourceId="resource3.id">
+      </concern>
+      <concern
+            name="concern1"
+            usedResourceId="resource44.id"
+            userResourceId="resource3.id">
+      </concern>
+      <concern
+            name="concern2"
+            usedResourceId="resource2.id"
+            userResourceId="resource1.id">
+      </concern>
+      <concern
+            name="concern2"
+            usedResourceId="resource44.id"
+            userResourceId="resource1.id">
+      </concern>
+   </extension>
+
+</plugin>

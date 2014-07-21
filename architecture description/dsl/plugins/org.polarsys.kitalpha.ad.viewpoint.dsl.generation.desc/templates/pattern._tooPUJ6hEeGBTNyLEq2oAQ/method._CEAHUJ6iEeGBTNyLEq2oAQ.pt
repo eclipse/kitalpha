@@ -1,0 +1,22 @@
+EList<AbstractSuperClass> superClasses = parameter.getInheritences();
+
+EList<EClass> superEClasses = new BasicEList<EClass>();
+		
+for (AbstractSuperClass abstractSuperClass : superClasses) 
+{
+	if (abstractSuperClass instanceof ExternalSuperClass)
+		superEClasses.add(((ExternalSuperClass)abstractSuperClass).getSuperClass());
+	
+	if (abstractSuperClass instanceof LocalSuperClass){
+		Class clazz = ((LocalSuperClass) abstractSuperClass).getSuperClass();
+		String className = clazz.getName();
+		EClass eClass = (EClass)ECoreResourceManager.INSTANCE.getEPackage().getEClassifier(className);
+		superEClasses.add(eClass);
+	}
+}
+
+for (EClass eClass : superEClasses) {
+	EClass clazz = PlatformEClassesManager.INSTANCE.getEClassesWithPlatformURI(eClass);
+	curEClass.getESuperTypes().add(clazz);
+} 
+		

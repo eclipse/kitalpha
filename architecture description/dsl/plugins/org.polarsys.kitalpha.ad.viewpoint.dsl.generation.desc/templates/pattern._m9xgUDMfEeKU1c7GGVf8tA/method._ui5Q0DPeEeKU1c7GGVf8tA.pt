@@ -1,0 +1,7 @@
+GenmodelProviderImpl genmodelProvider = ViewpointResourceProviderRegistry.getInstance().getGenmodelProvider();
+
+if (genmodelProvider != null)
+{
+	String editProjectName = genmodelProvider.getEditPluginName();
+	editProject = ResourcesPlugin.getWorkspace().getRoot().getProject(editProjectName);
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.ui.viewpointview.tab">
+      <tab
+            class="org.polarsys.kitalpha.ad.integration.sirius.views.tabs.SiriusTab"
+            id="org.polarsys.kitalpha.ad.integration.sirius.tab"
+            weight="15"
+            designOnly="true">
+      </tab>
+   </extension>
+
+   <extension
+         point="org.polarsys.kitalpha.ad.services.tools.integration">
+      <tool
+            class="org.polarsys.kitalpha.ad.integration.sirius.Activator">
+      </tool>
+   </extension>
+   
+   <extension
+         point="org.eclipse.sirius.refreshExtensionProvider">
+      <refreshExtensionProvider
+            priority="highest"
+            providerClass="org.polarsys.kitalpha.ad.integration.sirius.providers.ExtensionRefreshExtensionProvider">
+      </refreshExtensionProvider>
+   </extension>
+
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.polarsys.kitalpha.ad.integration.sirius.Activator"
+               id="org.polarsys.kitalpha.ad.integration.sirius"
+	       name="AD">
+    </component>
+  </extension>
+
+   
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         
+      <objectContribution
+            adaptable="false"
+            id="org.polarsys.kitalpha.ad.integration.sirius.actions.aird"
+            nameFilter="*.aird"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="org.polarsys.kitalpha.ad.integration.sirius.actions.ViewpointsSelectionAction"
+               enablesFor="1"
+               icon="platform:/plugin/org.eclipse.sirius.ui/icons/full/obj16/Viewpoint.gif"
+               id="org.polarsys.kitalpha.ad.integration.sirius.actions.ViewpointsSelectionAction"
+               label="%viewpoints_selection"
+               menubarPath="additions">
+         </action>
+	   </objectContribution>
+	</extension>
+
+</plugin>

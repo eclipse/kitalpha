@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_eC6K0On9EeKQgpgMDnmvmA" name="AFGenerator">
+    <contractContainer xmi:id="_hq6zUOn9EeKQgpgMDnmvmA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_lUQ4kOn9EeKQgpgMDnmvmA"
+          name="af.description.model" invocationContracts="#_uwcpsun-EeKQgpgMDnmvmA #_lif-guohEeKQgpgMDnmvmA #_NeTdMO4oEeKs5_h2ShE5zw #_Bty3UggOEeSsA4p9O6oiIA">
+        <type xmi:type="domain:TypeDomain" xmi:id="_lzQhsOn9EeKQgpgMDnmvmA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_kGHBoIqWEeOuG7zgbF3xzA"
+          name="package.af">
+        <type xmi:type="types:TypeBoolean" xmi:id="_korjMIqWEeOuG7zgbF3xzA"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_idk_UOn9EeKQgpgMDnmvmA">
+      <invocations xmi:id="_Pr5ZUO4sEeKs5_h2ShE5zw" name="Initialize Event Manager"
+          invokedActivity="#_q07RkO4rEeKs5_h2ShE5zw"/>
+      <invocations xmi:id="_uwcpsOn-EeKQgpgMDnmvmA" name="Load af data" invokedActivity="#_8_ibEOn9EeKQgpgMDnmvmA">
+        <invocationContractContainer xmi:id="_uwcpsen-EeKQgpgMDnmvmA">
+          <invocationContracts xmi:id="_uwcpsun-EeKQgpgMDnmvmA" factoryComponentContract="#_lUQ4kOn9EeKQgpgMDnmvmA"
+              invokedContract="#_Ksvx8On-EeKQgpgMDnmvmA"/>
+          <invocationContracts xmi:id="_uwcps-n-EeKQgpgMDnmvmA" targetInvocationContract="#_PJPLkOojEeKQgpgMDnmvmA"
+              invokedContract="#_K6mnwOn-EeKQgpgMDnmvmA"/>
+          <invocationContracts xmi:id="_uwcptOn-EeKQgpgMDnmvmA" targetInvocationContract="#_STKe0uoAEeKQgpgMDnmvmA #_lif-g-ohEeKQgpgMDnmvmA #_Bty3UwgOEeSsA4p9O6oiIA"
+              invokedContract="#_n8S1UOn-EeKQgpgMDnmvmA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_STKe0OoAEeKQgpgMDnmvmA" name="Create the AF Project" invokedActivity="#_fPjSMOn_EeKQgpgMDnmvmA">
+        <invocationContractContainer xmi:id="_STKe0eoAEeKQgpgMDnmvmA">
+          <invocationContracts xmi:id="_STKe0uoAEeKQgpgMDnmvmA" sourceInvocationContract="#_uwcptOn-EeKQgpgMDnmvmA"
+              invokedContract="#_hmf7cOn_EeKQgpgMDnmvmA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_lif-gOohEeKQgpgMDnmvmA" name="AF model generation" invokedActivity="#_tEc8wOoQEeKQgpgMDnmvmA">
+        <invocationContractContainer xmi:id="_lif-geohEeKQgpgMDnmvmA">
+          <invocationContracts xmi:id="_lif-guohEeKQgpgMDnmvmA" factoryComponentContract="#_lUQ4kOn9EeKQgpgMDnmvmA"
+              invokedContract="#_uRWNsOoQEeKQgpgMDnmvmA"/>
+          <invocationContracts xmi:id="_lif-g-ohEeKQgpgMDnmvmA" sourceInvocationContract="#_uwcptOn-EeKQgpgMDnmvmA"
+              invokedContract="#_umW0YOoQEeKQgpgMDnmvmA"/>
+          <invocationContracts xmi:id="_PJPLkOojEeKQgpgMDnmvmA" sourceInvocationContract="#_uwcps-n-EeKQgpgMDnmvmA"
+              invokedContract="#_KukXEOojEeKQgpgMDnmvmA"/>
+          <invocationContracts xmi:id="_GdyMcOolEeKQgpgMDnmvmA" invokedContract="#_Hkt_UOolEeKQgpgMDnmvmA"/>
+          <invocationContracts xmi:id="_QAtIgO4oEeKs5_h2ShE5zw" targetInvocationContract="#__FLacO72EeKM6tKnSIzyBw"
+              invokedContract="#_SPvL4O4oEeKs5_h2ShE5zw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_uAUo8eotEeKm_LEzgAyWbQ" name="Manage not generated viewpoint"
+          invokedActivity="#__A0kQOonEeKQgpgMDnmvmA">
+        <invocationContractContainer xmi:id="_uAUo8uotEeKm_LEzgAyWbQ">
+          <invocationContracts xmi:id="_NeTdMO4oEeKs5_h2ShE5zw" factoryComponentContract="#_lUQ4kOn9EeKQgpgMDnmvmA"
+              invokedContract="#_nYj0IO72EeKM6tKnSIzyBw"/>
+          <invocationContracts xmi:id="__FLacO72EeKM6tKnSIzyBw" sourceInvocationContract="#_QAtIgO4oEeKs5_h2ShE5zw"
+              invokedContract="#_qcCMMO72EeKM6tKnSIzyBw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Bty3UAgOEeSsA4p9O6oiIA" name="Create AF feature" invokedActivity="#_1zmTAAgJEeSsA4p9O6oiIA">
+        <invocationContractContainer xmi:id="_Bty3UQgOEeSsA4p9O6oiIA">
+          <invocationContracts xmi:id="_Bty3UggOEeSsA4p9O6oiIA" factoryComponentContract="#_lUQ4kOn9EeKQgpgMDnmvmA"
+              invokedContract="#_-hLuMAgJEeSsA4p9O6oiIA"/>
+          <invocationContracts xmi:id="_Bty3UwgOEeSsA4p9O6oiIA" sourceInvocationContract="#_uwcptOn-EeKQgpgMDnmvmA"
+              invokedContract="#_B-6ZUAgKEeSsA4p9O6oiIA"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_fPjSMOn_EeKQgpgMDnmvmA" name="Create.AF.Project">
+    <contractContainer xmi:id="_hYfUoOn_EeKQgpgMDnmvmA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_hmf7cOn_EeKQgpgMDnmvmA"
+          name="af.project.name" invocationContracts="#_rF2x0un_EeKQgpgMDnmvmA #_IuLjwuoPEeKQgpgMDnmvmA">
+        <type xmi:type="types:TypeString" xmi:id="_mOR-4On_EeKQgpgMDnmvmA"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_pZ-e0On_EeKQgpgMDnmvmA">
+      <invocations xmi:id="_rF2x0On_EeKQgpgMDnmvmA" name="Project creation" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_gQZzsAyvEeK3gMLbl4z4NA">
+        <invocationContractContainer xmi:id="_rF2x0en_EeKQgpgMDnmvmA">
+          <invocationContracts xmi:id="_rF2x0un_EeKQgpgMDnmvmA" factoryComponentContract="#_hmf7cOn_EeKQgpgMDnmvmA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_l7-2cAyvEeK3gMLbl4z4NA"/>
+          <invocationContracts xmi:id="_hOCsQOoMEeKQgpgMDnmvmA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_YS8jAAyxEeK3gMLbl4z4NA">
+            <type xmi:type="types:TypeString" xmi:id="_ivMV8OoMEeKQgpgMDnmvmA" value="J2SE-1.5"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_IuLjwOoPEeKQgpgMDnmvmA" name="Models  folder creation"
+          invokedActivity="#_BNhrMOoOEeKQgpgMDnmvmA">
+        <invocationContractContainer xmi:id="_IuLjweoPEeKQgpgMDnmvmA">
+          <invocationContracts xmi:id="_IuLjwuoPEeKQgpgMDnmvmA" factoryComponentContract="#_hmf7cOn_EeKQgpgMDnmvmA"
+              invokedContract="#_X0_nUOoOEeKQgpgMDnmvmA"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_1zmTAAgJEeSsA4p9O6oiIA" name="Manage AF and Viewpoint features">
+    <contractContainer xmi:id="_-PmO8AgJEeSsA4p9O6oiIA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_-hLuMAgJEeSsA4p9O6oiIA"
+          name="af.description.model" mandatory="true" invocationContracts="#_OKKt4ggNEeSsA4p9O6oiIA">
+        <type xmi:type="domain:TypeDomain" xmi:id="_BZNrQAgKEeSsA4p9O6oiIA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_B-6ZUAgKEeSsA4p9O6oiIA"
+          name="af.project.name" invocationContracts="#_OKKt5AgNEeSsA4p9O6oiIA">
+        <type xmi:type="types:TypeString" xmi:id="_GGWv0AgKEeSsA4p9O6oiIA"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_HMGP4AgKEeSsA4p9O6oiIA">
+      <invocations xmi:id="_OKKt4AgNEeSsA4p9O6oiIA" name="Prepare feature creation"
+          invokedActivity="#_XUkvUAgKEeSsA4p9O6oiIA">
+        <invocationContractContainer xmi:id="_OKKt4QgNEeSsA4p9O6oiIA">
+          <invocationContracts xmi:id="_OKKt4ggNEeSsA4p9O6oiIA" factoryComponentContract="#_-hLuMAgJEeSsA4p9O6oiIA"
+              invokedContract="#_krlzwAgKEeSsA4p9O6oiIA"/>
+          <invocationContracts xmi:id="_OKKt4wgNEeSsA4p9O6oiIA" targetInvocationContract="#_Vc6qIggKEeSsA4p9O6oiIA"
+              invokedContract="#_zjFXAAgLEeSsA4p9O6oiIA"/>
+          <invocationContracts xmi:id="_OKKt5AgNEeSsA4p9O6oiIA" factoryComponentContract="#_B-6ZUAgKEeSsA4p9O6oiIA"
+              invokedContract="#_mc1H4AgKEeSsA4p9O6oiIA"/>
+          <invocationContracts xmi:id="_OKKt5QgNEeSsA4p9O6oiIA" targetInvocationContract="#_Vc6qJggKEeSsA4p9O6oiIA"
+              invokedContract="#_Z7d5EAgKEeSsA4p9O6oiIA"/>
+          <invocationContracts xmi:id="_OKKt5ggNEeSsA4p9O6oiIA" targetInvocationContract="#_Vc6qJwgKEeSsA4p9O6oiIA"
+              invokedContract="#_bWXJwAgKEeSsA4p9O6oiIA"/>
+          <invocationContracts xmi:id="_8p2cUAgNEeSsA4p9O6oiIA" targetInvocationContract="#_Vc6qIwgKEeSsA4p9O6oiIA"
+              invokedContract="#_lYE-8AgNEeSsA4p9O6oiIA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Vc6qIAgKEeSsA4p9O6oiIA" name="Create af Feature and include generated af plugin and viewpoint features"
+          invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZAJpNEeO0BorZRiG7mg">
+        <invocationContractContainer xmi:id="_Vc6qIQgKEeSsA4p9O6oiIA">
+          <invocationContracts xmi:id="_Vc6qIggKEeSsA4p9O6oiIA" sourceInvocationContract="#_OKKt4wgNEeSsA4p9O6oiIA"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#/2/@contractContainer/@contracts.0"/>
+          <invocationContracts xmi:id="_Vc6qIwgKEeSsA4p9O6oiIA" sourceInvocationContract="#_8p2cUAgNEeSsA4p9O6oiIA"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#/2/@contractContainer/@contracts.1"/>
+          <invocationContracts xmi:id="_Vc6qJAgKEeSsA4p9O6oiIA" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZBppNEeO0BorZRiG7mg">
+            <type xmi:type="types:TypeString" xmi:id="_eM-qMAgNEeSsA4p9O6oiIA" value="www.polarsys.org"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_Vc6qJggKEeSsA4p9O6oiIA" sourceInvocationContract="#_OKKt5QgNEeSsA4p9O6oiIA"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#/2/@contractContainer/@contracts.4"/>
+          <invocationContracts xmi:id="_Vc6qJwgKEeSsA4p9O6oiIA" sourceInvocationContract="#_OKKt5ggNEeSsA4p9O6oiIA"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#/2/@contractContainer/@contracts.5"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_q07RkO4rEeKs5_h2ShE5zw" name="Init.Event.Listener.Manager"
+      kind="java" implementation="org.polarsys.kitalpha.ad.af.dsl.generation.desc.task.InitEventListenerManagerTask"/>
+  <ftask:Task xmi:id="_8_ibEOn9EeKQgpgMDnmvmA" name="Get.AF.Data" kind="java" implementation="org.polarsys.kitalpha.ad.af.dsl.generation.desc.task.AFDataGetterTask">
+    <contractContainer xmi:id="_KYeyIOn-EeKQgpgMDnmvmA">
+      <contracts xmi:id="_Ksvx8On-EeKQgpgMDnmvmA" name="af.description.model" mandatory="true">
+        <type xmi:type="domain:TypeDomain" xmi:id="_LTC88On-EeKQgpgMDnmvmA"/>
+      </contracts>
+      <contracts xmi:id="_K6mnwOn-EeKQgpgMDnmvmA" name="af.short.name" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_LzYC0On-EeKQgpgMDnmvmA"/>
+      </contracts>
+      <contracts xmi:id="_n8S1UOn-EeKQgpgMDnmvmA" name="af.project.name" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_ofm9wOn-EeKQgpgMDnmvmA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_BNhrMOoOEeKQgpgMDnmvmA" name="Create.Model.Folder" kind="java"
+      implementation="org.polarsys.kitalpha.ad.af.dsl.generation.desc.task.CreateAFModelFolderTask">
+    <contractContainer xmi:id="_XmiUkOoOEeKQgpgMDnmvmA">
+      <contracts xmi:id="_X0_nUOoOEeKQgpgMDnmvmA" name="af.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_a4WDkOoOEeKQgpgMDnmvmA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_tEc8wOoQEeKQgpgMDnmvmA" name="Create.AF.Model" kind="java"
+      implementation="org.polarsys.kitalpha.ad.af.dsl.generation.desc.task.CreateAFModelTask">
+    <contractContainer xmi:id="_tZxFcOoQEeKQgpgMDnmvmA">
+      <contracts xmi:id="_uRWNsOoQEeKQgpgMDnmvmA" name="af.description.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_ILgpoOoREeKQgpgMDnmvmA"/>
+      </contracts>
+      <contracts xmi:id="_umW0YOoQEeKQgpgMDnmvmA" name="af.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_IqXI0OoREeKQgpgMDnmvmA"/>
+      </contracts>
+      <contracts xmi:id="_KukXEOojEeKQgpgMDnmvmA" name="af.short.name">
+        <type xmi:type="types:TypeString" xmi:id="_OT438OojEeKQgpgMDnmvmA"/>
+      </contracts>
+      <contracts xmi:id="_Hkt_UOolEeKQgpgMDnmvmA" name="not.generated.vp" mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_KBUkoOolEeKQgpgMDnmvmA"/>
+      </contracts>
+      <contracts xmi:id="_SPvL4O4oEeKs5_h2ShE5zw" name="af.model.string.uri" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_T2-2gO4oEeKs5_h2ShE5zw"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="__A0kQOonEeKQgpgMDnmvmA" name="Manage.Not.Generated.Viewpoints"
+      kind="java" implementation="org.polarsys.kitalpha.ad.af.dsl.generation.desc.task.ManageMissingViewpointsTask">
+    <contractContainer xmi:id="_dpxqkOooEeKQgpgMDnmvmA">
+      <contracts xmi:id="_nYj0IO72EeKM6tKnSIzyBw" name="af.description.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_nzYH4O72EeKM6tKnSIzyBw"/>
+      </contracts>
+      <contracts xmi:id="_qcCMMO72EeKM6tKnSIzyBw" name="af.model.string.uri">
+        <type xmi:type="types:TypeString" xmi:id="_rYhpoO72EeKM6tKnSIzyBw"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_XUkvUAgKEeSsA4p9O6oiIA" name="Prepare.AF.Feature.Creation"
+      kind="java" implementation="org.polarsys.kitalpha.ad.af.dsl.generation.desc.task.PrepareAFFeatureCreationTask">
+    <contractContainer xmi:id="_ZtAmUAgKEeSsA4p9O6oiIA">
+      <contracts xmi:id="_krlzwAgKEeSsA4p9O6oiIA" name="af.description.model" mandatory="true">
+        <type xmi:type="domain:TypeDomain" xmi:id="_krlzwQgKEeSsA4p9O6oiIA"/>
+      </contracts>
+      <contracts xmi:id="_zjFXAAgLEeSsA4p9O6oiIA" name="af.feature.name" mandatory="true"
+          mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_zjFXAQgLEeSsA4p9O6oiIA"/>
+      </contracts>
+      <contracts xmi:id="_lYE-8AgNEeSsA4p9O6oiIA" description="" name="af.feature.label"
+          mandatory="true" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_lYE-8QgNEeSsA4p9O6oiIA"/>
+      </contracts>
+      <contracts xmi:id="_mc1H4AgKEeSsA4p9O6oiIA" name="af.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_mc1H4QgKEeSsA4p9O6oiIA"/>
+      </contracts>
+      <contracts xmi:id="_Z7d5EAgKEeSsA4p9O6oiIA" name="include.plugin.names.list"
+          mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_a_Q4YAgKEeSsA4p9O6oiIA"/>
+      </contracts>
+      <contracts xmi:id="_bWXJwAgKEeSsA4p9O6oiIA" name="include.feature.names.list"
+          mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_bWXJwQgKEeSsA4p9O6oiIA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

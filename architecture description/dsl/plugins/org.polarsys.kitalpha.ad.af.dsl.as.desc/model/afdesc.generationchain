@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="afdesc" factoryComponentName="org.polarsys.kitalpha.ad.af.dsl.as.desc.fc">
+  <elements xsi:type="generationChain:GenerationChain" name="afdesc">
+    <elements xsi:type="generationChain:EmfGeneration" name="EMF Generation for afdesc" modelPath="/org.polarsys.kitalpha.ad.af.dsl.as.desc/model/afdesc.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.ad.af.dsl.as.desc.model" basePackage="org.polarsys.kitalpha.ad.af.dsl.as.model"/>
+  </elements>
+</generationChain:GenerationChain>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SafetyPackage" genModel="model/simple.safety.genmodel" uri="http://www.polarsys.org/kitalpha/emde/example/simplecomponent/safety"/>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser class="org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.util.SafetyResourceFactoryImpl" type="safety"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,5 @@
+if(this.parameter.getFactoryInterfaceName().equals("RuntimeFactory")){
+return true;
+}else{
+return false;
+}

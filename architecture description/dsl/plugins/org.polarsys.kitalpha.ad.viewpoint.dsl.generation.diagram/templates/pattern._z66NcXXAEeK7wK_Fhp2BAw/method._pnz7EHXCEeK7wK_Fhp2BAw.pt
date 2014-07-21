@@ -1,0 +1,9 @@
+ if (parameter.getName() != null && parameter.getName().trim().length() > 0)
+ 	tool_name = parameter.getName();
+ else
+	tool_name =  "Reconnect_"+associated_mapping.getName();
+
+	if (source_reconnection)
+		tool_name = tool_name + "_Source";
+	else
+		tool_name = tool_name + "_Target";

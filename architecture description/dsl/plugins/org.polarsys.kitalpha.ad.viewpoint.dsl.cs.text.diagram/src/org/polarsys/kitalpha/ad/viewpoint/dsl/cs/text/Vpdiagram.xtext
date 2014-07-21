@@ -1,0 +1,519 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+ /**
+ * 
+ * @author Amine Lajmi
+ *
+ */
+grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" as vpdesc
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" as commondata
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" as expression
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" as vpdiagram
+import "http://www.eclipse.org/sirius/1.1.0" as sirius
+import "http://www.eclipse.org/sirius/diagram/1.1.0" as siriusDiagram
+import "http://www.eclipse.org/sirius/description/1.1.0" as siriusDescription
+import "http://www.eclipse.org/sirius/diagram/description/1.1.0" as siriusDiagramDescription 
+
+generate diagram "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpdiagram/1.0.0"
+
+Diagrams returns Diagrams:
+	{Diagrams}
+	(imports+=Import)*
+	(diagrams=Aspect)
+;
+
+Import:
+	'import' importedNamespace=FQN
+;
+
+Aspect returns vpdesc::Aspect:
+	DiagramSet	
+;
+ /********************************************************************
+ * 							vpdiagram
+ * 
+ ********************************************************************/
+DiagramSet returns vpdesc::Aspect:
+	{vpdiagram::DiagramSet}
+	'Diagrams' name=FQN
+	'{'
+		(diagrams+=DiagramRepresentation)*
+	'}'
+;
+
+DiagramRepresentation returns vpdiagram::DiagramRepresentation:
+	Diagram | DiagramExtension
+;
+	
+DiagramElement returns vpdiagram::DiagramElement:
+	DiagramChildren | BorderedNode
+;
+
+DiagramChildren returns vpdiagram::DiagramChildren:
+	AbstractEdge | Container | Node
+;
+
+AbstractNode returns vpdiagram::AbstractNode:
+	Node | BorderedNode | Container
+;
+
+AbstractEdge returns vpdiagram::DiagramChildren:
+	Edge | EdgeImport
+;
+
+AbstractDescription returns vpdiagram::AbstractDescription:
+	ContainerDescription | NodeDescription
+;
+
+AbstractContainerStyle returns vpdiagram::AbstractContainerStyle:
+	FlatStyle | ImageStyle 
+;
+
+AbstractNodeStyle returns vpdiagram::AbstractNodeStyle:
+	ImageStyle | BasicStyle | HistogramStyle
+;
+
+Diagram returns vpdiagram::DiagramRepresentation:
+	{vpdiagram::Diagram}
+	'Diagram' name=STRING
+	'{'
+		('description:' description=STRING)?
+		(the_domain = DomainContainer)
+		(the_MappingSet = MappingSet)?
+		(the_ActionSet = ActionSet)?
+	'}'
+;
+	
+DiagramExtension returns vpdiagram::DiagramRepresentation:
+	{vpdiagram::DiagramExtension}
+	'DiagramExtension' name=STRING
+	'{'
+		('extended-diagram:' extented_diagram=[siriusDiagramDescription::DiagramDescription| FQN])?
+		(the_MappingSet = MappingSet)?
+		(the_ActionSet = ActionSet)?
+	'}'
+;
+
+MappingSet returns vpdiagram::MappingSet:
+	{vpdiagram::MappingSet}
+	'Mapping'
+	'{'
+		(diagram_Elements+=DiagramChildren)*	
+	'}'
+;
+
+EdgeDescription returns vpdiagram::EdgeDescription:
+	{vpdiagram::EdgeDescription}
+	'Representation' '{'
+		(condition=Condition)?
+		('BeginLabel' '{' begin_Label=Label '}')?
+		('CenterLabel' '{' center_label=Label '}')?
+		('EndLabel' '{' end_label=Label '}')?
+		(style=EdgeStyle)?
+	'}'
+;
+
+Condition returns vpdiagram::Condition:
+	{vpdiagram::Condition}
+	'condition:'(expression= ForeignExpressionElement) 
+;
+
+EdgeStyle returns vpdiagram::EdgeStyle:
+	{vpdiagram::EdgeStyle}
+	'Style' '{'
+		('line-style:' lineStyle=LineStyle)?
+		('begin-decorator:' beginDecorator=EdgeArrows)?
+		('end-decorator:' endDecorator=EdgeArrows)?
+		('color:' color=SystemColors)?
+	'}'
+;
+
+Container returns vpdiagram::Container:
+	{vpdiagram::Container}
+	'Container' name=EString '{'
+		('import:' imports=[siriusDiagramDescription::ContainerMapping |FQN])?
+		('domain-context:' the_domain=NodeDomainElement)?
+		('content-layout:' contentLayout=ContainerLayout)?
+		(style+=ContainerDescription)*
+		(children=ContainerChildren)?
+	'}'
+;
+
+ContainerChildren returns vpdiagram::ContainerChildren:
+	{vpdiagram::ContainerChildren}
+	'Contains' '{'
+		('reuse' reused_nodes+=[vpdiagram::AbstractNode | FQN] (',' reused_nodes+=[vpdiagram::AbstractNode | FQN])*)?
+		(owned_nodes+=AbstractNode)*
+	'}'
+;
+
+NodeDomainElement returns vpdiagram::NodeDomainElement:
+	{vpdiagram::NodeDomainElement}
+	(domain_Class = AbstractClass)
+	('provided-by' (('query' query=STRING) | ('association' chlidren_list= AbstractAssociation2)))?
+;
+
+ContainerDescription returns vpdiagram::ContainerDescription:
+	{vpdiagram::ContainerDescription}
+	'Representation' '{'
+		(condition=Condition)?
+		('Label' '{' node_Label=Label '}')?
+		('Style' =>'{' style=AbstractContainerStyle '}')?
+	'}'
+;
+
+BasicStyle returns vpdiagram::BasicStyle:
+	{vpdiagram::BasicStyle}
+	'BasicStyle' '{'
+		('border-color:' borderColor = SystemColors)?
+		('background:' backgroundColor=SystemColors)?
+		('form:' form=Node_Form)?
+	'}'
+;
+
+HistogramStyle returns vpdiagram::HistogramStyle:
+	{vpdiagram::HistogramStyle}
+	'HistogramStyle' '{'
+		('border-color:' borderColor = SystemColors)?
+		(sections+=HistogramSection)*
+	'}'
+;
+
+HistogramSection returns vpdiagram::HistogramSection:
+	{vpdiagram::HistogramSection}
+	'Section' '{'
+		('background:' backgroundColor=SystemColors)?
+		('foreground:' forgroundColor=SystemColors)?
+		('minValue:' minValue=ForeignExpressionElement )?
+		('value:' value=ForeignExpressionElement )?
+		('maxValue:' maxValue=ForeignExpressionElement )?
+	'}'
+;
+
+ImageStyle returns vpdiagram::ImageStyle:
+	{vpdiagram::ImageStyle}
+	'Image' '{'
+		('border:' borderColor = SystemColors)?
+		('path:' imagePath = STRING)
+	'}'	
+;
+
+FlatStyle returns vpdiagram::FlatStyle:
+	{vpdiagram::FlatStyle}
+	'FlatStyle' '{'
+		('border:' borderColor=SystemColors)?
+	 	('background:' (backgroundStyle=BackgroundStyle)? (backgroundColor=SystemColors))?
+		('foreground:' forgroundColor=SystemColors)?
+	'}'		
+;
+
+Label returns vpdiagram::Label:
+	{vpdiagram::Label}
+	('content:' value = Expression )
+	('police:' (bold ?= 'bold')? (italic ?= 'italic')? (color = SystemColors)? (size = EInt)? )?
+;
+
+Node returns vpdiagram::Node:
+	{vpdiagram::Node}
+	'Node' name=EString '{'
+		('import:' imports=[siriusDiagramDescription::NodeMapping | FQN])? 
+		('domain-context:' the_domain=NodeDomainElement)?
+		(style+=NodeDescription)*
+		(children=NodeChildren)?
+	'}'
+;
+
+NodeChildren returns vpdiagram::NodeChildren:
+	{vpdiagram::NodeChildren}
+	'Contains' '{'
+		('reuse' reused_boderednodes+=[vpdiagram::BorderedNode | FQN] (',' reused_boderednodes+=[vpdiagram::BorderedNode | FQN])*)?
+		(owned_boderednodes+=BorderedNode)*
+	'}'
+;
+
+BorderedNode returns vpdiagram::BorderedNode:
+	{vpdiagram::BorderedNode}
+	'BorderedNode' name=EString '{'
+		('import:' imports=[siriusDiagramDescription::NodeMapping | FQN])? 
+		('domain-context:' the_domain=NodeDomainElement)?
+		(style+=NodeDescription)*
+	'}'
+;
+
+NodeDescription returns vpdiagram::NodeDescription:
+	{vpdiagram::NodeDescription}
+	'Representation' '{'
+		(condition=Condition)?
+		('Label' '{'node_Label=Label ('position:' label_position=LabelPosition)? ('alignment:' label_alignement=LabelAlignment)? '}')?
+		('Style' '{' style=AbstractNodeStyle '}')? 
+	'}'	
+;
+	
+ActionSet returns vpdiagram::ActionSet:
+	{vpdiagram::ActionSet}
+	'Actions' 
+	'{'
+		(actions+=Action)*
+		(openActions+=OpenAction)*
+	'}'
+;
+
+OpenAction returns vpdiagram::OpenAction:
+	{vpdiagram::OpenAction}
+	'OpenAction' name=EString
+	'{'
+		('precondition:' precondition=EString)?
+		('label:' label=STRING)?
+		('icon:' icon=STRING)?
+	'}'
+;
+
+Action returns vpdiagram::Action:
+	Create | Delete | Drop | ReconnectEdge
+;
+
+Create returns vpdiagram::Action:
+	{vpdiagram::Create}
+	'Create' name=EString
+	'{'
+		('precondition:' precondition=EString)?
+		('label:' label=STRING)?
+		('action-for:' tool_For=[vpdiagram::DiagramElement | FQN])
+		('icon:' icon=STRING)?
+	'}'
+;
+
+Delete returns vpdiagram::Action:
+	{vpdiagram::Delete}
+	'Delete' name=EString
+	'{'
+		('precondition:' precondition=EString)?
+		('label:' label=STRING)?
+		('action-for:' tool_For=[vpdiagram::DiagramElement | FQN])
+	'}'
+;
+
+
+Drop returns vpdiagram::Action:
+	{vpdiagram::Drop}
+	'Drop' name=EString
+	'{'
+		('precondition:' precondition=EString)?
+		('label:' label=STRING)?
+		('action-for:' tool_For=[vpdiagram::DiagramElement | FQN])
+	'}'
+;
+
+ReconnectEdge returns vpdiagram::Action:
+	{vpdiagram::ReconnectEdge}
+	'ReconnectEdge' name=EString
+	'{'
+		('precondition:' precondition=EString)?
+		('label:' label=STRING)?
+		('action-for:' tool_For=[vpdiagram::DiagramElement | FQN])
+	'}'
+;
+
+DomainContainer returns vpdiagram::DomainContainer:
+	{vpdiagram::DomainContainer}
+	('domain-context:' the_domain=AbstractClass)	
+;
+
+Edge returns vpdiagram::AbstractEdge:
+	{vpdiagram::Edge}
+	'Edge' name=EString '{'
+		(('association-context:' the_domain=EdgeDomainAssociation) | ('class-association-context:' the_domain=EdgeDomainElement))
+		('source:' source+=[vpdiagram::DiagramElement|FQN] ( ',' source+=[vpdiagram::DiagramElement|FQN])*)	
+		('target:' target+=[vpdiagram::DiagramElement|FQN] ( ',' target+=[vpdiagram::DiagramElement|FQN])*)	
+		(e_description+=EdgeDescription)*
+	'}'
+;
+
+EdgeImport returns vpdiagram::AbstractEdge:
+	{vpdiagram::EdgeImport}
+	'EdgeImport' name=EString '{'
+		('import:' imports=[siriusDiagramDescription::EdgeMapping | FQN])
+		(e_description+=EdgeDescription)*
+	'}'
+;
+
+EdgeDomainAssociation returns vpdiagram::EdgeDomainAssociation:
+	{vpdiagram::EdgeDomainAssociation}
+	(('query:' target_query= STRING) | (target_Locator=AbstractAssociation2))
+;
+
+EdgeDomainElement returns vpdiagram::EdgeDomainAssociation:
+	{vpdiagram::EdgeDomainElement}
+	(the_Domain=AbstractClass)
+	(('target-query:' target_query= STRING) | ('target-association:' target_Locator=AbstractAssociation2))
+	(('source-query:' source_query= STRING) | ('source-association:' source_Locator=AbstractAssociation2))
+;
+
+enum Node_Form returns vpdiagram::Node_Form:
+	Square='Square' |
+	Lozenge='Lozenge' |
+	Eclipse='Eclipse' |
+	Note = 'Note' |
+	Dot = 'Dot' |
+	Triangle = 'Triangle' |
+	Stroke = 'Stroke' |
+	Ring = 'Ring'
+;
+
+enum BackgroundStyle returns siriusDiagram::BackgroundStyle:
+	GradientLeftToRight='GradientLeftToRight' |
+	Liquid='Liquid' |
+	GradientTopToBottom='GradientTopToBottom'
+;
+
+enum LabelPosition returns siriusDiagram::LabelPosition:
+	border='border' | node='node'
+;
+
+enum LabelAlignment returns sirius::LabelAlignment:
+	CENTER='center' | LEFT='left' | RIGHT='right'
+;
+	
+enum LineStyle returns siriusDiagram::LineStyle:
+	solid='solid' | dash='dash' | dot='dot' | dash_dot='dash_dot'
+;
+
+enum EdgeArrows returns siriusDiagram::EdgeArrows:
+	NoDecoration='NoDecoration' |
+	OutputArrow='OutputArrow' |
+	InputArrow = 'InputArrow' |
+	OutputClosedArrow = 'OutputClosedArrow' |
+	InputClosedArrow = 'InputClosedArrow' |
+	OutputFillClosedArrow = 'OutputFillClosedArrow' |
+	InputFillClosedArrow = 'InputFillClosedArrow' |
+	Diamond = 'Diamond' |
+	FillDiamond = 'FillDiamond' |
+	InputArrowWithDiamond = 'InputArrowWithDiamond' |
+	InputArrowWithFillDiamond= 'InputArrowWothFillDiamond'
+;
+
+enum SystemColors returns siriusDescription::SystemColors:
+	black='black' |
+	blue='blue' |
+	red = 'red' |
+	green = 'green' |
+	yellow = 'yellow' |
+	purple = 'purple' |
+	orange = 'orange' |
+	chocolate = 'chocolate' |
+	gray = 'gray' |
+	white = 'white'|
+	dark_blue= 'dark_blue'|
+	dark_red= 'dark_red'|
+	dark_green= 'dark_green'|
+	dark_yellow= 'dark_yellow'|
+	dark_purple= 'dark_purple'|
+	dark_orange= 'dark_orange'|
+	dark_chocolate= 'dark_chocolate'|
+	dark_gray= 'dark_gray'|
+	light_blue= 'light_blue'|
+	light_red= 'light_red'|
+	light_green= 'light_green'|
+	light_yellow= 'light_yellow'|
+	light_purple= 'light_purple'|
+	light_orange= 'light_orange'|
+	light_chocolate= 'light_chocolate'|
+	light_gray= 'light_gray'
+;
+
+enum ContainerLayout returns siriusDiagram::ContainerLayout:
+	FreeForm='FreeForm' |
+	List='List'
+;
+
+
+ /********************************************************************
+ * 							Common data
+ * 
+ ********************************************************************/
+AbstractClass returns commondata::AbstractClass:
+ 	LocalClass2 | ExternalClass
+ ;
+
+LocalClass2 returns commondata::AbstractClass:
+	{commondata::LocalClass}
+	class=[vpdesc::Class|FQN]
+;
+
+ExternalClass returns commondata::AbstractClass:
+	{commondata::ExternalClass}
+	'external' class=[ecore::EClass|FQN]
+;
+
+AbstractAssociation2 returns commondata::AbstractAssociation:
+	ExternalAssociation | LocalAssociation
+;
+
+LocalAssociation returns commondata::AbstractAssociation:
+	{commondata::LocalAssociation}
+	reference=[vpdesc::LocalClassAssociation | FQN]	
+;
+
+ExternalAssociation returns commondata::AbstractAssociation:
+	{commondata::ExternalAssociation}
+	'external' reference=[ecore::EReference| FQN]
+;
+
+AbstractAttribute returns commondata::AbstractAttribute:
+	ExternalAttribute | LocalAttribute
+;
+
+LocalAttribute returns commondata::AbstractAttribute:
+	{commondata::LocalAttribute}
+	attribute=[vpdesc::Attribute | FQN];
+
+ExternalAttribute returns commondata::AbstractAttribute:
+	{commondata::ExternalAttribute}
+	'external' attribute=[ecore::EAttribute | FQN]
+;
+
+
+ /********************************************************************
+ * 							Expression
+ * 
+ ********************************************************************/
+Expression returns expression::Expression:
+ 	{expression::Expression}
+ //	(value = EString)?
+ 	(expressionElements+=ExpressionElement ( '+' expressionElements+=ExpressionElement)* )?
+ ;
+
+ExpressionElement returns expression::ExpressionElement:
+	ForeignExpressionElement | StringElement
+;
+
+ForeignExpressionElement returns expression::ForeignExpressionElement:
+	JavaElement | DomainElement
+;
+
+JavaElement returns expression::ForeignExpressionElement:
+	{expression::JavaElement}
+	'Java' (method=FQN)
+;
+
+DomainElement returns expression::ForeignExpressionElement:
+	{expression::DomainElement}
+	(attribute = [vpdesc::Attribute | FQN])
+;
+
+StringElement returns expression::ExpressionElement:
+	{expression::StringElement}
+	(value = STRING)
+;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.ad.wizard.category"
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.wizard.NewViewpointProjectWizard"
+            icon="icons/view.gif"
+            id="org.polarsys.kitalpha.ad.viewpoint.ui.wizard.NewViewpointProjectWizard"
+            name="%_UI_Wizard_Viewpoint_Project"
+            project="true">
+      </wizard>
+   </extension>
+
+   <!--extension
+         point="org.eclipse.ui.popupMenus">
+         
+      <objectContribution
+            adaptable="true"
+            id="org.polarsys.kitalpha.ad.viewpoint.sdk.actions.ManageBundleAction.contribution1"
+            objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               icon="icons/MDK16x16.gif"
+               id="af.group.menu"
+               label="AF"
+               path="additions">
+            <separator
+                  name="here">
+            </separator>
+         </menu>
+         <action
+               label="%install.bundle"
+               class="org.polarsys.kitalpha.ad.viewpoint.sdk.actions.ManageBundleAction"
+               menubarPath="af.group.menu/here"
+               enablesFor="1"
+               id="org.polarsys.kitalpha.ad.viewpoint.sdk.actions.ManageBundleAction2">
+         </action>
+         <action
+               class="org.polarsys.kitalpha.ad.viewpoint.sdk.actions.ReloadBundleAction"
+               enablesFor="1"
+               icon="icons/refresh.png"
+               id="org.polarsys.kitalpha.ad.viewpoint.sdk.actions.ReloadBundleAction"
+               label="%reload.bundle"
+               menubarPath="af.group.menu/here">
+         </action>
+      </objectContribution>
+   </extension-->
+   <extension
+         point="org.polarsys.kitalpha.ad.services.viewpoint.manager">
+      <ViewpointManager class="org.polarsys.kitalpha.ad.viewpoint.sdk.manager.WorkspaceViewpointManager"/>
+   </extension>
+
+</plugin>

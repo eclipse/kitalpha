@@ -1,0 +1,10 @@
+/************************ Creation of the Edge Mapping Import ************************/ 
+
+EdgeMappingImport edgeMappingImort = DescriptionFactory.eINSTANCE.createEdgeMappingImport();
+
+edgeMappingImort.setName(parameter.getName()+"_EMI");
+edgeMappingImort.setLabel(parameter.getName());
+
+edgeMappingImort.setImportedMapping(parameter.getImports());
+
+dEdgeImportMapping = edgeMappingImort;

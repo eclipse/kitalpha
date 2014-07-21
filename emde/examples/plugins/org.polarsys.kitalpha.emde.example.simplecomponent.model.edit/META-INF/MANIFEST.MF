@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.emde.example.simplecomponent.model.edit;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.polarsys.kitalpha.emde.example.simplecomponent.model;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.polarsys.kitalpha.emde.model;visibility:=reexport,
+ org.polarsys.kitalpha.emde.model.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

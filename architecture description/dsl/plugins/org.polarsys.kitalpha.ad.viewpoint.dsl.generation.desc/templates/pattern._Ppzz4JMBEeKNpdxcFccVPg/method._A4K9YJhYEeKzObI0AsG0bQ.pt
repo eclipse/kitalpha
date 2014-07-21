@@ -1,0 +1,2 @@
+eOperation = EcoreFactory.eINSTANCE.createEOperation();
+eOperation.setName(operation.getName()); 

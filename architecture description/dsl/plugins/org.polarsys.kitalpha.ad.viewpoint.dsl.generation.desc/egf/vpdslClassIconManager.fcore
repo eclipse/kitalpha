@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:javapattern="http://www.eclipse.org/egf/1.0.0/javapattern"
+    xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern">
+  <fcore:FactoryComponent xmi:id="_gcPicTMeEeKU1c7GGVf8tA" name="lvpsEditIconManager">
+    <contractContainer xmi:id="_g6MpwDMeEeKU1c7GGVf8tA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_hH5ukDMeEeKU1c7GGVf8tA"
+          name="vpdesc.model" mandatory="true" invocationContracts="#_FMucIjMpEeKU1c7GGVf8tA #_03Yc8jP6EeKU1c7GGVf8tA">
+        <type xmi:type="domain:TypeDomain" xmi:id="_t5E7ADMeEeKU1c7GGVf8tA"/>
+      </contracts>
+    </contractContainer>
+    <viewpointContainer xmi:id="_ulyQADMeEeKU1c7GGVf8tA">
+      <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_vEBrMDMeEeKU1c7GGVf8tA">
+        <libraries xmi:id="_xtwGgDMeEeKU1c7GGVf8tA" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.icon">
+          <elements xmi:id="_m9xgUDMfEeKU1c7GGVf8tA" name="iconManager" headerMethod="#_m9xgUjMfEeKU1c7GGVf8tA"
+              conditionMethod="#_m9xgVDMfEeKU1c7GGVf8tA" initMethod="#_m9xgUzMfEeKU1c7GGVf8tA"
+              footerMethod="#_m9xgVjMfEeKU1c7GGVf8tA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_m9xgUTMfEeKU1c7GGVf8tA"
+                name="Java"/>
+            <methods xmi:id="_m9xgUjMfEeKU1c7GGVf8tA" name="header" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._m9xgUjMfEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_m9xgUzMfEeKU1c7GGVf8tA" name="init" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._m9xgUzMfEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_m9xgVDMfEeKU1c7GGVf8tA" name="preCondition" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._m9xgVDMfEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_GPIqcDMgEeKU1c7GGVf8tA" name="setVpdslProject" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._GPIqcDMgEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_m9xgVjMfEeKU1c7GGVf8tA" name="footer" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._m9xgVjMfEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_ui5Q0DPeEeKU1c7GGVf8tA" name="setEditProject" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._ui5Q0DPeEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_QuxYcDMoEeKU1c7GGVf8tA" name="setIconName" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._QuxYcDMoEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_m9xgVTMfEeKU1c7GGVf8tA" name="CopyIconToEdit" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._m9xgVTMfEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_6V7NgDMvEeKU1c7GGVf8tA" name="setEditIconName" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._6V7NgDMvEeKU1c7GGVf8tA.pt"/>
+            <methods xmi:id="_Y8uzMDM6EeKU1c7GGVf8tA" name="setEditIconFolder" patternFilePath="templates/pattern._m9xgUDMfEeKU1c7GGVf8tA/method._Y8uzMDM6EeKU1c7GGVf8tA.pt"/>
+            <parameters xmi:id="_TOsTUDMvEeKU1c7GGVf8tA" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0#//Class"/>
+            <variables xmi:id="_nIXKQDMgEeKU1c7GGVf8tA" name="vpdslProject" type="org.eclipse.core.resources.IProject"/>
+            <variables xmi:id="_OrpDEDMoEeKU1c7GGVf8tA" name="iconName" type="java.lang.String"/>
+            <variables xmi:id="_aplCcDMtEeKU1c7GGVf8tA" name="editIconName" type="java.lang.String"/>
+            <variables xmi:id="_W2KvUDM6EeKU1c7GGVf8tA" name="editIconFolder" type="java.lang.String"/>
+            <variables xmi:id="_qI0SMDPeEeKU1c7GGVf8tA" name="editProject" type="org.eclipse.core.resources.IProject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_m9xgVzMfEeKU1c7GGVf8tA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_-yY-QDPeEeKU1c7GGVf8tA"
+                called="#_ui5Q0DPeEeKU1c7GGVf8tA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_oTUFADMhEeKU1c7GGVf8tA"
+                called="#_GPIqcDMgEeKU1c7GGVf8tA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_RfpbwDMoEeKU1c7GGVf8tA"
+                called="#_QuxYcDMoEeKU1c7GGVf8tA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_Zs3PoDM6EeKU1c7GGVf8tA"
+                called="#_Y8uzMDM6EeKU1c7GGVf8tA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_8EfBEDMvEeKU1c7GGVf8tA"
+                called="#_6V7NgDMvEeKU1c7GGVf8tA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_u_RRkDMfEeKU1c7GGVf8tA"
+                called="#_m9xgVTMfEeKU1c7GGVf8tA"/>
+          </elements>
+        </libraries>
+      </viewpoints>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_CnUgIDMpEeKU1c7GGVf8tA">
+      <invocations xmi:id="_FMucIDMpEeKU1c7GGVf8tA" name="Replace model element icons"
+          invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_8FZ3aof6eEd64XYPo3s6sPg">
+        <invocationContractContainer xmi:id="_FMucITMpEeKU1c7GGVf8tA">
+          <invocationContracts xmi:id="_FMucIjMpEeKU1c7GGVf8tA" factoryComponentContract="#_hH5ukDMeEeKU1c7GGVf8tA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_FMucIzMpEeKU1c7GGVf8tA" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_IPCWkDMpEeKU1c7GGVf8tA"
+                elements="#_xtwGgDMeEeKU1c7GGVf8tA"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_03Yc8DP6EeKU1c7GGVf8tA" name="Replace creation tools icons"
+          invokedActivity="#_mHs8cDP6EeKU1c7GGVf8tA">
+        <invocationContractContainer xmi:id="_03Yc8TP6EeKU1c7GGVf8tA">
+          <invocationContracts xmi:id="_03Yc8jP6EeKU1c7GGVf8tA" factoryComponentContract="#_hH5ukDMeEeKU1c7GGVf8tA"
+              invokedContract="#_xdOqQDP6EeKU1c7GGVf8tA"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_mHs8cDP6EeKU1c7GGVf8tA" name="generateEditToolsIcons" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.task.generateEditToolsIconsTask">
+    <contractContainer xmi:id="_xKTuQDP6EeKU1c7GGVf8tA">
+      <contracts xmi:id="_xdOqQDP6EeKU1c7GGVf8tA" name="vpdesc.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_x4DlEDP6EeKU1c7GGVf8tA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

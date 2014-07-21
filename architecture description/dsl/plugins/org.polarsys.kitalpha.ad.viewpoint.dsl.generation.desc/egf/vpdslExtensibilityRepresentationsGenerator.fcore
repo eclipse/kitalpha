@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_KoktcQOOEeS_Mc6arXEukQ" name="vpdslExtensibilityRepresentationsGenerator">
+    <contractContainer xmi:id="_aODGIAOREeS_Mc6arXEukQ">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_afVDYAOREeS_Mc6arXEukQ"
+          name="ecore.uri" mandatory="true" invocationContracts="#__pZtUAOREeS_Mc6arXEukQ #_RPDggAZzEeSs8dhCosCl-g #_Fby-8gahEeSs8dhCosCl-g">
+        <type xmi:type="types:TypeURI" xmi:id="_a_qJQAOREeS_Mc6arXEukQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_cKwqcAOREeS_Mc6arXEukQ"
+          name="genchain.uri" mandatory="true" invocationContracts="#_DwF14QOSEeS_Mc6arXEukQ">
+        <type xmi:type="types:TypeURI" xmi:id="_cKwqcQOREeS_Mc6arXEukQ"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_LsXswAOOEeS_Mc6arXEukQ">
+      <invocations xmi:id="_Klfc4AOREeS_Mc6arXEukQ" invokedActivity="#_kYcvgAOPEeS_Mc6arXEukQ">
+        <invocationContractContainer xmi:id="_CSq1oAOSEeS_Mc6arXEukQ">
+          <invocationContracts xmi:id="_RPDggAZzEeSs8dhCosCl-g" factoryComponentContract="#_afVDYAOREeS_Mc6arXEukQ"
+              invokedContract="#_owPPwQWrEeS_Z9H6ZjkJbg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_H5P5EAOREeS_Mc6arXEukQ" invokedActivity="#_MpmxEAOOEeS_Mc6arXEukQ">
+        <invocationContractContainer xmi:id="__bi3gAOREeS_Mc6arXEukQ">
+          <invocationContracts xmi:id="__pZtUAOREeS_Mc6arXEukQ" factoryComponentContract="#_afVDYAOREeS_Mc6arXEukQ"
+              invokedContract="#_MlC50AOREeS_Mc6arXEukQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Fby-8AahEeSs8dhCosCl-g" invokedActivity="#_SxMvQAagEeSs8dhCosCl-g">
+        <invocationContractContainer xmi:id="_Fby-8QahEeSs8dhCosCl-g">
+          <invocationContracts xmi:id="_Fby-8gahEeSs8dhCosCl-g" factoryComponentContract="#_afVDYAOREeS_Mc6arXEukQ"
+              invokedContract="#_ZOs-MAagEeSs8dhCosCl-g"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Jbl1kAOREeS_Mc6arXEukQ" invokedActivity="#_j4HpoAOPEeS_Mc6arXEukQ">
+        <invocationContractContainer xmi:id="_DwF14AOSEeS_Mc6arXEukQ">
+          <invocationContracts xmi:id="_DwF14QOSEeS_Mc6arXEukQ" factoryComponentContract="#_cKwqcAOREeS_Mc6arXEukQ"
+              invokedContract="#_T8MGgAOREeS_Mc6arXEukQ"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_MpmxEAOOEeS_Mc6arXEukQ" name="Generate eMDE digram and table"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.task.EMDERepresentationGenerationTask">
+    <contractContainer xmi:id="_MT6GgAOREeS_Mc6arXEukQ">
+      <contracts xmi:id="_MlC50AOREeS_Mc6arXEukQ" name="ecore.uri" mandatory="true">
+        <type xmi:type="types:TypeURI" xmi:id="_NVnbIAOREeS_Mc6arXEukQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_j4HpoAOPEeS_Mc6arXEukQ" name="Generate generation chain diagram"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.task.GenchainRepresentationGenerationTask">
+    <contractContainer xmi:id="_Tq5iMAOREeS_Mc6arXEukQ">
+      <contracts xmi:id="_T8MGgAOREeS_Mc6arXEukQ" name="genchain.uri" mandatory="true">
+        <type xmi:type="types:TypeURI" xmi:id="_UWtfUAOREeS_Mc6arXEukQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_kYcvgAOPEeS_Mc6arXEukQ" name="Generate documentation table"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.task.DocumentationRepresentationGenerationTask">
+    <contractContainer xmi:id="_SvmXkAOREeS_Mc6arXEukQ">
+      <contracts xmi:id="_owPPwQWrEeS_Z9H6ZjkJbg" name="ecore.uri" mandatory="true">
+        <type xmi:type="types:TypeURI" xmi:id="_qMekQAWrEeS_Z9H6ZjkJbg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_SxMvQAagEeSs8dhCosCl-g" name="Generate Entities representations"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.task.EntitiesRepresentationGenerationTask">
+    <contractContainer xmi:id="_Yw5n4AagEeSs8dhCosCl-g">
+      <contracts xmi:id="_ZOs-MAagEeSs8dhCosCl-g" name="ecore.uri" mandatory="true">
+        <type xmi:type="types:TypeURI" xmi:id="_baeSMAagEeSs8dhCosCl-g"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

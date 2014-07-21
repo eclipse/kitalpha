@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (c) 2014 Thales Global Services S.A.S.
+   All rights reserved. This program and the accompanying materials
+   are made available under the terms of the Eclipse Public License v1.0
+   which accompanies this distribution, and is available at
+   http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+   Thales Global Services S.A.S - initial API and implementation
+-->
+<templates>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpbuild.kw_Build" deleted="false" description="New Build" enabled="true" id="1" name="Build">Build ${fileName} {&#13;
+	target-platform: "D:/eclipse"&#13;
+	repository: svn+ssh://"svn.polarsys.corp.kitalpha/svnroot/"&#13;
+	features: org.polarsys.kitalpha.vp.example.feature&#13;
+}&#13;
+</template>
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpbuild.kw_Build" deleted="false" description="New Build with deployment options" enabled="true" id="2" name="Build">Build ${fileName} {&#13;
+		target-platform: "D:/eclipse"&#13;
+		repository: svn+ssh://"svn.polarsys.corp.kitalpha/svnroot/" {&#13;
+			folder "plugins"&#13;
+			folder "features"&#13;
+		}&#13;
+	
+	features: org.polarsys.kitalpha.vp.example.feature&#13;
+	
+	hudson-deployment {&#13;
+		ant: "ant-1.8.O"&#13;
+		assigned-node: "TC8"&#13;
+		build-id: "yyyyMMdd"&#13;
+		enable: true&#13;
+		jdk-name: "jdk6"&#13;
+		user-deploy-job-name: "deploymentJob"&#13;
+		user-deploy-server-url: "http://www.polarsys.org/viewpoints"&#13;
+		users {&#13;
+			login: "login1"&#13;
+			login: "login2" permission: EXECUTE&#13;
+		}&#13;
+		triggers {&#13;
+			Cron "00 * * * *"&#13;
+			SCM "06 * * * *"&#13;
+		}&#13;
+		generation-location: "releng-script" url: "svn.polarsys.corp.kitalpha/svnroot/plugin.releng"&#13;
+	}&#13;	
+}&#13;
+</template>
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpbuild.kw_hudson-deployment" deleted="false" description="Hudson deployment" enabled="true" id="3" name="Hudson">hudson-deployment {&#13;
+	ant: "ant-1.8.O"&#13;
+	assigned-node: "TC8"&#13;
+	build-id: "yyyyMMdd"&#13;
+	enable: true&#13;
+	jdk-name: "jdk6"&#13;
+	user-deploy-job-name: "deploymentJob"&#13;
+	user-deploy-server-url: "http://www.polarsys.org/viewpoints"&#13;
+	
+	users {&#13;
+		login: "login1"&#13;
+		login: "login2" permission: EXECUTE&#13;
+	}&#13;
+	
+	triggers {&#13;
+		Cron "00 * * * *"&#13;
+		SCM "06 * * * *"&#13;
+	}&#13;
+	generation-location: "releng-script" url: "svn.polarsys.corp.kitalpha/svnroot/plugin.releng"&#13;
+}
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpbuild.kw_users" deleted="false" description="Hudson deployment" enabled="true" id="4" name="Users">users {&#13;
+		login: "login1"&#13;
+		login: "login2" permission: EXECUTE&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpbuild.kw_triggers" deleted="false" description="triggers" enabled="true" id="5" name="Triggers">triggers {&#13;
+		Cron "00 * * * *"&#13;
+		SCM "06 * * * *"&#13;
+}&#13;
+</template>
+</templates>

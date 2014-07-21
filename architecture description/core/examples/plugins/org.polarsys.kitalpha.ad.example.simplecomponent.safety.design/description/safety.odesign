@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/description/style/1.1.0" name="safety" version="7.0.0">
+  <ownedViewpoints name="safety" modelFileExtension="simplecomponent">
+    <ownedRepresentationExtensions xsi:type="description:DiagramExtensionDescription" name="Safety Extension" viewpointURI="viewpoint:/org.polarsys.kitalpha.ad.example.simplecomponent.design/simplecomponent" representationName="ComponentModel">
+      <layers name="safety" activeByDefault="true">
+        <nodeMappings xsi:type="description:NodeMappingImport" name="soft" preconditionExpression="&lt;%eContents().filter(&quot;SimpleVPSafety&quot;).length() > 0 %>" semanticCandidatesExpression="[self.eContents()->select(oclIsKindOf(SoftwareComponent))/]" domainClass="SoftwareComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='safety']/@ownedRepresentationExtensions[name='Safety%20Extension']/@layers[name='safety']/@nodeMappings[name='safetyVP']">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </style>
+          <importedMapping href="../../org.polarsys.kitalpha.ad.example.simplecomponent.design/description/simplecomponent.odesign#//@ownedViewpoints[name='simplecomponent']/@ownedRepresentations[name='ComponentModel']/@defaultLayer/@nodeMappings[name='SoftwareComponent']"/>
+        </nodeMappings>
+        <nodeMappings name="safetyVP" semanticCandidatesExpression="service:getSafetyChilds" domainClass="SimpleVPSafety">
+          <style xsi:type="style:DotDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <containerMappings xsi:type="description:ContainerMappingImport" name="hard" semanticCandidatesExpression="[self.eContents()->select(oclIsKindOf(HardwareComponent))/]" reusedBorderedNodeMappings="//@ownedViewpoints[name='safety']/@ownedRepresentationExtensions[name='Safety%20Extension']/@layers[name='safety']/@nodeMappings[name='safetyVP']" reusedContainerMappings="//@ownedViewpoints[name='safety']/@ownedRepresentationExtensions[name='Safety%20Extension']/@layers[name='safety']/@containerMappings[name='hard']">
+          <reusedNodeMappings href="#//@ownedViewpoints[name='safety']/@ownedRepresentationExtensions[name='Safety%20Extension']/@layers[name='safety']/@nodeMappings[name='soft']"/>
+          <reusedNodeMappings href="../../org.polarsys.kitalpha.ad.example.simplecomponent.design/description/simplecomponent.odesign#//@ownedViewpoints[name='simplecomponent']/@ownedRepresentations[name='ComponentModel']/@defaultLayer/@nodeMappings[name='SoftwareComponent']"/>
+          <style xsi:type="style:FlatContainerStyleDescription" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+          <conditionnalStyles predicateExpression="service:hasSafetyChilds">
+            <style xsi:type="style:FlatContainerStyleDescription" showIcon="false">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </style>
+          </conditionnalStyles>
+          <importedMapping href="../../org.polarsys.kitalpha.ad.example.simplecomponent.design/description/simplecomponent.odesign#//@ownedViewpoints[name='simplecomponent']/@ownedRepresentations[name='ComponentModel']/@defaultLayer/@containerMappings[name='HardwareComponent']"/>
+        </containerMappings>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.ad.example.simplecomponent.safety.design.SafetyService"/>
+  </ownedViewpoints>
+</description:Group>

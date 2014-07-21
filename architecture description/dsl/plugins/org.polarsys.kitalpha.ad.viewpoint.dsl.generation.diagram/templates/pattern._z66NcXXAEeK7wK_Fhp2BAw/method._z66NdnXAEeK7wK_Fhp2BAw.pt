@@ -1,0 +1,35 @@
+	ReconnectEdgeDescription reconnect = ToolFactory.eINSTANCE.createReconnectEdgeDescription();
+	reconnect.setReconnectionKind(source_reconnection ? ReconnectionKind.RECONNECT_SOURCE_LITERAL : ReconnectionKind.RECONNECT_TARGET_LITERAL);
+	reconnect.setName(tool_name);
+	
+	EObject doEdgeMapping = GenerationUtil.getDoremiElement(associated_mapping);
+	((EdgeMapping) doEdgeMapping).getReconnections().add(reconnect);
+				
+	// create default variables and initial operation
+	SourceEdgeCreationVariable v_source = ToolFactory.eINSTANCE.createSourceEdgeCreationVariable(); 
+	TargetEdgeCreationVariable v_Target = ToolFactory.eINSTANCE.createTargetEdgeCreationVariable(); 
+	SourceEdgeViewCreationVariable v_sourceView = ToolFactory.eINSTANCE.createSourceEdgeViewCreationVariable(); 
+	TargetEdgeViewCreationVariable v_TargetView = ToolFactory.eINSTANCE.createTargetEdgeViewCreationVariable();
+	ElementSelectVariable v_element = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createElementSelectVariable();
+	ElementSelectVariable v_edgeView = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createElementSelectVariable();
+	initial_operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createInitialOperation();
+	
+		// Set the names of the variable
+	v_source.setName("source");
+	v_Target.setName("target");
+	v_sourceView.setName("sourceView");
+	v_TargetView.setName("targetView");
+	v_element.setName("element");
+	v_edgeView.setName("edgeView");
+	
+	// Add Variables and initial to the ReconnectEdgeDescription
+	reconnect.setSource(v_source);
+	reconnect.setTarget(v_Target);
+	reconnect.setSourceView(v_sourceView);
+	reconnect.setTargetView(v_TargetView);
+	reconnect.setElement(v_element);
+	reconnect.setEdgeView(v_edgeView); 
+	reconnect.setInitialOperation(initial_operation);
+	
+	dslvpToolElement = parameter;
+	abstractToolDescription = reconnect;

@@ -1,0 +1,19 @@
+//boolean generate = false;
+//try {
+//	generate = ECoreResourceManager.INSTANCE.generateEcoreModel(true);
+//} 
+//catch (Exception e) 
+//{
+//	if (e instanceof EcoreNotAvailableException) 
+//  {
+//		generate = true;
+//	} 
+//  else 
+//  {
+//		e.printStackTrace();
+//		generate = false;
+//	}
+//}
+//
+//return generate;
+return ECoreResourceManager.INSTANCE.generateEcoreModel(true);

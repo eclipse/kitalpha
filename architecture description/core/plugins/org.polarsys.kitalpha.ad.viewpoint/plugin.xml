@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.polarsys.kitalpha.ad.viewpoint.implementation.services" name="Service impl" schema="schema/implementation.services.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.ad.viewpoint.rule.providers" name="Rule Providers" schema="schema/rule.providers.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.ad.viewpoint.javarules" name="Java Rules" schema="schema/javarules.exsd"/>
+
+</plugin>

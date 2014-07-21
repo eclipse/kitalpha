@@ -1,0 +1,11 @@
+<%
+genModel.getImportedName("org.eclipse.emf.common.util.BasicEList");
+genModel.getImportedName("java.util.Map");
+genModel.getImportedName("java.util.HashMap");
+%>
+
+		BasicEList<Rule> rules = new BasicEList<Rule>();
+		Map<String, Rule> collector = new HashMap<String, Rule>();
+		collectRules(collector);
+		rules.addAll(collector.values());
+		return rules;

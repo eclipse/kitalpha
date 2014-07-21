@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.polarsys.kitalpha.composer.codegen.manager">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.polarsys.kitalpha.composer.codegen.manager" id="org.polarsys.kitalpha.composer.allocation.binding" name="Code generator Allocation Binding"/>
+      </appInfo>
+      <documentation>
+         This extension points allows to bind one &lt;i&gt;Allocation&lt;/i&gt; meta-model to &lt;i&gt;Business&lt;/i&gt; meta-models in order to declare code-generators.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="binding"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="binding">
+      <annotation>
+         <appInfo>
+            <meta.element labelAttribute="Name"/>
+         </appInfo>
+         <documentation>
+            A &lt;B&gt;Binding&lt;/B&gt; associates an &lt;B&gt;Allocation&lt;/B&gt; meta-model to :
+&lt;ul&gt;
+ &lt;li&gt;a name for the generation &lt;i&gt;driven&lt;/i&gt; by this allocation meta-model&lt;/li&gt;
+ &lt;li&gt;a description that gives information about the generator to the user&lt;/li&gt;
+ &lt;li&gt;
+  one or many business meta-model URIs.
+ &lt;/li&gt;
+&lt;/ul&gt;
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="businessMetamodelNsUriDeclaration"/>
+         </sequence>
+         <attribute name="Name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The &lt;b&gt;name&lt;/b&gt; that allows the user to easily identify &amp; use this generator.
+&lt;br&gt;This name will be used in the UI for selecting the generator.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="Id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A unique ID for the generation. It will only be used for technical access.&lt;br&gt;For instance command-line calls.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="NsUri" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The &lt;b&gt;NsURI&lt;/b&gt; of the &lt;b&gt;allocation meta-model&lt;/b&gt; that allows to describe this generator&apos;s generation production plan.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="Description" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A short text that describes this generator.&lt;br&gt;
+This short text will be displayed to the user as help.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="businessMetamodelNsUriDeclaration">
+      <complexType>
+         <attribute name="NsUri" type="string" use="required">
+            <annotation>
+               <documentation>
+                  NsURI of one &lt;b&gt;business&lt;/b&gt; meta-model that can be handled by the generator.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Thales 2009
+      </documentation>
+   </annotation>
+
+</schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.polarsys.kitalpha.emde.sdk.feature"
+      label="Kitalpha eMDE SDK Feature"
+      version="0.5.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.polarsys.kitalpha.emde.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.emde.genchain.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.emde.ui.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.emde.egf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.emde.portfolio.emf.egf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

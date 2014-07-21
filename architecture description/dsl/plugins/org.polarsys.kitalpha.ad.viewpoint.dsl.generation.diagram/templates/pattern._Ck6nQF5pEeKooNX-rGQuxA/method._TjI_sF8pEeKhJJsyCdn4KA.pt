@@ -1,0 +1,8 @@
+DomainContainer domain_container = parameter.getThe_domain();
+if (domain_container != null)
+{
+	AbstractClass aClass = domain_container.getThe_domain();
+	domainClass = aClass.getFQN();
+}
+else
+	domainClass = "";

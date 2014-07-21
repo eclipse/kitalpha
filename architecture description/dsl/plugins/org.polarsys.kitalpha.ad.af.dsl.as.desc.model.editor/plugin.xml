@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+
+<?eclipse version="3.0"?>
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.ui.newWizards">
+      <wizard category="org.eclipse.emf.ecore.Wizard.category.ID" class="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescModelWizard" icon="icons/full/obj16/AfdescModelFile.gif" id="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescModelWizardID" name="%_UI_AfdescModelWizard_label">
+         <description>%_UI_AfdescModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.ui.editors">
+      <editor class="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescEditor" contributorClass="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescActionBarContributor" extensions="afdesc" icon="icons/full/obj16/AfdescModelFile.gif" id="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescEditorID" name="%_UI_AfdescEditor_label">
+      </editor>
+   </extension>
+
+</plugin>

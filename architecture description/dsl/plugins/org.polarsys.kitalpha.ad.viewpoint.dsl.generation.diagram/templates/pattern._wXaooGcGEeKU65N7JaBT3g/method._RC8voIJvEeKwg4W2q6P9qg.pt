@@ -1,0 +1,5 @@
+// NodeMapping mapping = parameter.getImports();
+ 
+ // Inherits reused bordered nodes
+ if (mapping.getAllBorderedNodeMappings() != null && mapping.getAllBorderedNodeMappings().size() > 0)
+	inm.getReusedBorderedNodeMappings().addAll(mapping.getAllBorderedNodeMappings());

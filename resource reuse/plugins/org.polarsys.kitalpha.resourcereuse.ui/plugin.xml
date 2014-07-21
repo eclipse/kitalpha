@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="%search.view.name"
+            icon="icons/full/obj16/searchView.gif"
+            category="org.polarsys.kitalpha.view.category"
+            class="org.polarsys.kitalpha.resourcereuse.ui.views.ResourceSearchView"
+            id="org.polarsys.kitalpha.resourcereuse.ui.views.ResourceSearchView">
+      </view>
+   </extension>
+
+</plugin>

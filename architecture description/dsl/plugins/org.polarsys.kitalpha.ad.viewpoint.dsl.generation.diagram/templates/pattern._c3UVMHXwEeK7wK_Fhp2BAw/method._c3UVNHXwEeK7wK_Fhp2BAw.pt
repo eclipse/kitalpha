@@ -1,0 +1,3 @@
+return super.preCondition(ctx) &&  ((parameter.getTool_For() != null)
+		&& (parameter.getTool_For() instanceof Edge) 
+		&& (((Edge) parameter.getTool_For()).getThe_domain() instanceof EdgeDomainElement));

@@ -1,0 +1,23 @@
+if (generateJavaService != null && generateJavaService)
+{
+	String r_package_name = (String) ctx.getValue("design.project.name")+ ".service.tools";
+	String r_class_name = "DeleteToolService";
+	String java_service_name = r_package_name + "." + r_class_name;
+	
+	JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(java_service_name);
+	if (javaServiceData != null) 
+	{
+		javaServiceData.setContext(parameter);
+		JavaMethodReturnType returnType = JavaMethodReturnType.Boolean;
+		JavaMethodData javaMethodData = new JavaMethodData(tool_name, returnType);
+		javaMethodData.addMethodParameter("element", "EObject","the semantic source element");
+		javaMethodData.addMethodParameter("elementView","EObject", "the semantic element view");
+		javaMethodData.addMethodParameter("containerView", "EObject","the container view");
+		javaServiceData.addMethod(javaMethodData);
+		
+		If iv = ToolFactory.eINSTANCE.createIf();
+		String mParameters = "("+ VSMVariable.elementView.getInnerVariable() + "," + VSMVariable.containerView.getInnerVariable() + ")";
+		iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(tool_name + mParameters, ExpressionInterpreter.Service));
+		initial_operation.setFirstModelOperations(iv);
+	}
+} 

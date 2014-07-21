@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-Name: org.polarsys.kitalpha.emde.example.simplecomponent.safety.design
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.example.simplecomponent.safety.design;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.ad.example.simplecomponent.safety.design.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.sirius,
+ org.polarsys.kitalpha.emde.example.simplecomponent.safety;bundle-version="0.5.0",
+ org.polarsys.kitalpha.emde.example.simplecomponent.safety.model;bundle-version="0.5.0",
+ org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.edit;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ManifestVersion: 2

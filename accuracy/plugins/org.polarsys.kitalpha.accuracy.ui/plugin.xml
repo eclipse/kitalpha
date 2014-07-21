@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="org.polarsys.kitalpha.accuracy.ui.menu"
+         name="Accuracy Menu"
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?before=additions">
+         <menu
+               id="org.polarsys.kitalpha.accuracy.ui.menu.accuracy"
+               label="%accuracy.menu.label">
+            <command
+                  commandId="org.polarsys.kitalpha.accuracy.ui.commands.applyConfigurationCommand"
+                  id="org.polarsys.kitalpha.accuracy.ui.menu.command"
+                  label="%accuracy.command.label"
+                  tooltip="%accuracy.command.tooltip">
+               <visibleWhen>
+               <with
+                  variable="selection">
+               <count
+                     value="1">
+               </count>
+               <iterate
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <test
+                           property="org.eclipse.core.resources.extension"
+                           value="properties">
+                     </test>
+                  </adapt>
+               </iterate>
+            </with>
+               </visibleWhen>
+            </command>
+            <visibleWhen
+                  checkEnabled="true"></visibleWhen>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.polarsys.kitalpha.accuracy.ui.internal.handlers.ApplyConfigurationHandler"
+            commandId="org.polarsys.kitalpha.accuracy.ui.commands.applyConfigurationCommand">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <count
+                     value="1">
+               </count>
+               <iterate
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <test
+                           property="org.eclipse.core.resources.extension"
+                           value="properties">
+                     </test>
+                  </adapt>
+               </iterate>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="%accuracy.command.category.description.0"
+            id="org.polarsys.kitalpha.accuracy.ui.commands.category"
+            name="%accuracy.command.category.name">
+      </category>
+      <command
+            categoryId="org.polarsys.kitalpha.accuracy.ui.commands.category"
+            description="%accuracy.command.applyconf.description"
+            id="org.polarsys.kitalpha.accuracy.ui.commands.applyConfigurationCommand"
+            name="%accuracy.command.applyconf.name">
+      </command>
+   </extension>
+
+</plugin>

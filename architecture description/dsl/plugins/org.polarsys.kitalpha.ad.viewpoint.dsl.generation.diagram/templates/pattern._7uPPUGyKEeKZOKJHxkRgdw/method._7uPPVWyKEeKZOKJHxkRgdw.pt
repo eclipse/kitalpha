@@ -1,0 +1,5 @@
+if (dslvpElement != null && doremiElement != null)
+{
+	GenerationUtil.addObjectMapping(dslvpElement, doremiElement);
+}
+

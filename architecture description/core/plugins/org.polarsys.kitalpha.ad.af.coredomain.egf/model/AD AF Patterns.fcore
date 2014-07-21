@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmi:id="_5-fksK0uEeCTyNaXmMWg4A"
+    name="AF Patterns">
+  <viewpointContainer xmi:id="_7FKR0K0uEeCTyNaXmMWg4A">
+    <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_7nHvYK0uEeCTyNaXmMWg4A">
+      <libraries xmi:id="_7_l5wK0uEeCTyNaXmMWg4A" name="labelproviders">
+        <elements xmi:id="__S9HIK1eEeCTyNaXmMWg4A" name="getTextPattern" superPattern="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_03wVEGJ-Ed-FqczH3ESmRw"
+            headerMethod="#__S9HIq1eEeCTyNaXmMWg4A" conditionMethod="#__S9HJK1eEeCTyNaXmMWg4A"
+            initMethod="#__S9HI61eEeCTyNaXmMWg4A" footerMethod="#__S9HJq1eEeCTyNaXmMWg4A">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="__S9HIa1eEeCTyNaXmMWg4A"
+              name="JET"/>
+          <methods xmi:id="__S9HIq1eEeCTyNaXmMWg4A" name="header" patternFilePath="templates/pattern.__S9HIK1eEeCTyNaXmMWg4A/method.__S9HIq1eEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="__S9HI61eEeCTyNaXmMWg4A" name="init" patternFilePath="templates/pattern.__S9HIK1eEeCTyNaXmMWg4A/method.__S9HI61eEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="__S9HJK1eEeCTyNaXmMWg4A" name="preCondition" patternFilePath="templates/pattern.__S9HIK1eEeCTyNaXmMWg4A/method.__S9HJK1eEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="__S9HJa1eEeCTyNaXmMWg4A" name="doGenerate" patternFilePath="templates/pattern.__S9HIK1eEeCTyNaXmMWg4A/method.__S9HJa1eEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="__S9HJq1eEeCTyNaXmMWg4A" name="footer" patternFilePath="templates/pattern.__S9HIK1eEeCTyNaXmMWg4A/method.__S9HJq1eEeCTyNaXmMWg4A.pt"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="__S9HJ61eEeCTyNaXmMWg4A"/>
+        </elements>
+      </libraries>
+      <libraries xmi:id="_2JcJQK0vEeCTyNaXmMWg4A" name="eoperations.af">
+        <elements xmi:id="_79ZE4K0vEeCTyNaXmMWg4A" name="getViewpointPattern" superPattern="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0t7DoGJ-Ed-FqczH3ESmRw"
+            headerMethod="#_79ZE4q0vEeCTyNaXmMWg4A" conditionMethod="#_79ZE5K0vEeCTyNaXmMWg4A"
+            initMethod="#_79ZE460vEeCTyNaXmMWg4A" footerMethod="#_79ZE5q0vEeCTyNaXmMWg4A">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_79ZE4a0vEeCTyNaXmMWg4A"
+              name="JET"/>
+          <methods xmi:id="_79ZE4q0vEeCTyNaXmMWg4A" name="header" patternFilePath="templates/pattern._79ZE4K0vEeCTyNaXmMWg4A/method._79ZE4q0vEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="_79ZE460vEeCTyNaXmMWg4A" name="init" patternFilePath="templates/pattern._79ZE4K0vEeCTyNaXmMWg4A/method._79ZE460vEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="_79ZE5K0vEeCTyNaXmMWg4A" name="preCondition" patternFilePath="templates/pattern._79ZE4K0vEeCTyNaXmMWg4A/method._79ZE5K0vEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="_79ZE5a0vEeCTyNaXmMWg4A" name="doGenerate" patternFilePath="templates/pattern._79ZE4K0vEeCTyNaXmMWg4A/method._79ZE5a0vEeCTyNaXmMWg4A.pt"/>
+          <methods xmi:id="_79ZE5q0vEeCTyNaXmMWg4A" name="footer" patternFilePath="templates/pattern._79ZE4K0vEeCTyNaXmMWg4A/method._79ZE5q0vEeCTyNaXmMWg4A.pt"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_79ZE560vEeCTyNaXmMWg4A"/>
+        </elements>
+      </libraries>
+    </viewpoints>
+  </viewpointContainer>
+</fcore:FactoryComponent>

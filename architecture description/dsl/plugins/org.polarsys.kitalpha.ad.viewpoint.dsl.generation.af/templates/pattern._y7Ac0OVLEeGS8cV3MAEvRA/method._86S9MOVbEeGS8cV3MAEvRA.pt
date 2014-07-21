@@ -1,0 +1,5 @@
+<%
+Calendar cal = Calendar.getInstance();
+SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' hh:mm:ss z");
+genTime = sdf.format(cal.getTime());
+%>

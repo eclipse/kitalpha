@@ -1,0 +1,54 @@
+ToolDescription openTool = ToolFactory.eINSTANCE.createToolDescription();
+
+if (parameter.getIcon() != null && parameter.getIcon().trim().length() > 0) 
+{
+	String icon_path = IconPathHelper.computeDslIconPath(parameter.getIcon(), parameter);
+	if (icon_path != null && icon_path.trim().length() > 0)
+	{
+		openTool.setIconPath(icon_path);
+		IconPathHelper.copyIconFile(parameter.getIcon(), parameter);
+	}
+}
+
+openTool.setName(parameter.getName());
+openTool.setLabel(parameter.getLabel() != null ? parameter.getLabel() : parameter.getName());
+
+ElementVariable element =  ToolFactory.eINSTANCE.createElementVariable();
+element.setName("element");
+openTool.setElement(element);
+		
+ElementViewVariable elementView =  ToolFactory.eINSTANCE.createElementViewVariable();
+elementView.setName("elementView");
+openTool.setElementView(elementView);
+		
+InitialOperation init = ToolFactory.eINSTANCE.createInitialOperation();
+openTool.setInitialOperation(init);
+ChangeContext gotoElement = ToolFactory.eINSTANCE.createChangeContext();
+String pElement = VSMVariable.element.getExpressionVariable();
+gotoElement.setBrowseExpression(pElement);
+init.setFirstModelOperations(gotoElement);
+		
+String s_package_name = (String) ctx.getValue("design.project.name")+ ".service.tools";
+String s_class_name = "OpenActionService";
+String s_service_name = s_package_name + "."+ s_class_name;
+		
+JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(s_service_name);
+
+if (javaServiceData != null) {
+	javaServiceData.setContext(parameter);
+	String n_method_name = parameter.getName();
+	JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
+	JavaMethodData javaMethodData = new JavaMethodData(n_method_name, n_returnType);
+			
+	javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject", "the element");
+	javaMethodData.addMethodParameter("newSemanticContainer", "EObject", "the element view");
+	javaServiceData.addMethod(javaMethodData);
+
+	If d_if = ToolFactory.eINSTANCE.createIf();
+	String pElementView = "(" + VSMVariable.element.getInnerVariable() + ")";
+	d_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name +  pElementView , ExpressionInterpreter.Service));
+	gotoElement.getSubModelOperations().add(d_if);
+}
+		
+dslvpToolElement = parameter;
+abstractToolDescription = openTool;

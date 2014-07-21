@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>How to contribute my own variable</title>
+</head>
+
+<body>
+
+<h1> What ? </h1>
+Composer offers an extension mechanism allowing to add new variable. 
+Currently, it is possible to add own variable programmatically only by the <i>ComposerVariableInterpreter</i>.
+
+<h1> How to ? </h1>
+First, you have to define the new variable.
+<br></br>
+A variable definition have to implement the <i>IComposerVariable</i> interface.
+This interface defines two methods : <br></br>
+<ul>
+<li>getName() : it returns the name of the new variable (ex: "modelDir")</li>
+<br></br>
+<li>execute(Object obj) : defines the operation which is done on the path when the variable is found.</li>
+</ul>
+
+Second, you have to add this one to the variables registry like this : <br></br>
+<i>ComposerVariableInterpreter.
+INSTANCE.
+addNewVariable(myVariable);</i>
+</body>
+</html>

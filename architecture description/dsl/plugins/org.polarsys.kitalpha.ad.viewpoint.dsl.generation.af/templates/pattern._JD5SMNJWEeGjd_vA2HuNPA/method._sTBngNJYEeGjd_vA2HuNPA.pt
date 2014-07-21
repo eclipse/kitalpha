@@ -1,0 +1,6 @@
+ServiceSet ss = ViewpointFactory.eINSTANCE.createServiceSet();
+ss.setTarget(AfProjectManager.INSTANCE.getViewpoint());
+ss.setVpid(EcoreUtil.generateUUID());
+ss.setDescription(parameter.getDescription());
+
+AfProjectManager.INSTANCE.getViewpoint().setServiceSet(ss);

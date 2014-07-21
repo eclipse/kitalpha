@@ -1,0 +1,26 @@
+<%if (EMDEHelper.isExtensibleElement(genClass.getEcoreClass())) {%>
+                // begin-extension-code
+                {
+                    <%=genModel.getImportedName("org.eclipse.emf.edit.command.CommandParameter")%> commandParameter = createChildParameter
+                        (<%=createFeature.getQualifiedFeatureAccessor()%>,
+        <%if (createClass.isMapEntry()) { %>
+                         <%=createClass.getGenPackage().getQualifiedEFactoryInstanceAccessor()%>.create(<%=createClass.getQualifiedClassifierAccessor()%>));
+        <%} else {%>
+                         <%=createClass.getGenPackage().getQualifiedFactoryInstanceAccessor()%>.create<%=createClass.getName()%>());
+        <%}%>
+                    if (<%=genModel.getImportedName("org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper")%>.isValidCommand(object, commandParameter)) {
+                        newChildDescriptors.add(commandParameter);      
+                    }
+                }
+                // end-extension-code
+<%}else{%>
+                newChildDescriptors.add
+                    (createChildParameter
+                        (<%=createFeature.getQualifiedFeatureAccessor()%>,
+        <%if (createClass.isMapEntry()) { %>
+                         <%=createClass.getGenPackage().getQualifiedEFactoryInstanceAccessor()%>.create(<%=createClass.getQualifiedClassifierAccessor()%>)));
+        <%} else {%>
+                         <%=createClass.getGenPackage().getQualifiedFactoryInstanceAccessor()%>.create<%=createClass.getName()%>()));
+        <%}%>
+<%}%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsReferenceFeature.insert" args="createClass:createClass,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%>

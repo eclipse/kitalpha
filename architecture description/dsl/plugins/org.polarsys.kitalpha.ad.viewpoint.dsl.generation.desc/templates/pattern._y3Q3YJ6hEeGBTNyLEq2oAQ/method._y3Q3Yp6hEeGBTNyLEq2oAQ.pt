@@ -1,0 +1,28 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.emf.ecore.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.common.util.*;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.constant.Constant;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.exception.NotExtensibleEClassException;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.helper.EMDEElementProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.PlatformEClassesManager;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreModelHelper;
+
+import org.polarsys.kitalpha.emde.model.impl.EmdePackageImpl;
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

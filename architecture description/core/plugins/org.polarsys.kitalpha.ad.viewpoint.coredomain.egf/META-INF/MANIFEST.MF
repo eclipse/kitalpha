@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-Version: 0.5.0.qualifier
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.coredomain.egf;singleton:=true
+Require-Bundle: org.eclipse.egf.pattern;visibility:=reexport,
+ org.eclipse.egf.pattern.ftask;visibility:=reexport,
+ org.eclipse.egf.emf.pattern
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: eoperations.viewpoint,
+ eoperations.workspace,
+ labelproviders

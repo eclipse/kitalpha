@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+#
+# 	Copyright (c) THALES, 2007-2010. All rights reserved.
+#
+-->
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.polarsys.kitalpha.emde.model.EmdePackage" genModel="model/eMDE.genmodel" uri="http://www.polarsys.org/kitalpha/emde/1.0.0"/>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser class="org.polarsys.kitalpha.emde.model.util.EmdeResourceFactoryImpl" type="emde"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %BundleName
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Require-Bundle: org.eclipse.egf.domain,
+ org.eclipse.egf.model,
+ org.eclipse.ui;bundle-version="3.6.2",
+ org.eclipse.egf.model.ftask;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.manager,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.modelchecking
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter
+Bundle-Localization: plugin
+Bundle-Vendor: %BundleVendor

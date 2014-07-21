@@ -1,0 +1,22 @@
+if (vpElement.getOwned_annotations().size() > 0)
+{
+	for (Annotation iAnnotation : vpElement.getOwned_annotations()) 
+	{
+		String source = iAnnotation.getSource();
+		EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+		eAnnotation.setSource(source);
+		if (iAnnotation.getOwned_details().size() > 0)
+		{
+			for (Detail iDetail : iAnnotation.getOwned_details()) 
+			{
+				EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE.create(
+															EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+				entry.setKey(iDetail.getKey());
+				if (iDetail.getValue() != null)
+					entry.setValue(iDetail.getValue());
+				eAnnotation.getDetails().add(entry);
+			}
+		}
+		eElement.getEAnnotations().add(eAnnotation);
+	}
+}

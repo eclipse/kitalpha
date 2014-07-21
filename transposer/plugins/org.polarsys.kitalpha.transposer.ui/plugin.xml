@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.polarsys.kitalpha.transposer.ui.internal.configuration.TransposerTabGroup"
+            description="UI launcher for Transposer"
+            id="org.polarsys.kitalpha.transposer.ui.launch.TransposerTabGroup"
+            type="org.polarsys.kitalpha.transposer.ui.launch.TransposerConfigurationType">
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.polarsys.kitalpha.transposer.ui.launch.TransposerConfigurationType"
+            icon="icons/transposer.png"
+            id="org.polarsys.kitalpha.transposer.ui.launch.ConfigurationTypeImage">
+      </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.polarsys.kitalpha.transposer.ui.internal.configuration.TransposerLaunchConfigurationType"
+            id="org.polarsys.kitalpha.transposer.ui.launch.TransposerConfigurationType"
+            modes="run,debug"
+            name="Transposer"
+            public="true">
+      </launchConfigurationType>
+   </extension>
+   
+   
+   <extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      <menu
+            id="org.polarsys.kitalpha.transposer.ui.menu"
+            label="Run Transposer">
+         <dynamic
+               class="org.polarsys.kitalpha.transposer.ui.internal.menus.TransposerContributionItem"
+               id="org.polarsys.kitalpha.transposer.ui.dynamic">
+         </dynamic>
+         <visibleWhen
+               checkEnabled="true">
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <or>
+                     <and>
+                        <instanceof
+                              value="org.eclipse.emf.ecore.EObject">
+                        </instanceof>
+                        <test
+                              forcePluginActivation="true"
+                              property="org.polarsys.kitalpha.transposer.ui.emf.contributions.launchconfigurations">
+                        </test>
+                     </and>
+                     <and>
+                        <instanceof
+                              value="org.eclipse.core.resources.IFile">
+                        </instanceof>
+                        <test
+                              forcePluginActivation="true"
+                              property="org.polarsys.kitalpha.transposer.ui.file.contributions.launchconfigurations">
+                        </test>
+                     </and>
+                  </or>
+               </iterate>
+               </with>
+               </visibleWhen>
+               </menu>
+               </menuContribution>
+               
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.polarsys.kitalpha.transposer.ui.internal.menus.TransposerPropertyTester"
+            id="org.polarsys.kitalpha.transposer.ui.file.TransposerUITester"
+            namespace="org.polarsys.kitalpha.transposer.ui.file.contributions"
+            properties="launchconfigurations"
+            type="org.eclipse.core.resources.IFile">
+      </propertyTester>
+      <propertyTester
+            class="org.polarsys.kitalpha.transposer.ui.internal.menus.TransposerPropertyTester"
+            id="org.polarsys.kitalpha.transposer.ui.emf.TransposerUITester"
+            namespace="org.polarsys.kitalpha.transposer.ui.emf.contributions"
+            properties="launchconfigurations"
+            type="org.eclipse.emf.ecore.EObject">
+      </propertyTester>
+   </extension>
+</plugin>

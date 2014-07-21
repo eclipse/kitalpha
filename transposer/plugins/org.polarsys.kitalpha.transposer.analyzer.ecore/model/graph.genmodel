@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) THALES  2009. All rights reserved."
+    modelDirectory="/org.polarsys.kitalpha.transposer.analyzer/generated" editDirectory="/org.polarsys.kitalpha.transposer.analyzer.graph.edit/generated"
+    editorDirectory="/org.polarsys.kitalpha.transposer.analyzer.graph.editor/generated"
+    modelPluginID="org.polarsys.kitalpha.transposer.analyzer" modelName="Graph" editPluginClass="org.polarsys.kitalpha.transposer.analyzer.graph.provider.GraphEditPlugin"
+    editorPluginClass="org.polarsys.kitalpha.transposer.analyzer.graph.presentation.GraphEditorPlugin"
+    nonNLSMarkers="true" testSuiteClass="org.polarsys.kitalpha.transposer.analyzer.graph.tests.GraphAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>graph.ecore</foreignModel>
+  <genPackages prefix="Graph" basePackage="org.polarsys.kitalpha.transposer.analyzer"
+      disposableProviderFactory="true" ecorePackage="graph.ecore#/">
+    <genClasses ecoreClass="graph.ecore#//Graph">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graph.ecore#//Graph/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graph.ecore#//Graph/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graph.ecore#//Graph/vertices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graph.ecore#//Graph/edges"/>
+      <genOperations ecoreOperation="graph.ecore#//Graph/addAdjacent">
+        <genParameters ecoreParameter="graph.ecore#//Graph/addAdjacent/source_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addAdjacent/target_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addAdjacent/edgeContent_p"/>
+        <genTypeParameters ecoreTypeParameter="graph.ecore#//Graph/addAdjacent/T"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Graph/addAdjacent.1">
+        <genParameters ecoreParameter="graph.ecore#//Graph/addAdjacent.1/source_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addAdjacent.1/target_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addAdjacent.1/edgeContent_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addAdjacent.1/critical_p"/>
+        <genTypeParameters ecoreTypeParameter="graph.ecore#//Graph/addAdjacent.1/T"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Graph/addNamedAdjacent">
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent/source"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent/target"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent/edgeContent"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent/edgeName"/>
+        <genTypeParameters ecoreTypeParameter="graph.ecore#//Graph/addNamedAdjacent/T"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Graph/addNamedAdjacent.1">
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent.1/source_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent.1/target_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent.1/edgeContent_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent.1/edgeName_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Graph/addNamedAdjacent.1/critical_p"/>
+        <genTypeParameters ecoreTypeParameter="graph.ecore#//Graph/addNamedAdjacent.1/T"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Graph/addVertex">
+        <genParameters ecoreParameter="graph.ecore#//Graph/addVertex/vertex_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Graph/addEdge">
+        <genParameters ecoreParameter="graph.ecore#//Graph/addEdge/edge_p"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="graph.ecore#//GraphElement">
+      <genTypeParameters ecoreTypeParameter="graph.ecore#//GraphElement/ContentClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graph.ecore#//GraphElement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graph.ecore#//GraphElement/content"/>
+    </genClasses>
+    <genClasses ecoreClass="graph.ecore#//Vertex">
+      <genTypeParameters ecoreTypeParameter="graph.ecore#//Vertex/ContentClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graph.ecore#//Vertex/hotSpot"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference graph.ecore#//Vertex/outgoingEdges"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference graph.ecore#//Vertex/incomingEdges"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference graph.ecore#//Vertex/adjacents"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference graph.ecore#//Vertex/outgoingAdjacents"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference graph.ecore#//Vertex/incomingAdjacents"/>
+      <genOperations ecoreOperation="graph.ecore#//Vertex/hasForAdjacent">
+        <genParameters ecoreParameter="graph.ecore#//Vertex/hasForAdjacent/vertex_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Vertex/hasForOutgoingAdjacent">
+        <genParameters ecoreParameter="graph.ecore#//Vertex/hasForOutgoingAdjacent/vertex_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Vertex/hasForIncomingAdjacent">
+        <genParameters ecoreParameter="graph.ecore#//Vertex/hasForIncomingAdjacent/vertex_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Vertex/getIncomingEdgeFrom">
+        <genParameters ecoreParameter="graph.ecore#//Vertex/getIncomingEdgeFrom/vertex_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Vertex/getOutgoingEdgeTo">
+        <genParameters ecoreParameter="graph.ecore#//Vertex/getOutgoingEdgeTo/vertex_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Vertex/getEdgeTo">
+        <genParameters ecoreParameter="graph.ecore#//Vertex/getEdgeTo/vertex_p"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="graph.ecore#//Edge">
+      <genTypeParameters ecoreTypeParameter="graph.ecore#//Edge/ContentClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graph.ecore#//Edge/critical"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graph.ecore#//Edge/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference graph.ecore#//Edge/target"/>
+      <genOperations ecoreOperation="graph.ecore#//Edge/update">
+        <genParameters ecoreParameter="graph.ecore#//Edge/update/sourceVertex_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update/targetVertex_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Edge/update.1">
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.1/sourceVertex_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.1/targetVertex_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.1/criticalEdge_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Edge/update.2">
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.2/sourceVertex_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.2/targetVertex_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.2/edgeName_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.2/criticalEdge_p"/>
+      </genOperations>
+      <genOperations ecoreOperation="graph.ecore#//Edge/update.3">
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.3/sourceVertex_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.3/targetVertex_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.3/edgeContent_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.3/edgeName_p"/>
+        <genParameters ecoreParameter="graph.ecore#//Edge/update.3/criticalEdge_p"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

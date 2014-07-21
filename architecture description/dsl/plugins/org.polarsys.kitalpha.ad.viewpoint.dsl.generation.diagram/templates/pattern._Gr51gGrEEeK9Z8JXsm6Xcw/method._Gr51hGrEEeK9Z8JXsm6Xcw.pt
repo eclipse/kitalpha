@@ -1,0 +1,6 @@
+EDataTypeUniqueEList<EObject> domain = (EDataTypeUniqueEList<EObject>) ctx.getValue("domain");
+EObject modelElement = domain.get(0);
+if (modelElement != null)
+	return DiagramGenerationConfigurationHelper.generateVSM(modelElement);
+else
+	return false;

@@ -1,0 +1,2 @@
+return super.preCondition(ctx) && 
+		parameter.eContainer() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration; 

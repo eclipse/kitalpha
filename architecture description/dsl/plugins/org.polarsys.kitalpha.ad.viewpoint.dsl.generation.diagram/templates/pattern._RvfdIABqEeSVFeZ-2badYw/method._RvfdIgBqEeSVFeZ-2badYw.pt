@@ -1,0 +1,29 @@
+package PACKAGE;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.egf.model.pattern.Node;
+import org.eclipse.egf.model.pattern.PatternContext;
+import org.eclipse.egf.pattern.execution.InternalPatternContext;
+import org.eclipse.egf.pattern.execution.OutputManager;
+import org.eclipse.egf.pattern.execution.SuperOrchestrationContext;
+import org.eclipse.egf.pattern.query.IQuery;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.sirius.diagram.description.ContainerMapping;
+import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
+
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

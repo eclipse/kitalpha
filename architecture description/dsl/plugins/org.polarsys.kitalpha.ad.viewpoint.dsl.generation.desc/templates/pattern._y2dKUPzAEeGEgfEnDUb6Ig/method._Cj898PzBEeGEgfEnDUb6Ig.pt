@@ -1,0 +1,2 @@
+targetEClass = PlatformEClassesManager.INSTANCE.getEClassesWithPlatformURI(parameter.getExternalTarget()); 
+			

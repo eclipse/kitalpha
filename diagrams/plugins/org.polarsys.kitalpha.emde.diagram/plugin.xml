@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.polarsys.kitalpha.emde.diagram.Activator"
+               id="org.polarsys.kitalpha.emde.diagram"
+	       name="extensibility">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.polarsys.kitalpha.emde.diagram.javaaction.AnnotationSetValueAction"
+           id="org.polarsys.kitalpha.emde.diagram.javaaction.AnnotationSetValueAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.emde.diagram.javaaction.MakeClassExtensibleAction"
+           id="org.polarsys.kitalpha.emde.diagram.javaaction.MakeClassExtensibleAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.emde.diagram.javaaction.NewEMEAction"
+           id="org.polarsys.kitalpha.emde.diagram.javaaction.NewEMEAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.emde.diagram.javaaction.RemoveExtensibilityAction"
+           id="org.polarsys.kitalpha.emde.diagram.javaaction.RemoveExtensibilityAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.emde.diagram.javaaction.NewExtendedElementAction"
+           id="org.polarsys.kitalpha.emde.diagram.javaaction.NewExtendedElementAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.emde.diagram.javaaction.ValidateExtensionAction"
+           id="org.polarsys.kitalpha.emde.diagram.javaaction.ValidateExtensionAction">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.kitalpha.emde.diagram.javaaction.DeleteExtendedElementAction"
+           id="org.polarsys.kitalpha.emde.diagram.javaaction.DeleteExtendedElementAction">
+     </javaActions>
+  </extension>
+</plugin>

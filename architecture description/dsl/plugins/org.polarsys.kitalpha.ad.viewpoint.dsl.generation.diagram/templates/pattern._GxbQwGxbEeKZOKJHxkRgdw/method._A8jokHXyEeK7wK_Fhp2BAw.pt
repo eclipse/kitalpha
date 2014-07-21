@@ -1,0 +1,26 @@
+	AbstractAssociation reference = (AbstractAssociation)t_association;
+	if (reference != null)
+	{
+		String ref_name = reference.getName();
+		
+		ChangeContext gotoSource = ToolFactory.eINSTANCE.createChangeContext();
+		initial_operation.setFirstModelOperations(gotoSource);
+		gotoSource.setBrowseExpression(VSMVariable.source.getExpressionVariable());
+				
+		Unset t_unset = ToolFactory.eINSTANCE.createUnset();
+		t_unset.setFeatureName(ref_name);
+		String pEdgeView = VSMVariable.edgeView.getInnerVariable() + ".targetNode.oclAsType(viewpoint::DSemanticDecorator).target";
+		t_unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pEdgeView));
+		gotoSource.getSubModelOperations().add(t_unset);
+						
+		ChangeContext gotoTarget = ToolFactory.eINSTANCE.createChangeContext();
+		gotoTarget.setBrowseExpression(VSMVariable.target.getExpressionVariable());
+		gotoSource.getSubModelOperations().add(gotoTarget);
+					
+		SetValue t_setValue = ToolFactory.eINSTANCE.createSetValue();
+		t_setValue.setFeatureName(ref_name);
+		t_setValue.setValueExpression(SiriusExpressionHelper.getExpressoin(pEdgeView));
+		gotoTarget.getSubModelOperations().add(t_setValue);
+	}
+	else
+		generate_service = true;

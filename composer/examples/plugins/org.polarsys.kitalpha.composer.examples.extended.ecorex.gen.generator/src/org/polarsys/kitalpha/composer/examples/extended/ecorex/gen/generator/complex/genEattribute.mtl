@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module genEattribute('http://www.eclipse.org/emf/2002/Ecore')]
+[query public random(any : OclAny) : Integer = invoke('org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator.services.GenServices', 'random()', Sequence{})/]
+
+[template public gen(anEAttribute : EAttribute)]
+<h4>Attribute [name/] - Num [random()/]</h4>
+[/template]

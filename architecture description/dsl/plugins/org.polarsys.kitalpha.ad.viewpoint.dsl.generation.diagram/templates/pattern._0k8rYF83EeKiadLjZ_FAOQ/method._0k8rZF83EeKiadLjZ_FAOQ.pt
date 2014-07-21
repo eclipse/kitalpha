@@ -1,0 +1,1 @@
+return super.preCondition(ctx) && parameter.getImports() == null;

@@ -1,0 +1,60 @@
+<%
+genModel.getImportedName("org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement");
+%>
+
+
+	protected void collectProperties(Map<String, Property> name2prop) {
+		for (Viewpoint vp : getParents())
+			((ViewpointImpl) vp).collectProperties(name2prop);
+		if (getPropertySet() != null) {
+			for (Property prop : getPropertySet().getNewProperties())
+				name2prop.put(prop.getName(), prop);
+			for (Property prop : getPropertySet().getHiddenProperties())
+				name2prop.remove(prop.getName());
+		}
+	}
+	
+	protected void collectRules(Map<String, Rule> rules) {
+		for (Viewpoint vp : getParents())
+			((ViewpointImpl) vp).collectRules(rules);
+		if (getRuleSet() != null) {
+			addElements(rules, getRuleSet().getNewRules());
+			removeElements(rules, (getRuleSet().getHiddenRules()));
+		}
+	}
+	
+	protected void collectServices(Map<String, Service> services) {
+		for (Viewpoint vp : getParents())
+			((ViewpointImpl) vp).collectServices(services);
+		if (getServiceSet() != null) {
+			addElements(services, getServiceSet().getNewServices());
+			removeElements(services, getServiceSet().getHiddenServices());
+		}
+	}
+
+<%
+genModel.getImportedName("org.eclipse.emf.common.util.BasicEList");
+genModel.getImportedName("java.util.Map");
+genModel.getImportedName("java.util.HashMap");
+%>
+
+	private static void collectParents(Viewpoint vp, EList<Viewpoint> collecteur) {
+		for (Viewpoint parent : vp.getParents()) {
+			collectParents(parent, collecteur);
+			collecteur.add(parent);
+		}
+	}
+
+	protected <T extends NameElement> void addElements(Map<String, T> collector, EList<T> elts) {
+		for (T elt : elts) {
+			// if (!collector.containsKey(elt.getId()))
+			collector.put(elt.getId(), elt);
+		}
+	}
+
+	protected <T extends NameElement> void removeElements(Map<String, T> collector, EList<T> elts) {
+		for (T elt : elts) {
+			collector.remove(elt.getId());
+		}
+	}
+

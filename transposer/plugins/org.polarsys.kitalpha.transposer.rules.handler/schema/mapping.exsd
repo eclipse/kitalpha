@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.polarsys.kitalpha.rules.handler" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.polarsys.kitalpha.rules.handler" id="transposer.rules.handler.mapping" name="rules.handler.mapping"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2014 Thales Global Services S.A.S.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+         <documentation>
+            This extension point is used to define a transformation mapping : 
+Pim metaclasses are mapped to different possibilities [rules] that are mutually exclusive.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="mapping"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="mapping">
+      <annotation>
+         <appinfo>
+            <meta.element labelAttribute="mappingName"/>
+         </appinfo>
+         <documentation>
+            Un mapping est un ensemble de mappingElements [lignes dans le tableau de mapping].
+         </documentation>
+      </annotation>
+      <complexType>
+         <choice>
+            <element ref="mappingPackage" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="mappingElement" minOccurs="0" maxOccurs="unbounded"/>
+         </choice>
+         <attribute name="mappingPurpose" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The mapping purpose.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="mappingName" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The mapping name.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  Description of the mapping.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="private" type="boolean" use="default" value="false">
+            <annotation>
+               <documentation>
+                  This attribute allows to hide the mapping in the GUI
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="domainHelper" type="string">
+            <annotation>
+               <documentation>
+                  A class allowing transposer to get informations on the domain (eg: availables classes, hot spots, ...)
+This helper is required if there is no extended mapping. 
+If their is an extended mapping, the provided helper will overrides the one of the extended mapping.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IDomainHelper"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="context" type="string">
+            <annotation>
+               <documentation>
+                  Context that Transposer has to use.
+Optional.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="extendedMappingExtensionID" type="string">
+            <annotation>
+               <documentation>
+                  Indicates which mapping is extended : it allows to provides new mapping elements, to extends or ovverrides the existing ones.
+If the purpose is the same, the two mappings will be merged at runtime.
+If the purpose is different, it is a new mapping which extends the other, the two mappings will coexists at runtime.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="mappingPackage">
+      <annotation>
+         <appinfo>
+            <meta.element labelAttribute="name"/>
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice>
+            <element ref="mappingPackage" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="mappingElement" minOccurs="0" maxOccurs="unbounded"/>
+         </choice>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="mappingElement">
+      <annotation>
+         <appinfo>
+            <meta.element labelAttribute="domainMetaClass"/>
+         </appinfo>
+         <documentation>
+            A MappingElement associates a given MetaClass to different possibilities : there can be several mutually exclusive rules.
+
+The extension of mapping element is implicit : a mapping cannot have two mapping elements on the same domain class, if the extended mapping already contains an element on the given domain class, this element will be extended with the new ones.
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="defaultMappingPossibility" minOccurs="0" maxOccurs="1"/>
+            <element ref="mappingPossibility" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="domainMetaClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="reuseExtendedElementDefaultPossibility" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  It allows to specify to Transposer that the default possibility of the extended mapping element has to be reused.
+If a mapping element provides it own default possibility, this parameter is not used.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="reuseExtendedElementPossibilities" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  Reused possibilities are evaluated after the new ones.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="mappingPossibility">
+      <annotation>
+         <appinfo>
+            <meta.element labelAttribute="name"/>
+         </appinfo>
+      </annotation>
+      <complexType>
+         <attribute name="completeRule" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IRule"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="incompleteRule" type="string">
+            <annotation>
+               <documentation>
+                  Rule called when a cycle is detected in the graph build by the analyzer
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IRule"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="context" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="enabled" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="defaultMappingPossibility">
+      <annotation>
+         <appinfo>
+            <meta.element labelAttribute="name"/>
+         </appinfo>
+         <documentation>
+            This optional possibility is the last evaluated rule.
+It can be always applicable.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="completeRule" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="incompleteRule" type="string">
+            <annotation>
+               <documentation>
+                  Rule called when a cycle is detected in the graph build by the analyzer
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="context" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="enabled" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         Transposer 1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2009, 2009 THALES CORPORATE SERVICE
+   All rights reserved.
+      </documentation>
+   </annotation>
+
+</schema>

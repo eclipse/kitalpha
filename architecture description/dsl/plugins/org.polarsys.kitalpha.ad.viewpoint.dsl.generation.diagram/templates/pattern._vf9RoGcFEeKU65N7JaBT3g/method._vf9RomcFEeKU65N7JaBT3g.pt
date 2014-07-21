@@ -1,0 +1,19 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.eclipse.sirius.diagram.description.DescriptionFactory;
+import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescription;
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

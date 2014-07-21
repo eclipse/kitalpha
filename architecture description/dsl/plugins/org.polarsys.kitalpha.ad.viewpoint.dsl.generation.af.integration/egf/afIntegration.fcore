@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_pIAP4HpzEeKZnLNBJ96SOA" name="AF.Integration.Fire.Update">
+    <contractContainer xmi:id="_s9jlIHpzEeKZnLNBJ96SOA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_uufXQHpzEeKZnLNBJ96SOA"
+          name="af.model.platform.uri" invocationContracts="#_9tcC0npzEeKZnLNBJ96SOA #_8-pqMnpzEeKZnLNBJ96SOA">
+        <type xmi:type="types:TypeString" xmi:id="_v4sgkHpzEeKZnLNBJ96SOA"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_wnCNQHpzEeKZnLNBJ96SOA">
+      <invocations xmi:id="_8-pqMHpzEeKZnLNBJ96SOA" name="Update AF Required-bundles "
+          invokedActivity="#_3MGcwHpzEeKZnLNBJ96SOA">
+        <invocationContractContainer xmi:id="_8-pqMXpzEeKZnLNBJ96SOA">
+          <invocationContracts xmi:id="_8-pqMnpzEeKZnLNBJ96SOA" factoryComponentContract="#_uufXQHpzEeKZnLNBJ96SOA"
+              invokedContract="#_5a1lMXpzEeKZnLNBJ96SOA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_9tcC0HpzEeKZnLNBJ96SOA" name="Update AF Model" invokedActivity="#_1EEZQHpzEeKZnLNBJ96SOA">
+        <invocationContractContainer xmi:id="_9tcC0XpzEeKZnLNBJ96SOA">
+          <invocationContracts xmi:id="_9tcC0npzEeKZnLNBJ96SOA" factoryComponentContract="#_uufXQHpzEeKZnLNBJ96SOA"
+              invokedContract="#_5OLCMXpzEeKZnLNBJ96SOA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_qDTjQHqvEeKZnLNBJ96SOA" name="Clear AF Integration data"
+          invokedActivity="#_YQmWoHqvEeKZnLNBJ96SOA"/>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_3MGcwHpzEeKZnLNBJ96SOA" name="Update.AF.RequiredBundles" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.task.UpdateAFRequiredBundlesTask">
+    <contractContainer xmi:id="_5a1lMHpzEeKZnLNBJ96SOA">
+      <contracts xmi:id="_5a1lMXpzEeKZnLNBJ96SOA" name="af.model.platform.uri">
+        <type xmi:type="types:TypeString" xmi:id="_5a1lMnpzEeKZnLNBJ96SOA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_1EEZQHpzEeKZnLNBJ96SOA" name="Update.AF.Model" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.task.UpdateAFModelTask">
+    <contractContainer xmi:id="_5OLCMHpzEeKZnLNBJ96SOA">
+      <contracts xmi:id="_5OLCMXpzEeKZnLNBJ96SOA" name="af.model.platform.uri">
+        <type xmi:type="types:TypeString" xmi:id="_5OLCMnpzEeKZnLNBJ96SOA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_YQmWoHqvEeKZnLNBJ96SOA" name="Clear.AF.Integration.Data" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.task.InitAFIntegrationTask"/>
+</xmi:XMI>

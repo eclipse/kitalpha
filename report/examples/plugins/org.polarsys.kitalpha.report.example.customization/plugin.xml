@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <!--extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.polarsys.kitalpha.examples.report.Activator"/>
+   </extension-->
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            id="kitalpha.report.example.customization.contribution1">
+         <menu
+               label="%report_example_menu"
+               path="additions"
+               id="kitalpha.report.example.customization.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="%report_example_action"
+               class="org.polarsys.kitalpha.report.example.customization.NewReportAction"
+               menubarPath="kitalpha.report.example.customization.menu1/group1"
+               enablesFor="1"
+               id="kitalpha.report.example.customization.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

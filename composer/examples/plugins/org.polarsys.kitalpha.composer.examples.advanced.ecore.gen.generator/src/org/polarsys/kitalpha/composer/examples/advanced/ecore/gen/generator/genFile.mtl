@@ -1,0 +1,60 @@
+[comment encoding = UTF-8 /]
+[module genFile('http://org.polarsys.kitalpha/composer/example/advancedusecase/ecoreadvancedalloc/1.0.0','http://org.polarsys.kitalpha/allocation/base/1.0.0' , 'http://www.eclipse.org/emf/2002/Ecore')]
+
+[import org::polarsys::kitalpha::composer::examples::advanced::ecore::gen::generator::genEclass /]
+[import org::polarsys::kitalpha::composer::examples::advanced::ecore::gen::generator::genEattribute /]
+
+[template public genFile(anEcoreFile : EcoreFile) post(trim())]
+[comment @main /]
+[file (oclAsType(File).path+'/'+oclAsType(File).name, false, 'UTF-8')]
+[genHeader()/]
+
+[for (it : GeneratedElement | oclAsType(File).ownedTypes.oclAsType(GeneratedElement))]
+[genType()/]
+
+[/for]
+[genFooter()/]
+[/file]
+[/template]
+
+
+
+[template public genType(anGeneratedElement : GeneratedElement) post(trim())]
+[genType()/]
+[/template]
+
+[template public genType(anForwardDeclaration : ForwardDeclaration) post(trim())]
+<b>forward declaration</b> [oclAsType(Type).referencedElement.oclAsType(EClass).genName()/] </br>
+[/template]
+
+[template public genType(anDeclaration : Declaration) post(trim())]
+[for (it : Reference | references)]
+	[gen()/]
+[/for]
+
+[if (references->size() > 0)]
+<b>References : </b><br />
+[for (it : Reference | references)]
+	[gen()/]
+[/for]
+[/if]
+<br />
+<br />
+[/template]
+
+[template public gen(anReference : Reference) post(trim())]
+[name/] : <a href="[hyperlinkRef/]"><[eContainer(Type).referencedElement.oclAsType(EClass).eReferences->select(name = current(1).oclAsType(Reference).name).eReferenceType.name/]
+[/template]
+
+[template public genHeader(anEcoreFile : EcoreFile) post(trim())]
+<html>
+<head>
+<title>[oclAsType(File).name/]</title>
+</head>
+<body>
+[/template]
+
+[template public genFooter(anEcoreFile : EcoreFile) post(trim())]
+</body>
+</html>
+[/template]

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (c) 2014 Thales Global Services S.A.S.
+   All rights reserved. This program and the accompanying materials
+   are made available under the terms of the Eclipse Public License v1.0
+   which accompanies this distribution, and is available at
+   http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+   Thales Global Services S.A.S - initial API and implementation
+-->
+<templates>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Diagram" deleted="false" description="New Diagram" enabled="true" id="1" name="Diagram">
+Diagram "newDiagramName" {&#13;
+	domain-context: ${value:CrossReference('commondata.LocalClass.class')}&#13;
+	Mapping {&#13;
+		//[Container, Node or Edge] &#13;
+	}&#13;
+	Actions{&#13;
+		//[Actions]&#13;
+	}&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Container" deleted="false" description="New Container provided by local association" enabled="true" id="2" name="Container">
+Container newContainerName {&#13;
+	domain-context: ${local_class:CrossReference('commondata.LocalClass.class')} provided-by association ${local_association:CrossReference('commondata.LocalAssociation.reference')}&#13;
+	Representation {&#13;
+		Label { content: ${local_attribute:CrossReference('expression.DomainElement.attribute')} police: black }&#13;
+		Style {&#13;
+			FlatStyle {	border: blue background: light_gray }&#13;
+		}&#13;
+	}&#13;
+	Contains {&#13;
+		//[Container or  Node]&#13;
+	}&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Container" deleted="false" description="New Container provided by external association" enabled="true" id="3" name="Container">
+Container newContainerName {&#13;
+	domain-context: external ${external_class:CrossReference('commondata.ExternalClass.class')} provided-by association external ${external_association:CrossReference('commondata.ExternalAssociation.reference')}&#13;
+	Representation {&#13;
+		Label { content: "example" police: black }&#13;
+		Style {&#13;
+			FlatStyle {	border: blue background: light_gray }&#13;
+		}&#13;
+	}&#13;
+	Contains {&#13;
+		//[Container or  Node]&#13;
+	}&#13;
+}&#13;
+</template>
+
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Node" deleted="false" description="New Node provided by local association" enabled="true" id="4" name="Node">
+Node newNode {&#13;
+	domain-context: ${local_class:CrossReference('commondata.LocalClass.class')} provided-by association ${local_association:CrossReference('commondata.LocalAssociation.reference')}&#13;
+	Representation {&#13;
+		Label { content: "example" police: black alignment: center}&#13;
+		Style {&#13;
+			BasicStyle { border-color: black background: light_gray form: Square }&#13;
+		}&#13;
+	}&#13;
+	Contains {&#13;
+		//[Container or  Node]&#13;
+	}&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Node" deleted="false" description="New Node provided by external association" enabled="true" id="5" name="Node">
+Node newNode {&#13;
+	domain-context: ${local_class:CrossReference('commondata.LocalClass.class')} provided-by association external ${external_association:CrossReference('commondata.ExternalAssociation.reference')}&#13;
+	Representation {&#13;
+		Label { content: "example" police: black alignment: center}&#13;
+		Style {&#13;
+			BasicStyle { border-color: black background: light_gray form: Square }&#13;
+		}&#13;
+	}&#13;
+	Contains {&#13;
+		//[Container or  Node]&#13;
+	}&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Edge" deleted="false" description="New Edge provided by external association" enabled="true" id="6" name="Edge">
+Edge newEdge {&#13;
+	association-context: external ${external_association:CrossReference('commondata.ExternalAssociation.reference')}&#13;
+	source: ${source:CrossReference('Edge.source')}&#13;
+	target: ${target:CrossReference('Edge.target')}&#13;
+	Representation {&#13;
+		Style { end-decorator: OutputArrow color: black }&#13;
+	}&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Action" deleted="false" description="New Create Action" enabled="true" id="7" name="Action">
+Create createActionName { label: "Create tool example" action-for:  ${source:CrossReference('Create.tool_For')}}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Action" deleted="false" description="New Drop Action" enabled="true" id="8" name="Action">
+Drop dropActionName { label: "Drop tool example" action-for:  ${source:CrossReference('Drop.tool_For')}}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Action" deleted="false" description="New Delete Action" enabled="true" id="9" name="Action">
+Delete deleteActionName { label: "Delete tool example" action-for:  ${source:CrossReference('Delete.tool_For')}}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Action" deleted="false" description="New Reconnect Edge Action" enabled="true" id="10" name="Action">
+ReconnectEdge reconnectEdgeActionName { label: "Reconnect edge example" action-for:  ${source:CrossReference('ReconnectEdge.tool_For')}}&#13;
+</template>
+
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.OpenAction" deleted="false" description="New Open Action" enabled="true" id="11" name="OpenAction">
+OpenAction openActionName { precondition: openActionPrecondition label: "Open Action Label" icon: "Open Action Icon"  }&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramExtension" deleted="false" description="New Diagram Extension" enabled="true" id="12" name="Diagram Extension">
+DiagramExtension "New Diagram Extension" {&#13;
+ extended-diagram: ${source:CrossReference('extended-diagram.extented_diagram')}&#13;
+		Mapping {&#13;
+		//[Container, Node or Edge] &#13;
+	}&#13;
+	Actions{&#13;
+		//[Actions]&#13;
+	}&#13;
+}&#13;
+</template>
+
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BorderedNode" deleted="false" description="New BorderedNode By Local Association" enabled="true" id="13" name="BorderedNode">
+BorderedNode borderedNodeName {&#13;
+	domain-context: ${local_class:CrossReference('commondata.LocalClass.class')}  provided-by association ${local_association:CrossReference('commondata.LocalAssociation.reference')} &#13;
+	Representation {&#13;
+		Label {&#13;
+			content: "Expression"&#13;
+			position: border&#13;
+			alignment: center&#13;
+		}&#13;
+	Style {&#13;
+		BasicStyle {&#13;
+		border-color: light_green&#13;
+	}&#13;
+   }&#13;
+  }&#13;
+}&#13;
+</template>
+
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BorderedNode" deleted="false" description="New BorderedNode By External Association" enabled="true" id="14" name="BorderedNode">
+BorderedNode borderedNodeName {&#13;
+	domain-context: external ${external_class:CrossReference('commondata.ExternalClass.class')}  provided-by association external ${external_association:CrossReference('commondata.ExternalAssociation.reference')} &#13;
+	Representation {&#13;
+		Label {&#13;
+			content: "Expression"&#13;
+			position: border&#13;
+			alignment: center&#13;
+		}&#13;
+	Style {&#13;
+		BasicStyle {&#13;
+		border-color: light_green&#13;
+	}&#13;
+   }&#13;
+  }&#13;
+}&#13;
+</template>
+
+
+</templates>

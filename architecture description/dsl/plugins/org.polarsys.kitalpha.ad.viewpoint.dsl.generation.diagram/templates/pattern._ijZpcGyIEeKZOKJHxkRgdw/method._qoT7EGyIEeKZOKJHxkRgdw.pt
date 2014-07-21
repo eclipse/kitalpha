@@ -1,0 +1,10 @@
+EObject vpParent = parameter.eContainer();
+EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
+
+ToolSection section = (ToolSection) sectionObject;
+
+if (currentParent instanceof Layer) {
+	// Add the generated container Mapping (dContainer) in the Layer
+	Layer owner = (Layer) currentParent;
+	owner.getToolSections().add(section);
+}

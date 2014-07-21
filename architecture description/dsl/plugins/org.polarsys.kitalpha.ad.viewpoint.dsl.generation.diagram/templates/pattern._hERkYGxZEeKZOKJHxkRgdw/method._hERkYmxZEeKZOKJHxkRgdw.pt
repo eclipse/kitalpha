@@ -1,0 +1,57 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractAssociation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData.JavaMethodReturnType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.IconPathHelper;
+
+import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.diagram.description.ContainerMapping;
+import org.eclipse.sirius.diagram.description.EdgeMapping;
+import org.eclipse.sirius.viewpoint.description.tool.ContainerModelOperation;
+import org.eclipse.sirius.diagram.description.tool.EdgeCreationDescription;
+import org.eclipse.sirius.viewpoint.description.tool.InitEdgeCreationOperation;
+import org.eclipse.sirius.diagram.description.tool.SourceEdgeCreationVariable;
+import org.eclipse.sirius.diagram.description.tool.TargetEdgeCreationVariable;
+import org.eclipse.sirius.diagram.description.tool.SourceEdgeViewCreationVariable;
+import org.eclipse.sirius.diagram.description.tool.TargetEdgeViewCreationVariable;
+import org.eclipse.sirius.viewpoint.description.tool.SetValue;
+import org.eclipse.sirius.diagram.description.tool.ToolFactory;
+import org.eclipse.sirius.diagram.description.tool.NodeCreationDescription;
+import org.eclipse.sirius.diagram.description.tool.ContainerCreationDescription;
+import org.eclipse.sirius.viewpoint.description.tool.InitialNodeCreationOperation;
+import org.eclipse.sirius.diagram.description.tool.NodeCreationVariable;
+import org.eclipse.sirius.viewpoint.description.tool.ContainerViewVariable;
+import org.eclipse.sirius.viewpoint.description.tool.ChangeContext;
+import org.eclipse.sirius.viewpoint.description.tool.CreateInstance;
+import org.eclipse.sirius.viewpoint.description.tool.If;
+import org.eclipse.sirius.viewpoint.description.tool.MappingBasedToolDescription;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
+
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

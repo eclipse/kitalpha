@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model/src"
+    modelPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model"
+    modelName="Expression" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore</foreignModel>
+  <genPackages prefix="Expression" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram"
+      disposableProviderFactory="true" ecorePackage="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#/">
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//Expression/expressionElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//Expression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//JavaElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//JavaElement/method"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//DomainElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//DomainElement/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//StringElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//StringElement/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ExpressionElement"/>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ForeignExpressionElement"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,17 @@
+/************************* EClass Creation ***********************************/
+generatedEClass = EcoreFactory.eINSTANCE.createEClass();
+generatedEClass.setName(vpsClassName);
+generatedEClass.setAbstract(parameter.isAbstract());
+
+/************************* EClass Generic Annotation *************************/
+/**
+if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
+	ENamedElementAnnotationHelper.annotate(generatedEClass, 
+											ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
+											ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
+											parameter.getDescription(),
+											true);
+**/
+
+ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers().add(generatedEClass);
+

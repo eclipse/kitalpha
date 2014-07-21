@@ -1,0 +1,11 @@
+if (dslvpToolElement != null)
+{
+	EObject dslvpParent = dslvpToolElement.eContainer();  
+	EObject doremiParent = GenerationUtil.getDoremiElement(dslvpParent);
+
+	if (doremiParent instanceof ToolSection)
+	{
+		ToolSection toolSection = (ToolSection)doremiParent;
+		toolSection.getOwnedTools().add((ToolEntry)abstractToolDescription);
+	}
+}

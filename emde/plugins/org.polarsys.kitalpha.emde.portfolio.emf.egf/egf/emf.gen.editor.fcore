@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_AItvUFjkEd-5FJ833LkcRA"
+    name="emf.gen.editor.common">
+  <contractContainer xmi:id="_AItvUVjkEd-5FJ833LkcRA">
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_AItvUljkEd-5FJ833LkcRA"
+        description="EMF Model Pattern" name="genModelURI" mandatory="true" invocationContracts="#_8iT2kGjMEd-Pwf_Ge6oWrw">
+      <type xmi:type="domain:TypeDomain" xmi:id="_AItvU1jkEd-5FJ833LkcRA"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_678H4GmLEd-WDNIQ7luqOw"
+        name="mergeRulesURI" invocationContracts="#_9ckRkGmLEd-WDNIQ7luqOw">
+      <type xmi:type="types:TypeURI" xmi:id="_8pdZoGmLEd-WDNIQ7luqOw"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_AItvVljkEd-5FJ833LkcRA"
+        description="EMF Model Pattern" name="pattern.substitutions" invocationContracts="#_AItvXljkEd-5FJ833LkcRA">
+      <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_AItvV1jkEd-5FJ833LkcRA"/>
+    </contracts>
+  </contractContainer>
+  <viewpointContainer xmi:id="_TCapIFj4Ed-dWqYOpUTYSw">
+    <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_TCapIVj4Ed-dWqYOpUTYSw"/>
+  </viewpointContainer>
+  <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_AItvWljkEd-5FJ833LkcRA">
+    <invocations xmi:id="_AItvW1jkEd-5FJ833LkcRA" invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_N9g3oElcEd-TSsH7K-_bxQ">
+      <invocationContractContainer xmi:id="_AItvXFjkEd-5FJ833LkcRA">
+        <invocationContracts xmi:id="_AItvXVjkEd-5FJ833LkcRA" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_UVURwEldEd-TSsH7K-_bxQ">
+          <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_cPdngFj4Ed-dWqYOpUTYSw"/>
+        </invocationContracts>
+        <invocationContracts xmi:id="_AItvXljkEd-5FJ833LkcRA" factoryComponentContract="#_AItvVljkEd-5FJ833LkcRA"
+            invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_ahgHMEldEd-TSsH7K-_bxQ"/>
+        <invocationContracts xmi:id="_AItvX1jkEd-5FJ833LkcRA" targetInvocationContract="#_82bFYGjMEd-Pwf_Ge6oWrw"
+            invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_gBdIwEldEd-TSsH7K-_bxQ"/>
+      </invocationContractContainer>
+    </invocations>
+    <invocations xmi:id="_Lu8LkFjkEd-5FJ833LkcRA" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_f5sgYUebEd-o3oTHnj_3Dw">
+      <invocationContractContainer xmi:id="_7mZn8GjMEd-Pwf_Ge6oWrw">
+        <invocationContracts xmi:id="_8iT2kGjMEd-Pwf_Ge6oWrw" factoryComponentContract="#_AItvUljkEd-5FJ833LkcRA"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_-5VoYEebEd-o3oTHnj_3Dw"/>
+        <invocationContracts xmi:id="_9ckRkGmLEd-WDNIQ7luqOw" factoryComponentContract="#_678H4GmLEd-WDNIQ7luqOw"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_J2nz8GmLEd-WDNIQ7luqOw"/>
+        <invocationContracts xmi:id="_82bFYGjMEd-Pwf_Ge6oWrw" sourceInvocationContract="#_AItvX1jkEd-5FJ833LkcRA"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_WqYy4GQQEd-ZRKoL5olDIg"/>
+      </invocationContractContainer>
+    </invocations>
+  </orchestration>
+</fcore:FactoryComponent>

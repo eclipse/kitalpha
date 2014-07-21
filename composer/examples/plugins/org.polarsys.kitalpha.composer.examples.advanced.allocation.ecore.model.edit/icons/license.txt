@@ -1,0 +1,15 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+/icons/full/obj16/ForwardDeclaration.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/obj16/ForwardDeclaration.gif
+/icons/full/obj16/EcoreFile.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/obj16/EcoreFile.gif
+/icons/full/obj16/Reference.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/obj16/Reference.gif
+/icons/full/obj16/Declaration.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/obj16/Declaration.gif
+/icons/full/obj16/EcoreRoot.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/obj16/EcoreRoot.gif
+/icons/full/ctool16/CreateRoot_ownedFiles_EcoreFile.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/ctool16/CreateRoot_ownedFiles_EcoreFile.gif
+/icons/full/ctool16/CreateDeclaration_references_Reference.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/ctool16/CreateDeclaration_references_Reference.gif
+/icons/full/ctool16/CreateFile_ownedTypes_Declaration.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/ctool16/CreateFile_ownedTypes_Declaration.gif
+/icons/full/ctool16/CreateFile_ownedTypes_ForwardDeclaration.gif - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit - org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit/icons/full/ctool16/CreateFile_ownedTypes_ForwardDeclaration.gif

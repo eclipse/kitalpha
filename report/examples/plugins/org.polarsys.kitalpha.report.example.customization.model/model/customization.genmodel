@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.report.example.customization.model/generated"
+    editDirectory="/org.polarsys.kitalpha.report.example.customization.model.edit/generated"
+    editorDirectory="/org.polarsys.kitalpha.report.example.customization.model.editor/generated"
+    modelPluginID="org.polarsys.kitalpha.report.example.customization.model" modelName="Customization"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    editPluginID="org.polarsys.kitalpha.report.example.customization.model.edit" editorPluginID="org.polarsys.kitalpha.report.example.customization.model.editor"
+    usedGenPackages="../../org.polarsys.kitalpha.report.model/model/report.genmodel#//report">
+  <foreignModel>../../org.polarsys.kitalpha.report.example.customization/model/customization.ecore</foreignModel>
+  <genPackages prefix="Customization" basePackage="org.polarsys.kitalpha.report.example"
+      disposableProviderFactory="true" interfacePackageSuffix="model" metaDataPackageSuffix="model"
+      classPackageSuffix="model.impl" utilityPackageSuffix="model.util" providerPackageSuffix="model.provider"
+      presentationPackageSuffix="model.presentation" testsPackageSuffix="model.tests"
+      ecorePackage="../../org.polarsys.kitalpha.report.example.customization/model/customization.ecore#/">
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.report.example.customization/model/customization.ecore#//CustomEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.report.example.customization/model/customization.ecore#//CustomEntry/comment"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

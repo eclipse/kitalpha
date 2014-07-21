@@ -1,0 +1,10 @@
+EObject vpParent = parameter.eContainer().eContainer();
+EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
+
+EdgeMapping edgeMapping = (EdgeMapping) dEdgeMapping;
+
+if (currentParent instanceof Layer){
+	// Add the generated Edge Mapping (edgeMapping) in the Layer
+	Layer owner = (Layer) currentParent;
+	owner.getEdgeMappings().add(edgeMapping);
+} 

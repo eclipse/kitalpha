@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.composer.cots.generators">
+      <cost
+            Class="org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator.simple.launcher.AcceleoEcoreLauncher"
+            Description="EcoreX HTML Documentation Acceleo Template Simple Extension"
+            Id="org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator.simple"
+            Name="EcoreX HTML Documentation Acceleo Template Simple Extension"
+            NsUri="http://org.polarsys.kitalpha/composer/example/basicusecase/ecorebasicalloc/1.0.0">
+      </cost>
+   </extension>
+
+   <extension
+         point="org.polarsys.kitalpha.composer.cots.generators">
+      <cost
+            Class="org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator.complex.launcher.AcceleoEcoreLauncher"
+            Description="EcoreX HTML Documentation Acceleo Template Complex Extension"
+            Id="org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator.complex"
+            Name="Ecore HTML Documentation Acceleo Template Complex Extension"
+            NsUri="http://org.polarsys.kitalpha/composer/example/basicusecase/ecorebasicalloc/1.0.0">
+      </cost>
+   </extension>
+
+
+</plugin>

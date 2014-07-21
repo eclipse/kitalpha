@@ -1,0 +1,5 @@
+		BasicEList<Property> props = new BasicEList<Property>();
+		Map<String, Property> name2prop = new HashMap<String, Property>();
+		collectProperties(name2prop);
+		props.addAll(name2prop.values());
+		return props;

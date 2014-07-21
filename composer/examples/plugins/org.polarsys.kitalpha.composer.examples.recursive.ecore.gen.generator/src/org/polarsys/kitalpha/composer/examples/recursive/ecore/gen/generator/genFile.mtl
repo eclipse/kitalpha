@@ -1,0 +1,38 @@
+[comment encoding = UTF-8 /]
+[module genFile('http://org.polarsys.kitalpha/composer/example/recursiveusecase/ecorerecursivealloc/1.0.0', 'http://org.polarsys.kitalpha/allocation/base/1.0.0')]
+
+[import org::polarsys::kitalpha::composer::examples::recursive::ecore::gen::generator::genEcore /]
+
+[template public genFile(anEcoreAllocFile : EcoreAllocFile) post(trim())]
+[comment @main /]
+[file (oclAsType(File).path+'/'+oclAsType(File).name, false, 'UTF-8')]
+[genHeader()/]
+
+Generation plan for File [oclAsType(File).name/] : <br /><br />
+[for (it : EcoreAllocType | oclAsType(File).ownedTypes.oclAsType(EcoreAllocType))]
+[gen(it)/]
+[/for]
+<br /><br />
+
+[genFooter()/]
+[/file]
+[/template]
+
+
+
+[template public gen(anEcoreAllocType : EcoreAllocType) post(trim())]
+[oclAsType(Type).referencedElement.gen()/]
+[/template]
+
+[template public genHeader(anEcoreAllocFile : EcoreAllocFile) post(trim())]
+<html>
+<head>
+<title>[oclAsType(File).name/]</title>
+</head>
+<body>
+[/template]
+
+[template public genFooter(anEcoreAllocFile : EcoreAllocFile) post(trim())]
+</body>
+</html>
+[/template]

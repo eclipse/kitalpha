@@ -1,0 +1,12 @@
+EList<org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint> allVP = new BasicEList<org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint>();
+if (parameter.getParents().size() > 0)
+	allVP.addAll(AfProjectManager.INSTANCE.getViewpoint().getParents());
+
+if (parameter.getDependencies().size() > 0)
+	allVP.addAll(AfProjectManager.INSTANCE.getViewpoint().getDependencies());
+
+for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint : allVP)
+{
+	String bundleID = EcoreUtil.getURI(viewpoint).segment(1);
+	PDEUtility.updateRequiredBundles(AfProjectManager.INSTANCE.getProject(), bundleID, new NullProgressMonitor());
+}

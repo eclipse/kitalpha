@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vpui" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpui/1.0.0"
+    nsPrefix="vpui">
+  <eClassifiers xsi:type="ecore:EClass" name="UIContainer" eSuperTypes="#//DisplayableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="UI_fields" upperBound="-1"
+        eType="#//UIField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subContainers" upperBound="-1"
+        eType="#//UIContainer" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UI" eSuperTypes="#//DisplayableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="UI_Containers" upperBound="-1"
+        eType="#//UIContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="UI_DataSource" eType="#//DataSource"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UI_Field_Type">
+    <eLiterals name="text"/>
+    <eLiterals name="textarea" value="1"/>
+    <eLiterals name="checkbox" value="2"/>
+    <eLiterals name="radiobox" value="3"/>
+    <eLiterals name="simpleChoiceList" value="4" literal="simpleChoiceList"/>
+    <eLiterals name="multipleChoiceList" value="5" literal="multipleChoiceList"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIField" eSuperTypes="#//DisplayableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Mapping" lowerBound="1"
+        eType="#//FieldMapping" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//UI_Field_Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldMapping" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//ViewpointElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="UI_Field_Mapped_To" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//AbstractFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIDescription" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="UIs" upperBound="-1" eType="#//UI"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DisplayableElement" abstract="true"
+      eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSource" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalClass" eSuperTypes="#//DataSource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="UI_For_LocalClass" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Class"/>
+  </eClassifiers>
+</ecore:EPackage>

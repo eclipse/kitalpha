@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="customization"
+    nsURI="http://www.polarsys.org/kitalpha/report/customization/1.0.0" nsPrefix="customization">
+  <eClassifiers xsi:type="ecore:EClass" name="CustomEntry" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//LogEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

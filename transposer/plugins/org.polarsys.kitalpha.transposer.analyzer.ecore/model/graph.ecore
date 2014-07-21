@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graph"
+    nsURI="http://www.polarsys.org/transposer/analyzer/graph" nsPrefix="graph">
+  <eClassifiers xsi:type="ecore:EClass" name="Graph">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Graph contains vertices and edges."/>
+    </eAnnotations>
+    <eOperations name="addAdjacent" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Simply add the target Vertex to the graph as an adjacent of the source one. It will create a non critical edge from the source to the target."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments eTypeParameter="#//Graph/addAdjacent/T"/>
+      </eGenericType>
+      <eTypeParameters name="T"/>
+      <eParameters name="source_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="target_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="edgeContent_p" lowerBound="1">
+        <eGenericType eTypeParameter="#//Graph/addAdjacent/T"/>
+      </eParameters>
+    </eOperations>
+    <eOperations name="addAdjacent" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Simply add the target Vertex to the graph as an adjacent of the source one. It will create an edge from the source to the target. If &lt;code>critical_p = true&lt;/code>, the edge created edge will be critical."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments eTypeParameter="#//Graph/addAdjacent.1/T"/>
+      </eGenericType>
+      <eTypeParameters name="T"/>
+      <eParameters name="source_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="target_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="edgeContent_p" lowerBound="1">
+        <eGenericType eTypeParameter="#//Graph/addAdjacent.1/T"/>
+      </eParameters>
+      <eParameters name="critical_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="addNamedAdjacent" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A Graph contains vertices and edges."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments eTypeParameter="#//Graph/addNamedAdjacent/T"/>
+      </eGenericType>
+      <eTypeParameters name="T"/>
+      <eParameters name="source" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="target" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="edgeContent" lowerBound="1">
+        <eGenericType eTypeParameter="#//Graph/addNamedAdjacent/T"/>
+      </eParameters>
+      <eParameters name="edgeName" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="addNamedAdjacent" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Simply add the target Vertex to the graph as an adjacent of the source one. It will create an edge from the source to the target. If &lt;code>critical_p = true&lt;/code>, the edge created edge will be critical."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments eTypeParameter="#//Graph/addNamedAdjacent.1/T"/>
+      </eGenericType>
+      <eTypeParameters name="T"/>
+      <eParameters name="source_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="target_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="edgeContent_p" lowerBound="1">
+        <eGenericType eTypeParameter="#//Graph/addNamedAdjacent.1/T"/>
+      </eParameters>
+      <eParameters name="edgeName_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="critical_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="addVertex" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Simply add the vertex to the graph."/>
+      </eAnnotations>
+      <eParameters name="vertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="addEdge" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Simply add the edge to the graph."/>
+      </eAnnotations>
+      <eParameters name="edge_p" lowerBound="1">
+        <eGenericType eClassifier="#//Edge">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
+        containment="true">
+      <eGenericType eClassifier="#//Vertex">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        containment="true">
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphElement" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract named element contained by a graph.&#xD;&#xA;Its &quot;contents&quot; reference allows to point to an object (eg : a model object) "/>
+    </eAnnotations>
+    <eTypeParameters name="ContentClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content">
+      <eGenericType eTypeParameter="#//GraphElement/ContentClass"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Vertex can be considered as a graph node."/>
+    </eAnnotations>
+    <eTypeParameters name="ContentClass"/>
+    <eOperations name="hasForAdjacent" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Check if the given vertex is adjacent to the current one (e.g. there is an edge between them)."/>
+      </eAnnotations>
+      <eParameters name="vertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="hasForOutgoingAdjacent" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Check if the given vertex is 'outgoing' adjacent to the current one (e.g. it is the target of an outgoing edge)."/>
+      </eAnnotations>
+      <eParameters name="vertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="hasForIncomingAdjacent" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Check if the given vertex is 'incoming' adjacent to the current one (e.g. it is the source of an incoming edge)."/>
+      </eAnnotations>
+      <eParameters name="vertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getIncomingEdgeFrom" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Get the incoming edge from the given vertex."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments/>
+      </eGenericType>
+      <eParameters name="vertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getOutgoingEdgeTo" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Get the outgoing edge to the given vertex."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments/>
+      </eGenericType>
+      <eParameters name="vertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="getEdgeTo" lowerBound="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Get the edge which has the given vertex as source (resp.target) and the current vertex as target (resp. source)."/>
+      </eAnnotations>
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments/>
+      </eGenericType>
+      <eParameters name="vertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hotSpot" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdges" upperBound="-1"
+        eOpposite="#//Edge/source">
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingEdges" upperBound="-1"
+        eOpposite="#//Edge/target">
+      <eGenericType eClassifier="#//Edge">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="adjacents" upperBound="-1"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eGenericType eClassifier="#//Vertex">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingAdjacents" upperBound="-1"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eGenericType eClassifier="#//Vertex">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingAdjacents" upperBound="-1"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eGenericType eClassifier="#//Vertex">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//GraphElement">
+      <eTypeArguments eTypeParameter="#//Vertex/ContentClass"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An edge is a graph element whichg relies two vertices. An edge is oriented, it references a source Vertex and a target Vertex."/>
+    </eAnnotations>
+    <eTypeParameters name="ContentClass"/>
+    <eOperations name="update">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Update the current edge : source and target."/>
+      </eAnnotations>
+      <eParameters name="sourceVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="targetVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="update">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Update the current edge : source, target and criticality."/>
+      </eAnnotations>
+      <eParameters name="sourceVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="targetVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="criticalEdge_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="update">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Update the current edge : source, target, name and criticality."/>
+      </eAnnotations>
+      <eParameters name="sourceVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="targetVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="edgeName_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="criticalEdge_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="update">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Update the current edge : source, target, content, name and criticality."/>
+      </eAnnotations>
+      <eParameters name="sourceVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="targetVertex_p" lowerBound="1">
+        <eGenericType eClassifier="#//Vertex">
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="edgeContent_p" lowerBound="1">
+        <eGenericType eTypeParameter="#//Edge/ContentClass"/>
+      </eParameters>
+      <eParameters name="edgeName_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="criticalEdge_p" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="critical" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eOpposite="#//Vertex/outgoingEdges">
+      <eGenericType eClassifier="#//Vertex">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eOpposite="#//Vertex/incomingEdges">
+      <eGenericType eClassifier="#//Vertex">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//GraphElement">
+      <eTypeArguments eTypeParameter="#//Edge/ContentClass"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+</ecore:EPackage>

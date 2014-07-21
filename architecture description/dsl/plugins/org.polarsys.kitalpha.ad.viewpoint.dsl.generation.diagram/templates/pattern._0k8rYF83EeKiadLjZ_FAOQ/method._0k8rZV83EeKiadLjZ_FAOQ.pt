@@ -1,0 +1,4 @@
+NodeMapping nm = DescriptionFactory.eINSTANCE.createNodeMapping();
+nm.setName(parameter.getName()+"_NM");
+nm.setLabel(parameter.getName());
+dNodeMapping = nm;

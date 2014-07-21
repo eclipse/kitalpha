@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+<plugin>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "ecorebasicalloc.presentation.EcorebasicallocModelWizardID"
+      name = "%_UI_EcorebasicallocModelWizard_label"
+      class = "ecorebasicalloc.presentation.EcorebasicallocModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/EcorebasicallocModelFile.gif">
+      <description>%_UI_EcorebasicallocModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "ecorebasicalloc.presentation.EcorebasicallocEditorID"
+        name = "%_UI_EcorebasicallocEditor_label"
+        icon = "icons/full/obj16/EcorebasicallocModelFile.gif"
+        extensions = "ecorebasicalloc"
+        class = "ecorebasicalloc.presentation.EcorebasicallocEditor" 
+        contributorClass="ecorebasicalloc.presentation.EcorebasicallocActionBarContributor" >
+    </editor>
+  </extension>    
+</plugin>

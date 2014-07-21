@@ -1,0 +1,154 @@
+		EdgeMapping em = (EdgeMapping) dEdgeMapping;
+
+		for (EdgeDescription iEgdeDescription : parameter.getE_description()) 
+		{
+			Condition condition = iEgdeDescription.getCondition();
+			boolean conditionalStyle = false;
+			ConditionalEdgeStyleDescription ceStyleDesc = null;
+
+			if (condition != null) 
+			{
+				conditionalStyle = true;
+				ForeignExpressionElement fEE = condition.getExpression();
+				String acceleoExpression = "";
+				if (fEE instanceof JavaElement) 
+				{
+					String javaMethodName = ((JavaElement) fEE).getMethod();
+					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
+					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);				
+				}
+				if (fEE instanceof DomainElement)
+					acceleoExpression = "<%" + ((DomainElement) fEE).getAttribute().getName() + "%>";
+				
+
+				ceStyleDesc = DescriptionFactory.eINSTANCE.createConditionalEdgeStyleDescription();
+				ceStyleDesc.setPredicateExpression(acceleoExpression);
+
+				em.getConditionnalStyles().add(ceStyleDesc);
+			}
+
+			EdgeStyle vpStyle = iEgdeDescription.getStyle();
+			EdgeStyleDescription eStyleDesc = null;
+
+			if (vpStyle != null) 
+			{
+				eStyleDesc = StyleFactory.eINSTANCE.createEdgeStyleDescription();
+				
+				eStyleDesc.setLineStyle(vpStyle.getLineStyle());
+				eStyleDesc.setSourceArrow(vpStyle.getBeginDecorator());
+				eStyleDesc.setTargetArrow(vpStyle.getEndDecorator());
+				eStyleDesc.setStrokeColor(GenerationUtil.getSystemColor(vpStyle.getColor()));
+				
+				/********************** Setting Center Label properties ************************/
+				Label c_label = iEgdeDescription.getCenter_label();
+				String c_labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
+
+				String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
+
+				if (c_label != null) 
+				{
+					//((ExpressionImpl) c_label.getValue()).adaptValue();
+					((ExpressionImpl) c_label.getValue()).adaptValue(mParameters, true);
+
+					if (c_label.getValue() != null)
+						c_labelExpression = c_label.getValue().getValue();
+
+					CenterLabelStyleDescription cLabelStyleDesc = StyleFactory.eINSTANCE.createCenterLabelStyleDescription();
+					cLabelStyleDesc.setLabelExpression(c_labelExpression);
+					cLabelStyleDesc.setLabelSize(c_label.getSize());
+					cLabelStyleDesc.setShowIcon(false);
+					cLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(c_label.getColor()));	
+					
+					eStyleDesc.setCenterLabelStyleDescription(cLabelStyleDesc);
+
+					if (c_label.isBold() && c_label.isItalic()) 
+					{
+						cLabelStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
+					} 
+					else 
+					{
+						if (c_label.isBold())
+							cLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+
+						if (c_label.isItalic())
+							cLabelStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
+					}
+				}
+				
+				/********************** Setting Begin Label properties ************************/
+				Label b_label = iEgdeDescription.getBegin_Label();
+				String b_labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
+
+				if (b_label != null) 
+				{
+					//((ExpressionImpl) b_label.getValue()).adaptValue();
+					((ExpressionImpl) b_label.getValue()).adaptValue(mParameters, true);
+
+					if (b_label.getValue() != null)
+						b_labelExpression = b_label.getValue().getValue();
+
+					BeginLabelStyleDescription bLabelStyleDesc = StyleFactory.eINSTANCE.createBeginLabelStyleDescription();
+					bLabelStyleDesc.setLabelExpression(b_labelExpression);
+					bLabelStyleDesc.setLabelSize(b_label.getSize());
+					bLabelStyleDesc.setShowIcon(false);
+					bLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(b_label.getColor()));	
+					
+					eStyleDesc.setBeginLabelStyleDescription(bLabelStyleDesc);
+
+					if (b_label.isBold() && b_label.isItalic()) 
+					{
+						bLabelStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
+					} 
+					else 
+					{
+						if (b_label.isBold())
+							bLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+
+						if (b_label.isItalic())
+							bLabelStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
+					}
+				}
+				
+				/********************** Setting End Label properties ************************/
+				Label e_label = iEgdeDescription.getEnd_label();
+				String e_labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
+
+				if (e_label != null) 
+				{
+					//((ExpressionImpl) e_label.getValue()).adaptValue();
+					((ExpressionImpl) e_label.getValue()).adaptValue(mParameters, true);
+
+					if (e_label.getValue() != null)
+						e_labelExpression = e_label.getValue().getValue();
+
+					EndLabelStyleDescription eLabelStyleDesc = StyleFactory.eINSTANCE.createEndLabelStyleDescription();
+					eLabelStyleDesc.setLabelExpression(e_labelExpression);
+					eLabelStyleDesc.setLabelSize(e_label.getSize());
+					eLabelStyleDesc.setShowIcon(false);
+					eLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(e_label.getColor()));	
+					
+					eStyleDesc.setEndLabelStyleDescription(eLabelStyleDesc);
+
+					if (e_label.isBold() && e_label.isItalic()) 
+					{
+						eLabelStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
+					} 
+					else 
+					{
+						if (e_label.isBold())
+							eLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+
+						if (e_label.isItalic())
+							eLabelStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
+					}
+				}
+
+				/************* Add the created container style to it parent **************/
+				if (conditionalStyle)
+					ceStyleDesc.setStyle(eStyleDesc);
+				else
+					em.setStyle(eStyleDesc);
+			}
+			/************************* The end ****************************************************/
+		}

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.polarsys.kitalpha.accuracy">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.polarsys.kitalpha.accuracy" id="org.polarsys.kitalpha.validation.java" name="JavaConstraint"/>
+      </appInfo>
+      <documentation>
+         This extension point allows to easily add Java Constraints for your Metamodel.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="JavaConstraints"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="JavaConstraint">
+      <complexType>
+         <attribute name="Class" type="string">
+            <annotation>
+               <documentation>
+                  Class that implements IJavaConstraint.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.validation.java.provider.generic.IJavaConstraint"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="requirementId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the requirement.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="invariantId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the invariant.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="JavaConstraints">
+      <complexType>
+         <sequence>
+            <element ref="JavaConstraint" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         Generic Provider 1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         
+      </documentation>
+   </annotation>
+
+</schema>

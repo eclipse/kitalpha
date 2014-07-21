@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_cTDH0H7LEeOLj8ldLiBqyA" name="vpdslCoreResourcesGenerator">
+    <contractContainer xmi:id="_nxW-MH7LEeOLj8ldLiBqyA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_n_N0AH7LEeOLj8ldLiBqyA"
+          name="vpdsl.model" mandatory="true" invocationContracts="#_Kf-SUn7MEeOLj8ldLiBqyA #_S_st4oHQEeOkrKKPKbuzoQ #_9qVTAoH0EeOrLd1N8v_fcw #_yjFKgga2EeSAd8d0JTTnXA">
+        <type xmi:type="domain:TypeDomain" xmi:id="_odUsUH7LEeOLj8ldLiBqyA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_oz0gwH7LEeOLj8ldLiBqyA"
+          name="model.folder" invocationContracts="#_Kf-SU37MEeOLj8ldLiBqyA #_S_st44HQEeOkrKKPKbuzoQ">
+        <type xmi:type="types:TypeString" xmi:id="_qNEysH7LEeOLj8ldLiBqyA" value="models"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_8XWKwH7LEeOLj8ldLiBqyA">
+      <invocations xmi:id="_Kf-SUH7MEeOLj8ldLiBqyA" name="Ecore model generation"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_VflTkI66EeGdJv40MVeUZQ">
+        <invocationContractContainer xmi:id="_Kf-SUX7MEeOLj8ldLiBqyA">
+          <invocationContracts xmi:id="_Kf-SUn7MEeOLj8ldLiBqyA" factoryComponentContract="#_n_N0AH7LEeOLj8ldLiBqyA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_LZU_0I67EeGdJv40MVeUZQ"/>
+          <invocationContracts xmi:id="_Kf-SU37MEeOLj8ldLiBqyA" factoryComponentContract="#_oz0gwH7LEeOLj8ldLiBqyA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_-3NWsI70EeGaBt8RXbnVpQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_S_st4IHQEeOkrKKPKbuzoQ" name="Generate generation chain"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslGenerationChainManager.fcore#_dWQugIHPEeOkrKKPKbuzoQ">
+        <invocationContractContainer xmi:id="_S_st4YHQEeOkrKKPKbuzoQ">
+          <invocationContracts xmi:id="_S_st4oHQEeOkrKKPKbuzoQ" factoryComponentContract="#_n_N0AH7LEeOLj8ldLiBqyA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslGenerationChainManager.fcore#_eEJvQIHPEeOkrKKPKbuzoQ"/>
+          <invocationContracts xmi:id="_S_st44HQEeOkrKKPKbuzoQ" factoryComponentContract="#_oz0gwH7LEeOLj8ldLiBqyA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslGenerationChainManager.fcore#_kXhKwIHPEeOkrKKPKbuzoQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_lOXHAAOTEeS_Mc6arXEukQ" name="Aird generation" invokedActivity="#_-GYl8AOSEeS_Mc6arXEukQ">
+        <invocationContractContainer xmi:id="_lOXHAQOTEeS_Mc6arXEukQ">
+          <invocationContracts xmi:id="_lOXHAgOTEeS_Mc6arXEukQ" invokedContract="#_04oc8AOSEeS_Mc6arXEukQ"/>
+          <invocationContracts xmi:id="_lOXHAwOTEeS_Mc6arXEukQ" invokedContract="#_3bVqQAOSEeS_Mc6arXEukQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_5ntAgIHzEeOrLd1N8v_fcw" name="Register generated EPackage in AF integration manager"
+          invokedActivity="#_rd0UsIHzEeOrLd1N8v_fcw"/>
+      <invocations xmi:id="_TqaXoIH4EeOrLd1N8v_fcw" name="Initialize core resources provider"
+          invokedActivity="#_2iMrUIH3EeOrLd1N8v_fcw">
+        <invocationContractContainer xmi:id="_TqaXoYH4EeOrLd1N8v_fcw">
+          <invocationContracts xmi:id="_TqaXooH4EeOrLd1N8v_fcw" invokedContract="#_n_N0AH7LEeOLj8ldLiBqyA"/>
+          <invocationContracts xmi:id="_TqaXo4H4EeOrLd1N8v_fcw" invokedContract="#_oz0gwH7LEeOLj8ldLiBqyA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_9qVTAIH0EeOrLd1N8v_fcw" name="Change generated icons"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslClassIconManager.fcore#_gcPicTMeEeKU1c7GGVf8tA">
+        <invocationContractContainer xmi:id="_9qVTAYH0EeOrLd1N8v_fcw">
+          <invocationContracts xmi:id="_9qVTAoH0EeOrLd1N8v_fcw" factoryComponentContract="#_n_N0AH7LEeOLj8ldLiBqyA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslClassIconManager.fcore#_hH5ukDMeEeKU1c7GGVf8tA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_yjFKgAa2EeSAd8d0JTTnXA" invokedActivity="#_9HrAEAa1EeSAd8d0JTTnXA">
+        <invocationContractContainer xmi:id="_yjFKgQa2EeSAd8d0JTTnXA">
+          <invocationContracts xmi:id="_yjFKgga2EeSAd8d0JTTnXA" factoryComponentContract="#_n_N0AH7LEeOLj8ldLiBqyA"
+              invokedContract="#_DSY14Aa2EeSAd8d0JTTnXA"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_-GYl8AOSEeS_Mc6arXEukQ" name="Generates diagrams and tables">
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_ALcN8AOTEeS_Mc6arXEukQ">
+      <invocations xmi:id="_FM1rQAOTEeS_Mc6arXEukQ" invokedActivity="#_TlTbEAOSEeS_Mc6arXEukQ">
+        <invocationContractContainer xmi:id="_FM1rQQOTEeS_Mc6arXEukQ">
+          <invocationContracts xmi:id="_FM1rQgOTEeS_Mc6arXEukQ" targetInvocationContract="#_B1O2QgOTEeS_Mc6arXEukQ"
+              invokedContract="#_04oc8AOSEeS_Mc6arXEukQ"/>
+          <invocationContracts xmi:id="_FM1rQwOTEeS_Mc6arXEukQ" targetInvocationContract="#_B1O2QwOTEeS_Mc6arXEukQ"
+              invokedContract="#_3bVqQAOSEeS_Mc6arXEukQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_B1O2QAOTEeS_Mc6arXEukQ" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslExtensibilityRepresentationsGenerator.fcore#_KoktcQOOEeS_Mc6arXEukQ">
+        <invocationContractContainer xmi:id="_B1O2QQOTEeS_Mc6arXEukQ">
+          <invocationContracts xmi:id="_B1O2QgOTEeS_Mc6arXEukQ" sourceInvocationContract="#_FM1rQgOTEeS_Mc6arXEukQ"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslExtensibilityRepresentationsGenerator.fcore#_afVDYAOREeS_Mc6arXEukQ"/>
+          <invocationContracts xmi:id="_B1O2QwOTEeS_Mc6arXEukQ" sourceInvocationContract="#_FM1rQwOTEeS_Mc6arXEukQ"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslExtensibilityRepresentationsGenerator.fcore#_cKwqcAOREeS_Mc6arXEukQ"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_9HrAEAa1EeSAd8d0JTTnXA" name="Update Model plugin build.properties (Workarround)">
+    <contractContainer xmi:id="_CbZjgAa2EeSAd8d0JTTnXA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_DSY14Aa2EeSAd8d0JTTnXA"
+          name="vpdsl.model" mandatory="true" invocationContracts="#_hZ6DEga2EeSAd8d0JTTnXA">
+        <type xmi:type="domain:TypeDomain" xmi:id="_N0MAsAa2EeSAd8d0JTTnXA"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_O6gvkAa2EeSAd8d0JTTnXA">
+      <invocations xmi:id="_hZ6DEAa2EeSAd8d0JTTnXA" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_1L1eUPtNEeK-QL-B45qveg">
+        <invocationContractContainer xmi:id="_hZ6DEQa2EeSAd8d0JTTnXA">
+          <invocationContracts xmi:id="_hZ6DEga2EeSAd8d0JTTnXA" factoryComponentContract="#_DSY14Aa2EeSAd8d0JTTnXA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#//@contractContainer/@contracts.0"/>
+          <invocationContracts xmi:id="_hZ6DEwa2EeSAd8d0JTTnXA" targetInvocationContract="#_VNbfIga2EeSAd8d0JTTnXA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8mR2oPtNEeK-QL-B45qveg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_VNbfIAa2EeSAd8d0JTTnXA" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIOq5EeGh0fmNAy-1lA">
+        <invocationContractContainer xmi:id="_VNbfIQa2EeSAd8d0JTTnXA">
+          <invocationContracts xmi:id="_VNbfIga2EeSAd8d0JTTnXA" sourceInvocationContract="#_hZ6DEwa2EeSAd8d0JTTnXA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIuq5EeGh0fmNAy-1lA"/>
+          <invocationContracts xmi:id="_VNbfIwa2EeSAd8d0JTTnXA" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJOq5EeGh0fmNAy-1lA">
+            <type xmi:type="types:TypeString" xmi:id="_mT9iQAa2EeSAd8d0JTTnXA" value="model"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_VNbfJAa2EeSAd8d0JTTnXA" targetInvocationContract="#_qvyNUga2EeSAd8d0JTTnXA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJuq5EeGh0fmNAy-1lA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_qvyNUAa2EeSAd8d0JTTnXA" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_p4AoULWXEeOctqkSHWZC9g">
+        <invocationContractContainer xmi:id="_qvyNUQa2EeSAd8d0JTTnXA">
+          <invocationContracts xmi:id="_qvyNUga2EeSAd8d0JTTnXA" sourceInvocationContract="#_VNbfJAa2EeSAd8d0JTTnXA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_wd1FwLWXEeOctqkSHWZC9g"/>
+          <invocationContracts xmi:id="_qvyNUwa2EeSAd8d0JTTnXA" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_z6D8ELWXEeOctqkSHWZC9g">
+            <type xmi:type="types:TypeString" xmi:id="_tc0bUAa2EeSAd8d0JTTnXA" value="models"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_qvyNVAa2EeSAd8d0JTTnXA" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_wtLJULWXEeOctqkSHWZC9g">
+            <type xmi:type="types:TypeBoolean" xmi:id="_t5tLoAa2EeSAd8d0JTTnXA" value="true"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_rd0UsIHzEeOrLd1N8v_fcw" name="Register.Generated.EPackage.In.AF.Intergration"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.task.RegisterGeneratedEPackageInAFIntergrationTask"/>
+  <ftask:Task xmi:id="_2iMrUIH3EeOrLd1N8v_fcw" name="Initialize.Core.Resources.Provider"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.task.InitializeCoreResourcesProviderTask"/>
+  <ftask:Task xmi:id="_TlTbEAOSEeS_Mc6arXEukQ" name="Prepare models URIs" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.task.PrepareURIsTask">
+    <contractContainer xmi:id="_0plUUAOSEeS_Mc6arXEukQ">
+      <contracts xmi:id="_04oc8AOSEeS_Mc6arXEukQ" name="ecore.uri" mode="Out">
+        <type xmi:type="types:TypeURI" xmi:id="_1ZHT0AOSEeS_Mc6arXEukQ"/>
+      </contracts>
+      <contracts xmi:id="_3bVqQAOSEeS_Mc6arXEukQ" name="genchain.uri" mode="Out">
+        <type xmi:type="types:TypeURI" xmi:id="_3bVqQQOSEeS_Mc6arXEukQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

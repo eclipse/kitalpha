@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.polarsys.kitalpha.ecore.diagram.Activator"
+               id="org.polarsys.kitalpha.ecore.diagram"
+	       name="EcoreToolsExtra">
+    </component>
+  </extension>
+  
+   <extension
+         point="org.eclipse.sirius.externalJavaAction">
+      <javaActions
+            actionClass="org.polarsys.kitalpha.ecore.diagram.javaaction.HideLinkAction"
+            id="org.polarsys.kitalpha.ecore.diagram.javaaction.HideLinkAction">
+      </javaActions>
+      <javaActions
+            actionClass="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowLinkAction"
+            id="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowLinkAction">
+      </javaActions>
+      <javaActions
+            actionClass="org.polarsys.kitalpha.ecore.diagram.javaaction.HideInheritanceAction"
+            id="org.polarsys.kitalpha.ecore.diagram.javaaction.HideInheritanceAction">
+      </javaActions>
+      <javaActions
+            actionClass="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowInheritanceAction"
+            id="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowInheritanceAction">
+      </javaActions>
+      <javaActions
+            actionClass="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowReferenceAction"
+            id="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowReferenceAction">
+      </javaActions>
+      <javaActions
+            actionClass="org.polarsys.kitalpha.ecore.diagram.javaaction.HideReferenceAction"
+            id="org.polarsys.kitalpha.ecore.diagram.javaaction.HideReferenceAction">
+      </javaActions>
+   </extension>
+</plugin>

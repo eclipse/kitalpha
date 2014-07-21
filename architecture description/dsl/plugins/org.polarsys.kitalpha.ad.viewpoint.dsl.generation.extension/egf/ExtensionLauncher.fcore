@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_N6XtkCf4EeKRE4OguEMRpA" name="Extension.Launcher">
+    <contractContainer xmi:id="_PS5mwCf4EeKRE4OguEMRpA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Pl0iwCf4EeKRE4OguEMRpA"
+          name="extension.point.id" mandatory="true" invocationContracts="#_trzCYif5EeKRE4OguEMRpA">
+        <type xmi:type="types:TypeString" xmi:id="_QlAu4Cf4EeKRE4OguEMRpA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_CkC5ECf5EeKRE4OguEMRpA"
+          name="configuration.element.name" mandatory="true" invocationContracts="#_Ix66ICznEeKlecntHtUaFg">
+        <type xmi:type="types:TypeString" xmi:id="_CkC5ESf5EeKRE4OguEMRpA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_z8qNYCgCEeKRE4OguEMRpA"
+          name="extension.fcore.attribute.name" mandatory="true" invocationContracts="#_HcEfEC13EeKlecntHtUaFg">
+        <type xmi:type="types:TypeString" xmi:id="_33Ie4CgCEeKRE4OguEMRpA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_HQJb0Cf5EeKRE4OguEMRpA"
+          description="A Map of type : Map&lt;String, Object>. The first Entry is the name of the contract. The second one is the value of the contract"
+          name="factory.component.constracts" invocationContracts="#_UN9Ssy8jEeKlecntHtUaFg">
+        <type xmi:type="types:TypeMap" xmi:id="_Hu2KACf5EeKRE4OguEMRpA"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_Wzz-ACf5EeKRE4OguEMRpA">
+      <invocations xmi:id="_trzCYCf5EeKRE4OguEMRpA" name="Ask platform for the available extensions"
+          invokedActivity="#_XysBECf5EeKRE4OguEMRpA">
+        <invocationContractContainer xmi:id="_trzCYSf5EeKRE4OguEMRpA">
+          <invocationContracts xmi:id="_trzCYif5EeKRE4OguEMRpA" factoryComponentContract="#_Pl0iwCf4EeKRE4OguEMRpA"
+              invokedContract="#_d1hGMCf5EeKRE4OguEMRpA"/>
+          <invocationContracts xmi:id="_Ix66ICznEeKlecntHtUaFg" factoryComponentContract="#_CkC5ECf5EeKRE4OguEMRpA"
+              invokedContract="#_DrYXwCzfEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_HcEfEC13EeKlecntHtUaFg" factoryComponentContract="#_z8qNYCgCEeKRE4OguEMRpA"
+              invokedContract="#__BRkYC1zEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_trzCYyf5EeKRE4OguEMRpA" targetInvocationContract="#_UN9Ssi8jEeKlecntHtUaFg"
+              invokedContract="#_g-0ZcCf5EeKRE4OguEMRpA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_UN9SsC8jEeKlecntHtUaFg" name="Launch extensions activities"
+          invokedActivity="#_KI6x0C8iEeKlecntHtUaFg">
+        <invocationContractContainer xmi:id="_UN9SsS8jEeKlecntHtUaFg">
+          <invocationContracts xmi:id="_UN9Ssi8jEeKlecntHtUaFg" sourceInvocationContract="#_trzCYyf5EeKRE4OguEMRpA"
+              invokedContract="#_OT8n0C8iEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_UN9Ssy8jEeKlecntHtUaFg" factoryComponentContract="#_HQJb0Cf5EeKRE4OguEMRpA"
+              invokedContract="#_V4q9gC8iEeKlecntHtUaFg"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_IkgkgC89EeKlecntHtUaFg" name="Extension.Collection">
+    <contractContainer xmi:id="_M3SBQC89EeKlecntHtUaFg">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_PCmpUC89EeKlecntHtUaFg"
+          name="extension.point.id" mandatory="true" invocationContracts="#_YVmesi89EeKlecntHtUaFg">
+        <type xmi:type="types:TypeString" xmi:id="_PCmpUS89EeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_PCmpUi89EeKlecntHtUaFg"
+          name="configuration.element.name" mandatory="true" invocationContracts="#_YVmesy89EeKlecntHtUaFg">
+        <type xmi:type="types:TypeString" xmi:id="_PCmpUy89EeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_PCmpVC89EeKlecntHtUaFg"
+          name="extension.fcore.attribute.name" mandatory="true" invocationContracts="#_YVmetC89EeKlecntHtUaFg">
+        <type xmi:type="types:TypeString" xmi:id="_PCmpVS89EeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_qBKFAC8-EeKlecntHtUaFg"
+          name="selected.extension.point.contributions" mode="Out" invocationContracts="#_YVmetS89EeKlecntHtUaFg">
+        <type xmi:type="types:TypeList" xmi:id="_u_ve4C8-EeKlecntHtUaFg"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_NK9LMC89EeKlecntHtUaFg">
+      <invocations xmi:id="_YVmesC89EeKlecntHtUaFg" name="Ask platform for the available extensions"
+          invokedActivity="#_XysBECf5EeKRE4OguEMRpA">
+        <invocationContractContainer xmi:id="_YVmesS89EeKlecntHtUaFg">
+          <invocationContracts xmi:id="_YVmesi89EeKlecntHtUaFg" factoryComponentContract="#_PCmpUC89EeKlecntHtUaFg"
+              invokedContract="#_d1hGMCf5EeKRE4OguEMRpA"/>
+          <invocationContracts xmi:id="_YVmesy89EeKlecntHtUaFg" factoryComponentContract="#_PCmpUi89EeKlecntHtUaFg"
+              invokedContract="#_DrYXwCzfEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_YVmetC89EeKlecntHtUaFg" factoryComponentContract="#_PCmpVC89EeKlecntHtUaFg"
+              invokedContract="#__BRkYC1zEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_YVmetS89EeKlecntHtUaFg" factoryComponentContract="#_qBKFAC8-EeKlecntHtUaFg"
+              invokedContract="#_g-0ZcCf5EeKRE4OguEMRpA"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_QFqKYJxtEeK1urh_GCMRIg" name="Extension.Selection">
+    <contractContainer xmi:id="_TOh_0JxtEeK1urh_GCMRIg">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_jNU-0JxtEeK1urh_GCMRIg"
+          name="collected.extension.point.contributions" invocationContracts="#_VB2-opxtEeK1urh_GCMRIg">
+        <type xmi:type="types:TypeList" xmi:id="_nFIW0JxtEeK1urh_GCMRIg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_TOh_15xtEeK1urh_GCMRIg"
+          name="extension.name.attribute.name" mandatory="true" invocationContracts="#_VB2-o5xtEeK1urh_GCMRIg">
+        <type xmi:type="types:TypeString" xmi:id="_TOh_2JxtEeK1urh_GCMRIg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_TOh_2ZxtEeK1urh_GCMRIg"
+          name="extension.description.attribute.name" mandatory="true" invocationContracts="#_VB2-ppxtEeK1urh_GCMRIg">
+        <type xmi:type="types:TypeString" xmi:id="_TOh_2pxtEeK1urh_GCMRIg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_TOh_25xtEeK1urh_GCMRIg"
+          name="extension.category.attribute.name" invocationContracts="#_VB2-pZxtEeK1urh_GCMRIg">
+        <type xmi:type="types:TypeString" xmi:id="_TOh_3JxtEeK1urh_GCMRIg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_JEq-cJxuEeK1urh_GCMRIg"
+          name="user.selection" invocationContracts="#_VB2-pJxtEeK1urh_GCMRIg">
+        <type xmi:type="types:TypeBoolean" xmi:id="_JEq-cZxuEeK1urh_GCMRIg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_TOh_35xtEeK1urh_GCMRIg"
+          name="selected.extension.point.contributions" mode="Out" invocationContracts="#_VB2-p5xtEeK1urh_GCMRIg">
+        <type xmi:type="types:TypeList" xmi:id="_TOh_4JxtEeK1urh_GCMRIg"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_T-D_UJxtEeK1urh_GCMRIg">
+      <invocations xmi:id="_VB2-oJxtEeK1urh_GCMRIg" name="User selection of the extension"
+          invokedActivity="#_UkGacC8mEeKlecntHtUaFg">
+        <invocationContractContainer xmi:id="_VB2-oZxtEeK1urh_GCMRIg">
+          <invocationContracts xmi:id="_VB2-opxtEeK1urh_GCMRIg" factoryComponentContract="#_jNU-0JxtEeK1urh_GCMRIg"
+              invokedContract="#_YHfBoC8mEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_VB2-o5xtEeK1urh_GCMRIg" factoryComponentContract="#_TOh_15xtEeK1urh_GCMRIg"
+              invokedContract="#_7n8ocC8xEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_VB2-pJxtEeK1urh_GCMRIg" factoryComponentContract="#_JEq-cJxuEeK1urh_GCMRIg"
+              invokedContract="#_QVli4C83EeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_VB2-pZxtEeK1urh_GCMRIg" factoryComponentContract="#_TOh_25xtEeK1urh_GCMRIg"
+              invokedContract="#_7n8oci8xEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_VB2-ppxtEeK1urh_GCMRIg" factoryComponentContract="#_TOh_2ZxtEeK1urh_GCMRIg"
+              invokedContract="#_7n8odC8xEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_VB2-p5xtEeK1urh_GCMRIg" factoryComponentContract="#_TOh_35xtEeK1urh_GCMRIg"
+              invokedContract="#_YXInMC8mEeKlecntHtUaFg"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_KI6x0C8iEeKlecntHtUaFg" name="Extension.Activities.Launcher">
+    <contractContainer xmi:id="_OEJRQC8iEeKlecntHtUaFg">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_OT8n0C8iEeKlecntHtUaFg"
+          description="Input parameter : a List of LauncherExtension (@see: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.data.LauncherExtension)."
+          name="extension.point.contributions" mandatory="true" invocationContracts="#_dDeXUi8iEeKlecntHtUaFg">
+        <type xmi:type="types:TypeList" xmi:id="_TVDxQC8iEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_V4q9gC8iEeKlecntHtUaFg"
+          description="A Map of type : Map&lt;String, Object>. The first Entry is the name of the contract. The second one is the value of the contract"
+          name="factory.component.constracts" mandatory="true" invocationContracts="#_fg-Ugy8iEeKlecntHtUaFg">
+        <type xmi:type="types:TypeMap" xmi:id="_WgAqUC8iEeKlecntHtUaFg"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_YwjJkC8iEeKlecntHtUaFg">
+      <invocations xmi:id="_dDeXUC8iEeKlecntHtUaFg" name="Collect Factory Component activities from the extensions"
+          invokedActivity="#_7lDRMCf5EeKRE4OguEMRpA">
+        <invocationContractContainer xmi:id="_dDeXUS8iEeKlecntHtUaFg">
+          <invocationContracts xmi:id="_dDeXUi8iEeKlecntHtUaFg" factoryComponentContract="#_OT8n0C8iEeKlecntHtUaFg"
+              invokedContract="#_dl12ACf6EeKRE4OguEMRpA"/>
+          <invocationContracts xmi:id="_dDeXUy8iEeKlecntHtUaFg" targetInvocationContract="#_fg-Ugi8iEeKlecntHtUaFg"
+              invokedContract="#_Wb9CMCf6EeKRE4OguEMRpA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_fg-UgC8iEeKlecntHtUaFg" name="Launch all collected activities"
+          invokedActivity="#_rw938Cf6EeKRE4OguEMRpA">
+        <invocationContractContainer xmi:id="_fg-UgS8iEeKlecntHtUaFg">
+          <invocationContracts xmi:id="_fg-Ugi8iEeKlecntHtUaFg" sourceInvocationContract="#_dDeXUy8iEeKlecntHtUaFg"
+              invokedContract="#_t9VB1Sf6EeKRE4OguEMRpA"/>
+          <invocationContracts xmi:id="_fg-Ugy8iEeKlecntHtUaFg" factoryComponentContract="#_V4q9gC8iEeKlecntHtUaFg"
+              invokedContract="#_xt0Q4Cf6EeKRE4OguEMRpA"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_XysBECf5EeKRE4OguEMRpA" name="Extensions.Collection.Task" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.task.ExtensionsCollectorTask">
+    <contractContainer xmi:id="_djx18Cf5EeKRE4OguEMRpA">
+      <contracts xmi:id="_d1hGMCf5EeKRE4OguEMRpA" name="extension.point.id" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_gUzMECf5EeKRE4OguEMRpA"/>
+      </contracts>
+      <contracts xmi:id="_DrYXwCzfEeKlecntHtUaFg" name="extension.configuration.element.name"
+          mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_DrYXwSzfEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="__BRkYC1zEeKlecntHtUaFg" name="extension.fcore.attribute.name"
+          mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="__BRkYS1zEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_g-0ZcCf5EeKRE4OguEMRpA" description="Output parameter : a List of LauncherExtension (@see: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.data.LauncherExtension)."
+          name="extension.point.contributions" mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_FXPvUC1xEeKlecntHtUaFg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_UkGacC8mEeKlecntHtUaFg" name="Extensions.User.Selection.Task"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.task.ExtensionsSelectionTask">
+    <contractContainer xmi:id="_Xyea8C8mEeKlecntHtUaFg">
+      <contracts xmi:id="_YHfBoC8mEeKlecntHtUaFg" name="collected.extension.point.contributions"
+          mandatory="true">
+        <type xmi:type="types:TypeList" xmi:id="_Yp6ZQC8mEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_7n8ocC8xEeKlecntHtUaFg" name="extension.name.attribute.name"
+          mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_7n8ocS8xEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_QVli4C83EeKlecntHtUaFg" name="user.selection">
+        <type xmi:type="types:TypeBoolean" xmi:id="_SPxXoC83EeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_7n8oci8xEeKlecntHtUaFg" name="extension.category.attribute.name">
+        <type xmi:type="types:TypeString" xmi:id="_7n8ocy8xEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_7n8odC8xEeKlecntHtUaFg" name="extension.description.attribute.name">
+        <type xmi:type="types:TypeString" xmi:id="_7n8odS8xEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_YXInMC8mEeKlecntHtUaFg" name="selected.extension.point.contributions"
+          mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_Y_EJ4C8mEeKlecntHtUaFg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_7lDRMCf5EeKRE4OguEMRpA" name="FactoryComponents.Collection.Task"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.task.FactoryComponentsCollectorTask">
+    <contractContainer xmi:id="_SWmWYCf6EeKRE4OguEMRpA">
+      <contracts xmi:id="_dl12ACf6EeKRE4OguEMRpA" description="Input parameter : a List of LauncherExtension (@see: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.data.LauncherExtension)."
+          name="extension.point.contributions" mandatory="true">
+        <type xmi:type="types:TypeList" xmi:id="_OrRuMC1rEeKlecntHtUaFg" description=""/>
+      </contracts>
+      <contracts xmi:id="_Wb9CMCf6EeKRE4OguEMRpA" description="Output parameter : a List of URI. (URI format : platform:/plugin/[PluginID]/[Folders]/[Name].fcore#[Activity ID])"
+          name="factory.components.list" mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_aifZwCf6EeKRE4OguEMRpA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_rw938Cf6EeKRE4OguEMRpA" name="FactoryComponents.Launch.Task"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.task.FactoryComponentsLauncherTask">
+    <contractContainer xmi:id="_t9VB0Cf6EeKRE4OguEMRpA">
+      <contracts xmi:id="_t9VB1Sf6EeKRE4OguEMRpA" name="factory.components.list" mandatory="true">
+        <type xmi:type="types:TypeList" xmi:id="_t9VB1if6EeKRE4OguEMRpA"/>
+      </contracts>
+      <contracts xmi:id="_xt0Q4Cf6EeKRE4OguEMRpA" description="A Map of type : Map&lt;String, Object>. The first Entry is the name of the contract. The second one is the value of the contract"
+          name="factory.component.constracts">
+        <type xmi:type="types:TypeMap" xmi:id="_y9FgYCf6EeKRE4OguEMRpA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

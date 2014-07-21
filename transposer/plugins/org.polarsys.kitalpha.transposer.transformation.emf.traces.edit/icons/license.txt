@@ -1,0 +1,9 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+/icons/full/obj16/TraceRepository.gif - org.polarsys.kitalpha.transposer.transformation.emf.traces.edit - org.polarsys.kitalpha.transposer.transformation.emf.traces.edit/icons/full/obj16/TraceRepository.gif
+/icons/full/obj16/Trace.gif - org.polarsys.kitalpha.transposer.transformation.emf.traces.edit - org.polarsys.kitalpha.transposer.transformation.emf.traces.edit/icons/full/obj16/Trace.gif
+/icons/full/ctool16/CreateTraceRepository_Traces_Trace.gif - org.polarsys.kitalpha.transposer.transformation.emf.traces.edit - org.polarsys.kitalpha.transposer.transformation.emf.traces.edit/icons/full/ctool16/CreateTraceRepository_Traces_Trace.gif

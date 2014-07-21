@@ -1,0 +1,13 @@
+	/* Get the specified Target Class */
+	org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class vpsClazz = parameter.getLocalTarget();
+	
+	targetEClass = null;
+	
+	/* Get the corresponding generated Target ECLass from the generated EPackage */
+	EPackage vpsPackage = ECoreResourceManager.INSTANCE.getEPackage();
+	for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) {
+		if (iEClassifier.getName().equals(vpsClazz.getName())){
+			targetEClass = (EClass) iEClassifier; 
+		}
+	}
+	

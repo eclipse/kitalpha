@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Egf
+Bundle-SymbolicName: org.polarsys.kitalpha.report.example.customization.egf;singleton:=true
+Bundle-Version: 0.5.0.qualifier

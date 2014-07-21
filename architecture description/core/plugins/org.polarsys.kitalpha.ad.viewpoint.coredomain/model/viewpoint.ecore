@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="viewpoint"
+    nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" nsPrefix="vp">
+  <eClassifiers xsi:type="ecore:EClass" name="NameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vpid" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Viewpoint" eSuperTypes="#//NameElement">
+    <eOperations name="getProperty" eType="#//Property">
+      <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getProperties" upperBound="-1" eType="#//Property"/>
+    <eOperations name="getService" eType="#//Service">
+      <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getServices" upperBound="-1" eType="#//Service"/>
+    <eOperations name="getRule" eType="#//Rule">
+      <eParameters name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getRules" upperBound="-1" eType="#//Rule"/>
+    <eOperations name="getPropertyByName" eType="#//Property">
+      <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getAllParents" upperBound="-1" eType="#//Viewpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleSet" eType="#//RuleSet"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceSet" eType="#//ServiceSet"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertySet" eType="#//PropertySet"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parents" upperBound="-1"
+        eType="#//Viewpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//Viewpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metamodel" eType="#//Metamodel"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="representation" eType="#//Representation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValidationRule" eSuperTypes="#//Rule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" lowerBound="1"
+        eType="#//SeverityTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SeverityTypes">
+    <eLiterals name="debug" literal="debug"/>
+    <eLiterals name="info" value="1" literal="info"/>
+    <eLiterals name="warning" value="2" literal="warning"/>
+    <eLiterals name="error" value="3" literal="error"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContextTypes">
+    <eLiterals name="global"/>
+    <eLiterals name="instance" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//NameElement #//tools/ViewpointElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="live" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" lowerBound="1"
+        eType="#//ContextTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleSet" eSuperTypes="#//ElementSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenRules" upperBound="-1"
+        eType="#//Rule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newRules" upperBound="-1"
+        eType="#//Rule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//NameElement #//tools/ViewpointElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedRules" upperBound="-1"
+        eType="#//Rule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceSet" eSuperTypes="#//ElementSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenServices" upperBound="-1"
+        eType="#//Service"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newServices" upperBound="-1"
+        eType="#//Service" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//NameElement #//tools/ViewpointElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Types"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertySet" eSuperTypes="#//ElementSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hiddenProperties" upperBound="-1"
+        eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newProperties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Workspace">
+    <eOperations name="getRuleSet" eType="#//RuleSet">
+      <eParameters name="vp" lowerBound="1" eType="#//Viewpoint"/>
+    </eOperations>
+    <eOperations name="getServiceSet" eType="#//ServiceSet">
+      <eParameters name="vp" lowerBound="1" eType="#//Viewpoint"/>
+    </eOperations>
+    <eOperations name="getPropertySet" eType="#//PropertySet">
+      <eParameters name="vp" lowerBound="1" eType="#//Viewpoint"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleSets" upperBound="-1"
+        eType="#//RuleSet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceSets" upperBound="-1"
+        eType="#//ServiceSet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activeViewpoints" upperBound="-1"
+        eType="#//Viewpoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertySets" upperBound="-1"
+        eType="#//PropertySet" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Types">
+    <eLiterals name="String" literal="StringLiteral"/>
+    <eLiterals name="Integer" value="1" literal="IntegerLiteral"/>
+    <eLiterals name="Float" value="2" literal="FloatLiteral"/>
+    <eLiterals name="Boolean" value="3" literal="BooleanLiteral"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementSet" eSuperTypes="#//NameElement #//tools/ViewpointElementSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Viewpoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Metamodel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Representation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="representations" upperBound="-1"
+        eType="#//RepresentationElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RepresentationElement" abstract="true"/>
+  <eSubpackages name="tools" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/tools/1.0.0"
+      nsPrefix="tools">
+    <eClassifiers xsi:type="ecore:EClass" name="ViewpointElement" abstract="true"
+        interface="true" eSuperTypes="#//NameElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewpointElementSet" abstract="true"
+        interface="true"/>
+  </eSubpackages>
+</ecore:EPackage>

@@ -1,0 +1,9 @@
+		ServiceSet result = null;
+		for (ServiceSet set : getServiceSets()) {
+			if (vp.equals(set.getTarget())) {
+				if (result != null)
+					throw new IllegalStateException("Multple ServiceSet is not expected");
+				result = set;
+			}
+		}
+		return result;

@@ -1,0 +1,4 @@
+return DiagramGenerationConfigurationHelper.generateVSM(parameter) 
+	   && parameter.getChildren() != null 
+	   && parameter.getChildren().getReused_nodes() != null 
+	   && ! parameter.getChildren().getReused_nodes().isEmpty();

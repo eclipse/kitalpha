@@ -1,0 +1,7 @@
+for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) 
+{
+	if (iEClassifier instanceof EClass && iEClassifier.getName().equals(parameter.getName()))
+	{
+		curEClass = (EClass) iEClassifier;
+	}
+}

@@ -1,0 +1,33 @@
+Property property = ViewpointFactory.eINSTANCE.createProperty();
+
+/*** From VPSpec Model ***/
+property.setName(parameter.getName());
+property.setDescription(parameter.getDescription());
+Types type = null;
+switch (parameter.getType()) {
+	case BOOLEAN:
+		type = Types.BOOLEAN;
+		break;
+	case FLOAT:
+		type = Types.FLOAT;
+		break;
+	case INTEGER:
+		type = Types.INTEGER;
+		break;
+	case STRING:
+		type = Types.STRING;
+		break;
+}
+
+property.setType(type);
+
+property.setValue(parameter.getValue());
+
+
+/*** Generated ***/
+property.setId(AFModelUtils.getInstance().generateAFElementID(parameter));
+//property.setVpid(parameter.getVpid()); 
+property.setVpid(parameter.getVpid());
+
+/*** Adding the new property to the propertySet ***/
+pS.getNewProperties().add(property);

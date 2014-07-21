@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.vpspecfile"
+            nameFilter="*.vptext"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/dslvp_menu.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file"
+               label="Viewpoint DSL"
+               path="additions">
+            <groupMarker
+                  name="Representations">
+            </groupMarker>
+            <separator
+                  name="separator1">
+            </separator>  
+            <groupMarker
+                  name="group1">
+            </groupMarker>
+            <separator
+                  name="separator2">
+            </separator>
+            <groupMarker
+                  name="SpecificActionsSubMenu">
+            </groupMarker>
+         </menu>
+         <action 
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.actions.GenerateViewpointAction"
+               enablesFor="1"
+               icon="icons/dslvp_generate_build.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.GenerateAndBuild"
+               label="Generate and package viewpoint"
+               menubarPath="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file/group1">
+         </action>
+         <action
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.actions.GenerateViewpointAction"
+               enablesFor="1"
+               icon="icons/dslvp_generate_build.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.GenerateWithSelection"
+               label="Generate viewpoint with selection"
+               menubarPath="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file/group1">
+         </action>
+         <action
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.actions.GenerateViewpointAction"
+               enablesFor="1" 
+               icon="icons/dslvp_generate_build.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.Generate"
+               label="Generate viewpoint"
+               menubarPath="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file/group1">
+         </action>
+         <menu
+               icon="icons/dslvp_specific_actions.gif"
+               id="SpecificActionSubMenu"
+               label="Specific actions"
+               path="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file/SpecificActionsSubMenu">
+            <groupMarker
+                  name="SpecActionsGroup">
+            </groupMarker> 
+         </menu>
+         <action
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.actions.EraseEMFPluginsAction"
+               enablesFor="1"
+               icon="icons/dslvp_delete_emf_plugins.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.EraseEMFPlugins"
+               label="Erase generated EMF plug-ins"
+               menubarPath="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file/SpecificActionSubMenu/SpecActionsGroup">
+         </action>
+      </objectContribution>
+   </extension>
+ <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.generator.wizards.contribution.vpspecfile"
+            nameFilter="*.vpdesc"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/dslvpproject.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file"
+               label="Viewpoint DSL"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.actions.BackwardSynchronizerAction"
+               enablesFor="1"
+               icon="icons/dslvp_generate_resource.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.xtext.generators.vpspec"
+               label="Generate vptext files"
+               menubarPath="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.generator.wizards.contribution.vpspecfile"
+            nameFilter="*.vptext"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/dslvpproject.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file"
+               label="Viewpoint DSL"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.actions.SynchronizerAction"
+               enablesFor="1"
+               icon="icons/dslvp_generate_resource.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.xtext.generators.vpspec"
+               label="Generate vpdesc file"
+               menubarPath="org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.menu.file/group1">
+         </action>
+      </objectContribution>
+   </extension>
+ <extension
+       point="org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.initializeconcretesyntaxresource">
+    <InitializeConcreteSyntaxResource
+          class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.reverse.ReverseResourceInitializer"
+          default="true"
+          id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.reverse"
+          label="Text">
+    </InitializeConcreteSyntaxResource>
+ </extension>
+</plugin>

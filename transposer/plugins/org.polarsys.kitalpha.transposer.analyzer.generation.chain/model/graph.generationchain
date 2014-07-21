@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="graph" factoryComponentName="org.polarsys.kitalpha.transposer.analyzer.fcore">
+  <elements xsi:type="generationChain:GenerationChain" name="graph">
+    <elements xsi:type="genchainExtension:EmdeGeneration" name="Emde Generation for graph" modelPath="/org.polarsys.kitalpha.transposer.analyzer.ecore/model/graph.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.transposer.analyzer.graph" basePackage="org.polarsys.kitalpha.transposer.analyzer.ecore"/>
+  </elements>
+</generationChain:GenerationChain>

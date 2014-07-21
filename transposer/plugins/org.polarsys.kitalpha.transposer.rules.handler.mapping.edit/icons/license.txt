@@ -1,0 +1,23 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+/icons/full/obj16/RuntimePurpose.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/obj16/RuntimePurpose.gif
+/icons/full/obj16/MappingPossibility.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/obj16/MappingPossibility.gif
+/icons/full/obj16/MappingPackage.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/obj16/MappingPackage.gif
+/icons/full/obj16/MappingElement.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/obj16/MappingElement.gif
+/icons/full/obj16/ContributedPurpose.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/obj16/ContributedPurpose.gif
+/icons/full/obj16/Mapping.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/obj16/Mapping.gif
+/icons/full/ctool16/CreateMappingPackage_ownedMappingElements_MappingElement.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateMappingPackage_ownedMappingElements_MappingElement.gif
+/icons/full/ctool16/CreateMappingPackage_ownedPackages_MappingPackage.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateMappingPackage_ownedPackages_MappingPackage.gif
+/icons/full/ctool16/CreateMappingElement_ownedDefaultPossibility_MappingPossibility.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateMappingElement_ownedDefaultPossibility_MappingPossibility.gif
+/icons/full/ctool16/CreatePurposeRegistry_contributedPurposes_ContributedPurpose.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreatePurposeRegistry_contributedPurposes_ContributedPurpose.gif
+/icons/full/ctool16/CreateMapping_ownedPackages_MappingPackage.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateMapping_ownedPackages_MappingPackage.gif
+/icons/full/ctool16/CreatePurposeRegistry_registeredPurposes_RuntimePurpose.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreatePurposeRegistry_registeredPurposes_RuntimePurpose.gif
+/icons/full/ctool16/CreateContributedPurpose_mappings_Mapping.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateContributedPurpose_mappings_Mapping.gif
+/icons/full/ctool16/CreateMappingElement_defaultPossibility_MappingPossibility.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateMappingElement_defaultPossibility_MappingPossibility.gif
+/icons/full/ctool16/CreateRuntimePurpose_mapping_Mapping.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateRuntimePurpose_mapping_Mapping.gif
+/icons/full/ctool16/CreateMapping_ownedMappingElements_MappingElement.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateMapping_ownedMappingElements_MappingElement.gif
+/icons/full/ctool16/CreateMappingElement_ownedPossibilities_MappingPossibility.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit - org.polarsys.kitalpha.transposer.rules.handler.mapping.edit/icons/full/ctool16/CreateMappingElement_ownedPossibilities_MappingPossibility.gif

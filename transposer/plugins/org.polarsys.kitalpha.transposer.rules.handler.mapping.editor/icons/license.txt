@@ -1,0 +1,12 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+/icons/full/wizban/NewRuntime.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor/icons/full/wizban/NewRuntime.gif
+/icons/full/wizban/NewCommon.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor/icons/full/wizban/NewCommon.gif
+/icons/full/wizban/NewContribution.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor/icons/full/wizban/NewContribution.gif
+/icons/full/obj16/CommonModelFile.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor/icons/full/obj16/CommonModelFile.gif
+/icons/full/obj16/ContributionModelFile.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor/icons/full/obj16/ContributionModelFile.gif
+/icons/full/obj16/RuntimeModelFile.gif - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor - org.polarsys.kitalpha.transposer.rules.handler.mapping.editor/icons/full/obj16/RuntimeModelFile.gif

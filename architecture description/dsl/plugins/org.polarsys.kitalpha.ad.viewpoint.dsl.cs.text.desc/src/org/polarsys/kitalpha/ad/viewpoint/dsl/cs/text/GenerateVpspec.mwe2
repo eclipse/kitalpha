@@ -1,0 +1,255 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+module org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.GenerateVpspec
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.xtext.generator.*
+import org.eclipse.xtext.ui.generator.*
+
+var grammarURI = "classpath:/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpspec.xtext"
+var file.extensions = "spec.vptext"
+var projectName = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc"
+var runtimeProject = "../${projectName}"
+
+Workflow {
+    bean = StandaloneSetup {
+            scanClassPath = true
+            platformUri = "${runtimeProject}/.."
+            
+	        //Ecore
+			uriMap = {
+				from = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"
+				to = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel"
+				to = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
+				}
+	
+			//eMDE
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.emde/model/eMDE.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel"
+				}
+		
+			//Vpspec
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel"
+				}
+			
+			//Vpconf
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf/model/vpconf.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf/model/vpconf.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
+				}
+			
+			//Vpui
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui/model/vpui.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui/model/vpui.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model/model/vpui.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model/model/vpui.genmodel"
+				}
+				
+			//Vpdiagram
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore"
+				}	
+
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/model/vpdiagram.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/model/vpdiagram.genmodel"
+				}
+			
+			//Vpbuild
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build/model/vpbuild.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build/model/vpbuild.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model/model/vpbuild.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model/model/vpbuild.genmodel"
+				}
+	
+			//Vpservices
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.genmodel"
+				}
+				
+			//emde
+			registerGeneratedEPackage = "org.polarsys.kitalpha.emde.model.EmdePackage"
+			
+			//vpspec
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage"	
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel"
+			
+			//vpui
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model/model/vpui.genmodel"
+			
+			//vpconf
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
+			
+			//vpbuild
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model/model/vpbuild.genmodel"
+			
+			//vpservices
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.VpservicesPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.model/model/vpservices.genmodel"
+			
+			//services [aggregated]
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.genmodel"
+			
+			//vpdiagram
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/model/vpdiagram.genmodel"          
+        }
+    
+        component = DirectoryCleaner {
+            directory = "${runtimeProject}/src-gen"
+        }
+    
+        component = DirectoryCleaner {
+            directory = "${runtimeProject}.ui/src-gen"
+        }
+    
+        component = Generator {
+            pathRtProject = runtimeProject
+            pathUiProject = "${runtimeProject}.ui"
+           // pathTestProject = "${runtimeProject}.tests"
+            projectNameRt = projectName
+            projectNameUi = "${projectName}.ui"
+            language = {
+                uri = grammarURI
+                fileExtensions = file.extensions
+    
+                // Java API to access grammar elements (required by several other fragments)
+                fragment = grammarAccess.GrammarAccessFragment {}
+    
+                // generates Java API for the generated EPackages
+                fragment = ecore.EcoreGeneratorFragment {
+                // referencedGenModels = "
+                //  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
+                //  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
+                // "
+                }
+    
+                // Serializer 2.0
+                fragment = serializer.SerializerFragment {
+                	generateStub = false
+                }
+                
+                // the serialization component (1.0)
+                // fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+    
+                // a custom ResourceFactory for use with EMF
+                fragment = resourceFactory.ResourceFactoryFragment {
+                    fileExtensions = file.extensions
+                }
+    
+                // The antlr parser generator fragment.
+                fragment = parser.antlr.XtextAntlrGeneratorFragment {
+                //  options = {
+                //      backtrack = true
+                //  }
+                }
+    
+                // java-based API for validation
+                fragment = validation.JavaValidatorFragment {
+                //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+                //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+                }
+    
+                // scoping and exporting API
+                // fragment = scoping.ImportURIScopingFragment {}
+                // fragment = exporting.SimpleNamesFragment {}
+    
+                // scoping and exporting API
+                fragment = scoping.ImportNamespacesScopingFragment {}
+                fragment = exporting.QualifiedNamesFragment {}
+                fragment = builder.BuilderIntegrationFragment {}
+    
+                // generator API
+                fragment = generator.GeneratorFragment {
+                    generateMwe = false
+                    generateJavaMain = false
+                }
+    
+                // formatter API
+                fragment = formatting.FormatterFragment {}
+    
+                // labeling API
+                fragment = labeling.LabelProviderFragment {}
+    
+                // outline API
+                fragment = outline.OutlineTreeProviderFragment {}
+                fragment = outline.QuickOutlineFragment {}
+    
+                // quickfix API
+                fragment = quickfix.QuickfixProviderFragment {}
+    
+                // content assist API
+                fragment = contentAssist.JavaBasedContentAssistFragment {}
+    
+                // generates a more lightweight Antlr parser and lexer tailored for content assist
+                fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
+    
+                // generates junit test support classes into Generator#pathTestProject
+            //    fragment = junit.Junit4Fragment {}
+    
+                // project wizard (optional)
+                // fragment = projectWizard.SimpleProjectWizardFragment {
+                //      generatorProjectName = "${projectName}"
+                //      modelFileExtension = file.extensions
+                // }
+    
+                // rename refactoring
+                fragment = refactoring.RefactorElementNameFragment {}
+    
+                // provides the necessary bindings for java types integration
+                fragment = types.TypesGeneratorFragment {}
+    
+                // provides a preference page for template proposals
+                fragment = templates.CodetemplatesGeneratorFragment {}
+    
+                // provides a compare view
+                fragment = compare.CompareFragment {
+                     fileExtensions = file.extensions
+                }
+    
+            }
+        }
+}
+

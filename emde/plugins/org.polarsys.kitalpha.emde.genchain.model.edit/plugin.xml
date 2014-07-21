@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0"
+            class="org.polarsys.kitalpha.emde.genchain.extension.model.edit.provider.ExtensionItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            uri="http://www.eclipse.org/egf/1.0.0/generationChain"
+            class="org.polarsys.kitalpha.emde.genchain.extension.model.edit.provider.ExtensionItemProviderAdapterFactory$GenerationChainChildCreationExtender"/>
+   </extension>
+
+</plugin>

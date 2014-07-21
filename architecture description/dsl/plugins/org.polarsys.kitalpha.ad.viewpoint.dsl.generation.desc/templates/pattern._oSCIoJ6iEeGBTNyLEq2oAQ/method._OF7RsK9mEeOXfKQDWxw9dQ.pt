@@ -1,0 +1,1 @@
+vpsPackage = ECoreResourceManager.INSTANCE.getEPackage();

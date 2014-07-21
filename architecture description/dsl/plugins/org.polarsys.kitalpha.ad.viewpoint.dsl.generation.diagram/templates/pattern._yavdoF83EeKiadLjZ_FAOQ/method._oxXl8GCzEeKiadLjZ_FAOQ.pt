@@ -1,0 +1,5 @@
+ContainerMapping cm = DescriptionFactory.eINSTANCE.createContainerMapping();
+cm.setName(parameter.getName()+"_CM");
+cm.setLabel(parameter.getName());
+cm.setChildrenPresentation(parameter.getContentLayout());
+dContainerMapping = cm;

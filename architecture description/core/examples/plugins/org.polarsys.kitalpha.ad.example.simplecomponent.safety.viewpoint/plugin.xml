@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+	     point="org.eclipse.ui.views">
+	  <view
+	        name="Simple Component Safety Viewpoint"
+	        icon="icons/view.gif"
+	        category="org.polarsys.kitalpha.view.additional.category"
+	        class="org.polarsys.kitalpha.ad.viewpoint.ui.views.ViewpointView"
+	        id="org.polarsys.kitalpha.viewpoint.simplecomponent.safety.view"
+	        resourceId="org.polarsys.kitalpha.viewpoint.simplecomponent.safety"/>
+	</extension>
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="AF"
+	        id="org.polarsys.kitalpha.viewpoint.simplecomponent.safety"
+	        tags="vp"
+	        name="Simple Component Safety Viewpoint"
+	        path="/org.polarsys.kitalpha.ad.example.simplecomponent.safety.viewpoint/model/safetysimplecomponentviewpoint.vp#_YJzVoUVTEeOkq4dSGB2A5Q"/>
+	</extension>
+	<extension
+	     point="org.eclipse.ui.propertiesView">
+	        <excludeSources
+	           id="org.polarsys.kitalpha.viewpoint.simplecomponent.safety.view">
+	        </excludeSources>
+	</extension>
+</plugin>
+

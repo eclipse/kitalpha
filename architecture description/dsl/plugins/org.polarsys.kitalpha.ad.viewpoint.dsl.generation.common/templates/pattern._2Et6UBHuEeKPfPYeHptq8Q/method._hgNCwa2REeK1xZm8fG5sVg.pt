@@ -1,0 +1,2 @@
+<%char first = Character.toUpperCase(classname.charAt(0));%>
+<%classname = first + classname.substring(1);%>

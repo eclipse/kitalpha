@@ -1,0 +1,18 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.MappingImportAgent;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.MappingImportManager;
+
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

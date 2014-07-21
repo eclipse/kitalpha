@@ -1,0 +1,2 @@
+<% if (java_service_data != null)%>
+<%{%>}<%}%>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_5_dlgOXkEeGgfrVkK4wGcQ" name="lvpsRulesProjectsGenerator">
+    <contractContainer xmi:id="_ibchkOXkEeGgfrVkK4wGcQ">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_jPvsUOXkEeGgfrVkK4wGcQ"
+          name="root.project.name" invocationContracts="#_dhARwuXtEeGgfrVkK4wGcQ #_Y8PzguX1EeGwEPkr5Vq4HA #_c_XqsuX1EeGwEPkr5Vq4HA #_hq4XkuX1EeGwEPkr5Vq4HA #_n6XYouX1EeGwEPkr5Vq4HA #_ElUVsuetEeGme5hiz-D4Zg">
+        <type xmi:type="types:TypeString" xmi:id="_jsM-0OXkEeGgfrVkK4wGcQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_zZkiwOepEeGFRIOiNdIapw"
+          name="short.name" mandatory="true" invocationContracts="#_5W6jkuesEeGme5hiz-D4Zg">
+        <type xmi:type="types:TypeString" xmi:id="_1R1E4OepEeGFRIOiNdIapw"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_98whgOXkEeGgfrVkK4wGcQ">
+      <invocations xmi:id="_ElUVsOetEeGme5hiz-D4Zg" name="Get Rules Feature Name"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIOq5EeGh0fmNAy-1lA">
+        <invocationContractContainer xmi:id="_ElUVseetEeGme5hiz-D4Zg">
+          <invocationContracts xmi:id="_ElUVsuetEeGme5hiz-D4Zg" factoryComponentContract="#_jPvsUOXkEeGgfrVkK4wGcQ"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIuq5EeGh0fmNAy-1lA"/>
+          <invocationContracts xmi:id="_ElUVs-etEeGme5hiz-D4Zg" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJOq5EeGh0fmNAy-1lA">
+            <type xmi:type="types:TypeString" xmi:id="_GwDu8OetEeGme5hiz-D4Zg" value="rules.feature"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_ElUVtOetEeGme5hiz-D4Zg" targetInvocationContract="#_5W6jk-esEeGme5hiz-D4Zg #_zzLYwOetEeGme5hiz-D4Zg #_1t-RgOetEeGme5hiz-D4Zg #_21WJQOetEeGme5hiz-D4Zg #_4ByuQOetEeGme5hiz-D4Zg #_5izOAOetEeGme5hiz-D4Zg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJuq5EeGh0fmNAy-1lA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_5W6jkOesEeGme5hiz-D4Zg" name="Rule Feature Creation and registering in the genchain"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_NqCTsOq8EeGh0fmNAy-1lA">
+        <invocationContractContainer xmi:id="_5W6jkeesEeGme5hiz-D4Zg">
+          <invocationContracts xmi:id="_5W6jkuesEeGme5hiz-D4Zg" factoryComponentContract="#_zZkiwOepEeGFRIOiNdIapw"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_NqCTsuq8EeGh0fmNAy-1lA"/>
+          <invocationContracts xmi:id="_5W6jk-esEeGme5hiz-D4Zg" sourceInvocationContract="#_ElUVtOetEeGme5hiz-D4Zg"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZAppNEeO0BorZRiG7mg"/>
+          <invocationContracts xmi:id="_5W6jlOesEeGme5hiz-D4Zg" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZBJpNEeO0BorZRiG7mg">
+            <type xmi:type="types:TypeString" xmi:id="_K_HJUOetEeGme5hiz-D4Zg" value="Rules feature"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_5W6jleesEeGme5hiz-D4Zg" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZBppNEeO0BorZRiG7mg">
+            <type xmi:type="types:TypeString" xmi:id="_LQP8oOetEeGme5hiz-D4Zg" value="Polarsys"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_5W6jluesEeGme5hiz-D4Zg" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZCppNEeO0BorZRiG7mg"/>
+          <invocationContracts xmi:id="_5W6jl-esEeGme5hiz-D4Zg" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZDJpNEeO0BorZRiG7mg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_dhARwOXtEeGgfrVkK4wGcQ" name="[project.root.name].rules.analysis"
+          invokedActivity="#_gtadAOXlEeGgfrVkK4wGcQ">
+        <invocationContractContainer xmi:id="_dhARweXtEeGgfrVkK4wGcQ">
+          <invocationContracts xmi:id="_dhARwuXtEeGgfrVkK4wGcQ" factoryComponentContract="#_jPvsUOXkEeGgfrVkK4wGcQ"
+              invokedContract="#_ll4AwOXlEeGgfrVkK4wGcQ"/>
+          <invocationContracts xmi:id="_TfhhkeX0EeGwEPkr5Vq4HA" invokedContract="#_WEyToOX0EeGwEPkr5Vq4HA">
+            <type xmi:type="types:TypeString" xmi:id="_B3i7EOXwEeGgfrVkK4wGcQ" value="rules.analysis"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_zzLYwOetEeGme5hiz-D4Zg" sourceInvocationContract="#_ElUVtOetEeGme5hiz-D4Zg"
+              invokedContract="#_vjFckOetEeGme5hiz-D4Zg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Y8PzgOX1EeGwEPkr5Vq4HA" name="[project.root.name].rules.validation"
+          invokedActivity="#_gtadAOXlEeGgfrVkK4wGcQ">
+        <invocationContractContainer xmi:id="_Y8PzgeX1EeGwEPkr5Vq4HA">
+          <invocationContracts xmi:id="_Y8PzguX1EeGwEPkr5Vq4HA" factoryComponentContract="#_jPvsUOXkEeGgfrVkK4wGcQ"
+              invokedContract="#_ll4AwOXlEeGgfrVkK4wGcQ"/>
+          <invocationContracts xmi:id="_Y8Pzg-X1EeGwEPkr5Vq4HA" invokedContract="#_WEyToOX0EeGwEPkr5Vq4HA">
+            <type xmi:type="types:TypeString" xmi:id="_Y8PzhOX1EeGwEPkr5Vq4HA" value="rules.validation"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_1t-RgOetEeGme5hiz-D4Zg" sourceInvocationContract="#_ElUVtOetEeGme5hiz-D4Zg"
+              invokedContract="#_vjFckOetEeGme5hiz-D4Zg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_c_XqsOX1EeGwEPkr5Vq4HA" name="[project.root.name].rules.transformation"
+          invokedActivity="#_gtadAOXlEeGgfrVkK4wGcQ">
+        <invocationContractContainer xmi:id="_c_XqseX1EeGwEPkr5Vq4HA">
+          <invocationContracts xmi:id="_c_XqsuX1EeGwEPkr5Vq4HA" factoryComponentContract="#_jPvsUOXkEeGgfrVkK4wGcQ"
+              invokedContract="#_ll4AwOXlEeGgfrVkK4wGcQ"/>
+          <invocationContracts xmi:id="_c_Xqs-X1EeGwEPkr5Vq4HA" invokedContract="#_WEyToOX0EeGwEPkr5Vq4HA">
+            <type xmi:type="types:TypeString" xmi:id="_c_XqtOX1EeGwEPkr5Vq4HA" value="rules.transformation"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_21WJQOetEeGme5hiz-D4Zg" sourceInvocationContract="#_ElUVtOetEeGme5hiz-D4Zg"
+              invokedContract="#_vjFckOetEeGme5hiz-D4Zg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_hq4XkOX1EeGwEPkr5Vq4HA" name="[project.root.name].rules.generation"
+          invokedActivity="#_gtadAOXlEeGgfrVkK4wGcQ">
+        <invocationContractContainer xmi:id="_hq4XkeX1EeGwEPkr5Vq4HA">
+          <invocationContracts xmi:id="_hq4XkuX1EeGwEPkr5Vq4HA" factoryComponentContract="#_jPvsUOXkEeGgfrVkK4wGcQ"
+              invokedContract="#_ll4AwOXlEeGgfrVkK4wGcQ"/>
+          <invocationContracts xmi:id="_hq4Xk-X1EeGwEPkr5Vq4HA" invokedContract="#_WEyToOX0EeGwEPkr5Vq4HA">
+            <type xmi:type="types:TypeString" xmi:id="_hq4XlOX1EeGwEPkr5Vq4HA" value="rules.generation"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_4ByuQOetEeGme5hiz-D4Zg" sourceInvocationContract="#_ElUVtOetEeGme5hiz-D4Zg"
+              invokedContract="#_vjFckOetEeGme5hiz-D4Zg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_n6XYoOX1EeGwEPkr5Vq4HA" name="[project.root.name].rules.computation"
+          invokedActivity="#_gtadAOXlEeGgfrVkK4wGcQ">
+        <invocationContractContainer xmi:id="_n6XYoeX1EeGwEPkr5Vq4HA">
+          <invocationContracts xmi:id="_n6XYouX1EeGwEPkr5Vq4HA" factoryComponentContract="#_jPvsUOXkEeGgfrVkK4wGcQ"
+              invokedContract="#_ll4AwOXlEeGgfrVkK4wGcQ"/>
+          <invocationContracts xmi:id="_n6XYo-X1EeGwEPkr5Vq4HA" invokedContract="#_WEyToOX0EeGwEPkr5Vq4HA">
+            <type xmi:type="types:TypeString" xmi:id="_n6XYpOX1EeGwEPkr5Vq4HA" value="rules.computation"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_5izOAOetEeGme5hiz-D4Zg" sourceInvocationContract="#_ElUVtOetEeGme5hiz-D4Zg"
+              invokedContract="#_vjFckOetEeGme5hiz-D4Zg"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_gtadAOXlEeGgfrVkK4wGcQ" name="Plugin + Java nature project creattion and add it to the feature">
+    <contractContainer xmi:id="_lACv0OXlEeGgfrVkK4wGcQ">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_ll4AwOXlEeGgfrVkK4wGcQ"
+          name="root.project.name" invocationContracts="#_czahEuXvEeGgfrVkK4wGcQ">
+        <type xmi:type="types:TypeString" xmi:id="_mEZv0OXlEeGgfrVkK4wGcQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_WEyToOX0EeGwEPkr5Vq4HA"
+          name="resource.name.addition" invocationContracts="#_czahE-XvEeGgfrVkK4wGcQ">
+        <type xmi:type="types:TypeString" xmi:id="_WcoL4OX0EeGwEPkr5Vq4HA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_vjFckOetEeGme5hiz-D4Zg"
+          name="feature.name" invocationContracts="#_k9hzIuetEeGme5hiz-D4Zg">
+        <type xmi:type="types:TypeString" xmi:id="_xpyqYOetEeGme5hiz-D4Zg"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_oWqGUOXlEeGgfrVkK4wGcQ">
+      <invocations xmi:id="_czahEOXvEeGgfrVkK4wGcQ" name="First, Project name construction"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIOq5EeGh0fmNAy-1lA">
+        <invocationContractContainer xmi:id="_czahEeXvEeGgfrVkK4wGcQ">
+          <invocationContracts xmi:id="_czahEuXvEeGgfrVkK4wGcQ" factoryComponentContract="#_ll4AwOXlEeGgfrVkK4wGcQ"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIIuq5EeGh0fmNAy-1lA"/>
+          <invocationContracts xmi:id="_czahE-XvEeGgfrVkK4wGcQ" factoryComponentContract="#_WEyToOX0EeGwEPkr5Vq4HA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJOq5EeGh0fmNAy-1lA"/>
+          <invocationContracts xmi:id="_b1wBMOerEeGme5hiz-D4Zg" targetInvocationContract="#_k9hzI-etEeGme5hiz-D4Zg #_Gmy10qUiEeOWxfW4xf0FnQ"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJuq5EeGh0fmNAy-1lA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Gmy10KUiEeOWxfW4xf0FnQ" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_gQZzsAyvEeK3gMLbl4z4NA">
+        <invocationContractContainer xmi:id="_Gmy10aUiEeOWxfW4xf0FnQ">
+          <invocationContracts xmi:id="_Gmy10qUiEeOWxfW4xf0FnQ" sourceInvocationContract="#_b1wBMOerEeGme5hiz-D4Zg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_l7-2cAyvEeK3gMLbl4z4NA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_k9hzIOetEeGme5hiz-D4Zg" name="Fourth, Add plugin to the Rules Feature "
+          invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZGppNEeO0BorZRiG7mg">
+        <invocationContractContainer xmi:id="_k9hzIeetEeGme5hiz-D4Zg">
+          <invocationContracts xmi:id="_k9hzIuetEeGme5hiz-D4Zg" factoryComponentContract="#_vjFckOetEeGme5hiz-D4Zg"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZIJpNEeO0BorZRiG7mg"/>
+          <invocationContracts xmi:id="_k9hzI-etEeGme5hiz-D4Zg" sourceInvocationContract="#_b1wBMOerEeGme5hiz-D4Zg"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZHppNEeO0BorZRiG7mg"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+</xmi:XMI>

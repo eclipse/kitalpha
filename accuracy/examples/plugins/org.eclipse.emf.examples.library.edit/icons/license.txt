@@ -1,0 +1,22 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/Person.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/BookOnTape.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/Writer.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/Borrower.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/Employee.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/Book.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/CirculatingItem.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/VideoCassette.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/obj16/Library.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/ctool16/CreateLibrary_stock_Book.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/ctool16/CreateLibrary_stock_BookOnTape.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/ctool16/CreateLibrary_employees_Employee.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/ctool16/CreateLibrary_writers_Writer.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/ctool16/CreateLibrary_borrowers_Borrower.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/ctool16/CreateLibrary_stock_VideoCassette.gif
+rebranded/Accuracy/examples/org.eclipse.emf.examples.library.edit/icons/full/ctool16/CreateLibrary_branches_Library.gif

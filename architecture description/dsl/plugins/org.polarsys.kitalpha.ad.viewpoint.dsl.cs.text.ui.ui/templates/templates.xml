@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Copyright (c) 2014 Thales Global Services S.A.S.
+   All rights reserved. This program and the accompanying materials
+   are made available under the terms of the Eclipse Public License v1.0
+   which accompanies this distribution, and is available at
+   http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+   Thales Global Services S.A.S - initial API and implementation
+-->
+<templates>
+
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UI" deleted="false" description="New User Interface" enabled="true" id="1" name="UI">
+UI ${shortName} {&#13;
+	label: "${viewpointName}"&#13;
+	Container ${shortName}Section1 {&#13;
+		Field MyFieldSection1 type text, mapped-to ${value:CrossReference('FieldMapping.UI_Field_Mapped_To')}&#13;
+		Container ${shortName}Group1 {&#13;
+			Field MyFieldGroup1 type text, mapped-to ${value:CrossReference('FieldMapping.UI_Field_Mapped_To')}&#13;
+		}&#13;
+	}&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UI" deleted="false" description="New User Interface for a specific Class" enabled="true" id="2" name="UI">
+UI ${shortName} for ${localClass:CrossReference('LocalClass.UI_For_LocalClass')} {&#13;
+	label: "${viewpointName}"&#13;
+	Container ${shortName}Section1 {&#13;
+		Field MyFieldSection1 type text, mapped-to ${value:CrossReference('FieldMapping.UI_Field_Mapped_To')}&#13;
+	}&#13;
+}&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UI" deleted="false" description="Generate User Interface for all classes" enabled="true" id="3" name="UI">
+</template>
+
+</templates>

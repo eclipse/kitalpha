@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vpconf" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0"
+    nsPrefix="vpconf">
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vpConfigurationElements"
+        upperBound="-1" eType="#//ConfigurationElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationElement" abstract="true"
+      eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//ViewpointElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TargetApplication" eSuperTypes="#//ConfigurationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenerationConfiguration" eSuperTypes="#//ConfigurationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nsuri" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Generation" eSuperTypes="#//ConfigurationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedDataGenerationConf"
+        eType="#//GData" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedExtensionGenConf"
+        upperBound="-1" eType="#//ExtensionGeneratrionConfiguration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edit" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editor" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="test" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="javaDoc" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overwriteEcore" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionGeneratrionConfiguration" abstract="true"/>
+</ecore:EPackage>

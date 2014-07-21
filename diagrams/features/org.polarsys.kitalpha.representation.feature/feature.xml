@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.polarsys.kitalpha.representation.feature"
+      label="Feature"
+      version="0.5.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.polarsys.kitalpha.representation.ecore.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.representation.egf.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.representation.emde.feature"
+         version="0.0.0"/>
+
+</feature>

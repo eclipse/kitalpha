@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain"  name="vpbuild" factoryComponentName="org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.fc">
+  <elements xsi:type="generationChain:GenerationChain" name="vpbuild">
+    <elements xsi:type="genchainExtension:EmdeGeneration" name="eEmf Generation for vpbuild" modelPath="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build/model/vpbuild.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model"/>
+  </elements>
+</generationChain:GenerationChain>

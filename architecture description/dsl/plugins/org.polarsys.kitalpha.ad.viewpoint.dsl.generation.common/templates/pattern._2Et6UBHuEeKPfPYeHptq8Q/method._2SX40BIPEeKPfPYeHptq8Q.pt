@@ -1,0 +1,7 @@
+<%
+// Do not change in sub pattern
+ctx.setValue("projectname", projectname);
+ctx.setValue("packagename", packagename);
+ctx.setValue("classname", classname);
+ctx.setValue("savetime", savetime);
+%> 

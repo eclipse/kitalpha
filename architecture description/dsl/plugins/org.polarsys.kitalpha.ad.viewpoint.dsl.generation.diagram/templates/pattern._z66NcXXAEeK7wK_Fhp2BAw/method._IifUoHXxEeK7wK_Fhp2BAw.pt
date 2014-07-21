@@ -1,0 +1,3 @@
+String r_package_name = (String) ctx.getValue("design.project.name")+ ".service.tools";
+String r_class_name = "ReconnectEdgeToolService";
+java_service_name = r_package_name + "." + r_class_name;

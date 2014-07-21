@@ -1,0 +1,2 @@
+<%super.parameter = bordered_node;%>
+<%super.method_setParameters(stringBuffer, ctx);%>

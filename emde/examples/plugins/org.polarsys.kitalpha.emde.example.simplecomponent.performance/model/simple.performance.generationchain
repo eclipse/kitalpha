@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="performance" factoryComponentName="org.polarsys.kitalpha.emde.example.simplecomponent.performance.egf">
+  <elements xsi:type="generationChain:GenerationChain" name="performance">
+    <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for performance" modelPath="/org.polarsys.kitalpha.emde.example.simplecomponent.performance/model/simple.performance.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.emde.example.simplecomponent.performance.model" basePackage="org.polarsys.kitalpha.emde.example.simplecomponent.performance.model"/>
+  </elements>
+</generationChain:GenerationChain>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Report Customization Example
+Bundle-SymbolicName: org.polarsys.kitalpha.report.example.customization;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Localization: plugin
+Bundle-Activator: org.polarsys.kitalpha.report.example.customization.Activator
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: www.polarsys.org
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.polarsys.kitalpha.report.ui,
+ org.polarsys.kitalpha.report.example.customization.model,
+ org.polarsys.kitalpha.report.example.customization.model.edit,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.polarsys.kitalpha.report.example.customization

@@ -1,0 +1,7 @@
+NodeMapping currentNode = (NodeMapping) GenerationUtil.getDoremiElement(parameter);
+final EList<BorderedNode> reused_boderednodes = parameter.getChildren().getReused_boderednodes();
+for (BorderedNode borderedNode : reused_boderednodes) 
+{
+	NodeMapping currentBNode = (NodeMapping) GenerationUtil.getDoremiElement(borderedNode);
+	currentNode.getReusedBorderedNodeMappings().add(currentBNode);
+}

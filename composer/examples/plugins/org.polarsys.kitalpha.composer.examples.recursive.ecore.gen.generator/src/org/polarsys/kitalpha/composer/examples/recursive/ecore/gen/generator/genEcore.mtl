@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module genEcore('http://org.polarsys.kitalpha/composer/example/advancedusecase/ecoreadvancedalloc/1.0.0', 'http://org.polarsys.kitalpha/allocation/base/1.0.0', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+[template public gen(anEcoreFile : EcoreFile) post(trim())]
+-> File [oclAsType(File).name/] <br />
+[/template]
+
+[template public gen(anEObject : EObject) post(trim())]
+[/template]
+
+[template public gen(anDeclaration : Declaration) post(trim())]
+-> Declaration [oclAsType(Type).referencedElement.oclAsType(EClass).name/] <br />
+[/template]
+
+[template public gen(anForwardDeclaration : ForwardDeclaration) post(trim())]
+-> Forward declaration [oclAsType(Type).referencedElement.oclAsType(EClass).name/] <br />
+[/template]
+
+[template public gen(anReference : Reference) post(trim())]
+-> Reference [name/]<br />
+[/template]

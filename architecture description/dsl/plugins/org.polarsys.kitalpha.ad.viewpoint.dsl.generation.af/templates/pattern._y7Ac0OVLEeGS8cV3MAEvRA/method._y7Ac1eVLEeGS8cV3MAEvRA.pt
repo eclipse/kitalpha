@@ -1,0 +1,30 @@
+// DSL Viewpoint Generator V0.1 <%=genTime%>
+
+package <%=packageName%>;
+
+import org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule;
+import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;
+
+public class <%=ruleName%> implements JavaRule {
+
+	/* (non-Javadoc)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#run(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])
+	 */
+	public void run(ModelAccessor properties, Object[] selection) {
+		// TODO Auto-generated method stub
+		org.eclipse.jface.dialogs.MessageDialog.openInformation(
+				org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
+				"Java rule execution", 
+				"DSL Viewpoint generated rule \n Message from <%=ruleName%> rule");
+
+	}
+
+	/* (non-Javadoc)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#canRun(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])
+	 */
+	public boolean canRun(ModelAccessor properties, Object[] selection) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+}

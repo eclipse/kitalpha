@@ -1,0 +1,3 @@
+		EList<Viewpoint> result = new BasicEList<Viewpoint>();
+		collectParents(this, result);
+		return result;

@@ -1,0 +1,30 @@
+// get the specified type in vp desc model
+AbstractType opType = operation.getOperation_type();
+
+if (opType != null)
+{
+	// The EType to compute
+	EClassifier opertionEClassifierType = null;
+	// Case of local type, then look for the EClass generated from the Local Type (vpspec.Class) 
+	if (opType instanceof LocalType) 
+	{
+		final LocalType localType = (LocalType) opType;
+		final ViewpointClassifier viewpointClassifier = localType.getType();
+
+		/* Get the corresponding generated Target ECLass from the generated EPackage */
+		for (EClassifier iEClassifier : vpsPackage.getEClassifiers())
+		{
+			if (iEClassifier.getName().equals(viewpointClassifier.getName()))
+				opertionEClassifierType = iEClassifier;
+		}
+	}
+	// Case of external type, then look for the selected EClassifier
+	if (opType instanceof ExternalType) 
+	{
+		ExternalType extType = (ExternalType) opType;
+		opertionEClassifierType = extType.getType();
+	}
+	// set the generated EOperation Etype
+	if (opertionEClassifierType != null)
+		eOperation.setEType(opertionEClassifierType);
+}

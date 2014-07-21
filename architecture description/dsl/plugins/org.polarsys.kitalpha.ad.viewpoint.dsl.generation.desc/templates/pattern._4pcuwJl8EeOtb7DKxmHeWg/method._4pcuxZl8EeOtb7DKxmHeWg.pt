@@ -1,0 +1,8 @@
+// Create Enumeration Literal 
+final String name = parameter.getName().replaceAll("[^a-zA-Z0-9]", "_");
+final String s_literal = parameter.getLiteral();
+literal = EcoreFactory.eINSTANCE.createEEnumLiteral();
+literal.setLiteral(s_literal);
+literal.setName(name);
+literal.setValue(vpEnumeration.getOwnedValues().indexOf(parameter));
+eEnum.getELiterals().add(literal);

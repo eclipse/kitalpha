@@ -1,0 +1,12 @@
+// FIXME: [VPDiag_EXP: 01] Expression need validation
+
+SelectModelElementVariable select = ToolFactory.eINSTANCE.createSelectModelElementVariable();
+select.setName("elementsToRemove");
+String expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {") +
+SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")+
+SiriusExpressionHelper.getExpressoin("}else{")+
+SiriusExpressionHelper.getExpressoin("sourceNode.target")+
+SiriusExpressionHelper.getExpressoin("}");
+select.setCandidatesExpression(expression);
+select.setMessage("Select the element you want to unlink");
+elementView_del_var.getSubVariables().add(select);

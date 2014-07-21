@@ -1,0 +1,41 @@
+/*******************************************************************************
+ * Copyright (c) 2013 THALES GLOBAL SERVICES.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    THALES GLOBAL SERVICES - Initial API and implementation.
+ *******************************************************************************/
+
+
+package org.polarsys.kitalpha.validation.configurer;
+
+import java.util.Properties;
+
+import org.polarsys.kitalpha.validation.internal.configurer.ConstraintConfigurer;
+
+/**
+ * Service that is able to activate/deactivate constraints from a
+ * {@link Properties} object.
+ * 
+ * @author THALESGROUP
+ */
+public interface IConstraintConfigurer {
+
+	/** The default instance. */
+	IConstraintConfigurer INSTANCE = new ConstraintConfigurer();
+
+	/**
+	 * Activates/deactivates model constraints corresponding to the given
+	 * {@link Properties} object.
+	 * 
+	 * @param properties
+	 *            the properties.
+	 * @throws ConfigurerException
+	 *             if the properties are not valid.
+	 */
+	public void configure(Properties properties) throws ConfigurerException;
+
+}

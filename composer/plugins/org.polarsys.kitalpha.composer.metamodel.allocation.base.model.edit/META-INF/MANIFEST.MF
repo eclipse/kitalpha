@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.composer.metamodel.allocation.base.model.edit;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.polarsys.kitalpha.composer.metamodel.allocation.base.provider.AllocationEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.polarsys.kitalpha.composer.metamodel.allocation.base.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.polarsys.kitalpha.composer.metamodel.allocation.base.model;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

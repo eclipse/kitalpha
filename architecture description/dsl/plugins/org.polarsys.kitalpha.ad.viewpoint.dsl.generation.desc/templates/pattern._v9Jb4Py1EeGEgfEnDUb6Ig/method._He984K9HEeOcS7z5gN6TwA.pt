@@ -1,0 +1,1 @@
+eClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class)abstractAssociation.eContainer()).getName(); 

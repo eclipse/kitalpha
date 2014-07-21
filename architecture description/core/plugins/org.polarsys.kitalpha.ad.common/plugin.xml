@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="VPnature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.polarsys.kitalpha.ad.common.ProjectNature">
+         </run>
+      </runtime>
+   </extension>
+
+</plugin>

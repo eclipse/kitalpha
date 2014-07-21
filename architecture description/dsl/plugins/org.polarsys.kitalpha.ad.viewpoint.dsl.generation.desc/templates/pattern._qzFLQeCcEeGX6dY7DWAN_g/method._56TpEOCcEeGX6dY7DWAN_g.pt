@@ -1,0 +1,23 @@
+EList<AbstractSuperClass> superClasses = parameter.getInheritences();
+
+//EList<EClass> superEClasses = new BasicEList<EClass>();
+//for (AbstractSuperClass abstractSuperClass : superClasses) 
+//{
+//	if (abstractSuperClass instanceof ExternalSuperClass)
+//		superEClasses.add(((ExternalSuperClass) abstractSuperClass).getSuperClass());
+//}
+
+if (superClasses.size() == 0)
+{
+	String taName = VpDslConfigurationHelper.getTargetApplication(VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement());
+	if (taName != null && taName.trim().length() > 0)
+	{
+		ITargetApplication ta = TargetApplicationExtensionManager.getTargetApplicationClass(taName);
+		if (ta != null)
+		{
+			List<EClass> clazz = ta.getBasicSemanticElement();
+			if (clazz != null && clazz.size() > 0)
+				curEClass.getESuperTypes().addAll(clazz);
+		}
+	}
+}

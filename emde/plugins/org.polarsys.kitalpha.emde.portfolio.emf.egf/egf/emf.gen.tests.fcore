@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmi:id="_79dGwDYdEeGWF-mrFIsVzA"
+    name="emf.gen.tests">
+  <contractContainer xmi:id="_3papQDYeEeGWF-mrFIsVzA">
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_4FSF4DYeEeGWF-mrFIsVzA"
+        name="genModelURI" mandatory="true" invocationContracts="#_z-RNMjYeEeGWF-mrFIsVzA">
+      <type xmi:type="domain:TypeDomain" xmi:id="_6-Na0DYeEeGWF-mrFIsVzA"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_2zWxcDbCEeG-UqwSWL3rrQ"
+        name="pattern.substitutions" invocationContracts="#_HyGxkzbDEeG-UqwSWL3rrQ">
+      <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_6n4zADbCEeG-UqwSWL3rrQ"/>
+    </contracts>
+  </contractContainer>
+  <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_dhooEDYeEeGWF-mrFIsVzA">
+    <invocations xmi:id="_HyGxkDbDEeG-UqwSWL3rrQ" invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_N9g3oElcEd-TSsH7K-_bxQ">
+      <invocationContractContainer xmi:id="_HyGxkTbDEeG-UqwSWL3rrQ">
+        <invocationContracts xmi:id="_HyGxkjbDEeG-UqwSWL3rrQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_UVURwEldEd-TSsH7K-_bxQ">
+          <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_NAzEADbDEeG-UqwSWL3rrQ"/>
+        </invocationContracts>
+        <invocationContracts xmi:id="_HyGxkzbDEeG-UqwSWL3rrQ" factoryComponentContract="#_2zWxcDbCEeG-UqwSWL3rrQ"
+            invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_ahgHMEldEd-TSsH7K-_bxQ"/>
+        <invocationContracts xmi:id="_HyGxlDbDEeG-UqwSWL3rrQ" targetInvocationContract="#_y7_eUDbCEeG-UqwSWL3rrQ"
+            invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_gBdIwEldEd-TSsH7K-_bxQ"/>
+      </invocationContractContainer>
+    </invocations>
+    <invocations xmi:id="_z-RNMDYeEeGWF-mrFIsVzA" invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_PoF08DG0Ed-kc8dEZsdm2w">
+      <invocationContractContainer xmi:id="_z-RNMTYeEeGWF-mrFIsVzA">
+        <invocationContracts xmi:id="_z-RNMjYeEeGWF-mrFIsVzA" factoryComponentContract="#_4FSF4DYeEeGWF-mrFIsVzA"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Prg8hjG0Ed-kc8dEZsdm2w"/>
+        <invocationContracts xmi:id="_y7_eUDbCEeG-UqwSWL3rrQ" sourceInvocationContract="#_HyGxlDbDEeG-UqwSWL3rrQ"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_eYFgEFHVEd-dr9AWwNwIMQ"/>
+      </invocationContractContainer>
+    </invocations>
+  </orchestration>
+</fcore:FactoryComponent>

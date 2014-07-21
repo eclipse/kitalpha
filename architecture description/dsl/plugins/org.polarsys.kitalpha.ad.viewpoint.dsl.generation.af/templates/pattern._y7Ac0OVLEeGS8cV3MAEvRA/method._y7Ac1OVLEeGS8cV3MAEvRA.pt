@@ -1,0 +1,3 @@
+return parameter.getType().toString().equals(VpservicesPackage.eINSTANCE.getRules_Types().getEEnumLiteral(0).toString())
+&& (parameter.getClass_() == null
+|| parameter.getClass_().trim().length() == 0);

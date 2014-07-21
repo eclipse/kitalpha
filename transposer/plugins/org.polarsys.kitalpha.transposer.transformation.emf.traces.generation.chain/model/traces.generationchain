@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="traces" factoryComponentName="org.polarsys.kitalpha.transposer.transformation.emf.traces.fcore">
+  <elements xsi:type="generationChain:GenerationChain" name="traces">
+    <elements xsi:type="genchainExtension:EmdeGeneration" name="Emde generation for Trace" modelPath="/org.polarsys.kitalpha.transposer.transformation.emf.traces.ecore/model/traces.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.transposer.transformation.emf.traces" basePackage="org.polarsys.kitalpha.transposer.transformation.emf"/>
+  </elements>
+</generationChain:GenerationChain>

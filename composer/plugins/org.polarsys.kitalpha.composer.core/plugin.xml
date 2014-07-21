@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="org.polarsys.kitalpha.composer.allocation.strategies" name="allocation strategy provider" schema="schema/org.polarsys.kitalpha.composer.allocation.strategies.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.composer.allocation.refineries" name="allocation refinement provider" schema="schema/org.polarsys.kitalpha.composer.allocation.refineries.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.composer.cots.generators" name="cots generator provider" schema="schema/org.polarsys.kitalpha.composer.cots.generators.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.composer.allocation.binding" name="allocation binding" schema="schema/org.polarsys.kitalpha.composer.allocation.binding.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.composer.allocation.provider" name="allocationProvider" schema="schema/org.polarsys.kitalpha.composer.allocation.provider.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.composer.profile" name="composerProfile" schema="schema/org.polarsys.kitalpha.composer.profile.exsd"/>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.workflow.declaration">
+      <WorkflowDefinition
+            Identifier="org.polarsys.kitalpha.composer.core.workflow"
+            Name="Composer workflow">
+         <Description>
+            Composer workflow
+         </Description>
+         <WorkflowElement
+               AllowMultipleContributions="true"
+               Identifier="org.polarsys.kitalpha.composer.core.workflow.beforestrategy"
+               Name="Before strategy"
+               orderNumber="1">
+            <Description>
+               Before the strategy
+            </Description>
+            <ParameterDefinition
+                  Name="semanticModel"
+                  Type="List&lt;EObject&gt;">
+               <Description>
+                  Semantic model in entry of Composer.
+
+If Composer is launched with a resource in entry, the list contains one element (the root).
+
+If Composer is launched with selected elements in entry, the list contains the elements.
+               </Description>
+            </ParameterDefinition>
+            <ParameterDefinition
+                  Name="generationDirectoryPath"
+                  Type="String">
+               <Description>
+                  The path of the directory that contains the genereted files
+               </Description>
+            </ParameterDefinition>
+         </WorkflowElement>
+         <WorkflowElement
+               AllowMultipleContributions="true"
+               Identifier="org.polarsys.kitalpha.composer.core.workflow.beforerefinery"
+               Name="Before refinery"
+               orderNumber="2">
+            <Description>
+               Before the refinery
+            </Description>
+            <ParameterDefinition
+                  Name="semanticModel"
+                  Type="List&lt;EObject&gt;">
+               <Description>
+                  Semantic model in entry of Composer.
+
+If Composer is launched with a resource in entry, the list contains one element (the root).
+
+If Composer is launched with selected elements in entry, the list contains the elements.
+               </Description>
+            </ParameterDefinition>
+            <ParameterDefinition
+                  Name="allocationModel"
+                  Type="EObject">
+               <Description>
+                  The allocation model made by the strategy
+               </Description>
+            </ParameterDefinition>
+            <ParameterDefinition
+                  Name="generationDirectoryPath"
+                  Type="String">
+               <Description>
+                  The path of the directory that contains the genereted files
+               </Description>
+            </ParameterDefinition>
+         </WorkflowElement>
+         <WorkflowElement
+               AllowMultipleContributions="true"
+               Identifier="org.polarsys.kitalpha.composer.core.workflow.beforegeneration"
+               Name="Before generation"
+               orderNumber="3">
+            <Description>
+               Before the generation
+            </Description>
+            <ParameterDefinition
+                  Name="semanticModel"
+                  Type="List&lt;EObject&gt;">
+               <Description>
+                  Semantic model in entry of Composer.
+
+If Composer is launched with a resource in entry, the list contains one element (the root).
+
+If Composer is launched with selected elements in entry, the list contains the elements.
+               </Description>
+            </ParameterDefinition>
+            <ParameterDefinition
+                  Name="allocationModel"
+                  Type="EObject">
+               <Description>
+                  The allocation model refined
+               </Description>
+            </ParameterDefinition>
+            <ParameterDefinition
+                  Name="generationDirectoryPath"
+                  Type="String">
+               <Description>
+                  The path of the directory that contains the genereted files
+               </Description>
+            </ParameterDefinition>
+         </WorkflowElement>
+         <WorkflowElement
+               AllowMultipleContributions="true"
+               Identifier="org.polarsys.kitalpha.composer.core.workflow.aftergeneration"
+               Name="After generation"
+               orderNumber="4">
+            <Description>
+               After the generation
+            </Description>
+            <ParameterDefinition
+                  Name="semanticModel"
+                  Type="List&lt;EObject&gt;">
+               <Description>
+                  Semantic model in entry of Composer.
+
+If Composer is launched with a resource in entry, the list contains one element (the root).
+
+If Composer is launched with selected elements in entry, the list contains the elements.
+               </Description>
+            </ParameterDefinition>
+            <ParameterDefinition
+                  Name="generationDirectoryPath"
+                  Type="String">
+               <Description>
+                  The path of the directory that contains the genereted files
+               </Description>
+            </ParameterDefinition>
+            <ParameterDefinition
+                  Name="allocationModel"
+                  Type="EObject">
+               <Description>
+                  The allocation model refined
+               </Description>
+            </ParameterDefinition>
+         </WorkflowElement>
+      </WorkflowDefinition>
+   </extension>
+   <extension
+         id="standalone.composer"
+         name="Standalone Composer"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.polarsys.kitalpha.composer.internal.standalone.CodeManagerApplication">
+         </run>
+      </application>
+   </extension>
+   
+</plugin>

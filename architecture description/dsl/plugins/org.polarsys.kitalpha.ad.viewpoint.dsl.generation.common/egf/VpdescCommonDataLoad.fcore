@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ftask:Task xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_1L1eUPtNEeK-QL-B45qveg"
+    name="VpdslCommonDataLoad" kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.task.VpdescCommonDataLoadTask">
+  <contractContainer xmi:id="_37qhoPtNEeK-QL-B45qveg">
+    <contracts xmi:id="_6m4KsPtNEeK-QL-B45qveg" name="vpdesc.model" mandatory="true">
+      <type xmi:type="domain:TypeDomain" xmi:id="_68enQPtNEeK-QL-B45qveg"/>
+    </contracts>
+    <contracts xmi:id="_7VEtcPtNEeK-QL-B45qveg" name="name" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_7sw0sPtNEeK-QL-B45qveg"/>
+    </contracts>
+    <contracts xmi:id="_8BK-cPtNEeK-QL-B45qveg" name="short.name" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_8BK-cftNEeK-QL-B45qveg"/>
+    </contracts>
+    <contracts xmi:id="_ONdBUPtREeK-QL-B45qveg" name="displayable.short.name" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_ONdBUftREeK-QL-B45qveg"/>
+    </contracts>
+    <contracts xmi:id="_8mR2oPtNEeK-QL-B45qveg" name="root.project.name" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_8mR2oftNEeK-QL-B45qveg"/>
+    </contracts>
+    <contracts xmi:id="_8mR2ovtNEeK-QL-B45qveg" name="ns.uri" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_8mR2o_tNEeK-QL-B45qveg"/>
+    </contracts>
+    <contracts xmi:id="_817cMPtNEeK-QL-B45qveg" name="target.application" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_817cMftNEeK-QL-B45qveg"/>
+    </contracts>
+  </contractContainer>
+</ftask:Task>

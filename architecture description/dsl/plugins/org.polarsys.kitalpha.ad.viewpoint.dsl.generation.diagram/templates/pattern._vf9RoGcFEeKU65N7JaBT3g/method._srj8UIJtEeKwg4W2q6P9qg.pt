@@ -1,0 +1,17 @@
+// ContainerMapping mapping = parameter.getImports();
+
+// reusing the reused mappings
+if (mapping.getAllContainerMappings() != null && mapping.getAllContainerMappings().size() > 0)
+	icm.getReusedContainerMappings().addAll(mapping.getAllContainerMappings());
+		
+if (icm.getAllContainerMappings().contains(mapping))
+{
+	icm.getReusedContainerMappings().remove(mapping);
+	icm.getReusedContainerMappings().add(icm);
+}
+
+if (mapping.getAllNodeMappings() != null && mapping.getAllNodeMappings().size() > 0)
+	icm.getReusedNodeMappings().addAll(mapping.getAllNodeMappings());
+
+if (mapping.getAllBorderedNodeMappings() != null && mapping.getAllBorderedNodeMappings().size() > 0)
+	icm.getReusedBorderedNodeMappings().addAll(mapping.getAllBorderedNodeMappings());

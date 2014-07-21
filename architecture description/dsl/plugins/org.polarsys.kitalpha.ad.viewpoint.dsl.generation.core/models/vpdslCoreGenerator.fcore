@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_Pfv4EI66EeGdJv40MVeUZQ" name="vpdslCoreGenerator">
+    <contractContainer xmi:id="_N7tnkI68EeGdJv40MVeUZQ">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_bAXJoI68EeGdJv40MVeUZQ"
+          name="vpdesc.model" invocationContracts="#_042KkI68EeGdJv40MVeUZQ #_Yeg7ZC9DEeKlecntHtUaFg #_L7yb45x2EeK1urh_GCMRIg #_QktH8qjQEeKNnPmKtvTJEQ #_9wG6ENfuEeKRlJjtHs_2Jg #_DmQoMoKgEeOrLd1N8v_fcw">
+        <type xmi:type="domain:TypeDomain" xmi:id="_bAXJoY68EeGdJv40MVeUZQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_OMZH4I68EeGdJv40MVeUZQ"
+          name="root.project.name" invocationContracts="#_Yeg7Yi9DEeKlecntHtUaFg">
+        <type xmi:type="types:TypeString" xmi:id="_PlWe4I68EeGdJv40MVeUZQ" value=""/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Kbun0OhPEeGme5hiz-D4Zg"
+          name="build.viewpoint" invocationContracts="#_yGLF1QlWEeKTrvXiiChdUw">
+        <type xmi:type="types:TypeBoolean" xmi:id="_LGfcEOhPEeGme5hiz-D4Zg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_FmXz4C9HEeKlecntHtUaFg"
+          name="user.selection" invocationContracts="#_c5yuxpxuEeK1urh_GCMRIg">
+        <type xmi:type="types:TypeBoolean" xmi:id="_htOFoC9OEeKlecntHtUaFg"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_kdxfQI68EeGdJv40MVeUZQ">
+      <invocations xmi:id="_Mc1FEO1XEeKWbe7Id_8pyQ" name="Fire Begin Generation Event"
+          invokedActivity="#_4rS0Qe1WEeKWbe7Id_8pyQ"/>
+      <invocations xmi:id="_Lm8PwKvgEeG3bp9Q4VDJ1w" name="Initialize.All.Generation.Data"
+          invokedActivity="#_UL5ckNftEeKRlJjtHs_2Jg">
+        <invocationContractContainer xmi:id="_9hzYUNfuEeKRlJjtHs_2Jg">
+          <invocationContracts xmi:id="_9wG6ENfuEeKRlJjtHs_2Jg" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
+              invokedContract="#_6r3tANfuEeKRlJjtHs_2Jg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_DmQoMIKgEeOrLd1N8v_fcw" name="Load common data" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_1L1eUPtNEeK-QL-B45qveg">
+        <invocationContractContainer xmi:id="_DmQoMYKgEeOrLd1N8v_fcw">
+          <invocationContracts xmi:id="_DmQoMoKgEeOrLd1N8v_fcw" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_6m4KsPtNEeK-QL-B45qveg"/>
+          <invocationContracts xmi:id="_DmQoM4KgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0glWEeKTrvXiiChdUw #_Yeg7Yy9DEeKlecntHtUaFg #_kMPz03qwEeKZnLNBJ96SOA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8BK-cPtNEeK-QL-B45qveg"/>
+          <invocationContracts xmi:id="_DmQoNIKgEeOrLd1N8v_fcw" targetInvocationContract="#_Yeg7ZS9DEeKlecntHtUaFg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_ONdBUPtREeK-QL-B45qveg"/>
+          <invocationContracts xmi:id="_DmQoNYKgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0wlWEeKTrvXiiChdUw #_kMPz0nqwEeKZnLNBJ96SOA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8mR2oPtNEeK-QL-B45qveg"/>
+          <invocationContracts xmi:id="_DmQoNoKgEeOrLd1N8v_fcw" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_817cMPtNEeK-QL-B45qveg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_dpUloC8-EeKlecntHtUaFg" name="Generator Extensions Collector"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_IkgkgC89EeKlecntHtUaFg">
+        <invocationContractContainer xmi:id="_dpUloS8-EeKlecntHtUaFg">
+          <invocationContracts xmi:id="_dpUloi8-EeKlecntHtUaFg" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_PCmpUC89EeKlecntHtUaFg">
+            <type xmi:type="types:TypeString" xmi:id="_m1KqIC8-EeKlecntHtUaFg" value="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.ExtensionLauncher"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_dpUloy8-EeKlecntHtUaFg" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_PCmpUi89EeKlecntHtUaFg">
+            <type xmi:type="types:TypeString" xmi:id="_nK63sC8-EeKlecntHtUaFg" value="launcher"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_dpUlpC8-EeKlecntHtUaFg" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_PCmpVC89EeKlecntHtUaFg">
+            <type xmi:type="types:TypeString" xmi:id="_nS-AcC8-EeKlecntHtUaFg" value="fcore"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_0mj9cC8-EeKlecntHtUaFg" targetInvocationContract="#_L7yb4px2EeK1urh_GCMRIg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_qBKFAC8-EeKlecntHtUaFg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_L7yb4Jx2EeK1urh_GCMRIg" name="Filter Generator Extension by Target Application"
+          invokedActivity="#_sP-V8JxrEeK1urh_GCMRIg">
+        <invocationContractContainer xmi:id="_L7yb4Zx2EeK1urh_GCMRIg">
+          <invocationContracts xmi:id="_L7yb4px2EeK1urh_GCMRIg" sourceInvocationContract="#_0mj9cC8-EeKlecntHtUaFg"
+              invokedContract="#_CyPpAJxsEeK1urh_GCMRIg"/>
+          <invocationContracts xmi:id="_L7yb45x2EeK1urh_GCMRIg" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
+              invokedContract="#_JJVt8JxsEeK1urh_GCMRIg"/>
+          <invocationContracts xmi:id="_xhQBUJx2EeK1urh_GCMRIg" targetInvocationContract="#_c5yuwpxuEeK1urh_GCMRIg"
+              invokedContract="#_fbANoJx2EeK1urh_GCMRIg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_c5yuwJxuEeK1urh_GCMRIg" name="Generator Extensions User selection "
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_QFqKYJxtEeK1urh_GCMRIg">
+        <invocationContractContainer xmi:id="_c5yuwZxuEeK1urh_GCMRIg">
+          <invocationContracts xmi:id="_c5yuwpxuEeK1urh_GCMRIg" sourceInvocationContract="#_xhQBUJx2EeK1urh_GCMRIg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_jNU-0JxtEeK1urh_GCMRIg"/>
+          <invocationContracts xmi:id="_c5yuw5xuEeK1urh_GCMRIg" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_TOh_15xtEeK1urh_GCMRIg">
+            <type xmi:type="types:TypeString" xmi:id="_mIKi0JxuEeK1urh_GCMRIg" value="name"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_c5yuxJxuEeK1urh_GCMRIg" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_TOh_2ZxtEeK1urh_GCMRIg">
+            <type xmi:type="types:TypeString" xmi:id="_nDLZkJxuEeK1urh_GCMRIg" value="description"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_c5yuxZxuEeK1urh_GCMRIg" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_TOh_25xtEeK1urh_GCMRIg">
+            <type xmi:type="types:TypeString" xmi:id="_niUMoJxuEeK1urh_GCMRIg" value="category"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_c5yuxpxuEeK1urh_GCMRIg" factoryComponentContract="#_FmXz4C9HEeKlecntHtUaFg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_JEq-cJxuEeK1urh_GCMRIg"/>
+          <invocationContracts xmi:id="_c5yux5xuEeK1urh_GCMRIg" targetInvocationContract="#_ma7L4i9DEeKlecntHtUaFg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_TOh_35xtEeK1urh_GCMRIg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_QktH8KjQEeKNnPmKtvTJEQ" name="Register VpDslProject to include it to the generation chain as Plugin Addition"
+          invokedActivity="#_ys-DMKjPEeKNnPmKtvTJEQ">
+        <invocationContractContainer xmi:id="_QktH8ajQEeKNnPmKtvTJEQ">
+          <invocationContracts xmi:id="_QktH8qjQEeKNnPmKtvTJEQ" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
+              invokedContract="#_BDvUcKjQEeKNnPmKtvTJEQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Yeg7YC9DEeKlecntHtUaFg" name="Prepare contracts map for Aspect and Additions"
+          invokedActivity="#_EGsYkC9BEeKlecntHtUaFg">
+        <invocationContractContainer xmi:id="_Yeg7YS9DEeKlecntHtUaFg">
+          <invocationContracts xmi:id="_Yeg7Yi9DEeKlecntHtUaFg" factoryComponentContract="#_OMZH4I68EeGdJv40MVeUZQ"
+              invokedContract="#_akRjcC9CEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_Yeg7Yy9DEeKlecntHtUaFg" sourceInvocationContract="#_DmQoM4KgEeOrLd1N8v_fcw"
+              invokedContract="#_c25tYC9CEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_Yeg7ZC9DEeKlecntHtUaFg" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
+              invokedContract="#_IdoHIC9CEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_Yeg7ZS9DEeKlecntHtUaFg" sourceInvocationContract="#_DmQoNIKgEeOrLd1N8v_fcw"
+              invokedContract="#_e37xAC9CEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_Yeg7Zi9DEeKlecntHtUaFg" invokedContract="#_g66VYC9CEeKlecntHtUaFg">
+            <type xmi:type="types:TypeString" xmi:id="_eTVZsC9DEeKlecntHtUaFg" value="id"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_Yeg7Zy9DEeKlecntHtUaFg" targetInvocationContract="#_ma7L4y9DEeKlecntHtUaFg"
+              invokedContract="#_ZS_-QC9BEeKlecntHtUaFg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_q72V8I68EeGdJv40MVeUZQ" name="Viewpoint Core resource generation"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslCoreResourcesGenerator.fcore#_cTDH0H7LEeOLj8ldLiBqyA">
+        <invocationContractContainer xmi:id="_0pff8I68EeGdJv40MVeUZQ">
+          <invocationContracts xmi:id="_042KkI68EeGdJv40MVeUZQ" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslCoreResourcesGenerator.fcore#_n_N0AH7LEeOLj8ldLiBqyA"/>
+          <invocationContracts xmi:id="_LjHooI71EeGaBt8RXbnVpQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslCoreResourcesGenerator.fcore#_oz0gwH7LEeOLj8ldLiBqyA">
+            <type xmi:type="types:TypeString" xmi:id="_xE_ikI95EeGaBt8RXbnVpQ" value="models"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_ma7L4C9DEeKlecntHtUaFg" name="Launch selected generator extensions"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_KI6x0C8iEeKlecntHtUaFg">
+        <invocationContractContainer xmi:id="_ma7L4S9DEeKlecntHtUaFg">
+          <invocationContracts xmi:id="_ma7L4i9DEeKlecntHtUaFg" sourceInvocationContract="#_c5yux5xuEeK1urh_GCMRIg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_OT8n0C8iEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_ma7L4y9DEeKlecntHtUaFg" sourceInvocationContract="#_Yeg7Zy9DEeKlecntHtUaFg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension/egf/ExtensionLauncher.fcore#_V4q9gC8iEeKlecntHtUaFg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_yGLF0AlWEeKTrvXiiChdUw" name="Adding Generated features to the Generationchain + Build the generated Generationchain if choosen by user"
+          invokedActivity="#_VQU74AlWEeKTrvXiiChdUw">
+        <invocationContractContainer xmi:id="_yGLF0QlWEeKTrvXiiChdUw">
+          <invocationContracts xmi:id="_yGLF0glWEeKTrvXiiChdUw" sourceInvocationContract="#_DmQoM4KgEeOrLd1N8v_fcw"
+              invokedContract="#_qeYOAQlWEeKTrvXiiChdUw"/>
+          <invocationContracts xmi:id="_yGLF0wlWEeKTrvXiiChdUw" sourceInvocationContract="#_DmQoNYKgEeOrLd1N8v_fcw"
+              invokedContract="#_qeYOAwlWEeKTrvXiiChdUw"/>
+          <invocationContracts xmi:id="_yGLF1AlWEeKTrvXiiChdUw" invokedContract="#_qeYOBQlWEeKTrvXiiChdUw">
+            <type xmi:type="types:TypeString" xmi:id="_73Ls4AlWEeKTrvXiiChdUw" value="models"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_yGLF1QlWEeKTrvXiiChdUw" factoryComponentContract="#_Kbun0OhPEeGme5hiz-D4Zg"
+              invokedContract="#_qeYOBwlWEeKTrvXiiChdUw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_kMPz0HqwEeKZnLNBJ96SOA" name="Fire AF Integration" invokedActivity="#_INuTcHqwEeKZnLNBJ96SOA">
+        <invocationContractContainer xmi:id="_kMPz0XqwEeKZnLNBJ96SOA">
+          <invocationContracts xmi:id="_kMPz0nqwEeKZnLNBJ96SOA" sourceInvocationContract="#_DmQoNYKgEeOrLd1N8v_fcw"
+              invokedContract="#_KRuykHqwEeKZnLNBJ96SOA"/>
+          <invocationContracts xmi:id="_kMPz03qwEeKZnLNBJ96SOA" sourceInvocationContract="#_DmQoM4KgEeOrLd1N8v_fcw"
+              invokedContract="#_M_JbEHqwEeKZnLNBJ96SOA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_NPMWIO1XEeKWbe7Id_8pyQ" name="Fire End Generation Event"
+          invokedActivity="#_qYZHoO1cEeKWbe7Id_8pyQ"/>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_INuTcHqwEeKZnLNBJ96SOA" name="Fire.AF.Integration">
+    <contractContainer xmi:id="_KC-k4HqwEeKZnLNBJ96SOA">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_KRuykHqwEeKZnLNBJ96SOA"
+          name="root.project.name" invocationContracts="#_gCi3snqpEeKZnLNBJ96SOA">
+        <type xmi:type="types:TypeString" xmi:id="_MyCMIHqwEeKZnLNBJ96SOA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_M_JbEHqwEeKZnLNBJ96SOA"
+          name="short.name" invocationContracts="#_gCi3s3qpEeKZnLNBJ96SOA">
+        <type xmi:type="types:TypeString" xmi:id="_M_JbEXqwEeKZnLNBJ96SOA"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_TvXKoHqwEeKZnLNBJ96SOA">
+      <invocations xmi:id="_gCi3sHqpEeKZnLNBJ96SOA" name="Compute the AF Model platform URI"
+          invokedActivity="#_hXg8AHqoEeKZnLNBJ96SOA">
+        <invocationContractContainer xmi:id="_gCi3sXqpEeKZnLNBJ96SOA">
+          <invocationContracts xmi:id="_gCi3snqpEeKZnLNBJ96SOA" factoryComponentContract="#_KRuykHqwEeKZnLNBJ96SOA"
+              invokedContract="#_nlT7AHqoEeKZnLNBJ96SOA"/>
+          <invocationContracts xmi:id="_gCi3s3qpEeKZnLNBJ96SOA" factoryComponentContract="#_M_JbEHqwEeKZnLNBJ96SOA"
+              invokedContract="#_zj_6kHqoEeKZnLNBJ96SOA"/>
+          <invocationContracts xmi:id="_gCi3tHqpEeKZnLNBJ96SOA" targetInvocationContract="#_7nP0wnqnEeKZnLNBJ96SOA"
+              invokedContract="#_5rO-kHqoEeKZnLNBJ96SOA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_7nP0wHqnEeKZnLNBJ96SOA" name="Patch AF artefacts" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration/egf/afIntegration.fcore#_pIAP4HpzEeKZnLNBJ96SOA">
+        <invocationContractContainer xmi:id="_7nP0wXqnEeKZnLNBJ96SOA">
+          <invocationContracts xmi:id="_7nP0wnqnEeKZnLNBJ96SOA" sourceInvocationContract="#_gCi3tHqpEeKZnLNBJ96SOA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration/egf/afIntegration.fcore#_uufXQHpzEeKZnLNBJ96SOA"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_UL5ckNftEeKRlJjtHs_2Jg" name="Initialize.Generation">
+    <contractContainer xmi:id="_6bCbsNfuEeKRlJjtHs_2Jg">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_6r3tANfuEeKRlJjtHs_2Jg"
+          name="vpdesc.model" mandatory="true" invocationContracts="#_BBwRANfvEeKRlJjtHs_2Jg">
+        <type xmi:type="domain:TypeDomain" xmi:id="_8g_bkNfuEeKRlJjtHs_2Jg"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_YKuCkNftEeKRlJjtHs_2Jg">
+      <invocations xmi:id="_gr2WINftEeKRlJjtHs_2Jg" name="Initialize.Core.Resources.Provider"
+          invokedActivity="#_6Cr4ANfsEeKRlJjtHs_2Jg">
+        <invocationContractContainer xmi:id="_Ax0XkNfvEeKRlJjtHs_2Jg">
+          <invocationContracts xmi:id="_BBwRANfvEeKRlJjtHs_2Jg" factoryComponentContract="#_6r3tANfuEeKRlJjtHs_2Jg"
+              invokedContract="#_CTtoINfvEeKRlJjtHs_2Jg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_p4nnsNftEeKRlJjtHs_2Jg" name="Clear.AF.Intergratin.Data"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration/egf/afIntegration.fcore#_YQmWoHqvEeKZnLNBJ96SOA"/>
+      <invocations xmi:id="_zVACkNftEeKRlJjtHs_2Jg" name="Initialize.Generation.Resources"
+          invokedActivity="#_MVR8cKvgEeG3bp9Q4VDJ1w"/>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_6Cr4ANfsEeKRlJjtHs_2Jg" name="Initalize.Viewpoint.Core.Resources.Provider"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.InitalizeViewpointCoreResourcesProviderTask">
+    <contractContainer xmi:id="_CGS3MNfvEeKRlJjtHs_2Jg">
+      <contracts xmi:id="_CTtoINfvEeKRlJjtHs_2Jg" name="vpdesc.model" mandatory="true">
+        <type xmi:type="domain:TypeDomain" xmi:id="_HYOq4NfvEeKRlJjtHs_2Jg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_MVR8cKvgEeG3bp9Q4VDJ1w" name="Initialize.Generation.Resources"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.InitGenerationResources"/>
+  <ftask:Task xmi:id="_EGsYkC9BEeKlecntHtUaFg" name="Preprare Contract Map" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.PrepareContractsMapTask">
+    <contractContainer xmi:id="_ZBRVEC9BEeKlecntHtUaFg">
+      <contracts xmi:id="_akRjcC9CEeKlecntHtUaFg" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_bijwoC9CEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_c25tYC9CEeKlecntHtUaFg" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_dsPZ8C9CEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_IdoHIC9CEeKlecntHtUaFg" name="vpdesc.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_SOrxgC9CEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_e37xAC9CEeKlecntHtUaFg" name="name">
+        <type xmi:type="types:TypeString" xmi:id="_fuxSYC9CEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_g66VYC9CEeKlecntHtUaFg" name="vpID">
+        <type xmi:type="types:TypeString" xmi:id="_huK-UC9CEeKlecntHtUaFg"/>
+      </contracts>
+      <contracts xmi:id="_ZS_-QC9BEeKlecntHtUaFg" name="constracts.map" mode="Out">
+        <type xmi:type="types:TypeMap" xmi:id="_cq3R8C9BEeKlecntHtUaFg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_VQU74AlWEeKTrvXiiChdUw" name="LvpsGenChainModelBuildLauncher"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.LvpsGenChainModelLauncherTask">
+    <contractContainer xmi:id="_qeYOAAlWEeKTrvXiiChdUw">
+      <contracts xmi:id="_qeYOAQlWEeKTrvXiiChdUw" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_qeYOAglWEeKTrvXiiChdUw"/>
+      </contracts>
+      <contracts xmi:id="_qeYOAwlWEeKTrvXiiChdUw" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_qeYOBAlWEeKTrvXiiChdUw"/>
+      </contracts>
+      <contracts xmi:id="_qeYOBQlWEeKTrvXiiChdUw" name="model.folder">
+        <type xmi:type="types:TypeString" xmi:id="_qeYOBglWEeKTrvXiiChdUw"/>
+      </contracts>
+      <contracts xmi:id="_qeYOBwlWEeKTrvXiiChdUw" name="build.viewpoint">
+        <type xmi:type="types:TypeBoolean" xmi:id="_qeYOCAlWEeKTrvXiiChdUw"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_hXg8AHqoEeKZnLNBJ96SOA" name="Get.AF.Model.Platform.Uri" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.AFModelPlatformUriGetterTast">
+    <contractContainer xmi:id="_m1CUoHqoEeKZnLNBJ96SOA">
+      <contracts xmi:id="_nlT7AHqoEeKZnLNBJ96SOA" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_ymUKUHqoEeKZnLNBJ96SOA"/>
+      </contracts>
+      <contracts xmi:id="_zj_6kHqoEeKZnLNBJ96SOA" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_3YCM4HqoEeKZnLNBJ96SOA"/>
+      </contracts>
+      <contracts xmi:id="_5rO-kHqoEeKZnLNBJ96SOA" name="af.model.platform.uri" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_6RhigHqoEeKZnLNBJ96SOA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_sP-V8JxrEeK1urh_GCMRIg" name="Filter.generator.extension.by.target.application"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.FilterGeneratorExtensionByTargetApplicationTask">
+    <contractContainer xmi:id="_Cbv0kJxsEeK1urh_GCMRIg">
+      <contracts xmi:id="_CyPpAJxsEeK1urh_GCMRIg" name="collected.extension.point.contributions">
+        <type xmi:type="types:TypeList" xmi:id="_E4gK4JxsEeK1urh_GCMRIg"/>
+      </contracts>
+      <contracts xmi:id="_JJVt8JxsEeK1urh_GCMRIg" name="vpdesc.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_KrO-gJxsEeK1urh_GCMRIg"/>
+      </contracts>
+      <contracts xmi:id="_fbANoJx2EeK1urh_GCMRIg" name="filtered.extension.point.contributions"
+          mode="Out">
+        <type xmi:type="types:TypeList" xmi:id="_fbANoZx2EeK1urh_GCMRIg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_ys-DMKjPEeKNnPmKtvTJEQ" name="Register VpDsl project to include it in the Generationchain"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.RegisterVpDslProjectTask">
+    <contractContainer xmi:id="_AZRbIKjQEeKNnPmKtvTJEQ">
+      <contracts xmi:id="_BDvUcKjQEeKNnPmKtvTJEQ" name="vpdesc.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_Cvd2cKjQEeKNnPmKtvTJEQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_4rS0Qe1WEeKWbe7Id_8pyQ" name="Fire.Generation.Begin.Event"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.CreateGenerationBeginEventTask"/>
+  <ftask:Task xmi:id="_qYZHoO1cEeKWbe7Id_8pyQ" name="Fire.Generation.End.Event" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.CreateGenerationEndEventTask"/>
+</xmi:XMI>

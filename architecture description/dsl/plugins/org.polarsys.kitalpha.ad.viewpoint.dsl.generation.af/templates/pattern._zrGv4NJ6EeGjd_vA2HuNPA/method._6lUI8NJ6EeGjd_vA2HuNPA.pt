@@ -1,0 +1,19 @@
+//String serviceID = ((XMLResource)parameter.eResource()).getID(parameter);
+
+String serviceID = parameter.getVpid();
+		
+ArrayList<String> ruleListID = new ArrayList<String>();
+for (Rule rule : parameter.getRelatedRules()) {
+	ruleListID.add(rule.getVpid());
+}
+		 
+for (Service service : AfProjectManager.INSTANCE.getViewpoint().getServiceSet().getNewServices()) {
+	if (service.getVpid() == serviceID){
+		for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule rule : AfProjectManager.INSTANCE.getViewpoint().getRuleSet().getNewRules()) {
+			if (ruleListID.contains(rule.getVpid())){
+				service.getRelatedRules().add(rule);
+			}
+		}
+	}
+}
+		

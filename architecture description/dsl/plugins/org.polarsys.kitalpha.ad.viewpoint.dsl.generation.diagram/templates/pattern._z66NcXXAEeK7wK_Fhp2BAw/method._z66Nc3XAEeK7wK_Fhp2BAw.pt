@@ -1,0 +1,41 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.emf.ecore.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+import org.eclipse.egf.common.helper.*;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData.JavaMethodReturnType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
+
+import org.eclipse.sirius.diagram.description.EdgeMapping;
+import org.eclipse.sirius.diagram.description.tool.ReconnectEdgeDescription;
+import org.eclipse.sirius.diagram.description.tool.ReconnectionKind;
+import org.eclipse.sirius.diagram.description.tool.SourceEdgeCreationVariable;
+import org.eclipse.sirius.diagram.description.tool.SourceEdgeViewCreationVariable;
+import org.eclipse.sirius.diagram.description.tool.TargetEdgeCreationVariable;
+import org.eclipse.sirius.diagram.description.tool.TargetEdgeViewCreationVariable;
+import org.eclipse.sirius.diagram.description.tool.ToolFactory;
+import org.eclipse.sirius.viewpoint.description.tool.ElementSelectVariable;
+import org.eclipse.sirius.viewpoint.description.tool.If;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
+
+
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

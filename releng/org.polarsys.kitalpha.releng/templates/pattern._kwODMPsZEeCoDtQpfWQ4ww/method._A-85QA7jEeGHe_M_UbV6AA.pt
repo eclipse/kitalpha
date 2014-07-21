@@ -1,0 +1,22 @@
+	<macrodef name="egf">
+        <attribute name="workspace" default="${workspace}" />
+        <element name="activities" />
+        <element name="globargs" optional="true" />
+        <element name="cmdargs" optional="true" />
+        <sequential>
+            <eclipse.launch app="egf">
+                <args>
+                    <arg value="-application" />
+                    <arg value="org.eclipse.egf.application.activity" />
+                    <arg value="-consoleLog" />
+                    <arg value="-data" />
+                    <arg value="@{workspace}" />
+                    <globargs />
+                    <arg value="-runtime" />
+                    <arg value="-activities" />
+                    <activities />
+                    <cmdargs />
+                </args>
+            </eclipse.launch>
+        </sequential>
+    </macrodef>

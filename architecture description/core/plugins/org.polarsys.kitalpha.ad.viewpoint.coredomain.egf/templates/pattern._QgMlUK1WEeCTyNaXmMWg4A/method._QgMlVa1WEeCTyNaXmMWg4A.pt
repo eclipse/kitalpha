@@ -1,0 +1,19 @@
+		if (getRuleSet() != null) {
+			// find rule inside the set
+			for (Rule rule : getRuleSet().getNewRules()) {
+				if (id.equals(rule.getId()))
+					return rule;
+			}
+			// if the rule is hidden return null
+			for (Rule rule : getRuleSet().getHiddenRules()) {
+				if (id.equals(rule.getId()))
+					return null;
+			}
+		}
+		// delegate to parents
+		for (Viewpoint vp : getParents()) {
+			Rule rule = vp.getRule(id);
+			if (rule != null)
+				return rule;
+		}
+		return null;

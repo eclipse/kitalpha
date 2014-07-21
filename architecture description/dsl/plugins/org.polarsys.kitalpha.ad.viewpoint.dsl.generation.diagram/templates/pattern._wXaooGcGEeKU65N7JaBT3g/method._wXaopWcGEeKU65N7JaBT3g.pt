@@ -1,0 +1,12 @@
+mapping = parameter.getImports();
+
+genDefaultSemanticCandidatesExpression = false;
+
+inm = DescriptionFactory.eINSTANCE.createNodeMappingImport();
+inm.setName(parameter.getName()+"_Imported_NM");
+inm.setLabel(parameter.getName());
+inm.setImportedMapping(mapping);
+
+dNodeMapping = inm;
+
+//MappingAutoImportManager.INSTANCE.registerUserMappingImport(parameter.getImports(), inm);

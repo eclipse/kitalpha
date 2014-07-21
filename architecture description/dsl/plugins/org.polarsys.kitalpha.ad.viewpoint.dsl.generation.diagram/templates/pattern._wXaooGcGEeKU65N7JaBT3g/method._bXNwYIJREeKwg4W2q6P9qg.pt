@@ -1,0 +1,30 @@
+// Inherits label if not defined
+boolean inheritsLabel = true;
+if (parameter.getStyle() != null && parameter.getStyle().size() > 0)
+{
+	for (NodeDescription iNodeDescription : parameter.getStyle()) 
+	{
+		if (iNodeDescription.getCondition() == null)
+		{
+			if (iNodeDescription.getNode_Label() != null)
+			{
+				inheritsLabel = false;
+				break;
+			}		
+		}
+	}
+} 
+		
+if (inheritsLabel)
+{
+	NodeStyleDescription style = inm.getStyle();
+	if (style != null)
+	{
+		style.setLabelAlignment(mapping.getStyle().getLabelAlignment());
+		style.setLabelColor(mapping.getStyle().getLabelColor());
+		style.setLabelExpression(mapping.getStyle().getLabelExpression());
+		style.setLabelFormat(mapping.getStyle().getLabelFormat());
+		style.setLabelPosition(mapping.getStyle().getLabelPosition());
+		style.setLabelSize(mapping.getStyle().getLabelSize());
+	}
+}

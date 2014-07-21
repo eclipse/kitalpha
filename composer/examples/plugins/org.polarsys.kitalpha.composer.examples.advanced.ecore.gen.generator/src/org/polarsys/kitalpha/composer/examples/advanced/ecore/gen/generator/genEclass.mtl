@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module genEclass('http://www.eclipse.org/emf/2002/Ecore')]
+
+[import org::polarsys::kitalpha::composer::examples::advanced::ecore::gen::generator::genEattribute /]
+
+[template public genEClass(anEClass : EClass)]
+<a name="[name/]"><h1>EClass [name/]</h1></a>
+[for (it : EAttribute | eAttributes)]
+	[genEAttribute()/]
+
+[/for]
+[/template]
+
+[template public genName(anEClass : EClass)]
+[name/]
+[/template]

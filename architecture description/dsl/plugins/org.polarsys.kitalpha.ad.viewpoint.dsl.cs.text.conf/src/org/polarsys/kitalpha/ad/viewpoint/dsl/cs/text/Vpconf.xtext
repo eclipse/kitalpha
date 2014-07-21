@@ -1,0 +1,106 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ /**
+ * 
+ * @author Amine Lajmi
+ *
+ */
+grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" as vpconf
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" as vpdesc
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" as vpdiagramConfig
+
+/********************************************************************
+ * 							vpconf
+ * 
+ ********************************************************************/
+
+Configuration returns vpdesc::Aspect:
+	{vpconf::Configuration}
+	'Configuration' name=FQN
+	'{'
+		(vpConfigurationElements+=ConfigurationElement)*
+	'}';
+
+ConfigurationElement returns vpconf::ConfigurationElement:
+	TargetApplication | GenerationConfiguration | Generation
+;
+
+TargetApplication returns vpconf::ConfigurationElement:
+	{vpconf::TargetApplication}
+	//('id' id = EString)?
+	'target' (type=TargetApplicationType)
+	;
+
+GenerationConfiguration returns vpconf::ConfigurationElement: 
+	{vpconf::GenerationConfiguration}
+	//('id' id = EString)?
+	'project' ( projectName=FQN)
+	('nsuri' nsuri=STRING)?
+	;
+
+Generation returns vpconf::ConfigurationElement:
+	{vpconf::Generation}
+	'generation' '{'
+		(ownedDataGenerationConf=GData)?
+		(ownedExtensionGenConf+=ExtensionGeneratrionConfiguration)?
+	'}'
+;
+
+GData returns vpconf::GData:
+	{vpconf::GData}
+	'data' '('
+		(
+			('Model:' ((model=EBoolean)))?
+			('Edit:' ((edit=EBoolean)))?
+			('Editor:'  ((editor=EBoolean)))?
+			('Test:' ((test=EBoolean)))?
+			('Javadoc:' ((javaDoc=EBoolean)))?
+			('OverwriteEcore:' (overwriteEcore=EBoolean))?
+		)
+	')'
+;
+
+
+ExtensionGeneratrionConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+	DiagramGenerationConfiguration
+;
+
+
+DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+	{vpdiagramConfig::DiagramGenerationConfiguration}
+	'diagram' '('
+		(
+			'overwriteOdesign:' overwriteVSM=EBoolean
+		)
+	')'
+;
+
+
+//GenerateVPDocumentation returns vpconf::ConfigurationElement:
+//	{vpconf::GenerateVPDocumentation}
+//	//('id' id = EString)?
+//	'documentation'	(value?=EBoolean)
+//	;
+//
+//EmfGeneration returns vpconf::EmfGeneration:
+//	{vpconf::EmfGeneration}
+//	//('id' id = EString)?
+//	'GenerationConfiguration' '{'
+//		'EmfGeneration' 'erasePluginsBeforeGeneration:'	(EraseEmfPluginsBeforeGeneration?=EBoolean)
+//	'}'
+//	;
+
+TargetApplicationType:
+	'EMF'
+	;

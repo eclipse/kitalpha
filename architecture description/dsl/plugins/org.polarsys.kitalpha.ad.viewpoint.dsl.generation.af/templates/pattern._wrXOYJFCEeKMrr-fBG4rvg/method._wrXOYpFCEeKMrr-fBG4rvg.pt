@@ -1,0 +1,21 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Property;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Types;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.project.AFModelUtils;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.project.AfProjectManager;
+
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

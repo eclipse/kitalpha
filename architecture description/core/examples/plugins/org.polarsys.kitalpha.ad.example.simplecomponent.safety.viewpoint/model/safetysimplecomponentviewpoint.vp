@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sirius="http://www.polarsys.org/kitalpha/ad/sirius/1.0.0" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Simple Component Safety Viewpoint" id="org.polarsys.kitalpha.viewpoint.simplecomponent.safety" vpid="_YJzVoUVTEeOkq4dSGB2A5Q">
+  <metamodel>
+    <models href="../../org.polarsys.kitalpha.emde.example.simplecomponent.safety/model/simple.safety.ecore#/"/>
+  </metamodel>
+  <representation>
+    <representations xsi:type="sirius:SiriusRepresentation">
+      <odesign href="../../../plugin/org.polarsys.kitalpha.ad.example.simplecomponent.safety.design/description/safety.odesign#/"/>
+    </representations>
+  </representation>
+</vp:Viewpoint>

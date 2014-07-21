@@ -1,0 +1,7 @@
+{
+	final Map<String, Object> callParameters = new HashMap<String, Object>();
+	callParameters.put("root", root);
+	callParameters.put("genModel", genModel);
+	CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_WKlYsDA4EeCJ8qG0PlPcqA", new ExecutionContext((InternalPatternContext) ctx), callParameters);
+}
+

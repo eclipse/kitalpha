@@ -1,0 +1,7 @@
+PropertySet ps = ViewpointFactory.eINSTANCE.createPropertySet();
+ps.setTarget(AfProjectManager.INSTANCE.getViewpoint());
+ps.setVpid(EcoreUtil.generateUUID());
+ps.setDescription(parameter.getDescription());
+
+AfProjectManager.INSTANCE.getViewpoint().setPropertySet(ps);
+			

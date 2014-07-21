@@ -1,0 +1,248 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ /**
+ * 
+ * @author Amine Lajmi
+ *
+ */
+grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" as vpdesc
+
+generate data "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/data/1.0.0"
+
+DataSpec returns DataSpec:
+	{DataSpec}
+	(imports+=Import)*
+	(data=Data)
+;
+
+
+AbstractImport:
+	ImportNamespace | ImportURI
+;
+
+ImportNamespace:
+	importedNamespace=FQN
+;
+
+ImportURI:
+	'external' importURI=EString
+;
+
+Import:
+	'import' AbstractImport
+;
+
+
+Data returns vpdesc::Data:
+	{vpdesc::Data}
+	'Data' (name=FQN)? 
+	'{'
+		(owned_annotations+=Annotation)*
+		//('id:' id = EString)?
+		(
+			('description:' description=EString)? &
+			(VP_Classes+=Class)* &
+			(VP_Enumerations+=Enumeration)*
+		)
+	'}'
+;
+
+//ViewpointClassifier returns vpdesc::ViewpointClassifier:
+//	Class | Enumeration
+//;
+
+Class returns vpdesc::Class:
+	{vpdesc::Class}
+	'Class' (name=EString) '{'
+		//('id:' id = EString)?
+		('description:' description=EString)?
+		('icon:' icon=STRING)?
+		('extends' extends+=[ecore::EClass|FQN] ( ',' extends+=[ecore::EClass|FQN])* )?
+		('superClass' Inheritences+=AbstractSuperClass ( ',' Inheritences+=AbstractSuperClass)* )?
+		('abstract:' abstract=EBoolean)?
+		(owned_annotations+=Annotation)*
+		('Attributes:' (VP_Class_Attributes+=Attribute)* )?
+		('Associations:' (VP_Classes_Associations+=AbstractAssociation)* )?
+		('Operations:' (VP_Class_Operations+=Operation)* )?
+	'}';
+
+Enumeration returns vpdesc::Enumeration:
+	{vpdesc::Enumeration}
+	'Enumeration' (name=ID) '{'
+		
+		(owned_annotations+=Annotation)*
+		(ownedValues+=Value (',' ownedValues+=Value)*)
+		
+	'}'
+;
+
+AbstractSuperClass returns vpdesc::AbstractSuperClass:
+	LocalSuperClass | ExternalSuperClass
+;
+
+LocalSuperClass returns vpdesc::AbstractSuperClass:
+	{vpdesc::LocalSuperClass}
+	superClass=[vpdesc::Class|FQN]
+	;
+
+ExternalSuperClass returns vpdesc::AbstractSuperClass:
+	{vpdesc::ExternalSuperClass}
+	'external' superClass=[ecore::EClass|FQN]
+;
+
+AbstractFeature returns vpdesc::AbstractFeature:
+		AbstractAssociation | Attribute
+	;
+
+AbstractAssociation returns vpdesc::AbstractAssociation:
+		LocalClassAssociation | ExternalClassAssociation
+	;
+
+LocalClassAssociation returns vpdesc::AbstractAssociation:
+	{vpdesc::LocalClassAssociation}
+		name=EString
+		//('id' id = EString)?
+		('description' description=EString ',')?
+		(type=Association_Types)
+		(cardinality=Cardinalities)
+		(LocalTarget=[vpdesc::Class|FQN])
+		(
+			('changeable:' changeable=EBoolean)? &
+			('derived:' derived=EBoolean)? &
+			('ordered:' ordered=EBoolean)? &
+			('transient:' transient=EBoolean)? &
+			('unique:' unique=EBoolean)? &
+			('unsettable:' unsettable=EBoolean)? &
+			('volatile:' volatile=EBoolean)?
+		)
+		(owned_annotations+=Annotation)*
+	;
+
+ExternalClassAssociation returns vpdesc::AbstractAssociation:
+	{vpdesc::ExternalClassAssociation}
+		name=EString
+		//('id' id = EString)?
+		('description' description=EString ',')?
+		(type=Association_Types)
+		(cardinality=Cardinalities)
+		'external'
+		(ExternalTarget=[ecore::EClass|FQN])
+		(
+			('changeable:' changeable=EBoolean)? &
+			('derived:' derived=EBoolean)? &
+			('ordered:' ordered=EBoolean)? &
+			('transient:' transient=EBoolean)? &
+			('unique:' unique=EBoolean)? &
+			('unsettable:' unsettable=EBoolean)? &
+			('volatile:' volatile=EBoolean)?
+		)
+		(owned_annotations+=Annotation)*
+	;
+
+
+AbstractAttributeType returns vpdesc::AbstractAttributeType:
+	LocalAttributeType | ExternalAttributeType
+;
+
+LocalAttributeType returns vpdesc::AbstractAttributeType:
+	{vpdesc::LocalAttributeType}
+	'enum' type=[vpdesc::Enumeration|FQN]
+;
+
+ExternalAttributeType returns vpdesc::AbstractAttributeType:
+	{vpdesc::ExternalAttributeType}
+	'type' type=[ecore::EDataType|FQN]
+;
+
+Attribute returns vpdesc::Attribute:
+	{vpdesc::Attribute}
+	name=EString
+		//('id' id = EString)?
+		('description' description=EString ',')?
+		(owned_type=AbstractAttributeType)
+		(cardinality=Cardinalities)?
+		(
+			('id:' isId=EBoolean)? &
+			('changeable:' changeable=EBoolean)? &
+			('derived:' derived=EBoolean)? &
+			('ordered:' ordered=EBoolean)? &
+			('transient:' transient=EBoolean)? &
+			('unique:' unique=EBoolean)? &
+			('unsettable:' unsettable=EBoolean)? &
+			('volatile:' volatile=EBoolean)?
+		)
+		('values' '('(owned_values+=Value ( ',' owned_values+=Value)*)? ')')?
+		(owned_annotations+=Annotation)*
+	;
+
+Value returns vpdesc::Value:
+	{vpdesc::Value}
+	(name=EString 'literal')? literal=EString	
+	;
+
+
+Operation returns vpdesc::Operation:
+	{vpdesc::Operation}
+	name=EString
+	'('( parameters+=Parameter ( ',' parameters+=Parameter)* )? ')'
+	('returns'(operation_type = AbstractType))?
+	(owned_annotations+=Annotation)*
+	;
+
+Parameter returns vpdesc::Parameter:
+	{vpdesc::Parameter}
+	(parameter_type=AbstractType)
+	name=EString
+	(description=EString)?
+	(owned_annotations+=Annotation)*
+;
+
+
+AbstractType returns vpdesc::AbstractType:
+	LocalType | ExternalType
+;
+
+ExternalType returns vpdesc::AbstractType:
+	{vpdesc::ExternalType}
+	'external' type=[ecore::EClassifier|FQN]
+	(cardinality=Cardinalities)
+;
+
+LocalType returns vpdesc::AbstractType:
+	{vpdesc::LocalType}
+	type=[vpdesc::ViewpointClassifier|FQN]
+	(cardinality=Cardinalities)
+;
+
+
+AnnotatableElement returns vpdesc::AnnotatableElement: 
+	{vpdesc::AnnotatableElement}
+	(owned_annotations+=Annotation)*
+;
+
+Annotation returns vpdesc::Annotation:
+	{vpdesc::Annotation}
+	'Annotation' (source=EString) ('{' (owned_details+=Detail)+ '}')?
+;
+
+Detail returns vpdesc::Detail:
+	{vpdesc::Detail}
+	'key:' key=EString ('value:' value=EString)?
+;
+
+enum Association_Types returns vpdesc::Association_Types:
+	containment='contains' | reference='refers';
+
+enum Cardinalities returns vpdesc::Cardinalities:
+	Nothing_Or_Many='[0,*]' | One_Or_Many='[1,*]' | Nothing_Or_One='[0,1]' | Only_One='[1,1]';

@@ -1,0 +1,7 @@
+RuleSet rs = ViewpointFactory.eINSTANCE.createRuleSet();
+rs.setTarget(AfProjectManager.INSTANCE.getViewpoint());
+rs.setVpid(EcoreUtil.generateUUID());
+rs.setDescription(parameter.getDescription());
+
+AfProjectManager.INSTANCE.getViewpoint().setRuleSet(rs);
+			

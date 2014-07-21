@@ -1,0 +1,37 @@
+if (targetClasses == null) return;
+
+if (targetClasses.isEmpty()) return;
+
+
+// Creation of the EAnnotation object 
+EAnnotation anotExtendedElement = EcoreFactory.eINSTANCE.createEAnnotation();
+anotExtendedElement.setSource(Constant.EXTENDTED_ELEMENT_ANNOTATION_SOURCE);
+EAnnotation anotMapping = EcoreFactory.eINSTANCE.createEAnnotation();
+anotMapping.setSource(Constant.MAPPING_ANNOTATION_SOURCE);
+	
+// Compose the annotation details contents
+String strExtendedElement = "";
+String strMapping = "";	
+for (Object iClazz : targetClasses) {
+	EClass clazz = (EClass) iClazz;
+	String clazzName = clazz.getName(); 
+	strExtendedElement = strExtendedElement +" "+ clazz.getEPackage().getNsURI() + Constant.URI_SEPARATOR + clazzName;
+	strMapping = strMapping +" "+ EcoreUtil.getURI(clazz).toString();
+}
+
+// Creation of the Annotation details Entries			
+EStringToStringMapEntryImpl detExtendedElement = (EStringToStringMapEntryImpl)EcoreFactory.eINSTANCE.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+EStringToStringMapEntryImpl detMapping = (EStringToStringMapEntryImpl)EcoreFactory.eINSTANCE.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());	
+detExtendedElement.setValue(strExtendedElement);
+detExtendedElement.setKey(Constant.EXTENDTED_ELEMENT_DETAIL);
+detMapping.setValue(strMapping);
+detMapping.setKey(Constant.MAPPING_DETAIL);
+
+anotExtendedElement.getDetails().add(detExtendedElement);
+anotMapping.getDetails().add(detMapping);
+
+// Annotating curEClass
+curEClass.getEAnnotations().add(anotExtendedElement);
+curEClass.getEAnnotations().add(anotMapping); 
+
+curEClass.getESuperTypes().add(EMDEElementProvider.INSTANCE.getElementExtension());

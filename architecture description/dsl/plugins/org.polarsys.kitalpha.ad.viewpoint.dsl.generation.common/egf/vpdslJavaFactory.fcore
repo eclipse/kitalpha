@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmi:id="_t5hagBHuEeKPfPYeHptq8Q"
+    name="vpdslJavaAbstractFactory">
+  <viewpointContainer xmi:id="_wsWHcBHuEeKPfPYeHptq8Q">
+    <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_xSycYBHuEeKPfPYeHptq8Q">
+      <libraries xmi:id="_xilL4BHuEeKPfPYeHptq8Q" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns">
+        <elements xmi:id="_2Et6UBHuEeKPfPYeHptq8Q" name="JavaAbstractPattern" headerMethod="#_2Et6UhHuEeKPfPYeHptq8Q"
+            conditionMethod="#_2Et6VBHuEeKPfPYeHptq8Q" initMethod="#_2Et6UxHuEeKPfPYeHptq8Q"
+            footerMethod="#_2Et6VhHuEeKPfPYeHptq8Q">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_QWTs4BHxEeKPfPYeHptq8Q"
+              name="JET"/>
+          <methods xmi:id="_2Et6UhHuEeKPfPYeHptq8Q" name="header" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._2Et6UhHuEeKPfPYeHptq8Q.pt"/>
+          <methods xmi:id="_2Et6UxHuEeKPfPYeHptq8Q" name="init" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._2Et6UxHuEeKPfPYeHptq8Q.pt"/>
+          <methods xmi:id="_2Et6VBHuEeKPfPYeHptq8Q" name="preCondition" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._2Et6VBHuEeKPfPYeHptq8Q.pt"/>
+          <methods xmi:id="_2Et6VRHuEeKPfPYeHptq8Q" name="setParameters" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._2Et6VRHuEeKPfPYeHptq8Q.pt"/>
+          <methods xmi:id="_2Et6VhHuEeKPfPYeHptq8Q" name="footer" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._2Et6VhHuEeKPfPYeHptq8Q.pt"/>
+          <methods xmi:id="_2SX40BIPEeKPfPYeHptq8Q" name="setReporterParameters" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._2SX40BIPEeKPfPYeHptq8Q.pt"/>
+          <methods xmi:id="_hgNCwa2REeK1xZm8fG5sVg" name="TransformsfirstLetterToUpperCase"
+              patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._hgNCwa2REeK1xZm8fG5sVg.pt"/>
+          <methods xmi:id="_vlEMwIdrEeO18K96OrmnXw" name="setCopyright" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._vlEMwIdrEeO18K96OrmnXw.pt"/>
+          <methods xmi:id="_xA21UIdrEeO18K96OrmnXw" name="genClassHeaderComment" patternFilePath="templates/pattern._2Et6UBHuEeKPfPYeHptq8Q/method._xA21UIdrEeO18K96OrmnXw.pt"/>
+          <variables xmi:id="_7W1UMBHuEeKPfPYeHptq8Q" name="copyright" type="java.lang.String"/>
+          <variables xmi:id="_8k638BHuEeKPfPYeHptq8Q" name="projectname" type="java.lang.String"/>
+          <variables xmi:id="_-IwpQBHuEeKPfPYeHptq8Q" name="packagename" type="java.lang.String"/>
+          <variables xmi:id="__TaegBHuEeKPfPYeHptq8Q" name="classname" type="java.lang.String"/>
+          <variables xmi:id="_BfMZkBHvEeKPfPYeHptq8Q" name="savetime" type="java.lang.Integer"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_2Et6VxHuEeKPfPYeHptq8Q"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_KwatUBHvEeKPfPYeHptq8Q"
+              called="#_2Et6VRHuEeKPfPYeHptq8Q"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_vMWpsK2REeK1xZm8fG5sVg"
+              called="#_hgNCwa2REeK1xZm8fG5sVg"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_jqKLEBIQEeKPfPYeHptq8Q"
+              called="#_2SX40BIPEeKPfPYeHptq8Q"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_6mxmsIdrEeO18K96OrmnXw"
+              called="#_vlEMwIdrEeO18K96OrmnXw"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_8tLSgIdrEeO18K96OrmnXw"
+              called="#_xA21UIdrEeO18K96OrmnXw"/>
+        </elements>
+      </libraries>
+    </viewpoints>
+  </viewpointContainer>
+</fcore:FactoryComponent>

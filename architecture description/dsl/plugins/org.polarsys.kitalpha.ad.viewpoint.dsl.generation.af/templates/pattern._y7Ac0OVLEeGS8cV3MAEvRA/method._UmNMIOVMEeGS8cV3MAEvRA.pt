@@ -1,0 +1,4 @@
+<%ruleName = ((Rule)parameter).getName();
+ruleName = ruleName.substring(0,1).toUpperCase() + ruleName.substring(1);
+ruleName = JDTUtility.getValidClassName(ruleName);
+ctx.setValue("ruleName", ruleName);%>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="customization" factoryComponentName="org.polarsys.kitalpha.report.example.customization.egf">
+  <elements xsi:type="generationChain:GenerationChain" name="report">
+    <elements xsi:type="generationChain:EmfGeneration" name="Emf Generation for custom report" modelPath="/org.polarsys.kitalpha.report.example.customization/model/customization.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.report.example.customization.model" basePackage="org.polarsys.kitalpha.report.example"/>
+  </elements>
+</generationChain:GenerationChain>

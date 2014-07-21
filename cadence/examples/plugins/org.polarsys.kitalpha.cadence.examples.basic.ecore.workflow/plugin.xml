@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.ModelValidation"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.ValidateModel"
+            Name="Model Validation"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.beforestrategy"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            Validate the semantic model before the application of the strategy
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.DisplayTime"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.DisplayTimeBeforeStrategy"
+            Name="Display Time"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.beforestrategy"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            Display the time in the console
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.DisplayTime"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.DisplayTimeBeforeRefinery"
+            Name="Display Time"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.beforerefinery"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            Display the time in the console
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.DisplayTime"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.DisplayTimeBeforeGeneration"
+            Name="Display Time"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.beforegeneration"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            Display the time in the console
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.DisplayTime"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.DisplayTimeAfterGeneration"
+            Name="Display Time"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.aftergeneration"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            Display the time in the console
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.EclipseBrowserLauncher"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.launcheclipsebrowser"
+            Name="Launch Eclipse Browser"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.aftergeneration"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            Display all generated classes in the Eclipse browser
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.SaveAllocationModel"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.saveAllocationModelAS"
+            Name="Save Allocation model"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.beforerefinery"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            &quot;The suffix for the copy of the allocation model.&quot;
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.activities.SaveAllocationModel"
+            Identifier="org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow.saveAllocationModelAR"
+            Name="Save Allocation model"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.beforegeneration"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            &quot;The suffix for the copy of the allocation model.&quot;
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+
+</plugin>

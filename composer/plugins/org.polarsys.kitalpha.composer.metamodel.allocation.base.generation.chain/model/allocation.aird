@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.obeo.fr/dsl/viewpoint/description/1.1.0" xmlns:genchainExtension="http://www.polarsys.org/genchain/extension/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.obeo.fr/dsl/viewpoint/description/style/1.1.0" xmlns:viewpoint="http://www.obeo.fr/dsl/viewpoint/1.1.0" xsi:schemaLocation="http://www.obeo.fr/dsl/viewpoint/description/1.1.0 http://www.obeo.fr/dsl/viewpoint/1.1.0#//description http://www.obeo.fr/dsl/viewpoint/description/style/1.1.0 http://www.obeo.fr/dsl/viewpoint/1.1.0#//description/style" xmi:id="_27yLsAhpEeC8j9D0Ekgb2A" selectedViews="_3d6BUAhpEeC8j9D0Ekgb2A">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_3d6BUAhpEeC8j9D0Ekgb2A" initialized="true">
+    <ownedRepresentations xmi:type="viewpoint:DSemanticDiagram" xmi:id="_3d6BUQhpEeC8j9D0Ekgb2A" name="Generation Chain">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_3d6BUwhpEeC8j9D0Ekgb2A" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_3d6BVAhpEeC8j9D0Ekgb2A" type="Viewpoint" element="_3d6BUQhpEeC8j9D0Ekgb2A" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_4txtwAhpEeC8j9D0Ekgb2A" type="2003" element="_4toj0AhpEeC8j9D0Ekgb2A">
+            <children xmi:type="notation:Node" xmi:id="_4txtwwhpEeC8j9D0Ekgb2A" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_4txtxAhpEeC8j9D0Ekgb2A" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_ItDN4AhqEeC8j9D0Ekgb2A" type="3010" element="_IswS8AhqEeC8j9D0Ekgb2A">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_ItDN4QhqEeC8j9D0Ekgb2A"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ItDN4ghqEeC8j9D0Ekgb2A" type="3010" element="_Is5c4whqEeC8j9D0Ekgb2A">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_ItDN4whqEeC8j9D0Ekgb2A"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_4txtxQhpEeC8j9D0Ekgb2A"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_4txtxghpEeC8j9D0Ekgb2A"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4txtwQhpEeC8j9D0Ekgb2A" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4txtwghpEeC8j9D0Ekgb2A" x="235" y="105"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_3d6BVQhpEeC8j9D0Ekgb2A"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="viewpoint:DNodeList" xmi:id="_4toj0AhpEeC8j9D0Ekgb2A" name="allocation generation chain">
+        <target xmi:type="generationChain:GenerationChain" href="allocation.generationchain#/"/>
+        <semanticElements xmi:type="generationChain:GenerationChain" href="allocation.generationchain#/"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="viewpoint:FlatContainerStyle" xmi:id="_4toj0QhpEeC8j9D0Ekgb2A">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_4toj0ghpEeC8j9D0Ekgb2A"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_4toj0whpEeC8j9D0Ekgb2A" red="114" green="159" blue="207"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_4toj1AhpEeC8j9D0Ekgb2A" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']"/>
+        <ownedElements xmi:type="viewpoint:DNodeListElement" xmi:id="_IswS8AhqEeC8j9D0Ekgb2A" name="Thales Emf Generation for allocation">
+          <target xmi:type="genchainExtension:ThalesEmfGeneration" href="allocation.generationchain#//@elements.0"/>
+          <semanticElements xmi:type="genchainExtension:ThalesEmfGeneration" href="allocation.generationchain#//@elements.0"/>
+          <ownedStyle xmi:type="viewpoint:Square" xmi:id="_guBeIAhrEeC8j9D0Ekgb2A">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_gunUAAhrEeC8j9D0Ekgb2A"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_gunUAQhrEeC8j9D0Ekgb2A" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']"/>
+        </ownedElements>
+        <ownedElements xmi:type="viewpoint:DNodeListElement" xmi:id="_Is5c4whqEeC8j9D0Ekgb2A" name="Thales Emf Documentation for allocation">
+          <target xmi:type="genchainExtension:ThalesDocumentationGeneration" href="allocation.generationchain#//@elements.1"/>
+          <semanticElements xmi:type="genchainExtension:ThalesDocumentationGeneration" href="allocation.generationchain#//@elements.1"/>
+          <ownedStyle xmi:type="viewpoint:Square" xmi:id="_NXlN4AhrEeC8j9D0Ekgb2A">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_NX4I0AhrEeC8j9D0Ekgb2A"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_NX4I0QhrEeC8j9D0Ekgb2A" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <description xmi:type="description:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']"/>
+      <filterVariableHistory xmi:type="viewpoint:FilterVariableHistory" xmi:id="_3d6BUghpEeC8j9D0Ekgb2A"/>
+      <activatedLayers xmi:type="description:Layer" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer"/>
+      <target xmi:type="generationChain:GenerationChain" href="allocation.generationchain#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.genchain.editor/model/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']"/>
+  </ownedViews>
+  <models xmi:type="generationChain:GenerationChain" href="allocation.generationchain#/"/>
+</viewpoint:DAnalysis>

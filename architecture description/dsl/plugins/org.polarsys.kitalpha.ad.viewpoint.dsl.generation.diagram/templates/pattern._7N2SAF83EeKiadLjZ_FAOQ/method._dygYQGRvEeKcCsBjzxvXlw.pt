@@ -1,0 +1,44 @@
+		EdgeMapping edgeMapping = (EdgeMapping) dEdgeMapping;
+		
+		EdgeDomainAssociation domain = parameter.getThe_domain();
+		
+		String domainClass = "";
+		String sourceFinderExpression = "";
+		String targetFinderExpression = "";
+		
+		/******************** The case of Element based Edge Mapping *******************/ 
+		if (domain instanceof EdgeDomainElement)
+		{
+			edgeMapping.setUseDomainElement(true);
+			EdgeDomainElement edElement = (EdgeDomainElement) domain;
+			
+			// Source finder Expression
+			if (edElement.getSource_Locator() != null)
+				sourceFinderExpression = SiriusExpressionHelper.getExpressoin(edElement.getSource_Locator().getName(), ExpressionInterpreter.Feature);
+			else
+			{
+				String s_query = edElement.getSource_query();
+				if ( s_query != null && s_query.trim().length() > 0)
+					sourceFinderExpression = edElement.getSource_query();
+			}
+			
+			if (edElement.getThe_Domain() != null)
+				domainClass = edElement.getThe_Domain().getFQN();
+		}
+		
+		/************* The case of both Relation and Element based Edge Mapping ***************/
+		// Target finder Expression
+		if (domain.getTarget_Locator() != null)
+			targetFinderExpression = SiriusExpressionHelper.getExpressoin(domain.getTarget_Locator().getName(), ExpressionInterpreter.Feature);
+		else
+		{
+			String t_query = domain.getTarget_query();
+			if (t_query != null && t_query.trim().length() > 0)
+				targetFinderExpression = t_query;
+		}
+		
+		// Setting the semantic data
+		edgeMapping.setDomainClass(domainClass);
+		edgeMapping.setSourceFinderExpression(sourceFinderExpression);
+		edgeMapping.setTargetFinderExpression(targetFinderExpression);
+		

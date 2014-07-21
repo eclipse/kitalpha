@@ -1,0 +1,42 @@
+AbstractAssociation t_reference = (AbstractAssociation) t_association;
+AbstractAssociation s_reference = (AbstractAssociation) s_association;
+
+generateJavaService = false;
+
+if ( t_reference != null && s_reference != null )
+{	
+	ChangeContext gotoElement = ToolFactory.eINSTANCE.createChangeContext();
+	
+	gotoElement.setBrowseExpression(VSMVariable.element.getExpressionVariable());
+		
+	initial_operation.setFirstModelOperations(gotoElement);
+	
+	//AbstractAssociation t_reference = (AbstractAssociation)t_association;
+	String pElementToRemove = VSMVariable.getGenericExpressionVariable("elementsToRemove");
+	if (t_reference != null)
+	{
+		String t_ref_name = t_reference.getName();
+		Unset unset = ToolFactory.eINSTANCE.createUnset();
+		unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+		unset.setFeatureName(t_ref_name);
+		
+		gotoElement.getSubModelOperations().add(unset);
+	}
+	
+	//AbstractAssociation s_reference = (AbstractAssociation)s_association;
+	if (s_reference != null)
+	{
+		String s_ref_name = s_reference.getName();
+		Unset unset = ToolFactory.eINSTANCE.createUnset();
+		unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+		unset.setFeatureName(s_ref_name);
+		
+		gotoElement.getSubModelOperations().add(unset);
+	}
+}
+else
+{
+	generateJavaService = true;
+}
+		
+	

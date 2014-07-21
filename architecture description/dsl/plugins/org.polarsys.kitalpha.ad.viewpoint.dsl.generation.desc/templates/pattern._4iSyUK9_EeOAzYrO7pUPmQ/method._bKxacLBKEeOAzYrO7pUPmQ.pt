@@ -1,0 +1,2 @@
+// Loading resource
+ECoreResourceManager.INSTANCE.loadECoreResource(new ECoreFileInformation(rootProjectName, modelFolder, shortName));

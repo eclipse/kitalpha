@@ -1,0 +1,48 @@
+<%if (genClass.isMapEntry()) {%>
+		<%=genClass.getImportedInterfaceName()%><%if (genModel.useGenerics()) {%><?, ?><%}%> <%=genClass.getSafeUncapName()%> = (<%=genClass.getImportedInterfaceName()%><%if (genModel.useGenerics()) {%><?, ?><%}%>)object;
+  <%if (!genClass.getMapEntryKeyFeature().isPropertyMultiLine() && !genClass.getMapEntryValueFeature().isPropertyMultiLine()) {%>
+		return "" + <%=genClass.getSafeUncapName()%>.getKey() + " -> " + <%=genClass.getSafeUncapName()%>.getValue();<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%>
+  <%} else {%>
+    <%if (genClass.getMapEntryKeyFeature().isPropertyMultiLine()) {%>
+		String key = crop("" + <%=genClass.getSafeUncapName()%>.getKey());<%=genModel.getNonNLS()%>
+    <%} else {%>
+		String key = "" + <%=genClass.getSafeUncapName()%>.getKey();<%=genModel.getNonNLS()%>
+    <%}%>
+    <%if (genClass.getMapEntryValueFeature().isPropertyMultiLine()) {%>
+		String value = crop("" + <%=genClass.getSafeUncapName()%>.getValue());<%=genModel.getNonNLS()%>
+    <%} else {%>
+		String value = "" + <%=genClass.getSafeUncapName()%>.getValue();<%=genModel.getNonNLS()%>
+    <%}%>
+		return key + " -> " + value;<%=genModel.getNonNLS()%>
+  <%}%>
+<%} else if (genClass.getLabelFeature() != null) { GenFeature labelFeature = genClass.getLabelFeature();%>
+  <%if (labelFeature.isPrimitiveType() && !labelFeature.getGenClass().isDynamic() && !labelFeature.isSuppressedGetVisibility()) {%>
+		<%=genClass.getImportedInterfaceName()%><%=genClass.getInterfaceWildTypeArguments()%> <%=genClass.getSafeUncapName()%> = (<%=genClass.getImportedInterfaceName()%><%=genClass.getInterfaceWildTypeArguments()%>)object;
+		// begin-extension-code
+		return <%=genClass.getSafeUncapName()%>.<%=genClass.getLabelFeature().getGetAccessor()%>() + " [" + getString("_UI_<%=genClass.getName()%>_type") + "]";<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%=genModel.getNonNLS(3)%>
+		// end-extension-code
+  <%} else {%>
+    <%if (labelFeature.isStringType() && !labelFeature.getGenClass().isDynamic() && !labelFeature.isSuppressedGetVisibility()) {%>
+      <%if (labelFeature.isPropertyMultiLine()) {%>
+		String label = crop(((<%=genClass.getImportedInterfaceName()%><%=genClass.getInterfaceWildTypeArguments()%>)object).<%=labelFeature.getGetAccessor()%>());
+      <%} else {%>
+		String label = ((<%=genClass.getImportedInterfaceName()%><%=genClass.getInterfaceWildTypeArguments()%>)object).<%=labelFeature.getGetAccessor()%>();
+      <%}%>
+    <%} else {%>
+      <%if (labelFeature.isSuppressedGetVisibility() || labelFeature.getGenClass().isDynamic()) {%>
+		<%=genModel.getImportedName("java.lang.Object")%> labelValue = ((<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>)object).eGet(<%=labelFeature.getQualifiedFeatureAccessor()%>);
+      <%} else {%>
+		<%=labelFeature.getRawImportedType()%> labelValue = ((<%=genClass.getImportedInterfaceName()%><%=genClass.getInterfaceWildTypeArguments()%>)object).<%=labelFeature.getGetAccessor()%>();
+      <%}%>
+		String label = labelValue == null ? null : labelValue.toString();
+    <%}%>
+		// begin-extension-code
+		return label == null || label.length() == 0 ?
+			"[" + getString("_UI_<%=genClass.getName()%>_type") + "]" : label;<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%=genModel.getNonNLS(3)%>
+		// end-extension-code
+  <%}%>
+<%} else {%>
+		// begin-extension-code
+		return "[" + getString("_UI_<%=genClass.getName()%>_type") + "]";<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%><%=genModel.getNonNLS(3)%>
+		// end-extension-code
+<%}%>

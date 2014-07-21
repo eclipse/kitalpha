@@ -1,0 +1,3 @@
+		String cls = genClass.getName();
+		String operation = genOperation.getName();
+		return "getProperties".equals(operation) && "Viewpoint".equals(cls);

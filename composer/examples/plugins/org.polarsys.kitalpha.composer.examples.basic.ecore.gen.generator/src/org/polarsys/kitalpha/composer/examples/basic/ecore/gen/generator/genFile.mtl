@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module genFile('http://org.polarsys.kitalpha/allocation/base/1.0.0', 'http://org.polarsys.kitalpha/composer/example/basicusecase/ecorebasicalloc/1.0.0', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+[import org::polarsys::kitalpha::composer::examples::basic::ecore::gen::generator::genEclass /]
+[import org::polarsys::kitalpha::composer::examples::basic::ecore::gen::generator::genEattribute /]
+
+[template public genFile(anEcoreFile : EcoreFile) post(trim())]
+[comment @main /]
+[file (anEcoreFile.oclAsType(File).path.concat('/').concat(anEcoreFile.oclAsType(File).name), false, 'UTF-8')]
+[genHeader()/]
+
+[for (it : EcoreClass | anEcoreFile.oclAsType(File).ownedTypes.oclAsType(EcoreClass))]
+[genType()/]
+
+[/for]
+[genFooter()/]
+[/file]
+[/template]
+
+
+
+[template public genType(anEcoreClass : EcoreClass) post(trim())]
+[for (it : EClass | anEcoreClass.oclAsType(Type).referencedElement.oclAsType(EClass))]
+	[genEClass()/]
+
+[/for]
+[/template]
+
+[template public genHeader(anEcoreFile : EcoreFile) post(trim())]
+<html>
+<head>
+<title>[anEcoreFile.oclAsType(File).name/]</title>
+</head>
+<body>
+[/template]
+
+[template public genFooter(anEcoreFile : EcoreFile) post(trim())]
+</body>
+</html>
+[/template]

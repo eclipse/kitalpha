@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <ftask:Task xmi:id="_s4CIIOq5EeGh0fmNAy-1lA" name="getNewProjectName" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.util.task.GetFullProjectNameTask">
+    <contractContainer xmi:id="_s4CIIeq5EeGh0fmNAy-1lA">
+      <contracts xmi:id="_s4CIIuq5EeGh0fmNAy-1lA" name="old.resource.name">
+        <type xmi:type="types:TypeString" xmi:id="_s4CII-q5EeGh0fmNAy-1lA"/>
+      </contracts>
+      <contracts xmi:id="_s4CIJOq5EeGh0fmNAy-1lA" name="resource.name.addition">
+        <type xmi:type="types:TypeString" xmi:id="_s4CIJeq5EeGh0fmNAy-1lA"/>
+      </contracts>
+      <contracts xmi:id="_s4CIJuq5EeGh0fmNAy-1lA" name="new.resource.name" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_s4CIJ-q5EeGh0fmNAy-1lA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_NqCTsOq8EeGh0fmNAy-1lA" name="CreateFeatureAndRegisterItInGenchainAdditionsManager"
+      kind="java" superTask="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZAJpNEeO0BorZRiG7mg"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.util.task.CreateAndRegisterFeature">
+    <contractContainer xmi:id="_NqCTseq8EeGh0fmNAy-1lA">
+      <contracts xmi:id="_NqCTsuq8EeGh0fmNAy-1lA" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_NqCTs-q8EeGh0fmNAy-1lA"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <fcore:FactoryComponent xmi:id="_gQZzsAyvEeK3gMLbl4z4NA" name="Create.Plugin.Project.factory">
+    <contractContainer xmi:id="_1OXggKUYEeOWxfW4xf0FnQ">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_l7-2cAyvEeK3gMLbl4z4NA"
+          name="id" invocationContracts="#_BUT-oqUZEeOWxfW4xf0FnQ #_FeSrwqUZEeOWxfW4xf0FnQ #_fxNAEqUzEeOWxfW4xf0FnQ">
+        <type xmi:type="types:TypeString" xmi:id="__G6ZUKUgEeOWxfW4xf0FnQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_YS8jAAyxEeK3gMLbl4z4NA"
+          name="execution.environment" invocationContracts="#_BUT-o6UZEeOWxfW4xf0FnQ #_fxNAE6UzEeOWxfW4xf0FnQ">
+        <type xmi:type="types:TypeString" xmi:id="_5pCVAKUYEeOWxfW4xf0FnQ" value="JavaSE-1.6"/>
+      </contracts>
+    </contractContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_8TphIKUYEeOWxfW4xf0FnQ">
+      <invocations xmi:id="_BUT-oKUZEeOWxfW4xf0FnQ" name="First: create the java project"
+          invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_bLHVECakEd-RhP-A_BvFzw">
+        <invocationContractContainer xmi:id="_BUT-oaUZEeOWxfW4xf0FnQ">
+          <invocationContracts xmi:id="_BUT-oqUZEeOWxfW4xf0FnQ" factoryComponentContract="#_l7-2cAyvEeK3gMLbl4z4NA"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_Fs2AMCalEd-RhP-A_BvFzw"/>
+          <invocationContracts xmi:id="_BUT-o6UZEeOWxfW4xf0FnQ" factoryComponentContract="#_YS8jAAyxEeK3gMLbl4z4NA"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_VDCuICalEd-RhP-A_BvFzw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_FeSrwKUZEeOWxfW4xf0FnQ" name="Second: convert the java project to plugin project"
+          invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_DSL_oIqSEd-U1srr1078Ww">
+        <invocationContractContainer xmi:id="_FeSrwaUZEeOWxfW4xf0FnQ">
+          <invocationContracts xmi:id="_FeSrwqUZEeOWxfW4xf0FnQ" factoryComponentContract="#_l7-2cAyvEeK3gMLbl4z4NA"
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_WbRLgIqhEd-U1srr1078Ww"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_fxNAEKUzEeOWxfW4xf0FnQ" name="Update bundle JRE compliance"
+          invokedActivity="#_MsYWMKUxEeOWxfW4xf0FnQ">
+        <invocationContractContainer xmi:id="_fxNAEaUzEeOWxfW4xf0FnQ">
+          <invocationContracts xmi:id="_fxNAEqUzEeOWxfW4xf0FnQ" factoryComponentContract="#_l7-2cAyvEeK3gMLbl4z4NA"
+              invokedContract="#_bUTo4KUxEeOWxfW4xf0FnQ"/>
+          <invocationContracts xmi:id="_fxNAE6UzEeOWxfW4xf0FnQ" factoryComponentContract="#_YS8jAAyxEeK3gMLbl4z4NA"
+              invokedContract="#_cY2PEKUxEeOWxfW4xf0FnQ"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_MsYWMKUxEeOWxfW4xf0FnQ" name="Update.JRE.Compliance" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.util.task.UpdateBundleJREComplaince">
+    <contractContainer xmi:id="_bDT_gKUxEeOWxfW4xf0FnQ">
+      <contracts xmi:id="_bUTo4KUxEeOWxfW4xf0FnQ" name="bundle.id" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_cFnxEKUxEeOWxfW4xf0FnQ"/>
+      </contracts>
+      <contracts xmi:id="_cY2PEKUxEeOWxfW4xf0FnQ" name="execution.environment" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_cY2PEaUxEeOWxfW4xf0FnQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

@@ -1,0 +1,4 @@
+if ("GraphElement".equals(genFeature.getGenClass().getEcoreClass().getName()) && "content".equals(genFeature.getName())) {
+    return true;
+}
+return false;

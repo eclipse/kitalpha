@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="ocl.constraint.provider.SpecificConstraintProvider"
+         point="org.eclipse.emf.validation.constraintProviders">
+      <constraintProvider
+            class="constraint.provider.SpecificConstraintProvider"
+            mode="Batch">
+         <package
+               namespaceUri="http:///org/eclipse/emf/examples/library/extlibrary.ecore/1.0.0">
+         </package>
+      </constraintProvider>
+      <constraintProvider
+            class="constraint.provider.java.JavaSpecificConstraintProvider"
+            mode="Batch">
+         <package
+               namespaceUri="http:///org/eclipse/emf/examples/library/extlibrary.ecore/1.0.0">
+         </package>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.validation.java">
+      <JavaConstraints>
+         <JavaConstraint
+               Class="constraint.provider.java.WriterNameStartsWithUpperCase"
+               invariantId="inv_writer_01"
+               requirementId="REQ_JAVA_01"></JavaConstraint>
+         <JavaConstraint
+               Class="constraint.provider.java.WriterNameHasNoSpace"
+               invariantId="inv_writer_02"
+               requirementId="REQ_JAVA_02">
+         </JavaConstraint>
+      </JavaConstraints>
+   </extension>
+   <extension point="org.eclipse.emf.validation.constraintBindings">
+		<binding 
+			category="library"
+			context="org.polarsys.kitalpha.accuracy.clientContext">
+		</binding>
+	</extension>
+
+</plugin>

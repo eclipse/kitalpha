@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_FAZHQEk-Ed-iSsj7SyJthw" name="root">
+  <packagedElement xmi:type="uml:Package" xmi:id="_G2aNsEk-Ed-iSsj7SyJthw" name="subpackage_1">
+    <packagedElement xmi:type="uml:Class" xmi:id="_IC_8oEk-Ed-iSsj7SyJthw" name="class_1">
+      <ownedAttribute xmi:id="_OBzwgElWEd-kRqyXhZZ6zg" name="name" type="_33bfwQX9EeGwKfW_UTdm0g" isUnique="false"/>
+      <ownedAttribute xmi:id="_f0VCoEuVEd-hFMRCZ0lKDg" name="class2" type="_hESYYElVEd-kRqyXhZZ6zg" isUnique="false"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hESYYElVEd-kRqyXhZZ6zg" name="class_2">
+      <ownedAttribute xmi:id="_Lpyb8E4GEd-INdDm_9UGow" name="class2" type="_IC_8oEk-Ed-iSsj7SyJthw" isUnique="false"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_P9wzwEk-Ed-iSsj7SyJthw" name="subpackage_2">
+    <packagedElement xmi:type="uml:Class" xmi:id="_P9wzwUk-Ed-iSsj7SyJthw" name="class_1">
+      <generalization xmi:id="_WwwIgElUEd-kRqyXhZZ6zg" general="_R9UOsElUEd-kRqyXhZZ6zg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_R9nLoEk-Ed-iSsj7SyJthw" name="class_2">
+      <generalization xmi:id="_Wd-WcElUEd-kRqyXhZZ6zg" general="_R9UOsElUEd-kRqyXhZZ6zg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_SKkpkEk-Ed-iSsj7SyJthw" name="class_3" isAbstract="true">
+      <generalization xmi:id="_WIz-wElUEd-kRqyXhZZ6zg" general="_R9UOsElUEd-kRqyXhZZ6zg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_R9UOsElUEd-kRqyXhZZ6zg" name="Class_0" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_33bfwQX9EeGwKfW_UTdm0g" name="String"/>
+</uml:Package>

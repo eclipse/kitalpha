@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+			id="org.polarsys.kitalpha.emde.ecore.editor.validate.extension1"
+			objectClass="org.eclipse.emf.ecore.EPackage">
+			<action
+				id="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction1"
+				label="%UI_Validate_Action_Label"
+				menubarPath="additions"
+				class="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction"
+				enablesFor="1"/>
+		</objectContribution>
+  		<objectContribution
+        	id="org.polarsys.kitalpha.emde.ecore.editor.validate.extension2"
+        	objectClass="org.eclipse.emf.ecore.EClass">
+	     	<action
+	           class="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction"
+	           enablesFor="1"
+	           id="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction2"
+	           label="%UI_Validate_Action_Label"
+	           menubarPath="additions">
+	     	</action>
+  		</objectContribution>
+	</extension>
+
+
+</plugin>

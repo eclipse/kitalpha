@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.report.model/generated"
+    editDirectory="/org.polarsys.kitalpha.report.model.edit/generated" editorDirectory="/org.polarsys.kitalpha.report.model.editor/generated"
+    modelPluginID="org.polarsys.kitalpha.report.model" modelName="Report" editPluginClass="org.polarsys.kitalpha.report.model.edit.provider.ReportEditPlugin"
+    editorPluginClass="org.polarsys.kitalpha.report.presentation.ReportEditorPlugin"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    runtimeVersion="2.6">
+  <foreignModel>../../../plugin/org.polarsys.kitalpha.report/model/report.ecore</foreignModel>
+  <genPackages prefix="ReportElement" basePackage="org.polarsys.kitalpha" disposableProviderFactory="true"
+      interfacePackageSuffix="model" metaDataPackageSuffix="model" classPackageSuffix="model.impl"
+      utilityPackageSuffix="model.util" providerPackageSuffix="model.edit.provider"
+      presentationPackageSuffix="model.editor.presentation" testsPackageSuffix="model.tests"
+      ecorePackage="platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#/">
+    <genClasses image="false" ecoreClass="platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//LogEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//LogEntry/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//LogEntry/date"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//LogEntry/severity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//LogEntry/details"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//LogEntry/referencedObject"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//Severity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//Severity/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//Severity/label"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//ReportList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//ReportList/reports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.report/model/report.ecore#//ReportList/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

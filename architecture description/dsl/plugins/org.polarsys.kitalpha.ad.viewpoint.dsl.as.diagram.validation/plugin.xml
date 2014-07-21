@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.coreConstraintContribution">
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.name.ToolsUniqueNameconstraint"
+            constraint="vpElement.UniqueValue"
+            name="Tools name Unique constraint">
+      </contribution>
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.name.MappingsUniqueNameConstraint"
+            constraint="vpElement.UniqueValue"
+            name="Mapping name Not Empty constraint">
+      </contribution>
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.name.NotEmptyName"
+            constraint="vpNamedElement.NameNotEmpty"
+            name="Diagram Element Not Empty Name">
+      </contribution>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.additionalConstraint">
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.domain.AbstractNodeDomain"
+            constraint="vpElement.FreeErrorConstraint"
+            name="AbstractNode Domain constraints">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.domain.EdgeDomain"        
+            constraint="vpElement.FreeErrorConstraint"
+            name="Edge Domain constraints">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.representation.MappingRepresentationStyleNLabelRules"
+            constraint="vpElement.FreeErrorConstraint"
+            name="New Mapping Style Not Null Constraint | Imported Mapping must have either a Style or a Label">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.representation.NodesUniqueNoConditionalRepresentationRules"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Only one Container/Node/Bordered Node representation can have no condition">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.representation.EdgesUniqueNoConditionalRepresentationRules"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Only one Edge/EdgeImport Node representation can have no condition">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.condition.NoCollectionDomainAttributeCondition"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Domain condition constraint">
+      </addition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.DiagramValidationStart">
+      </startup>
+   </extension>
+
+</plugin>

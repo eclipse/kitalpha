@@ -1,0 +1,3 @@
+		String cls = genClass.getName();
+		String operation = genOperation.getName();
+		return "getPropertySet".equals(operation) && "Workspace".equals(cls);

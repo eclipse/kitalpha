@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="org.polarsys.kitalpha.ad.af.dsl.project.afspec"
+            nameFilter="*.aftext"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               icon="icons/af_description.png"
+               id="org.polarsys.kitalpha.ad.af.dsl.menu"
+               label="Architecture Framework DSL"
+               path="additions">
+            <separator
+                  name="main">
+            </separator>
+         </menu>
+         <action
+               class="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.actions.GenerateArchitectureFrameworkAction"
+               enablesFor="1"
+               icon="icons/afdsl_generate_action.png"
+               id="org.polarsys.kitalpha.ad.af.dsl.generateAndPackageAF"
+               label="Generate and Package Architecture Framework"
+               menubarPath="org.polarsys.kitalpha.ad.af.dsl.menu/main">
+         </action>
+         <action
+               class="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.actions.GenerateArchitectureFrameworkAction"
+               enablesFor="1"
+               icon="icons/afdsl_generate_action.png"
+               id="org.polarsys.kitalpha.ad.af.dsl.generateAF"
+               label="Generate Architecture Framework"
+               menubarPath="org.polarsys.kitalpha.ad.af.dsl.menu/main">
+         </action>
+         <menu
+               icon="icons/af_specific_actions.png"
+               id="AFSpecificActionSubMenu"
+               label="Specific actions"
+               path="org.polarsys.kitalpha.ad.af.dsl.menu/main">
+            <groupMarker
+                  name="AFSpecActionsGroup">
+            </groupMarker>
+         </menu>
+         <action
+               class="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.actions.DetectCyclesAction"
+               enablesFor="1"
+               icon="icons/af_cycle_action.png"
+               id="org.polarsys.kitalpha.ad.af.dsl.cycle"
+               label="Detect cycles"
+               menubarPath="org.polarsys.kitalpha.ad.af.dsl.menu/AFSpecificActionSubMenu/AFSpecActionsGroupAFSpecActionsGroup">
+         </action>
+      </objectContribution>
+   </extension>
+	 <extension point="org.eclipse.ui.popupMenus">
+	    
+	    <objectContribution
+	          id="org.polarsys.kitalpha.ad.af.dsl.cs.text.generators.contribution.afdesc"
+	          nameFilter="*.afdesc"
+	          objectClass="org.eclipse.core.resources.IFile">
+	       <menu
+	             icon="icons/af_description.png"
+                 id="org.polarsys.kitalpha.ad.af.dsl.menu"
+                 label="Architecture Framework DSL"
+	             path="additions">
+	          <separator
+	                name="main">
+	          </separator>
+	       </menu>
+	       <action
+	             class="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.actions.BackwardSynchronizeAction"
+	             enablesFor="1"
+	             icon="icons/afdsl_generate_resource.png"
+	             id="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.backwardsynchronizer"
+	             label="Generate aftext file"
+	             menubarPath="org.polarsys.kitalpha.ad.af.dsl.menu/main">
+	       </action>
+	    </objectContribution>
+	   
+	    <objectContribution
+	          id="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.contribution.aftext"
+	          nameFilter="*.aftext"
+	          objectClass="org.eclipse.core.resources.IFile">
+	       <menu
+	             icon="icons/af_description.png"
+                 id="org.polarsys.kitalpha.ad.af.dsl.menu"
+                 label="Architecture Framework DSL"
+	             path="additions">
+	          <separator
+	                name="main">
+	          </separator>
+	       </menu>
+	       <action
+	             class="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.actions.SynchronizeAction"
+	             enablesFor="1"
+	             icon="icons/afdsl_generate_resource.png"
+	             id="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.synchronizer"
+	             label="Generate afdesc file"
+	             menubarPath="org.polarsys.kitalpha.ad.af.dsl.menu/main">
+	       </action>
+	    </objectContribution>
+	 </extension>
+	 
+</plugin>

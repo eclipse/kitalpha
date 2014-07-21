@@ -1,0 +1,259 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+
+package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java;
+
+import java.io.ByteArrayInputStream;
+import java.io.FileNotFoundException;
+import java.util.regex.Pattern;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.ToolFactory;
+import org.eclipse.jdt.core.compiler.IProblem;
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.formatter.CodeFormatter;
+import org.eclipse.jface.text.Document;
+import org.eclipse.jface.text.IDocument;
+import org.eclipse.text.edits.MalformedTreeException;
+import org.eclipse.text.edits.TextEdit;
+
+/**
+ * @author Boubekeur Zendagui
+ */
+
+public class JDTUtility {
+	
+	/**
+	 *  
+	 * @param project the project containing the Java package 
+	 * @param packageName the Java package name
+	 * @return return the IFolder of the Java package
+	 */
+	public static IFolder packageToFolder(IProject project, String packageName){
+		String folder = getValidPackageName(packageName);
+		folder = folder.replaceAll("\\.", "/");
+		folder = "src/"+ folder;
+		return project.getFolder(new Path(folder));
+	}
+	
+	
+	/**
+	 * This use the EMF merge engine to merge available Java code with generated 
+	 * one. 
+	 * @param javaFile
+	 * @param generatedCode
+	 * @return the merged Java code that hold user modification
+	 */
+	public static String mergeJavaCode(IFile javaFile, String generatedCode){
+		String mergerCode = "";
+		try 
+		{
+			mergerCode = JavaMerger.doMerge(javaFile, generatedCode);
+		} 
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+		return mergerCode;
+	}
+	
+	/**
+	 * This method formats the Java code given in parameter.
+	 * @param javaCode original Java code 
+	 * @return Formated java code
+	 */
+	public static String formatJavaCode(String javaCode){
+		CodeFormatter codeFormatter = ToolFactory.createCodeFormatter(null);
+		
+		TextEdit textEdit = codeFormatter.format(CodeFormatter.K_UNKNOWN, javaCode, 0,javaCode.length(),0,null);
+		IDocument document = new Document(javaCode);
+		try 
+		{
+			textEdit.apply(document);
+			javaCode = document.get();
+		} 
+		catch (MalformedTreeException e) 
+		{
+			e.printStackTrace();
+		} 
+		catch (org.eclipse.jface.text.BadLocationException e) 
+		{
+			e.printStackTrace();
+		}
+
+		return javaCode;
+	}
+	
+	/**
+	 * This methods allows to write a Java code (javaCode parameter content) in 
+	 * a file (javaFile parameter)
+	 * @param javaFile the Java file wherein the code is serialized
+	 * @param javaCode the Java code 
+	 */
+	public static void writeJavaContent(IFile javaFile, String javaCode){
+		String formatedOutput = formatJavaCode(javaCode);
+		ByteArrayInputStream outputContent = new ByteArrayInputStream(formatedOutput.getBytes());
+		try 
+		{
+			if (javaFile.exists())
+				javaFile.setContents(outputContent, true, false, null);
+			else
+				javaFile.create(outputContent, true, null);
+
+			javaFile.refreshLocal(IFile.DEPTH_ONE, new NullProgressMonitor());
+		} 
+		catch (CoreException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * This keeps only alphanumeric, '.' and '_' characters 
+	 * @param name the Java package name 
+	 * @return Correct Java package name
+	 */
+	public static String getValidPackageName(String name){
+		return name.replaceAll("[^a-zA-Z0-9_.]","");
+	}
+	
+	/**
+	 * This keeps only alphanumeric and '_' characters 
+	 * @param name the Java class name 
+	 * @return Correct Java class name
+	 */
+	public static String getValidClassName(String name){
+		String cName = name.replaceAll("[^a-zA-Z0-9_]","");
+		return cName.substring(0,1).toUpperCase() + cName.substring(1);
+	}
+	
+	
+	/**
+	 * This method create all package folders
+	 * @param project The project wherein the package folders will be created
+	 * @param packageName the name of the 
+	 * @return 
+	 */
+	public static IFolder createOrGetPackageFolders(IProject project, String packageName){
+		IFolder src = project.getFolder("src");
+		if (! src.exists()){
+			try 
+			{
+				src.create(true, true, null);
+			} 
+			catch (CoreException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		
+		Path packageFolderPath = new Path(packageName.replace('.', '/'));
+		if (src.getFolder(packageFolderPath).exists())
+			return src.getFolder(packageFolderPath);
+		
+		IFolder parent = src;
+		for (int i = 0; i < packageFolderPath.segmentCount(); i++) 
+		{
+			IFolder curFolder = parent.getFolder(packageFolderPath.segment(i));
+			if (! curFolder.exists())
+			{
+				try 
+				{
+					curFolder.create(true, true, null);
+				} 
+				catch (CoreException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+			
+			parent = curFolder;
+		}
+		
+		return parent;
+	}
+	
+	/**
+	 * In this version, this methods remove only unused imports.
+	 * FIXME: To improve. This is just a POC.
+	 * @param javaFile
+	 * @param javaCode
+	 * @return
+	 */
+	public static String organizeImport(IFile javaFile, String javaCode){
+		// If the java file is not serialized yet then save it in order to parse it by AST parser 
+		if (! javaFile.exists())
+			JDTUtility.writeJavaContent(javaFile, javaCode);
+		
+		final ASTParser parser = ASTParser.newParser(AST.JLS3);
+		parser.setResolveBindings(true);
+		final IJavaElement element = JavaCore.create(javaFile);
+		parser.setSource((ICompilationUnit)element);
+		final CompilationUnit cUnit=(CompilationUnit) parser.createAST(new NullProgressMonitor());	
+		for (IProblem problem : cUnit.getProblems()) 
+		{
+		    if(problem.getID() == IProblem.UnusedImport) 
+		    {
+		    	final String unusedImport = problem.getArguments()[0];
+		    	final String javaImportRegEx = "import([\\s])*"+unusedImport+"([\\s])*;([\\s])*";
+		    	final Pattern p = Pattern.compile(javaImportRegEx.trim());
+		    	javaCode = p.matcher(javaCode).replaceAll("");
+		    }
+		}
+		
+		return javaCode;
+	}
+	
+	public static void organizeImport(final IFile javaCode){
+//		ICompilationUnit unit = JavaCore.createCompilationUnitFrom(javaCode);
+//		OrganizeImportsAction fOrganizeImports= new OrganizeImportsAction(...);
+//		fOrganizeImports.run(unit);
+		
+//		OR 
+		
+//		final ICommandService cmdService = (ICommandService)PlatformUI.getWorkbench().getService(ICommandService.class);
+//
+//		if (cmdService != null) {
+//	        final Command organize_cmd = cmdService.getCommand(IJavaEditorActionDefinitionIds.ORGANIZE_IMPORTS);
+//	        organize_cmd.setHandler(new AbstractHandler(){
+//				public Object execute(ExecutionEvent event)
+//						throws ExecutionException {
+//					return super.equals(event);
+//				}
+//	        	@Override
+//	        	public boolean isEnabled() {
+//	        		return true;
+//	        	}
+//	        });
+//	        final ExecutionEvent execEvt = new ExecutionEvent(organize_cmd, Collections.EMPTY_MAP, javaCode, null);
+//	        Display.getDefault().asyncExec(new Runnable() {
+//	            public void run() {
+//	                try {
+//	                    organize_cmd.executeWithChecks(execEvt);
+//	                } catch (Exception e) {
+//	                	System.out.println(e.getMessage());
+//	                }
+//	            }
+//	        });
+//	    }
+	}
+	
+}

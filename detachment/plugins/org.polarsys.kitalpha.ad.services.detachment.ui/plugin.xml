@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.core.resources.IResource"
+            nameFilter="*.aird"
+            objectClass="org.eclipse.core.resources.IResource">
+         <menu
+               id="org.polarsys.kitalpha.ad.services.detachment.ui.architectureDescription"
+               label="%ARCHITECTURE_DESCRIPTION"
+               path="additions">
+            <groupMarker
+                  name="detachment">
+            </groupMarker>
+         </menu>
+         <action
+               class="org.polarsys.kitalpha.ad.services.detachment.ui.action.DetachmentServiceAction"
+               icon="icons/icon_detachment.png"
+               id="org.polarsys.kitalpha.ad.services.detachment.ui.detachmentService"
+               label="%DETACHMENT_SERVICE_ACTION"
+               menubarPath="org.polarsys.kitalpha.ad.services.detachment.ui.architectureDescription/detachment">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

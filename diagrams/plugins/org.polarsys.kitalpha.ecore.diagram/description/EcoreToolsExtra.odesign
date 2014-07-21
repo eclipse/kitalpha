@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="EcoreToolsExtra" version="8.1.0">
+  <ownedViewpoints name="EcoreToolsExtra_ModelView" label="Ecore Tools Extra - Model View" modelFileExtension="ecore xcore">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@toolSections.4/@ownedTools[name='Drop%20EClass%20from%20treeview'] //@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@toolSections.4/@ownedTools[name='Drop%20EEnum%20from%20treeview']" name="Focus" titleExpression="['Focus on EPackage ' + name/]" domainClass="ecore.EPackage">
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide class content">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']/@subNodeMappings[name='Focus%20All%20EAttribute'] //@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']/@subNodeMappings[name='Focus%20All%20EOperation']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide generalizations">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@edgeMappings[name='Focus%20ESupertypes']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide references">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@edgeMappings[name='Focus%20EReference']" semanticConditionExpression="[containment/]"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide containments">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@edgeMappings[name='Focus%20EReference']" semanticConditionExpression="[not containment/]"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide deriveds">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@edgeMappings[name='Focus%20EReference']" semanticConditionExpression="[not derived/]"/>
+      </filters>
+      <defaultLayer name="Default">
+        <edgeMappings name="Focus EReference" semanticCandidatesExpression="[focusedEReferences(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" semanticElements="" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetFinderExpression="[eType.oclAsType(ecore::EClass).mostAbstractObject(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" sourceFinderExpression="[mostAbstractObject(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" targetExpression="" domainClass="EReference" useDomainElement="true">
+          <style sizeComputationExpression="1">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="[computeEReferenceLabel(view.eContainer(DDiagram).eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[containment/]">
+            <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <centerLabelStyleDescription labelExpression="[computeEReferenceLabel(view.eContainer(DDiagram).eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[derived/]">
+            <style strokeColor="//@userColorsPalettes[name='Migration%20Palette']/@entries[name='DerivedEReferencesColor']" sizeComputationExpression="1">
+              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + computeEReferenceLabel(view.eContainer(DDiagram).eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="Focus ESupertypes" semanticCandidatesExpression="[viewpoint.eAllContents()->select(oclIsKindOf(DNodeList)).eGet('target')->select(oclIsKindOf(EClass))/]" semanticElements="" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetFinderExpression="[nearestSuperTypes(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" sourceFinderExpression="[mostAbstractObject(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" targetExpression="" domainClass="EClass" useDomainElement="true">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[superTypesLabel(view.eGet('targetNode').eGet('target').oclAsType(ecore::EClass))->select(oclIsKindOf(EClass)).eGet('name')/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="service:isImplemented(view)">
+            <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="[superTypesLabel(view.eGet('targetNode').eGet('target').oclAsType(ecore::EClass))->select(oclIsKindOf(EClass)).eGet('name')/]">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <containerMappings name="Focus EClass" deletionDescription="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20EClass%20and%20EEnum']" semanticCandidatesExpression="service:focusOnEClassSCE()" createElements="false" domainClass="ecore.EClass" childrenPresentation="List">
+          <subNodeMappings name="Focus All EAttribute" preconditionExpression="[eContainer(EClass).hasNotDisplayedSuperType(containerView.eGet('target'), viewpoint.eAllContents()->select(oclIsKindOf(viewpoint::DSemanticDecorator)).eGet('target'))/]" semanticCandidatesExpression="service:findAllEAtribute()" semanticElements="" domainClass="ecore.EAttribute">
+            <style xsi:type="style:SquareDescription" labelExpression="[name +' : '+ eType.name +' ['+ eContainer(EPackage).name +']' /]" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Focus All EOperation" preconditionExpression="[eContainer(EClass).hasNotDisplayedSuperType(containerView.eGet('target'), viewpoint.eAllContents()->select(oclIsKindOf(viewpoint::DSemanticDecorator)).eGet('target'))/]" semanticCandidatesExpression="service:findAllEOperation()" semanticElements="" domainClass="ecore.EOperation">
+            <style xsi:type="style:SquareDescription" labelExpression="[name +' : '+ eType.name +' ['+ eContainer(EPackage).name +']' /]" labelAlignment="LEFT">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[abstract/]">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <containerMappings name="Focus EEnum" deletionDescription="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20EClass%20and%20EEnum']" semanticCandidatesExpression="service:focusOnEENumSCE()" createElements="false" domainClass="ecore.EEnum" childrenPresentation="List">
+          <subNodeMappings name="Focus EEnumLiteral" semanticCandidatesExpression="feature:eLiterals" domainClass="ecore.EEnumLiteral">
+            <style xsi:type="style:BundledImageDescription" labelAlignment="LEFT" sizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Insert Existing" label="Insert Existing">
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="Insert Eclass" label="EClasses" precondition="[containerView->select(oclIsKindOf(DDiagram))->size() > 0 /]" candidatesExpression="service:insertEClassSelectionWizard(containerView)" multiple="true" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EClass.gif">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:containerView">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:updateSessionSemantiqueResources(element, container)">
+                  <subModelOperations xsi:type="tool:For" expression="var:element">
+                    <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" containerViewExpression="var:containerView"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="Insert enum" label="EEnums" precondition="[containerView->select(oclIsKindOf(DDiagram))->size() > 0 /]" forceRefresh="true" candidatesExpression="[self.insertEEnumSelectionWizard(containerView)/]" multiple="true" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EEnum.gif">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:containerView">
+                <subModelOperations xsi:type="tool:If" conditionExpression="service:updateSessionSemantiqueResources(element, container)">
+                  <subModelOperations xsi:type="tool:For" expression="[element/]">
+                    <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EEnum']" containerViewExpression="[containerView/]"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="delete EClass and EEnum" forceRefresh="true">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="[elementView/]">
+                <subModelOperations xsi:type="tool:DeleteView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Show EClass">
+          <ownedTools xsi:type="tool:ToolDescription" name="Neighbors" precondition="[container.toolShowPrecondition()/]" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/neighbors.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="[element.showNeighbor(elementView)/]">
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" containerViewExpression="[elementView.oclAsType(diagram::DNodeList).getParentDiagram()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="All relationships" precondition="[container.toolShowPrecondition()/]" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/allRelationships.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="[element.showRelation(elementView)/]">
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" containerViewExpression="[elementView.oclAsType(diagram::DNodeList).getParentDiagram()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="References" precondition="[container.toolShowPrecondition()/]" candidatesExpression="[(container.showReferences(diagram.eAllContents()->asOrderedSet()->asSequence().eGet('target')))->asOrderedSet()->asSequence()/]" multiple="true" tree="true" rootExpression="[(container.showReferencesRoot(diagram.eAllContents().eGet('target')))->asOrderedSet()->asSequence()/]" childrenExpression="[eContents(ecore::EReference)/]" message="Select linked classes" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/References2.gif">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:element">
+                <subModelOperations xsi:type="tool:If" conditionExpression="[i.eGet('eType') &lt;> container/]">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[i.eGet('eType')/]">
+                    <subModelOperations xsi:type="tool:If" conditionExpression="[i.eGet('eType').oclAsType(ecore::EClass).mostAbstractObject(diagram.eContents(diagram::DNodeList).eGet('target'))->size() = 0/]">
+                      <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" containerViewExpression="[containerView.eContainer(diagram::DSemanticDiagram)/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="[i.eGet('eType') = container/]">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="[i.eContainer()/]">
+                    <subModelOperations xsi:type="tool:If" conditionExpression="[i.eContainer().oclAsType(ecore::EClass).mostAbstractObject(diagram.eContents(diagram::DNodeList).eGet('target'))->size() = 0/]">
+                      <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" containerViewExpression="[containerView.eContainer(DSemanticDiagram)/]"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Hide">
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="EClasses references" precondition="service:toolsShowHidePrecondition(containerView)" candidatesExpression="[hideClassReferencesCandidates(containerView)->asOrderedSet()->asSequence()/]" multiple="true" tree="true" rootExpression="[hideClassReferencesRoot(containerView)->asOrderedSet()->asSequence()/]" childrenExpression="[eContents()->select(oclIsKindOf(ecore::EReference))/]" message="Select class references to hide" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/hide_EReference.gif">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Hide DEdges" id="org.polarsys.kitalpha.ecore.diagram.javaaction.HideLinkAction">
+                <parameters name="element" value="var:element"/>
+                <parameters name="viewElement" value="[containerView.getViewElement()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="All inheritances" precondition="[container.oclIsKindOf(ecore::EPackage)/]" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/hide_AllInheritances.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Show Link Action" id="org.polarsys.kitalpha.ecore.diagram.javaaction.HideInheritanceAction">
+                <parameters name="element" value="[element.computeAllReferencesToHide(elementView)/]"/>
+                <parameters name="viewElement" value="var:elementView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="All References" precondition="[container.oclIsKindOf(ecore::EPackage)/]" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/hide_AllReferences.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Show Link Action" id="org.polarsys.kitalpha.ecore.diagram.javaaction.HideReferenceAction">
+                <parameters name="element" value="[element.computeAllReferencesToHide(elementView)/]"/>
+                <parameters name="viewElement" value="var:elementView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Reveal">
+          <ownedTools xsi:type="tool:SelectionWizardDescription" name="EClasses references" precondition="service:toolsShowHidePrecondition(containerView)" candidatesExpression="[revealClassReferencesCandidates(containerView)->asOrderedSet()->asSequence()/]" multiple="true" tree="true" rootExpression="[revealClassReferencesRoot(containerView)->asOrderedSet()->asSequence()/]" childrenExpression="[eContents()->select(oclIsKindOf(ecore::EReference))/]" message="Select class references to hide" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EReference.gif">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Show Link Action" id="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowLinkAction">
+                <parameters name="element" value="var:element"/>
+                <parameters name="viewElement" value="[containerView.getViewElement()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="All inheritances" precondition="[container.oclIsKindOf(ecore::EPackage)/]" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/allInheritances.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Show Link Action" id="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowInheritanceAction">
+                <parameters name="element" value="[element.computeAllReferencesToShow(elementView)/]"/>
+                <parameters name="viewElement" value="var:elementView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="All References" precondition="[container.oclIsKindOf(ecore::EPackage)/]" iconPath="/org.polarsys.kitalpha.ecore.diagram/icons/tools/allReferences.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Show Link Action" id="org.polarsys.kitalpha.ecore.diagram.javaaction.ShowReferenceAction">
+                <parameters name="element" value="[element.computeAllReferencesToShow(elementView)/]"/>
+                <parameters name="viewElement" value="var:elementView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Drop tools section">
+          <ownedTools xsi:type="tool_1:ContainerDropDescription" name="Drop EClass from treeview" mappings="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" containerViewExpression="var:newContainerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerDropDescription" name="Drop EEnum from treeview" mappings="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EEnum']" dragSource="PROJECT_EXPLORER">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:For" expression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" containerViewExpression="var:newContainerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[eContainer() &lt;> container/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']/@subNodeMappings[name='Focus%20All%20EAttribute']/@style" attributeName="iconPath" value="/org.polarsys.kitalpha.ecore.diagram/icons/styles/ESupperAttribute.png"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']/@subNodeMappings[name='Focus%20All%20EOperation']/@style" attributeName="iconPath" value="/org.polarsys.kitalpha.ecore.diagram/icons/styles/ESuperOperation.png"/>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.ecore.diagram.service.HideRevealToolsService"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.ecore.diagram.service.EcoreService"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.ecore.diagram.service.EcoreActionsServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.ecore.diagram.service.ShowService"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="Migration Palette">
+    <entries xsi:type="description:UserFixedColor" red="0" green="100" blue="255" name="DerivedEReferencesColor"/>
+  </userColorsPalettes>
+</description:Group>

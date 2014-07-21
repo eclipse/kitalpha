@@ -1,0 +1,25 @@
+		delete_tool = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE.createDeleteElementDescription();
+		delete_tool.setName(tool_name+"_ID");
+		delete_tool.setLabel(tool_name);
+		
+		element_del_var = ToolFactory.eINSTANCE.createElementDeleteVariable();
+		element_del_var.setName("element");
+		
+		EObject doEdgeMapping = GenerationUtil.getDoremiElement(associated_mapping);
+		((DiagramElementMapping)doEdgeMapping).setDeletionDescription(delete_tool);
+		
+		elementView_del_var = ToolFactory.eINSTANCE.createElementDeleteVariable();
+		elementView_del_var.setName("elementView");
+		
+		containerView_del_var = ToolFactory.eINSTANCE.createContainerViewVariable();
+		containerView_del_var.setName("containerView");
+		
+		initial_operation = ToolFactory.eINSTANCE.createInitialOperation();
+		
+		delete_tool.setContainerView(containerView_del_var);
+		delete_tool.setElement(element_del_var);
+		delete_tool.setElementView(elementView_del_var);
+		delete_tool.setInitialOperation(initial_operation);
+		
+		dslvpToolElement = parameter;
+		abstractToolDescription = delete_tool;

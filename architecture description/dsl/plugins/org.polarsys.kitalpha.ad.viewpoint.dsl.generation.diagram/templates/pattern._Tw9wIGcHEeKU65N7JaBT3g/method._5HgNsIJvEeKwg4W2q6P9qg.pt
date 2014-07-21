@@ -1,0 +1,19 @@
+//NodeMapping mapping = parameter.getImports();
+
+boolean inheritSemanticCandidatesExpression = false;
+		
+if (inm.getSemanticCandidatesExpression() == null) {
+	inheritSemanticCandidatesExpression = true;
+}
+else
+{
+	if (inm.getSemanticCandidatesExpression().trim().length() == 0)
+	{
+		inheritSemanticCandidatesExpression = true;
+	}
+}
+		
+if (inheritSemanticCandidatesExpression)
+{
+	inm.setSemanticCandidatesExpression(mapping.getSemanticCandidatesExpression());
+}

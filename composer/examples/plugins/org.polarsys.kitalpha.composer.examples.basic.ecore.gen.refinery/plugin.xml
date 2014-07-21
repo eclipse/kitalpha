@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.composer.allocation.refineries">
+      <refinery
+            Class="org.polarsys.kitalpha.composer.examples.basic.ecore.gen.refinery.EmptyRefinery"
+            Description="This refinery does nothing."
+            Id="org.polarsys.kitalpha.composer.examples.basic.ecore.gen.refinery"
+            Name="Ecore Refinery"
+            NsUri="http://org.polarsys.kitalpha/composer/example/basicusecase/ecorebasicalloc/1.0.0">
+      </refinery>
+   </extension>
+
+</plugin>

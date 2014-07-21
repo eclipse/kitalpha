@@ -1,0 +1,6 @@
+<%if (genPackage.isExtensibleProviderFactory()) {%>
+		for (AdapterFactory extendedAdapterFactory : <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance().getExtendedModelAdapterFactories(<%=genPackage.getImportedItemProviderAdapterFactoryClassName()%>.class.getName())) {
+			adapterFactory.addAdapterFactory(extendedAdapterFactory);
+		}
+<%}%>
+		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());

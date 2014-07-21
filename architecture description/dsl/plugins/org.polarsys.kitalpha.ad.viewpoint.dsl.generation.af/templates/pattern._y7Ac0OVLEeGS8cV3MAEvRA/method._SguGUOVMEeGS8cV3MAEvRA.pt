@@ -1,0 +1,2 @@
+<%packageName = (String) ctx.getValue(AfConstants.CONTRACT_PROJECT_NAME)+".businessrules";
+packageName = JDTUtility.getValidPackageName(packageName);%> 
