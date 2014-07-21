@@ -1,4 +1,4 @@
-//Generated on Wed Jul 02 09:29:35 CEST 2014 with EGF 1.2.0.v20140617-0643
+//Generated on Mon Jul 21 18:35:10 CEST 2014 with EGF 1.1.0.v20140528-0645
 package org.polarsys.kitalpha.releng;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,9 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.build.hudson.additions.Publisherartifacts {
+public class ExcludepublishPattern
+		extends
+		org.eclipse.egf.portfolio.eclipse.build.hudson.additions.Publisherartifacts {
 	protected static String nl;
 
 	public static synchronized ExcludepublishPattern create(String lineSeparator) {
@@ -18,8 +20,13 @@ public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.bui
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "    <hudson.tasks.ArtifactArchiver>" + NL + "      <artifacts>result/publish/**</artifacts>" + NL + "      " + NL + "      <excludes>result/publish/TP_*/**/*</excludes>" + NL + "      <latestOnly>false</latestOnly>" + NL + "    </hudson.tasks.ArtifactArchiver>" + NL;
+	public final String NL = nl == null ? (System.getProperties()
+			.getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "    <hudson.tasks.ArtifactArchiver>" + NL
+			+ "      <artifacts>result/publish/**</artifacts>" + NL + "      "
+			+ NL + "      <excludes>result/publish/TP_*/**/*</excludes>" + NL
+			+ "      <latestOnly>false</latestOnly>" + NL
+			+ "    </hudson.tasks.ArtifactArchiver>" + NL;
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -39,9 +46,12 @@ public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.bui
 		IQuery.ParameterDescription paramDesc = null;
 		Node.Container currentNode = ctx.getNode();
 
-		paramDesc = new IQuery.ParameterDescription("job", "http://www.eclipse.org/egf/1.0.1/buildcore#//Job");
+		paramDesc = new IQuery.ParameterDescription("job",
+				"http://www.eclipse.org/egf/1.0.1/buildcore#//Job");
 		queryCtx = new HashMap<String, String>();
-		List<Object> jobList = QueryHelper.load(ctx, "org.eclipse.egf.pattern.query.EObjectInjectedContextQuery").execute(paramDesc, queryCtx, ctx);
+		List<Object> jobList = QueryHelper.load(ctx,
+				"org.eclipse.egf.pattern.query.EObjectInjectedContextQuery")
+				.execute(paramDesc, queryCtx, ctx);
 
 		for (Object jobParameter : jobList) {
 
@@ -55,7 +65,8 @@ public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.bui
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(
+					OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_2);
@@ -73,7 +84,8 @@ public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.bui
 			parameterValues.put("job", this.job);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
+					parameterValues);
 		}
 		return null;
 	}
@@ -84,10 +96,12 @@ public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.bui
 		return parameters;
 	}
 
-	protected void method_body(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+	protected void method_body(final StringBuffer stringBuffer,
+			final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "body", stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "body",
+				stringBuffer.toString());
 	}
 }
