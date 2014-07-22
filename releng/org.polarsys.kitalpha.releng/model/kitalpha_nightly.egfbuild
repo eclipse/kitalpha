@@ -144,7 +144,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_DfwmUECvEeOkCsna5l9rlg" id="org.polarsys.kitalpha.common.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_GzpY8ECvEeOkCsna5l9rlg" component="_DfwmUECvEeOkCsna5l9rlg"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_btE9AI5uEeORY9jpJq94Og" name="common feature" id="TP_juno" profile="SDKProfile" resultSteps="_GzpY8ECvEeOkCsna5l9rlg"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_btE9AI5uEeORY9jpJq94Og" name="common feature" id="TP_juno" profile="SDKProfile" resultSteps="_GzpY8ECvEeOkCsna5l9rlg" installResultStepsSourceFeatures="true"/>
     <scms xsi:type="buildscm:GIT" xmi:id="_QHSrIf1HEeONEpLzC2FMiA">
       <locations xmi:id="_Qp9TUP1HEeONEpLzC2FMiA" url="localhost:8080/kitalpha" username="admin" password="bZYSAf13neRD"/>
     </scms>
@@ -157,25 +157,22 @@
       <components xsi:type="buildstep:Feature" xmi:id="_XG_igKRCEeOdPJBpl-8efw" id="org.polarsys.kitalpha.accuracy.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_dAuWAKRCEeOdPJBpl-8efw" component="_XG_igKRCEeOdPJBpl-8efw"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_ffSqMKRCEeOdPJBpl-8efw" name="accuracy feature" id="TP_juno" profile="SDKProfile" resultSteps="_dAuWAKRCEeOdPJBpl-8efw"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_ffSqMKRCEeOdPJBpl-8efw" name="accuracy feature" id="TP_juno" profile="SDKProfile" resultSteps="_dAuWAKRCEeOdPJBpl-8efw" installResultStepsSourceFeatures="true"/>
     <scms xsi:type="buildscm:GIT" xmi:id="_KK0x0f35EeOAVuD-0y5mBw">
       <locations xmi:id="_KK0x0v35EeOAVuD-0y5mBw" url="localhost:8080/kitalpha" username="admin" password="bZYSAf13neRD"/>
     </scms>
   </jobs>
-  <jobs xmi:id="_WrFHIC9VEeOlq-9ObYy--w" name="resourcereuse" enabled="false">
+  <jobs xmi:id="_WrFHIC9VEeOlq-9ObYy--w" name="resourcereuse">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_e9aJsC9VEeOlq-9ObYy--w" name="resourcereuse">
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_mUu8kC9VEeOlq-9ObYy--w" svnLocation="_ggpeES9VEeOlq-9ObYy--w" folderName="plugins"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_sYTokC9VEeOlq-9ObYy--w" svnLocation="_ggpeES9VEeOlq-9ObYy--w" folderName="features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIBGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resourcereuse/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIRGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resourcereuse/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Yk0yoI5uEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_yRm-QC9VEeOlq-9ObYy--w" id="org.polarsys.kitalpha.resourcereuse.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_00UyoC9VEeOlq-9ObYy--w" id="org.polarsys.kitalpha.resourcereuse.ui.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_5zqacC9VEeOlq-9ObYy--w" component="_00UyoC9VEeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_3JfTMC9VEeOlq-9ObYy--w" component="_yRm-QC9VEeOlq-9ObYy--w"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" id="TP_juno" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_ggpeEC9VEeOlq-9ObYy--w">
-      <locations xmi:id="_ggpeES9VEeOlq-9ObYy--w" protocol="svn+ssh://" url="svn.thalesforge.corp.thales/svnroot/omf-kitalpha/${main_version}/resource reuse" localPath="svn"/>
-    </scms>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" id="TP_juno" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_cOYZ4J7uEeOjCb9D2yIVHQ" name="cadence" enabled="false">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_fnRBQJ7uEeOjCb9D2yIVHQ">
