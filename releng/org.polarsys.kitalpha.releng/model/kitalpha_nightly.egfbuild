@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="ASCII"?>
 <buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildfile="http://www.eclipse.org/egf/1.0.0/buildfile" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_Nightly">
   <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
-    <properties xmi:id="_kt6SMEE8EeOcseK798bpbA" key="egf.repo.url" value="http://ci.orchestra.ors.services.thales/job/MDK_4.0/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.sdk/site.p2"/>
-    <properties xmi:id="_sGeM8YiQEeGw1JGlbsaTnw" key="ma_download_url" value="http://ci.orchestra.ors.services.thales/job/Melody_Advance_Product_Latest/lastSuccessfulBuild/artifact/result/publish/MelodyAdvance-updateSite-src.zip"/>
+    <properties xmi:id="_kt6SMEE8EeOcseK798bpbA" key="egf.repo.url" value="https://hudson.eclipse.org/hudson/job/buckminster-egf-juno/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.sdk/site.p2/"/>
     <properties xmi:id="_MWwdkPlvEeCFCIE_fWd_VQ" key="cloudsmith.download.prefix" value="http://download.eclipse.org/external/"/>
     <properties xmi:id="_MlqcQPlvEeCFCIE_fWd_VQ" key="polarion.download.prefix" value="http://download.eclipse.org/external/"/>
     <properties xmi:id="_LPrgwPlvEeCFCIE_fWd_VQ" key="eclipse.download.prefix" value="http://download.eclipse.org/"/>
     <properties xmi:id="_p3huoPmBEeCFCIE_fWd_VQ" key="plugin.repo.prefix" value="http://svn.orchestra.ors.services.thales/plugins_repo/trunk"/>
     <properties xmi:id="_C7QgkHs6EeKM-JnMHzahcg" key="plugin.repo.path" value="${plugin.repo.prefix}/MDE/${plugin.repo.version}"/>
-    <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="http://svn.orchestra.ors.services.thales/plugins_repo/trunk/MDE/latest/sirius/1.0.0.RC2"/>
+    <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="http://download.eclipse.org/sirius/updates/stable/1.0.0-S20140310-091449/juno/"/>
     <properties xmi:id="_n0G4oJPyEeODqo9Nw0Mw6Q" key="orbit.repo.url" value="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
     <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="http://download.eclipse.org/eclipse/updates/3.8/"/>
   </propertyPackages>
@@ -27,12 +26,10 @@
       <productNames>org.eclipse.sdk.ide</productNames>
     </steps>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_whSTII5rEeORY9jpJq94Og" name="install cots features" id="TP_juno" profile="SDKProfile">
-      <updateSiteUrls>${plugin.repo.path}/acceleo/3.4.1</updateSiteUrls>
       <updateSiteUrls>${egf.repo.url}</updateSiteUrls>
       <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
       <updateSiteUrls>${orbit.repo.url}</updateSiteUrls>
       <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
-      <updateSiteUrls>${plugin.repo.path}/eef/1.3</updateSiteUrls>
       <featureNames>org.eclipse.uml2.sdk</featureNames>
       <featureNames>org.eclipse.emf.eef.sdk-feature</featureNames>
       <featureNames>org.eclipse.acceleo.sdk</featureNames>
@@ -103,9 +100,9 @@
       <featureNames>org.eclipse.acceleo</featureNames>
     </steps>
     <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
-      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" url="localhost:8080/kitalpha" username="admin" password="bZYSAf13neRD"/>
+      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" username="" password=""/>
     </scms>
-    <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="http://192.168.0.20:8081" userDeployJobName="">
+    <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="https://www.polarsys.org/kitalpha/hudson/" userDeployJobName="">
       <users xmi:id="_L3dmIPqoEeKFaurHIkYR0w" login="T0136269" permission="WRITE"/>
       <users xmi:id="_-GeMIPtPEeKPbphZ8y4wCw" login="melody_super_admin" permission="WRITE"/>
       <users xmi:id="_bgkTYC8pEeOKqMcF9LOVig" login="S0020807" permission="WRITE"/>
