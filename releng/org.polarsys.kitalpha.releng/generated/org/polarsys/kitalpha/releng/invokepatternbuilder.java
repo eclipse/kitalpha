@@ -1,4 +1,4 @@
-//Generated on Mon Jul 21 18:35:10 CEST 2014 with EGF 1.1.0.v20140528-0645
+//Generated on Tue Jul 22 09:19:51 CEST 2014 with EGF 1.1.0.v20140528-0645
 package org.polarsys.kitalpha.releng;
 
 import org.eclipse.egf.common.helper.*;

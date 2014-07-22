@@ -10,6 +10,8 @@
     <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="http://download.eclipse.org/sirius/updates/stable/1.0.0-S20140310-091449/juno/"/>
     <properties xmi:id="_n0G4oJPyEeODqo9Nw0Mw6Q" key="orbit.repo.url" value="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
     <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="http://download.eclipse.org/eclipse/updates/3.8/"/>
+    <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="http://download.eclipse.org/modeling/emft/eef/updates/releases/1.3"/>
+    <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="http://download.eclipse.org/acceleo/updates/releases/3.4"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="juno"/>
@@ -30,6 +32,8 @@
       <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
       <updateSiteUrls>${orbit.repo.url}</updateSiteUrls>
       <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+      <updateSiteUrls>${eef.repo.url}</updateSiteUrls>
+      <updateSiteUrls>${acceleo.repo.url}</updateSiteUrls>
       <featureNames>org.eclipse.uml2.sdk</featureNames>
       <featureNames>org.eclipse.emf.eef.sdk-feature</featureNames>
       <featureNames>org.eclipse.acceleo.sdk</featureNames>
@@ -103,14 +107,9 @@
       <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" username="" password=""/>
     </scms>
     <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="https://www.polarsys.org/kitalpha/hudson/" userDeployJobName="">
-      <users xmi:id="_L3dmIPqoEeKFaurHIkYR0w" login="T0136269" permission="WRITE"/>
-      <users xmi:id="_-GeMIPtPEeKPbphZ8y4wCw" login="melody_super_admin" permission="WRITE"/>
-      <users xmi:id="_bgkTYC8pEeOKqMcF9LOVig" login="S0020807" permission="WRITE"/>
-      <users xmi:id="_ucKUMH7JEeOkCccPIIQ2Yw" login="s0036038" permission="WRITE"/>
-      <users xmi:id="_uSOs0YNCEeO4K7leE9IQQw" login="T0025113" permission="WRITE"/>
-      <users xmi:id="_8MIb4INCEeO4K7leE9IQQw" login="S0045853" permission="WRITE"/>
+      <users xmi:id="_8MIb4INCEeO4K7leE9IQQw" login="thomas.guiu@soyatec.com" permission="WRITE"/>
       <triggers xsi:type="builddeploy:SCMTrigger" xmi:id="_PkkxEAYrEeGvu-Y1KM--ag"/>
-      <triggers xsi:type="builddeploy:CronTrigger" xmi:id="_AmyRsQ8MEeKIuPgeX8UkeA" planning="* * * * *"/>
+      <triggers xsi:type="builddeploy:CronTrigger" xmi:id="_AmyRsQ8MEeKIuPgeX8UkeA" planning="* * * * 5"/>
       <generationLocation xsi:type="buildscm:GITGenerationLocation" xmi:id="_UkTtQPx8EeO7zY3f-pIrjg" folderName="releng/org.polarsys.kitalpha.releng/jobs" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg"/>
     </deployment>
   </jobs>
