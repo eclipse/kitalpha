@@ -164,8 +164,8 @@
   </jobs>
   <jobs xmi:id="_WrFHIC9VEeOlq-9ObYy--w" name="resourcereuse">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_e9aJsC9VEeOlq-9ObYy--w" name="resourcereuse">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIBGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resourcereuse/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIRGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resourcereuse/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIBGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resource reuse/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIRGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resource reuse/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Yk0yoI5uEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_yRm-QC9VEeOlq-9ObYy--w" id="org.polarsys.kitalpha.resourcereuse.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_00UyoC9VEeOlq-9ObYy--w" id="org.polarsys.kitalpha.resourcereuse.ui.feature"/>
