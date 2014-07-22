@@ -174,25 +174,22 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_3JfTMC9VEeOlq-9ObYy--w" component="_yRm-QC9VEeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" id="TP_juno" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_cOYZ4J7uEeOjCb9D2yIVHQ" name="cadence" enabled="false">
+  <jobs xmi:id="_cOYZ4J7uEeOjCb9D2yIVHQ" name="cadence">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_fnRBQJ7uEeOjCb9D2yIVHQ">
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_ldM54J7uEeOjCb9D2yIVHQ" suffix="" svnLocation="_JOX3MJ7vEeOjCb9D2yIVHQ" folderName="features"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_m_J00J7uEeOjCb9D2yIVHQ" svnLocation="_JOX3MJ7vEeOjCb9D2yIVHQ" folderName="plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIBGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="cadence/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIRGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="cadence/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_JOYE8J70EeOjCb9D2yIVHQ" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_oZEOEJ7uEeOjCb9D2yIVHQ" id="org.polarsys.kitalpha.cadence.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_peSJsJ7uEeOjCb9D2yIVHQ" name="" component="_oZEOEJ7uEeOjCb9D2yIVHQ"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_rK9G4J7uEeOjCb9D2yIVHQ" name="cadence feature" id="TP_juno" profile="SDKProfile" resultSteps="_peSJsJ7uEeOjCb9D2yIVHQ"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_HXlUsJ7vEeOjCb9D2yIVHQ">
-      <locations xmi:id="_JOX3MJ7vEeOjCb9D2yIVHQ" protocol="svn+ssh://" url="svn.thalesforge.corp.thales/svnroot/omf-kitalpha/${main_version}/cadence" localPath="svn"/>
-    </scms>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_rK9G4J7uEeOjCb9D2yIVHQ" name="cadence feature" id="TP_juno" profile="SDKProfile" resultSteps="_peSJsJ7uEeOjCb9D2yIVHQ" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_RKKqAC9aEeOlq-9ObYy--w" name="report" enabled="false">
+  <jobs xmi:id="_RKKqAC9aEeOlq-9ObYy--w" name="report">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_RKKqAi9aEeOlq-9ObYy--w" name="report">
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_RKKqAy9aEeOlq-9ObYy--w" svnLocation="_RKKqCy9aEeOlq-9ObYy--w" folderName="plugins"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_RKKqBC9aEeOlq-9ObYy--w" svnLocation="_RKKqCy9aEeOlq-9ObYy--w" folderName="features"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_lKjK8C9hEeOlq-9ObYy--w" svnLocation="_RKKqCy9aEeOlq-9ObYy--w" folderName="examples/plugins"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_lKjK8S9hEeOlq-9ObYy--w" svnLocation="_RKKqCy9aEeOlq-9ObYy--w" folderName="examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_5dxLYBGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="report/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_5dxLYRGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="report/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Eiy_EBGREeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="report/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Eiy_ERGREeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="report/examples/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_6ma90I5wEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_RKKqBi9aEeOlq-9ObYy--w" id="org.polarsys.kitalpha.report.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_RKKqBy9aEeOlq-9ObYy--w" id="org.polarsys.kitalpha.report.ui.feature"/>
@@ -201,10 +198,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_soSH0C9hEeOlq-9ObYy--w" component="_phDRIC9hEeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_RKKqCC9aEeOlq-9ObYy--w" component="_RKKqBy9aEeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_RKKqCS9aEeOlq-9ObYy--w" component="_RKKqBi9aEeOlq-9ObYy--w"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_BhkyEI5xEeORY9jpJq94Og" name="report feature" id="TP_juno" profile="SDKProfile" resultSteps="_soSH0C9hEeOlq-9ObYy--w _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_RKKqCi9aEeOlq-9ObYy--w">
-      <locations xmi:id="_RKKqCy9aEeOlq-9ObYy--w" protocol="svn+ssh://" url="svn.thalesforge.corp.thales/svnroot/omf-kitalpha/${main_version}/report" localPath="svn"/>
-    </scms>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_BhkyEI5xEeORY9jpJq94Og" name="report feature" id="TP_juno" profile="SDKProfile" resultSteps="_soSH0C9hEeOlq-9ObYy--w _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_5pBbMLduEd-fpYD9HydZOw" name="emde" enabled="false">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_k3gzwLdxEd-fpYD9HydZOw" name="emde">
