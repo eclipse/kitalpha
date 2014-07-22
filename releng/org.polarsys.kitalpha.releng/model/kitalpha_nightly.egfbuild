@@ -200,12 +200,12 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_RKKqCS9aEeOlq-9ObYy--w" component="_RKKqBi9aEeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_BhkyEI5xEeORY9jpJq94Og" name="report feature" id="TP_juno" profile="SDKProfile" resultSteps="_soSH0C9hEeOlq-9ObYy--w _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_5pBbMLduEd-fpYD9HydZOw" name="emde" enabled="false">
+  <jobs xmi:id="_5pBbMLduEd-fpYD9HydZOw" name="emde">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_k3gzwLdxEd-fpYD9HydZOw" name="emde">
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_lTiBYLdxEd-fpYD9HydZOw" suffix="" svnLocation="_eXfcULdxEd-fpYD9HydZOw" folderName="plugins"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_scYTYLdxEd-fpYD9HydZOw" suffix="" svnLocation="_eXfcULdxEd-fpYD9HydZOw" folderName="features"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_3RqVYbtXEd-GFvRlyJMgsw" suffix="" svnLocation="_eXfcULdxEd-fpYD9HydZOw" folderName="examples/plugins"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_7_wbYC9REeOlq-9ObYy--w" suffix="" svnLocation="_eXfcULdxEd-fpYD9HydZOw" folderName="examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cBGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="emde/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cRGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="emde/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7chGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="emde/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cxGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="emde/examples/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_8UlIwI5wEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_JqJIkLtYEd-GFvRlyJMgsw" id="org.polarsys.kitalpha.emde.ui.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_Vj3kQC9REeOlq-9ObYy--w" id="org.polarsys.kitalpha.emde.feature"/>
@@ -224,36 +224,27 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_1g4HoC_6EeOlq-9ObYy--w" component="_vCK-0C_6EeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_jq8bIDTMEeOTLJ9sjzkh8g" component="_gXftYDTMEeOTLJ9sjzkh8g"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_yWFRMDY9EeOP8MSofnrGNA" component="_wH7XkDY9EeOP8MSofnrGNA"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_C9QF4I5xEeORY9jpJq94Og" name="emde feature" id="TP_juno" profile="SDKProfile" resultSteps="_0Vn1cC_6EeOlq-9ObYy--w _jQTkcC9kEeOlq-9ObYy--w _1g4HoC_6EeOlq-9ObYy--w _1GyzsC_6EeOlq-9ObYy--w _Y3BXEC9REeOlq-9ObYy--w _jq8bIDTMEeOTLJ9sjzkh8g _yWFRMDY9EeOP8MSofnrGNA _LcwVsLtYEd-GFvRlyJMgsw"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_bFijYLdxEd-fpYD9HydZOw">
-      <locations xmi:id="_eXfcULdxEd-fpYD9HydZOw" protocol="svn+ssh://" url="svn.thalesforge.corp.thales/svnroot/omf-kitalpha/${main_version}/emde" localPath="svn"/>
-    </scms>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_C9QF4I5xEeORY9jpJq94Og" name="emde feature" id="TP_juno" profile="SDKProfile" resultSteps="_0Vn1cC_6EeOlq-9ObYy--w _jQTkcC9kEeOlq-9ObYy--w _1g4HoC_6EeOlq-9ObYy--w _1GyzsC_6EeOlq-9ObYy--w _Y3BXEC9REeOlq-9ObYy--w _jq8bIDTMEeOTLJ9sjzkh8g _yWFRMDY9EeOP8MSofnrGNA _LcwVsLtYEd-GFvRlyJMgsw" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_vjsowJ7uEeOjCb9D2yIVHQ" name="composer" enabled="false">
+  <jobs xmi:id="_vjsowJ7uEeOjCb9D2yIVHQ" name="composer">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_vjsowZ7uEeOjCb9D2yIVHQ">
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_vjsowp7uEeOjCb9D2yIVHQ" svnLocation="_PUFRMZ7vEeOjCb9D2yIVHQ" folderName="features"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_vjsow57uEeOjCb9D2yIVHQ" svnLocation="_PUFRMZ7vEeOjCb9D2yIVHQ" folderName="plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tkRbkBGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="composer/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tkRbkRGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="composer/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_JoktoJ70EeOjCb9D2yIVHQ" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_vjsoxJ7uEeOjCb9D2yIVHQ" id="org.polarsys.kitalpha.composer.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_vjsoxZ7uEeOjCb9D2yIVHQ" name="" component="_vjsoxJ7uEeOjCb9D2yIVHQ"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_vjsoxp7uEeOjCb9D2yIVHQ" name="composer feature" id="TP_juno" profile="SDKProfile" resultSteps="_vjsoxZ7uEeOjCb9D2yIVHQ"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_PUFRMJ7vEeOjCb9D2yIVHQ">
-      <locations xmi:id="_PUFRMZ7vEeOjCb9D2yIVHQ" protocol="svn+ssh://" url="svn.thalesforge.corp.thales/svnroot/omf-kitalpha/${main_version}/composer" localPath="svn"/>
-    </scms>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_vjsoxp7uEeOjCb9D2yIVHQ" name="composer feature" id="TP_juno" profile="SDKProfile" resultSteps="_vjsoxZ7uEeOjCb9D2yIVHQ" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_x7ip4J7uEeOjCb9D2yIVHQ" name="transposer" enabled="false">
+  <jobs xmi:id="_x7ip4J7uEeOjCb9D2yIVHQ" name="transposer">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_x7ip4Z7uEeOjCb9D2yIVHQ">
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_x7ip4p7uEeOjCb9D2yIVHQ" svnLocation="_Pm_mIZ7vEeOjCb9D2yIVHQ" folderName="features"/>
-      <buildLocations xsi:type="buildscm:SVNBuildLocation" xmi:id="_x7ip457uEeOjCb9D2yIVHQ" svnLocation="_Pm_mIZ7vEeOjCb9D2yIVHQ" folderName="plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uRKWwBGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="transposer/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uRKWwRGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="transposer/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_KDXzQJ70EeOjCb9D2yIVHQ" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_x7ip5J7uEeOjCb9D2yIVHQ" id="org.polarsys.kitalpha.transposer.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_x7ip5Z7uEeOjCb9D2yIVHQ" name="" component="_x7ip5J7uEeOjCb9D2yIVHQ"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_x7ip5p7uEeOjCb9D2yIVHQ" name="transposer feature" id="TP_juno" profile="SDKProfile" resultSteps="_x7ip5Z7uEeOjCb9D2yIVHQ"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_Pm_mIJ7vEeOjCb9D2yIVHQ">
-      <locations xmi:id="_Pm_mIZ7vEeOjCb9D2yIVHQ" protocol="svn+ssh://" url="svn.thalesforge.corp.thales/svnroot/omf-kitalpha/${main_version}/transposer" localPath="svn"/>
-    </scms>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_x7ip5p7uEeOjCb9D2yIVHQ" name="transposer feature" id="TP_juno" profile="SDKProfile" resultSteps="_x7ip5Z7uEeOjCb9D2yIVHQ" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad" enabled="false">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
