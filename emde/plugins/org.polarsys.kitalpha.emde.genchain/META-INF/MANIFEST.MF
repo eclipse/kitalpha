@@ -16,4 +16,5 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: emde.genchain.extension,
- org.polarsys.kitalpha.emde.genchain
+ org.polarsys.kitalpha.emde.genchain,
+ org.polarsys.kitalpha.emde.genchain.utils
