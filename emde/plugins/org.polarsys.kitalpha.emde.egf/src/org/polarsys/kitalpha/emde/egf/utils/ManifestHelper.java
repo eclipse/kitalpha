@@ -154,6 +154,7 @@ public abstract class ManifestHelper {
 		@Override
 		protected List<String> getRequiredPlugins() {
 			List<String> additions = new ArrayList<String>();
+			additions.addAll(genModel.getEditorPluginVariables());
 			additions.add("org.eclipse.emf.ecore.edit"); //$NON-NLS-1$
 			additions.add("org.eclipse.emf.ecore.editor"); //$NON-NLS-1$
 			additions.add("org.polarsys.kitalpha.emde.ui"); //$NON-NLS-1$
@@ -175,7 +176,7 @@ public abstract class ManifestHelper {
 		@Override
 		protected List<String> getRequiredPlugins() {
 			List<String> additions = new ArrayList<String>();
-
+			additions.addAll(genModel.getEditPluginVariables());
 			additions.add("org.polarsys.kitalpha.emde"); //$NON-NLS-1$
 			for (GenPackage genPackage : genModel.getGenPackages()) {
 				if (genPackage.isChildCreationExtenders() == false) {
@@ -212,6 +213,8 @@ public abstract class ManifestHelper {
 		@Override
 		protected List<String> getRequiredPlugins() {
 			List<String> additions = new ArrayList<String>();
+			additions.addAll(genModel.getModelPluginVariables());
+			
 			if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
 				additions.add("org.polarsys.kitalpha.emde.xmi"); //$NON-NLS-1$
 			}
