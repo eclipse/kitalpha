@@ -50,5 +50,6 @@
 	key: "key1" value: "value1"&#13;
 }&#13;
 </template>
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.kw_import" deleted="false" description="Import External Model" enabled="true" id="8" name="Import external">import external ${cursor}</template>
 
 </templates>

@@ -265,24 +265,24 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 			}
 			if (output.get(key) instanceof UserInterface) {
 				viewpoint.getVP_Aspects().add(((UserInterface) output.get(key)).getUiDescription());
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeUIKeyword_9_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeUIKeyword_13_0_0().getValue());
 			}
 			if (output.get(key) instanceof Diagrams) {
 				viewpoint.getVP_Aspects().add(((Diagrams) output.get(key)).getDiagrams());
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeDiagramsKeyword_10_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeDiagramsKeyword_14_0_0().getValue());
 			}
 			if (output.get(key) instanceof Services) {
 				viewpoint.getVP_Aspects().add(((Services) output.get(key)).getServices().get(0));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeServicesKeyword_11_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeServicesKeyword_15_0_0().getValue());
 			}
 			if (output.get(key) instanceof Configuration) {
 				viewpoint.getVP_Aspects().add((Configuration) output.get(key));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeConfigurationKeyword_13_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeConfigurationKeyword_17_0_0().getValue());
 			}
 			if (output.get(key) instanceof Build) {
 				//A remettre des que la migration du model vpbuild.
 				viewpoint.getVP_Aspects().add((Build) output.get(key));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeBuildKeyword_12_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeBuildKeyword_16_0_0().getValue());
 			}
 		}
 		return viewpoint;

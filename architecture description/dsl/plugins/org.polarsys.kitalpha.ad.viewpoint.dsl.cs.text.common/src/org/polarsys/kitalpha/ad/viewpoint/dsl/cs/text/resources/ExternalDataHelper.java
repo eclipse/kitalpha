@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
@@ -26,7 +27,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.MetamodelIDs;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 
 import com.google.common.collect.Lists;
 
@@ -172,8 +175,13 @@ public class ExternalDataHelper {
 			return resourceSet.getPackageRegistry().getEPackage(resourceOrNsURI);
 		URI uri = URI.createURI(resourceOrNsURI);
 		try {
-			if ("http".equalsIgnoreCase(uri.scheme()))
-				return null;
+			if ("http".equalsIgnoreCase(uri.scheme())){
+				DataWorkspaceEPackage.INSTANCE.initializeDataWorkspaceRegistry(ResourcesPlugin.getWorkspace());
+				EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE.getEPackage(uri.toString());
+				EcoreUtil.resolveAll(ecoreModel);
+				//resourceSet.getResources().add(ecoreModel.eResource());
+				return ecoreModel;
+			}
 			if (uri.fragment() == null) {
 				Resource resource = resourceSet.getResource(uri, true);
 				if (resource.getContents().isEmpty())

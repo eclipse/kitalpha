@@ -40,6 +40,10 @@ public class VpspecSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         description=EString? 
 	 *         (parents+=[Viewpoint|FQN] parents+=[Viewpoint|FQN]*)? 
 	 *         (dependencies+=[Viewpoint|FQN] dependencies+=[Viewpoint|FQN]*)? 
+	 *         (useViewpoint+=[Viewpoint|FQN] useViewpoint+=[Viewpoint|FQN]*)? 
+	 *         (useEcoreResource+=EString useResource+=EString*)? 
+	 *         (useDiagramResource+=EString useResource+=EString*)? 
+	 *         (useEMFResource+=EString useResource+=EString*)? 
 	 *         VP_Data=[Data|FQN]? 
 	 *         (type+='UI' VP_Aspects+=[UIDescription|FQN])? 
 	 *         (type+='Diagrams' VP_Aspects+=[DiagramSet|FQN])? 

@@ -31,7 +31,8 @@ public class VpdiagramFormatter extends AbstractDeclarativeFormatter {
 		c.setAutoLinewrap(160);
 		
 		//Line wrap before import
-		c.setLinewrap(1).before(f.getImportAccess().getImportKeyword_0());
+		c.setLinewrap(1).before(f.getImportGroupAccess().getImportKeyword_0());
+		c.setLinewrap(1).before(f.getImportNameSpaceAccess().getImportKeyword_0());
 		
 		
 		//Line wrap before Diagrams

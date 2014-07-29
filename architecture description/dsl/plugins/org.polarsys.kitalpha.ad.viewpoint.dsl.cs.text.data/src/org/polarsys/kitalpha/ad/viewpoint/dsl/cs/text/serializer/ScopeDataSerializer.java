@@ -23,6 +23,7 @@ import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.tokens.CrossReferenceSerializer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
 
 import com.google.common.collect.Iterables;
@@ -60,7 +61,10 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 			String importURI = ePackage.getNsURI();
 			QualifiedName packageNsURI = QualifiedName.create(importURI);
 			URI nsURI = URI.createURI(packageNsURI.toString());
-			EPackage ecoreModel = EPackageRegistryImpl.INSTANCE
+//			EPackage ecoreModel = EPackageRegistryImpl.INSTANCE
+//					.getEPackage(nsURI.toString());
+			//Call workspace Registry. This registry delegates to EMF registry when the EPackage is not found
+			EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE
 					.getEPackage(nsURI.toString());
 			if (ecoreModel != null) {
 				 EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), semanticObject.eResource().getResourceSet());

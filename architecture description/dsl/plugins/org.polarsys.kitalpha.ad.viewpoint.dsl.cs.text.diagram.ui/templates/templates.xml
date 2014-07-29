@@ -166,5 +166,6 @@ BorderedNode borderedNodeName {&#13;
 }&#13;
 </template>
 
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.kw_import" deleted="false" description="Import External Representation" enabled="true" id="15" name="Import external">import external ${cursor}</template>
 
 </templates>

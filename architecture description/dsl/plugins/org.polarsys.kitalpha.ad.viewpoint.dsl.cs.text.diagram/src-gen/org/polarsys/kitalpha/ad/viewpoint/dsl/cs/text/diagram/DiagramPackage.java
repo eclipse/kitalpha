@@ -94,14 +94,33 @@ public interface DiagramPackage extends EPackage
   int DIAGRAMS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportImpl <em>Import</em>}' class.
+   * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.AbstractImportImpl <em>Abstract Import</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportImpl
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getImport()
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.AbstractImportImpl
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getAbstractImport()
    * @generated
    */
-  int IMPORT = 1;
+  int ABSTRACT_IMPORT = 1;
+
+  /**
+   * The number of structural features of the '<em>Abstract Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_IMPORT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportNameSpaceImpl <em>Import Name Space</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportNameSpaceImpl
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getImportNameSpace()
+   * @generated
+   */
+  int IMPORT_NAME_SPACE = 2;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -110,16 +129,44 @@ public interface DiagramPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT__IMPORTED_NAMESPACE = 0;
+  int IMPORT_NAME_SPACE__IMPORTED_NAMESPACE = ABSTRACT_IMPORT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Import</em>' class.
+   * The number of structural features of the '<em>Import Name Space</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = 1;
+  int IMPORT_NAME_SPACE_FEATURE_COUNT = ABSTRACT_IMPORT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportGroupImpl <em>Import Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportGroupImpl
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getImportGroup()
+   * @generated
+   */
+  int IMPORT_GROUP = 3;
+
+  /**
+   * The feature id for the '<em><b>Imported Group</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_GROUP__IMPORTED_GROUP = ABSTRACT_IMPORT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Import Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_GROUP_FEATURE_COUNT = ABSTRACT_IMPORT_FEATURE_COUNT + 1;
 
 
   /**
@@ -155,25 +202,56 @@ public interface DiagramPackage extends EPackage
   EReference getDiagrams_Diagrams();
 
   /**
-   * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import <em>Import</em>}'.
+   * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport <em>Abstract Import</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import
+   * @return the meta object for class '<em>Abstract Import</em>'.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport
    * @generated
    */
-  EClass getImport();
+  EClass getAbstractImport();
 
   /**
-   * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace <em>Import Name Space</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import Name Space</em>'.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace
+   * @generated
+   */
+  EClass getImportNameSpace();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Imported Namespace</em>'.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import#getImportedNamespace()
-   * @see #getImport()
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace#getImportedNamespace()
+   * @see #getImportNameSpace()
    * @generated
    */
-  EAttribute getImport_ImportedNamespace();
+  EAttribute getImportNameSpace_ImportedNamespace();
+
+  /**
+   * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup <em>Import Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import Group</em>'.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup
+   * @generated
+   */
+  EClass getImportGroup();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup#getImportedGroup <em>Imported Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imported Group</em>'.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup#getImportedGroup()
+   * @see #getImportGroup()
+   * @generated
+   */
+  EAttribute getImportGroup_ImportedGroup();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -225,14 +303,24 @@ public interface DiagramPackage extends EPackage
     EReference DIAGRAMS__DIAGRAMS = eINSTANCE.getDiagrams_Diagrams();
 
     /**
-     * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportImpl <em>Import</em>}' class.
+     * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.AbstractImportImpl <em>Abstract Import</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportImpl
-     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getImport()
+     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.AbstractImportImpl
+     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getAbstractImport()
      * @generated
      */
-    EClass IMPORT = eINSTANCE.getImport();
+    EClass ABSTRACT_IMPORT = eINSTANCE.getAbstractImport();
+
+    /**
+     * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportNameSpaceImpl <em>Import Name Space</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportNameSpaceImpl
+     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getImportNameSpace()
+     * @generated
+     */
+    EClass IMPORT_NAME_SPACE = eINSTANCE.getImportNameSpace();
 
     /**
      * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
@@ -240,7 +328,25 @@ public interface DiagramPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
+    EAttribute IMPORT_NAME_SPACE__IMPORTED_NAMESPACE = eINSTANCE.getImportNameSpace_ImportedNamespace();
+
+    /**
+     * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportGroupImpl <em>Import Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportGroupImpl
+     * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramPackageImpl#getImportGroup()
+     * @generated
+     */
+    EClass IMPORT_GROUP = eINSTANCE.getImportGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Group</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_GROUP__IMPORTED_GROUP = eINSTANCE.getImportGroup_ImportedGroup();
 
   }
 

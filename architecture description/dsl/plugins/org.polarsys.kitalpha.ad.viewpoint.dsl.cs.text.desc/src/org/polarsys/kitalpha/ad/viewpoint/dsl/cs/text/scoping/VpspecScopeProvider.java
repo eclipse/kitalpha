@@ -17,11 +17,12 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.scoping.impl.FilteringScope;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 
 import com.google.common.base.Predicate;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 
 /**
  * 
@@ -64,6 +65,17 @@ public class VpspecScopeProvider extends AbstractDeclarativeScopeProvider {
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof Aspect || d.getEObjectOrProxy() instanceof Services);
+					}
+				});
+	}
+	
+	IScope scope_Viewpoint_useViewpoint(EObject context, EReference reference){
+		final EObject context2 = context;
+		return new FilteringScope(delegateGetScope(context, reference),
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d) {
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint && 
+								d.getEObjectOrProxy().equals(context2) == false);
 					}
 				});
 	}

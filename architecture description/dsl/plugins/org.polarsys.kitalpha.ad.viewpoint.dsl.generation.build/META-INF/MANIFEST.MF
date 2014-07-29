@@ -30,3 +30,4 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.internal
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.templates,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util
+Import-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.templates

@@ -1435,10 +1435,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:71:7: ( 'Diagrams' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:71:9: 'Diagrams'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:71:7: ( 'external' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:71:9: 'external'
             {
-            match("Diagrams"); 
+            match("external"); 
 
 
             }
@@ -1456,10 +1456,11 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:72:7: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:72:9: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:72:7: ( 'Diagrams' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:72:9: 'Diagrams'
             {
-            match('{'); 
+            match("Diagrams"); 
+
 
             }
 
@@ -1476,10 +1477,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:73:7: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:73:9: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:73:7: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:73:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -1496,11 +1497,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:74:7: ( 'Diagram' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:74:9: 'Diagram'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:74:7: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:74:9: '}'
             {
-            match("Diagram"); 
-
+            match('}'); 
 
             }
 
@@ -1517,10 +1517,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:75:7: ( 'description:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:75:9: 'description:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:75:7: ( 'Diagram' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:75:9: 'Diagram'
             {
-            match("description:"); 
+            match("Diagram"); 
 
 
             }
@@ -1538,10 +1538,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:76:7: ( 'DiagramExtension' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:76:9: 'DiagramExtension'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:76:7: ( 'description:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:76:9: 'description:'
             {
-            match("DiagramExtension"); 
+            match("description:"); 
 
 
             }
@@ -1559,10 +1559,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:77:7: ( 'extended-diagram:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:77:9: 'extended-diagram:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:77:7: ( 'DiagramExtension' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:77:9: 'DiagramExtension'
             {
-            match("extended-diagram:"); 
+            match("DiagramExtension"); 
 
 
             }
@@ -1580,10 +1580,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:78:7: ( 'Mapping' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:78:9: 'Mapping'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:78:7: ( 'extended-diagram:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:78:9: 'extended-diagram:'
             {
-            match("Mapping"); 
+            match("extended-diagram:"); 
 
 
             }
@@ -1601,10 +1601,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:79:7: ( 'Representation' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:79:9: 'Representation'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:79:7: ( 'Mapping' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:79:9: 'Mapping'
             {
-            match("Representation"); 
+            match("Mapping"); 
 
 
             }
@@ -1622,10 +1622,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:80:7: ( 'BeginLabel' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:80:9: 'BeginLabel'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:80:7: ( 'Representation' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:80:9: 'Representation'
             {
-            match("BeginLabel"); 
+            match("Representation"); 
 
 
             }
@@ -1643,10 +1643,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:81:7: ( 'CenterLabel' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:81:9: 'CenterLabel'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:81:7: ( 'BeginLabel' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:81:9: 'BeginLabel'
             {
-            match("CenterLabel"); 
+            match("BeginLabel"); 
 
 
             }
@@ -1664,10 +1664,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:82:7: ( 'EndLabel' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:82:9: 'EndLabel'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:82:7: ( 'CenterLabel' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:82:9: 'CenterLabel'
             {
-            match("EndLabel"); 
+            match("CenterLabel"); 
 
 
             }
@@ -1685,10 +1685,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:83:7: ( 'condition:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:83:9: 'condition:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:83:7: ( 'EndLabel' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:83:9: 'EndLabel'
             {
-            match("condition:"); 
+            match("EndLabel"); 
 
 
             }
@@ -1706,10 +1706,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:84:7: ( 'Style' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:84:9: 'Style'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:84:7: ( 'condition:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:84:9: 'condition:'
             {
-            match("Style"); 
+            match("condition:"); 
 
 
             }
@@ -1727,10 +1727,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:85:7: ( 'line-style:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:85:9: 'line-style:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:85:7: ( 'Style' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:85:9: 'Style'
             {
-            match("line-style:"); 
+            match("Style"); 
 
 
             }
@@ -1748,10 +1748,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:86:7: ( 'begin-decorator:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:86:9: 'begin-decorator:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:86:7: ( 'line-style:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:86:9: 'line-style:'
             {
-            match("begin-decorator:"); 
+            match("line-style:"); 
 
 
             }
@@ -1769,10 +1769,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:87:7: ( 'end-decorator:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:87:9: 'end-decorator:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:87:7: ( 'begin-decorator:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:87:9: 'begin-decorator:'
             {
-            match("end-decorator:"); 
+            match("begin-decorator:"); 
 
 
             }
@@ -1790,10 +1790,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:88:7: ( 'color:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:88:9: 'color:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:88:7: ( 'end-decorator:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:88:9: 'end-decorator:'
             {
-            match("color:"); 
+            match("end-decorator:"); 
 
 
             }
@@ -1811,10 +1811,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:89:7: ( 'Container' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:89:9: 'Container'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:89:7: ( 'color:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:89:9: 'color:'
             {
-            match("Container"); 
+            match("color:"); 
 
 
             }
@@ -1832,10 +1832,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:90:7: ( 'import:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:90:9: 'import:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:90:7: ( 'Container' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:90:9: 'Container'
             {
-            match("import:"); 
+            match("Container"); 
 
 
             }
@@ -1853,10 +1853,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:91:7: ( 'domain-context:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:91:9: 'domain-context:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:91:7: ( 'import:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:91:9: 'import:'
             {
-            match("domain-context:"); 
+            match("import:"); 
 
 
             }
@@ -1874,10 +1874,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:92:7: ( 'content-layout:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:92:9: 'content-layout:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:92:7: ( 'domain-context:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:92:9: 'domain-context:'
             {
-            match("content-layout:"); 
+            match("domain-context:"); 
 
 
             }
@@ -1895,10 +1895,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:93:7: ( 'Contains' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:93:9: 'Contains'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:93:7: ( 'content-layout:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:93:9: 'content-layout:'
             {
-            match("Contains"); 
+            match("content-layout:"); 
 
 
             }
@@ -1916,10 +1916,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:94:7: ( 'reuse' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:94:9: 'reuse'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:94:7: ( 'Contains' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:94:9: 'Contains'
             {
-            match("reuse"); 
+            match("Contains"); 
 
 
             }
@@ -1937,10 +1937,11 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:95:7: ( ',' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:95:9: ','
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:95:7: ( 'reuse' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:95:9: 'reuse'
             {
-            match(','); 
+            match("reuse"); 
+
 
             }
 
@@ -1957,11 +1958,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:96:7: ( 'provided-by' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:96:9: 'provided-by'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:96:7: ( ',' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:96:9: ','
             {
-            match("provided-by"); 
-
+            match(','); 
 
             }
 
@@ -1978,10 +1978,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:97:7: ( 'query' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:97:9: 'query'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:97:7: ( 'provided-by' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:97:9: 'provided-by'
             {
-            match("query"); 
+            match("provided-by"); 
 
 
             }
@@ -1999,10 +1999,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:98:7: ( 'association' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:98:9: 'association'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:98:7: ( 'query' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:98:9: 'query'
             {
-            match("association"); 
+            match("query"); 
 
 
             }
@@ -2020,10 +2020,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:99:7: ( 'Label' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:99:9: 'Label'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:99:7: ( 'association' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:99:9: 'association'
             {
-            match("Label"); 
+            match("association"); 
 
 
             }
@@ -2041,10 +2041,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:100:8: ( 'BasicStyle' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:100:10: 'BasicStyle'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:100:8: ( 'Label' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:100:10: 'Label'
             {
-            match("BasicStyle"); 
+            match("Label"); 
 
 
             }
@@ -2062,10 +2062,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:101:8: ( 'border-color:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:101:10: 'border-color:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:101:8: ( 'BasicStyle' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:101:10: 'BasicStyle'
             {
-            match("border-color:"); 
+            match("BasicStyle"); 
 
 
             }
@@ -2083,10 +2083,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:102:8: ( 'background:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:102:10: 'background:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:102:8: ( 'border-color:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:102:10: 'border-color:'
             {
-            match("background:"); 
+            match("border-color:"); 
 
 
             }
@@ -2104,10 +2104,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:103:8: ( 'form:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:103:10: 'form:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:103:8: ( 'background:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:103:10: 'background:'
             {
-            match("form:"); 
+            match("background:"); 
 
 
             }
@@ -2125,10 +2125,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:104:8: ( 'HistogramStyle' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:104:10: 'HistogramStyle'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:104:8: ( 'form:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:104:10: 'form:'
             {
-            match("HistogramStyle"); 
+            match("form:"); 
 
 
             }
@@ -2146,10 +2146,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:105:8: ( 'Section' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:105:10: 'Section'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:105:8: ( 'HistogramStyle' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:105:10: 'HistogramStyle'
             {
-            match("Section"); 
+            match("HistogramStyle"); 
 
 
             }
@@ -2167,10 +2167,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:106:8: ( 'foreground:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:106:10: 'foreground:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:106:8: ( 'Section' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:106:10: 'Section'
             {
-            match("foreground:"); 
+            match("Section"); 
 
 
             }
@@ -2188,10 +2188,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:107:8: ( 'minValue:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:107:10: 'minValue:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:107:8: ( 'foreground:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:107:10: 'foreground:'
             {
-            match("minValue:"); 
+            match("foreground:"); 
 
 
             }
@@ -2209,10 +2209,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:108:8: ( 'value:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:108:10: 'value:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:108:8: ( 'minValue:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:108:10: 'minValue:'
             {
-            match("value:"); 
+            match("minValue:"); 
 
 
             }
@@ -2230,10 +2230,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:109:8: ( 'maxValue:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:109:10: 'maxValue:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:109:8: ( 'value:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:109:10: 'value:'
             {
-            match("maxValue:"); 
+            match("value:"); 
 
 
             }
@@ -2251,10 +2251,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:110:8: ( 'Image' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:110:10: 'Image'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:110:8: ( 'maxValue:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:110:10: 'maxValue:'
             {
-            match("Image"); 
+            match("maxValue:"); 
 
 
             }
@@ -2272,10 +2272,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:111:8: ( 'border:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:111:10: 'border:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:111:8: ( 'Image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:111:10: 'Image'
             {
-            match("border:"); 
+            match("Image"); 
 
 
             }
@@ -2293,10 +2293,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:112:8: ( 'path:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:112:10: 'path:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:112:8: ( 'border:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:112:10: 'border:'
             {
-            match("path:"); 
+            match("border:"); 
 
 
             }
@@ -2314,10 +2314,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:113:8: ( 'FlatStyle' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:113:10: 'FlatStyle'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:113:8: ( 'path:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:113:10: 'path:'
             {
-            match("FlatStyle"); 
+            match("path:"); 
 
 
             }
@@ -2335,10 +2335,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:114:8: ( 'content:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:114:10: 'content:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:114:8: ( 'FlatStyle' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:114:10: 'FlatStyle'
             {
-            match("content:"); 
+            match("FlatStyle"); 
 
 
             }
@@ -2356,10 +2356,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:115:8: ( 'police:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:115:10: 'police:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:115:8: ( 'content:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:115:10: 'content:'
             {
-            match("police:"); 
+            match("content:"); 
 
 
             }
@@ -2377,10 +2377,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:116:8: ( 'Node' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:116:10: 'Node'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:116:8: ( 'police:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:116:10: 'police:'
             {
-            match("Node"); 
+            match("police:"); 
 
 
             }
@@ -2398,10 +2398,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:117:8: ( 'BorderedNode' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:117:10: 'BorderedNode'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:117:8: ( 'Node' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:117:10: 'Node'
             {
-            match("BorderedNode"); 
+            match("Node"); 
 
 
             }
@@ -2419,10 +2419,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:118:8: ( 'position:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:118:10: 'position:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:118:8: ( 'BorderedNode' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:118:10: 'BorderedNode'
             {
-            match("position:"); 
+            match("BorderedNode"); 
 
 
             }
@@ -2440,10 +2440,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:119:8: ( 'alignment:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:119:10: 'alignment:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:119:8: ( 'position:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:119:10: 'position:'
             {
-            match("alignment:"); 
+            match("position:"); 
 
 
             }
@@ -2461,10 +2461,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:120:8: ( 'Actions' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:120:10: 'Actions'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:120:8: ( 'alignment:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:120:10: 'alignment:'
             {
-            match("Actions"); 
+            match("alignment:"); 
 
 
             }
@@ -2482,10 +2482,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:121:8: ( 'OpenAction' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:121:10: 'OpenAction'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:121:8: ( 'Actions' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:121:10: 'Actions'
             {
-            match("OpenAction"); 
+            match("Actions"); 
 
 
             }
@@ -2503,10 +2503,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:122:8: ( 'precondition:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:122:10: 'precondition:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:122:8: ( 'OpenAction' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:122:10: 'OpenAction'
             {
-            match("precondition:"); 
+            match("OpenAction"); 
 
 
             }
@@ -2524,10 +2524,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:123:8: ( 'label:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:123:10: 'label:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:123:8: ( 'precondition:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:123:10: 'precondition:'
             {
-            match("label:"); 
+            match("precondition:"); 
 
 
             }
@@ -2545,10 +2545,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:124:8: ( 'icon:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:124:10: 'icon:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:124:8: ( 'label:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:124:10: 'label:'
             {
-            match("icon:"); 
+            match("label:"); 
 
 
             }
@@ -2566,10 +2566,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:125:8: ( 'Create' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:125:10: 'Create'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:125:8: ( 'icon:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:125:10: 'icon:'
             {
-            match("Create"); 
+            match("icon:"); 
 
 
             }
@@ -2587,10 +2587,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:126:8: ( 'action-for:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:126:10: 'action-for:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:126:8: ( 'Create' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:126:10: 'Create'
             {
-            match("action-for:"); 
+            match("Create"); 
 
 
             }
@@ -2608,10 +2608,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:127:8: ( 'Delete' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:127:10: 'Delete'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:127:8: ( 'action-for:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:127:10: 'action-for:'
             {
-            match("Delete"); 
+            match("action-for:"); 
 
 
             }
@@ -2629,10 +2629,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:128:8: ( 'Drop' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:128:10: 'Drop'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:128:8: ( 'Delete' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:128:10: 'Delete'
             {
-            match("Drop"); 
+            match("Delete"); 
 
 
             }
@@ -2650,10 +2650,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:129:8: ( 'ReconnectEdge' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:129:10: 'ReconnectEdge'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:129:8: ( 'Drop' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:129:10: 'Drop'
             {
-            match("ReconnectEdge"); 
+            match("Drop"); 
 
 
             }
@@ -2671,10 +2671,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:130:8: ( 'Edge' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:130:10: 'Edge'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:130:8: ( 'ReconnectEdge' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:130:10: 'ReconnectEdge'
             {
-            match("Edge"); 
+            match("ReconnectEdge"); 
 
 
             }
@@ -2692,10 +2692,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:131:8: ( 'association-context:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:131:10: 'association-context:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:131:8: ( 'Edge' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:131:10: 'Edge'
             {
-            match("association-context:"); 
+            match("Edge"); 
 
 
             }
@@ -2713,10 +2713,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:132:8: ( 'class-association-context:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:132:10: 'class-association-context:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:132:8: ( 'association-context:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:132:10: 'association-context:'
             {
-            match("class-association-context:"); 
+            match("association-context:"); 
 
 
             }
@@ -2734,10 +2734,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__133;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:133:8: ( 'source:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:133:10: 'source:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:133:8: ( 'class-association-context:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:133:10: 'class-association-context:'
             {
-            match("source:"); 
+            match("class-association-context:"); 
 
 
             }
@@ -2755,10 +2755,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__134;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:134:8: ( 'target:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:134:10: 'target:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:134:8: ( 'source:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:134:10: 'source:'
             {
-            match("target:"); 
+            match("source:"); 
 
 
             }
@@ -2776,10 +2776,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__135;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:135:8: ( 'EdgeImport' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:135:10: 'EdgeImport'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:135:8: ( 'target:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:135:10: 'target:'
             {
-            match("EdgeImport"); 
+            match("target:"); 
 
 
             }
@@ -2797,10 +2797,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__136;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:136:8: ( 'query:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:136:10: 'query:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:136:8: ( 'EdgeImport' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:136:10: 'EdgeImport'
             {
-            match("query:"); 
+            match("EdgeImport"); 
 
 
             }
@@ -2818,10 +2818,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__137;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:137:8: ( 'target-query:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:137:10: 'target-query:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:137:8: ( 'query:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:137:10: 'query:'
             {
-            match("target-query:"); 
+            match("query:"); 
 
 
             }
@@ -2839,10 +2839,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__138;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:138:8: ( 'target-association:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:138:10: 'target-association:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:138:8: ( 'target-query:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:138:10: 'target-query:'
             {
-            match("target-association:"); 
+            match("target-query:"); 
 
 
             }
@@ -2860,10 +2860,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__139;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:139:8: ( 'source-query:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:139:10: 'source-query:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:139:8: ( 'target-association:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:139:10: 'target-association:'
             {
-            match("source-query:"); 
+            match("target-association:"); 
 
 
             }
@@ -2881,10 +2881,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__140;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:140:8: ( 'source-association:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:140:10: 'source-association:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:140:8: ( 'source-query:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:140:10: 'source-query:'
             {
-            match("source-association:"); 
+            match("source-query:"); 
 
 
             }
@@ -2902,10 +2902,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = T__141;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:141:8: ( 'external' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:141:10: 'external'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:141:8: ( 'source-association:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:141:10: 'source-association:'
             {
-            match("external"); 
+            match("source-association:"); 
 
 
             }
@@ -3026,10 +3026,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18249:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18249:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18438:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18438:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18249:11: ( '^' )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18438:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -3038,7 +3038,7 @@ public class InternalVpdiagramLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18249:11: '^'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18438:11: '^'
                     {
                     match('^'); 
 
@@ -3056,7 +3056,7 @@ public class InternalVpdiagramLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18249:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18438:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -3105,10 +3105,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18251:10: ( ( '0' .. '9' )+ )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18251:12: ( '0' .. '9' )+
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18440:10: ( ( '0' .. '9' )+ )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18440:12: ( '0' .. '9' )+
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18251:12: ( '0' .. '9' )+
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18440:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -3122,7 +3122,7 @@ public class InternalVpdiagramLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18251:13: '0' .. '9'
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18440:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -3154,10 +3154,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -3175,10 +3175,10 @@ public class InternalVpdiagramLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -3194,7 +3194,7 @@ public class InternalVpdiagramLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -3210,7 +3210,7 @@ public class InternalVpdiagramLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3235,10 +3235,10 @@ public class InternalVpdiagramLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -3254,7 +3254,7 @@ public class InternalVpdiagramLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -3270,7 +3270,7 @@ public class InternalVpdiagramLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18253:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18442:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -3313,12 +3313,12 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18255:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18255:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18444:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18444:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18255:24: ( options {greedy=false; } : . )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18444:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -3343,7 +3343,7 @@ public class InternalVpdiagramLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18255:52: .
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18444:52: .
             	    {
             	    matchAny(); 
 
@@ -3373,12 +3373,12 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -3391,7 +3391,7 @@ public class InternalVpdiagramLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3411,7 +3411,7 @@ public class InternalVpdiagramLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:40: ( ( '\\r' )? '\\n' )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3420,9 +3420,9 @@ public class InternalVpdiagramLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:41: ( '\\r' )? '\\n'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:41: ( '\\r' )?
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -3431,7 +3431,7 @@ public class InternalVpdiagramLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18257:41: '\\r'
+                            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18446:41: '\\r'
                             {
                             match('\r'); 
 
@@ -3463,10 +3463,10 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18259:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18259:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18448:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18448:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18259:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18448:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -3520,8 +3520,8 @@ public class InternalVpdiagramLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18261:16: ( . )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18261:18: .
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18450:16: ( . )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18450:18: .
             {
             matchAny(); 
 
@@ -4549,8 +4549,8 @@ public class InternalVpdiagramLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\30\66\2\uffff\4\66\1\uffff\10\66\1\uffff\1\66\1\uffff"+
-        "\1\62\2\uffff\3\62\2\uffff\3\66\1\uffff\63\66\2\uffff\11\66\1\uffff"+
+        "\1\uffff\31\66\2\uffff\3\66\1\uffff\10\66\1\uffff\1\66\1\uffff"+
+        "\1\62\2\uffff\3\62\2\uffff\3\66\1\uffff\65\66\2\uffff\7\66\1\uffff"+
         "\13\66\1\uffff\1\66\6\uffff\16\66\1\u00f2\31\66\1\u010e\5\66\1\u0114"+
         "\62\66\1\u0148\3\66\1\u014d\1\u014e\1\66\1\u0150\1\uffff\3\66\1"+
         "\u0154\1\66\1\u0156\4\66\1\u015b\1\66\1\u015d\2\66\1\u0160\6\66"+
@@ -4568,36 +4568,36 @@ public class InternalVpdiagramLexer extends Lexer {
         "\1\66\1\uffff\12\66\2\uffff\10\66\1\uffff\13\66\2\uffff\2\66\1\uffff"+
         "\1\66\4\uffff\2\66\1\u027b\5\66\1\uffff\2\66\1\uffff\4\66\1\u0288"+
         "\5\uffff\1\u028b\2\66\1\uffff\1\u028e\1\66\1\uffff\1\u0290\6\66"+
-        "\2\uffff\7\66\2\uffff\1\u02a0\1\66\1\u02a2\17\66\1\u02b2\5\66\1"+
-        "\u02b8\1\uffff\5\66\1\u02be\6\66\4\uffff\2\66\1\uffff\1\66\1\uffff"+
-        "\5\66\1\u02cd\2\66\1\u02d0\6\66\1\uffff\1\u02d7\1\uffff\1\66\1\u02d9"+
-        "\15\66\1\uffff\1\u02e7\1\uffff\1\66\3\uffff\4\66\1\u02ed\1\uffff"+
-        "\4\66\2\uffff\1\u02f2\7\66\2\uffff\1\u02fa\1\uffff\1\66\1\u02fc"+
-        "\4\66\1\uffff\1\u0301\1\uffff\10\66\1\u030a\1\u030c\3\66\1\uffff"+
-        "\1\66\1\u0311\1\u0312\2\66\1\uffff\1\66\1\uffff\2\66\1\uffff\6\66"+
-        "\2\uffff\1\u031e\1\uffff\4\66\1\uffff\1\u0323\1\u0324\1\u0325\2"+
-        "\66\1\u0328\2\66\1\uffff\1\66\1\uffff\2\66\1\u032f\1\66\2\uffff"+
-        "\1\66\1\u0332\1\u0334\1\uffff\1\66\1\u0336\5\66\1\uffff\1\u033c"+
-        "\1\u033d\1\u033e\1\66\3\uffff\1\66\2\uffff\6\66\1\uffff\1\66\1\u0348"+
-        "\3\uffff\1\66\1\uffff\2\66\1\u034c\2\66\3\uffff\10\66\2\uffff\2"+
-        "\66\1\u0359\1\uffff\3\66\1\u035d\6\66\1\u0364\1\66\1\uffff\2\66"+
-        "\1\u0368\1\uffff\6\66\1\uffff\1\u036f\2\66\1\uffff\4\66\1\u0376"+
-        "\1\66\1\uffff\2\66\1\u037a\3\66\1\uffff\3\66\1\uffff\4\66\1\u0385"+
-        "\1\u0386\4\66\2\uffff\3\66\1\u038e\1\u038f\1\u0390\1\66\3\uffff"+
-        "\3\66\1\u0395\1\uffff";
+        "\2\uffff\7\66\2\uffff\1\u02a0\1\66\1\u02a2\17\66\1\u02b2\4\66\1"+
+        "\u02b7\1\66\1\uffff\5\66\1\u02be\6\66\4\uffff\2\66\1\uffff\1\66"+
+        "\1\uffff\5\66\1\u02cd\2\66\1\u02d0\6\66\1\uffff\1\u02d7\1\uffff"+
+        "\1\66\1\u02d9\15\66\1\uffff\1\u02e7\1\uffff\1\66\3\uffff\4\66\1"+
+        "\u02ed\1\uffff\4\66\2\uffff\1\u02f2\7\66\2\uffff\1\u02fa\1\uffff"+
+        "\1\66\1\u02fc\4\66\1\uffff\1\u0301\1\uffff\10\66\1\u030a\1\u030c"+
+        "\3\66\1\uffff\1\66\1\u0311\1\u0312\2\66\1\uffff\1\66\1\uffff\2\66"+
+        "\1\uffff\6\66\2\uffff\1\u031e\1\uffff\4\66\1\uffff\1\u0323\1\u0324"+
+        "\1\u0325\2\66\1\u0328\2\66\1\uffff\1\66\1\uffff\2\66\1\u032f\1\66"+
+        "\2\uffff\1\66\1\u0332\1\u0334\1\uffff\1\66\1\u0336\5\66\1\uffff"+
+        "\1\u033c\1\u033d\1\u033e\1\66\3\uffff\1\66\2\uffff\6\66\1\uffff"+
+        "\1\66\1\u0348\3\uffff\1\66\1\uffff\2\66\1\u034c\2\66\3\uffff\10"+
+        "\66\2\uffff\2\66\1\u0359\1\uffff\3\66\1\u035d\6\66\1\u0364\1\66"+
+        "\1\uffff\2\66\1\u0368\1\uffff\6\66\1\uffff\1\u036f\2\66\1\uffff"+
+        "\4\66\1\u0376\1\66\1\uffff\2\66\1\u037a\3\66\1\uffff\3\66\1\uffff"+
+        "\4\66\1\u0385\1\u0386\4\66\2\uffff\3\66\1\u038e\1\u038f\1\u0390"+
+        "\1\66\3\uffff\3\66\1\u0395\1\uffff";
     static final String DFA12_eofS =
         "\u0396\uffff";
     static final String DFA12_minS =
         "\1\0\1\145\1\141\1\143\1\157\1\145\1\162\1\145\1\162\1\141\1\157"+
         "\1\145\1\141\1\145\1\157\1\141\1\160\1\155\1\151\1\162\1\145\1\141"+
-        "\1\162\1\150\1\143\2\uffff\1\156\2\141\1\145\1\uffff\1\165\1\143"+
+        "\1\162\1\150\1\143\1\156\2\uffff\2\141\1\145\1\uffff\1\165\1\143"+
         "\1\157\1\151\2\141\1\143\1\141\1\uffff\1\141\1\uffff\1\101\2\uffff"+
         "\2\0\1\52\2\uffff\1\165\1\162\1\143\1\uffff\1\172\1\161\1\142\1"+
         "\154\1\144\1\147\1\104\1\164\1\141\1\154\1\157\1\151\1\156\1\143"+
         "\1\141\1\154\1\141\1\147\1\143\1\144\1\156\1\157\1\154\1\141\1\146"+
         "\1\147\1\142\1\147\1\144\1\154\1\162\1\155\1\163\1\164\1\145\1\160"+
         "\1\141\1\154\1\145\2\141\1\154\1\162\1\145\1\164\1\154\1\141\1\151"+
-        "\1\160\1\157\1\141\2\uffff\1\164\1\144\1\160\1\147\1\163\1\162\2"+
+        "\1\160\1\157\1\141\1\164\1\144\2\uffff\1\160\1\147\1\163\1\162\2"+
         "\156\1\145\1\uffff\1\145\1\163\1\151\1\164\1\162\1\163\1\156\1\170"+
         "\1\154\1\164\1\162\1\uffff\1\166\6\uffff\1\141\1\157\1\154\1\164"+
         "\1\145\1\165\1\164\1\145\1\151\1\114\4\145\1\60\1\147\1\145\1\160"+
@@ -4621,41 +4621,41 @@ public class InternalVpdiagramLexer extends Lexer {
         "\1\162\1\uffff\1\162\1\154\1\164\1\156\1\72\1\55\1\uffff\1\137\1"+
         "\uffff\1\72\3\60\1\145\1\144\1\uffff\1\142\1\156\1\151\1\164\1\143"+
         "\1\101\1\60\1\151\1\157\1\164\1\60\1\uffff\1\167\1\145\1\144\1\156"+
-        "\1\uffff\1\145\1\151\1\145\1\60\1\164\1\uffff\1\143\1\144\2\156"+
-        "\1\114\1\123\2\162\1\151\1\145\1\60\1\151\1\155\1\156\1\uffff\1"+
-        "\162\1\147\2\154\1\72\1\156\1\164\1\uffff\2\60\1\uffff\1\156\1\145"+
-        "\1\60\1\uffff\2\145\1\160\1\162\1\144\1\155\1\60\1\154\2\145\1\156"+
-        "\1\55\2\uffff\1\157\1\60\1\141\1\151\1\164\2\uffff\1\142\4\uffff"+
-        "\1\55\1\157\1\154\1\145\1\162\1\145\1\165\1\162\1\150\1\55\1\160"+
-        "\1\101\1\164\1\162\1\154\1\151\1\uffff\1\141\1\162\1\171\1\uffff"+
-        "\2\60\1\145\1\144\1\72\1\157\1\60\1\uffff\2\60\1\145\1\141\1\147"+
-        "\1\141\1\164\1\145\1\114\1\156\1\60\2\uffff\1\141\1\145\1\55\1\157"+
-        "\1\162\2\165\1\uffff\1\163\1\55\2\uffff\2\60\1\uffff\1\60\1\154"+
-        "\1\157\1\141\2\60\1\uffff\1\145\1\156\1\143\1\164\3\uffff\1\165"+
-        "\1\uffff\1\164\1\157\1\55\1\154\1\145\1\162\1\145\1\165\1\162\1"+
-        "\150\1\uffff\1\141\1\164\1\165\1\144\1\141\1\154\1\162\1\141\1\157"+
-        "\1\uffff\1\164\1\162\1\154\2\151\1\162\1\157\1\154\2\155\1\154\2"+
-        "\uffff\1\144\1\151\1\uffff\1\156\4\uffff\1\144\1\154\1\60\1\142"+
-        "\1\171\1\144\1\141\1\145\1\uffff\1\164\1\156\1\uffff\1\165\1\141"+
-        "\2\145\1\60\1\uffff\1\141\3\uffff\1\60\1\162\1\164\1\uffff\1\60"+
-        "\1\170\1\uffff\1\60\2\164\1\114\1\156\1\145\1\156\2\uffff\1\165"+
-        "\1\144\1\141\1\154\1\162\1\141\1\157\2\uffff\1\60\1\145\1\60\1\145"+
-        "\1\171\1\154\1\160\1\156\1\143\1\151\1\162\1\157\1\154\2\157\1\163"+
-        "\1\154\1\157\1\60\1\145\1\55\1\164\1\72\1\55\1\60\1\uffff\1\145"+
-        "\1\154\1\116\1\142\1\162\1\60\1\151\1\164\1\156\1\155\2\72\4\uffff"+
-        "\1\164\1\151\1\uffff\1\164\1\uffff\1\141\1\105\1\145\1\157\1\144"+
-        "\1\60\1\72\1\145\1\60\1\145\1\171\1\154\1\160\1\156\1\143\1\uffff"+
-        "\1\60\1\uffff\1\156\1\60\1\157\1\154\1\147\3\157\1\163\1\154\1\156"+
-        "\1\167\1\145\1\103\1\156\1\uffff\1\60\1\uffff\1\151\3\uffff\1\154"+
-        "\1\145\1\157\1\145\1\60\1\uffff\1\157\1\72\1\144\1\123\2\uffff\1"+
-        "\60\1\157\1\145\1\164\1\144\1\146\1\160\1\72\2\uffff\1\60\1\uffff"+
-        "\1\156\1\60\1\157\1\154\1\147\1\157\1\uffff\1\60\1\uffff\1\167\2"+
-        "\145\1\154\1\156\1\167\1\145\1\103\2\60\1\144\1\154\1\144\1\uffff"+
-        "\1\157\2\60\1\144\1\154\1\uffff\1\156\1\uffff\1\72\1\164\1\uffff"+
-        "\2\156\1\151\1\147\1\164\1\124\2\uffff\1\60\1\uffff\1\167\2\145"+
-        "\1\154\1\uffff\3\60\1\141\1\72\1\60\1\144\1\154\1\uffff\1\151\1"+
-        "\uffff\1\101\1\157\1\60\1\156\2\uffff\1\145\1\60\1\55\1\uffff\1"+
-        "\171\1\60\1\163\1\157\1\145\1\124\1\157\1\uffff\3\60\1\141\3\uffff"+
+        "\1\uffff\1\145\1\151\1\145\1\60\1\164\1\uffff\1\143\1\156\1\144"+
+        "\1\156\1\114\1\123\2\162\1\151\1\145\1\60\1\151\1\155\1\156\1\uffff"+
+        "\1\162\1\147\2\154\1\72\1\156\1\164\1\uffff\2\60\1\uffff\1\156\1"+
+        "\145\1\60\1\uffff\2\145\1\160\1\162\1\144\1\155\1\60\1\154\2\145"+
+        "\1\156\1\55\2\uffff\1\157\1\60\1\141\1\151\1\164\2\uffff\1\142\4"+
+        "\uffff\1\55\1\157\1\154\1\145\1\162\1\145\1\165\1\162\1\150\1\55"+
+        "\1\160\1\101\1\164\1\162\1\154\1\151\1\uffff\1\141\1\162\1\171\1"+
+        "\uffff\2\60\1\145\1\144\1\72\1\157\1\60\1\uffff\2\60\1\141\1\145"+
+        "\1\147\1\141\1\164\1\145\1\114\1\156\1\60\2\uffff\1\141\1\145\1"+
+        "\55\1\157\1\162\2\165\1\uffff\1\163\1\55\2\uffff\2\60\1\uffff\1"+
+        "\60\1\154\1\157\1\141\2\60\1\uffff\1\145\1\156\1\143\1\164\3\uffff"+
+        "\1\165\1\uffff\1\164\1\157\1\55\1\154\1\145\1\162\1\145\1\165\1"+
+        "\162\1\150\1\uffff\1\141\1\164\1\165\1\144\1\141\1\154\1\162\1\141"+
+        "\1\157\1\uffff\1\164\1\162\1\154\2\151\1\162\1\157\1\154\2\155\1"+
+        "\154\2\uffff\1\144\1\151\1\uffff\1\156\4\uffff\1\154\1\144\1\60"+
+        "\1\142\1\171\1\144\1\141\1\145\1\uffff\1\164\1\156\1\uffff\1\165"+
+        "\1\141\2\145\1\60\1\uffff\1\141\3\uffff\1\60\1\162\1\164\1\uffff"+
+        "\1\60\1\170\1\uffff\1\60\2\164\1\114\1\156\1\145\1\156\2\uffff\1"+
+        "\165\1\144\1\141\1\154\1\162\1\141\1\157\2\uffff\1\60\1\145\1\60"+
+        "\1\145\1\171\1\154\1\160\1\156\1\143\1\151\1\162\1\157\1\154\2\157"+
+        "\1\163\1\154\1\157\1\60\1\145\1\55\1\164\1\72\1\60\1\55\1\uffff"+
+        "\1\145\1\154\1\116\1\142\1\162\1\60\1\151\1\164\1\156\1\155\2\72"+
+        "\4\uffff\1\164\1\151\1\uffff\1\164\1\uffff\1\141\1\105\1\145\1\157"+
+        "\1\144\1\60\1\72\1\145\1\60\1\145\1\171\1\154\1\160\1\156\1\143"+
+        "\1\uffff\1\60\1\uffff\1\156\1\60\1\157\1\154\1\147\3\157\1\163\1"+
+        "\154\1\156\1\167\1\145\1\103\1\156\1\uffff\1\60\1\uffff\1\151\3"+
+        "\uffff\1\154\1\145\1\157\1\145\1\60\1\uffff\1\157\1\72\1\144\1\123"+
+        "\2\uffff\1\60\1\157\1\145\1\164\1\144\1\146\1\160\1\72\2\uffff\1"+
+        "\60\1\uffff\1\156\1\60\1\157\1\154\1\147\1\157\1\uffff\1\60\1\uffff"+
+        "\1\167\2\145\1\154\1\156\1\167\1\145\1\103\2\60\1\144\1\154\1\144"+
+        "\1\uffff\1\157\2\60\1\144\1\154\1\uffff\1\156\1\uffff\1\72\1\164"+
+        "\1\uffff\2\156\1\151\1\147\1\164\1\124\2\uffff\1\60\1\uffff\1\167"+
+        "\2\145\1\154\1\uffff\3\60\1\141\1\72\1\60\1\144\1\154\1\uffff\1"+
+        "\151\1\uffff\1\101\1\157\1\60\1\156\2\uffff\1\145\1\60\1\55\1\uffff"+
+        "\1\171\1\60\1\163\1\157\1\145\1\124\1\157\1\uffff\3\60\1\141\3\uffff"+
         "\1\164\2\uffff\1\101\1\157\2\164\1\162\1\163\1\uffff\1\72\1\60\3"+
         "\uffff\1\154\1\uffff\1\151\1\156\1\60\1\157\1\102\3\uffff\1\164"+
         "\1\145\1\162\1\163\2\150\1\162\1\145\2\uffff\1\145\1\157\1\60\1"+
@@ -4668,60 +4668,60 @@ public class InternalVpdiagramLexer extends Lexer {
         "\157\1\156\1\144\1\60\1\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\164\1\157\1\156\1\157\2\162\1\151\1\162\3\157\2\151"+
-        "\2\157\1\165\1\156\2\162\1\145\1\165\1\162\1\150\1\164\2\uffff\1"+
-        "\170\1\141\1\157\1\162\1\uffff\1\165\1\163\1\157\2\151\1\141\1\143"+
-        "\1\141\1\uffff\1\141\1\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff"+
-        "\1\165\1\171\1\143\1\uffff\1\172\1\163\1\142\1\154\1\144\1\147\2"+
-        "\164\1\141\1\154\1\157\1\151\1\156\1\160\1\141\1\162\1\165\1\147"+
-        "\1\143\1\144\1\156\1\157\1\156\1\141\1\146\1\156\1\142\1\147\2\165"+
-        "\1\163\1\164\1\163\1\164\1\145\1\160\1\141\1\154\1\145\1\141\1\145"+
-        "\1\154\1\162\1\157\1\164\1\163\1\141\1\151\1\160\1\157\1\141\2\uffff"+
-        "\1\164\1\144\1\160\1\147\1\163\1\162\2\156\1\145\1\uffff\1\145\1"+
-        "\163\1\151\1\164\1\162\1\163\1\156\1\170\1\154\1\164\1\162\1\uffff"+
-        "\1\166\6\uffff\1\141\1\157\1\154\1\164\1\145\1\165\1\164\1\145\1"+
-        "\151\1\114\4\145\1\172\1\155\1\145\1\160\1\141\1\147\1\162\1\157"+
-        "\3\144\1\143\1\145\1\151\1\153\1\145\1\164\1\143\1\164\1\157\1\163"+
-        "\1\164\1\150\2\145\1\150\1\172\1\163\1\151\1\162\1\150\1\153\1\172"+
-        "\1\141\1\143\1\160\1\156\1\165\1\147\1\154\1\145\1\164\1\145\1\171"+
-        "\1\154\1\160\1\166\1\143\1\150\2\151\1\156\1\164\1\157\1\156\1\154"+
-        "\1\145\1\55\1\160\2\151\1\144\2\164\1\141\1\162\1\157\1\147\1\151"+
-        "\1\155\1\164\2\126\1\165\1\151\1\147\1\141\1\162\1\153\1\145\1\151"+
-        "\1\156\1\151\1\172\1\154\1\160\1\141\2\172\1\143\1\172\1\uffff\1"+
-        "\157\1\162\1\164\1\172\1\156\1\172\1\145\1\156\1\151\1\145\1\172"+
-        "\1\153\1\172\1\156\1\147\1\172\1\145\1\157\1\151\1\145\1\162\1\163"+
-        "\1\172\1\164\1\55\1\154\1\164\1\uffff\1\145\1\144\1\143\1\172\1"+
-        "\137\1\uffff\1\151\1\162\1\165\1\101\1\164\1\145\1\104\1\106\1\123"+
-        "\1\156\1\172\1\157\1\154\1\151\1\157\1\72\1\143\1\164\1\147\1\145"+
-        "\1\162\1\72\1\151\1\162\1\uffff\1\151\1\156\1\143\2\145\1\141\1"+
-        "\164\1\171\1\143\1\156\1\157\1\72\1\147\1\157\2\141\1\145\1\157"+
-        "\1\145\1\172\2\145\1\172\1\157\1\147\1\144\1\uffff\1\172\1\163\1"+
-        "\142\1\155\2\uffff\1\157\1\uffff\1\156\1\141\1\145\1\uffff\1\147"+
-        "\1\uffff\1\163\1\156\1\145\1\162\1\uffff\1\172\1\uffff\1\55\1\162"+
-        "\1\uffff\1\162\1\154\1\164\1\156\1\72\1\55\1\uffff\1\137\1\uffff"+
-        "\1\72\3\172\1\145\1\144\1\uffff\1\171\1\156\1\151\1\164\1\143\1"+
-        "\106\1\172\1\151\1\157\1\164\1\172\1\uffff\1\167\1\145\1\144\1\156"+
-        "\1\uffff\1\145\1\151\1\145\1\172\1\164\1\uffff\1\143\1\144\2\156"+
-        "\1\114\1\123\2\162\1\151\1\145\1\172\1\151\1\155\1\156\1\uffff\1"+
-        "\162\1\147\2\154\1\72\1\156\1\164\1\uffff\2\172\1\uffff\1\156\1"+
-        "\145\1\172\1\uffff\2\145\1\160\1\162\1\144\1\155\1\172\1\154\2\145"+
-        "\1\156\1\172\2\uffff\1\157\1\172\1\141\1\151\1\164\2\uffff\1\171"+
-        "\4\uffff\1\72\1\157\1\154\1\145\1\162\1\145\1\165\1\162\1\150\1"+
-        "\55\1\160\1\106\1\164\1\162\1\154\1\151\1\uffff\1\141\1\162\1\171"+
-        "\1\uffff\2\172\1\145\1\144\1\72\1\157\1\172\1\uffff\2\172\1\145"+
-        "\1\141\1\147\1\141\1\164\1\145\1\114\1\156\1\172\2\uffff\1\141\1"+
-        "\145\1\55\1\157\1\162\2\165\1\uffff\1\163\1\72\2\uffff\2\172\1\uffff"+
+        "\2\157\1\165\1\156\2\162\1\145\1\165\1\162\1\150\1\164\1\170\2\uffff"+
+        "\1\141\1\157\1\162\1\uffff\1\165\1\163\1\157\2\151\1\141\1\143\1"+
+        "\141\1\uffff\1\141\1\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1"+
+        "\165\1\171\1\143\1\uffff\1\172\1\163\1\142\1\154\1\144\1\147\2\164"+
+        "\1\141\1\154\1\157\1\151\1\156\1\160\1\141\1\162\1\165\1\147\1\143"+
+        "\1\144\1\156\1\157\1\156\1\141\1\146\1\156\1\142\1\147\2\165\1\163"+
+        "\1\164\1\163\1\164\1\145\1\160\1\141\1\154\1\145\1\141\1\145\1\154"+
+        "\1\162\1\157\1\164\1\163\1\141\1\151\1\160\1\157\1\141\1\164\1\144"+
+        "\2\uffff\1\160\1\147\1\163\1\162\2\156\1\145\1\uffff\1\145\1\163"+
+        "\1\151\1\164\1\162\1\163\1\156\1\170\1\154\1\164\1\162\1\uffff\1"+
+        "\166\6\uffff\1\141\1\157\1\154\1\164\1\145\1\165\1\164\1\145\1\151"+
+        "\1\114\4\145\1\172\1\155\1\145\1\160\1\141\1\147\1\162\1\157\3\144"+
+        "\1\143\1\145\1\151\1\153\1\145\1\164\1\143\1\164\1\157\1\163\1\164"+
+        "\1\150\2\145\1\150\1\172\1\163\1\151\1\162\1\150\1\153\1\172\1\141"+
+        "\1\143\1\160\1\156\1\165\1\147\1\154\1\145\1\164\1\145\1\171\1\154"+
+        "\1\160\1\166\1\143\1\150\2\151\1\156\1\164\1\157\1\156\1\154\1\145"+
+        "\1\55\1\160\2\151\1\144\2\164\1\141\1\162\1\157\1\147\1\151\1\155"+
+        "\1\164\2\126\1\165\1\151\1\147\1\141\1\162\1\153\1\145\1\151\1\156"+
+        "\1\151\1\172\1\154\1\160\1\141\2\172\1\143\1\172\1\uffff\1\157\1"+
+        "\162\1\164\1\172\1\156\1\172\1\145\1\156\1\151\1\145\1\172\1\153"+
+        "\1\172\1\156\1\147\1\172\1\145\1\157\1\151\1\145\1\162\1\163\1\172"+
+        "\1\164\1\55\1\154\1\164\1\uffff\1\145\1\144\1\143\1\172\1\137\1"+
+        "\uffff\1\151\1\162\1\165\1\101\1\164\1\145\1\104\1\106\1\123\1\156"+
+        "\1\172\1\157\1\154\1\151\1\157\1\72\1\143\1\164\1\147\1\145\1\162"+
+        "\1\72\1\151\1\162\1\uffff\1\151\1\156\1\143\2\145\1\141\1\164\1"+
+        "\171\1\143\1\156\1\157\1\72\1\147\1\157\2\141\1\145\1\157\1\145"+
+        "\1\172\2\145\1\172\1\157\1\147\1\144\1\uffff\1\172\1\163\1\142\1"+
+        "\155\2\uffff\1\157\1\uffff\1\156\1\141\1\145\1\uffff\1\147\1\uffff"+
+        "\1\163\1\156\1\145\1\162\1\uffff\1\172\1\uffff\1\55\1\162\1\uffff"+
+        "\1\162\1\154\1\164\1\156\1\72\1\55\1\uffff\1\137\1\uffff\1\72\3"+
+        "\172\1\145\1\144\1\uffff\1\171\1\156\1\151\1\164\1\143\1\106\1\172"+
+        "\1\151\1\157\1\164\1\172\1\uffff\1\167\1\145\1\144\1\156\1\uffff"+
+        "\1\145\1\151\1\145\1\172\1\164\1\uffff\1\143\1\156\1\144\1\156\1"+
+        "\114\1\123\2\162\1\151\1\145\1\172\1\151\1\155\1\156\1\uffff\1\162"+
+        "\1\147\2\154\1\72\1\156\1\164\1\uffff\2\172\1\uffff\1\156\1\145"+
+        "\1\172\1\uffff\2\145\1\160\1\162\1\144\1\155\1\172\1\154\2\145\1"+
+        "\156\1\172\2\uffff\1\157\1\172\1\141\1\151\1\164\2\uffff\1\171\4"+
+        "\uffff\1\72\1\157\1\154\1\145\1\162\1\145\1\165\1\162\1\150\1\55"+
+        "\1\160\1\106\1\164\1\162\1\154\1\151\1\uffff\1\141\1\162\1\171\1"+
+        "\uffff\2\172\1\145\1\144\1\72\1\157\1\172\1\uffff\2\172\1\141\1"+
+        "\145\1\147\1\141\1\164\1\145\1\114\1\156\1\172\2\uffff\1\141\1\145"+
+        "\1\55\1\157\1\162\2\165\1\uffff\1\163\1\72\2\uffff\2\172\1\uffff"+
         "\1\172\1\154\1\157\1\141\2\172\1\uffff\1\145\1\156\1\143\1\164\3"+
         "\uffff\1\165\1\uffff\1\164\1\157\1\72\1\154\1\145\1\162\1\145\1"+
         "\165\1\162\1\150\1\uffff\1\161\1\164\1\165\1\144\1\145\1\154\1\162"+
         "\1\141\1\157\1\uffff\1\164\1\162\1\154\2\151\1\162\1\157\1\154\2"+
-        "\155\1\154\2\uffff\1\144\1\151\1\uffff\1\156\4\uffff\1\144\1\154"+
+        "\155\1\154\2\uffff\1\144\1\151\1\uffff\1\156\4\uffff\1\154\1\144"+
         "\1\172\1\142\1\171\1\144\1\141\1\163\1\uffff\1\164\1\156\1\uffff"+
         "\1\165\1\141\2\145\1\172\1\uffff\1\161\3\uffff\1\172\1\162\1\164"+
         "\1\uffff\1\172\1\170\1\uffff\1\172\2\164\1\124\1\156\1\145\1\156"+
         "\2\uffff\1\165\1\144\1\145\1\154\1\162\1\141\1\157\2\uffff\1\172"+
         "\1\145\1\172\1\145\1\171\1\154\1\160\1\156\1\143\1\151\1\162\1\157"+
-        "\1\154\2\157\1\163\1\154\1\157\1\172\1\145\1\55\1\164\1\72\1\55"+
-        "\1\172\1\uffff\1\145\1\154\1\116\1\142\1\162\1\172\1\151\1\164\1"+
+        "\1\154\2\157\1\163\1\154\1\157\1\172\1\145\1\55\1\164\1\72\1\172"+
+        "\1\55\1\uffff\1\145\1\154\1\116\1\142\1\162\1\172\1\151\1\164\1"+
         "\156\1\155\2\72\4\uffff\1\164\1\151\1\uffff\1\164\1\uffff\1\141"+
         "\1\105\1\145\1\157\1\144\1\172\1\72\1\145\1\172\1\145\1\171\1\154"+
         "\1\160\1\156\1\143\1\uffff\1\172\1\uffff\1\156\1\172\1\157\1\154"+
@@ -4747,32 +4747,32 @@ public class InternalVpdiagramLexer extends Lexer {
         "\1\167\1\144\1\141\3\172\1\155\3\uffff\1\157\1\156\1\144\1\172\1"+
         "\uffff";
     static final String DFA12_acceptS =
-        "\31\uffff\1\76\1\77\4\uffff\1\125\10\uffff\1\u0084\1\uffff\1\u0086"+
+        "\32\uffff\1\77\1\100\3\uffff\1\126\10\uffff\1\u0084\1\uffff\1\u0086"+
         "\1\uffff\1\u0089\1\u008a\3\uffff\1\u008e\1\u008f\3\uffff\1\u0089"+
-        "\63\uffff\1\76\1\77\11\uffff\1\125\13\uffff\1\u0084\1\uffff\1\u0086"+
+        "\65\uffff\1\77\1\100\7\uffff\1\126\13\uffff\1\u0084\1\uffff\1\u0086"+
         "\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\151\uffff\1\5\33\uffff"+
-        "\1\42\5\uffff\1\23\30\uffff\1\115\32\uffff\1\73\4\uffff\1\170\1"+
-        "\4\1\uffff\1\152\3\uffff\1\166\1\uffff\1\10\4\uffff\1\u0087\1\uffff"+
-        "\1\41\2\uffff\1\15\6\uffff\1\17\1\uffff\1\113\6\uffff\1\22\13\uffff"+
-        "\1\50\4\uffff\1\146\5\uffff\1\162\16\uffff\1\135\7\uffff\1\u0085"+
-        "\2\uffff\1\112\3\uffff\1\131\14\uffff\1\40\1\114\5\uffff\1\116\1"+
-        "\172\1\uffff\1\161\1\20\1\124\1\21\20\uffff\1\144\3\uffff\1\43\7"+
-        "\uffff\1\51\13\uffff\1\176\1\127\7\uffff\1\142\2\uffff\1\1\1\7\2"+
-        "\uffff\1\12\6\uffff\1\165\4\uffff\1\133\1\145\1\14\1\uffff\1\16"+
-        "\12\uffff\1\173\11\uffff\1\121\13\uffff\1\44\1\45\2\uffff\1\151"+
-        "\1\uffff\1\46\1\120\1\74\1\u0088\10\uffff\1\163\2\uffff\1\164\5"+
-        "\uffff\1\174\1\uffff\1\137\1\2\1\3\3\uffff\1\34\2\uffff\1\100\7"+
-        "\uffff\1\122\1\150\7\uffff\1\u0081\1\u0082\31\uffff\1\104\14\uffff"+
-        "\1\156\1\177\1\u0080\1\110\2\uffff\1\75\1\uffff\1\6\17\uffff\1\24"+
-        "\1\uffff\1\53\17\uffff\1\72\1\uffff\1\126\1\uffff\1\154\1\103\1"+
-        "\u0083\5\uffff\1\123\4\uffff\1\141\1\143\10\uffff\1\47\1\111\1\uffff"+
-        "\1\63\6\uffff\1\52\1\uffff\1\61\15\uffff\1\147\5\uffff\1\117\1\uffff"+
-        "\1\155\2\uffff\1\175\6\uffff\1\134\1\62\1\uffff\1\71\4\uffff\1\54"+
-        "\10\uffff\1\157\1\uffff\1\27\4\uffff\1\106\1\132\3\uffff\1\140\7"+
-        "\uffff\1\64\4\uffff\1\55\1\56\1\57\1\uffff\1\101\1\26\6\uffff\1"+
-        "\35\2\uffff\1\107\1\171\1\130\1\uffff\1\25\5\uffff\1\65\1\66\1\67"+
-        "\10\uffff\1\160\1\153\3\uffff\1\167\14\uffff\1\105\3\uffff\1\60"+
-        "\6\uffff\1\136\3\uffff\1\70\6\uffff\1\102\6\uffff\1\31\3\uffff\1"+
+        "\1\42\5\uffff\1\23\30\uffff\1\116\32\uffff\1\73\4\uffff\1\171\1"+
+        "\4\1\uffff\1\153\3\uffff\1\167\1\uffff\1\10\4\uffff\1\u0087\1\uffff"+
+        "\1\41\2\uffff\1\15\6\uffff\1\17\1\uffff\1\114\6\uffff\1\22\13\uffff"+
+        "\1\50\4\uffff\1\147\5\uffff\1\163\16\uffff\1\136\7\uffff\1\u0085"+
+        "\2\uffff\1\113\3\uffff\1\132\14\uffff\1\40\1\115\5\uffff\1\117\1"+
+        "\173\1\uffff\1\162\1\20\1\125\1\21\20\uffff\1\145\3\uffff\1\43\7"+
+        "\uffff\1\51\13\uffff\1\177\1\130\7\uffff\1\143\2\uffff\1\1\1\7\2"+
+        "\uffff\1\12\6\uffff\1\166\4\uffff\1\134\1\146\1\14\1\uffff\1\16"+
+        "\12\uffff\1\174\11\uffff\1\122\13\uffff\1\44\1\45\2\uffff\1\152"+
+        "\1\uffff\1\46\1\121\1\74\1\u0088\10\uffff\1\164\2\uffff\1\165\5"+
+        "\uffff\1\175\1\uffff\1\140\1\2\1\3\3\uffff\1\34\2\uffff\1\101\7"+
+        "\uffff\1\123\1\151\7\uffff\1\u0082\1\u0083\31\uffff\1\105\14\uffff"+
+        "\1\157\1\u0080\1\u0081\1\111\2\uffff\1\76\1\uffff\1\6\17\uffff\1"+
+        "\24\1\uffff\1\53\17\uffff\1\72\1\uffff\1\127\1\uffff\1\155\1\75"+
+        "\1\104\5\uffff\1\124\4\uffff\1\142\1\144\10\uffff\1\47\1\112\1\uffff"+
+        "\1\63\6\uffff\1\52\1\uffff\1\61\15\uffff\1\150\5\uffff\1\120\1\uffff"+
+        "\1\156\2\uffff\1\176\6\uffff\1\135\1\62\1\uffff\1\71\4\uffff\1\54"+
+        "\10\uffff\1\160\1\uffff\1\27\4\uffff\1\107\1\133\3\uffff\1\141\7"+
+        "\uffff\1\64\4\uffff\1\55\1\56\1\57\1\uffff\1\102\1\26\6\uffff\1"+
+        "\35\2\uffff\1\110\1\172\1\131\1\uffff\1\25\5\uffff\1\65\1\66\1\67"+
+        "\10\uffff\1\161\1\154\3\uffff\1\170\14\uffff\1\106\3\uffff\1\60"+
+        "\6\uffff\1\137\3\uffff\1\70\6\uffff\1\103\6\uffff\1\31\3\uffff\1"+
         "\30\12\uffff\1\11\1\13\7\uffff\1\33\1\32\1\36\4\uffff\1\37";
     static final String DFA12_specialS =
         "\1\0\55\uffff\1\1\1\2\u0366\uffff}>";
@@ -4780,9 +4780,9 @@ public class InternalVpdiagramLexer extends Lexer {
             "\11\62\2\61\2\62\1\61\22\62\1\61\1\62\1\56\4\62\1\57\3\62\1"+
             "\50\1\37\1\62\1\52\1\60\12\55\7\62\1\46\1\35\1\36\1\5\1\3\1"+
             "\22\1\10\1\43\1\21\1\51\1\54\1\2\1\34\1\4\1\20\2\54\1\7\1\1"+
-            "\1\6\6\54\3\62\1\53\1\54\1\62\1\41\1\11\1\13\1\17\1\33\1\42"+
+            "\1\6\6\54\3\62\1\53\1\54\1\62\1\41\1\11\1\13\1\17\1\31\1\42"+
             "\1\23\1\54\1\30\2\54\1\14\1\44\1\12\1\26\1\25\1\40\1\15\1\16"+
-            "\1\47\1\54\1\45\1\27\1\54\1\24\1\54\1\31\1\62\1\32\uff82\62",
+            "\1\47\1\54\1\45\1\27\1\54\1\24\1\54\1\32\1\62\1\33\uff82\62",
             "\1\65\13\uffff\1\63\2\uffff\1\64",
             "\1\71\7\uffff\1\70\5\uffff\1\67",
             "\1\72\1\74\11\uffff\1\73",
@@ -4807,9 +4807,9 @@ public class InternalVpdiagramLexer extends Lexer {
             "\1\145",
             "\1\146",
             "\1\150\11\uffff\1\147\6\uffff\1\151",
+            "\1\153\11\uffff\1\152",
             "",
             "",
-            "\1\155\11\uffff\1\154",
             "\1\156",
             "\1\160\3\uffff\1\157\11\uffff\1\161",
             "\1\162\11\uffff\1\163\2\uffff\1\164",
@@ -4888,10 +4888,10 @@ public class InternalVpdiagramLexer extends Lexer {
             "\1\u00cc",
             "\1\u00cd",
             "\1\u00ce",
-            "",
-            "",
             "\1\u00cf",
             "\1\u00d0",
+            "",
+            "",
             "\1\u00d1",
             "\1\u00d2",
             "\1\u00d3",
@@ -5083,7 +5083,7 @@ public class InternalVpdiagramLexer extends Lexer {
             "\1\u0186",
             "\1\u0187",
             "\1\u0188",
-            "\1\u0189\3\uffff\1\u018a",
+            "\1\u018a\3\uffff\1\u0189",
             "",
             "\1\u018b",
             "\1\u018c",
@@ -5420,8 +5420,8 @@ public class InternalVpdiagramLexer extends Lexer {
             "\1\u02b4",
             "\1\u02b5",
             "\1\u02b6",
-            "\1\u02b7",
             "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
+            "\1\u02b8",
             "",
             "\1\u02b9",
             "\1\u02ba",
@@ -5797,11 +5797,11 @@ public class InternalVpdiagramLexer extends Lexer {
 
                         else if ( (LA12_0=='i') ) {s = 24;}
 
-                        else if ( (LA12_0=='{') ) {s = 25;}
+                        else if ( (LA12_0=='e') ) {s = 25;}
 
-                        else if ( (LA12_0=='}') ) {s = 26;}
+                        else if ( (LA12_0=='{') ) {s = 26;}
 
-                        else if ( (LA12_0=='e') ) {s = 27;}
+                        else if ( (LA12_0=='}') ) {s = 27;}
 
                         else if ( (LA12_0=='M') ) {s = 28;}
 

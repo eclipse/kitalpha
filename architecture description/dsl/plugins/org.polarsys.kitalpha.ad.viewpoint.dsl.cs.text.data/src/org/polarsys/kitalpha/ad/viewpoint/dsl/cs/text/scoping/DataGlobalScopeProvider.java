@@ -31,6 +31,7 @@ import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.DefaultGlobalScopeProvider;
 import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
 
 import com.google.common.base.Predicate;
@@ -104,7 +105,8 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					
 					if (importNsURI != null && !importNsURI.equals("")) {
 						QualifiedName nsURI = QualifiedName.create(importNsURI);
-						EPackage ecoreModel = eResource.getResourceSet().getPackageRegistry().getEPackage(nsURI.toString());
+//						EPackage ecoreModel = eResource.getResourceSet().getPackageRegistry().getEPackage(nsURI.toString());
+						EPackage ecoreModel = (EPackage) DataWorkspaceEPackage.INSTANCE.getEPackage(nsURI.toString());
 						if (ecoreModel != null) {
 							EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(),	eResource.getResourceSet());
 

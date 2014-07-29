@@ -65,7 +65,9 @@ public class DiagramFactoryImpl extends EFactoryImpl implements DiagramFactory
     switch (eClass.getClassifierID())
     {
       case DiagramPackage.DIAGRAMS: return createDiagrams();
-      case DiagramPackage.IMPORT: return createImport();
+      case DiagramPackage.ABSTRACT_IMPORT: return createAbstractImport();
+      case DiagramPackage.IMPORT_NAME_SPACE: return createImportNameSpace();
+      case DiagramPackage.IMPORT_GROUP: return createImportGroup();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -87,10 +89,32 @@ public class DiagramFactoryImpl extends EFactoryImpl implements DiagramFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import createImport()
+  public AbstractImport createAbstractImport()
   {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
+    AbstractImportImpl abstractImport = new AbstractImportImpl();
+    return abstractImport;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImportNameSpace createImportNameSpace()
+  {
+    ImportNameSpaceImpl importNameSpace = new ImportNameSpaceImpl();
+    return importNameSpace;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImportGroup createImportGroup()
+  {
+    ImportGroupImpl importGroup = new ImportGroupImpl();
+    return importGroup;
   }
 
   /**

@@ -32,13 +32,31 @@ public interface DiagramFactory extends EFactory
   Diagrams createDiagrams();
 
   /**
-   * Returns a new object of class '<em>Import</em>'.
+   * Returns a new object of class '<em>Abstract Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
+   * @return a new object of class '<em>Abstract Import</em>'.
    * @generated
    */
-  Import createImport();
+  AbstractImport createAbstractImport();
+
+  /**
+   * Returns a new object of class '<em>Import Name Space</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Name Space</em>'.
+   * @generated
+   */
+  ImportNameSpace createImportNameSpace();
+
+  /**
+   * Returns a new object of class '<em>Import Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Group</em>'.
+   * @generated
+   */
+  ImportGroup createImportGroup();
 
   /**
    * Returns the package supported by this factory.

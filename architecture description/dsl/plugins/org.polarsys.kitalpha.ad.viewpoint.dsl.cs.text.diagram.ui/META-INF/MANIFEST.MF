@@ -18,7 +18,11 @@ Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram;visibilit
  org.eclipse.compare,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.eclipse.sirius.viewpoint.description,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.specification,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr

@@ -30,13 +30,24 @@ generate diagram "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpdi
 
 Diagrams returns Diagrams:
 	{Diagrams}
-	(imports+=Import)*
+	(imports+=AbstractImport)*
 	(diagrams=Aspect)
 ;
 
-Import:
+
+AbstractImport:
+	ImportNameSpace | ImportGroup
+;
+
+
+ImportNameSpace:
 	'import' importedNamespace=FQN
 ;
+
+ImportGroup:
+	'import' 'external' importedGroup=EString
+;
+
 
 Aspect returns vpdesc::Aspect:
 	DiagramSet	

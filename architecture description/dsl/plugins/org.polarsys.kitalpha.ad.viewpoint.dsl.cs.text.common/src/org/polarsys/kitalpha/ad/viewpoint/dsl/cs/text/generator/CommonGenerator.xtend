@@ -37,11 +37,12 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.resource.XtextResource
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator$DiagnosticListAcceptor
-import java.util.EventObject
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper
-import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.common.util.URI
+import org.eclipse.sirius.viewpoint.description.Group
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 
 abstract class CommonGenerator implements IViewpointSynchronizer {
 	
@@ -78,7 +79,7 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 					target.setVP_Data(copier.get(key) as Data)
 				}
 				
-				//Fix me: without EMF refelexion
+				//FIXME without EMF refelexion
 				for (EObject imp : input) {
 					if (imp.eClass.name.equals("ImportURI"))
 					{
@@ -97,6 +98,7 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 				} else {
 					target.VP_Aspects.add(copier.get(key) as Aspect)
 				}
+				
 			}			
 			if (key instanceof DiagramSet) {
 				var oldDiagramSet =  target.VP_Aspects.findFirst(c | c instanceof DiagramSet)
@@ -104,6 +106,25 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 					EcoreUtil2::replace(oldDiagramSet, copier.get(key))
 				} else {
 					target.VP_Aspects.add(copier.get(key) as Aspect)
+				}
+				
+				//FIXME without EMF refelexion
+				for (EObject imp : input) {
+					if (imp.eClass.name.equals("ImportGroup"))
+					{
+						var EStructuralFeature importGroupAttr = imp.eClass.getEStructuralFeature("importedGroup");
+						var String importValue = imp.eGet(importGroupAttr).toString;
+						var targetDiagram = target.VP_Aspects.findFirst(d | d instanceof DiagramSet);
+						var resource = new ResourceSetImpl().getResource(URI::createURI(importValue.substring(1, importValue.length-1)), true);
+						
+						if (resource != null){
+							val rootGroup = resource.contents.get(0);
+							if (rootGroup != null)
+								(targetDiagram as DiagramSet).additionalExternalGroup.add(rootGroup as Group);
+						
+						}
+						
+					}
 				}
 			}		
 			if (key instanceof Build) {

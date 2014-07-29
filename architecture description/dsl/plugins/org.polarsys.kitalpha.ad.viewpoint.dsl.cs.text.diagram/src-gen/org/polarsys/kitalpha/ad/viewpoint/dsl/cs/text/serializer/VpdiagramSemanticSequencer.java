@@ -60,7 +60,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ReconnectEdge;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpdiagramGrammarAccess;
 
 @SuppressWarnings("all")
@@ -121,9 +122,17 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 					return; 
 				}
 				else break;
-			case DiagramPackage.IMPORT:
-				if(context == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
+			case DiagramPackage.IMPORT_GROUP:
+				if(context == grammarAccess.getAbstractImportRule() ||
+				   context == grammarAccess.getImportGroupRule()) {
+					sequence_ImportGroup(context, (ImportGroup) semanticObject); 
+					return; 
+				}
+				else break;
+			case DiagramPackage.IMPORT_NAME_SPACE:
+				if(context == grammarAccess.getAbstractImportRule() ||
+				   context == grammarAccess.getImportNameSpaceRule()) {
+					sequence_ImportNameSpace(context, (ImportNameSpace) semanticObject); 
 					return; 
 				}
 				else break;
@@ -508,7 +517,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* diagrams=Aspect)
+	 *     (imports+=AbstractImport* diagrams=Aspect)
 	 */
 	protected void sequence_Diagrams(EObject context, Diagrams semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -723,16 +732,32 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     importedNamespace=FQN
+	 *     importedGroup=EString
 	 */
-	protected void sequence_Import(EObject context, Import semanticObject) {
+	protected void sequence_ImportGroup(EObject context, ImportGroup semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DiagramPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagramPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+			if(transientValues.isValueTransient(semanticObject, DiagramPackage.Literals.IMPORT_GROUP__IMPORTED_GROUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagramPackage.Literals.IMPORT_GROUP__IMPORTED_GROUP));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceFQNParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.accept(grammarAccess.getImportGroupAccess().getImportedGroupEStringParserRuleCall_2_0(), semanticObject.getImportedGroup());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     importedNamespace=FQN
+	 */
+	protected void sequence_ImportNameSpace(EObject context, ImportNameSpace semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DiagramPackage.Literals.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DiagramPackage.Literals.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getImportNameSpaceAccess().getImportedNamespaceFQNParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	

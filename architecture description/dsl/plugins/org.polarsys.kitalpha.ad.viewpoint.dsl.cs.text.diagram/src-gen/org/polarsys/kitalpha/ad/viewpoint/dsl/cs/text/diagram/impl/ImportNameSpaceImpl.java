@@ -7,25 +7,24 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Import</b></em>'.
+ * An implementation of the model object '<em><b>Import Name Space</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportNameSpaceImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ImportImpl extends MinimalEObjectImpl.Container implements Import
+public class ImportNameSpaceImpl extends AbstractImportImpl implements ImportNameSpace
 {
   /**
    * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
@@ -52,7 +51,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ImportImpl()
+  protected ImportNameSpaceImpl()
   {
     super();
   }
@@ -65,7 +64,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   @Override
   protected EClass eStaticClass()
   {
-    return DiagramPackage.Literals.IMPORT;
+    return DiagramPackage.Literals.IMPORT_NAME_SPACE;
   }
 
   /**
@@ -88,7 +87,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     String oldImportedNamespace = importedNamespace;
     importedNamespace = newImportedNamespace;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DiagramPackage.IMPORT__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
+      eNotify(new ENotificationImpl(this, Notification.SET, DiagramPackage.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
   }
 
   /**
@@ -101,7 +100,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case DiagramPackage.IMPORT__IMPORTED_NAMESPACE:
+      case DiagramPackage.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE:
         return getImportedNamespace();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -117,7 +116,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case DiagramPackage.IMPORT__IMPORTED_NAMESPACE:
+      case DiagramPackage.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE:
         setImportedNamespace((String)newValue);
         return;
     }
@@ -134,7 +133,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case DiagramPackage.IMPORT__IMPORTED_NAMESPACE:
+      case DiagramPackage.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE:
         setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
         return;
     }
@@ -151,7 +150,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case DiagramPackage.IMPORT__IMPORTED_NAMESPACE:
+      case DiagramPackage.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE:
         return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
     }
     return super.eIsSet(featureID);
@@ -174,4 +173,4 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     return result.toString();
   }
 
-} //ImportImpl
+} //ImportNameSpaceImpl

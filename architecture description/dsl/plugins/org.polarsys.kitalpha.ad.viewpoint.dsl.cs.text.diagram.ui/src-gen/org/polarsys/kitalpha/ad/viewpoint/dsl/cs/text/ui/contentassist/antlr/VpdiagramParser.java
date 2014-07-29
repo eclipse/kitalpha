@@ -37,6 +37,7 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getAbstractImportAccess().getAlternatives(), "rule__AbstractImport__Alternatives");
 					put(grammarAccess.getDiagramRepresentationAccess().getAlternatives(), "rule__DiagramRepresentation__Alternatives");
 					put(grammarAccess.getDiagramElementAccess().getAlternatives(), "rule__DiagramElement__Alternatives");
 					put(grammarAccess.getDiagramChildrenAccess().getAlternatives(), "rule__DiagramChildren__Alternatives");
@@ -67,7 +68,8 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSystemColorsAccess().getAlternatives(), "rule__SystemColors__Alternatives");
 					put(grammarAccess.getContainerLayoutAccess().getAlternatives(), "rule__ContainerLayout__Alternatives");
 					put(grammarAccess.getDiagramsAccess().getGroup(), "rule__Diagrams__Group__0");
-					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
+					put(grammarAccess.getImportNameSpaceAccess().getGroup(), "rule__ImportNameSpace__Group__0");
+					put(grammarAccess.getImportGroupAccess().getGroup(), "rule__ImportGroup__Group__0");
 					put(grammarAccess.getDiagramSetAccess().getGroup(), "rule__DiagramSet__Group__0");
 					put(grammarAccess.getDiagramAccess().getGroup(), "rule__Diagram__Group__0");
 					put(grammarAccess.getDiagramAccess().getGroup_4(), "rule__Diagram__Group_4__0");
@@ -190,7 +192,8 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
 					put(grammarAccess.getDiagramsAccess().getImportsAssignment_1(), "rule__Diagrams__ImportsAssignment_1");
 					put(grammarAccess.getDiagramsAccess().getDiagramsAssignment_2(), "rule__Diagrams__DiagramsAssignment_2");
-					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
+					put(grammarAccess.getImportNameSpaceAccess().getImportedNamespaceAssignment_1(), "rule__ImportNameSpace__ImportedNamespaceAssignment_1");
+					put(grammarAccess.getImportGroupAccess().getImportedGroupAssignment_2(), "rule__ImportGroup__ImportedGroupAssignment_2");
 					put(grammarAccess.getDiagramSetAccess().getNameAssignment_2(), "rule__DiagramSet__NameAssignment_2");
 					put(grammarAccess.getDiagramSetAccess().getDiagramsAssignment_4(), "rule__DiagramSet__DiagramsAssignment_4");
 					put(grammarAccess.getDiagramAccess().getNameAssignment_2(), "rule__Diagram__NameAssignment_2");

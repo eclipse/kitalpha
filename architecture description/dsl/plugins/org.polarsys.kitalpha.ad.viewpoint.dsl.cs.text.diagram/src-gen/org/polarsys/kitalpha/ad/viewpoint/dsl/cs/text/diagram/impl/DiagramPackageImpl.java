@@ -12,10 +12,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +39,21 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass importEClass = null;
+  private EClass abstractImportEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importNameSpaceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importGroupEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -140,9 +156,9 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getImport()
+  public EClass getAbstractImport()
   {
-    return importEClass;
+    return abstractImportEClass;
   }
 
   /**
@@ -150,9 +166,39 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImport_ImportedNamespace()
+  public EClass getImportNameSpace()
   {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+    return importNameSpaceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImportNameSpace_ImportedNamespace()
+  {
+    return (EAttribute)importNameSpaceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImportGroup()
+  {
+    return importGroupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImportGroup_ImportedGroup()
+  {
+    return (EAttribute)importGroupEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -189,8 +235,13 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage
     createEReference(diagramsEClass, DIAGRAMS__IMPORTS);
     createEReference(diagramsEClass, DIAGRAMS__DIAGRAMS);
 
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
+    abstractImportEClass = createEClass(ABSTRACT_IMPORT);
+
+    importNameSpaceEClass = createEClass(IMPORT_NAME_SPACE);
+    createEAttribute(importNameSpaceEClass, IMPORT_NAME_SPACE__IMPORTED_NAMESPACE);
+
+    importGroupEClass = createEClass(IMPORT_GROUP);
+    createEAttribute(importGroupEClass, IMPORT_GROUP__IMPORTED_GROUP);
   }
 
   /**
@@ -226,14 +277,21 @@ public class DiagramPackageImpl extends EPackageImpl implements DiagramPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    importNameSpaceEClass.getESuperTypes().add(this.getAbstractImport());
+    importGroupEClass.getESuperTypes().add(this.getAbstractImport());
 
     // Initialize classes and features; add operations and parameters
     initEClass(diagramsEClass, Diagrams.class, "Diagrams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDiagrams_Imports(), this.getImport(), null, "imports", null, 0, -1, Diagrams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDiagrams_Imports(), this.getAbstractImport(), null, "imports", null, 0, -1, Diagrams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDiagrams_Diagrams(), theVpdescPackage.getAspect(), null, "diagrams", null, 0, 1, Diagrams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_ImportedNamespace(), theEcorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(abstractImportEClass, AbstractImport.class, "AbstractImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(importNameSpaceEClass, ImportNameSpace.class, "ImportNameSpace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImportNameSpace_ImportedNamespace(), theEcorePackage.getEString(), "importedNamespace", null, 0, 1, ImportNameSpace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(importGroupEClass, ImportGroup.class, "ImportGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImportGroup_ImportedGroup(), theEcorePackage.getEString(), "importedGroup", null, 0, 1, ImportGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

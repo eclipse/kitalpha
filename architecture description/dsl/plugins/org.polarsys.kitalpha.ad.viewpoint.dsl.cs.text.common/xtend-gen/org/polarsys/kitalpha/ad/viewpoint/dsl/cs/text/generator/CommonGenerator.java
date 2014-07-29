@@ -17,9 +17,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EContentsEList.FeatureIterator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
+import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.resource.XtextResource;
@@ -141,95 +143,129 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
             EObject _get_5 = this.copier.get(key);
             _vP_Aspects_3.add(((Aspect) _get_5));
           }
+          for (final EObject imp_1 : input) {
+            EClass _eClass_2 = imp_1.eClass();
+            String _name_1 = _eClass_2.getName();
+            boolean _equals_1 = _name_1.equals("ImportGroup");
+            if (_equals_1) {
+              EClass _eClass_3 = imp_1.eClass();
+              EStructuralFeature importGroupAttr = _eClass_3.getEStructuralFeature("importedGroup");
+              Object _eGet_1 = imp_1.eGet(importGroupAttr);
+              String importValue_1 = _eGet_1.toString();
+              EList<Aspect> _vP_Aspects_4 = target.getVP_Aspects();
+              final Function1<Aspect,Boolean> _function_2 = new Function1<Aspect,Boolean>() {
+                  public Boolean apply(final Aspect d) {
+                    return Boolean.valueOf((d instanceof DiagramSet));
+                  }
+                };
+              Aspect targetDiagram = IterableExtensions.<Aspect>findFirst(_vP_Aspects_4, _function_2);
+              ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
+              int _length = importValue_1.length();
+              int _minus = (_length - 1);
+              String _substring = importValue_1.substring(1, _minus);
+              URI _createURI = URI.createURI(_substring);
+              Resource resource = _resourceSetImpl.getResource(_createURI, true);
+              boolean _notEquals_3 = (!Objects.equal(resource, null));
+              if (_notEquals_3) {
+                EList<EObject> _contents = resource.getContents();
+                final EObject rootGroup = _contents.get(0);
+                boolean _notEquals_4 = (!Objects.equal(rootGroup, null));
+                if (_notEquals_4) {
+                  EList<Group> _additionalExternalGroup = ((DiagramSet) targetDiagram).getAdditionalExternalGroup();
+                  _additionalExternalGroup.add(((Group) rootGroup));
+                }
+              }
+            }
+          }
         }
         if ((key instanceof Build)) {
-          EList<Aspect> _vP_Aspects_4 = target.getVP_Aspects();
-          final Function1<Aspect,Boolean> _function_2 = new Function1<Aspect,Boolean>() {
+          EList<Aspect> _vP_Aspects_5 = target.getVP_Aspects();
+          final Function1<Aspect,Boolean> _function_3 = new Function1<Aspect,Boolean>() {
               public Boolean apply(final Aspect c) {
                 return Boolean.valueOf((c instanceof Build));
               }
             };
-          Aspect oldBuild = IterableExtensions.<Aspect>findFirst(_vP_Aspects_4, _function_2);
-          boolean _notEquals_3 = (!Objects.equal(oldBuild, null));
-          if (_notEquals_3) {
+          Aspect oldBuild = IterableExtensions.<Aspect>findFirst(_vP_Aspects_5, _function_3);
+          boolean _notEquals_5 = (!Objects.equal(oldBuild, null));
+          if (_notEquals_5) {
             EObject _get_6 = this.copier.get(key);
             EcoreUtil2.replace(oldBuild, _get_6);
           } else {
-            EList<Aspect> _vP_Aspects_5 = target.getVP_Aspects();
+            EList<Aspect> _vP_Aspects_6 = target.getVP_Aspects();
             EObject _get_7 = this.copier.get(key);
-            _vP_Aspects_5.add(((Aspect) _get_7));
+            _vP_Aspects_6.add(((Aspect) _get_7));
           }
         }
         if ((key instanceof Configuration)) {
-          EList<Aspect> _vP_Aspects_6 = target.getVP_Aspects();
-          final Function1<Aspect,Boolean> _function_3 = new Function1<Aspect,Boolean>() {
+          EList<Aspect> _vP_Aspects_7 = target.getVP_Aspects();
+          final Function1<Aspect,Boolean> _function_4 = new Function1<Aspect,Boolean>() {
               public Boolean apply(final Aspect c) {
                 return Boolean.valueOf((c instanceof Configuration));
               }
             };
-          Aspect oldConf = IterableExtensions.<Aspect>findFirst(_vP_Aspects_6, _function_3);
-          boolean _notEquals_4 = (!Objects.equal(oldConf, null));
-          if (_notEquals_4) {
+          Aspect oldConf = IterableExtensions.<Aspect>findFirst(_vP_Aspects_7, _function_4);
+          boolean _notEquals_6 = (!Objects.equal(oldConf, null));
+          if (_notEquals_6) {
             EObject _get_8 = this.copier.get(key);
             EcoreUtil2.replace(oldConf, _get_8);
           } else {
-            EList<Aspect> _vP_Aspects_7 = target.getVP_Aspects();
+            EList<Aspect> _vP_Aspects_8 = target.getVP_Aspects();
             EObject _get_9 = this.copier.get(key);
-            _vP_Aspects_7.add(((Aspect) _get_9));
+            _vP_Aspects_8.add(((Aspect) _get_9));
           }
         }
         if ((key instanceof RuleSet)) {
-          EList<Aspect> _vP_Aspects_8 = target.getVP_Aspects();
-          final Function1<Aspect,Boolean> _function_4 = new Function1<Aspect,Boolean>() {
+          EList<Aspect> _vP_Aspects_9 = target.getVP_Aspects();
+          final Function1<Aspect,Boolean> _function_5 = new Function1<Aspect,Boolean>() {
               public Boolean apply(final Aspect c) {
                 return Boolean.valueOf((c instanceof RuleSet));
               }
             };
-          Aspect oldRules = IterableExtensions.<Aspect>findFirst(_vP_Aspects_8, _function_4);
-          boolean _notEquals_5 = (!Objects.equal(oldRules, null));
-          if (_notEquals_5) {
+          Aspect oldRules = IterableExtensions.<Aspect>findFirst(_vP_Aspects_9, _function_5);
+          boolean _notEquals_7 = (!Objects.equal(oldRules, null));
+          if (_notEquals_7) {
             EObject _get_10 = this.copier.get(key);
             EcoreUtil2.replace(oldRules, _get_10);
           } else {
-            EList<Aspect> _vP_Aspects_9 = target.getVP_Aspects();
+            EList<Aspect> _vP_Aspects_10 = target.getVP_Aspects();
             EObject _get_11 = this.copier.get(key);
-            _vP_Aspects_9.add(((Aspect) _get_11));
+            _vP_Aspects_10.add(((Aspect) _get_11));
           }
         }
         if ((key instanceof ServiceSet)) {
-          EList<Aspect> _vP_Aspects_10 = target.getVP_Aspects();
-          final Function1<Aspect,Boolean> _function_5 = new Function1<Aspect,Boolean>() {
+          EList<Aspect> _vP_Aspects_11 = target.getVP_Aspects();
+          final Function1<Aspect,Boolean> _function_6 = new Function1<Aspect,Boolean>() {
               public Boolean apply(final Aspect c) {
                 return Boolean.valueOf((c instanceof ServiceSet));
               }
             };
-          Aspect oldServices = IterableExtensions.<Aspect>findFirst(_vP_Aspects_10, _function_5);
-          boolean _notEquals_6 = (!Objects.equal(oldServices, null));
-          if (_notEquals_6) {
+          Aspect oldServices = IterableExtensions.<Aspect>findFirst(_vP_Aspects_11, _function_6);
+          boolean _notEquals_8 = (!Objects.equal(oldServices, null));
+          if (_notEquals_8) {
             EObject _get_12 = this.copier.get(key);
             EcoreUtil2.replace(oldServices, _get_12);
           } else {
-            EList<Aspect> _vP_Aspects_11 = target.getVP_Aspects();
+            EList<Aspect> _vP_Aspects_12 = target.getVP_Aspects();
             EObject _get_13 = this.copier.get(key);
-            _vP_Aspects_11.add(((Aspect) _get_13));
+            _vP_Aspects_12.add(((Aspect) _get_13));
           }
         }
         if ((key instanceof PropertySet)) {
-          EList<Aspect> _vP_Aspects_12 = target.getVP_Aspects();
-          final Function1<Aspect,Boolean> _function_6 = new Function1<Aspect,Boolean>() {
+          EList<Aspect> _vP_Aspects_13 = target.getVP_Aspects();
+          final Function1<Aspect,Boolean> _function_7 = new Function1<Aspect,Boolean>() {
               public Boolean apply(final Aspect c) {
                 return Boolean.valueOf((c instanceof PropertySet));
               }
             };
-          Aspect oldProperties = IterableExtensions.<Aspect>findFirst(_vP_Aspects_12, _function_6);
-          boolean _notEquals_7 = (!Objects.equal(oldProperties, null));
-          if (_notEquals_7) {
+          Aspect oldProperties = IterableExtensions.<Aspect>findFirst(_vP_Aspects_13, _function_7);
+          boolean _notEquals_9 = (!Objects.equal(oldProperties, null));
+          if (_notEquals_9) {
             EObject _get_14 = this.copier.get(key);
             EcoreUtil2.replace(oldProperties, _get_14);
           } else {
-            EList<Aspect> _vP_Aspects_13 = target.getVP_Aspects();
+            EList<Aspect> _vP_Aspects_14 = target.getVP_Aspects();
             EObject _get_15 = this.copier.get(key);
-            _vP_Aspects_13.add(((Aspect) _get_15));
+            _vP_Aspects_14.add(((Aspect) _get_15));
           }
         }
       }

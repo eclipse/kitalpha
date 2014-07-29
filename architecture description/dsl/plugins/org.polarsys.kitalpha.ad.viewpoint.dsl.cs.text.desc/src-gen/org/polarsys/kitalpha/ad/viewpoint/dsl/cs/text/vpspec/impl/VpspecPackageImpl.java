@@ -162,7 +162,7 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getViewpoint_VP_Data()
+  public EReference getViewpoint_UseViewpoint()
   {
     return (EReference)viewpointEClass.getEStructuralFeatures().get(5);
   }
@@ -172,7 +172,7 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getViewpoint_Type()
+  public EAttribute getViewpoint_UseEcoreResource()
   {
     return (EAttribute)viewpointEClass.getEStructuralFeatures().get(6);
   }
@@ -182,9 +182,59 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getViewpoint_UseResource()
+  {
+    return (EAttribute)viewpointEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getViewpoint_UseDiagramResource()
+  {
+    return (EAttribute)viewpointEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getViewpoint_UseEMFResource()
+  {
+    return (EAttribute)viewpointEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getViewpoint_VP_Data()
+  {
+    return (EReference)viewpointEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getViewpoint_Type()
+  {
+    return (EAttribute)viewpointEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getViewpoint_VP_Aspects()
   {
-    return (EReference)viewpointEClass.getEStructuralFeatures().get(7);
+    return (EReference)viewpointEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -223,6 +273,11 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
     createEAttribute(viewpointEClass, VIEWPOINT__DESCRIPTION);
     createEReference(viewpointEClass, VIEWPOINT__PARENTS);
     createEReference(viewpointEClass, VIEWPOINT__DEPENDENCIES);
+    createEReference(viewpointEClass, VIEWPOINT__USE_VIEWPOINT);
+    createEAttribute(viewpointEClass, VIEWPOINT__USE_ECORE_RESOURCE);
+    createEAttribute(viewpointEClass, VIEWPOINT__USE_RESOURCE);
+    createEAttribute(viewpointEClass, VIEWPOINT__USE_DIAGRAM_RESOURCE);
+    createEAttribute(viewpointEClass, VIEWPOINT__USE_EMF_RESOURCE);
     createEReference(viewpointEClass, VIEWPOINT__VP_DATA);
     createEAttribute(viewpointEClass, VIEWPOINT__TYPE);
     createEReference(viewpointEClass, VIEWPOINT__VP_ASPECTS);
@@ -269,6 +324,11 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
     initEAttribute(getViewpoint_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_Parents(), this.getViewpoint(), null, "parents", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_Dependencies(), this.getViewpoint(), null, "dependencies", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getViewpoint_UseViewpoint(), this.getViewpoint(), null, "useViewpoint", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getViewpoint_UseEcoreResource(), theEcorePackage.getEString(), "useEcoreResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getViewpoint_UseResource(), theEcorePackage.getEString(), "useResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getViewpoint_UseDiagramResource(), theEcorePackage.getEString(), "useDiagramResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getViewpoint_UseEMFResource(), theEcorePackage.getEString(), "useEMFResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_VP_Data(), theVpdescPackage.getData(), null, "VP_Data", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_Type(), theEcorePackage.getEString(), "type", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_VP_Aspects(), theVpdescPackage.getAspect(), null, "VP_Aspects", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

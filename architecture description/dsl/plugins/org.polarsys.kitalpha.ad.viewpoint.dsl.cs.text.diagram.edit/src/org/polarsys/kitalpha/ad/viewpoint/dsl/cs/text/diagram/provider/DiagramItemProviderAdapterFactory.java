@@ -123,7 +123,6 @@ public class DiagramItemProviderAdapterFactory extends DiagramAdapterFactory imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Adapter createImportAdapter() {
 		if (importItemProvider == null) {
 			importItemProvider = new ImportItemProvider(this);

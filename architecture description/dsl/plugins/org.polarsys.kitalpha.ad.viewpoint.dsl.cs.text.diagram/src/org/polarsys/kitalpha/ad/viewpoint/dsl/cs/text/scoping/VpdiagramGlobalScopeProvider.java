@@ -18,12 +18,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
@@ -38,6 +40,7 @@ import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.DefaultGlobalScopeProvider;
 import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpdiagram.DoremiDiagramElementHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
@@ -85,6 +88,7 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		exportedObjects = Iterables.concat(exportedObjects,	getDoremiEdgeMappings(eResource, type));
 		exportedObjects = Iterables.concat(exportedObjects,	getDoremiNodeMappings(eResource, type));
 		exportedObjects = Iterables.concat(exportedObjects,	getDoremiContainerMappings(eResource, type));
+		exportedObjects = Iterables.concat(exportedObjects, getExternalImportDiagramObjectDescription(eResource, exportedObjects, type));
 		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
 	}
 	
@@ -244,6 +248,56 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 				exportedObjects = Iterables.concat(exportedObjects, description.getExportedObjects());
 			}
 		}
+		return exportedObjects;
+	}
+	
+	//Handle external imports
+	private Iterable<IEObjectDescription> getExternalImportDiagramObjectDescription(Resource resource,
+			Iterable<IEObjectDescription> exportedObjects, EClass type){
+
+		Collection<IEObjectDescription> ExportImportedObjects = new ArrayList<IEObjectDescription>();
+		TreeIterator<EObject> it = resource.getAllContents();
+
+
+		while (it.hasNext()){
+			EObject next = it.next();
+
+			for(EObject content: next.eContents()){
+				if (content instanceof ImportGroup){
+					ImportGroup importedOdesign = (ImportGroup)content;
+					String platformURI = importedOdesign.getImportedGroup();
+
+					if (platformURI != null && !platformURI.isEmpty()){
+						String tmpUri = platformURI.substring(1, platformURI.length() - 1);
+						URI uri = URI.createURI(tmpUri);
+						Resource odesignResources = resource.getResourceSet().getResource(uri, true);
+
+						if (descriptionManager != null
+								&& odesignResources != null) {
+							EcoreUtil.resolveAll(odesignResources);
+
+							TreeIterator<EObject> odesign_it = odesignResources.getAllContents();
+
+							while (odesign_it.hasNext()){
+								EObject odesign_next = odesign_it.next();
+								if (odesign_next instanceof DiagramDescription){
+									IEObjectDescription desc = EObjectDescription.create(((DiagramDescription) odesign_next).getName().replaceAll(" ", ""), odesign_next, null);
+									ExportImportedObjects.add(desc);
+									//									IResourceDescription resourceDescription = descriptionManager.getResourceDescription(odesignResources);
+									//									exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());
+								}
+							}
+						}
+						
+//						exportedObjects = Iterables.concat(exportedObjects, getDoremiDiagramDescriptions(odesignResources, type));
+//						exportedObjects = Iterables.concat(exportedObjects,	getDoremiEdgeMappings(odesignResources, type));
+//						exportedObjects = Iterables.concat(exportedObjects,	getDoremiNodeMappings(odesignResources, type));
+//						exportedObjects = Iterables.concat(exportedObjects,	getDoremiContainerMappings(odesignResources, type));
+					}
+				}
+			}
+		}
+		exportedObjects = Iterables.concat(exportedObjects, ExportImportedObjects);
 		return exportedObjects;
 	}
 	

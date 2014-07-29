@@ -38,12 +38,18 @@ public class VpspecFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1).before(f.getViewpointAccess().getExtendsKeyword_6_0());
 		c.setLinewrap(1).before(f.getViewpointAccess().getAggregatesKeyword_7_0());
 		
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeBuildKeyword_12_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeConfigurationKeyword_13_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getDataKeyword_8_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeDiagramsKeyword_10_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeServicesKeyword_11_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeUIKeyword_9_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeBuildKeyword_16_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeConfigurationKeyword_17_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getDataKeyword_12_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeDiagramsKeyword_14_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeServicesKeyword_15_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeUIKeyword_13_0_0());
+		
+		c.setLinewrap(1).before(f.getViewpointAccess().getUseViewpointKeyword_8_0());
+		
+		for(Keyword keyword: f.findKeywords(",")) {
+			c.setNoSpace().before(keyword);
+		}
 
 		for(Pair<Keyword, Keyword> pair: f.findKeywordPairs("{", "}")) {
 			c.setIndentation(pair.getFirst(), pair.getSecond());

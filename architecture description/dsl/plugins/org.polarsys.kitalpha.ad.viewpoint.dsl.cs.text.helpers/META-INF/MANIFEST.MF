@@ -17,3 +17,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpconf,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpdiagram,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec
+Import-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.extension,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram

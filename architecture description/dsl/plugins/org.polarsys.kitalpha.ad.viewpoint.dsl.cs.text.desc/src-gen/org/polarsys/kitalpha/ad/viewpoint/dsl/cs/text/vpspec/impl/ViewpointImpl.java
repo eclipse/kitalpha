@@ -35,6 +35,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getParents <em>Parents</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getDependencies <em>Dependencies</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseViewpoint <em>Use Viewpoint</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseEcoreResource <em>Use Ecore Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseResource <em>Use Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseDiagramResource <em>Use Diagram Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseEMFResource <em>Use EMF Resource</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getVP_Data <em>VP Data</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getVP_Aspects <em>VP Aspects</em>}</li>
@@ -124,6 +129,56 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * @ordered
    */
   protected EList<Viewpoint> dependencies;
+
+  /**
+   * The cached value of the '{@link #getUseViewpoint() <em>Use Viewpoint</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseViewpoint()
+   * @generated
+   * @ordered
+   */
+  protected EList<Viewpoint> useViewpoint;
+
+  /**
+   * The cached value of the '{@link #getUseEcoreResource() <em>Use Ecore Resource</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseEcoreResource()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> useEcoreResource;
+
+  /**
+   * The cached value of the '{@link #getUseResource() <em>Use Resource</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseResource()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> useResource;
+
+  /**
+   * The cached value of the '{@link #getUseDiagramResource() <em>Use Diagram Resource</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseDiagramResource()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> useDiagramResource;
+
+  /**
+   * The cached value of the '{@link #getUseEMFResource() <em>Use EMF Resource</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseEMFResource()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> useEMFResource;
 
   /**
    * The cached value of the '{@link #getVP_Data() <em>VP Data</em>}' reference.
@@ -278,6 +333,76 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Viewpoint> getUseViewpoint()
+  {
+    if (useViewpoint == null)
+    {
+      useViewpoint = new EObjectResolvingEList<Viewpoint>(Viewpoint.class, this, VpspecPackage.VIEWPOINT__USE_VIEWPOINT);
+    }
+    return useViewpoint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getUseEcoreResource()
+  {
+    if (useEcoreResource == null)
+    {
+      useEcoreResource = new EDataTypeEList<String>(String.class, this, VpspecPackage.VIEWPOINT__USE_ECORE_RESOURCE);
+    }
+    return useEcoreResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getUseResource()
+  {
+    if (useResource == null)
+    {
+      useResource = new EDataTypeEList<String>(String.class, this, VpspecPackage.VIEWPOINT__USE_RESOURCE);
+    }
+    return useResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getUseDiagramResource()
+  {
+    if (useDiagramResource == null)
+    {
+      useDiagramResource = new EDataTypeEList<String>(String.class, this, VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE);
+    }
+    return useDiagramResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getUseEMFResource()
+  {
+    if (useEMFResource == null)
+    {
+      useEMFResource = new EDataTypeEList<String>(String.class, this, VpspecPackage.VIEWPOINT__USE_EMF_RESOURCE);
+    }
+    return useEMFResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Data getVP_Data()
   {
     if (vP_Data != null && vP_Data.eIsProxy())
@@ -364,6 +489,16 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         return getParents();
       case VpspecPackage.VIEWPOINT__DEPENDENCIES:
         return getDependencies();
+      case VpspecPackage.VIEWPOINT__USE_VIEWPOINT:
+        return getUseViewpoint();
+      case VpspecPackage.VIEWPOINT__USE_ECORE_RESOURCE:
+        return getUseEcoreResource();
+      case VpspecPackage.VIEWPOINT__USE_RESOURCE:
+        return getUseResource();
+      case VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE:
+        return getUseDiagramResource();
+      case VpspecPackage.VIEWPOINT__USE_EMF_RESOURCE:
+        return getUseEMFResource();
       case VpspecPackage.VIEWPOINT__VP_DATA:
         if (resolve) return getVP_Data();
         return basicGetVP_Data();
@@ -402,6 +537,26 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
       case VpspecPackage.VIEWPOINT__DEPENDENCIES:
         getDependencies().clear();
         getDependencies().addAll((Collection<? extends Viewpoint>)newValue);
+        return;
+      case VpspecPackage.VIEWPOINT__USE_VIEWPOINT:
+        getUseViewpoint().clear();
+        getUseViewpoint().addAll((Collection<? extends Viewpoint>)newValue);
+        return;
+      case VpspecPackage.VIEWPOINT__USE_ECORE_RESOURCE:
+        getUseEcoreResource().clear();
+        getUseEcoreResource().addAll((Collection<? extends String>)newValue);
+        return;
+      case VpspecPackage.VIEWPOINT__USE_RESOURCE:
+        getUseResource().clear();
+        getUseResource().addAll((Collection<? extends String>)newValue);
+        return;
+      case VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE:
+        getUseDiagramResource().clear();
+        getUseDiagramResource().addAll((Collection<? extends String>)newValue);
+        return;
+      case VpspecPackage.VIEWPOINT__USE_EMF_RESOURCE:
+        getUseEMFResource().clear();
+        getUseEMFResource().addAll((Collection<? extends String>)newValue);
         return;
       case VpspecPackage.VIEWPOINT__VP_DATA:
         setVP_Data((Data)newValue);
@@ -443,6 +598,21 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
       case VpspecPackage.VIEWPOINT__DEPENDENCIES:
         getDependencies().clear();
         return;
+      case VpspecPackage.VIEWPOINT__USE_VIEWPOINT:
+        getUseViewpoint().clear();
+        return;
+      case VpspecPackage.VIEWPOINT__USE_ECORE_RESOURCE:
+        getUseEcoreResource().clear();
+        return;
+      case VpspecPackage.VIEWPOINT__USE_RESOURCE:
+        getUseResource().clear();
+        return;
+      case VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE:
+        getUseDiagramResource().clear();
+        return;
+      case VpspecPackage.VIEWPOINT__USE_EMF_RESOURCE:
+        getUseEMFResource().clear();
+        return;
       case VpspecPackage.VIEWPOINT__VP_DATA:
         setVP_Data((Data)null);
         return;
@@ -476,6 +646,16 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         return parents != null && !parents.isEmpty();
       case VpspecPackage.VIEWPOINT__DEPENDENCIES:
         return dependencies != null && !dependencies.isEmpty();
+      case VpspecPackage.VIEWPOINT__USE_VIEWPOINT:
+        return useViewpoint != null && !useViewpoint.isEmpty();
+      case VpspecPackage.VIEWPOINT__USE_ECORE_RESOURCE:
+        return useEcoreResource != null && !useEcoreResource.isEmpty();
+      case VpspecPackage.VIEWPOINT__USE_RESOURCE:
+        return useResource != null && !useResource.isEmpty();
+      case VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE:
+        return useDiagramResource != null && !useDiagramResource.isEmpty();
+      case VpspecPackage.VIEWPOINT__USE_EMF_RESOURCE:
+        return useEMFResource != null && !useEMFResource.isEmpty();
       case VpspecPackage.VIEWPOINT__VP_DATA:
         return vP_Data != null;
       case VpspecPackage.VIEWPOINT__TYPE:
@@ -503,6 +683,14 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
     result.append(name);
     result.append(", description: ");
     result.append(description);
+    result.append(", useEcoreResource: ");
+    result.append(useEcoreResource);
+    result.append(", useResource: ");
+    result.append(useResource);
+    result.append(", useDiagramResource: ");
+    result.append(useDiagramResource);
+    result.append(", useEMFResource: ");
+    result.append(useEMFResource);
     result.append(", type: ");
     result.append(type);
     result.append(')');

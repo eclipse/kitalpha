@@ -79,10 +79,26 @@ public class DiagramSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DiagramPackage.IMPORT:
+      case DiagramPackage.ABSTRACT_IMPORT:
       {
-        Import import_ = (Import)theEObject;
-        T result = caseImport(import_);
+        AbstractImport abstractImport = (AbstractImport)theEObject;
+        T result = caseAbstractImport(abstractImport);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DiagramPackage.IMPORT_NAME_SPACE:
+      {
+        ImportNameSpace importNameSpace = (ImportNameSpace)theEObject;
+        T result = caseImportNameSpace(importNameSpace);
+        if (result == null) result = caseAbstractImport(importNameSpace);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DiagramPackage.IMPORT_GROUP:
+      {
+        ImportGroup importGroup = (ImportGroup)theEObject;
+        T result = caseImportGroup(importGroup);
+        if (result == null) result = caseAbstractImport(importGroup);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -107,17 +123,49 @@ public class DiagramSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Import</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Import</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseImport(Import object)
+  public T caseAbstractImport(AbstractImport object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import Name Space</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import Name Space</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportNameSpace(ImportNameSpace object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportGroup(ImportGroup object)
   {
     return null;
   }

@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public class DiagramsImpl extends MinimalEObjectImpl.Container implements Diagra
    * @generated
    * @ordered
    */
-  protected EList<Import> imports;
+  protected EList<AbstractImport> imports;
 
   /**
    * The cached value of the '{@link #getDiagrams() <em>Diagrams</em>}' containment reference.
@@ -86,11 +86,11 @@ public class DiagramsImpl extends MinimalEObjectImpl.Container implements Diagra
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Import> getImports()
+  public EList<AbstractImport> getImports()
   {
     if (imports == null)
     {
-      imports = new EObjectContainmentEList<Import>(Import.class, this, DiagramPackage.DIAGRAMS__IMPORTS);
+      imports = new EObjectContainmentEList<AbstractImport>(AbstractImport.class, this, DiagramPackage.DIAGRAMS__IMPORTS);
     }
     return imports;
   }
@@ -192,7 +192,7 @@ public class DiagramsImpl extends MinimalEObjectImpl.Container implements Diagra
     {
       case DiagramPackage.DIAGRAMS__IMPORTS:
         getImports().clear();
-        getImports().addAll((Collection<? extends Import>)newValue);
+        getImports().addAll((Collection<? extends AbstractImport>)newValue);
         return;
       case DiagramPackage.DIAGRAMS__DIAGRAMS:
         setDiagrams((Aspect)newValue);

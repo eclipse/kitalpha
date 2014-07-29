@@ -14,8 +14,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Vpdiagram.ecore#//Diagrams/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Vpdiagram.ecore#//Diagrams/diagrams"/>
     </genClasses>
-    <genClasses ecoreClass="Vpdiagram.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpdiagram.ecore#//Import/importedNamespace"/>
+    <genClasses ecoreClass="Vpdiagram.ecore#//AbstractImport"/>
+    <genClasses ecoreClass="Vpdiagram.ecore#//ImportNameSpace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpdiagram.ecore#//ImportNameSpace/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Vpdiagram.ecore#//ImportGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpdiagram.ecore#//ImportGroup/importedGroup"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

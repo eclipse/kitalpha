@@ -17,10 +17,12 @@ import java.util.Collections;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.shared.SharedStateModule;
 import org.eclipse.xtext.util.Modules2;
 import org.osgi.framework.BundleContext;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
@@ -51,6 +53,7 @@ public class CommonActivator extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		injectors.clear();
 		INSTANCE = null;
+		DataWorkspaceEPackage.INSTANCE.dispose(ResourcesPlugin.getWorkspace());
 		super.stop(context);
 	}
 	

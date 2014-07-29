@@ -44,13 +44,13 @@ public class VpspecJavaValidator extends AbstractVpspecJavaValidator {
 		if (!aspects.isEmpty()) {
 			for (String type : types) {
 				int index = types.indexOf(type);
-				if (type.equals(access.getViewpointAccess().getTypeDiagramsKeyword_10_0_0().getValue()) && !(aspects.get(index) instanceof DiagramSet))
+				if (type.equals(access.getViewpointAccess().getTypeDiagramsKeyword_14_0_0().getValue()) && !(aspects.get(index) instanceof DiagramSet))
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
-				if (type.equals(access.getViewpointAccess().getTypeUIKeyword_9_0_0().getValue()) && !(aspects.get(index) instanceof UIDescription))
+				if (type.equals(access.getViewpointAccess().getTypeUIKeyword_13_0_0().getValue()) && !(aspects.get(index) instanceof UIDescription))
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
-				if (type.equals(access.getViewpointAccess().getTypeConfigurationKeyword_13_0_0().getValue()) && !(aspects.get(index) instanceof Configuration))
+				if (type.equals(access.getViewpointAccess().getTypeConfigurationKeyword_17_0_0().getValue()) && !(aspects.get(index) instanceof Configuration))
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
-				if (type.equals(access.getViewpointAccess().getTypeBuildKeyword_12_0_0().getValue()) && !(aspects.get(index) instanceof Build))
+				if (type.equals(access.getViewpointAccess().getTypeBuildKeyword_16_0_0().getValue()) && !(aspects.get(index) instanceof Build))
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
 			}
 			EList<Viewpoint> dependencies = vp.getDependencies();

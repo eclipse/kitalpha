@@ -170,7 +170,7 @@ public class DiagramsItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(DiagramPackage.Literals.DIAGRAMS__IMPORTS,
-				 DiagramFactory.eINSTANCE.createImport()));
+				 DiagramFactory.eINSTANCE.createImportNameSpace()));
 
 
 	}

@@ -80,9 +80,19 @@ public class DiagramAdapterFactory extends AdapterFactoryImpl
         return createDiagramsAdapter();
       }
       @Override
-      public Adapter caseImport(Import object)
+      public Adapter caseAbstractImport(AbstractImport object)
       {
-        return createImportAdapter();
+        return createAbstractImportAdapter();
+      }
+      @Override
+      public Adapter caseImportNameSpace(ImportNameSpace object)
+      {
+        return createImportNameSpaceAdapter();
+      }
+      @Override
+      public Adapter caseImportGroup(ImportGroup object)
+      {
+        return createImportGroupAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -122,16 +132,46 @@ public class DiagramAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import <em>Import</em>}'.
+   * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport <em>Abstract Import</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport
    * @generated
    */
-  public Adapter createImportAdapter()
+  public Adapter createAbstractImportAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace <em>Import Name Space</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace
+   * @generated
+   */
+  public Adapter createImportNameSpaceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup <em>Import Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup
+   * @generated
+   */
+  public Adapter createImportGroupAdapter()
   {
     return null;
   }

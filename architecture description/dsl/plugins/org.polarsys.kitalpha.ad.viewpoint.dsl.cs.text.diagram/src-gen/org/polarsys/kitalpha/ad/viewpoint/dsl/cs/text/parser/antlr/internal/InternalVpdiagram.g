@@ -87,9 +87,9 @@ ruleDiagrams returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDiagramsAccess().getImportsImportParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getDiagramsAccess().getImportsAbstractImportParserRuleCall_1_0()); 
 	    }
-		lv_imports_1_0=ruleImport		{
+		lv_imports_1_0=ruleAbstractImport		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDiagramsRule());
 	        }
@@ -97,7 +97,7 @@ ruleDiagrams returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_1_0, 
-        		"Import");
+        		"AbstractImport");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -127,38 +127,125 @@ ruleDiagrams returns [EObject current=null]
 
 
 
-// Entry rule entryRuleImport
-entryRuleImport returns [EObject current=null] 
+// Entry rule entryRuleAbstractImport
+entryRuleAbstractImport returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getImportRule()); }
-	 iv_ruleImport=ruleImport 
-	 { $current=$iv_ruleImport.current; } 
+	{ newCompositeNode(grammarAccess.getAbstractImportRule()); }
+	 iv_ruleAbstractImport=ruleAbstractImport 
+	 { $current=$iv_ruleAbstractImport.current; } 
 	 EOF 
 ;
 
-// Rule Import
-ruleImport returns [EObject current=null] 
+// Rule AbstractImport
+ruleAbstractImport returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getAbstractImportAccess().getImportNameSpaceParserRuleCall_0()); 
+    }
+    this_ImportNameSpace_0=ruleImportNameSpace
+    { 
+        $current = $this_ImportNameSpace_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getAbstractImportAccess().getImportGroupParserRuleCall_1()); 
+    }
+    this_ImportGroup_1=ruleImportGroup
+    { 
+        $current = $this_ImportGroup_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleImportNameSpace
+entryRuleImportNameSpace returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getImportNameSpaceRule()); }
+	 iv_ruleImportNameSpace=ruleImportNameSpace 
+	 { $current=$iv_ruleImportNameSpace.current; } 
+	 EOF 
+;
+
+// Rule ImportNameSpace
+ruleImportNameSpace returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (	otherlv_0='import' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getImportNameSpaceAccess().getImportKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceFQNParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getImportNameSpaceAccess().getImportedNamespaceFQNParserRuleCall_1_0()); 
 	    }
 		lv_importedNamespace_1_0=ruleFQN		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getImportRule());
+	            $current = createModelElementForParent(grammarAccess.getImportNameSpaceRule());
 	        }
        		set(
        			$current, 
        			"importedNamespace",
         		lv_importedNamespace_1_0, 
         		"FQN");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleImportGroup
+entryRuleImportGroup returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getImportGroupRule()); }
+	 iv_ruleImportGroup=ruleImportGroup 
+	 { $current=$iv_ruleImportGroup.current; } 
+	 EOF 
+;
+
+// Rule ImportGroup
+ruleImportGroup returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='import' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getImportGroupAccess().getImportKeyword_0());
+    }
+	otherlv_1='external' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getImportGroupAccess().getExternalKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getImportGroupAccess().getImportedGroupEStringParserRuleCall_2_0()); 
+	    }
+		lv_importedGroup_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getImportGroupRule());
+	        }
+       		set(
+       			$current, 
+       			"importedGroup",
+        		lv_importedGroup_2_0, 
+        		"EString");
 	        afterParserOrEnumRuleCall();
 	    }
 

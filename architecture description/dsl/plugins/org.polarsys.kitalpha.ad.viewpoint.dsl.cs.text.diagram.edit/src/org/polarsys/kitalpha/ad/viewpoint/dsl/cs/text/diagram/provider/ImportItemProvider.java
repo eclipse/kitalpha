@@ -37,8 +37,10 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import} object.
@@ -84,7 +86,7 @@ public class ImportItemProvider
 	 * This adds a property descriptor for the Imported Namespace feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addImportedNamespacePropertyDescriptor(Object object) {
 
@@ -93,14 +95,28 @@ public class ImportItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Import_importedNamespace_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Import_importedNamespace_feature", "_UI_Import_type"),
-				 DiagramPackage.Literals.IMPORT__IMPORTED_NAMESPACE,
+				 getString("_UI_PropertyDescriptor_description", "_UI_Import_importedNamespace_feature", "_UI_AbstractImport_type"),
+				 DiagramPackage.Literals.IMPORT_NAME_SPACE__IMPORTED_NAMESPACE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+		
+		itemPropertyDescriptors.add
+		(createItemPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_Import_importedGroup_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_Import_importedGroup_feature", "_UI_AbstractImport_type"),
+			 DiagramPackage.Literals.IMPORT_GROUP__IMPORTED_GROUP,
+			 true,
+			 false,
+			 false,
+			 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+			 null,
+			 null));
 
 	}
 
@@ -124,10 +140,18 @@ public class ImportItemProvider
 	@Override
 	public String getText(Object object) {
 
-		String label = ((Import)object).getImportedNamespace();
+		String label = null;
+		
+		if (object instanceof ImportNameSpace){
+			label = ((ImportNameSpace)object).getImportedNamespace();
+		} else {
+			if (object instanceof ImportGroup){
+				label = ((ImportGroup)object).getImportedGroup();
+			}
+		}
 		return label == null || label.length() == 0 ?
-			getString("_UI_Import_type") :
-			getString("_UI_Import_type") + " " + label;
+			getString("_UI_AbstractImport_type") :
+			getString("_UI_AbstractImport_type") + " " + label;
 
 	}
 
@@ -136,14 +160,14 @@ public class ImportItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Import.class)) {
-			case DiagramPackage.IMPORT__IMPORTED_NAMESPACE:
+		switch (notification.getFeatureID(AbstractImport.class)) {
+			case DiagramPackage.IMPORT_GROUP | DiagramPackage.IMPORT_NAME_SPACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

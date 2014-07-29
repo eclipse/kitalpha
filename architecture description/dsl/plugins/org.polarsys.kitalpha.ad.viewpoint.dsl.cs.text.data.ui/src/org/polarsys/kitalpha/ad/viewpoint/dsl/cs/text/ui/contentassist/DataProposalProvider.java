@@ -147,13 +147,18 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 
 		Image image = ImageDescriptor.createFromURL(url).createImage();
 
-		Set<String> nsUris = NsUriFinder.getNsUriFromEPackageRegistry();
+//		Set<String> nsUris = NsUriFinder.getNsUriFromEPackageRegistry();
+		Set<String> nsUris = NsUriFinder.getViewpointEPackagesNSURI(model);
 
 		for (String uri : nsUris) {
 			StyledString styledUri = new StyledString();
 			styledUri.append(uri);
-			acceptor.accept(createCompletionProposal(createProposal(uri),
+			if (uri.startsWith("\"") && uri.contains(context.getPrefix().substring(1)))
+				acceptor.accept(createCompletionProposal(createProposal(uri),
 					styledUri, image, context));
+			else
+				acceptor.accept(createCompletionProposal(createProposal(uri),
+						styledUri, image, context));
 		}
 
 	}

@@ -24,26 +24,26 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDiagramsAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cImportsImportParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
+		private final RuleCall cImportsAbstractImportParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
 		private final Assignment cDiagramsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDiagramsAspectParserRuleCall_2_0 = (RuleCall)cDiagramsAssignment_2.eContents().get(0);
 		
 		//Diagrams:
 		//
-		//	{Diagrams} imports+=Import* diagrams=Aspect;
+		//	{Diagrams} imports+=AbstractImport* diagrams=Aspect;
 		public ParserRule getRule() { return rule; }
 
-		//{Diagrams} imports+=Import* diagrams=Aspect
+		//{Diagrams} imports+=AbstractImport* diagrams=Aspect
 		public Group getGroup() { return cGroup; }
 
 		//{Diagrams}
 		public Action getDiagramsAction_0() { return cDiagramsAction_0; }
 
-		//imports+=Import*
+		//imports+=AbstractImport*
 		public Assignment getImportsAssignment_1() { return cImportsAssignment_1; }
 
-		//Import
-		public RuleCall getImportsImportParserRuleCall_1_0() { return cImportsImportParserRuleCall_1_0; }
+		//AbstractImport
+		public RuleCall getImportsAbstractImportParserRuleCall_1_0() { return cImportsAbstractImportParserRuleCall_1_0; }
 
 		//diagrams=Aspect
 		public Assignment getDiagramsAssignment_2() { return cDiagramsAssignment_2; }
@@ -52,14 +52,35 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getDiagramsAspectParserRuleCall_2_0() { return cDiagramsAspectParserRuleCall_2_0; }
 	}
 
-	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+	public class AbstractImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractImport");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cImportNameSpaceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cImportGroupParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//AbstractImport:
+		//
+		//	ImportNameSpace | ImportGroup;
+		public ParserRule getRule() { return rule; }
+
+		//ImportNameSpace | ImportGroup
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ImportNameSpace
+		public RuleCall getImportNameSpaceParserRuleCall_0() { return cImportNameSpaceParserRuleCall_0; }
+
+		//ImportGroup
+		public RuleCall getImportGroupParserRuleCall_1() { return cImportGroupParserRuleCall_1; }
+	}
+
+	public class ImportNameSpaceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ImportNameSpace");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceFQNParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
-		//Import:
+		//ImportNameSpace:
 		//
 		//	"import" importedNamespace=FQN;
 		public ParserRule getRule() { return rule; }
@@ -75,6 +96,35 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 		//FQN
 		public RuleCall getImportedNamespaceFQNParserRuleCall_1_0() { return cImportedNamespaceFQNParserRuleCall_1_0; }
+	}
+
+	public class ImportGroupElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ImportGroup");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cExternalKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cImportedGroupAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cImportedGroupEStringParserRuleCall_2_0 = (RuleCall)cImportedGroupAssignment_2.eContents().get(0);
+		
+		//ImportGroup:
+		//
+		//	"import" "external" importedGroup=EString;
+		public ParserRule getRule() { return rule; }
+
+		//"import" "external" importedGroup=EString
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//"external"
+		public Keyword getExternalKeyword_1() { return cExternalKeyword_1; }
+
+		//importedGroup=EString
+		public Assignment getImportedGroupAssignment_2() { return cImportedGroupAssignment_2; }
+
+		//EString
+		public RuleCall getImportedGroupEStringParserRuleCall_2_0() { return cImportedGroupEStringParserRuleCall_2_0; }
 	}
 
 	public class AspectElements extends AbstractParserRuleElementFinder {
@@ -4000,7 +4050,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private DiagramsElements pDiagrams;
-	private ImportElements pImport;
+	private AbstractImportElements pAbstractImport;
+	private ImportNameSpaceElements pImportNameSpace;
+	private ImportGroupElements pImportGroup;
 	private AspectElements pAspect;
 	private DiagramSetElements pDiagramSet;
 	private DiagramRepresentationElements pDiagramRepresentation;
@@ -4107,7 +4159,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Diagrams:
 	//
-	//	{Diagrams} imports+=Import* diagrams=Aspect;
+	//	{Diagrams} imports+=AbstractImport* diagrams=Aspect;
 	public DiagramsElements getDiagramsAccess() {
 		return (pDiagrams != null) ? pDiagrams : (pDiagrams = new DiagramsElements());
 	}
@@ -4116,15 +4168,37 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramsAccess().getRule();
 	}
 
-	//Import:
+	//AbstractImport:
 	//
-	//	"import" importedNamespace=FQN;
-	public ImportElements getImportAccess() {
-		return (pImport != null) ? pImport : (pImport = new ImportElements());
+	//	ImportNameSpace | ImportGroup;
+	public AbstractImportElements getAbstractImportAccess() {
+		return (pAbstractImport != null) ? pAbstractImport : (pAbstractImport = new AbstractImportElements());
 	}
 	
-	public ParserRule getImportRule() {
-		return getImportAccess().getRule();
+	public ParserRule getAbstractImportRule() {
+		return getAbstractImportAccess().getRule();
+	}
+
+	//ImportNameSpace:
+	//
+	//	"import" importedNamespace=FQN;
+	public ImportNameSpaceElements getImportNameSpaceAccess() {
+		return (pImportNameSpace != null) ? pImportNameSpace : (pImportNameSpace = new ImportNameSpaceElements());
+	}
+	
+	public ParserRule getImportNameSpaceRule() {
+		return getImportNameSpaceAccess().getRule();
+	}
+
+	//ImportGroup:
+	//
+	//	"import" "external" importedGroup=EString;
+	public ImportGroupElements getImportGroupAccess() {
+		return (pImportGroup != null) ? pImportGroup : (pImportGroup = new ImportGroupElements());
+	}
+	
+	public ParserRule getImportGroupRule() {
+		return getImportGroupAccess().getRule();
 	}
 
 	//Aspect returns vpdesc::Aspect:

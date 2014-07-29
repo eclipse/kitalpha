@@ -16,14 +16,17 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
+import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 
 
 /**
@@ -36,6 +39,7 @@ public class DoremiDiagramElementHelper {
 
 	public static List<DiagramDescription> getAvailableDoremiDiagramFor(EObject anyModelElement){
 		List<DiagramDescription> result = new ArrayList<DiagramDescription>();
+		List<DiagramDescription> importedDiagrams = getImportedDoremiDiagramFor(anyModelElement);
 		if (anyModelElement != null) {
 			List<String> diagramFilter = ExtensionManager.getDiagramFilters(anyModelElement);
 			if (diagramFilter != null && ! diagramFilter.isEmpty()) {
@@ -48,6 +52,70 @@ public class DoremiDiagramElementHelper {
 				}
 			}
 		}
+		
+		if (importedDiagrams != null && !importedDiagrams.isEmpty()){
+			result.addAll(importedDiagrams);
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Get all imported {@link DiagramRepresentation} by end user.
+	 * @param anyModelElement any viewpoint model element.
+	 * @return a {@link List} of {@link DiagramRepresentation}
+	 */
+	public static List<DiagramDescription> getImportedDoremiDiagramFor(EObject anyModelElement){
+		List<DiagramDescription> result = new ArrayList<DiagramDescription>();
+		if (anyModelElement instanceof DiagramSet){
+			DiagramSet diagramSet = (DiagramSet)anyModelElement;
+			EList<Group> groups = diagramSet.getAdditionalExternalGroup();
+			for (Group group : groups) 
+			{
+				List<DiagramDescription> diagrams = getDiagrams(group);
+				if (diagrams.isEmpty() == false)
+				{
+					result.addAll(diagrams);
+				}
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 
+	 * @param container can be either a : 
+	 * <ul>
+	 * <li>{@link Viewpoint} </li>
+	 * <li>{@link Group} </li>
+	 * </ul>
+	 * @return
+	 */
+	private static List<DiagramDescription> getDiagrams(Object container){
+		List<DiagramDescription> result = new ArrayList<DiagramDescription>();
+		
+		if (container instanceof Group)
+		{
+			EList<org.eclipse.sirius.viewpoint.description.Viewpoint> ownedViewpoints = ((Group) container).getOwnedViewpoints();
+			for (org.eclipse.sirius.viewpoint.description.Viewpoint viewpoint : ownedViewpoints) 
+			{
+				for (RepresentationDescription iRepresentationDescription : viewpoint.getOwnedRepresentations()) 
+				{
+					if (iRepresentationDescription instanceof DiagramDescription)
+						result.add((DiagramDescription)iRepresentationDescription);
+				}
+			}
+		}
+		
+		if (container instanceof org.eclipse.sirius.viewpoint.description.Viewpoint)
+		{
+			for (RepresentationDescription iRepresentationDescription : ((org.eclipse.sirius.viewpoint.description.Viewpoint)container).getOwnedRepresentations()) 
+			{
+				if (iRepresentationDescription instanceof DiagramDescription)
+					result.add((DiagramDescription)iRepresentationDescription);
+			}
+		}
+		
 		return result;
 	}
 	
