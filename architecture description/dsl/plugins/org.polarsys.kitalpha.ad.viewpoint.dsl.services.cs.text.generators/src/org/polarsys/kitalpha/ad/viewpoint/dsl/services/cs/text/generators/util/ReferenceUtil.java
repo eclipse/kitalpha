@@ -30,10 +30,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
  * @author Amine Lajmi
  *
  */
+
 public class ReferenceUtil {
 
 	private ReferenceUtil() {}
-	
+
 	public static void setTargetReferences(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint source, org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint target, ResourceSet resourceSet) {
 		target.getParents().clear();
 		EList<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint> parents = source.getParents();
@@ -52,26 +53,46 @@ public class ReferenceUtil {
 			target.getDependencies().add((org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint)eObject);
 		}
 	}
-	
+
 	public static void setTargetReferences(org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint viewpoint,	Viewpoint target, ResourceSet resourceSet) {
+		//Parents (extends)
 		target.getParents().clear();
 		EList<org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint> parents = viewpoint.getParents();
 		for (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint x : parents) {
-			URI uri = EcoreUtil.getURI(x);
-			URI alterEgo = uri.trimFileExtension().trimFileExtension().appendFileExtension(FileExtension.VPDESC_EXTENSION);
-			EObject eObject = resourceSet.getEObject(alterEgo, true);
-			target.getParents().add((Viewpoint)eObject);
+			//					URI uri = EcoreUtil.getURI(x);
+			//					URI alterEgo = uri.trimFileExtension().trimFileExtension().appendFileExtension(FileExtension.VPDESC_EXTENSION);
+			//					EObject eObject = resourceSet.getEObject(alterEgo, true);
+			target.getParents().add(computeModelViewpoint(x, resourceSet));
 		}
+
+		//Dependencies (aggregates)
 		target.getDependencies().clear();
 		EList<org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint> dependencies = viewpoint.getDependencies();
 		for (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint x : dependencies) {
-			URI uri = EcoreUtil.getURI(x);
-			URI alterEgo = uri.trimFileExtension().trimFileExtension().appendFileExtension(FileExtension.VPDESC_EXTENSION);
-			EObject eObject = resourceSet.getEObject(alterEgo, true);
-			target.getDependencies().add((Viewpoint)eObject);
+			target.getDependencies().add(computeModelViewpoint(x, resourceSet));
+		}
+
+		//Use link (use viewpoint)
+		target.getUseViewpoint().clear();
+		EList<org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint> useViewpoints = viewpoint.getUseViewpoint();
+
+		if (useViewpoints.isEmpty()){
+			target.getUseViewpoint().clear();
+		}
+		for (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint x : useViewpoints) {
+			target.getUseViewpoint().add(computeModelViewpoint(x, resourceSet));
 		}
 	}
-	
+
+	private static Viewpoint computeModelViewpoint(org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint viewpoint, ResourceSet resourceSet){
+		URI uri = EcoreUtil.getURI(viewpoint);
+		if (!uri.toString().contains("#xtextLink_")){ // $NON-NLS-1$
+			URI alterEgo = uri.trimFileExtension().trimFileExtension().appendFileExtension(FileExtension.VPDESC_EXTENSION);
+			return (Viewpoint)resourceSet.getEObject(alterEgo, true);
+		}
+		return null;
+	}
+			
 	public static void recoverReferences(EObject inputObject, EcoreUtil.Copier copier) {
 		TreeIterator<EObject> eAllContents = inputObject.eAllContents();
 		while(eAllContents.hasNext()) {

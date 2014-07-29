@@ -37,9 +37,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
  * @author Amine Lajmi
  *
  */
+
+
 public class GeneratorsUtil {
 
-	
 	public static final String COPYRIGHT_KITALPHA = "PolarSys";
 	
 	private GeneratorsUtil() {}
@@ -47,7 +48,7 @@ public class GeneratorsUtil {
 	public static String getCurrentUserName() {
 		return System.getProperty("user.name");
 	}
-
+	
 	public static String getCurrentDate() {
 		return DateFormat.getDateInstance().format(new java.util.Date());
 	}
@@ -82,8 +83,8 @@ public class GeneratorsUtil {
 			for (EPackage ePackage : ePackages) {
 				imports.append("import external \"")
 						.append(ePackage.getNsURI()).append("\"\n");
-				ResourceHelper.loadExternalLibrary(ePackage.getNsURI(), data
-						.eResource().getResourceSet());
+//				ResourceHelper.loadExternalLibrary(ePackage.getNsURI(), data
+//						.eResource().getResourceSet());
 			}
 
 			imports.append("\n");
@@ -93,8 +94,7 @@ public class GeneratorsUtil {
 		
 		return "";
 	}
-	
-	
+		
 	public static void toggleXtextNature(String projectName) {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		if (project.exists() && project.isAccessible() && !project.isHidden()) {
