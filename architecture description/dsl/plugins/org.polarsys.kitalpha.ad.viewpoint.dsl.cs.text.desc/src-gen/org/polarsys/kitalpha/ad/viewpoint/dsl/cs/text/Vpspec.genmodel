@@ -17,10 +17,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/parents"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/dependencies"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/useViewpoint"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useEcoreResource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useResource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useAnyEMFResource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useDiagramResource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useEMFResource"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/VP_Data"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/VP_Aspects"/>

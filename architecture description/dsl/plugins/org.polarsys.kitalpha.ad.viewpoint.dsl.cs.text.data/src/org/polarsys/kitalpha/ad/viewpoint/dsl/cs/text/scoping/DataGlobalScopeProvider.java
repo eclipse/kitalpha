@@ -104,10 +104,10 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					String importNsURI = ((org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.impl.ImportURIImpl) content).getImportURI();
 					
 					if (importNsURI != null && !importNsURI.equals("")) {
-						QualifiedName nsURI = QualifiedName.create(importNsURI);
+						URI nsURI = URI.createURI(importNsURI);
 //						EPackage ecoreModel = eResource.getResourceSet().getPackageRegistry().getEPackage(nsURI.toString());
-						EPackage ecoreModel = (EPackage) DataWorkspaceEPackage.INSTANCE.getEPackage(nsURI.toString());
-						if (ecoreModel != null) {
+//						EPackage ecoreModel = (EPackage) DataWorkspaceEPackage.INSTANCE.getEPackage(nsURI.toString());
+//						if (ecoreModel != null) {
 							EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(),	eResource.getResourceSet());
 
 							if (descriptionManager != null
@@ -119,7 +119,7 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 							}
 						}
 					}
-				}
+//				}
 			}
 		}
 		return exportedObjects;

@@ -59,27 +59,27 @@ public class VpspecContentProposalPriorities extends ContentProposalPriorities {
 				keywordPriority = dependenciesPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getDataKeyword_12_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getDataKeyword_11_0().getValue())) {
 				keywordPriority = dataPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeUIKeyword_13_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeUIKeyword_12_0_0().getValue())) {
 				keywordPriority = uiPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeDiagramsKeyword_14_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeDiagramsKeyword_13_0_0().getValue())) {
 				keywordPriority = diagramPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeServicesKeyword_15_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeServicesKeyword_14_0_0().getValue())) {
 				keywordPriority = serviceSetPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeBuildKeyword_16_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeBuildKeyword_15_0_0().getValue())) {
 				keywordPriority = buildPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeConfigurationKeyword_17_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeConfigurationKeyword_16_0_0().getValue())) {
 				keywordPriority = configurationPriority;
 				affected = true;
 			}

@@ -121,22 +121,13 @@ public interface VpspecPackage extends EPackage
   int VIEWPOINT__USE_VIEWPOINT = 5;
 
   /**
-   * The feature id for the '<em><b>Use Ecore Resource</b></em>' attribute list.
+   * The feature id for the '<em><b>Use Any EMF Resource</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIEWPOINT__USE_ECORE_RESOURCE = 6;
-
-  /**
-   * The feature id for the '<em><b>Use Resource</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VIEWPOINT__USE_RESOURCE = 7;
+  int VIEWPOINT__USE_ANY_EMF_RESOURCE = 6;
 
   /**
    * The feature id for the '<em><b>Use Diagram Resource</b></em>' attribute list.
@@ -145,16 +136,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__USE_DIAGRAM_RESOURCE = 8;
-
-  /**
-   * The feature id for the '<em><b>Use EMF Resource</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VIEWPOINT__USE_EMF_RESOURCE = 9;
+  int VIEWPOINT__USE_DIAGRAM_RESOURCE = 7;
 
   /**
    * The feature id for the '<em><b>VP Data</b></em>' reference.
@@ -163,7 +145,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__VP_DATA = 10;
+  int VIEWPOINT__VP_DATA = 8;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute list.
@@ -172,7 +154,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__TYPE = 11;
+  int VIEWPOINT__TYPE = 9;
 
   /**
    * The feature id for the '<em><b>VP Aspects</b></em>' reference list.
@@ -181,7 +163,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__VP_ASPECTS = 12;
+  int VIEWPOINT__VP_ASPECTS = 10;
 
   /**
    * The number of structural features of the '<em>Viewpoint</em>' class.
@@ -190,7 +172,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_FEATURE_COUNT = 13;
+  int VIEWPOINT_FEATURE_COUNT = 11;
 
 
   /**
@@ -270,26 +252,15 @@ public interface VpspecPackage extends EPackage
   EReference getViewpoint_UseViewpoint();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseEcoreResource <em>Use Ecore Resource</em>}'.
+   * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseAnyEMFResource <em>Use Any EMF Resource</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Use Ecore Resource</em>'.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseEcoreResource()
+   * @return the meta object for the attribute list '<em>Use Any EMF Resource</em>'.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseAnyEMFResource()
    * @see #getViewpoint()
    * @generated
    */
-  EAttribute getViewpoint_UseEcoreResource();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseResource <em>Use Resource</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Use Resource</em>'.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseResource()
-   * @see #getViewpoint()
-   * @generated
-   */
-  EAttribute getViewpoint_UseResource();
+  EAttribute getViewpoint_UseAnyEMFResource();
 
   /**
    * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseDiagramResource <em>Use Diagram Resource</em>}'.
@@ -301,17 +272,6 @@ public interface VpspecPackage extends EPackage
    * @generated
    */
   EAttribute getViewpoint_UseDiagramResource();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseEMFResource <em>Use EMF Resource</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Use EMF Resource</em>'.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseEMFResource()
-   * @see #getViewpoint()
-   * @generated
-   */
-  EAttribute getViewpoint_UseEMFResource();
 
   /**
    * Returns the meta object for the reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getVP_Data <em>VP Data</em>}'.
@@ -428,20 +388,12 @@ public interface VpspecPackage extends EPackage
     EReference VIEWPOINT__USE_VIEWPOINT = eINSTANCE.getViewpoint_UseViewpoint();
 
     /**
-     * The meta object literal for the '<em><b>Use Ecore Resource</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Use Any EMF Resource</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VIEWPOINT__USE_ECORE_RESOURCE = eINSTANCE.getViewpoint_UseEcoreResource();
-
-    /**
-     * The meta object literal for the '<em><b>Use Resource</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VIEWPOINT__USE_RESOURCE = eINSTANCE.getViewpoint_UseResource();
+    EAttribute VIEWPOINT__USE_ANY_EMF_RESOURCE = eINSTANCE.getViewpoint_UseAnyEMFResource();
 
     /**
      * The meta object literal for the '<em><b>Use Diagram Resource</b></em>' attribute list feature.
@@ -450,14 +402,6 @@ public interface VpspecPackage extends EPackage
      * @generated
      */
     EAttribute VIEWPOINT__USE_DIAGRAM_RESOURCE = eINSTANCE.getViewpoint_UseDiagramResource();
-
-    /**
-     * The meta object literal for the '<em><b>Use EMF Resource</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VIEWPOINT__USE_EMF_RESOURCE = eINSTANCE.getViewpoint_UseEMFResource();
 
     /**
      * The meta object literal for the '<em><b>VP Data</b></em>' reference feature.

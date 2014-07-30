@@ -178,9 +178,12 @@ public class ExternalDataHelper {
 			if ("http".equalsIgnoreCase(uri.scheme())){
 				DataWorkspaceEPackage.INSTANCE.initializeDataWorkspaceRegistry(ResourcesPlugin.getWorkspace());
 				EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE.getEPackage(uri.toString());
-				EcoreUtil.resolveAll(ecoreModel);
-				//resourceSet.getResources().add(ecoreModel.eResource());
-				return ecoreModel;
+
+				if (ecoreModel != null){
+					EcoreUtil.resolveAll(ecoreModel);
+					//resourceSet.getResources().add(ecoreModel.eResource());
+					return ecoreModel;
+				}
 			}
 			if (uri.fragment() == null) {
 				Resource resource = resourceSet.getResource(uri, true);

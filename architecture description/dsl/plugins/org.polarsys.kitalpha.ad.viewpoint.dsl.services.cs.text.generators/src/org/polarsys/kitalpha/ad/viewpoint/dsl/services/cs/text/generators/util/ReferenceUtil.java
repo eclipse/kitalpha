@@ -23,7 +23,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
 
 /**
  * 
@@ -52,6 +56,34 @@ public class ReferenceUtil {
 			EObject eObject = ResourceHelper.loadPrimaryResource(alterEgo, resourceSet).get(0);
 			target.getDependencies().add((org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint)eObject);
 		}
+		
+		target.getDependencies().clear();
+		EList<Viewpoint> usedViewpoints = source.getUseViewpoint();
+		
+		for (Viewpoint x : usedViewpoints) {
+			URI uri = EcoreUtil.getURI(x);
+			URI alterEgo = uri.trimFileExtension().appendFileExtension(FileExtension.SPECIFICATION_EXTENSION).trimFragment();
+			EObject eObject = ResourceHelper.loadPrimaryResource(alterEgo, resourceSet).get(0);
+			target.getUseViewpoint().add((org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint)eObject);
+		}
+		
+		
+		//use anyEMF resource
+		initModelTextEMFUsedResources(source.getViewpointResources(), target);
+	}
+
+	private static void initModelTextEMFUsedResources(
+			ViewpointResources viewpointResources,
+			org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint target) {
+		
+		VpdescUsedResourceSwitch resourceSwitch = new VpdescUsedResourceSwitch(target);
+		if (viewpointResources != null){
+			EList<AbstractResource> usedUMFResources = viewpointResources.getUseResource();
+			
+			for (AbstractResource abstractResource : usedUMFResources) {
+				resourceSwitch.doSwitch(abstractResource);
+			}
+		}
 	}
 
 	public static void setTargetReferences(org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint viewpoint,	Viewpoint target, ResourceSet resourceSet) {
@@ -76,15 +108,59 @@ public class ReferenceUtil {
 		target.getUseViewpoint().clear();
 		EList<org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint> useViewpoints = viewpoint.getUseViewpoint();
 
-		if (useViewpoints.isEmpty()){
-			target.getUseViewpoint().clear();
-		}
+		target.getUseViewpoint().clear();
 		for (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint x : useViewpoints) {
 			target.getUseViewpoint().add(computeModelViewpoint(x, resourceSet));
+		}
+		
+		//Use anyEMF
+		initModelEMFUsedResources(viewpoint.getUseAnyEMFResource(), target);
+		
+	}
+
+	private static void initModelEMFUsedResources(
+			EList<String> useAnyEMFResource, Viewpoint target) {
+		
+		if (useAnyEMFResource == null){
+			target.setViewpointResources(null);
+			return;
+		}
+
+		if (useAnyEMFResource.isEmpty()){
+			target.setViewpointResources(null);
+			return;
+		}
+
+		ViewpointResources vr = target.getViewpointResources();
+
+		if (vr  == null){
+			vr = VpdescFactory.eINSTANCE.createViewpointResources();
+			target.setViewpointResources(vr);
+		}
+		
+		vr.getUseResource().clear();
+		for (String uri : useAnyEMFResource) {
+			initModelEMFUsedResources(uri, target);
+		}
+		
+		
+	}
+
+	private static void initModelEMFUsedResources(String usedURI, Viewpoint target) {
+		
+		if (usedURI != null && !usedURI.isEmpty()){
+			URI uri = URI.createURI(usedURI.substring(1, usedURI.length() - 1));
+			
+			if (uri.isPlatform()){
+				EMFResource er = VpdescFactory.eINSTANCE.createEMFResource();
+				er.setUri(uri.toString());
+				target.getViewpointResources().getUseResource().add(er);
+			}
 		}
 	}
 
 	private static Viewpoint computeModelViewpoint(org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint viewpoint, ResourceSet resourceSet){
+		EcoreUtil.resolveAll(viewpoint);
 		URI uri = EcoreUtil.getURI(viewpoint);
 		if (!uri.toString().contains("#xtextLink_")){ // $NON-NLS-1$
 			URI alterEgo = uri.trimFileExtension().trimFileExtension().appendFileExtension(FileExtension.VPDESC_EXTENSION);
