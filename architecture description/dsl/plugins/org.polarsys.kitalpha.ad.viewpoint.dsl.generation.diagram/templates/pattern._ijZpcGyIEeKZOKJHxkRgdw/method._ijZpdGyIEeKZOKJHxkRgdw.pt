@@ -1,1 +1,1 @@
-return ! super.preCondition(ctx) && ((ActionSet)parameter).getActions().isEmpty();
+return super.preCondition(ctx) && ! ((ActionSet)parameter).getActions().isEmpty();

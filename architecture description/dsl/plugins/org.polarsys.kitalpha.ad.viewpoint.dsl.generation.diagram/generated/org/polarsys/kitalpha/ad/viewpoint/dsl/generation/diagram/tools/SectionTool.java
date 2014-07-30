@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-//Generated on Tue Jul 15 11:17:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated on Wed Jul 30 19:44:41 CEST 2014 with EGF 1.2.0.v20140721-0706
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -33,6 +33,7 @@ public class SectionTool
 	public SectionTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -116,8 +117,8 @@ public class SectionTool
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return !super.preCondition(ctx)
-				&& ((ActionSet) parameter).getActions().isEmpty();
+		return super.preCondition(ctx)
+				&& !((ActionSet) parameter).getActions().isEmpty();
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ActionSet parameter;
