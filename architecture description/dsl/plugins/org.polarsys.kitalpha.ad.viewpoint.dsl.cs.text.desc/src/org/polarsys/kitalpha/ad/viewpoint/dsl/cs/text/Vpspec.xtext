@@ -49,9 +49,8 @@ Viewpoint returns Viewpoint:
 		('use viewpoint:' useViewpoint+=[Viewpoint | FQN] (',' useViewpoint+=[Viewpoint | FQN])*)?
 		
 		//Viewpoint use resources
-		('use ecore:' useEcoreResource+=EString (',' useResource+=EString)*)?
-		('use diagram:' useDiagramResource+=EString (',' useResource+=EString)*)?
-		('use EMF:' useEMFResource+=EString (',' useResource+=EString)*)?
+		('use anyEMF:' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
+		('use diagram:' useDiagramResource+=EString (',' useDiagramResource+=EString)*)?
 //		(useResources+='use workspace: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
 //		(useResources+='use filesystem: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
 		

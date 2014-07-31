@@ -23,10 +23,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getParents <em>Parents</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseViewpoint <em>Use Viewpoint</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseEcoreResource <em>Use Ecore Resource</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseResource <em>Use Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseAnyEMFResource <em>Use Any EMF Resource</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseDiagramResource <em>Use Diagram Resource</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseEMFResource <em>Use EMF Resource</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getVP_Data <em>VP Data</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getType <em>Type</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getVP_Aspects <em>VP Aspects</em>}</li>
@@ -166,36 +164,20 @@ public interface Viewpoint extends EObject
   EList<Viewpoint> getUseViewpoint();
 
   /**
-   * Returns the value of the '<em><b>Use Ecore Resource</b></em>' attribute list.
+   * Returns the value of the '<em><b>Use Any EMF Resource</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Use Ecore Resource</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Use Any EMF Resource</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Ecore Resource</em>' attribute list.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage#getViewpoint_UseEcoreResource()
+   * @return the value of the '<em>Use Any EMF Resource</em>' attribute list.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage#getViewpoint_UseAnyEMFResource()
    * @model unique="false"
    * @generated
    */
-  EList<String> getUseEcoreResource();
-
-  /**
-   * Returns the value of the '<em><b>Use Resource</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Use Resource</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Use Resource</em>' attribute list.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage#getViewpoint_UseResource()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getUseResource();
+  EList<String> getUseAnyEMFResource();
 
   /**
    * Returns the value of the '<em><b>Use Diagram Resource</b></em>' attribute list.
@@ -212,22 +194,6 @@ public interface Viewpoint extends EObject
    * @generated
    */
   EList<String> getUseDiagramResource();
-
-  /**
-   * Returns the value of the '<em><b>Use EMF Resource</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Use EMF Resource</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Use EMF Resource</em>' attribute list.
-   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage#getViewpoint_UseEMFResource()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getUseEMFResource();
 
   /**
    * Returns the value of the '<em><b>VP Data</b></em>' reference.

@@ -64,20 +64,21 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 //			EPackage ecoreModel = EPackageRegistryImpl.INSTANCE
 //					.getEPackage(nsURI.toString());
 			//Call workspace Registry. This registry delegates to EMF registry when the EPackage is not found
-			EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE
-					.getEPackage(nsURI.toString());
-			if (ecoreModel != null) {
+//			EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE
+//					.getEPackage(nsURI.toString());
+//			if (ecoreModel != null) {
 				 EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), semanticObject.eResource().getResourceSet());
 				// EPackageRegistryImpl.INSTANCE.getEPackage(importURI);
 				if (descriptionManager != null && loadedEPackage != null
 						&& loadedEPackage.eResource() != null) {
-					Resource packageResource = ecoreModel.eResource();
+//					Resource packageResource = ecoreModel.eResource();
+					Resource packageResource = loadedEPackage.eResource();
 					IResourceDescription resourceDescription = descriptionManager
 							.getResourceDescription(packageResource);
 					exportedObjects = Iterables.concat(exportedObjects,
 							resourceDescription.getExportedObjects());
 				}
-			}
+//			}
 		}
 		
 		IScope newLocalScope = MultimapBasedScope.createScope(scope, exportedObjects, false);
