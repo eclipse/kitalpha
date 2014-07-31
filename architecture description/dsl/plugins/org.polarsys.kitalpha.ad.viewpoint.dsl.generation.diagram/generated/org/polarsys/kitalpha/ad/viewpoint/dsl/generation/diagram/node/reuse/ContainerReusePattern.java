@@ -93,12 +93,14 @@ public class ContainerReusePattern
 						.getDoremiElement(abstractNode);
 				currentContainerNode.getReusedContainerMappings().add(
 						currentContainer);
+				break;
 			}
 
-			if (abstractNode instanceof Node) {
+			if (abstractNode instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node) {
 				NodeMapping currentNode = (NodeMapping) GenerationUtil
 						.getDoremiElement(abstractNode);
 				currentContainerNode.getReusedNodeMappings().add(currentNode);
+				break;
 			}
 
 			if (abstractNode instanceof BorderedNode) {
@@ -106,6 +108,7 @@ public class ContainerReusePattern
 						.getDoremiElement(abstractNode);
 				currentContainerNode.getReusedBorderedNodeMappings().add(
 						currentBNode);
+				break;
 			}
 		}
 
