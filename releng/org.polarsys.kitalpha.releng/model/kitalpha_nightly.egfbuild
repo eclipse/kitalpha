@@ -23,12 +23,12 @@
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
     <properties xmi:id="_pAapkPq5EeKXG4Dej4PCUQ" key="main_version" value="trunk"/>
     <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_P-70gBceEeSiX7noNBdBeQ" name="TP_build" id="TP_build" profile="SDKProfile" p2_os="" p2_ws="" p2_arch="">
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_CxGu8EhiEeOxuMV9a71i9w" name="TP_juno" id="TP_juno" profile="SDKProfile" p2_os="win32" p2_ws="win32" p2_arch="x86">
       <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
       <featureNames>org.eclipse.sdk</featureNames>
       <productNames>org.eclipse.sdk.ide</productNames>
     </steps>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_CxGu8EhiEeOxuMV9a71i9w" name="TP_juno" id="TP_juno" profile="SDKProfile" p2_os="win32" p2_ws="win32" p2_arch="x86">
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_P-70gBceEeSiX7noNBdBeQ" name="TP_build" id="TP_build" profile="SDKProfile" p2_os="" p2_ws="" p2_arch="">
       <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
       <featureNames>org.eclipse.sdk</featureNames>
       <productNames>org.eclipse.sdk.ide</productNames>
@@ -109,7 +109,7 @@
       <updateSiteUrls>${eclipse.download.prefix}/releases/kepler</updateSiteUrls>
       <featureNames>org.eclipse.acceleo</featureNames>
     </steps>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_k9zM4AdAEeSxv713mpB8TA" name="install ecoretools2" id="TP_juno" profile="MDK">
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_k9zM4AdAEeSxv713mpB8TA" name="install ecoretools2" id="TP_juno" profile="SDKProfile">
       <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
       <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
     </steps>
