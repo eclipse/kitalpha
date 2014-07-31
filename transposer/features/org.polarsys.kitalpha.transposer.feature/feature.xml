@@ -20,10 +20,6 @@
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.validation"/>
-      <import plugin="org.eclipse.egf.pattern"/>
-      <import plugin="org.eclipse.egf.emf.pattern"/>
-      <import plugin="org.eclipse.egf.pattern.ftask"/>
-      <import plugin="org.polarsys.kitalpha.emde.egf"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
