@@ -6,17 +6,20 @@ for (AbstractNode abstractNode : reused_nodes)
 	{
 		ContainerMapping currentContainer = (ContainerMapping) GenerationUtil.getDoremiElement(abstractNode);
 		currentContainerNode.getReusedContainerMappings().add(currentContainer);	
+		break;
 	}
 
-	if (abstractNode instanceof Node) 
+	if (abstractNode instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node)
 	{
 		NodeMapping currentNode = (NodeMapping) GenerationUtil.getDoremiElement(abstractNode);
 		currentContainerNode.getReusedNodeMappings().add(currentNode);
+		break;
 	}
 	
 	if (abstractNode instanceof BorderedNode)
 	{
 		NodeMapping currentBNode = (NodeMapping) GenerationUtil.getDoremiElement(abstractNode);
 		currentContainerNode.getReusedBorderedNodeMappings().add(currentBNode);
+		break;
 	}
 }
