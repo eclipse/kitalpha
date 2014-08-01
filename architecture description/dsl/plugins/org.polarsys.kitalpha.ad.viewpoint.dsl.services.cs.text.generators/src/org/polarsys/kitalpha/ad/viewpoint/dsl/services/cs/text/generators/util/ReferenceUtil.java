@@ -10,7 +10,7 @@
  ******************************************************************************/
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util;
-
+ 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -34,9 +34,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
  * @author Amine Lajmi
  *
  */
-
 public class ReferenceUtil {
-
+	
 	private ReferenceUtil() {}
 
 	public static void setTargetReferences(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint source, org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint target, ResourceSet resourceSet) {
@@ -57,7 +56,7 @@ public class ReferenceUtil {
 			target.getDependencies().add((org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint)eObject);
 		}
 		
-		target.getDependencies().clear();
+		target.getUseViewpoint().clear();
 		EList<Viewpoint> usedViewpoints = source.getUseViewpoint();
 		
 		for (Viewpoint x : usedViewpoints) {
@@ -69,12 +68,26 @@ public class ReferenceUtil {
 		
 		
 		//use anyEMF resource
+		target.getUseAnyEMFResource().clear();
 		initModelTextEMFUsedResources(source.getViewpointResources(), target);
+		
+		//use diagram resource
+		target.getUseDiagramResource().clear();
+		initModelTextUsedDiagramResources(source.getViewpointResources(), target);
+	}
+
+	private static void initModelTextUsedDiagramResources(
+			ViewpointResources viewpointResources,
+			org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint target) {
+		
+		initModelTextEMFUsedResources(viewpointResources, target);
+		
 	}
 
 	private static void initModelTextEMFUsedResources(
 			ViewpointResources viewpointResources,
 			org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint target) {
+		
 		
 		VpdescUsedResourceSwitch resourceSwitch = new VpdescUsedResourceSwitch(target);
 		if (viewpointResources != null){
@@ -116,6 +129,14 @@ public class ReferenceUtil {
 		//Use anyEMF
 		initModelEMFUsedResources(viewpoint.getUseAnyEMFResource(), target);
 		
+		//Use diagram
+		initModelUsedDiagram(viewpoint.getUseDiagramResource(), target);
+		
+	}
+
+	private static void initModelUsedDiagram(EList<String> useDiagramResource,
+			Viewpoint target) {
+		initModelEMFUsedResources(useDiagramResource, target);
 	}
 
 	private static void initModelEMFUsedResources(

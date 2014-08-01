@@ -37,7 +37,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainView
  *
  */
 public class NsUriFinder {
-	
+
 	@Deprecated
 	public static Set<String> getNsUriFromEPackageRegistry(){
 		
@@ -84,8 +84,11 @@ public class NsUriFinder {
 		Collection<String> uris = new HashSet<String>();
 		
 		for (AbstractResource abstractResource : usedResources) {
-			if (abstractResource instanceof EMFResource)
-				uris.add(((EMFResource)abstractResource).getUri());
+			if (abstractResource instanceof EMFResource){
+				String uri = ((EMFResource)abstractResource).getUri();
+				if (!uri.endsWith(".odesign"))
+					uris.add(uri);
+			}
 		}
 		return uris;
 	}
@@ -99,6 +102,8 @@ public class NsUriFinder {
 	}
 
 
+	//FIXME put these 2 methods in an abstract class in common plugin to be shared by Data
+	//		NsUriFinder too (they are duplicated!)
 	private static Viewpoint getCurrentViewpoint(Resource standaloneResource) {
 		
 		if (standaloneResource != null){

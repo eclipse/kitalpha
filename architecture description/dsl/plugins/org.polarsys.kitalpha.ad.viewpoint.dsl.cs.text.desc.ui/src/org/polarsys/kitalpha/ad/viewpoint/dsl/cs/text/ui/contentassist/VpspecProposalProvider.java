@@ -11,11 +11,25 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
+
+import java.net.URL;
+import java.util.Collections;
+import java.util.Set;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.ILabelProvider;
+
+import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.Keyword;
@@ -28,6 +42,15 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ContentProposalLabelProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.AbstractVpspecProposalProvider;
@@ -36,13 +59,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.inject.Inject;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 
 /**
  * 
@@ -204,6 +220,34 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	
 	
 	//XXX: Decomment to get Content assist
+	@Override
+	public void completeViewpoint_UseDiagramResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		
+		final String EMF_PLUGIN_ID = "org.eclipse.sirius.editor";
+		final String SCHEMAT_PATH = "icons/full/obj16/Sirius.gif";
+
+		final Bundle bundle = Platform.getBundle(EMF_PLUGIN_ID);
+		final URL url = FileLocator.find(bundle, new Path(SCHEMAT_PATH),
+				Collections.EMPTY_MAP);
+
+		Image image = ImageDescriptor.createFromURL(url).createImage();
+		
+		ViewpointRegistry siriusRegistry = ViewpointRegistry.getInstance();
+		
+		Set<org.eclipse.sirius.viewpoint.description.Viewpoint> odesigns = siriusRegistry.getViewpoints();
+		
+		for (org.eclipse.sirius.viewpoint.description.Viewpoint viewpoint : odesigns) {
+			StyledString styledURI = new StyledString();
+			
+			String platformURI = viewpoint.eResource().getURI().toString();
+			styledURI.append(platformURI);
+			
+			acceptor.accept(createCompletionProposal(
+					"\"" + platformURI + "\"", styledURI,
+					image, context));
+			
+		}
+	}
 	
 //	@Override
 //	public void completeViewpoint_UseAnyEMFResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
