@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.polarsys.kitalpha.common.feature"
-      label="Kitalpha Common Feature"
+      label="Kitalpha Common Feature (Incubation)"
       version="0.5.0.qualifier"
       provider-name="%providerName">
 
@@ -30,5 +30,5 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
 </feature>

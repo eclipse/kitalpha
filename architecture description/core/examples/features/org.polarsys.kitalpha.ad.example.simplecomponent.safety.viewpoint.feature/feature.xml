@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.polarsys.kitalpha.ad.example.simplecomponent.safety.viewpoint.feature"
-      label="Safety Viewpoint for Simplecomponent Feature (AD Example)"
+      label="Safety Viewpoint for Simplecomponent Feature (AD Example) (Incubation)"
       version="0.5.0.qualifier"
       provider-name="%providerName">
 

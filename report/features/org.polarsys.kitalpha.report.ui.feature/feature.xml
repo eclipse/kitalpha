@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.polarsys.kitalpha.report.ui.feature"
-      label="Kitalpha Report UI Feature"
+      label="Kitalpha Report UI Feature (Incubation)"
       version="0.5.0.qualifier"
       provider-name="%providerName">
 
