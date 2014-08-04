@@ -11,6 +11,10 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util;
  
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -18,20 +22,25 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EContentsEList.FeatureIterator;
+import org.eclipse.sirius.viewpoint.description.Group;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.MetamodelIDs;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 public class ReferenceUtil {
@@ -66,7 +75,6 @@ public class ReferenceUtil {
 			target.getUseViewpoint().add((org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint)eObject);
 		}
 		
-		
 		//use anyEMF resource
 		target.getUseAnyEMFResource().clear();
 		initModelTextEMFUsedResources(source.getViewpointResources(), target);
@@ -74,6 +82,52 @@ public class ReferenceUtil {
 		//use diagram resource
 		target.getUseDiagramResource().clear();
 		initModelTextUsedDiagramResources(source.getViewpointResources(), target);
+		
+		//Use workspace
+		target.getUseWorkspaceResource().clear();
+		initUsedWorkspaceResource(source.getViewpointResources(), target);
+		
+		//Use filesystem resource
+		initUsedFSResources(source.getViewpointResources(), target);
+	}
+
+	
+	
+	private static void initUsedFSResources(
+			ViewpointResources viewpointResources,
+			org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint target) {
+
+		if (viewpointResources != null){
+			EList<AbstractResource> resources = viewpointResources.getUseResource();
+
+			for (AbstractResource abstractResource : resources) {
+				if (abstractResource instanceof FileSystemResource){
+					FileSystemResource fsr = (FileSystemResource)abstractResource;
+					if (!fsr.isWorkspace()){
+						target.getUseFSResource().add("\"" + fsr.getPath().trim() + "\"");
+					}
+				}
+			}
+		}
+	}
+
+	private static void initUsedWorkspaceResource(
+			ViewpointResources viewpointResources,
+			org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint target) {
+
+		if (viewpointResources != null){
+			EList<AbstractResource> resources = viewpointResources.getUseResource();
+
+			for (AbstractResource abstractResource : resources) {
+				if (abstractResource instanceof FileSystemResource){
+					FileSystemResource fsr = (FileSystemResource)abstractResource;
+					if (fsr.isWorkspace()){
+						target.getUseWorkspaceResource().add("\"" + fsr.getPath().trim() + "\"");
+					}
+				}
+			}
+		}
+
 	}
 
 	private static void initModelTextUsedDiagramResources(
@@ -132,6 +186,106 @@ public class ReferenceUtil {
 		//Use diagram
 		initModelUsedDiagram(viewpoint.getUseDiagramResource(), target);
 		
+		//Use workspace
+		initUsedWorkspaceResource(viewpoint.getUseWorkspaceResource(), target);
+		
+		//Use fileSystem
+		initUseFileSystemResource(viewpoint.getUseFSResource(), target);
+		
+	}
+
+	private static void initUseFileSystemResource(EList<String> useFSResource,
+			Viewpoint target) {
+		
+
+		if (useFSResource == null || useFSResource.isEmpty()){
+			target.setViewpointResources(null);
+			return;
+		}
+		
+		ViewpointResources vr = target.getViewpointResources();
+		
+		if (vr == null){
+			vr = VpdescFactory.eINSTANCE.createViewpointResources();
+			target.setViewpointResources(vr);
+		}
+		
+		clearFSResources(vr);
+		
+		for (String fsPath : useFSResource) {
+			FileSystemResource fsr = VpdescFactory.eINSTANCE.createFileSystemResource();
+			fsr.setPath(fsPath.substring(1, fsPath.length() - 1));
+			fsr.setWorkspace(false);
+			target.getViewpointResources().getUseResource().add(fsr);
+		}
+		
+		
+	}
+
+	private static void initUsedWorkspaceResource(
+			EList<String> useWorkspaceResource, Viewpoint target) {
+
+		if (useWorkspaceResource == null || useWorkspaceResource.isEmpty()){
+			target.setViewpointResources(null);
+			return;
+		}
+		
+		ViewpointResources vr = target.getViewpointResources();
+		
+		if (vr == null){
+			vr = VpdescFactory.eINSTANCE.createViewpointResources();
+			target.setViewpointResources(vr);
+		}
+		
+		clearWorkspaceResources(vr);
+		
+		for (String path : useWorkspaceResource) {
+			initPath(path, target);
+		}
+	}
+	
+	private static void clearWorkspaceResources(ViewpointResources viewpointResources){
+		EList<AbstractResource> ar = viewpointResources.getUseResource();
+		
+		for (AbstractResource abstractResource : ar) {
+			if (abstractResource instanceof FileSystemResource){
+				FileSystemResource fsr = (FileSystemResource)abstractResource;
+				
+				if (fsr.isWorkspace()){
+					ar.remove(fsr);
+				}
+			}
+		}
+	}
+	
+	private static void clearFSResources(ViewpointResources viewpointResources){
+		EList<AbstractResource> ar = viewpointResources.getUseResource();
+		
+		for (AbstractResource abstractResource : ar) {
+			if (abstractResource instanceof FileSystemResource){
+				FileSystemResource fsr = (FileSystemResource)abstractResource;
+				if (!fsr.isWorkspace())
+					ar.remove(fsr);
+			}
+		}
+	}
+
+	private static void initPath(String path, Viewpoint target) {
+		//FIXME path without quotation
+		IPath iPath = new Path(path.substring(1, path.length() - 1));
+
+		if (iPath != null){
+			
+				IResource wsResource = ResourcesPlugin.getWorkspace().getRoot().findMember(iPath);
+
+				if (wsResource != null && wsResource.isAccessible()){
+					FileSystemResource fsr = VpdescFactory.eINSTANCE.createFileSystemResource();
+					fsr.setPath(path.trim().substring(1, path.length() - 1).trim());
+					fsr.setWorkspace(true);
+					target.getViewpointResources().getUseResource().add(fsr);
+				}
+
+		}
 	}
 
 	private static void initModelUsedDiagram(EList<String> useDiagramResource,
@@ -159,18 +313,28 @@ public class ReferenceUtil {
 			target.setViewpointResources(vr);
 		}
 		
-		vr.getUseResource().clear();
+		clearEMFResources(vr);
 		for (String uri : useAnyEMFResource) {
-			initModelEMFUsedResources(uri, target);
+			initModelEMFUsedResources(uri.trim(), target);
 		}
 		
+	}
+	
+	private static void clearEMFResources(ViewpointResources viewpointResources){
+		EList<AbstractResource> ar = viewpointResources.getUseResource();
 		
+		for (AbstractResource abstractResource : ar) {
+			if (abstractResource instanceof EMFResource){
+				EMFResource fsr = (EMFResource)abstractResource;
+				ar.remove(fsr);
+			}
+		}
 	}
 
 	private static void initModelEMFUsedResources(String usedURI, Viewpoint target) {
 		
 		if (usedURI != null && !usedURI.isEmpty()){
-			URI uri = URI.createURI(usedURI.substring(1, usedURI.length() - 1));
+			URI uri = URI.createURI(usedURI.trim().substring(1, usedURI.length() - 1).trim());
 			
 			if (uri.isPlatform()){
 				EMFResource er = VpdescFactory.eINSTANCE.createEMFResource();

@@ -55,6 +55,7 @@ import com.google.inject.Inject;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
@@ -299,8 +300,13 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					String platformURI = importedOdesign.getImportedGroup();
 
 					if (platformURI != null && !platformURI.isEmpty()){
-						String tmpUri = platformURI.substring(1, platformURI.length() - 1);
+						String tmpUri = platformURI.substring(1, platformURI.length() - 1).trim();
 						URI uri = URI.createURI(tmpUri);
+						
+						if (!uri.isPlatform()){
+							uri = uri.createFileURI(tmpUri);
+						}
+						
 						Resource odesignResources = resource.getResourceSet().getResource(uri, true);
 
 						if (descriptionManager != null

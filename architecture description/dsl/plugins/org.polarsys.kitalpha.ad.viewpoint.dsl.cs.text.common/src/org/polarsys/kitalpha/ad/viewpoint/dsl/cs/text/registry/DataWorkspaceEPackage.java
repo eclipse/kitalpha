@@ -11,7 +11,9 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -63,8 +65,10 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 		}
 	}
 
-	public void registerEPackagesFrom(IFile file) {
-
+	public Collection<EPackage> registerEPackagesFrom(IFile file) {
+		
+		Collection<EPackage> addEPackages = new HashSet<EPackage>();
+		
 		if (file.isAccessible()){
 			String path = file.getFullPath().toOSString();
 			URI uri = URI.createPlatformResourceURI(path, true);
@@ -80,14 +84,46 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 					EPackage ePackage = (EPackage) next;
 					String ePackageUri = ePackage.getNsURI();
 					
+					addEPackages.add(ePackage);
 					if (!containsKey(ePackageUri))
 						put(ePackage.getNsURI(), ePackage);
 				}
 			}
 		}
+		return addEPackages;
 	}
-//
-//	
+	
+	
+	
+	public Collection<EPackage> registerEPackagesFrom(java.io.File file) {
+		
+		Collection<EPackage> addEPackages = new HashSet<EPackage>();
+
+		if (file != null && file.isFile()){
+			String path = file.getAbsolutePath();
+			URI uri = URI.createFileURI(path);
+
+			ResourceSet resourceSet = new ResourceSetImpl();
+			Resource resource = resourceSet.getResource(uri, true);
+
+			TreeIterator<EObject> it = resource.getAllContents();
+
+			while (it.hasNext()) {
+				EObject next = it.next();
+
+				if (next instanceof EPackage) {
+					EPackage ePackage = (EPackage) next;
+					String ePackageUri = ePackage.getNsURI();
+
+					addEPackages.add(ePackage);
+					if (!containsKey(ePackageUri))
+						put(ePackage.getNsURI(), ePackage);
+				}
+			}
+		}
+		return addEPackages;
+	}
+
 //	//TODO redefine it with temporary Map which hold <Path, NSURI>
 	
 	public void removeEPackagesOf(IFile file) {

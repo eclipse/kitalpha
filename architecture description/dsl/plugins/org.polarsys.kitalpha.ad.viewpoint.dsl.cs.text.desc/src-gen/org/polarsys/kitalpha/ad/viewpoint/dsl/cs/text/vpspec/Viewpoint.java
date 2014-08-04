@@ -25,6 +25,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseViewpoint <em>Use Viewpoint</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseAnyEMFResource <em>Use Any EMF Resource</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseDiagramResource <em>Use Diagram Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseWorkspaceResource <em>Use Workspace Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseFSResource <em>Use FS Resource</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getVP_Data <em>VP Data</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getType <em>Type</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getVP_Aspects <em>VP Aspects</em>}</li>
@@ -194,6 +196,38 @@ public interface Viewpoint extends EObject
    * @generated
    */
   EList<String> getUseDiagramResource();
+
+  /**
+   * Returns the value of the '<em><b>Use Workspace Resource</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Use Workspace Resource</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Use Workspace Resource</em>' attribute list.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage#getViewpoint_UseWorkspaceResource()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getUseWorkspaceResource();
+
+  /**
+   * Returns the value of the '<em><b>Use FS Resource</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Use FS Resource</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Use FS Resource</em>' attribute list.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage#getViewpoint_UseFSResource()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getUseFSResource();
 
   /**
    * Returns the value of the '<em><b>VP Data</b></em>' reference.

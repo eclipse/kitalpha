@@ -19,6 +19,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/useViewpoint"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useAnyEMFResource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useDiagramResource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useWorkspaceResource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/useFSResource"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/VP_Data"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Vpspec.ecore#//Viewpoint/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Vpspec.ecore#//Viewpoint/VP_Aspects"/>

@@ -355,9 +355,97 @@ ruleViewpoint returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_28='Data' 
+))*)?(	otherlv_28='use workspace:' 
     {
-    	newLeafNode(otherlv_28, grammarAccess.getViewpointAccess().getDataKeyword_11_0());
+    	newLeafNode(otherlv_28, grammarAccess.getViewpointAccess().getUseWorkspaceKeyword_11_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getUseWorkspaceResourceEStringParserRuleCall_11_1_0()); 
+	    }
+		lv_useWorkspaceResource_29_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getViewpointRule());
+	        }
+       		add(
+       			$current, 
+       			"useWorkspaceResource",
+        		lv_useWorkspaceResource_29_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_30=',' 
+    {
+    	newLeafNode(otherlv_30, grammarAccess.getViewpointAccess().getCommaKeyword_11_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getUseWorkspaceResourceEStringParserRuleCall_11_2_1_0()); 
+	    }
+		lv_useWorkspaceResource_31_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getViewpointRule());
+	        }
+       		add(
+       			$current, 
+       			"useWorkspaceResource",
+        		lv_useWorkspaceResource_31_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?(	otherlv_32='use filesystem:' 
+    {
+    	newLeafNode(otherlv_32, grammarAccess.getViewpointAccess().getUseFilesystemKeyword_12_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getUseFSResourceEStringParserRuleCall_12_1_0()); 
+	    }
+		lv_useFSResource_33_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getViewpointRule());
+	        }
+       		add(
+       			$current, 
+       			"useFSResource",
+        		lv_useFSResource_33_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_34=',' 
+    {
+    	newLeafNode(otherlv_34, grammarAccess.getViewpointAccess().getCommaKeyword_12_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getUseFSResourceEStringParserRuleCall_12_2_1_0()); 
+	    }
+		lv_useFSResource_35_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getViewpointRule());
+	        }
+       		add(
+       			$current, 
+       			"useFSResource",
+        		lv_useFSResource_35_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?(	otherlv_36='Data' 
+    {
+    	newLeafNode(otherlv_36, grammarAccess.getViewpointAccess().getDataKeyword_13_0());
     }
 (
 (
@@ -367,7 +455,7 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_DataDataCrossReference_11_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_DataDataCrossReference_13_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -376,16 +464,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_30_0=	'UI' 
+		lv_type_38_0=	'UI' 
     {
-        newLeafNode(lv_type_30_0, grammarAccess.getViewpointAccess().getTypeUIKeyword_12_0_0());
+        newLeafNode(lv_type_38_0, grammarAccess.getViewpointAccess().getTypeUIKeyword_14_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_30_0, "UI");
+       		addWithLastConsumed($current, "type", lv_type_38_0, "UI");
 	    }
 
 )
@@ -397,7 +485,7 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsUIDescriptionCrossReference_12_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsUIDescriptionCrossReference_14_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -406,16 +494,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_32_0=	'Diagrams' 
+		lv_type_40_0=	'Diagrams' 
     {
-        newLeafNode(lv_type_32_0, grammarAccess.getViewpointAccess().getTypeDiagramsKeyword_13_0_0());
+        newLeafNode(lv_type_40_0, grammarAccess.getViewpointAccess().getTypeDiagramsKeyword_15_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_32_0, "Diagrams");
+       		addWithLastConsumed($current, "type", lv_type_40_0, "Diagrams");
 	    }
 
 )
@@ -427,7 +515,7 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsDiagramSetCrossReference_13_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsDiagramSetCrossReference_15_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -436,16 +524,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_34_0=	'Services' 
+		lv_type_42_0=	'Services' 
     {
-        newLeafNode(lv_type_34_0, grammarAccess.getViewpointAccess().getTypeServicesKeyword_14_0_0());
+        newLeafNode(lv_type_42_0, grammarAccess.getViewpointAccess().getTypeServicesKeyword_16_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_34_0, "Services");
+       		addWithLastConsumed($current, "type", lv_type_42_0, "Services");
 	    }
 
 )
@@ -457,7 +545,7 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsServiceSetCrossReference_14_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsServiceSetCrossReference_16_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -466,16 +554,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_36_0=	'Build' 
+		lv_type_44_0=	'Build' 
     {
-        newLeafNode(lv_type_36_0, grammarAccess.getViewpointAccess().getTypeBuildKeyword_15_0_0());
+        newLeafNode(lv_type_44_0, grammarAccess.getViewpointAccess().getTypeBuildKeyword_17_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_36_0, "Build");
+       		addWithLastConsumed($current, "type", lv_type_44_0, "Build");
 	    }
 
 )
@@ -487,7 +575,7 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsBuildCrossReference_15_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsBuildCrossReference_17_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -496,16 +584,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_38_0=	'Configuration' 
+		lv_type_46_0=	'Configuration' 
     {
-        newLeafNode(lv_type_38_0, grammarAccess.getViewpointAccess().getTypeConfigurationKeyword_16_0_0());
+        newLeafNode(lv_type_46_0, grammarAccess.getViewpointAccess().getTypeConfigurationKeyword_18_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_38_0, "Configuration");
+       		addWithLastConsumed($current, "type", lv_type_46_0, "Configuration");
 	    }
 
 )
@@ -517,16 +605,16 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsConfigurationCrossReference_16_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsConfigurationCrossReference_18_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_40='}' 
+))?	otherlv_48='}' 
     {
-    	newLeafNode(otherlv_40, grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_17());
+    	newLeafNode(otherlv_48, grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_19());
     }
 )
 ;

@@ -25,6 +25,7 @@ import org.eclipse.sirius.viewpoint.description.Group;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.specification.CoreDomainViewpointDiagramHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
@@ -76,6 +77,14 @@ public class NsUriFinder {
 						usedDiagrams.add(uri);
 					}
 					
+				}
+				
+				if (abstractResource instanceof FileSystemResource){
+					FileSystemResource fsr = (FileSystemResource)abstractResource;
+					String path = fsr.getPath();
+					if (path.endsWith(".odesign")){
+						usedDiagrams.add(path);
+					}
 				}
 			}
 		}

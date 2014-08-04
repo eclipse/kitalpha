@@ -21,6 +21,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAcce
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 public class VpspecFormatter extends AbstractDeclarativeFormatter {
@@ -38,12 +39,19 @@ public class VpspecFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1).before(f.getViewpointAccess().getExtendsKeyword_6_0());
 		c.setLinewrap(1).before(f.getViewpointAccess().getAggregatesKeyword_7_0());
 		
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeBuildKeyword_15_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeConfigurationKeyword_16_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getDataKeyword_11_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeDiagramsKeyword_13_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeServicesKeyword_14_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeUIKeyword_12_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getUseViewpointKeyword_8_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getUseAnyEMFKeyword_9_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getUseDiagramKeyword_10_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getUseWorkspaceKeyword_11_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getUseFilesystemKeyword_12_0());
+
+		
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeBuildKeyword_17_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeConfigurationKeyword_18_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getDataKeyword_13_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeDiagramsKeyword_15_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeServicesKeyword_16_0_0());
+		c.setLinewrap(1).before(f.getViewpointAccess().getTypeUIKeyword_14_0_0());
 		
 		c.setLinewrap(1).before(f.getViewpointAccess().getUseViewpointKeyword_8_0());
 		c.setLinewrap(1).before(f.getViewpointAccess().getUseAnyEMFKeyword_9_0());

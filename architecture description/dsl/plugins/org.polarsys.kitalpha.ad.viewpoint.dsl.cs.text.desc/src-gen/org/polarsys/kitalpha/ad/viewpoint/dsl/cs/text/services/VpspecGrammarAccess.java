@@ -82,41 +82,57 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUseDiagramResourceAssignment_10_2_1 = (Assignment)cGroup_10_2.eContents().get(1);
 		private final RuleCall cUseDiagramResourceEStringParserRuleCall_10_2_1_0 = (RuleCall)cUseDiagramResourceAssignment_10_2_1.eContents().get(0);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cDataKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Assignment cVP_DataAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
-		private final CrossReference cVP_DataDataCrossReference_11_1_0 = (CrossReference)cVP_DataAssignment_11_1.eContents().get(0);
-		private final RuleCall cVP_DataDataFQNParserRuleCall_11_1_0_1 = (RuleCall)cVP_DataDataCrossReference_11_1_0.eContents().get(1);
+		private final Keyword cUseWorkspaceKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Assignment cUseWorkspaceResourceAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
+		private final RuleCall cUseWorkspaceResourceEStringParserRuleCall_11_1_0 = (RuleCall)cUseWorkspaceResourceAssignment_11_1.eContents().get(0);
+		private final Group cGroup_11_2 = (Group)cGroup_11.eContents().get(2);
+		private final Keyword cCommaKeyword_11_2_0 = (Keyword)cGroup_11_2.eContents().get(0);
+		private final Assignment cUseWorkspaceResourceAssignment_11_2_1 = (Assignment)cGroup_11_2.eContents().get(1);
+		private final RuleCall cUseWorkspaceResourceEStringParserRuleCall_11_2_1_0 = (RuleCall)cUseWorkspaceResourceAssignment_11_2_1.eContents().get(0);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Assignment cTypeAssignment_12_0 = (Assignment)cGroup_12.eContents().get(0);
-		private final Keyword cTypeUIKeyword_12_0_0 = (Keyword)cTypeAssignment_12_0.eContents().get(0);
-		private final Assignment cVP_AspectsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-		private final CrossReference cVP_AspectsUIDescriptionCrossReference_12_1_0 = (CrossReference)cVP_AspectsAssignment_12_1.eContents().get(0);
-		private final RuleCall cVP_AspectsUIDescriptionFQNParserRuleCall_12_1_0_1 = (RuleCall)cVP_AspectsUIDescriptionCrossReference_12_1_0.eContents().get(1);
+		private final Keyword cUseFilesystemKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cUseFSResourceAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cUseFSResourceEStringParserRuleCall_12_1_0 = (RuleCall)cUseFSResourceAssignment_12_1.eContents().get(0);
+		private final Group cGroup_12_2 = (Group)cGroup_12.eContents().get(2);
+		private final Keyword cCommaKeyword_12_2_0 = (Keyword)cGroup_12_2.eContents().get(0);
+		private final Assignment cUseFSResourceAssignment_12_2_1 = (Assignment)cGroup_12_2.eContents().get(1);
+		private final RuleCall cUseFSResourceEStringParserRuleCall_12_2_1_0 = (RuleCall)cUseFSResourceAssignment_12_2_1.eContents().get(0);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Assignment cTypeAssignment_13_0 = (Assignment)cGroup_13.eContents().get(0);
-		private final Keyword cTypeDiagramsKeyword_13_0_0 = (Keyword)cTypeAssignment_13_0.eContents().get(0);
-		private final Assignment cVP_AspectsAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
-		private final CrossReference cVP_AspectsDiagramSetCrossReference_13_1_0 = (CrossReference)cVP_AspectsAssignment_13_1.eContents().get(0);
-		private final RuleCall cVP_AspectsDiagramSetFQNParserRuleCall_13_1_0_1 = (RuleCall)cVP_AspectsDiagramSetCrossReference_13_1_0.eContents().get(1);
+		private final Keyword cDataKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Assignment cVP_DataAssignment_13_1 = (Assignment)cGroup_13.eContents().get(1);
+		private final CrossReference cVP_DataDataCrossReference_13_1_0 = (CrossReference)cVP_DataAssignment_13_1.eContents().get(0);
+		private final RuleCall cVP_DataDataFQNParserRuleCall_13_1_0_1 = (RuleCall)cVP_DataDataCrossReference_13_1_0.eContents().get(1);
 		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
 		private final Assignment cTypeAssignment_14_0 = (Assignment)cGroup_14.eContents().get(0);
-		private final Keyword cTypeServicesKeyword_14_0_0 = (Keyword)cTypeAssignment_14_0.eContents().get(0);
+		private final Keyword cTypeUIKeyword_14_0_0 = (Keyword)cTypeAssignment_14_0.eContents().get(0);
 		private final Assignment cVP_AspectsAssignment_14_1 = (Assignment)cGroup_14.eContents().get(1);
-		private final CrossReference cVP_AspectsServiceSetCrossReference_14_1_0 = (CrossReference)cVP_AspectsAssignment_14_1.eContents().get(0);
-		private final RuleCall cVP_AspectsServiceSetFQNParserRuleCall_14_1_0_1 = (RuleCall)cVP_AspectsServiceSetCrossReference_14_1_0.eContents().get(1);
+		private final CrossReference cVP_AspectsUIDescriptionCrossReference_14_1_0 = (CrossReference)cVP_AspectsAssignment_14_1.eContents().get(0);
+		private final RuleCall cVP_AspectsUIDescriptionFQNParserRuleCall_14_1_0_1 = (RuleCall)cVP_AspectsUIDescriptionCrossReference_14_1_0.eContents().get(1);
 		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
 		private final Assignment cTypeAssignment_15_0 = (Assignment)cGroup_15.eContents().get(0);
-		private final Keyword cTypeBuildKeyword_15_0_0 = (Keyword)cTypeAssignment_15_0.eContents().get(0);
+		private final Keyword cTypeDiagramsKeyword_15_0_0 = (Keyword)cTypeAssignment_15_0.eContents().get(0);
 		private final Assignment cVP_AspectsAssignment_15_1 = (Assignment)cGroup_15.eContents().get(1);
-		private final CrossReference cVP_AspectsBuildCrossReference_15_1_0 = (CrossReference)cVP_AspectsAssignment_15_1.eContents().get(0);
-		private final RuleCall cVP_AspectsBuildFQNParserRuleCall_15_1_0_1 = (RuleCall)cVP_AspectsBuildCrossReference_15_1_0.eContents().get(1);
+		private final CrossReference cVP_AspectsDiagramSetCrossReference_15_1_0 = (CrossReference)cVP_AspectsAssignment_15_1.eContents().get(0);
+		private final RuleCall cVP_AspectsDiagramSetFQNParserRuleCall_15_1_0_1 = (RuleCall)cVP_AspectsDiagramSetCrossReference_15_1_0.eContents().get(1);
 		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
 		private final Assignment cTypeAssignment_16_0 = (Assignment)cGroup_16.eContents().get(0);
-		private final Keyword cTypeConfigurationKeyword_16_0_0 = (Keyword)cTypeAssignment_16_0.eContents().get(0);
+		private final Keyword cTypeServicesKeyword_16_0_0 = (Keyword)cTypeAssignment_16_0.eContents().get(0);
 		private final Assignment cVP_AspectsAssignment_16_1 = (Assignment)cGroup_16.eContents().get(1);
-		private final CrossReference cVP_AspectsConfigurationCrossReference_16_1_0 = (CrossReference)cVP_AspectsAssignment_16_1.eContents().get(0);
-		private final RuleCall cVP_AspectsConfigurationFQNParserRuleCall_16_1_0_1 = (RuleCall)cVP_AspectsConfigurationCrossReference_16_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final CrossReference cVP_AspectsServiceSetCrossReference_16_1_0 = (CrossReference)cVP_AspectsAssignment_16_1.eContents().get(0);
+		private final RuleCall cVP_AspectsServiceSetFQNParserRuleCall_16_1_0_1 = (RuleCall)cVP_AspectsServiceSetCrossReference_16_1_0.eContents().get(1);
+		private final Group cGroup_17 = (Group)cGroup.eContents().get(17);
+		private final Assignment cTypeAssignment_17_0 = (Assignment)cGroup_17.eContents().get(0);
+		private final Keyword cTypeBuildKeyword_17_0_0 = (Keyword)cTypeAssignment_17_0.eContents().get(0);
+		private final Assignment cVP_AspectsAssignment_17_1 = (Assignment)cGroup_17.eContents().get(1);
+		private final CrossReference cVP_AspectsBuildCrossReference_17_1_0 = (CrossReference)cVP_AspectsAssignment_17_1.eContents().get(0);
+		private final RuleCall cVP_AspectsBuildFQNParserRuleCall_17_1_0_1 = (RuleCall)cVP_AspectsBuildCrossReference_17_1_0.eContents().get(1);
+		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
+		private final Assignment cTypeAssignment_18_0 = (Assignment)cGroup_18.eContents().get(0);
+		private final Keyword cTypeConfigurationKeyword_18_0_0 = (Keyword)cTypeAssignment_18_0.eContents().get(0);
+		private final Assignment cVP_AspectsAssignment_18_1 = (Assignment)cGroup_18.eContents().get(1);
+		private final CrossReference cVP_AspectsConfigurationCrossReference_18_1_0 = (CrossReference)cVP_AspectsAssignment_18_1.eContents().get(0);
+		private final RuleCall cVP_AspectsConfigurationFQNParserRuleCall_18_1_0_1 = (RuleCall)cVP_AspectsConfigurationCrossReference_18_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		/// ********************************************************************
 		//
@@ -136,11 +152,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	("use anyEMF:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("use diagram:"
 		//
-		//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? //		(useResources+='use workspace: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
+		//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("use workspace:" useWorkspaceResource+=EString (","
 		//
-		//	//		(useResources+='use filesystem: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
+		//	useWorkspaceResource+=EString)*)? ("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
 		//
-		//	("Data" VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
+		//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
 		//
 		//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 		//
@@ -157,11 +173,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//("use anyEMF:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("use diagram:"
 		//
-		//useDiagramResource+=EString ("," useDiagramResource+=EString)*)? //		(useResources+='use workspace: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
+		//useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("use workspace:" useWorkspaceResource+=EString (","
 		//
-		////		(useResources+='use filesystem: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
+		//useWorkspaceResource+=EString)*)? ("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
 		//
-		//("Data" VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
+		//VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
 		//
 		//VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 		//
@@ -345,113 +361,161 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseDiagramResourceEStringParserRuleCall_10_2_1_0() { return cUseDiagramResourceEStringParserRuleCall_10_2_1_0; }
 
-		//("Data" VP_Data=[vpdesc::Data|FQN])?
+		//("use workspace:" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"Data"
-		public Keyword getDataKeyword_11_0() { return cDataKeyword_11_0; }
+		//"use workspace:"
+		public Keyword getUseWorkspaceKeyword_11_0() { return cUseWorkspaceKeyword_11_0; }
 
-		//VP_Data=[vpdesc::Data|FQN]
-		public Assignment getVP_DataAssignment_11_1() { return cVP_DataAssignment_11_1; }
+		//useWorkspaceResource+=EString
+		public Assignment getUseWorkspaceResourceAssignment_11_1() { return cUseWorkspaceResourceAssignment_11_1; }
 
-		//[vpdesc::Data|FQN]
-		public CrossReference getVP_DataDataCrossReference_11_1_0() { return cVP_DataDataCrossReference_11_1_0; }
+		//EString
+		public RuleCall getUseWorkspaceResourceEStringParserRuleCall_11_1_0() { return cUseWorkspaceResourceEStringParserRuleCall_11_1_0; }
 
-		//FQN
-		public RuleCall getVP_DataDataFQNParserRuleCall_11_1_0_1() { return cVP_DataDataFQNParserRuleCall_11_1_0_1; }
+		//("," useWorkspaceResource+=EString)*
+		public Group getGroup_11_2() { return cGroup_11_2; }
 
-		//(type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])?
+		//","
+		public Keyword getCommaKeyword_11_2_0() { return cCommaKeyword_11_2_0; }
+
+		//useWorkspaceResource+=EString
+		public Assignment getUseWorkspaceResourceAssignment_11_2_1() { return cUseWorkspaceResourceAssignment_11_2_1; }
+
+		//EString
+		public RuleCall getUseWorkspaceResourceEStringParserRuleCall_11_2_1_0() { return cUseWorkspaceResourceEStringParserRuleCall_11_2_1_0; }
+
+		//("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//type+="UI"
-		public Assignment getTypeAssignment_12_0() { return cTypeAssignment_12_0; }
+		//"use filesystem:"
+		public Keyword getUseFilesystemKeyword_12_0() { return cUseFilesystemKeyword_12_0; }
 
-		//"UI"
-		public Keyword getTypeUIKeyword_12_0_0() { return cTypeUIKeyword_12_0_0; }
+		//useFSResource+=EString
+		public Assignment getUseFSResourceAssignment_12_1() { return cUseFSResourceAssignment_12_1; }
 
-		//VP_Aspects+=[vpui::UIDescription|FQN]
-		public Assignment getVP_AspectsAssignment_12_1() { return cVP_AspectsAssignment_12_1; }
+		//EString
+		public RuleCall getUseFSResourceEStringParserRuleCall_12_1_0() { return cUseFSResourceEStringParserRuleCall_12_1_0; }
 
-		//[vpui::UIDescription|FQN]
-		public CrossReference getVP_AspectsUIDescriptionCrossReference_12_1_0() { return cVP_AspectsUIDescriptionCrossReference_12_1_0; }
+		//("," useFSResource+=EString)*
+		public Group getGroup_12_2() { return cGroup_12_2; }
 
-		//FQN
-		public RuleCall getVP_AspectsUIDescriptionFQNParserRuleCall_12_1_0_1() { return cVP_AspectsUIDescriptionFQNParserRuleCall_12_1_0_1; }
+		//","
+		public Keyword getCommaKeyword_12_2_0() { return cCommaKeyword_12_2_0; }
 
-		//(type+="Diagrams" VP_Aspects+=[vpdiagram::DiagramSet|FQN])?
+		//useFSResource+=EString
+		public Assignment getUseFSResourceAssignment_12_2_1() { return cUseFSResourceAssignment_12_2_1; }
+
+		//EString
+		public RuleCall getUseFSResourceEStringParserRuleCall_12_2_1_0() { return cUseFSResourceEStringParserRuleCall_12_2_1_0; }
+
+		//("Data" VP_Data=[vpdesc::Data|FQN])?
 		public Group getGroup_13() { return cGroup_13; }
 
-		//type+="Diagrams"
-		public Assignment getTypeAssignment_13_0() { return cTypeAssignment_13_0; }
+		//"Data"
+		public Keyword getDataKeyword_13_0() { return cDataKeyword_13_0; }
 
-		//"Diagrams"
-		public Keyword getTypeDiagramsKeyword_13_0_0() { return cTypeDiagramsKeyword_13_0_0; }
+		//VP_Data=[vpdesc::Data|FQN]
+		public Assignment getVP_DataAssignment_13_1() { return cVP_DataAssignment_13_1; }
 
-		//VP_Aspects+=[vpdiagram::DiagramSet|FQN]
-		public Assignment getVP_AspectsAssignment_13_1() { return cVP_AspectsAssignment_13_1; }
-
-		//[vpdiagram::DiagramSet|FQN]
-		public CrossReference getVP_AspectsDiagramSetCrossReference_13_1_0() { return cVP_AspectsDiagramSetCrossReference_13_1_0; }
+		//[vpdesc::Data|FQN]
+		public CrossReference getVP_DataDataCrossReference_13_1_0() { return cVP_DataDataCrossReference_13_1_0; }
 
 		//FQN
-		public RuleCall getVP_AspectsDiagramSetFQNParserRuleCall_13_1_0_1() { return cVP_AspectsDiagramSetFQNParserRuleCall_13_1_0_1; }
+		public RuleCall getVP_DataDataFQNParserRuleCall_13_1_0_1() { return cVP_DataDataFQNParserRuleCall_13_1_0_1; }
 
-		//(type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])?
+		//(type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])?
 		public Group getGroup_14() { return cGroup_14; }
 
-		//type+="Services"
+		//type+="UI"
 		public Assignment getTypeAssignment_14_0() { return cTypeAssignment_14_0; }
 
-		//"Services"
-		public Keyword getTypeServicesKeyword_14_0_0() { return cTypeServicesKeyword_14_0_0; }
+		//"UI"
+		public Keyword getTypeUIKeyword_14_0_0() { return cTypeUIKeyword_14_0_0; }
 
-		//VP_Aspects+=[vpservices::ServiceSet|FQN]
+		//VP_Aspects+=[vpui::UIDescription|FQN]
 		public Assignment getVP_AspectsAssignment_14_1() { return cVP_AspectsAssignment_14_1; }
 
-		//[vpservices::ServiceSet|FQN]
-		public CrossReference getVP_AspectsServiceSetCrossReference_14_1_0() { return cVP_AspectsServiceSetCrossReference_14_1_0; }
+		//[vpui::UIDescription|FQN]
+		public CrossReference getVP_AspectsUIDescriptionCrossReference_14_1_0() { return cVP_AspectsUIDescriptionCrossReference_14_1_0; }
 
 		//FQN
-		public RuleCall getVP_AspectsServiceSetFQNParserRuleCall_14_1_0_1() { return cVP_AspectsServiceSetFQNParserRuleCall_14_1_0_1; }
+		public RuleCall getVP_AspectsUIDescriptionFQNParserRuleCall_14_1_0_1() { return cVP_AspectsUIDescriptionFQNParserRuleCall_14_1_0_1; }
 
-		//(type+="Build" VP_Aspects+=[vpbuild::Build|FQN])?
+		//(type+="Diagrams" VP_Aspects+=[vpdiagram::DiagramSet|FQN])?
 		public Group getGroup_15() { return cGroup_15; }
 
-		//type+="Build"
+		//type+="Diagrams"
 		public Assignment getTypeAssignment_15_0() { return cTypeAssignment_15_0; }
 
-		//"Build"
-		public Keyword getTypeBuildKeyword_15_0_0() { return cTypeBuildKeyword_15_0_0; }
+		//"Diagrams"
+		public Keyword getTypeDiagramsKeyword_15_0_0() { return cTypeDiagramsKeyword_15_0_0; }
 
-		//VP_Aspects+=[vpbuild::Build|FQN]
+		//VP_Aspects+=[vpdiagram::DiagramSet|FQN]
 		public Assignment getVP_AspectsAssignment_15_1() { return cVP_AspectsAssignment_15_1; }
 
-		//[vpbuild::Build|FQN]
-		public CrossReference getVP_AspectsBuildCrossReference_15_1_0() { return cVP_AspectsBuildCrossReference_15_1_0; }
+		//[vpdiagram::DiagramSet|FQN]
+		public CrossReference getVP_AspectsDiagramSetCrossReference_15_1_0() { return cVP_AspectsDiagramSetCrossReference_15_1_0; }
 
 		//FQN
-		public RuleCall getVP_AspectsBuildFQNParserRuleCall_15_1_0_1() { return cVP_AspectsBuildFQNParserRuleCall_15_1_0_1; }
+		public RuleCall getVP_AspectsDiagramSetFQNParserRuleCall_15_1_0_1() { return cVP_AspectsDiagramSetFQNParserRuleCall_15_1_0_1; }
 
-		//(type+="Configuration" VP_Aspects+=[vpconf::Configuration|FQN])?
+		//(type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])?
 		public Group getGroup_16() { return cGroup_16; }
 
-		//type+="Configuration"
+		//type+="Services"
 		public Assignment getTypeAssignment_16_0() { return cTypeAssignment_16_0; }
 
-		//"Configuration"
-		public Keyword getTypeConfigurationKeyword_16_0_0() { return cTypeConfigurationKeyword_16_0_0; }
+		//"Services"
+		public Keyword getTypeServicesKeyword_16_0_0() { return cTypeServicesKeyword_16_0_0; }
 
-		//VP_Aspects+=[vpconf::Configuration|FQN]
+		//VP_Aspects+=[vpservices::ServiceSet|FQN]
 		public Assignment getVP_AspectsAssignment_16_1() { return cVP_AspectsAssignment_16_1; }
 
-		//[vpconf::Configuration|FQN]
-		public CrossReference getVP_AspectsConfigurationCrossReference_16_1_0() { return cVP_AspectsConfigurationCrossReference_16_1_0; }
+		//[vpservices::ServiceSet|FQN]
+		public CrossReference getVP_AspectsServiceSetCrossReference_16_1_0() { return cVP_AspectsServiceSetCrossReference_16_1_0; }
 
 		//FQN
-		public RuleCall getVP_AspectsConfigurationFQNParserRuleCall_16_1_0_1() { return cVP_AspectsConfigurationFQNParserRuleCall_16_1_0_1; }
+		public RuleCall getVP_AspectsServiceSetFQNParserRuleCall_16_1_0_1() { return cVP_AspectsServiceSetFQNParserRuleCall_16_1_0_1; }
+
+		//(type+="Build" VP_Aspects+=[vpbuild::Build|FQN])?
+		public Group getGroup_17() { return cGroup_17; }
+
+		//type+="Build"
+		public Assignment getTypeAssignment_17_0() { return cTypeAssignment_17_0; }
+
+		//"Build"
+		public Keyword getTypeBuildKeyword_17_0_0() { return cTypeBuildKeyword_17_0_0; }
+
+		//VP_Aspects+=[vpbuild::Build|FQN]
+		public Assignment getVP_AspectsAssignment_17_1() { return cVP_AspectsAssignment_17_1; }
+
+		//[vpbuild::Build|FQN]
+		public CrossReference getVP_AspectsBuildCrossReference_17_1_0() { return cVP_AspectsBuildCrossReference_17_1_0; }
+
+		//FQN
+		public RuleCall getVP_AspectsBuildFQNParserRuleCall_17_1_0_1() { return cVP_AspectsBuildFQNParserRuleCall_17_1_0_1; }
+
+		//(type+="Configuration" VP_Aspects+=[vpconf::Configuration|FQN])?
+		public Group getGroup_18() { return cGroup_18; }
+
+		//type+="Configuration"
+		public Assignment getTypeAssignment_18_0() { return cTypeAssignment_18_0; }
+
+		//"Configuration"
+		public Keyword getTypeConfigurationKeyword_18_0_0() { return cTypeConfigurationKeyword_18_0_0; }
+
+		//VP_Aspects+=[vpconf::Configuration|FQN]
+		public Assignment getVP_AspectsAssignment_18_1() { return cVP_AspectsAssignment_18_1; }
+
+		//[vpconf::Configuration|FQN]
+		public CrossReference getVP_AspectsConfigurationCrossReference_18_1_0() { return cVP_AspectsConfigurationCrossReference_18_1_0; }
+
+		//FQN
+		public RuleCall getVP_AspectsConfigurationFQNParserRuleCall_18_1_0_1() { return cVP_AspectsConfigurationFQNParserRuleCall_18_1_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
+		public Keyword getRightCurlyBracketKeyword_19() { return cRightCurlyBracketKeyword_19; }
 	}
 	
 	
@@ -513,11 +577,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	("use anyEMF:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("use diagram:"
 	//
-	//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? //		(useResources+='use workspace: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
+	//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("use workspace:" useWorkspaceResource+=EString (","
 	//
-	//	//		(useResources+='use filesystem: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
+	//	useWorkspaceResource+=EString)*)? ("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
 	//
-	//	("Data" VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
+	//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
 	//
 	//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 	//

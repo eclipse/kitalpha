@@ -192,9 +192,9 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getViewpoint_VP_Data()
+  public EAttribute getViewpoint_UseWorkspaceResource()
   {
-    return (EReference)viewpointEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)viewpointEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -202,7 +202,7 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getViewpoint_Type()
+  public EAttribute getViewpoint_UseFSResource()
   {
     return (EAttribute)viewpointEClass.getEStructuralFeatures().get(9);
   }
@@ -212,9 +212,29 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getViewpoint_VP_Aspects()
+  public EReference getViewpoint_VP_Data()
   {
     return (EReference)viewpointEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getViewpoint_Type()
+  {
+    return (EAttribute)viewpointEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getViewpoint_VP_Aspects()
+  {
+    return (EReference)viewpointEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -256,6 +276,8 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
     createEReference(viewpointEClass, VIEWPOINT__USE_VIEWPOINT);
     createEAttribute(viewpointEClass, VIEWPOINT__USE_ANY_EMF_RESOURCE);
     createEAttribute(viewpointEClass, VIEWPOINT__USE_DIAGRAM_RESOURCE);
+    createEAttribute(viewpointEClass, VIEWPOINT__USE_WORKSPACE_RESOURCE);
+    createEAttribute(viewpointEClass, VIEWPOINT__USE_FS_RESOURCE);
     createEReference(viewpointEClass, VIEWPOINT__VP_DATA);
     createEAttribute(viewpointEClass, VIEWPOINT__TYPE);
     createEReference(viewpointEClass, VIEWPOINT__VP_ASPECTS);
@@ -305,6 +327,8 @@ public class VpspecPackageImpl extends EPackageImpl implements VpspecPackage
     initEReference(getViewpoint_UseViewpoint(), this.getViewpoint(), null, "useViewpoint", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_UseAnyEMFResource(), theEcorePackage.getEString(), "useAnyEMFResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_UseDiagramResource(), theEcorePackage.getEString(), "useDiagramResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getViewpoint_UseWorkspaceResource(), theEcorePackage.getEString(), "useWorkspaceResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getViewpoint_UseFSResource(), theEcorePackage.getEString(), "useFSResource", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_VP_Data(), theVpdescPackage.getData(), null, "VP_Data", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getViewpoint_Type(), theEcorePackage.getEString(), "type", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getViewpoint_VP_Aspects(), theVpdescPackage.getAspect(), null, "VP_Aspects", null, 0, -1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

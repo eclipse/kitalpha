@@ -38,6 +38,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseViewpoint <em>Use Viewpoint</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseAnyEMFResource <em>Use Any EMF Resource</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseDiagramResource <em>Use Diagram Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseWorkspaceResource <em>Use Workspace Resource</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getUseFSResource <em>Use FS Resource</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getVP_Data <em>VP Data</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getVP_Aspects <em>VP Aspects</em>}</li>
@@ -157,6 +159,26 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * @ordered
    */
   protected EList<String> useDiagramResource;
+
+  /**
+   * The cached value of the '{@link #getUseWorkspaceResource() <em>Use Workspace Resource</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseWorkspaceResource()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> useWorkspaceResource;
+
+  /**
+   * The cached value of the '{@link #getUseFSResource() <em>Use FS Resource</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUseFSResource()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> useFSResource;
 
   /**
    * The cached value of the '{@link #getVP_Data() <em>VP Data</em>}' reference.
@@ -353,6 +375,34 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getUseWorkspaceResource()
+  {
+    if (useWorkspaceResource == null)
+    {
+      useWorkspaceResource = new EDataTypeEList<String>(String.class, this, VpspecPackage.VIEWPOINT__USE_WORKSPACE_RESOURCE);
+    }
+    return useWorkspaceResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getUseFSResource()
+  {
+    if (useFSResource == null)
+    {
+      useFSResource = new EDataTypeEList<String>(String.class, this, VpspecPackage.VIEWPOINT__USE_FS_RESOURCE);
+    }
+    return useFSResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Data getVP_Data()
   {
     if (vP_Data != null && vP_Data.eIsProxy())
@@ -445,6 +495,10 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         return getUseAnyEMFResource();
       case VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE:
         return getUseDiagramResource();
+      case VpspecPackage.VIEWPOINT__USE_WORKSPACE_RESOURCE:
+        return getUseWorkspaceResource();
+      case VpspecPackage.VIEWPOINT__USE_FS_RESOURCE:
+        return getUseFSResource();
       case VpspecPackage.VIEWPOINT__VP_DATA:
         if (resolve) return getVP_Data();
         return basicGetVP_Data();
@@ -496,6 +550,14 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         getUseDiagramResource().clear();
         getUseDiagramResource().addAll((Collection<? extends String>)newValue);
         return;
+      case VpspecPackage.VIEWPOINT__USE_WORKSPACE_RESOURCE:
+        getUseWorkspaceResource().clear();
+        getUseWorkspaceResource().addAll((Collection<? extends String>)newValue);
+        return;
+      case VpspecPackage.VIEWPOINT__USE_FS_RESOURCE:
+        getUseFSResource().clear();
+        getUseFSResource().addAll((Collection<? extends String>)newValue);
+        return;
       case VpspecPackage.VIEWPOINT__VP_DATA:
         setVP_Data((Data)newValue);
         return;
@@ -545,6 +607,12 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
       case VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE:
         getUseDiagramResource().clear();
         return;
+      case VpspecPackage.VIEWPOINT__USE_WORKSPACE_RESOURCE:
+        getUseWorkspaceResource().clear();
+        return;
+      case VpspecPackage.VIEWPOINT__USE_FS_RESOURCE:
+        getUseFSResource().clear();
+        return;
       case VpspecPackage.VIEWPOINT__VP_DATA:
         setVP_Data((Data)null);
         return;
@@ -584,6 +652,10 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
         return useAnyEMFResource != null && !useAnyEMFResource.isEmpty();
       case VpspecPackage.VIEWPOINT__USE_DIAGRAM_RESOURCE:
         return useDiagramResource != null && !useDiagramResource.isEmpty();
+      case VpspecPackage.VIEWPOINT__USE_WORKSPACE_RESOURCE:
+        return useWorkspaceResource != null && !useWorkspaceResource.isEmpty();
+      case VpspecPackage.VIEWPOINT__USE_FS_RESOURCE:
+        return useFSResource != null && !useFSResource.isEmpty();
       case VpspecPackage.VIEWPOINT__VP_DATA:
         return vP_Data != null;
       case VpspecPackage.VIEWPOINT__TYPE:
@@ -615,6 +687,10 @@ public class ViewpointImpl extends MinimalEObjectImpl.Container implements Viewp
     result.append(useAnyEMFResource);
     result.append(", useDiagramResource: ");
     result.append(useDiagramResource);
+    result.append(", useWorkspaceResource: ");
+    result.append(useWorkspaceResource);
+    result.append(", useFSResource: ");
+    result.append(useFSResource);
     result.append(", type: ");
     result.append(type);
     result.append(')');

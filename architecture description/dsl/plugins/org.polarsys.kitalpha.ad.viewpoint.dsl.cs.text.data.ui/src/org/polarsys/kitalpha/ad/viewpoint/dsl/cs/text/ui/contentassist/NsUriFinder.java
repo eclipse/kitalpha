@@ -10,24 +10,40 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.core.filesystem.EFS;
+import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainViewpointHelper;
 
@@ -69,7 +85,7 @@ public class NsUriFinder {
 			EList<AbstractResource> usedResources = vr.getUseResource();
 			
 			if (!usedResources.isEmpty()){
-				Collection<String> emfUsedUri = getEMFUsedURI(usedResources);
+				Collection<String> emfUsedUri = getEMFUsedURI(usedResources, model);
 				return emfUsedUri;
 			}
 		}
@@ -79,9 +95,10 @@ public class NsUriFinder {
 
 
 	private static Collection<String> getEMFUsedURI(
-			EList<AbstractResource> usedResources) {
+			EList<AbstractResource> usedResources, EObject model) {
 		
 		Collection<String> uris = new HashSet<String>();
+		Collection<EPackage> epackages = null;
 		
 		for (AbstractResource abstractResource : usedResources) {
 			if (abstractResource instanceof EMFResource){
@@ -89,7 +106,52 @@ public class NsUriFinder {
 				if (!uri.endsWith(".odesign"))
 					uris.add(uri);
 			}
+			
+			if (abstractResource instanceof FileSystemResource){
+				FileSystemResource fsr = (FileSystemResource)abstractResource;
+				String path = fsr.getPath();
+				if (path.endsWith(".ecore")){
+					IPath p = new Path(path);
+					IFileStore fileStore = EFS.getLocalFileSystem().getStore(p);
+					java.io.File externalFile = null;
+					try {
+						externalFile = fileStore.toLocalFile(EFS.NONE, null);
+					} catch (CoreException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					if (externalFile != null){
+						epackages = DataWorkspaceEPackage.INSTANCE.registerEPackagesFrom(externalFile);
+					}
+					
+					
+//					IProject currentProject = ResourcesPlugin.getWorkspace().getRoot().getProject(model.eResource().getURI().segment(1));
+//					IFolder folder = currentProject.getFolder("external");
+//					if (!folder.exists()){
+//						try {
+//							folder.create(true, true, null);
+//						} catch (CoreException e) {
+//							e.printStackTrace();
+//						}
+//					}
+//					IFile f = folder.getFile(p.lastSegment());
+//					try {
+//						f.createLink(p, IResource.NONE, null);
+//					} catch (CoreException e) {
+//						//e.printStackTrace();
+//					}
+					//epackages = DataWorkspaceEPackage.INSTANCE.registerEPackagesFrom(f);
+				}
+			}
 		}
+
+		if (epackages != null && !epackages.isEmpty()){
+			for (EPackage ePackage : epackages) {
+				uris.add(ePackage.getNsURI());
+			}
+		}
+
 		return uris;
 	}
 

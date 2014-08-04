@@ -139,13 +139,31 @@ public interface VpspecPackage extends EPackage
   int VIEWPOINT__USE_DIAGRAM_RESOURCE = 7;
 
   /**
+   * The feature id for the '<em><b>Use Workspace Resource</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEWPOINT__USE_WORKSPACE_RESOURCE = 8;
+
+  /**
+   * The feature id for the '<em><b>Use FS Resource</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VIEWPOINT__USE_FS_RESOURCE = 9;
+
+  /**
    * The feature id for the '<em><b>VP Data</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIEWPOINT__VP_DATA = 8;
+  int VIEWPOINT__VP_DATA = 10;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute list.
@@ -154,7 +172,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__TYPE = 9;
+  int VIEWPOINT__TYPE = 11;
 
   /**
    * The feature id for the '<em><b>VP Aspects</b></em>' reference list.
@@ -163,7 +181,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT__VP_ASPECTS = 10;
+  int VIEWPOINT__VP_ASPECTS = 12;
 
   /**
    * The number of structural features of the '<em>Viewpoint</em>' class.
@@ -172,7 +190,7 @@ public interface VpspecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_FEATURE_COUNT = 11;
+  int VIEWPOINT_FEATURE_COUNT = 13;
 
 
   /**
@@ -272,6 +290,28 @@ public interface VpspecPackage extends EPackage
    * @generated
    */
   EAttribute getViewpoint_UseDiagramResource();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseWorkspaceResource <em>Use Workspace Resource</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Use Workspace Resource</em>'.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseWorkspaceResource()
+   * @see #getViewpoint()
+   * @generated
+   */
+  EAttribute getViewpoint_UseWorkspaceResource();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseFSResource <em>Use FS Resource</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Use FS Resource</em>'.
+   * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getUseFSResource()
+   * @see #getViewpoint()
+   * @generated
+   */
+  EAttribute getViewpoint_UseFSResource();
 
   /**
    * Returns the meta object for the reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getVP_Data <em>VP Data</em>}'.
@@ -402,6 +442,22 @@ public interface VpspecPackage extends EPackage
      * @generated
      */
     EAttribute VIEWPOINT__USE_DIAGRAM_RESOURCE = eINSTANCE.getViewpoint_UseDiagramResource();
+
+    /**
+     * The meta object literal for the '<em><b>Use Workspace Resource</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VIEWPOINT__USE_WORKSPACE_RESOURCE = eINSTANCE.getViewpoint_UseWorkspaceResource();
+
+    /**
+     * The meta object literal for the '<em><b>Use FS Resource</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VIEWPOINT__USE_FS_RESOURCE = eINSTANCE.getViewpoint_UseFSResource();
 
     /**
      * The meta object literal for the '<em><b>VP Data</b></em>' reference feature.

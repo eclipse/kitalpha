@@ -53,11 +53,15 @@ public class VpspecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getViewpointAccess().getGroup_10(), "rule__Viewpoint__Group_10__0");
 					put(grammarAccess.getViewpointAccess().getGroup_10_2(), "rule__Viewpoint__Group_10_2__0");
 					put(grammarAccess.getViewpointAccess().getGroup_11(), "rule__Viewpoint__Group_11__0");
+					put(grammarAccess.getViewpointAccess().getGroup_11_2(), "rule__Viewpoint__Group_11_2__0");
 					put(grammarAccess.getViewpointAccess().getGroup_12(), "rule__Viewpoint__Group_12__0");
+					put(grammarAccess.getViewpointAccess().getGroup_12_2(), "rule__Viewpoint__Group_12_2__0");
 					put(grammarAccess.getViewpointAccess().getGroup_13(), "rule__Viewpoint__Group_13__0");
 					put(grammarAccess.getViewpointAccess().getGroup_14(), "rule__Viewpoint__Group_14__0");
 					put(grammarAccess.getViewpointAccess().getGroup_15(), "rule__Viewpoint__Group_15__0");
 					put(grammarAccess.getViewpointAccess().getGroup_16(), "rule__Viewpoint__Group_16__0");
+					put(grammarAccess.getViewpointAccess().getGroup_17(), "rule__Viewpoint__Group_17__0");
+					put(grammarAccess.getViewpointAccess().getGroup_18(), "rule__Viewpoint__Group_18__0");
 					put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 					put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
 					put(grammarAccess.getViewpointAccess().getShortNameAssignment_2(), "rule__Viewpoint__ShortNameAssignment_2");
@@ -73,17 +77,21 @@ public class VpspecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getViewpointAccess().getUseAnyEMFResourceAssignment_9_2_1(), "rule__Viewpoint__UseAnyEMFResourceAssignment_9_2_1");
 					put(grammarAccess.getViewpointAccess().getUseDiagramResourceAssignment_10_1(), "rule__Viewpoint__UseDiagramResourceAssignment_10_1");
 					put(grammarAccess.getViewpointAccess().getUseDiagramResourceAssignment_10_2_1(), "rule__Viewpoint__UseDiagramResourceAssignment_10_2_1");
-					put(grammarAccess.getViewpointAccess().getVP_DataAssignment_11_1(), "rule__Viewpoint__VP_DataAssignment_11_1");
-					put(grammarAccess.getViewpointAccess().getTypeAssignment_12_0(), "rule__Viewpoint__TypeAssignment_12_0");
-					put(grammarAccess.getViewpointAccess().getVP_AspectsAssignment_12_1(), "rule__Viewpoint__VP_AspectsAssignment_12_1");
-					put(grammarAccess.getViewpointAccess().getTypeAssignment_13_0(), "rule__Viewpoint__TypeAssignment_13_0");
-					put(grammarAccess.getViewpointAccess().getVP_AspectsAssignment_13_1(), "rule__Viewpoint__VP_AspectsAssignment_13_1");
+					put(grammarAccess.getViewpointAccess().getUseWorkspaceResourceAssignment_11_1(), "rule__Viewpoint__UseWorkspaceResourceAssignment_11_1");
+					put(grammarAccess.getViewpointAccess().getUseWorkspaceResourceAssignment_11_2_1(), "rule__Viewpoint__UseWorkspaceResourceAssignment_11_2_1");
+					put(grammarAccess.getViewpointAccess().getUseFSResourceAssignment_12_1(), "rule__Viewpoint__UseFSResourceAssignment_12_1");
+					put(grammarAccess.getViewpointAccess().getUseFSResourceAssignment_12_2_1(), "rule__Viewpoint__UseFSResourceAssignment_12_2_1");
+					put(grammarAccess.getViewpointAccess().getVP_DataAssignment_13_1(), "rule__Viewpoint__VP_DataAssignment_13_1");
 					put(grammarAccess.getViewpointAccess().getTypeAssignment_14_0(), "rule__Viewpoint__TypeAssignment_14_0");
 					put(grammarAccess.getViewpointAccess().getVP_AspectsAssignment_14_1(), "rule__Viewpoint__VP_AspectsAssignment_14_1");
 					put(grammarAccess.getViewpointAccess().getTypeAssignment_15_0(), "rule__Viewpoint__TypeAssignment_15_0");
 					put(grammarAccess.getViewpointAccess().getVP_AspectsAssignment_15_1(), "rule__Viewpoint__VP_AspectsAssignment_15_1");
 					put(grammarAccess.getViewpointAccess().getTypeAssignment_16_0(), "rule__Viewpoint__TypeAssignment_16_0");
 					put(grammarAccess.getViewpointAccess().getVP_AspectsAssignment_16_1(), "rule__Viewpoint__VP_AspectsAssignment_16_1");
+					put(grammarAccess.getViewpointAccess().getTypeAssignment_17_0(), "rule__Viewpoint__TypeAssignment_17_0");
+					put(grammarAccess.getViewpointAccess().getVP_AspectsAssignment_17_1(), "rule__Viewpoint__VP_AspectsAssignment_17_1");
+					put(grammarAccess.getViewpointAccess().getTypeAssignment_18_0(), "rule__Viewpoint__TypeAssignment_18_0");
+					put(grammarAccess.getViewpointAccess().getVP_AspectsAssignment_18_1(), "rule__Viewpoint__VP_AspectsAssignment_18_1");
 				}
 			};
 		}

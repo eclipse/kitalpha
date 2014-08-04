@@ -12,7 +12,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources;
 
 import java.util.List;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
@@ -72,7 +74,7 @@ public class WorkspaceResourceHelper {
 						if (isCandidate(file, extension))
 							projectResources.add(file);
 					}
-					return false;
+					return true;
 				}
 			});
 			
@@ -82,6 +84,59 @@ public class WorkspaceResourceHelper {
 		
 		return projectResources;
 	}
+
+	public static List<IContainer> getAllWorkspaceContainers(IWorkspace ws){
+		final List<IContainer> containers = Lists.newArrayList();
+
+		final IWorkspaceRoot root = ws.getRoot();
+
+		try {
+			root.accept(new IResourceVisitor() {
+
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					if (resource.isAccessible() && (resource instanceof IContainer)) {
+						IContainer container = (IContainer) resource;
+						containers.add(container);
+					}
+					return true;
+				}
+			});
+
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+
+		return containers;
+	}
+	
+	
+	public static List<IFile> getAllWorkspaceFiles(IWorkspace ws){
+		final List<IFile> files = Lists.newArrayList();
+
+		final IWorkspaceRoot root = ws.getRoot();
+
+		try {
+			root.accept(new IResourceVisitor() {
+
+				@Override
+				public boolean visit(IResource resource) throws CoreException {
+					if (resource.isAccessible() && (resource instanceof IFile)) {
+						IFile file = (IFile) resource;
+						files.add(file);
+					}
+					return true;
+				}
+			});
+
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+
+		return files;
+	}
+	
+	
 	
 	private static boolean isCandidate(IFile file, String extension){
 		return (extension != null && !extension.isEmpty() && file.getName().endsWith(extension));

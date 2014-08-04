@@ -26,10 +26,14 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.swt.SWTException;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
@@ -40,10 +44,14 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAttributeType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalAttributeType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.DataGrammarAccess;
 
 import com.google.inject.Inject;
@@ -120,16 +128,28 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 		IPath iconRelativePath = iconFolder.getProjectRelativePath();
 		List<IResource> collectICons = collectICons(iconFolder,
 				new ArrayList<IResource>());
+		
+		//To decomment later
+//		List<IResource> importedResources = getImportedResources(model);
+//		
+//		for (IResource iResource : importedResources) {
+//			collectICons = collectICons(iResource, collectICons);
+//		}
+		
 		for (IResource candidate : collectICons) {
 			if (candidate instanceof IFile) {
 				IFile xfile = (IFile) candidate;
-				Image image = getImage(xfile.getLocation());
-				IPath projectRelativePath = xfile.getProjectRelativePath();
-				IPath makeRelativeTo = projectRelativePath
-						.makeRelativeTo(iconRelativePath);
-				acceptor.accept(createCompletionProposal(
-						"\"" + makeRelativeTo.toString() + "\"",
-						makeRelativeTo.toString(), image, context));
+				try {
+					Image image = getImage(xfile.getLocation());
+					IPath projectRelativePath = xfile.getProjectRelativePath();
+					IPath makeRelativeTo = projectRelativePath
+							.makeRelativeTo(iconRelativePath);
+					acceptor.accept(createCompletionProposal(
+							"\"" + makeRelativeTo.toString() + "\"",
+							makeRelativeTo.toString(), image, context));
+				} catch (SWTException e){
+					//we don't others file except images.
+				}
 			}
 		}
 	}
@@ -167,5 +187,54 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 		StringBuffer tmp = new StringBuffer();
 		tmp.append("\"").append(uri).append("\"");
 		return tmp.toString();
+	}
+	
+	
+	
+	private List<IResource> getImportedResources(EObject model){
+		Resource standalone = ResourceHelper.loadStandaloneResource(model.eResource().getURI().segment(1));
+		ViewpointResources vr = getViewpointResource(standalone);
+		
+		List<IResource> importedResources = new ArrayList<IResource>();
+		
+		if (vr != null){
+			EList<AbstractResource> ar = vr.getUseResource();
+			
+			for (AbstractResource abstractResource : ar) {
+				if (abstractResource instanceof FileSystemResource){
+					FileSystemResource fsr = (FileSystemResource)abstractResource;
+					
+					if (fsr.isWorkspace()){
+						String path_str = fsr.getPath();
+						IPath path = new Path(path_str);
+						IResource r = ResourcesPlugin.getWorkspace().getRoot().findMember(path);
+						
+						if (r != null){
+							importedResources.add(r);
+						}
+					}
+				}
+			}
+		}
+		
+		return importedResources;
+		
+	}
+
+	private ViewpointResources getViewpointResource(Resource standalone) {
+		
+		if (standalone == null)
+			return null;
+		
+		TreeIterator<EObject> it = standalone.getAllContents();
+		
+		while (it.hasNext()){
+			EObject next = it.next();
+			
+			if (next instanceof ViewpointResources)
+				return (ViewpointResources)next;
+		}
+		
+		return null;
 	}
 }

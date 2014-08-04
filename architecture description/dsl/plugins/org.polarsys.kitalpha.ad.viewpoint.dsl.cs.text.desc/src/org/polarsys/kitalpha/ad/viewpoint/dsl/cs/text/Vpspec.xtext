@@ -11,6 +11,7 @@
  /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
@@ -51,8 +52,8 @@ Viewpoint returns Viewpoint:
 		//Viewpoint use resources
 		('use anyEMF:' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
 		('use diagram:' useDiagramResource+=EString (',' useDiagramResource+=EString)*)?
-//		(useResources+='use workspace: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
-//		(useResources+='use filesystem: ' useResource+=[vpdesc::FileSystemResource | FQN] (',' useResource+=[vpdesc::FileSystemResource | FQN])*)?
+		('use workspace:' useWorkspaceResource+=EString (',' useWorkspaceResource+=EString)*)?
+		('use filesystem:' useFSResource+=EString (',' useFSResource+=EString)*)?
 		
 		
 		('Data' VP_Data=[vpdesc::Data | FQN])?
