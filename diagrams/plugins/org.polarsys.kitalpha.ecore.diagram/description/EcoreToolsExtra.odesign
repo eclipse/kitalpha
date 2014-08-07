@@ -78,7 +78,7 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
-          <conditionnalStyles predicateExpression="[abstract/]">
+          <conditionnalStyles predicateExpression="feature:abstract">
             <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -308,7 +308,7 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="2" labelSize="10" labelFormat="italic" labelExpression="[name + '\n( '+ eContainer(EPackage).name +' )'/]" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -324,7 +324,7 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" labelFormat="italic" labelExpression="[name + '\n( '+ eContainer(EPackage).name +' )'/]" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -376,7 +376,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/ ' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
@@ -392,7 +392,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/ ' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
@@ -408,7 +408,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/ ' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
@@ -462,7 +462,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
@@ -486,7 +486,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
@@ -510,7 +510,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
@@ -534,7 +534,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
@@ -558,7 +558,7 @@
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
             <style sizeComputationExpression="1">
-              <strokeColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
+              <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
               <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
