@@ -590,15 +590,15 @@
           </subNodeMappings>
         </containerMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="EF Neighbor EClass" preconditionExpression="[self &lt;> diagram.eGet('target')/]" deletionDescription="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Class']" semanticCandidatesExpression="[self.getFocusNeighbourgClassesSemanticCandidate(eInverse(EReference))/]" domainClass="ecore.EClass" childrenPresentation="List" importedMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']"/>
-        <containerMappings name="EF Import EClass" preconditionExpression="[self &lt;> diagram.eGet('target')/]" semanticCandidatesExpression="&lt;%(self.eAllSuperTypes + self.eAllReferences.eType.filter(&quot;EClass&quot;) + self.~eType.filter(&quot;EReference&quot;).eContainer.filter(&quot;EClass&quot;) + self.eAllSuperTypes.~eType.filter(&quot;EReference&quot;).eContainer.filter(&quot;EClass&quot;)).nMinimize%>" createElements="false" domainClass="EClass" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="&lt;%name + &quot;\n( &quot;+ eContainer.filter(&quot;EPackage&quot;).name + &quot;)&quot;%>" backgroundStyle="GradientTopToBottom">
+        <containerMappings name="EF Import EClass" preconditionExpression="[self &lt;> diagram.eGet('target')/]" semanticCandidatesExpression="[focusEFImportEClassSCE(self.eInverse(EReference), self.eGet('eAllSuperTypes').eInverse(EReference)->asOrderedSet())/]" createElements="false" domainClass="ecore.EClass" childrenPresentation="List">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
-          <conditionnalStyles predicateExpression="&lt;%abstract%>">
-            <style xsi:type="style:FlatContainerStyleDescription" labelFormat="italic" labelExpression="&lt;%name + &quot;\n( &quot;+ eContainer.filter(&quot;EPackage&quot;).name + &quot;)&quot;%>" backgroundStyle="GradientTopToBottom">
+          <conditionnalStyles predicateExpression="feature:abstract">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>

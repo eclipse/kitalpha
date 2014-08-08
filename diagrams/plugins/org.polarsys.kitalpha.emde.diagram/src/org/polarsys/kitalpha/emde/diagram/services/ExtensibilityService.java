@@ -149,15 +149,6 @@ public class ExtensibilityService {
 			ePackage.getEAnnotations().add(annotation);
 		}
 		
-//		annotation = ePackage.getEAnnotation(OLD_SOURCE);
-//		if (annotation == null) 
-//		{
-//			annotation = EcoreFactory.eINSTANCE.createEAnnotation();
-//			annotation.setSource(OLD_SOURCE);
-//			init(annotation);
-//			ePackage.getEAnnotations().add(annotation);
-//		}
-		
 		try {
 			Session session = SessionManager.INSTANCE.getSession(ePackage);
 			session.addSemanticResource(convert(EmdePackage.Literals.ELEMENT_EXTENSION).eResource().getURI(), NPM);

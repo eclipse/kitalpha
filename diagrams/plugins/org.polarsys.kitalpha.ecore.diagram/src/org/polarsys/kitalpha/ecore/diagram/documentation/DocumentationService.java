@@ -40,19 +40,54 @@ public class DocumentationService {
 	protected static final TransactionalEditingDomain editingDomain = 
 			EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain();
 
+	public void createDocumentation(EModelElement receiver) {
+		if (accept(receiver)) 
+		{
+			final Collection<Object> documentation = getDocumentation(receiver);
+			if (documentation.isEmpty())
+			{
+				EAnnotation eAnnotation = receiver.getEAnnotation(DOCUMENTATION_SOURCE);
+				if (eAnnotation == null) 
+					eAnnotation = creatDocumentationEAnnotation(receiver);
+
+				createEntry(eAnnotation, DESCRIPTION);
+				createEntry(eAnnotation, USAGE_GUIDELINE);
+				createEntry(eAnnotation, USED_IN_LEVELS);
+				createEntry(eAnnotation, USAGE_EXAMPLES);
+				createEntry(eAnnotation, CONSTRAINTS);
+			}
+		} 
+	}
+	
 	public Collection<Object> getDocumentation(EModelElement receiver) {
 		if (accept(receiver)) 
 		{
-			EAnnotation eAnnotation = receiver.getEAnnotation(DOCUMENTATION_SOURCE);
-			if (eAnnotation == null) 
-				eAnnotation = creatDocumentationEAnnotation(receiver);
-			
 			Collection<Object> result = new UniqueEList<Object>();
-			result.add(getEntry(eAnnotation, DESCRIPTION));
-			result.add(getEntry(eAnnotation, USAGE_GUIDELINE));
-			result.add(getEntry(eAnnotation, USED_IN_LEVELS));
-			result.add(getEntry(eAnnotation, USAGE_EXAMPLES));
-			result.add(getEntry(eAnnotation, CONSTRAINTS));
+			EAnnotation eAnnotation = receiver.getEAnnotation(DOCUMENTATION_SOURCE);
+//			if (eAnnotation == null) 
+//				eAnnotation = creatDocumentationEAnnotation(receiver);
+			if (eAnnotation != null )
+			{
+				Object descriptionEntry = getEntry(eAnnotation, DESCRIPTION);
+				if (descriptionEntry != null)
+					result.add(descriptionEntry);
+
+				Object usageGuidEntry = getEntry(eAnnotation, USAGE_GUIDELINE);
+				if (usageGuidEntry != null)
+					result.add(usageGuidEntry);
+
+				Object usageLevelEntry = getEntry(eAnnotation, USED_IN_LEVELS);
+				if (usageLevelEntry != null)
+					result.add(usageLevelEntry);
+
+				Object usageExampleEntry = getEntry(eAnnotation, USAGE_EXAMPLES);
+				if (usageExampleEntry != null)
+					result.add(usageExampleEntry);
+
+				Object contraintsEntry = getEntry(eAnnotation, CONSTRAINTS);
+				if (contraintsEntry != null)
+					result.add(contraintsEntry);
+			}
 			return result;
 		} 
 		else 
@@ -83,6 +118,24 @@ public class DocumentationService {
 		return eAnnotation;
 
 	}
+	
+	public void createEntry(final EAnnotation eAnnotation, String key) {
+		final Object existingEntry = getEntry(eAnnotation, key);
+		
+		if (existingEntry == null)
+		{
+			final EStringToStringMapEntryImpl entry = 
+					(EStringToStringMapEntryImpl) ((EcoreFactoryImpl) EcoreFactory.eINSTANCE).createEStringToStringMapEntry();
+			entry.setKey(key);
+
+			editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
+				@Override
+				protected void doExecute() {
+					eAnnotation.getDetails().add(entry);
+				}
+			});
+		}
+	}
 
 	private Object getEntry(final EAnnotation eAnnotation, String key) {
 		for (Entry<String, String> entry : eAnnotation.getDetails()) 
@@ -91,17 +144,17 @@ public class DocumentationService {
 				return entry;
 		}
 
-		final EStringToStringMapEntryImpl entry = 
-				(EStringToStringMapEntryImpl) ((EcoreFactoryImpl) EcoreFactory.eINSTANCE).createEStringToStringMapEntry();
-		entry.setKey(key);
-
-		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
-			@Override
-			protected void doExecute() {
-				eAnnotation.getDetails().add(entry);
-			}
-		});
-
-		return entry;
+//		final EStringToStringMapEntryImpl entry = 
+//				(EStringToStringMapEntryImpl) ((EcoreFactoryImpl) EcoreFactory.eINSTANCE).createEStringToStringMapEntry();
+//		entry.setKey(key);
+//
+//		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
+//			@Override
+//			protected void doExecute() {
+//				eAnnotation.getDetails().add(entry);
+//			}
+//		});
+//		return entry;
+		return null;
 	}
 }

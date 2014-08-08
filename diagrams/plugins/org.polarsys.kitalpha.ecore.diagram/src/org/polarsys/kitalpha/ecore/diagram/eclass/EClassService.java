@@ -39,6 +39,48 @@ public class EClassService {
 	private static final int MAX_DEPTH = 1;
 	private static EcoreService ecoreServicePlus = new EcoreService();
 	
+	
+	/**
+	 * Implementation of EF Import EClass Semantic Candidate Expression (SCE)
+	 * @param root
+	 * @param eTypeInverse
+	 * @param allSuperTypeETypeInverse
+	 * @return
+	 */
+	public Collection<EClass> focusEFImportEClassSCE(EClass root, Set<EReference> eTypeInverse, Set<EReference> allSuperTypeETypeInverse){
+		EList<EClass> result = new UniqueEList<EClass>();
+		result.addAll(root.getEAllSuperTypes());
+		
+		final EList<EReference> eAllReferences = root.getEAllReferences();
+		for (EReference eReference : eAllReferences) 
+		{
+			result.add((EClass) eReference.eContainer());
+		}
+		
+		if (eTypeInverse != null && ! eTypeInverse.isEmpty())
+		{
+			for (EReference eReference : eTypeInverse) 
+			{
+				result.add((EClass) eReference.eContainer());
+			}
+		}
+		
+		if (allSuperTypeETypeInverse != null && ! allSuperTypeETypeInverse.isEmpty())
+		{
+			for (EReference eReference : allSuperTypeETypeInverse) 
+			{
+				result.add((EClass) eReference.eContainer());
+			}
+		}
+		
+		for (EClass clazz : result) 
+		{
+			System.out.println(clazz.getName());
+		}
+		
+		return result; 
+	}
+	
 	public boolean linksPrecondition(EReference reference, Boolean containment, Boolean autoReference){
 		EClass eContainer = (EClass) reference.eContainer();
 		boolean result = true;
