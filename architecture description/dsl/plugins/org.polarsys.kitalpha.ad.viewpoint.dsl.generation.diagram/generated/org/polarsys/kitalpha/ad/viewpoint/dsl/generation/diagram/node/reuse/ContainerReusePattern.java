@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 15:04:15 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated on Mon Aug 11 17:36:20 CEST 2014 with EGF 1.2.0.v20140721-0706
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.reuse;
 
 import java.util.HashMap;
@@ -38,6 +27,7 @@ public class ContainerReusePattern
 	public ContainerReusePattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -93,14 +83,14 @@ public class ContainerReusePattern
 						.getDoremiElement(abstractNode);
 				currentContainerNode.getReusedContainerMappings().add(
 						currentContainer);
-				break;
+				continue;
 			}
 
 			if (abstractNode instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node) {
 				NodeMapping currentNode = (NodeMapping) GenerationUtil
 						.getDoremiElement(abstractNode);
 				currentContainerNode.getReusedNodeMappings().add(currentNode);
-				break;
+				continue;
 			}
 
 			if (abstractNode instanceof BorderedNode) {
@@ -108,7 +98,7 @@ public class ContainerReusePattern
 						.getDoremiElement(abstractNode);
 				currentContainerNode.getReusedBorderedNodeMappings().add(
 						currentBNode);
-				break;
+				continue;
 			}
 		}
 
