@@ -10,6 +10,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription
 import org.eclipse.sirius.diagram.description.DescriptionFactory;
 import org.eclipse.sirius.diagram.description.style.NodeStyleDescription;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
+
 public class CLASS {
 
 	public CLASS() {

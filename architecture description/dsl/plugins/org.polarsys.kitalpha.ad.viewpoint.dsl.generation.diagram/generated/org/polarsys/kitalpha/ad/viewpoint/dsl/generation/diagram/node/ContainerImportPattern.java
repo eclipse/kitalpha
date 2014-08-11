@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:15:04 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated on Mon Aug 11 14:20:30 CEST 2014 with EGF 1.2.0.v20140721-0706
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -21,6 +10,7 @@ import org.eclipse.sirius.diagram.description.DescriptionFactory;
 import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 
 public class ContainerImportPattern
 		extends
@@ -29,6 +19,7 @@ public class ContainerImportPattern
 	public ContainerImportPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -192,7 +183,8 @@ public class ContainerImportPattern
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx) && parameter.getImports() != null;
+		return DiagramGenerationConfigurationHelper.generateVSM(parameter)
+				&& parameter.getImports() != null;
 	}
 
 	protected org.eclipse.sirius.diagram.description.ContainerMappingImport icm;

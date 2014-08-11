@@ -1,1 +1,1 @@
-return super.preCondition(ctx) && parameter.getImports() != null;
+return DiagramGenerationConfigurationHelper.generateVSM(parameter) && parameter.getImports() != null;
