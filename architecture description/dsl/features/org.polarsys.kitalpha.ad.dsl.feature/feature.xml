@@ -11,7 +11,7 @@ Contributors:
 -->
 <feature
       id="org.polarsys.kitalpha.ad.dsl.feature"
-      label="Kitalpha AD DSL feature"
+      label="Kitalpha AD DSL feature (Incubation)"
       version="0.5.0.qualifier"
       provider-name="%providerName">
 
@@ -34,6 +34,5 @@ Contributors:
    <includes
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.feature"
          version="0.0.0"/>
-
 
 </feature>

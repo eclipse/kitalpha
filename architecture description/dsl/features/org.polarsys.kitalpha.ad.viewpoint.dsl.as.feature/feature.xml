@@ -11,7 +11,7 @@ Contributors:
 -->
 <feature
       id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.feature"
-      label="Viewpoint dsl abstract description feature"
+      label="Viewpoint dsl abstract description feature (Incubation)"
       version="0.5.0.qualifier"
       provider-name="%providerName">
 
@@ -286,11 +286,11 @@ Contributors:
          version="0.0.0"
          unpack="false"/>
 
-	<plugin
+   <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>         
+         unpack="false"/>
 
 </feature>
