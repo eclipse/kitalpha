@@ -1,5 +1,5 @@
 <%Calendar cal = Calendar.getInstance();
-SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' hh:mm:ss z");
+SimpleDateFormat sdf = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss z");
 String genTime = sdf.format(cal.getTime());
 %>
 <body style="background-color:#DDE0E3; margin:0px; padding:0px;">

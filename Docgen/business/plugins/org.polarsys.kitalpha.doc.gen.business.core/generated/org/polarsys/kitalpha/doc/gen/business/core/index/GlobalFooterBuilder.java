@@ -8,7 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-//Generated on Tue Aug 12 17:12:49 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated on Tue Aug 12 18:18:43 CEST 2014 with EGF 1.2.0.v20140721-0706
 package org.polarsys.kitalpha.doc.gen.business.core.index;
 
 import org.eclipse.egf.common.helper.*;
@@ -143,7 +143,7 @@ public class GlobalFooterBuilder
 
 		Calendar cal = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat(
-				"dd.MM.yyyy 'at' hh:mm:ss z");
+				"EEE, d MMM yyyy HH:mm:ss z");
 		String genTime = sdf.format(cal.getTime());
 
 		stringBuffer.append(TEXT_4);
