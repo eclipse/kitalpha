@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:javapattern="http://www.eclipse.org/egf/1.0.0/javapattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
+    xmi:id="_Cyi18R1kEeSL-4aCmHxj2g" name="DocgenGenchainExtension">
+  <viewpointContainer xmi:id="_MTQ-QB1kEeSL-4aCmHxj2g">
+    <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_MqWokB1kEeSL-4aCmHxj2g">
+      <libraries xmi:id="_M7Mg8B1kEeSL-4aCmHxj2g" name="org.polarsys.kitalpha.doc.gen.business.ecore.genchain">
+        <elements xmi:id="_UcpgMB1kEeSL-4aCmHxj2g" name="DocgenExtension" headerMethod="#_UcpgMh1kEeSL-4aCmHxj2g"
+            conditionMethod="#_UcpgNB1kEeSL-4aCmHxj2g" initMethod="#_UcpgMx1kEeSL-4aCmHxj2g"
+            footerMethod="#_UcpgNh1kEeSL-4aCmHxj2g">
+          <nature xmi:type="javapattern:JavaNature" xmi:id="_UcpgMR1kEeSL-4aCmHxj2g"
+              name="Java"/>
+          <methods xmi:id="_UcpgMh1kEeSL-4aCmHxj2g" name="header" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgMh1kEeSL-4aCmHxj2g.pt"/>
+          <methods xmi:id="_UcpgMx1kEeSL-4aCmHxj2g" name="init" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgMx1kEeSL-4aCmHxj2g.pt"/>
+          <methods xmi:id="_UcpgNB1kEeSL-4aCmHxj2g" name="preCondition" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgNB1kEeSL-4aCmHxj2g.pt"/>
+          <methods xmi:id="_YDzqoR8FEeSwh70kRwdkOA" name="initializeBrandingData"
+              patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._YDzqoR8FEeSwh70kRwdkOA.pt"/>
+          <methods xmi:id="_UcpgNR1kEeSL-4aCmHxj2g" name="body" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgNR1kEeSL-4aCmHxj2g.pt"/>
+          <methods xmi:id="_UcpgNh1kEeSL-4aCmHxj2g" name="footer" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgNh1kEeSL-4aCmHxj2g.pt"/>
+          <parameters xmi:id="_WYe6wB1kEeSL-4aCmHxj2g" name="parameter" type="http://www.polarsys.org/kitalpha/docgen/ecore/genchain/1.0.0#//KitalphaDocumentationGeneration"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_UcpgNx1kEeSL-4aCmHxj2g"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_YR0RcB8FEeSwh70kRwdkOA"
+              called="#_YDzqoR8FEeSwh70kRwdkOA"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_2UGsUB40EeSYicwoCfn9sQ"
+              called="#_UcpgNR1kEeSL-4aCmHxj2g"/>
+        </elements>
+      </libraries>
+    </viewpoints>
+  </viewpointContainer>
+</fcore:FactoryComponent>

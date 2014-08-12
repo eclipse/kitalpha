@@ -1,0 +1,1 @@
+return org.polarsys.kitalpha.doc.gen.business.ecore.helpers.PreConditionHelper.isTypeGenerated(parameter);

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <ftask:Task xmi:id="_B9nwIR4UEeSYicwoCfn9sQ" name="EcoreDocGenLauncher" kind="java"
+      implementation="org.polarsys.kitalpha.doc.gen.business.ecore.task.EcoreDocGenLauncherTask">
+    <contractContainer xmi:id="_GM07gB4UEeSYicwoCfn9sQ">
+      <contracts xmi:id="_Iq7VoB4UEeSYicwoCfn9sQ" name="ecoreFilePath" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_JzMlQB4UEeSYicwoCfn9sQ"/>
+      </contracts>
+      <contracts xmi:id="_KIgt8B4UEeSYicwoCfn9sQ" name="outputDirectoryPath" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_KIgt8R4UEeSYicwoCfn9sQ"/>
+      </contracts>
+      <contracts xmi:id="_MNbMAB4UEeSYicwoCfn9sQ" name="pattern.substitutions">
+        <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_NrwLMB4UEeSYicwoCfn9sQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <fcore:FactoryComponent xmi:id="_oW26AYaqEeCqVPyWxeH-sg" name="EcoreDocGenDefaultLauncher">
+    <contractContainer xmi:id="_ez6jIIa1EeC-OYybHI_OSQ">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_fG2GMIa1EeC-OYybHI_OSQ"
+          name="projectName" mandatory="true" invocationContracts="#_26zqoIa1EeC-OYybHI_OSQ">
+        <type xmi:type="types:TypeString" xmi:id="_sQeO4Ia1EeC-OYybHI_OSQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_fTzkIIa1EeC-OYybHI_OSQ"
+          name="outputFolder" mandatory="true" invocationContracts="#_2EHTMIa1EeC-OYybHI_OSQ">
+        <type xmi:type="types:TypeString" xmi:id="_ssomcIa1EeC-OYybHI_OSQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_8QUucVwpEeO7Ja5QXv8etA"
+          name="pattern.substitutions" invocationContracts="#_9BWiwFwpEeO7Ja5QXv8etA">
+        <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_8QUuclwpEeO7Ja5QXv8etA"/>
+      </contracts>
+    </contractContainer>
+    <viewpointContainer xmi:id="_tYcjkIa1EeC-OYybHI_OSQ">
+      <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_t_VkcIa1EeC-OYybHI_OSQ">
+        <domains xmi:type="domain:EMFDomain" xmi:id="_uZ29QIa1EeC-OYybHI_OSQ" name="MDK EMF Domain"
+            helperImplementation="org.polarsys.kitalpha.doc.gen.business.ecore.helpers.MDKDomainHelper"/>
+      </viewpoints>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_vqVGoIa1EeC-OYybHI_OSQ">
+      <invocations xmi:id="_zV6nkIa1EeC-OYybHI_OSQ" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_HWwwod6jEeC7p7H7gvnXVA">
+        <invocationContractContainer xmi:id="_1xyNEIa1EeC-OYybHI_OSQ">
+          <invocationContracts xmi:id="_2EHTMIa1EeC-OYybHI_OSQ" factoryComponentContract="#_fTzkIIa1EeC-OYybHI_OSQ"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_BB6cgN6lEeC7p7H7gvnXVA"/>
+          <invocationContracts xmi:id="_26zqoIa1EeC-OYybHI_OSQ" factoryComponentContract="#_fG2GMIa1EeC-OYybHI_OSQ"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_AuGIoN6lEeC7p7H7gvnXVA"/>
+          <invocationContracts xmi:id="_3ug_gIa1EeC-OYybHI_OSQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_COyfUN6lEeC7p7H7gvnXVA">
+            <type xmi:type="domain:TypeDomain" xmi:id="_8vMEEIa1EeC-OYybHI_OSQ" domain="#_uZ29QIa1EeC-OYybHI_OSQ"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_9BWiwFwpEeO7Ja5QXv8etA" factoryComponentContract="#_8QUucVwpEeO7Ja5QXv8etA"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_7LipwVv_EeONz-cAZOOGtw"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+</xmi:XMI>

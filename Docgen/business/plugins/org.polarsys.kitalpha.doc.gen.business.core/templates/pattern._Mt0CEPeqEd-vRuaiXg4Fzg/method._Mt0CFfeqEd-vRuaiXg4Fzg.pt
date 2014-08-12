@@ -1,0 +1,10 @@
+</ul>
+  <script type="text/javascript">
+$("#treemenu1").treeview({
+ collapsed: true,
+ unique: false,
+ control: "#treecontrol"
+});
+</script>
+   </body>
+</html>

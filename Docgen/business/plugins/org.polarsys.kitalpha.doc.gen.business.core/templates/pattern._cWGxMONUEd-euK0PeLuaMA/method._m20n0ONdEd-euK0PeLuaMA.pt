@@ -1,0 +1,6 @@
+<%String string = "";
+if (title == null) {
+	string = Character.toString(property.charAt(0)).toUpperCase() + property.substring(1);
+}%>
+<h2><%=string%></h2>
+<p>

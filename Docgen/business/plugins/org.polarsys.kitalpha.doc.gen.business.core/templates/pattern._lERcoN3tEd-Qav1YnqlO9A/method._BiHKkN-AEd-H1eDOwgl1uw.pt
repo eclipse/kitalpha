@@ -1,0 +1,26 @@
+<% // For sidebar with explorer
+  // <tr> 
+  //  <td> <br/>
+  //    <table border="0" cellspacing="0" cellpadding="0">
+  //      <tr> 
+  //        <td><img src="folder.gif" width="16" height="16">Model 
+  //          <script src="treeview.js" language="javascript" type="text/javascript"></script>
+  //        </td>
+  //      </tr>
+  //      <tr> 
+%>
+		<div id="sidebar">
+			<div id="packages">
+				<h1>Models</h1>
+				<iframe src ="../index.html" id="modelIndex" frameborder="0">
+					Error : index.html is not found
+				</iframe>
+<%
+/*
+				<object data="../index.html" type="text/html" id="modelIndex">
+					Error : index.html is not found
+				</object>
+*/			
+%>
+				<br/>
+				<h1>Model Explorer</h1>

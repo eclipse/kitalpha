@@ -1,0 +1,1 @@
+<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarSubEntry_End" args="currentObject:parameter"%>

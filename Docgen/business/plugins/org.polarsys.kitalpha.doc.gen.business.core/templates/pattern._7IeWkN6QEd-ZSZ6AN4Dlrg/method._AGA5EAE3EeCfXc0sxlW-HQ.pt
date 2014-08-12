@@ -1,0 +1,2 @@
+<%String id= EcoreUtil.getID(currentObject);%>
+<li <%if(id != null) {%>id="<%=id%>" <%}%>>

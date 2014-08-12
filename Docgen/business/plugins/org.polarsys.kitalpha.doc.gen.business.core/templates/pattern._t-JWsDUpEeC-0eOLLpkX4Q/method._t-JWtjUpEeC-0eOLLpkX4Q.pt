@@ -1,0 +1,3 @@
+<%
+	ctx.setValue(DocGenHtmlConstants.FILE_NAME, "sidebarMenu");
+%>

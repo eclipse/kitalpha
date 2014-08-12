@@ -1,0 +1,10 @@
+<%
+	String projectName= ctx.getValue("projectName").toString();
+	String outputFolder = ctx.getValue("outputFolder").toString();
+	String text = LabelProviderHelper.getText(currentObject);
+	text = EscapeChars.forHTML(text);
+%>
+
+<% String imageFileName = LabelProviderHelper.getImageFileName(currentObject, projectName, outputFolder);%>
+<img src="../icon/<%=imageFileName%>" alt="<%=currentObject.eClass().getName()%>"/> <a href="../<%= DocGenHtmlUtil.getModelName(currentObject.eResource().getURI())%>/<%=fileNameService.getFileName(currentObject)%>.html" target="content"><%= text %></a>
+

@@ -1,0 +1,61 @@
+<%
+	// org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog().log(new Status(IStatus.INFO,
+	//			org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Starting generate diagram :" + diagram.getName()));
+	Session session = DiagramSessionHelper.getCurrentSession();
+	IPath outputPath = new Path(projectName).append(outputFolder).append(generatedFolder);
+	DiagramExport diagramExport = new DiagramExport(projectName, outputPath, diagram, session);
+	IFile imageFile = diagramExport.exportAsImage();
+	Resource sessionResource = session.getSessionResource();
+	if (imageFile!=null && imageFile.exists())
+	{
+		String id = "";
+		if(sessionResource instanceof XMLResource) 
+		{
+			id = ((XMLResource) sessionResource).getID(diagram);
+			if(id == null && EcoreUtil.getURI(diagram) != null) 
+			{
+				id = EcoreUtil.getURI(diagram).fragment();
+			}
+		}
+		String mapName = diagram.getName() + "_" + id + "_PositionMap";
+		mapName = DocGenHtmlUtil.getValidFileName(mapName);
+		CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
+		//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
+		Map<EObject, Rectangle> positionMap = calculator.getPositionMap();
+		%>
+	<div>
+	<p class="diagram-name" id="<%=id%>"><%= diagram.getName()%></p>
+	<p class="diagram">
+		<img src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= diagram.getName()%>" usemap="#<%=mapName%>" />
+		
+		<br/>
+		<br/>
+		<map name="<%=mapName%>">
+<%
+	
+for (Entry<EObject, Rectangle> entrySet : positionMap.entrySet()){
+		EObject key = entrySet.getKey();
+		String fileName = fileNameService.getFileName(key);
+		String fragment = helper.getElementId(key);
+		Rectangle rectangle = entrySet.getValue();
+		Point topLeft = rectangle.getTopLeft();
+		Point bottomRight = rectangle.getBottomRight();
+		String modelName = DocGenHtmlUtil.getModelName(key);%>
+			<area shape="rect" coords="<%=topLeft.x%>,<%=topLeft.y%>,<%=bottomRight.x%>,<%=bottomRight.y%>" href="../<%=modelName%>/<%=fileName%>.html#<%=fragment%>" alt="<%=fileName%>" />
+<%	}
+%>			
+		</map>
+	</p>
+	<p class="diagram-description"><%= helper.diagramDocumentationPostTraitement(((DSemanticDiagram)diagram).getTarget(), diagram.getDocumentation(), projectName, outputFolder)%></p>
+	</div>
+<%}
+else {
+%>
+<p class="diagram-name" id="<%=sessionResource.getURIFragment(diagram)%>"><%= diagram.getName()%></p>
+<p>image is missing</p>
+<p class="diagram-description"><%= diagram.getDocumentation()%></p>
+<%
+			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog().log(
+					new Status(IStatus.ERROR,org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Error during diagram export action:" + diagram.getName()));
+		}
+%>

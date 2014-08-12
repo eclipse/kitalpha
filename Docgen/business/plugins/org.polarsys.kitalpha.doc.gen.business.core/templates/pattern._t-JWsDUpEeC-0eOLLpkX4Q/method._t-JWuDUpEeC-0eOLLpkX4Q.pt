@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+		<script type="text/javascript" src="../../scripts/simpletreemenu.js">
+		</script>
+		<link rel="stylesheet" type="text/css" href="../../css/simpletree.css" />
+    </head>
+    
+    <body style="margin:0px; padding:0px; background-color:#CCCCCC">
+<p style="margin:0px; padding:3px;"><a href="javascript:ddtreemenu.flatten('treemenu1', 'expand')"><img src="../../img/closed.gif" alt="Expand All" style="border:0px"/></a> <a href="javascript:ddtreemenu.flatten('treemenu1', 'contact')"><img src="../../img/open.gif" alt="Collapse All" style="border:0px"/></a></p>
+   </body>
+</html>

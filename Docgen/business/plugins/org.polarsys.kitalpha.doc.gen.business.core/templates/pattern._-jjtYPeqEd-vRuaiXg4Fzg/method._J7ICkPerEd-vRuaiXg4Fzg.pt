@@ -1,0 +1,3 @@
+<% String imageFileName = LabelProviderHelper.getImageFileName(parameter, projectName, folderName);%>
+<img src="../icon/<%=imageFileName%>" alt="<%=parameter.eClass().getName()%>"/><%= LabelProviderHelper.getText(parameter)%>
+

@@ -1,0 +1,12 @@
+<%
+element = parameter;
+fileName = fileNameService.getFileName(element);
+helper = new DefaultDoremiDiagramHelper();
+title = ((EClass) element).getName();
+
+if(((EClass) element).isAbstract())
+	iconPath = "../../img/AbstractClass.png";
+else 
+	iconPath = "../../img/ConcreteClass.png";
+
+%>

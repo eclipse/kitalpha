@@ -1,0 +1,72 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+String text = ((EClass) element).getName();
+text = EscapeChars.forHTML(text);
+%>
+<p><strong>Package :</strong> <%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(((EClass) element).getEPackage())%></p>
+<h1><%=text%></h1>
+<img src="<%=iconPath%>" alt="" />
+<p><strong>Description :</strong><br /><%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription((EClass) element)%></p>
+<p><strong>Abstract: </strong><br /><%=((EClass) element).isAbstract()%></p>
+<%Collection<DRepresentation> diagramList = DoremiHelper.getDiagramForObject(element);%>
+
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline((EClass) element)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels((EClass) element)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageExamples((EClass) element)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getConstraints((EClass) element)%>
+<%for (DRepresentation diagram : diagramList){
+if((diagram instanceof DSemanticDiagram) && (((DSemanticDiagram) diagram).getDescription().getName().equals("Class Focus"))) {
+String generatedFolder = fileNameService.getFileName(((DSemanticDiagram)diagram).getTarget());%>
+<p><strong>Focus: </strong></p>
+<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
+<%}}%>
+
+<%if(((EClass) element).getESuperTypes().size() > 0) {%>
+<p><strong>Inherits from: </strong><br /><%
+for(EClass eClass : ((EClass) element).getESuperTypes()) {
+%><%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(eClass)%>&nbsp;
+<%
+}
+%></p>
+<%
+}
+for (DRepresentation diagram : diagramList){
+if((diagram instanceof DSemanticDiagram) && (((DSemanticDiagram) diagram).getDescription().getName().equals("Inheritance"))) {
+String generatedFolder = fileNameService.getFileName(((DSemanticDiagram)diagram).getTarget());%>
+<p><strong>Inheritance: </strong></p>
+<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
+<%}}
+if (((EClass) element).getEAllAttributes().size() > 0) {
+%>
+<h2>Attributes</h2>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EClassContentHelper.getAttributesTable((EClass) element)%>
+<%
+}
+
+
+if (((EClass) element).getEAllOperations().size() > 0) {
+%>
+<h2>Operations</h2>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EClassContentHelper.getOperationsTable((EClass) element)%>
+<%
+}
+
+
+if (((EClass) element).getEAllReferences().size() > 0) {
+%>
+<h2>References</h2>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EClassContentHelper.getReferencesTable((EClass) element)%>
+<%
+}
+
+
+if (diagramList.size() >= 1){%>
+<h2>Representations</h2>
+
+<%for (DRepresentation diagram : diagramList){
+if((diagram instanceof DSemanticDiagram) && (!((DSemanticDiagram) diagram).getDescription().getName().equals("Inheritance") && !((DSemanticDiagram) diagram).getDescription().getName().equals("Class Focus"))) {
+String generatedFolder = fileNameService.getFileName(((DSemanticDiagram)diagram).getTarget());%>
+<p><strong><%=((DSemanticDiagram) diagram).getDescription().getName()%></strong></p>
+<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
+<%}}}%>

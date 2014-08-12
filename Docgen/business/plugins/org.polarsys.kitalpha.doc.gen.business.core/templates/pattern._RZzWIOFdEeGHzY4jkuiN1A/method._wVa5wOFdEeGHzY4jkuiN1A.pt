@@ -1,0 +1,31 @@
+<%
+	String projectName = ctx.getValue("projectName").toString();
+	String outputFolder = ctx.getValue("outputFolder").toString();
+	List<EObject> domain = (List<EObject>) ctx.getValue("domain");
+	String logoAlt = (String) DocumentationBrandingData.getInstance().getData("logoAlt");
+	String logoPath = (String) DocumentationBrandingData.getInstance().getData("logoPath");
+	// Copier l'image dans le répertoire généré des images et la nommer logo.gif (../../img/logo.gif)
+	if (logoPath.equals("Default") == false)
+		DocumentationBrandingDataHelper.copyLogoFile(projectName, outputFolder, logoPath);
+%>
+<body style="background-color:#5C74A2; 
+	  background-image:url('../img/heander_fndContenuGauche_small3.jpg'); 
+	  background-repeat:repeat-x;">
+
+	<h1 style="width:50%; 
+		float:left; 
+		color:#FFFFFF; 
+		margin:15px; 
+		font-family: Arial, sans-serif; 
+		font-size:25px">
+		List of models
+	</h1>
+	<div style="float:right; 
+		 position:relative; 
+		 top:10px; 
+		 right:30px;">
+		 <img style="height:45px;" 
+			  src="../img/logo.gif" 
+			  alt="<%=logoAlt%>"/> 
+	</div>
+</body>

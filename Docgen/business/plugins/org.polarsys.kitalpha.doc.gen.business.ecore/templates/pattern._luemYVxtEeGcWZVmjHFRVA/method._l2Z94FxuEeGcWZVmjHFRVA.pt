@@ -1,0 +1,5 @@
+<%
+element = parameter;
+fileName = fileNameService.getFileName(element);
+title = title = ((EEnum) element).getName();
+%>

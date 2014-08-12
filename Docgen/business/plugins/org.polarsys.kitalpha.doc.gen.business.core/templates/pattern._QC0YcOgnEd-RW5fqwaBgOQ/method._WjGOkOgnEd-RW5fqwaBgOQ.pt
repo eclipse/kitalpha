@@ -1,0 +1,10 @@
+<%
+List<String> domainList = (List<String>) ctx.getValue("domainList");
+for (String domain : domainList){
+%>
+		<li>
+			<div style="float:left; margin-left:5px; font-size:12px; font-family:Arial">
+				<a href="<%=domain%>/index.html" target="_top"><%=domain%></a>
+			</div>
+		</li>
+<%}%>

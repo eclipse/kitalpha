@@ -1,0 +1,7 @@
+<%
+	String projectName= ctx.getValue("projectName").toString();
+	String outputFolder = ctx.getValue("outputFolder").toString();
+%>
+
+
+<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarEntry" args="currentObject:parameter, projectName:projectName, outputFolder:folderName"%>

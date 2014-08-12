@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.doc.gen.business.core.ui;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.doc.gen.business.core.ui.Activator
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.emf.ecore.editor,
+ org.eclipse.egf.core.ui,
+ org.polarsys.kitalpha.doc.gen.business.core,
+ org.eclipse.sirius.diagram;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
+Export-Package: org.polarsys.kitalpha.doc.gen.business.core.ui.helper,
+ org.polarsys.kitalpha.doc.gen.business.core.ui.wizards

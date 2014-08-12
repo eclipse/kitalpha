@@ -1,0 +1,10 @@
+<iframe src ="sidebar.html" id="modelexplorer" frameborder="0">
+Error : sidebar.html is not found
+</iframe>
+<%
+/*
+<object data="sidebar.html" type="text/html" id="modelexplorer">
+Error : sidebar.html is not found
+</object>
+*/
+%>

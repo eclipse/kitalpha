@@ -1,0 +1,33 @@
+@SuppressWarnings("unchecked")
+Map<GenerationElement, FactoryComponent> fcs = (Map<GenerationElement, FactoryComponent>) ctx.getValue(FcoreBuilderConstants.CURRENT_FCORE);
+
+FactoryComponent fc = fcs.get((GenerationElement) (parameter.eContainer()));
+
+URI DOC_GEN_ACTIVITY_MODEL_URI = URI.createPlatformPluginURI("/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore#", false);
+String DOC_GEN_ACTIVITY_ID = "_B9nwIR4UEeSYicwoCfn9sQ";
+
+/*String name = parameter.getName();*/
+String pluginName = parameter.getPluginName();
+String outputDirectoryPath = parameter.getOutputDirectoryPath(); 
+String ecorePath = parameter.getModelPath();
+
+Resource eResource = fc.eResource();
+ResourceSet resourceSet = eResource.getResourceSet();
+
+ProductionPlan pp = (ProductionPlan) fc.getOrchestration();
+
+Activity activity = (Activity) resourceSet.getResource(DOC_GEN_ACTIVITY_MODEL_URI, true).getEObject(DOC_GEN_ACTIVITY_ID);
+
+Map<String, Type> contract2type = new HashMap<String, Type>();
+
+// Set ecoreFilePath contract value
+TypeString typeString = TypesFactory.eINSTANCE.createTypeString();
+typeString.setValue(ecorePath);
+contract2type.put("ecoreFilePath", typeString);
+
+// Set outputDirectoryPath contract value
+typeString = TypesFactory.eINSTANCE.createTypeString();
+typeString.setValue(pluginName + "/" + outputDirectoryPath);
+contract2type.put("outputDirectoryPath", typeString);
+
+ActivityInvocationHelper.addInvocation(pp, activity, contract2type);
