@@ -17,7 +17,7 @@ import org.polarsys.kitalpha.emde.diagram.services.ExtensibilityService;
 
 // Abstract action to add an extensible super class to a given EClass
 public abstract class AbstractNewExtensibleElement extends AbstractEmdeExternalJavaAction {
-	private static final String MESSAGE = "Can't find the com.thalesgroup.mde.emde plugin";
+	private static final String MESSAGE = "Can't find the org.polarsys.kitalpha.emde plugin";
 	private static final String TITLE = "Error";
 	private static final String OWNER = "owner";
 	private static final URI EMDE_URI = URI.createURI("platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore");

@@ -79,7 +79,6 @@ public class ExtensibilityService {
 	public static final String USE_UUIDS = "useUUIDs";
 	public static final String USE_ID_ATTRIBUTES = "useIDAttributes";
 
-//	private static final String OLD_SOURCE = "http://www.thalesgroup.com/mde/mdsofa/dsl/2007/dslfactory";
 	private static final String NEW_SOURCE = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension";
 	private static final String TRUE = "true";
 	private static final String FALSE = "false";

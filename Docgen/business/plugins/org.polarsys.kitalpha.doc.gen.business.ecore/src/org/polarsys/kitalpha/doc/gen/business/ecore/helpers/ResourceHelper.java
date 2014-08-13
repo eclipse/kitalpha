@@ -92,9 +92,6 @@ public class ResourceHelper {
 	}
 
 	/*
-	 * com.thalesgroup.mde.mdsofa.common.ui.internal.helper.UserEnforcedHelper.makeFileWritable
-	 * ()
-	 * 
 	 * @author t0076261
 	 */
 	private static IStatus makeFilesWritable(IFile[] files, Object display_p) {
@@ -290,8 +287,8 @@ public class ResourceHelper {
 		contents.append("Bundle-Name: " + name + "\n");
 		contents.append("Bundle-SymbolicName: " + name + ";singleton:=true\n");
 		contents.append("Bundle-Version: 1.0.0.qualifier\n");
-		contents.append("Bundle-RequiredExecutionEnvironment: J2SE-1.5\n");
-		contents.append("Bundle-Vendor: THALESGROUP\n");
+		contents.append("Bundle-RequiredExecutionEnvironment: JavaSE-1.6\n");
+		contents.append("Bundle-Vendor: Polarsys\n");
 		// contents.append("Bundle-Activator: "
 		// + metaFolder.getProject().getName() + ".Activator");
 		contents.append("\n");

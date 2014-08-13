@@ -13,7 +13,7 @@ package org.polarsys.kitalpha.doc.gen.business.core.ui;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "com.thalesgroup.mde.docgen.html.common.ui.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.polarsys.kitalpha.doc.gen.business.core.ui.messages"; //$NON-NLS-1$
 	public static String InvokeActivityHelper_Error;
 	public static String InvokeActivityHelper_HTML_Documentation_Generation;
 	static {
