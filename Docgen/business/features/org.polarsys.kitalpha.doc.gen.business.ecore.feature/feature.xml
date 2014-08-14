@@ -17,6 +17,10 @@
       %license
    </license>
 
+   <requires>
+      <import feature="org.polarsys.kitalpha.doc.gen.business.core.feature" version="0.5.0.v20140814-0416" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="org.polarsys.kitalpha.doc.gen.business.ecore"
          download-size="0"
