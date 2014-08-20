@@ -18285,12 +18285,12 @@ rule__LocalAssociation__ReferenceAssignment_1
     }
 :
 (
-{ before(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationCrossReference_1_0()); }
+{ before(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationCrossReference_1_0()); }
 (
-{ before(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationFQNParserRuleCall_1_0_1()); }
-	ruleFQN{ after(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationFQNParserRuleCall_1_0_1()); }
+{ before(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationFQNParserRuleCall_1_0_1()); }
+	ruleFQN{ after(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationFQNParserRuleCall_1_0_1()); }
 )
-{ after(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationCrossReference_1_0()); }
+{ after(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationCrossReference_1_0()); }
 )
 
 ;

@@ -789,7 +789,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     reference=[LocalClassAssociation|FQN]
+	 *     reference=[AbstractAssociation|FQN]
 	 */
 	protected void sequence_LocalAssociation(EObject context, LocalAssociation semanticObject) {
 		if(errorAcceptor != null) {
@@ -798,7 +798,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationFQNParserRuleCall_1_0_1(), semanticObject.getReference());
+		feeder.accept(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationFQNParserRuleCall_1_0_1(), semanticObject.getReference());
 		feeder.finish();
 	}
 	

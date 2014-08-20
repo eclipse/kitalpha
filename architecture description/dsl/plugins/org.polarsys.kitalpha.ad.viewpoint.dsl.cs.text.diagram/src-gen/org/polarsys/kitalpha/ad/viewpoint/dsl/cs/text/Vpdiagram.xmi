@@ -1682,7 +1682,7 @@
         <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.1">
-              <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0#//LocalClassAssociation"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0#//AbstractAssociation"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
           </terminal>

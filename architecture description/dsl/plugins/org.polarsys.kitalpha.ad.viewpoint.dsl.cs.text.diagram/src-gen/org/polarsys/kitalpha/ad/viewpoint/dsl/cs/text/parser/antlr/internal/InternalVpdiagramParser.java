@@ -12483,7 +12483,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationCrossReference_1_0()); 
+              	        newCompositeNode(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationCrossReference_1_0()); 
               	    
             }
             pushFollow(FOLLOW_ruleFQN_in_ruleLocalAssociation9491);

@@ -51462,13 +51462,13 @@ public class InternalVpdiagramParser extends AbstractInternalContentAssistParser
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18288:1: ( ruleFQN )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationCrossReference_1_0()); 
+               before(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationCrossReference_1_0()); 
             }
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18289:1: ( ruleFQN )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpdiagram.g:18290:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationFQNParserRuleCall_1_0_1()); 
+               before(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationFQNParserRuleCall_1_0_1()); 
             }
             pushFollow(FOLLOW_ruleFQN_in_rule__LocalAssociation__ReferenceAssignment_136832);
             ruleFQN();
@@ -51476,13 +51476,13 @@ public class InternalVpdiagramParser extends AbstractInternalContentAssistParser
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationFQNParserRuleCall_1_0_1()); 
+               after(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationFQNParserRuleCall_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationCrossReference_1_0()); 
+               after(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationCrossReference_1_0()); 
             }
 
             }

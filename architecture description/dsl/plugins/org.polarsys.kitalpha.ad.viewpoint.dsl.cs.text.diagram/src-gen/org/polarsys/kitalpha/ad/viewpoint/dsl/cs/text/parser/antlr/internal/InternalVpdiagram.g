@@ -4404,7 +4404,7 @@ ruleLocalAssociation returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getLocalAssociationAccess().getReferenceLocalClassAssociationCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationCrossReference_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();

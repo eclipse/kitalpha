@@ -35,14 +35,14 @@ Workflow {
 				}
 	
 			//eMDE
-			uriMap = {
-				from = "platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore"
-				to = "platform:/resource/org.polarsys.kitalpha.emde/model/eMDE.ecore"
-				}	
-			uriMap = {	
-				from = "platform:/plugin/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel"
-				to = "platform:/resource/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel"
-				}
+//			uriMap = {
+//				from = "platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore"
+//				to = "platform:/resource/org.polarsys.kitalpha.emde/model/eMDE.ecore"
+//				}	
+//			uriMap = {	
+//				from = "platform:/plugin/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel"
+//				to = "platform:/resource/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel"
+//				}
 		
 			//Vpspec
 			uriMap = {
@@ -85,7 +85,7 @@ Workflow {
 				}
 	
 			//emde
-			registerGeneratedEPackage = "org.polarsys.kitalpha.emde.model.EmdePackage"
+//			registerGeneratedEPackage = "org.polarsys.kitalpha.emde.model.EmdePackage"
 			
 			//vpspec
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage"	

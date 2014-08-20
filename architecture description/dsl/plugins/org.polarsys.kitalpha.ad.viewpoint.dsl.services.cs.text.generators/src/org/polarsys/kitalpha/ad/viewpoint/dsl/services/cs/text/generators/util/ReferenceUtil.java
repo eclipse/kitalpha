@@ -88,6 +88,7 @@ public class ReferenceUtil {
 		initUsedWorkspaceResource(source.getViewpointResources(), target);
 		
 		//Use filesystem resource
+		target.getUseFSResource().clear();
 		initUsedFSResources(source.getViewpointResources(), target);
 	}
 
@@ -180,15 +181,40 @@ public class ReferenceUtil {
 			target.getUseViewpoint().add(computeModelViewpoint(x, resourceSet));
 		}
 		
+		target.setViewpointResources(null);
+		
+//		//Use anyEMF
+//		initModelEMFUsedResources(viewpoint.getUseAnyEMFResource(), target);
+//		
+//		//Use diagram
+//		initModelUsedDiagram(viewpoint.getUseDiagramResource(), target);
+//		
+//		//Use workspace
+//		initUsedWorkspaceResource(viewpoint.getUseWorkspaceResource(), target);
+//		
+//		//Use fileSystem
+//		initUseFileSystemResource(viewpoint.getUseFSResource(), target);
+		
+		setViewpointUsedResource(viewpoint, target);
+		
+	}
+	
+	
+	
+
+	private static void setViewpointUsedResource(
+			org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint viewpoint,
+			Viewpoint target) {
+		
 		//Use anyEMF
 		initModelEMFUsedResources(viewpoint.getUseAnyEMFResource(), target);
-		
+
 		//Use diagram
 		initModelUsedDiagram(viewpoint.getUseDiagramResource(), target);
-		
+
 		//Use workspace
 		initUsedWorkspaceResource(viewpoint.getUseWorkspaceResource(), target);
-		
+
 		//Use fileSystem
 		initUseFileSystemResource(viewpoint.getUseFSResource(), target);
 		
@@ -199,7 +225,6 @@ public class ReferenceUtil {
 		
 
 		if (useFSResource == null || useFSResource.isEmpty()){
-			target.setViewpointResources(null);
 			return;
 		}
 		
@@ -226,7 +251,6 @@ public class ReferenceUtil {
 			EList<String> useWorkspaceResource, Viewpoint target) {
 
 		if (useWorkspaceResource == null || useWorkspaceResource.isEmpty()){
-			target.setViewpointResources(null);
 			return;
 		}
 		
@@ -297,12 +321,10 @@ public class ReferenceUtil {
 			EList<String> useAnyEMFResource, Viewpoint target) {
 		
 		if (useAnyEMFResource == null){
-			target.setViewpointResources(null);
 			return;
 		}
 
 		if (useAnyEMFResource.isEmpty()){
-			target.setViewpointResources(null);
 			return;
 		}
 
@@ -313,7 +335,7 @@ public class ReferenceUtil {
 			target.setViewpointResources(vr);
 		}
 		
-		clearEMFResources(vr);
+		//clearEMFResources(vr);
 		for (String uri : useAnyEMFResource) {
 			initModelEMFUsedResources(uri.trim(), target);
 		}
