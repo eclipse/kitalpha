@@ -122,7 +122,7 @@ public class WizardsUtil {
 			" *\n" +
 			" */\n" +
 			"Configuration " + shortName + ".conf" + " {\n" +
-			"	target " + targetApplication + "\n" +
+			"	target \"" + targetApplication + "\"\n" +
 			"	project " + rootProjectName + "\n" +
 			"	nsuri " + "\"" + nsURI+ "\"" + "\n" +
 			"}";

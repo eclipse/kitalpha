@@ -281,36 +281,6 @@ finally {
 
 
 
-// Entry rule entryRuleTargetApplicationType
-entryRuleTargetApplicationType 
-:
-{ before(grammarAccess.getTargetApplicationTypeRule()); }
-	 ruleTargetApplicationType
-{ after(grammarAccess.getTargetApplicationTypeRule()); } 
-	 EOF 
-;
-
-// Rule TargetApplicationType
-ruleTargetApplicationType
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getTargetApplicationTypeAccess().getEMFKeyword()); }
-
-	'EMF' 
-
-{ after(grammarAccess.getTargetApplicationTypeAccess().getEMFKeyword()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 
 
 // Entry rule entryRuleFQN
@@ -2212,8 +2182,8 @@ rule__TargetApplication__TypeAssignment_2
     }
 :
 (
-{ before(grammarAccess.getTargetApplicationAccess().getTypeTargetApplicationTypeParserRuleCall_2_0()); }
-	ruleTargetApplicationType{ after(grammarAccess.getTargetApplicationAccess().getTypeTargetApplicationTypeParserRuleCall_2_0()); }
+{ before(grammarAccess.getTargetApplicationAccess().getTypeSTRINGTerminalRuleCall_2_0()); }
+	RULE_STRING{ after(grammarAccess.getTargetApplicationAccess().getTypeSTRINGTerminalRuleCall_2_0()); }
 )
 
 ;

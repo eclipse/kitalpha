@@ -214,19 +214,19 @@ ruleTargetApplication returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getTargetApplicationAccess().getTypeTargetApplicationTypeParserRuleCall_2_0()); 
-	    }
-		lv_type_2_0=ruleTargetApplicationType		{
+		lv_type_2_0=RULE_STRING
+		{
+			newLeafNode(lv_type_2_0, grammarAccess.getTargetApplicationAccess().getTypeSTRINGTerminalRuleCall_2_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTargetApplicationRule());
+	            $current = createModelElement(grammarAccess.getTargetApplicationRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"type",
         		lv_type_2_0, 
-        		"TargetApplicationType");
-	        afterParserOrEnumRuleCall();
+        		"STRING");
 	    }
 
 )
@@ -640,33 +640,6 @@ ruleDiagramGenerationConfiguration returns [EObject current=null]
     }
 )
 ;
-
-
-
-
-
-// Entry rule entryRuleTargetApplicationType
-entryRuleTargetApplicationType returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getTargetApplicationTypeRule()); } 
-	 iv_ruleTargetApplicationType=ruleTargetApplicationType 
-	 { $current=$iv_ruleTargetApplicationType.current.getText(); }  
-	 EOF 
-;
-
-// Rule TargetApplicationType
-ruleTargetApplicationType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-
-	kw='EMF' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getTargetApplicationTypeAccess().getEMFKeyword()); 
-    }
-
-    ;
 
 
 

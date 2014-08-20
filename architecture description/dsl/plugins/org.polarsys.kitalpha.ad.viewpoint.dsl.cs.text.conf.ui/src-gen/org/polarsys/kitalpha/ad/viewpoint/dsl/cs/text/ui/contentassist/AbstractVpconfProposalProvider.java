@@ -84,7 +84,4 @@ public class AbstractVpconfProposalProvider extends CommonProposalProvider {
 	public void complete_DiagramGenerationConfiguration(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
-	public void complete_TargetApplicationType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// subclasses may override
-	}
 }

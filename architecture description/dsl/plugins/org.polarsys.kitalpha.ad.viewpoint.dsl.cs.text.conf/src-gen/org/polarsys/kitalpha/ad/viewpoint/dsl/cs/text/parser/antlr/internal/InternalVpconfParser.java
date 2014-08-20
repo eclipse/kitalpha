@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalVpconfParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Configuration'", "'{'", "'}'", "'target'", "'project'", "'nsuri'", "'generation'", "'data'", "'('", "'Model:'", "'Edit:'", "'Editor:'", "'Test:'", "'Javadoc:'", "'OverwriteEcore:'", "')'", "'diagram'", "'overwriteOdesign:'", "'EMF'", "'.'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Configuration'", "'{'", "'}'", "'target'", "'project'", "'nsuri'", "'generation'", "'data'", "'('", "'Model:'", "'Edit:'", "'Editor:'", "'Test:'", "'Javadoc:'", "'OverwriteEcore:'", "')'", "'diagram'", "'overwriteOdesign:'", "'.'", "'true'", "'false'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -43,7 +43,6 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
     public static final int T__19=19;
     public static final int T__31=31;
     public static final int RULE_STRING=4;
-    public static final int T__32=32;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
@@ -510,22 +509,21 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTargetApplication"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:201:1: ruleTargetApplication returns [EObject current=null] : ( () otherlv_1= 'target' ( (lv_type_2_0= ruleTargetApplicationType ) ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:201:1: ruleTargetApplication returns [EObject current=null] : ( () otherlv_1= 'target' ( (lv_type_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleTargetApplication() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        AntlrDatatypeRuleToken lv_type_2_0 = null;
-
+        Token lv_type_2_0=null;
 
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:204:28: ( ( () otherlv_1= 'target' ( (lv_type_2_0= ruleTargetApplicationType ) ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:205:1: ( () otherlv_1= 'target' ( (lv_type_2_0= ruleTargetApplicationType ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:204:28: ( ( () otherlv_1= 'target' ( (lv_type_2_0= RULE_STRING ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:205:1: ( () otherlv_1= 'target' ( (lv_type_2_0= RULE_STRING ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:205:1: ( () otherlv_1= 'target' ( (lv_type_2_0= ruleTargetApplicationType ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:205:2: () otherlv_1= 'target' ( (lv_type_2_0= ruleTargetApplicationType ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:205:1: ( () otherlv_1= 'target' ( (lv_type_2_0= RULE_STRING ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:205:2: () otherlv_1= 'target' ( (lv_type_2_0= RULE_STRING ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:205:2: ()
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:206:5: 
@@ -546,33 +544,28 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getTargetApplicationAccess().getTargetKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:215:1: ( (lv_type_2_0= ruleTargetApplicationType ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:216:1: (lv_type_2_0= ruleTargetApplicationType )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:215:1: ( (lv_type_2_0= RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:216:1: (lv_type_2_0= RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:216:1: (lv_type_2_0= ruleTargetApplicationType )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:217:3: lv_type_2_0= ruleTargetApplicationType
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:216:1: (lv_type_2_0= RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:217:3: lv_type_2_0= RULE_STRING
             {
+            lv_type_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTargetApplication453); if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getTargetApplicationAccess().getTypeTargetApplicationTypeParserRuleCall_2_0()); 
-              	    
-            }
-            pushFollow(FOLLOW_ruleTargetApplicationType_in_ruleTargetApplication457);
-            lv_type_2_0=ruleTargetApplicationType();
 
-            state._fsp--;
-            if (state.failed) return current;
+              			newLeafNode(lv_type_2_0, grammarAccess.getTargetApplicationAccess().getTypeSTRINGTerminalRuleCall_2_0()); 
+              		
+            }
             if ( state.backtracking==0 ) {
 
               	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getTargetApplicationRule());
+              	            current = createModelElement(grammarAccess.getTargetApplicationRule());
               	        }
-                     		set(
+                     		setWithLastConsumed(
                      			current, 
                      			"type",
                       		lv_type_2_0, 
-                      		"TargetApplicationType");
-              	        afterParserOrEnumRuleCall();
+                      		"STRING");
               	    
             }
 
@@ -618,7 +611,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGenerationConfigurationRule()); 
             }
-            pushFollow(FOLLOW_ruleGenerationConfiguration_in_entryRuleGenerationConfiguration493);
+            pushFollow(FOLLOW_ruleGenerationConfiguration_in_entryRuleGenerationConfiguration494);
             iv_ruleGenerationConfiguration=ruleGenerationConfiguration();
 
             state._fsp--;
@@ -626,7 +619,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleGenerationConfiguration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGenerationConfiguration503); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGenerationConfiguration504); if (state.failed) return current;
 
             }
 
@@ -676,7 +669,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleGenerationConfiguration549); if (state.failed) return current;
+            otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleGenerationConfiguration550); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getGenerationConfigurationAccess().getProjectKeyword_1());
@@ -693,7 +686,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getGenerationConfigurationAccess().getProjectNameFQNParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleGenerationConfiguration570);
+            pushFollow(FOLLOW_ruleFQN_in_ruleGenerationConfiguration571);
             lv_projectName_2_0=ruleFQN();
 
             state._fsp--;
@@ -728,7 +721,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:282:4: otherlv_3= 'nsuri' ( (lv_nsuri_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleGenerationConfiguration583); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleGenerationConfiguration584); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getGenerationConfigurationAccess().getNsuriKeyword_3_0());
@@ -740,7 +733,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:287:1: (lv_nsuri_4_0= RULE_STRING )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:288:3: lv_nsuri_4_0= RULE_STRING
                     {
-                    lv_nsuri_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleGenerationConfiguration600); if (state.failed) return current;
+                    lv_nsuri_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleGenerationConfiguration601); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       			newLeafNode(lv_nsuri_4_0, grammarAccess.getGenerationConfigurationAccess().getNsuriSTRINGTerminalRuleCall_3_1_0()); 
@@ -807,7 +800,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGenerationRule()); 
             }
-            pushFollow(FOLLOW_ruleGeneration_in_entryRuleGeneration643);
+            pushFollow(FOLLOW_ruleGeneration_in_entryRuleGeneration644);
             iv_ruleGeneration=ruleGeneration();
 
             state._fsp--;
@@ -815,7 +808,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleGeneration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGeneration653); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGeneration654); if (state.failed) return current;
 
             }
 
@@ -867,13 +860,13 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleGeneration699); if (state.failed) return current;
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleGeneration700); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getGenerationAccess().getGenerationKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleGeneration711); if (state.failed) return current;
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleGeneration712); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getGenerationAccess().getLeftCurlyBracketKeyword_2());
@@ -898,7 +891,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGenerationAccess().getOwnedDataGenerationConfGDataParserRuleCall_3_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleGData_in_ruleGeneration732);
+                    pushFollow(FOLLOW_ruleGData_in_ruleGeneration733);
                     lv_ownedDataGenerationConf_3_0=ruleGData();
 
                     state._fsp--;
@@ -944,7 +937,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGenerationAccess().getOwnedExtensionGenConfExtensionGeneratrionConfigurationParserRuleCall_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExtensionGeneratrionConfiguration_in_ruleGeneration754);
+                    pushFollow(FOLLOW_ruleExtensionGeneratrionConfiguration_in_ruleGeneration755);
                     lv_ownedExtensionGenConf_4_0=ruleExtensionGeneratrionConfiguration();
 
                     state._fsp--;
@@ -971,7 +964,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,13,FOLLOW_13_in_ruleGeneration767); if (state.failed) return current;
+            otherlv_5=(Token)match(input,13,FOLLOW_13_in_ruleGeneration768); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getGenerationAccess().getRightCurlyBracketKeyword_5());
@@ -1014,7 +1007,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGDataRule()); 
             }
-            pushFollow(FOLLOW_ruleGData_in_entryRuleGData803);
+            pushFollow(FOLLOW_ruleGData_in_entryRuleGData804);
             iv_ruleGData=ruleGData();
 
             state._fsp--;
@@ -1022,7 +1015,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleGData; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGData813); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGData814); if (state.failed) return current;
 
             }
 
@@ -1088,13 +1081,13 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleGData859); if (state.failed) return current;
+            otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleGData860); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getGDataAccess().getDataKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleGData871); if (state.failed) return current;
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleGData872); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getGDataAccess().getLeftParenthesisKeyword_2());
@@ -1114,7 +1107,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:414:4: otherlv_3= 'Model:' ( (lv_model_4_0= ruleEBoolean ) )
                     {
-                    otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleGData885); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleGData886); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getGDataAccess().getModelKeyword_3_0_0());
@@ -1131,7 +1124,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGDataAccess().getModelEBooleanParserRuleCall_3_0_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData906);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData907);
                     lv_model_4_0=ruleEBoolean();
 
                     state._fsp--;
@@ -1172,7 +1165,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:436:6: otherlv_5= 'Edit:' ( (lv_edit_6_0= ruleEBoolean ) )
                     {
-                    otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleGData921); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleGData922); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getGDataAccess().getEditKeyword_3_1_0());
@@ -1189,7 +1182,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGDataAccess().getEditEBooleanParserRuleCall_3_1_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData942);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData943);
                     lv_edit_6_0=ruleEBoolean();
 
                     state._fsp--;
@@ -1230,7 +1223,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:458:6: otherlv_7= 'Editor:' ( (lv_editor_8_0= ruleEBoolean ) )
                     {
-                    otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleGData957); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleGData958); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_7, grammarAccess.getGDataAccess().getEditorKeyword_3_2_0());
@@ -1247,7 +1240,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGDataAccess().getEditorEBooleanParserRuleCall_3_2_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData978);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData979);
                     lv_editor_8_0=ruleEBoolean();
 
                     state._fsp--;
@@ -1288,7 +1281,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:480:6: otherlv_9= 'Test:' ( (lv_test_10_0= ruleEBoolean ) )
                     {
-                    otherlv_9=(Token)match(input,23,FOLLOW_23_in_ruleGData993); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,23,FOLLOW_23_in_ruleGData994); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_9, grammarAccess.getGDataAccess().getTestKeyword_3_3_0());
@@ -1305,7 +1298,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGDataAccess().getTestEBooleanParserRuleCall_3_3_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData1014);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData1015);
                     lv_test_10_0=ruleEBoolean();
 
                     state._fsp--;
@@ -1346,7 +1339,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:502:6: otherlv_11= 'Javadoc:' ( (lv_javaDoc_12_0= ruleEBoolean ) )
                     {
-                    otherlv_11=(Token)match(input,24,FOLLOW_24_in_ruleGData1029); if (state.failed) return current;
+                    otherlv_11=(Token)match(input,24,FOLLOW_24_in_ruleGData1030); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_11, grammarAccess.getGDataAccess().getJavadocKeyword_3_4_0());
@@ -1363,7 +1356,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGDataAccess().getJavaDocEBooleanParserRuleCall_3_4_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData1050);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData1051);
                     lv_javaDoc_12_0=ruleEBoolean();
 
                     state._fsp--;
@@ -1404,7 +1397,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:524:6: otherlv_13= 'OverwriteEcore:' ( (lv_overwriteEcore_14_0= ruleEBoolean ) )
                     {
-                    otherlv_13=(Token)match(input,25,FOLLOW_25_in_ruleGData1065); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,25,FOLLOW_25_in_ruleGData1066); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_13, grammarAccess.getGDataAccess().getOverwriteEcoreKeyword_3_5_0());
@@ -1421,7 +1414,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getGDataAccess().getOverwriteEcoreEBooleanParserRuleCall_3_5_1_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData1086);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleGData1087);
                     lv_overwriteEcore_14_0=ruleEBoolean();
 
                     state._fsp--;
@@ -1454,7 +1447,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,26,FOLLOW_26_in_ruleGData1101); if (state.failed) return current;
+            otherlv_15=(Token)match(input,26,FOLLOW_26_in_ruleGData1102); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_15, grammarAccess.getGDataAccess().getRightParenthesisKeyword_4());
@@ -1497,7 +1490,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExtensionGeneratrionConfigurationRule()); 
             }
-            pushFollow(FOLLOW_ruleExtensionGeneratrionConfiguration_in_entryRuleExtensionGeneratrionConfiguration1137);
+            pushFollow(FOLLOW_ruleExtensionGeneratrionConfiguration_in_entryRuleExtensionGeneratrionConfiguration1138);
             iv_ruleExtensionGeneratrionConfiguration=ruleExtensionGeneratrionConfiguration();
 
             state._fsp--;
@@ -1505,7 +1498,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExtensionGeneratrionConfiguration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExtensionGeneratrionConfiguration1147); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExtensionGeneratrionConfiguration1148); if (state.failed) return current;
 
             }
 
@@ -1541,7 +1534,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                       newCompositeNode(grammarAccess.getExtensionGeneratrionConfigurationAccess().getDiagramGenerationConfigurationParserRuleCall()); 
                   
             }
-            pushFollow(FOLLOW_ruleDiagramGenerationConfiguration_in_ruleExtensionGeneratrionConfiguration1193);
+            pushFollow(FOLLOW_ruleDiagramGenerationConfiguration_in_ruleExtensionGeneratrionConfiguration1194);
             this_DiagramGenerationConfiguration_0=ruleDiagramGenerationConfiguration();
 
             state._fsp--;
@@ -1586,7 +1579,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDiagramGenerationConfigurationRule()); 
             }
-            pushFollow(FOLLOW_ruleDiagramGenerationConfiguration_in_entryRuleDiagramGenerationConfiguration1227);
+            pushFollow(FOLLOW_ruleDiagramGenerationConfiguration_in_entryRuleDiagramGenerationConfiguration1228);
             iv_ruleDiagramGenerationConfiguration=ruleDiagramGenerationConfiguration();
 
             state._fsp--;
@@ -1594,7 +1587,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleDiagramGenerationConfiguration; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDiagramGenerationConfiguration1237); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDiagramGenerationConfiguration1238); if (state.failed) return current;
 
             }
 
@@ -1645,13 +1638,13 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FOLLOW_27_in_ruleDiagramGenerationConfiguration1283); if (state.failed) return current;
+            otherlv_1=(Token)match(input,27,FOLLOW_27_in_ruleDiagramGenerationConfiguration1284); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getDiagramGenerationConfigurationAccess().getDiagramKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleDiagramGenerationConfiguration1295); if (state.failed) return current;
+            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleDiagramGenerationConfiguration1296); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getDiagramGenerationConfigurationAccess().getLeftParenthesisKeyword_2());
@@ -1660,7 +1653,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:615:1: (otherlv_3= 'overwriteOdesign:' ( (lv_overwriteVSM_4_0= ruleEBoolean ) ) )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:615:3: otherlv_3= 'overwriteOdesign:' ( (lv_overwriteVSM_4_0= ruleEBoolean ) )
             {
-            otherlv_3=(Token)match(input,28,FOLLOW_28_in_ruleDiagramGenerationConfiguration1308); if (state.failed) return current;
+            otherlv_3=(Token)match(input,28,FOLLOW_28_in_ruleDiagramGenerationConfiguration1309); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteOdesignKeyword_3_0());
@@ -1677,7 +1670,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMEBooleanParserRuleCall_3_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_ruleDiagramGenerationConfiguration1329);
+            pushFollow(FOLLOW_ruleEBoolean_in_ruleDiagramGenerationConfiguration1330);
             lv_overwriteVSM_4_0=ruleEBoolean();
 
             state._fsp--;
@@ -1704,7 +1697,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FOLLOW_26_in_ruleDiagramGenerationConfiguration1342); if (state.failed) return current;
+            otherlv_5=(Token)match(input,26,FOLLOW_26_in_ruleDiagramGenerationConfiguration1343); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getDiagramGenerationConfigurationAccess().getRightParenthesisKeyword_4());
@@ -1732,87 +1725,8 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDiagramGenerationConfiguration"
 
 
-    // $ANTLR start "entryRuleTargetApplicationType"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:649:1: entryRuleTargetApplicationType returns [String current=null] : iv_ruleTargetApplicationType= ruleTargetApplicationType EOF ;
-    public final String entryRuleTargetApplicationType() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleTargetApplicationType = null;
-
-
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:650:2: (iv_ruleTargetApplicationType= ruleTargetApplicationType EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:651:2: iv_ruleTargetApplicationType= ruleTargetApplicationType EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getTargetApplicationTypeRule()); 
-            }
-            pushFollow(FOLLOW_ruleTargetApplicationType_in_entryRuleTargetApplicationType1379);
-            iv_ruleTargetApplicationType=ruleTargetApplicationType();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleTargetApplicationType.getText(); 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTargetApplicationType1390); if (state.failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleTargetApplicationType"
-
-
-    // $ANTLR start "ruleTargetApplicationType"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:658:1: ruleTargetApplicationType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'EMF' ;
-    public final AntlrDatatypeRuleToken ruleTargetApplicationType() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-         enterRule(); 
-            
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:661:28: (kw= 'EMF' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:663:2: kw= 'EMF'
-            {
-            kw=(Token)match(input,29,FOLLOW_29_in_ruleTargetApplicationType1427); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                      current.merge(kw);
-                      newLeafNode(kw, grammarAccess.getTargetApplicationTypeAccess().getEMFKeyword()); 
-                  
-            }
-
-            }
-
-            if ( state.backtracking==0 ) {
-               leaveRule(); 
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleTargetApplicationType"
-
-
     // $ANTLR start "entryRuleFQN"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:678:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:651:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -1820,13 +1734,13 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:679:2: (iv_ruleFQN= ruleFQN EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:680:2: iv_ruleFQN= ruleFQN EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:652:2: (iv_ruleFQN= ruleFQN EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:653:2: iv_ruleFQN= ruleFQN EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFQNRule()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN1469);
+            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN1382);
             iv_ruleFQN=ruleFQN();
 
             state._fsp--;
@@ -1834,7 +1748,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFQN.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN1480); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN1393); if (state.failed) return current;
 
             }
 
@@ -1852,7 +1766,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFQN"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:687:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:660:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1863,13 +1777,13 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:690:28: ( (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:691:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:663:28: ( (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:664:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:691:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:691:6: this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:664:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:664:6: this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1520); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1433); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -1880,32 +1794,32 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                   newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:698:1: (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:671:1: (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
             loop12:
             do {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==30) ) {
+                if ( (LA12_0==29) ) {
                     alt12=1;
                 }
 
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:699:2: kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:672:2: kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID )
             	    {
-            	    kw=(Token)match(input,30,FOLLOW_30_in_ruleFQN1539); if (state.failed) return current;
+            	    kw=(Token)match(input,29,FOLLOW_29_in_ruleFQN1452); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
             	              newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             	          
             	    }
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:704:1: ( ( RULE_ID )=>this_ID_2= RULE_ID )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:704:2: ( RULE_ID )=>this_ID_2= RULE_ID
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:677:1: ( ( RULE_ID )=>this_ID_2= RULE_ID )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:677:2: ( RULE_ID )=>this_ID_2= RULE_ID
             	    {
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1560); if (state.failed) return current;
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1473); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_ID_2);
@@ -1951,7 +1865,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBoolean"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:719:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:692:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
     public final String entryRuleEBoolean() throws RecognitionException {
         String current = null;
 
@@ -1959,13 +1873,13 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:720:2: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:721:2: iv_ruleEBoolean= ruleEBoolean EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:693:2: (iv_ruleEBoolean= ruleEBoolean EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:694:2: iv_ruleEBoolean= ruleEBoolean EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEBooleanRule()); 
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_entryRuleEBoolean1609);
+            pushFollow(FOLLOW_ruleEBoolean_in_entryRuleEBoolean1522);
             iv_ruleEBoolean=ruleEBoolean();
 
             state._fsp--;
@@ -1973,7 +1887,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleEBoolean.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEBoolean1620); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEBoolean1533); if (state.failed) return current;
 
             }
 
@@ -1991,7 +1905,7 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBoolean"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:728:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:701:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2000,17 +1914,17 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:731:28: ( (kw= 'true' | kw= 'false' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:732:1: (kw= 'true' | kw= 'false' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:704:28: ( (kw= 'true' | kw= 'false' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:705:1: (kw= 'true' | kw= 'false' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:732:1: (kw= 'true' | kw= 'false' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:705:1: (kw= 'true' | kw= 'false' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==31) ) {
+            if ( (LA13_0==30) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==32) ) {
+            else if ( (LA13_0==31) ) {
                 alt13=2;
             }
             else {
@@ -2022,9 +1936,9 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:733:2: kw= 'true'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:706:2: kw= 'true'
                     {
-                    kw=(Token)match(input,31,FOLLOW_31_in_ruleEBoolean1658); if (state.failed) return current;
+                    kw=(Token)match(input,30,FOLLOW_30_in_ruleEBoolean1571); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -2035,9 +1949,9 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:740:2: kw= 'false'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpconf.g:713:2: kw= 'false'
                     {
-                    kw=(Token)match(input,32,FOLLOW_32_in_ruleEBoolean1677); if (state.failed) return current;
+                    kw=(Token)match(input,31,FOLLOW_31_in_ruleEBoolean1590); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -2087,59 +2001,56 @@ public class InternalVpconfParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleGeneration_in_ruleConfigurationElement345 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTargetApplication_in_entryRuleTargetApplication380 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTargetApplication390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleTargetApplication436 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_ruleTargetApplicationType_in_ruleTargetApplication457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGenerationConfiguration_in_entryRuleGenerationConfiguration493 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGenerationConfiguration503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleGenerationConfiguration549 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleGenerationConfiguration570 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_16_in_ruleGenerationConfiguration583 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleGenerationConfiguration600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGeneration_in_entryRuleGeneration643 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGeneration653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleGeneration699 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleGeneration711 = new BitSet(new long[]{0x0000000008042000L});
-    public static final BitSet FOLLOW_ruleGData_in_ruleGeneration732 = new BitSet(new long[]{0x0000000008002000L});
-    public static final BitSet FOLLOW_ruleExtensionGeneratrionConfiguration_in_ruleGeneration754 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleGeneration767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGData_in_entryRuleGData803 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGData813 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleGData859 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleGData871 = new BitSet(new long[]{0x0000000007F00000L});
-    public static final BitSet FOLLOW_20_in_ruleGData885 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData906 = new BitSet(new long[]{0x0000000007E00000L});
-    public static final BitSet FOLLOW_21_in_ruleGData921 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData942 = new BitSet(new long[]{0x0000000007C00000L});
-    public static final BitSet FOLLOW_22_in_ruleGData957 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData978 = new BitSet(new long[]{0x0000000007800000L});
-    public static final BitSet FOLLOW_23_in_ruleGData993 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData1014 = new BitSet(new long[]{0x0000000007000000L});
-    public static final BitSet FOLLOW_24_in_ruleGData1029 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData1050 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_25_in_ruleGData1065 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData1086 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleGData1101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExtensionGeneratrionConfiguration_in_entryRuleExtensionGeneratrionConfiguration1137 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExtensionGeneratrionConfiguration1147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDiagramGenerationConfiguration_in_ruleExtensionGeneratrionConfiguration1193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDiagramGenerationConfiguration_in_entryRuleDiagramGenerationConfiguration1227 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDiagramGenerationConfiguration1237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleDiagramGenerationConfiguration1283 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleDiagramGenerationConfiguration1295 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleDiagramGenerationConfiguration1308 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleDiagramGenerationConfiguration1329 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleDiagramGenerationConfiguration1342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTargetApplicationType_in_entryRuleTargetApplicationType1379 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTargetApplicationType1390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleTargetApplicationType1427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN1469 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFQN1480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN1520 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_30_in_ruleFQN1539 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN1560 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_entryRuleEBoolean1609 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEBoolean1620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleEBoolean1658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleEBoolean1677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleTargetApplication436 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTargetApplication453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGenerationConfiguration_in_entryRuleGenerationConfiguration494 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGenerationConfiguration504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleGenerationConfiguration550 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleGenerationConfiguration571 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_16_in_ruleGenerationConfiguration584 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleGenerationConfiguration601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGeneration_in_entryRuleGeneration644 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGeneration654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleGeneration700 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleGeneration712 = new BitSet(new long[]{0x0000000008042000L});
+    public static final BitSet FOLLOW_ruleGData_in_ruleGeneration733 = new BitSet(new long[]{0x0000000008002000L});
+    public static final BitSet FOLLOW_ruleExtensionGeneratrionConfiguration_in_ruleGeneration755 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleGeneration768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGData_in_entryRuleGData804 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGData814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleGData860 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleGData872 = new BitSet(new long[]{0x0000000007F00000L});
+    public static final BitSet FOLLOW_20_in_ruleGData886 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData907 = new BitSet(new long[]{0x0000000007E00000L});
+    public static final BitSet FOLLOW_21_in_ruleGData922 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData943 = new BitSet(new long[]{0x0000000007C00000L});
+    public static final BitSet FOLLOW_22_in_ruleGData958 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData979 = new BitSet(new long[]{0x0000000007800000L});
+    public static final BitSet FOLLOW_23_in_ruleGData994 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData1015 = new BitSet(new long[]{0x0000000007000000L});
+    public static final BitSet FOLLOW_24_in_ruleGData1030 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData1051 = new BitSet(new long[]{0x0000000006000000L});
+    public static final BitSet FOLLOW_25_in_ruleGData1066 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleGData1087 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleGData1102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExtensionGeneratrionConfiguration_in_entryRuleExtensionGeneratrionConfiguration1138 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExtensionGeneratrionConfiguration1148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDiagramGenerationConfiguration_in_ruleExtensionGeneratrionConfiguration1194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDiagramGenerationConfiguration_in_entryRuleDiagramGenerationConfiguration1228 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDiagramGenerationConfiguration1238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleDiagramGenerationConfiguration1284 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleDiagramGenerationConfiguration1296 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleDiagramGenerationConfiguration1309 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleDiagramGenerationConfiguration1330 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleDiagramGenerationConfiguration1343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN1382 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFQN1393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN1433 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_29_in_ruleFQN1452 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN1473 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_entryRuleEBoolean1522 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEBoolean1533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleEBoolean1571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleEBoolean1590 = new BitSet(new long[]{0x0000000000000002L});
 
 }

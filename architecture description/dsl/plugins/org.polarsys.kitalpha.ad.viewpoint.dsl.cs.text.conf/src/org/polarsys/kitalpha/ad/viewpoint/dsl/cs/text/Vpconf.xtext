@@ -39,7 +39,7 @@ ConfigurationElement returns vpconf::ConfigurationElement:
 TargetApplication returns vpconf::ConfigurationElement:
 	{vpconf::TargetApplication}
 	//('id' id = EString)?
-	'target' (type=TargetApplicationType)
+	'target' (type=STRING)
 	;
 
 GenerationConfiguration returns vpconf::ConfigurationElement: 
@@ -101,6 +101,6 @@ DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration
 //	'}'
 //	;
 
-TargetApplicationType:
-	'EMF'
-	;
+//TargetApplicationType:
+//	'EMF'
+//	;

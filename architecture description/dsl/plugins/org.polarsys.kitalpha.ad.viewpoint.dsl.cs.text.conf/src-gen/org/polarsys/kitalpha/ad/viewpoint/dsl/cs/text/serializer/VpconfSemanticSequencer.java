@@ -138,7 +138,7 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     type=TargetApplicationType
+	 *     type=STRING
 	 */
 	protected void sequence_TargetApplication(EObject context, TargetApplication semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

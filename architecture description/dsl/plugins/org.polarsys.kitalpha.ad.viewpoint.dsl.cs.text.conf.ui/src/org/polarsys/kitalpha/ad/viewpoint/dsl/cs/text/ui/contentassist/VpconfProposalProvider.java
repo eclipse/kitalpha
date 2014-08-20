@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
@@ -43,13 +44,25 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 	
 
 	@Override
-	public void complete_TargetApplicationType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeTargetApplication_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		List<String> targetPlatformProposals = TargetApplicationReader.getSupportedModelingEnvironment();
 		// Add target platform as proposal
 		for (String proposal :targetPlatformProposals) {
-			acceptor.accept(createCompletionProposal(proposal, context));
+			acceptor.accept(createCompletionProposal("\"" + proposal + "\"", context)); //$NON-NLS-1$
 		}
 	}
+	
+	
+//	@Override
+//	public void complete_TargetApplicationType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		List<String> targetPlatformProposals = TargetApplicationReader.getSupportedModelingEnvironment();
+//		// Add target platform as proposal
+//		for (String proposal :targetPlatformProposals) {
+//			acceptor.accept(createCompletionProposal(proposal, context));
+//		}
+//	}
+	
+	
 	
 	//Forbid many declarations of diagram overwrite.
 	@Override
