@@ -18,6 +18,8 @@ import org.eclipse.egf.portfolio.genchain.extension.ExtensionHelper;
 import org.polarsys.kitalpha.ad.ta.extension.TargetApplicationAdapter;
 import org.polarsys.kitalpha.emde.genchain.EmdeGenerationExtension;
 
+import org.polarsys.kitalpha.doc.gen.business.ecore.genchain.extension.KitalphaDocumentationExtension;
+
 /**
  * @author Boubekeur Zendagui
  */
@@ -28,6 +30,7 @@ public class EMFTargetApplication extends TargetApplicationAdapter {
 	public List<ExtensionHelper> getGenerationExtensionHelpers() {
 		List<ExtensionHelper> result = new ArrayList<ExtensionHelper>();
 		result.add(new EmdeGenerationExtension());
+		result.add(new KitalphaDocumentationExtension());
 		return result;
 	}
 
