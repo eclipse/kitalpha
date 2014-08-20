@@ -98,66 +98,6 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	
-	private AbstractClass getAbstractClassDomainOfContainer(AbstractAssociation abstractAssociation){
-		
-		if (abstractAssociation == null)
-			return null;
-		
-		
-		EObject container = abstractAssociation.eContainer();
-		
-		if (container instanceof DomainContainer){
-			DomainContainer domainContainer = (DomainContainer)container;
-			EObject containerDomain = domainContainer.eContainer();
-			
-			if (containerDomain instanceof MappingSet){
-				containerDomain = containerDomain.eContainer();
-			}
-			
-			if (containerDomain instanceof Diagram){
-				Diagram diagram = (Diagram)containerDomain;
-				return getAbstractClassOf(diagram);
-			}
-		}
-		
-		if (container instanceof NodeDomainElement){
-			NodeDomainElement nde = (NodeDomainElement)container;
-			EObject containerDomainElement = nde.eContainer().eContainer();
-			
-			if (containerDomainElement!= null && 
-					containerDomainElement instanceof MappingSet){
-				containerDomainElement = containerDomainElement.eContainer();
-			}
-			
-			if (containerDomainElement != null &&
-					containerDomainElement instanceof ContainerChildren){
-				containerDomainElement = containerDomainElement.eContainer();
-			}
-			
-			if (containerDomainElement instanceof Container){
-				Container domainElementContainer = (Container)containerDomainElement;
-				return domainElementContainer.getThe_domain().getDomain_Class();				
-			}
-			
-			if (containerDomainElement instanceof Diagram){
-				Diagram diagram = (Diagram)containerDomainElement;
-				return getAbstractClassOf(diagram);
-			}
-			
-			if (containerDomainElement instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node){
-				Node domainElementContainer = (Node)containerDomainElement;
-				return getAbstractClassOf(domainElementContainer);				
-			}
-			
-			if (containerDomainElement instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode){
-				BorderedNode domainElementContainer = (BorderedNode)containerDomainElement;
-				return getAbstractClassOf(domainElementContainer);				
-			}
-		}
-		
-		return null;
-	}
-	
 	private AbstractClass getAbstractClassOf(Diagram diagram){
 		return diagram.getThe_domain().getThe_domain();
 	}

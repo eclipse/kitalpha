@@ -3136,28 +3136,28 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLocalAssociationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cReferenceLocalClassAssociationCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
-		private final RuleCall cReferenceLocalClassAssociationFQNParserRuleCall_1_0_1 = (RuleCall)cReferenceLocalClassAssociationCrossReference_1_0.eContents().get(1);
+		private final CrossReference cReferenceAbstractAssociationCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
+		private final RuleCall cReferenceAbstractAssociationFQNParserRuleCall_1_0_1 = (RuleCall)cReferenceAbstractAssociationCrossReference_1_0.eContents().get(1);
 		
 		//LocalAssociation returns commondata::AbstractAssociation:
 		//
-		//	{commondata::LocalAssociation} reference=[vpdesc::LocalClassAssociation|FQN];
+		//	{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN];
 		public ParserRule getRule() { return rule; }
 
-		//{commondata::LocalAssociation} reference=[vpdesc::LocalClassAssociation|FQN]
+		//{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN]
 		public Group getGroup() { return cGroup; }
 
 		//{commondata::LocalAssociation}
 		public Action getLocalAssociationAction_0() { return cLocalAssociationAction_0; }
 
-		//reference=[vpdesc::LocalClassAssociation|FQN]
+		//reference=[vpdesc::AbstractAssociation|FQN]
 		public Assignment getReferenceAssignment_1() { return cReferenceAssignment_1; }
 
-		//[vpdesc::LocalClassAssociation|FQN]
-		public CrossReference getReferenceLocalClassAssociationCrossReference_1_0() { return cReferenceLocalClassAssociationCrossReference_1_0; }
+		//[vpdesc::AbstractAssociation|FQN]
+		public CrossReference getReferenceAbstractAssociationCrossReference_1_0() { return cReferenceAbstractAssociationCrossReference_1_0; }
 
 		//FQN
-		public RuleCall getReferenceLocalClassAssociationFQNParserRuleCall_1_0_1() { return cReferenceLocalClassAssociationFQNParserRuleCall_1_0_1; }
+		public RuleCall getReferenceAbstractAssociationFQNParserRuleCall_1_0_1() { return cReferenceAbstractAssociationFQNParserRuleCall_1_0_1; }
 	}
 
 	public class ExternalAssociationElements extends AbstractParserRuleElementFinder {
@@ -4883,7 +4883,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 	//LocalAssociation returns commondata::AbstractAssociation:
 	//
-	//	{commondata::LocalAssociation} reference=[vpdesc::LocalClassAssociation|FQN];
+	//	{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN];
 	public LocalAssociationElements getLocalAssociationAccess() {
 		return (pLocalAssociation != null) ? pLocalAssociation : (pLocalAssociation = new LocalAssociationElements());
 	}

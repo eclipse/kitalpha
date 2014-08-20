@@ -474,7 +474,7 @@ AbstractAssociation2 returns commondata::AbstractAssociation:
 
 LocalAssociation returns commondata::AbstractAssociation:
 	{commondata::LocalAssociation}
-	reference=[vpdesc::LocalClassAssociation | FQN]	
+	reference=[vpdesc::AbstractAssociation | FQN]	
 ;
 
 ExternalAssociation returns commondata::AbstractAssociation:
