@@ -46,6 +46,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 
@@ -441,6 +442,12 @@ public class VpdiagramScopeHelper {
 				NodeDomainElement nde2 = ((BorderedNode)childrenContainer).getThe_domain();
 				return getDomain_class(nde2);
 			}
+		}
+		
+		if (container instanceof NodeChildren){
+			NodeChildren nc = (NodeChildren)container;
+			Node node = (Node)nc.eContainer();
+			return node.getThe_domain().getDomain_Class();
 		}
 		
 		if (container instanceof MappingSet){
