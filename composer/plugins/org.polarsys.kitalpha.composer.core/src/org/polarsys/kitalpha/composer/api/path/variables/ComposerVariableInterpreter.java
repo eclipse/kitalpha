@@ -14,6 +14,7 @@
  */
 package org.polarsys.kitalpha.composer.api.path.variables;
 
+import java.io.File;
 import java.util.Set;
 
 import org.polarsys.kitalpha.composer.Activator;
@@ -25,8 +26,9 @@ import org.polarsys.kitalpha.composer.internal.path.variables.ComposerVariablesR
  *
  */
 public class ComposerVariableInterpreter {
-	private static final String DEB = "$";
+	private static final String DEB = "$"; //$NON-NLS-1$
 	public static final ComposerVariableInterpreter INSTANCE = new ComposerVariableInterpreter();
+	private static final String PARENT ="../"; //$NON-NLS-1$
 	private  ComposerVariablesRegistry registry = ComposerVariablesRegistry.INSTANCE;
 	
 	public Object execute(String value, Object obj){
@@ -35,6 +37,12 @@ public class ComposerVariableInterpreter {
 		if(var != null){
 			Object substitution = var.execute(obj);
 			String regex = DEB + var.getName();
+			if(value.startsWith(PARENT)){
+				File f = new File((String)substitution);
+				substitution = f.getParentFile().getAbsolutePath();
+				regex = PARENT + regex;
+			}
+			
 			result = value.replace(regex, (String)substitution);
 		}else{
 			result = value;
@@ -58,10 +66,10 @@ public class ComposerVariableInterpreter {
 				if(var_name != null && !var_name.equals("")){
 					var = registry.getVariable(var_name);
 					if(var == null){
-							throw new Exception("The generation path use an invalid variable."); ////$NON-NLS-1$
+							throw new Exception("The generation path use an invalid variable."); //$NON-NLS-1$
 					}
 				}else{
-					throw new Exception("The generation path use an invalid variable."); ////$NON-NLS-2$
+					throw new Exception("The generation path use an invalid variable."); //$NON-NLS-2$
 				}
 				
 			}

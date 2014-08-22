@@ -15,14 +15,14 @@
 package org.polarsys.kitalpha.composer.internal.path.variables.common;
 
 import java.io.File;
-import java.io.IOException;
+import java.io.FilenameFilter;
 import java.util.List;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.polarsys.kitalpha.composer.api.path.variables.IComposerVariable;
 
 /**
@@ -34,49 +34,71 @@ public class ProjectDir implements IComposerVariable {
 	
 
 	public String getName() {
-		// TODO Auto-generated method stub
-		return "projectDir";
+		return "projectDir"; //$NON-NLS-1$
 	}
 
 	public String execute(Object obj) {
-		String replacement = "";
+		String replacement = ""; //$NON-NLS-1$
 		
 		if (obj instanceof File) {
+			File file = (File)obj;
+			replacement = findProject(file);
 			
-			try{
-			throw new IOException("The $projectDir variable is not supported for Java I/O");
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
 		}
-		if (obj instanceof IResource) {
-			IResource res = (IResource) obj;
-			replacement = res.getProject().getFullPath().toString();
-		}
+		
 		if (obj instanceof EObject) {
 			EObject eObject = (EObject) obj;
-			replacement = "/" + eObject.eResource().getURI().segment(1);
+			replacement = WorkspaceSynchronizer.getFile(eObject.eResource()).getProject().getLocation().toString();
 		}
 		
 		if(obj instanceof Resource){
 			Resource res = (Resource)obj;
-			replacement = "/" + res.getURI().segment(1);
+			replacement =  WorkspaceSynchronizer.getFile(res).getProject().getLocation().toString();
+		
 		}
+		
+		if (obj instanceof IResource) {
+			IResource res = (IResource) obj;
+			replacement = res.getProject().getLocation().toString();
+		}
+		
 		
 		if(obj instanceof ResourceSet){
 			ResourceSet set = (ResourceSet)obj;
 			List<Resource> resources = set.getResources();
 			if(!resources.isEmpty()){
 				Resource first = resources.get(0);
-				replacement = "/" + first.getURI().segment(1);
+				replacement = execute(first);
 			}else{
-				String msg = "Your selection is empty";
+				String msg = "Your selection is empty"; //$NON-NLS-1$
 				RuntimeException exception = new RuntimeException(msg);
 				throw exception;
 			}
 			
 		}
 		return replacement;
+	}
+
+	private String findProject(File file) {
+		String result = ""; ////$NON-NLS-1$
+		if(file.isDirectory()){
+			String[] contents = file.list(new FilenameFilter() {
+				
+				public boolean accept(File arg0, String arg1) {
+					
+					return arg1.equalsIgnoreCase(".project"); //$NON-NLS-1$
+				}
+			});
+			
+			if(contents.length > 0 ){
+				result = file.getAbsolutePath();
+				return result;
+			}
+			
+		}
+			result = findProject(file.getParentFile());
+		
+		return result;
 	}
 
 }

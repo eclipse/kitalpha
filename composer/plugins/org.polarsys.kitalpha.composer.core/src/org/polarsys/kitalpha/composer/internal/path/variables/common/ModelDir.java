@@ -21,6 +21,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 
 import org.polarsys.kitalpha.composer.api.path.variables.IComposerVariable;
 
@@ -33,36 +34,34 @@ public class ModelDir implements IComposerVariable {
 	
 
 	public String getName() {
-		// TODO Auto-generated method stub
-		return "modelDir";
+		return "modelDir"; //$NON-NLS-1$
 	}
 
 	public String execute(Object obj) {
-		String replacement = "";
+		String replacement = ""; //$NON-NLS-1$
 	
 		
 		
 		if (obj instanceof File) {
 			File file = (File) obj;
-			
-				replacement= file.getParent();
-			 
+			replacement= file.getParent();			 
 		}
+		
 		if (obj instanceof IResource) {
 			IResource res = (IResource) obj;
-			 replacement= res.getFullPath().toString();
+			 replacement= res.getLocation().toString();
 			 
 		}
+		
 		if (obj instanceof EObject) {
 			EObject eObject = (EObject) obj;
-			replacement =  eObject.eResource().getURI().toPlatformString(false);
-			replacement = replacement.split(eObject.eResource().getURI().lastSegment())[0];
+			replacement =   WorkspaceSynchronizer.getFile(eObject.eResource()).getParent().getLocation().toString();
+
 		}
 		
 		if(obj instanceof Resource){
 			Resource res = (Resource)obj;
-			replacement = res.getURI().toPlatformString(false);
-			replacement = replacement.split(res.getURI().lastSegment())[0];
+			replacement = WorkspaceSynchronizer.getFile(res).getParent().getLocation().toString();
 		}
 		
 		if(obj instanceof ResourceSet){
@@ -70,8 +69,7 @@ public class ModelDir implements IComposerVariable {
 			List<Resource> resources = set.getResources();
 			if(!resources.isEmpty()){
 				Resource first = resources.get(0);
-				replacement = first.getURI().toPlatformString(false);
-				replacement = replacement.split(first.getURI().lastSegment())[0];
+				replacement = execute(first);
 			}else{
 				String msg = "Your selection is empty";
 				RuntimeException exception = new RuntimeException(msg);

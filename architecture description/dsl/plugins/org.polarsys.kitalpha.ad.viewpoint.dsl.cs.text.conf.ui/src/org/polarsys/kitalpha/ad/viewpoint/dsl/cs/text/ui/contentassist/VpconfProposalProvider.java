@@ -48,7 +48,7 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 		List<String> targetPlatformProposals = TargetApplicationReader.getSupportedModelingEnvironment();
 		// Add target platform as proposal
 		for (String proposal :targetPlatformProposals) {
-			acceptor.accept(createCompletionProposal("\"" + proposal + "\"", context)); //$NON-NLS-1$
+			acceptor.accept(createCompletionProposal(proposal, context)); //$NON-NLS-1$
 		}
 	}
 	

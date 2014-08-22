@@ -281,6 +281,32 @@ finally {
 
 
 
+// Entry rule entryRuleEString
+entryRuleEString 
+:
+{ before(grammarAccess.getEStringRule()); }
+	 ruleEString
+{ after(grammarAccess.getEStringRule()); } 
+	 EOF 
+;
+
+// Rule EString
+ruleEString
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getEStringAccess().getAlternatives()); }
+(rule__EString__Alternatives)
+{ after(grammarAccess.getEStringAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 
 
 // Entry rule entryRuleFQN
@@ -370,6 +396,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__EString__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); }
+	RULE_STRING
+{ after(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); }
+)
+
+    |(
+{ before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
+	RULE_ID
+{ after(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 rule__EBoolean__Alternatives
     @init {
@@ -2182,8 +2229,8 @@ rule__TargetApplication__TypeAssignment_2
     }
 :
 (
-{ before(grammarAccess.getTargetApplicationAccess().getTypeSTRINGTerminalRuleCall_2_0()); }
-	RULE_STRING{ after(grammarAccess.getTargetApplicationAccess().getTypeSTRINGTerminalRuleCall_2_0()); }
+{ before(grammarAccess.getTargetApplicationAccess().getTypeEStringParserRuleCall_2_0()); }
+	ruleEString{ after(grammarAccess.getTargetApplicationAccess().getTypeEStringParserRuleCall_2_0()); }
 )
 
 ;

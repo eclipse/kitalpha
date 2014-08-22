@@ -39,7 +39,7 @@ ConfigurationElement returns vpconf::ConfigurationElement:
 TargetApplication returns vpconf::ConfigurationElement:
 	{vpconf::TargetApplication}
 	//('id' id = EString)?
-	'target' (type=STRING)
+	'target' (type=EString)
 	;
 
 GenerationConfiguration returns vpconf::ConfigurationElement: 

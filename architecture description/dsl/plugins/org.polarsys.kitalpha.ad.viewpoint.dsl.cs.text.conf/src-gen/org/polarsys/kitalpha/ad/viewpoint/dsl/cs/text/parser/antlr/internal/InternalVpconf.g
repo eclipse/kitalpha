@@ -214,19 +214,19 @@ ruleTargetApplication returns [EObject current=null]
     }
 (
 (
-		lv_type_2_0=RULE_STRING
-		{
-			newLeafNode(lv_type_2_0, grammarAccess.getTargetApplicationAccess().getTypeSTRINGTerminalRuleCall_2_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getTargetApplicationAccess().getTypeEStringParserRuleCall_2_0()); 
+	    }
+		lv_type_2_0=ruleEString		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTargetApplicationRule());
+	            $current = createModelElementForParent(grammarAccess.getTargetApplicationRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"type",
         		lv_type_2_0, 
-        		"STRING");
+        		"EString");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -642,6 +642,40 @@ ruleDiagramGenerationConfiguration returns [EObject current=null]
 ;
 
 
+
+
+
+// Entry rule entryRuleEString
+entryRuleEString returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEStringRule()); } 
+	 iv_ruleEString=ruleEString 
+	 { $current=$iv_ruleEString.current.getText(); }  
+	 EOF 
+;
+
+// Rule EString
+ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_STRING_0=RULE_STRING    {
+		$current.merge(this_STRING_0);
+    }
+
+    { 
+    newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
+    }
+
+    |    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
+    }
+
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
+    }
+)
+    ;
 
 
 

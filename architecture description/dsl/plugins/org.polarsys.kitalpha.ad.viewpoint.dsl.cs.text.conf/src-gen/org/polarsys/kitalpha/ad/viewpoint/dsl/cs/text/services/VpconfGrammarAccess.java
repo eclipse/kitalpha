@@ -101,18 +101,18 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cTargetApplicationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cTargetKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeSTRINGTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeEStringParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		
 		//TargetApplication returns vpconf::ConfigurationElement:
 		//
 		//	{vpconf::TargetApplication} //('id' id = EString)?
 		//
-		//	"target" type=STRING;
+		//	"target" type=EString;
 		public ParserRule getRule() { return rule; }
 
 		//{vpconf::TargetApplication} //('id' id = EString)?
 		//
-		//"target" type=STRING
+		//"target" type=EString
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::TargetApplication}
@@ -123,11 +123,11 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//"target"
 		public Keyword getTargetKeyword_1() { return cTargetKeyword_1; }
 
-		//type=STRING
+		//type=EString
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
-		//STRING
-		public RuleCall getTypeSTRINGTerminalRuleCall_2_0() { return cTypeSTRINGTerminalRuleCall_2_0; }
+		//EString
+		public RuleCall getTypeEStringParserRuleCall_2_0() { return cTypeEStringParserRuleCall_2_0; }
 	}
 
 	public class GenerationConfigurationElements extends AbstractParserRuleElementFinder {
@@ -533,7 +533,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	{vpconf::TargetApplication} //('id' id = EString)?
 	//
-	//	"target" type=STRING;
+	//	"target" type=EString;
 	public TargetApplicationElements getTargetApplicationAccess() {
 		return (pTargetApplication != null) ? pTargetApplication : (pTargetApplication = new TargetApplicationElements());
 	}

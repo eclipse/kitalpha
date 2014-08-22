@@ -1,24 +1,27 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
+Ant-Version: Apache Ant 1.7.1
+Created-By: 20.45-b01 (Sun Microsystems Inc.)
+Export-Package: org.polarsys.kitalpha.composer.api,org.polarsys.kitalp
+ ha.composer.api.allocation,org.polarsys.kitalpha.composer.api.configu
+ ration,org.polarsys.kitalpha.composer.api.library,org.polarsys.kitalp
+ ha.composer.api.path,org.polarsys.kitalpha.composer.api.profiles,org.
+ polarsys.kitalpha.composer.extension.points
+Bundle-ClassPath: .
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.polarsys.kitalpha.composer.core;singleton:=true
-Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: org.polarsys.kitalpha.composer.Activator
-Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.debug.core;visibility:=reexport,
  org.polarsys.kitalpha.composer.metamodel.allocation.base.model;visibility:=reexport,
  org.polarsys.kitalpha.cadence.core,
- org.polarsys.kitalpha.resourcereuse
+ org.polarsys.kitalpha.resourcereuse,
+ org.eclipse.emf.workspace
+Bundle-Vendor: %providerName
 Eclipse-LazyStart: true
-Export-Package: org.polarsys.kitalpha.composer.api,
- org.polarsys.kitalpha.composer.api.allocation,
- org.polarsys.kitalpha.composer.api.configuration,
- org.polarsys.kitalpha.composer.api.library,
- org.polarsys.kitalpha.composer.api.path,
- org.polarsys.kitalpha.composer.api.profiles,
- org.polarsys.kitalpha.composer.extension.points
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bundle-Localization: plugin
-Bundle-ClassPath: .
+Bundle-Version: 0.5.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.polarsys.kitalpha.composer.Activator
+Bundle-SymbolicName: org.polarsys.kitalpha.composer.core;singleton:=tr
+ ue
+
