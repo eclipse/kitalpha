@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %BACKUP_ACTIONS_NAME
+Bundle-SymbolicName: org.polarsys.kitalpha.model.actions.contrib.backup;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.model.actions.contrib.backup.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.polarsys.kitalpha.model.actions,
+ org.eclipse.core.resources
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %VENDOR
+Import-Package: org.apache.log4j

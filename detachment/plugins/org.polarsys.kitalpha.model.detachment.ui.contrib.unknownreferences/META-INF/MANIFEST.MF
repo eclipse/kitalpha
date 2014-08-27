@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %MODEL_DETACHMENT_UR_PAGE
+Bundle-SymbolicName: org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.Activator
+Bundle-Vendor: %VENDOR
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ui.forms,
+ org.polarsys.kitalpha.model.analysis,
+ org.polarsys.kitalpha.model.detachment.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.pages,
+ org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.providers

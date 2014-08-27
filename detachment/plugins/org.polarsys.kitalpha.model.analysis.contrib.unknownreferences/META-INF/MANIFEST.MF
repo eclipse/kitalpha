@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %UNKNOWN_REF_FINDER
+Bundle-SymbolicName: org.polarsys.kitalpha.model.analysis.contrib.unknownreferences;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.Activator
+Bundle-Vendor: %VENDOR
+Require-Bundle: org.eclipse.core.runtime,
+ org.polarsys.kitalpha.model.analysis,
+ org.eclipse.sirius,
+ org.eclipse.sirius.diagram,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.feedback,
+ org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.finders

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+
+
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.model.actions.definition">
+      <action
+            class="org.polarsys.kitalpha.model.actions.contrib.resourceschecker.action.WorkspaceResourceChecker"
+            id="org.polarsys.kitalpha.model.actions.contrib.detachment.checkFileResourceAttributes"
+            priority="500.00">
+      </action>
+   </extension>
+
+</plugin>
