@@ -2551,7 +2551,7 @@ openFile
         </eclipse.launch>
 	</target>	
 	<target name="zip_juno_results" depends="init">
-		<zip destfile="${publish}/kitalpha_juno_${kitalpha_version}-${timestamp}.zip" basedir="${publish}/TP_juno"  >
+		<zip destfile="${publish}/kitalpha_juno_${kitalpha_version}-${timestamp}-incubation.zip" basedir="${publish}/TP_juno"  >
 
 		</zip>
 	</target>
