@@ -12,9 +12,16 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 
+import java.io.IOException;
+import java.net.DatagramPacket;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.resources.IContainer;
@@ -23,8 +30,16 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
+import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -56,6 +71,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.WorkspaceResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
@@ -64,6 +80,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
+import com.google.common.cache.LoadingCache;
 import com.google.inject.Inject;
 
 /**
@@ -308,109 +325,96 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	}
 	
 	
-//	@Override
-//	public void completeViewpoint_UseAnyEMFResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-//		final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
-//		final String SCHEMAT_PATH = "icons/full/obj16/EPackage.gif";
-//
-//		final Bundle bundle = Platform.getBundle(EMF_PLUGIN_ID);
-//		final URL url = FileLocator.find(bundle, new Path(SCHEMAT_PATH),
-//				Collections.EMPTY_MAP);
-//
-//		Image image = ImageDescriptor.createFromURL(url).createImage();
-//		
-//		Collection<String> platformNsUri = getPlatformURIOfAllEPackages();
-//		
-//		for (String pUri : platformNsUri) {
-//			StyledString styledUri = new StyledString();
-//			styledUri.append(pUri);
-//			acceptor.accept(
-//					createCompletionProposal(
-//							"\"" + pUri + "\"", styledUri, image, context));
-//		}
-//		
-//		
-//	}
-//	
-//	private Collection<String> getPlatformURIOfAllEPackages(){
-//		Collection<Object> packages = DataWorkspaceEPackage.INSTANCE.values();
-//		
-//		Collection<String> platformsNsURI = new HashSet<String>();
-//		 
-//		for (Object pkg : packages) {
-//			EPackage ePackage = null;
-//			
-//			if (pkg instanceof EPackage){
-//				ePackage = (EPackage)pkg;
-//			}
-//			else {
-//				if (pkg instanceof EPackage.Descriptor){
-//					ePackage = ((EPackage.Descriptor)pkg).getEPackage();
-//				}
-//			}
-//
-//			if (ePackage != null){
-//				
-//				URI urii = EcoreUtil.getURI(ePackage);
-//				
-//				if (urii.isPlatformResource()){
-//					System.err.println(">>> " + urii.toString());
-//					platformsNsURI.add(urii.toString());
-//				} else {
-//					URI p = getPlatformURI(URI.createURI(ePackage.getNsURI()));
-//					if (p != null){
-//						System.err.println(">>> " + p.toString());
-//						platformsNsURI.add(p.toString());
-//					}
-//				}
-//				
-//				
-//				//URI resource_uri = ePackage.eResource().getURI();
-////				URI resource_uri = getPlatformURI(URI.createURI(ePackage.getNsURI()));
-////
-////				if (resource_uri != null){
-////					if (resource_uri.isPlatformPlugin()){
-////						String platform_uri = resource_uri.toString();
-////						platformsNsURI.add(platform_uri);
-////					}
-////
-////					if (resource_uri.isPlatformResource()){
-////						String platform_uri = resource_uri.toString();
-////						platformsNsURI.add(platform_uri);
-////					}
-////				}
-//			}
-//		}
-//		return platformsNsURI;
-//	}
-//	
-//	
-//	private URI getPlatformURI(URI uri){
-//		URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(uri.toString());
-//
-//		if (genmodelURI != null){
-//			ResourceSet rs = new ResourceSetImpl();
-//			Resource r = rs.createResource(genmodelURI);
-//
-//			try {
-//				r.load(null);
-//			} catch (IOException e) {
-//				//e.printStackTrace();
-//			}
-//			
-//			EList<EObject> genContents = r.getContents();
-//			if (genContents != null && !genContents.isEmpty()){
-//				EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
-//				for(GenPackage genPackage: genmodels){
-//					URI platformURI = genPackage.getEcorePackage().eResource().getURI();
-//					return platformURI;
-//				}
-//			}
-//			
-//			
-//			
-//		}
-//		return null;
-//	}
+	@Override
+	public void completeViewpoint_UseAnyEMFResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
+		final String SCHEMAT_PATH = "icons/full/obj16/EPackage.gif";
+
+		final Bundle bundle = Platform.getBundle(EMF_PLUGIN_ID);
+		final URL url = FileLocator.find(bundle, new Path(SCHEMAT_PATH),
+				Collections.EMPTY_MAP);
+
+		Image image = ImageDescriptor.createFromURL(url).createImage();
+		
+		Collection<String> platformNsUri = getPlatformURIOfAllEPackages();
+		
+		for (String pUri : platformNsUri) {
+			StyledString styledUri = new StyledString();
+			styledUri.append(pUri);
+			acceptor.accept(
+					createCompletionProposal(
+							"\"" + pUri + "\"", styledUri, image, context));
+		}
+		
+		
+	}
+	
+	private Collection<String> getPlatformURIOfAllEPackages(){
+		
+		Collection<Object> packages = DataWorkspaceEPackage.INSTANCE.values();
+		
+		Collection<String> platformsNsURI = new HashSet<String>();
+		
+		for (Object pkg : packages) {
+			EPackage ePackage = null;
+			
+			if (pkg instanceof EPackage){
+				ePackage = (EPackage)pkg;
+			}
+			else {
+				if (pkg instanceof EPackage.Descriptor){
+					ePackage = ((EPackage.Descriptor)pkg).getEPackage();
+				}
+			}
+
+			if (ePackage != null){
+				
+				URI uri = EcoreUtil.getURI(ePackage);
+				
+				if (uri.isPlatformResource()){
+					platformsNsURI.add(uri.toString());
+				} else {
+					URI p = getPlatformURI(URI.createURI(ePackage.getNsURI()));
+					if (p != null){
+						platformsNsURI.add(p.toString());
+					}
+				}
+			}
+		}
+		
+		return platformsNsURI;
+	}
+	
+	
+	ResourceSet rs = new ResourceSetImpl();
+	
+	private URI getPlatformURI(URI uri){
+		
+		
+		URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(uri.toString());
+
+		if (genmodelURI != null){
+			
+			Resource r = rs.createResource(genmodelURI);
+
+			try {
+				if (!r.isLoaded()){
+					r.load(null);
+				}
+			} catch (IOException e) {
+				//e.printStackTrace();
+			}
+			
+			EList<EObject> genContents = r.getContents();
+			if (genContents != null && !genContents.isEmpty()){
+				EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
+				for(GenPackage genPackage: genmodels){
+					URI platformURI = genPackage.getEcorePackage().eResource().getURI();
+					return platformURI;
+				}
+			}
+		}
+		return null;
+	}
 	
 }
