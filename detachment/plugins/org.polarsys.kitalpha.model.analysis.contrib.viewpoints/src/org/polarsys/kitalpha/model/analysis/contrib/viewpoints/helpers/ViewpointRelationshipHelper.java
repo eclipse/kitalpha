@@ -179,7 +179,7 @@ public class ViewpointRelationshipHelper {
 			for (EPackage ePackage : eList) {
 				String nsUri = ePackage.getNsURI();
 				
-				if (nsUri.equals(nsUri2))
+				if (nsUri != null && nsUri.equals(nsUri2))
 					return true;
 			}
 		}

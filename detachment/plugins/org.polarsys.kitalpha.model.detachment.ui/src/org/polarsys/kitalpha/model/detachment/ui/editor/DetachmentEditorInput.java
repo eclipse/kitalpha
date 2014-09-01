@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
+import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.model.detachment.ui.Activator;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
 
@@ -49,7 +50,12 @@ public class DetachmentEditorInput implements IEditorInput {
 	
 	@Override
 	public ImageDescriptor getImageDescriptor() {
-		return null;
+		
+		String IMG_PATH = "icons/run_detach.gif";	//$NON-NLS-1$
+		Bundle currentBundle = Activator.getDefault().getBundle();
+		URL url = FileLocator.find(currentBundle, new Path(IMG_PATH), Collections.emptyMap());
+		
+		return ImageDescriptor.createFromURL(url);
 	}
 	
 	@Override
