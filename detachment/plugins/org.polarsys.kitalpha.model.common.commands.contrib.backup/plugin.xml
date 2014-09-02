@@ -15,12 +15,12 @@ Contributors:
 
 <plugin>
    <extension
-         point="org.polarsys.kitalpha.model.actions.definition">
-      <action
-            class="org.polarsys.kitalpha.model.actions.contrib.backup.action.BackupAndSaveAction"
-            id="org.polarsys.kitalpha.model.actions.contrib.detachment.backup"
+         point="org.polarsys.kitalpha.model.common.commands.definition">
+      <command
+            class="org.polarsys.kitalpha.model.common.commands.contrib.backup.command.BackupAndSaveCommand"
+            id="org.polarsys.kitalpha.model.actions.contrib.detachment.backupAndSave"
             priority="10000.00">
-      </action>
+      </command>
    </extension>
 
 </plugin>

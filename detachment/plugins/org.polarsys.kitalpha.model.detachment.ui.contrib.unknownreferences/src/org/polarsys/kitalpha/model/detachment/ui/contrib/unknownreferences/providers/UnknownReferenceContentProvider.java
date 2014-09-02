@@ -21,8 +21,8 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
-import org.polarsys.kitalpha.model.analysis.interfaces.IFeedback;
-import org.polarsys.kitalpha.model.analysis.interfaces.IFeedback.IFeedbackMessage;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.IFeedbackMessage;
 
 /**
  * @author Faycal Abka

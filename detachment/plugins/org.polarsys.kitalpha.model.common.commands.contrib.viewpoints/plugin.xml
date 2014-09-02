@@ -15,13 +15,13 @@ Contributors:
 
 <plugin>
    <extension
-         point="org.polarsys.kitalpha.model.actions.definition">
-      <action
-            class="org.polarsys.kitalpha.model.actions.contrib.viewpoints.action.ViewpointsDetachmentAction"
-            finderId="org.polarsys.kitalpha.model.analysis.contribution.finders.analysis.viewpoints"
-            id="org.polarsys.kitalpha.model.actions.contrib.detachment.viewpointselection"
-            priority="5000.00">
-      </action>
+         point="org.polarsys.kitalpha.model.common.commands.definition">
+      <command
+            class="org.polarsys.kitalpha.model.common.commands.contrib.viewpoints.command.ViewpointsDetachmentCommand"
+            id="org.polarsys.kitalpha.model.common.commands.contrib.detachment.viewpointselection"
+            priority="5000.00"
+            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints">
+      </command>
    </extension>
 
 </plugin>

@@ -21,7 +21,7 @@ public interface Constants {
 	public static final String CLASS_ATTRIBUTE = "class";
 	public static final String ID_ATTRIBUTE = "id";
 	public static final String TITLE_ATTRIBUTE = "title";
-	public static final String FINDER_ID = "idFinder";
+	public static final String SCRUTINIZE_ID = "scrutinizeId";
 	
 	//Editor ID
 	public static final String EDITOR_ID = "org.polarsys.kitalpha.model.detachment.ui.editor";

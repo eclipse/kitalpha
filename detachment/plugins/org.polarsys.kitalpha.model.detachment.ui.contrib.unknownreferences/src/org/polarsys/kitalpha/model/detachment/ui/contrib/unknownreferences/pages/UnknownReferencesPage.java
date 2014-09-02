@@ -24,12 +24,12 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
-import org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.feedback.Feedback;
-import org.polarsys.kitalpha.model.analysis.interfaces.IFeedback;
-import org.polarsys.kitalpha.model.analysis.interfaces.IFeedback.IFeedbackMessage;
-import org.polarsys.kitalpha.model.analysis.interfaces.IFinder;
-import org.polarsys.kitalpha.model.analysis.registry.ModelAnalysisRegistry;
-import org.polarsys.kitalpha.model.analysis.registry.ModelAnalysisRegistry.RegistryElement;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.feedback.Feedback;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.IFeedbackMessage;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.Messages;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.providers.UnknownReferenceContentProvider;
 import org.polarsys.kitalpha.model.detachment.ui.page.AbstractDetachmentFormPage;
@@ -76,7 +76,7 @@ public class UnknownReferencesPage extends AbstractDetachmentFormPage {
 		tableViewer.setContentProvider(contentProvider);
 		tableViewer.setLabelProvider(contentProvider);
 		
-		RegistryElement regElt = ModelAnalysisRegistry.INSTANCE.getRegistryElement(getFinderID());
+		RegistryElement regElt = ModelScrutinyRegistry.INSTANCE.getRegistryElement(getFinderID());
 		IFeedback unknownReferences = collectUnknownReferences(regElt);
 		
 		
@@ -86,9 +86,9 @@ public class UnknownReferencesPage extends AbstractDetachmentFormPage {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private IFeedback collectUnknownReferences(RegistryElement regElt) {
-		Collection<IFinder> unknownRefFinders = regElt.getFinders();
+		Collection<IScrutinize> unknownRefFinders = regElt.getFinders();
 		IFeedback feedback = new Feedback();
-		for (IFinder iFinder : unknownRefFinders) {
+		for (IScrutinize iFinder : unknownRefFinders) {
 			Object feedBackResult = iFinder.getFeedbackAnalysisMessages();
 			if (feedBackResult instanceof Collection){
 				Collection<IFeedbackMessage> messages = (Collection<IFeedbackMessage>) feedBackResult;

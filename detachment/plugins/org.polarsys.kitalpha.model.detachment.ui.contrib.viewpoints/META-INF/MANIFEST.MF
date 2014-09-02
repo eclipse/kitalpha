@@ -8,7 +8,7 @@ Bundle-Vendor: %VENDOR
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.forms,
- org.polarsys.kitalpha.model.analysis,
+ org.polarsys.kitalpha.model.common.scrutiny,
  org.polarsys.kitalpha.model.detachment.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %REFRESH_ACTIONS_NAME
-Bundle-SymbolicName: org.polarsys.kitalpha.model.actions.contrib.refresh;singleton:=true
+Bundle-Name: %REFRESH_COMMANDS_NAME
+Bundle-SymbolicName: org.polarsys.kitalpha.model.common.commands.contrib.refresh;singleton:=true
 Bundle-Version: 0.5.0.qualifier
-Bundle-Activator: org.polarsys.kitalpha.model.actions.contrib.refresh.Activator
+Bundle-Activator: org.polarsys.kitalpha.model.common.commands.contrib.refresh.Activator
 Bundle-Vendor: %VENDOR
 Require-Bundle: org.eclipse.core.runtime,
- org.polarsys.kitalpha.model.actions,
+ org.polarsys.kitalpha.model.common.commands,
  org.eclipse.sirius,
  org.eclipse.emf.transaction
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

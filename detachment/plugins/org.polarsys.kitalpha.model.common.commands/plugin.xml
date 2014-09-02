@@ -13,6 +13,6 @@ Contributors:
 -->
 
 <plugin>
-   <extension-point id="org.polarsys.kitalpha.model.actions.definition" name="action" schema="schema/action.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.model.common.commands.definition" name="command" schema="schema/command.exsd"/>
 
 </plugin>

@@ -29,12 +29,12 @@ import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
-import org.polarsys.kitalpha.model.analysis.analyzer.Analyzer;
-import org.polarsys.kitalpha.model.analysis.analyzer.ModelAnalyzerException;
-import org.polarsys.kitalpha.model.analysis.contrib.viewpoints.trees.IViewpointTreeDescription;
-import org.polarsys.kitalpha.model.analysis.contrib.viewpoints.trees.ViewpointTreeContainer;
-import org.polarsys.kitalpha.model.analysis.interfaces.IFinder;
-import org.polarsys.kitalpha.model.analysis.registry.ModelAnalysisRegistry.RegistryElement;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.IViewpointTreeDescription;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.ViewpointTreeContainer;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.Messages;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.providers.ViewpointTreeLabelProvider;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.providers.ViewpointTreeProvider;
@@ -97,17 +97,17 @@ public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 		RegistryElement regElt = null;
 		
 		try {
-			regElt = Analyzer.getRegistryElement(getFinderID());	
-		} catch (ModelAnalyzerException e) {
+			regElt = Scrutineer.getRegistryElement(getFinderID());	
+		} catch (ModelScrutinyException e) {
 			e.printStackTrace();
 		}
 		
 		treeViewer.setInput(null);
 		
 		if (regElt != null){
-			Iterator<IFinder> it = regElt.getFinders().iterator();
+			Iterator<IScrutinize> it = regElt.getFinders().iterator();
 			while (it.hasNext()){
-				IFinder<ViewpointTreeContainer, Object> next = it.next();
+				IScrutinize<ViewpointTreeContainer, Object> next = it.next();
 				treeViewer.setInput(next.getAnalysisResult());
 			}
 			treeViewer.expandAll();

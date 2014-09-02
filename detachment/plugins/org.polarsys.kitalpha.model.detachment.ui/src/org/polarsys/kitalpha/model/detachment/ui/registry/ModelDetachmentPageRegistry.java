@@ -51,7 +51,7 @@ public class ModelDetachmentPageRegistry {
 						String pageClass = config.getAttribute(Constants.CLASS_ATTRIBUTE);
 						String id = config .getAttribute(Constants.ID_ATTRIBUTE);
 						String title = config.getAttribute(Constants.TITLE_ATTRIBUTE);
-						String finder_id = config.getAttribute(Constants.FINDER_ID);
+						String finder_id = config.getAttribute(Constants.SCRUTINIZE_ID);
 						
 						String contributorID = config.getContributor().getName();
 						//TODO handle when return is null, otherwise handle it in newformpageinstancewithparameters() by catching an exception
