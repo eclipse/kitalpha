@@ -20,6 +20,7 @@ Contributors:
             class="org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.pages.UnknownReferencesPage"
             id="org.polarsys.kitalpha.model.detachment.ui.contrib.pages.unknownreferences"
             idFinder="org.polarsys.kitalpha.model.analysis.contribution.finders.analysis.unknownReference"
+            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutinizes.unknownReference"
             title="Unknown references">
       </page>
    </extension>

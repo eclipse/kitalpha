@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.polarsys.kitalpha.model.actions.contrib.backup</name>
+	<name>org.polarsys.kitalpha.model.common.commands.contrib.backup</name>
 	<comment></comment>
 	<projects>
 	</projects>

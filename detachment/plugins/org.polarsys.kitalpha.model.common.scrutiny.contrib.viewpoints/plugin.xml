@@ -15,14 +15,14 @@ Contributors:
 
 <plugin>
    <extension
-         point="org.polarsys.kitalpha.model.analysis.finder">
-      <analysis
-            id="org.polarsys.kitalpha.model.analysis.contribution.finders.analysis.viewpoints"
+         point="org.polarsys.kitalpha.model.common.scrutiny.scrutinize">
+      <scrutiny
+            id="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints"
             name="Viewpoints">
          <class
-               finder="org.polarsys.kitalpha.model.analysis.contrib.viewpoints.finders.UsedAFViewpoints">
+               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes.UsedAFViewpoints">
          </class>
-      </analysis>
+      </scrutiny>
    </extension>
 
 </plugin>

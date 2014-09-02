@@ -7,14 +7,14 @@ Bundle-Activator: org.polarsys.kitalpha.model.detachment.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.forms,
- org.polarsys.kitalpha.model.analysis;visibility:=reexport,
- org.polarsys.kitalpha.model.analysis.contrib.unknownreferences;visibility:=reexport,
+ org.polarsys.kitalpha.model.common.scrutiny;visibility:=reexport,
+ org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences;visibility:=reexport,
  org.eclipse.ui.editors,
- org.polarsys.kitalpha.model.analysis.contrib.viewpoints;visibility:=reexport,
+ org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints;visibility:=reexport,
  org.eclipse.core.resources,
  org.eclipse.sirius,
  org.eclipse.ui.ide,
- org.polarsys.kitalpha.model.actions
+ org.polarsys.kitalpha.model.common.commands
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %VENDOR

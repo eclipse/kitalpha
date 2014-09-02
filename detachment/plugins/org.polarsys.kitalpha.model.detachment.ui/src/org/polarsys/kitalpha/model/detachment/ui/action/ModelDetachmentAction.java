@@ -28,7 +28,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
-import org.polarsys.kitalpha.model.analysis.analyzer.Analyzer;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentEditorInput;
 import org.polarsys.kitalpha.model.detachment.ui.editor.ModelDetachment;
@@ -52,7 +52,7 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 		try {
 			if (airdIResource != null){
 				Resource resource = (new LoadResource(airdIResource)).getResource();
-				Analyzer.startAnalysis(resource);
+				Scrutineer.startScrutiny(resource);
 				
 				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 				IEditorPart editor = IDE.openEditor(page, detachmentInput, Constants.EDITOR_ID);

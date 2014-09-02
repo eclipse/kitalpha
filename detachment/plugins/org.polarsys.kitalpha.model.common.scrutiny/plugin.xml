@@ -13,6 +13,6 @@ Contributors:
 -->
 
 <plugin>
-   <extension-point id="org.polarsys.kitalpha.model.analysis.finder" name="finder" schema="schema/finder.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.model.common.scrutiny.scrutinize" name="scrutinize" schema="schema/scrutinize.exsd"/>
 
 </plugin>

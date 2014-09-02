@@ -15,26 +15,26 @@ Contributors:
 
 <plugin>
    <extension
-         point="org.polarsys.kitalpha.model.analysis.finder">
-      <analysis
-            id="org.polarsys.kitalpha.model.analysis.contribution.finders.analysis.unknownReference"
+         point="org.polarsys.kitalpha.model.common.scrutiny.scrutinize">
+      <scrutiny
+            id="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutinizes.unknownReference"
             name="Unknown References">
          <class
-               finder="org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.finders.InvalidDMapping">
+               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDMapping">
          </class>
          <class
-               finder="org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.finders.InvalidDRepresentationContainer">
+               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDRepresentationContainer">
          </class>
          <class
-               finder="org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.finders.InvalidFilterDescription">
+               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidFilterDescription">
          </class>
          <class
-               finder="org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.finders.InvalidLayer">
+               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidLayer">
          </class>
          <class
-               finder="org.polarsys.kitalpha.model.analysis.contrib.unknownreferences.finders.MissingEPackage">
+               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.MissingEPackage">
          </class>
-      </analysis>
+      </scrutiny>
    </extension>
 
 </plugin>

@@ -39,8 +39,8 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.SharedHeaderFormEditor;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.osgi.framework.Bundle;
-import org.polarsys.kitalpha.model.actions.exception.ModelActionException;
-import org.polarsys.kitalpha.model.actions.runner.ModelActionRunner;
+import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
+import org.polarsys.kitalpha.model.common.commands.runner.ModelCommandRunner;
 import org.polarsys.kitalpha.model.detachment.ui.Activator;
 import org.polarsys.kitalpha.model.detachment.ui.Messages;
 import org.polarsys.kitalpha.model.detachment.ui.page.AbstractDetachmentFormPage;
@@ -76,7 +76,7 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 				@Override
 				public void run(){
 
-					final ModelActionRunner actionRunner = new ModelActionRunner();
+					final ModelCommandRunner actionRunner = new ModelCommandRunner();
 					
 					final Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 
@@ -107,7 +107,7 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 											
 											
 											
-										} catch (final ModelActionException e) {
+										} catch (final ModelCommandException e) {
 
 											Display.getDefault().syncExec(new Runnable() {
 												

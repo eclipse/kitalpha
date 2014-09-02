@@ -15,13 +15,13 @@ Contributors:
 
 <plugin>
    <extension
-         point="org.polarsys.kitalpha.model.actions.definition">
-      <action
-            class="org.polarsys.kitalpha.model.actions.contrib.unknownreferences.action.UnknownreferencesCleaner"
-            finderId="org.polarsys.kitalpha.model.analysis.contribution.finders.analysis.unknownReference"
-            id="org.polarsys.kitalpha.model.actions.contrib.detachment.unknownreferencesCleaner"
-            priority="1000.00">
-      </action>
+         point="org.polarsys.kitalpha.model.common.commands.definition">
+      <command
+            class="org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.command.UnknownreferencesCleaner"
+            id="org.polarsys.kitalpha.model.common.commands.contrib.detachment.unknownreferencesCleaner"
+            priority="1000.00"
+            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutinizes.unknownReference">
+      </command>
    </extension>
 
 </plugin>

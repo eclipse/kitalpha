@@ -20,6 +20,7 @@ Contributors:
             class="org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.pages.ViewpointsHierarchyPage"
             id="org.polarsys.kitalpha.model.detachment.ui.contrib.pages.viewpoints"
             idFinder="org.polarsys.kitalpha.model.analysis.contribution.finders.analysis.viewpoints"
+            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints"
             title="Viewpoints Tree Page">
       </page>
    </extension>

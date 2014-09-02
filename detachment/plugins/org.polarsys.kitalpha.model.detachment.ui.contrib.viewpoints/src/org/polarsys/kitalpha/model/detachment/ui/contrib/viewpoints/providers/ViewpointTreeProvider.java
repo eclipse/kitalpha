@@ -12,8 +12,8 @@ package org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.providers;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import org.polarsys.kitalpha.model.analysis.contrib.viewpoints.trees.IViewpointTreeDescription;
-import org.polarsys.kitalpha.model.analysis.contrib.viewpoints.trees.ViewpointTreeContainer;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.IViewpointTreeDescription;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.ViewpointTreeContainer;
 
 /**
  * @author Faycal Abka
