@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.polarsys.kitalpha.model.actions.feature"
-      label="%MODEL_ACTIONS_FEATRE_NAME"
+      id="org.polarsys.kitalpha.model.common.commands.feature"
+      label="%MODEL_CMD_FEATURE_NAME"
       version="0.5.0.qualifier"
       provider-name="%providerName">
 
@@ -18,42 +18,42 @@
    </license>
 
    <plugin
-         id="org.polarsys.kitalpha.model.actions"
+         id="org.polarsys.kitalpha.model.common.commands"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.kitalpha.model.actions.contrib.backup"
+         id="org.polarsys.kitalpha.model.common.commands.contrib.backup"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.kitalpha.model.actions.contrib.refresh"
+         id="org.polarsys.kitalpha.model.common.commands.contrib.refresh"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.kitalpha.model.actions.contrib.resourcesChecker"
+         id="org.polarsys.kitalpha.model.common.commands.contrib.resourcesChecker"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.kitalpha.model.actions.contrib.unknownreferences"
+         id="org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.kitalpha.model.actions.contrib.viewpoints"
+         id="org.polarsys.kitalpha.model.common.commands.contrib.viewpoints"
          download-size="0"
          install-size="0"
          version="0.0.0"
