@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.polarsys.kitalpha.model.analysis.feature"
-      label="%MODEL_ANALYSIS_FEATRE_NAME"
+      id="org.polarsys.kitalpha.model.common.scrutiny.feature"
+      label="%MODEL_SECRUTINY_FEATRE_NAME"
       version="0.5.0.qualifier"
       provider-name="%providerName">
 
@@ -18,21 +18,21 @@
    </license>
 
    <plugin
-         id="org.polarsys.kitalpha.model.analysis"
+         id="org.polarsys.kitalpha.model.common.scrutiny"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.kitalpha.model.analysis.contrib.unknownreferences"
+         id="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.kitalpha.model.analysis.contrib.viewpoints"
+         id="org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints"
          download-size="0"
          install-size="0"
          version="0.0.0"
