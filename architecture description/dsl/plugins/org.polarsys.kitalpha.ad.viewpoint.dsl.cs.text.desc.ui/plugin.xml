@@ -402,5 +402,18 @@ Contributors:
           </action>
        </viewerContribution>
     </extension>
+      <extension
+            point="org.eclipse.ui.decorators">
+         <decorator
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator.SpecFileDecorator"
+               icon="icons/spec_overlay.gif"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui.decorator1"
+               label="%ICON_DECORATOR_LABEL"
+               lightweight="true"
+               location="TOP_RIGHT"
+               objectClass="org.eclipse.core.resources.IResource"
+               state="true">
+         </decorator>
+      </extension>
     
 </plugin>
