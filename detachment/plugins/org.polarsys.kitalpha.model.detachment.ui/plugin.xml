@@ -33,9 +33,9 @@ Contributors:
             nameFilter="*.aird"
             objectClass="org.eclipse.core.resources.IResource">
          <menu
-               icon="icons/detach_icon.png"
+               icon="icons/Kitalpha_Logo_alpha.png"
                id="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription"
-               label="%AD_POPUPMENU_NAME"
+               label="%MODEL_POPUPMENU_NAME"
                path="additions">
             <groupMarker
                   name="%AD_MODEL_DETACHMENT_NAME">
@@ -45,7 +45,7 @@ Contributors:
                class="org.polarsys.kitalpha.model.detachment.ui.action.ModelDetachmentAction"
                icon="icons/detach_icon.png"
                id="org.polarsys.kitalpha.model.detachment.ui.detachment"
-               label="%AD_MODEL_DETACHMENT_NAME"
+               label="%MODEL_MODEL_DETACHMENT_NAME"
                menubarPath="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription/detachment">
          </action>
       </objectContribution>
