@@ -35,8 +35,8 @@
       <import feature="org.polarsys.kitalpha.ad.dsl.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.cadence.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.accuracy.feature" version="0.5.0.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.services.detachment.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.representation.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.detachment.feature" version="0.5.0.qualifier"/>
    </requires>
 
 </feature>
