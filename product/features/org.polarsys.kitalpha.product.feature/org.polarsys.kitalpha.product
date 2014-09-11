@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Kitalpha" uid="org.polarsys.kitalpha.product" id="org.polarsys.kitalpha.product" application="org.polarsys.kitalpha.application" useFeatures="false" includeLaunchers="false">
+
+   <aboutInfo>
+      <image path="/org.polarsys.kitalpha.product/icons/KitalphaAbout.png"/>
+      <text>
+         Kitalpha
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/org.polarsys.kitalpha.product/icons/Kitalpha16x16.png" i32="/org.polarsys.kitalpha.product/icons/Kitalpha32x32.png" i48="/org.polarsys.kitalpha.product/icons/Kitalpha48x48.png"/>
+
+   <splash
+      location="org.polarsys.kitalpha.product" />
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+
+</product>

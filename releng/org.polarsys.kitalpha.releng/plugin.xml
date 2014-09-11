@@ -7,6 +7,9 @@
       <fcore
             id="egf/Generation.fcore">
       </fcore>
+      <fcore
+            id="egf/customPlatform.fcore">
+      </fcore>
    </extension>
 
 </plugin>

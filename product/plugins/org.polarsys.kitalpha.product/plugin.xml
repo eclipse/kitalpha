@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.polarsys.kitalpha.product.PerspectiveFactory"
+            icon="icons/Kitalpha16x16.png"
+            id="org.polarsys.kitalpha.product.perspective"
+            name="Kitalpha">
+         <description>
+            This is the Kitalpha Perspective.
+         </description>
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.polarsys.kitalpha.product.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         id="org.polarsys.kitalpha.application"
+         name="Kitalpha"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            icon="icons/Kitalpha16x16.png"
+            thread="main"
+            visible="true">
+         <run
+               class="org.polarsys.kitalpha.product.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="org.polarsys.kitalpha.product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.polarsys.kitalpha.application"
+            name="Kitalpha">
+         <property
+               name="windowImages"
+               value="icons/Kitalpha16x16.png,icons/Kitalpha32x32.png,icons/Kitalpha48x48.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Kitalpha platform provided by Thales Corporate Services S.A.S">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/KitalphaAbout.png">
+         </property>
+         <property
+               name="appName"
+               value="Kitalpha">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="org.polarsys.kitalpha.product.KitalphaSplashHandler"
+            id="org.polarsys.kitalpha.product.splashHandler">
+      </splashHandler>
+      <splashHandlerProductBinding
+            productId="org.polarsys.kitalpha.product"
+            splashId="org.polarsys.kitalpha.product.splashHandler">
+      </splashHandlerProductBinding>
+   </extension>
+
+</plugin>

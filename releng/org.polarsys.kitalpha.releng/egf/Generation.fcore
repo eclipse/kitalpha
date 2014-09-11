@@ -13,7 +13,7 @@
     <viewpointContainer xmi:id="_wBJ7II3DEd-jLJFvCqxXvA">
       <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_wScfcI3DEd-jLJFvCqxXvA">
         <domains xmi:type="domain:EMFDomain" xmi:id="_4o2qMd8yEeKiPNz7tWm6rg" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
-            uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_1.0.egfbuild"/>
+            uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_product.egfbuild"/>
         <domains xmi:type="domain:EMFDomain" xmi:id="_QK8XYY4-EeOQ8YcnVfa6Wg" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
             uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_juno.egfbuild"/>
         <domains xmi:type="domain:EMFDomain" xmi:id="_WV6e0RD2EeS3h6_GdwVh4g" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
