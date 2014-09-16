@@ -140,7 +140,10 @@ public class ViewpointManager {
 		if (vpDependencies == null)
 			dependencies.put(vpResource.getId(), vpDependencies = new ArrayList<String>());
 		vpDependencies.clear();
-		for (Viewpoint dep : vp.getDependencies()) {
+		List<Viewpoint> dependencies = new ArrayList<Viewpoint>(10);
+		dependencies.addAll(vp.getDependencies());
+		dependencies.addAll(vp.getParents());
+		for (Viewpoint dep : dependencies) {
 			String id = dep.getId();
 			vpDependencies.add(id);
 			if (!activated.contains(id))
