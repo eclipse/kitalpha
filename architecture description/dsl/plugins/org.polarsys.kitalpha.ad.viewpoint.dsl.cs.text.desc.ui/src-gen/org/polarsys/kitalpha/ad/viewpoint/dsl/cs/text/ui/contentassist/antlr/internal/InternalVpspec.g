@@ -1256,11 +1256,11 @@ rule__Viewpoint__Group_8__0__Impl
     }
 :
 (
-{ before(grammarAccess.getViewpointAccess().getUseViewpointKeyword_8_0()); }
+{ before(grammarAccess.getViewpointAccess().getUsesViewpointKeyword_8_0()); }
 
-	'use viewpoint:' 
+	'uses viewpoint:' 
 
-{ after(grammarAccess.getViewpointAccess().getUseViewpointKeyword_8_0()); }
+{ after(grammarAccess.getViewpointAccess().getUsesViewpointKeyword_8_0()); }
 )
 
 ;
@@ -1413,11 +1413,11 @@ rule__Viewpoint__Group_9__0__Impl
     }
 :
 (
-{ before(grammarAccess.getViewpointAccess().getUseAnyEMFKeyword_9_0()); }
+{ before(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); }
 
-	'use anyEMF:' 
+	'uses model:' 
 
-{ after(grammarAccess.getViewpointAccess().getUseAnyEMFKeyword_9_0()); }
+{ after(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); }
 )
 
 ;
@@ -1570,11 +1570,11 @@ rule__Viewpoint__Group_10__0__Impl
     }
 :
 (
-{ before(grammarAccess.getViewpointAccess().getUseDiagramKeyword_10_0()); }
+{ before(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); }
 
-	'use diagram:' 
+	'uses diagram:' 
 
-{ after(grammarAccess.getViewpointAccess().getUseDiagramKeyword_10_0()); }
+{ after(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); }
 )
 
 ;
@@ -1727,11 +1727,11 @@ rule__Viewpoint__Group_11__0__Impl
     }
 :
 (
-{ before(grammarAccess.getViewpointAccess().getUseWorkspaceKeyword_11_0()); }
+{ before(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); }
 
-	'use workspace:' 
+	'uses workspace:' 
 
-{ after(grammarAccess.getViewpointAccess().getUseWorkspaceKeyword_11_0()); }
+{ after(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); }
 )
 
 ;
@@ -1884,11 +1884,11 @@ rule__Viewpoint__Group_12__0__Impl
     }
 :
 (
-{ before(grammarAccess.getViewpointAccess().getUseFilesystemKeyword_12_0()); }
+{ before(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); }
 
-	'use filesystem:' 
+	'uses filesystem:' 
 
-{ after(grammarAccess.getViewpointAccess().getUseFilesystemKeyword_12_0()); }
+{ after(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); }
 )
 
 ;
