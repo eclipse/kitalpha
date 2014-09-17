@@ -62,23 +62,23 @@ public class VpspecContentProposalPriorities extends ContentProposalPriorities {
 				keywordPriority = dependenciesPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUseViewpointKeyword_8_0().getValue())){
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUsesViewpointKeyword_8_0().getValue())){
 				keywordPriority = useViewpointPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUseAnyEMFKeyword_9_0().getValue())){
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUsesModelKeyword_9_0().getValue())){
 				keywordPriority = useAnyEMFPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUseDiagramKeyword_10_0().getValue())){
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUsesDiagramKeyword_10_0().getValue())){
 				keywordPriority = useDiagramPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUseWorkspaceKeyword_11_0().getValue())){
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUsesWorkspaceKeyword_11_0().getValue())){
 				keywordPriority = useWorkspacePriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUseFilesystemKeyword_12_0().getValue())){
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getUsesFilesystemKeyword_12_0().getValue())){
 				keywordPriority = useFileSystemPriority;
 				affected = true;
 			}

@@ -56,7 +56,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cDependenciesViewpointCrossReference_7_2_1_0 = (CrossReference)cDependenciesAssignment_7_2_1.eContents().get(0);
 		private final RuleCall cDependenciesViewpointFQNParserRuleCall_7_2_1_0_1 = (RuleCall)cDependenciesViewpointCrossReference_7_2_1_0.eContents().get(1);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cUseViewpointKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cUsesViewpointKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Assignment cUseViewpointAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
 		private final CrossReference cUseViewpointViewpointCrossReference_8_1_0 = (CrossReference)cUseViewpointAssignment_8_1.eContents().get(0);
 		private final RuleCall cUseViewpointViewpointFQNParserRuleCall_8_1_0_1 = (RuleCall)cUseViewpointViewpointCrossReference_8_1_0.eContents().get(1);
@@ -66,7 +66,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cUseViewpointViewpointCrossReference_8_2_1_0 = (CrossReference)cUseViewpointAssignment_8_2_1.eContents().get(0);
 		private final RuleCall cUseViewpointViewpointFQNParserRuleCall_8_2_1_0_1 = (RuleCall)cUseViewpointViewpointCrossReference_8_2_1_0.eContents().get(1);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cUseAnyEMFKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cUsesModelKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Assignment cUseAnyEMFResourceAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
 		private final RuleCall cUseAnyEMFResourceEStringParserRuleCall_9_1_0 = (RuleCall)cUseAnyEMFResourceAssignment_9_1.eContents().get(0);
 		private final Group cGroup_9_2 = (Group)cGroup_9.eContents().get(2);
@@ -74,7 +74,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUseAnyEMFResourceAssignment_9_2_1 = (Assignment)cGroup_9_2.eContents().get(1);
 		private final RuleCall cUseAnyEMFResourceEStringParserRuleCall_9_2_1_0 = (RuleCall)cUseAnyEMFResourceAssignment_9_2_1.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cUseDiagramKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cUsesDiagramKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Assignment cUseDiagramResourceAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
 		private final RuleCall cUseDiagramResourceEStringParserRuleCall_10_1_0 = (RuleCall)cUseDiagramResourceAssignment_10_1.eContents().get(0);
 		private final Group cGroup_10_2 = (Group)cGroup_10.eContents().get(2);
@@ -82,7 +82,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUseDiagramResourceAssignment_10_2_1 = (Assignment)cGroup_10_2.eContents().get(1);
 		private final RuleCall cUseDiagramResourceEStringParserRuleCall_10_2_1_0 = (RuleCall)cUseDiagramResourceAssignment_10_2_1.eContents().get(0);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cUseWorkspaceKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Keyword cUsesWorkspaceKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
 		private final Assignment cUseWorkspaceResourceAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
 		private final RuleCall cUseWorkspaceResourceEStringParserRuleCall_11_1_0 = (RuleCall)cUseWorkspaceResourceAssignment_11_1.eContents().get(0);
 		private final Group cGroup_11_2 = (Group)cGroup_11.eContents().get(2);
@@ -90,7 +90,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cUseWorkspaceResourceAssignment_11_2_1 = (Assignment)cGroup_11_2.eContents().get(1);
 		private final RuleCall cUseWorkspaceResourceEStringParserRuleCall_11_2_1_0 = (RuleCall)cUseWorkspaceResourceAssignment_11_2_1.eContents().get(0);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cUseFilesystemKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Keyword cUsesFilesystemKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
 		private final Assignment cUseFSResourceAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
 		private final RuleCall cUseFSResourceEStringParserRuleCall_12_1_0 = (RuleCall)cUseFSResourceAssignment_12_1.eContents().get(0);
 		private final Group cGroup_12_2 = (Group)cGroup_12.eContents().get(2);
@@ -148,15 +148,15 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	parents+=[Viewpoint|FQN])*)? ("aggregates" dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
 		//
-		//	("use viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
+		//	("uses viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
 		//
-		//	("use anyEMF:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("use diagram:"
+		//	("uses model:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram:"
 		//
-		//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("use workspace:" useWorkspaceResource+=EString (","
+		//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("uses workspace:" useWorkspaceResource+=EString
 		//
-		//	useWorkspaceResource+=EString)*)? ("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
+		//	("," useWorkspaceResource+=EString)*)? ("uses filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)?
 		//
-		//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
+		//	("Data" VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
 		//
 		//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 		//
@@ -169,13 +169,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//parents+=[Viewpoint|FQN])*)? ("aggregates" dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
 		//
-		//("use viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
+		//("uses viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
 		//
-		//("use anyEMF:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("use diagram:"
+		//("uses model:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram:"
 		//
-		//useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("use workspace:" useWorkspaceResource+=EString (","
+		//useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("uses workspace:" useWorkspaceResource+=EString (","
 		//
-		//useWorkspaceResource+=EString)*)? ("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
+		//useWorkspaceResource+=EString)*)? ("uses filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
 		//
 		//VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
 		//
@@ -283,11 +283,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getDependenciesViewpointFQNParserRuleCall_7_2_1_0_1() { return cDependenciesViewpointFQNParserRuleCall_7_2_1_0_1; }
 
-		//("use viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)?
+		//("uses viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"use viewpoint:"
-		public Keyword getUseViewpointKeyword_8_0() { return cUseViewpointKeyword_8_0; }
+		//"uses viewpoint:"
+		public Keyword getUsesViewpointKeyword_8_0() { return cUsesViewpointKeyword_8_0; }
 
 		//useViewpoint+=[Viewpoint|FQN]
 		public Assignment getUseViewpointAssignment_8_1() { return cUseViewpointAssignment_8_1; }
@@ -313,11 +313,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getUseViewpointViewpointFQNParserRuleCall_8_2_1_0_1() { return cUseViewpointViewpointFQNParserRuleCall_8_2_1_0_1; }
 
-		//("use anyEMF:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)?
+		//("uses model:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"use anyEMF:"
-		public Keyword getUseAnyEMFKeyword_9_0() { return cUseAnyEMFKeyword_9_0; }
+		//"uses model:"
+		public Keyword getUsesModelKeyword_9_0() { return cUsesModelKeyword_9_0; }
 
 		//useAnyEMFResource+=EString
 		public Assignment getUseAnyEMFResourceAssignment_9_1() { return cUseAnyEMFResourceAssignment_9_1; }
@@ -337,11 +337,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseAnyEMFResourceEStringParserRuleCall_9_2_1_0() { return cUseAnyEMFResourceEStringParserRuleCall_9_2_1_0; }
 
-		//("use diagram:" useDiagramResource+=EString ("," useDiagramResource+=EString)*)?
+		//("uses diagram:" useDiagramResource+=EString ("," useDiagramResource+=EString)*)?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"use diagram:"
-		public Keyword getUseDiagramKeyword_10_0() { return cUseDiagramKeyword_10_0; }
+		//"uses diagram:"
+		public Keyword getUsesDiagramKeyword_10_0() { return cUsesDiagramKeyword_10_0; }
 
 		//useDiagramResource+=EString
 		public Assignment getUseDiagramResourceAssignment_10_1() { return cUseDiagramResourceAssignment_10_1; }
@@ -361,11 +361,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseDiagramResourceEStringParserRuleCall_10_2_1_0() { return cUseDiagramResourceEStringParserRuleCall_10_2_1_0; }
 
-		//("use workspace:" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
+		//("uses workspace:" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"use workspace:"
-		public Keyword getUseWorkspaceKeyword_11_0() { return cUseWorkspaceKeyword_11_0; }
+		//"uses workspace:"
+		public Keyword getUsesWorkspaceKeyword_11_0() { return cUsesWorkspaceKeyword_11_0; }
 
 		//useWorkspaceResource+=EString
 		public Assignment getUseWorkspaceResourceAssignment_11_1() { return cUseWorkspaceResourceAssignment_11_1; }
@@ -385,11 +385,11 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseWorkspaceResourceEStringParserRuleCall_11_2_1_0() { return cUseWorkspaceResourceEStringParserRuleCall_11_2_1_0; }
 
-		//("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)?
+		//("uses filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//"use filesystem:"
-		public Keyword getUseFilesystemKeyword_12_0() { return cUseFilesystemKeyword_12_0; }
+		//"uses filesystem:"
+		public Keyword getUsesFilesystemKeyword_12_0() { return cUsesFilesystemKeyword_12_0; }
 
 		//useFSResource+=EString
 		public Assignment getUseFSResourceAssignment_12_1() { return cUseFSResourceAssignment_12_1; }
@@ -573,15 +573,15 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	parents+=[Viewpoint|FQN])*)? ("aggregates" dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
 	//
-	//	("use viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
+	//	("uses viewpoint:" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
 	//
-	//	("use anyEMF:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("use diagram:"
+	//	("uses model:" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram:"
 	//
-	//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("use workspace:" useWorkspaceResource+=EString (","
+	//	useDiagramResource+=EString ("," useDiagramResource+=EString)*)? ("uses workspace:" useWorkspaceResource+=EString
 	//
-	//	useWorkspaceResource+=EString)*)? ("use filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
+	//	("," useWorkspaceResource+=EString)*)? ("uses filesystem:" useFSResource+=EString ("," useFSResource+=EString)*)?
 	//
-	//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
+	//	("Data" VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
 	//
 	//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 	//

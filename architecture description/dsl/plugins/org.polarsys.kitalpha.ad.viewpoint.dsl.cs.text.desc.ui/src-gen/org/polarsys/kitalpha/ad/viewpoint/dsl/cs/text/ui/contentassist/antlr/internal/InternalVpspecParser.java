@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalVpspecParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Viewpoint'", "'{'", "'}'", "'name:'", "'description:'", "'extends'", "','", "'aggregates'", "'use viewpoint:'", "'use anyEMF:'", "'use diagram:'", "'use workspace:'", "'use filesystem:'", "'Data'", "'.'", "'UI'", "'Diagrams'", "'Services'", "'Build'", "'Configuration'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Viewpoint'", "'{'", "'}'", "'name:'", "'description:'", "'extends'", "','", "'aggregates'", "'uses viewpoint:'", "'uses model:'", "'uses diagram:'", "'uses workspace:'", "'uses filesystem:'", "'Data'", "'.'", "'UI'", "'Diagrams'", "'Services'", "'Build'", "'Configuration'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -3557,24 +3557,24 @@ public class InternalVpspecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoint__Group_8__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1253:1: rule__Viewpoint__Group_8__0__Impl : ( 'use viewpoint:' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1253:1: rule__Viewpoint__Group_8__0__Impl : ( 'uses viewpoint:' ) ;
     public final void rule__Viewpoint__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1257:1: ( ( 'use viewpoint:' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1258:1: ( 'use viewpoint:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1257:1: ( ( 'uses viewpoint:' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1258:1: ( 'uses viewpoint:' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1258:1: ( 'use viewpoint:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1259:1: 'use viewpoint:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1258:1: ( 'uses viewpoint:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1259:1: 'uses viewpoint:'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getViewpointAccess().getUseViewpointKeyword_8_0()); 
+               before(grammarAccess.getViewpointAccess().getUsesViewpointKeyword_8_0()); 
             }
             match(input,19,FOLLOW_19_in_rule__Viewpoint__Group_8__0__Impl2462); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getViewpointAccess().getUseViewpointKeyword_8_0()); 
+               after(grammarAccess.getViewpointAccess().getUsesViewpointKeyword_8_0()); 
             }
 
             }
@@ -3990,24 +3990,24 @@ public class InternalVpspecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoint__Group_9__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1410:1: rule__Viewpoint__Group_9__0__Impl : ( 'use anyEMF:' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1410:1: rule__Viewpoint__Group_9__0__Impl : ( 'uses model:' ) ;
     public final void rule__Viewpoint__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1414:1: ( ( 'use anyEMF:' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1415:1: ( 'use anyEMF:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1414:1: ( ( 'uses model:' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1415:1: ( 'uses model:' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1415:1: ( 'use anyEMF:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1416:1: 'use anyEMF:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1415:1: ( 'uses model:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1416:1: 'uses model:'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getViewpointAccess().getUseAnyEMFKeyword_9_0()); 
+               before(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); 
             }
             match(input,20,FOLLOW_20_in_rule__Viewpoint__Group_9__0__Impl2771); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getViewpointAccess().getUseAnyEMFKeyword_9_0()); 
+               after(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); 
             }
 
             }
@@ -4423,24 +4423,24 @@ public class InternalVpspecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoint__Group_10__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1567:1: rule__Viewpoint__Group_10__0__Impl : ( 'use diagram:' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1567:1: rule__Viewpoint__Group_10__0__Impl : ( 'uses diagram:' ) ;
     public final void rule__Viewpoint__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1571:1: ( ( 'use diagram:' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1572:1: ( 'use diagram:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1571:1: ( ( 'uses diagram:' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1572:1: ( 'uses diagram:' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1572:1: ( 'use diagram:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1573:1: 'use diagram:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1572:1: ( 'uses diagram:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1573:1: 'uses diagram:'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getViewpointAccess().getUseDiagramKeyword_10_0()); 
+               before(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); 
             }
             match(input,21,FOLLOW_21_in_rule__Viewpoint__Group_10__0__Impl3080); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getViewpointAccess().getUseDiagramKeyword_10_0()); 
+               after(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); 
             }
 
             }
@@ -4856,24 +4856,24 @@ public class InternalVpspecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoint__Group_11__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1724:1: rule__Viewpoint__Group_11__0__Impl : ( 'use workspace:' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1724:1: rule__Viewpoint__Group_11__0__Impl : ( 'uses workspace:' ) ;
     public final void rule__Viewpoint__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1728:1: ( ( 'use workspace:' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1729:1: ( 'use workspace:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1728:1: ( ( 'uses workspace:' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1729:1: ( 'uses workspace:' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1729:1: ( 'use workspace:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1730:1: 'use workspace:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1729:1: ( 'uses workspace:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1730:1: 'uses workspace:'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getViewpointAccess().getUseWorkspaceKeyword_11_0()); 
+               before(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); 
             }
             match(input,22,FOLLOW_22_in_rule__Viewpoint__Group_11__0__Impl3389); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getViewpointAccess().getUseWorkspaceKeyword_11_0()); 
+               after(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); 
             }
 
             }
@@ -5289,24 +5289,24 @@ public class InternalVpspecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoint__Group_12__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1881:1: rule__Viewpoint__Group_12__0__Impl : ( 'use filesystem:' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1881:1: rule__Viewpoint__Group_12__0__Impl : ( 'uses filesystem:' ) ;
     public final void rule__Viewpoint__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1885:1: ( ( 'use filesystem:' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1886:1: ( 'use filesystem:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1885:1: ( ( 'uses filesystem:' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1886:1: ( 'uses filesystem:' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1886:1: ( 'use filesystem:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1887:1: 'use filesystem:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1886:1: ( 'uses filesystem:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalVpspec.g:1887:1: 'uses filesystem:'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getViewpointAccess().getUseFilesystemKeyword_12_0()); 
+               before(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); 
             }
             match(input,23,FOLLOW_23_in_rule__Viewpoint__Group_12__0__Impl3698); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getViewpointAccess().getUseFilesystemKeyword_12_0()); 
+               after(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); 
             }
 
             }

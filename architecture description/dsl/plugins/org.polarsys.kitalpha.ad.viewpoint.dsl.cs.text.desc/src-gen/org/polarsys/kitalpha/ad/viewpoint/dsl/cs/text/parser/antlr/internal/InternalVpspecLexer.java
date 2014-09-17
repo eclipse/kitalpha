@@ -204,10 +204,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:18:7: ( 'use viewpoint:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:18:9: 'use viewpoint:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:18:7: ( 'uses viewpoint:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:18:9: 'uses viewpoint:'
             {
-            match("use viewpoint:"); 
+            match("uses viewpoint:"); 
 
 
             }
@@ -225,10 +225,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:7: ( 'use anyEMF:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:9: 'use anyEMF:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:7: ( 'uses model:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:9: 'uses model:'
             {
-            match("use anyEMF:"); 
+            match("uses model:"); 
 
 
             }
@@ -246,10 +246,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:7: ( 'use diagram:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:9: 'use diagram:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:7: ( 'uses diagram:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:9: 'uses diagram:'
             {
-            match("use diagram:"); 
+            match("uses diagram:"); 
 
 
             }
@@ -267,10 +267,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:7: ( 'use workspace:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:9: 'use workspace:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:7: ( 'uses workspace:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:9: 'uses workspace:'
             {
-            match("use workspace:"); 
+            match("uses workspace:"); 
 
 
             }
@@ -288,10 +288,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:7: ( 'use filesystem:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:9: 'use filesystem:'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:7: ( 'uses filesystem:' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:9: 'uses filesystem:'
             {
-            match("use filesystem:"); 
+            match("uses filesystem:"); 
 
 
             }
@@ -1188,44 +1188,44 @@ public class InternalVpspecLexer extends Lexer {
     static final String DFA12_eotS =
         "\1\uffff\1\31\1\uffff\3\31\1\uffff\7\31\2\uffff\1\27\2\uffff\3"+
         "\27\2\uffff\1\31\2\uffff\3\31\1\uffff\4\31\1\66\3\31\7\uffff\10"+
-        "\31\1\uffff\10\31\1\uffff\1\117\5\31\1\uffff\3\31\6\uffff\2\31\1"+
-        "\132\7\31\1\uffff\3\31\1\145\6\31\1\uffff\1\31\1\155\1\156\1\31"+
-        "\1\160\2\31\2\uffff\1\31\1\uffff\1\31\1\165\2\31\1\uffff\1\31\1"+
-        "\uffff\1\31\1\172\1\uffff";
+        "\31\1\uffff\11\31\1\113\5\31\1\uffff\3\31\2\uffff\2\31\1\133\5\31"+
+        "\5\uffff\2\31\1\uffff\3\31\1\146\6\31\1\uffff\1\31\1\156\1\157\1"+
+        "\31\1\161\2\31\2\uffff\1\31\1\uffff\1\31\1\166\2\31\1\uffff\1\31"+
+        "\1\uffff\1\31\1\173\1\uffff";
     static final String DFA12_eofS =
-        "\173\uffff";
+        "\174\uffff";
     static final String DFA12_minS =
         "\1\0\1\151\1\uffff\1\141\1\145\1\170\1\uffff\1\147\1\163\1\141"+
         "\1\111\1\145\1\165\1\157\2\uffff\1\101\2\uffff\2\0\1\52\2\uffff"+
         "\1\145\2\uffff\1\155\1\163\1\164\1\uffff\1\147\1\145\1\164\1\141"+
         "\1\60\1\162\1\151\1\156\7\uffff\1\167\1\145\1\143\1\145\1\162\1"+
-        "\40\1\141\1\147\1\uffff\1\166\1\154\1\146\1\160\1\72\1\162\1\156"+
-        "\1\145\1\141\1\60\1\162\1\151\1\144\1\151\1\157\1\uffff\1\151\1"+
-        "\144\1\147\6\uffff\1\141\1\143\1\60\1\147\1\151\1\160\1\163\1\141"+
-        "\1\155\1\145\1\uffff\1\165\1\156\1\164\1\60\1\164\2\163\1\162\1"+
-        "\164\1\151\1\uffff\1\145\2\60\1\141\1\60\1\157\1\163\2\uffff\1\164"+
-        "\1\uffff\1\156\1\60\1\151\1\72\1\uffff\1\157\1\uffff\1\156\1\60"+
-        "\1\uffff";
+        "\163\1\141\1\147\1\uffff\1\166\1\154\1\146\1\160\1\72\1\162\1\156"+
+        "\1\145\1\40\1\60\1\162\1\151\1\144\1\151\1\157\1\uffff\1\151\1\144"+
+        "\1\147\1\144\1\uffff\1\141\1\143\1\60\1\147\1\151\1\160\1\163\1"+
+        "\141\5\uffff\1\155\1\145\1\uffff\1\165\1\156\1\164\1\60\1\164\2"+
+        "\163\1\162\1\164\1\151\1\uffff\1\145\2\60\1\141\1\60\1\157\1\163"+
+        "\2\uffff\1\164\1\uffff\1\156\1\60\1\151\1\72\1\uffff\1\157\1\uffff"+
+        "\1\156\1\60\1\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\151\1\uffff\1\141\1\145\1\170\1\uffff\1\147\1\163\1"+
         "\151\1\111\1\145\1\165\1\157\2\uffff\1\172\2\uffff\2\uffff\1\57"+
         "\2\uffff\1\145\2\uffff\1\155\1\163\1\164\1\uffff\1\147\1\145\1\164"+
         "\1\141\1\172\1\162\1\151\1\156\7\uffff\1\167\1\145\1\143\1\145\1"+
-        "\162\1\40\1\141\1\147\1\uffff\1\166\1\154\1\146\1\160\1\72\1\162"+
-        "\1\156\1\145\1\167\1\172\1\162\1\151\1\144\1\151\1\157\1\uffff\1"+
-        "\151\1\144\1\147\6\uffff\1\141\1\143\1\172\1\147\1\151\1\160\1\163"+
-        "\1\141\1\155\1\145\1\uffff\1\165\1\156\1\164\1\172\1\164\2\163\1"+
-        "\162\1\164\1\151\1\uffff\1\145\2\172\1\141\1\172\1\157\1\163\2\uffff"+
-        "\1\164\1\uffff\1\156\1\172\1\151\1\72\1\uffff\1\157\1\uffff\1\156"+
-        "\1\172\1\uffff";
+        "\162\1\163\1\141\1\147\1\uffff\1\166\1\154\1\146\1\160\1\72\1\162"+
+        "\1\156\1\145\1\40\1\172\1\162\1\151\1\144\1\151\1\157\1\uffff\1"+
+        "\151\1\144\1\147\1\167\1\uffff\1\141\1\143\1\172\1\147\1\151\1\160"+
+        "\1\163\1\141\5\uffff\1\155\1\145\1\uffff\1\165\1\156\1\164\1\172"+
+        "\1\164\2\163\1\162\1\164\1\151\1\uffff\1\145\2\172\1\141\1\172\1"+
+        "\157\1\163\2\uffff\1\164\1\uffff\1\156\1\172\1\151\1\72\1\uffff"+
+        "\1\157\1\uffff\1\156\1\172\1\uffff";
     static final String DFA12_acceptS =
         "\2\uffff\1\2\3\uffff\1\6\7\uffff\1\23\1\24\1\uffff\1\25\1\26\3"+
         "\uffff\1\32\1\33\1\uffff\1\25\1\2\3\uffff\1\6\10\uffff\1\23\1\24"+
-        "\1\26\1\27\1\30\1\31\1\32\10\uffff\1\16\17\uffff\1\3\3\uffff\1\10"+
-        "\1\11\1\12\1\13\1\14\1\15\12\uffff\1\21\12\uffff\1\5\7\uffff\1\17"+
-        "\1\20\1\uffff\1\1\4\uffff\1\7\1\uffff\1\4\2\uffff\1\22";
+        "\1\26\1\27\1\30\1\31\1\32\10\uffff\1\16\17\uffff\1\3\4\uffff\1\15"+
+        "\10\uffff\1\10\1\11\1\12\1\13\1\14\2\uffff\1\21\12\uffff\1\5\7\uffff"+
+        "\1\17\1\20\1\uffff\1\1\4\uffff\1\7\1\uffff\1\4\2\uffff\1\22";
     static final String DFA12_specialS =
-        "\1\1\22\uffff\1\2\1\0\146\uffff}>";
+        "\1\1\22\uffff\1\2\1\0\147\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\27\2\26\2\27\1\26\22\27\1\26\1\27\1\23\4\27\1\24\4\27\1"+
             "\6\1\27\1\17\1\25\12\22\7\27\1\21\1\14\1\15\1\11\16\21\1\13"+
@@ -1293,64 +1293,65 @@ public class InternalVpspecLexer extends Lexer {
             "\1\107",
             "\1\110",
             "\1\111",
-            "\1\113\2\uffff\1\114\1\uffff\1\116\17\uffff\1\112\1\115",
+            "\1\112",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\114",
+            "\1\115",
+            "\1\116",
+            "\1\117",
             "\1\120",
+            "",
             "\1\121",
             "\1\122",
             "\1\123",
-            "\1\124",
+            "\1\126\1\uffff\1\130\6\uffff\1\125\10\uffff\1\124\1\127",
             "",
-            "\1\125",
-            "\1\126",
-            "\1\127",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\130",
             "\1\131",
+            "\1\132",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\133",
             "\1\134",
             "\1\135",
             "\1\136",
             "\1\137",
             "\1\140",
-            "\1\141",
             "",
+            "",
+            "",
+            "",
+            "",
+            "\1\141",
             "\1\142",
+            "",
             "\1\143",
             "\1\144",
+            "\1\145",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\146",
             "\1\147",
             "\1\150",
             "\1\151",
             "\1\152",
             "\1\153",
-            "",
             "\1\154",
+            "",
+            "\1\155",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\157",
+            "\1\160",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\161",
             "\1\162",
-            "",
-            "",
             "\1\163",
             "",
-            "\1\164",
-            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\166",
-            "\1\167",
             "",
+            "\1\164",
+            "",
+            "\1\165",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\167",
             "\1\170",
             "",
             "\1\171",
+            "",
+            "\1\172",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             ""
     };
