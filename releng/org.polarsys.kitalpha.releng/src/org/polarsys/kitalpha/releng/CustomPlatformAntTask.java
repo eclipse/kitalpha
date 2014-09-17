@@ -21,6 +21,8 @@ public class CustomPlatformAntTask extends AbstractTask {
 	private String version;
 
 	private String buildId;
+	private String application;
+	private String product;	
 
 	public void setVersion(String version) {
 		this.version = version;
@@ -31,6 +33,14 @@ public class CustomPlatformAntTask extends AbstractTask {
 	}
 
 	public CustomPlatformAntTask() {
+	}
+
+	public void setApplication(String application) {
+		this.application = application;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
 	}
 
 	public void setPlatformPath(String platformPath) {
@@ -53,7 +63,7 @@ public class CustomPlatformAntTask extends AbstractTask {
 	private void modifyAboutMappings() throws IOException {
 		File pluginsFolder = new File(platformPath, "plugins");
 		for (File pluginFolder : pluginsFolder.listFiles()) {
-			if (pluginFolder.isDirectory() && pluginFolder.getName().startsWith("org.polarsys.kitalpha.product_")) {
+			if (pluginFolder.isDirectory() && pluginFolder.getName().startsWith(product+"_")) {
 				File file = new File(pluginFolder, "about.mappings");
 				System.out.println("Will modify " + file.getName());
 				List<String> list = new ArrayList<String>();
@@ -72,11 +82,11 @@ public class CustomPlatformAntTask extends AbstractTask {
 		readFile(file, list);
 		for (String line : new ArrayList<String>(list)) {
 			if (line.startsWith("eclipse.product"))
-				list.set(list.indexOf(line), "eclipse.product=org.polarsys.kitalpha.product");
+				list.set(list.indexOf(line), "eclipse.product="+product);
 			if (line.startsWith("osgi.splashPath"))
-				list.set(list.indexOf(line), "osgi.splashPath=platform\\:/base/plugins/org.polarsys.kitalpha.product");
+				list.set(list.indexOf(line), "osgi.splashPath=platform\\:/base/plugins/"+product);
 			if (line.startsWith("eclipse.application"))
-				list.set(list.indexOf(line), "eclipse.application=org.polarsys.kitalpha.application");
+				list.set(list.indexOf(line), "eclipse.application="+application);
 		}
 		writeFile(file, list);
 	}
@@ -95,7 +105,7 @@ public class CustomPlatformAntTask extends AbstractTask {
 					if (line.startsWith("-Xms") || line.startsWith("-Xmx"))
 						list.remove(line);
 					if (line.equals("org.eclipse.platform"))
-						list.set(list.indexOf(line), "org.polarsys.kitalpha.product");
+						list.set(list.indexOf(line), product);
 				}
 
 				list.add("-Dosgi.requiredJavaVersion=1.5");

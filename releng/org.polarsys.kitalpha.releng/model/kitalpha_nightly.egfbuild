@@ -374,6 +374,8 @@
       <properties xmi:id="_A3txYj5oEeSTuepII-sKzw" key="platformPath" value="${publish}/TP_juno"/>
       <properties xmi:id="_A3txYz5oEeSTuepII-sKzw" key="version" value="${mdk_version}"/>
       <properties xmi:id="_A3txZD5oEeSTuepII-sKzw" key="buildId" value="${timestamp}"/>
+      <properties xmi:id="_SJU7wD5rEeSTuepII-sKzw" key="product" value="org.polarsys.kitalpha.product"/>
+      <properties xmi:id="_Sg35ED5rEeSTuepII-sKzw" key="application" value="org.polarsys.kitalpha.application"/>
       <egfActivities xmi:id="_A3txZT5oEeSTuepII-sKzw" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
     </steps>
     <steps xsi:type="buildstep:AntStep" xmi:id="_i74IQbTJEeOS77taL_kqbA" name="fix eclipse.ini" enabled="false" targetName="fixConfig" xml="&lt;target name=&quot;fixConfig&quot;>&#xD;&#xA;&#x9;&lt;echo file=&quot;${publish}/TP_juno/eclipse.ini&quot;>-showLocation&#xD;&#xA;-startup&#xD;&#xA;plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar&#xD;&#xA;--launcher.library&#xD;&#xA;plugins/org.eclipse.equinox.launcher.win32.win32.x86_1.1.200.v20120913-144807&#xD;&#xA;-showsplash&#xD;&#xA;org.eclipse.platform&#xD;&#xA;--launcher.XXMaxPermSize&#xD;&#xA;256m&#xD;&#xA;--launcher.defaultAction&#xD;&#xA;openFile&#xD;&#xA;-vmargs&#xD;&#xA;-Xms128m&#xD;&#xA;-Xmx512m&#xD;&#xA;-XX:PermSize=64M&#xD;&#xA;-XX:MaxPermSize=512M&#xD;&#xA;&lt;/echo>&#xD;&#xA;&lt;/target>"/>

@@ -18,6 +18,8 @@ public class CustomPlatformEGFTask extends CustomPlatformAntTask implements ITas
         setPlatformPath(System.getProperty("platformPath"));
         setVersion(System.getProperty("version"));
         setBuildId(System.getProperty("buildId"));
+        setProduct(System.getProperty("product"));
+        setApplication(System.getProperty("application"));
         execute();
     }
 
