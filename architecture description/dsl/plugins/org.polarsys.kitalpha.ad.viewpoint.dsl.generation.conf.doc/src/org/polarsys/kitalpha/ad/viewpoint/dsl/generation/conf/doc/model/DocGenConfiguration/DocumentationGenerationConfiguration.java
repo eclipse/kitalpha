@@ -18,7 +18,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratri
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isGenerateDocumentation <em>Generate Documentation</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isEcoreToHtml <em>Ecore To Html</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,38 +34,38 @@ public interface DocumentationGenerationConfiguration extends ExtensionGeneratri
 
 
 	/**
-	 * Returns the value of the '<em><b>Generate Documentation</b></em>' attribute.
+	 * Returns the value of the '<em><b>Ecore To Html</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generate Documentation</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Ecore To Html</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Generate Documentation</em>' attribute.
-	 * @see #setGenerateDocumentation(boolean)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocGenConfigurationPackage#getDocumentationGenerationConfiguration_GenerateDocumentation()
+	 * @return the value of the '<em>Ecore To Html</em>' attribute.
+	 * @see #setEcoreToHtml(boolean)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocGenConfigurationPackage#getDocumentationGenerationConfiguration_EcoreToHtml()
 	 * @model default="false"
 	 * @generated
 	 */
 
-	boolean isGenerateDocumentation();
+	boolean isEcoreToHtml();
 
 
 
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isGenerateDocumentation <em>Generate Documentation</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isEcoreToHtml <em>Ecore To Html</em>}' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Generate Documentation</em>' attribute.
-	 * @see #isGenerateDocumentation()
+	 * @param value the new value of the '<em>Ecore To Html</em>' attribute.
+	 * @see #isEcoreToHtml()
 	 * @generated
 	 */
 
-	void setGenerateDocumentation(boolean value);
+	void setEcoreToHtml(boolean value);
 
 
 

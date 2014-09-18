@@ -82,7 +82,7 @@ public class DocGenGenerationConfiguration implements IGenerationElementInnerCon
 						{
 							if (extGenConf instanceof DocumentationGenerationConfiguration)
 							{
-								return ((DocumentationGenerationConfiguration) extGenConf).isGenerateDocumentation();
+								return ((DocumentationGenerationConfiguration) extGenConf).isEcoreToHtml();
 							}
 						}
 					}

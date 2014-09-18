@@ -9,7 +9,7 @@
   <genPackages prefix="DocGenConfiguration" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model"
       disposableProviderFactory="true" childCreationExtenders="true" ecorePackage="DocGenConfiguration.ecore#/">
     <genClasses ecoreClass="DocGenConfiguration.ecore#//DocumentationGenerationConfiguration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocGenConfiguration.ecore#//DocumentationGenerationConfiguration/generateDocumentation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocGenConfiguration.ecore#//DocumentationGenerationConfiguration/ecoreToHtml"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

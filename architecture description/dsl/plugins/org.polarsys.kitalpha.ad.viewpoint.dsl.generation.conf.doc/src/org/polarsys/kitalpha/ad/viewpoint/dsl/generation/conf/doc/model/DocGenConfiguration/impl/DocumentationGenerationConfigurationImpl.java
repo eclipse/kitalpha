@@ -25,7 +25,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenCo
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.impl.DocumentationGenerationConfigurationImpl#isGenerateDocumentation <em>Generate Documentation</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.impl.DocumentationGenerationConfigurationImpl#isEcoreToHtml <em>Ecore To Html</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,26 +34,24 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenCo
 public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratrionConfigurationImpl implements DocumentationGenerationConfiguration {
 
 	/**
-	 * The default value of the '{@link #isGenerateDocumentation() <em>Generate Documentation</em>}' attribute.
+	 * The default value of the '{@link #isEcoreToHtml() <em>Ecore To Html</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isGenerateDocumentation()
+	 * @see #isEcoreToHtml()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean GENERATE_DOCUMENTATION_EDEFAULT = false;
+	protected static final boolean ECORE_TO_HTML_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isGenerateDocumentation() <em>Generate Documentation</em>}' attribute.
+	 * The cached value of the '{@link #isEcoreToHtml() <em>Ecore To Html</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isGenerateDocumentation()
+	 * @see #isEcoreToHtml()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean generateDocumentation = GENERATE_DOCUMENTATION_EDEFAULT;
-
-
+	protected boolean ecoreToHtml = ECORE_TO_HTML_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,12 +84,10 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 	 * @generated
 	 */
 
-	public boolean isGenerateDocumentation() {
+	public boolean isEcoreToHtml() {
 
-		return generateDocumentation;
+		return ecoreToHtml;
 	}
-
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,17 +95,14 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 	 * @generated
 	 */
 
-	public void setGenerateDocumentation(boolean newGenerateDocumentation) {
+	public void setEcoreToHtml(boolean newEcoreToHtml) {
 
-		boolean oldGenerateDocumentation = generateDocumentation;
-		generateDocumentation = newGenerateDocumentation;
+		boolean oldEcoreToHtml = ecoreToHtml;
+		ecoreToHtml = newEcoreToHtml;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION, oldGenerateDocumentation, generateDocumentation));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML, oldEcoreToHtml, ecoreToHtml));
 
 	}
-
-
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,8 +112,8 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION:
-				return isGenerateDocumentation();
+			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML:
+				return isEcoreToHtml();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -133,8 +126,8 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION:
-				setGenerateDocumentation((Boolean)newValue);
+			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML:
+				setEcoreToHtml((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -149,8 +142,8 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION:
-				setGenerateDocumentation(GENERATE_DOCUMENTATION_EDEFAULT);
+			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML:
+				setEcoreToHtml(ECORE_TO_HTML_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -166,8 +159,8 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION:
-				return generateDocumentation != GENERATE_DOCUMENTATION_EDEFAULT;
+			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML:
+				return ecoreToHtml != ECORE_TO_HTML_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -183,8 +176,8 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (generateDocumentation: ");
-		result.append(generateDocumentation);
+		result.append(" (ecoreToHtml: ");
+		result.append(ecoreToHtml);
 		result.append(')');
 		return result.toString();
 	}

@@ -4,7 +4,7 @@
     nsPrefix="DocGenConfiguration">
   <eClassifiers xsi:type="ecore:EClass" name="DocumentationGenerationConfiguration"
       eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf/model/vpconf.ecore#//ExtensionGeneratrionConfiguration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateDocumentation"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreToHtml" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
 </ecore:EPackage>

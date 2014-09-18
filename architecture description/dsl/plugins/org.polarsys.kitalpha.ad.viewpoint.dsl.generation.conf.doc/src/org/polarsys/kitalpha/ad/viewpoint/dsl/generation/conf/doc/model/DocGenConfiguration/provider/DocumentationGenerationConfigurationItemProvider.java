@@ -66,26 +66,26 @@ public class DocumentationGenerationConfigurationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGenerateDocumentationPropertyDescriptor(object);
+			addEcoreToHtmlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Generate Documentation feature.
+	 * This adds a property descriptor for the Ecore To Html feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGenerateDocumentationPropertyDescriptor(Object object) {
+	protected void addEcoreToHtmlPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DocumentationGenerationConfiguration_generateDocumentation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DocumentationGenerationConfiguration_generateDocumentation_feature", "_UI_DocumentationGenerationConfiguration_type"),
-				 DocGenConfigurationPackage.Literals.DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION,
+				 getString("_UI_DocumentationGenerationConfiguration_ecoreToHtml_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DocumentationGenerationConfiguration_ecoreToHtml_feature", "_UI_DocumentationGenerationConfiguration_type"),
+				 DocGenConfigurationPackage.Literals.DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML,
 				 true,
 				 false,
 				 false,
@@ -116,7 +116,7 @@ public class DocumentationGenerationConfigurationItemProvider
 	public String getText(Object object) {
 
 		DocumentationGenerationConfiguration documentationGenerationConfiguration = (DocumentationGenerationConfiguration)object;
-		return getString("_UI_DocumentationGenerationConfiguration_type") + " " + documentationGenerationConfiguration.isGenerateDocumentation();
+		return getString("_UI_DocumentationGenerationConfiguration_type") + " " + documentationGenerationConfiguration.isEcoreToHtml();
 
 	}
 
@@ -132,7 +132,7 @@ public class DocumentationGenerationConfigurationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DocumentationGenerationConfiguration.class)) {
-			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION:
+			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -111,7 +111,7 @@ public class DocGenConfigurationPackageImpl extends EPackageImpl implements DocG
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocumentationGenerationConfiguration_GenerateDocumentation() {
+	public EAttribute getDocumentationGenerationConfiguration_EcoreToHtml() {
 		return (EAttribute)documentationGenerationConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -144,7 +144,7 @@ public class DocGenConfigurationPackageImpl extends EPackageImpl implements DocG
 
 		// Create classes and their features
 		documentationGenerationConfigurationEClass = createEClass(DOCUMENTATION_GENERATION_CONFIGURATION);
-		createEAttribute(documentationGenerationConfigurationEClass, DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION);
+		createEAttribute(documentationGenerationConfigurationEClass, DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML);
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class DocGenConfigurationPackageImpl extends EPackageImpl implements DocG
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(documentationGenerationConfigurationEClass, DocumentationGenerationConfiguration.class, "DocumentationGenerationConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocumentationGenerationConfiguration_GenerateDocumentation(), ecorePackage.getEBoolean(), "generateDocumentation", "false", 0, 1, DocumentationGenerationConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocumentationGenerationConfiguration_EcoreToHtml(), ecorePackage.getEBoolean(), "ecoreToHtml", "false", 0, 1, DocumentationGenerationConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -72,13 +72,13 @@ public interface DocGenConfigurationPackage extends EPackage {
 	int DOCUMENTATION_GENERATION_CONFIGURATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Generate Documentation</b></em>' attribute.
+	 * The feature id for the '<em><b>Ecore To Html</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION = VpconfPackage.EXTENSION_GENERATRION_CONFIGURATION_FEATURE_COUNT + 0;
+	int DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML = VpconfPackage.EXTENSION_GENERATRION_CONFIGURATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Documentation Generation Configuration</em>' class.
@@ -101,15 +101,15 @@ public interface DocGenConfigurationPackage extends EPackage {
 	EClass getDocumentationGenerationConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isGenerateDocumentation <em>Generate Documentation</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isEcoreToHtml <em>Ecore To Html</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Generate Documentation</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isGenerateDocumentation()
+	 * @return the meta object for the attribute '<em>Ecore To Html</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration#isEcoreToHtml()
 	 * @see #getDocumentationGenerationConfiguration()
 	 * @generated
 	 */
-	EAttribute getDocumentationGenerationConfiguration_GenerateDocumentation();
+	EAttribute getDocumentationGenerationConfiguration_EcoreToHtml();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -144,12 +144,12 @@ public interface DocGenConfigurationPackage extends EPackage {
 		EClass DOCUMENTATION_GENERATION_CONFIGURATION = eINSTANCE.getDocumentationGenerationConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Generate Documentation</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ecore To Html</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENTATION_GENERATION_CONFIGURATION__GENERATE_DOCUMENTATION = eINSTANCE.getDocumentationGenerationConfiguration_GenerateDocumentation();
+		EAttribute DOCUMENTATION_GENERATION_CONFIGURATION__ECORE_TO_HTML = eINSTANCE.getDocumentationGenerationConfiguration_EcoreToHtml();
 
 	}
 
