@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/src"
+    editDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/src"
+    modelPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc" modelName="DocGenConfiguration"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel#//vpconf">
+  <foreignModel>DocGenConfiguration.ecore</foreignModel>
+  <genPackages prefix="DocGenConfiguration" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model"
+      disposableProviderFactory="true" childCreationExtenders="true" ecorePackage="DocGenConfiguration.ecore#/">
+    <genClasses ecoreClass="DocGenConfiguration.ecore#//DocumentationGenerationConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DocGenConfiguration.ecore#//DocumentationGenerationConfiguration/generateDocumentation"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
