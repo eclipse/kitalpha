@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="DocGenConfiguration" factoryComponentName="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.fc">
+  <elements xsi:type="generationChain:GenerationChain" name="DocGenConfiguration">
+    <elements xsi:type="generationChain:EmfGeneration" name="EMF generation for DocGenConfiguration" modelPath="/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model"/>
+  </elements>
+</generationChain:GenerationChain>

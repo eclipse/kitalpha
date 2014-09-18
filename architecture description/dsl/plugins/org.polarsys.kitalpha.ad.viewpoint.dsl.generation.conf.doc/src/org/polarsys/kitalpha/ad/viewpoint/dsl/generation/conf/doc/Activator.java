@@ -8,12 +8,10 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-
-package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf;
+package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.global.GenerationConfigurationRegistry;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -21,7 +19,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.global.GenerationC
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;
@@ -38,8 +36,7 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		plugin = this; 
-		GenerationConfigurationRegistry.initConfigurationExtensionRegistry();
+		plugin = this;
 	}
 
 	/*
@@ -48,7 +45,6 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
-		GenerationConfigurationRegistry.unregisterAll();
 		super.stop(context);
 	}
 

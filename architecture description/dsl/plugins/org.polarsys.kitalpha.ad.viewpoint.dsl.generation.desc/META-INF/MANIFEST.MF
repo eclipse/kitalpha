@@ -1,4 +1,4 @@
-Manifest-Version: 1.0
+Manifest-Version: 1.0 
 Bundle-ManifestVersion: 2
 Bundle-Name: %BundleName
 Bundle-Vendor: %BundleVendor
@@ -55,7 +55,6 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.task,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.icon,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.internal.conf,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.internal.icons,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.operation,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.reporter,

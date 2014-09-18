@@ -14,21 +14,33 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.global;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.egf.portfolio.genchain.generationChain.GenerationElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.element.IGenerationElementConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.element.IGenerationElementDependeciesConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.element.IGenerationElementInnerConfiguration;
-
+ 
 /**
  * @author Boubekeur Zendagui
  */
-public class GenerationConfigurationRegistry {
+public class GenerationConfigurationRegistry  implements GenerationConfigurationConstants{
 
 	/** List of available {@link IGenerationElementInnerConfiguration} */
 	private static List<IGenerationElementInnerConfiguration> innerConfigurationRegistry = new ArrayList<IGenerationElementInnerConfiguration>();
 	
 	/** List of available {@link IGenerationElementDependeciesConfiguration} */
 	private static List<IGenerationElementDependeciesConfiguration> dependenciesRegistry = new ArrayList<IGenerationElementDependeciesConfiguration>();
+	
+	/**
+	 * Unregister all extension
+	 */
+	public static void unregisterAll(){
+		innerConfigurationRegistry.clear();
+		dependenciesRegistry.clear();
+	}
 	
 	/**
 	 * Register an {@link IGenerationElementInnerConfiguration}
@@ -72,6 +84,33 @@ public class GenerationConfigurationRegistry {
 	public static void unregister(IGenerationElementDependeciesConfiguration configuration){
 		if (dependenciesRegistry.contains(configuration))
 			dependenciesRegistry.remove(configuration);
+	}
+	
+	/**
+	 * Initialize generation configuration extension.
+	 * @throws CoreException
+	 */
+	public static void initConfigurationExtensionRegistry() throws CoreException{
+		IExtension[] tExtensions = Platform.getExtensionRegistry().getExtensionPoint(GEN_CONF_EXTENSION_ID).getExtensions();
+		if (tExtensions.length > 0)
+		{
+			for (IExtension iExtension : tExtensions)
+			{
+				IConfigurationElement[] configurationElements = iExtension.getConfigurationElements();
+				if (configurationElements.length > 0)
+				{
+					for (IConfigurationElement iConfigurationElement : configurationElements) 
+					{
+						if (iConfigurationElement.getName().equals(GEN_CONF_INNER_CONFIGURATION_ELEMENT_NAME))
+						{
+							IGenerationElementInnerConfiguration configuration = 
+									(IGenerationElementInnerConfiguration) iConfigurationElement.createExecutableExtension(GEN_CONF_ATTRIBUTE_CLASS);
+							GenerationConfigurationRegistry.register(configuration);
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	/**
