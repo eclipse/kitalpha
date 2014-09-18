@@ -75,7 +75,7 @@ public class KitalphaSplashHandler extends BasicSplashHandler {
 		builder.append(version2.getQualifier());
 		final String text = builder.toString();
 
-		final Point buildIdPoint = new Point(200, 225);
+		final Point buildIdPoint = new Point(240, 165);
 		getContent().addPaintListener(new PaintListener() {
 
 			public void paintControl(PaintEvent e) {
