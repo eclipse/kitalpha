@@ -38,6 +38,7 @@ public class VpconfParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getConfigurationElementAccess().getAlternatives(), "rule__ConfigurationElement__Alternatives");
+					put(grammarAccess.getExtensionGeneratrionConfigurationAccess().getAlternatives(), "rule__ExtensionGeneratrionConfiguration__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 					put(grammarAccess.getConfigurationAccess().getGroup(), "rule__Configuration__Group__0");
@@ -55,6 +56,8 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGDataAccess().getGroup_3_5(), "rule__GData__Group_3_5__0");
 					put(grammarAccess.getDiagramGenerationConfigurationAccess().getGroup(), "rule__DiagramGenerationConfiguration__Group__0");
 					put(grammarAccess.getDiagramGenerationConfigurationAccess().getGroup_3(), "rule__DiagramGenerationConfiguration__Group_3__0");
+					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getGroup(), "rule__DocumentationGenerationConfiguration__Group__0");
+					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getGroup_3(), "rule__DocumentationGenerationConfiguration__Group_3__0");
 					put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 					put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
 					put(grammarAccess.getConfigurationAccess().getNameAssignment_2(), "rule__Configuration__NameAssignment_2");
@@ -71,6 +74,7 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGDataAccess().getJavaDocAssignment_3_4_1(), "rule__GData__JavaDocAssignment_3_4_1");
 					put(grammarAccess.getGDataAccess().getOverwriteEcoreAssignment_3_5_1(), "rule__GData__OverwriteEcoreAssignment_3_5_1");
 					put(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMAssignment_3_1(), "rule__DiagramGenerationConfiguration__OverwriteVSMAssignment_3_1");
+					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getEcoreToHtmlAssignment_3_1(), "rule__DocumentationGenerationConfiguration__EcoreToHtmlAssignment_3_1");
 				}
 			};
 		}

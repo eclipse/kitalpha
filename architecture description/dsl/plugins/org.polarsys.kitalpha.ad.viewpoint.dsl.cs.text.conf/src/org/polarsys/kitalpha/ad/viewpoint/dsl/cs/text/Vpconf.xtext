@@ -19,6 +19,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" as vpconf
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" as vpdesc
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" as vpdiagramConfig
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" as docGenConfig
 
 /********************************************************************
  * 							vpconf
@@ -53,7 +54,7 @@ Generation returns vpconf::ConfigurationElement:
 	{vpconf::Generation}
 	'generation' '{'
 		(ownedDataGenerationConf=GData)?
-		(ownedExtensionGenConf+=ExtensionGeneratrionConfiguration)?
+		(ownedExtensionGenConf+=ExtensionGeneratrionConfiguration)*
 	'}'
 ;
 
@@ -73,7 +74,7 @@ GData returns vpconf::GData:
 
 
 ExtensionGeneratrionConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-	DiagramGenerationConfiguration
+	DiagramGenerationConfiguration | DocumentationGenerationConfiguration
 ;
 
 
@@ -81,8 +82,15 @@ DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration
 	{vpdiagramConfig::DiagramGenerationConfiguration}
 	'diagram' '('
 		(
-			'overwriteOdesign:' overwriteVSM=EBoolean
+			('OverwriteOdesign:' overwriteVSM=EBoolean)?
 		)
+	')'
+;
+
+DocumentationGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+	{docGenConfig::DocumentationGenerationConfiguration}
+	'documentation' '('
+		('EcoreToHtml:' ecoreToHtml=EBoolean)?
 	')'
 ;
 

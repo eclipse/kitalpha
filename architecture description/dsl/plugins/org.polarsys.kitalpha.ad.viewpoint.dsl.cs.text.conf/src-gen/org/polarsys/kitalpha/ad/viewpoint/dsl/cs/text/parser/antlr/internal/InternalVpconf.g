@@ -372,7 +372,7 @@ ruleGeneration returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_5='}' 
+)*	otherlv_5='}' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getGenerationAccess().getRightCurlyBracketKeyword_5());
     }
@@ -568,9 +568,9 @@ ruleExtensionGeneratrionConfiguration returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+(
     { 
-        newCompositeNode(grammarAccess.getExtensionGeneratrionConfigurationAccess().getDiagramGenerationConfigurationParserRuleCall()); 
+        newCompositeNode(grammarAccess.getExtensionGeneratrionConfigurationAccess().getDiagramGenerationConfigurationParserRuleCall_0()); 
     }
     this_DiagramGenerationConfiguration_0=ruleDiagramGenerationConfiguration
     { 
@@ -578,6 +578,16 @@ ruleExtensionGeneratrionConfiguration returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
+    |
+    { 
+        newCompositeNode(grammarAccess.getExtensionGeneratrionConfigurationAccess().getDocumentationGenerationConfigurationParserRuleCall_1()); 
+    }
+    this_DocumentationGenerationConfiguration_1=ruleDocumentationGenerationConfiguration
+    { 
+        $current = $this_DocumentationGenerationConfiguration_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 
 
@@ -612,7 +622,7 @@ ruleDiagramGenerationConfiguration returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getDiagramGenerationConfigurationAccess().getLeftParenthesisKeyword_2());
     }
-(	otherlv_3='overwriteOdesign:' 
+(	otherlv_3='OverwriteOdesign:' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteOdesignKeyword_3_0());
     }
@@ -634,9 +644,70 @@ ruleDiagramGenerationConfiguration returns [EObject current=null]
 	    }
 
 )
-))	otherlv_5=')' 
+))?	otherlv_5=')' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getDiagramGenerationConfigurationAccess().getRightParenthesisKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleDocumentationGenerationConfiguration
+entryRuleDocumentationGenerationConfiguration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDocumentationGenerationConfigurationRule()); }
+	 iv_ruleDocumentationGenerationConfiguration=ruleDocumentationGenerationConfiguration 
+	 { $current=$iv_ruleDocumentationGenerationConfiguration.current; } 
+	 EOF 
+;
+
+// Rule DocumentationGenerationConfiguration
+ruleDocumentationGenerationConfiguration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getDocumentationGenerationConfigurationAccess().getDocumentationGenerationConfigurationAction_0(),
+            $current);
+    }
+)	otherlv_1='documentation' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getDocumentationGenerationConfigurationAccess().getDocumentationKeyword_1());
+    }
+	otherlv_2='(' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getDocumentationGenerationConfigurationAccess().getLeftParenthesisKeyword_2());
+    }
+(	otherlv_3='EcoreToHtml:' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getDocumentationGenerationConfigurationAccess().getEcoreToHtmlKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDocumentationGenerationConfigurationAccess().getEcoreToHtmlEBooleanParserRuleCall_3_1_0()); 
+	    }
+		lv_ecoreToHtml_4_0=ruleEBoolean		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDocumentationGenerationConfigurationRule());
+	        }
+       		set(
+       			$current, 
+       			"ecoreToHtml",
+        		lv_ecoreToHtml_4_0, 
+        		"EBoolean");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getDocumentationGenerationConfigurationAccess().getRightParenthesisKeyword_4());
     }
 )
 ;

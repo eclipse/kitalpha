@@ -17,6 +17,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.CommonEditorCa
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateContextType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateStore;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpConfProposalPriorities;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
 
 
@@ -49,5 +50,9 @@ public class VpconfUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.te
 	@Override
 	public Class<? extends org.eclipse.xtext.ui.editor.IXtextEditorCallback> bindIXtextEditorCallback() {
 		return CommonEditorCallback.class;
+	}
+	
+	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalPriorities> bindIContentProposalPriorities(){
+		return VpConfProposalPriorities.class;
 	}
 }

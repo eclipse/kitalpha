@@ -4,15 +4,12 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
@@ -22,6 +19,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.ConfigurationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocGenConfigurationPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration;
 
 @SuppressWarnings("all")
 public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -30,7 +29,16 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	private VpconfGrammarAccess grammarAccess;
 	
 	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == ConfigurationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+		if(semanticObject.eClass().getEPackage() == DocGenConfigurationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION:
+				if(context == grammarAccess.getDocumentationGenerationConfigurationRule() ||
+				   context == grammarAccess.getExtensionGeneratrionConfigurationRule()) {
+					sequence_DocumentationGenerationConfiguration(context, (DocumentationGenerationConfiguration) semanticObject); 
+					return; 
+				}
+				else break;
+			}
+		else if(semanticObject.eClass().getEPackage() == ConfigurationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ConfigurationPackage.DIAGRAM_GENERATION_CONFIGURATION:
 				if(context == grammarAccess.getDiagramGenerationConfigurationRule() ||
 				   context == grammarAccess.getExtensionGeneratrionConfigurationRule()) {
@@ -88,17 +96,19 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     overwriteVSM=EBoolean
+	 *     (overwriteVSM=EBoolean?)
 	 */
 	protected void sequence_DiagramGenerationConfiguration(EObject context, DiagramGenerationConfiguration semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ConfigurationPackage.Literals.DIAGRAM_GENERATION_CONFIGURATION__OVERWRITE_VSM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ConfigurationPackage.Literals.DIAGRAM_GENERATION_CONFIGURATION__OVERWRITE_VSM));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMEBooleanParserRuleCall_3_1_0(), semanticObject.isOverwriteVSM());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (ecoreToHtml=EBoolean?)
+	 */
+	protected void sequence_DocumentationGenerationConfiguration(EObject context, DocumentationGenerationConfiguration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -129,7 +139,7 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (ownedDataGenerationConf=GData? ownedExtensionGenConf+=ExtensionGeneratrionConfiguration?)
+	 *     (ownedDataGenerationConf=GData? ownedExtensionGenConf+=ExtensionGeneratrionConfiguration*)
 	 */
 	protected void sequence_Generation(EObject context, Generation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
