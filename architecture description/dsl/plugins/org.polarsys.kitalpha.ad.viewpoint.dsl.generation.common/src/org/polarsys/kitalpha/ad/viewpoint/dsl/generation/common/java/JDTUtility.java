@@ -200,24 +200,24 @@ public class JDTUtility {
 	 */
 	public static String organizeImport(IFile javaFile, String javaCode){
 		// If the java file is not serialized yet then save it in order to parse it by AST parser 
-		if (! javaFile.exists())
-			JDTUtility.writeJavaContent(javaFile, javaCode);
-		
-		final ASTParser parser = ASTParser.newParser(AST.JLS3);
-		parser.setResolveBindings(true);
-		final IJavaElement element = JavaCore.create(javaFile);
-		parser.setSource((ICompilationUnit)element);
-		final CompilationUnit cUnit=(CompilationUnit) parser.createAST(new NullProgressMonitor());	
-		for (IProblem problem : cUnit.getProblems()) 
-		{
-		    if(problem.getID() == IProblem.UnusedImport) 
-		    {
-		    	final String unusedImport = problem.getArguments()[0];
-		    	final String javaImportRegEx = "import([\\s])*"+unusedImport+"([\\s])*;([\\s])*";
-		    	final Pattern p = Pattern.compile(javaImportRegEx.trim());
-		    	javaCode = p.matcher(javaCode).replaceAll("");
-		    }
-		}
+//		if (! javaFile.exists())
+//			JDTUtility.writeJavaContent(javaFile, javaCode);
+//		
+//		final ASTParser parser = ASTParser.newParser(AST.JLS3);
+//		parser.setResolveBindings(true);
+//		final IJavaElement element = JavaCore.create(javaFile);
+//		parser.setSource((ICompilationUnit)element);
+//		final CompilationUnit cUnit=(CompilationUnit) parser.createAST(new NullProgressMonitor());	
+//		for (IProblem problem : cUnit.getProblems()) 
+//		{
+//		    if(problem.getID() == IProblem.UnusedImport) 
+//		    {
+//		    	final String unusedImport = problem.getArguments()[0];
+//		    	final String javaImportRegEx = "import([\\s])*"+unusedImport+"([\\s])*;([\\s])*";
+//		    	final Pattern p = Pattern.compile(javaImportRegEx.trim());
+//		    	javaCode = p.matcher(javaCode).replaceAll("");
+//		    }
+//		}
 		
 		return javaCode;
 	}
