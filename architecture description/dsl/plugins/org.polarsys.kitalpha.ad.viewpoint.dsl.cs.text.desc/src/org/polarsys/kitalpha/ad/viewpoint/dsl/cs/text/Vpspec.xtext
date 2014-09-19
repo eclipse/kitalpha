@@ -47,13 +47,13 @@ Viewpoint returns Viewpoint:
 		('aggregates' dependencies+=[Viewpoint|FQN] ( ',' dependencies+=[Viewpoint|FQN])* )?
 		
 		//Viewpoint use link
-		('uses viewpoint:' useViewpoint+=[Viewpoint | FQN] (',' useViewpoint+=[Viewpoint | FQN])*)?
+		('uses viewpoint' useViewpoint+=[Viewpoint | FQN] (',' useViewpoint+=[Viewpoint | FQN])*)?
 		
 		//Viewpoint use resources
-		('uses model:' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
-		('uses diagram:' useDiagramResource+=EString (',' useDiagramResource+=EString)*)?
-		('uses workspace:' useWorkspaceResource+=EString (',' useWorkspaceResource+=EString)*)?
-		('uses filesystem:' useFSResource+=EString (',' useFSResource+=EString)*)?
+		('uses model' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
+		('uses diagram' useDiagramResource+=EString (',' useDiagramResource+=EString)*)?
+		('uses workspace' useWorkspaceResource+=EString (',' useWorkspaceResource+=EString)*)?
+		('uses filesystem' useFSResource+=EString (',' useFSResource+=EString)*)?
 		
 		
 		('Data' VP_Data=[vpdesc::Data | FQN])?
