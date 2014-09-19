@@ -39,6 +39,9 @@
       <import feature="org.polarsys.kitalpha.accuracy.source.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.representation.source.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.model.detachment.source.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.doc.gen.business.core.source.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.source.feature" version="0.5.0.qualifier"/>
+      
    </requires>
 
 </feature>
