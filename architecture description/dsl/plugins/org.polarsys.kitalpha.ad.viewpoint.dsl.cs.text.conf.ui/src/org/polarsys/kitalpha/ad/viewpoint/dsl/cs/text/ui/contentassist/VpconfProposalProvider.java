@@ -43,6 +43,9 @@ import com.google.inject.Inject;
  */
 public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 	
+	private final static String SPACE = " ";
+	private final static String QUOTES = "\""; 
+	
 	@Inject
 	private IGrammarAccess grammar;
 	
@@ -52,12 +55,14 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 		List<String> targetPlatformProposals = TargetApplicationReader.getSupportedModelingEnvironment();
 		// Add target platform as proposal
 		for (String proposal :targetPlatformProposals) {
-			acceptor.accept(createCompletionProposal(proposal, context)); //$NON-NLS-1$
+			if (proposal.contains(SPACE))
+				proposal = QUOTES + proposal + QUOTES;
+			acceptor.accept(createCompletionProposal(proposal, context));
 		}
 	}
 	
 	
-	//Forbid many declarations of diagram overwrite.
+	//Forbid many declarations of diagram/documentation overwrite.
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext,	ICompletionProposalAcceptor acceptor) {
 		if (grammar instanceof VpconfGrammarAccess) {

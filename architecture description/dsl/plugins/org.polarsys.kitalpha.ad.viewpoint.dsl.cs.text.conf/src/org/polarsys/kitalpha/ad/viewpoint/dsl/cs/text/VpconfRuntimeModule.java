@@ -15,6 +15,7 @@ import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.VpconfGenerator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resource.VpconfResourceServiceProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ConfValueConverter;
 
 
 /**
@@ -28,5 +29,9 @@ public class VpconfRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.
 	
 	public Class<? extends IViewpointSynchronizer> bindIViewpointSynchronizer() {
 		return VpconfGenerator.class;
+	}
+	
+	public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
+		return ConfValueConverter.class;
 	}
 }
