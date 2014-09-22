@@ -197,12 +197,12 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	{vpconf::Generation} "generation" "{" ownedDataGenerationConf=GData?
 		//
-		//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration? "}";
+		//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* "}";
 		public ParserRule getRule() { return rule; }
 
 		//{vpconf::Generation} "generation" "{" ownedDataGenerationConf=GData?
 		//
-		//ownedExtensionGenConf+=ExtensionGeneratrionConfiguration? "}"
+		//ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::Generation}
@@ -220,7 +220,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//GData
 		public RuleCall getOwnedDataGenerationConfGDataParserRuleCall_3_0() { return cOwnedDataGenerationConfGDataParserRuleCall_3_0; }
 
-		//ownedExtensionGenConf+=ExtensionGeneratrionConfiguration?
+		//ownedExtensionGenConf+=ExtensionGeneratrionConfiguration*
 		public Assignment getOwnedExtensionGenConfAssignment_4() { return cOwnedExtensionGenConfAssignment_4; }
 
 		//ExtensionGeneratrionConfiguration
@@ -367,15 +367,23 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ExtensionGeneratrionConfigurationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExtensionGeneratrionConfiguration");
-		private final RuleCall cDiagramGenerationConfigurationParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDiagramGenerationConfigurationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cDocumentationGenerationConfigurationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ExtensionGeneratrionConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
 		//
-		//	DiagramGenerationConfiguration;
+		//	DiagramGenerationConfiguration | DocumentationGenerationConfiguration;
 		public ParserRule getRule() { return rule; }
 
+		//DiagramGenerationConfiguration | DocumentationGenerationConfiguration
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//DiagramGenerationConfiguration
-		public RuleCall getDiagramGenerationConfigurationParserRuleCall() { return cDiagramGenerationConfigurationParserRuleCall; }
+		public RuleCall getDiagramGenerationConfigurationParserRuleCall_0() { return cDiagramGenerationConfigurationParserRuleCall_0; }
+
+		//DocumentationGenerationConfiguration
+		public RuleCall getDocumentationGenerationConfigurationParserRuleCall_1() { return cDocumentationGenerationConfigurationParserRuleCall_1; }
 	}
 
 	public class DiagramGenerationConfigurationElements extends AbstractParserRuleElementFinder {
@@ -388,6 +396,51 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cOverwriteOdesignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cOverwriteVSMAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cOverwriteVSMEBooleanParserRuleCall_3_1_0 = (RuleCall)cOverwriteVSMAssignment_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+		//
+		//	{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("OverwriteOdesign:" overwriteVSM=EBoolean)? ")";
+		public ParserRule getRule() { return rule; }
+
+		//{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("OverwriteOdesign:" overwriteVSM=EBoolean)? ")"
+		public Group getGroup() { return cGroup; }
+
+		//{vpdiagramConfig::DiagramGenerationConfiguration}
+		public Action getDiagramGenerationConfigurationAction_0() { return cDiagramGenerationConfigurationAction_0; }
+
+		//"diagram"
+		public Keyword getDiagramKeyword_1() { return cDiagramKeyword_1; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+
+		//("OverwriteOdesign:" overwriteVSM=EBoolean)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"OverwriteOdesign:"
+		public Keyword getOverwriteOdesignKeyword_3_0() { return cOverwriteOdesignKeyword_3_0; }
+
+		//overwriteVSM=EBoolean
+		public Assignment getOverwriteVSMAssignment_3_1() { return cOverwriteVSMAssignment_3_1; }
+
+		//EBoolean
+		public RuleCall getOverwriteVSMEBooleanParserRuleCall_3_1_0() { return cOverwriteVSMEBooleanParserRuleCall_3_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+	}
+
+	public class DocumentationGenerationConfigurationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DocumentationGenerationConfiguration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDocumentationGenerationConfigurationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cDocumentationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cEcoreToHtmlKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cEcoreToHtmlAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cEcoreToHtmlEBooleanParserRuleCall_3_1_0 = (RuleCall)cEcoreToHtmlAssignment_3_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		////GenerateVPDocumentation returns vpconf::ConfigurationElement:
@@ -420,34 +473,34 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		////	'EMF'
 		//
-		////	; DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+		////	; DocumentationGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
 		//
-		//	{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("overwriteOdesign:" overwriteVSM=EBoolean) ")";
+		//	{docGenConfig::DocumentationGenerationConfiguration} "documentation" "(" ("EcoreToHtml:" ecoreToHtml=EBoolean)? ")";
 		public ParserRule getRule() { return rule; }
 
-		//{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("overwriteOdesign:" overwriteVSM=EBoolean) ")"
+		//{docGenConfig::DocumentationGenerationConfiguration} "documentation" "(" ("EcoreToHtml:" ecoreToHtml=EBoolean)? ")"
 		public Group getGroup() { return cGroup; }
 
-		//{vpdiagramConfig::DiagramGenerationConfiguration}
-		public Action getDiagramGenerationConfigurationAction_0() { return cDiagramGenerationConfigurationAction_0; }
+		//{docGenConfig::DocumentationGenerationConfiguration}
+		public Action getDocumentationGenerationConfigurationAction_0() { return cDocumentationGenerationConfigurationAction_0; }
 
-		//"diagram"
-		public Keyword getDiagramKeyword_1() { return cDiagramKeyword_1; }
+		//"documentation"
+		public Keyword getDocumentationKeyword_1() { return cDocumentationKeyword_1; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
-		//"overwriteOdesign:" overwriteVSM=EBoolean
+		//("EcoreToHtml:" ecoreToHtml=EBoolean)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"overwriteOdesign:"
-		public Keyword getOverwriteOdesignKeyword_3_0() { return cOverwriteOdesignKeyword_3_0; }
+		//"EcoreToHtml:"
+		public Keyword getEcoreToHtmlKeyword_3_0() { return cEcoreToHtmlKeyword_3_0; }
 
-		//overwriteVSM=EBoolean
-		public Assignment getOverwriteVSMAssignment_3_1() { return cOverwriteVSMAssignment_3_1; }
+		//ecoreToHtml=EBoolean
+		public Assignment getEcoreToHtmlAssignment_3_1() { return cEcoreToHtmlAssignment_3_1; }
 
 		//EBoolean
-		public RuleCall getOverwriteVSMEBooleanParserRuleCall_3_1_0() { return cOverwriteVSMEBooleanParserRuleCall_3_1_0; }
+		public RuleCall getEcoreToHtmlEBooleanParserRuleCall_3_1_0() { return cEcoreToHtmlEBooleanParserRuleCall_3_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -462,6 +515,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	private GDataElements pGData;
 	private ExtensionGeneratrionConfigurationElements pExtensionGeneratrionConfiguration;
 	private DiagramGenerationConfigurationElements pDiagramGenerationConfiguration;
+	private DocumentationGenerationConfigurationElements pDocumentationGenerationConfiguration;
 	
 	private final Grammar grammar;
 
@@ -559,7 +613,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	{vpconf::Generation} "generation" "{" ownedDataGenerationConf=GData?
 	//
-	//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration? "}";
+	//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* "}";
 	public GenerationElements getGenerationAccess() {
 		return (pGeneration != null) ? pGeneration : (pGeneration = new GenerationElements());
 	}
@@ -583,13 +637,24 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ExtensionGeneratrionConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
 	//
-	//	DiagramGenerationConfiguration;
+	//	DiagramGenerationConfiguration | DocumentationGenerationConfiguration;
 	public ExtensionGeneratrionConfigurationElements getExtensionGeneratrionConfigurationAccess() {
 		return (pExtensionGeneratrionConfiguration != null) ? pExtensionGeneratrionConfiguration : (pExtensionGeneratrionConfiguration = new ExtensionGeneratrionConfigurationElements());
 	}
 	
 	public ParserRule getExtensionGeneratrionConfigurationRule() {
 		return getExtensionGeneratrionConfigurationAccess().getRule();
+	}
+
+	//DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+	//
+	//	{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("OverwriteOdesign:" overwriteVSM=EBoolean)? ")";
+	public DiagramGenerationConfigurationElements getDiagramGenerationConfigurationAccess() {
+		return (pDiagramGenerationConfiguration != null) ? pDiagramGenerationConfiguration : (pDiagramGenerationConfiguration = new DiagramGenerationConfigurationElements());
+	}
+	
+	public ParserRule getDiagramGenerationConfigurationRule() {
+		return getDiagramGenerationConfigurationAccess().getRule();
 	}
 
 	////GenerateVPDocumentation returns vpconf::ConfigurationElement:
@@ -622,15 +687,15 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	////	'EMF'
 	//
-	////	; DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+	////	; DocumentationGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
 	//
-	//	{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("overwriteOdesign:" overwriteVSM=EBoolean) ")";
-	public DiagramGenerationConfigurationElements getDiagramGenerationConfigurationAccess() {
-		return (pDiagramGenerationConfiguration != null) ? pDiagramGenerationConfiguration : (pDiagramGenerationConfiguration = new DiagramGenerationConfigurationElements());
+	//	{docGenConfig::DocumentationGenerationConfiguration} "documentation" "(" ("EcoreToHtml:" ecoreToHtml=EBoolean)? ")";
+	public DocumentationGenerationConfigurationElements getDocumentationGenerationConfigurationAccess() {
+		return (pDocumentationGenerationConfiguration != null) ? pDocumentationGenerationConfiguration : (pDocumentationGenerationConfiguration = new DocumentationGenerationConfigurationElements());
 	}
 	
-	public ParserRule getDiagramGenerationConfigurationRule() {
-		return getDiagramGenerationConfigurationAccess().getRule();
+	public ParserRule getDocumentationGenerationConfigurationRule() {
+		return getDocumentationGenerationConfigurationAccess().getRule();
 	}
 
 	//EString returns ecore::EString:

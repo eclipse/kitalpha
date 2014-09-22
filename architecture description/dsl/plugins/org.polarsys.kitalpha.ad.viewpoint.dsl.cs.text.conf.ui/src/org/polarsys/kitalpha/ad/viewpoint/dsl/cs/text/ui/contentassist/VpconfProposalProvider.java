@@ -14,20 +14,24 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ConfigurationElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratrionConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration;
 
 import com.google.inject.Inject;
 
@@ -53,29 +57,18 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 	}
 	
 	
-//	@Override
-//	public void complete_TargetApplicationType(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-//		List<String> targetPlatformProposals = TargetApplicationReader.getSupportedModelingEnvironment();
-//		// Add target platform as proposal
-//		for (String proposal :targetPlatformProposals) {
-//			acceptor.accept(createCompletionProposal(proposal, context));
-//		}
-//	}
-	
-	
-	
 	//Forbid many declarations of diagram overwrite.
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext,	ICompletionProposalAcceptor acceptor) {
 		if (grammar instanceof VpconfGrammarAccess) {
 			VpconfGrammarAccess access = (VpconfGrammarAccess) grammar;
 			ICompletionProposal proposal = createCompletionProposal(keyword.getValue(), getKeywordDisplayString(keyword), getImage(keyword), contentAssistContext);
-			if (proposal == null) {
-				return;
-			}
+			
+			
+			
 			EObject current = contentAssistContext.getCurrentModel();
 			
-			if (current != null && NodeModelUtils.getNode(current) != null){
+			if (current != null && NodeModelUtils.getNode(current) != null && proposal != null){
 				ICompositeNode rootNode = NodeModelUtils.getNode(current).getRootNode();
 				EObject root = NodeModelUtils.findActualSemanticObjectFor(rootNode);
 				
@@ -88,15 +81,43 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 						ConfigurationElement ce = it.next();
 						if (ce instanceof Generation){
 							Generation gen = (Generation)ce;
-							if (gen.getOwnedExtensionGenConf().size() == 1 &&
-									proposal.getDisplayString().matches(access.getDiagramGenerationConfigurationAccess().getDiagramKeyword_1().getValue()))
+							
+							if (proposal.getDisplayString().matches(access.getGenerationAccess().getGenerationKeyword_1().getValue()))
 								return;
+							
+							EList<ExtensionGeneratrionConfiguration> listConfig = gen.getOwnedExtensionGenConf();
+							
+							for (ExtensionGeneratrionConfiguration confOpt : listConfig) {
+								
+								if (confOpt instanceof DiagramGenerationConfiguration &&
+										proposal.getDisplayString().matches(access.getDiagramGenerationConfigurationAccess().getDiagramKeyword_1().getValue())){
+									
+									return;
+								}
+								
+								if (confOpt instanceof DocumentationGenerationConfiguration &&
+										proposal.getDisplayString().matches(access.getDocumentationGenerationConfigurationAccess().getDocumentationKeyword_1().getValue())){
+									return;
+								}
+							}
+							
+							INode currentNode = contentAssistContext.getCurrentNode();
+							INode nextNode    = currentNode.getNextSibling();
+							while (nextNode != null && !nextNode.getText().equals(")")){
+								if (nextNode.getText().equals(proposal.getDisplayString())){
+									return;
+								}
+								nextNode = nextNode.getNextSibling();
+							}
 						}
 					}
 				}
+				
+				getPriorityHelper().adjustKeywordPriority(proposal, contentAssistContext.getPrefix());
+				acceptor.accept(proposal);
+				
 			}
 		}
-		super.completeKeyword(keyword, contentAssistContext, acceptor);
 	}
 	
 }

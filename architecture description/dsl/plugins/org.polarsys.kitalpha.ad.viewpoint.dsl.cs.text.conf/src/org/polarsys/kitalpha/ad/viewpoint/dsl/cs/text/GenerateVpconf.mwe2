@@ -64,7 +64,17 @@ Workflow {
 				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
 				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
 				}	
-				
+			
+			//Generation config Documentation
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.genmodel"
+				}
+			
 			//Vpdiagram
 			uriMap = {
 				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore"
@@ -82,6 +92,9 @@ Workflow {
 			//vpconf
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage"
 			
+			//generation config doc
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocGenConfigurationPackage"
+			
 			//vpdiagram
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage"
 			
@@ -90,6 +103,7 @@ Workflow {
 			
 			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
 			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/model/vpdiagram.genmodel"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.genmodel"
         }
     
         component = DirectoryCleaner {
