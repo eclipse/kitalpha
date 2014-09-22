@@ -238,12 +238,14 @@ public class ReferenceUtil {
 		clearFSResources(vr);
 		
 		for (String fsPath : useFSResource) {
-			FileSystemResource fsr = VpdescFactory.eINSTANCE.createFileSystemResource();
-			fsr.setPath(fsPath.substring(1, fsPath.length() - 1));
-			fsr.setWorkspace(false);
-			target.getViewpointResources().getUseResource().add(fsr);
+			if (fsPath != null && !fsPath.isEmpty()){
+				FileSystemResource fsr = VpdescFactory.eINSTANCE.createFileSystemResource();
+				fsr.setPath(fsPath.substring(1, fsPath.length() - 1));
+				fsr.setWorkspace(false);
+				target.getViewpointResources().getUseResource().add(fsr);
+			}
 		}
-		
+
 		
 	}
 
@@ -337,7 +339,8 @@ public class ReferenceUtil {
 		
 		//clearEMFResources(vr);
 		for (String uri : useAnyEMFResource) {
-			initModelEMFUsedResources(uri.trim(), target);
+			if (uri != null && !uri.isEmpty())
+				initModelEMFUsedResources(uri.trim(), target);
 		}
 		
 	}

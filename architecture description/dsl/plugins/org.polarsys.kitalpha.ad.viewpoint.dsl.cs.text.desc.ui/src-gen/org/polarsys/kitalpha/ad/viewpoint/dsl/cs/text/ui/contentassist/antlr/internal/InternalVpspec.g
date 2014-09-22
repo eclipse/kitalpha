@@ -1258,7 +1258,7 @@ rule__Viewpoint__Group_8__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesViewpointKeyword_8_0()); }
 
-	'uses viewpoint:' 
+	'uses viewpoint' 
 
 { after(grammarAccess.getViewpointAccess().getUsesViewpointKeyword_8_0()); }
 )
@@ -1415,7 +1415,7 @@ rule__Viewpoint__Group_9__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); }
 
-	'uses model:' 
+	'uses model' 
 
 { after(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); }
 )
@@ -1572,7 +1572,7 @@ rule__Viewpoint__Group_10__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); }
 
-	'uses diagram:' 
+	'uses diagram' 
 
 { after(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); }
 )
@@ -1729,7 +1729,7 @@ rule__Viewpoint__Group_11__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); }
 
-	'uses workspace:' 
+	'uses workspace' 
 
 { after(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); }
 )
@@ -1886,7 +1886,7 @@ rule__Viewpoint__Group_12__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); }
 
-	'uses filesystem:' 
+	'uses filesystem' 
 
 { after(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); }
 )
