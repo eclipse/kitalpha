@@ -40,6 +40,9 @@ public class WizardsUtil {
 	
 	public static final String GENERATOR_SPECILIZATION_EXTENSION_POINT_ATTRIBUTE = "name";
 	
+	private static final String SPACE = " ";
+	private static final String QUOTES = "\"";
+	
 	
 	public WizardsUtil() {
 	}
@@ -121,11 +124,18 @@ public class WizardsUtil {
 			" *	@date: " +  getCurrentDate()+"\n" +
 			" *\n" +
 			" */\n" +
-			"Configuration " + shortName + ".conf" + " {\n" +
-			"	target " + targetApplication + "\n" +
-			"	project " + rootProjectName + "\n" +
+			"Configuration " + shortName + ".conf" + " {\n";
+		
+			if (targetApplication != null && targetApplication.contains(SPACE)){
+				fileContent = fileContent + 	"	target " + QUOTES + targetApplication + QUOTES + "\n";
+			} else {
+				fileContent = fileContent +		"	target " + targetApplication + "\n";
+			}
+			
+			fileContent = fileContent + 	"	project " + rootProjectName + "\n" +
 			"	nsuri " + "\"" + nsURI+ "\"" + "\n" +
 			"}";
+			
 		return fileContent;
 	}
 	
@@ -139,11 +149,17 @@ public class WizardsUtil {
 			" *	@date: " +  getCurrentDate()+"\n" +
 			" *\n" +
 			" */\n" +
-			"Configuration " + fileName + " {\n" +
-			"	target " + targetApplication + "\n" +
-			"	project " + rootProjectName + "\n" +
-			"	nsuri " + "\"" + nsURI+ "\"" + "\n" +
-			"}";
+			"Configuration " + fileName + " {\n";
+			if (targetApplication != null && targetApplication.contains(SPACE)){
+				fileContent = fileContent + 	"	target " + QUOTES + targetApplication + QUOTES + "\n";
+			} else {
+				fileContent = fileContent +		"	target " + targetApplication + "\n";
+			}
+
+			fileContent = fileContent + 	"	project " + rootProjectName + "\n" +
+				"	project " + rootProjectName + "\n" +
+				"	nsuri " + "\"" + nsURI+ "\"" + "\n" +
+				"}";
 		return fileContent;
 	}
 	
