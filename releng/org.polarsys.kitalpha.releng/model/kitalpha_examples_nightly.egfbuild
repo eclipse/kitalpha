@@ -24,7 +24,7 @@
       </steps>
       <steps xsi:type="buildstep:InstallStep" xmi:id="_c8yE0D5LEeSicsfEyxBYkg" name="install egf TP_build" id="TP_build" profile="SDKProfile" p2_os="" p2_ws="" p2_arch="">
         <updateSiteUrls>${egf.repo.url}</updateSiteUrls>
-        <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+        <updateSiteUrls>${eclipse.download.prefix}/releases/juno</updateSiteUrls>
         <featureNames>org.eclipse.egf.sdk</featureNames>
       </steps>
     </steps>
@@ -49,7 +49,7 @@
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_5zqacC9VEeOlq-9ObYy--w" component="_00UyoC9VEeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_3JfTMC9VEeOlq-9ObYy--w" component="_yRm-QC9VEeOlq-9ObYy--w"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" id="TP_juno" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" enabled="false" id="TP_juno" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_RKKqAC9aEeOlq-9ObYy--w" name="report">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_RKKqAi9aEeOlq-9ObYy--w" name="report">
@@ -60,7 +60,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_phDRIC9hEeOlq-9ObYy--w" id="org.polarsys.kitalpha.report.example.customization.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_soSH0C9hEeOlq-9ObYy--w" component="_phDRIC9hEeOlq-9ObYy--w"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_BhkyEI5xEeORY9jpJq94Og" name="report feature" id="TP_kitalpha" profile="SDKProfile" resultSteps="_soSH0C9hEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_BhkyEI5xEeORY9jpJq94Og" name="report feature" enabled="false" id="TP_kitalpha" profile="SDKProfile" resultSteps="_soSH0C9hEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
     <scms xsi:type="buildscm:GIT" xmi:id="_b0byEEPwEeSAV7j17x4tgA">
       <locations xmi:id="_cSiDUEPwEeSAV7j17x4tgA" url="localhost:8080/kitalpha" username="admin" password="bZYSAf13neRD"/>
     </scms>
@@ -80,7 +80,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_jQTkcC9kEeOlq-9ObYy--w" component="_t8Ij0C_6EeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_1GyzsC_6EeOlq-9ObYy--w" component="_w-ceQC_6EeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_1g4HoC_6EeOlq-9ObYy--w" component="_vCK-0C_6EeOlq-9ObYy--w"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_C9QF4I5xEeORY9jpJq94Og" name="emde feature" id="TP_kitalpha" profile="SDKProfile" resultSteps="_0Vn1cC_6EeOlq-9ObYy--w _jQTkcC9kEeOlq-9ObYy--w _1g4HoC_6EeOlq-9ObYy--w _1GyzsC_6EeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_C9QF4I5xEeORY9jpJq94Og" name="emde feature" enabled="false" id="TP_kitalpha" profile="SDKProfile" resultSteps="_0Vn1cC_6EeOlq-9ObYy--w _jQTkcC9kEeOlq-9ObYy--w _1g4HoC_6EeOlq-9ObYy--w _1GyzsC_6EeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
@@ -91,7 +91,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_2UVU8JP_EeODqo9Nw0Mw6Q" id="org.polarsys.kitalpha.ad.example.simplecomponent.safety.viewpoint.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_7WlG0JP_EeODqo9Nw0Mw6Q" component="_2UVU8JP_EeODqo9Nw0Mw6Q"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" id="TP_kitalpha" profile="SDKProfile" resultSteps="_7WlG0JP_EeODqo9Nw0Mw6Q" installResultStepsSourceFeatures="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" enabled="false" id="TP_kitalpha" profile="SDKProfile" resultSteps="_7WlG0JP_EeODqo9Nw0Mw6Q" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_32V0wDY9EeOP8MSofnrGNA" name="All in one">
     <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha_examples" id="kitalpha_examples" publishSteps="_7WlG0JP_EeODqo9Nw0Mw6Q _0Vn1cC_6EeOlq-9ObYy--w _jQTkcC9kEeOlq-9ObYy--w _1g4HoC_6EeOlq-9ObYy--w _1GyzsC_6EeOlq-9ObYy--w _soSH0C9hEeOlq-9ObYy--w"/>
