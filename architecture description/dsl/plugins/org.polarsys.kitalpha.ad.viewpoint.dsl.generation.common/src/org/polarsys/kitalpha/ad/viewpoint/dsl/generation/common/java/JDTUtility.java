@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
-import java.util.regex.Pattern;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -21,19 +20,21 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.jdt.core.ICompilationUnit;
-import org.eclipse.jdt.core.IJavaElement;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.ToolFactory;
-import org.eclipse.jdt.core.compiler.IProblem;
-import org.eclipse.jdt.core.dom.AST;
-import org.eclipse.jdt.core.dom.ASTParser;
-import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
 import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.TextEdit;
+
+//import java.util.regex.Pattern;
+//import org.eclipse.jdt.core.ICompilationUnit;
+//import org.eclipse.jdt.core.IJavaElement;
+//import org.eclipse.jdt.core.JavaCore;
+//import org.eclipse.jdt.core.compiler.IProblem;
+//import org.eclipse.jdt.core.dom.AST;
+//import org.eclipse.jdt.core.dom.ASTParser;
+//import org.eclipse.jdt.core.dom.CompilationUnit;
 
 /**
  * @author Boubekeur Zendagui
@@ -132,7 +133,7 @@ public class JDTUtility {
 	 * @return Correct Java package name
 	 */
 	public static String getValidPackageName(String name){
-		return name.replaceAll("[^a-zA-Z0-9_.]","");
+		return name.replaceAll("[^a-zA-Z0-9_.]","").toLowerCase();
 	}
 	
 	/**
