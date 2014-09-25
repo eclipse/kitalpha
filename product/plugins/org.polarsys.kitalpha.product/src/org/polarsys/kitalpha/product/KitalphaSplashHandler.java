@@ -44,7 +44,7 @@ public class KitalphaSplashHandler extends BasicSplashHandler {
 			messageRectString = product.getProperty(IProductConstants.STARTUP_MESSAGE_RECT);
 			foregroundColorString = product.getProperty(IProductConstants.STARTUP_FOREGROUND_COLOR);
 		}
-		Rectangle progressRect = StringConverter.asRectangle(progressRectString, new Rectangle(10, 10, 300, 15));
+		Rectangle progressRect = StringConverter.asRectangle(progressRectString, new Rectangle(1, 10, 452, 15));
 		setProgressRect(progressRect);
 
 		Rectangle messageRect = StringConverter.asRectangle(messageRectString, new Rectangle(10, 35, 300, 15));
@@ -54,7 +54,7 @@ public class KitalphaSplashHandler extends BasicSplashHandler {
 		try {
 			foregroundColorInteger = Integer.parseInt(foregroundColorString, 16);
 		} catch (Exception ex) {
-			foregroundColorInteger = 0xD2D7FF; // off white
+			foregroundColorInteger = 0x726ba6; // off white
 		}
 
 		setForeground(new RGB((foregroundColorInteger & 0xFF0000) >> 16, (foregroundColorInteger & 0xFF00) >> 8, foregroundColorInteger & 0xFF));
@@ -75,7 +75,7 @@ public class KitalphaSplashHandler extends BasicSplashHandler {
 		builder.append(version2.getQualifier());
 		final String text = builder.toString();
 
-		final Point buildIdPoint = new Point(240, 165);
+		final Point buildIdPoint = new Point(240, 205);
 		getContent().addPaintListener(new PaintListener() {
 
 			public void paintControl(PaintEvent e) {
