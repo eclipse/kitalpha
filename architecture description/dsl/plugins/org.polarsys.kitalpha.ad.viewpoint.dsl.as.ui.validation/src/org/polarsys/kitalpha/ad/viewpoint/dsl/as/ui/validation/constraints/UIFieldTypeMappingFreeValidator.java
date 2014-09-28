@@ -11,7 +11,9 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints;
 
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.ValidationStatus;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation;
@@ -19,6 +21,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAttributeT
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Cardinalities;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalAttributeType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalAttributeType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.FieldMapping;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIContainer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField;
@@ -84,9 +89,7 @@ public class UIFieldTypeMappingFreeValidator implements IAdditionalConstraint {
 					return (typeName.equals("EBoolean") ? ValidationStatus.Ok : ValidationStatus.Error);
 					
 				case RADIOBOX:
-					return (typeName.equals("EEnumerator") 
-							|| typeName.equals("Enumeration") 
-							|| attributeType instanceof EEnum ? ValidationStatus.Ok : ValidationStatus.Error);
+					return (checkAttributeTypeForRadioBox(attributeType) ? ValidationStatus.Ok : ValidationStatus.Error);
 					
 				case TEXT:
 				case TEXTAREA:
@@ -100,7 +103,24 @@ public class UIFieldTypeMappingFreeValidator implements IAdditionalConstraint {
 		}
 		return ValidationStatus.Ignored;
 	}
-
+	
+	private boolean checkAttributeTypeForRadioBox(AbstractAttributeType type){
+		if (type instanceof LocalAttributeType)
+		{
+			final EObject lType = ((LocalAttributeType) type).getType();
+			return lType instanceof Enumeration;
+		}
+		
+		if (type instanceof ExternalAttributeType)
+		{
+			final EDataType eType = ((ExternalAttributeType) type).getType();
+			return eType instanceof EEnum || eType.getName().equals("EEnumerator"); 
+		}
+		
+		
+		return false;
+	}
+	
 	public String getMessage(ValidationStatus status, Object eObject) {
 		UIField uiField = (UIField) eObject;
 		UI_Field_Type uiFieldType = uiField.getType();
