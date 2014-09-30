@@ -35,6 +35,7 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.osgi.baseadaptor.BaseData;
 import org.eclipse.osgi.framework.internal.core.AbstractBundle;
+import org.eclipse.osgi.framework.internal.core.PackageAdminImpl;
 import org.eclipse.osgi.service.resolver.BaseDescription;
 import org.eclipse.osgi.service.resolver.BundleDescription;
 import org.eclipse.osgi.service.resolver.BundleSpecification;
@@ -85,7 +86,9 @@ public class BundleManager {
 			for (String dependency : bundle2dependencies.get(bundle.getSymbolicName())) {
 				Set<String> users = bundle2users.get(dependency);
 				if (users == null || users.isEmpty()) {
-					remove(Platform.getBundle(dependency));
+					Bundle bundle2 = Platform.getBundle(dependency);
+					if (bundle2 != null) // in some case the bundle may have been uninstalled
+						remove(bundle2);
 				}
 			}
 			bundle2dependencies.remove(bundle.getSymbolicName());
@@ -106,10 +109,9 @@ public class BundleManager {
 		BundleContext context = Activator.getContext();
 		ServiceReference packageAdminReference = context.getServiceReference(PackageAdmin.class.getName());
 		PackageAdmin packageAdmin = (PackageAdmin) context.getService(packageAdminReference);
-		packageAdmin.refreshPackages(collector.toArray(new Bundle[collector.size()]));
+		((PackageAdminImpl) packageAdmin).refreshPackages(collector.toArray(new Bundle[collector.size()]), true, null);
+		// packageAdmin.resolveBundles(collector.toArray(new Bundle[collector.size()]));
 
-		// wait for event dispatch
-		Thread.sleep(100);
 
 	}
 
