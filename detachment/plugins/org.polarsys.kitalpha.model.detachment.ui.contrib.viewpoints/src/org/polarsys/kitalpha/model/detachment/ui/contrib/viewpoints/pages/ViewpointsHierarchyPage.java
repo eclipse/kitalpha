@@ -22,7 +22,6 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.dialogs.ContainerCheckedTreeViewer;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.FormEditor;
@@ -31,13 +30,13 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.IViewpointTreeDescription;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.ViewpointTreeContainer;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.ExtensionTreeViewer;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.providers.ViewpointTreeLabelProvider;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.providers.ViewpointTreeProvider;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.Messages;
-import org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.providers.ViewpointTreeLabelProvider;
-import org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.providers.ViewpointTreeProvider;
 import org.polarsys.kitalpha.model.detachment.ui.page.AbstractDetachmentFormPage;
 
 /**
@@ -146,53 +145,4 @@ public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 	private void selectAll(boolean checked) {
 		treeViewer.setAllChecked(checked);
 	}
-	
-	class ExtensionTreeViewer extends ContainerCheckedTreeViewer {
-
-		public ExtensionTreeViewer(Composite parent, int style) {
-			super(parent, style);
-		}
-
-		// handle user click event
-		protected void handleSelect(SelectionEvent event) {
-			// call super class to notify change of check state
-			IViewpointTreeDescription selected_vpd = (IViewpointTreeDescription) event.item.getData();
-			
-			if (selected_vpd != null){
-				TreeItem item = (TreeItem)event.item;
-				item.setGrayed(false);
-				selected_vpd.setAsCandidateToKeep(item.getChecked());
-				selected_vpd.updateCandidates(selected_vpd.isCandidateToKeep());
-				TreeItem [] allItems = getTree().getItems();
-				
-				updateCheckItems(allItems);
-			}
-			super.handleSelect(event);
-
-		}
-
-		private void updateCheckItems(TreeItem[] allItems) {
-			
-			for (TreeItem treeItem : allItems) {
-				IViewpointTreeDescription vpd = (IViewpointTreeDescription) treeItem.getData();
-				treeItem.setChecked(vpd.isCandidateToKeep());
-				treeItem.setGrayed(false);
-				updateCheckChildrenItems(treeItem.getItems());
-			}
-		}
-
-		private void updateCheckChildrenItems(TreeItem[] items) {
-			if (items == null) return;
-			if (items.length == 0) return;
-			
-			for (TreeItem treeItem : items) {
-				IViewpointTreeDescription vpd = (IViewpointTreeDescription) treeItem.getData();
-				treeItem.setChecked(vpd.isCandidateToKeep());
-				treeItem.setGrayed(false);
-				updateCheckChildrenItems(treeItem.getItems());
-			}
-			
-		}
-	}
-
 }

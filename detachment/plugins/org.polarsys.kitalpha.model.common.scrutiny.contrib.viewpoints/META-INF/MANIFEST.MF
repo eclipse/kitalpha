@@ -8,10 +8,9 @@ Bundle-Vendor: %VENDOR
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.model.common.scrutiny;visibility:=reexport,
  org.polarsys.kitalpha.resourcereuse;visibility:=reexport,
- org.polarsys.kitalpha.ad.af.coredomain.model;visibility:=reexport
+ org.polarsys.kitalpha.ad.af.coredomain.model;visibility:=reexport,
+ org.polarsys.kitalpha.model.common.share;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints,
- org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.helpers,
- org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes,
- org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees
+ org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes

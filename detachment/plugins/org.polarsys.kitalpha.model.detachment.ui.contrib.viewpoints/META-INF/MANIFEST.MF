@@ -9,6 +9,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.forms,
  org.polarsys.kitalpha.model.common.scrutiny,
- org.polarsys.kitalpha.model.detachment.ui
+ org.polarsys.kitalpha.model.detachment.ui,
+ org.polarsys.kitalpha.model.common.share
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

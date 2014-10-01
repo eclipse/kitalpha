@@ -7,7 +7,8 @@ Bundle-Activator: org.polarsys.kitalpha.model.common.commands.contrib.viewpoints
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.model.common.commands,
  org.polarsys.kitalpha.model.common.scrutiny,
- org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints
+ org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints,
+ org.polarsys.kitalpha.model.common.share
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.log4j

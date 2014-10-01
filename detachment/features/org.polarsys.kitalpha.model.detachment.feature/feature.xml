@@ -29,4 +29,8 @@
          id="org.polarsys.kitalpha.model.common.scrutiny.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.polarsys.kitalpha.model.common.share.feature"
+         version="0.0.0"/>
+
 </feature>
