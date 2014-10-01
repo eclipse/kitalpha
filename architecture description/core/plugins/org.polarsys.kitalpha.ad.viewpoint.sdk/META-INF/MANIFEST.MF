@@ -13,3 +13,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.pde.core
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.sdk.actions,
+ org.polarsys.kitalpha.ad.viewpoint.sdk.manager
