@@ -101,7 +101,7 @@ public class BundleManager {
 		allManagedBundles.add(symbolicName);
 
 		IPluginModelBase model = PluginRegistry.findModel(symbolicName);
-		List<Bundle> collector = new ArrayList<Bundle>();
+		Set<Bundle> collector = new HashSet<Bundle>();
 		load(model.getBundleDescription(), collector);
 
 		Bundle installBundle = findBundle(symbolicName);
@@ -110,12 +110,12 @@ public class BundleManager {
 		ServiceReference packageAdminReference = context.getServiceReference(PackageAdmin.class.getName());
 		PackageAdmin packageAdmin = (PackageAdmin) context.getService(packageAdminReference);
 		((PackageAdminImpl) packageAdmin).refreshPackages(collector.toArray(new Bundle[collector.size()]), true, null);
+		((PackageAdminImpl) packageAdmin).resolveBundles(collector);
 		// packageAdmin.resolveBundles(collector.toArray(new Bundle[collector.size()]));
-
 
 	}
 
-	private void load(BundleDescription description, List<Bundle> collector) throws UnsupportedEncodingException, MalformedURLException, BundleException, CoreException, InterruptedException {
+	private void load(BundleDescription description, Set<Bundle> collector) throws UnsupportedEncodingException, MalformedURLException, BundleException, CoreException, InterruptedException {
 		String symbolicName = description.getSymbolicName();
 		for (BundleSpecification spec : description.getRequiredBundles()) {
 			BaseDescription supplier = spec.getSupplier();
