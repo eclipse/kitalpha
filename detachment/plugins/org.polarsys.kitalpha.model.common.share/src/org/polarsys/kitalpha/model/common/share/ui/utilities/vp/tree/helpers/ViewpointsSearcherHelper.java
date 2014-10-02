@@ -9,7 +9,7 @@
  *    THALES GLOBAL SERVICES - Initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.helpers;
+package org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers;
 
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;

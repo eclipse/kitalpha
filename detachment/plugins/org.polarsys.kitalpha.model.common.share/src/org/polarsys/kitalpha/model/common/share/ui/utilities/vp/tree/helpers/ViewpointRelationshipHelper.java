@@ -8,7 +8,7 @@
  * Contributors:
  *    THALES GLOBAL SERVICES - Initial API and implementation
  *******************************************************************************/
-package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.helpers;
+package org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers;
 
 import java.util.Collection;
 import java.util.HashMap;

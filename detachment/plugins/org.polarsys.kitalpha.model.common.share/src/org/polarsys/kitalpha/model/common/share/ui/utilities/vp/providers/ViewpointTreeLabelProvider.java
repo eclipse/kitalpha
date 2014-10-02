@@ -8,14 +8,14 @@
  * Contributors:
  *    THALES GLOBAL SERVICES - Initial API and implementation
  *******************************************************************************/
-package org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.providers;
+package org.polarsys.kitalpha.model.common.share.ui.utilities.vp.providers;
 
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.IViewpointTreeDescription;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.IViewpointTreeDescription;
 
 /**
  * @author Faycal Abka

@@ -29,6 +29,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
+import org.polarsys.kitalpha.model.common.share.resource.loading.LoadResource;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentEditorInput;
 import org.polarsys.kitalpha.model.detachment.ui.editor.ModelDetachment;

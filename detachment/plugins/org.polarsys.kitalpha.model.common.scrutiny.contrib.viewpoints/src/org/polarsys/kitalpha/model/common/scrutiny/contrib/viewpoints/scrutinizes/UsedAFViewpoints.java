@@ -17,12 +17,12 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.helpers.FinderAFViewpointHelper;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.helpers.ViewpointRelationshipHelper;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.helpers.ViewpointsSearcherHelper;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.ViewpointTreeBuilder;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees.ViewpointTreeContainer;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeBuilder;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.FinderAFViewpointHelper;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointRelationshipHelper;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointsSearcherHelper;
 
 /**
  * @author Faycal Abka

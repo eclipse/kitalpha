@@ -9,7 +9,7 @@
  *    THALES GLOBAL SERVICES - Initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.detachment.ui.action;
+package org.polarsys.kitalpha.model.common.share.resource.loading;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.polarsys.kitalpha.model.detachment.ui.Messages;
+import org.polarsys.kitalpha.model.common.share.Messages;
 
 /**
  * Utility for loading platform resources

@@ -9,7 +9,7 @@
  *    THALES GLOBAL SERVICES - Initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees;
+package org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.helpers.ViewpointsSearcherHelper;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointsSearcherHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**

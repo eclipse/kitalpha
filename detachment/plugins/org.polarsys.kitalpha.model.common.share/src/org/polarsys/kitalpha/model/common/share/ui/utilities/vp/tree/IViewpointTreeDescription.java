@@ -9,7 +9,7 @@
  *    THALES GLOBAL SERVICES - Initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.trees;
+package org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree;
 
 import java.util.Collection;
 
