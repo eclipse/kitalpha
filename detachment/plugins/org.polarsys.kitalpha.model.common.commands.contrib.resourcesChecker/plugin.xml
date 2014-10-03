@@ -19,7 +19,8 @@ Contributors:
       <command
             class="org.polarsys.kitalpha.model.common.commands.contrib.resourcesChecker.command.WorkspaceResourceChecker"
             id="org.polarsys.kitalpha.model.common.commands.contrib.detachment.checkFileResourceAttributes"
-            priority="500.00">
+            priority="500.00"
+            workflow="ALL">
       </command>
    </extension>
 

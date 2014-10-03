@@ -20,7 +20,8 @@ Contributors:
             class="org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.command.UnknownreferencesCleaner"
             id="org.polarsys.kitalpha.model.common.commands.contrib.detachment.unknownreferencesCleaner"
             priority="1000.00"
-            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutinizes.unknownReference">
+            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutinizes.unknownReference"
+            workflow="DETACHMENT">
       </command>
    </extension>
 

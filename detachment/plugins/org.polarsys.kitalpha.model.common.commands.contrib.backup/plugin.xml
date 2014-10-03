@@ -19,7 +19,8 @@ Contributors:
       <command
             class="org.polarsys.kitalpha.model.common.commands.contrib.backup.command.BackupAndSaveCommand"
             id="org.polarsys.kitalpha.model.actions.contrib.detachment.backupAndSave"
-            priority="10000.00">
+            priority="10000.00"
+            workflow="ALL">
       </command>
    </extension>
 

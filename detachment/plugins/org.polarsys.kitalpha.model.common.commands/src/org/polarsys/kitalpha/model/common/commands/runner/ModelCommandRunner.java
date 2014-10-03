@@ -1,22 +1,24 @@
 /*******************************************************************************
- * Copyright (c) 2013 THALES GLOBAL SERVICES.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Contributors:
- *    THALES GLOBAL SERVICES - Initial API and implementation
- *******************************************************************************/
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.model.common.commands.runner;
 
 import java.util.Deque;
+import java.util.EnumSet;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
+import org.polarsys.kitalpha.model.common.commands.registry.WorkflowType;
 import org.polarsys.kitalpha.model.common.commands.scheduling.ModelCommandStackBuilder;
 
 /**
@@ -27,7 +29,7 @@ public class ModelCommandRunner implements IModelCommandRunner {
 	private final ModelCommandStackBuilder actionsStack = new ModelCommandStackBuilder();
 
 	@Override
-	public void run(Resource resource, IProgressMonitor monitor) throws ModelCommandException {
+	public void run(Resource resource, EnumSet<WorkflowType> workflows, IProgressMonitor monitor) throws ModelCommandException {
 		
 		
 		actionsStack.buildModelActionStack();
@@ -39,7 +41,11 @@ public class ModelCommandRunner implements IModelCommandRunner {
 		
 		while (!stack.isEmpty()){
 			ModelCommand action = stack.pop();
-			action.exec(resource, subMonitor.newChild(100));
+			
+			WorkflowType actionWorkflow = action.getWokflowType();
+			
+			if (workflows.contains(actionWorkflow))
+				action.exec(resource, subMonitor.newChild(100));
 		}
 	}
 
