@@ -127,7 +127,7 @@
             invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_gBdIwEldEd-TSsH7K-_bxQ"/>
       </invocationContractContainer>
     </invocations>
-    <invocations xmi:id="_ap6KYN6lEeC7p7H7gvnXVA" name="Lunch documentation generation"
+    <invocations xmi:id="_ap6KYN6lEeC7p7H7gvnXVA" name="Launch documentation generation"
         invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_lXoikdzyEd-264OhVlAChA">
       <invocationContractContainer xmi:id="_b2y0QN6lEeC7p7H7gvnXVA">
         <invocationContracts xmi:id="_qBTLIN6lEeC7p7H7gvnXVA" factoryComponentContract="#_AuGIoN6lEeC7p7H7gvnXVA"
