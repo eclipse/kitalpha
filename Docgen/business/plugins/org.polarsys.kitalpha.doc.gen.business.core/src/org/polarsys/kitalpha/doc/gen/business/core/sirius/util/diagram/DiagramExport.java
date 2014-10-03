@@ -98,8 +98,6 @@ public class DiagramExport {
 			IFile generatedDiagram = getGeneratedDiagram();
 			if (generatedDiagram == null) 
 			{
-				// See ticket
-				// https://support.jira.obeo.fr/browse/DOREMI-2376
 				Display.getDefault().syncExec(new Runnable() {
 					public void run() {
 						final ExportAction exportAction = new ExportAction(session, getRepresentationsToExportAsImage(), outputPath, ImageFileFormat.JPG,false);

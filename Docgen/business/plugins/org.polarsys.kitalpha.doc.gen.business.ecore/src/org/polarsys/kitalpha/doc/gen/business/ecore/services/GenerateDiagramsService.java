@@ -283,10 +283,10 @@ public class GenerateDiagramsService {
 	}
 
 	/**
-	 * Provides GMF diagram corresponding to DoReMi representation.
+	 * Provides GMF diagram corresponding to Sirius representation.
 	 * 
 	 * @param representation
-	 *            the DoReMi representation.
+	 *            the Sirius representation.
 	 * @param sessionResource
 	 *            the session containing representation.
 	 * @return
@@ -334,7 +334,7 @@ public class GenerateDiagramsService {
 	public void layout(URI airdUri) {
 		try {
 
-			Resource ecoreResource = getResourceFromAvailableDoReMiSessions(resource.getURI());
+			Resource ecoreResource = getResourceFromAvailableSiriusSessions(resource.getURI());
 			if (ecoreResource == null && resource.isLoaded())
 			{
 				ecoreResource = resource;
@@ -429,7 +429,7 @@ public class GenerateDiagramsService {
 	 * @param sessionUri
 	 * @return
 	 */
-	private Resource getResourceFromAvailableDoReMiSessions(URI sessionUri) {
+	private Resource getResourceFromAvailableSiriusSessions(URI sessionUri) {
 		for (Session currentSession : SessionManager.INSTANCE.getSessions()) 
 		{
 			for (Resource resource : currentSession.getSemanticResources()) 
@@ -660,7 +660,7 @@ public class GenerateDiagramsService {
 		 * Refresh the new created representation.
 		 * 
 		 * @param representation
-		 *            the DoReMi representation.
+		 *            the Sirius representation.
 		 * @param session
 		 *            the session containing the representation.
 		 */

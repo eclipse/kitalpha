@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated on Tue Aug 12 15:01:19 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.doc.gen.business.ecore.content;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,8 +11,8 @@ import org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreFileNameService
 import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
-import org.polarsys.kitalpha.doc.gen.business.core.util.DoremiHelper;
-import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultDoremiDiagramHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultSiriusDiagramHelper;
 
 public class ecoreElementContent
 		extends
@@ -38,11 +28,20 @@ public class ecoreElementContent
 
 	public final String NL = nl == null ? (System.getProperties()
 			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<p><strong>Package :</strong> ";
+	protected final String TEXT_1 = "<div style=\"position: fixed; top: 0; left: 1%; width: 98%; z-index: 2; background-color: white; \";>"
+			+ NL + "<p><strong>Package :</strong> ";
 	protected final String TEXT_2 = "</p>" + NL + "<h1>";
 	protected final String TEXT_3 = "</h1>" + NL + "<img src=\"";
-	protected final String TEXT_4 = "\" alt=\"\" />" + NL
-			+ "<p><strong>Description :</strong><br />";
+	protected final String TEXT_4 = "\" alt=\"\" />"
+			+ NL
+			+ "<hr style=\"width:98%; align : center; \" /> "
+			+ NL
+			+ "</div>"
+			+ NL
+			+ ""
+			+ NL
+			+ "<div style=\"position: absolute; top: 160px; left: 1%; z-index: 1; width: 98%;\">"
+			+ NL + "<p><strong>Description :</strong><br />";
 	protected final String TEXT_5 = "</p>" + NL
 			+ "<p><strong>Abstract: </strong><br />";
 	protected final String TEXT_6 = "</p>";
@@ -71,7 +70,7 @@ public class ecoreElementContent
 	protected final String TEXT_27 = NL + "<p><strong>";
 	protected final String TEXT_28 = "</strong></p>";
 	protected final String TEXT_29 = NL;
-	protected final String TEXT_30 = NL;
+	protected final String TEXT_30 = NL + "</div>";
 	protected final String TEXT_31 = NL;
 	protected final String TEXT_32 = NL;
 
@@ -185,7 +184,7 @@ public class ecoreElementContent
 		stringBuffer.append(TEXT_5);
 		stringBuffer.append(((EClass) element).isAbstract());
 		stringBuffer.append(TEXT_6);
-		Collection<DRepresentation> diagramList = DoremiHelper
+		Collection<DRepresentation> diagramList = SiriusHelper
 				.getDiagramForObject(element);
 		stringBuffer.append(TEXT_7);
 		stringBuffer.append(TEXT_8);
@@ -372,7 +371,7 @@ public class ecoreElementContent
 
 		element = parameter;
 		fileName = fileNameService.getFileName(element);
-		helper = new DefaultDoremiDiagramHelper();
+		helper = new DefaultSiriusDiagramHelper();
 		title = ((EClass) element).getName();
 
 		if (((EClass) element).isAbstract())

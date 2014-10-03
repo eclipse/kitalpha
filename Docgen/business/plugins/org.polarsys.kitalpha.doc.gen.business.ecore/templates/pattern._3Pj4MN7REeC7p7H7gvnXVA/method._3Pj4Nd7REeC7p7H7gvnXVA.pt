@@ -4,12 +4,17 @@ String projectName = ctx.getValue("projectName").toString();
 String text = ((EClass) element).getName();
 text = EscapeChars.forHTML(text);
 %>
+<div style="position: fixed; top: 0; left: 1%; width: 98%; z-index: 2; background-color: white; ";>
 <p><strong>Package :</strong> <%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(((EClass) element).getEPackage())%></p>
 <h1><%=text%></h1>
 <img src="<%=iconPath%>" alt="" />
+<hr style="width:98%; align : center; " /> 
+</div>
+
+<div style="position: absolute; top: 160px; left: 1%; z-index: 1; width: 98%;">
 <p><strong>Description :</strong><br /><%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription((EClass) element)%></p>
 <p><strong>Abstract: </strong><br /><%=((EClass) element).isAbstract()%></p>
-<%Collection<DRepresentation> diagramList = DoremiHelper.getDiagramForObject(element);%>
+<%Collection<DRepresentation> diagramList = SiriusHelper.getDiagramForObject(element);%>
 
 <%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline((EClass) element)%>
 <%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels((EClass) element)%>
@@ -70,3 +75,4 @@ String generatedFolder = fileNameService.getFileName(((DSemanticDiagram)diagram)
 <p><strong><%=((DSemanticDiagram) diagram).getDescription().getName()%></strong></p>
 <%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
 <%}}}%>
+</div>

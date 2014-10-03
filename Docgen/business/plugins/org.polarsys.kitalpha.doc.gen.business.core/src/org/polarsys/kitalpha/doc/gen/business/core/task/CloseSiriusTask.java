@@ -8,25 +8,22 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-package org.polarsys.kitalpha.doc.gen.business.core.util;
+package org.polarsys.kitalpha.doc.gen.business.core.task;
 
-import java.util.Collection;
-
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.URI;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.diagram.CoordinatesCalculator;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.LabelProviderHelper;
 
 
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.business.api.dialect.DialectManager;
+public class CloseSiriusTask extends AbstrackSiriusTaskAction {
 
-public class DoremiHelper {
-	public static Collection<DRepresentation> getDiagramForObject(
-			EObject element) {
-		Collection<DRepresentation> representations = DialectManager.INSTANCE
-				.getRepresentations(element,
-						DiagramSessionHelper.getCurrentSession());
-
-		return representations;
-
+	@Override
+	public void doTask(URI uri) {
+		DiagramSessionHelper.cleanSession();
+//		DiagramExport.closeSessions();
+		CoordinatesCalculator.COORDINATES_MAP.clear();
+		LabelProviderHelper.disposeImageRegistry();
 	}
+
 }
