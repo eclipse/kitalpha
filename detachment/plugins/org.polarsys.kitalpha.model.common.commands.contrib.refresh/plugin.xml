@@ -19,7 +19,8 @@ Contributors:
       <command
             class="org.polarsys.kitalpha.model.common.commands.contrib.refresh.command.RefreshRepresentation"
             id="org.polarsys.kitalpha.model.actions.contrib.detachment.refreshRepresentation"
-            priority="50000.00">
+            priority="50000.00"
+            workflow="ALL">
       </command>
    </extension>
 

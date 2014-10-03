@@ -20,7 +20,8 @@ Contributors:
             class="org.polarsys.kitalpha.model.common.commands.contrib.viewpoints.command.ViewpointsDetachmentCommand"
             id="org.polarsys.kitalpha.model.common.commands.contrib.detachment.viewpointselection"
             priority="5000.00"
-            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints">
+            scrutinizeId="org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints"
+            workflow="DETACHMENT">
       </command>
    </extension>
 
