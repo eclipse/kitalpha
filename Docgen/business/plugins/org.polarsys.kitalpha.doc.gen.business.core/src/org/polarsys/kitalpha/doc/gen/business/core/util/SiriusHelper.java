@@ -10,31 +10,23 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.core.util;
 
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 
-import org.eclipse.sirius.diagram.DDiagramElement;
 
-public class DefaultDoremiDiagramHelper implements IDiagramHelper {
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
 
-	public boolean select(EObject eObject) {
-		return true;
+public class SiriusHelper {
+	public static Collection<DRepresentation> getDiagramForObject(
+			EObject element) {
+		Collection<DRepresentation> representations = DialectManager.INSTANCE
+				.getRepresentations(element,
+						DiagramSessionHelper.getCurrentSession());
+
+		return representations;
+
 	}
-
-	public EObject getSemanticElement(DDiagramElement element) {
-		return element.getTarget();
-	}
-
-	public boolean isContainer(DDiagramElement element) {
-		return true;
-	}
-
-	public String getElementId(EObject eObject) {
-		return "";
-	}
-
-	public String diagramDocumentationPostTraitement(EObject eObject,
-			String documentation, String projectName, String outputFolder) {
-		return documentation;
-	}
-
 }

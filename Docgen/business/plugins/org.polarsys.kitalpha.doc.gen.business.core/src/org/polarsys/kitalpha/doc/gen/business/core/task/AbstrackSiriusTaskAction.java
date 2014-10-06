@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.URI;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 
 
-public abstract class AbstrackDoremiTaskAction implements ITaskProduction {
+public abstract class AbstrackSiriusTaskAction implements ITaskProduction {
 
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {

@@ -1,7 +1,7 @@
 <%
 element = parameter;
 fileName = fileNameService.getFileName(element);
-helper = new DefaultDoremiDiagramHelper();
+helper = new DefaultSiriusDiagramHelper();
 title = ((EClass) element).getName();
 
 if(((EClass) element).isAbstract())

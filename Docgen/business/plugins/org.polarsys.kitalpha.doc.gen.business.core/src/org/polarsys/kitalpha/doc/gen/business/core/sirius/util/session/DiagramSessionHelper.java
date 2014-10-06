@@ -22,7 +22,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 
 /**
- * This class manage the unique doremi session used during documentation
+ * This class manage the unique sirius session used during documentation
  * generation.
  */
 public class DiagramSessionHelper {

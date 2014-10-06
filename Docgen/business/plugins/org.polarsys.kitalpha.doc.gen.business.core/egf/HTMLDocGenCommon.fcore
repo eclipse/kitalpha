@@ -391,7 +391,7 @@
               invokedContract="#_zy7bR-gmEd-RW5fqwaBgOQ"/>
         </invocationContractContainer>
       </invocations>
-      <invocations xmi:id="__u20YPcREd-opsPVeIv2ZQ" name="Open Doremi session" invokedActivity="#_Lts24fcQEd-opsPVeIv2ZQ">
+      <invocations xmi:id="__u20YPcREd-opsPVeIv2ZQ" name="Open Sirius session" invokedActivity="#_Lts24fcQEd-opsPVeIv2ZQ">
         <invocationContractContainer xmi:id="__u20YfcREd-opsPVeIv2ZQ">
           <invocationContracts xmi:id="__u20YvcREd-opsPVeIv2ZQ" factoryComponentContract="#_67_oxN3rEd-Qav1YnqlO9A"
               invokedContract="#_Qeaz4PcQEd-opsPVeIv2ZQ"/>
@@ -421,7 +421,7 @@
           </invocationContracts>
         </invocationContractContainer>
       </invocations>
-      <invocations xmi:id="_8JDyYPcREd-opsPVeIv2ZQ" name="Close Doremi session" invokedActivity="#_fhJzQPcQEd-opsPVeIv2ZQ">
+      <invocations xmi:id="_8JDyYPcREd-opsPVeIv2ZQ" name="Close Sirius session" invokedActivity="#_fhJzQPcQEd-opsPVeIv2ZQ">
         <invocationContractContainer xmi:id="_8JDyYfcREd-opsPVeIv2ZQ">
           <invocationContracts xmi:id="_8JDyYvcREd-opsPVeIv2ZQ" factoryComponentContract="#_67_oxN3rEd-Qav1YnqlO9A"
               invokedContract="#_fhJzQvcQEd-opsPVeIv2ZQ"/>
@@ -893,16 +893,16 @@
       </contracts>
     </contractContainer>
   </ftask:Task>
-  <ftask:Task xmi:id="_Lts24fcQEd-opsPVeIv2ZQ" name="HTMLDocGen.Open Doremi Session"
-      kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.OpenDoremiTask">
+  <ftask:Task xmi:id="_Lts24fcQEd-opsPVeIv2ZQ" name="HTMLDocGen.Open Sirius Session"
+      kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.OpenSiriusTask">
     <contractContainer xmi:id="_QRCfMPcQEd-opsPVeIv2ZQ">
       <contracts xmi:id="_Qeaz4PcQEd-opsPVeIv2ZQ" name="domain">
         <type xmi:type="domain:TypeDomain" xmi:id="_Q7Zq0PcQEd-opsPVeIv2ZQ"/>
       </contracts>
     </contractContainer>
   </ftask:Task>
-  <ftask:Task xmi:id="_fhJzQPcQEd-opsPVeIv2ZQ" name="HTMLDocGen.Close Doremi Session"
-      kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.CloseDoremiTask">
+  <ftask:Task xmi:id="_fhJzQPcQEd-opsPVeIv2ZQ" name="HTMLDocGen.Close Sirius Session"
+      kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.CloseSiriusTask">
     <contractContainer xmi:id="_fhJzQfcQEd-opsPVeIv2ZQ">
       <contracts xmi:id="_fhJzQvcQEd-opsPVeIv2ZQ" name="domain">
         <type xmi:type="domain:TypeDomain" xmi:id="_fhJzQ_cQEd-opsPVeIv2ZQ"/>

@@ -118,7 +118,7 @@ public class CoordinatesCalculator {
 	 * @param diagram
 	 *            the ddiagram to resolve proxy.
 	 * @param session
-	 *            the doremi session referencing diagram resource. If null, we
+	 *            the sirius session referencing diagram resource. If null, we
 	 *            try to find out the session from proxy uri.
 	 */
 	private void resolveProxy(DDiagram diagram, Session session) {

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.DDiagramElement;
 
 /**
- * Doremi diagram helper.
+ * Sirius diagram helper.
  * 
  * @author Florian Barbin
  * 

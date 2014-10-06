@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.URI;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 
 
-public class OpenDoremiTask extends AbstrackDoremiTaskAction {
+public class OpenSiriusTask extends AbstrackSiriusTaskAction {
 
 	@Override
 	public void doTask(URI uri) {
