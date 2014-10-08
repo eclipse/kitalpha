@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.polarsys.kitalpha.cadence.feature"
-      label="Kitalpha Cadence Feature"
-      version="0.5.0.qualifier">
+      label="%providerName"
+      version="0.5.0.qualifier"
+      provider-name="%providerVendor">
 
    <description>
       %description
