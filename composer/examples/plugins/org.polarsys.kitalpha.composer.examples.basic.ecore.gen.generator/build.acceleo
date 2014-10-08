@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../org.polarsys.kitalpha.composer.core;${target.folder}/../../org.polarsys.kitalpha.composer.metamodel.allocation.base.model;${target.folder}/../../org.polarsys.kitalpha.cadence.core;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore;"
+            dependencies="${target.folder}/../../org.polarsys.kitalpha.composer.core;${target.folder}/../../org.polarsys.kitalpha.composer.metamodel.allocation.base.model;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>

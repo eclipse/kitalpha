@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../org.polarsys.kitalpha.composer.core;${target.folder}/../../org.polarsys.kitalpha.composer.metamodel.allocation.base.model;${target.folder}/../../org.polarsys.kitalpha.cadence.core;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.ecore.gen.generator;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore;${target.folder}/../../org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation;"
+            dependencies="${target.folder}/../../org.polarsys.kitalpha.composer.core;${target.folder}/../../org.polarsys.kitalpha.composer.metamodel.allocation.base.model;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.ecore.gen.generator;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model;${target.folder}/../../org.polarsys.kitalpha.composer.examples.basic.allocation.ecore;${target.folder}/../../org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>
