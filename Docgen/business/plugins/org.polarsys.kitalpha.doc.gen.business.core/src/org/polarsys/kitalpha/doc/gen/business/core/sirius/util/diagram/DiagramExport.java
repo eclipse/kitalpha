@@ -38,7 +38,7 @@ import org.eclipse.sirius.ui.tools.api.actions.export.ExportAction;
 import org.eclipse.sirius.ext.swt.ImageFileFormat;
 
 /**
- * @author S0021936
+ * @author S0021936, Boubekeur Zendagui
  * 
  */
 public class DiagramExport {
@@ -95,36 +95,20 @@ public class DiagramExport {
 		URI airdURI = airdResource.getURI();
 		if (airdURI != null) 
 		{
-			IFile generatedDiagram = getGeneratedDiagram();
-			if (generatedDiagram == null) 
-			{
-				Display.getDefault().syncExec(new Runnable() {
-					public void run() {
-						final ExportAction exportAction = new ExportAction(session, getRepresentationsToExportAsImage(), outputPath, ImageFileFormat.JPG,false);
-						try {
-							exportAction.run(NULL_PROGRESS_MONITOR);
-						} catch (InterruptedException e) {
-							Activator
-							.getDefault()
-							.getLog()
-							.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
-									"An error occured during export action", e));
-						} catch (Exception e) {
-							Activator
-							.getDefault()
-							.getLog()
-							.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
-									"An error occured during export action", e));
-						}
+			Display.getDefault().syncExec(new Runnable() {
+				public void run() {
+					final ExportAction exportAction = new GenDocDiagramExportAction(session, getRepresentationsToExportAsImage(), outputPath, ImageFileFormat.JPG,false);
+					try {
+						exportAction.run(NULL_PROGRESS_MONITOR);
+					} catch (InterruptedException e) {
+						Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,"An error occured during export action", e));
+					} catch (Exception e) {
+						Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,"An error occured during export action", e));
 					}
-				});
-				
-				result.add(getGeneratedDiagram());
-			}
-			else 
-			{
-				result.add(generatedDiagram);
-			}
+				}
+			});
+
+			result.add(getGeneratedDiagram());
 		}
 		
 		if (result.size() > 0) 
