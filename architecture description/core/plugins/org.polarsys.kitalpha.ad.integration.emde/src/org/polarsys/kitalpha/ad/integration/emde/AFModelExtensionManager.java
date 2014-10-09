@@ -36,6 +36,11 @@ import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtension
 public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 	static {
+	}
+
+	public AFModelExtensionManager() {
+		super();
+		// TODO Auto-generated constructor stub
 		ViewpointManager.INSTANCE.addListener(new EarlyListener() {
 
 			private final ResourceSet set = new ResourceSetImpl();
@@ -63,6 +68,22 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 			public void hasBeenActivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 				sendEvent(vp, true);
 			}
+		});
+
+		// TODO: quick solution clear all data
+		ViewpointManager.INSTANCE.addListener(new EarlyListener() {
+
+			@Override
+			public void hasBeenActivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			}
+
+			@Override
+			public void hasBeenDeactivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+				extension2state.clear();
+				managedByAF2state.clear();
+				loadExtensibleModels();
+			}
+
 		});
 	}
 
@@ -104,11 +125,10 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	}
 
 	/*
-	 * TODO we're loading all VP models at any calls ... What is the cost ?
-	 * Tested on model with 14 000 logical components, we need to cache result
-	 * of computations
+	 * TODO we're loading all VP models at any calls ... What is the cost ? Tested on model with 14 000 logical components, we need to cache result of computations
 	 */
 	public boolean isExtensionModelDisabled(ExtendedModel extended) {
+
 		String nsURI = extended.getName();
 		if (extension2state.containsKey(nsURI)) {
 			return !extension2state.get(nsURI);

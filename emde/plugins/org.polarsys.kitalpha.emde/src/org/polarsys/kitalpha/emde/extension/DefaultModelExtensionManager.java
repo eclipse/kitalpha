@@ -50,7 +50,10 @@ public abstract class DefaultModelExtensionManager implements ModelExtensionMana
 	private List<ExtensionManagerDelegate> delegates = new ArrayList<ExtensionManagerDelegate>();
 
 	public boolean isExtensionModelDisabled(String extensibleModel, String extendedModel) {
-		return isExtensionModelDisabled(getExtendedModel(extendedModel));
+		ExtendedModel extendedModel2 = getExtendedModel(extendedModel);
+		if (extendedModel2 == null)
+			return true;
+		return isExtensionModelDisabled(extendedModel2);
 	}
 
 	public boolean canDisableExtensionModel(ExtendedModel extended) {
@@ -106,6 +109,8 @@ public abstract class DefaultModelExtensionManager implements ModelExtensionMana
 					} catch (WrappedException e1) {
 						discardedModels.add(entry.getKey());
 						Log.getDefault().logError("Cannot create extender for model:'" + entry.getKey() + "' -> model is discarded.", e1);
+					} catch (Exception e1) {
+						System.out.println();
 					}
 					if (extender == null)
 						continue;
