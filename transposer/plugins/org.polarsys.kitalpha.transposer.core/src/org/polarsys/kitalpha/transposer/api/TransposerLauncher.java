@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2013 THALES GLOBAL SERVICES.
+ * Copyright (c) 2014 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    THALES GLOBAL SERVICES - Initial API and implementation
+ *    Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
 
 package org.polarsys.kitalpha.transposer.api;
@@ -56,9 +56,15 @@ public final class TransposerLauncher {
  * @param comparator_p a comparator for sort independant elements
  * @param monitor_p: ProgressMonitor
  */
-  public static void launch(final Object selection_p, final String purpose_p, final String mappingId_p, final TransposerConfiguration configuration_p, final Comparator<Vertex<?>> comparator_p,IProgressMonitor monitor_p) {
+  @SuppressWarnings("unchecked")
+public static void launch(final Object selection_p, final String purpose_p, final String mappingId_p, final TransposerConfiguration configuration_p, final Comparator<Vertex<?>> comparator_p,IProgressMonitor monitor_p) {
     Collection<Object> selection = new ArrayList<Object>(1);
-    selection.add(selection_p);
+    
+    if (selection_p instanceof Collection){
+    	selection.addAll((Collection<? extends Object>) selection_p);
+    } else {
+    	selection.add(selection_p);
+    }
 
     launch(selection, purpose_p, mappingId_p, configuration_p, comparator_p,monitor_p);
   }
@@ -90,9 +96,15 @@ public final class TransposerLauncher {
    * @param configuration_p: the transposer configuration
    * @param monitor_p: ProgressMonitor
    */
-    public static void launch(final Object selection_p, final String purpose_p, final String mappingId_p, final TransposerConfiguration configuration_p,IProgressMonitor monitor_p) {
+    @SuppressWarnings("unchecked")
+	public static void launch(final Object selection_p, final String purpose_p, final String mappingId_p, final TransposerConfiguration configuration_p,IProgressMonitor monitor_p) {
       Collection<Object> selection = new ArrayList<Object>(1);
-      selection.add(selection_p);
+
+      if (selection_p instanceof Collection){
+      	selection.addAll((Collection<? extends Object>) selection_p);
+      } else {
+      	selection.add(selection_p);
+      }
 
       launch(selection, purpose_p, mappingId_p, configuration_p, null,monitor_p);
     }
