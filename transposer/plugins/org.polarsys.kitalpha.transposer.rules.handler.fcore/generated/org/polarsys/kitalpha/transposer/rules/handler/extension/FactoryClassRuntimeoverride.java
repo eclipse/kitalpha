@@ -1,4 +1,4 @@
-//Generated on Wed Apr 23 15:55:33 CEST 2014 with EGF 1.1.0.v20140422-0640
+//Generated on Wed Oct 08 18:19:51 CEST 2014 with EGF 1.2.0.v20140717-0709
 package org.polarsys.kitalpha.transposer.rules.handler.extension;
 
 import org.eclipse.egf.emf.pattern.base.*;

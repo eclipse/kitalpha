@@ -17,3 +17,4 @@ Export-Package: org.polarsys.kitalpha.transposer,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Localization: plugin
 Bundle-ClassPath: .
+Import-Package: org.polarsys.kitalpha.transposer.analyzer.api
