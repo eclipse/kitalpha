@@ -55,10 +55,10 @@ public class DocGenGenerationConfiguration implements IGenerationElementInnerCon
 	 */
 	@Override
 	public void configure(GenerationElement element) {
-		final Viewpoint viewpoint = VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement();
-		final String rootProjectName = VpDslConfigurationHelper.getRootProjectName(viewpoint);
-		String documenationPluginName = rootProjectName + ".doc";
-		((KitalphaDocumentationGeneration)element).setPluginName(documenationPluginName);
+//		final Viewpoint viewpoint = VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement();
+//		final String rootProjectName = VpDslConfigurationHelper.getRootProjectName(viewpoint);
+//		String documenationPluginName = rootProjectName + ".doc";
+//		((KitalphaDocumentationGeneration)element).setPluginName(documenationPluginName);
 	}
 	
 	/**
