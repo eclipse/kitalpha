@@ -142,7 +142,7 @@
           invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZGppNEeO0BorZRiG7mg">
         <invocationContractContainer xmi:id="_k9hzIeetEeGme5hiz-D4Zg">
           <invocationContracts xmi:id="_k9hzIuetEeGme5hiz-D4Zg" factoryComponentContract="#_vjFckOetEeGme5hiz-D4Zg"
-              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZIJpNEeO0BorZRiG7mg"/>
+              invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZHJpNEeO0BorZRiG7mg"/>
           <invocationContracts xmi:id="_k9hzI-etEeGme5hiz-D4Zg" sourceInvocationContract="#_b1wBMOerEeGme5hiz-D4Zg"
               invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZHppNEeO0BorZRiG7mg"/>
         </invocationContractContainer>
