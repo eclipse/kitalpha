@@ -11,13 +11,17 @@
 
 package org.polarsys.kitalpha.model.attachment.ui;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -80,20 +84,41 @@ public class ViewpointPage extends AbstractWizardPage {
 		ModelPage page = (ModelPage) getWizard().getPage(ModelPage.NAME);
 		label.setText("Source model: " + page.getSourceFile().getFullPath().toString());
 		if (visible) {
-			try {
-				Set<String> targetViewpointIds = getViewpointIds(page.getTargetFile());
-				// Set<String> ancestorViewpointIds = getViewpointIds(page.getAncestorFile());
+			final IFile targetFile = page.getTargetFile();
+			final IFile sourceFile = page.getSourceFile();
+			IRunnableWithProgress op = new IRunnableWithProgress() {
+				public void run(IProgressMonitor monitor) throws InvocationTargetException {
+					try {
+						monitor.beginTask("Analysing models...", 10);
+						monitor.worked(1);
+						Set<String> targetViewpointIds = getViewpointIds(targetFile);
+						monitor.worked(3);
 
-				RegistryElement registry = getRegistry(page.getSourceFile());
-				IScrutinize next = registry.getFinders().iterator().next();
-				analysisResult = (ViewpointTreeContainer) next.getAnalysisResult();
-				removeDescriptions(analysisResult.getRoots(), targetViewpointIds);
+						RegistryElement registry = getRegistry(sourceFile);
+						IScrutinize next = registry.getFinders().iterator().next();
+						analysisResult = (ViewpointTreeContainer) next.getAnalysisResult();
+						monitor.worked(3);
+
+						removeDescriptions(analysisResult.getRoots(), targetViewpointIds);
+
+						monitor.worked(3);
+						Thread.sleep(2000);
+					} catch (Throwable e) {
+						throw new InvocationTargetException(e);
+					} finally {
+						monitor.done();
+					}
+				}
+			};
+			try {
+				getContainer().run(false, false, op);
 				treeViewer.setInput(analysisResult);
-				System.out.println();
-			} catch (ModelScrutinyException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (InterruptedException e) {
+			} catch (InvocationTargetException e) {
+				Throwable realException = e.getTargetException();
+				MessageDialog.openError(getShell(), "Error", realException.getMessage());
 			}
+
 		}
 		super.setVisible(visible);
 	}
