@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -46,7 +47,7 @@ public class ModelPage extends AbstractWizardPage {
 			updateStatus(null);
 			for (int n = 0; n < 3; n++) {
 				if (!usages[n].getText().equals(USAGES[2]) && files[n] == null)
-					updateStatus(usages[n].getText() + " muste be set.");
+					updateStatus(NLS.bind(Messages.wizard_page_error1, usages[n].getText()));
 			}
 		}
 
@@ -81,8 +82,8 @@ public class ModelPage extends AbstractWizardPage {
 	protected ModelPage(List<IFile> files) {
 		super(NAME);
 		this.files = files.toArray(new IFile[3]);
-		setTitle("Role selection");
-		setDescription("Select the role for each model.");
+		setTitle(Messages.wizard_page_title);
+		setDescription(Messages.wizard_page_description);
 	}
 
 	protected void createModelControls(Composite container2, int index) {
@@ -94,7 +95,7 @@ public class ModelPage extends AbstractWizardPage {
 		models[index] = sourceText;
 
 		Label label = new Label(container2, SWT.None);
-		label.setText("used as");
+		label.setText(Messages.wizard_page_label1);
 		label.setLayoutData(new GridData());
 
 		Combo sourceCombo = new Combo(container2, SWT.READ_ONLY | SWT.DROP_DOWN);
@@ -120,7 +121,7 @@ public class ModelPage extends AbstractWizardPage {
 			if (usages[n].getText().equals(role))
 				return files[n];
 		}
-		throw new IllegalStateException("Cannot find role " + role);
+		throw new IllegalStateException(NLS.bind(Messages.wizard_page_error2, role));
 
 	}
 

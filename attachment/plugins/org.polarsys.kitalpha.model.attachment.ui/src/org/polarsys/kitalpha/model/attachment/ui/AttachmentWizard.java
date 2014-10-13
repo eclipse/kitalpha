@@ -120,7 +120,7 @@ public class AttachmentWizard extends Wizard {
 	public AttachmentWizard(List<IFile> files) {
 		this.files = files;
 		setNeedsProgressMonitor(true);
-		setWindowTitle("Model Attachment");
+		setWindowTitle(Messages.wizard_title);
 
 	}
 
@@ -155,7 +155,7 @@ public class AttachmentWizard extends Wizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			Throwable realException = e.getTargetException();
-			MessageDialog.openError(getShell(), "Error", realException.getMessage());
+			MessageDialog.openError(getShell(), Messages.error_dialog_title, realException.getMessage());
 			return false;
 		}
 
