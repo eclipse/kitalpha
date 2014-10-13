@@ -65,8 +65,13 @@ public class LvpsGenChainModelLauncherTask extends TaskProductionAdapter {
 			class vpdslOnlyBuildApplicationHelper extends BuildApplicationHelper{
 				public void onlyBuild(URI fcoreURI){
 					final TargetPlatformResourceSet resourceSet = new TargetPlatformResourceSet();
-				       this.generationChain = (GenerationChain) resourceSet.getResource(fcoreURI, true).getContents().get(0);
-				       super.createAfterJob().schedule();
+					this.generationChain = (GenerationChain) resourceSet.getResource(fcoreURI, true).getContents().get(0);
+					super.createAfterJob().schedule();
+				}
+				
+				@Override
+				protected String computeFcoreOutputPath(GenerationChain generationChain) {
+					return generationChain.getFactoryComponentName() +".fc" + computeFcoreRelativePath(generationChain);
 				}
 			};
 			vpdslOnlyBuildApplicationHelper onlyBuilder = new vpdslOnlyBuildApplicationHelper();
