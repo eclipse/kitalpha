@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.core.resources.IResource"
+            nameFilter="*.aird"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="org.polarsys.kitalpha.model.attachment.ui.action.ModelAttachmentAction"
+               enablesFor="2+"
+               icon="icons/attachment.png"
+               id="org.polarsys.kitalpha.model.attachment.ui.attachment"
+               label="%MODEL_MODEL_ATTACHMENT_NAME"
+               menubarPath="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription/attachment">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
