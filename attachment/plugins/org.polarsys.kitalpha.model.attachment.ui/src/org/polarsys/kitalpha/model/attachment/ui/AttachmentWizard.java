@@ -11,12 +11,12 @@
 
 package org.polarsys.kitalpha.model.attachment.ui;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.diffmerge.api.IMergeSelector;
 import org.eclipse.emf.diffmerge.api.Role;
@@ -36,6 +36,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.wizard.Wizard;
 
 /**
@@ -44,33 +46,69 @@ import org.eclipse.jface.wizard.Wizard;
  */
 public class AttachmentWizard extends Wizard {
 
-	private final class MyTreeIterator implements TreeIterator<EObject> {
-		private final List<EObject> filtered;
-		private Iterator<EObject> it;
+	private final class MergeCommand extends RecordingCommand {
+		private final EditingDomain domain;
+		private final IComparisonMethod method;
+		private IProgressMonitor monitor;
 
-		private MyTreeIterator(List<EObject> filtered) {
-			this.filtered = filtered;
-			it = filtered.iterator();
+		private MergeCommand(TransactionalEditingDomain domain, IComparisonMethod method, IProgressMonitor monitor) {
+			super(domain);
+			this.domain = domain;
+			this.method = method;
+			this.monitor = monitor;
 		}
 
 		@Override
-		public boolean hasNext() {
-			return it.hasNext();
-		}
+		protected void doExecute() {
+			try {
+				Role leftRole = Role.REFERENCE;
+				IEditableModelScope sourceScope = method.getModelScopeDefinition(leftRole).createScope(domain);
+				if (sourceScope instanceof IPersistentModelScope)
+					((IPersistentModelScope) sourceScope).load();
 
-		@Override
-		public EObject next() {
-			return it.next();
-		}
+				Role rightRole = Role.TARGET;
+				IEditableModelScope targetScope = method.getModelScopeDefinition(rightRole).createScope(domain);
+				if (targetScope instanceof IPersistentModelScope)
+					((IPersistentModelScope) targetScope).load();
 
-		@Override
-		public void remove() {
+				IEditableModelScope ancestorScope = null;// method.getModelScopeDefinition(Role.ANCESTOR).createScope(domain);
+				if (ancestorScope instanceof IPersistentModelScope)
+					((IPersistentModelScope) ancestorScope).load();
 
-		}
+				EComparison comparison = new EComparisonImpl(targetScope, sourceScope, ancestorScope);
+				comparison.compute(method.getMatchPolicy(), method.getDiffPolicy(), method.getMergePolicy(), monitor);
 
-		@Override
-		public void prune() {
-			throw new UnsupportedOperationException();
+				boolean consistent = comparison.isConsistent();
+				boolean hasRemainingDifferences = comparison.hasRemainingDifferences();
+				Collection<IDifference> remainingDifferences = comparison.getRemainingDifferences();
+				comparison.merge(new IMergeSelector() {
+
+					@Override
+					public Role getMergeDirection(IDifference difference_p) {
+						System.out.println(difference_p);
+						if (difference_p.isConflicting())
+							return null;
+						if (difference_p instanceof EReferenceValuePresence) {
+							EReferenceValuePresence diff = (EReferenceValuePresence) difference_p;
+							return toMerge(diff.getValue().getReference()) ? Role.TARGET : null;
+						}
+						if (difference_p instanceof EElementPresence) {
+							// les nouveaux elts
+							EElementPresence diff = (EElementPresence) difference_p;
+							return toMerge(diff.getElement(), true) ? Role.TARGET : null;
+						}
+
+						return Role.TARGET;
+					}
+				}, true, monitor);
+				// comparison.merge(rightRole, true, null);
+				Collection<IDifference> remainingDifferences2 = comparison.getRemainingDifferences();
+				if (targetScope instanceof IPersistentModelScope.Editable)
+					((IPersistentModelScope.Editable) targetScope).save();
+
+			} catch (Exception e) {
+				throw new WrappedException(e);
+			}
 		}
 	}
 
@@ -94,70 +132,32 @@ public class AttachmentWizard extends Wizard {
 
 	@Override
 	public boolean performFinish() {
-
 		ComparisonSetupManager manager = EMFDiffMergeUIPlugin.getDefault().getSetupManager();
 		ComparisonSetup setup = manager.createComparisonSetup(modelPage.getTargetFile(), modelPage.getSourceFile(), modelPage.getAncestorFile());
 		IComparisonMethodFactory comparisonMethodFactory = setup.getApplicableComparisonMethodFactories().get(0);
 		final IComparisonMethod method = comparisonMethodFactory.createComparisonMethod(setup.getScopeDefinition(Role.TARGET), setup.getScopeDefinition(Role.REFERENCE), setup.getScopeDefinition(Role.ANCESTOR));
 		final EditingDomain domain = method.getEditingDomain();
-
-		domain.getCommandStack().execute(new RecordingCommand((TransactionalEditingDomain) domain) {
-
-			@Override
-			protected void doExecute() {
+		IRunnableWithProgress op = new IRunnableWithProgress() {
+			public void run(IProgressMonitor monitor) throws InvocationTargetException {
 				try {
-					Role leftRole = Role.REFERENCE;
-					IEditableModelScope sourceScope = method.getModelScopeDefinition(leftRole).createScope(domain);
-					if (sourceScope instanceof IPersistentModelScope)
-						((IPersistentModelScope) sourceScope).load();
 
-					Role rightRole = Role.TARGET;
-					IEditableModelScope targetScope = method.getModelScopeDefinition(rightRole).createScope(domain);
-					if (targetScope instanceof IPersistentModelScope)
-						((IPersistentModelScope) targetScope).load();
-
-					IEditableModelScope ancestorScope = null;// method.getModelScopeDefinition(Role.ANCESTOR).createScope(domain);
-					if (ancestorScope instanceof IPersistentModelScope)
-						((IPersistentModelScope) ancestorScope).load();
-
-					EComparison comparison = new EComparisonImpl(targetScope, sourceScope, ancestorScope);
-					comparison.compute(method.getMatchPolicy(), method.getDiffPolicy(), method.getMergePolicy(), null);
-
-					boolean consistent = comparison.isConsistent();
-					boolean hasRemainingDifferences = comparison.hasRemainingDifferences();
-					Collection<IDifference> remainingDifferences = comparison.getRemainingDifferences();
-					System.out.println();
-					comparison.merge(new IMergeSelector() {
-
-						@Override
-						public Role getMergeDirection(IDifference difference_p) {
-							System.out.println(difference_p);
-							if (difference_p.isConflicting())
-								return null;
-							if (difference_p instanceof EReferenceValuePresence) {
-								EReferenceValuePresence diff = (EReferenceValuePresence) difference_p;
-								return toMerge(diff.getValue().getReference()) ? Role.TARGET : null;
-							}
-							if (difference_p instanceof EElementPresence) {
-								// les nouveaux elts
-								EElementPresence diff = (EElementPresence) difference_p;
-								return toMerge(diff.getElement(), true) ? Role.TARGET : null;
-							}
-
-							return Role.TARGET;
-						}
-					}, true, null);
-					// comparison.merge(rightRole, true, null);
-					Collection<IDifference> remainingDifferences2 = comparison.getRemainingDifferences();
-					if (targetScope instanceof IPersistentModelScope.Editable)
-						((IPersistentModelScope.Editable) targetScope).save();
-
+					domain.getCommandStack().execute(new MergeCommand((TransactionalEditingDomain) domain, method, monitor));
 				} catch (Exception e) {
-					throw new WrappedException(e);
+					throw new InvocationTargetException(e);
+				} finally {
+					monitor.done();
 				}
 			}
-
-		});
+		};
+		try {
+			getContainer().run(false, false, op);
+		} catch (InterruptedException e) {
+			return false;
+		} catch (InvocationTargetException e) {
+			Throwable realException = e.getTargetException();
+			MessageDialog.openError(getShell(), "Error", realException.getMessage());
+			return false;
+		}
 
 		return true;
 	}
