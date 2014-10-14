@@ -95,7 +95,7 @@ public enum VSMVariable {
 	 * @return a valid value of the variable name to use in the VSM. 
 	 */
 	public String getExpressionVariable(){
-		boolean compatibleA2 = SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.Acceleo_2_x);
+		boolean compatibleA2 = SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy);
 		if (compatibleA2)
 			return "<%$" + this.name() + "%>";
 		else
@@ -115,7 +115,7 @@ public enum VSMVariable {
 	 * @return a valid value of the variable name to use in the VSM. 
 	 */
 	public static String getGenericExpressionVariable(String variableName){
-		boolean compatibleA2 = SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.Acceleo_2_x);
+		boolean compatibleA2 = SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy);
 		if (compatibleA2)
 			return "<%$" + variableName + "%>";
 		else
