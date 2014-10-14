@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ViewerComparator;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -50,8 +51,8 @@ public class ViewpointPage extends AbstractWizardPage {
 
 	protected ViewpointPage() {
 		super(NAME);
-		setTitle("Viewpoint Page");
-		setDescription("Select the viewpoints to attach.");
+		setTitle(Messages.wizard_page_title1);
+		setDescription(Messages.wizard_page_description1);
 		// setPageComplete(false);
 	}
 
@@ -63,7 +64,7 @@ public class ViewpointPage extends AbstractWizardPage {
 		label.setLayoutData(ld);
 
 		Label label = new Label(parent, SWT.None);
-		label.setText("Attachable viewpoints:");
+		label.setText(Messages.wizard_page_label2);
 		ld = new GridData(GridData.FILL_HORIZONTAL);
 		ld.horizontalSpan = 3;
 		label.setLayoutData(ld);
@@ -82,14 +83,14 @@ public class ViewpointPage extends AbstractWizardPage {
 	@Override
 	public void setVisible(boolean visible) {
 		ModelPage page = (ModelPage) getWizard().getPage(ModelPage.NAME);
-		label.setText("Source model: " + page.getSourceFile().getFullPath().toString());
+		label.setText(NLS.bind(Messages.wizard_page_label3, page.getSourceFile().getFullPath().toString()));
 		if (visible) {
 			final IFile targetFile = page.getTargetFile();
 			final IFile sourceFile = page.getSourceFile();
 			IRunnableWithProgress op = new IRunnableWithProgress() {
 				public void run(IProgressMonitor monitor) throws InvocationTargetException {
 					try {
-						monitor.beginTask("Analysing models...", 10);
+						monitor.beginTask(Messages.wizard_page_label4, 10);
 						monitor.worked(1);
 						Set<String> targetViewpointIds = getViewpointIds(targetFile);
 						monitor.worked(3);
@@ -116,7 +117,7 @@ public class ViewpointPage extends AbstractWizardPage {
 			} catch (InterruptedException e) {
 			} catch (InvocationTargetException e) {
 				Throwable realException = e.getTargetException();
-				MessageDialog.openError(getShell(), "Error", realException.getMessage());
+				MessageDialog.openError(getShell(), Messages.error_dialog_title, realException.getMessage());
 			}
 
 		}
