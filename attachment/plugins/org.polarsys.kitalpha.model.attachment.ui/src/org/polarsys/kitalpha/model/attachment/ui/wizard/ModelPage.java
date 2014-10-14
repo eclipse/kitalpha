@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.attachment.ui;
+package org.polarsys.kitalpha.model.attachment.ui.wizard;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -26,6 +26,7 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.polarsys.kitalpha.model.attachment.ui.Messages;
 
 /**
  * @author Thomas Guiu

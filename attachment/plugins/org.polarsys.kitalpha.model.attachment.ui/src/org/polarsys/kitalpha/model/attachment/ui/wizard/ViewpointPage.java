@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.attachment.ui;
+package org.polarsys.kitalpha.model.attachment.ui.wizard;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -28,6 +28,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.polarsys.kitalpha.model.attachment.ui.Messages;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;

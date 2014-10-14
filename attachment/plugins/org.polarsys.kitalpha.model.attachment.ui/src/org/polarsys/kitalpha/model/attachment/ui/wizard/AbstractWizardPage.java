@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.attachment.ui;
+package org.polarsys.kitalpha.model.attachment.ui.wizard;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.wizard.WizardPage;

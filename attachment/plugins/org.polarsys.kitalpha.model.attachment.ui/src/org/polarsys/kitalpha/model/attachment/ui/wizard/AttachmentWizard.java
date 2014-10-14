@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.kitalpha.model.attachment.ui;
+package org.polarsys.kitalpha.model.attachment.ui.wizard;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -39,6 +39,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.wizard.Wizard;
+import org.polarsys.kitalpha.model.attachment.ui.Messages;
 
 /**
  * @author Thomas Guiu

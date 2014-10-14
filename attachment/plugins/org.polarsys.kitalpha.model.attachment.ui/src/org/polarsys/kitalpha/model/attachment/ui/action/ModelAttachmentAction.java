@@ -22,7 +22,7 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
-import org.polarsys.kitalpha.model.attachment.ui.AttachmentWizard;
+import org.polarsys.kitalpha.model.attachment.ui.wizard.AttachmentWizard;
 
 /**
  * @author Thomas Guiu
