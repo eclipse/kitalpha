@@ -11,6 +11,11 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.extension.ExtensionManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.resourceimpl.ViewpointResourceProviderRegistry;
+
+
 /**
  * This helper provides methods to create a valid expression to use in a Viewpoint 
  * Specification Model (VSM).
@@ -31,8 +36,10 @@ public class SiriusExpressionHelper {
 	 */
 	public static ExpressionKind getCurrentExpressionKind(){
 		// TODO: add a preference allowing user to select expression kind. 
-		return ExpressionKind.Acceleo_3_x;
-		//return ExpressionKind.Acceleo_2_x;
+//		return ExpressionKind.Acceleo_3_x;
+//		return ExpressionKind.QueryLegacy;
+		final Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
+		return ExtensionManager.getDiagramExpressionLanguageFilters(viewpoint);
 	}
 	
 	/**
@@ -60,7 +67,7 @@ public class SiriusExpressionHelper {
 	 */
 	public static String getInnerVariable(String variableName){
 		switch (getCurrentExpressionKind()) {
-		case Acceleo_2_x:
+		case QueryLegacy:
 			return variableHasPrefix(variableName) ? variableName : "$" + variableName;
 		case Acceleo_3_x:
 			return getVariableWithoutPrefix(variableName);
@@ -77,7 +84,7 @@ public class SiriusExpressionHelper {
 	 */
 	public static String formatString(String string){
 		switch (getCurrentExpressionKind()) {
-		case Acceleo_2_x:
+		case QueryLegacy:
 			return string;
 		case Acceleo_3_x:
 			return stringHasAcceleo3Delimiters(string) ? string : '\'' + string + '\'';

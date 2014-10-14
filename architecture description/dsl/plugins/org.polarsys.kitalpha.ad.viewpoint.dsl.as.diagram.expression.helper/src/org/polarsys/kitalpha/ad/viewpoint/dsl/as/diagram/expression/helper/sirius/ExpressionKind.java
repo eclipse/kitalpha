@@ -17,7 +17,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siri
  */
 
 public enum ExpressionKind implements IExpressionFormat{
-	Acceleo_2_x, Acceleo_3_x, Ocl;
+	QueryLegacy, Acceleo_3_x, Ocl;
 	
 	/**
 	 * @see IExpressionFormat#format(String)
@@ -29,7 +29,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		else
 		{
 			switch (this) {
-			case Acceleo_2_x:
+			case QueryLegacy:
 				return getExpression_Acceleo_2(expression);
 			case Acceleo_3_x:
 				return getExpression_Acceleo_3(expression);
@@ -46,7 +46,7 @@ public enum ExpressionKind implements IExpressionFormat{
 	@Override
 	public boolean isFormated(String expression){
 		switch (this) {
-		case Acceleo_2_x:
+		case QueryLegacy:
 			return containsDelimiters(expression, 2, 2);
 		case Acceleo_3_x:
 			return containsDelimiters(expression, 1, 2);
@@ -54,6 +54,41 @@ public enum ExpressionKind implements IExpressionFormat{
 			return containsDelimiters(expression, 4, -1);
 		}
 		return false;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Enum#toString()
+	 */
+	@Override
+	public String toString() {
+		switch (this) {
+		case QueryLegacy:
+			return "QueryLegacy";
+		case Acceleo_3_x:
+			return "Acceleo3";
+		case Ocl:
+			return "Ocl";
+		}
+		throw new RuntimeException();
+	}
+	
+	/**
+	 * Return the corresponding {@link ExpressionKind} from it string equivalent
+	 * @param expressionKind string expression kind
+	 * @return corresponding {@link ExpressionKind}
+	 */
+	public static ExpressionKind getExpressionKind(String expressionKind){
+		if (expressionKind.equals(ExpressionKind.QueryLegacy.toString())) 
+			return QueryLegacy;
+		
+		if (expressionKind.equals(ExpressionKind.Acceleo_3_x.toString())) 
+			return Acceleo_3_x;
+		
+		if (expressionKind.equals(ExpressionKind.Ocl.toString())) 
+			return Ocl;
+		
+		throw new RuntimeException();
 	}
 	
 	/**
@@ -105,7 +140,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		// Check begin of expression
 		String beginDelimiter = expression.substring(0, beginPrefixLenght);
 		switch (this) {
-		case Acceleo_2_x:
+		case QueryLegacy:
 			result = beginDelimiter.equals("<%");
 			checkExpressionEnd = true;
 			break;
@@ -123,7 +158,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		{
 			String endDelimiter = expression.substring(0, beginPrefixLenght);
 			switch (this) {
-			case Acceleo_2_x:
+			case QueryLegacy:
 				result &= endDelimiter.equals("%>");
 				break;
 			case Acceleo_3_x:
