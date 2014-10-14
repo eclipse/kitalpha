@@ -49,6 +49,8 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.sirius.viewpoint.description.util.DescriptionAdapterFactory;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionKind;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMGenerationUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
 
@@ -116,14 +118,30 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 	}
 	
 	private void updateProjectDependecies(String designProjectName, String rootProjectName){
+		//First : compute required bundles to add and dependencies to remove
 		List<String> requiredBundlesToAdd = new ArrayList<String>();
+		List<String> dependenciesToRemove = new ArrayList<String>();
 		requiredBundlesToAdd.add("org.eclipse.emf.ecore");
 		requiredBundlesToAdd.add("org.eclipse.sirius.diagram");
 		requiredBundlesToAdd.add(rootProjectName+".model");
+		final ExpressionKind currentExpressionKind = SiriusExpressionHelper.getCurrentExpressionKind();
+		switch (currentExpressionKind) {
+		case QueryLegacy:
+			dependenciesToRemove.add("org.eclipse.sirius.common.acceleo.mtl");
+			requiredBundlesToAdd.add("org.eclipse.sirius.query.legacy");
+			break;
+		default:
+			break;
+		}
+		
+		// Second : Update Design project dependencies
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(designProjectName);
 		if (project != null && project.exists())
 		{
+			// Add required bundles 
 			PDEUtility.updateRequiredBundles(project, requiredBundlesToAdd, new NullProgressMonitor());
+			// Update plug-in dependencies depending on Acceleo 3 or QueryLegacy language use.
+			PDEUtility.removeRequiredBundles(project, dependenciesToRemove, new NullProgressMonitor());
 			try {
 				project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 			} catch (CoreException e) {

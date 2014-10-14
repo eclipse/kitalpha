@@ -183,6 +183,32 @@ public class PDEUtility {
 		requiredBundlesToAdd.add(requiredBundleToAdd);
 		updateManifestModel(project, requiredBundlesToAdd, null, false, monitor);
 	}
+	
+	/**
+	 * Remove a list of plug-in dependencies from required bundles
+	 * @param project
+	 * @param requiredBundlesToRemove
+	 * @param monitor
+	 */
+	public static void removeRequiredBundles(IProject project, 
+											List<String> requiredBundlesToRemove,
+											IProgressMonitor monitor){
+		updateManifestModel2(project, requiredBundlesToRemove, false, monitor);
+	}
+
+	/**
+	 * Remove one plug-in dependency from required bundles
+	 * @param project
+	 * @param requiredBundleToRemove
+	 * @param monitor
+	 */
+	public static void removeRequiredBundles(IProject project, 
+											 String requiredBundleToRemove,
+											 IProgressMonitor monitor){
+		List<String> requiredBundlesToRemove = new ArrayList<String>();
+		requiredBundlesToRemove.add(requiredBundleToRemove);
+		updateManifestModel2(project, requiredBundlesToRemove, false, monitor);
+	}
 
 	/**
 	 * 
@@ -208,7 +234,7 @@ public class PDEUtility {
 
 	
 	/**
-	 * 
+	 * Add bundles in required bundles, package in exported packages and set required execution environment
 	 * @param project
 	 * @param requiredBundlesToAdd
 	 * @param requiredExecutionEnvironment
@@ -260,6 +286,134 @@ public class PDEUtility {
 				}
 			}, monitor);
 		}
+	}
+	
+	/**
+	 * Remove bundles from required bundles or packages from imported packages
+	 * @param project
+	 * @param requiredBundlesToRemove
+	 * @param exportedPackagesToRemove
+	 * @param monitor
+	 */
+	private static void updateManifestModel2(final IProject project, 
+											 final List<String> requiredBundlesToRemove,
+											 final boolean exportedPackagesToRemove,
+											 final IProgressMonitor monitor){
+		if (project == null)
+			return;
+
+		synchronized (bundleLock) {
+			IFile	manifest = project.getFile(ICoreConstants.BUNDLE_FILENAME_DESCRIPTOR);
+			PDEModelUtility.modifyModel(new ModelModification(manifest) {
+				@Override
+				protected void modifyModel(IBaseModel model, IProgressMonitor innerMonitor) throws CoreException {
+					if (model instanceof IBundlePluginModelBase == false) 
+						return;
+
+					IBundlePluginModelBase bundleModel = (IBundlePluginModelBase) model;
+					IBundle bundle = bundleModel.getBundleModel().getBundle();
+
+					// update required bundles
+					if (requiredBundlesToRemove != null && requiredBundlesToRemove.size() > 0)
+					{
+						String available_requiredBundles = bundle.getHeader(Constants.REQUIRE_BUNDLE);
+						String newRequiredBundles = mergeRequiredBundles2(available_requiredBundles, requiredBundlesToRemove);
+						if (newRequiredBundles != null)
+							bundle.setHeader(Constants.REQUIRE_BUNDLE, newRequiredBundles);
+					}
+
+
+					// Export all non internal Java Packages.
+					if (exportedPackagesToRemove)
+					{
+						//TODO:
+					}
+				}
+			}, monitor);
+		}
+	}
+	
+	/**
+	 * Remove bundle from required bundles
+	 * @param available_requiredBundles
+	 * @param requiredBundlesToRemove
+	 * @return
+	 */
+	private static String mergeRequiredBundles2(String available_requiredBundles, final List<String> requiredBundlesToRemove) {
+		boolean updateBundles = false;
+		List<String> available_dependecies = new ArrayList<String>();
+		
+		// There is some required Bundles
+		if (available_requiredBundles != null && available_requiredBundles.trim().length() > 0)
+		{
+			// If there more then one dependency
+			if (available_requiredBundles.indexOf(",") != -1)
+			{
+				String[] list = available_requiredBundles.split(",");
+				for (String current : list)
+				{
+					available_dependecies.add(current) ;
+				}
+			}
+			else
+			{
+				available_dependecies.add(available_requiredBundles);
+			}
+
+			
+			// If we are here, this means that there is some required bundle in the manifest
+			for (String bundleToAdd : requiredBundlesToRemove) 
+			{
+				boolean removeBundle = false;
+				for (String availableBundle : available_dependecies) 
+				{
+					String plugName = availableBundle;
+					
+					if (plugName.indexOf(";") != -1)
+						plugName = plugName.subSequence(0,availableBundle.indexOf(";")).toString();
+
+					// May be check if a required version is defined in the bundleToAdd.
+					// If it is the case, remove it to do the next test
+					if (plugName.equals(bundleToAdd))
+					{
+						removeBundle = true;
+						break;
+					}
+				}
+				
+				if (removeBundle)
+				{
+					available_dependecies.remove(bundleToAdd);
+					updateBundles = true;
+				}
+			}
+		}
+		else // there no required bundles in the Manifest, so there is nothing to remove
+		{
+			return null;
+		}
+
+		
+		// Rewrite string version of required bundles
+		if (available_dependecies.size() > 0 && updateBundles)
+		{
+			String newRequiredBundles = "";
+			if (available_dependecies.size() == 1)
+			{
+				newRequiredBundles = available_dependecies.get(0);
+			}
+			else
+			{
+				newRequiredBundles = available_dependecies.get(0)+",";
+				for (int i = 1; i < available_dependecies.size()-1; i++) 
+				{
+					newRequiredBundles = newRequiredBundles +"\n " + available_dependecies.get(i) +",";
+				}
+				newRequiredBundles = newRequiredBundles +"\n " + available_dependecies.get(available_dependecies.size()-1); 
+			}
+			return newRequiredBundles;
+		}
+		return available_requiredBundles;
 	}
 
 	/**
