@@ -17,42 +17,26 @@ import java.util.Iterator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
-import org.eclipse.sirius.viewpoint.description.Group;
-import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.CommondataFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.ExternalAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.ExternalClass;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.LocalAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.LocalClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalSuperClass;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerChildren;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 
 
 /**
- * TODO Review the code (clean, organization...)
  * @author Faycal Abka
  *
  */
@@ -70,7 +54,7 @@ public class VpdiagramScopeHelper {
 		if (d.getEObjectOrProxy() instanceof EReference){
 			if (context instanceof ExternalAssociation){
 				ExternalAssociation externalAssociation = (ExternalAssociation)context;
-				NodeDomainElement nde = getNodeDomainElementFrom(externalAssociation);
+				NodeDomainElement nde = VpDiagramHelper.getNodeDomainElementFrom(externalAssociation);
 				
 				
 				if (nde == null && externalAssociation.eContainer() instanceof EdgeDomainAssociation){
@@ -80,8 +64,8 @@ public class VpdiagramScopeHelper {
 				EObject ndeContainer = nde.eContainer();
 				if (ndeContainer instanceof Container || ndeContainer instanceof Node || ndeContainer instanceof BorderedNode){
 
-					AbstractClass domain_class = getDomain_class(nde); 
-					AbstractClass container_domain_class = getDomainContainerOfContainerOfElement(nde);
+					AbstractClass domain_class = VpDiagramHelper.getDomain_class(nde); 
+					AbstractClass container_domain_class = VpDiagramHelper.getDomainContainerOfContainerOfElement(nde);
 
 					if (domain_class == null){
 						return d.getEObjectOrProxy() instanceof EReference;
@@ -89,7 +73,7 @@ public class VpdiagramScopeHelper {
 
 					if (container_domain_class == null){
 						//With import
-						EClass eClass = getDomainContainerOfContainerOfElementExternal(nde);
+						EClass eClass = VpDiagramHelper.getDomainContainerOfContainerOfElementExternal(nde);
 						
 						if (domain_class instanceof ExternalClass){
 							ExternalClass externalDomain_class = (ExternalClass)domain_class;
@@ -125,14 +109,7 @@ public class VpdiagramScopeHelper {
 		return d.getEObjectOrProxy() instanceof EReference;
 	}
 	
-	/*
-	 * Naming convention about handler:
-	 * 	boolean handle[TypeOfContainerDomainClass][TypeOfCurrentDomainClass]Association(...)
-	 * 
-	 * TypeOfContainerDomainClass may be: External - Local
-	 * TypeOfCurrentDomainClass may be  : External - Local
-	 * 
-	 */
+
 	private static boolean handExternalLocalAssociation(IEObjectDescription d,
 			LocalClass localDomain_class,
 			ExternalClass externalContainer_domain_class) {
@@ -143,7 +120,7 @@ public class VpdiagramScopeHelper {
 
 	private static boolean handleExternalLocalAssociation(
 			IEObjectDescription d, Class localClass, EClass externalEClass) {
-		Collection<EClass> SuperEClasses = getExternalSuperClassEClasses(localClass);
+		Collection<EClass> SuperEClasses = VpDiagramHelper.getExternalSuperClassEClasses(localClass);
 		
 		boolean result = false;
 		for (EClass eClass : SuperEClasses) {
@@ -151,60 +128,6 @@ public class VpdiagramScopeHelper {
 		}
 		
 		return result;
-	}
-
-
-	private static Collection<EClass> getExternalSuperClassEClasses(
-			Class localClass) {
-		Collection<EClass> superEClasses = new UniqueEList<EClass>();
-		
-		EList<AbstractSuperClass> inheritences = localClass.getInheritences();
-		
-		
-		for (AbstractSuperClass superClass : inheritences) {
-			if (superClass instanceof ExternalSuperClass){
-				ExternalSuperClass esc = (ExternalSuperClass)superClass;
-				superEClasses.add(esc.getSuperClass());
-			}
-			if (superClass instanceof LocalSuperClass){
-				LocalSuperClass lsc = (LocalSuperClass)superClass;
-				superEClasses.addAll(getExternalSuperClassEClasses(lsc.getSuperClass()));
-			}
-		}
-		
-		EList<EClass> extendEClasses = localClass.getExtends();
-		
-		for (EClass eClass : extendEClasses) {
-			EcoreUtil.resolveAll(eClass);
-			superEClasses.add(eClass);
-			superEClasses.addAll(eClass.getEAllSuperTypes());
-		}
-		
-		return superEClasses;
-	}
-
-	private static NodeDomainElement getNodeDomainElementFrom(
-			AbstractAssociation association) {
-		
-		if (association instanceof ExternalAssociation){
-			ExternalAssociation externalAssociation = (ExternalAssociation)association;
-			EObject eContainer = externalAssociation.eContainer();
-
-			if (eContainer instanceof NodeDomainElement){
-				return ((NodeDomainElement)eContainer);
-			}
-		}
-		
-		if (association instanceof LocalAssociation){
-			LocalAssociation localAssociation = (LocalAssociation)association;
-			EObject eContainer = localAssociation.eContainer();
-
-			if (eContainer instanceof NodeDomainElement){
-				return ((NodeDomainElement)eContainer);
-			}
-		}
-		
-		return null;
 	}
 
 
@@ -225,7 +148,7 @@ public class VpdiagramScopeHelper {
 		
 		
 		EList<EReference> allReferencesContainerDomain = container_eClass.getEAllReferences();
-		EList<EReference> filtredReferences = filterReferenceWithType(allReferencesContainerDomain, domain_eClass);
+		EList<EReference> filtredReferences = VpDiagramHelper.filterReferenceWithType(allReferencesContainerDomain, domain_eClass);
 		EList<EClass> typeRefClasses = new UniqueEList<EClass>();
 		EList<String> refTypeNames = new UniqueEList<String>();
 		
@@ -241,227 +164,9 @@ public class VpdiagramScopeHelper {
 		if (r instanceof EReference)
 			ref = (EReference)r;
 		;
-		return (ref != null) && (refTypeNames.contains(ref.getEType().getName())); //(!typeRefClasses.isEmpty()) && (typeRefClasses.contains(ref.getEType()) || refTypeNames.contains(ref.getEType().getName()));// || //(ref != null) && (!filtredReferences.isEmpty()) && (filtredReferences.contains(ref));// &&
+		return (ref != null) && (refTypeNames.contains(ref.getEType().getName()));// || ref.getEType() == EmdePackage.eINSTANCE.getElementExtension();
 	}
 
-
-	//TODO to change
-	private static EList<EReference> filterReferenceWithType(
-			EList<EReference> allReferencesContainerDomain, EClass type) {
-		
-		EList<EReference> filtredReferences = new UniqueEList<EReference>();
-		EList<EClass> superTypesOfType = CollectAllSuperTypes(type); //type.getEAllSuperTypes();
-		
-		for (EReference eReference : allReferencesContainerDomain) {
-			EClass eRefType = (EClass) eReference.getEType();
-			
-			if (type == eReference.getEType()){
-				filtredReferences.add(eReference);
-				continue;
-			}
-			EList<EClass> superTypesOfRefType = CollectAllSuperTypes(eRefType);
-			
-			if (superTypesOfType.contains(eRefType))
-				filtredReferences.add(eReference);
-			
-			for (EClass eClass : superTypesOfRefType) {
-				
-				for (EClass eClass2 : superTypesOfType) {
-					if (eClass.getName().equals(eClass2.getName())){
-						filtredReferences.add(eReference);
-					}
-				}
-//				if (superTypesOfType.contains(eClass) || type == eClass)
-//					filtredReferences.add(eReference);
-			}
-			
-		}
-		
-		return filtredReferences;
-	}
-
-
-	private static EList<EClass> CollectAllSuperTypes(EClass type) {
-		EList<EClass> result = new UniqueEList<EClass>();
-		
-		EList<EClass> superTypes = type.getEAllSuperTypes();
-		
-		result.addAll(superTypes);
-		
-		for (EClass eClass : superTypes) {
-			collectHierarchyTypes(eClass, result);
-		}
-		
-		
-		return result;
-	}
-
-	private static void collectHierarchyTypes(EClass eClass,
-			EList<EClass> result) {
-		
-		EList<EClass> superTypes = eClass.getEAllSuperTypes();
-		
-		result.addAll(superTypes);
-		for (EClass eClass2 : superTypes) {
-			collectHierarchyTypes(eClass2, result);
-		}
-	}
-
-	private static AbstractClass getDomain_class(NodeDomainElement nde){
-		if (nde != null)
-			return nde.getDomain_Class();
-		return null;
-	}
-	
-	
-	//TODO Code need to be cleaned and organization :(
-	private static EClass getDomainContainerOfContainerOfElementExternal(NodeDomainElement nde){
-		if (nde == null)
-			return null;
-		
-		EObject container = nde.eContainer().eContainer();
-		
-		if (container instanceof Diagram){
-			Diagram diagram = (Diagram)container;
-			AbstractClass abstClass = diagram.getThe_domain().getThe_domain();
-			if (abstClass instanceof ExternalClass)
-				return ((ExternalClass)abstClass).getClass_();
-			
-		}
-		
-		if (container instanceof AbstractNode){
-			NodeDomainElement nde2 = ((AbstractNode)container).getThe_domain();
-			AbstractClass abstClass = getDomain_class(nde2);
-			if (abstClass instanceof ExternalClass)
-				return ((ExternalClass)abstClass).getClass_();
-		}
-		
-		if (container instanceof ContainerChildren){
-			EObject childrenContainer = container.eContainer();
-			if (childrenContainer instanceof Node){
-				NodeDomainElement nde2 = ((Node)childrenContainer).getThe_domain();
-				AbstractClass abstClass = getDomain_class(nde2);
-				if (abstClass instanceof ExternalClass)
-					return ((ExternalClass)abstClass).getClass_();
-			}
-			
-			if (childrenContainer instanceof Container){
-				NodeDomainElement nde2 = ((Container)childrenContainer).getThe_domain();
-				if (nde2 == null){
-					Container c = ((Container)childrenContainer);
-					
-					String containerImportDomain = c.getImports().getDomainClass();
-					
-					String tmp = null;
-					if (containerImportDomain.contains(".")){
-						tmp = containerImportDomain.substring(containerImportDomain.lastIndexOf(".") + 1);
-					} else {
-						tmp = containerImportDomain;
-					}
-					
-//					RepresentationDescription rd = (RepresentationDescription) c.getImports().eContainer().eContainer();
-//					EList<EPackage> mm = rd.getMetamodel();
-					
-					Collection<Object> ePackageRegistry = DataWorkspaceEPackage.INSTANCE.values();
-					
-					for (Object object : ePackageRegistry) {
-						if (object instanceof EPackage){
-							EPackage ePackage = (EPackage)object;
-							
-							EClass eClass = (EClass) ePackage.getEClassifier(tmp);
-							//return the first class found
-							if (eClass != null){
-								return eClass;
-							}
-							
-						}
-					}					
-				}
-				
-				AbstractClass abstClass = getDomain_class(nde2);
-				if (abstClass instanceof ExternalClass)
-					return ((ExternalClass)abstClass).getClass_();
-			}
-			
-			if (childrenContainer instanceof BorderedNode){
-				NodeDomainElement nde2 = ((BorderedNode)childrenContainer).getThe_domain();
-				AbstractClass abstClass = getDomain_class(nde2);
-				if (abstClass instanceof ExternalClass)
-					return ((ExternalClass)abstClass).getClass_();
-			}
-		}
-		
-		if (container instanceof MappingSet){
-			EObject mappingSetContainer = container.eContainer();
-			if (mappingSetContainer instanceof Diagram){
-				Diagram diagram = (Diagram)mappingSetContainer;
-				AbstractClass abstClass = diagram.getThe_domain().getThe_domain();
-				if (abstClass instanceof ExternalClass)
-					return ((ExternalClass)abstClass).getClass_();
-			}
-		}
-		return null;
-	}
-	
-	private static AbstractClass getDomainContainerOfContainerOfElement(NodeDomainElement nde){
-		if (nde == null)
-			return null;
-		
-		EObject container = nde.eContainer().eContainer();
-		
-		if (container instanceof Diagram){
-			Diagram diagram = (Diagram)container;
-			return diagram.getThe_domain().getThe_domain();
-		}
-		
-		if (container instanceof AbstractNode){
-			NodeDomainElement nde2 = ((AbstractNode)container).getThe_domain();
-			return getDomain_class(nde2);
-		}
-		
-		if (container instanceof ContainerChildren){
-			EObject childrenContainer = container.eContainer();
-			if (childrenContainer instanceof Node){
-				NodeDomainElement nde2 = ((Node)childrenContainer).getThe_domain();
-				return getDomain_class(nde2);
-			}
-			
-			if (childrenContainer instanceof Container){
-				NodeDomainElement nde2 = ((Container)childrenContainer).getThe_domain();
-//				if (nde2 == null){
-//					Container c = ((Container)childrenContainer);
-//					c.getImports().eContainer().eContainer();
-//					
-//					EClass eClass = ((RepresentationDescription) c.getImports().eContainer().eContainer()).getMetamodel().get(0).getEClassifier("HardwareComponent").eClass();
-//				}
-				
-				return getDomain_class(nde2);
-			}
-			
-			if (childrenContainer instanceof BorderedNode){
-				NodeDomainElement nde2 = ((BorderedNode)childrenContainer).getThe_domain();
-				return getDomain_class(nde2);
-			}
-		}
-		
-		if (container instanceof NodeChildren){
-			NodeChildren nc = (NodeChildren)container;
-			Node node = (Node)nc.eContainer();
-			return node.getThe_domain().getDomain_Class();
-		}
-		
-		if (container instanceof MappingSet){
-			EObject mappingSetContainer = container.eContainer();
-			if (mappingSetContainer instanceof Diagram){
-				Diagram diagram = (Diagram)mappingSetContainer;
-				return diagram.getThe_domain().getThe_domain();
-			}
-		}
-		return null;
-	}
-
-	
-	
 	
 	/*
 	 * ***********************************
@@ -480,15 +185,15 @@ public class VpdiagramScopeHelper {
 				
 				EObject ndeContainer = nde.eContainer();
 				if (ndeContainer instanceof Container || ndeContainer instanceof Node || ndeContainer instanceof BorderedNode){
-					AbstractClass domain_class = getDomain_class(nde);
-					AbstractClass container_domain_class = getDomainContainerOfContainerOfElement(nde);
+					AbstractClass domain_class = VpDiagramHelper.getDomain_class(nde);
+					AbstractClass container_domain_class = VpDiagramHelper.getDomainContainerOfContainerOfElement(nde);
 
 					if (domain_class == null)
 						return  d.getEObjectOrProxy() instanceof AbstractAssociation;
 
 					if (container_domain_class == null){
 						//With import
-						EClass eClass = getDomainContainerOfContainerOfElementExternal(nde);
+						EClass eClass = VpDiagramHelper.getDomainContainerOfContainerOfElementExternal(nde);
 						
 						if (domain_class instanceof ExternalClass){
 							ExternalClass externalDomain_class = (ExternalClass)domain_class;
@@ -530,110 +235,23 @@ public class VpdiagramScopeHelper {
 			LocalClass containerLocalDomain_class) {
 		
 		Collection<EReference> allContainerReferences = getAllEReferencesOf(containerLocalDomain_class);
-		filterEReferencesWithType(allContainerReferences, externalDomainClass.getClass_());
+		VpDiagramHelper.filterEReferencesWithType(allContainerReferences, externalDomainClass.getClass_());
 		return false;
 	}
 	
-	private static void filterEReferencesWithType(
-			Collection<EReference> allContainerReferences, EClass eClazz) {
-		
-		EList<EClass> superTypes = eClazz.getEAllSuperTypes();
-		
-		Iterator<EReference> it = allContainerReferences.iterator();
-		
-		while (it.hasNext()){
-			EReference ref = it.next();
-			if (!superTypes.contains(ref.getEType())){
-				it.remove();
-			}
-		}
-	}
+	
 
 	private static Collection<EReference> getAllEReferencesOf(
 			LocalClass containerLocalDomain_class) {
 		
-		Collection<EReference> localEReferences = getLocalEReferences(containerLocalDomain_class);
+		Collection<EReference> localEReferences = VpDiagramHelper.getLocalEReferences(containerLocalDomain_class);
 		return localEReferences;
-	}
-	
-	private static Collection<EReference> getLocalEReferences(
-			LocalClass containerLocalDomain_class) {
-		
-		Collection<EReference> currentEReferences = getCurrentEReferences(containerLocalDomain_class.getClass_());
-		
-		EList<AbstractSuperClass> superClasses = containerLocalDomain_class.getClass_().getInheritences();
-		
-		for (AbstractSuperClass abstractSuperClass : superClasses) {
-			if (abstractSuperClass instanceof ExternalSuperClass){
-				ExternalSuperClass ec = (ExternalSuperClass)abstractSuperClass;
-				currentEReferences.addAll(ec.getSuperClass().getEAllReferences());
-			}
-			
-			if (abstractSuperClass instanceof LocalSuperClass){
-				LocalSuperClass lsc = (LocalSuperClass)abstractSuperClass;
-				collectEReferences(currentEReferences, lsc);
-			}
-		}
-		
-		
-		
-		return currentEReferences;
-	}
-	
-	
-	
-	
-
-	private static void collectEReferences(
-			Collection<EReference> currentEReferences, LocalSuperClass lsc) {
-		
-		Class clazz = lsc.getSuperClass();
-		
-		currentEReferences.addAll(getCurrentEReferences(clazz));
-		
-		EList<AbstractSuperClass> superTypes = clazz.getInheritences();
-		
-		if (superTypes.isEmpty())
-			return;
-		
-		for (AbstractSuperClass abstractSuperClass : superTypes) {
-			if (abstractSuperClass instanceof ExternalSuperClass){
-				ExternalSuperClass esc = (ExternalSuperClass)abstractSuperClass;
-				currentEReferences.addAll(esc.getSuperClass().getEAllReferences());
-			}
-			
-			if (abstractSuperClass instanceof LocalSuperClass){
-				LocalSuperClass lsc2 = (LocalSuperClass)abstractSuperClass;
-				collectEReferences(currentEReferences, lsc2);
-			}
-		}
-	}
-
-	
-	private static Collection<EReference> getCurrentEReferences(
-			Class vpdslClass) {
-		
-		Collection<EReference> ref = new HashSet<EReference>();
-		
-		EList<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation> associations = 
-				vpdslClass.getVP_Classes_Associations();
-		
-		for (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation abstractAssociation : associations) {
-			if (abstractAssociation instanceof ExternalAssociation){
-				ExternalAssociation ea = (ExternalAssociation)abstractAssociation;
-				ref.add(ea.getReference());
-			}
-		}
-		
-		return ref;
 	}
 	
 	
 	/*
 	 * Local local domain classes
 	 */
-	
-	
 
 	private static boolean handleLocalLocalAssociation(IEObjectDescription d,
 			LocalClass localDomain_class, LocalClass containerLocalDomain_class) {
@@ -652,7 +270,7 @@ public class VpdiagramScopeHelper {
 		LocalClassAssociation lca = (LocalClassAssociation)d.getEObjectOrProxy();
 		Class target  = lca.getLocalTarget();
 		
-		return (areEqualWithHerarchy(target, localVpdescClass)) && (availableAssociations.contains(lca));
+		return (VpDiagramHelper.areEqualWithHerarchy(target, localVpdescClass)) && (availableAssociations.contains(lca));
 	}
 	
 	
@@ -755,35 +373,5 @@ public class VpdiagramScopeHelper {
 			}
 		}
 		
-	}
-	
-	private static boolean areEqualWithHerarchy(Class target,
-			Class localVpdescClass) {
-		
-		if (localVpdescClass == null) return false;
-		if (target.eClass() == localVpdescClass.eClass()) return true;
-		
-		boolean areEqual = false;
-		
-		
-		
-		EList<AbstractSuperClass> superClasses = localVpdescClass.getInheritences();
-		
-		if (superClasses.isEmpty())
-			return false;
-		
-		for (AbstractSuperClass abstractSuperClass : superClasses) {
-			if (abstractSuperClass instanceof LocalSuperClass){
-				Class clazz = ((LocalSuperClass)abstractSuperClass).getSuperClass();
-				
-				areEqual |= (clazz.eClass() == target.eClass());
-				
-				if (areEqual) return areEqual;
-				
-				return areEqualWithHerarchy(target, clazz);
-			}
-		}
-		
-		return false;
 	}
 }
