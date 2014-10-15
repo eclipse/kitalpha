@@ -38,6 +38,9 @@
       <import feature="org.polarsys.kitalpha.cadence.source.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.accuracy.source.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.representation.source.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.share.source.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.scrutiny.source.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.commands.source.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.model.detachment.source.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.doc.gen.business.core.source.feature" version="0.5.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.source.feature" version="0.5.0.qualifier"/>
