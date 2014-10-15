@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionKind;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.DomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expression;
@@ -338,8 +339,11 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 						&& dElement.getAttribute().getName() != null
 						&& dElement.getAttribute().getName().trim().length() > 0) 
 				{
-					String expression = ((DomainElement) expressionElement).getAttribute().getName();
-					value += multiple ? expression : SiriusExpressionHelper.getExpressoin(expression, ExpressionInterpreter.Feature);
+					String attributeName = ((DomainElement) expressionElement).getAttribute().getName();
+					
+					if (multiple)
+						attributeName = SiriusExpressionHelper.getInnerFeature(attributeName);
+					value += multiple ? attributeName : SiriusExpressionHelper.getExpressoin(attributeName, ExpressionInterpreter.Feature);
 				}
 				break;
 
@@ -357,6 +361,9 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 					else 
 						methodName += "()";
 					
+					if (multiple)
+						methodName = SiriusExpressionHelper.getInnerJavaService(methodName);
+					
 					value += multiple ? methodName : SiriusExpressionHelper.getExpressoin(methodName, ExpressionInterpreter.Service);
 				}
 				break;
@@ -364,7 +371,8 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 			
 			if (expressionElements.indexOf(expressionElement) != expressionElements.size() - 1)
 			{// This means that the current element is not the last one, So add " + " between expression
-				value += " + ";
+				value += SiriusExpressionHelper.getConcatenationCharacter();
+//				value += " + ";
 			}
 			else
 			{

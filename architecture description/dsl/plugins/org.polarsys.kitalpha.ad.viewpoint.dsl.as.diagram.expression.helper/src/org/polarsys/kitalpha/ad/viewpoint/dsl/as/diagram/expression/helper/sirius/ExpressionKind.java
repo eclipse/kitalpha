@@ -41,6 +41,22 @@ public enum ExpressionKind implements IExpressionFormat{
 	}
 	
 	/**
+	 * 
+	 * @return
+	 */
+	public String getConcatenationCharacter() {
+		switch (this) {
+		case QueryLegacy:
+			return "";
+		case Acceleo_3_x:
+			return "+";
+		case Ocl:
+			throw new OCLExpressionNotSupported();
+		}
+		throw new RuntimeException("Expression kind not supported");
+	}
+	
+	/**
 	 * @see IExpressionFormat#isFormated(String)
 	 */
 	@Override
@@ -99,7 +115,11 @@ public enum ExpressionKind implements IExpressionFormat{
 	 * @return a valid Acceleo 2 expression to use in VSM
 	 */
 	private String getExpression_Acceleo_2(String expression){
-		return "<%" + expression + "%>";
+		// If True, this means that the expression is composite and doesn't need to be formated
+		if (expression.contains("<%") && expression.contains("%>"))
+			return expression; 
+		else // the expression is not composite and not formated, then format it
+			return "<%" + expression + "%>";
 	}
 	
 	/**

@@ -62,6 +62,48 @@ public class SiriusExpressionHelper {
 	}
 	
 	/**
+	 * @return concatenation character for a specific expression language
+	 */
+	public static String getConcatenationCharacter() {
+		final ExpressionKind currentExpressionKind = SiriusExpressionHelper.getCurrentExpressionKind();
+		return currentExpressionKind.getConcatenationCharacter();
+	}
+	
+	/**
+	 * 
+	 * @param featureName
+	 * @return
+	 */
+	public static String getInnerFeature(String featureName){
+		switch (getCurrentExpressionKind()) {
+		case QueryLegacy:
+			return "<%" + featureName + "%>";
+		case Acceleo_3_x:
+			return featureName;
+		case Ocl:
+			throw new OCLExpressionNotSupported();
+		}
+		throw new RuntimeException();
+	}
+	
+	/**
+	 * 
+	 * @param serviceName
+	 * @return
+	 */
+	public static String getInnerJavaService(String serviceName){
+		switch (getCurrentExpressionKind()) {
+		case QueryLegacy:
+			return "<%" + serviceName + "%>";
+		case Acceleo_3_x:
+			return serviceName;
+		case Ocl:
+			throw new OCLExpressionNotSupported();
+		}
+		throw new RuntimeException();
+	}
+	
+	/**
 	 * @param variableName the name of the variable to transform
 	 * @return well formated variable name
 	 */
