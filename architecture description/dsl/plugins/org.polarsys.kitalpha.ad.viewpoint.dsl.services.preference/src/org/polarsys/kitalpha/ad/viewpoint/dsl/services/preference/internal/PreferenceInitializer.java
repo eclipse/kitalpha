@@ -12,7 +12,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.internal;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.helper.VPRootProjectNamePreferencesHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.helper.ViewpointDslPreferencesHelper;
 
 /**
  * @author Boubekeur Zendagui
@@ -28,11 +28,11 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 */
 	@Override
 	public void initializeDefaultPreferences() {
-		String customizedValue = VPRootProjectNamePreferencesHelper.getCustomizedValue();
-		if (! VPRootProjectNamePreferencesHelper.useTargetApplicationValue() &&
+		String customizedValue = ViewpointDslPreferencesHelper.getCustomizedRPNValue();
+		if (! ViewpointDslPreferencesHelper.useTargetApplicationValue() &&
 				(customizedValue == null || (customizedValue != null && customizedValue.trim().length() == 0)))
 		{
-			VPRootProjectNamePreferencesHelper.restorDefautValues();
+			ViewpointDslPreferencesHelper.restorRPNDefautValues();
 		}
 	}
 }
