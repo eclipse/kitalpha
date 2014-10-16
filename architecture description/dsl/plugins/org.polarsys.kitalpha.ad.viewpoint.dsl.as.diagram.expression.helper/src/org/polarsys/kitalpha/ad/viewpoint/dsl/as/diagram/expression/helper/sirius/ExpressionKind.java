@@ -30,7 +30,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		{
 			switch (this) {
 			case QueryLegacy:
-				return getExpression_Acceleo_2(expression);
+				return getExpression_QueryLegacy(expression);
 			case Acceleo_3_x:
 				return getExpression_Acceleo_3(expression);
 			case Ocl:
@@ -114,7 +114,7 @@ public enum ExpressionKind implements IExpressionFormat{
 	 * @param expression to transform to Acceleo 2 expression. 
 	 * @return a valid Acceleo 2 expression to use in VSM
 	 */
-	private String getExpression_Acceleo_2(String expression){
+	private String getExpression_QueryLegacy(String expression){
 		// If True, this means that the expression is composite and doesn't need to be formated
 		if (expression.contains("<%") && expression.contains("%>"))
 			return expression; 
