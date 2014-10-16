@@ -45,7 +45,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfigur
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.helper.VPRootProjectNamePreferencesHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.helper.ViewpointDslPreferencesHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.exceptions.CantConcreteSyntaxResourceCreator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.extensions.ConcreteSyntaxResourceCreationManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.message.Messages;
@@ -109,8 +109,8 @@ public class NewDSLVpProjectWizard extends Wizard implements INewWizard {
 		checkStringArgument(vpTargetApplication, "Target application name");
 		this.vpTargetApplication = vpTargetApplication;
 		// Initialize Target Application data
-		if (! VPRootProjectNamePreferencesHelper.useTargetApplicationValue())
-			taRootProjectName = VPRootProjectNamePreferencesHelper.getCustomizedValue();
+		if (! ViewpointDslPreferencesHelper.useTargetApplicationValue())
+			taRootProjectName = ViewpointDslPreferencesHelper.getCustomizedRPNValue();
 		else
 			taRootProjectName = TargetApplicationExtensionManager.getRootProjectName(this.vpTargetApplication).toLowerCase();
 		

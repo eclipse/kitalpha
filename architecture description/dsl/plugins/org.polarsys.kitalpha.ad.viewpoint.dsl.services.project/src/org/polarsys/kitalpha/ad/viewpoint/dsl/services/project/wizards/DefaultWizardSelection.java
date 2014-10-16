@@ -11,6 +11,8 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.wizards;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.helper.ViewpointDslPreferenceConstant;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.helper.ViewpointDslPreferencesHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.extensions.ConcreteSyntaxResourceCreationManager;
 
 /**
@@ -35,13 +37,12 @@ public class DefaultWizardSelection {
 	}
 	/**
 	 * This allows to identify default target application. 
-	 * FIXME Default target application is Melody Advance, this is not compatible with Kitalpha. 
 	 * @param data the name of the target application
 	 * @return
 	 */
 	protected static boolean checkTargetApplication(String data){
 		if (data != null && data.trim().length() > 0)
-			return data.equals("EMF");
+			return data.equals(ViewpointDslPreferencesHelper.getCustomizedDefaultTAValue());
 		
 		return false;
 	}

@@ -17,6 +17,13 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.helper;
 
 public abstract class ViewpointDslPreferenceConstant {
 	
+	/** This preference allows to set a default target application to use in
+	 * viewpoint creation and reverse wizards */
+	public static final String VP_TA__DEFAULT = "DefaultViewpointTA";
+	
+	/** This is the default target application */
+	public static final String VP_TA__DEFAULT__DEFAULT_VALUE = "EMF";
+	
 	/** This preference allows the user to choose between the value of the target 
 	 * application root project name or value he provided **/
 	public static final String VP_ROOT_PROJECT_NAME__USE_TA = "UseTAViewpointRootProjectName";
