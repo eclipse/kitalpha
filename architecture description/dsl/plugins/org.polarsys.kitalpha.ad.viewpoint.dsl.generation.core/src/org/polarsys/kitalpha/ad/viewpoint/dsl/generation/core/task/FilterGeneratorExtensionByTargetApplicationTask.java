@@ -64,18 +64,14 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 				{
 					if (iConfigurationElement.getName().equals("filter"))
 					{
+						boolean filterOK = true;
 						// Filter by Target Application
 						String extensionTargetApplication = iConfigurationElement.getAttribute("TargetApplication");
 						if (extensionTargetApplication != null)
 						{
 							noFilter = false;
-							if (extensionTargetApplication.equals(targetApplication))
-							{
-								holdedExtensionPointContributions.add(launcherExtension);
-								break;
-							}
+							filterOK &= extensionTargetApplication.equals(targetApplication);
 						}
-						
 						
 						// Filter by Java filter
 						try {
@@ -83,16 +79,16 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 							if (createExecutableExtension != null)
 							{
 								noFilter = false;
-								boolean accept = createExecutableExtension.accept(domainModel);
-								if (accept)
-								{
-									holdedExtensionPointContributions.add(launcherExtension);
-									break;
-								}
+								filterOK &= createExecutableExtension.accept(domainModel);
 							}
-							
 						} catch (CoreException e) {
 							e.printStackTrace();
+						}
+						
+						if (filterOK)
+						{
+							holdedExtensionPointContributions.add(launcherExtension);
+							break;
 						}
 					}
 				}
