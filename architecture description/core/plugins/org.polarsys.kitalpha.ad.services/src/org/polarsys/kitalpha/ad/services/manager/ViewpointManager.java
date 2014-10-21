@@ -163,6 +163,7 @@ public class ViewpointManager {
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_7, providerSymbolicName));
 		// TODO peut etre qu'il faudrait utiliser un job pour eviter le sleep
 		try {
+			bundle.update();
 			bundle.start(Bundle.START_TRANSIENT);
 			// wait for event dispatch
 			Thread.sleep(100);

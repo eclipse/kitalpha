@@ -26,7 +26,13 @@ import org.polarsys.kitalpha.emde.extension.utils.Log;
  */
 public class ModelExtensionHelper {
 
+	private static final ModelExtensionManager instance = createInstance();
+
 	public static ModelExtensionManager getInstance() {
+		return instance;
+	}
+
+	private static ModelExtensionManager createInstance() {
 
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.emde.extension.model.manager");

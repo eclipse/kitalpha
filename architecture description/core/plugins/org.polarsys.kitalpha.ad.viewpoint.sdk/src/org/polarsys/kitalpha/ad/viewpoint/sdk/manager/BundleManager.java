@@ -75,7 +75,7 @@ public class BundleManager {
 	}
 
 	protected void remove(Bundle bundle) throws BundleException {
-		allManagedBundles.remove(bundle.getSymbolicName());
+		// allManagedBundles.remove(bundle.getSymbolicName());
 		bundle.stop(Bundle.STOP_TRANSIENT);
 		// clean usages link, this bundle doesn't use anyone now.
 		for (Set<String> users : bundle2users.values()) {
@@ -93,7 +93,7 @@ public class BundleManager {
 			}
 			bundle2dependencies.remove(bundle.getSymbolicName());
 		}
-		bundle.uninstall();
+		// bundle.uninstall();
 	}
 
 	public void load(String symbolicName) throws UnsupportedEncodingException, MalformedURLException, BundleException, CoreException, InterruptedException {
