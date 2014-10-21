@@ -46,7 +46,15 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 				Collection<IScrutinize> finders = registryElement.getFinders();
 
 				for (IScrutinize iFinder : finders) {
-					iFinder.findIn(resource);
+					/*
+					 * FIXME: This is not good check, because we limited the detach
+					 * only on the instances. Find a better way to check this.
+					 * 
+					 * This is done, because the detachment find some unknown references
+					 * in capella ide caused by malformed odesigns
+					 */
+					if (!resource.getURI().isPlatformPlugin())
+						iFinder.findIn(resource);
 				}
 			}
 		}
@@ -64,8 +72,12 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 					RegistryElement registryElement = (RegistryElement)regElt;
 					Collection<IScrutinize> finders = registryElement.getFinders();
 					
+					/*
+					 * FIXME: cf. Fixme in visited(Resource) method above
+					 */
 					for (IScrutinize iFinder : finders) {
-						iFinder.findIn(eObject);
+						if (eObject.eResource() != null && !eObject.eResource().getURI().isPlatformPlugin())
+							iFinder.findIn(eObject);
 					}
 				}
 			}
