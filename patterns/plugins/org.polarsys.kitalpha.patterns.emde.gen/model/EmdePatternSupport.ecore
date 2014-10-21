@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emdepatternsupport" nsURI="http://org.eclipse.com/emf/diffmerge/patterns/support/emde/1.0.0"
+    nsPrefix="org.polarsys.kitalpha.patterns.emde">
+  <eClassifiers xsi:type="ecore:EClass" name="EmdePatternInstanceSet" eSuperTypes="../../org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension ../../org.eclipse.emf.diffmerge.patterns.support.gen/model/CommonPatternSupport.ecore#//CommonPatternInstanceSet"/>
+</ecore:EPackage>
