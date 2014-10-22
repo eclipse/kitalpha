@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.*;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
 
@@ -231,13 +232,13 @@ public class EmdepatternsupportAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.diffmerge.patterns.support.gen.patterninstances.CommonPatternInstanceSet <em>Common Pattern Instance Set</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstanceSet <em>Common Pattern Instance Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.diffmerge.patterns.support.gen.patterninstances.CommonPatternInstanceSet
+	 * @see org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstanceSet
 	 * @generated
 	 */
 	public Adapter createCommonPatternInstanceSetAdapter() {

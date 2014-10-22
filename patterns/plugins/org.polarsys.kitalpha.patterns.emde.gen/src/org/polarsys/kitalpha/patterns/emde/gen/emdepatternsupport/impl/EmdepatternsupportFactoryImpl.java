@@ -35,7 +35,7 @@ public class EmdepatternsupportFactoryImpl extends EFactoryImpl implements Emdep
 	 */
   public static EmdepatternsupportFactory init() {
 		try {
-			EmdepatternsupportFactory theEmdepatternsupportFactory = (EmdepatternsupportFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/patterns/emde/1.0.0");  //$NON-NLS-1$
+			EmdepatternsupportFactory theEmdepatternsupportFactory = (EmdepatternsupportFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/patterns/emde/1.0.0"); 
 			if (theEmdepatternsupportFactory != null) {
 				return theEmdepatternsupportFactory;
 			}
@@ -66,7 +66,7 @@ public class EmdepatternsupportFactoryImpl extends EFactoryImpl implements Emdep
 		switch (eClass.getClassifierID()) {
 			case EmdepatternsupportPackage.EMDE_PATTERN_INSTANCE_SET: return createEmdePatternInstanceSet();
 			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 

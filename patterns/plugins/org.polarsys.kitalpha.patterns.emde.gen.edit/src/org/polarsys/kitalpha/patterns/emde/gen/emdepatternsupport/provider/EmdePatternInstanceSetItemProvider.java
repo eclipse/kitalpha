@@ -87,8 +87,8 @@ public class EmdePatternInstanceSetItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AbstractIdentifiedElement_id_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractIdentifiedElement_id_feature", "_UI_AbstractIdentifiedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 getString("_UI_AbstractIdentifiedElement_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractIdentifiedElement_id_feature", "_UI_AbstractIdentifiedElement_type"),
 				 CorepatternsPackage.Literals.ABSTRACT_IDENTIFIED_ELEMENT__ID,
 				 true,
 				 false,
@@ -136,7 +136,7 @@ public class EmdePatternInstanceSetItemProvider
 	 */
   @Override
   public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EmdePatternInstanceSet")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EmdePatternInstanceSet"));
 	}
 
   /**

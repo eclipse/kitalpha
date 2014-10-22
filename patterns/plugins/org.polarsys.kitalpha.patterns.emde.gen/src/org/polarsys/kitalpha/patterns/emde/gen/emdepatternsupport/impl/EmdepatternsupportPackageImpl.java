@@ -174,7 +174,7 @@ public class EmdepatternsupportPackageImpl extends EPackageImpl implements Emdep
 		emdePatternInstanceSetEClass.getESuperTypes().add(theCommonpatternsupportPackage.getCommonPatternInstanceSet());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(emdePatternInstanceSetEClass, EmdePatternInstanceSet.class, "EmdePatternInstanceSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(emdePatternInstanceSetEClass, EmdePatternInstanceSet.class, "EmdePatternInstanceSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

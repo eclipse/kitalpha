@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.*;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
 
