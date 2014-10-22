@@ -10,12 +10,12 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.provider;
 
-import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
-import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.provider.CorePatternsEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.provider.CorePatternsEditPlugin;
 import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.provider.CommonPatternSupportEditPlugin;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
 
 /**
  * This is the central singleton for the EmdePatternSupport edit plugin.

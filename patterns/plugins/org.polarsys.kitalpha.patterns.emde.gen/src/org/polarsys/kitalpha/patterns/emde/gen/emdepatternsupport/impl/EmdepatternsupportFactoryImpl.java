@@ -16,6 +16,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.*;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportFactory;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +35,7 @@ public class EmdepatternsupportFactoryImpl extends EFactoryImpl implements Emdep
 	 */
   public static EmdepatternsupportFactory init() {
 		try {
-			EmdepatternsupportFactory theEmdepatternsupportFactory = (EmdepatternsupportFactory)EPackage.Registry.INSTANCE.getEFactory("http://org.eclipse.com/emf/diffmerge/patterns/support/emde/1.0.0");  //$NON-NLS-1$
+			EmdepatternsupportFactory theEmdepatternsupportFactory = (EmdepatternsupportFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/patterns/emde/1.0.0");  //$NON-NLS-1$
 			if (theEmdepatternsupportFactory != null) {
 				return theEmdepatternsupportFactory;
 			}

@@ -10,27 +10,27 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.impl;
 
-import  org.polarsys.kitalpha.emde.model.impl.ElementExtensionImpl;
-import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
-import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
-import org.eclipse.emf.diffmerge.patterns.core.api.IIdentifiedElement;
-import org.eclipse.emf.diffmerge.patterns.core.api.IPatternInstanceMarker;
-import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.AbstractIdentifiedElement;
-import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.CorepatternsPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.diffmerge.patterns.core.CorePatternsPlugin;
+import org.eclipse.emf.diffmerge.patterns.core.api.IIdentifiedElement;
+import org.eclipse.emf.diffmerge.patterns.core.api.IPatternInstanceMarker;
+import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.AbstractIdentifiedElement;
+import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.CorepatternsPackage;
+import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstance;
+import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstanceSet;
+import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonpatternsupportPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstance;
-import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstanceSet;
-import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonpatternsupportPackage;
+import org.polarsys.kitalpha.emde.model.impl.ElementExtensionImpl;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,10 +80,11 @@ public class EmdePatternInstanceSetImpl extends ElementExtensionImpl implements 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   protected EmdePatternInstanceSetImpl() {
 		super();
+    CorePatternsPlugin.getDefault().setNewId(this);
 	}
 
   /**

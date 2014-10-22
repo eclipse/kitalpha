@@ -10,18 +10,19 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.util;
 
-import org.polarsys.kitalpha.emde.model.Element;
-import org.polarsys.kitalpha.emde.model.ElementExtension;
-import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.*;
-import org.eclipse.emf.diffmerge.patterns.core.api.IIdentifiedElement;
-import org.eclipse.emf.diffmerge.patterns.core.api.IPatternInstanceMarker;
-import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.AbstractIdentifiedElement;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.diffmerge.patterns.core.api.IIdentifiedElement;
+import org.eclipse.emf.diffmerge.patterns.core.api.IPatternInstanceMarker;
+import org.eclipse.emf.diffmerge.patterns.core.gen.corepatterns.AbstractIdentifiedElement;
 import org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstanceSet;
+import org.eclipse.emf.ecore.EObject;
+import org.polarsys.kitalpha.emde.model.Element;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
+import org.polarsys.kitalpha.emde.model.ExtensibleElement;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
+import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,44 +79,44 @@ public class EmdepatternsupportAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected EmdepatternsupportSwitch<Adapter> modelSwitch =
-			new EmdepatternsupportSwitch<Adapter>() {
-		@Override
-		public Adapter caseEmdePatternInstanceSet(EmdePatternInstanceSet object) {
-			return createEmdePatternInstanceSetAdapter();
-		}
-		@Override
-		public Adapter caseElement(Element object) {
-			return createElementAdapter();
-		}
-		@Override
-		public Adapter caseExtensibleElement(ExtensibleElement object) {
-			return createExtensibleElementAdapter();
-		}
-		@Override
-		public Adapter caseElementExtension(ElementExtension object) {
-			return createElementExtensionAdapter();
-		}
-		@Override
-		public Adapter caseIIdentifiedElement(IIdentifiedElement object) {
-			return createIIdentifiedElementAdapter();
-		}
-		@Override
-		public Adapter caseAbstractIdentifiedElement(AbstractIdentifiedElement object) {
-			return createAbstractIdentifiedElementAdapter();
-		}
-		@Override
-		public Adapter caseIPatternInstanceMarker(IPatternInstanceMarker object) {
-			return createIPatternInstanceMarkerAdapter();
-		}
-		@Override
-		public Adapter caseCommonPatternInstanceSet(CommonPatternInstanceSet object) {
-			return createCommonPatternInstanceSetAdapter();
-		}
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+		new EmdepatternsupportSwitch<Adapter>() {
+			@Override
+			public Adapter caseEmdePatternInstanceSet(EmdePatternInstanceSet object) {
+				return createEmdePatternInstanceSetAdapter();
+			}
+			@Override
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
+			}
+			@Override
+			public Adapter caseExtensibleElement(ExtensibleElement object) {
+				return createExtensibleElementAdapter();
+			}
+			@Override
+			public Adapter caseElementExtension(ElementExtension object) {
+				return createElementExtensionAdapter();
+			}
+			@Override
+			public Adapter caseIIdentifiedElement(IIdentifiedElement object) {
+				return createIIdentifiedElementAdapter();
+			}
+			@Override
+			public Adapter caseAbstractIdentifiedElement(AbstractIdentifiedElement object) {
+				return createAbstractIdentifiedElementAdapter();
+			}
+			@Override
+			public Adapter caseIPatternInstanceMarker(IPatternInstanceMarker object) {
+				return createIPatternInstanceMarkerAdapter();
+			}
+			@Override
+			public Adapter caseCommonPatternInstanceSet(CommonPatternInstanceSet object) {
+				return createCommonPatternInstanceSetAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -230,13 +231,13 @@ public class EmdepatternsupportAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstanceSet <em>Common Pattern Instance Set</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.diffmerge.patterns.support.gen.patterninstances.CommonPatternInstanceSet <em>Common Pattern Instance Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.diffmerge.patterns.support.gen.commonpatternsupport.CommonPatternInstanceSet
+	 * @see org.eclipse.emf.diffmerge.patterns.support.gen.patterninstances.CommonPatternInstanceSet
 	 * @generated
 	 */
 	public Adapter createCommonPatternInstanceSetAdapter() {

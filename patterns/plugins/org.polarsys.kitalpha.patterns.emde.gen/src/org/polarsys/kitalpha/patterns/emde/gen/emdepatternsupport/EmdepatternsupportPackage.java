@@ -10,10 +10,9 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport;
 
-import org.polarsys.kitalpha.emde.model.EmdePackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +45,7 @@ public interface EmdepatternsupportPackage extends EPackage {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  String eNS_URI = "http://org.eclipse.com/emf/diffmerge/patterns/support/emde/1.0.0"; //$NON-NLS-1$
+  String eNS_URI = "http://www.polarsys.org/kitalpha/patterns/emde/1.0.0"; //$NON-NLS-1$
 
   /**
 	 * The package namespace name.
@@ -54,7 +53,7 @@ public interface EmdepatternsupportPackage extends EPackage {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  String eNS_PREFIX = "org.eclipse.emf.diffmerge.patterns.support.emde"; //$NON-NLS-1$
+  String eNS_PREFIX = "org.polarsys.kitalpha.patterns.emde"; //$NON-NLS-1$
 
   /**
 	 * The singleton instance of the package.

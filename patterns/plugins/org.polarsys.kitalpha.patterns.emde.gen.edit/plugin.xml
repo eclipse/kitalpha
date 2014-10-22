@@ -14,7 +14,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated EmdePatternSupport -->
       <factory
-            uri="http://org.eclipse.com/emf/diffmerge/patterns/support/emde/1.0.0"
+            uri="http://www.polarsys.org/kitalpha/patterns/emde/1.0.0"
             class="org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.provider.EmdepatternsupportItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
