@@ -16,7 +16,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.diffmerge.ui,
  org.eclipse.emf.transaction;bundle-version="1.4.0",
  org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints,
- org.polarsys.capella.core.compare;bundle-version="0.8.0",
  org.polarsys.kitalpha.model.common.share;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
