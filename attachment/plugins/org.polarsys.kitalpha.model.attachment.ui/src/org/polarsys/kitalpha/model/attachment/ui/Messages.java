@@ -22,8 +22,8 @@ public class Messages extends NLS {
 	public static String wizard_title; //$NON-NLS-1$ "Model Attachment"
 	public static String wizard_page_error1; //$NON-NLS-1$  {0} must be set.
 	public static String wizard_page_error2; //$NON-NLS-1$  "Cannot find role {0}
-	public static String wizard_page_error3; //$NON-NLS-1$ 
-	public static String wizard_page_error4; //$NON-NLS-1$ 
+	//	public static String wizard_page_error3; //$NON-NLS-1$ 
+	//	public static String wizard_page_error4; //$NON-NLS-1$ 
 	public static String error_dialog_title; //$NON-NLS-1$ "Error"
 	public static String wizard_page_title; // "Role selection"
 	public static String wizard_page_description; // "Select the role for each model."
