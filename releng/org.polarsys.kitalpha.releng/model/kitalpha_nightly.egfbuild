@@ -51,7 +51,6 @@
         <featureNames>org.eclipse.sirius.runtime.ide.xtext</featureNames>
         <featureNames>org.eclipse.sirius.runtime.ocl</featureNames>
         <featureNames>org.eclipse.sirius.runtime</featureNames>
-        <featureNames>org.eclipse.sirius.samples</featureNames>
         <featureNames>org.eclipse.sirius.specifier.ide.ui.acceleo</featureNames>
         <featureNames>org.eclipse.sirius.specifier.ide.ui</featureNames>
         <featureNames>org.eclipse.sirius.runtime.acceleo</featureNames>
@@ -62,7 +61,6 @@
         <featureNames>org.eclipse.sirius.runtime.ide.xtext.source</featureNames>
         <featureNames>org.eclipse.sirius.runtime.ocl.source</featureNames>
         <featureNames>org.eclipse.sirius.runtime.source</featureNames>
-        <featureNames>org.eclipse.sirius.samples.source</featureNames>
         <featureNames>org.eclipse.sirius.specifier.ide.ui.acceleo.source</featureNames>
         <featureNames>org.eclipse.sirius.specifier.ide.ui.source</featureNames>
         <featureNames>org.eclipse.sirius.runtime.acceleo.source</featureNames>
