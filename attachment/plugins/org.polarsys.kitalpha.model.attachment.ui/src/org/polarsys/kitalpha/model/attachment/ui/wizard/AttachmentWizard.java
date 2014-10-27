@@ -18,6 +18,7 @@ import java.util.List;
 import org.eclipse.compare.CompareUI;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.diffmerge.api.IMergeSelector;
 import org.eclipse.emf.diffmerge.api.Role;
@@ -96,7 +97,9 @@ public class AttachmentWizard extends Wizard {
 							EReferenceValuePresence diff = (EReferenceValuePresence) difference_p;
 							if (toMerge(diff.getValue().getReference()))
 								return Role.TARGET;
-							return null;
+							// does the element have a reference to one of our objects ?
+							EList<EObject> eCrossReferences = diff.getValue().getReference().eCrossReferences();
+							return toMerge((EObject[]) eCrossReferences.toArray(new EObject[eCrossReferences.size()])) ? Role.TARGET : null;
 						}
 						if (difference_p instanceof EElementPresence) {
 							// les nouveaux elts
