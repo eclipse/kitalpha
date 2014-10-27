@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.compare.CompareUI;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.WrappedException;
@@ -25,13 +26,16 @@ import org.eclipse.emf.diffmerge.api.scopes.IEditableModelScope;
 import org.eclipse.emf.diffmerge.api.scopes.IPersistentModelScope;
 import org.eclipse.emf.diffmerge.diffdata.EComparison;
 import org.eclipse.emf.diffmerge.diffdata.EElementPresence;
+import org.eclipse.emf.diffmerge.diffdata.EMergeableDifference;
 import org.eclipse.emf.diffmerge.diffdata.EReferenceValuePresence;
 import org.eclipse.emf.diffmerge.diffdata.impl.EComparisonImpl;
 import org.eclipse.emf.diffmerge.ui.EMFDiffMergeUIPlugin;
 import org.eclipse.emf.diffmerge.ui.setup.ComparisonSetup;
 import org.eclipse.emf.diffmerge.ui.setup.ComparisonSetupManager;
+import org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput;
 import org.eclipse.emf.diffmerge.ui.specification.IComparisonMethod;
 import org.eclipse.emf.diffmerge.ui.specification.IComparisonMethodFactory;
+import org.eclipse.emf.diffmerge.ui.viewers.EMFDiffNode;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -80,18 +84,19 @@ public class AttachmentWizard extends Wizard {
 				comparison.compute(method.getMatchPolicy(), method.getDiffPolicy(), method.getMergePolicy(), monitor);
 
 				boolean consistent = comparison.isConsistent();
-				boolean hasRemainingDifferences = comparison.hasRemainingDifferences();
 				Collection<IDifference> remainingDifferences = comparison.getRemainingDifferences();
+				// TODO poser la question pour continuer
 				comparison.merge(new IMergeSelector() {
 
 					@Override
 					public Role getMergeDirection(IDifference difference_p) {
-						System.out.println(difference_p);
 						if (difference_p.isConflicting())
 							return null;
 						if (difference_p instanceof EReferenceValuePresence) {
 							EReferenceValuePresence diff = (EReferenceValuePresence) difference_p;
-							return toMerge(diff.getValue().getReference()) ? Role.TARGET : null;
+							if (toMerge(diff.getValue().getReference()))
+								return Role.TARGET;
+							return null;
 						}
 						if (difference_p instanceof EElementPresence) {
 							// les nouveaux elts
@@ -99,13 +104,27 @@ public class AttachmentWizard extends Wizard {
 							return toMerge(diff.getElement(), true) ? Role.TARGET : null;
 						}
 
-						return Role.TARGET;
+						return null;
 					}
 				}, true, monitor);
-				// comparison.merge(rightRole, true, null);
-				Collection<IDifference> remainingDifferences2 = comparison.getRemainingDifferences();
+
 				if (targetScope instanceof IPersistentModelScope.Editable)
 					((IPersistentModelScope.Editable) targetScope).save();
+
+				Collection<IDifference> remainingDifferences2 = comparison.getRemainingDifferences();
+
+				// Open UI for merge remaining elements
+				// TODO all remaining changes will be shown, need a filter to
+				// show only the differences related to the viewpoint. These
+				// differences are surely in conflict.
+				if (comparison.hasRemainingDifferences()) {
+
+					EMFDiffMergeEditorInput input = new EMFDiffMergeEditorInput(method);
+					CompareUI.openCompareEditor(input);
+					EMFDiffNode compareResult = input.getCompareResult();
+					for (IDifference diff : comparison.getRemainingDifferences())
+						compareResult.getUIComparison().getDifferencesToIgnore().add((EMergeableDifference) diff);
+				}
 
 			} catch (Exception e) {
 				throw new WrappedException(e);
@@ -141,7 +160,6 @@ public class AttachmentWizard extends Wizard {
 		IRunnableWithProgress op = new IRunnableWithProgress() {
 			public void run(IProgressMonitor monitor) throws InvocationTargetException {
 				try {
-
 					domain.getCommandStack().execute(new MergeCommand((TransactionalEditingDomain) domain, method, monitor));
 				} catch (Exception e) {
 					throw new InvocationTargetException(e);
@@ -163,8 +181,13 @@ public class AttachmentWizard extends Wizard {
 		return true;
 	}
 
-	private boolean toMerge(EObject obj) {
-		return viewpointPage.analysisResult.getUriToRemove().contains(obj.eClass().getEPackage().getNsURI());
+	private boolean toMerge(EObject... objs) {
+		Collection<String> selectedUris = viewpointPage.analysisResult.getSelectedUris();
+		for (EObject obj : objs) {
+			if (selectedUris.contains(obj.eClass().getEPackage().getNsURI()))
+				return true;
+		}
+		return false;
 	}
 
 	private boolean toMerge(EObject obj, boolean checkContainers) {
