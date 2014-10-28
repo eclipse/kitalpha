@@ -318,14 +318,14 @@ public class ViewpointManagerView extends ViewPart {
 				try {
 					ViewpointManager.INSTANCE.activate(res.getId());
 
-					// we need a short delay to wait for new freshly installed
-					// bundles to be ready
-					getSite().getShell().getDisplay().timerExec(500, new Runnable() {
-
-						public void run() {
-							ViewHelper.openViews(res);
-						}
-					});
+					// // we need a short delay to wait for new freshly installed
+					// // bundles to be ready
+					// getSite().getShell().getDisplay().timerExec(500, new Runnable() {
+					//
+					// public void run() {
+					// ViewHelper.openViews(res);
+					// }
+					// });
 				} catch (ViewpointActivationException e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					AD_Log.getDefault().logError(e);
