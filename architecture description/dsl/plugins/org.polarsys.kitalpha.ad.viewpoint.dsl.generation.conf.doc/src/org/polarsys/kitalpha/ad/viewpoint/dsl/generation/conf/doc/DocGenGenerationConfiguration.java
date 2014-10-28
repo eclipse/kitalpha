@@ -67,6 +67,7 @@ public class DocGenGenerationConfiguration implements IGenerationElementInnerCon
 	 * @return
 	 */
 	private static boolean generateDocumenationFor(EObject anyModelElement){
+		boolean result = false;
 		Configuration vpConf = VpDslConfigurationHelper.getViewpointConfiguration(anyModelElement);
 		EList<ConfigurationElement> vpConfigurationElements = vpConf.getVpConfigurationElements();
 		if (vpConfigurationElements != null && vpConfigurationElements.isEmpty() == false)
@@ -82,13 +83,16 @@ public class DocGenGenerationConfiguration implements IGenerationElementInnerCon
 						{
 							if (extGenConf instanceof DocumentationGenerationConfiguration)
 							{
-								return ((DocumentationGenerationConfiguration) extGenConf).isEcoreToHtml();
+								result = ((DocumentationGenerationConfiguration) extGenConf).isEcoreToHtml();
+								break;
 							}
 						}
 					}
 				}
+				if (result)
+					break;
 			}
 		}
-		return true;
+		return result;
 	}
 }
