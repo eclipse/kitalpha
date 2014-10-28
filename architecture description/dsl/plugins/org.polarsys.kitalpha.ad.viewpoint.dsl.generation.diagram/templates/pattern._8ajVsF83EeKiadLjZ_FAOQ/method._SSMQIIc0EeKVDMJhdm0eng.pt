@@ -159,7 +159,20 @@ for (EdgeDescription iEgdeDescription : parameter.getE_description()) {
 	{
 		eLabelStyleDesc = EcoreUtil.copy(parameter.getImports().getStyle().getEndLabelStyleDescription());
 	}
+	/****************************************************************************************************/
 
+	
+
+	EdgeStyleDescription eStyleDesc_merged = null;
+	try {
+		eStyleDesc_merged = EdgeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), eStyleDesc, iEgdeDescription);
+	} 
+	catch (Exception e) {
+	} 
+	
+	if (eStyleDesc_merged != null)
+		eStyleDesc = eStyleDesc_merged;
+		
 	/****************************************************************************************************/
 	eStyleDesc.setCenterLabelStyleDescription(cLabelStyleDesc);
 	eStyleDesc.setBeginLabelStyleDescription(bLabelStyleDesc);

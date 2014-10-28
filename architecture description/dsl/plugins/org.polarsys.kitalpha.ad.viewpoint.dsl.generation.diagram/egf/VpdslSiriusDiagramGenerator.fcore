@@ -230,6 +230,7 @@
                 patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._x3qegIJREeKwg4W2q6P9qg.pt"/>
             <methods xmi:id="_srj8UIJtEeKwg4W2q6P9qg" name="inheritMappingReuse" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._srj8UIJtEeKwg4W2q6P9qg.pt"/>
             <methods xmi:id="_8WYPYIJtEeKwg4W2q6P9qg" name="inheritSemanticData" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._8WYPYIJtEeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_HG40sF66EeSynot0RWxlXQ" name="setStyle" patternFilePath="templates/pattern._vf9RoGcFEeKU65N7JaBT3g/method._HG40sF66EeSynot0RWxlXQ.pt"/>
             <variables xmi:id="_MpIFIIJuEeKwg4W2q6P9qg" name="icm" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/ContainerMappingImport"/>
             <variables xmi:id="_i8z5gYSmEeKlgrb0i1zvPQ" name="mapping" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/ContainerMapping"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_vf9Rp2cFEeKU65N7JaBT3g"/>
@@ -261,6 +262,7 @@
                 patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._bXNwYIJREeKwg4W2q6P9qg.pt"/>
             <methods xmi:id="_RC8voIJvEeKwg4W2q6P9qg" name="inheritMappingReuse" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._RC8voIJvEeKwg4W2q6P9qg.pt"/>
             <methods xmi:id="_VVHvcIJvEeKwg4W2q6P9qg" name="inheritSemanticData" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._VVHvcIJvEeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_a9gZ0F66EeSynot0RWxlXQ" name="setStyle" patternFilePath="templates/pattern._wXaooGcGEeKU65N7JaBT3g/method._a9gZ0F66EeSynot0RWxlXQ.pt"/>
             <variables xmi:id="_f2VrcIJvEeKwg4W2q6P9qg" name="inm" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMappingImport"/>
             <variables xmi:id="_wtpzMISmEeKlgrb0i1zvPQ" name="mapping" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMapping"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_wXaop2cGEeKU65N7JaBT3g"/>
@@ -293,6 +295,7 @@
                 patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._m8uF0IJPEeKwg4W2q6P9qg.pt"/>
             <methods xmi:id="_o5rUMIJvEeKwg4W2q6P9qg" name="inheritMappingReuse" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._o5rUMIJvEeKwg4W2q6P9qg.pt"/>
             <methods xmi:id="_5HgNsIJvEeKwg4W2q6P9qg" name="inheritSemanticData" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._5HgNsIJvEeKwg4W2q6P9qg.pt"/>
+            <methods xmi:id="_fDBdsF66EeSynot0RWxlXQ" name="setStyle" patternFilePath="templates/pattern._Tw9wIGcHEeKU65N7JaBT3g/method._fDBdsF66EeSynot0RWxlXQ.pt"/>
             <variables xmi:id="_uB7ncIJvEeKwg4W2q6P9qg" name="inm" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMappingImport"/>
             <variables xmi:id="_5YrpoISmEeKlgrb0i1zvPQ" name="mapping" type="http://www.eclipse.org/sirius/diagram/1.1.0#//description/NodeMapping"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_Tw9wJ2cHEeKU65N7JaBT3g"/>

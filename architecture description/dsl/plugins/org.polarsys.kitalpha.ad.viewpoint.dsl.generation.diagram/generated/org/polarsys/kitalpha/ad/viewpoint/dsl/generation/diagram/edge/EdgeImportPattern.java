@@ -45,6 +45,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.EdgeStyleImportMerger;
+
 public class EdgeImportPattern
 		extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
@@ -313,6 +315,17 @@ public class EdgeImportPattern
 				eLabelStyleDesc = EcoreUtil.copy(parameter.getImports()
 						.getStyle().getEndLabelStyleDescription());
 			}
+			/****************************************************************************************************/
+
+			EdgeStyleDescription eStyleDesc_merged = null;
+			try {
+				eStyleDesc_merged = EdgeStyleImportMerger.mergeStyles(parameter
+						.getImports().getStyle(), eStyleDesc, iEgdeDescription);
+			} catch (Exception e) {
+			}
+
+			if (eStyleDesc_merged != null)
+				eStyleDesc = eStyleDesc_merged;
 
 			/****************************************************************************************************/
 			eStyleDesc.setCenterLabelStyleDescription(cLabelStyleDesc);
