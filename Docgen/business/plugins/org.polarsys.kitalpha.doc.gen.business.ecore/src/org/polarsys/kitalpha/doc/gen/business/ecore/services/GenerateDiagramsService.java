@@ -46,35 +46,32 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.services.layout.LayoutService;
 import org.eclipse.gmf.runtime.diagram.ui.services.layout.LayoutType;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
-import org.polarsys.kitalpha.doc.gen.business.ecore.Activator;
-import org.polarsys.kitalpha.doc.gen.business.ecore.helpers.AIRDDiagramGeneratorHelper;
-
-
-import org.eclipse.sirius.viewpoint.DAnalysis;
-import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.DSemanticDecorator;
-import org.eclipse.sirius.diagram.DSemanticDiagram;
-import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.helper.SiriusResourceHelper;
-
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.api.session.resource.AirdResource;
-import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
-import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
-import org.eclipse.sirius.viewpoint.description.Viewpoint;
-import org.eclipse.sirius.diagram.ui.business.api.view.refresh.CanonicalSynchronizer;
-import org.eclipse.sirius.diagram.ui.business.api.view.refresh.CanonicalSynchronizerFactory;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
 import org.eclipse.sirius.diagram.ui.tools.internal.part.OffscreenEditPartFactory;
 import org.eclipse.sirius.tools.api.command.SiriusCommand;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
+import org.eclipse.sirius.viewpoint.DAnalysis;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.eclipse.sirius.viewpoint.DView;
+import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
+import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
+import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.polarsys.kitalpha.doc.gen.business.ecore.Activator;
+import org.polarsys.kitalpha.doc.gen.business.ecore.helpers.AIRDDiagramGeneratorHelper;
 
 @SuppressWarnings("restriction")
 public class GenerateDiagramsService {
