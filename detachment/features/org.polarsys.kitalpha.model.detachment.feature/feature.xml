@@ -31,4 +31,10 @@ Contributors:
          id="org.polarsys.kitalpha.model.detachment.ui.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import feature="org.polarsys.kitalpha.model.common.commands.feature"/>
+      <import feature="org.polarsys.kitalpha.model.common.scrutiny.feature"/>
+      <import feature="org.polarsys.kitalpha.model.common.share.feature"/>
+   </requires>
+
 </feature>
