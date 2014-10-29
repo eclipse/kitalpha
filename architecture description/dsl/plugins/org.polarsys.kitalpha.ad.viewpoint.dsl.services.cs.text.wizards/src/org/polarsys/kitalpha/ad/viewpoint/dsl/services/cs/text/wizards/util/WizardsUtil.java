@@ -133,8 +133,25 @@ public class WizardsUtil {
 			}
 			
 			fileContent = fileContent + 	"	project " + rootProjectName + "\n" +
-			"	nsuri " + "\"" + nsURI+ "\"" + "\n" +
-			"}";
+			"	nsuri " + "\"" + nsURI+ "\"" + "\n";
+			
+			fileContent += "\tgeneration {\n" +
+					"\t\tdata (\n" +
+					"\t\t\tModel: true\n" +
+					"\t\t\tEdit: true\n" + 
+					"\t\t\tEditor: false\n" +
+					"\t\t\tTest: false\n" +
+					"\t\t\tJavadoc: false\n" +
+					"\t\t\tOverwriteEcore: true\n" +
+					"\t\t)\n" +
+					"\t\tdiagram (\n" +
+					"\t\t\tOverwriteOdesign: true\n" +
+					"\t\t)\n" +
+					"\t\tdocumentation (\n" +
+					"\t\t\tEcoreToHtml: false\n" +
+					"\t\t)\n" +
+					"\t}\n" +
+					"}\n";
 			
 		return fileContent;
 	}
@@ -158,9 +175,26 @@ public class WizardsUtil {
 
 			fileContent = fileContent + 	"	project " + rootProjectName + "\n" +
 				"	project " + rootProjectName + "\n" +
-				"	nsuri " + "\"" + nsURI+ "\"" + "\n" +
-				"}";
-		return fileContent;
+				"	nsuri " + "\"" + nsURI+ "\"" + "\n";
+			
+			fileContent += "\tgeneration {\n" +
+					"\t\tdata (\n" +
+					"\t\t\tModel: true\n" +
+					"\t\t\tEdit: true\n" + 
+					"\t\t\tEditor: false\n" +
+					"\t\t\tTest: false\n" +
+					"\t\t\tJavadoc: false\n" +
+					"\t\t\tOverwriteEcore: true\n" +
+					"\t\t)\n" +
+					"\t\tdiagram (\n" +
+					"\t\t\tOverwriteOdesign: true\n" +
+					"\t\t)\n" +
+					"\t\tdocumentation (\n" +
+					"\t\t\tEcoreToHtml: false\n" +
+					"\t\t)\n" +
+					"\t}\n" +
+					"}\n";
+			return fileContent;
 	}
 	
 	public static String getInitialDataContent(String shortName) {

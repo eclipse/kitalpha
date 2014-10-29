@@ -11,24 +11,52 @@
 -->
 <templates>
 
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_Configuration" deleted="false" description="New configuration" enabled="true" id="1" name="Configuration">Configuration ${fileName} {&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_Configuration" deleted="false" description="New configuration" enabled="true" id="1" name="Basic Configuration">Configuration ${fileName} {&#13;
 	target EMF&#13;
 	project org.polarsys.kitaplpha.vp.${shortName}&#13;
 	nsuri "http://www.polarsys.org/kitalpha/${shortName}"&#13;
 }&#13;
 </template>
 
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_Configuration" deleted="false" description="Generation configuration" enabled="true" id="2" name="generation">
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_Configuration" deleted="false" description="New configuration" enabled="true" id="2" name="Configuration with Generation Options">Configuration ${fileName} {&#13;
+	target EMF&#13;
+	project org.polarsys.kitaplpha.vp.${shortName}&#13;
+	nsuri "http://www.polarsys.org/kitalpha/${shortName}"&#13;
 	generation {&#13;
 		data (&#13;
 			Model: true&#13;
-			Edit: true&#13; 
+			Edit: true &#13;
 			Editor: false&#13;
-			Test: false&#13; 
+			Test: false&#13;
 			Javadoc: false&#13;
 			OverwriteEcore: true&#13;
-		) &#13;
+	 	)&#13;
+	 	diagram (&#13;
+	 		OverwriteOdesign: true&#13;
+	 	)&#13;
+	 	documentation (&#13;
+	 		EcoreToHtml: false&#13;
+	 	)&#13;
 	}&#13;
+}&#13;
 </template>
 
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_generation" deleted="false" description="Generation configuration" enabled="true" id="3" name="Generation Options">
+generation {&#13;
+	data (&#13;
+		Model: true&#13;
+		Edit: true &#13;
+		Editor: false&#13;
+		Test: false&#13;
+		Javadoc: false&#13;
+		OverwriteEcore: true&#13;
+	 )&#13;
+	 diagram (&#13;
+	 	OverwriteOdesign: true&#13;
+	 )&#13;
+	 documentation (&#13;
+	 	EcoreToHtml: false&#13;
+	 )&#13;
+}&#13;
+</template>
 </templates>
