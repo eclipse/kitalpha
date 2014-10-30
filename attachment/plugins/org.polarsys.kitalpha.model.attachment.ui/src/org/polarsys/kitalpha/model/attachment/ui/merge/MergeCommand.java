@@ -2,7 +2,6 @@ package org.polarsys.kitalpha.model.attachment.ui.merge;
 
 import java.util.Collection;
 
-import org.eclipse.compare.CompareUI;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.diffmerge.api.Role;
@@ -10,11 +9,8 @@ import org.eclipse.emf.diffmerge.api.diff.IDifference;
 import org.eclipse.emf.diffmerge.api.scopes.IEditableModelScope;
 import org.eclipse.emf.diffmerge.api.scopes.IPersistentModelScope;
 import org.eclipse.emf.diffmerge.diffdata.EComparison;
-import org.eclipse.emf.diffmerge.diffdata.EMergeableDifference;
 import org.eclipse.emf.diffmerge.diffdata.impl.EComparisonImpl;
-import org.eclipse.emf.diffmerge.ui.setup.EMFDiffMergeEditorInput;
 import org.eclipse.emf.diffmerge.ui.specification.IComparisonMethod;
-import org.eclipse.emf.diffmerge.ui.viewers.EMFDiffNode;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -24,12 +20,14 @@ public class MergeCommand extends RecordingCommand {
 	private final IComparisonMethod method;
 	private IProgressMonitor monitor;
 	private Collection<String> selectedUris;
+	private Collection<IDifference> conflicts;
 
-	public MergeCommand(TransactionalEditingDomain domain, IComparisonMethod method, Collection<String> selectedUris, IProgressMonitor monitor) {
+	public MergeCommand(TransactionalEditingDomain domain, IComparisonMethod method, Collection<String> selectedUris, Collection<IDifference> conflicts, IProgressMonitor monitor) {
 		super(domain);
 		this.domain = domain;
 		this.method = method;
 		this.selectedUris = selectedUris;
+		this.conflicts = conflicts;
 		this.monitor = monitor;
 	}
 
@@ -56,7 +54,7 @@ public class MergeCommand extends RecordingCommand {
 			boolean consistent = comparison.isConsistent();
 			Collection<IDifference> remainingDifferences = comparison.getRemainingDifferences();
 			// TODO poser la question pour continuer
-			comparison.merge(new AttachmentMergeSelector(selectedUris), true, monitor);
+			comparison.merge(new AttachmentMergeSelector(selectedUris, conflicts), true, monitor);
 
 			if (targetScope instanceof IPersistentModelScope.Editable)
 				((IPersistentModelScope.Editable) targetScope).save();
@@ -67,14 +65,14 @@ public class MergeCommand extends RecordingCommand {
 			// TODO all remaining changes will be shown, need a filter to
 			// show only the differences related to the viewpoint. These
 			// differences are surely in conflict.
-			if (comparison.hasRemainingDifferences()) {
-
-				EMFDiffMergeEditorInput input = new EMFDiffMergeEditorInput(method);
-				CompareUI.openCompareEditor(input);
-				EMFDiffNode compareResult = input.getCompareResult();
-				for (IDifference diff : comparison.getRemainingDifferences())
-					compareResult.getUIComparison().getDifferencesToIgnore().add((EMergeableDifference) diff);
-			}
+			// if (comparison.hasRemainingDifferences()) {
+			//
+			// EMFDiffMergeEditorInput input = new EMFDiffMergeEditorInput(method);
+			// CompareUI.openCompareEditor(input);
+			// EMFDiffNode compareResult = input.getCompareResult();
+			// for (IDifference diff : comparison.getRemainingDifferences())
+			// compareResult.getUIComparison().getDifferencesToIgnore().add((EMergeableDifference) diff);
+			// }
 
 		} catch (Exception e) {
 			throw new WrappedException(e);

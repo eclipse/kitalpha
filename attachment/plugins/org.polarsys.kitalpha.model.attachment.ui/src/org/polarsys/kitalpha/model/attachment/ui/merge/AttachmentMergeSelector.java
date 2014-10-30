@@ -11,18 +11,27 @@ import org.eclipse.emf.diffmerge.diffdata.EReferenceValuePresence;
 import org.eclipse.emf.ecore.EObject;
 
 public final class AttachmentMergeSelector implements IMergeSelector {
-	
-	private Collection<String> selectedUris;
 
-	public AttachmentMergeSelector(Collection<String> selectedUris) {
+	private Collection<String> selectedUris;
+	private Collection<IDifference> conflicts;
+
+	public AttachmentMergeSelector(Collection<String> selectedUris, Collection<IDifference> conflicts) {
 		super();
 		this.selectedUris = selectedUris;
+		this.conflicts = conflicts;
 	}
 
 	@Override
 	public Role getMergeDirection(IDifference difference_p) {
-		if (difference_p.isConflicting())
+		Role computeMergeDirection = computeMergeDirection(difference_p);
+		if (computeMergeDirection != null && difference_p.isConflicting()) {
+			conflicts.add(difference_p);
 			return null;
+		}
+		return computeMergeDirection;
+	}
+
+	private Role computeMergeDirection(IDifference difference_p) {
 		if (difference_p instanceof EReferenceValuePresence) {
 			EReferenceValuePresence diff = (EReferenceValuePresence) difference_p;
 			if (toMerge(diff.getValue().getReference()))
@@ -39,7 +48,7 @@ public final class AttachmentMergeSelector implements IMergeSelector {
 
 		return null;
 	}
-	
+
 	private boolean toMerge(EObject... objs) {
 		for (EObject obj : objs) {
 			if (selectedUris.contains(obj.eClass().getEPackage().getNsURI()))

@@ -22,6 +22,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.jface.viewers.CheckStateChangedEvent;
+import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
@@ -54,7 +56,7 @@ public class ViewpointPage extends AbstractWizardPage {
 		super(NAME);
 		setTitle(Messages.wizard_page_title1);
 		setDescription(Messages.wizard_page_description1);
-		// setPageComplete(false);
+		setPageComplete(false);
 	}
 
 	@Override
@@ -78,6 +80,13 @@ public class ViewpointPage extends AbstractWizardPage {
 		treeViewer.setContentProvider(new ViewpointTreeProvider());
 		treeViewer.setLabelProvider(new ViewpointTreeLabelProvider());
 		treeViewer.setComparator(new ViewerComparator());
+		treeViewer.addCheckStateListener(new ICheckStateListener() {
+
+			@Override
+			public void checkStateChanged(CheckStateChangedEvent event) {
+				setPageComplete(analysisResult != null && !analysisResult.getSelectedUris().isEmpty());
+			}
+		});
 
 	}
 
