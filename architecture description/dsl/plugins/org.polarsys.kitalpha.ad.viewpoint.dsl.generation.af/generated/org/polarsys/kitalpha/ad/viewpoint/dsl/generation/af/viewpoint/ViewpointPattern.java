@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-//Generated on Fri Jun 27 18:40:21 CEST 2014 with EGF 1.2.0.v20140618-1006
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.viewpoint;
 
 import java.util.*;
@@ -36,6 +36,7 @@ public class ViewpointPattern {
 	public ViewpointPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -117,6 +118,29 @@ public class ViewpointPattern {
 		}
 
 		for (Viewpoint viewpoint : parameter.getDependencies()) {
+			String afViewpointID = VpDslConfigurationHelper
+					.getRootProjectName(viewpoint);
+			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper
+					.getAFViewpoint(afViewpointID, resourceSet);
+
+			if (viewpoint_af != null) {
+				boolean isAlreadyAdded = false;
+				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE
+						.getViewpoint().getDependencies()) {
+					if (iVp.getName().equals(viewpoint_af.getName())
+							&& iVp.getId().equals(viewpoint_af.getId())
+							&& iVp.getVpid().equals(viewpoint_af.getVpid())) {
+						isAlreadyAdded = true;
+						break;
+					}
+				}
+				if (!isAlreadyAdded)
+					AfProjectManager.INSTANCE.getViewpoint().getDependencies()
+							.add(viewpoint_af);
+			}
+		}
+
+		for (Viewpoint viewpoint : parameter.getUseViewpoint()) {
 			String afViewpointID = VpDslConfigurationHelper
 					.getRootProjectName(viewpoint);
 			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper
