@@ -27,6 +27,19 @@ Contributors:
       %license
    </license>
 
+   <requires>
+      <import feature="org.polarsys.kitalpha.model.common.commands.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.scrutiny.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.share.feature" version="0.5.0.qualifier"/>
+   </requires>
+
+   <plugin
+         id="org.polarsys.kitalpha.model.attachment.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 
 
 </feature>
