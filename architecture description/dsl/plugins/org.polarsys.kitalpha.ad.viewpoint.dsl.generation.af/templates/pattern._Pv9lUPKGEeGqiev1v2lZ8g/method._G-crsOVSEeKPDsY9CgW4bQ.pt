@@ -46,3 +46,27 @@ for (Viewpoint viewpoint : parameter.getDependencies())
 			AfProjectManager.INSTANCE.getViewpoint().getDependencies().add(viewpoint_af);
 	}
 }
+
+for (Viewpoint viewpoint : parameter.getUseViewpoint()) 
+{
+	String afViewpointID = VpDslConfigurationHelper.getRootProjectName(viewpoint);
+	org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = 
+		PlatformViewpointHelper.getAFViewpoint(afViewpointID, resourceSet);
+			
+	if (viewpoint_af != null)
+	{
+		boolean isAlreadyAdded = false;
+		for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE.getViewpoint().getDependencies()) 
+		{
+			if (iVp.getName().equals(viewpoint_af.getName())
+					&& iVp.getId().equals(viewpoint_af.getId())
+					&& iVp.getVpid().equals(viewpoint_af.getVpid()))
+			{
+				isAlreadyAdded = true;
+				break;
+			}
+		}
+		if (! isAlreadyAdded)
+			AfProjectManager.INSTANCE.getViewpoint().getDependencies().add(viewpoint_af);
+	}
+}
