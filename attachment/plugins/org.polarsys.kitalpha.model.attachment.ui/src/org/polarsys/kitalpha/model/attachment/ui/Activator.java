@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.model.attachment.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+import org.polarsys.kitalpha.report.utils.ReportFactory;
 
 /**
  * @author Thomas Guiu
@@ -22,6 +23,9 @@ public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "org.polarsys.kitalpha.model.attachment.ui"; //$NON-NLS-1$
+
+	public static final String REPORT_LIST_ID = "Attachment"; //$NON-NLS-1$
+	public static final ReportFactory LOG = new ReportFactory(REPORT_LIST_ID);
 
 	// The shared instance
 	private static Activator plugin;

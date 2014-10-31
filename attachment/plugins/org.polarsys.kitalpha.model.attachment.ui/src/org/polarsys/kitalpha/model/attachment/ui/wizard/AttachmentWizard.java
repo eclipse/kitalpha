@@ -36,6 +36,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.wizard.Wizard;
+import org.polarsys.kitalpha.model.attachment.ui.Activator;
 import org.polarsys.kitalpha.model.attachment.ui.Messages;
 import org.polarsys.kitalpha.model.attachment.ui.merge.MergeCommand;
 import org.polarsys.kitalpha.model.attachment.ui.merge.OpenConflictEditorRunnable;
@@ -113,6 +114,7 @@ public class AttachmentWizard extends Wizard {
 		} catch (InvocationTargetException e) {
 			Throwable realException = e.getTargetException();
 			MessageDialog.openError(getShell(), Messages.error_dialog_title, realException.getMessage());
+			Activator.LOG.logError(e);
 			return false;
 		}
 
