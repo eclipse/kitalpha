@@ -34,6 +34,8 @@ public final class AttachmentMergeSelector implements IMergeSelector {
 	private Role computeMergeDirection(IDifference difference_p) {
 		if (difference_p instanceof EReferenceValuePresence) {
 			EReferenceValuePresence diff = (EReferenceValuePresence) difference_p;
+			if (diff.getValue().getReference() == null)
+				return null;
 			if (toMerge(diff.getValue().getReference()))
 				return Role.TARGET;
 			// does the element have a reference to one of our objects ?
@@ -51,6 +53,8 @@ public final class AttachmentMergeSelector implements IMergeSelector {
 
 	private boolean toMerge(EObject... objs) {
 		for (EObject obj : objs) {
+			if (obj == null)
+				return false;
 			if (selectedUris.contains(obj.eClass().getEPackage().getNsURI()))
 				return true;
 		}
