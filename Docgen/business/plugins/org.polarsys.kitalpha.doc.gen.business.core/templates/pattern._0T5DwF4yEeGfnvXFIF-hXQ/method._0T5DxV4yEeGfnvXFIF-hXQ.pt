@@ -5,8 +5,7 @@ List<String> concepts = (List<String>) ctx.getValue("concepts");
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<script src="../../scripts/search.js"></script> 
-	<script src="../../scripts/jquery-treeview/lib/jquery.js"></script>	
+	<script src="../../scripts/jquery-treeview/lib/jquery-1.11.1.js"></script>	
 </head>
 <body style="padding:0px; margin:0px; background-color:#F6F6F6">
 

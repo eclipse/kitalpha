@@ -8,7 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-//Generated on Tue Aug 12 15:01:03 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.doc.gen.business.core.searchIndex;
 
 import org.eclipse.egf.common.helper.*;
@@ -40,9 +40,7 @@ public class SearchIndex
 			+ NL
 			+ "<head>"
 			+ NL
-			+ "\t<script src=\"../../scripts/search.js\"></script> "
-			+ NL
-			+ "\t<script src=\"../../scripts/jquery-treeview/lib/jquery.js\"></script>\t"
+			+ "\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\"></script>\t"
 			+ NL
 			+ "</head>"
 			+ NL
