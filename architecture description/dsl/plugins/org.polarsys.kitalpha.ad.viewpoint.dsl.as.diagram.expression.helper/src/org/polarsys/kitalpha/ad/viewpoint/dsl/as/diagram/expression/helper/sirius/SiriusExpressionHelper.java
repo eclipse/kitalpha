@@ -35,11 +35,28 @@ public class SiriusExpressionHelper {
 	 * @return the default expression kind
 	 */
 	public static ExpressionKind getCurrentExpressionKind(){
-		// TODO: add a preference allowing user to select expression kind. 
-//		return ExpressionKind.Acceleo_3_x;
-//		return ExpressionKind.QueryLegacy;
 		final Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
 		return ExtensionManager.getDiagramExpressionLanguageFilters(viewpoint);
+	}
+	
+	/**
+	 * Return a semantic element of edge source or target node
+	 * @param source if True so return target element of source node, 
+	 * else, return target element of edge target.
+	 * @return
+	 */
+	public static String getEdgeSemanticTarget(boolean source){
+		switch (getCurrentExpressionKind()) {
+		case QueryLegacy:
+			return "targetNode.target";
+
+		case Acceleo_3_x:
+			return "targetNode.oclAsType(viewpoint::DSemanticDecorator).target";
+			
+		case Ocl:
+			throw new OCLExpressionNotSupported();
+		}
+		return "";
 	}
 	
 	/**
