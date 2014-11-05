@@ -35,10 +35,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			ViewpointDslPreferencesHelper.restorRPNDefautValues();
 		}
 		
-//		String customizedTAValue = ViewpointDslPreferencesHelper.getCustomizedDefaultTAValue();
-//		if (customizedTAValue == null || (customizedTAValue != null && customizedTAValue.trim().length() == 0))
-//		{
-//			ViewpointDslPreferencesHelper.restorDefautTADefaultValues();
-//		}
+		String customizedTAValue = ViewpointDslPreferencesHelper.getCustomizedDefaultTAValue();
+		if (customizedTAValue == null || (customizedTAValue != null && customizedTAValue.trim().length() == 0))
+		{
+			ViewpointDslPreferencesHelper.restorDefautTADefaultValues();
+		}
 	}
 }
