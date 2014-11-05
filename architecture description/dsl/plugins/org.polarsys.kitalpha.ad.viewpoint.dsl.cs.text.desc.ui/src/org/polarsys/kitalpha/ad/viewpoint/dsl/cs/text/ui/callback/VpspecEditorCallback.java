@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.EventListener;
 import java.util.HashMap;
 import java.util.List;
@@ -20,8 +21,11 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.text.contentassist.ContentAssistEvent;
 import org.eclipse.jface.text.contentassist.ICompletionListener;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -33,6 +37,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.PlatformUI;
@@ -47,6 +52,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.WizardIDs;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.CommonEditorCallback;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpspecTemplateContextType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.diagnostic.VptextResourcesDiagnostic;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.ReferenceUtil;
 //decomment the import when the migration has finished
 //import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.ReferenceUtil;
@@ -199,8 +205,12 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 				//decomment when migration has finished
 				ReferenceUtil.setTargetReferences(sourceVp, targetVp, resourceSet);
 			}
+			
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
-			if (validate(inputObjects)) {
+			
+			Collection<Diagnostic> diagnostics = VptextResourcesDiagnostic.INSTANCE.getDiagnostics(resourceSet, false);
+			
+			if (validate(inputObjects) && diagnostics.isEmpty() && VptextResourcesDiagnostic.INSTANCE.performEMFValidation(inputObjects)) {
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
 				if (synchronizedObject!=null) {
 					try {
@@ -212,6 +222,17 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 						e.printStackTrace();
 					}	
 				}
+			} else {
+				
+				Display.getDefault().syncExec(new Runnable() {
+					@Override
+					public void run() {
+						IStatus status = VptextResourcesDiagnostic.INSTANCE.getStatus();
+						Shell shell = getShell();
+						ErrorDialog.openError(shell, "Synchronization Error", Messages.commonEditorCallBack_Synchronizationfailed, status); //$NON-NLS-1$
+					}
+				});
+				currentEditor.getEditorSite().getActionBars().getStatusLineManager().setErrorMessage(Messages.commonEditorCallback_SynchronizationfailedStatus);
 			}
 		}
 		resourceSet.eSetDeliver(false);
