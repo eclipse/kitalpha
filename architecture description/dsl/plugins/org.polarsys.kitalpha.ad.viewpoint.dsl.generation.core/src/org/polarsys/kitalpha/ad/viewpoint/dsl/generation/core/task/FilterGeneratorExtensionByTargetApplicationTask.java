@@ -75,11 +75,15 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 						
 						// Filter by Java filter
 						try {
-							IExtensionFilter createExecutableExtension = (IExtensionFilter) iConfigurationElement.createExecutableExtension("java");
-							if (createExecutableExtension != null)
+							String extensionJava = iConfigurationElement.getAttribute("java");
+							if (extensionJava != null && extensionJava.length() > 0)
 							{
-								noFilter = false;
-								filterOK &= createExecutableExtension.accept(domainModel);
+								IExtensionFilter createExecutableExtension = (IExtensionFilter) iConfigurationElement.createExecutableExtension("java");
+								if (createExecutableExtension != null)
+								{
+									noFilter = false;
+									filterOK &= createExecutableExtension.accept(domainModel);
+								}
 							}
 						} catch (CoreException e) {
 							e.printStackTrace();
