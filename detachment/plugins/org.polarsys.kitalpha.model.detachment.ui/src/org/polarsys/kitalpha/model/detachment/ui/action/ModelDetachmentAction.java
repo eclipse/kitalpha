@@ -28,6 +28,8 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
+import org.polarsys.kitalpha.model.common.precondition.runner.IPreconditionRunner;
+import org.polarsys.kitalpha.model.common.precondition.runner.PreconditionRunner;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.share.resource.loading.LoadResource;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
@@ -41,8 +43,11 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 	
 	Logger LOGGER = Logger.getLogger(ModelDetachmentAction.class);
 	
+	
 	private IFile airdIResource;
 	private IEditorInput detachmentInput;
+	
+	private boolean isSelectionChanged = false;
 
 	public ModelDetachmentAction() {
 		this.detachmentInput = new DetachmentEditorInput();
@@ -52,6 +57,13 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		try {
 			if (airdIResource != null){
+				
+				if (!isSelectionChanged){
+					check_versionCompatibility();
+				}
+				
+				isSelectionChanged = false;
+				
 				Resource resource = (new LoadResource(airdIResource)).getResource();
 				Scrutineer.startScrutiny(resource);
 				
@@ -80,7 +92,11 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 				if (airdIResource != firstElement){
 					airdIResource = (IFile)firstElement;
 					
+					check_versionCompatibility();
+					isSelectionChanged = true;
+
 					action.setEnabled(true);
+					
 					URI uri = URI.createPlatformResourceURI(airdIResource.getFullPath().toPortableString(), true);
 					Session session = SessionManager.INSTANCE.getSession(uri, new NullProgressMonitor());
 					
@@ -96,6 +112,13 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		
+	}
+	
+	//TODO create Exception for Precondition and throw RuntimeException after catch
+	private void check_versionCompatibility(){
+		//Execute preconditions
+		IPreconditionRunner<IFile> preconditionRunner = new PreconditionRunner<IFile>();
+		preconditionRunner.run(airdIResource, new NullProgressMonitor());
 	}
 
 }
