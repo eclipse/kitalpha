@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.ui.ide,
  org.polarsys.kitalpha.model.common.commands,
- org.polarsys.kitalpha.model.common.share
+ org.polarsys.kitalpha.model.common.share,
+ org.polarsys.kitalpha.model.common.precondition
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %VENDOR
