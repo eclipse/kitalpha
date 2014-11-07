@@ -12,6 +12,8 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.resource;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,16 +21,22 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.ui.tools.api.project.ViewpointSpecificationProject;
 import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
 import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.extension.ExtensionManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.resourceimpl.ViewpointResourceProviderRegistry;
 
 /**
@@ -124,8 +132,71 @@ public class DoremiResourceManager {
 			for (String extension : taExtensions) 
 				result += " " + extension;
 		}
+		else
+		{
+			try {
+				final String otherExtensions = computeOtherFileExtensions();
+				if (otherExtensions != null && ! otherExtensions.isEmpty())
+				{
+					String extensions = result + " " + otherExtensions;
+					extensions = removeDuplicateExtensions(extensions);
+					result = extensions;
+				}
+			} catch (Exception e) {}
+		}
 
 		return result;
+	}
+	
+	/**
+	 * Compute additional model file extension depending on the extended Viewpoints
+	 * @return a {@link String} value containing additional model files extensions
+	 */
+	private static String computeOtherFileExtensions(){
+		String result = "";
+		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
+		final EList<Aspect> vp_Aspects = viewpoint.getVP_Aspects();
+		for (Aspect aspect : vp_Aspects) 
+		{
+			if (aspect instanceof DiagramSet)
+			{
+				final EList<DiagramRepresentation> diagrams = ((DiagramSet) aspect).getDiagrams();
+				// Collect file extensions
+				for (DiagramRepresentation diagramRepresentation : diagrams) 
+				{
+					if (diagramRepresentation instanceof DiagramExtension)
+					{
+						final DiagramDescription extented_diagram = ((DiagramExtension) diagramRepresentation).getExtented_diagram();
+						final EObject eContainer = extented_diagram.eContainer();
+						if (eContainer instanceof Viewpoint)
+						{
+							result += " " + ((Viewpoint) eContainer).getModelFileExtension();
+						}
+					}
+				}
+			}
+		}
+		
+		return result;
+	}
+	
+	private static String removeDuplicateExtensions(String exts){
+		final String[] extensions = exts.split(" ");
+		Arrays.sort(extensions);
+		ArrayList<String> uniqExtensions = new ArrayList<String>();
+		for (String ext : extensions) 
+		{
+			if (! uniqExtensions.contains(ext))
+				uniqExtensions.add(ext);
+		}
+		
+		String uniqExt = "";
+		for (String string : uniqExtensions) 
+		{
+			uniqExt+= string + " ";
+		}
+		
+		return uniqExt;
 	}
 	
 	public static void save(){
