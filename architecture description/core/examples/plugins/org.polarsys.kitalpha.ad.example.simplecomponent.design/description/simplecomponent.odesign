@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/description/style/1.1.0" name="simplecomponent" version="7.0.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="simplecomponent" version="8.1.0">
   <ownedViewpoints name="simplecomponent" modelFileExtension="simplecomponent">
-    <ownedRepresentations xsi:type="description:DiagramDescription" name="ComponentModel" domainClass="ComponentModel">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ComponentModel" domainClass="simplecomponent.ComponentModel">
+      <metamodel href="../../org.polarsys.kitalpha.emde.example.simplecomponent/model/simplecomponent.ecore#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="SoftwareComponent" semanticCandidatesExpression="[self.eContents()->select(oclIsKindOf(SoftwareComponent))/]" domainClass="SoftwareComponent">
+        <nodeMappings name="SoftwareComponent" semanticCandidatesExpression="feature:abstractComponent" domainClass="simplecomponent.SoftwareComponent">
           <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
           </style>
         </nodeMappings>
-        <containerMappings name="HardwareComponent" semanticCandidatesExpression="[self.eContents()->select(oclIsKindOf(&quot;HardwareComponent&quot;))/]" domainClass="HardwareComponent" reusedNodeMappings="//@ownedViewpoints[name='simplecomponent']/@ownedRepresentations[name='ComponentModel']/@defaultLayer/@nodeMappings[name='SoftwareComponent']" reusedContainerMappings="//@ownedViewpoints[name='simplecomponent']/@ownedRepresentations[name='ComponentModel']/@defaultLayer/@containerMappings[name='HardwareComponent']">
+        <containerMappings name="HardwareComponent" semanticCandidatesExpression="feature:abstractComponent" domainClass="simplecomponent.HardwareComponent" reusedNodeMappings="//@ownedViewpoints[name='simplecomponent']/@ownedRepresentations[name='ComponentModel']/@defaultLayer/@nodeMappings[name='SoftwareComponent']" reusedContainerMappings="//@ownedViewpoints[name='simplecomponent']/@ownedRepresentations[name='ComponentModel']/@defaultLayer/@containerMappings[name='HardwareComponent']">
           <style xsi:type="style:FlatContainerStyleDescription" showIcon="false">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
