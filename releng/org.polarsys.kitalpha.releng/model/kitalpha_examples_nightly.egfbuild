@@ -6,7 +6,7 @@
     <properties xmi:id="_MlqcQPlvEeCFCIE_fWd_VQ" key="polarion.download.prefix" value="http://download.eclipse.org/external/"/>
     <properties xmi:id="_LPrgwPlvEeCFCIE_fWd_VQ" key="eclipse.download.prefix" value="http://download.eclipse.org/"/>
     <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="http://download.eclipse.org/eclipse/updates/3.8/"/>
-    <properties xmi:id="_X3zPUUPuEeSAV7j17x4tgA" key="kitalpha.zip.url" value="https://polarsys.org/kitalpha/hudson/job/Kitalpha_Nightly/266/artifact/result/publish/kitalpha_juno_0.5.0-2014-09-26_03-52-55-incubation.zip"/>
+    <properties xmi:id="_X3zPUUPuEeSAV7j17x4tgA" key="kitalpha.zip.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_Nightly/396/artifact/result/publish/kitalpha_juno_0.5.0-2014-11-27_00-00-48-incubation.zip"/>
   </propertyPackages>
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
     <properties xmi:id="_pAapkPq5EeKXG4Dej4PCUQ" key="main_version" value="trunk"/>
