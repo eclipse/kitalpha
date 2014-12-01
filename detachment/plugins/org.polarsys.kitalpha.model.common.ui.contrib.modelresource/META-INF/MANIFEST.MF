@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.model.common.ui.contrib.modelresource;singleton:=true
+Bundle-Version: 0.5.1.qualifier
+Bundle-Activator: org.polarsys.kitalpha.model.common.ui.contrib.modelresource.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.forms,
+ org.eclipse.core.runtime,
+ org.polarsys.kitalpha.model.detachment.ui,
+ org.polarsys.kitalpha.model.common.share
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: .
+Bundle-Vendor: %pluginVendor
