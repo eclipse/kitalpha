@@ -8,7 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-//Generated on Tue Aug 12 15:01:03 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -32,10 +32,11 @@ public class ElementSideBarFooter extends
 	public final String NL = nl == null ? (System.getProperties()
 			.getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "</ul>" + NL
-			+ "  <script type=\"text/javascript\">" + NL
-			+ "$(\"#treemenu1\").treeview({" + NL + " collapsed: true," + NL
-			+ " unique: false," + NL + " control: \"#treecontrol\"" + NL
-			+ "});" + NL + "</script>" + NL + "   </body>" + NL + "</html>";
+			+ "\t<script type=\"text/javascript\">" + NL
+			+ "\t\t$(\"#treemenu1\").treeview({" + NL + "\t\t collapsed: true,"
+			+ NL + "\t\t animated: \"fast\"," + NL + "\t\t unique: false," + NL
+			+ "\t\t control: \"#treecontrol\"" + NL + "\t\t});" + NL
+			+ "\t</script>" + NL + "   </body>" + NL + "</html>";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 

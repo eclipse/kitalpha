@@ -1,10 +1,11 @@
 </ul>
-  <script type="text/javascript">
-$("#treemenu1").treeview({
- collapsed: true,
- unique: false,
- control: "#treecontrol"
-});
-</script>
+	<script type="text/javascript">
+		$("#treemenu1").treeview({
+		 collapsed: true,
+		 animated: "fast",
+		 unique: false,
+		 control: "#treecontrol"
+		});
+	</script>
    </body>
 </html>

@@ -8,7 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-//Generated on Tue Aug 12 15:01:03 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -47,9 +47,7 @@ public class ElementSideBarHeader extends
 			+ NL
 			+ "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />"
 			+ NL
-			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery.js\" type=\"text/javascript\"></script>"
-			+ NL
-			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery.cookie.js\" type=\"text/javascript\"></script>"
+			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\" type=\"text/javascript\"></script>"
 			+ NL
 			+ "  \t\t<script src=\"../../scripts/jquery-treeview/jquery.treeview.js\" type=\"text/javascript\"></script>"
 			+ NL
