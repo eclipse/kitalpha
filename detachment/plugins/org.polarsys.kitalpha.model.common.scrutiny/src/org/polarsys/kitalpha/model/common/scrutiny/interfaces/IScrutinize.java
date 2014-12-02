@@ -28,6 +28,9 @@ public interface IScrutinize<T, K> {
 	public void findIn(Resource resource);
 	
 	/**
+	 * This method returns the structure of the srutinizer resource result to the UI and Commands.
+	 * Note: The returned structure must contains the selection of the user 
+	 * 
 	 * @return T which is the type containing the result
 	 * of the analysis
 	 */

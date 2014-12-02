@@ -53,7 +53,7 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 					 * This is done, because the detachment find some unknown references
 					 * in capella ide caused by malformed odesigns
 					 */
-					if (!resource.getURI().isPlatformPlugin())
+					//if (!resource.getURI().isPlatformPlugin())
 						iFinder.findIn(resource);
 				}
 			}
@@ -76,7 +76,7 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 					 * FIXME: cf. Fixme in visited(Resource) method above
 					 */
 					for (IScrutinize iFinder : finders) {
-						if (eObject.eResource() != null && !eObject.eResource().getURI().isPlatformPlugin())
+						//if (eObject.eResource() != null && !eObject.eResource().getURI().isPlatformPlugin())
 							iFinder.findIn(eObject);
 					}
 				}

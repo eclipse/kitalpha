@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.model.common.commands.contrib.modelresources;singleton:=true
+Bundle-Version: 0.5.1.qualifier
+Bundle-Activator: org.polarsys.kitalpha.model.common.commands.contrib.modelresources.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.polarsys.kitalpha.model.common.scrutiny,
+ org.polarsys.kitalpha.model.common.commands,
+ org.polarsys.kitalpha.model.common.share,
+ org.eclipse.emf.transaction,
+ org.eclipse.sirius,
+ org.eclipse.emf.workspace
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %pluginVendor

@@ -28,6 +28,7 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.backup.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
@@ -37,100 +38,106 @@ import org.polarsys.kitalpha.model.common.commands.registry.WorkflowType;
  * @author Faycal Abka
  */
 public class BackupAndSaveCommand extends ModelCommand {
-	
+
 	Logger LOGGER = Logger.getLogger(BackupAndSaveCommand.class);
 
 	private final String DATE_FORMAT = "yyyy-MM-dd";
 	private final String HOUR_FORMAT = "HH-mm-ss";
 	private final String BACKUP_FOLDER_NAME  = "backup-";
-	
-	
-	
+
+
+
 	public BackupAndSaveCommand() {
 	}
 
 	@Override
 	public void exec(Resource resource, IProgressMonitor monitor) 
 			throws ModelCommandException {
-		
+
 		URI uri = URI.createURI(resource.getURI().toString(), true);
 		String plugin_id = uri.segment(1);
-		
+
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(plugin_id);
-		
-		
+
+
 		DateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
 		Date date = new Date();
 		String rootBackupFolder = BACKUP_FOLDER_NAME + dateFormat.format(date);
-		
-		
-		EList<Resource> resources = resource.getResourceSet().getResources();
-		
-		int nbResources = resources.size();
-		
-		SubMonitor subMonitor = SubMonitor.convert(monitor, nbResources);
-		subMonitor.beginTask(Messages.bind(Messages.BACKUP_RESOURCE_MESSAGE, resource.getURI()), nbResources);
-		
-		createRootBackupFolder(rootBackupFolder, project, subMonitor.newChild(1));
-		
-		String backupPath = createSubFolder(rootBackupFolder, plugin_id, project, date, subMonitor.newChild(1));
-	
-		for (Resource resource2 : resources){
-			
-			if (resource2.getURI().isPlatformResource()) {
-				
-				try {
-					backupResource(resource2, backupPath, subMonitor.newChild(1));
-					
-					subMonitor.subTask(Messages.bind(Messages.SAVE_RESOURCE_MESSAGE, resource2.getURI()));
-					resource2.save(null);
+
+		EList<Resource> resources = null;
+		if (resource != null && resource.getResourceSet() != null){
+			resources = resource.getResourceSet().getResources();
+
+
+			int nbResources = resources.size();
+
+			SubMonitor subMonitor = SubMonitor.convert(monitor, nbResources);
+			subMonitor.beginTask(Messages.bind(Messages.BACKUP_RESOURCE_MESSAGE, resource.getURI()), nbResources);
+
+			createRootBackupFolder(rootBackupFolder, project, subMonitor.newChild(1));
+
+			String backupPath = createSubFolder(rootBackupFolder, plugin_id, project, date, subMonitor.newChild(1));
+
+			for (Resource resource2 : resources){
+
+				if (resource2.getURI().isPlatformResource()) {
+
+					try {
+
+						if (resource2 != null){
+							backupResource(resource2, backupPath, subMonitor.newChild(1));
+
+							subMonitor.subTask(Messages.bind(Messages.SAVE_RESOURCE_MESSAGE, resource2.getURI()));
+							resource2.save(null);
+							subMonitor.worked(1);
+						}
+
+					} catch (CoreException e) {
+						e.printStackTrace();
+						LOGGER.error(e.getMessage(), e);
+					} catch (IOException e) {
+						e.printStackTrace();
+						LOGGER.error(e.getMessage(), e);
+					}
+				} else {
+					//Log on the progress monitor that is not platform resource
 					subMonitor.worked(1);
-					
+				}
+			}
+			if (project != null)
+				try {
+
+					subMonitor.subTask(Messages.bind(Messages.REFRESH_PROJECT_MESSAGE, plugin_id));
+					project.refreshLocal(IResource.DEPTH_INFINITE, subMonitor);
+					subMonitor.worked(1);
+
 				} catch (CoreException e) {
 					e.printStackTrace();
 					LOGGER.error(e.getMessage(), e);
-				} catch (IOException e) {
-					e.printStackTrace();
-					LOGGER.error(e.getMessage(), e);
 				}
-			} else {
-				//Log on the progress monitor that is not platform resource
-				subMonitor.worked(1);
-			}
+
+			subMonitor.done();
 		}
-		if (project != null)
-			try {
-				
-				subMonitor.subTask(Messages.bind(Messages.REFRESH_PROJECT_MESSAGE, plugin_id));
-				project.refreshLocal(IResource.DEPTH_INFINITE, subMonitor);
-				subMonitor.worked(1);
-
-			} catch (CoreException e) {
-				e.printStackTrace();
-				LOGGER.error(e.getMessage(), e);
-			}
-
-		subMonitor.done();
 	}
-	
-	
+
+
 	private String createSubFolder(String rootBackupFolder, String plugin_id, IProject project, Date date,
 			IProgressMonitor monitor) {
-		
+
 		IFolder rootFolder = project.getFolder(new Path(rootBackupFolder));
-		
+
 		if (!rootFolder.exists()){
 			createRootBackupFolder(rootBackupFolder, project, monitor);
 		}
-		
+
 		DateFormat dateFormat = new SimpleDateFormat(HOUR_FORMAT);
 		String subFolderName = dateFormat.format(date);
-		
+
 		String subFolderPath = rootBackupFolder + "/" + subFolderName; //$NON-NLS-1$
 		IFolder subFolder = project.getFolder(new Path(subFolderPath));
-		
+
 		if (!subFolder.exists()){
-			
+
 			try {
 				monitor.subTask(Messages.bind(Messages.FOLDER_CREATION_MESSAGE, subFolderPath));
 				subFolder.create(true, true, monitor);
@@ -140,9 +147,9 @@ public class BackupAndSaveCommand extends ModelCommand {
 				e.printStackTrace();
 				LOGGER.error(e.getMessage(), e);
 			}
-			
+
 		}
-		
+
 		return plugin_id + "/" + subFolderPath; //$NON-NLS-1$
 	}
 
@@ -152,13 +159,13 @@ public class BackupAndSaveCommand extends ModelCommand {
 		IPath path = new Path(rootBackupFolder);
 
 		IFolder folder = project.getFolder(path);
-		
+
 		if (!folder.exists()){
 			try {
 				monitor.subTask(Messages.bind(Messages.ROOT_FOLDER_CREATION_MESSAGE, rootBackupFolder));
 				folder.create(true, true, monitor);
 				monitor.done();
-				
+
 			} catch (CoreException e) {
 				e.printStackTrace();
 			}
@@ -167,21 +174,24 @@ public class BackupAndSaveCommand extends ModelCommand {
 	}
 
 	private void backupResource(Resource resource2, String path, IProgressMonitor monitor) throws CoreException {
-		
+
 		SubMonitor subMonitor = SubMonitor.convert(monitor, 1);
-		
+
 		subMonitor.subTask(Messages.bind(Messages.BACKUP_RESOURCE_MESSAGE, resource2.getURI()));
-		
+
 		URI uri = resource2.getURI();
 
 		if (uri.isPlatformResource()){
 			String platformString = uri.toPlatformString(true);
 			IResource iResource = ResourcesPlugin.getWorkspace().getRoot().findMember(platformString);
-			String iResourceName = iResource.getName();
-			IPath backupPath = new Path("/" + path + "/" + iResourceName); //$NON-NLS-1$
-			iResource.copy(backupPath, true, subMonitor);
+
+			if (iResource != null){
+				String iResourceName = iResource.getName();
+				IPath backupPath = new Path("/" + path + "/" + iResourceName); //$NON-NLS-1$
+				iResource.copy(backupPath, true, subMonitor);
+			}
 		}
-		
+
 		subMonitor.done();
 	}
 

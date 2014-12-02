@@ -56,11 +56,11 @@ public class WorkspaceResourceChecker extends ModelCommand {
 			String platformString = uri.toPlatformString(true);
 			IResource iResource = ResourcesPlugin.getWorkspace().getRoot().findMember(platformString);
 
-			if (!iResource.isAccessible()){
+			if (iResource != null && !iResource.isAccessible()){
 				throw new ModelCommandException(Messages.bind(Messages.RESOURCE_INACCESSIBLE, iResource.getName()));
 			}
 
-			if (iResource.getResourceAttributes().isReadOnly()){
+			if (iResource != null && iResource.getResourceAttributes().isReadOnly()){
 				throw new ModelCommandException(Messages.bind(Messages.RESOURCE_READONLY, iResource.getName()));
 			}
 			

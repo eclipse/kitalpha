@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.commands.contrib.refresh.command;
 
+import java.io.IOException;
 import java.util.Collection;
 
 import org.apache.log4j.Logger;
@@ -17,6 +18,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
@@ -39,6 +41,16 @@ public class RefreshRepresentation extends ModelCommand {
 			throws ModelCommandException {
 		
 		SubMonitor subMonitor = SubMonitor.convert(monitor);
+		
+		if (resource.isLoaded()){
+			resource.unload();
+		}
+		
+		try {
+			resource.load(null);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		Session session = SessionManager.INSTANCE.getSession(resource.getURI(), subMonitor);
 		session.open(subMonitor);
