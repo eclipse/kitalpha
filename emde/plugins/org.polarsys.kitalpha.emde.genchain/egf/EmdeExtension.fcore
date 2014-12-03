@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fcore:FactoryComponent xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
-    xmlns:javapattern="http://www.eclipse.org/egf/1.0.0/javapattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmi:id="_g06MccGiEd-9MM7ZmqaWEg"
-    name="eMDE Genchain Extension">
+<fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:javapattern="http://www.eclipse.org/egf/1.0.0/javapattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
+    xmi:id="_g06MccGiEd-9MM7ZmqaWEg" name="eMDE Genchain Extension">
   <viewpointContainer xmi:id="_hXLzEMGiEd-9MM7ZmqaWEg">
     <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_hwg5EMGiEd-9MM7ZmqaWEg">
-      <libraries xmi:id="_iZMpsMGiEd-9MM7ZmqaWEg" name="emde.genchain.extension">
+      <libraries xmi:id="_iZMpsMGiEd-9MM7ZmqaWEg" name="org.polarsys.kitalpha.emde.genchain.extension">
         <elements xmi:id="_tgjjMMGjEd-9MM7ZmqaWEg" name="EmdeGenerationPattern" headerMethod="#_tgjjMcGjEd-9MM7ZmqaWEg"
             conditionMethod="#_tgjjM8GjEd-9MM7ZmqaWEg" initMethod="#_tgjjMsGjEd-9MM7ZmqaWEg"
             footerMethod="#_tgjjNcGjEd-9MM7ZmqaWEg">

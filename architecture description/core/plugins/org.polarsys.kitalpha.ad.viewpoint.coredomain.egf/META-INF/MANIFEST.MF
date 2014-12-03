@@ -9,6 +9,6 @@ Require-Bundle: org.eclipse.egf.pattern;visibility:=reexport,
  org.eclipse.egf.pattern.ftask;visibility:=reexport,
  org.eclipse.egf.emf.pattern
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: eoperations.viewpoint,
- eoperations.workspace,
- labelproviders
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint,
+ org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.workspace,
+ org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.labelproviders

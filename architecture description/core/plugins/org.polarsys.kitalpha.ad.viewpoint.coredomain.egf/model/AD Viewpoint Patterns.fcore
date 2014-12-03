@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fcore:FactoryComponent xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
-    xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmi:id="_5-fksK0uEeCTyNaXmMWg4A"
-    name="AF Patterns">
+<fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
+    xmi:id="_5-fksK0uEeCTyNaXmMWg4A" name="AF Patterns">
   <viewpointContainer xmi:id="_7FKR0K0uEeCTyNaXmMWg4A">
     <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_7nHvYK0uEeCTyNaXmMWg4A">
-      <libraries xmi:id="_7_l5wK0uEeCTyNaXmMWg4A" name="labelproviders">
+      <libraries xmi:id="_7_l5wK0uEeCTyNaXmMWg4A" name="org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.labelproviders">
         <elements xmi:id="__S9HIK1eEeCTyNaXmMWg4A" name="getTextPattern" superPattern="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_03wVEGJ-Ed-FqczH3ESmRw"
             headerMethod="#__S9HIq1eEeCTyNaXmMWg4A" conditionMethod="#__S9HJK1eEeCTyNaXmMWg4A"
             initMethod="#__S9HI61eEeCTyNaXmMWg4A" footerMethod="#__S9HJq1eEeCTyNaXmMWg4A">
@@ -19,7 +18,7 @@
           <orchestration xmi:type="pattern:SuperCall" xmi:id="__S9HJ61eEeCTyNaXmMWg4A"/>
         </elements>
       </libraries>
-      <libraries xmi:id="_HUt-8K0vEeCTyNaXmMWg4A" name="eoperations.workspace">
+      <libraries xmi:id="_HUt-8K0vEeCTyNaXmMWg4A" name="org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.workspace">
         <elements xmi:id="_rj0hgK1HEeCTyNaXmMWg4A" name="getPropertySetPattern" superPattern="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0t7DoGJ-Ed-FqczH3ESmRw"
             headerMethod="#_rj0hgq1HEeCTyNaXmMWg4A" conditionMethod="#_rj0hhK1HEeCTyNaXmMWg4A"
             initMethod="#_rj0hg61HEeCTyNaXmMWg4A" footerMethod="#_rj0hhq1HEeCTyNaXmMWg4A">
@@ -57,7 +56,7 @@
           <orchestration xmi:type="pattern:SuperCall" xmi:id="_5PZgt61HEeCTyNaXmMWg4A"/>
         </elements>
       </libraries>
-      <libraries xmi:id="_pXObAK0vEeCTyNaXmMWg4A" name="eoperations.viewpoint">
+      <libraries xmi:id="_pXObAK0vEeCTyNaXmMWg4A" name="org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint">
         <elements xmi:id="_TKNb4K1TEeCTyNaXmMWg4A" name="getPropertyPattern" superPattern="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0t7DoGJ-Ed-FqczH3ESmRw"
             headerMethod="#_TKNb4q1TEeCTyNaXmMWg4A" conditionMethod="#_TKNb5K1TEeCTyNaXmMWg4A"
             initMethod="#_TKNb461TEeCTyNaXmMWg4A" footerMethod="#_TKNb5q1TEeCTyNaXmMWg4A">
