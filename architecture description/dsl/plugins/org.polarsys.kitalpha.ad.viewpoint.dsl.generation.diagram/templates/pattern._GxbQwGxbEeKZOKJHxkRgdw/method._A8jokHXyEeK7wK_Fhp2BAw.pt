@@ -9,7 +9,8 @@
 				
 		Unset t_unset = ToolFactory.eINSTANCE.createUnset();
 		t_unset.setFeatureName(ref_name);
-		String pEdgeView = VSMVariable.edgeView.getInnerVariable() + ".targetNode.oclAsType(viewpoint::DSemanticDecorator).target";
+		//String pEdgeView = VSMVariable.edgeView.getInnerVariable() + ".targetNode.oclAsType(viewpoint::DSemanticDecorator).target";
+		String pEdgeView = VSMVariable.edgeView.getInnerVariable() + "." + SiriusExpressionHelper.getEdgeSemanticTarget(false);
 		t_unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pEdgeView));
 		gotoSource.getSubModelOperations().add(t_unset);
 						

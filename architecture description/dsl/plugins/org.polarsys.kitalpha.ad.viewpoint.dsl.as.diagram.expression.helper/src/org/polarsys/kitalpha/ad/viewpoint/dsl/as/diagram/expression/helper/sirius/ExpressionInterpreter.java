@@ -71,6 +71,11 @@ public enum ExpressionInterpreter implements IExpressionFormat{
 	 * @return a formated expression to use in Viewpoint Specification Model
 	 */
 	private static String getExpression_I_Service(String expression){
+		// If the used Expression language is Query Legacy and if service has variable, 
+		// 		remove $ character if they exist before each variable name
+		if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy))
+			expression = expression.replaceAll("\\$", "");
+		
 		return "service:" + expression;
 	}
 	
