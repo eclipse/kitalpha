@@ -82,6 +82,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
 	private boolean synchronizing;
 	
+	
 	@Inject
 	private IResourceSetProvider resourceSetProvider;
 	
@@ -181,8 +182,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 			Runnable runnable = new Runnable() {		
 				public void run() {			
 					if (!synchronizing) {
-						doSynchronize((IFile) current.getEditorInput().getAdapter(IFile.class));
-						synchronizing = true;
+						synchronizing = doSynchronize((IFile) current.getEditorInput().getAdapter(IFile.class));
 					}
 				}
 			};
@@ -201,12 +201,14 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		String projectName = getProject(file).getName();
 		EObject targetObject = ResourceHelper.loadStandaloneResource(resourceSet, projectName);
 		if (targetObject!=null) {
-			
+
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
-			Collection<Diagnostic> diagnostics = VptextResourcesDiagnostic.INSTANCE.getDiagnostics(resourceSet, false);
-			
+			Collection<Diagnostic> diagnostics = VptextResourcesDiagnostic.INSTANCE.getDiagnostics(resourceSet, false, projectName);
+
 			if (validate(inputObjects) && diagnostics.isEmpty() && VptextResourcesDiagnostic.INSTANCE.performEMFValidation(inputObjects)) {
+
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetObject);
+
 				if (synchronizedObject!=null) {
 					try {
 						final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
@@ -218,7 +220,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 					}
 				}
 			} else {
-				
+
 				Display.getDefault().syncExec(new Runnable() {
 					@Override
 					public void run() {
@@ -229,8 +231,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 					}
 				});
 			}
+
 		}
-		
+
 		resourceSet.eSetDeliver(false);
 		resourceSet.getResources().clear();
 		resourceSet.eAdapters().clear();

@@ -208,10 +208,12 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 			
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
-			Collection<Diagnostic> diagnostics = VptextResourcesDiagnostic.INSTANCE.getDiagnostics(resourceSet, false);
+			Collection<Diagnostic> diagnostics = VptextResourcesDiagnostic.INSTANCE.getDiagnostics(resourceSet, false, projectName);
 			
 			if (validate(inputObjects) && diagnostics.isEmpty() && VptextResourcesDiagnostic.INSTANCE.performEMFValidation(inputObjects)) {
+				
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
+				
 				if (synchronizedObject!=null) {
 					try {
 						final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
@@ -223,7 +225,7 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 					}	
 				}
 			} else {
-				
+
 				Display.getDefault().syncExec(new Runnable() {
 					@Override
 					public void run() {
