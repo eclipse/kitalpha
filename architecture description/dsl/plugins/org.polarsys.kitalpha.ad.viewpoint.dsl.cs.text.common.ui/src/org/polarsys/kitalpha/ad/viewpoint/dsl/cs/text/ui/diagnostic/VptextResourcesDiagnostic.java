@@ -1,6 +1,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.diagnostic;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -47,15 +48,17 @@ public class VptextResourcesDiagnostic {
 	}
 
 
-	public synchronized Collection<Diagnostic> getDiagnostics(ResourceSet resourceSet, boolean includeWarnings) {
+	public synchronized Collection<Diagnostic> getDiagnostics(ResourceSet resourceSet, boolean includeWarnings, String projectName) {
+		
+		EcoreUtil.resolveAll(resourceSet);
 		
 		dispose();
 		
 		EList<Resource> resources = resourceSet.getResources();
 		
 		for (Resource resource : resources) {
-			if (acceptResource(resource)){
-				EcoreUtil.resolveAll(resource);
+			if (acceptResource(resource, projectName)){
+				
 				Diagnostic diagnostic = EcoreUtil.computeDiagnostic(resource, includeWarnings);
 				
 				if (diagnostic.getChildren() != null && !diagnostic.getChildren().isEmpty()){
@@ -63,12 +66,16 @@ public class VptextResourcesDiagnostic {
 				}
 			}		
 		}
-		
+
 		return this.diagnostics;
 	}
 
-	private boolean acceptResource(Resource resource) {
-		return pattern.matcher(resource.getURI().toString()).matches();
+	private boolean acceptResource(Resource resource, String projectName) {
+		String resourceProjectName = resource.getURI().segment(1);
+		if (resourceProjectName == null)
+			return false;
+		
+		return pattern.matcher(resource.getURI().toString()).matches() && resourceProjectName.equals(projectName);
 	}
 	
 	/**
