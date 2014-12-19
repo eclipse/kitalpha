@@ -52,6 +52,10 @@ public class EcoreElementsUtil {
 				{
 					String nsUri = ((EPackage) rootElement).getNsURI();
 					URI packNsURI  = URI.createURI(nsUri);
+					if (! REGISTRY.containsKey(nsUri))
+					{
+						REGISTRY.put(nsUri, rootElement);
+					}
 					
 					EPackage nsuri_rootElement = REGISTRY.getEPackage(packNsURI.toString());
 					result = (EClass) lookForEClassifier(nsuri_rootElement, element.getName());
@@ -84,6 +88,10 @@ public class EcoreElementsUtil {
 				{
 					String nsUri = ((EPackage) rootElement).getNsURI();
 					URI packNsURI  = URI.createURI(nsUri);
+					if (! REGISTRY.containsKey(nsUri))
+					{
+						REGISTRY.put(nsUri, rootElement);
+					}
 					
 					EPackage nsuri_rootElement = REGISTRY.getEPackage(packNsURI.toString());
 					result = (EDataType) lookForEClassifier(nsuri_rootElement, element.getName());
@@ -116,6 +124,10 @@ public class EcoreElementsUtil {
 				{
 					String nsUri = ((EPackage) rootElement).getNsURI();
 					URI packNsURI  = URI.createURI(nsUri);
+					if (! REGISTRY.containsKey(nsUri))
+					{
+						REGISTRY.put(nsUri, rootElement);
+					}
 					
 					EPackage nsuri_rootElement = REGISTRY.getEPackage(packNsURI.toString());
 					result = (EEnum) lookForEClassifier(nsuri_rootElement, element.getName());
