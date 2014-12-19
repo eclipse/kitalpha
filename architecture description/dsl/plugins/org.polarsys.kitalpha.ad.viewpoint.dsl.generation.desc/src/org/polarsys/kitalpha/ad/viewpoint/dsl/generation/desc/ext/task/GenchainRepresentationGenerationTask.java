@@ -17,9 +17,11 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
+import org.eclipse.egf.model.domain.EMFDomain;
 import org.eclipse.emf.common.util.URI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter.TaskProductionAdapter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.operation.GenchainRepresentationCreationOperation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.helper.GenerationConfigurationHelper;
 
 /**
  * @author Boubekeur Zendagui
@@ -31,17 +33,21 @@ public class GenchainRepresentationGenerationTask extends TaskProductionAdapter{
 	 */
 	@Override
 	public void doExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
-		URI domainURI = productionContext.getInputValue("genchain.uri", URI.class);
-		if (domainURI == null)
-			throw new RuntimeException("Ecore URI can't be null");
-		
-		GenchainRepresentationCreationOperation creationOperation = new GenchainRepresentationCreationOperation(domainURI);
-		try {
-			creationOperation.run(new NullProgressMonitor());
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		EMFDomain domain = productionContext.getInputValue("vpdsl.model", EMFDomain.class);
+		if (GenerationConfigurationHelper.canGegenrate(domain))
+		{
+			URI domainURI = productionContext.getInputValue("genchain.uri", URI.class);
+			if (domainURI == null)
+				throw new RuntimeException("Ecore URI can't be null");
+
+			GenchainRepresentationCreationOperation creationOperation = new GenchainRepresentationCreationOperation(domainURI);
+			try {
+				creationOperation.run(new NullProgressMonitor());
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

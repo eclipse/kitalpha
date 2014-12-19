@@ -38,7 +38,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.ext.base,
  org.eclipse.sirius.table,
  org.eclipse.sirius.ecore.extender;bundle-version="1.0.0",
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.eclipse.ui.actions

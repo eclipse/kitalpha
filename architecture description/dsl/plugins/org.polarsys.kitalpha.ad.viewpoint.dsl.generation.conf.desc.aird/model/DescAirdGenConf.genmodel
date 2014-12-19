@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird/src"
+    editDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird/src"
+    modelPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird"
+    modelName="DescAirdGenConf" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel#//vpconf platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc">
+  <foreignModel>DescAirdGenConf.ecore</foreignModel>
+  <genPackages prefix="DescAirdGenConf" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model"
+      disposableProviderFactory="true" childCreationExtenders="true" ecorePackage="DescAirdGenConf.ecore#/">
+    <genClasses ecoreClass="DescAirdGenConf.ecore#//AirdGenerationConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DescAirdGenConf.ecore#//AirdGenerationConfiguration/genRepresentations"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
