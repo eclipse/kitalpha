@@ -13,7 +13,7 @@
     <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_vUjtsJJbEeSPapwxSH2ZqQ" name="TP_juno (local)">
       <steps xsi:type="buildfile:CopyStep" xmi:id="_zyNkwJJbEeSPapwxSH2ZqQ" destinationFolderPath="${publish}/TP_kitalpha">
-        <dirPaths>/home/hudson/genie.polarsys.polarsys.kitalpha/.hudson/jobs/Kitalpha_Nightly/result/publish/TP_juno</dirPaths>
+        <dirPaths>/home/hudson/genie.polarsys.polarsys.kitalpha/.hudson/jobs/Kitalpha_Nightly/workspace/result/publish/TP_juno</dirPaths>
       </steps>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_jTST4D5LEeSicsfEyxBYkg" name="TP_juno" enabled="false">
