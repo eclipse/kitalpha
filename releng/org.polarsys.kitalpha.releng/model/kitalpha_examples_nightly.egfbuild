@@ -11,7 +11,12 @@
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
     <properties xmi:id="_pAapkPq5EeKXG4Dej4PCUQ" key="main_version" value="trunk"/>
     <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
-    <steps xsi:type="buildcore:StepContainer" xmi:id="_jTST4D5LEeSicsfEyxBYkg" name="TP_juno">
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_vUjtsJJbEeSPapwxSH2ZqQ" name="TP_juno (local)">
+      <steps xsi:type="buildfile:CopyStep" xmi:id="_zyNkwJJbEeSPapwxSH2ZqQ" destinationFolderPath="${publish}/TP_kitalpha">
+        <dirPaths>/home/hudson/genie.polarsys.polarsys.kitalpha/.hudson/jobs/Kitalpha_Nightly/result/publish/TP_juno</dirPaths>
+      </steps>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_jTST4D5LEeSicsfEyxBYkg" name="TP_juno" enabled="false">
       <steps xsi:type="buildfile:CreateFolderStep" xmi:id="_n_QbEEPuEeSAV7j17x4tgA" folderPath="${result}"/>
       <steps xsi:type="buildfile:DownloadStep" xmi:id="_tb8GMEPuEeSAV7j17x4tgA" sourceFilePath="${kitalpha.zip.url}" destinationFilePath="${result}/kit.zip"/>
       <steps xsi:type="buildfile:UnzipStep" xmi:id="_1G8DAEPuEeSAV7j17x4tgA" sourceFilePath="${result}/kit.zip" destinationFolderPath="${publish}/TP_kitalpha"/>
