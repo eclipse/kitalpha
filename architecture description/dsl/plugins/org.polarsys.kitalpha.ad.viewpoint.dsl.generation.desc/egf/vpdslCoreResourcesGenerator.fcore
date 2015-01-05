@@ -5,7 +5,7 @@
   <fcore:FactoryComponent xmi:id="_cTDH0H7LEeOLj8ldLiBqyA" name="vpdslCoreResourcesGenerator">
     <contractContainer xmi:id="_nxW-MH7LEeOLj8ldLiBqyA">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_n_N0AH7LEeOLj8ldLiBqyA"
-          name="vpdsl.model" mandatory="true" invocationContracts="#_Kf-SUn7MEeOLj8ldLiBqyA #_S_st4oHQEeOkrKKPKbuzoQ #_9qVTAoH0EeOrLd1N8v_fcw #_yjFKgga2EeSAd8d0JTTnXA">
+          name="vpdsl.model" mandatory="true" invocationContracts="#_Kf-SUn7MEeOLj8ldLiBqyA #_S_st4oHQEeOkrKKPKbuzoQ #_9qVTAoH0EeOrLd1N8v_fcw #_yjFKgga2EeSAd8d0JTTnXA #_ridhkIbVEeSf0eU505H_Qw">
         <type xmi:type="domain:TypeDomain" xmi:id="_odUsUH7LEeOLj8ldLiBqyA"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_oz0gwH7LEeOLj8ldLiBqyA"
@@ -36,6 +36,8 @@
         <invocationContractContainer xmi:id="_lOXHAQOTEeS_Mc6arXEukQ">
           <invocationContracts xmi:id="_lOXHAgOTEeS_Mc6arXEukQ" invokedContract="#_04oc8AOSEeS_Mc6arXEukQ"/>
           <invocationContracts xmi:id="_lOXHAwOTEeS_Mc6arXEukQ" invokedContract="#_3bVqQAOSEeS_Mc6arXEukQ"/>
+          <invocationContracts xmi:id="_ridhkIbVEeSf0eU505H_Qw" factoryComponentContract="#_n_N0AH7LEeOLj8ldLiBqyA"
+              invokedContract="#_oHa-EIbVEeSf0eU505H_Qw"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_5ntAgIHzEeOrLd1N8v_fcw" name="Register generated EPackage in AF integration manager"
@@ -63,6 +65,12 @@
     </orchestration>
   </fcore:FactoryComponent>
   <fcore:FactoryComponent xmi:id="_-GYl8AOSEeS_Mc6arXEukQ" name="Generates diagrams and tables">
+    <contractContainer xmi:id="_n0WREIbVEeSf0eU505H_Qw">
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_oHa-EIbVEeSf0eU505H_Qw"
+          name="vpdsl.model" invocationContracts="#_mKjBsIbVEeSf0eU505H_Qw">
+        <type xmi:type="domain:TypeDomain" xmi:id="_p1-xoIbVEeSf0eU505H_Qw"/>
+      </contracts>
+    </contractContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_ALcN8AOTEeS_Mc6arXEukQ">
       <invocations xmi:id="_FM1rQAOTEeS_Mc6arXEukQ" invokedActivity="#_TlTbEAOSEeS_Mc6arXEukQ">
         <invocationContractContainer xmi:id="_FM1rQQOTEeS_Mc6arXEukQ">
@@ -78,6 +86,8 @@
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslExtensibilityRepresentationsGenerator.fcore#_afVDYAOREeS_Mc6arXEukQ"/>
           <invocationContracts xmi:id="_B1O2QwOTEeS_Mc6arXEukQ" sourceInvocationContract="#_FM1rQwOTEeS_Mc6arXEukQ"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslExtensibilityRepresentationsGenerator.fcore#_cKwqcAOREeS_Mc6arXEukQ"/>
+          <invocationContracts xmi:id="_mKjBsIbVEeSf0eU505H_Qw" factoryComponentContract="#_oHa-EIbVEeSf0eU505H_Qw"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslExtensibilityRepresentationsGenerator.fcore#_Cd3YQIbUEeSf0eU505H_Qw"/>
         </invocationContractContainer>
       </invocations>
     </orchestration>
@@ -93,7 +103,7 @@
       <invocations xmi:id="_hZ6DEAa2EeSAd8d0JTTnXA" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_1L1eUPtNEeK-QL-B45qveg">
         <invocationContractContainer xmi:id="_hZ6DEQa2EeSAd8d0JTTnXA">
           <invocationContracts xmi:id="_hZ6DEga2EeSAd8d0JTTnXA" factoryComponentContract="#_DSY14Aa2EeSAd8d0JTTnXA"
-              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#//@contractContainer/@contracts.0"/>
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_6m4KsPtNEeK-QL-B45qveg"/>
           <invocationContracts xmi:id="_hZ6DEwa2EeSAd8d0JTTnXA" targetInvocationContract="#_VNbfIga2EeSAd8d0JTTnXA"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8mR2oPtNEeK-QL-B45qveg"/>
         </invocationContractContainer>
