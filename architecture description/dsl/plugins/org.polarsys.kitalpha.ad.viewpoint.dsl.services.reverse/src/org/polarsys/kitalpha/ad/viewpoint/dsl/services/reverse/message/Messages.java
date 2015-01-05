@@ -24,9 +24,12 @@ public class Messages extends NLS {
 	public static String Reverse_Wizard_ConcretSyntax_SubTask;
 	public static String Reverse_Wizard_PluginXmlContribution_Task;
 	public static String Reverse_Wizard_PluginXmlContribution_SubTask;
+	public static String Reverse_Wizard_WindowTitle;
+	public static String Reverse_Wizard_FirstPage_Description;
+	public static String Reverse_Wizard_FirstPage_Title;
 	public static String Reverse_Wizard_SecondPage_Description;
 	public static String Reverse_Wizard_SecondPage_Title;
-	public static String Reverse_Wizard_WindowTitle;
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

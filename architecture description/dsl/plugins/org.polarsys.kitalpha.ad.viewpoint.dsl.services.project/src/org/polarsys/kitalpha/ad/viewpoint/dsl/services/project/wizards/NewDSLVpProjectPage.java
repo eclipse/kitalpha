@@ -61,6 +61,17 @@ public class NewDSLVpProjectPage extends WizardPage{
 	 * be added
 	 */
 	public void createControl(Composite parent) {
+		Composite compo = createMainComposite(parent);
+		setControl(compo);
+	    vpDataChanged();
+	}
+	
+	/**
+	 * create the main composite wherein all widgets will be created
+	 * @param parent the parent composite
+	 * @return the main composite
+	 */
+	protected Composite createMainComposite(Composite parent){
 		Composite compo = new Composite(parent, SWT.NONE);
 		compo.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 	    compo.setLayout(new GridLayout(2, false));
@@ -108,8 +119,7 @@ public class NewDSLVpProjectPage extends WizardPage{
 			i++;
 		}
 		
-		setControl(compo);
-	    vpDataChanged();
+		return compo;
 	}
 	
 	/**
