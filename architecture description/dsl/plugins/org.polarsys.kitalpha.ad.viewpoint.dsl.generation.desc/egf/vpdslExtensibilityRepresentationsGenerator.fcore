@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
-    xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
-    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
   <fcore:FactoryComponent xmi:id="_KoktcQOOEeS_Mc6arXEukQ" name="vpdslExtensibilityRepresentationsGenerator">
     <contractContainer xmi:id="_aODGIAOREeS_Mc6arXEukQ">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_afVDYAOREeS_Mc6arXEukQ"
@@ -12,30 +12,42 @@
           name="genchain.uri" mandatory="true" invocationContracts="#_DwF14QOSEeS_Mc6arXEukQ">
         <type xmi:type="types:TypeURI" xmi:id="_cKwqcQOREeS_Mc6arXEukQ"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Cd3YQIbUEeSf0eU505H_Qw"
+          name="vpdsl.model" invocationContracts="#_XuYTEIbVEeSf0eU505H_Qw #_bjgKgIbVEeSf0eU505H_Qw #_dg0LwIbVEeSf0eU505H_Qw #_fEp9EIbVEeSf0eU505H_Qw">
+        <type xmi:type="domain:TypeDomain" xmi:id="_Et0BoIbUEeSf0eU505H_Qw"/>
+      </contracts>
     </contractContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_LsXswAOOEeS_Mc6arXEukQ">
       <invocations xmi:id="_Klfc4AOREeS_Mc6arXEukQ" invokedActivity="#_kYcvgAOPEeS_Mc6arXEukQ">
         <invocationContractContainer xmi:id="_CSq1oAOSEeS_Mc6arXEukQ">
           <invocationContracts xmi:id="_RPDggAZzEeSs8dhCosCl-g" factoryComponentContract="#_afVDYAOREeS_Mc6arXEukQ"
               invokedContract="#_owPPwQWrEeS_Z9H6ZjkJbg"/>
+          <invocationContracts xmi:id="_XuYTEIbVEeSf0eU505H_Qw" factoryComponentContract="#_Cd3YQIbUEeSf0eU505H_Qw"
+              invokedContract="#_oPbgAIbUEeSf0eU505H_Qw"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_H5P5EAOREeS_Mc6arXEukQ" invokedActivity="#_MpmxEAOOEeS_Mc6arXEukQ">
         <invocationContractContainer xmi:id="__bi3gAOREeS_Mc6arXEukQ">
           <invocationContracts xmi:id="__pZtUAOREeS_Mc6arXEukQ" factoryComponentContract="#_afVDYAOREeS_Mc6arXEukQ"
               invokedContract="#_MlC50AOREeS_Mc6arXEukQ"/>
+          <invocationContracts xmi:id="_bjgKgIbVEeSf0eU505H_Qw" factoryComponentContract="#_Cd3YQIbUEeSf0eU505H_Qw"
+              invokedContract="#_lyhYsIbUEeSf0eU505H_Qw"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_Fby-8AahEeSs8dhCosCl-g" invokedActivity="#_SxMvQAagEeSs8dhCosCl-g">
         <invocationContractContainer xmi:id="_Fby-8QahEeSs8dhCosCl-g">
           <invocationContracts xmi:id="_Fby-8gahEeSs8dhCosCl-g" factoryComponentContract="#_afVDYAOREeS_Mc6arXEukQ"
               invokedContract="#_ZOs-MAagEeSs8dhCosCl-g"/>
+          <invocationContracts xmi:id="_dg0LwIbVEeSf0eU505H_Qw" factoryComponentContract="#_Cd3YQIbUEeSf0eU505H_Qw"
+              invokedContract="#_of0scIbUEeSf0eU505H_Qw"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_Jbl1kAOREeS_Mc6arXEukQ" invokedActivity="#_j4HpoAOPEeS_Mc6arXEukQ">
         <invocationContractContainer xmi:id="_DwF14AOSEeS_Mc6arXEukQ">
           <invocationContracts xmi:id="_DwF14QOSEeS_Mc6arXEukQ" factoryComponentContract="#_cKwqcAOREeS_Mc6arXEukQ"
               invokedContract="#_T8MGgAOREeS_Mc6arXEukQ"/>
+          <invocationContracts xmi:id="_fEp9EIbVEeSf0eU505H_Qw" factoryComponentContract="#_Cd3YQIbUEeSf0eU505H_Qw"
+              invokedContract="#_n51DcIbUEeSf0eU505H_Qw"/>
         </invocationContractContainer>
       </invocations>
     </orchestration>
@@ -46,6 +58,9 @@
       <contracts xmi:id="_MlC50AOREeS_Mc6arXEukQ" name="ecore.uri" mandatory="true">
         <type xmi:type="types:TypeURI" xmi:id="_NVnbIAOREeS_Mc6arXEukQ"/>
       </contracts>
+      <contracts xmi:id="_lyhYsIbUEeSf0eU505H_Qw" name="vpdsl.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_nEog0IbUEeSf0eU505H_Qw"/>
+      </contracts>
     </contractContainer>
   </ftask:Task>
   <ftask:Task xmi:id="_j4HpoAOPEeS_Mc6arXEukQ" name="Generate generation chain diagram"
@@ -53,6 +68,9 @@
     <contractContainer xmi:id="_Tq5iMAOREeS_Mc6arXEukQ">
       <contracts xmi:id="_T8MGgAOREeS_Mc6arXEukQ" name="genchain.uri" mandatory="true">
         <type xmi:type="types:TypeURI" xmi:id="_UWtfUAOREeS_Mc6arXEukQ"/>
+      </contracts>
+      <contracts xmi:id="_n51DcIbUEeSf0eU505H_Qw" name="vpdsl.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_n51DcYbUEeSf0eU505H_Qw"/>
       </contracts>
     </contractContainer>
   </ftask:Task>
@@ -62,6 +80,9 @@
       <contracts xmi:id="_owPPwQWrEeS_Z9H6ZjkJbg" name="ecore.uri" mandatory="true">
         <type xmi:type="types:TypeURI" xmi:id="_qMekQAWrEeS_Z9H6ZjkJbg"/>
       </contracts>
+      <contracts xmi:id="_oPbgAIbUEeSf0eU505H_Qw" name="vpdsl.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_oPbgAYbUEeSf0eU505H_Qw"/>
+      </contracts>
     </contractContainer>
   </ftask:Task>
   <ftask:Task xmi:id="_SxMvQAagEeSs8dhCosCl-g" name="Generate Entities representations"
@@ -69,6 +90,9 @@
     <contractContainer xmi:id="_Yw5n4AagEeSs8dhCosCl-g">
       <contracts xmi:id="_ZOs-MAagEeSs8dhCosCl-g" name="ecore.uri" mandatory="true">
         <type xmi:type="types:TypeURI" xmi:id="_baeSMAagEeSs8dhCosCl-g"/>
+      </contracts>
+      <contracts xmi:id="_of0scIbUEeSf0eU505H_Qw" name="vpdsl.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_of0scYbUEeSf0eU505H_Qw"/>
       </contracts>
     </contractContainer>
   </ftask:Task>
