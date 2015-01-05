@@ -29,11 +29,13 @@ import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.wizards.NewDSLVpProjectWizard;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.ecore.ConflictingNameResloveStrategy;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.ecore.ReverseFromEcoreEngine;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.extension.CantInitializeConcreteSyntaxResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.extension.ConcreteSyntaxResourceInitializeManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.message.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.ReverseUtil;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.wizard.pages.ReverseFirstPage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.wizard.pages.ReverseSecondPage;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
@@ -44,8 +46,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.exceptions.CantCo
  */
 
 public class ReverseDSLVPProjectWizard extends NewDSLVpProjectWizard {
-
+	
 	private EPackage ePackage;
+	/** **/
+	protected boolean flattenEPackages; 
+	/** **/
+	protected ConflictingNameResloveStrategy conflictingNameResloveStrategy;
+	/** **/
+	protected boolean addSeparator;
 	
 	public ReverseDSLVPProjectWizard(IStructuredSelection selection) {
 		super();
@@ -69,6 +77,14 @@ public class ReverseDSLVPProjectWizard extends NewDSLVpProjectWizard {
 			vpNsURI = ePackage.getNsURI();
 			super.setGenerateNsUri(false);
 		}
+	}
+	
+	@Override
+	protected void addFirstPage() {
+		page = new ReverseFirstPage();
+		page.setTitle(Messages.Reverse_Wizard_FirstPage_Title);
+		page.setDescription(Messages.Reverse_Wizard_FirstPage_Description);
+		addPage(page);
 	}
 
 	@Override
@@ -188,12 +204,39 @@ public class ReverseDSLVPProjectWizard extends NewDSLVpProjectWizard {
 				   throws InvocationTargetException, InterruptedException {
 		ReverseFromEcoreEngine reverseEngine = new ReverseFromEcoreEngine();
 		try {
+			reverseEngine.setFlattenEPackages(this.flattenEPackages);
+			reverseEngine.setAddSeperator(this.addSeparator);
+			reverseEngine.setNameConflictResolveStrategy(this.conflictingNameResloveStrategy);
 			reverseEngine.reverse(ePackage, vp, monitor);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally{
 			monitor.done();
 		}
+	}
+	
+	public boolean isFlattenEPackages() {
+		return flattenEPackages;
+	}
+
+	public void setFlattenEPackages(boolean flattenEPackages) {
+		this.flattenEPackages = flattenEPackages;
+	}
+
+	public ConflictingNameResloveStrategy getConflictingNameResloveStrategy() {
+		return conflictingNameResloveStrategy;
+	}
+
+	public void setConflictingNameResloveStrategy(ConflictingNameResloveStrategy conflictingNameResloveStrategy) {
+		this.conflictingNameResloveStrategy = conflictingNameResloveStrategy;
+	}
+
+	public boolean isAddSeparator() {
+		return addSeparator;
+	}
+
+	public void setAddSeparator(boolean addSeparator) {
+		this.addSeparator = addSeparator;
 	}
 
 }

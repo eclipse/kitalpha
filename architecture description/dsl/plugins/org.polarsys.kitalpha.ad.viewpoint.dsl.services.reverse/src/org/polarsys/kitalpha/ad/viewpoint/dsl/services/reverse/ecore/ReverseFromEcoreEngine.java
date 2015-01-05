@@ -21,6 +21,7 @@ import java.util.Map;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -37,11 +38,13 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
+import org.eclipse.emf.ecore.impl.ESuperAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.ad.ta.extension.TargetApplicationExtensionManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AnnotatableElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Annotation;
@@ -51,6 +54,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Cardinalities;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Detail;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalAttributeType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssociation;
@@ -64,7 +68,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Parameter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.EClassifierNameComparator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.EcoreElementsUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.ReverseUtil;
 
@@ -74,13 +80,18 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.ReverseUtil
 
 public class ReverseFromEcoreEngine {
 	// This map must be moved to a singleton object to manage reverse based on more then one ecore model
-	private Map<EClass, Class> reverseClassesMapping_ = new HashMap<EClass, Class>();
-	private Map<EEnum, Enumeration> reverseEnumerationsMapping_ = new HashMap<EEnum, Enumeration>();
-	private Map<EModelElement, AnnotatableElement> annotationElementMapping_ = new HashMap<EModelElement, AnnotatableElement>();
 	private static final EPackage.Registry REGISTRY = new EPackageRegistryImpl(EPackage.Registry.INSTANCE);
 	private static final String eMDE_ANNOTATION_1 = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint";
 	private static final String eMDE_ANNOTATION_2 ="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping";
+	
+	private Map<EClass, Class> reverseClassesMapping_ = new HashMap<EClass, Class>();
+	private Map<EEnum, Enumeration> reverseEnumerationsMapping_ = new HashMap<EEnum, Enumeration>();
+	private Map<EModelElement, AnnotatableElement> annotationElementMapping_ = new HashMap<EModelElement, AnnotatableElement>();
 
+	private boolean flattenEPackages;
+	private boolean addSeperator;
+	private ConflictingNameResloveStrategy nameConflictResolveStrategy;
+	
 	// One ecore model dependent reverse engine instance properties 
 	private EPackage ePackage ;
 	private Viewpoint viewpoint;
@@ -89,6 +100,8 @@ public class ReverseFromEcoreEngine {
 	private List<EPackage> targetApplicationEPackages = new ArrayList<EPackage>();
 	private final String ECORE_NSURI_PATTERN = "http://www.eclipse.org/emf/\\d{4}/Ecore";
 	private final String EMDE_NSURI_PATTERN = "http://www.polarsys.org/kitalpha/emde/(\\d+(\\.\\d+(\\.\\d+)))";
+	
+	private List<EClassifier> eClassifiersToReverse;
 	
 	/**
 	 * This method do reverse steps :
@@ -113,7 +126,9 @@ public class ReverseFromEcoreEngine {
 		this.monitor = monitor;
 		loadTargetApplicationEPackages();
 		
-		int stepCount = reversibleElementCount(ePackage) + 10;
+		initEClassifiersToReverse(this.ePackage);
+		
+		int stepCount = reversibleElementCount() + 10;
 		monitor.beginTask("Reverse from Ecore model", stepCount);
 		
 		// Register data to reverse Annotation
@@ -139,11 +154,89 @@ public class ReverseFromEcoreEngine {
 		return true;
 	}
 	
+	private void initEClassifiersToReverse(EPackage ePackage){
+		if (eClassifiersToReverse == null)
+			eClassifiersToReverse = new UniqueEList<EClassifier>();
+		else
+			eClassifiersToReverse.clear();
+		
+		collectEClassifiers(ePackage);
+	}
+	
+	/**
+	 * Return all EClassifier available in the package and it sub packages
+	 * @param ePackage the package containing EClassifiers
+	 * @return a {@link List} of {@link EClassifier}
+	 */
+	private void collectEClassifiers(EPackage ePackage){
+		final EList<EClassifier> eClassifiers = ePackage.getEClassifiers();
+		if (! eClassifiers.isEmpty())
+		{
+			if (eClassifiersToReverse.isEmpty())
+				eClassifiersToReverse.addAll(eClassifiers);
+			else
+			{
+				for (EClassifier eClassifier : eClassifiers) 
+				{
+					// Check if there is a EClassifier having the same name as the current EClassifier
+					final int searchResult = Collections.binarySearch(eClassifiersToReverse, eClassifier, new EClassifierNameComparator());
+					if (searchResult > -1)
+					{// This means that there is an EClassifier having the same name
+						String newEClassifierName = getNewEClassifierName(eClassifier);
+						eClassifier.setName(newEClassifierName);
+					}
+				}
+				
+				eClassifiersToReverse.addAll(eClassifiers);
+			}
+		}
+		
+		if (this.flattenEPackages)
+		{
+			final EList<EPackage> eSubpackages = ePackage.getESubpackages();
+			if (! eSubpackages.isEmpty())
+			{
+				for (EPackage subEPackage : eSubpackages) 
+				{
+					collectEClassifiers(subEPackage);
+				}
+			}
+		}
+	}
+	
+	private String getNewEClassifierName(EClassifier eClassifier){
+		final String ePackageName = eClassifier.getEPackage().getName();
+		final String oldEClassfierName = eClassifier.getName();
+		
+		String newEClassifierName = oldEClassfierName;
+		
+		switch (nameConflictResolveStrategy) {
+		case PrefixByEPackageName:
+			newEClassifierName = ePackageName + (this.addSeperator ? "_" : "") + oldEClassfierName;
+			break;
+			
+		case SufixByEPackageName:
+			newEClassifierName = oldEClassfierName + (this.addSeperator ? "_" : "") + ePackageName;
+			break;
+
+		case PrefixByIncrementalValue:
+			// TODO: to implement
+			break;
+		
+		case SufixByIncrementalValue:
+			// TODO: to implement
+			break;
+		case None:
+			break;
+		}
+		return newEClassifierName;
+	}
+	
 	/**
 	 * Reverse Step 0.
 	 */
 	private void reverseEnumeration(){
-		for (EClassifier eClassifier : ePackage.getEClassifiers()) 
+		for (EClassifier eClassifier : eClassifiersToReverse/*ePackage.getEClassifiers()*/) 
 		{
 			if (eClassifier instanceof EEnum)
 			{
@@ -178,7 +271,7 @@ public class ReverseFromEcoreEngine {
 	 * Reverse Step 1.
 	 */
 	private void reverseClasses(){
-		for (EClassifier eClassifier : ePackage.getEClassifiers()) 
+		for (EClassifier eClassifier : eClassifiersToReverse/*ePackage.getEClassifiers()*/) 
 		{
 			if (eClassifier instanceof EClass)
 			{
@@ -208,7 +301,7 @@ public class ReverseFromEcoreEngine {
 	 * Reverse all class relationships {Inheritance and Association}, Operations
 	 */
 	private void reverseClassesContent(){
-		for (EClassifier eClassifier : ePackage.getEClassifiers()) 
+		for (EClassifier eClassifier : eClassifiersToReverse/*ePackage.getEClassifiers()*/) 
 		{
 			if (eClassifier instanceof EClass)
 			{
@@ -683,6 +776,49 @@ public class ReverseFromEcoreEngine {
 		{
 			Data data = this.viewpoint.getVP_Data();
 			data.getAdditionalExternalData().add(externalEPackage);
+			addEMFResource(externalEPackage);
+		}
+	}
+	
+	private void addEMFResource(EPackage ePackage){
+		// Check if ViewpointResources element is available in the model 
+		ViewpointResources viewpointResources = this.viewpoint.getViewpointResources();
+		if (viewpointResources == null)
+		{// ViewpointResources is not available, so create it.
+			viewpointResources = VpdescFactory.eINSTANCE.createViewpointResources();
+			this.viewpoint.setViewpointResources(viewpointResources);
+		}
+		
+		final URI uri = ePackage.eResource().getURI();
+		if (uri != null)
+		{
+			// Check if the EMFResource a already added to ViewpointResources
+			boolean addResource = true;
+			final String uri_s = uri.toString();
+			final EList<AbstractResource> usedResources = viewpointResources.getUseResource();
+			if (usedResources != null && ! usedResources.isEmpty())
+			{
+				for (AbstractResource abstractResource : usedResources) 
+				{
+					if (abstractResource instanceof EMFResource)
+					{
+						final String emfResourceUri = ((EMFResource) abstractResource).getUri();
+						if (emfResourceUri.equals(uri_s))
+						{
+							addResource = false;
+							break;
+						}
+					}
+				}
+			}
+			
+			// EMFResource in not available in ViewpointResources. So create it.
+			if (addResource)
+			{
+				EMFResource emfResource = VpdescFactory.eINSTANCE.createEMFResource();
+				emfResource.setUri(uri_s);
+				this.viewpoint.getViewpointResources().getUseResource().add(emfResource);
+			}
 		}
 	}
 	
@@ -806,9 +942,9 @@ public class ReverseFromEcoreEngine {
 	 * @param ePackage
 	 * @return
 	 */
-	private int reversibleElementCount(EPackage ePackage){
+	private int reversibleElementCount(){
 		int result = 0;
-		for (EClassifier iEClassifier : ePackage.getEClassifiers()) 
+		for (EClassifier iEClassifier : eClassifiersToReverse/*ePackage.getEClassifiers()*/) 
 		{
 			if (iEClassifier instanceof EClass)
 			{
@@ -851,5 +987,30 @@ public class ReverseFromEcoreEngine {
 		}
 		else
 			reverseClassesMapping_.put(source, generated);
+	}
+	
+	public boolean isFlattenEPackages() {
+		return flattenEPackages;
+	}
+
+	public void setFlattenEPackages(boolean flattenEPackages) {
+		this.flattenEPackages = flattenEPackages;
+	}
+
+	public boolean isAddSeperator() {
+		return addSeperator;
+	}
+
+	public void setAddSeperator(boolean addSeperator) {
+		this.addSeperator = addSeperator;
+	}
+
+	public ConflictingNameResloveStrategy getNameConflictResolveStrategy() {
+		return nameConflictResolveStrategy;
+	}
+
+	public void setNameConflictResolveStrategy(
+			ConflictingNameResloveStrategy nameConflictResolveStrategy) {
+		this.nameConflictResolveStrategy = nameConflictResolveStrategy;
 	}
 }
