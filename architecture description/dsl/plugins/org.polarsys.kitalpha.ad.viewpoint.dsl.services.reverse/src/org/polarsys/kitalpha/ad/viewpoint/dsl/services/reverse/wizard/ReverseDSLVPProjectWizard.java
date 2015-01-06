@@ -79,6 +79,10 @@ public class ReverseDSLVPProjectWizard extends NewDSLVpProjectWizard {
 		}
 	}
 	
+	public EPackage getEPackage(){
+		return this.ePackage;
+	}
+	
 	@Override
 	protected void addFirstPage() {
 		page = new ReverseFirstPage();

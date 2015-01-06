@@ -38,7 +38,6 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
-import org.eclipse.emf.ecore.impl.ESuperAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.ad.ta.extension.TargetApplicationExtensionManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
@@ -70,7 +69,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.EClassifierNameComparator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.EcoreElementsUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.ReverseUtil;
 
@@ -179,15 +177,17 @@ public class ReverseFromEcoreEngine {
 				for (EClassifier eClassifier : eClassifiers) 
 				{
 					// Check if there is a EClassifier having the same name as the current EClassifier
-					final int searchResult = Collections.binarySearch(eClassifiersToReverse, eClassifier, new EClassifierNameComparator());
-					if (searchResult > -1)
-					{// This means that there is an EClassifier having the same name
-						String newEClassifierName = getNewEClassifierName(eClassifier);
-						eClassifier.setName(newEClassifierName);
+					for (EClassifier eClassifier2 : eClassifiersToReverse) 
+					{
+						if (eClassifier.getName().toUpperCase().equals(eClassifier2.getName().toUpperCase()))
+						{// This means that there is an EClassifier having the same name
+							String newEClassifierName = getNewEClassifierName(eClassifier);
+							eClassifier.setName(newEClassifierName);
+							break;
+						}
 					}
+					eClassifiersToReverse.add(eClassifier);
 				}
-				
-				eClassifiersToReverse.addAll(eClassifiers);
 			}
 		}
 		

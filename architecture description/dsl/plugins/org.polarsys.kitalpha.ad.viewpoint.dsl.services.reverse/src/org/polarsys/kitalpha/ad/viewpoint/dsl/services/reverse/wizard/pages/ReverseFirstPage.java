@@ -12,6 +12,8 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.wizard.pages;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -45,54 +47,68 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 	protected Composite createMainComposite(Composite parent) {
 
 		final Composite mainComposite = super.createMainComposite(parent);
+		
+		boolean createOptionwidgets = false;
+		final EPackage ePackage = ((ReverseDSLVPProjectWizard)getWizard()).getEPackage();
+		if (ePackage != null)
+		{
+			final EList<EPackage> eSubpackages = ePackage.getESubpackages();
+			if (eSubpackages != null && ! eSubpackages.isEmpty())
+			{
+				createOptionwidgets = true;
+			}
+		}
 
-		// Option group
-		option_G = new Group(mainComposite, SWT.NONE);
-		option_G.setText("Options");
+		if (createOptionwidgets)
+		{
+			// Option group
+			option_G = new Group(mainComposite, SWT.NONE);
+			option_G.setText("Options");
 
-		GridData twoColumns_GD = new GridData(GridData.FILL_HORIZONTAL);
-		twoColumns_GD.horizontalSpan = 2;
-		option_G.setLayoutData(twoColumns_GD);
-		option_G.setLayout(new GridLayout());
+			GridData twoColumns_GD = new GridData(GridData.FILL_HORIZONTAL);
+			twoColumns_GD.horizontalSpan = 2;
+			option_G.setLayoutData(twoColumns_GD);
+			option_G.setLayout(new GridLayout());
 
-		// Flatten check box
-		flatten_CB = new Button(option_G, SWT.CHECK);
-		flatten_CB.setSelection(false);
-		flatten_CB.setText("Flatten EPackages and sub EPackages");
-		flatten_CB.addSelectionListener(new ReverseOptionsSelectionListener());
+			// Flatten check box
+			flatten_CB = new Button(option_G, SWT.CHECK);
+			flatten_CB.setSelection(false);
+			flatten_CB.setText("Flatten EPackages and sub EPackages");
+			flatten_CB.addSelectionListener(new ReverseOptionsSelectionListener());
 
 
-		flatten_G = new Group(option_G, SWT.NONE);
-		flatten_G.setEnabled(false);
-		flatten_G.setText("Conflicting names");
-		flatten_G.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		flatten_G.setLayout(new GridLayout(2, true));
+			flatten_G = new Group(option_G, SWT.NONE);
+			flatten_G.setEnabled(false);
+			flatten_G.setText("Conflicting names");
+			flatten_G.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+			flatten_G.setLayout(new GridLayout(2, true));
 
-		// Prefix/Sufix buttons
-		prefix_ePackageName_RB = new Button(flatten_G, SWT.RADIO);
-		prefix_ePackageName_RB.setText("Prefix by EPackage name");
-		prefix_ePackageName_RB.setSelection(true);
-		prefix_ePackageName_RB.addSelectionListener(new ReverseOptionsSelectionListener());
+			// Prefix/Sufix buttons
+			prefix_ePackageName_RB = new Button(flatten_G, SWT.RADIO);
+			prefix_ePackageName_RB.setText("Prefix by EPackage name");
+			prefix_ePackageName_RB.setSelection(true);
+			prefix_ePackageName_RB.addSelectionListener(new ReverseOptionsSelectionListener());
 
-		sufix_ePackageName_RB = new Button(flatten_G, SWT.RADIO);
-		sufix_ePackageName_RB.setText("Sufix by EPackage name");
-		sufix_ePackageName_RB.addSelectionListener(new ReverseOptionsSelectionListener());
+			sufix_ePackageName_RB = new Button(flatten_G, SWT.RADIO);
+			sufix_ePackageName_RB.setText("Sufix by EPackage name");
+			sufix_ePackageName_RB.addSelectionListener(new ReverseOptionsSelectionListener());
 
-		// TODO: activate after implementation of this strategy
-//		prefix_integer_RB = new Button(flatten_G, SWT.RADIO);
-//		prefix_integer_RB.setText("Prefix by Incremental value");
-//		prefix_integer_RB.addSelectionListener(new ReverseOptionsSelectionListener());
-//		sufix_integer_RB = new Button(flatten_G, SWT.RADIO);
-//		sufix_integer_RB.setText("Sufix by Incremental value");
-//		sufix_integer_RB.addSelectionListener(new ReverseOptionsSelectionListener());
+			// TODO: activate after implementation of this strategy
+			//		prefix_integer_RB = new Button(flatten_G, SWT.RADIO);
+			//		prefix_integer_RB.setText("Prefix by Incremental value");
+			//		prefix_integer_RB.addSelectionListener(new ReverseOptionsSelectionListener());
+			//		sufix_integer_RB = new Button(flatten_G, SWT.RADIO);
+			//		sufix_integer_RB.setText("Sufix by Incremental value");
+			//		sufix_integer_RB.addSelectionListener(new ReverseOptionsSelectionListener());
 
-		// Custon separator widgets
-		separator_CB = new Button(flatten_G, SWT.CHECK);
-		separator_CB.setSelection(false);
-		separator_CB.setText("Separate by \"_\"");
-		separator_CB.addSelectionListener(new ReverseOptionsSelectionListener());
+			// Custon separator widgets
+			separator_CB = new Button(flatten_G, SWT.CHECK);
+			separator_CB.setSelection(false);
+			separator_CB.setText("Separate by \"_\"");
+			separator_CB.addSelectionListener(new ReverseOptionsSelectionListener());
 
-		initialzeWidgetsEnablement();
+			initialzeWidgetsEnablement();
+		}
 
 		return mainComposite;
 	}
@@ -169,10 +185,10 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 		private void flatten_CB_Selected_DATA(){
 			final boolean flatten_IS_ON = flatten_CB.getSelection();
 			_WIZARD.setFlattenEPackages(flatten_IS_ON);
+			_WIZARD.setAddSeparator(separator_CB.getSelection());
 			if (! flatten_IS_ON)
 			{
 				_WIZARD.setConflictingNameResloveStrategy(ConflictingNameResloveStrategy.None);
-				_WIZARD.setAddSeparator(false);
 			}
 		}
 		
