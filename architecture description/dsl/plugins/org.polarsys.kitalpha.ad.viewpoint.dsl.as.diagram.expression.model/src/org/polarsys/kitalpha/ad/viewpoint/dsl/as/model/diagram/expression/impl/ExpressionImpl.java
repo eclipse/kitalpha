@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionKind;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.DomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expression;
@@ -329,7 +328,7 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 			case ExpressionPackage.STRING_ELEMENT:
 				StringElement sElement = (StringElement) expressionElement;
 				if (sElement.getValue() != null && sElement.getValue().trim().length() > 0)
-					value += SiriusExpressionHelper.formatString(sElement.getValue());
+					value += ! multiple ? sElement.getValue() : SiriusExpressionHelper.formatString(sElement.getValue());
 				
 				break;
 				

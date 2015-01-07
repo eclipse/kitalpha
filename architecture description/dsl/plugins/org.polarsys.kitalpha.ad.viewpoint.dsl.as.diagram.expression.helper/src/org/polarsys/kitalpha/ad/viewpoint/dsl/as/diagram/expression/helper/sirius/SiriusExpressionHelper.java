@@ -142,6 +142,9 @@ public class SiriusExpressionHelper {
 	 * @return a formated string 
 	 */
 	public static String formatString(String string){
+		if (ExpressionInterpreter.isInterpreterExpression(string))
+			return string;
+		
 		switch (getCurrentExpressionKind()) {
 		case QueryLegacy:
 			return string;

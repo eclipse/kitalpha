@@ -107,5 +107,27 @@ public enum ExpressionInterpreter implements IExpressionFormat{
 		}
 		return false;
 	}
+	
+	public static boolean isInterpreterExpression(String expression){
+		String firstCharacters;
+		if (expression.length() > 4)
+		{
+			firstCharacters = expression.substring(0, 4);
+			if (firstCharacters.equals(Variable.name().toLowerCase()+":"))
+				return true;
+		}
+		else
+		{
+			if (expression.length() > 8)
+			{
+				firstCharacters = expression.substring(0, 8);
+				if (firstCharacters.equals(Feature.name().toLowerCase()+":") || 
+						firstCharacters.equals(Service.name().toLowerCase()+":"))
+					return true;
+			}
+		}
+
+		return false;
+	}
 
 }
