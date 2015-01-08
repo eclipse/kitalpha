@@ -73,7 +73,7 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 			// Flatten check box
 			flatten_CB = new Button(option_G, SWT.CHECK);
 			flatten_CB.setSelection(false);
-			flatten_CB.setText("Flatten EPackages and sub EPackages");
+			flatten_CB.setText("Flatten and integrate EPackages and Sub-EPackages");
 			flatten_CB.addSelectionListener(new ReverseOptionsSelectionListener());
 
 
