@@ -351,17 +351,40 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 				if (jElement.getMethod() != null && jElement.getMethod().trim().length() > 0) 
 				{
 					String methodName = jElement.getMethod();
-					String twoLastChars = methodName.subSequence(methodName.length() - 2, methodName.length()).toString();
-					if (twoLastChars.equals("()")) 
-						methodName = methodName.substring(0, methodName.length() - 2);
-
-					if (addParams && javaMethodParams != null && javaMethodParams.trim().length() > 0) 
-						methodName += "(" + javaMethodParams + ")";
-					else 
-						methodName += "()";
 					
-					if (multiple)
-						methodName = SiriusExpressionHelper.getInnerJavaService(methodName);
+					if (methodName.endsWith(")"))
+					{// Method has parameter, or at least brackets
+						if (addParams && javaMethodParams != null && javaMethodParams.trim().length() > 0)
+						{
+							String newParams = (methodName.endsWith("()") ? "": ", ") + javaMethodParams + ")";
+							methodName = methodName.replace(")", newParams);
+						}
+					}
+					else
+					{// Method has no brackets
+						if (addParams && javaMethodParams != null && javaMethodParams.trim().length() > 0)
+						{
+							String newParams = "(" + javaMethodParams + ")";
+							methodName += newParams;
+						}
+						else
+							methodName += "()";
+					}
+					
+					// Old implementation
+//					{
+//						String twoLastChars = methodName.subSequence(methodName.length() - 2, methodName.length()).toString();
+//						if (twoLastChars.equals("()")) 
+//							methodName = methodName.substring(0, methodName.length() - 2);
+//
+//						if (addParams && javaMethodParams != null && javaMethodParams.trim().length() > 0) 
+//							methodName += "(" + javaMethodParams + ")";
+//						else 
+//							methodName += "()";
+//
+//						if (multiple)
+//							methodName = SiriusExpressionHelper.getInnerJavaService(methodName);
+//					}
 					
 					value += multiple ? methodName : SiriusExpressionHelper.getExpressoin(methodName, ExpressionInterpreter.Service);
 				}
