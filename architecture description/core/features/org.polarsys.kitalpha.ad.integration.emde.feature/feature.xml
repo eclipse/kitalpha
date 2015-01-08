@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.ad.integration.emde.feature"
       label="Kitalpha AD eMDE Integration Feature (Incubation)"
-      version="0.5.0.qualifier"
+      version="0.5.1.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -18,8 +18,8 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.emde.feature" version="0.5.0.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.feature" version="0.5.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.feature" version="0.5.1.qualifier"/>
    </requires>
 
    <plugin
