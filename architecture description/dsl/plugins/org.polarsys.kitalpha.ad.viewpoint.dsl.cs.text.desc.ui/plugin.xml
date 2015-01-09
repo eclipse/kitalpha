@@ -301,9 +301,10 @@ Contributors:
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.editors.documentProviders"
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpspecExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="spec.vptext">
+    <provider
+          class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpspecExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+          extensions="spec.vptext"
+          id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.editors.documentProviders">
     </provider>
   </extension>
   <extension

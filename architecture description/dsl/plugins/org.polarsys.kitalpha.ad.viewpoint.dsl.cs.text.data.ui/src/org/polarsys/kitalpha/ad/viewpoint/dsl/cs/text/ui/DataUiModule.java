@@ -19,6 +19,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTem
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateStore;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.DataPrefixMatcher;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor.DataEditor;
 
 
 /**
@@ -57,5 +58,9 @@ public class DataUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text
 	@Override
 	public Class<? extends org.eclipse.xtext.ui.editor.IXtextEditorCallback> bindIXtextEditorCallback() {
 		return CommonEditorCallback.class;
+	}
+	
+	public Class<? extends org.eclipse.xtext.ui.editor.XtextEditor> bindXtextEditor(){
+		return DataEditor.class;
 	}
 }

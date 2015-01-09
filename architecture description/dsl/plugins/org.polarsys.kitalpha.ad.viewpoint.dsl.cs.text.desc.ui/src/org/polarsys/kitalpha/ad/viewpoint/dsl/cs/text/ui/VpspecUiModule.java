@@ -16,6 +16,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.VpspecEditorCa
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpspecContentProposalPriorities;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpspecTemplateContextType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpspecTemplateProposalProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor.SpecEditor;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor.VpdslEditor;
 
 
 /**
@@ -45,5 +47,9 @@ public class VpspecUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.te
 	
 	public Class<? extends  org.eclipse.xtext.ui.editor.templates.XtextTemplateContextType> bindIContextContentType() {
 		return VpspecTemplateContextType.class;
+	}
+	
+	public Class<? extends org.eclipse.xtext.ui.editor.XtextEditor> bindXtextEditor(){
+		return SpecEditor.class;
 	}
 }
