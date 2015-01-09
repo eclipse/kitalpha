@@ -21,7 +21,7 @@ public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.messages"; //$NON-NLS-1$
 	public static String CommonEditorCallback_MultipleInstancesError;
 	public static String CommonEditorCallback_SynchronizationSuccess;
-	public static String commonEditorCallBack_Synchronizationfailed;
+	public static String commonEditor_SaveError;
 	public static String commonEditorCallback_SynchronizationfailedStatus;
 	
 	

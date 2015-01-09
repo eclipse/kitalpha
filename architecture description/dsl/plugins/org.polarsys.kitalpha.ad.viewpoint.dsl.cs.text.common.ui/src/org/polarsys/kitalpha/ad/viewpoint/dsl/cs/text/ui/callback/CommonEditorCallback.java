@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -22,19 +21,13 @@ import java.util.Map;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.VerifyListener;
@@ -54,8 +47,6 @@ import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.diagnostic.VptextResourcesDiagnostic;
-
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -66,6 +57,8 @@ import com.google.inject.Injector;
  * @author Amine Lajmi
  *
  */
+
+
 @SuppressWarnings("restriction")
 public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
@@ -164,7 +157,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		return currentEditor.getEditorSite().getShell();
 	}
 
-	@Override
 	public void removeVerifyListener(VerifyListener listener) {
 		ISourceViewer sourceViewer = currentEditor.getInternalSourceViewer();
 		StyledText widget = sourceViewer.getTextWidget();
@@ -203,9 +195,8 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		if (targetObject!=null) {
 
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
-			Collection<Diagnostic> diagnostics = VptextResourcesDiagnostic.INSTANCE.getDiagnostics(resourceSet, false, projectName);
-
-			if (validate(inputObjects) && diagnostics.isEmpty() && VptextResourcesDiagnostic.INSTANCE.performEMFValidation(inputObjects)) {
+			
+			if (validate(inputObjects)){
 
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetObject);
 
@@ -219,19 +210,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 						e.printStackTrace();
 					}
 				}
-			} else {
-
-				Display.getDefault().syncExec(new Runnable() {
-					@Override
-					public void run() {
-						IStatus status = VptextResourcesDiagnostic.INSTANCE.getStatus();
-						Shell shell = getShell();
-						ErrorDialog.openError(shell, "Synchronization Error", Messages.commonEditorCallBack_Synchronizationfailed, status); //$NON-NLS-1$
-						currentEditor.getEditorSite().getActionBars().getStatusLineManager().setErrorMessage(Messages.commonEditorCallback_SynchronizationfailedStatus);
-					}
-				});
 			}
-
 		}
 
 		resourceSet.eSetDeliver(false);

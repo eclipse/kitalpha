@@ -19,6 +19,7 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor.DataEditor;
 
 
 /**
@@ -31,8 +32,8 @@ public class DataMatchingStrategy implements IEditorMatchingStrategy {
 	public boolean matches(IEditorReference editorRef, IEditorInput input) {
 		if (input instanceof FileEditorInput) {
 			IWorkbenchPart part = editorRef.getPart(true);
-			if (part instanceof XtextEditor) {
-				XtextEditor editor = (XtextEditor) part;
+			if (part instanceof DataEditor) {
+				DataEditor editor = (DataEditor) part;
 				IEditorInput editorInput = editor.getEditorInput();
 				if (!editorInput.equals(input))
 					return false;
