@@ -415,6 +415,16 @@ Contributors:
                objectClass="org.eclipse.core.resources.IResource"
                state="true">
          </decorator>
+         <decorator
+               adaptable="true"
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator.UnsynchronizedResource"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui.vpdesc.decorator"
+               label="Unsynchronized Vpdesc Resource"
+               lightweight="true"
+               location="REPLACE"
+               objectClass="org.eclipse.core.resources.IResource"
+               state="true">
+         </decorator>
       </extension>
     
 </plugin>

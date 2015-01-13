@@ -35,5 +35,6 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.VpspecActivator

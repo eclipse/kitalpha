@@ -21,12 +21,17 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+//import org.eclipse.ui.texteditor.EditorMessages;
+import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.IExternalContentSupport;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
+import org.eclipse.xtext.ui.editor.CompoundXtextEditorCallback;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.util.IResourceScopeCache;
@@ -46,6 +51,9 @@ public abstract class VpdslEditor extends XtextEditor {
 	private boolean isResourceClean = true;
 	private Map<String, String> messages = null;
 	private StringBuffer logMessages = null;
+	
+	@Inject
+	private CompoundXtextEditorCallback callback;
 	
 	@Inject
 	IExternalContentProvider s;
@@ -195,23 +203,55 @@ public abstract class VpdslEditor extends XtextEditor {
 	
 	@Override
 	public void doSaveAs(){
-		if (canSave()){
-			super.doSaveAs();
-		} else {
-			//FIXME show once if save all.
-			logAndShowErrors();
-		}
+		performSaveAs(getProgressMonitor());
+		if (canSave())
+			callback.afterSave(this);
+		
+//		if (canSave()){
+//			super.doSaveAs();
+//		} else {
+//			//FIXME show once if save all.
+//			logAndShowErrors();
+//		}
 	}
 
 	@Override
 	public void doSave(IProgressMonitor progressMonitor){
-		isResourceClean = true;
-		if (canSave()){
-			super.doSave(progressMonitor);
+		
+		IDocumentProvider p= getDocumentProvider();
+		if (p == null)
+			return;
+
+		if (p.isDeleted(getEditorInput())) {
+
+			if (isSaveAsAllowed()) {
+
+				performSaveAs(progressMonitor);
+
+			} else {
+
+				Shell shell= getSite().getShell();
+				String title= "EditorMessages.Editor_error_save_deleted_title";
+				String msg= "EditorMessages.Editor_error_save_deleted_message";
+				MessageDialog.openError(shell, title, msg);
+			}
+
 		} else {
-			//FIXME show once if save all.
-			logAndShowErrors();
+			updateState(getEditorInput());
+			validateState(getEditorInput());
+			performSave(false, progressMonitor);
 		}
+		
+		if (canSave())
+			callback.afterSave(this);
+//		
+//		isResourceClean = true;
+//		if (canSave()){
+//			super.doSave(progressMonitor);
+//		} else {
+//			//FIXME show once if save all.
+//			logAndShowErrors();
+//		}
 	}
 	
 	

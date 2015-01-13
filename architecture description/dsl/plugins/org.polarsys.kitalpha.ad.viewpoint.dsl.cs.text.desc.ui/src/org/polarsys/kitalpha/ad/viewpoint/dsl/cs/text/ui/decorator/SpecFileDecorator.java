@@ -13,11 +13,14 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator;
 
 import java.net.URL;
 import java.util.Collections;
+import java.util.Map;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -63,8 +66,6 @@ public class SpecFileDecorator implements ILightweightLabelDecorator {
 				decoration.addOverlay(IMG_OVERLAY);
 			}
 		}
-		
-
 	}
 
 }

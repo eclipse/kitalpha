@@ -19,6 +19,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.CommonActivator
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.observer,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation,
