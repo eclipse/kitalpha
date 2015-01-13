@@ -18,7 +18,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTem
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateStore;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor.BuildEditor;
 
 
 /**

@@ -13,8 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.EventListener;
 import java.util.HashMap;
 import java.util.List;
@@ -22,11 +20,8 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
-import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.text.contentassist.ContentAssistEvent;
 import org.eclipse.jface.text.contentassist.ICompletionListener;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -38,7 +33,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.PlatformUI;
@@ -207,7 +201,7 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 			
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
-			if (validate(inputObjects)){
+			if (validate(inputObjects) && canSynchronize(file, projectName)){
 				
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
 				

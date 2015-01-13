@@ -541,6 +541,29 @@ public class ResourceHelper {
 		//	throw new RuntimeException (Messages.ResourceHelper_TargetModelNotFound);
 		return null;
 	}
+	
+		
+	/**
+	 * Returns IResource of standalone resource of projectName project
+	 * 
+	 * XXX: use as parameter to get the standalone resource for better perf??
+	 * 
+	 * @param projectName
+	 * @return
+	 */
+	public static IResource getStandaloneIResource(String projectName) {
+		List<URI> resourceURIs = new ArrayList<URI>();
+		org.polarsys.kitalpha.resourcereuse.model.Resource[] resources = getStandaloneResources();
+		for (org.polarsys.kitalpha.resourcereuse.model.Resource r: resources) {
+			URI uri = computeURI(r);
+			if (r.getProviderSymbolicName().equals(projectName))
+				resourceURIs.add(uri);
+		}
+		//assume there is one semantic resource per project
+		String standaloneResourceURI = resourceURIs.get(0).toPlatformString(true);
+		IResource iResource = ResourcesPlugin.getWorkspace().getRoot().findMember(standaloneResourceURI);
+		return iResource;
+	}
 
 	/**
 	 * Loads the standalone primary resource of the given project in a new resource set

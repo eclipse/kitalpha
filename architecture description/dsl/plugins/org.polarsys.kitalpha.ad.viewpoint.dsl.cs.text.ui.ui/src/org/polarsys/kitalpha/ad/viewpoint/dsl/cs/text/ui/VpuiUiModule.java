@@ -18,7 +18,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTem
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpuiTemplateContextType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpuiTemplateProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.editor.UIEditor;
 
 
 /**
@@ -54,7 +53,7 @@ public class VpuiUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text
 		return CommonEditorCallback.class;
 	}
 	
-	public Class<? extends org.eclipse.xtext.ui.editor.XtextEditor> bindXtextEditor(){
-		return UIEditor.class;
-	}
+//	public Class<? extends org.eclipse.xtext.ui.editor.XtextEditor> bindXtextEditor(){
+//		return UIEditor.class;
+//	}
 }

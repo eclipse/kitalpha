@@ -18,15 +18,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.custom.StyledText;
@@ -36,6 +40,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.builder.nature.NatureAddingEditorCallback;
 import org.eclipse.xtext.builder.nature.ToggleXtextNatureAction;
 import org.eclipse.xtext.resource.XtextResource;
@@ -62,6 +67,8 @@ import com.google.inject.Injector;
 @SuppressWarnings("restriction")
 public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
+	protected Logger logger = Logger.getLogger(CommonEditorCallback.class);
+	
 	protected XtextEditor currentEditor;
 	
 	@Inject
@@ -75,9 +82,16 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
 	private boolean synchronizing;
 	
+	private boolean isResourceClean = true;
+	
+	private Map<String, String> messages = null;
+	
+	private StringBuffer logMessages = null;
+	
 	
 	@Inject
 	private IResourceSetProvider resourceSetProvider;
+	
 	
 	public CommonEditorCallback() {
 		synchronizing = false;
@@ -163,19 +177,40 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		if (widget != null)
 			widget.removeVerifyListener(listener);
 	}
+	
 
 	
 	@Override
 	public void afterSave(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
+
 		if (!synchronizing) {
 			final XtextEditor current = editor;
 			Runnable runnable = new Runnable() {		
 				public void run() {			
 					if (!synchronizing) {
-						synchronizing = doSynchronize((IFile) current.getEditorInput().getAdapter(IFile.class));
-					}
+						IFile file = (IFile) current.getEditorInput().getAdapter(IFile.class);						
+						String projectName = getProject(file).getName();
+
+						synchronizing = doSynchronize(file);
+
+						/**
+						 * FIXME: Show label only on the vpdesc resournce (see the associated decorator)
+						 */
+//						IResource standaloneIResource = ResourceHelper.getStandaloneIResource(projectName);
+//						if (standaloneIResource != null){
+
+							VpdslModelResourcesManager.addResource(file);
+
+
+							if (synchronizing){
+								VpdslModelResourcesManager.addPersistentProperty(file, "");
+							} else {
+								VpdslModelResourcesManager.addPersistentProperty(file, "Unsynchronized");
+							}
+//						}
+					}	
 				}
 			};
 			if (runnable != null)
@@ -196,7 +231,8 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
-			if (validate(inputObjects)){
+			isResourceClean = true; //reset
+			if (validate(inputObjects) && canSynchronize(file, projectName)){
 
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetObject);
 
@@ -210,6 +246,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 						e.printStackTrace();
 					}
 				}
+			} else {
+				logger.error(flattenMessages(messages));
+				logger.error(logMessages);
 			}
 		}
 
@@ -277,5 +316,127 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		} else {
 			runnable.run();
 		}
+	}
+	
+	
+	protected boolean canSynchronize(IFile file, String projectName){
+		
+		XtextResourceSet resourceSet = getInjector().getInstance(XtextResourceSet.class);
+		loadInputModels(file, resourceSet);
+		
+		EcoreUtil2.resolveAll(resourceSet);
+		
+		createOrReinitializeMessagesBuffer();
+		
+		for (Resource resource : resourceSet.getResources()) {
+			if (resource.getURI().isPlatformResource() && holdInPoject(resource.getURI(), projectName)){			
+				isResourceClean &= handleXtextResourceErrors(resource);
+				isResourceClean &= handleEMFValidationErrors(resource);
+			}
+		}
+		
+		resourceSet.eSetDeliver(false);
+		resourceSet.getResources().clear();
+		resourceSet.eAdapters().clear();
+		
+		return isResourceClean;
+	}
+	
+	
+	private boolean holdInPoject(URI uri, String projectName) {
+		String resourceProjectName = uri.segment(1);
+		return (resourceProjectName != null && resourceProjectName.equals(projectName));
+	}
+
+	private void createOrReinitializeMessagesBuffer(){
+		if (messages == null)
+			messages = new HashMap<String, String>();
+		else
+			messages.clear();
+		
+		if (logMessages == null)
+			logMessages = new StringBuffer();
+		else
+			logMessages.setLength(0);
+	}
+	
+	private boolean handleEMFValidationErrors(Resource resource) {
+		
+		EList<EObject> content = resource.getContents();
+
+		org.eclipse.emf.common.util.Diagnostic result = 
+				Diagnostician.INSTANCE.validate(EcoreUtil.getRootContainer(content.get(0)));
+
+
+		if (result.getSeverity() == IStatus.ERROR){
+			String wsResourceName = resource.getURI().lastSegment();
+			assembleValidationMessages(result, wsResourceName);
+			return false;
+		}
+
+
+		return true;
+	}
+
+	private void assembleValidationMessages(
+			org.eclipse.emf.common.util.Diagnostic result, String resourceName) {
+		List<org.eclipse.emf.common.util.Diagnostic> children = result.getChildren();
+
+		if (result != null && !result.getChildren().isEmpty()){
+			for (org.eclipse.emf.common.util.Diagnostic diagnostic : children) {
+				if (diagnostic.getSeverity() == IStatus.ERROR){
+					if (!messages.containsKey(resourceName)){
+						messages.put("[" + resourceName + "] ", 
+								"contains error after the modifications. See the log error message for more details\n");
+					}
+					
+					logMessages.append("\n[").append(resourceName).append("] ");
+					logMessages.append(diagnostic.getMessage());
+					logMessages.append("\n");
+					assembleValidationMessages(diagnostic, resourceName);
+				}
+			}
+		}
+	}
+
+	/**
+	 * This method is responsible to check if there are errors in the
+	 * resources and collect the messages of the errors.
+	 * @param resource to check
+	 * @return true if the editor can be saved, otherwise false
+	 */
+	private boolean handleXtextResourceErrors(Resource resource) {
+		EList<org.eclipse.emf.ecore.resource.Resource.Diagnostic> diagnostics = resource.getErrors();
+
+		if (diagnostics != null && !diagnostics.isEmpty()){
+			String wsResourceName = resource.getURI().lastSegment();
+			assembleMessages(diagnostics, wsResourceName);
+			return false;
+		}
+		return true;
+	}
+
+	private void assembleMessages(EList<org.eclipse.emf.ecore.resource.Resource.Diagnostic> errors, String resourceName) {
+
+		for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : errors) {
+			
+			if (!messages.containsKey(resourceName)){
+				messages.put("[" + resourceName + "] ", 
+						"contains error after the modifications. See the log error for more details\n");
+			}
+			
+			logMessages.append("[").append(resourceName).append("] ");
+			logMessages.append(diagnostic.getMessage());
+			logMessages.append("\n");
+		}
+	}
+	
+	private String flattenMessages(Map<String, String> messages) {
+		StringBuffer tmp = new StringBuffer();
+		
+		for (String key : messages.keySet()) {
+			tmp.append(key).append(messages.get(key));
+		}
+		return tmp.toString();
 	}
 }
