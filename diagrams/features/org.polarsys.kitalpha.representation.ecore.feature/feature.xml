@@ -12,10 +12,10 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.representation.ecore.feature"
       label="Ecore diagrams generation (Incubation)"
-      version="0.5.0.qualifier"
+      version="0.5.1.qualifier"
       provider-name="%providerName">
 
-   <description url="http://www.example.com/description">
+   <description>
       %description
    </description>
 
@@ -24,7 +24,7 @@ Contributors:
    </copyright>
 
    <license url="%licenseURL">
-      %licence
+      %license
    </license>
 
    <requires>

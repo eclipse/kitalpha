@@ -12,14 +12,14 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.representation.emde.feature"
       label="EMDE diagrams generation (incubation)"
-      version="0.5.0.qualifier"
+      version="0.5.1.qualifier"
       provider-name="%providerName">
 
-   <description url="http://www.example.com/description">
+   <description>
       %description
    </description>
 
-   <copyright url="http://www.example.com/copyright">
+   <copyright>
       %copyright
    </copyright>
 
