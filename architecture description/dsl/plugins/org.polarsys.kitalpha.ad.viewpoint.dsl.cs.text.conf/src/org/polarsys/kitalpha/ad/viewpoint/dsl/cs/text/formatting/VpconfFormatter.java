@@ -41,12 +41,12 @@ public class VpconfFormatter extends AbstractDeclarativeFormatter {
 		//generation section
 		c.setLinewrap(1).before(f.getGenerationAccess().getGenerationKeyword_1());
 		c.setLinewrap(1).after(f.getGenerationAccess().getRightCurlyBracketKeyword_5());
-		c.setLinewrap(1).after(f.getGDataAccess().getModelAssignment_3_0_1());
-		c.setLinewrap(1).after(f.getGDataAccess().getEditAssignment_3_1_1());
-		c.setLinewrap(1).after(f.getGDataAccess().getEditorAssignment_3_2_1());
-		c.setLinewrap(1).after(f.getGDataAccess().getTestAssignment_3_3_1());
-		c.setLinewrap(1).after(f.getGDataAccess().getJavaDocAssignment_3_4_1());
-		c.setLinewrap(1).after(f.getGDataAccess().getOverwriteEcoreAssignment_3_5_1());
+		c.setLinewrap(1).after(f.getGDataAccess().getModelAssignment_3_0_2());
+		c.setLinewrap(1).after(f.getGDataAccess().getEditAssignment_3_1_2());
+		c.setLinewrap(1).after(f.getGDataAccess().getEditorAssignment_3_2_2());
+		c.setLinewrap(1).after(f.getGDataAccess().getTestAssignment_3_3_2());
+		c.setLinewrap(1).after(f.getGDataAccess().getJavaDocAssignment_3_4_2());
+		c.setLinewrap(1).after(f.getGDataAccess().getOverwriteEcoreAssignment_3_5_2());
 		
 		
 		for (Pair<Keyword, Keyword> pair : f.findKeywordPairs("(", ")")) {

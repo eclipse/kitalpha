@@ -65,7 +65,7 @@ Workflow {
 				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
 				}	
 			
-			//Generation config Documentation
+			//Generation config
 			uriMap = {
 				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.ecore"
 				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.ecore"
@@ -73,6 +73,15 @@ Workflow {
 			uriMap = {	
 				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.genmodel"
 				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.genmodel"
+				}
+				
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird/model/DescAirdGenConf.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird/model/DescAirdGenConf.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird/model/DescAirdGenConf.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird/model/DescAirdGenConf.genmodel"
 				}
 			
 			//Vpdiagram
@@ -92,8 +101,10 @@ Workflow {
 			//vpconf
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage"
 			
-			//generation config doc
+			//generation config
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocGenConfigurationPackage"
+			
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.DescAirdGenConfPackage"
 			
 			//vpdiagram
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage"
@@ -104,6 +115,7 @@ Workflow {
 			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel"
 			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/model/vpdiagram.genmodel"
 			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc/model/DocGenConfiguration.genmodel"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird/model/DescAirdGenConf.genmodel"
         }
     
         component = DirectoryCleaner {

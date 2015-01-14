@@ -19,6 +19,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.ConfigurationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.AirdGenerationConfiguration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.DescAirdGenConfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocGenConfigurationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration;
 
@@ -29,7 +31,16 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	private VpconfGrammarAccess grammarAccess;
 	
 	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == DocGenConfigurationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+		if(semanticObject.eClass().getEPackage() == DescAirdGenConfPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case DescAirdGenConfPackage.AIRD_GENERATION_CONFIGURATION:
+				if(context == grammarAccess.getExtensionGeneratrionConfigurationRule() ||
+				   context == grammarAccess.getModelsAirdGenerationConfigurationRule()) {
+					sequence_ModelsAirdGenerationConfiguration(context, (AirdGenerationConfiguration) semanticObject); 
+					return; 
+				}
+				else break;
+			}
+		else if(semanticObject.eClass().getEPackage() == DocGenConfigurationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION:
 				if(context == grammarAccess.getDocumentationGenerationConfigurationRule() ||
 				   context == grammarAccess.getExtensionGeneratrionConfigurationRule()) {
@@ -142,6 +153,15 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (ownedDataGenerationConf=GData? ownedExtensionGenConf+=ExtensionGeneratrionConfiguration*)
 	 */
 	protected void sequence_Generation(EObject context, Generation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (genRepresentations=EBoolean?)
+	 */
+	protected void sequence_ModelsAirdGenerationConfiguration(EObject context, AirdGenerationConfiguration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

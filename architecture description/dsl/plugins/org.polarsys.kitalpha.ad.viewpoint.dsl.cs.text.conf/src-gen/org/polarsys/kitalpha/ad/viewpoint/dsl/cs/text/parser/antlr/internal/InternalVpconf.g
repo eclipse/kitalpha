@@ -411,141 +411,165 @@ ruleGData returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getGDataAccess().getLeftParenthesisKeyword_2());
     }
-((	otherlv_3='Model:' 
+((	otherlv_3='Model' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getGDataAccess().getModelKeyword_3_0_0());
+    }
+	otherlv_4=':' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getGDataAccess().getColonKeyword_3_0_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGDataAccess().getModelEBooleanParserRuleCall_3_0_1_0()); 
+	        newCompositeNode(grammarAccess.getGDataAccess().getModelEBooleanParserRuleCall_3_0_2_0()); 
 	    }
-		lv_model_4_0=ruleEBoolean		{
+		lv_model_5_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGDataRule());
 	        }
        		set(
        			$current, 
        			"model",
-        		lv_model_4_0, 
+        		lv_model_5_0, 
         		"EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_5='Edit:' 
+))?(	otherlv_6='Edit' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getGDataAccess().getEditKeyword_3_1_0());
+    	newLeafNode(otherlv_6, grammarAccess.getGDataAccess().getEditKeyword_3_1_0());
+    }
+	otherlv_7=':' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getGDataAccess().getColonKeyword_3_1_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGDataAccess().getEditEBooleanParserRuleCall_3_1_1_0()); 
+	        newCompositeNode(grammarAccess.getGDataAccess().getEditEBooleanParserRuleCall_3_1_2_0()); 
 	    }
-		lv_edit_6_0=ruleEBoolean		{
+		lv_edit_8_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGDataRule());
 	        }
        		set(
        			$current, 
        			"edit",
-        		lv_edit_6_0, 
+        		lv_edit_8_0, 
         		"EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_7='Editor:' 
+))?(	otherlv_9='Editor' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getGDataAccess().getEditorKeyword_3_2_0());
+    	newLeafNode(otherlv_9, grammarAccess.getGDataAccess().getEditorKeyword_3_2_0());
+    }
+	otherlv_10=':' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getGDataAccess().getColonKeyword_3_2_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGDataAccess().getEditorEBooleanParserRuleCall_3_2_1_0()); 
+	        newCompositeNode(grammarAccess.getGDataAccess().getEditorEBooleanParserRuleCall_3_2_2_0()); 
 	    }
-		lv_editor_8_0=ruleEBoolean		{
+		lv_editor_11_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGDataRule());
 	        }
        		set(
        			$current, 
        			"editor",
-        		lv_editor_8_0, 
+        		lv_editor_11_0, 
         		"EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_9='Test:' 
+))?(	otherlv_12='Test' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getGDataAccess().getTestKeyword_3_3_0());
+    	newLeafNode(otherlv_12, grammarAccess.getGDataAccess().getTestKeyword_3_3_0());
+    }
+	otherlv_13=':' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getGDataAccess().getColonKeyword_3_3_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGDataAccess().getTestEBooleanParserRuleCall_3_3_1_0()); 
+	        newCompositeNode(grammarAccess.getGDataAccess().getTestEBooleanParserRuleCall_3_3_2_0()); 
 	    }
-		lv_test_10_0=ruleEBoolean		{
+		lv_test_14_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGDataRule());
 	        }
        		set(
        			$current, 
        			"test",
-        		lv_test_10_0, 
+        		lv_test_14_0, 
         		"EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_11='Javadoc:' 
+))?(	otherlv_15='Javadoc' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getGDataAccess().getJavadocKeyword_3_4_0());
+    	newLeafNode(otherlv_15, grammarAccess.getGDataAccess().getJavadocKeyword_3_4_0());
+    }
+	otherlv_16=':' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getGDataAccess().getColonKeyword_3_4_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGDataAccess().getJavaDocEBooleanParserRuleCall_3_4_1_0()); 
+	        newCompositeNode(grammarAccess.getGDataAccess().getJavaDocEBooleanParserRuleCall_3_4_2_0()); 
 	    }
-		lv_javaDoc_12_0=ruleEBoolean		{
+		lv_javaDoc_17_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGDataRule());
 	        }
        		set(
        			$current, 
        			"javaDoc",
-        		lv_javaDoc_12_0, 
+        		lv_javaDoc_17_0, 
         		"EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_13='OverwriteEcore:' 
+))?(	otherlv_18='OverwriteEcore' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getGDataAccess().getOverwriteEcoreKeyword_3_5_0());
+    	newLeafNode(otherlv_18, grammarAccess.getGDataAccess().getOverwriteEcoreKeyword_3_5_0());
+    }
+	otherlv_19=':' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getGDataAccess().getColonKeyword_3_5_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getGDataAccess().getOverwriteEcoreEBooleanParserRuleCall_3_5_1_0()); 
+	        newCompositeNode(grammarAccess.getGDataAccess().getOverwriteEcoreEBooleanParserRuleCall_3_5_2_0()); 
 	    }
-		lv_overwriteEcore_14_0=ruleEBoolean		{
+		lv_overwriteEcore_20_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getGDataRule());
 	        }
        		set(
        			$current, 
        			"overwriteEcore",
-        		lv_overwriteEcore_14_0, 
+        		lv_overwriteEcore_20_0, 
         		"EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?)	otherlv_15=')' 
+))?)	otherlv_21=')' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getGDataAccess().getRightParenthesisKeyword_4());
+    	newLeafNode(otherlv_21, grammarAccess.getGDataAccess().getRightParenthesisKeyword_4());
     }
 )
 ;
@@ -587,6 +611,16 @@ ruleExtensionGeneratrionConfiguration returns [EObject current=null]
         $current = $this_DocumentationGenerationConfiguration_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getExtensionGeneratrionConfigurationAccess().getModelsAirdGenerationConfigurationParserRuleCall_2()); 
+    }
+    this_ModelsAirdGenerationConfiguration_2=ruleModelsAirdGenerationConfiguration
+    { 
+        $current = $this_ModelsAirdGenerationConfiguration_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -622,31 +656,35 @@ ruleDiagramGenerationConfiguration returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getDiagramGenerationConfigurationAccess().getLeftParenthesisKeyword_2());
     }
-(	otherlv_3='OverwriteOdesign:' 
+(	otherlv_3='OverwriteOdesign' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteOdesignKeyword_3_0());
+    }
+	otherlv_4=':' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getDiagramGenerationConfigurationAccess().getColonKeyword_3_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMEBooleanParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMEBooleanParserRuleCall_3_2_0()); 
 	    }
-		lv_overwriteVSM_4_0=ruleEBoolean		{
+		lv_overwriteVSM_5_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDiagramGenerationConfigurationRule());
 	        }
        		set(
        			$current, 
        			"overwriteVSM",
-        		lv_overwriteVSM_4_0, 
+        		lv_overwriteVSM_5_0, 
         		"EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_5=')' 
+))?	otherlv_6=')' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getDiagramGenerationConfigurationAccess().getRightParenthesisKeyword_4());
+    	newLeafNode(otherlv_6, grammarAccess.getDiagramGenerationConfigurationAccess().getRightParenthesisKeyword_4());
     }
 )
 ;
@@ -708,6 +746,71 @@ ruleDocumentationGenerationConfiguration returns [EObject current=null]
 ))?	otherlv_5=')' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getDocumentationGenerationConfigurationAccess().getRightParenthesisKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleModelsAirdGenerationConfiguration
+entryRuleModelsAirdGenerationConfiguration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getModelsAirdGenerationConfigurationRule()); }
+	 iv_ruleModelsAirdGenerationConfiguration=ruleModelsAirdGenerationConfiguration 
+	 { $current=$iv_ruleModelsAirdGenerationConfiguration.current; } 
+	 EOF 
+;
+
+// Rule ModelsAirdGenerationConfiguration
+ruleModelsAirdGenerationConfiguration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getModelsAirdGenerationConfigurationAccess().getAirdGenerationConfigurationAction_0(),
+            $current);
+    }
+)	otherlv_1='ecore' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getModelsAirdGenerationConfigurationAccess().getEcoreKeyword_1());
+    }
+	otherlv_2='(' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getModelsAirdGenerationConfigurationAccess().getLeftParenthesisKeyword_2());
+    }
+(	otherlv_3='aird' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getModelsAirdGenerationConfigurationAccess().getAirdKeyword_3_0());
+    }
+	otherlv_4=':' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getModelsAirdGenerationConfigurationAccess().getColonKeyword_3_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getModelsAirdGenerationConfigurationAccess().getGenRepresentationsEBooleanParserRuleCall_3_2_0()); 
+	    }
+		lv_genRepresentations_5_0=ruleEBoolean		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getModelsAirdGenerationConfigurationRule());
+	        }
+       		set(
+       			$current, 
+       			"genRepresentations",
+        		lv_genRepresentations_5_0, 
+        		"EBoolean");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_6=')' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getModelsAirdGenerationConfigurationAccess().getRightParenthesisKeyword_4());
     }
 )
 ;
