@@ -62,6 +62,9 @@ public class AbstractVpconfProposalProvider extends CommonProposalProvider {
 	public void completeDocumentationGenerationConfiguration_EcoreToHtml(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
 	}
+	public void completeModelsAirdGenerationConfiguration_GenRepresentations(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+	}
     
 	public void complete_Configuration(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
@@ -88,6 +91,9 @@ public class AbstractVpconfProposalProvider extends CommonProposalProvider {
 		// subclasses may override
 	}
 	public void complete_DocumentationGenerationConfiguration(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
+	public void complete_ModelsAirdGenerationConfiguration(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}
 }

@@ -24,7 +24,8 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird
 Import-Package: org.apache.log4j,
  org.eclipse.core.resources,
  org.eclipse.emf.validation.model,

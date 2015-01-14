@@ -20,6 +20,7 @@ import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" as vp
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" as vpdesc
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" as vpdiagramConfig
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" as docGenConfig
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0" as airdGenConfig
 
 /********************************************************************
  * 							vpconf
@@ -62,19 +63,19 @@ GData returns vpconf::GData:
 	{vpconf::GData}
 	'data' '('
 		(
-			('Model:' ((model=EBoolean)))?
-			('Edit:' ((edit=EBoolean)))?
-			('Editor:'  ((editor=EBoolean)))?
-			('Test:' ((test=EBoolean)))?
-			('Javadoc:' ((javaDoc=EBoolean)))?
-			('OverwriteEcore:' (overwriteEcore=EBoolean))?
+			('Model'':' ((model=EBoolean)))?
+			('Edit' ':' ((edit=EBoolean)))?
+			('Editor'':'  ((editor=EBoolean)))?
+			('Test'':' ((test=EBoolean)))?
+			('Javadoc'':' ((javaDoc=EBoolean)))?
+			('OverwriteEcore'':' (overwriteEcore=EBoolean))?
 		)
 	')'
 ;
 
 
 ExtensionGeneratrionConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-	DiagramGenerationConfiguration | DocumentationGenerationConfiguration
+	DiagramGenerationConfiguration | DocumentationGenerationConfiguration | ModelsAirdGenerationConfiguration
 ;
 
 
@@ -82,7 +83,7 @@ DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration
 	{vpdiagramConfig::DiagramGenerationConfiguration}
 	'diagram' '('
 		(
-			('OverwriteOdesign:' overwriteVSM=EBoolean)?
+			('OverwriteOdesign'':' overwriteVSM=EBoolean)?
 		)
 	')'
 ;
@@ -94,21 +95,9 @@ DocumentationGenerationConfiguration returns vpconf::ExtensionGeneratrionConfigu
 	')'
 ;
 
-
-//GenerateVPDocumentation returns vpconf::ConfigurationElement:
-//	{vpconf::GenerateVPDocumentation}
-//	//('id' id = EString)?
-//	'documentation'	(value?=EBoolean)
-//	;
-//
-//EmfGeneration returns vpconf::EmfGeneration:
-//	{vpconf::EmfGeneration}
-//	//('id' id = EString)?
-//	'GenerationConfiguration' '{'
-//		'EmfGeneration' 'erasePluginsBeforeGeneration:'	(EraseEmfPluginsBeforeGeneration?=EBoolean)
-//	'}'
-//	;
-
-//TargetApplicationType:
-//	'EMF'
-//	;
+ModelsAirdGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
+	{airdGenConfig::AirdGenerationConfiguration}
+	'ecore' '('
+		('aird' ':' genRepresentations=EBoolean)?
+	')'
+;

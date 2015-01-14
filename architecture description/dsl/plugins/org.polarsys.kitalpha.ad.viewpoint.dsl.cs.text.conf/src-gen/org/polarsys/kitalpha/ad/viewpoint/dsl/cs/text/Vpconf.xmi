@@ -16,6 +16,9 @@
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="docGenConfig">
       <ePackage href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0#/"/>
     </metamodelDeclarations>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="airdGenConfig">
+      <ePackage href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0#/"/>
+    </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="Configuration">
       <type metamodel="/0/@metamodelDeclarations.2">
         <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0#//Aspect"/>
@@ -120,37 +123,43 @@
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Group" cardinality="?">
-            <elements xsi:type="xtext:Keyword" value="Model:"/>
+            <elements xsi:type="xtext:Keyword" value="Model"/>
+            <elements xsi:type="xtext:Keyword" value=":"/>
             <elements xsi:type="xtext:Assignment" feature="model" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="?">
-            <elements xsi:type="xtext:Keyword" value="Edit:"/>
+            <elements xsi:type="xtext:Keyword" value="Edit"/>
+            <elements xsi:type="xtext:Keyword" value=":"/>
             <elements xsi:type="xtext:Assignment" feature="edit" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="?">
-            <elements xsi:type="xtext:Keyword" value="Editor:"/>
+            <elements xsi:type="xtext:Keyword" value="Editor"/>
+            <elements xsi:type="xtext:Keyword" value=":"/>
             <elements xsi:type="xtext:Assignment" feature="editor" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="?">
-            <elements xsi:type="xtext:Keyword" value="Test:"/>
+            <elements xsi:type="xtext:Keyword" value="Test"/>
+            <elements xsi:type="xtext:Keyword" value=":"/>
             <elements xsi:type="xtext:Assignment" feature="test" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="?">
-            <elements xsi:type="xtext:Keyword" value="Javadoc:"/>
+            <elements xsi:type="xtext:Keyword" value="Javadoc"/>
+            <elements xsi:type="xtext:Keyword" value=":"/>
             <elements xsi:type="xtext:Assignment" feature="javaDoc" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
             </elements>
           </elements>
           <elements xsi:type="xtext:Group" cardinality="?">
-            <elements xsi:type="xtext:Keyword" value="OverwriteEcore:"/>
+            <elements xsi:type="xtext:Keyword" value="OverwriteEcore"/>
+            <elements xsi:type="xtext:Keyword" value=":"/>
             <elements xsi:type="xtext:Assignment" feature="overwriteEcore" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
             </elements>
@@ -166,6 +175,7 @@
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="DiagramGenerationConfiguration">
@@ -181,7 +191,8 @@
         <elements xsi:type="xtext:Keyword" value="diagram"/>
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="OverwriteOdesign:"/>
+          <elements xsi:type="xtext:Keyword" value="OverwriteOdesign"/>
+          <elements xsi:type="xtext:Keyword" value=":"/>
           <elements xsi:type="xtext:Assignment" feature="overwriteVSM" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
           </elements>
@@ -204,6 +215,28 @@
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="EcoreToHtml:"/>
           <elements xsi:type="xtext:Assignment" feature="ecoreToHtml" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="ModelsAirdGenerationConfiguration">
+      <type metamodel="/0/@metamodelDeclarations.1">
+        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0#//ExtensionGeneratrionConfiguration"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.5">
+            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0#//AirdGenerationConfiguration"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="ecore"/>
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="aird"/>
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="genRepresentations" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
           </elements>
         </elements>

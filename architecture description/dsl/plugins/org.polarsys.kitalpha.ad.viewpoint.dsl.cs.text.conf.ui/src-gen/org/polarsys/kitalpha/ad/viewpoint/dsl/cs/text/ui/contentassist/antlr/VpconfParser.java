@@ -58,6 +58,8 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDiagramGenerationConfigurationAccess().getGroup_3(), "rule__DiagramGenerationConfiguration__Group_3__0");
 					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getGroup(), "rule__DocumentationGenerationConfiguration__Group__0");
 					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getGroup_3(), "rule__DocumentationGenerationConfiguration__Group_3__0");
+					put(grammarAccess.getModelsAirdGenerationConfigurationAccess().getGroup(), "rule__ModelsAirdGenerationConfiguration__Group__0");
+					put(grammarAccess.getModelsAirdGenerationConfigurationAccess().getGroup_3(), "rule__ModelsAirdGenerationConfiguration__Group_3__0");
 					put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 					put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
 					put(grammarAccess.getConfigurationAccess().getNameAssignment_2(), "rule__Configuration__NameAssignment_2");
@@ -67,14 +69,15 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGenerationConfigurationAccess().getNsuriAssignment_3_1(), "rule__GenerationConfiguration__NsuriAssignment_3_1");
 					put(grammarAccess.getGenerationAccess().getOwnedDataGenerationConfAssignment_3(), "rule__Generation__OwnedDataGenerationConfAssignment_3");
 					put(grammarAccess.getGenerationAccess().getOwnedExtensionGenConfAssignment_4(), "rule__Generation__OwnedExtensionGenConfAssignment_4");
-					put(grammarAccess.getGDataAccess().getModelAssignment_3_0_1(), "rule__GData__ModelAssignment_3_0_1");
-					put(grammarAccess.getGDataAccess().getEditAssignment_3_1_1(), "rule__GData__EditAssignment_3_1_1");
-					put(grammarAccess.getGDataAccess().getEditorAssignment_3_2_1(), "rule__GData__EditorAssignment_3_2_1");
-					put(grammarAccess.getGDataAccess().getTestAssignment_3_3_1(), "rule__GData__TestAssignment_3_3_1");
-					put(grammarAccess.getGDataAccess().getJavaDocAssignment_3_4_1(), "rule__GData__JavaDocAssignment_3_4_1");
-					put(grammarAccess.getGDataAccess().getOverwriteEcoreAssignment_3_5_1(), "rule__GData__OverwriteEcoreAssignment_3_5_1");
-					put(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMAssignment_3_1(), "rule__DiagramGenerationConfiguration__OverwriteVSMAssignment_3_1");
+					put(grammarAccess.getGDataAccess().getModelAssignment_3_0_2(), "rule__GData__ModelAssignment_3_0_2");
+					put(grammarAccess.getGDataAccess().getEditAssignment_3_1_2(), "rule__GData__EditAssignment_3_1_2");
+					put(grammarAccess.getGDataAccess().getEditorAssignment_3_2_2(), "rule__GData__EditorAssignment_3_2_2");
+					put(grammarAccess.getGDataAccess().getTestAssignment_3_3_2(), "rule__GData__TestAssignment_3_3_2");
+					put(grammarAccess.getGDataAccess().getJavaDocAssignment_3_4_2(), "rule__GData__JavaDocAssignment_3_4_2");
+					put(grammarAccess.getGDataAccess().getOverwriteEcoreAssignment_3_5_2(), "rule__GData__OverwriteEcoreAssignment_3_5_2");
+					put(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMAssignment_3_2(), "rule__DiagramGenerationConfiguration__OverwriteVSMAssignment_3_2");
 					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getEcoreToHtmlAssignment_3_1(), "rule__DocumentationGenerationConfiguration__EcoreToHtmlAssignment_3_1");
+					put(grammarAccess.getModelsAirdGenerationConfigurationAccess().getGenRepresentationsAssignment_3_2(), "rule__ModelsAirdGenerationConfiguration__GenRepresentationsAssignment_3_2");
 				}
 			};
 		}
