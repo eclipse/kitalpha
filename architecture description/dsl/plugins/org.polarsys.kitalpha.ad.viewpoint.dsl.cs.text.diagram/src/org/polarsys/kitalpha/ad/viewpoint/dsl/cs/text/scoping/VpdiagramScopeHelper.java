@@ -40,6 +40,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainEleme
  * @author Faycal Abka
  *
  */
+
+/*
+ * FIXME: This is ugly class helper for the scope. Redefine it for better
+ * performance and code reading
+ */
 public class VpdiagramScopeHelper {
 
 	
