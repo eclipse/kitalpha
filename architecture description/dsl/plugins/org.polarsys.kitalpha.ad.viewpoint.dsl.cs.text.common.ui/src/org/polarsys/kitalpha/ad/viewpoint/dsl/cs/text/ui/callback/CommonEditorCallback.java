@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +41,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.builder.nature.NatureAddingEditorCallback;
 import org.eclipse.xtext.builder.nature.ToggleXtextNatureAction;
 import org.eclipse.xtext.resource.XtextResource;
@@ -52,6 +52,7 @@ import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -191,7 +192,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 				public void run() {			
 					if (!synchronizing) {
 						IFile file = (IFile) current.getEditorInput().getAdapter(IFile.class);						
-						String projectName = getProject(file).getName();
 
 						synchronizing = doSynchronize(file);
 
@@ -320,16 +320,16 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
 	
 	protected boolean canSynchronize(IFile file, String projectName){
-		
 		XtextResourceSet resourceSet = getInjector().getInstance(XtextResourceSet.class);
 		loadInputModels(file, resourceSet);
-		
-		EcoreUtil2.resolveAll(resourceSet);
+		ResourceHelper.loadPrimaryResource(file, resourceSet);
 		
 		createOrReinitializeMessagesBuffer();
 		
-		for (Resource resource : resourceSet.getResources()) {
+		ArrayList<Resource> resources = Lists.newArrayList(resourceSet.getResources());
+		for (Resource resource : resources) {
 			if (resource.getURI().isPlatformResource() && holdInPoject(resource.getURI(), projectName)){			
+				EcoreUtil.resolveAll(resource);
 				isResourceClean &= handleXtextResourceErrors(resource);
 				isResourceClean &= handleEMFValidationErrors(resource);
 			}
@@ -338,7 +338,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		resourceSet.eSetDeliver(false);
 		resourceSet.getResources().clear();
 		resourceSet.eAdapters().clear();
-		
 		return isResourceClean;
 	}
 	
