@@ -171,6 +171,8 @@
     </genClasses>
     <genClasses ecoreClass="vpdiagram.ecore#//DiagramSet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vpdiagram.ecore#//DiagramSet/diagrams"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vpdiagram.ecore#//DiagramSet/additionalExternalGroup"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vpdiagram.ecore#//DiagramSet/additionalExternalData"/>
     </genClasses>
     <nestedGenPackages prefix="Configuration" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram"
         disposableProviderFactory="true" childCreationExtenders="true" ecorePackage="vpdiagram.ecore#//configuration">

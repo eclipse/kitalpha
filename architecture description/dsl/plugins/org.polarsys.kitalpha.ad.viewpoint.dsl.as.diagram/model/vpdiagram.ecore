@@ -219,6 +219,8 @@
         eType="#//DiagramRepresentation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="additionalExternalGroup"
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/Group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalExternalData"
+        upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
   </eClassifiers>
   <eSubpackages name="configuration" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0"
       nsPrefix="configuration">

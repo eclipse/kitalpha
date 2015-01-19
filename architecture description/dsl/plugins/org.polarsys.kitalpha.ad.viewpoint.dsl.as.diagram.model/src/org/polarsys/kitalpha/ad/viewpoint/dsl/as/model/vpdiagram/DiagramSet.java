@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.sirius.viewpoint.description.Group;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 
@@ -26,6 +27,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getDiagrams <em>Diagrams</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getAdditionalExternalGroup <em>Additional External Group</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getAdditionalExternalData <em>Additional External Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,5 +69,21 @@ public interface DiagramSet extends Aspect {
 	 * @generated
 	 */
 	EList<Group> getAdditionalExternalGroup();
+
+	/**
+	 * Returns the value of the '<em><b>Additional External Data</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.EPackage}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Additional External Data</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Additional External Data</em>' reference list.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getDiagramSet_AdditionalExternalData()
+	 * @model
+	 * @generated
+	 */
+	EList<EPackage> getAdditionalExternalData();
 
 } // DiagramSet
