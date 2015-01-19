@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -40,6 +41,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramSetImpl#getDiagrams <em>Diagrams</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramSetImpl#getAdditionalExternalGroup <em>Additional External Group</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramSetImpl#getAdditionalExternalData <em>Additional External Data</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +68,16 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 	 * @ordered
 	 */
 	protected EList<Group> additionalExternalGroup;
+
+	/**
+	 * The cached value of the '{@link #getAdditionalExternalData() <em>Additional External Data</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdditionalExternalData()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EPackage> additionalExternalData;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,6 +128,18 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EPackage> getAdditionalExternalData() {
+		if (additionalExternalData == null) {
+			additionalExternalData = new EObjectResolvingEList<EPackage>(EPackage.class, this, VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA);
+		}
+		return additionalExternalData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
@@ -138,6 +162,8 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 				return getDiagrams();
 			case VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP:
 				return getAdditionalExternalGroup();
+			case VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA:
+				return getAdditionalExternalData();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,6 +185,10 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 				getAdditionalExternalGroup().clear();
 				getAdditionalExternalGroup().addAll((Collection<? extends Group>)newValue);
 				return;
+			case VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA:
+				getAdditionalExternalData().clear();
+				getAdditionalExternalData().addAll((Collection<? extends EPackage>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -177,6 +207,9 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 			case VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP:
 				getAdditionalExternalGroup().clear();
 				return;
+			case VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA:
+				getAdditionalExternalData().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,6 +226,8 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 				return diagrams != null && !diagrams.isEmpty();
 			case VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP:
 				return additionalExternalGroup != null && !additionalExternalGroup.isEmpty();
+			case VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA:
+				return additionalExternalData != null && !additionalExternalData.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

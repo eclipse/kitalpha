@@ -1531,6 +1531,15 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDiagramSet_AdditionalExternalData() {
+		return (EReference)diagramSetEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getNode_Form() {
 		return node_FormEEnum;
 	}
@@ -1723,6 +1732,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		diagramSetEClass = createEClass(DIAGRAM_SET);
 		createEReference(diagramSetEClass, DIAGRAM_SET__DIAGRAMS);
 		createEReference(diagramSetEClass, DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP);
+		createEReference(diagramSetEClass, DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA);
 
 		// Create enums
 		node_FormEEnum = createEEnum(NODE_FORM);
@@ -1961,6 +1971,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		initEClass(diagramSetEClass, DiagramSet.class, "DiagramSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagramSet_Diagrams(), this.getDiagramRepresentation(), null, "diagrams", null, 0, -1, DiagramSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramSet_AdditionalExternalGroup(), theDescriptionPackage_1.getGroup(), null, "additionalExternalGroup", null, 0, -1, DiagramSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramSet_AdditionalExternalData(), theEcorePackage.getEPackage(), null, "additionalExternalData", null, 0, -1, DiagramSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(node_FormEEnum, Node_Form.class, "Node_Form");

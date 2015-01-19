@@ -2305,13 +2305,22 @@ public interface VpdiagramPackage extends EPackage {
 	int DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP = VpdescPackage.ASPECT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Additional External Data</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA = VpdescPackage.ASPECT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Diagram Set</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_SET_FEATURE_COUNT = VpdescPackage.ASPECT_FEATURE_COUNT + 2;
+	int DIAGRAM_SET_FEATURE_COUNT = VpdescPackage.ASPECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node_Form <em>Node Form</em>}' enum.
@@ -3603,6 +3612,17 @@ public interface VpdiagramPackage extends EPackage {
 	EReference getDiagramSet_AdditionalExternalGroup();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getAdditionalExternalData <em>Additional External Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Additional External Data</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getAdditionalExternalData()
+	 * @see #getDiagramSet()
+	 * @generated
+	 */
+	EReference getDiagramSet_AdditionalExternalData();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node_Form <em>Node Form</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4675,6 +4695,14 @@ public interface VpdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP = eINSTANCE.getDiagramSet_AdditionalExternalGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Additional External Data</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA = eINSTANCE.getDiagramSet_AdditionalExternalData();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node_Form <em>Node Form</em>}' enum.
