@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.VerifyListener;
@@ -41,6 +42,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.builder.nature.NatureAddingEditorCallback;
 import org.eclipse.xtext.builder.nature.ToggleXtextNatureAction;
 import org.eclipse.xtext.resource.XtextResource;
@@ -49,6 +51,7 @@ import org.eclipse.xtext.ui.editor.DirtyStateEditorSupport;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
+import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
@@ -329,7 +332,15 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		ArrayList<Resource> resources = Lists.newArrayList(resourceSet.getResources());
 		for (Resource resource : resources) {
 			if (resource.getURI().isPlatformResource() && holdInPoject(resource.getURI(), projectName)){			
-				EcoreUtil.resolveAll(resource);
+				EcoreUtil2.resolveLazyCrossReferences(resource, new CancelIndicator() {
+					
+					@Override
+					public boolean isCanceled() {
+						return false;
+					}
+				});
+				
+				
 				isResourceClean &= handleXtextResourceErrors(resource);
 				isResourceClean &= handleEMFValidationErrors(resource);
 			}
