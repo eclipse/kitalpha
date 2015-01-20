@@ -44,9 +44,11 @@ import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpdiagram.DoremiDiagramElementHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpdiagram.SiriusViewpointHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.WorkspaceResourceHelper;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
@@ -301,6 +303,22 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 
 					if (platformURI != null && !platformURI.isEmpty()){
 						String tmpUri = platformURI.substring(1, platformURI.length() - 1).trim();
+						
+						//TODO put it in an another method and the name of variable
+						if (tmpUri.startsWith("http://")){
+							EPackage ePackage = DataWorkspaceEPackage.INSTANCE.getEPackage(tmpUri);
+							
+							if (ePackage != null){
+								if (descriptionManager!=null &&	ePackage.eResource()!=null) {
+									Resource packageResource = ePackage.eResource();
+									EcoreUtil2.resolveAll(packageResource);
+									IResourceDescription resourceDescription =	descriptionManager.getResourceDescription(packageResource);
+									exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());
+									break;
+								}
+							}
+						}
+						
 						URI uri = URI.createURI(tmpUri);
 						
 						if (!uri.isPlatform()){
@@ -314,46 +332,57 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 							EcoreUtil.resolveAll(odesignResources);
 
 							Group group = SiriusViewpointHelper.getViewpointGroup(odesignResources);
-							
+
 							if (group != null){
 								IEObjectDescription desc = EObjectDescription.create(group.getName().replaceAll(" ", ""), group, null);
 								exportImportedObjects.add(desc);
 							}
-							
+
 							List<RepresentationDescription> diagramDescriptions = SiriusViewpointHelper.getAllRepresentationDescription(odesignResources);
-							for (RepresentationDescription dd : diagramDescriptions) {
-								IEObjectDescription desc = EObjectDescription.create(dd.getName().replaceAll(" ", ""), dd, null);
-								exportImportedObjects.add(desc);
-							}
-						
 							
+							if (diagramDescriptions != null && !diagramDescriptions.isEmpty()){
+								for (RepresentationDescription dd : diagramDescriptions) {
+									IEObjectDescription desc = EObjectDescription.create(dd.getName().replaceAll(" ", ""), dd, null);
+									exportImportedObjects.add(desc);
+								}
+							}
+
+
 							List<ContainerMapping> containers = SiriusViewpointHelper.getAllContainerMapping(odesignResources);
 
-							for (ContainerMapping containerMapping : containers) {
-								IEObjectDescription desc = EObjectDescription.create(containerMapping.getName().replaceAll(" ", ""), containerMapping, null);
-								exportImportedObjects.add(desc);
+							if (containers != null && !containers.isEmpty()){
+								for (ContainerMapping containerMapping : containers) {
+									IEObjectDescription desc = EObjectDescription.create(containerMapping.getName().replaceAll(" ", ""), containerMapping, null);
+									exportImportedObjects.add(desc);
+								}
 							}
-							
+
 							List<DiagramDescription> diagramDescription = SiriusViewpointHelper.getAllDiagramDescription(odesignResources);
 
-							for (DiagramDescription dd : diagramDescription) {
-								IEObjectDescription desc = EObjectDescription.create(dd.getName().replaceAll(" ", ""), dd, null);
-								exportImportedObjects.add(desc);
+							if (diagramDescription != null && !diagramDescription.isEmpty()){
+								for (DiagramDescription dd : diagramDescription) {
+									IEObjectDescription desc = EObjectDescription.create(dd.getName().replaceAll(" ", ""), dd, null);
+									exportImportedObjects.add(desc);
+								}
 							}
-							
+
 							List<NodeMapping> nodeMappings = SiriusViewpointHelper.getAllNodeMapping(odesignResources);
 
-							for (NodeMapping nm : nodeMappings) {
-								IEObjectDescription desc = EObjectDescription.create(nm.getName().replaceAll(" ", ""), nm, null);
-								exportImportedObjects.add(desc);
+							if (nodeMappings != null && !nodeMappings.isEmpty()){
+								for (NodeMapping nm : nodeMappings) {
+									IEObjectDescription desc = EObjectDescription.create(nm.getName().replaceAll(" ", ""), nm, null);
+									exportImportedObjects.add(desc);
+								}
 							}
-							
+
 							List<EdgeMapping> edgeMappings = SiriusViewpointHelper.getAllEdgeMapping(odesignResources);
 
-							for (EdgeMapping em : edgeMappings) {
-								IEObjectDescription desc = EObjectDescription.create(em.getName().replaceAll(" ", ""), em, null);
-								exportImportedObjects.add(desc);
-							}					
+							if (edgeMappings != null && !edgeMappings.isEmpty()){
+								for (EdgeMapping em : edgeMappings) {
+									IEObjectDescription desc = EObjectDescription.create(em.getName().replaceAll(" ", ""), em, null);
+									exportImportedObjects.add(desc);
+								}
+							}
 						}
 					}
 				}

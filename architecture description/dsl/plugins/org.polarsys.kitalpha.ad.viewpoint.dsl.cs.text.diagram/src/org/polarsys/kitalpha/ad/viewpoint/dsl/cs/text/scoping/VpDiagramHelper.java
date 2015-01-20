@@ -38,6 +38,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerChildren;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren;
@@ -269,13 +270,23 @@ public class VpDiagramHelper {
 				if (abstClass instanceof ExternalClass)
 					return ((ExternalClass)abstClass).getClass_();
 			}
+			
+			if (mappingSetContainer instanceof DiagramExtension){
+				DiagramExtension diagramExtension = (DiagramExtension)mappingSetContainer;
+				EClass result = getAbstractNodeDomainEClass(diagramExtension);
+				
+				if (result != null)
+					return result;
+			}
 		}
 		
 		return null;
 	}
 	
 	
-	
+	/*
+	 * FIXME this is ugly method; dispach this on several methods
+	 */
 	private static EClass getAbstractNodeDomainEClass(EObject container){
 		if (container instanceof Node){
 			Node node = ((Node)container);
@@ -328,12 +339,23 @@ public class VpDiagramHelper {
 				return ((ExternalClass)abstClass).getClass_();
 		}
 		
+		if (container instanceof DiagramExtension){
+			DiagramExtension diagramExtension = (DiagramExtension)container;
+			String domainClass =diagramExtension.getExtented_diagram().getDomainClass();
+			if (domainClass != null && !domainClass.isEmpty())
+				return getImportedEClass(domainClass);
+		}
+		
 		return null;
 	}
 	
 	
 	private static EClass getImportedEClass(String importedDomainClassName) {
 		String tmp = null;
+		
+		if (importedDomainClassName == null)
+			return null;
+		
 		if (importedDomainClassName.contains(".")){
 			tmp = importedDomainClassName.substring(importedDomainClassName.lastIndexOf(".") + 1);
 		} else {

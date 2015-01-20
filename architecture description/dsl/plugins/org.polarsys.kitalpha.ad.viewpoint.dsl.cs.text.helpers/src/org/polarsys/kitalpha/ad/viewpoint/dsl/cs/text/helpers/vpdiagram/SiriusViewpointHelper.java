@@ -66,7 +66,11 @@ public class SiriusViewpointHelper {
 	public static List<RepresentationDescription> getAllRepresentationDescription(Resource resource){
 		
 		Viewpoint v = getRootviewpoint(resource);
-		return Collections.unmodifiableList(v.getOwnedRepresentations());
+		if (v != null)
+			return Collections.unmodifiableList(v.getOwnedRepresentations());
+		else 
+//			throw new RuntimeException("Couldn't find the import of the resource: " + resource.getURI());
+			return null;
 	}
 	
 	
@@ -124,41 +128,43 @@ public class SiriusViewpointHelper {
 		List<DiagramDescription> diagramDescriptions = new ArrayList<DiagramDescription>();
 		
 		List<RepresentationDescription> desc = getAllRepresentationDescription(resource);
-		
-		for (RepresentationDescription rd : desc) {
-			if (rd instanceof DiagramDescription){
-				DiagramDescription dd = (DiagramDescription)rd;
-				diagramDescriptions.add(dd);
+
+		if (desc != null && !desc.isEmpty()){
+			for (RepresentationDescription rd : desc) {
+				if (rd instanceof DiagramDescription){
+					DiagramDescription dd = (DiagramDescription)rd;
+					diagramDescriptions.add(dd);
+				}
 			}
 		}
-		
 		return diagramDescriptions;
 	}
 	
 	public static List<NodeMapping> getAllNodeMapping(Resource resource){
 		
 		List<NodeMapping> result = new ArrayList<NodeMapping>();
-		
+
 		List<DiagramDescription> desc = getAllDiagramDescription(resource);
 
-		for (DiagramDescription dd : desc) {
-			result.addAll(dd.getAllNodeMappings());
-			
-			for (NodeMapping nm : dd.getAllNodeMappings()) {
-				List<NodeMapping> borderedNodes = getBorderedNodes(nm);
-				if (borderedNodes != null && borderedNodes.size() > 0)
-					for (NodeMapping nodeMapping : borderedNodes) 
-						if (! result.contains(nodeMapping))
-							result.add(nodeMapping);
-			}
-			
-			for (ContainerMapping iContainerMapping : dd.getAllContainerMappings()) {
-				List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
-				if (subNodes != null && subNodes.size() > 0)
-					result.addAll(subNodes);
+		if (desc != null && !desc.isEmpty()){
+			for (DiagramDescription dd : desc) {
+				result.addAll(dd.getAllNodeMappings());
+
+				for (NodeMapping nm : dd.getAllNodeMappings()) {
+					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
+					if (borderedNodes != null && borderedNodes.size() > 0)
+						for (NodeMapping nodeMapping : borderedNodes) 
+							if (! result.contains(nodeMapping))
+								result.add(nodeMapping);
+				}
+
+				for (ContainerMapping iContainerMapping : dd.getAllContainerMappings()) {
+					List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
+					if (subNodes != null && subNodes.size() > 0)
+						result.addAll(subNodes);
+				}
 			}
 		}
-		
 		return result;
 	}
 
