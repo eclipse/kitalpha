@@ -83,16 +83,37 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		}
 		return MultimapBasedScope.createScope(result, exportedObjects, ignoreCase);	
 	}
+	
+	private static Iterable<IEObjectDescription> externalObjectDescriptions = null;
+	
+	private Iterable<IEObjectDescription> getTaIEObjectDescription(Resource eResource,Iterable<IEObjectDescription> exportedObjects, EClass type){
+		ResourceSet resourceSet = eResource.getResourceSet();
+		if (externalObjectDescriptions == null)
+		{
+			externalObjectDescriptions = getExternalObjectDescriptions(resourceSet, exportedObjects);
+			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiDiagramDescriptions(eResource, type));
+			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiEdgeMappings(eResource, type));
+			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiNodeMappings(eResource, type));
+			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiContainerMappings(eResource, type));
+		}
+		
+		return externalObjectDescriptions;
+	}
+	
 
 	protected IScope createVpdiagramContainerScope(Resource eResource, IScope parent, IContainer container, Predicate<IEObjectDescription> filter, EClass type, boolean ignoreCase) {
 		ResourceSet resourceSet = eResource.getResourceSet();
 		Iterable<IEObjectDescription> exportedObjects = Collections.emptyList();
 		exportedObjects = Iterables.concat(exportedObjects, getAspectObjectDescriptions(resourceSet, exportedObjects, FileExtension.DATA_EXTENSION));
-		exportedObjects = Iterables.concat(exportedObjects,	getExternalObjectDescriptions(resourceSet, exportedObjects));
-		exportedObjects = Iterables.concat(exportedObjects, getDoremiDiagramDescriptions(eResource, type));
-		exportedObjects = Iterables.concat(exportedObjects,	getDoremiEdgeMappings(eResource, type));
-		exportedObjects = Iterables.concat(exportedObjects,	getDoremiNodeMappings(eResource, type));
-		exportedObjects = Iterables.concat(exportedObjects,	getDoremiContainerMappings(eResource, type));
+		
+		exportedObjects = Iterables.concat(exportedObjects,	getTaIEObjectDescription(eResource, exportedObjects, type));
+		
+//		exportedObjects = Iterables.concat(exportedObjects, getExternalObjectDescriptions(eResource, type));
+//		exportedObjects = Iterables.concat(exportedObjects, getDoremiDiagramDescriptions(eResource, type));
+//		exportedObjects = Iterables.concat(exportedObjects,	getDoremiEdgeMappings(eResource, type));
+//		exportedObjects = Iterables.concat(exportedObjects,	getDoremiNodeMappings(eResource, type));
+//		exportedObjects = Iterables.concat(exportedObjects,	getDoremiContainerMappings(eResource, type));
+		
 		exportedObjects = Iterables.concat(exportedObjects, getImportedDiagrams(eResource));
 		exportedObjects = Iterables.concat(exportedObjects, getExternalImportDiagramObjectDescription(eResource, exportedObjects, type));
 		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
