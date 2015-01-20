@@ -63,10 +63,23 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		return MultimapBasedScope.createScope(result, exportedObjects, ignoreCase);	
 	}
 
+	private static Iterable<IEObjectDescription> taObjects = null;
+	
+	private Iterable<IEObjectDescription> getTAObject(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects){
+		if (taObjects == null)
+		{
+			taObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
+		}
+		
+		return taObjects;
+	}
+	
 	protected IScope createDataContainerScope(Resource eResource, IScope parent, IContainer container, Predicate<IEObjectDescription> filter, EClass type, boolean ignoreCase) {
 		Iterable<IEObjectDescription> exportedObjects = Collections.emptyList();		
 		ResourceSet resourceSet = eResource.getResourceSet();
-		exportedObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
+		exportedObjects = getTAObject(resourceSet, exportedObjects);
+		
+//		exportedObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
 		exportedObjects = getExternalImportObjectDescription(eResource, exportedObjects);
 		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
 	}
