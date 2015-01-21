@@ -424,7 +424,7 @@
       <steps xsi:type="buildfile:ZipStep" xmi:id="_YEebIJKXEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.zip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_NAn1cJWzEeSPapwxSH2ZqQ" name="TP_win32-win32-x86_64">
-      <properties xmi:id="_NAn1cZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86" type="INLINED"/>
+      <properties xmi:id="_NAn1cZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86_64" type="INLINED"/>
       <properties xmi:id="_NAn1cpWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
       <properties xmi:id="_NAn1c5WzEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
       <properties xmi:id="_NAn1dJWzEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
@@ -443,7 +443,7 @@
       <steps xsi:type="buildfile:ZipStep" xmi:id="_NAn1fpWzEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.zip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_U6KkkJWzEeSPapwxSH2ZqQ" name="TP_linux-gtk-x86">
-      <properties xmi:id="_U6KkkZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86" type="INLINED"/>
+      <properties xmi:id="_U6KkkZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_linux-gtk-x86" type="INLINED"/>
       <properties xmi:id="_U6KkkpWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
       <properties xmi:id="_U6Kkk5WzEeSPapwxSH2ZqQ" key="TP_os" value="linux" type="INLINED"/>
       <properties xmi:id="_U6KklJWzEeSPapwxSH2ZqQ" key="TP_ws" value="gtk" type="INLINED"/>
@@ -462,7 +462,7 @@
       <steps xsi:type="buildfile:ZipStep" xmi:id="_U6KknpWzEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.zip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_caErsJWzEeSPapwxSH2ZqQ" name="TP_linux-gtk-x86_64">
-      <properties xmi:id="_caErsZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86" type="INLINED"/>
+      <properties xmi:id="_caErsZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_linux-gtk-x86_64" type="INLINED"/>
       <properties xmi:id="_caErspWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
       <properties xmi:id="_caErs5WzEeSPapwxSH2ZqQ" key="TP_os" value="linux" type="INLINED"/>
       <properties xmi:id="_caErtJWzEeSPapwxSH2ZqQ" key="TP_ws" value="gtk" type="INLINED"/>
@@ -481,7 +481,7 @@
       <steps xsi:type="buildfile:ZipStep" xmi:id="_caErvpWzEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.zip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_e0YK8JWzEeSPapwxSH2ZqQ" name="TP_macosx-cocoa-x86_64">
-      <properties xmi:id="_e0YK8ZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86" type="INLINED"/>
+      <properties xmi:id="_e0YK8ZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_macosx-cocoa-x86_64" type="INLINED"/>
       <properties xmi:id="_e0YK8pWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
       <properties xmi:id="_e0YK85WzEeSPapwxSH2ZqQ" key="TP_os" value="macosx" type="INLINED"/>
       <properties xmi:id="_e0YK9JWzEeSPapwxSH2ZqQ" key="TP_ws" value="cocoa" type="INLINED"/>
