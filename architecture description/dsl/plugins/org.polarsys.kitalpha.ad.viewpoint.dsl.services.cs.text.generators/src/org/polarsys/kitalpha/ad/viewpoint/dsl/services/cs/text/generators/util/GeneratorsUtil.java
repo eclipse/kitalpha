@@ -26,15 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.xtext.ui.XtextProjectHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 
 
 /**
  * 
- * @author Amine Lajmi
+ * @author Amine Lajmi,
+ * Faycal Abka
  *
  */
 
@@ -83,8 +87,6 @@ public class GeneratorsUtil {
 			for (EPackage ePackage : ePackages) {
 				imports.append("import external \"")
 						.append(ePackage.getNsURI()).append("\"\n");
-//				ResourceHelper.loadExternalLibrary(ePackage.getNsURI(), data
-//						.eResource().getResourceSet());
 			}
 
 			imports.append("\n");
@@ -92,6 +94,35 @@ public class GeneratorsUtil {
 
 		}
 		
+		return "";
+	}
+ 
+	//to support diagram external imports 
+	public static String getExternalImportDiagramHeader(DiagramSet diagram){
+
+		if (diagram != null && diagram.getAdditionalExternalData().size() > 0) {
+
+			StringBuffer imports = new StringBuffer("\n");
+
+			List<EPackage> ePackages = diagram.getAdditionalExternalData();
+
+			for (EPackage ePackage : ePackages) {
+				imports.append("import external \"")
+				.append(ePackage.getNsURI()).append("\"\n");
+			}
+
+			List<Group> groups = diagram.getAdditionalExternalGroup();
+
+			for (Group group : groups) {
+				imports.append("import external \"")
+				.append(group.eResource().getURI().toString()).append("\"\n");
+			}
+
+			imports.append("\n");
+			return imports.toString();
+
+		}
+
 		return "";
 	}
 		

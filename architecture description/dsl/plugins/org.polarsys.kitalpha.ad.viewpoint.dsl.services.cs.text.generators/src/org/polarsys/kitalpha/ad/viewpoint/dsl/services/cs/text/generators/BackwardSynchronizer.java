@@ -40,7 +40,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 
 /**
  * 
- * @author Amine Lajmi
+ * @author Amine Lajmi,
+ * Faycal Abka
  *
  */
 public class BackwardSynchronizer extends AbstractSynchronizer {
@@ -113,7 +114,7 @@ public class BackwardSynchronizer extends AbstractSynchronizer {
 		}
 		ReferenceUtil.recoverReferences(inputAspect, copier);
 		String serializationContent = textResource.getSerializer().serialize(clone);
-		newContent = appendCopyRightHeader(clone, CoreModelHelper.getViewpointShortName(inputAspect)) + serializationContent;
+		newContent = appendCopyRightHeader(clone, CoreModelHelper.getViewpointShortName(inputAspect)) + GeneratorsUtil.getExternalImportDiagramHeader(inputAspect) + serializationContent;
 		if (saveNewResource(textResource, newContent))
 			return textResource.getContents().get(0);
 		return null;

@@ -37,13 +37,16 @@ public class VpdescUsedResourceSwitch extends VpdescSwitch<AbstractResource> {
 	public AbstractResource caseEMFResource(EMFResource er){
 		
 		String uri = er.getUri();
-		
+		String decoratedURI = decorateStringWithQuotation(uri);
+
 		if (checkExtensionService(uri, DIAGRAM_EXTENSION)){
-			target.getUseDiagramResource().add(decorateStringWithQuotation(uri));
+			if (!target.getUseDiagramResource().contains(decoratedURI))
+				target.getUseDiagramResource().add(decoratedURI);
 		} else {
-			target.getUseAnyEMFResource().add(decorateStringWithQuotation(uri));
+			if (!target.getUseAnyEMFResource().contains(decoratedURI))
+				target.getUseAnyEMFResource().add(decoratedURI);
 		}
-		
+
 		return er;
 	}
 	
