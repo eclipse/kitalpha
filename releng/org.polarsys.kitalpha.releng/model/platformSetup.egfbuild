@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildcore:StepContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_3DxKYJKCEeSPapwxSH2ZqQ" name="setup platform">
-  <steps xsi:type="buildstep:InstallStep" xmi:id="__eSfoJKCEeSPapwxSH2ZqQ" name="${TP_name}" id="${TP_name}" profile="SDKProfile" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
+  <steps xsi:type="buildstep:InstallStep" xmi:id="__eSfoJKCEeSPapwxSH2ZqQ" name="${TP_name}" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
     <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
     <featureNames>org.eclipse.sdk</featureNames>
     <productNames>org.eclipse.sdk.ide</productNames>
   </steps>
-  <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0ZKKEeSPapwxSH2ZqQ" name="install cots features" id="${TP_name}" profile="SDKProfile" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
+  <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0ZKKEeSPapwxSH2ZqQ" name="install cots features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
     <updateSiteUrls>${egf.repo.url}</updateSiteUrls>
     <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
     <updateSiteUrls>${orbit.repo.url}</updateSiteUrls>
@@ -40,7 +40,7 @@
     <featureNames>org.eclipse.sirius.runtime.acceleo.source</featureNames>
     <featureNames>org.eclipse.emf.validation.ocl</featureNames>
   </steps>
-  <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0pKKEeSPapwxSH2ZqQ" name="install diffmerge" id="${TP_name}" profile="SDKProfile">
+  <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0pKKEeSPapwxSH2ZqQ" name="install diffmerge" id="${TP_name}" profile="${TP_profile}">
     <updateSiteUrls>${diffmerge.repo.url}</updateSiteUrls>
     <updateSiteUrls>${diffmerge.patterns.repo.url}</updateSiteUrls>
     <featureNames>org.eclipse.emf.diffmerge.sdk.source.feature</featureNames>
@@ -48,7 +48,7 @@
     <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.feature</featureNames>
     <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.source.feature</featureNames>
   </steps>
-  <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN05KKEeSPapwxSH2ZqQ" name="install ecoretools2" id="${TP_name}" profile="SDKProfile">
+  <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN05KKEeSPapwxSH2ZqQ" name="install ecoretools2" id="${TP_name}" profile="${TP_profile}">
     <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
     <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
   </steps>

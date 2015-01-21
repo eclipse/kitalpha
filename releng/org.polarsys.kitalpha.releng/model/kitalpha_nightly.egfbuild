@@ -30,6 +30,7 @@
       <properties xmi:id="_eG7gEJKHEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
       <properties xmi:id="_eayQMJKHEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
       <properties xmi:id="_evriIJKHEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
+      <properties xmi:id="_d2Gu0aF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
       <steps xsi:type="buildcore:ReuseStep" xmi:id="_Cs0RIJKDEeSPapwxSH2ZqQ" name="">
         <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
       </steps>
@@ -409,6 +410,7 @@
       <properties xmi:id="_0awbkJKUEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
       <properties xmi:id="_0awbkZKUEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
       <properties xmi:id="_0awbkpKUEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
+      <properties xmi:id="_m8Pz8KF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
       <steps xsi:type="buildcore:ReuseStep" xmi:id="_KLyuspKEEeSPapwxSH2ZqQ" name="">
         <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
       </steps>
@@ -428,6 +430,7 @@
       <properties xmi:id="_NAn1cpWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
       <properties xmi:id="_NAn1c5WzEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
       <properties xmi:id="_NAn1dJWzEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
+      <properties xmi:id="_pPK40KF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
       <steps xsi:type="buildcore:ReuseStep" xmi:id="_NAn1dZWzEeSPapwxSH2ZqQ" name="">
         <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
       </steps>
@@ -447,6 +450,7 @@
       <properties xmi:id="_U6KkkpWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
       <properties xmi:id="_U6Kkk5WzEeSPapwxSH2ZqQ" key="TP_os" value="linux" type="INLINED"/>
       <properties xmi:id="_U6KklJWzEeSPapwxSH2ZqQ" key="TP_ws" value="gtk" type="INLINED"/>
+      <properties xmi:id="_pgc2EKF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
       <steps xsi:type="buildcore:ReuseStep" xmi:id="_U6KklZWzEeSPapwxSH2ZqQ" name="">
         <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
       </steps>
@@ -466,6 +470,7 @@
       <properties xmi:id="_caErspWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
       <properties xmi:id="_caErs5WzEeSPapwxSH2ZqQ" key="TP_os" value="linux" type="INLINED"/>
       <properties xmi:id="_caErtJWzEeSPapwxSH2ZqQ" key="TP_ws" value="gtk" type="INLINED"/>
+      <properties xmi:id="_pyx8MKF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
       <steps xsi:type="buildcore:ReuseStep" xmi:id="_caErtZWzEeSPapwxSH2ZqQ" name="">
         <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
       </steps>
@@ -485,6 +490,7 @@
       <properties xmi:id="_e0YK8pWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
       <properties xmi:id="_e0YK85WzEeSPapwxSH2ZqQ" key="TP_os" value="macosx" type="INLINED"/>
       <properties xmi:id="_e0YK9JWzEeSPapwxSH2ZqQ" key="TP_ws" value="cocoa" type="INLINED"/>
+      <properties xmi:id="_qDBXoKF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
       <steps xsi:type="buildcore:ReuseStep" xmi:id="_e0YK9ZWzEeSPapwxSH2ZqQ" name="">
         <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
       </steps>
