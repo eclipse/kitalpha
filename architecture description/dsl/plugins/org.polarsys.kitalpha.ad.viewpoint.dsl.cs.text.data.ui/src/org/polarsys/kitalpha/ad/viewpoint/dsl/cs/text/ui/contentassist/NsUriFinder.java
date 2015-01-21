@@ -12,42 +12,24 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-import org.eclipse.core.filesystem.EFS;
-import org.eclipse.core.filesystem.IFileStore;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EPackage.Registry;
-import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.resource.XtextResource;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RepresentationElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainViewpointHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper.URIConverterHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainViewpointHelper;
 
 /**
  * 
@@ -72,7 +54,11 @@ public class NsUriFinder {
 		
 		if (vp.getUseAnyEMFResource() != null && !vp.getUseAnyEMFResource().isEmpty())
 			 uris.addAll(vp.getUseAnyEMFResource());
-		uris.addAll(getWSAndFSResource(vp));
+		
+		if (vp.getUseAnyEMFResource() != null && !vp.getUseAnyEMFResource().isEmpty())
+			uris.addAll(getWSAndFSResource(vp));
+		
+		uris.addAll(getUsedViewpointEPackages(vp));
 		
 		return uris;
 	}
@@ -91,6 +77,59 @@ public class NsUriFinder {
 				 uris.add(uri);
 		 }
 		 return uris;
+	}
+	
+	
+	private static Collection<String> getUsedViewpointEPackages(Viewpoint vp){
+		EList<Viewpoint> viewpoints = vp.getUseViewpoint();
+		
+		Collection<String> platformURIs = new HashSet<String>();
+		
+		for (Viewpoint viewpoint : viewpoints) {	
+			String vpProjectName = ResourceHelper.getProjectName(viewpoint);	
+
+			//FIXME: get this id form configuation aspect 	
+			String resource_id = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));	
+
+			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resource_id, null);
+			
+			if (coreDomainViewpoint == null){	
+				throw new RuntimeException("Could not find the viewpoint resource for the project: " + vpProjectName);
+			} else {
+				EList<EPackage> packages = coreDomainViewpoint.getMetamodel().getModels();	
+				platformURIs.addAll(getPlatformURIsOfPackages(packages));
+			}
+		}
+		return platformURIs;
+	}
+		
+		
+		private static Collection<String> getPlatformURIsOfPackages(EList<EPackage> packages) {	
+
+			Collection<String> platformsUri = new HashSet<String>();
+			for (EPackage ePackage : packages) {
+				String nsuri = ePackage.getNsURI();
+				
+				URI uri = URI.createURI(nsuri);
+				URI p_uri = URIConverterHelper.getPlatformURI(uri);
+				
+				if (p_uri != null && !p_uri.isEmpty()){
+					platformsUri.add(p_uri.toString());
+				} else {
+					Resource ePackageResource = ePackage.eResource();
+					if (ePackageResource != null){
+						URI resource_uri = ePackageResource.getURI();
+						
+						if (resource_uri != null && !resource_uri.isEmpty())
+							platformsUri.add(resource_uri.toString());
+					} else {
+						platformsUri.add(nsuri);
+					}
+				}
+					
+			}
+			
+			return platformsUri;
 	}
 	
 	private static Viewpoint getRootViewpoint(EObject model, String projectName, IExternalContentProvider externalProvider){

@@ -43,13 +43,14 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.formatting,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr.internal,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl,
- org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.util,
- org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.util
 

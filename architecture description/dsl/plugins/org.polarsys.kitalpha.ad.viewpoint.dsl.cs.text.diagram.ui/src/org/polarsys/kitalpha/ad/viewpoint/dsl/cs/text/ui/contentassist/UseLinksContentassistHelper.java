@@ -24,6 +24,7 @@ import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvid
 import org.eclipse.xtext.resource.XtextResource;
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusRepresentation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainViewpointHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper.URIConverterHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RepresentationElement;
@@ -106,19 +107,19 @@ public class UseLinksContentassistHelper {
 		
 		for (Viewpoint viewpoint : viewpoints) {	
 			String vpProjectName = ResourceHelper.getProjectName(viewpoint);	
-			
+
 			//FIXME: get this id form configuation aspect 	
 			String resource_id = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));	
-					
-					org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resource_id, null);	
-					
-					if (coreDomainViewpoint == null){	
-						throw new RuntimeException("Could not find the viewpoint resource for the project: " + vpProjectName);	
-					} else {                        	
-						EList<EPackage> packages = coreDomainViewpoint.getMetamodel().getModels();	
-						EList<RepresentationElement> representations = coreDomainViewpoint.getRepresentation().getRepresentations();	
-						fillURI(packages, representations);	
-					}	
+
+			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resource_id, null);	
+
+			if (coreDomainViewpoint == null){	
+				throw new RuntimeException("Could not find the viewpoint resource for the project: " + vpProjectName);	
+			} else {                        	
+				EList<EPackage> packages = coreDomainViewpoint.getMetamodel().getModels();	
+				EList<RepresentationElement> representations = coreDomainViewpoint.getRepresentation().getRepresentations();	
+				fillURI(packages, representations);	
+			}	
 		}	
 	}	
 	
@@ -127,8 +128,23 @@ public class UseLinksContentassistHelper {
 		
 		for (EPackage ePackage : packages) {
 			String nsuri = ePackage.getNsURI();	
-			imports.put(MODEL_KEY, nsuri);	
-		}	
+			URI uri = URI.createURI(nsuri);
+			URI p_uri = URIConverterHelper.getPlatformURI(uri);
+			
+			if (p_uri != null && !p_uri.isEmpty())
+				imports.put(MODEL_KEY, p_uri.toString());
+			else {
+				Resource ePackageResource = ePackage.eResource();
+				if (ePackageResource != null){
+					URI resource_uri = ePackageResource.getURI();
+					
+					if (resource_uri != null && !resource_uri.isEmpty())
+						imports.put(MODEL_KEY, resource_uri.toString());
+				} else {
+					imports.put(MODEL_KEY, nsuri);
+				}
+			}
+		}
 	
 		for (RepresentationElement representationElement : representations) {	
 			if (representationElement instanceof SiriusRepresentation){	

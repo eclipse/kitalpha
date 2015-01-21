@@ -71,6 +71,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper.URIConverterHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.WorkspaceResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
@@ -336,85 +337,20 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 
 		Image image = ImageDescriptor.createFromURL(url).createImage();
 		
-		Collection<String> platformNsUri = getPlatformURIOfAllEPackages();
+		Collection<String> platformNsUri = URIConverterHelper.getPlatformURIOfAllEPackages();
+		
+		Viewpoint vp = (Viewpoint)model;
+		EList<String> usedAnyEMFModel = vp.getUseAnyEMFResource();
 		
 		for (String pUri : platformNsUri) {
-			StyledString styledUri = new StyledString();
-			styledUri.append(pUri);
-			acceptor.accept(
-					createCompletionProposal(
-							"\"" + pUri + "\"", styledUri, image, context));
-		}
-		
-		
-	}
-	
-	private Collection<String> getPlatformURIOfAllEPackages(){
-		
-		Collection<Object> packages = DataWorkspaceEPackage.INSTANCE.values();
-		
-		Collection<String> platformsNsURI = new HashSet<String>();
-		
-		for (Object pkg : packages) {
-			EPackage ePackage = null;
 			
-			if (pkg instanceof EPackage){
-				ePackage = (EPackage)pkg;
-			}
-			else {
-				if (pkg instanceof EPackage.Descriptor){
-					ePackage = ((EPackage.Descriptor)pkg).getEPackage();
-				}
-			}
-
-			if (ePackage != null){
-				
-				URI uri = EcoreUtil.getURI(ePackage);
-				
-				if (uri.isPlatformResource()){
-					platformsNsURI.add(uri.toString());
-				} else {
-					URI p = getPlatformURI(URI.createURI(ePackage.getNsURI()));
-					if (p != null){
-						platformsNsURI.add(p.toString());
-					}
-				}
+			if (!usedAnyEMFModel.contains("\"" + pUri + "\"")){
+				StyledString styledUri = new StyledString();
+				styledUri.append(pUri);
+				acceptor.accept(
+						createCompletionProposal(
+								"\"" + pUri + "\"", styledUri, image, context));
 			}
 		}
-		
-		return platformsNsURI;
 	}
-	
-	
-	ResourceSet rs = new ResourceSetImpl();
-	
-	private URI getPlatformURI(URI uri){
-		
-		
-		URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(uri.toString());
-
-		if (genmodelURI != null){
-			
-			Resource r = rs.createResource(genmodelURI);
-
-			try {
-				if (!r.isLoaded()){
-					r.load(null);
-				}
-			} catch (IOException e) {
-				//e.printStackTrace();
-			}
-			
-			EList<EObject> genContents = r.getContents();
-			if (genContents != null && !genContents.isEmpty()){
-				EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
-				for(GenPackage genPackage: genmodels){
-					URI platformURI = genPackage.getEcorePackage().eResource().getURI();
-					return platformURI;
-				}
-			}
-		}
-		return null;
-	}
-	
 }
