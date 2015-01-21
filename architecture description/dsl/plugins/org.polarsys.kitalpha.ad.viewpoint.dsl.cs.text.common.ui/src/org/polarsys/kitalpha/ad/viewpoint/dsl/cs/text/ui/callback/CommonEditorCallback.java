@@ -250,8 +250,10 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 					}
 				}
 			} else {
-				logger.error(flattenMessages(messages));
-				logger.error(logMessages);
+				if (messages != null && logMessages != null){
+					logger.error(flattenMessages(messages));
+					logger.error(logMessages);
+				}
 			}
 		}
 
@@ -332,13 +334,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		ArrayList<Resource> resources = Lists.newArrayList(resourceSet.getResources());
 		for (Resource resource : resources) {
 			if (resource.getURI().isPlatformResource() && holdInPoject(resource.getURI(), projectName)){			
-				EcoreUtil2.resolveLazyCrossReferences(resource, new CancelIndicator() {
-					
-					@Override
-					public boolean isCanceled() {
-						return false;
-					}
-				});
+				EcoreUtil2.resolveLazyCrossReferences(resource, CancelIndicator.NullImpl);
 				
 				
 				isResourceClean &= handleXtextResourceErrors(resource);

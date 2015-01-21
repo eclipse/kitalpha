@@ -39,6 +39,7 @@ import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
+import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
@@ -65,6 +66,9 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 
 	@Inject
 	DataGrammarAccess grammar;
+	
+	@Inject
+	IExternalContentProvider contentProvider;
 
 	@Override
 	public void completeKeyword(Keyword keyword,
@@ -167,74 +171,21 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 
 		Image image = ImageDescriptor.createFromURL(url).createImage();
 
-//		Set<String> nsUris = NsUriFinder.getNsUriFromEPackageRegistry();
-		Set<String> nsUris = NsUriFinder.getViewpointEPackagesNSURI(model);
-
+		Set<String> nsUris = NsUriFinder.getViewpointEPackagesNSURI(model, contentProvider);
+		
 		for (String uri : nsUris) {
 			StyledString styledUri = new StyledString();
-			styledUri.append(uri);
-			if (uri.startsWith("\"") && uri.contains(context.getPrefix().substring(1)))
-				acceptor.accept(createCompletionProposal(createProposal(uri),
-					styledUri, image, context));
-			else
-				acceptor.accept(createCompletionProposal(createProposal(uri),
-						styledUri, image, context));
+			uri = uri.substring(1, uri.length() - 1);
+			acceptor.accept(createCompletionProposal(createProposal(uri),
+					  styledUri, image, context));
+			
 		}
-
+		
 	}
 
 	private String createProposal(String uri) {
 		StringBuffer tmp = new StringBuffer();
 		tmp.append("\"").append(uri).append("\"");
 		return tmp.toString();
-	}
-	
-	
-	
-	private List<IResource> getImportedResources(EObject model){
-		Resource standalone = ResourceHelper.loadStandaloneResource(model.eResource().getURI().segment(1));
-		ViewpointResources vr = getViewpointResource(standalone);
-		
-		List<IResource> importedResources = new ArrayList<IResource>();
-		
-		if (vr != null){
-			EList<AbstractResource> ar = vr.getUseResource();
-			
-			for (AbstractResource abstractResource : ar) {
-				if (abstractResource instanceof FileSystemResource){
-					FileSystemResource fsr = (FileSystemResource)abstractResource;
-					
-					if (fsr.isWorkspace()){
-						String path_str = fsr.getPath();
-						IPath path = new Path(path_str);
-						IResource r = ResourcesPlugin.getWorkspace().getRoot().findMember(path);
-						
-						if (r != null){
-							importedResources.add(r);
-						}
-					}
-				}
-			}
-		}
-		
-		return importedResources;
-		
-	}
-
-	private ViewpointResources getViewpointResource(Resource standalone) {
-		
-		if (standalone == null)
-			return null;
-		
-		TreeIterator<EObject> it = standalone.getAllContents();
-		
-		while (it.hasNext()){
-			EObject next = it.next();
-			
-			if (next instanceof ViewpointResources)
-				return (ViewpointResources)next;
-		}
-		
-		return null;
 	}
 }

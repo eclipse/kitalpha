@@ -38,13 +38,15 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
+import org.eclipse.xtext.resource.XtextResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainViewpointHelper;
 
 /**
@@ -54,123 +56,71 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainView
  */
 public class NsUriFinder {
 
-	@Deprecated
-	public static Set<String> getNsUriFromEPackageRegistry(){
-		
-		Registry registry = EPackageRegistryImpl.INSTANCE;
-		return registry.keySet();
-	}
-	
-	
-	public static Set<String> getViewpointEPackagesNSURI(EObject model){
-		Set<String> nsuris = new HashSet<String>();
-		Collection<EPackage> usedEPackages = getUsedEPackages(model);
-		Collection<String> usedEMFResources = getUsedEMFResources(model);
-		for (EPackage ePacakge : usedEPackages) {
-			nsuris.add(ePacakge.getNsURI());
-		}
-		
-		nsuris.addAll(usedEMFResources);
-		
-		return nsuris;
-		
-	}
-	
-	private static Collection<String> getUsedEMFResources(EObject model) {
-		Viewpoint viewpoint = getRootViewpoint(model);
-		
-		ViewpointResources vr = viewpoint.getViewpointResources();
-		
-		if (vr != null){
-			EList<AbstractResource> usedResources = vr.getUseResource();
-			
-			if (!usedResources.isEmpty()){
-				Collection<String> emfUsedUri = getEMFUsedURI(usedResources, model);
-				return emfUsedUri;
-			}
-		}
-		
-		return Collections.emptyList();
-	}
+	public static Set<String> getViewpointEPackagesNSURI(EObject model, IExternalContentProvider externalProvider){
+		String projectName = ResourceHelper.getProjectName(model);
+		Viewpoint vp = getRootViewpoint(model, projectName, externalProvider);
+		Set<String> uris = new HashSet<String>();
 
-
-	private static Collection<String> getEMFUsedURI(
-			EList<AbstractResource> usedResources, EObject model) {
-		
-		Collection<String> uris = new HashSet<String>();
-		Collection<EPackage> epackages = null;
-		
-		for (AbstractResource abstractResource : usedResources) {
-			if (abstractResource instanceof EMFResource){
-				String uri = ((EMFResource)abstractResource).getUri();
-				if (!uri.endsWith(".odesign"))
-					uris.add(uri);
-			}
-			
-			if (abstractResource instanceof FileSystemResource){
-				FileSystemResource fsr = (FileSystemResource)abstractResource;
-				String path = fsr.getPath();
-				if (path.endsWith(".ecore")){
-					IPath p = new Path(path);
-					IFileStore fileStore = EFS.getLocalFileSystem().getStore(p);
-					java.io.File externalFile = null;
-					try {
-						externalFile = fileStore.toLocalFile(EFS.NONE, null);
-					} catch (CoreException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-					if (externalFile != null){
-						epackages = DataWorkspaceEPackage.INSTANCE.registerEPackagesFrom(externalFile);
-					}
-					
-					
-//					IProject currentProject = ResourcesPlugin.getWorkspace().getRoot().getProject(model.eResource().getURI().segment(1));
-//					IFolder folder = currentProject.getFolder("external");
-//					if (!folder.exists()){
-//						try {
-//							folder.create(true, true, null);
-//						} catch (CoreException e) {
-//							e.printStackTrace();
-//						}
-//					}
-//					IFile f = folder.getFile(p.lastSegment());
-//					try {
-//						f.createLink(p, IResource.NONE, null);
-//					} catch (CoreException e) {
-//						//e.printStackTrace();
-//					}
-					//epackages = DataWorkspaceEPackage.INSTANCE.registerEPackagesFrom(f);
-				}
-			}
-		}
-
-		if (epackages != null && !epackages.isEmpty()){
-			for (EPackage ePackage : epackages) {
-				uris.add(ePackage.getNsURI());
-			}
-		}
+		uris = getUsedModel(vp);
 
 		return uris;
 	}
 
 
-	private static List<EPackage> getUsedEPackages(EObject model){
+	private static Set<String> getUsedModel(Viewpoint vp) {
+		Set<String> uris = new HashSet<String>();
 		
-		Viewpoint viewpoint = getRootViewpoint(model);
+		if (vp.getUseAnyEMFResource() != null && !vp.getUseAnyEMFResource().isEmpty())
+			 uris.addAll(vp.getUseAnyEMFResource());
+		uris.addAll(getWSAndFSResource(vp));
 		
-		return CoreDomainViewpointHelper.getViewpointAccessibleEPackage(viewpoint);
+		return uris;
 	}
 
-
-	//FIXME put these 2 methods in an abstract class in common plugin to be shared by Data
-	//		NsUriFinder too (they are duplicated!)
-	private static Viewpoint getCurrentViewpoint(Resource standaloneResource) {
+	
+	private static Collection<? extends String> getWSAndFSResource(Viewpoint vp) {
+		Collection<String> uris = new HashSet<String>();
 		
+		for (String uri : vp.getUseFSResource()) {
+			if (uri.endsWith(".ecore"))
+				uris.add(uri);
+		}
+		
+		 for (String uri : vp.getUseWorkspaceResource()) {
+			 if (uri.endsWith(".ecore"))
+				 uris.add(uri);
+		 }
+		 return uris;
+	}
+	
+	private static Viewpoint getRootViewpoint(EObject model, String projectName, IExternalContentProvider externalProvider){
+		
+		ResourceSet fakeResourceSet = new ResourceSetImpl();
+		XtextResource resource;
+		
+		ResourceHelper.loadPrimaryResource(projectName, fakeResourceSet);
+		URI uri = ResourceHelper.getPrimaryResourceURI(projectName);
+		
+		resource = (XtextResource) fakeResourceSet.getResource(uri, false);
+		String text = externalProvider.getActualContentProvider().getContent(uri);
+		
+		if (text != null && !text.isEmpty() && resource != null)
+			try {
+				resource.reparse(text);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		
+		Viewpoint viewpoint = getCurrentViewpoint(resource);
+		
+		return viewpoint;
+	}
+	
+	//FIXME put these 2 methods in an abstract class in common plugin to be shared by Data 
+	//NsUriFinder too (they are duplicated!)
+	private static Viewpoint getCurrentViewpoint(Resource standaloneResource) {
 		if (standaloneResource != null){
 			TreeIterator<EObject> it = standaloneResource.getAllContents();
-
 			while (it.hasNext()){
 				EObject v = it.next();
 				if (v instanceof Viewpoint)
@@ -178,14 +128,5 @@ public class NsUriFinder {
 			}
 		}
 		return null;
-	}
-	
-	private static Viewpoint getRootViewpoint(EObject model){
-		
-		String projectName = EcoreUtil.getURI(model).segment(1);
-		Resource standaloneResource = ResourceHelper.loadStandaloneResource(projectName);
-		Viewpoint viewpoint = getCurrentViewpoint(standaloneResource);
-		
-		return viewpoint;
 	}
 }

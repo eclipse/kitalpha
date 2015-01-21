@@ -13,7 +13,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -31,10 +33,13 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
+
+import com.google.inject.Inject;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
@@ -45,6 +50,9 @@ import org.osgi.framework.Bundle;
  *
  */
 public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider {
+	
+	@Inject
+	private IExternalContentProvider contentProvider;
 
 	@Override
 	public void completeOpenAction_Icon(EObject model, Assignment assignment,
@@ -114,28 +122,49 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			Assignment assignment, ContentAssistContext context,
 			ICompletionProposalAcceptor acceptor) {
 
-		final String EMF_PLUGIN_ID = "org.eclipse.sirius.editor";
-		final String SCHEMAT_PATH = "icons/full/obj16/Sirius.gif";
+		 final String SIRIUS_PLUGIN_ID = "org.eclipse.sirius.editor";
+		 final String SIRIUS_GIF_PATH = "icons/full/obj16/Sirius.gif";
+		 
+		 final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
+		 final String EMF_GIF_PATH = "icons/full/obj16/EPackage.gif";
 
-		final Bundle bundle = Platform.getBundle(EMF_PLUGIN_ID);
-		final URL url = FileLocator.find(bundle, new Path(SCHEMAT_PATH),
+		 final Bundle bundle_sirius = Platform.getBundle(SIRIUS_PLUGIN_ID);
+		 final URL url_sirius = FileLocator.find(bundle_sirius, new Path(SIRIUS_GIF_PATH),
 				Collections.EMPTY_MAP);
+		 
+		 final Bundle bundle_emf = Platform.getBundle(EMF_PLUGIN_ID);
+		 final URL url_emf = FileLocator.find(bundle_emf, new Path(EMF_GIF_PATH),
+				 Collections.EMPTY_MAP);
+		 
+		 Image image_sirius = ImageDescriptor.createFromURL(url_sirius).createImage();
+		 Image image_emf = ImageDescriptor.createFromURL(url_emf).createImage();
+		 
+		 
+		 DiagramUseLinks imports = UseLinksContentassistHelper.getViewpointRepresentation(model, contentProvider);
 
-		Image image = ImageDescriptor.createFromURL(url).createImage();
-
-//		Set<String> nsUris = NsUriFinder.getNsUriFromEPackageRegistry();
-		Set<String> nsUris = NsUriFinder.getViewpointRepresentation(model);
-
-		for (String uri : nsUris) {
-			StyledString styledUri = new StyledString();
-			styledUri.append(uri);
-			if (uri.startsWith("\"") && uri.contains(context.getPrefix().substring(1)))
-				acceptor.accept(createCompletionProposal(createProposal(uri),
-					styledUri, image, context));
-			else
-				acceptor.accept(createCompletionProposal(createProposal(uri),
-						styledUri, image, context));
-		}
+		 Collection<String> importsDiagram = imports.get(UseLinksContentassistHelper.DIAGRAM_KEY);	
+         List<String> sortedList = new LinkedList<String>();	
+         	
+         if (importsDiagram != null && !importsDiagram.isEmpty())	
+                 sortedList.addAll(importsDiagram);	
+         	
+         Collection<String> importsModel = imports.get(UseLinksContentassistHelper.MODEL_KEY);	
+         	
+         if (importsModel != null && !importsModel.isEmpty())	
+                 sortedList.addAll(importsModel);	
+         	
+         	
+         for (String uri : sortedList) {	
+                 StyledString styledUri = new StyledString();	
+                 styledUri.append(uri);	
+                 if (imports.get(UseLinksContentassistHelper.MODEL_KEY).contains(uri)){	
+                         acceptor.accept(createCompletionProposal(createProposal(uri),	
+                                         styledUri, image_emf, context));	
+                 } else {	
+                         acceptor.accept(createCompletionProposal(createProposal(uri),	
+                                         styledUri, image_sirius, context));	
+                 }	
+         }
 
 	}
 

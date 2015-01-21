@@ -152,6 +152,12 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               EStructuralFeature importGroupAttr = _eClass_3.getEStructuralFeature("importedGroup");
               Object _eGet_1 = imp_1.eGet(importGroupAttr);
               String importValue_1 = _eGet_1.toString();
+              int _length = importValue_1.length();
+              int _minus = (_length - 1);
+              String _substring = importValue_1.substring(1, _minus);
+              importValue_1 = _substring;
+              ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
+              ResourceSetImpl resourceSet = _resourceSetImpl;
               EList<Aspect> _vP_Aspects_4 = target.getVP_Aspects();
               final Function1<Aspect,Boolean> _function_2 = new Function1<Aspect,Boolean>() {
                   public Boolean apply(final Aspect d) {
@@ -159,20 +165,28 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
                   }
                 };
               Aspect targetDiagram = IterableExtensions.<Aspect>findFirst(_vP_Aspects_4, _function_2);
-              ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
-              int _length = importValue_1.length();
-              int _minus = (_length - 1);
-              String _substring = importValue_1.substring(1, _minus);
-              URI _createURI = URI.createURI(_substring);
-              Resource resource = _resourceSetImpl.getResource(_createURI, true);
-              boolean _notEquals_3 = (!Objects.equal(resource, null));
-              if (_notEquals_3) {
-                EList<EObject> _contents = resource.getContents();
-                final EObject rootGroup = _contents.get(0);
-                boolean _notEquals_4 = (!Objects.equal(rootGroup, null));
-                if (_notEquals_4) {
-                  EList<Group> _additionalExternalGroup = ((DiagramSet) targetDiagram).getAdditionalExternalGroup();
-                  _additionalExternalGroup.add(((Group) rootGroup));
+              boolean _isEcoreURI = this.isEcoreURI(importValue_1);
+              if (_isEcoreURI) {
+                Resource _eResource_1 = target.eResource();
+                ResourceSet _resourceSet_1 = _eResource_1.getResourceSet();
+                final EPackage ePackage = ExternalDataHelper.loadEPackage(importValue_1, _resourceSet_1);
+                boolean _notEquals_3 = (!Objects.equal(ePackage, null));
+                if (_notEquals_3) {
+                  EList<EPackage> _additionalExternalData_1 = ((DiagramSet) targetDiagram).getAdditionalExternalData();
+                  _additionalExternalData_1.add(ePackage);
+                } else {
+                  URI _createURI = URI.createURI(importValue_1);
+                  final Resource resource = resourceSet.getResource(_createURI, true);
+                  boolean _notEquals_4 = (!Objects.equal(resource, null));
+                  if (_notEquals_4) {
+                    EList<EObject> _contents = resource.getContents();
+                    final EObject rootGroup = _contents.get(0);
+                    boolean _notEquals_5 = (!Objects.equal(rootGroup, null));
+                    if (_notEquals_5) {
+                      EList<Group> _additionalExternalGroup = ((DiagramSet) targetDiagram).getAdditionalExternalGroup();
+                      _additionalExternalGroup.add(((Group) rootGroup));
+                    }
+                  }
                 }
               }
             }
@@ -186,8 +200,8 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               }
             };
           Aspect oldBuild = IterableExtensions.<Aspect>findFirst(_vP_Aspects_5, _function_3);
-          boolean _notEquals_5 = (!Objects.equal(oldBuild, null));
-          if (_notEquals_5) {
+          boolean _notEquals_6 = (!Objects.equal(oldBuild, null));
+          if (_notEquals_6) {
             EObject _get_6 = this.copier.get(key);
             EcoreUtil2.replace(oldBuild, _get_6);
           } else {
@@ -204,8 +218,8 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               }
             };
           Aspect oldConf = IterableExtensions.<Aspect>findFirst(_vP_Aspects_7, _function_4);
-          boolean _notEquals_6 = (!Objects.equal(oldConf, null));
-          if (_notEquals_6) {
+          boolean _notEquals_7 = (!Objects.equal(oldConf, null));
+          if (_notEquals_7) {
             EObject _get_8 = this.copier.get(key);
             EcoreUtil2.replace(oldConf, _get_8);
           } else {
@@ -222,8 +236,8 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               }
             };
           Aspect oldRules = IterableExtensions.<Aspect>findFirst(_vP_Aspects_9, _function_5);
-          boolean _notEquals_7 = (!Objects.equal(oldRules, null));
-          if (_notEquals_7) {
+          boolean _notEquals_8 = (!Objects.equal(oldRules, null));
+          if (_notEquals_8) {
             EObject _get_10 = this.copier.get(key);
             EcoreUtil2.replace(oldRules, _get_10);
           } else {
@@ -240,8 +254,8 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               }
             };
           Aspect oldServices = IterableExtensions.<Aspect>findFirst(_vP_Aspects_11, _function_6);
-          boolean _notEquals_8 = (!Objects.equal(oldServices, null));
-          if (_notEquals_8) {
+          boolean _notEquals_9 = (!Objects.equal(oldServices, null));
+          if (_notEquals_9) {
             EObject _get_12 = this.copier.get(key);
             EcoreUtil2.replace(oldServices, _get_12);
           } else {
@@ -258,8 +272,8 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               }
             };
           Aspect oldProperties = IterableExtensions.<Aspect>findFirst(_vP_Aspects_13, _function_7);
-          boolean _notEquals_9 = (!Objects.equal(oldProperties, null));
-          if (_notEquals_9) {
+          boolean _notEquals_10 = (!Objects.equal(oldProperties, null));
+          if (_notEquals_10) {
             EObject _get_14 = this.copier.get(key);
             EcoreUtil2.replace(oldProperties, _get_14);
           } else {
@@ -271,6 +285,18 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
       }
     }
     return target;
+  }
+  
+  public boolean isEcoreURI(final String uri) {
+    boolean _or = false;
+    boolean _startsWith = uri.startsWith("http://");
+    if (_startsWith) {
+      _or = true;
+    } else {
+      boolean _endsWith = uri.endsWith(".ecore");
+      _or = (_startsWith || _endsWith);
+    }
+    return _or;
   }
   
   public void setTargetName(final Viewpoint viewpoint) {

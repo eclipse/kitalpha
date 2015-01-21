@@ -113,15 +113,26 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 					if (imp.eClass.name.equals("ImportGroup"))
 					{
 						var EStructuralFeature importGroupAttr = imp.eClass.getEStructuralFeature("importedGroup");
-						var String importValue = imp.eGet(importGroupAttr).toString;
+						var String importValue = imp.eGet(importGroupAttr).toString;				
+						importValue = importValue.substring(1, importValue.length-1);
+						
+						var resourceSet = new ResourceSetImpl();
 						var targetDiagram = target.VP_Aspects.findFirst(d | d instanceof DiagramSet);
-						var resource = new ResourceSetImpl().getResource(URI::createURI(importValue.substring(1, importValue.length-1)), true);
+						if (isEcoreURI(importValue)){
+							val EPackage ePackage = ExternalDataHelper::loadEPackage(importValue, target.eResource.resourceSet);
+			                if (ePackage != null){
+			                	(targetDiagram as DiagramSet).additionalExternalData.add(ePackage);	
+			                } else {
+			                	//Representation 
+			                	val resource = resourceSet.getResource(URI::createURI(importValue), true);
 						
-						if (resource != null){
-							val rootGroup = resource.contents.get(0);
-							if (rootGroup != null)
-								(targetDiagram as DiagramSet).additionalExternalGroup.add(rootGroup as Group);
-						
+								if (resource != null){
+									val rootGroup = resource.contents.get(0);
+									if (rootGroup != null)
+										(targetDiagram as DiagramSet).additionalExternalGroup.add(rootGroup as Group);
+								}
+								
+							}
 						}
 						
 					}
@@ -170,6 +181,11 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 		}
 		return target;
 	}
+	
+	def boolean isEcoreURI(String uri) {
+		return uri.startsWith("http://") || uri.endsWith(".ecore");
+	}
+
 	
 	def setTargetName(Viewpoint viewpoint) { 
 		if (viewpoint.name==null || viewpoint.name =="")

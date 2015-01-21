@@ -37,6 +37,9 @@
 	 	documentation (&#13;
 	 		EcoreToHtml: false&#13;
 	 	)&#13;
+	 	ecore (&#13;
+			aird: false&#13;	
+		)&#13;
 	}&#13;
 }&#13;
 </template>
@@ -56,6 +59,9 @@ generation {&#13;
 	 )&#13;
 	 documentation (&#13;
 	 	EcoreToHtml: false&#13;
+	 )&#13;
+	 ecore (&#13;
+		aird: false&#13;	
 	 )&#13;
 }&#13;
 </template>

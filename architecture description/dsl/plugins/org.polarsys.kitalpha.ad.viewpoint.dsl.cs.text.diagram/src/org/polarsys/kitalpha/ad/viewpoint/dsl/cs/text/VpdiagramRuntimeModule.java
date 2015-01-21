@@ -11,7 +11,9 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text;
 
+import org.eclipse.xtext.parsetree.reconstr.impl.DefaultTransientValueService;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.ExternalImportsTransientService;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.VpdiagramGenerator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resource.VpdiagramResourceServiceProvider;
@@ -42,4 +44,8 @@ public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.d
 	public Class<? extends IViewpointSynchronizer> bindIViewpointSynchronizer() {
 		return VpdiagramGenerator.class;
 	}
+	
+	 public Class<? extends DefaultTransientValueService> bindExternalDataTransient() {
+         return ExternalImportsTransientService.class;
+ }
 }
