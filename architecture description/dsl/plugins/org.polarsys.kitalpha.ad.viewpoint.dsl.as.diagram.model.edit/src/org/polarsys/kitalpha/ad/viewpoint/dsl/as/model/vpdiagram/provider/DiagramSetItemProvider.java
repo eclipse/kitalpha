@@ -9,6 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
+
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider;
 
 import java.util.Collection;
@@ -62,6 +63,7 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 			super.getPropertyDescriptors(object);
 
 			addAdditionalExternalGroupPropertyDescriptor(object);
+			addAdditionalExternalDataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,6 +82,28 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 				 getString("_UI_DiagramSet_additionalExternalGroup_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramSet_additionalExternalGroup_feature", "_UI_DiagramSet_type"),
 				 VpdiagramPackage.Literals.DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Additional External Data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdditionalExternalDataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiagramSet_additionalExternalData_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramSet_additionalExternalData_feature", "_UI_DiagramSet_type"),
+				 VpdiagramPackage.Literals.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA,
 				 true,
 				 false,
 				 true,
