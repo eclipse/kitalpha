@@ -47,6 +47,8 @@
     <featureNames>org.eclipse.emf.diffmerge.sdk.feature</featureNames>
     <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.feature</featureNames>
     <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.source.feature</featureNames>
+    <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature</featureNames>
+    <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.source.feature</featureNames>
   </steps>
   <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN05KKEeSPapwxSH2ZqQ" name="install ecoretools2" id="${TP_name}" profile="${TP_profile}">
     <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
