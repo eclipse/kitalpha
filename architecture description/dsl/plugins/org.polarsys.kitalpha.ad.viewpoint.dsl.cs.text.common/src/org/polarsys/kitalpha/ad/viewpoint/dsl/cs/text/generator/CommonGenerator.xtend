@@ -121,23 +121,22 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 						if (isEcoreURI(importValue)){
 							val EPackage ePackage = ExternalDataHelper::loadEPackage(importValue, target.eResource.resourceSet);
 			                if (ePackage != null){
-			                	(targetDiagram as DiagramSet).additionalExternalData.add(ePackage);	
-			                } else {
-			                	//Representation 
-			                	val resource = resourceSet.getResource(URI::createURI(importValue), true);
+			                	(targetDiagram as DiagramSet).additionalExternalData.add(ePackage);
+			                }
+			            } else {
+			                //Representation 
+			                val resource = resourceSet.getResource(URI::createURI(importValue), true);
 						
-								if (resource != null){
-									val rootGroup = resource.contents.get(0);
-									if (rootGroup != null)
-										(targetDiagram as DiagramSet).additionalExternalGroup.add(rootGroup as Group);
-								}
-								
+							if (resource != null){
+								val rootGroup = resource.contents.get(0);
+								if (rootGroup != null)
+									(targetDiagram as DiagramSet).additionalExternalGroup.add(rootGroup as Group);
 							}
 						}
-						
 					}
 				}
-			}		
+			}
+					
 			if (key instanceof Build) {
 				var oldBuild =  target.VP_Aspects.findFirst(c | c instanceof Build)
 				if (oldBuild!=null) {

@@ -13,12 +13,14 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text;
 
 import org.eclipse.xtext.parsetree.reconstr.impl.DefaultTransientValueService;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.ExternalImportsTransientService;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.VpdiagramGenerator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resource.VpdiagramResourceServiceProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping.VpdiagramContainerManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping.VpdiagramGlobalScopeProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer.ScopeDiagramSerializer;
 
 
 /**
@@ -44,8 +46,13 @@ public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.d
 	public Class<? extends IViewpointSynchronizer> bindIViewpointSynchronizer() {
 		return VpdiagramGenerator.class;
 	}
+
+	public Class<? extends DefaultTransientValueService> bindExternalDataTransient() {
+		return ExternalImportsTransientService.class;
+	}
 	
-	 public Class<? extends DefaultTransientValueService> bindExternalDataTransient() {
-         return ExternalImportsTransientService.class;
- }
+	@SuppressWarnings("restriction")
+	public Class<? extends ICrossReferenceSerializer> bindCrossReferenceSerializer(){
+		return ScopeDiagramSerializer.class;
+	}
 }

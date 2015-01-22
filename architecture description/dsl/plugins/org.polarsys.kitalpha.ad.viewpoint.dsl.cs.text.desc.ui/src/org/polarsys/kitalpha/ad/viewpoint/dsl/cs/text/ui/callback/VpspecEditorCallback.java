@@ -216,6 +216,8 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 					}	
 				}
 			}
+		} else {
+			System.err.println("Error");
 		}
 		resourceSet.eSetDeliver(false);
 		resourceSet.getResources().clear();

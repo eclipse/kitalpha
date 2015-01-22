@@ -174,18 +174,18 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
                 if (_notEquals_3) {
                   EList<EPackage> _additionalExternalData_1 = ((DiagramSet) targetDiagram).getAdditionalExternalData();
                   _additionalExternalData_1.add(ePackage);
-                } else {
-                  URI _createURI = URI.createURI(importValue_1);
-                  final Resource resource = resourceSet.getResource(_createURI, true);
-                  boolean _notEquals_4 = (!Objects.equal(resource, null));
-                  if (_notEquals_4) {
-                    EList<EObject> _contents = resource.getContents();
-                    final EObject rootGroup = _contents.get(0);
-                    boolean _notEquals_5 = (!Objects.equal(rootGroup, null));
-                    if (_notEquals_5) {
-                      EList<Group> _additionalExternalGroup = ((DiagramSet) targetDiagram).getAdditionalExternalGroup();
-                      _additionalExternalGroup.add(((Group) rootGroup));
-                    }
+                }
+              } else {
+                URI _createURI = URI.createURI(importValue_1);
+                final Resource resource = resourceSet.getResource(_createURI, true);
+                boolean _notEquals_4 = (!Objects.equal(resource, null));
+                if (_notEquals_4) {
+                  EList<EObject> _contents = resource.getContents();
+                  final EObject rootGroup = _contents.get(0);
+                  boolean _notEquals_5 = (!Objects.equal(rootGroup, null));
+                  if (_notEquals_5) {
+                    EList<Group> _additionalExternalGroup = ((DiagramSet) targetDiagram).getAdditionalExternalGroup();
+                    _additionalExternalGroup.add(((Group) rootGroup));
                   }
                 }
               }
