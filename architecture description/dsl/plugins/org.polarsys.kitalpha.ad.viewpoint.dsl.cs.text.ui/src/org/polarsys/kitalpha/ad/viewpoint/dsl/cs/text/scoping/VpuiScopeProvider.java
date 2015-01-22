@@ -33,6 +33,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI_Field_Type;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 /**
  * 
@@ -45,10 +46,12 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 	public IScope getScope(EObject context, EReference reference) {
 		if (reference.equals(VpuiPackage.eINSTANCE
 				.getFieldMapping_UI_Field_Mapped_To())) {
+			
+			final EObject context2 = context;
 			return new FilteringScope(super.getScope(context, reference),
 					new Predicate<IEObjectDescription>() {
 						public boolean apply(IEObjectDescription d) {
-							return (d.getEObjectOrProxy() instanceof AbstractFeature);
+							return (d.getEObjectOrProxy() instanceof AbstractFeature && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 						}
 					});
 		}
@@ -57,10 +60,13 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 
 	IScope scope_LocalClass_UI_For_LocalClass(EObject context,
 			EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class
+								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
@@ -69,6 +75,7 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 			EReference reference) {
 		// Store the last field type, filter later "mapped-to" according to this
 		// type
+		
 		String typeName = null;
 		if (context instanceof FieldMapping && context.eContainer() != null) {
 			UIField field = (UIField) context.eContainer();
@@ -89,10 +96,12 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 		final String lastFieldType = typeName;
 		final boolean mapped = isMapped;
 		final org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class clazz = mappedClass;
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						if (d.getEObjectOrProxy() instanceof AbstractFeature) {
+						if (d.getEObjectOrProxy() instanceof AbstractFeature && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy())) {
 							if (lastFieldType == null)
 								return false;
 							if (lastFieldType.equals(UI_Field_Type.TEXT
