@@ -34,6 +34,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 
 /**
@@ -219,12 +220,13 @@ public class VpdiagramScopeHelper {
 						if (domain_class instanceof LocalClass){
 							LocalClass localDomain_class = (LocalClass)domain_class;
 
-							return handleLocalLocalAssociation(d, localDomain_class, containerLocalDomain_class);
+							return handleLocalLocalAssociation(d, localDomain_class, containerLocalDomain_class) 
+									&& ProjectUtil.areInSameProject(context, d.getEObjectOrProxy());
 						}
 
 						if (domain_class instanceof ExternalClass){
-							ExternalClass externalDomainClass = (ExternalClass)domain_class;
-							return d.getEObjectOrProxy() instanceof AbstractAssociation; //handleLocalExternalAssociations(d, externalDomainClass, containerLocalDomain_class);
+//							ExternalClass externalDomainClass = (ExternalClass)domain_class;
+							return d.getEObjectOrProxy() instanceof AbstractAssociation;// && ProjectUtil.areInSameProject(context, d.getEObjectOrProxy()); //handleLocalExternalAssociations(d, externalDomainClass, containerLocalDomain_class);
 						}
 					}
 				}
@@ -235,23 +237,23 @@ public class VpdiagramScopeHelper {
 	}
 
 	
-	private static boolean handleLocalExternalAssociations(
-			IEObjectDescription d, ExternalClass externalDomainClass,
-			LocalClass containerLocalDomain_class) {
-		
-		Collection<EReference> allContainerReferences = getAllEReferencesOf(containerLocalDomain_class);
-		VpDiagramHelper.filterEReferencesWithType(allContainerReferences, externalDomainClass.getClass_());
-		return false;
-	}
+//	private static boolean handleLocalExternalAssociations(
+//			IEObjectDescription d, ExternalClass externalDomainClass,
+//			LocalClass containerLocalDomain_class) {
+//		
+//		Collection<EReference> allContainerReferences = getAllEReferencesOf(containerLocalDomain_class);
+//		VpDiagramHelper.filterEReferencesWithType(allContainerReferences, externalDomainClass.getClass_());
+//		return false;
+//	}
 	
 	
 
-	private static Collection<EReference> getAllEReferencesOf(
-			LocalClass containerLocalDomain_class) {
-		
-		Collection<EReference> localEReferences = VpDiagramHelper.getLocalEReferences(containerLocalDomain_class);
-		return localEReferences;
-	}
+//	private static Collection<EReference> getAllEReferencesOf(
+//			LocalClass containerLocalDomain_class) {
+//		
+//		Collection<EReference> localEReferences = VpDiagramHelper.getLocalEReferences(containerLocalDomain_class);
+//		return localEReferences;
+//	}
 	
 	
 	/*

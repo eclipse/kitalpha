@@ -32,6 +32,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
 
@@ -47,10 +48,13 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	 * Scope of the vpdiagram sublanguage
 	 */
 	IScope scope_LocalClass_class(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class 
+								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
@@ -65,19 +69,25 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_NodeDomainElement_domain_Class(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class
+								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
 	
 	IScope scope_NodeDomainElement_chlidren_list(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation
+								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
@@ -96,17 +106,17 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	
-	private AbstractClass getAbstractClassOf(Diagram diagram){
-		return diagram.getThe_domain().getThe_domain();
-	}
-	
-	private AbstractClass getAbstractClassOf(Node node){
-		return node.getThe_domain().getDomain_Class();
-	}
-	
-	private AbstractClass getAbstractClassOf(BorderedNode borderedNode){
-		return borderedNode.getThe_domain().getDomain_Class();
-	}
+//	private AbstractClass getAbstractClassOf(Diagram diagram){
+//		return diagram.getThe_domain().getThe_domain();
+//	}
+//	
+//	private AbstractClass getAbstractClassOf(Node node){
+//		return node.getThe_domain().getDomain_Class();
+//	}
+//	
+//	private AbstractClass getAbstractClassOf(BorderedNode borderedNode){
+//		return borderedNode.getThe_domain().getDomain_Class();
+//	}
 	
 	
 	
@@ -117,97 +127,20 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						
-						
-//						if (d.getEObjectOrProxy() instanceof LocalClassAssociation){
-//							LocalClassAssociation localClassAssociation = (LocalClassAssociation)d.getEObjectOrProxy();
-//							Class target = localClassAssociation.getLocalTarget();
-//							EObject localClassAssociationContainer = localClassAssociation.eContainer();
-//							
-//							if (localClassAssociationContainer instanceof Class){
-//								Class lClassAssociationContainer = (Class)localClassAssociationContainer;
-//								
-//								if (nodeDomainElement == null) 
-//									return false;
-//								
-//								
-//								AbstractClass abstractDomain_class = nodeDomainElement.getDomain_Class();
-//								
-//								AbstractClass containerDomainClass = getAbstractClassFrom(nodeDomainElement);
-//								
-//								if (abstractDomain_class != null && containerDomainClass != null 
-//										&& abstractDomain_class instanceof LocalClass && containerDomainClass instanceof LocalClass){
-//									LocalClass domain_class = (LocalClass)abstractDomain_class;
-//									LocalClass container_domainClass = (LocalClass)containerDomainClass;
-//									
-//									EList<AbstractSuperClass> superClasses = domain_class.getClass_().getInheritences();
-//									
-//									
-//									boolean isSuperClass = false;
-//									for (AbstractSuperClass abstractSuperClass : superClasses) {
-//										if (abstractSuperClass instanceof LocalSuperClass){
-//											isSuperClass = ((LocalSuperClass)abstractSuperClass).getSuperClass() == target;
-//										}
-//									}
-//									
-//									
-//									return (lClassAssociationContainer != null 
-//											&& lClassAssociationContainer.getVP_Classes_Associations().contains(localClassAssociation))
-//											&& ((domain_class.getClass_() == target) || isSuperClass)
-//											&& container_domainClass.getClass_().getVP_Classes_Associations().contains(localClassAssociation);
-//								}
-//							}
-//						}
-						
 						 return VpdiagramScopeHelper.selectLocalAssociation(context2, d);
 						//return d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
 					}
 				});
 	}
 	
-	
-	private AbstractClass getAbstractClassFrom(NodeDomainElement nde){
-		
-		//Skip its container
-		EObject container = nde.eContainer().eContainer();
-		
-		if (container instanceof ContainerChildren){
-			container = container.eContainer();
-		}
-		
-		if (container instanceof MappingSet){
-			container = container.eContainer();
-		}
-		
-		if (container instanceof Container){
-			return ((Container)container).getThe_domain().getDomain_Class();
-		}
-		
-		if (container instanceof Node){
-			Node n = (Node)container;
-			return getAbstractClassOf(n);
-		}
-		
-		if (container instanceof BorderedNode){
-			BorderedNode bn = (BorderedNode)container;
-			return getAbstractClassOf(bn);
-		}
-		
-		if (container instanceof Diagram){
-			Diagram d = (Diagram)container;
-			return getAbstractClassOf(d);
-		}
-		
-		return null;	
-		
-		
-	}
-	
 	IScope scope_DomainElement_attribute(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute 
+								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
@@ -222,19 +155,23 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_Edge_source(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof DiagramElement);
+						return (d.getEObjectOrProxy() instanceof DiagramElement && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
 	
 	IScope scope_Edge_target(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof DiagramElement);
+						return (d.getEObjectOrProxy() instanceof DiagramElement && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
@@ -276,29 +213,35 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_Action_tool_For(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof DiagramElement);
+						return (d.getEObjectOrProxy() instanceof DiagramElement && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
 	
 	IScope scope_ContainerChildren_reused_nodes(EObject context, EReference reference){
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d){
-						return (d.getEObjectOrProxy() instanceof AbstractNode);
+						return (d.getEObjectOrProxy() instanceof AbstractNode && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
 	
 	
 	IScope scope_NodeChildren_reused_boderednodes(EObject context, EReference reference){
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d){
-						return (d.getEObjectOrProxy() instanceof BorderedNode);
+						return (d.getEObjectOrProxy() instanceof BorderedNode && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}

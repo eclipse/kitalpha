@@ -21,6 +21,7 @@ import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.scoping.impl.FilteringScope;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
 
@@ -71,10 +72,12 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_LocalAttributeType_type(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof Enumeration);
+						return (d.getEObjectOrProxy() instanceof Enumeration && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
@@ -89,10 +92,13 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 
 	IScope scope_LocalClassAssociation_LocalTarget(EObject context,	EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class 
+								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}
@@ -116,10 +122,13 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_LocalType_type(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointClassifier);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointClassifier
+								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
 	}

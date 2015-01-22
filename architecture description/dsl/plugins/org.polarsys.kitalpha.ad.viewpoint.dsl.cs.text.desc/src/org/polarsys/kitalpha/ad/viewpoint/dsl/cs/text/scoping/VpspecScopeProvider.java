@@ -43,10 +43,12 @@ public class VpspecScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_Viewpoint_dependencies(EObject context, EReference reference) {
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
-						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint);
+						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint 
+								&& d.getEObjectOrProxy().equals(context2) == false);
 					}
 				});
 	}
