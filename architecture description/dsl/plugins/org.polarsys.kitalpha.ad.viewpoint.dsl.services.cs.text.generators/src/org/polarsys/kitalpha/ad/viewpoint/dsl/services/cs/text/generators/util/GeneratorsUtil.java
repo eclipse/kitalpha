@@ -100,7 +100,7 @@ public class GeneratorsUtil {
 	//to support diagram external imports 
 	public static String getExternalImportDiagramHeader(DiagramSet diagram){
 
-		if (diagram != null && diagram.getAdditionalExternalData().size() > 0) {
+		if (diagram != null) {
 
 			StringBuffer imports = new StringBuffer("\n");
 

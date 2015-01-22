@@ -56,7 +56,12 @@ public class ExternalImportsTransientService extends DefaultTransientValueServic
 		if (owner instanceof DiagramExtension &&
 				check_id(VpdiagramPackage.DIAGRAM_EXTENSION__ID, feature)){	
 			return true;
-		}	
+		}
+		
+		if (owner instanceof DiagramExtension &&
+				check_id(VpdiagramPackage.DIAGRAM_EXTENSION__DESCRIPTION, feature)){	
+			return true;
+		}
 
 		return false;
 	}	
