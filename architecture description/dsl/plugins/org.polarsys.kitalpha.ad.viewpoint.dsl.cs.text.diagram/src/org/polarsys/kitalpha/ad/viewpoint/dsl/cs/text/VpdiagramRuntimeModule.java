@@ -47,12 +47,13 @@ public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.d
 		return VpdiagramGenerator.class;
 	}
 
-	public Class<? extends DefaultTransientValueService> bindExternalDataTransient() {
-		return ExternalImportsTransientService.class;
-	}
+	//TODO Reactivate for the backward Sync
+//	public Class<? extends DefaultTransientValueService> bindExternalDiagramTransient() {
+//		return ExternalImportsTransientService.class;
+//	}
 	
-	@SuppressWarnings("restriction")
-	public Class<? extends ICrossReferenceSerializer> bindCrossReferenceSerializer(){
-		return ScopeDiagramSerializer.class;
-	}
+//	@SuppressWarnings("restriction")
+//	public Class<? extends ICrossReferenceSerializer> bindCrossReferenceSerializer(){
+//		return ScopeDiagramSerializer.class;
+//	}
 }

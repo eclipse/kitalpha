@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +32,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.mwe.core.monitor.NullProgressMonitor;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.VerifyListener;
@@ -204,14 +202,14 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 //						IResource standaloneIResource = ResourceHelper.getStandaloneIResource(projectName);
 //						if (standaloneIResource != null){
 
-							VpdslModelResourcesManager.addResource(file);
+//							VpdslModelResourcesManager.addResource(file);
 
 
-							if (synchronizing){
-								VpdslModelResourcesManager.addPersistentProperty(file, "");
-							} else {
-								VpdslModelResourcesManager.addPersistentProperty(file, "Unsynchronized");
-							}
+//							if (synchronizing){
+//								VpdslModelResourcesManager.addPersistentProperty(file, "");
+//							} else {
+//								VpdslModelResourcesManager.addPersistentProperty(file, "Unsynchronized");
+//							}
 //						}
 					}	
 				}
@@ -338,13 +336,16 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 				
 				
 				isResourceClean &= handleXtextResourceErrors(resource);
-				isResourceClean &= handleEMFValidationErrors(resource);
+				
+				if (!isResourceClean)
+					isResourceClean &= handleEMFValidationErrors(resource);
 			}
 		}
 		
 		resourceSet.eSetDeliver(false);
 		resourceSet.getResources().clear();
 		resourceSet.eAdapters().clear();
+		
 		return isResourceClean;
 	}
 	
