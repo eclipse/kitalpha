@@ -1,4 +1,4 @@
-//Generated on Wed Jun 18 09:37:14 CEST 2014 with EGF 1.1.0.v20140528-0645
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.emde.egf.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -1391,7 +1391,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					if (genFeature.getTypeGenDataType() == null || !genFeature.getTypeGenDataType().isObjectType() || !genFeature.getRawType().equals(genFeature.getType(genClass))) {
 						if (genFeature.getEcoreFeature().getEGenericType().getETypeParameter() == null) {
 							stringBuffer.append(TEXT_263);
-							stringBuffer.append(genFeature.getObjectType(genClass));
+							stringBuffer.append(genFeature.getRawImportedBoundType());
 							stringBuffer.append(TEXT_264);
 						}
 						stringBuffer.append(TEXT_265);
