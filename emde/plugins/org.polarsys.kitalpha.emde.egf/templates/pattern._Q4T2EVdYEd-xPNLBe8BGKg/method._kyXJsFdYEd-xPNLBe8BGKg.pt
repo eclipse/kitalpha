@@ -466,13 +466,13 @@ public interface <%=genClass.getInterfaceName()%><%=genClass.getTypeParameters()
 				set<%=genFeature.getAccessorName()%>(((<%=genFeature.getObjectType(genClass)%>)newValue).<%=genFeature.getPrimitiveValueFunction()%>());
     <%} else {%>
         <%if (genFeature.getTypeGenDataType() == null || !genFeature.getTypeGenDataType().isObjectType() || !genFeature.getRawType().equals(genFeature.getType(genClass))) {%>
-<%if (genFeature.getEcoreFeature().getEGenericType().getETypeParameter() == null) {%>
+<%if (!genFeature.getEcoreFeature().getEGenericType().getETypeArguments().isEmpty()) {%>
 				// begin-extension-code
 				if (newValue == null || newValue instanceof <%=genFeature.getRawImportedBoundType()%>) {
 				// end-extension-code
 <%}%>
 					set<%=genFeature.getAccessorName()%>((<%=genFeature.getObjectType(genClass)%>)newValue);
-<%if (genFeature.getEcoreFeature().getEGenericType().getETypeParameter() == null) {%>
+<%if (!genFeature.getEcoreFeature().getEGenericType().getETypeArguments().isEmpty()) {%>
 				// begin-extension-code
 				}
 				// end-extension-code

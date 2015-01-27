@@ -1389,7 +1389,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					stringBuffer.append(TEXT_262);
 				} else {
 					if (genFeature.getTypeGenDataType() == null || !genFeature.getTypeGenDataType().isObjectType() || !genFeature.getRawType().equals(genFeature.getType(genClass))) {
-						if (genFeature.getEcoreFeature().getEGenericType().getETypeParameter() == null) {
+						if (!genFeature.getEcoreFeature().getEGenericType().getETypeArguments().isEmpty()) {
 							stringBuffer.append(TEXT_263);
 							stringBuffer.append(genFeature.getRawImportedBoundType());
 							stringBuffer.append(TEXT_264);
@@ -1399,7 +1399,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 						stringBuffer.append(TEXT_266);
 						stringBuffer.append(genFeature.getObjectType(genClass));
 						stringBuffer.append(TEXT_267);
-						if (genFeature.getEcoreFeature().getEGenericType().getETypeParameter() == null) {
+						if (!genFeature.getEcoreFeature().getEGenericType().getETypeArguments().isEmpty()) {
 							stringBuffer.append(TEXT_268);
 						}
 					} else {
