@@ -173,12 +173,12 @@ public class DiagramTextAcceleration {
 		String classFQN = qualifiedNameProvider.apply(node.getVPClass()).toString();
 		String associationFQN = qualifiedNameProvider.apply(node.getContainingReference()).toString();
 		
-		if (firstGeneration_container){
-			appendable.increaseIndentation().newLine();
-			firstGeneration_container = false;
-		} else {
-			appendable.newLine();
-		}
+//		if (firstGeneration_container){
+//			appendable.increaseIndentation().newLine();
+//			firstGeneration_container = false;
+//		} else {
+//			appendable.newLine();
+//		}
 		
 		appendable.append("Container ").append(node.getVPClass().getName()).append("{");
 		appendable.increaseIndentation().newLine();
@@ -189,6 +189,7 @@ public class DiagramTextAcceleration {
 		generateRepresentation(getLabel(node), false);
 		appendable.newLine();
 		appendable.append("Contains { ");
+		appendable.increaseIndentation().newLine();
 	}
 	
 	private void endContainerGeneration(){
@@ -196,6 +197,7 @@ public class DiagramTextAcceleration {
 		appendable.append("}");
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}");
+		appendable.newLine();
 	}
 
 	
@@ -203,12 +205,12 @@ public class DiagramTextAcceleration {
 		String classFQN = qualifiedNameProvider.apply(node.getVPClass()).toString();
 		String associationFQN = qualifiedNameProvider.apply(node.getContainingReference()).toString();
 		
-		if (firstGeneration_node){
-			appendable.increaseIndentation().newLine();
-			firstGeneration_node = false;
-		} else {
-			appendable.newLine();
-		}
+//		if (firstGeneration_node){
+//			appendable.increaseIndentation().newLine();
+//			firstGeneration_node = false;
+//		} else {
+//			appendable.newLine();
+//		}
 		appendable.append("Node ").append(node.getVPClass().getName()).append("{");
 		appendable.increaseIndentation().newLine(); 
 		appendable.append("domain-context: ").append(classFQN);
