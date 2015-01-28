@@ -157,7 +157,8 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
          for (String uri : sortedList) {	
                  StyledString styledUri = new StyledString();	
                  styledUri.append(uri);	
-                 if (imports.get(UseLinksContentassistHelper.MODEL_KEY).contains(uri)){	
+                 Collection<String> modelValues = imports.get(UseLinksContentassistHelper.MODEL_KEY);
+                 if (modelValues != null && modelValues.contains(uri)){	
                          acceptor.accept(createCompletionProposal(createProposal(uri),	
                                          styledUri, image_emf, context));	
                  } else {	

@@ -16,6 +16,7 @@ import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.ExternalImportsTransientService;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.SequencerDiagramTransientValue;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.VpdiagramGenerator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resource.VpdiagramResourceServiceProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping.VpdiagramContainerManager;
@@ -26,6 +27,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer.ScopeDiagramSer
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
+@SuppressWarnings("restriction")
 public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.AbstractVpdiagramRuntimeModule {
 
 	public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
@@ -47,13 +49,15 @@ public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.d
 		return VpdiagramGenerator.class;
 	}
 
-	//TODO Reactivate for the backward Sync
-//	public Class<? extends DefaultTransientValueService> bindExternalDiagramTransient() {
-//		return ExternalImportsTransientService.class;
-//	}
+	public Class<? extends DefaultTransientValueService> bindExternalDiagramTransient() {
+		return ExternalImportsTransientService.class;
+	}
 	
-//	@SuppressWarnings("restriction")
-//	public Class<? extends ICrossReferenceSerializer> bindCrossReferenceSerializer(){
-//		return ScopeDiagramSerializer.class;
-//	}
+	public Class<? extends ICrossReferenceSerializer> bindCrossReferenceSerializer(){
+		return ScopeDiagramSerializer.class;
+	}
+	
+	public Class<? extends org.eclipse.xtext.serializer.sequencer.ITransientValueService> bindSequencerTransientValueService() {
+		return SequencerDiagramTransientValue.class;
+	}
 }

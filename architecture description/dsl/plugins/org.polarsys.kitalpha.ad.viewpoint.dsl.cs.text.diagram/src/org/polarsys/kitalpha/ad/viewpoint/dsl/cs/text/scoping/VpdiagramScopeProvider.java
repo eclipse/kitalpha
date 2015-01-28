@@ -22,16 +22,9 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.scoping.impl.FilteringScope;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerChildren;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
@@ -40,6 +33,7 @@ import com.google.common.base.Predicate;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
@@ -128,7 +122,6 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
 						 return VpdiagramScopeHelper.selectLocalAssociation(context2, d);
-						//return d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
 					}
 				});
 	}

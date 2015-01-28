@@ -101,9 +101,9 @@ public class VpDiagramEditorCallBack extends CommonEditorCallback {
 	private void applySelectedProposal() {
 		if (selectedProposal.equals(VpdiagramEditorCallBack_NewAccelerationDiagram)){
 			Collection<IObserver> observers = new HashSet<IObserver>();
-			TemplateInterceptor interceptor = VpdiagramTemplateProposalProvider.getRetarder();
+			TemplateInterceptor interceptor = VpdiagramTemplateProposalProvider.getInterceptor();
 			observers.add(interceptor);
-			TemplateWizardAction.showTemplateWizardWizard(VpdiagramTemplateProposalProvider.getRetarder().getClasses(), observers);
+			TemplateWizardAction.showTemplateWizardWizard(VpdiagramTemplateProposalProvider.getInterceptor().getClasses(), observers);
 		}
 	}
 		

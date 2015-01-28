@@ -233,8 +233,10 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
 			isResourceClean = true; //reset
-			if (validate(inputObjects) && canSynchronize(file, projectName)){
-
+			
+			//FIXME: Reactivate it when transient value service work will
+			//if (validate(inputObjects) && canSynchronize(file, projectName)){
+			if (canSynchronize(file, projectName)){
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetObject);
 
 				if (synchronizedObject!=null) {

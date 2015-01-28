@@ -104,7 +104,7 @@ public class TemplateInterceptor implements IObserver {
 			appendable.append("domain-context: ").append(qualifiedNameProvider.apply(vpClass).toString());
 			appendable.newLine();
 			appendable.append("Mapping {");
-			appendable.increaseIndentation().newLine();
+			appendable.increaseIndentation();
 			diagramTextAcceleration.generateNodesText();
 			diagramTextAcceleration.generateEdgesText();
 			
