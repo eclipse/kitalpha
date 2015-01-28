@@ -13,10 +13,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.CommonEditorCallback;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateContextType;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateProposalProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.VpDiagramEditorCallBack;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateStore;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.template.VpdiagramTemplateProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
 
 
@@ -33,25 +32,23 @@ public class VpdiagramUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs
 		return CommonEObjectHover.class;
 	}
 	
+	
 	@Override
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider> bindITemplateProposalProvider(){
-		return CommonTemplateProposalProvider.class;
+		return VpdiagramTemplateProposalProvider.class;
 	}
 	
 	public Class<? extends org.eclipse.jface.text.templates.persistence.TemplateStore> bindTemplateStore() {
 		return CommonTemplateStore.class;
 	}
 	
-	public Class<? extends  org.eclipse.xtext.ui.editor.templates.XtextTemplateContextType> bindIContextContentType() {
-		return CommonTemplateContextType.class;
-	}
 	
 	@Override
 	public Class<? extends org.eclipse.xtext.ui.editor.IXtextEditorCallback> bindIXtextEditorCallback() {
-		return CommonEditorCallback.class;
+		return VpDiagramEditorCallBack.class;
 	}
 	
-//	public Class<? extends org.eclipse.xtext.ui.editor.XtextEditor> bindXtextEditor(){
-//		return DiagramEditor.class;
-//	}
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider.class;
+	}
 }

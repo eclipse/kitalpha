@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EPackageRegistryImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.naming.QualifiedName;
@@ -23,7 +22,6 @@ import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.tokens.CrossReferenceSerializer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
 
 import com.google.common.collect.Iterables;
@@ -56,29 +54,19 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 		if (eObject instanceof EPackage){
 			ePackage = (EPackage)eObject;
 		}
-//		String ePackage = target.eResource().getURI().toString();
 		if (ePackage != null) {
 			String importURI = ePackage.getNsURI();
 			QualifiedName packageNsURI = QualifiedName.create(importURI);
 			URI nsURI = URI.createURI(packageNsURI.toString());
-//			EPackage ecoreModel = EPackageRegistryImpl.INSTANCE
-//					.getEPackage(nsURI.toString());
-			//Call workspace Registry. This registry delegates to EMF registry when the EPackage is not found
-//			EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE
-//					.getEPackage(nsURI.toString());
-//			if (ecoreModel != null) {
 				 EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), semanticObject.eResource().getResourceSet());
-				// EPackageRegistryImpl.INSTANCE.getEPackage(importURI);
 				if (descriptionManager != null && loadedEPackage != null
 						&& loadedEPackage.eResource() != null) {
-//					Resource packageResource = ecoreModel.eResource();
 					Resource packageResource = loadedEPackage.eResource();
 					IResourceDescription resourceDescription = descriptionManager
 							.getResourceDescription(packageResource);
 					exportedObjects = Iterables.concat(exportedObjects,
 							resourceDescription.getExportedObjects());
 				}
-//			}
 		}
 		
 		IScope newLocalScope = MultimapBasedScope.createScope(scope, exportedObjects, false);

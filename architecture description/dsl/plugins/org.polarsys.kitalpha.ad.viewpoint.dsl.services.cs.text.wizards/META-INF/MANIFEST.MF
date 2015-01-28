@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.project,
  org.polarsys.kitalpha.resourcereuse,
- org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.preferences
+ org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.preferences,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards,
@@ -24,6 +25,8 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.conf,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.data,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.observer,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.services,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.spec,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.ui,

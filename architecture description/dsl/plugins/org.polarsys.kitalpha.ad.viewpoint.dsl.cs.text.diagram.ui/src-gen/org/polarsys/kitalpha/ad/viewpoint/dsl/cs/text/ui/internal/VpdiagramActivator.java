@@ -29,12 +29,15 @@ public class VpdiagramActivator extends AbstractUIPlugin {
 	
 	private static VpdiagramActivator INSTANCE;
 	
+	private static long diagram_suffix;
+	
 	private Map<String, Injector> injectors = Collections.synchronizedMap(Maps.<String, Injector> newHashMapWithExpectedSize(1));
 	
 	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		INSTANCE = this;
+		diagram_suffix = 0;
 	}
 	
 	@Override
@@ -90,6 +93,13 @@ public class VpdiagramActivator extends AbstractUIPlugin {
 	
 	protected Module getSharedStateModule() {
 		return new SharedStateModule();
+	}
+	
+	
+	public static long getAndIncrementDiagram_suffix(){
+		long current = diagram_suffix;
+		diagram_suffix++;
+		return current;
 	}
 	
 }
