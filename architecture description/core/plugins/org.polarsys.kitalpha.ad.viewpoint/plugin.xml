@@ -4,5 +4,12 @@
    <extension-point id="org.polarsys.kitalpha.ad.viewpoint.implementation.services" name="Service impl" schema="schema/implementation.services.exsd"/>
    <extension-point id="org.polarsys.kitalpha.ad.viewpoint.rule.providers" name="Rule Providers" schema="schema/rule.providers.exsd"/>
    <extension-point id="org.polarsys.kitalpha.ad.viewpoint.javarules" name="Java Rules" schema="schema/javarules.exsd"/>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.rule.providers">
+      <RuleProvider
+            class="org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRuleProvider">
+      </RuleProvider>
+   </extension>
+
 
 </plugin>
