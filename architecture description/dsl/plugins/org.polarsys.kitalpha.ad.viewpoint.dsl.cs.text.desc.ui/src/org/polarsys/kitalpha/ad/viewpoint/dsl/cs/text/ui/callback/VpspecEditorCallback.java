@@ -201,9 +201,7 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 			
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
-			//FIXME reactivate it when transient value are fixed
-//			if (validate(inputObjects)){
-			if (canSynchronize(file, projectName)){	
+			if (validate(inputObjects) && canSynchronize(file, projectName)){
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
 				
 				if (synchronizedObject!=null) {

@@ -36,8 +36,6 @@ public class DiagramTextAcceleration {
 	
 	private TreeAppendable appendable;
 	
-	private boolean firstGeneration_container = true;
-	private boolean firstGeneration_node = true;
 	
 	public DiagramTextAcceleration(Class rootClass, IQualifiedNameProvider qualifiedNameProvider, TreeAppendable appendable) {
 		
@@ -89,6 +87,10 @@ public class DiagramTextAcceleration {
 			appendable.append("/*").append(node.getName()).append(" Actions */");
 			appendable.newLine();
 			
+			/*
+			 * NB: getAndIncrementDiagram_suffix() is defined in the activator
+			 * if regeneration, reimplement it or subclass the activator
+			 */
 			long suffix = VpdiagramActivator.getAndIncrementDiagram_suffix();
 			appendable.append("Create ").append(node.getName().trim()).append("_CT_" + suffix).append("{");
 			appendable.increaseIndentation().newLine();

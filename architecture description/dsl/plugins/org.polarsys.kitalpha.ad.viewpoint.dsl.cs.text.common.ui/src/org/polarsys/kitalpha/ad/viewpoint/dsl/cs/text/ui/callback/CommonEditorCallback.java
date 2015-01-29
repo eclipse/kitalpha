@@ -234,9 +234,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 			
 			isResourceClean = true; //reset
 			
-			//FIXME: Reactivate it when transient value service work will
-			//if (validate(inputObjects) && canSynchronize(file, projectName)){
-			if (canSynchronize(file, projectName)){
+			if (validate(inputObjects) && canSynchronize(file, projectName)){
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetObject);
 
 				if (synchronizedObject!=null) {
