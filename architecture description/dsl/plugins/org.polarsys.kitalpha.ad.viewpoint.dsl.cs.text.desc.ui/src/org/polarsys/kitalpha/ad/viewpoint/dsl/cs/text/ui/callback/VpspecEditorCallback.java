@@ -190,7 +190,7 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 		IViewpointSynchronizer generator = getInjector().getInstance(IViewpointSynchronizer.class);
 		String projectName = getProject(file).getName();
 		EObject targetObject = ResourceHelper.loadStandaloneResource(resourceSet, projectName);
-		if (targetObject!=null && canSynchronize(file, projectName)) {
+		if (targetObject!=null) {
 			Viewpoint targetVp = (Viewpoint) targetObject;		
 			EObject primaryResourceRoot = ResourceHelper.loadResource(file, resourceSet).get(0);
 			if (primaryResourceRoot instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint) {
@@ -201,8 +201,9 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 			
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
-			if (validate(inputObjects)){
-				
+			//FIXME reactivate it when transient value are fixed
+//			if (validate(inputObjects)){
+			if (canSynchronize(file, projectName)){	
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
 				
 				if (synchronizedObject!=null) {

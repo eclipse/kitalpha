@@ -63,24 +63,18 @@ public class ScopeDiagramSerializer extends CrossReferenceSerializer {
 		EObject eObject = target.eResource().getContents().get(0);
 		
 		if (eObject instanceof EPackage){
-			EPackage ePackage = null;
+			Resource resource = eObject.eResource();
 			
-			ePackage = (EPackage)eObject;
-
-			String importURI = ePackage.getNsURI();
-			QualifiedName packageNsURI = QualifiedName.create(importURI);
-			URI nsURI = URI.createURI(packageNsURI.toString());
-
-			EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), semanticObject.eResource().getResourceSet());
-
-			if (descriptionManager != null && loadedEPackage != null
-					&& loadedEPackage.eResource() != null) {
-
-				Resource packageResource = loadedEPackage.eResource();
-				IResourceDescription resourceDescription = descriptionManager
-						.getResourceDescription(packageResource);
-				exportedObjects = Iterables.concat(exportedObjects,
-						resourceDescription.getExportedObjects());
+			if (resource != null){
+				URI importURI = resource.getURI();
+				EPackage loadedEPackage = ExternalDataHelper.loadEPackage(importURI.toString(), semanticObject.eResource().getResourceSet());
+				
+				if (descriptionManager != null && loadedEPackage != null) {
+					IResourceDescription resourceDescription = descriptionManager
+							.getResourceDescription(resource);
+					exportedObjects = Iterables.concat(exportedObjects,
+							resourceDescription.getExportedObjects());
+				}
 			}
 		}
 		

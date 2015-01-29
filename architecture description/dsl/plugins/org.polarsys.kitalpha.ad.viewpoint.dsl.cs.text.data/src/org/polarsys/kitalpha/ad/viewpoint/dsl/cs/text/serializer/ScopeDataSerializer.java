@@ -41,6 +41,7 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 	IResourceDescription.Manager descriptionManager;
 	
 	
+	
 	@Override
 	protected String getCrossReferenceNameFromScope(EObject semanticObject,
 			CrossReference crossref, EObject target, final IScope scope,
@@ -48,25 +49,18 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 
 		Iterable<IEObjectDescription> exportedObjects = scope.getAllElements();
 		
-		EPackage ePackage = null;
-		EObject eObject = target.eResource().getContents().get(0);
+		Resource resource = target.eResource();
 		
-		if (eObject instanceof EPackage){
-			ePackage = (EPackage)eObject;
-		}
-		if (ePackage != null) {
-			String importURI = ePackage.getNsURI();
-			QualifiedName packageNsURI = QualifiedName.create(importURI);
-			URI nsURI = URI.createURI(packageNsURI.toString());
-				 EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), semanticObject.eResource().getResourceSet());
-				if (descriptionManager != null && loadedEPackage != null
-						&& loadedEPackage.eResource() != null) {
-					Resource packageResource = loadedEPackage.eResource();
-					IResourceDescription resourceDescription = descriptionManager
-							.getResourceDescription(packageResource);
-					exportedObjects = Iterables.concat(exportedObjects,
-							resourceDescription.getExportedObjects());
-				}
+		if (resource != null){
+			URI importURI = resource.getURI();
+			EPackage loadedEPackage = ExternalDataHelper.loadEPackage(importURI.toString(), semanticObject.eResource().getResourceSet());
+			
+			if (descriptionManager != null && loadedEPackage != null) {
+				IResourceDescription resourceDescription = descriptionManager
+						.getResourceDescription(resource);
+				exportedObjects = Iterables.concat(exportedObjects,
+						resourceDescription.getExportedObjects());
+			}
 		}
 		
 		IScope newLocalScope = MultimapBasedScope.createScope(scope, exportedObjects, false);

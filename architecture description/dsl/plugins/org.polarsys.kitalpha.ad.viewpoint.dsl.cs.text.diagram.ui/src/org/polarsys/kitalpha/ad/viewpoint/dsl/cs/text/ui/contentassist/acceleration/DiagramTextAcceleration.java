@@ -56,14 +56,13 @@ public class DiagramTextAcceleration {
 	}
 	
 	
-	//FIXME: indent when generation will be enabled
 	public void generateEdgesText() {
 		for (AEdge aEdge : dataAnalyser.getAllEdges()) 
 		{
 			
 			appendable.newLine();
 			appendable.append("Edge ").append(aEdge.getName()).append(" {");
-			appendable.newLine();
+			appendable.increaseIndentation().newLine();
 			appendable.append("association-context: ").append(qualifiedNameProvider.apply(aEdge.getTargetReference()).toString());
 			appendable.newLine();
 			appendable.append("source: ").append(aEdge.getSourceNodesFQN());
@@ -71,12 +70,14 @@ public class DiagramTextAcceleration {
 			appendable.append("target: ").append(aEdge.getTargetNodesFQN());
 			appendable.newLine();
 			appendable.append("Representation {");
-			appendable.newLine();
-			appendable.append("Style {").newLine();
-			appendable.append("end-decorator: InputArrow color: black");
-			appendable.newLine().append("}");
-			appendable.newLine().append("}");
-			appendable.newLine().append("}");
+			appendable.increaseIndentation().newLine();
+			appendable.append("Style {");
+			appendable.increaseIndentation().newLine();
+			appendable.append("end-decorator: InputArrow").newLine();
+			appendable.append("color: black");
+			appendable.decreaseIndentation().newLine().append("}"); //Style
+			appendable.decreaseIndentation().newLine().append("}"); //Repesentation
+			appendable.decreaseIndentation().newLine().append("}"); //Edge
 		}
 	}
 	
@@ -106,27 +107,30 @@ public class DiagramTextAcceleration {
 				appendable.append("}");
 			}
 			appendable.decreaseIndentation();
-			
 		}
 		
 		for (AEdge edge : dataAnalyser.getAllEdges()) 
 		{
-			appendable.newLine().append("/*").append(edge.getName()).append(" Actions */ ");
+			appendable.increaseIndentation().newLine();
+			appendable.append("/*").append(edge.getName()).append(" Actions */ ");
 			appendable.newLine();
 			appendable.append("Create ").append(edge.getName().trim()).append("_CT {");
-			appendable.newLine();
+			appendable.increaseIndentation().newLine();
 			appendable.append("label: \"").append(edge.getName()).append("\" action-for: ").append(edge.getName());
-			appendable.newLine().append("}");
+			appendable.decreaseIndentation().newLine().append("}");
+			appendable.newLine();
 			
 			appendable.append("Delete ").append(edge.getName().trim()).append("_DT {");
+			appendable.increaseIndentation().newLine();
+			appendable.append("action-for: ").append(edge.getName());
+			appendable.decreaseIndentation().newLine().append("}");
 			appendable.newLine();
-			appendable.append("\" action-for: ").append(edge.getName());
-			appendable.newLine().append("}");
 			
 			appendable.append("ReconnectEdge ").append(edge.getName().trim()).append("_RET {");
-			appendable.newLine();
-			appendable.append("\" action-for: ").append(edge.getName());
-			appendable.newLine().append("}");
+			appendable.increaseIndentation().newLine();
+			appendable.append("action-for: ").append(edge.getName());
+			appendable.decreaseIndentation().newLine().append("}");
+			appendable.decreaseIndentation();
 		}
 		appendable.newLine();
 		appendable.append("}");
@@ -152,9 +156,9 @@ public class DiagramTextAcceleration {
 				{
 					int index = reuse.indexOf(aNode);
 					if (index == 0)
-						appendable.append(" reuse ").append(aNode.getFQN());
+						appendable.append("reuse ").append(aNode.getFQN()).newLine();
 					else
-						appendable.append(", ").append(aNode.getFQN());
+						appendable.append(", ").append(aNode.getFQN()).append(" ");
 				}
 			}
 			
@@ -173,13 +177,7 @@ public class DiagramTextAcceleration {
 		String classFQN = qualifiedNameProvider.apply(node.getVPClass()).toString();
 		String associationFQN = qualifiedNameProvider.apply(node.getContainingReference()).toString();
 		
-//		if (firstGeneration_container){
-//			appendable.increaseIndentation().newLine();
-//			firstGeneration_container = false;
-//		} else {
-//			appendable.newLine();
-//		}
-		
+		appendable.newLine();
 		appendable.append("Container ").append(node.getVPClass().getName()).append("{");
 		appendable.increaseIndentation().newLine();
 		appendable.append("domain-context: ").append(classFQN).append(" provided-by association ")
@@ -197,7 +195,6 @@ public class DiagramTextAcceleration {
 		appendable.append("}");
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}");
-		appendable.newLine();
 	}
 
 	
@@ -205,12 +202,7 @@ public class DiagramTextAcceleration {
 		String classFQN = qualifiedNameProvider.apply(node.getVPClass()).toString();
 		String associationFQN = qualifiedNameProvider.apply(node.getContainingReference()).toString();
 		
-//		if (firstGeneration_node){
-//			appendable.increaseIndentation().newLine();
-//			firstGeneration_node = false;
-//		} else {
-//			appendable.newLine();
-//		}
+		appendable.newLine();
 		appendable.append("Node ").append(node.getVPClass().getName()).append("{");
 		appendable.increaseIndentation().newLine(); 
 		appendable.append("domain-context: ").append(classFQN);
@@ -239,10 +231,11 @@ public class DiagramTextAcceleration {
 		appendable.append("content: ").append(label);
 		appendable.newLine();
 		appendable.append("police: black");
-		appendable.newLine();
 		
-		if (isNode)
-			appendable.append("alignment: left");
+		if (isNode){
+			appendable.newLine();
+			appendable.append(" alignment: left");
+		}
 		
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}");

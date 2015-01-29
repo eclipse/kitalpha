@@ -27,6 +27,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.ExternalClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.LocalClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
@@ -233,7 +234,7 @@ public class VpdiagramScopeHelper {
 			}
 		}
 
-		return d.getEObjectOrProxy() instanceof LocalClassAssociation;
+		return (d.getEObjectOrProxy() instanceof LocalClassAssociation || d.getEObjectOrProxy() instanceof ExternalClassAssociation) && ProjectUtil.areInSameProject(context, d.getEObjectOrProxy());
 	}
 
 	

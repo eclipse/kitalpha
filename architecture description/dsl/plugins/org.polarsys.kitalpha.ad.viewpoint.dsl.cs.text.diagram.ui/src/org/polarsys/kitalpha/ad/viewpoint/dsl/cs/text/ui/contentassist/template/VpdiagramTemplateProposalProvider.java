@@ -82,7 +82,7 @@ public class VpdiagramTemplateProposalProvider extends
 	}
 
 
-	public static TemplateInterceptor getRetarder() {
+	public static TemplateInterceptor getInterceptor() {
 		return interceptor;
 	}
 
@@ -107,8 +107,14 @@ public class VpdiagramTemplateProposalProvider extends
 		
 		for (URI uri : dataResourceURIs) {
 			List<EObject> dataRoots = ResourceHelper.loadDataResource(uri, resourceSet);
-			EList<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class> classes = ((Data)dataRoots.get(0)).getVP_Classes();
-			interceptor.addAll(classes);
+
+			for (EObject eObject : dataRoots) {
+				if (eObject instanceof Data){
+					EList<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class> classes = ((Data)eObject).getVP_Classes();
+					interceptor.addAll(classes);
+				}
+			}
+
 		}
 	}
 }
