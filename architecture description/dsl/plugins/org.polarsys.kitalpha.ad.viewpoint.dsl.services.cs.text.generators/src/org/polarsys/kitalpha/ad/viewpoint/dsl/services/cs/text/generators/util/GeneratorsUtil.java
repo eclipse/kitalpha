@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.viewpoint.description.Group;
@@ -107,8 +108,18 @@ public class GeneratorsUtil {
 			List<EPackage> ePackages = diagram.getAdditionalExternalData();
 
 			for (EPackage ePackage : ePackages) {
-				imports.append("import external \"")
-				.append(ePackage.getNsURI()).append("\"\n");
+				imports.append("import external \"");
+				Resource resource = ePackage.eResource();
+				
+				//TODO: create helper to get platform uri
+				if (resource != null){
+					String uri = resource.getURI().toString();
+					imports.append(uri);
+				} else {
+					imports.append(ePackage.getNsURI());
+				}
+				
+				imports.append("\"\n");
 			}
 
 			List<Group> groups = diagram.getAdditionalExternalGroup();
