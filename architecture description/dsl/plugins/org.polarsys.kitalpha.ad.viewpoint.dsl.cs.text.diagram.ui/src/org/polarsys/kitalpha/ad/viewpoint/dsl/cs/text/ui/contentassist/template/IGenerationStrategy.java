@@ -8,15 +8,28 @@
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.observer;
+package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.template;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
 
 /**
- * The observer. It is reposible to update the template
- * @author S0020807
+ * 
+ * This interface aims to have diffrentes diagram generation
+ * 
+ * @author Faycal Abka
  *
  */
-public interface IObserver {
-	public void update(Class vpClass, boolean isDiagramExtension);
+public interface IGenerationStrategy {
+	
+	static final String SEPARATOR = ".";
+	static final String LINE_SEPARATOR = "\n";	
+	static final String INDENTATION = "	";
+
+	/**
+	 * Algorithm of generation
+	 * @param vpClass
+	 * @param TreeAppendable
+	 */
+	public TreeAppendable generateDiagram(Class vpClass);
 }

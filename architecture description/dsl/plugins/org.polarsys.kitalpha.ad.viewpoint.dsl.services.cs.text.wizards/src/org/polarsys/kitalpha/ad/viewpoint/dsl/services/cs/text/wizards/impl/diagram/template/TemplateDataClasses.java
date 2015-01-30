@@ -45,6 +45,7 @@ public class TemplateDataClasses extends Wizard implements ISelectionNotificatio
 				notifyObservators(class1);
 			}
 		}
+		page.dispose();
 		return true;
 	}
 	
@@ -71,11 +72,19 @@ public class TemplateDataClasses extends Wizard implements ISelectionNotificatio
 	}
 
 	@Override
-	public void notifyObservators(Class vpClass) {
+	public void notifyObservators(Class vpClass) 
+	{
+		boolean isExtension = false;
+		DataClassesPage page = getDataClassesPage();
 		
-		for (IObserver observer : observers) {
-			observer.update(vpClass);
+		if (page != null)
+		{
+			isExtension = page.isDiagramExtension();
+		}
+		
+		for (IObserver observer : observers) 
+		{
+			observer.update(vpClass, isExtension);
 		}
 	}
-	
 }

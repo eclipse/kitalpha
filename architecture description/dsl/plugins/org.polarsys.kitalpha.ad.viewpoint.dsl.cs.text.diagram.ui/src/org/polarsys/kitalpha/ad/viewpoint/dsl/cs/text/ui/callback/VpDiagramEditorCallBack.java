@@ -16,6 +16,8 @@ import java.util.HashSet;
 import org.eclipse.jface.text.contentassist.ContentAssistEvent;
 import org.eclipse.jface.text.contentassist.ICompletionListener;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.jface.wizard.IWizard;
+import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
@@ -100,10 +102,11 @@ public class VpDiagramEditorCallBack extends CommonEditorCallback {
 	
 	private void applySelectedProposal() {
 		if (selectedProposal.equals(VpdiagramEditorCallBack_NewAccelerationDiagram)){
-			Collection<IObserver> observers = new HashSet<IObserver>();
 			TemplateInterceptor interceptor = VpdiagramTemplateProposalProvider.getInterceptor();
-			observers.add(interceptor);
-			TemplateWizardAction.showTemplateWizardWizard(VpdiagramTemplateProposalProvider.getInterceptor().getClasses(), observers);
+			Wizard wizard = TemplateWizardAction.createWizardDialog();
+			TemplateWizardAction.registerObserver(wizard, interceptor);
+			TemplateWizardAction.openAndInitWizard(wizard, interceptor.getClasses());
+			
 		}
 	}
 		
