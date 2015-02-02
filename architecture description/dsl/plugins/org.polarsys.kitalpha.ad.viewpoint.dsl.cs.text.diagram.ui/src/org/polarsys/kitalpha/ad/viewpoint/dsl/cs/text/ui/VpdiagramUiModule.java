@@ -51,4 +51,6 @@ public class VpdiagramUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
 		return org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider.class;
 	}
+	
+	
 }

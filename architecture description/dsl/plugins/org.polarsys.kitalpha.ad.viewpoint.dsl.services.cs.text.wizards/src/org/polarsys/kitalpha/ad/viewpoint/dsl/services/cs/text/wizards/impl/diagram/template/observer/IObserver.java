@@ -13,8 +13,8 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.dia
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 
 /**
- * The observer. It is reposible to update the template
- * @author S0020807
+ * The observer. It is resposible to update the template
+ * @author Faycal Abka
  *
  */
 public interface IObserver {

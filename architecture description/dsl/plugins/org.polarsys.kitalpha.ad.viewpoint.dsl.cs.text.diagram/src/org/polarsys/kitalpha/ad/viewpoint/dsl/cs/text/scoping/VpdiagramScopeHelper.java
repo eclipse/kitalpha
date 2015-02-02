@@ -58,7 +58,7 @@ public class VpdiagramScopeHelper {
 	public static boolean selectExternalAssociation(EObject context,
 			IEObjectDescription d) {		
 		
-		if (d.getEObjectOrProxy() instanceof EReference){
+//		if (d.getEObjectOrProxy() instanceof EReference){
 			if (context instanceof ExternalAssociation){
 				ExternalAssociation externalAssociation = (ExternalAssociation)context;
 				NodeDomainElement nde = VpDiagramHelper.getNodeDomainElementFrom(externalAssociation);
@@ -112,7 +112,7 @@ public class VpdiagramScopeHelper {
 					}
 				}
 			}
-		}
+//		}
 		return d.getEObjectOrProxy() instanceof EReference;
 	}
 	
