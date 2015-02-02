@@ -78,47 +78,37 @@ public class TemplateInterceptor implements IObserver {
 		classes.addAll(newClasses);
 	}
 
-	public Collection<Class> getClasses() {
+	public Collection<Class> getClasses()
+	{
 		return classes;
 	}
 
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void update(Class vpClass) {
+	public void update(Class vpClass, boolean isDiagramExtension)
+	{
 		Template template = getTemplate();
 		
 		if (template != null){
+
+			IGenerationStrategy newDiagGen;
 			
-			if (qualifiedNameProvider == null){
+			if (qualifiedNameProvider == null)
+			{
 				qualifiedNameProvider = new DefaultDeclarativeQualifiedNameProvider();
 			}
 			
-			TreeAppendable appendable = new TreeAppendable(model, INDENTATION, LINE_SEPARATOR);
-			DiagramTextAcceleration diagramTextAcceleration = new DiagramTextAcceleration(vpClass, qualifiedNameProvider, appendable);
-			
-			long suffix = VpdiagramActivator.getAndIncrementDiagram_suffix();
-			
-			appendable.append("Diagram \"diagram_" + suffix + "\" {");
-			appendable.increaseIndentation().newLine();
-			appendable.append("domain-context: ").append(qualifiedNameProvider.apply(vpClass).toString());
-			appendable.newLine();
-			appendable.append("Mapping {");
-			appendable.increaseIndentation();
-			diagramTextAcceleration.generateNodesText();
-			diagramTextAcceleration.generateEdgesText();
-			
-			appendable.decreaseIndentation().newLine();
-			appendable.append("}"); //Mapping
-			appendable.newLine();
-			appendable.append("Actions {");
-			
-			diagramTextAcceleration.generateActionsText();
-			
-			appendable.decreaseIndentation().newLine();
-			appendable.append("}");
-			
-			template.setPattern(appendable.getContent());
+			if (isDiagramExtension)
+			{
+				newDiagGen = new ExtendedDiagramGeneration(model, qualifiedNameProvider);
+			}
+			else
+			{
+				newDiagGen = new NewDiagramGeneraton(model, qualifiedNameProvider);
+			}
+
+			template.setPattern(newDiagGen.generateDiagram(vpClass).getContent());
 		}
 	}
 

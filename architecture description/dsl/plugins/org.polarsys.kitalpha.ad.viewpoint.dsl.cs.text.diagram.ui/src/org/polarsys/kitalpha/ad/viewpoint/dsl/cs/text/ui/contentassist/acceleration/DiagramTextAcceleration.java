@@ -36,14 +36,36 @@ public class DiagramTextAcceleration {
 	
 	private TreeAppendable appendable;
 	
+	private final String prefix;
 	
-	public DiagramTextAcceleration(Class rootClass, IQualifiedNameProvider qualifiedNameProvider, TreeAppendable appendable) {
+	
+	public DiagramTextAcceleration(Class rootClass, 
+			IQualifiedNameProvider qualifiedNameProvider, 
+			TreeAppendable appendable) {
 		
 		this.qualifiedNameProvider = qualifiedNameProvider;
 		this.appendable = appendable;
+		this.prefix = null;
 		
 		dataAnalyser = new ADataAnalyser(rootClass);
 		dataAnalyser.Analyse();
+	}
+	
+	public DiagramTextAcceleration(Class rootClass, 
+			IQualifiedNameProvider qualifiedNameProvider, 
+			TreeAppendable appendable,
+			String prefix) {
+		
+		this.qualifiedNameProvider = qualifiedNameProvider;
+		this.appendable = appendable;
+		this.prefix = prefix;
+		
+		dataAnalyser = new ADataAnalyser(rootClass);
+		dataAnalyser.Analyse();
+	}
+	
+	public boolean isRootNodesEmpty(){
+		return dataAnalyser.getRootNodes().isEmpty();
 	}
 	
 	public void generateNodesText() {
@@ -63,9 +85,9 @@ public class DiagramTextAcceleration {
 			appendable.increaseIndentation().newLine();
 			appendable.append("association-context: ").append(qualifiedNameProvider.apply(aEdge.getTargetReference()).toString());
 			appendable.newLine();
-			appendable.append("source: ").append(aEdge.getSourceNodesFQN());
+			appendable.append("source: ").append(getSourceNodesFQN(aEdge));
 			appendable.newLine();
-			appendable.append("target: ").append(aEdge.getTargetNodesFQN());
+			appendable.append("target: ").append(getTargetNodesFQN(aEdge));
 			appendable.newLine();
 			appendable.append("Representation {");
 			appendable.increaseIndentation().newLine();
@@ -94,8 +116,8 @@ public class DiagramTextAcceleration {
 			long suffix = VpdiagramActivator.getAndIncrementDiagram_suffix();
 			appendable.append("Create ").append(node.getName().trim()).append("_CT_" + suffix).append("{");
 			appendable.increaseIndentation().newLine();
-			appendable.append("label: \"").append(node.getName()).append(node.getFQN()).append("\" ");
-			appendable.append("action-for: ").append(node.getFQN());
+			appendable.append("label: \"").append(node.getName()).append(getFQN(node)).append("\" ");
+			appendable.append("action-for: ").append(getFQN(node));
 			appendable.decreaseIndentation().newLine();
 			appendable.append("}");
 			
@@ -104,7 +126,7 @@ public class DiagramTextAcceleration {
 				appendable.newLine();
 				appendable.append("Drop ").append(node.getName().trim()).append("_DT_" + suffix).append("{");
 				appendable.increaseIndentation().newLine();
-				appendable.append("action-for: ").append(node.getFQN());
+				appendable.append("action-for: ").append(getFQN(node));
 				appendable.decreaseIndentation().newLine();
 				appendable.append("}");
 			}
@@ -158,9 +180,9 @@ public class DiagramTextAcceleration {
 				{
 					int index = reuse.indexOf(aNode);
 					if (index == 0)
-						appendable.append("reuse ").append(aNode.getFQN()).newLine();
+						appendable.append("reuse ").append(getFQN(aNode)).newLine();
 					else
-						appendable.append(", ").append(aNode.getFQN()).append(" ");
+						appendable.append(", ").append(getFQN(aNode)).append(" ");
 				}
 			}
 			
@@ -225,7 +247,7 @@ public class DiagramTextAcceleration {
 	 * @param label
 	 * @param isNode true is not otherwise is container
 	 */
-	private void generateRepresentation(String label, boolean isNode){
+	public void generateRepresentation(String label, boolean isNode){
 		appendable.append("Representation { ");
 		appendable.increaseIndentation().newLine();
 		appendable.append("Label {");
@@ -272,5 +294,42 @@ public class DiagramTextAcceleration {
 		else
 			return "\"" + node.getName() + "\"";
 	}
+	
+	private String getFQN(ANode node){
+		if (prefix != null)
+			return prefix + "." + node.getFQN();
+		return node.getFQN();
+	}
 
+	
+	private String getSourceNodesFQN(AEdge edge){
+		if (prefix != null){
+			String sources[] = edge.getSourceNodesFQN().split(",");
+			return computeFQN(sources);
+			
+		}
+		return edge.getSourceNodesFQN();
+	}
+	
+	private String computeFQN(String refrences[]){
+		StringBuilder result = new StringBuilder();
+
+		int size = refrences.length;
+		for (String ref : refrences) {
+			String tmp = prefix + "." + ref.trim();
+			result.append(tmp);
+			if (ref != refrences[size - 1])
+				result.append(", ");
+		}
+		
+		return result.toString();
+	}
+	
+	private String getTargetNodesFQN(AEdge edge){
+		if (prefix != null){
+			String targets[] = edge.getTargetNodesFQN().split(",");
+			return computeFQN(targets);
+		}
+		return edge.getTargetNodesFQN();
+	}
 }

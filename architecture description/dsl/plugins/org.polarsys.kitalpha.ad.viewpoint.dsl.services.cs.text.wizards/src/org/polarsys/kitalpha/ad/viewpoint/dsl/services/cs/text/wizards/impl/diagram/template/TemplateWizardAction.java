@@ -12,11 +12,15 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.dia
 
 import java.util.Collection;
 
+import org.eclipse.jface.wizard.IWizard;
+import org.eclipse.jface.wizard.IWizardPage;
+import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.observer.IObserver;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.observer.ISelectionNotification;
 
 /**
  * 
@@ -25,22 +29,51 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diag
  */
 public class TemplateWizardAction {
 	
-	public static TemplateDataClasses showTemplateWizardWizard(Collection<Class> classes, Collection<IObserver> observers){
-		
+	private static WizardDialog dialog;
+	
+	public static Wizard createWizardDialog(){
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		TemplateDataClasses dataClassesWizard = new TemplateDataClasses();
-
-		for (IObserver observer : observers) {
-			dataClassesWizard.registerObserver(observer);
-		}
-		
-		dataClassesWizard.addPage(new DataClassesPage("List Data Class", classes));
 		
 		WizardDialog dialog = new WizardDialog(shell, dataClassesWizard);
-				
-		dialog.open();
+		dialog.setTitle("Diagram Creation");
+		
+		TemplateWizardAction.dialog = dialog;
 		
 		return dataClassesWizard;
 	}
 	
+	public static void openAndInitWizard(Wizard wizard, Collection<Class> classes){
+		
+		if (TemplateWizardAction.dialog == null){
+			throw new RuntimeException("Dialog wizard was not created!");
+		}
+		
+		//Register pages here
+		wizard.addPage(new DataClassesPage("List Data Class", classes));
+		
+		dialog.open();
+	}
+	
+	/**
+	 * Register observer wizard
+	 * @param wizard
+	 * @param observer
+	 */
+	public static void registerObserver(IWizard wizard, IObserver observer){
+		
+		if (wizard == null || observer == null){
+			//TODO log warning or error
+			return;
+		}
+
+		if (wizard instanceof ISelectionNotification){
+			ISelectionNotification notifier = (ISelectionNotification)wizard;
+			registerObserver(notifier, observer);
+		}
+	}
+	
+	private static void registerObserver(ISelectionNotification observator, IObserver observer){
+		observator.registerObserver(observer);
+	}
 }
