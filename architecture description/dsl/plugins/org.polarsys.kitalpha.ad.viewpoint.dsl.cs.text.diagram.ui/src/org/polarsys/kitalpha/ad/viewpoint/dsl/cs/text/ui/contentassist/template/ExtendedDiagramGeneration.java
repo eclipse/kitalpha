@@ -1,7 +1,5 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.template;
 
-import java.io.IOException;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
@@ -31,7 +29,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		
 		appendable.append("DiagramExtension \"diagramExtension_" + suffix + "\" {");
 		appendable.increaseIndentation().newLine();
-		appendable.append("extended-diagram: ").append("//extended diagram"); //TODO resolver
+		appendable.append("extended-diagram: ").append("${extendedDiagram:CrossReference('DiagramExtension.extented_diagram')}").append(" //extended diagram"); //TODO resolver
 		appendable.newLine();
 		appendable.append("Mapping {");
 		appendable.increaseIndentation().newLine();
@@ -66,7 +64,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 	private void createNode(TreeAppendable appendable, Class domainContext, DiagramTextAcceleration acceleration){
 		appendable.append("Node ").append(domainContext.getName()).append("{");
 		appendable.increaseIndentation().newLine();
-		appendable.append("import: ").append("//import a node");
+		appendable.append("import: ").append("${importNode:CrossReference('Node.imports')}").append(" //import a node");
 		appendable.newLine();
 		appendable.append("domain-context: ").append(qualifiedNameProvider.apply(domainContext).toString());
 		appendable.newLine();
@@ -84,12 +82,12 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 	private void createContainer(TreeAppendable appendable, Class domainContext, DiagramTextAcceleration acceleration){
 		appendable.append("Container ").append(domainContext.getName()).append("{");
 		appendable.increaseIndentation().newLine();
-		appendable.append("import: ").append("//import a node");
+		appendable.append("import: ").append("${importContainer:CrossReference('Container.imports')}").append(" //import a container");
 		appendable.newLine();
 		appendable.append("domain-context: ").append(qualifiedNameProvider.apply(domainContext).toString());
 		appendable.newLine();
 		//TODO provided by association with variable resolver?
-		appendable.append("provided-by association external emde.ExtensibleElement.ownedExtensions");
+		appendable.append("provided-by association external ").append("emde.ExtensibleElement.ownedExtensions");
 		appendable.newLine();
 		acceleration.generateRepresentation("\"ContainerLabel\"", false);
 		appendable.newLine();

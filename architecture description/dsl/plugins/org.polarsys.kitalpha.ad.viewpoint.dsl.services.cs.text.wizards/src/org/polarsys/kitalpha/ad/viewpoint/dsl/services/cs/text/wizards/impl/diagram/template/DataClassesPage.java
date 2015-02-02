@@ -20,6 +20,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
@@ -72,8 +73,10 @@ public class DataClassesPage extends WizardPage{
 		ListViewer listViewer = new ListViewer(listComposite, SWT.BORDER | SWT.V_SCROLL);
 		listViewer.getList().setLayoutData(new GridData(GridData.FILL_BOTH));
 		
+		listViewer.setComparator(new ViewerComparator());
+		
 		Button extensionDiagramcheckbox = new Button(listComposite, SWT.CHECK);
-		extensionDiagramcheckbox.setText("Create Diagram Extension?");
+		extensionDiagramcheckbox.setText("Create Diagram Extension");
 		extensionDiagramcheckbox.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		setControl(parent);
 		
