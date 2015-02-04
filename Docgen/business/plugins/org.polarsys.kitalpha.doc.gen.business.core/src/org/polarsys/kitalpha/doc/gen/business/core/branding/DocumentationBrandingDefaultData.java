@@ -13,6 +13,9 @@ package org.polarsys.kitalpha.doc.gen.business.core.branding;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenBrandingPreferenceConstant;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenBrandingPreferencesHelper;
+
 /**
  * @author Boubekeur Zendagui
  */
@@ -25,9 +28,23 @@ public final class DocumentationBrandingDefaultData {
 	
 	// Initialize default data
 	static {
-		data.put("copyright", "(c) Thales Global Services S.A.S, 2014. All Rights Reserved.");
-		data.put("logoPath", "Default");
-		data.put("logoAlt", "Kitalpha");
+		updateData();
+	}
+	
+	private static void updateData(){
+		data.clear();
+		data.put("copyright", DocgenBrandingPreferencesHelper.getCopyright());
+		final Boolean useDefaultLogo = DocgenBrandingPreferencesHelper.getUseDefaultLogo();
+		if (useDefaultLogo)
+		{
+			data.put("logoPath", DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE);
+			data.put("logoAlt", DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE);
+		}
+		else
+		{
+			data.put("logoPath", DocgenBrandingPreferencesHelper.getLogoPath());
+			data.put("logoAlt", DocgenBrandingPreferencesHelper.getLogoAlternateText());
+		}
 	}
 	/**
 	 * Check if a default data is available for data identified by key
@@ -35,6 +52,7 @@ public final class DocumentationBrandingDefaultData {
 	 * @return True if there is a default value for the key
 	 */
 	public static boolean isThereDefautData(String key){
+		updateData();
 		return data.containsKey(key);
 	}
 	
@@ -44,6 +62,7 @@ public final class DocumentationBrandingDefaultData {
 	 * @return the value of the data
 	 */
 	public static Object getDefaultData(String key) {
+		updateData();
 		return data.get(key);
 	}
 }

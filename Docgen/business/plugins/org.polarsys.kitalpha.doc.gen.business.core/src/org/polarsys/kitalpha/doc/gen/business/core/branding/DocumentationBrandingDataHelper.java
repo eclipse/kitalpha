@@ -10,9 +10,14 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.core.branding;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
@@ -23,6 +28,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.URIUtil;
+import org.polarsys.kitalpha.doc.gen.business.core.branding.DocumentationBrandingDataException.ExceptionCause;
 
 /**
  * @author Boubekeur Zendagui
@@ -79,8 +86,25 @@ public class DocumentationBrandingDataHelper {
 			return getBundledIconInputStream(logoPath);
 		}
 		else
-		{// We deal with workspace file
-			return getWorkspaceIconInputStream(logoPath);
+		{
+			try {
+				URI uri = URIUtil.fromString(logoPath);
+				if (uri.isAbsolute())
+				{
+					// We deal with a local file system
+					return getLocalFileInputStream(logoPath);
+				}
+				else
+				{
+					// We deal with a workspace file
+					return getWorkspaceIconInputStream(logoPath);
+				}
+				
+			} catch (FileNotFoundException e) {
+				throw new DocumentationBrandingDataException(ExceptionCause.FileDoesntExist, "", e);
+			} catch (URISyntaxException e) {
+				throw new DocumentationBrandingDataException(ExceptionCause.MalformatedURL, "", e);
+			}
 		}
 	}
 	
@@ -99,6 +123,26 @@ public class DocumentationBrandingDataHelper {
 		} catch (IOException e) {
 			throw new DocumentationBrandingDataException(DocumentationBrandingDataException.ExceptionCause.CantLoadContent, logoPath, e);
 		}
+	}
+	
+	/**
+	 * 
+	 * @param logoPath
+	 * @return
+	 * @throws URISyntaxException
+	 * @throws FileNotFoundException
+	 * @throws DocumentationBrandingDataException
+	 */
+	private static InputStream getLocalFileInputStream(String logoPath) throws URISyntaxException, FileNotFoundException, DocumentationBrandingDataException{
+		URI uri = URIUtil.fromString(logoPath).normalize();
+		// Add file scheme if it not exists
+		if (! logoPath.startsWith("file:"))
+			uri = URIUtil.fromString("file://"+logoPath).normalize();
+
+		// handle the file
+		final File file = URIUtil.toFile(uri);
+		FileInputStream fis = new FileInputStream(file);
+		return fis;
 	}
 	
 	/**
