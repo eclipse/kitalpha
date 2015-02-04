@@ -81,20 +81,15 @@ public class SearchIndex
 			+ "\t\t\t\tjConcepts[i] = new Array();" + NL + "\t\t\t}" + NL
 			+ "\t\t\tconceptsList[x] = jConcepts;" + NL
 			+ "\t\t\taddedConceptCount = addedConceptCount + 255;" + NL
-			+ "\t\t}" + NL + "\t\t" + NL + "\t\t<!-- Original code" + NL
-			+ "\t\t//var concepts = new Array();" + NL
-			+ "\t\t//for(i = 0; i < ";
-	protected final String TEXT_5 = ";i++) {" + NL
-			+ "\t\t//\tconcepts[i] = new Array();" + NL + "\t\t//}" + NL
-			+ "\t\t-->" + NL;
-	protected final String TEXT_6 = "conceptsList[";
-	protected final String TEXT_7 = "][";
-	protected final String TEXT_8 = "][0] = \"";
-	protected final String TEXT_9 = "\";" + NL + "\t\tconceptsList[";
-	protected final String TEXT_10 = "][";
-	protected final String TEXT_11 = "][1] = \"";
-	protected final String TEXT_12 = "\";" + NL + "\t\t";
-	protected final String TEXT_13 = "\t\t\t"
+			+ "\t\t}" + NL;
+	protected final String TEXT_5 = "conceptsList[";
+	protected final String TEXT_6 = "][";
+	protected final String TEXT_7 = "][0] = \"";
+	protected final String TEXT_8 = "\";" + NL + "\t\tconceptsList[";
+	protected final String TEXT_9 = "][";
+	protected final String TEXT_10 = "][1] = \"";
+	protected final String TEXT_11 = "\";" + NL + "\t\t";
+	protected final String TEXT_12 = "\t\t\t"
 			+ NL
 			+ "\t    $(\"#input1\").keyup(function () {"
 			+ NL
@@ -126,8 +121,8 @@ public class SearchIndex
 			+ NL + "\t      element.value = value;" + NL + "\t    }).keyup();"
 			+ NL + "\t    " + NL + "\t</script>" + NL + "\t</div>" + NL
 			+ "</body>" + NL + "</html>";
+	protected final String TEXT_13 = NL;
 	protected final String TEXT_14 = NL;
-	protected final String TEXT_15 = NL;
 
 	public SearchIndex() {
 		//Here is the constructor
@@ -156,8 +151,8 @@ public class SearchIndex
 					OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
+		stringBuffer.append(TEXT_13);
 		stringBuffer.append(TEXT_14);
-		stringBuffer.append(TEXT_15);
 		return stringBuffer.toString();
 	}
 
@@ -186,8 +181,6 @@ public class SearchIndex
 		stringBuffer.append(TEXT_3);
 		stringBuffer.append(concepts.size());
 		stringBuffer.append(TEXT_4);
-		stringBuffer.append(concepts.size());
-		stringBuffer.append(TEXT_5);
 
 		int count = 0;
 		int listCount = 0;
@@ -195,20 +188,20 @@ public class SearchIndex
 		for (String currentConcept : concepts) {
 			i++;
 
+			stringBuffer.append(TEXT_5);
+			stringBuffer.append(listCount);
 			stringBuffer.append(TEXT_6);
-			stringBuffer.append(listCount);
+			stringBuffer.append(count);
 			stringBuffer.append(TEXT_7);
-			stringBuffer.append(count);
-			stringBuffer.append(TEXT_8);
 			stringBuffer.append(currentConcept.replace("\"", "\\\""));
-			stringBuffer.append(TEXT_9);
+			stringBuffer.append(TEXT_8);
 			stringBuffer.append(listCount);
-			stringBuffer.append(TEXT_10);
+			stringBuffer.append(TEXT_9);
 			stringBuffer.append(count);
-			stringBuffer.append(TEXT_11);
+			stringBuffer.append(TEXT_10);
 			stringBuffer.append(i + "_"
 					+ DocGenHtmlUtil.getValidFileName(currentConcept));
-			stringBuffer.append(TEXT_12);
+			stringBuffer.append(TEXT_11);
 
 			if (count == 254) {
 				count = 0;
@@ -218,7 +211,7 @@ public class SearchIndex
 			}
 		}
 
-		stringBuffer.append(TEXT_13);
+		stringBuffer.append(TEXT_12);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "content",
 				stringBuffer.toString());

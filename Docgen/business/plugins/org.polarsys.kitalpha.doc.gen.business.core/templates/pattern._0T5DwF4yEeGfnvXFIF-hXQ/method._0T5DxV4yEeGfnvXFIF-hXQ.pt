@@ -39,13 +39,6 @@ List<String> concepts = (List<String>) ctx.getValue("concepts");
 			conceptsList[x] = jConcepts;
 			addedConceptCount = addedConceptCount + 255;
 		}
-		
-		<!-- Original code
-		//var concepts = new Array();
-		//for(i = 0; i < <%=concepts.size()%>;i++) {
-		//	concepts[i] = new Array();
-		//}
-		-->
 
 <%
 int count = 0;
