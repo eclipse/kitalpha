@@ -18,15 +18,9 @@ public class CustomPlatformAntTask extends AbstractTask {
 
 	private String platformPath;
 
-	private String version;
-
 	private String buildId;
 	private String application;
-	private String product;	
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
+	private String product;
 
 	public void setBuildId(String buildId) {
 		this.buildId = buildId;
@@ -54,24 +48,8 @@ public class CustomPlatformAntTask extends AbstractTask {
 		try {
 			modifyEclipseInis();
 			modifyConfigIni();
-			modifyAboutMappings();
 		} catch (IOException e) {
 			throw new BuildException(e);
-		}
-	}
-
-	private void modifyAboutMappings() throws IOException {
-		File pluginsFolder = new File(platformPath, "plugins");
-		for (File pluginFolder : pluginsFolder.listFiles()) {
-			if (pluginFolder.isDirectory() && pluginFolder.getName().startsWith(product+"_")) {
-				File file = new File(pluginFolder, "about.mappings");
-				System.out.println("Will modify " + file.getName());
-				List<String> list = new ArrayList<String>();
-				readFile(file, list);
-				list.add("0=" + version);
-				list.add("1=" + buildId);
-				writeFile(file, list);
-			}
 		}
 	}
 
@@ -82,11 +60,11 @@ public class CustomPlatformAntTask extends AbstractTask {
 		readFile(file, list);
 		for (String line : new ArrayList<String>(list)) {
 			if (line.startsWith("eclipse.product"))
-				list.set(list.indexOf(line), "eclipse.product="+product);
+				list.set(list.indexOf(line), "eclipse.product=" + product);
 			if (line.startsWith("osgi.splashPath"))
-				list.set(list.indexOf(line), "osgi.splashPath=platform\\:/base/plugins/"+product);
+				list.set(list.indexOf(line), "osgi.splashPath=platform\\:/base/plugins/" + product);
 			if (line.startsWith("eclipse.application"))
-				list.set(list.indexOf(line), "eclipse.application="+application);
+				list.set(list.indexOf(line), "eclipse.application=" + application);
 		}
 		writeFile(file, list);
 	}
