@@ -117,7 +117,7 @@ public class DiagramTextAcceleration {
 			appendable.append("Create ").append(node.getName().trim()).append("_CT_" + suffix).append("{");
 			appendable.increaseIndentation().newLine();
 			appendable.append("label: \"").append(node.getName()).append(getFQN(node)).append("\" ");
-			appendable.append("action-for: ").append(getFQN(node));
+			appendable.append("action-for: ").append(prefix).append(".").append(getFQN(node));
 			appendable.decreaseIndentation().newLine();
 			appendable.append("}");
 			
@@ -126,7 +126,7 @@ public class DiagramTextAcceleration {
 				appendable.newLine();
 				appendable.append("Drop ").append(node.getName().trim()).append("_DT_" + suffix).append("{");
 				appendable.increaseIndentation().newLine();
-				appendable.append("action-for: ").append(getFQN(node));
+				appendable.append("action-for: ").append(prefix).append(".").append(getFQN(node));
 				appendable.decreaseIndentation().newLine();
 				appendable.append("}");
 			}
@@ -316,7 +316,7 @@ public class DiagramTextAcceleration {
 
 		int size = refrences.length;
 		for (String ref : refrences) {
-			String tmp = prefix + "." + ref.trim();
+			String tmp = prefix + "." + prefix + "." + ref.trim();
 			result.append(tmp);
 			if (ref != refrences[size - 1])
 				result.append(", ");

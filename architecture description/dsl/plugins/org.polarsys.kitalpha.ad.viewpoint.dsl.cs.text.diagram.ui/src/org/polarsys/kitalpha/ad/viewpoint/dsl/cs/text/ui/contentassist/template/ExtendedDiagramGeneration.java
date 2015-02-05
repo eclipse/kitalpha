@@ -36,12 +36,18 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		
 		if (diagramTextAcceleration.isRootNodesEmpty()){
 			//Create node
+			createNode_import(appendable, vpClass, diagramTextAcceleration);
 			createNode(appendable, vpClass, diagramTextAcceleration);
 		} else {
+			createContainer_import(appendable, vpClass, diagramTextAcceleration);
 			createContainer(appendable, vpClass, diagramTextAcceleration);
 		}
 		diagramTextAcceleration.generateNodesText();
 		
+		appendable.decreaseIndentation().newLine();
+		appendable.append("}");
+		appendable.decreaseIndentation().newLine();
+		appendable.append("}"); //contains
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}"); //contains
 		appendable.decreaseIndentation().newLine();
@@ -61,10 +67,30 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		return appendable;
 	}
 	
-	private void createNode(TreeAppendable appendable, Class domainContext, DiagramTextAcceleration acceleration){
+	private void createNode_import(TreeAppendable appendable, Class domainContext, DiagramTextAcceleration acceleration){
 		appendable.append("Node ").append(domainContext.getName()).append("{");
 		appendable.increaseIndentation().newLine();
 		appendable.append("import: ").append("${importNode:CrossReference('Node.imports')}").append(" //import a node");
+		appendable.newLine();
+		appendable.newLine();
+		appendable.append("Contains {");
+		appendable.increaseIndentation().newLine();
+	}
+	
+	
+	private void createContainer_import(TreeAppendable appendable, Class domainContext, DiagramTextAcceleration acceleration){
+		appendable.append("Container ").append(domainContext.getName()).append("{");
+		appendable.increaseIndentation().newLine();
+		appendable.append("import: ").append("${importContainer:CrossReference('Container.imports')}").append(" //import a container");
+		appendable.newLine();
+		appendable.append("Contains {");
+		appendable.increaseIndentation().newLine();
+	}
+	
+	private void createNode(TreeAppendable appendable, Class domainContext, DiagramTextAcceleration acceleration){
+		appendable.append("Node ").append(domainContext.getName()).append("{");
+		appendable.increaseIndentation().newLine();
+//		appendable.append("import: ").append("${importNode:CrossReference('Node.imports')}").append(" //import a node");
 		appendable.newLine();
 		appendable.append("domain-context: ").append(qualifiedNameProvider.apply(domainContext).toString());
 		appendable.newLine();
@@ -82,7 +108,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 	private void createContainer(TreeAppendable appendable, Class domainContext, DiagramTextAcceleration acceleration){
 		appendable.append("Container ").append(domainContext.getName()).append("{");
 		appendable.increaseIndentation().newLine();
-		appendable.append("import: ").append("${importContainer:CrossReference('Container.imports')}").append(" //import a container");
+//		appendable.append("import: ").append("${importContainer:CrossReference('Container.imports')}").append(" //import a container");
 		appendable.newLine();
 		appendable.append("domain-context: ").append(qualifiedNameProvider.apply(domainContext).toString());
 		appendable.newLine();
