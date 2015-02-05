@@ -30,7 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.views.ViewpointView;
  */
 public class DefaultSelectionProvider implements AFSelectionProvider {
 
-	private final List<Object> selectedObjects = new ArrayList<Object>();
+	protected final List<Object> selectedObjects = new ArrayList<Object>();
 	private final List<ISelectionListener> listeners = new ArrayList<ISelectionListener>();
 	private final ISelectionListener listener;
 
