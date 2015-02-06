@@ -46,6 +46,16 @@
       <import feature="org.polarsys.kitalpha.doc.gen.business.core.source.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.source.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.patterns.source.feature" version="0.5.1.qualifier"/>
+      
+      <import feature="org.polarsys.kitalpha.accuracy.examples.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.accuracy.examples.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.cadence.examples.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.cadence.examples.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.composer.examples.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.composer.examples.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.transposer.examples.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.transposer.examples.source.feature" version="0.5.1.qualifier"/>
+      
    </requires>
 
 </feature>

@@ -27,10 +27,6 @@ Contributors:
       %license
    </license>
 
-   <includes
-         id="org.polarsys.kitalpha.cadence.feature"
-         version="0.0.0"/>
-
    <requires>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
@@ -60,6 +56,7 @@ Contributors:
       <import plugin="org.eclipse.acceleo.engine" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.model" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.acceleo.profiler" version="3.3.0" match="greaterOrEqual"/>
+      <import feature="org.polarsys.kitalpha.cadence.feature" version="0.5.0.v20141112-0513"/>
    </requires>
 
    <plugin
