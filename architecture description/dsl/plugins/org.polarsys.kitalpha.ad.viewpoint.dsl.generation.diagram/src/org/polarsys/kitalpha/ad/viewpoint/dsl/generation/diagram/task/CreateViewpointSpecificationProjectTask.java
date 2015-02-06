@@ -156,7 +156,7 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 		      new AdapterFactoryEditingDomain(new DescriptionAdapterFactory(), new BasicCommandStack());
 		
 		Resource resource = domain.createResource(odesign_file.getFullPath().toString());
-		resource.load(null);
+		resource.load(Collections.EMPTY_MAP);
 		EList<EObject> content = resource.getContents();
 		if (content!= null && content.size() > 0)
 		{
