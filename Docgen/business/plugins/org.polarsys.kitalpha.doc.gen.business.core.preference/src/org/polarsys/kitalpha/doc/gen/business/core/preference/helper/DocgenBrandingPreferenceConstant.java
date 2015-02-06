@@ -34,6 +34,6 @@ public class DocgenBrandingPreferenceConstant {
 	/** This preference allows to set a default alternative text of logo to use 
 	 * in the header of generated html pages */
 	public static final String DOCGEN_BRANDING_LOGO_ALT = "DocdenBrandingLogoALT";
-	public static final String DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE = "[Default Kitalpha logo]";
+	public static final String DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE = "[Default logo]";
 	
 }
