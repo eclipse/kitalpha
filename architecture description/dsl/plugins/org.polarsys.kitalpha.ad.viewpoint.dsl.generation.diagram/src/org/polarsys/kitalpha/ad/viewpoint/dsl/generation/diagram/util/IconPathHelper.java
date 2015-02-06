@@ -80,7 +80,12 @@ public class IconPathHelper {
 							throws CoreException, InvocationTargetException, InterruptedException{
 		boolean result = true;
 		IFolder source_folder = VpDslProjectHelper.getVpDslIconFolder(vpElement, false);
+		if (source_folder == null || !source_folder.exists())
+			return false;
+		
 		final IFile source_icon = source_folder.getFile(icon_name);
+		if (source_icon == null || ! source_icon.exists())
+			return false;
 		
 //		String target_icon_name = computeTargetIconFileName(icon_name, vpElement);
 		IFolder target_folder = getTargetFolder(vpElement);
