@@ -32,6 +32,10 @@ public class DiagramTextAcceleration {
 
 	private ADataAnalyser dataAnalyser;
 	
+	public final ADataAnalyser getDataAnalyser(){
+		return dataAnalyser;
+	}
+	
 	private IQualifiedNameProvider qualifiedNameProvider;
 	
 	private TreeAppendable appendable;
@@ -39,9 +43,7 @@ public class DiagramTextAcceleration {
 	private final String prefix;
 	
 	
-	public DiagramTextAcceleration(Class rootClass, 
-			IQualifiedNameProvider qualifiedNameProvider, 
-			TreeAppendable appendable) {
+	public DiagramTextAcceleration(Class rootClass, IQualifiedNameProvider qualifiedNameProvider, TreeAppendable appendable) {
 		
 		this.qualifiedNameProvider = qualifiedNameProvider;
 		this.appendable = appendable;
@@ -102,6 +104,10 @@ public class DiagramTextAcceleration {
 	}
 	
 	public void generateActionsText() {
+		generateActionsText(false);
+	}
+	
+	public void generateActionsText(boolean considerRootAsChild) {
 		
 		for (ANode node : dataAnalyser.getAllNodes()) 
 		{
@@ -117,16 +123,19 @@ public class DiagramTextAcceleration {
 			appendable.append("Create ").append(node.getName().trim()).append("_CT_" + suffix).append("{");
 			appendable.increaseIndentation().newLine();
 			appendable.append("label: \"").append(node.getName()).append(getFQN(node)).append("\" ");
-			appendable.append("action-for: ").append(prefix).append(".").append(getFQN(node));
+			appendable.append("action-for: ");
+			appendFirstPrefix(appendable).append(getFQN(node));
 			appendable.decreaseIndentation().newLine();
 			appendable.append("}");
 			
 			
-			if (node.getParent() != null){
+			if (node.getParent() != null || 
+					(considerRootAsChild && dataAnalyser.getRootNodes().contains(node))){
 				appendable.newLine();
 				appendable.append("Drop ").append(node.getName().trim()).append("_DT_" + suffix).append("{");
 				appendable.increaseIndentation().newLine();
-				appendable.append("action-for: ").append(prefix).append(".").append(getFQN(node));
+				appendable.append("action-for: ");
+				appendFirstPrefix(appendable).append(getFQN(node));
 				appendable.decreaseIndentation().newLine();
 				appendable.append("}");
 			}
@@ -276,9 +285,11 @@ public class DiagramTextAcceleration {
 			appendable.increaseIndentation().newLine();
 		}
 		
-		appendable.append("background: light_green ");
+		appendable.append("background: light_blue ");
 		if (isNode)
 			appendable.append("form: Square");
+		else 
+			appendable.append("foreground: white"); 
 		
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}"); //basic style
@@ -295,7 +306,7 @@ public class DiagramTextAcceleration {
 			return "\"" + node.getName() + "\"";
 	}
 	
-	private String getFQN(ANode node){
+	public final String getFQN(ANode node){
 		if (prefix != null)
 			return prefix + "." + node.getFQN();
 		return node.getFQN();
@@ -316,7 +327,8 @@ public class DiagramTextAcceleration {
 
 		int size = refrences.length;
 		for (String ref : refrences) {
-			String tmp = prefix + "." + prefix + "." + ref.trim();
+			String tmp = prefix + "Container." + prefix + "." + ref.trim(); //FIXME: underscores are not good practice
+			
 			result.append(tmp);
 			if (ref != refrences[size - 1])
 				result.append(", ");
@@ -331,5 +343,12 @@ public class DiagramTextAcceleration {
 			return computeFQN(targets);
 		}
 		return edge.getTargetNodesFQN();
+	}
+	
+	private TreeAppendable appendFirstPrefix(TreeAppendable appendable){
+		if (prefix != null && !prefix.isEmpty()){
+			appendable.append(prefix).append("Container."); //FIXME: underscores are not good practice
+		}
+		return appendable;
 	}
 }
