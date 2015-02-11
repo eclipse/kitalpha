@@ -718,7 +718,9 @@ public class ResourceHelper {
 			if (ecoreModel !=null){
 				EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), resourceSet);
 				Resource packageResource = loadedEPackage.eResource();
-				if (packageResource!=null) {
+				// [BZE] : modification of the condition, this avoid an exception raise
+				if (packageResource != null && ! resourceSet.getResources().contains(packageResource))
+				{
 					resourceSet.getResources().add(packageResource);
 				}
 			}

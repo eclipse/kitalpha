@@ -37,6 +37,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expres
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ExpressionPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.StringElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -334,12 +335,10 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 				
 			case ExpressionPackage.DOMAIN_ELEMENT:
 				DomainElement dElement = (DomainElement) expressionElement;
-				if (dElement.getAttribute() != null
-						&& dElement.getAttribute().getName() != null
-						&& dElement.getAttribute().getName().trim().length() > 0) 
+				final Attribute attribute = dElement.getAttribute();
+				String attributeName = attribute.getName();
+				if (attribute != null && attributeName != null && attributeName.trim().length() > 0) 
 				{
-					String attributeName = ((DomainElement) expressionElement).getAttribute().getName();
-					
 					if (multiple)
 						attributeName = SiriusExpressionHelper.getInnerFeature(attributeName);
 					value += multiple ? attributeName : SiriusExpressionHelper.getExpressoin(attributeName, ExpressionInterpreter.Feature);

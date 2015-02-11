@@ -31,18 +31,35 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 /**
  * 
  * @author Faycal Abka
+ *         Boubekeur Zendagui	
  *
  */
 public class SiriusViewpointHelper {
-	 
+	
+	/**
+	 * FIXME: Handle the other viewpoint of a given group and not only the first one
+	 * @param resource
+	 * @return
+	 */
 	public static Viewpoint getRootviewpoint(Resource resource){
-		TreeIterator<EObject> it = resource.getAllContents();
+		// Original Code
+//		TreeIterator<EObject> it = resource.getAllContents();
+//		while (it.hasNext()){
+//			EObject next = it.next();
+//			
+//			if (next instanceof Viewpoint)
+//				return (Viewpoint)next;
+//		}
 		
-		while (it.hasNext()){
-			EObject next = it.next();
-			
-			if (next instanceof Viewpoint)
-				return (Viewpoint)next;
+		// [BZE] New implementation
+		final EList<EObject> contents = resource.getContents();
+		if (contents != null && ! contents.isEmpty())
+		{
+			final EObject eObject = contents.get(0);
+			if (eObject instanceof Group)
+			{
+				return ((Group) eObject).getOwnedViewpoints().get(0);
+			}
 		}
 		
 		return null;
@@ -100,6 +117,31 @@ public class SiriusViewpointHelper {
 		
 		return result;
 	}
+	
+	/**
+	 * [BZE] an alternative method to {@link #getAllContainerMapping(Resource)}
+	 * Returns all {@link ContainerMapping} of the diagrams provided by <code> diagrams</code>
+	 * @param diagrams {@link DiagramDescription}s defining the scope
+	 * @return all {@link ContainerMapping} defined in <code> diagrams </code>
+	 */
+	public static List<ContainerMapping> getAllContainerMapping(List<DiagramDescription> diagrams)
+	{
+		List<ContainerMapping> result = new ArrayList<ContainerMapping>();
+		for (DiagramDescription dd : diagrams) 
+		{
+			// Add to result all direct contained mapping in the current diagram
+			result.addAll(dd.getAllContainerMappings());
+
+			// Look for sub mapping
+			for (ContainerMapping cm : dd.getAllContainerMappings()) {
+				List<ContainerMapping> subResult = getSubContainers(cm);
+				if (subResult != null && !subResult.isEmpty())
+					result.addAll(subResult);
+			}
+		}
+		return result;
+	}
+	
 	
 	//FIXME: Duplicated code, it's bad :)
 	/**
@@ -167,6 +209,41 @@ public class SiriusViewpointHelper {
 		}
 		return result;
 	}
+	
+	/**
+	 * [BZE] an alternative method to {@link #getAllNodeMapping(Resource)}
+	 * Returns all {@link NodeMapping} of the diagrams provided by <code> diagrams</code>
+	 * @param diagrams {@link DiagramDescription}s defining the scope
+	 * @return all {@link NodeMapping} defined in <code> diagrams </code>
+	 */
+	public static List<NodeMapping> getAllNodeMapping(List<DiagramDescription> diagrams){
+		List<NodeMapping> result = new ArrayList<NodeMapping>();
+		if (diagrams != null && !diagrams.isEmpty())
+		{
+			for (DiagramDescription dd : diagrams) 
+			{
+				// Get all direct contained NodeMapping
+				result.addAll(dd.getAllNodeMappings());
+
+				// Get sub NodeMappings
+				for (NodeMapping nm : dd.getAllNodeMappings()) {
+					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
+					if (borderedNodes != null && borderedNodes.size() > 0)
+						for (NodeMapping nodeMapping : borderedNodes) 
+							if (! result.contains(nodeMapping))
+								result.add(nodeMapping);
+				}
+
+				// Get Sub NodeMappings of all ContainerMappings
+				for (ContainerMapping iContainerMapping : dd.getAllContainerMappings()) {
+					List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
+					if (subNodes != null && subNodes.size() > 0)
+						result.addAll(subNodes);
+				}
+			}
+		}
+		return result;
+	}
 
 	
 	//FIXME duplacate code (see comment below)
@@ -223,6 +300,24 @@ public class SiriusViewpointHelper {
 		List<DiagramDescription> diagrams = getAllDiagramDescription(resource);
 		for (DiagramDescription iDiagram : diagrams) 
 			result.addAll(iDiagram.getAllEdgeMappings());
+		
+		return result;
+	}
+	
+	/**
+	 * [BZE] an alternative method to {@link #getAllEdgeMapping(Resource)}
+	 * Returns all {@link EdgeMapping} of the diagrams provided by <code> diagrams</code>
+	 * @param diagrams {@link DiagramDescription}s defining the scope
+	 * @return all {@link EdgeMapping} defined in <code> diagrams </code>
+	 */
+	public static List<EdgeMapping> getAllEdgeMapping(List<DiagramDescription> diagrams){
+		List<EdgeMapping> result = new ArrayList<EdgeMapping>();
+		
+		if (diagrams != null && !diagrams.isEmpty())
+		{
+			for (DiagramDescription iDiagram : diagrams) 
+				result.addAll(iDiagram.getAllEdgeMappings());
+		}
 		
 		return result;
 	}
