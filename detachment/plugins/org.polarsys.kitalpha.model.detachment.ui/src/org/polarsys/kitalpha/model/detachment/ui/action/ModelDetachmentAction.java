@@ -64,11 +64,11 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		if (airdIResource != null){
 
-			if (!isSelectionChanged){
-				exec_preconditions();
-			}
-
-			isSelectionChanged = false;
+//			if (!isSelectionChanged){
+//				exec_preconditions();
+//			}
+//
+//			isSelectionChanged = false;
 
 
 			try {
@@ -79,6 +79,8 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 							public void run(IProgressMonitor monitor)
 									throws InvocationTargetException,
 									InterruptedException {
+								
+								exec_preconditions();
 	
 								monitor.beginTask("Analyzing of resource: " + airdIResource.getProjectRelativePath(), 2);
 								monitor.subTask("Loading : " + airdIResource.getProjectRelativePath());
@@ -124,15 +126,17 @@ public class ModelDetachmentAction implements IObjectActionDelegate {
 				if (airdIResource != firstElement){
 					airdIResource = (IFile)firstElement;
 					
-					exec_preconditions();
-					isSelectionChanged = true;
+//					exec_preconditions();
+//					isSelectionChanged = true;
 
 					action.setEnabled(true);
 					URI uri = URI.createPlatformResourceURI(airdIResource.getFullPath().toPortableString(), true);
-					Session session = SessionManager.INSTANCE.getSession(uri, new NullProgressMonitor());
+					
+					Session session = SessionManager.INSTANCE.getExistingSession(uri);
+//					Session session = SessionManager.INSTANCE.getSession(uri, new NullProgressMonitor());
 
 					if (session != null){
-						action.setEnabled(!session.isOpen());
+						action.setEnabled(session == null || !session.isOpen());
 					}
 				}
 			}
