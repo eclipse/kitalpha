@@ -262,11 +262,13 @@ public class DiagramTextAcceleration {
 		appendable.append("Label {");
 		appendable.increaseIndentation().newLine();
 		appendable.append("content: ").append(label);
-		appendable.newLine();
-		appendable.append("police: black");
+//		appendable.newLine();
+		appendable.append(" police: black");
 		
-		if (isNode){
-			appendable.newLine();
+		if (isNode)
+		{
+//			appendable.newLine();
+			appendable.append(" position: node");
 			appendable.append(" alignment: left");
 		}
 		
@@ -278,11 +280,11 @@ public class DiagramTextAcceleration {
 		
 		if (isNode){
 			appendable.append("BasicStyle {");
-			appendable.increaseIndentation().newLine();
+			appendable.increaseIndentation()/*.newLine()*/;
 			appendable.append("border-color: black ");
 		} else {
 			appendable.append("FlatStyle {");
-			appendable.increaseIndentation().newLine();
+			appendable.increaseIndentation()/*.newLine()*/;
 		}
 		
 		appendable.append("background: light_blue ");
@@ -291,7 +293,7 @@ public class DiagramTextAcceleration {
 		else 
 			appendable.append("foreground: white"); 
 		
-		appendable.decreaseIndentation().newLine();
+		appendable.decreaseIndentation()/*.newLine()*/;
 		appendable.append("}"); //basic style
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}"); //Style
