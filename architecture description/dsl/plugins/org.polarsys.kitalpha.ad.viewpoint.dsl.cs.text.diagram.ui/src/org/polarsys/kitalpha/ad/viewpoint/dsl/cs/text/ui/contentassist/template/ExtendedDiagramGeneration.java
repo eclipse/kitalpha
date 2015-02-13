@@ -99,7 +99,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		//TODO provided by association with variable resolver?
 		appendable.append("provided-by association external emde.ExtensibleElement.ownedExtensions");
 		appendable.newLine();
-		acceleration.generateRepresentation("\"feature:name\"", true);
+		acceleration.generateRepresentation(acceleration.getLabel(domainContext), true);
 		appendable.newLine();
 		appendable.append("Contains {");
 		appendable.increaseIndentation().newLine();
@@ -117,7 +117,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		//TODO provided by association with variable resolver?
 		appendable.append("provided-by association external ").append("emde.ExtensibleElement.ownedExtensions");
 		appendable.newLine();
-		acceleration.generateRepresentation("\"ContainerLabel\"", false);
+		acceleration.generateRepresentation(acceleration.getLabel(domainContext), false);
 		appendable.newLine();
 		appendable.append("Contains {");
 		appendable.increaseIndentation().newLine();
@@ -133,7 +133,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		appendable.append("/* ").append(domainContext.getName().trim().concat("Container")).append(" Actions*/").newLine();
 		appendable.append("Create ").append(domainContext.getName().trim()).append("_CT_" + suffix).append("{");
 		appendable.increaseIndentation().newLine();
-		appendable.append("label: \"").append(domainContext.getName()).append("Container\" ");
+		appendable.append("label: \"").append(domainContext.getName()).append("\" ");
 		appendable.append("action-for: ").append(concernedNodeFQN);
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}");

@@ -111,8 +111,8 @@ public class DiagramTextAcceleration {
 		
 		for (ANode node : dataAnalyser.getAllNodes()) 
 		{
-			appendable.increaseIndentation().newLine();
-			appendable.append("/*").append(node.getName()).append(" Actions */");
+			appendable.increaseIndentation().newLine().newLine();
+			appendable.append("/*").append(node.getVPClass().getName()).append(" Actions */");
 			appendable.newLine();
 			
 			/*
@@ -122,15 +122,15 @@ public class DiagramTextAcceleration {
 			long suffix = VpdiagramActivator.getAndIncrementDiagram_suffix();
 			appendable.append("Create ").append(node.getName().trim()).append("_CT_" + suffix).append("{");
 			appendable.increaseIndentation().newLine();
-			appendable.append("label: \"").append(node.getName()).append(getFQN(node)).append("\" ");
+			appendable.append("label: \"").append(node.getVPClass().getName()).append("\" ");
 			appendable.append("action-for: ");
 			appendFirstPrefix(appendable).append(getFQN(node));
 			appendable.decreaseIndentation().newLine();
 			appendable.append("}");
 			
 			
-			if (node.getParent() != null || 
-					(considerRootAsChild && dataAnalyser.getRootNodes().contains(node))){
+			if (node.getParent() != null || (considerRootAsChild && dataAnalyser.getRootNodes().contains(node)))
+			{
 				appendable.newLine();
 				appendable.append("Drop ").append(node.getName().trim()).append("_DT_" + suffix).append("{");
 				appendable.increaseIndentation().newLine();
@@ -213,8 +213,7 @@ public class DiagramTextAcceleration {
 		appendable.newLine();
 		appendable.append("Container ").append(node.getVPClass().getName()).append("{");
 		appendable.increaseIndentation().newLine();
-		appendable.append("domain-context: ").append(classFQN).append(" provided-by association ")
-			.append(associationFQN);
+		appendable.append("domain-context: ").append(classFQN).append(" provided-by association ").append(associationFQN);
 		appendable.newLine();
 		
 		generateRepresentation(getLabel(node), false);
@@ -262,12 +261,10 @@ public class DiagramTextAcceleration {
 		appendable.append("Label {");
 		appendable.increaseIndentation().newLine();
 		appendable.append("content: ").append(label);
-//		appendable.newLine();
 		appendable.append(" police: black");
 		
 		if (isNode)
 		{
-//			appendable.newLine();
 			appendable.append(" position: node");
 			appendable.append(" alignment: left");
 		}
@@ -301,11 +298,18 @@ public class DiagramTextAcceleration {
 		appendable.append("}"); //Reprensentation
 	}
 	
-	private String getLabel(ANode node){
+	public String getLabel(ANode node){
 		if (ADataAnalyserHelper.hasNameAttribute(node.getVPClass()))
 			return "\"feature:name\"";
 		else
-			return "\"" + node.getName() + "\"";
+			return "\"" + node.getVPClass().getName() + "\"";
+	}
+	
+	public String getLabel(Class clazz){
+		if (ADataAnalyserHelper.hasNameAttribute(clazz))
+			return "\"feature:name\"";
+		else
+			return "\"" + clazz.getName() + "\"";
 	}
 	
 	public final String getFQN(ANode node){
