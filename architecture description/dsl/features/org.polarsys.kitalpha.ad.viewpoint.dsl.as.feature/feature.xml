@@ -38,7 +38,8 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.fc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model"
@@ -65,7 +66,8 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.fc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model"
@@ -92,7 +94,8 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.fc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper"
@@ -140,7 +143,8 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.fc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.model"
@@ -174,7 +178,8 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.fc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model"
@@ -236,7 +241,8 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.fc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model"
@@ -256,7 +262,8 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.fc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper"

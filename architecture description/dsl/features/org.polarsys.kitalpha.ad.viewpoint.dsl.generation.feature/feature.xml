@@ -143,6 +143,7 @@ Contributors:
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
