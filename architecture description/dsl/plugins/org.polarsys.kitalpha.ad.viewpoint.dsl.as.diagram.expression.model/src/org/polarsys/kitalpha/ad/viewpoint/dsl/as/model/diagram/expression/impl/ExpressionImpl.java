@@ -336,13 +336,17 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 			case ExpressionPackage.DOMAIN_ELEMENT:
 				DomainElement dElement = (DomainElement) expressionElement;
 				final Attribute attribute = dElement.getAttribute();
-				String attributeName = attribute.getName();
-				if (attribute != null && attributeName != null && attributeName.trim().length() > 0) 
+				if (attribute != null)
 				{
-					if (multiple)
-						attributeName = SiriusExpressionHelper.getInnerFeature(attributeName);
-					value += multiple ? attributeName : SiriusExpressionHelper.getExpressoin(attributeName, ExpressionInterpreter.Feature);
+					String attributeName = attribute.getName();
+					if (attributeName != null && attributeName.trim().length() > 0) 
+					{
+						if (multiple)
+							attributeName = SiriusExpressionHelper.getInnerFeature(attributeName);
+						value += multiple ? attributeName : SiriusExpressionHelper.getExpressoin(attributeName, ExpressionInterpreter.Feature);
+					}
 				}
+				
 				break;
 
 			case ExpressionPackage.JAVA_ELEMENT:
