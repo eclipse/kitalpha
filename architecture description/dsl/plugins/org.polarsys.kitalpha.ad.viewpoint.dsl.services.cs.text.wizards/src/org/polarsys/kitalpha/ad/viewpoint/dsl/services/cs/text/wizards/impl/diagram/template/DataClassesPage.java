@@ -33,25 +33,22 @@ import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 
 /**
- * 
  * @author Faycal Abka
- *
  */
+
 public class DataClassesPage extends WizardPage{
-	
-	Collection<Class> classes;
+	private Collection<Class> classes;
 	final Collection<Class> selectedClass = new HashSet<Class>(1);
+	
+	private ListViewer listViewer;
 	
 	private boolean isDiagramExtension = false;
 	
-	
-	protected DataClassesPage(String pageName) 
-	{
+	protected DataClassesPage(String pageName) {
 		super(pageName);
 	}
 	
-	protected DataClassesPage(String pageName, Collection<Class> classes)
-	{
+	protected DataClassesPage(String pageName, Collection<Class> classes){
 		this(pageName);
 		this.classes = classes;
 		setTitle(pageName);
@@ -59,18 +56,14 @@ public class DataClassesPage extends WizardPage{
 	}
 
 	@Override
-	public void createControl(Composite parent) 
-	{
-		
-		
+	public void createControl(Composite parent) {
 		Composite listComposite = new Composite(parent, SWT.None);
 		
 		GridLayout layout = new GridLayout(1, true);
 		listComposite.setLayout(layout);
 		
-		
 		//List
-		ListViewer listViewer = new ListViewer(listComposite, SWT.BORDER | SWT.V_SCROLL);
+		listViewer = new ListViewer(listComposite, SWT.BORDER | SWT.V_SCROLL);
 		listViewer.getList().setLayoutData(new GridData(GridData.FILL_BOTH));
 		
 		listViewer.setComparator(new ViewerComparator());
@@ -80,20 +73,24 @@ public class DataClassesPage extends WizardPage{
 		extensionDiagramcheckbox.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		setControl(parent);
 		
-		
 		extensionDiagramcheckbox.addSelectionListener(new SelectionListener() {
-			
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Button button = (Button)e.widget;
 				updateIsDiagramExtension(button.getSelection());
-				
+				if (button.getSelection())
+				{
+					Collection<Class> emdeExtensionClasses = DataClassesPageHelper.getEmdeExtensionClasses(classes);
+					DataClassesPageHelper.updateListViewerContent(listViewer, emdeExtensionClasses);
+				}
+				else
+				{
+					DataClassesPageHelper.updateListViewerContent(listViewer, classes);
+				}
 			}
-			
+
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
-				
-			}
+			public void widgetDefaultSelected(SelectionEvent e) {}
 		});
 		
 		listViewer.setLabelProvider(new LabelProvider(){
@@ -105,14 +102,11 @@ public class DataClassesPage extends WizardPage{
 			public String getText(Object element){
 				return ((Class)element).getName();
 			}
-			
-			
 		});
 		
 		
 		listViewer.addSelectionChangedListener(new ISelectionChangedListener() 
 		{
-			
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) 
 			{
@@ -125,22 +119,15 @@ public class DataClassesPage extends WizardPage{
 		
 		listViewer.setContentProvider(new IStructuredContentProvider() 
 		{
+			@Override
+			public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
 			
 			@Override
-			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) 
-			{
-				
-			}
-			
-			@Override
-			public void dispose() 
-			{
-			}
+			public void dispose() {}
 			
 			@SuppressWarnings("unchecked")
 			@Override
-			public Object[] getElements(Object inputElement) 
-			{
+			public Object[] getElements(Object inputElement){
 				return ((Collection<Class>)inputElement).toArray();
 			}
 		});
@@ -149,14 +136,11 @@ public class DataClassesPage extends WizardPage{
 		listViewer.setInput(classes);
 	}
 	
-	
-	public Collection<Class> getSelectedClass() 
-	{
+	public Collection<Class> getSelectedClass()  {
 		return selectedClass;
 	}
 	
-	public boolean isUserSelectedDomainContext()
-	{
+	public boolean isUserSelectedDomainContext() {
 		return !selectedClass.isEmpty();
 	}
 	

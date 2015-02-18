@@ -103,6 +103,7 @@ public class VpDiagramEditorCallBack extends CommonEditorCallback {
 	private void applySelectedProposal() {
 		if (selectedProposal.equals(VpdiagramEditorCallBack_NewAccelerationDiagram)){
 			TemplateInterceptor interceptor = VpdiagramTemplateProposalProvider.getInterceptor();
+			interceptor.getTemplate().setPattern("");
 			Wizard wizard = TemplateWizardAction.createWizardDialog();
 			TemplateWizardAction.registerObserver(wizard, interceptor);
 			TemplateWizardAction.openAndInitWizard(wizard, interceptor.getClasses());
