@@ -21,7 +21,7 @@ Contributors:
             nameFilter="*.ecore"
             objectClass="org.eclipse.core.resources.IFile">
          <menu
-               icon="icons/dslvp_menu.gif"
+               icon="icons/Kitalpha_Logo_alpha.png"
                id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.menu.ecore"
                label="%menu.label"
                path="additions">
@@ -32,6 +32,7 @@ Contributors:
          <action
                class="org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.ecore.ReverseFromEcoreAction"
                enablesFor="1"
+               icon="icons/dslvp_menu.gif"
                id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.fromecore"
                label="%menu.action.reverse.label"
                menubarPath="org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.menu.ecore/reverse">
