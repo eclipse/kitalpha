@@ -36,7 +36,7 @@ public class ModelCommandStackBuilder {
 	public void buildModelActionStack(){
 		Map<String, RegistryActionElement> actionsRegistry = ModelCommandRegistry.INSTANCE.initRegistry();
 		
-		Collection<RegistryActionElement> sortedActionsElt = ModelCommandStackHelper.sortActions(actionsRegistry.values());
+		Collection<RegistryActionElement> sortedActionsElt = ModelCommandStackHelper.sortActions2(actionsRegistry.values());
 		
 		for (RegistryActionElement registryActionElement : sortedActionsElt) {
 			actionsStack.push(registryActionElement.getAction());
