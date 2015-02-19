@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalSuperClass;
 
 /**
  * @author Boubekeur Zendagui
@@ -35,13 +37,59 @@ public final class DataClassesPageHelper {
 		Collection<Class> resulClasses = new ArrayList<Class>();
 		for (Class iClass : classes) 
 		{
-			final EList<EClass> classesToExtens = iClass.getExtends();
-			if (classesToExtens != null && ! classesToExtens.isEmpty())
+			final EList<EClass> classesToExtend = iClass.getExtends();
+			if (classesToExtend != null) 
 			{
-				resulClasses.add(iClass);
+				if (! classesToExtend.isEmpty())
+				{// Check if the Class is itself an Emde Extension
+					resulClasses.add(iClass);
+				}
+				else
+				{// Check if there is at least one super Class that is an Emde Extension
+					boolean isClassExtensionByInheritance = isClassInheritsFromEmdeExtension(iClass);
+					if (isClassExtensionByInheritance)
+						resulClasses.add(iClass);
+				}
 			}
+				
 		}
 		return resulClasses;
+	}
+	
+	/**
+	 * Check if a {@link Class} is an Emde extension by inheritance. This mean that it inherits from a 
+	 * {@link Class} that {@link Class#getExtends()} is not empty
+	 * @param clazz the {@link Class} to check
+	 * @return True if the {@link Class} inherits from an Emde Extension
+	 */
+	private static boolean isClassInheritsFromEmdeExtension(Class clazz){
+		final EList<AbstractSuperClass> inheritences = clazz.getInheritences();
+		for (AbstractSuperClass aSuperClass : inheritences) 
+		{
+			if (aSuperClass instanceof LocalSuperClass)
+			{
+				final Class localSuperClass = ((LocalSuperClass) aSuperClass).getSuperClass();
+				if (localSuperClass != null)
+				{
+					final EList<EClass> extendedClasses = localSuperClass.getExtends();
+					if (extendedClasses != null )
+					{
+						if (! extendedClasses.isEmpty())
+						{
+							return true;
+						}
+						else
+						{
+							final boolean isSuperClassEmdeExtension = isClassInheritsFromEmdeExtension(localSuperClass);
+							if (isSuperClassEmdeExtension)
+								return true;
+						}
+					}
+				}
+			}
+		}
+		
+		return false;
 	}
 	
 	/**
