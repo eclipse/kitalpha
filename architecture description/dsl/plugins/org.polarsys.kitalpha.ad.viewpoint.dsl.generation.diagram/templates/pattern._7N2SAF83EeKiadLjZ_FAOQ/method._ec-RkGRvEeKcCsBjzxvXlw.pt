@@ -34,7 +34,7 @@
 			if (vpStyle != null) 
 			{
 				eStyleDesc = StyleFactory.eINSTANCE.createEdgeStyleDescription();
-				
+				eStyleDesc.setSizeComputationExpression("0");
 				eStyleDesc.setLineStyle(vpStyle.getLineStyle());
 				eStyleDesc.setSourceArrow(vpStyle.getBeginDecorator());
 				eStyleDesc.setTargetArrow(vpStyle.getEndDecorator());

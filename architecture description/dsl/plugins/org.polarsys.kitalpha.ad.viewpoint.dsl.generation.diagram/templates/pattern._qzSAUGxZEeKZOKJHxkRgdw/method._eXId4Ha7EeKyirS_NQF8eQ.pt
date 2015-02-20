@@ -7,7 +7,9 @@
 		
 		initial_operation.setFirstModelOperations(gotoElement);
 		
-		String pElementView = VSMVariable.elementView.getInnerVariable()+".targetNode.target" ;
+		//String pElementView = VSMVariable.elementView.getInnerVariable()+".targetNode.target" ;
+		String pElementView = VSMVariable.elementView.getInnerVariable()+ "." +SiriusExpressionHelper.getEdgeSemanticTarget(false);
+		
 		String ref_name = reference.getName();
 		Unset unset = ToolFactory.eINSTANCE.createUnset();
 		unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementView));

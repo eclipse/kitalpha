@@ -8,8 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-
-//Generated on Tue Jul 15 11:18:28 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -28,6 +27,7 @@ import org.eclipse.sirius.viewpoint.description.tool.SelectModelElementVariable;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionKind;
 
 public class DeleteToolForElementBasedEdge
 		extends
@@ -36,6 +36,7 @@ public class DeleteToolForElementBasedEdge
 	public DeleteToolForElementBasedEdge() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -100,8 +101,8 @@ public class DeleteToolForElementBasedEdge
 			if (t_reference != null) {
 				String t_ref_name = t_reference.getName();
 				Unset unset = ToolFactory.eINSTANCE.createUnset();
-				unset.setElementExpression(SiriusExpressionHelper
-						.getExpressoin(pElementToRemove));
+				//unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+				unset.setElementExpression(pElementToRemove);
 				unset.setFeatureName(t_ref_name);
 
 				gotoElement.getSubModelOperations().add(unset);
@@ -111,8 +112,8 @@ public class DeleteToolForElementBasedEdge
 			if (s_reference != null) {
 				String s_ref_name = s_reference.getName();
 				Unset unset = ToolFactory.eINSTANCE.createUnset();
-				unset.setElementExpression(SiriusExpressionHelper
-						.getExpressoin(pElementToRemove));
+				//unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+				unset.setElementExpression(pElementToRemove);
 				unset.setFeatureName(s_ref_name);
 
 				gotoElement.getSubModelOperations().add(unset);
@@ -133,13 +134,24 @@ public class DeleteToolForElementBasedEdge
 		SelectModelElementVariable select = ToolFactory.eINSTANCE
 				.createSelectModelElementVariable();
 		select.setName("elementsToRemove");
-		String expression = SiriusExpressionHelper
-				.getExpressoin("if (sourceNode.target != targetNode.target) {")
-				+ SiriusExpressionHelper
-						.getExpressoin("sourceNode.target + targetNode.target")
-				+ SiriusExpressionHelper.getExpressoin("}else{")
-				+ SiriusExpressionHelper.getExpressoin("sourceNode.target")
-				+ SiriusExpressionHelper.getExpressoin("}");
+
+		String expression = "";
+		if (SiriusExpressionHelper.getCurrentExpressionKind().equals(
+				ExpressionKind.QueryLegacy)) {
+			expression = SiriusExpressionHelper
+					.getExpressoin("if (sourceNode.target != targetNode.target) {")
+					+ SiriusExpressionHelper
+							.getExpressoin("sourceNode.target + targetNode.target")
+					+ SiriusExpressionHelper.getExpressoin("}else{")
+					+ SiriusExpressionHelper.getExpressoin("sourceNode.target")
+					+ SiriusExpressionHelper.getExpressoin("}");
+		}
+
+		if (SiriusExpressionHelper.getCurrentExpressionKind().equals(
+				ExpressionKind.Acceleo_3_x)) {
+			expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
+		}
+
 		select.setCandidatesExpression(expression);
 		select.setMessage("Select the element you want to unlink");
 		elementView_del_var.getSubVariables().add(select);

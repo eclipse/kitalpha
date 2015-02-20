@@ -46,16 +46,34 @@ public class SiriusExpressionHelper {
 	 * @return
 	 */
 	public static String getEdgeSemanticTarget(boolean source){
-		switch (getCurrentExpressionKind()) {
-		case QueryLegacy:
-			return "targetNode.target";
+		final ExpressionKind currentExpressionKind = getCurrentExpressionKind();
+		if (source)
+		{
+			switch (currentExpressionKind) {
+			case QueryLegacy:
+				return "sourceNode.target";
 
-		case Acceleo_3_x:
-			return "targetNode.oclAsType(viewpoint::DSemanticDecorator).target";
-			
-		case Ocl:
-			throw new OCLExpressionNotSupported();
+			case Acceleo_3_x:
+				return "sourceNode.oclAsType(viewpoint::DSemanticDecorator).target";
+
+			case Ocl:
+				throw new OCLExpressionNotSupported();
+			}
 		}
+		else
+		{
+			switch (currentExpressionKind) {
+			case QueryLegacy:
+				return "targetNode.target";
+
+			case Acceleo_3_x:
+				return "targetNode.oclAsType(viewpoint::DSemanticDecorator).target";
+
+			case Ocl:
+				throw new OCLExpressionNotSupported();
+			}
+		}
+		
 		return "";
 	}
 	

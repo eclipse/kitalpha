@@ -17,7 +17,8 @@ if ( t_reference != null && s_reference != null )
 	{
 		String t_ref_name = t_reference.getName();
 		Unset unset = ToolFactory.eINSTANCE.createUnset();
-		unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+		//unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+		unset.setElementExpression(pElementToRemove);
 		unset.setFeatureName(t_ref_name);
 		
 		gotoElement.getSubModelOperations().add(unset);
@@ -28,7 +29,8 @@ if ( t_reference != null && s_reference != null )
 	{
 		String s_ref_name = s_reference.getName();
 		Unset unset = ToolFactory.eINSTANCE.createUnset();
-		unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+		//unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementToRemove));
+		unset.setElementExpression(pElementToRemove);
 		unset.setFeatureName(s_ref_name);
 		
 		gotoElement.getSubModelOperations().add(unset);

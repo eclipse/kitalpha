@@ -8,8 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-
-//Generated on Tue Jul 15 11:17:26 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -35,6 +34,7 @@ public class DeleteToolForRelationBasedEdge
 	public DeleteToolForRelationBasedEdge() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -88,8 +88,10 @@ public class DeleteToolForRelationBasedEdge
 
 			initial_operation.setFirstModelOperations(gotoElement);
 
+			//String pElementView = VSMVariable.elementView.getInnerVariable()+".targetNode.target" ;
 			String pElementView = VSMVariable.elementView.getInnerVariable()
-					+ ".targetNode.target";
+					+ "." + SiriusExpressionHelper.getEdgeSemanticTarget(false);
+
 			String ref_name = reference.getName();
 			Unset unset = ToolFactory.eINSTANCE.createUnset();
 			unset.setElementExpression(SiriusExpressionHelper

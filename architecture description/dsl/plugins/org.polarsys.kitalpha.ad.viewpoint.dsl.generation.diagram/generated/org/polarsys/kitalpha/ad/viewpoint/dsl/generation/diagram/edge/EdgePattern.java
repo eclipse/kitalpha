@@ -9,7 +9,8 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-//Generated on Tue Jul 15 11:05:02 CEST 2014 with EGF 1.2.0.v20140710-0659
+
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.edge;
 
 import java.util.*;
@@ -59,6 +60,7 @@ public class EdgePattern
 	public EdgePattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -256,7 +258,7 @@ public class EdgePattern
 			if (vpStyle != null) {
 				eStyleDesc = StyleFactory.eINSTANCE
 						.createEdgeStyleDescription();
-
+				eStyleDesc.setSizeComputationExpression("0");
 				eStyleDesc.setLineStyle(vpStyle.getLineStyle());
 				eStyleDesc.setSourceArrow(vpStyle.getBeginDecorator());
 				eStyleDesc.setTargetArrow(vpStyle.getEndDecorator());

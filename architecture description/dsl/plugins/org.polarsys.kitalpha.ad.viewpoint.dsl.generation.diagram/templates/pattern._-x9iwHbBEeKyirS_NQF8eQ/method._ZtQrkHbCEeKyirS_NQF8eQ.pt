@@ -2,11 +2,22 @@
 
 SelectModelElementVariable select = ToolFactory.eINSTANCE.createSelectModelElementVariable();
 select.setName("elementsToRemove");
-String expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {") +
-SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")+
-SiriusExpressionHelper.getExpressoin("}else{")+
-SiriusExpressionHelper.getExpressoin("sourceNode.target")+
-SiriusExpressionHelper.getExpressoin("}");
+
+String expression = "";
+if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy))
+{
+	expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {") +
+	SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")+
+	SiriusExpressionHelper.getExpressoin("}else{")+
+	SiriusExpressionHelper.getExpressoin("sourceNode.target")+
+	SiriusExpressionHelper.getExpressoin("}");
+}
+
+if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.Acceleo_3_x))
+{
+	expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
+}
+
 select.setCandidatesExpression(expression);
 select.setMessage("Select the element you want to unlink");
 elementView_del_var.getSubVariables().add(select);
