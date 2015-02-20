@@ -19,11 +19,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.observer.IObserver;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.observer.ISelectionNotification;
 
-
 /**
- * 
  * @author Faycal Abka
- *
  */
 
 public class TemplateDataClasses extends Wizard implements ISelectionNotification {
@@ -32,6 +29,7 @@ public class TemplateDataClasses extends Wizard implements ISelectionNotificatio
 	
 
 	public TemplateDataClasses() {
+		setWindowTitle("Accelerator of diagram creation");
 	}
 	
 	@Override
