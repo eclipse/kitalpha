@@ -98,11 +98,18 @@ public final class DataClassesPageHelper {
 	 * @param classList List of {@link Class}es to display in the {@link ListViewer}
 	 */
 	public static void updateListViewerContent(ListViewer listViewer, Collection<Class> classList){
-		ISelection oldSelection = listViewer.getSelection();
+		ISelection oldSelection = null;
+		if (listViewer.getList().getItems().length > 0)
+			oldSelection = listViewer.getSelection();
+		
 		listViewer.setInput(classList);
 		listViewer.refresh();
-		int selectionNewIndex = getSelectionNewIndex(listViewer, (StructuredSelection)oldSelection);
-		listViewer.setSelection(new StructuredSelection(listViewer.getElementAt(selectionNewIndex)), true);
+		if (listViewer.getList().getItems().length > 0)
+		{   // Select the element selected before, if it is always displayed
+			int selectionNewIndex = getSelectionNewIndex(listViewer, (StructuredSelection)oldSelection);
+			listViewer.setSelection(new StructuredSelection(listViewer.getElementAt(selectionNewIndex)), true);
+		}
+		
 	}
 	
 	/**

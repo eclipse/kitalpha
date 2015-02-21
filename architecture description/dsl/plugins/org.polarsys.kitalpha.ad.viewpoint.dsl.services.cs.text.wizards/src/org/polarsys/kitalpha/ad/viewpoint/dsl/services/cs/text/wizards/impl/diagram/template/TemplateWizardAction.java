@@ -50,7 +50,7 @@ public class TemplateWizardAction {
 		}
 		
 		//Register pages here
-		wizard.addPage(new DataClassesPage("List Data Class", classes));
+		wizard.addPage(new DataClassesPage("Select The Diagram Domain Class", classes));
 		
 		dialog.open();
 	}
