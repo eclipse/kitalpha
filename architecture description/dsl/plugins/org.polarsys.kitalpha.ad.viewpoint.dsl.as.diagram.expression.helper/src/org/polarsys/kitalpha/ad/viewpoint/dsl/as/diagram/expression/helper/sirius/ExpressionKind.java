@@ -157,6 +157,9 @@ public enum ExpressionKind implements IExpressionFormat{
 		boolean result = false;
 		boolean checkExpressionEnd = false;
 
+		if (expression == null || (expression != null && expression.length() < beginPrefixLenght))
+			return false;
+		
 		// Check begin of expression
 		String beginDelimiter = expression.substring(0, beginPrefixLenght);
 		switch (this) {
