@@ -81,8 +81,10 @@ public class ModelResourceCommand extends ModelCommand {
 						for (EObject eObject : resourceEObjects) {
 							Collection<Setting> eObjectSettings = settings.get(eObject);
 							
-							for (Setting setting : eObjectSettings) {
-								handleSetting(setting, eObject);
+							if (eObjectSettings != null){
+								for (Setting setting : eObjectSettings) {
+									handleSetting(setting, eObject);
+								}
 							}
 							EcoreUtil.delete(eObject);
 						}

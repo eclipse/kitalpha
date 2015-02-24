@@ -12,12 +12,15 @@ package org.polarsys.kitalpha.model.common.share.modelresources.helpers;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -26,10 +29,12 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -38,44 +43,84 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * 
- * @author Faycal Abka
+ * @author Faycal Abka,
+ * 	       Boubekeur Zendagui
  *
  */
 public class DetachmentHelper {
 	
+	private static Map<URI, Resource> loadedResources = new HashMap<URI, Resource>();
+	private static final Logger _LOGGER = Logger.getLogger(DetachmentHelper.class); 
+	
 	public static URI getPlatformURIFromNSURI(URI uri){
-
-		ResourceSet rs = new ResourceSetImpl();
-		
-		URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(uri.toString());
-
-		if (genmodelURI != null){
-
-			Resource r = rs.createResource(genmodelURI);
-
-			try {
-				if (!r.isLoaded()){
-					r.load(null);
+		Resource r = null;
+		r = loadedResources.get(uri);
+		if (r == null)
+		{
+			ResourceSet rs = new ResourceSetImpl();
+			URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(uri.toString());
+			if (genmodelURI != null)
+			{
+				if (genmodelURI.isPlatformPlugin())
+				{
+					r = rs.createResource(genmodelURI);
+					loadedResources.put(uri, r);
+//					try {
+//						if (!r.isLoaded())
+//						{
+//							r.load(null);
+//							loadedResources.put(uri, r);
+//						}
+//					} 
+//					catch (IOException e) {
+//					}
 				}
-			} catch (IOException e) {
+				
 			}
-
-			EList<EObject> genContents = r.getContents();
-			if (genContents != null && !genContents.isEmpty()){
-				EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
-				for(GenPackage genPackage: genmodels){
-					URI platformURI = genPackage.getEcorePackage().eResource().getURI();
-					return platformURI;
+		}
+		
+		if (r != null)
+		{
+			try {
+				if (!r.isLoaded())
+					r.load(null);
+			} 
+			catch (IOException e) {
+				_LOGGER.error("Unable to load resource " + uri, e);
+			}
+			/**************************/
+			
+			EList<EObject> genContents = r.getContents();;
+			if (genContents != null && ! genContents.isEmpty())
+			{
+				if (genContents != null && !genContents.isEmpty())
+				{
+					EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
+					for(GenPackage genPackage: genmodels)
+					{
+						URI platformURI = genPackage.getEcorePackage().eResource().getURI();
+						return platformURI;
+					}
 				}
 			}
 		}
+
 		return null;
 	}
 	
-	
 	public static URI getPlatformResourceURIFromEObject(EObject eObject){
-		String nsURI = eObject.eClass().getEPackage().getNsURI();
-		return DetachmentHelper.getPlatformURIFromNSURI(URI.createURI(nsURI));
+		EObject rootContainer = EcoreUtil.getRootContainer(eObject);
+		if (rootContainer instanceof EPackage)
+		{
+			String nsURI2 = ((EPackage) rootContainer).getNsURI();
+			return DetachmentHelper.getPlatformURIFromNSURI(URI.createURI(nsURI2));
+		}
+		else
+		{
+			// FIXME: Why detach go back to ecore of the current object ?
+			String nsURI = eObject.eClass().getEPackage().getNsURI();
+			return DetachmentHelper.getPlatformURIFromNSURI(URI.createURI(nsURI));
+		}
 	}
 	
 	
