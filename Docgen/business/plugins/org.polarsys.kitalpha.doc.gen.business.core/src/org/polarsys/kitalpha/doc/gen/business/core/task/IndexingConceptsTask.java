@@ -34,6 +34,7 @@ import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
+import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
 
 public class IndexingConceptsTask implements ITaskProduction {
@@ -269,7 +270,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 			for (String currentConcept : concepts) 
 			{
 				String title = m.group(1);
-				if (title.contains(currentConcept))
+				String currentConcept_html = EscapeChars.forHTML(currentConcept);
+				if (title.contains(currentConcept_html))
 					indexTitle(fileName, currentConcept);
 			}
 		}
@@ -281,8 +283,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 			for (String currentConcept : concepts) {
 				for (int i = 1; i <= mParagraphe.groupCount(); i++) {
 					String paragraph = mParagraphe.group(i);
-
-					if (paragraph.contains(currentConcept)) {
+					String currentConcept_html = EscapeChars.forHTML(currentConcept);
+					if (paragraph.contains(currentConcept_html)) {
 						indexParagraph(fileName, currentConcept);
 						break;
 					}
@@ -296,8 +298,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 			for (String currentConcept : concepts) {
 				for (int i = 1; i <= mList.groupCount(); i++) {
 					String listGroup = mList.group(i);
-
-					if (listGroup.contains(currentConcept)) {
+					String currentConcept_html = EscapeChars.forHTML(currentConcept);
+					if (listGroup.contains(currentConcept_html)) {
 						indexList(fileName, currentConcept);
 					}
 				}
@@ -311,8 +313,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 			for (String currentConcept : concepts) {
 				for (int i = 1; i <= mTable.groupCount(); i++) {
 					String listGroup = mTable.group(i);
-
-					if (listGroup.contains(currentConcept)) {
+					String currentConcept_html = EscapeChars.forHTML(currentConcept);
+					if (listGroup.contains(currentConcept_html)) {
 						indexTable(fileName, currentConcept);
 					}
 				}
