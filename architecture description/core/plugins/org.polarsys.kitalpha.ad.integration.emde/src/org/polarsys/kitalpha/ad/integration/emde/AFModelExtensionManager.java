@@ -54,10 +54,12 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 				Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 				if (vp == null || vp.eIsProxy())
 					return;
-				for (EPackage pack : vp.getMetamodel().getModels()) {
-					extension2state.put(pack.getNsURI(), enable);
-					managedByAF2state.put(pack.getNsURI(), Boolean.TRUE);
-					DefaultModelExtensionManager.fireExtensionEvent(pack.getNsURI(), enable);
+				if (vp.getMetamodel() != null) {
+					for (EPackage pack : vp.getMetamodel().getModels()) {
+						extension2state.put(pack.getNsURI(), enable);
+						managedByAF2state.put(pack.getNsURI(), Boolean.TRUE);
+						DefaultModelExtensionManager.fireExtensionEvent(pack.getNsURI(), enable);
+					}
 				}
 				for (Resource r : set.getResources()) {
 					r.unload();
@@ -101,12 +103,14 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 				try {
 					URI uri = URIHelper.createURI(res);
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-					for (EPackage pack : vp.getMetamodel().getModels()) {
-						// if the model is owned by a VP we must tell yes or no.
-						// In other case let the super implementation answer
-						if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
-							managedByAF2state.put(nsURI, Boolean.TRUE);
-							return false;
+					if (vp.getMetamodel() != null) {
+						for (EPackage pack : vp.getMetamodel().getModels()) {
+							// if the model is owned by a VP we must tell yes or no.
+							// In other case let the super implementation answer
+							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
+								managedByAF2state.put(nsURI, Boolean.TRUE);
+								return false;
+							}
 						}
 					}
 				} catch (Exception e) {
@@ -139,13 +143,15 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 				try {
 					URI uri = URIHelper.createURI(res);
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-					for (EPackage pack : vp.getMetamodel().getModels()) {
-						// if the model is owned by a VP we must tell yes or no.
-						// In other case let the super implementation answer
-						if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
-							boolean vpActive = ViewpointManager.INSTANCE.isActive(res.getId());
-							extension2state.put(nsURI, vpActive);
-							return !vpActive;
+					if (vp.getMetamodel() != null) {
+						for (EPackage pack : vp.getMetamodel().getModels()) {
+							// if the model is owned by a VP we must tell yes or no.
+							// In other case let the super implementation answer
+							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
+								boolean vpActive = ViewpointManager.INSTANCE.isActive(res.getId());
+								extension2state.put(nsURI, vpActive);
+								return !vpActive;
+							}
 						}
 					}
 				} catch (Exception e) {

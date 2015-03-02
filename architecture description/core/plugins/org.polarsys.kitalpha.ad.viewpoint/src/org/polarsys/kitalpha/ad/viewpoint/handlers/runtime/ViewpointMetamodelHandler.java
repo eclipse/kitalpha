@@ -35,7 +35,10 @@ public class ViewpointMetamodelHandler extends ViewpointManager.ElementHandler i
 		if (getResourceManager().isReadOnly())
 			throw new IllegalStateException();
 
-		EList<EPackage> models = getViewpoint().getMetamodel().getModels();
+		Metamodel metamodel = getMetamodel();
+		if (metamodel == null)
+			return;
+		EList<EPackage> models = metamodel.getModels();
 		models.removeAll(packages);
 		saveModel();
 	}
@@ -44,7 +47,10 @@ public class ViewpointMetamodelHandler extends ViewpointManager.ElementHandler i
 		if (getResourceManager().isReadOnly())
 			throw new IllegalStateException();
 
-		getViewpoint().getMetamodel().getModels().addAll(packages);
+		Metamodel metamodel = getMetamodel();
+		if (metamodel == null)
+			return;
+		metamodel.getModels().addAll(packages);
 		saveModel();
 	}
 
