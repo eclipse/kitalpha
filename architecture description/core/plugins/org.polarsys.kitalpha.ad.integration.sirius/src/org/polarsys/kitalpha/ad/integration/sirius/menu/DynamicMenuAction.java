@@ -192,7 +192,7 @@ public class DynamicMenuAction implements IMenuCreator, IObjectActionDelegate {
 			if (vp.isAbstract() || !ViewpointManager.INSTANCE.isActive(vp.getId())) {
 				continue;
 			}
-			ModelManager vpMgr = ModelManager.createViewpointManager(vp);
+			ModelManager vpMgr = ModelManager.createWorkspaceManager(vp);
 			vp2mgr.put(vp, vpMgr);
 			for (ViewpointElement elt : sort(vpMgr.getServiceHandler().getElements())) {
 				try {
