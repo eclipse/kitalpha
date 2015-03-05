@@ -27,7 +27,7 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule;
  */
 public class Rules {
 
-	private static final String EXTENSION_POINT_ID = "org.polarsys.kitalpha.rule.providers";
+	private static final String EXTENSION_POINT_ID = "org.polarsys.kitalpha.ad.viewpoint.rule.providers";
 
 	public static String getProviderName(Rule rule) {
 		if (rule.getImplementation() == null || "".equals(rule.getImplementation()))
