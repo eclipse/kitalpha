@@ -43,7 +43,7 @@ public class NewServiceWizardPage extends NewElementWizardPage {
 	protected final static String SERVICE_TYPE = "service.type";
 
 	protected StringDialogField fServiceTypeDialogField;
-	protected IStatus fServiceTypeStatus;
+	protected IStatus fServiceTypeStatus = new StatusInfo();
 
 	/**
 	 * Creates a new <code>NewClassWizardPage</code>
@@ -132,7 +132,7 @@ public class NewServiceWizardPage extends NewElementWizardPage {
 		createTypeNameControls(composite, nColumns);
 
 		createSuperInterfacesControls(composite, nColumns);
-		addSuperInterface("org.polarsys.kitalpha.af.integration.ServiceImplementation");
+		addSuperInterface("org.polarsys.kitalpha.ad.viewpoint.integration.services.ServiceImplementation");
 
 		createCommentControls(composite, nColumns);
 		setAddComments(true, true);

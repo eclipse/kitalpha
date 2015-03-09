@@ -32,7 +32,7 @@ public class NewJavaRuleCreationWizard extends NewRuleCreationWizard {
 		super(handler);
 		setDefaultPageImageDescriptor(JavaPluginImages.DESC_WIZBAN_NEWCLASS);
 		setWindowTitle(Messages.NewJavaRuleCreationWizard_title);
-		requiredDependencies.add("org.polarsys.kitalpha.af");
+		requiredDependencies.add("org.polarsys.kitalpha.ad.viewpoint");
 		fPage = new NewJavaRuleWizardPage();
 	}
 
@@ -43,7 +43,7 @@ public class NewJavaRuleCreationWizard extends NewRuleCreationWizard {
 
 		// 2 - Add extension point declaration
 		IPluginExtension extension = factory.createExtension();
-		extension.setPoint("org.polarsys.kitalpha.af.javarules");
+		extension.setPoint("org.polarsys.kitalpha.ad.viewpoint.javarules");
 		model.getExtensions().add(extension);
 		IPluginElement element = factory.createElement(extension);
 

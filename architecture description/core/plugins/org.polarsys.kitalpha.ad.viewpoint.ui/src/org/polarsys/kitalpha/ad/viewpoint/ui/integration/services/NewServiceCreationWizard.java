@@ -41,7 +41,7 @@ public class NewServiceCreationWizard extends NewElementCreationWizard {
 		this.handler = handler;
 		setDefaultPageImageDescriptor(JavaPluginImages.DESC_WIZBAN_NEWCLASS);
 		setWindowTitle(Messages.NewServiceCreationWizard_title);
-		requiredDependencies.add("org.polarsys.kitalpha.af");
+		requiredDependencies.add("org.polarsys.kitalpha.ad.viewpoint");
 		fPage = new NewServiceWizardPage();
 	}
 
@@ -58,7 +58,7 @@ public class NewServiceCreationWizard extends NewElementCreationWizard {
 
 		// 2 - Add extension point declaration
 		IPluginExtension extension = factory.createExtension();
-		extension.setPoint("org.polarsys.kitalpha.af.implementation.services");
+		extension.setPoint("org.polarsys.kitalpha.ad.viewpoint.implementation.services");
 		model.getExtensions().add(extension);
 		IPluginElement element = factory.createElement(extension);
 

@@ -73,7 +73,7 @@ public class NewJavaRuleWizardPage extends NewElementWizardPage {
 		createTypeNameControls(composite, nColumns);
 
 		createSuperInterfacesControls(composite, nColumns);
-		addSuperInterface("org.polarsys.kitalpha.af.integration.rules.JavaRule");
+		addSuperInterface("org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule");
 
 		createCommentControls(composite, nColumns);
 		setAddComments(true, true);
