@@ -194,11 +194,10 @@ public class PropertySetItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.PROPERTY_SET__NEW_PROPERTIES,
-				 ViewpointFactory.eINSTANCE.createProperty()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.PROPERTY_SET__NEW_PROPERTIES,
+						 ViewpointFactory.eINSTANCE.createProperty()));
 
 
 	}

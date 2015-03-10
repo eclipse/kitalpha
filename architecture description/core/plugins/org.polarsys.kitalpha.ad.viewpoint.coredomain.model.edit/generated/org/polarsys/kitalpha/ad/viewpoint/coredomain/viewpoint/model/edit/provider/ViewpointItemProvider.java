@@ -74,6 +74,7 @@ public class ViewpointItemProvider
 			addParentsPropertyDescriptor(object);
 			addDependenciesPropertyDescriptor(object);
 			addAbstractPropertyDescriptor(object);
+			addVersionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -145,6 +146,30 @@ public class ViewpointItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+
+	}
+
+	/**
+	 * This adds a property descriptor for the Version feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVersionPropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Viewpoint_version_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Viewpoint_version_feature", "_UI_Viewpoint_type"),
+				 ViewpointPackage.Literals.VIEWPOINT__VERSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 
@@ -232,6 +257,7 @@ public class ViewpointItemProvider
 
 		switch (notification.getFeatureID(Viewpoint.class)) {
 			case ViewpointPackage.VIEWPOINT__ABSTRACT:
+			case ViewpointPackage.VIEWPOINT__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ViewpointPackage.VIEWPOINT__RULE_SET:
@@ -256,43 +282,38 @@ public class ViewpointItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.VIEWPOINT__RULE_SET,
-				 ViewpointFactory.eINSTANCE.createRuleSet()));
-
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.VIEWPOINT__RULE_SET,
+						 ViewpointFactory.eINSTANCE.createRuleSet()));
 
 
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.VIEWPOINT__SERVICE_SET,
-				 ViewpointFactory.eINSTANCE.createServiceSet()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.VIEWPOINT__SERVICE_SET,
+						 ViewpointFactory.eINSTANCE.createServiceSet()));
 
 
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.VIEWPOINT__PROPERTY_SET,
-				 ViewpointFactory.eINSTANCE.createPropertySet()));
-
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.VIEWPOINT__PROPERTY_SET,
+						 ViewpointFactory.eINSTANCE.createPropertySet()));
 
 
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.VIEWPOINT__METAMODEL,
-				 ViewpointFactory.eINSTANCE.createMetamodel()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.VIEWPOINT__METAMODEL,
+						 ViewpointFactory.eINSTANCE.createMetamodel()));
 
 
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.VIEWPOINT__REPRESENTATION,
-				 ViewpointFactory.eINSTANCE.createRepresentation()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.VIEWPOINT__REPRESENTATION,
+						 ViewpointFactory.eINSTANCE.createRepresentation()));
 
 
 	}

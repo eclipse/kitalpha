@@ -13,14 +13,14 @@ package org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ContextTypes;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ElementSet;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Metamodel;
@@ -40,147 +40,146 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointFactory;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Workspace;
-
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.ToolsPackage;
-
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.impl.ToolsPackageImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Package</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPackage {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass nameElementEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass viewpointEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass validationRuleEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass ruleEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass ruleSetEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass serviceEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass serviceSetEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass propertyEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass propertySetEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass workspaceEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass elementSetEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass metamodelEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass representationEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass representationElementEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum severityTypesEEnum = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum contextTypesEEnum = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum typesEEnum = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EDataType versionEDataType = null;
+
+	/**
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI value.
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#eNS_URI
 	 * @see #init()
@@ -191,8 +190,8 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -200,20 +199,20 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link ViewpointPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * This method is used to initialize {@link ViewpointPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ViewpointPackage init() {
-		if (isInited) return (ViewpointPackage)EPackage.Registry.INSTANCE.getEPackage(ViewpointPackage.eNS_URI);
+		if (isInited)
+			return (ViewpointPackage) EPackage.Registry.INSTANCE.getEPackage(ViewpointPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ViewpointPackageImpl theViewpointPackage = (ViewpointPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ViewpointPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ViewpointPackageImpl());
+		ViewpointPackageImpl theViewpointPackage = (ViewpointPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ViewpointPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ViewpointPackageImpl());
 
 		isInited = true;
 
@@ -221,7 +220,7 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		ToolsPackageImpl theToolsPackage = (ToolsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ToolsPackage.eNS_URI) instanceof ToolsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ToolsPackage.eNS_URI) : ToolsPackage.eINSTANCE);
+		ToolsPackageImpl theToolsPackage = (ToolsPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ToolsPackage.eNS_URI) instanceof ToolsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ToolsPackage.eNS_URI) : ToolsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theViewpointPackage.createPackageContents();
@@ -234,15 +233,14 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 		// Mark meta-data to indicate it can't be changed
 		theViewpointPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ViewpointPackage.eNS_URI, theViewpointPackage);
 		return theViewpointPackage;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getNameElement() {
@@ -250,44 +248,44 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getNameElement_Name() {
-		return (EAttribute)nameElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) nameElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getNameElement_Description() {
-		return (EAttribute)nameElementEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) nameElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getNameElement_Id() {
-		return (EAttribute)nameElementEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) nameElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getNameElement_Vpid() {
-		return (EAttribute)nameElementEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) nameElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getViewpoint() {
@@ -295,80 +293,89 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getViewpoint_RuleSet() {
-		return (EReference)viewpointEClass.getEStructuralFeatures().get(0);
+		return (EReference) viewpointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getViewpoint_ServiceSet() {
-		return (EReference)viewpointEClass.getEStructuralFeatures().get(1);
+		return (EReference) viewpointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getViewpoint_PropertySet() {
-		return (EReference)viewpointEClass.getEStructuralFeatures().get(2);
+		return (EReference) viewpointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getViewpoint_Parents() {
-		return (EReference)viewpointEClass.getEStructuralFeatures().get(3);
+		return (EReference) viewpointEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getViewpoint_Dependencies() {
-		return (EReference)viewpointEClass.getEStructuralFeatures().get(4);
+		return (EReference) viewpointEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getViewpoint_Abstract() {
-		return (EAttribute)viewpointEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) viewpointEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getViewpoint_Metamodel() {
-		return (EReference)viewpointEClass.getEStructuralFeatures().get(6);
+		return (EReference) viewpointEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getViewpoint_Representation() {
-		return (EReference)viewpointEClass.getEStructuralFeatures().get(7);
+		return (EReference) viewpointEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getViewpoint_Version() {
+		return (EAttribute) viewpointEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getValidationRule() {
@@ -376,26 +383,26 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Severity() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getValidationRule_Message() {
-		return (EAttribute)validationRuleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) validationRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getRule() {
@@ -403,53 +410,53 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRule_Live() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRule_Implementation() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRule_Context() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRule_Language() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRule_Type() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getRuleSet() {
@@ -457,26 +464,26 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getRuleSet_HiddenRules() {
-		return (EReference)ruleSetEClass.getEStructuralFeatures().get(0);
+		return (EReference) ruleSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getRuleSet_NewRules() {
-		return (EReference)ruleSetEClass.getEStructuralFeatures().get(1);
+		return (EReference) ruleSetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getService() {
@@ -484,26 +491,26 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getService_RelatedRules() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(0);
+		return (EReference) serviceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getService_Type() {
-		return (EAttribute)serviceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) serviceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getServiceSet() {
@@ -511,26 +518,26 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getServiceSet_HiddenServices() {
-		return (EReference)serviceSetEClass.getEStructuralFeatures().get(0);
+		return (EReference) serviceSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getServiceSet_NewServices() {
-		return (EReference)serviceSetEClass.getEStructuralFeatures().get(1);
+		return (EReference) serviceSetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getProperty() {
@@ -538,26 +545,26 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getProperty_Value() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getProperty_Type() {
-		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) propertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPropertySet() {
@@ -565,26 +572,26 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPropertySet_HiddenProperties() {
-		return (EReference)propertySetEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertySetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPropertySet_NewProperties() {
-		return (EReference)propertySetEClass.getEStructuralFeatures().get(1);
+		return (EReference) propertySetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getWorkspace() {
@@ -592,44 +599,44 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWorkspace_RuleSets() {
-		return (EReference)workspaceEClass.getEStructuralFeatures().get(0);
+		return (EReference) workspaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWorkspace_ServiceSets() {
-		return (EReference)workspaceEClass.getEStructuralFeatures().get(1);
+		return (EReference) workspaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWorkspace_ActiveViewpoints() {
-		return (EReference)workspaceEClass.getEStructuralFeatures().get(2);
+		return (EReference) workspaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWorkspace_PropertySets() {
-		return (EReference)workspaceEClass.getEStructuralFeatures().get(3);
+		return (EReference) workspaceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getElementSet() {
@@ -637,17 +644,17 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getElementSet_Target() {
-		return (EReference)elementSetEClass.getEStructuralFeatures().get(0);
+		return (EReference) elementSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getMetamodel() {
@@ -655,17 +662,17 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getMetamodel_Models() {
-		return (EReference)metamodelEClass.getEStructuralFeatures().get(0);
+		return (EReference) metamodelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getRepresentation() {
@@ -673,17 +680,17 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getRepresentation_Representations() {
-		return (EReference)representationEClass.getEStructuralFeatures().get(0);
+		return (EReference) representationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getRepresentationElement() {
@@ -691,8 +698,17 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EDataType getVersion() {
+		return versionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getSeverityTypes() {
@@ -700,8 +716,8 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getContextTypes() {
@@ -709,8 +725,8 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getTypes() {
@@ -718,30 +734,29 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ViewpointFactory getViewpointFactory() {
-		return (ViewpointFactory)getEFactoryInstance();
+		return (ViewpointFactory) getEFactoryInstance();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
-	 * guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -760,6 +775,7 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 		createEAttribute(viewpointEClass, VIEWPOINT__ABSTRACT);
 		createEReference(viewpointEClass, VIEWPOINT__METAMODEL);
 		createEReference(viewpointEClass, VIEWPOINT__REPRESENTATION);
+		createEAttribute(viewpointEClass, VIEWPOINT__VERSION);
 
 		validationRuleEClass = createEClass(VALIDATION_RULE);
 		createEAttribute(validationRuleEClass, VALIDATION_RULE__SEVERITY);
@@ -813,24 +829,26 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 		severityTypesEEnum = createEEnum(SEVERITY_TYPES);
 		contextTypesEEnum = createEEnum(CONTEXT_TYPES);
 		typesEEnum = createEEnum(TYPES);
+
+		// Create data types
+		versionEDataType = createEDataType(VERSION);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
-	 * method is guarded to have no affect on any invocation but its first.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -839,8 +857,8 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ToolsPackage theToolsPackage = (ToolsPackage)EPackage.Registry.INSTANCE.getEPackage(ToolsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		ToolsPackage theToolsPackage = (ToolsPackage) EPackage.Registry.INSTANCE.getEPackage(ToolsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theToolsPackage);
@@ -880,6 +898,7 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 		initEAttribute(getViewpoint_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getViewpoint_Metamodel(), this.getMetamodel(), null, "metamodel", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getViewpoint_Representation(), this.getRepresentation(), null, "representation", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewpoint_Version(), this.getVersion(), "version", null, 0, 1, Viewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(viewpointEClass, this.getProperty(), "getProperty", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -975,8 +994,11 @@ public class ViewpointPackageImpl extends EPackageImpl implements ViewpointPacka
 		addEEnumLiteral(typesEEnum, Types.FLOAT);
 		addEEnumLiteral(typesEEnum, Types.BOOLEAN);
 
+		// Initialize data types
+		initEDataType(versionEDataType, Version.class, "Version", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //ViewpointPackageImpl
+} // ViewpointPackageImpl

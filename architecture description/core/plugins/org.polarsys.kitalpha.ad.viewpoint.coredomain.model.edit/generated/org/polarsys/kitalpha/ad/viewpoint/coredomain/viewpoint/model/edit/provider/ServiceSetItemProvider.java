@@ -194,11 +194,10 @@ public class ServiceSetItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.SERVICE_SET__NEW_SERVICES,
-				 ViewpointFactory.eINSTANCE.createService()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.SERVICE_SET__NEW_SERVICES,
+						 ViewpointFactory.eINSTANCE.createService()));
 
 
 	}

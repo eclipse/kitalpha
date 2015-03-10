@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.*;
 
 /**
@@ -98,6 +99,8 @@ public class ViewpointFactoryImpl extends EFactoryImpl implements ViewpointFacto
 				return createContextTypesFromString(eDataType, initialValue);
 			case ViewpointPackage.TYPES:
 				return createTypesFromString(eDataType, initialValue);
+			case ViewpointPackage.VERSION:
+				return createVersionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -117,6 +120,8 @@ public class ViewpointFactoryImpl extends EFactoryImpl implements ViewpointFacto
 				return convertContextTypesToString(eDataType, instanceValue);
 			case ViewpointPackage.TYPES:
 				return convertTypesToString(eDataType, instanceValue);
+			case ViewpointPackage.VERSION:
+				return convertVersionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -310,6 +315,24 @@ public class ViewpointFactoryImpl extends EFactoryImpl implements ViewpointFacto
 	 */
 	public String convertTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Version createVersionFromString(EDataType eDataType, String initialValue) {
+		return (Version)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVersionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

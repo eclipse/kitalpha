@@ -202,27 +202,24 @@ public class WorkspaceItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.WORKSPACE__RULE_SETS,
-				 ViewpointFactory.eINSTANCE.createRuleSet()));
-
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.WORKSPACE__RULE_SETS,
+						 ViewpointFactory.eINSTANCE.createRuleSet()));
 
 
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.WORKSPACE__SERVICE_SETS,
-				 ViewpointFactory.eINSTANCE.createServiceSet()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.WORKSPACE__SERVICE_SETS,
+						 ViewpointFactory.eINSTANCE.createServiceSet()));
 
 
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.WORKSPACE__PROPERTY_SETS,
-				 ViewpointFactory.eINSTANCE.createPropertySet()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.WORKSPACE__PROPERTY_SETS,
+						 ViewpointFactory.eINSTANCE.createPropertySet()));
 
 
 	}

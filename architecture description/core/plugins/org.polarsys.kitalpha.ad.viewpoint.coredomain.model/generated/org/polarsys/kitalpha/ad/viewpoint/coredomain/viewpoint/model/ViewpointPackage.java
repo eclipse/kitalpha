@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -239,13 +240,22 @@ public interface ViewpointPackage extends EPackage {
 	int VIEWPOINT__REPRESENTATION = NAME_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT__VERSION = NAME_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Viewpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_FEATURE_COUNT = NAME_ELEMENT_FEATURE_COUNT + 8;
+	int VIEWPOINT_FEATURE_COUNT = NAME_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RuleImpl <em>Rule</em>}' class.
@@ -1052,6 +1062,16 @@ public interface ViewpointPackage extends EPackage {
 	int REPRESENTATION_ELEMENT_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '<em>Version</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.osgi.framework.Version
+	 * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.ViewpointPackageImpl#getVersion()
+	 * @generated
+	 */
+	int VERSION = 17;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.SeverityTypes <em>Severity Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1233,6 +1253,17 @@ public interface ViewpointPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getViewpoint_Representation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint#getVersion <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint#getVersion()
+	 * @see #getViewpoint()
+	 * @generated
+	 */
+	EAttribute getViewpoint_Version();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ValidationRule <em>Validation Rule</em>}'.
@@ -1619,6 +1650,17 @@ public interface ViewpointPackage extends EPackage {
 	EClass getRepresentationElement();
 
 	/**
+	 * Returns the meta object for data type '{@link org.osgi.framework.Version <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Version</em>'.
+	 * @see org.osgi.framework.Version
+	 * @model instanceClass="org.osgi.framework.Version"
+	 * @generated
+	 */
+	EDataType getVersion();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.SeverityTypes <em>Severity Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1785,6 +1827,14 @@ public interface ViewpointPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VIEWPOINT__REPRESENTATION = eINSTANCE.getViewpoint_Representation();
+
+		/**
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIEWPOINT__VERSION = eINSTANCE.getViewpoint_Version();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.ValidationRuleImpl <em>Validation Rule</em>}' class.
@@ -2097,6 +2147,16 @@ public interface ViewpointPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REPRESENTATION_ELEMENT = eINSTANCE.getRepresentationElement();
+
+		/**
+		 * The meta object literal for the '<em>Version</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.osgi.framework.Version
+		 * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.ViewpointPackageImpl#getVersion()
+		 * @generated
+		 */
+		EDataType VERSION = eINSTANCE.getVersion();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.SeverityTypes <em>Severity Types</em>}' enum.

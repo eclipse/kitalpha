@@ -194,19 +194,17 @@ public class RuleSetItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.RULE_SET__NEW_RULES,
-				 ViewpointFactory.eINSTANCE.createRule()));
-
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.RULE_SET__NEW_RULES,
+						 ViewpointFactory.eINSTANCE.createRule()));
 
 
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.RULE_SET__NEW_RULES,
-				 ViewpointFactory.eINSTANCE.createValidationRule()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.RULE_SET__NEW_RULES,
+						 ViewpointFactory.eINSTANCE.createValidationRule()));
 
 
 	}
