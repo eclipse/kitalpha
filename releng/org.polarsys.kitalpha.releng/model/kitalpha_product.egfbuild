@@ -83,7 +83,7 @@
       <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
     </steps>
     <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
-      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" username="" password=""/>
+      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
     </scms>
     <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="https://www.polarsys.org/kitalpha/hudson/" userDeployJobName="">
       <users xmi:id="_8MIb4INCEeO4K7leE9IQQw" login="thomas.guiu@soyatec.com" permission="WRITE"/>
