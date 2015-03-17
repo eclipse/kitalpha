@@ -55,7 +55,6 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.EditorHelper;
 import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.ModelFileDialog;
-import org.polarsys.kitalpha.ad.viewpoint.ui.views.SelectionListener2;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.AbstractTab;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.ResourceTableSorter;
 
@@ -92,7 +91,7 @@ public class SiriusTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
 				if (currentSortColumn.equals(newSortColumn)) {
@@ -137,7 +136,7 @@ public class SiriusTab extends AbstractTab {
 		addBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IRepresentationHandler representationHandler = modelManager.getRepresentationHandler();
 				URI uri = viewpoint.eResource().getURI();
 				String segment = uri.segment(1);
@@ -169,7 +168,7 @@ public class SiriusTab extends AbstractTab {
 		deleteBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) odesignViewer.getSelection();
 				List<RepresentationElement> packages = new ArrayList<RepresentationElement>();
 				for (Object obj : selection.toArray()) {
@@ -186,7 +185,7 @@ public class SiriusTab extends AbstractTab {
 		viewBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) odesignViewer.getSelection();
 				SiriusRepresentation obj = (SiriusRepresentation) selection.getFirstElement();
 				Group odesign = obj.getOdesign();

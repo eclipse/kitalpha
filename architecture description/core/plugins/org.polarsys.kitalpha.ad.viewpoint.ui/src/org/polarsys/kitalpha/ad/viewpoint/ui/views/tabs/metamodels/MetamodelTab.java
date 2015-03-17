@@ -51,7 +51,6 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.EditorHelper;
 import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.ModelFileDialog;
-import org.polarsys.kitalpha.ad.viewpoint.ui.views.SelectionListener2;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.AbstractTab;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.ResourceTableSorter;
 
@@ -88,7 +87,7 @@ public class MetamodelTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
 				if (currentSortColumn.equals(newSortColumn)) {
@@ -127,7 +126,7 @@ public class MetamodelTab extends AbstractTab {
 		addBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IMetamodelHandler metamodelHandler = modelManager.getMetamodelHandler();
 				URI uri = viewpoint.eResource().getURI();
 				String segment = uri.segment(1);
@@ -158,7 +157,7 @@ public class MetamodelTab extends AbstractTab {
 		deleteBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) metamodelViewer.getSelection();
 				List<EPackage> packages = new ArrayList<EPackage>();
 				for (Object obj : selection.toArray()) {
@@ -176,7 +175,7 @@ public class MetamodelTab extends AbstractTab {
 		viewBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) metamodelViewer.getSelection();
 				EObject obj = (EObject) selection.getFirstElement();
 				URI uri = obj.eResource().getURI();

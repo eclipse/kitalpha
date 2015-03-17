@@ -57,7 +57,6 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.integration.rules.RuleProviderWizard;
 import org.polarsys.kitalpha.ad.viewpoint.ui.integration.rules.RuleWizards;
-import org.polarsys.kitalpha.ad.viewpoint.ui.views.SelectionListener2;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.ComboStringEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.RuleIDTypeEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.RuleTypeEditingSupport;
@@ -138,7 +137,7 @@ public class RuleTab extends AbstractTab {
 		createRuleItem = new MenuItem(menu, SWT.PUSH);
 		createRuleItem.setText(Messages.RuleTab_create_service_label);
 		createRuleItem.addSelectionListener(new SelectionListener2() {
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) ruleViewer.getSelection();
 				List<Rule> rules = new ArrayList<Rule>();
 				for (Object obj : selection.toArray()) {
@@ -157,7 +156,7 @@ public class RuleTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
 				if (currentSortColumn.equals(newSortColumn)) {
@@ -246,7 +245,7 @@ public class RuleTab extends AbstractTab {
 			final String type = wz;
 			wItem.addSelectionListener(new SelectionListener2() {
 
-				public void widgetSelected(SelectionEvent e) {
+				public void doWidgetSelected(SelectionEvent e) {
 					IProject containingProject = ProjectUtils.getContainingProject(viewpoint);
 					RuleProviderWizard provider = RuleWizards.getProvider(type);
 					provider.openWizard(site.getShell(), modelManager.getRuleHandler(), containingProject);
@@ -261,7 +260,7 @@ public class RuleTab extends AbstractTab {
 		addBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				String id = ElementHelper.computeNewId(modelManager.getRuleHandler(), viewpoint.getId() + ".rule");
 				modelManager.getRuleHandler().createRule(id);
 			}
@@ -274,7 +273,7 @@ public class RuleTab extends AbstractTab {
 		deleteBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) ruleViewer.getSelection();
 				List<Rule> rules = new ArrayList<Rule>();
 				for (Object obj : selection.toArray()) {

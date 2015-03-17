@@ -36,4 +36,8 @@ public interface IMiscHandler extends IElementHandler {
 
 	void setName(String txt);
 
+	String getVersion();
+
+	void setVersion(String txt);
+
 }

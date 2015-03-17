@@ -132,8 +132,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	}
 
 	/**
-	 * This is a callback that will allow us to create the viewer and initialize
-	 * it.
+	 * This is a callback that will allow us to create the viewer and initialize it.
 	 */
 	public void createPartControl(Composite parent) {
 

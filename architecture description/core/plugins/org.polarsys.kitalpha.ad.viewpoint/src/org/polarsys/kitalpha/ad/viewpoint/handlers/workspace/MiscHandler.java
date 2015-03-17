@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.handlers.workspace;
 
 import java.util.List;
 
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.ViewpointElement;
 import org.polarsys.kitalpha.ad.viewpoint.handlers.IMiscHandler;
@@ -65,6 +66,17 @@ public class MiscHandler extends WorkspaceManager.ElementHandler implements IMis
 	}
 
 	public void setName(String txt) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public String getVersion() {
+		Version version = getViewpoint().getVersion();
+		return version == null ? null : version.toString();
+	}
+
+	@Override
+	public void setVersion(String txt) {
 		throw new UnsupportedOperationException();
 	}
 
