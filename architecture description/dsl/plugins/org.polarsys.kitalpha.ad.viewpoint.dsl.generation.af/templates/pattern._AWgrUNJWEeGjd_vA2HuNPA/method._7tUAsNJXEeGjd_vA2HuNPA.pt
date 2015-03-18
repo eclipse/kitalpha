@@ -1,6 +1,6 @@
 Rule rule = ViewpointFactory.eINSTANCE.createRule();
 
-/*** From VPSpec Model ***/
+/*** From VPDesc Model ***/
 rule.setName(parameter.getName());
 rule.setDescription(parameter.getDescription());
 rule.setType(parameter.getType().toString());

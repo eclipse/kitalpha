@@ -1,6 +1,6 @@
 Property property = ViewpointFactory.eINSTANCE.createProperty();
 
-/*** From VPSpec Model ***/
+/*** From VPDesc Model ***/
 property.setName(parameter.getName());
 property.setDescription(parameter.getDescription());
 Types type = null;

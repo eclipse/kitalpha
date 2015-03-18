@@ -1,6 +1,6 @@
 Service service = ViewpointFactory.eINSTANCE.createService();
 
-/*** From VPSpec Model ***/
+/*** From VPDesc Model ***/
 service.setName(parameter.getName());
 service.setDescription(parameter.getDescription());
 // The related rue will be added soon.

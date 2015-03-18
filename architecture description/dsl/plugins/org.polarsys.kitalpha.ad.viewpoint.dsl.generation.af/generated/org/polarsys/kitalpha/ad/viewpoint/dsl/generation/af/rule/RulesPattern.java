@@ -8,8 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-
-//Generated on Tue Jun 24 11:36:30 CEST 2014 with EGF 1.2.0.v20140618-1006
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.rule;
 
 import java.util.*;
@@ -33,6 +32,7 @@ public class RulesPattern {
 	public RulesPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -81,7 +81,7 @@ public class RulesPattern {
 			final PatternContext ctx) throws Exception {
 		Rule rule = ViewpointFactory.eINSTANCE.createRule();
 
-		/*** From VPSpec Model ***/
+		/*** From VPDesc Model ***/
 		rule.setName(parameter.getName());
 		rule.setDescription(parameter.getDescription());
 		rule.setType(parameter.getType().toString());

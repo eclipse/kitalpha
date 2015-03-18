@@ -157,7 +157,7 @@ public class AFIntegrationManager {
 	
 	/**
 	 * This method allows to patch the AF model. It add the registered EPackage as Meta-models 
-	 * and the registered Doremi Group as Representation Elements
+	 * and the registered Sirius Group as Representation Elements
 	 * 
 	 * The AF Plugin and its Manifest are identified thanks to @param model_uri
 	 * 
@@ -252,15 +252,15 @@ public class AFIntegrationManager {
 			viewpoint.setRepresentation(representation);
 		}
 		
-		/** Add registered Doremi Group to the representation list **/
+		/** Add registered Sirius Group to the representation list **/
 		List<Group> representation_list = AFRepresentationIntegration.getInstance().getRepresentationToRegister();
 		for (Group group : representation_list) 
 		{
 			if (!isRepresentationRegistered(representation, group))
 			{
-				SiriusRepresentation doremiRepresentation = SiriusFactory.eINSTANCE.createSiriusRepresentation();
-				doremiRepresentation.setOdesign(group);
-				representation.getRepresentations().add(doremiRepresentation);
+				SiriusRepresentation siriusRepresentation = SiriusFactory.eINSTANCE.createSiriusRepresentation();
+				siriusRepresentation.setOdesign(group);
+				representation.getRepresentations().add(siriusRepresentation);
 			}
 		}
 	}
