@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.rule.providers">
+      <RuleProvider
+            class="org.polarsys.kitalpha.ad.viewpoint.emfvalidation.rules.EmfValidationRuleProvider"/>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.ui.rule.wizard.providers">
+      <RuleWizardProvider
+            class="org.polarsys.kitalpha.ad.viewpoint.emfvalidation.rules.EmfValidationRuleProviderWizard">
+      </RuleWizardProvider>
+   </extension>
+
+</plugin>
