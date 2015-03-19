@@ -38,7 +38,6 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.edit.provid
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
-import org.polarsys.kitalpha.ad.viewpoint.ui.views.SelectionListener2;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.ComboStringEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.PropertyTypeEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.StringEditingSupport;
@@ -84,7 +83,7 @@ public class ConfigurationTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
 				if (currentSortColumn.equals(newSortColumn)) {
@@ -148,7 +147,7 @@ public class ConfigurationTab extends AbstractTab {
 		addBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				String computeNewName = ElementHelper.computeNewName(modelManager.getConfigurationHandler(), viewpoint.getId() + ".property");
 				getModelManager().getConfigurationHandler().createProperty(computeNewName);
 			}
@@ -161,7 +160,7 @@ public class ConfigurationTab extends AbstractTab {
 		deleteBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) configViewer.getSelection();
 				List<Property> actions = new ArrayList<Property>();
 				for (Object obj : selection.toArray()) {

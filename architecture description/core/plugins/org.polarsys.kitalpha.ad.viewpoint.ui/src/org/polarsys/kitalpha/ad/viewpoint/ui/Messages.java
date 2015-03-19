@@ -60,6 +60,7 @@ public class Messages extends NLS {
 	public static String OverviewTab_title;
 	public static String OverviewTab_abstract_button_label;
 	public static String OverviewTab_name_label;
+	public static String OverviewTab_version_label;
 	public static String OverviewTab_description_label;
 	public static String OverviewTab_parent_label;
 	public static String OverviewTab_add_tooltip;

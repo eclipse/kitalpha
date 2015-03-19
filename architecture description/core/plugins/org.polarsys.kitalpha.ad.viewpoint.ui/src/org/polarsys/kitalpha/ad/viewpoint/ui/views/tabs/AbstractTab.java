@@ -19,6 +19,10 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IViewSite;
@@ -127,6 +131,49 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 
 	public boolean isDesignOnly() {
 		return designOnly;
+	}
+
+	protected void displayError(String message) {
+		site.getActionBars().getStatusLineManager().setErrorMessage(message);
+	}
+
+	protected class FocusListener2 implements FocusListener {
+
+		public void doFocusLost(FocusEvent e) {
+
+		}
+
+		public final void focusLost(FocusEvent e) {
+			displayError(null);
+			try {
+				doFocusLost(e);
+			} catch (Exception e1) {
+				displayError(e1.getMessage());
+			}
+		}
+
+		public void focusGained(FocusEvent e) {
+
+		}
+	}
+
+	protected abstract class SelectionListener2 implements SelectionListener {
+
+		public final void widgetDefaultSelected(SelectionEvent e) {
+
+		}
+
+		public final void widgetSelected(SelectionEvent e) {
+			displayError(null);
+			try {
+				doWidgetSelected(e);
+			} catch (Exception ee) {
+				displayError(ee.getMessage());
+			}
+
+		}
+
+		protected abstract void doWidgetSelected(SelectionEvent e) throws Exception;
 	}
 
 }

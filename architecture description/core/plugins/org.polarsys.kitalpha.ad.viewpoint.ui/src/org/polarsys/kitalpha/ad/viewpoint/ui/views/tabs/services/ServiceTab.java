@@ -61,7 +61,6 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.NewElementCreationWizard;
 import org.polarsys.kitalpha.ad.viewpoint.ui.integration.services.NewServiceCreationWizard;
-import org.polarsys.kitalpha.ad.viewpoint.ui.views.SelectionListener2;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.ComboStringEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.ServiceTypeEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.StringEditingSupport;
@@ -147,7 +146,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 					button = new Button(table, SWT.PUSH);
 					button.setImage(Activator.getDefault().getImage(AFImages.RUN));
 					button.addSelectionListener(new SelectionListener2() {
-						public void widgetSelected(SelectionEvent e) {
+						public void doWidgetSelected(SelectionEvent e) {
 							Service service = (Service) item.getData();
 							try {
 								ServiceImplementation impl = Implementations.getInstance(service);
@@ -195,7 +194,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
 				if (currentSortColumn.equals(newSortColumn)) {
@@ -275,7 +274,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		createBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IProject containingProject = ProjectUtils.getContainingProject(viewpoint);
 				NewElementCreationWizard wizard = new NewServiceCreationWizard(getModelManager().getServiceHandler());
 				wizard.init(PlatformUI.getWorkbench(), new StructuredSelection(new Object[] { containingProject }));
@@ -291,7 +290,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		addBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				String id = ElementHelper.computeNewId(modelManager.getServiceHandler(), viewpoint.getId() + ".service");
 				getModelManager().getServiceHandler().createService(id, Messages.ServiceTab_new_service_label, null, new ArrayList<Rule>());
 			}
@@ -304,7 +303,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		deleteBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) serviceViewer.getSelection();
 				List<Service> services = new ArrayList<Service>();
 				for (Object obj : selection.toArray()) {

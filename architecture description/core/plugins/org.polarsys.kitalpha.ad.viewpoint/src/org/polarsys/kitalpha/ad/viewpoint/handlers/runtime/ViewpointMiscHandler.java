@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EPackage;
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.ViewpointElement;
 import org.polarsys.kitalpha.ad.viewpoint.handlers.IMiscHandler;
@@ -116,4 +117,25 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 		saveModel();
 	}
 
+	@Override
+	public String getVersion() {
+		Version version = getViewpoint().getVersion();
+		if (version == null)
+			return null;
+		return version.toString();
+	}
+
+	@Override
+	public void setVersion(String txt) {
+		if (getResourceManager().isReadOnly())
+			throw new IllegalStateException();
+
+		String versionStr = getVersion();
+		if ("".equals(txt) && versionStr == null)
+			return;
+		if (txt.equals(versionStr))
+			return;
+		getViewpoint().setVersion(new Version(txt));
+		saveModel();
+	}
 }

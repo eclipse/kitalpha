@@ -33,7 +33,6 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.events.FocusEvent;
-import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -52,7 +51,6 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.LoadViewpointModelDialog;
-import org.polarsys.kitalpha.ad.viewpoint.ui.views.SelectionListener2;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.AbstractTab;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.ResourceTableSorter;
 
@@ -67,6 +65,7 @@ public class OverviewTab extends AbstractTab {
 	private Button addBtn, deleteBtn;
 	private Button abstractButton;
 	private Text nameText;
+	private Text versionText;
 	private Text descriptionText;
 
 	public OverviewTab() {
@@ -98,34 +97,40 @@ public class OverviewTab extends AbstractTab {
 		toolkit.createLabel(composite, Messages.OverviewTab_name_label);
 		nameText = toolkit.createText(composite, "");
 		nameText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		nameText.addFocusListener(new FocusListener() {
+		nameText.addFocusListener(new FocusListener2() {
 
-			public void focusLost(FocusEvent e) {
+			public void doFocusLost(FocusEvent e) {
 				IMiscHandler miscHandler = modelManager.getMiscHandler();
 				if (miscHandler != null) {
 					miscHandler.setName(nameText.getText());
 				}
 			}
 
-			public void focusGained(FocusEvent e) {
+		});
 
+		toolkit.createLabel(composite, Messages.OverviewTab_version_label);
+		versionText = toolkit.createText(composite, "");
+		versionText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		versionText.addFocusListener(new FocusListener2() {
+
+			public void doFocusLost(FocusEvent e) {
+				IMiscHandler miscHandler = modelManager.getMiscHandler();
+				if (miscHandler != null) {
+					miscHandler.setVersion(versionText.getText());
+				}
 			}
 		});
 
 		toolkit.createLabel(composite, Messages.OverviewTab_description_label);
 		descriptionText = toolkit.createText(composite, "");
 		descriptionText.setLayoutData(new GridData(GridData.FILL_BOTH));
-		descriptionText.addFocusListener(new FocusListener() {
+		descriptionText.addFocusListener(new FocusListener2() {
 
-			public void focusLost(FocusEvent e) {
+			public void doFocusLost(FocusEvent e) {
 				IMiscHandler miscHandler = modelManager.getMiscHandler();
 				if (miscHandler != null) {
 					miscHandler.setDescription(descriptionText.getText());
 				}
-			}
-
-			public void focusGained(FocusEvent e) {
-
 			}
 		});
 
@@ -142,7 +147,7 @@ public class OverviewTab extends AbstractTab {
 		abstractButton.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IMiscHandler miscHandler = modelManager.getMiscHandler();
 				if (miscHandler != null) {
 					miscHandler.setAbstract(abstractButton.getSelection());
@@ -159,7 +164,7 @@ public class OverviewTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
 				if (currentSortColumn.equals(newSortColumn)) {
@@ -198,7 +203,7 @@ public class OverviewTab extends AbstractTab {
 		addBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IMiscHandler miscHandler = modelManager.getMiscHandler();
 				URI uri = viewpoint.eResource().getURI();
 				IPath path = new Path(uri.path()).removeFirstSegments(1);
@@ -234,7 +239,7 @@ public class OverviewTab extends AbstractTab {
 		deleteBtn.addSelectionListener(new SelectionListener2() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) parentsViewer.getSelection();
 				List<Viewpoint> vps = new ArrayList<Viewpoint>();
 				for (Object obj : selection.toArray()) {
@@ -266,10 +271,12 @@ public class OverviewTab extends AbstractTab {
 			abstractButton.setSelection(false);
 			descriptionText.setText("");
 			nameText.setText("");
+			versionText.setText("");
 		} else {
 			abstractButton.setSelection(miscHandler.isAbstract());
 			descriptionText.setText(miscHandler.getDescription() == null ? "" : miscHandler.getDescription());
 			nameText.setText(miscHandler.getName() == null ? "" : miscHandler.getName());
+			versionText.setText(miscHandler.getVersion() == null ? "" : miscHandler.getVersion());
 		}
 		parentsViewer.refresh();
 		updateButtons((IStructuredSelection) parentsViewer.getSelection());
@@ -280,6 +287,7 @@ public class OverviewTab extends AbstractTab {
 		abstractButton.setEnabled(!readOnly);
 		descriptionText.setEnabled(!readOnly);
 		nameText.setEnabled(!readOnly);
+		versionText.setEnabled(!readOnly);
 		addBtn.setEnabled(!readOnly);
 		deleteBtn.setEnabled(!readOnly && !selection.isEmpty());
 	}
