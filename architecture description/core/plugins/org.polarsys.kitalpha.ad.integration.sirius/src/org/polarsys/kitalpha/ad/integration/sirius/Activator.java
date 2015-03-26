@@ -59,7 +59,7 @@ public class Activator extends AFUIActivator {
 		viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(AF_DESIGN));
 
 		// load AF model manager
-		ModelExtensionHelper.getInstance();
+		// ModelExtensionHelper.getInstance(eObject);
 
 		ViewpointManager.INSTANCE.addListener(listener);
 		for (SessionManagerListener l : sessionListeners)

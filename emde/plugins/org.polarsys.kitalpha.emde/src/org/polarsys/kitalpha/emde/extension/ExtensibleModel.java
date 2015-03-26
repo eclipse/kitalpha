@@ -131,7 +131,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 					}
 				}
 				// Process Inherited namespaces
-				ModelExtensionManager instance = ModelExtensionHelper.getInstance();
+				ModelExtensionManager instance = ModelExtensionHelper.getInstanceSpecial();
 				for (String inheritedNamespace : inheritedNamespaces) {
 					ExtensibleModel inheritedExtensibleModel = instance.getExtensibleModel(inheritedNamespace);
 					if (inheritedExtensibleModel != null && inheritedExtensibleModels.contains(inheritedExtensibleModel) == false) {

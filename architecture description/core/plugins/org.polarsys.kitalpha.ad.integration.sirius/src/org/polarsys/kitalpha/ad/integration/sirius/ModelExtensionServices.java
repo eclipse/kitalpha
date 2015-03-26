@@ -26,7 +26,7 @@ public class ModelExtensionServices {
 	public boolean isExtensionModelActive(EObject obj) {
 		if (obj instanceof DSemanticDecorator) {
 			DSemanticDecorator elt = (DSemanticDecorator) obj;
-			if ((elt.getTarget() != null) && ModelExtensionHelper.getInstance().isExtensionModelDisabled(elt.getTarget())) {
+			if ((elt.getTarget() != null) && ModelExtensionHelper.getInstance(elt.getTarget()).isExtensionModelDisabled(elt.getTarget())) {
 				return false;
 			}
 		}
@@ -34,7 +34,7 @@ public class ModelExtensionServices {
 		if (obj instanceof DRepresentationElement) {
 			DRepresentationElement elt = (DRepresentationElement) obj;
 			for (EObject eobj : elt.getSemanticElements()) {
-				if ((eobj != null) && ModelExtensionHelper.getInstance().isExtensionModelDisabled(eobj)) {
+				if ((eobj != null) && ModelExtensionHelper.getInstance(eobj).isExtensionModelDisabled(eobj)) {
 					return false;
 				}
 			}

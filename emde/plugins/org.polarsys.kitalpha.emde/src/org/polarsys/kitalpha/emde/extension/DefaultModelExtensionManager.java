@@ -43,6 +43,8 @@ public abstract class DefaultModelExtensionManager implements ModelExtensionMana
 		loadExtensibleModels();
 	}
 
+	private EObject target;
+
 	private static final Set<String> discardedModels = new HashSet<String>();
 
 	private final Map<String, ExtensibleModel> extensibleModelsKeyURI = new HashMap<String, ExtensibleModel>();
@@ -182,6 +184,14 @@ public abstract class DefaultModelExtensionManager implements ModelExtensionMana
 
 	public List<ExtensionManagerDelegate> getDelegates() {
 		return delegates;
+	}
+
+	public EObject getTarget() {
+		return target;
+	}
+
+	public void setTarget(EObject target) {
+		this.target = target;
 	}
 
 }

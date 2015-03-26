@@ -94,6 +94,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 	@Override
 	public boolean canDisableExtensionModel(ExtendedModel extended) {
+		if (getTarget() == null)
+			throw new UnsupportedOperationException();
 		String nsURI = extended.getName();
 		if (managedByAF2state.containsKey(nsURI))
 			return !managedByAF2state.get(nsURI);
@@ -105,7 +107,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 					if (vp.getMetamodel() != null) {
 						for (EPackage pack : vp.getMetamodel().getModels()) {
-							// if the model is owned by a VP we must tell yes or no.
+							// if the model is owned by a VP we must tell yes or
+							// no.
 							// In other case let the super implementation answer
 							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
 								managedByAF2state.put(nsURI, Boolean.TRUE);
@@ -129,10 +132,13 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	}
 
 	/*
-	 * TODO we're loading all VP models at any calls ... What is the cost ? Tested on model with 14 000 logical components, we need to cache result of computations
+	 * TODO we're loading all VP models at any calls ... What is the cost ?
+	 * Tested on model with 14 000 logical components, we need to cache result
+	 * of computations
 	 */
 	public boolean isExtensionModelDisabled(ExtendedModel extended) {
-
+		if (getTarget() == null)
+			throw new UnsupportedOperationException();
 		String nsURI = extended.getName();
 		if (extension2state.containsKey(nsURI)) {
 			return !extension2state.get(nsURI);
@@ -145,7 +151,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 					if (vp.getMetamodel() != null) {
 						for (EPackage pack : vp.getMetamodel().getModels()) {
-							// if the model is owned by a VP we must tell yes or no.
+							// if the model is owned by a VP we must tell yes or
+							// no.
 							// In other case let the super implementation answer
 							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
 								boolean vpActive = ViewpointManager.INSTANCE.isActive(res.getId());
