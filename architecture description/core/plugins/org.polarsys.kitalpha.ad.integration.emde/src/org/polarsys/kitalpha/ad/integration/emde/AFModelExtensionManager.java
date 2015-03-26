@@ -27,6 +27,7 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.emde.extension.DefaultModelExtensionManager;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
 import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtensionManager;
 
 /**
@@ -83,7 +84,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 			public void hasBeenDeactivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 				extension2state.clear();
 				managedByAF2state.clear();
-				loadExtensibleModels();
+				ModelExtensionDescriptor.INSTANCE.loadExtensibleModels();
 			}
 
 		});
