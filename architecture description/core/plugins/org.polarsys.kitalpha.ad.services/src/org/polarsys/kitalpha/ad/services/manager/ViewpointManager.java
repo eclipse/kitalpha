@@ -54,7 +54,8 @@ public class ViewpointManager {
 	private final Set<String> activated = new HashSet<String>();
 	private final Set<String> discarded = new HashSet<String>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
-	private final StateManager stateManager = new StateManager();
+
+	// private final StateManager stateManager = new StateManager();
 
 	public Resource getViewpoint(String id) {
 		for (Resource res : getAvailableViewpoints()) {
@@ -121,7 +122,7 @@ public class ViewpointManager {
 				r.unload();
 			}
 			set.getResources().clear();
-			stateManager.saveState();
+			// stateManager.saveState();
 		}
 	}
 
@@ -198,7 +199,7 @@ public class ViewpointManager {
 		desactivateBundle(providerSymbolicName);
 		activated.remove(id);
 		fireEvent(vpResource, DEACTIVATED);
-		stateManager.saveState();
+		// stateManager.saveState();
 	}
 
 	protected void fireEvent(Resource vpResource, int event) {
@@ -210,9 +211,9 @@ public class ViewpointManager {
 		}
 	}
 
-	public void loadState() {
-		stateManager.loadState();
-	}
+	// public void loadState() {
+	// stateManager.loadState();
+	// }
 
 	public class StateManager {
 		private boolean loading = false;
@@ -287,8 +288,9 @@ public class ViewpointManager {
 	private static final int ACTIVATED = 1;
 	private static final int DEACTIVATED = 2;
 
-	public static final ViewpointManager INSTANCE;
-	static {
+	public static ViewpointManager INSTANCE;
+
+	public static ViewpointManager createInstance() {
 		ViewpointManager instance = null;
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.services.viewpoint.manager");
@@ -300,7 +302,7 @@ public class ViewpointManager {
 			AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_2, e);
 			instance = new ViewpointManager();
 		}
-		INSTANCE = instance;
+		return instance;
 	}
 
 }
