@@ -824,10 +824,6 @@ public class VpbuildPackageImpl extends EPackageImpl implements VpbuildPackage {
 		// Create annotations
 		// http://www.polarsys.org/kitalpha/emde/1.0.0/extension
 		createExtensionAnnotations();
-		// http://www.thalesgroup.com/mde/mdsofa/dsl/2007/dslfactory
-		createDslfactoryAnnotations();
-		// http://www.thalesgroup.com/mde/ecore/documentation
-		createDocumentationAnnotations();
 	}
 
 	/**
@@ -844,42 +840,6 @@ public class VpbuildPackageImpl extends EPackageImpl implements VpbuildPackage {
 				"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
 				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
 		});
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.thalesgroup.com/mde/mdsofa/dsl/2007/dslfactory</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDslfactoryAnnotations() {
-		String source = "http://www.thalesgroup.com/mde/mdsofa/dsl/2007/dslfactory"; //$NON-NLS-1$			
-		addAnnotation(this, source, new String[] {
-				"extensibleProviderFactory", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"childCreationExtenders", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
-		});
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.thalesgroup.com/mde/ecore/documentation</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDocumentationAnnotations() {
-		String source = "http://www.thalesgroup.com/mde/ecore/documentation"; //$NON-NLS-1$				
-		addAnnotation(
-				this,
-				source,
-				new String[] {
-						"description", "This metamodel contains the metaclasses to specify a viewpoint build process.", //$NON-NLS-1$ //$NON-NLS-2$
-						"usage guideline", null, //$NON-NLS-1$
-						"used in levels", null, //$NON-NLS-1$
-						"usage examples", null, //$NON-NLS-1$
-						"constraints", null //$NON-NLS-1$
-				});
 	}
 
 } //VpbuildPackageImpl

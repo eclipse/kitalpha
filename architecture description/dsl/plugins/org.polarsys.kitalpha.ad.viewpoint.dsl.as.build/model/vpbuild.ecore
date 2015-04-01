@@ -8,19 +8,6 @@
     <details key="useUUIDs" value="true"/>
     <details key="useIDAttributes" value="false"/>
   </eAnnotations>
-  <eAnnotations source="http://www.thalesgroup.com/mde/mdsofa/dsl/2007/dslfactory">
-    <details key="extensibleProviderFactory" value="true"/>
-    <details key="childCreationExtenders" value="true"/>
-    <details key="useUUIDs" value="true"/>
-    <details key="useIDAttributes" value="false"/>
-  </eAnnotations>
-  <eAnnotations source="http://www.thalesgroup.com/mde/ecore/documentation">
-    <details key="description" value="This metamodel contains the metaclasses to specify a viewpoint build process."/>
-    <details key="usage guideline"/>
-    <details key="used in levels"/>
-    <details key="usage examples"/>
-    <details key="constraints"/>
-  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Build" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="target_platform" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mapped_repositories" upperBound="-1"

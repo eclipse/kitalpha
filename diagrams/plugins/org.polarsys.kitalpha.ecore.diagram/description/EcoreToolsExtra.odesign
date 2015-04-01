@@ -633,64 +633,6 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:SelectionWizardDescription" name="Hide class references" precondition="&lt;%$containerView.filter(&quot;DDiagram&quot;).nSize() > 0 %>" forceRefresh="true" candidatesExpression="&lt;%$containerView.eAllContents(&quot;DEdge&quot;)[self.visible].target.filter(&quot;EReference&quot;).nMinimize + $containerView.eAllContents(&quot;DEdge&quot;)[self.visible].target.eContainer.filter(&quot;EClass&quot;).nMinimize%>" multiple="true" tree="true" rootExpression="&lt;%$containerView.eAllContents(&quot;DEdge&quot;)[self.visible].target.eContainer.filter(&quot;EClass&quot;).nMinimize%>" childrenExpression="&lt;%eContents.filter(&quot;EReference&quot;)%>" message="Select class references to hide" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EPackage.gif">
-            <element name="element"/>
-            <containerView name="containerView"/>
-            <container name="container"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Hide Link Action" id="com.thalesgroup.mde.mda.pim.ecore.design.service.javaaction.hideLinkAction">
-                <parameters name="element" value="&lt;%$element%>"/>
-                <parameters name="viewElement" value="&lt;%$containerView.eAllContents[self.visible == true].filter(&quot;DEdge&quot;).nMinimize%>"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:SelectionWizardDescription" name="Reveal hiden class references" precondition="&lt;%$containerView.filter(&quot;DDiagram&quot;).nSize() > 0 %>" forceRefresh="true" candidatesExpression="&lt;%$containerView.eAllContents(&quot;DEdge&quot;)[self.visible == false].target.filter(&quot;EReference&quot;).nMinimize + $containerView.eAllContents(&quot;DEdge&quot;)[self.visible == false].target.eContainer.filter(&quot;EClass&quot;).nMinimize%>" multiple="true" tree="true" rootExpression="&lt;%$containerView.eAllContents(&quot;DEdge&quot;)[self.visible == false].target.eContainer.filter(&quot;EClass&quot;).nMinimize%>" childrenExpression="&lt;%eContents.filter(&quot;EReference&quot;)%>" message="Select hiden class references to reveal" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EPackage.gif">
-            <element name="element"/>
-            <containerView name="containerView"/>
-            <container name="container"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Show Link Action" id="com.thalesgroup.mde.mda.pim.ecore.design.service.javaaction.showLinknAction">
-                <parameters name="element" value="&lt;%$element%>"/>
-                <parameters name="viewElement" value="&lt;%$containerView.eAllContents[self.visible == false].filter(&quot;DEdge&quot;).nMinimize%>"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Hide all references" forceRefresh="true" containerMappings="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EPackage.gif">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Hide DEdges" id="com.thalesgroup.mde.mda.pim.ecore.design.service.javaaction.hideReferenceAction">
-                <parameters name="element" value="&lt;%$containerView.eContents.filter(&quot;DEdge&quot;)[self.visible]%>"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Reveal all hiden references" forceRefresh="true" containerMappings="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EPackage.gif">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Reveal DEdges" id="com.thalesgroup.mde.mda.pim.ecore.design.service.javaaction.showReferenceAction">
-                <parameters name="element" value="&lt;%$containerView.eContents.filter(&quot;DEdge&quot;)[self.visible == false]%>"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Hide all class inheritances" forceRefresh="true" containerMappings="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EPackage.gif">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Hide Inheritance DEdges" id="com.thalesgroup.mde.mda.pim.ecore.design.service.javaaction.hideInheritanceAction">
-                <parameters name="element" value="&lt;%$containerView.eContents.filter(&quot;DEdge&quot;)[self.visible]%>"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Reveal all hiden class inheritances" forceRefresh="true" containerMappings="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EPackage.gif">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="Reveal Inheritance DEdges" id="com.thalesgroup.mde.mda.pim.ecore.design.service.javaaction.showInheritanceAction">
-                <parameters name="element" value="&lt;%$containerView.eContents.filter(&quot;DEdge&quot;)[self.visible == false]%>"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>

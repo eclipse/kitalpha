@@ -55,7 +55,7 @@ public class PluginUtil {
 		appendable.append("Bundle-SymbolicName: " + projectName + ";singleton:=true").append(lineSeparator);
 		appendable.append("Bundle-Version: 1.0.0.qualifier").append(lineSeparator);
 		appendable.append("Bundle-RequiredExecutionEnvironment: J2SE-1.5").append(lineSeparator);
-		appendable.append("Bundle-Vendor: THALESGROUP").append(lineSeparator);
+		appendable.append("Bundle-Vendor: Polarsys").append(lineSeparator);
 		return appendable;
 	}
 }

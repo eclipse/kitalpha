@@ -33,8 +33,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildFactory
  * @model kind="package"
  *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/extension extensibleProviderFactory='true' childCreationExtenders='true' useUUIDs='true' useIDAttributes='false'"
- *        annotation="http://www.thalesgroup.com/mde/mdsofa/dsl/2007/dslfactory extensibleProviderFactory='true' childCreationExtenders='true' useUUIDs='true' useIDAttributes='false'"
- *        annotation="http://www.thalesgroup.com/mde/ecore/documentation description='This metamodel contains the metaclasses to specify a viewpoint build process.' usage\040guideline='null' used\040in\040levels='null' usage\040examples='null' constraints='null'"
  * @generated
  */
 public interface VpbuildPackage extends EPackage {
