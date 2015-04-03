@@ -4,17 +4,17 @@
     <properties xmi:id="_kt6SMEE8EeOcseK798bpbA" key="egf.repo.url" value="https://hudson.eclipse.org/egf/job/buckminster-egf-juno/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.sdk/site.p2/"/>
     <properties xmi:id="_MWwdkPlvEeCFCIE_fWd_VQ" key="cloudsmith.download.prefix" value="http://download.eclipse.org/external/"/>
     <properties xmi:id="_MlqcQPlvEeCFCIE_fWd_VQ" key="polarion.download.prefix" value="http://download.eclipse.org/external/"/>
-    <properties xmi:id="_LPrgwPlvEeCFCIE_fWd_VQ" key="eclipse.download.prefix" value="http://download.eclipse.org/"/>
+    <properties xmi:id="_LPrgwPlvEeCFCIE_fWd_VQ" key="eclipse.download.prefix" value="http://download.eclipse.org"/>
     <properties xmi:id="_p3huoPmBEeCFCIE_fWd_VQ" key="plugin.repo.prefix" value="http://svn.orchestra.ors.services.thales/plugins_repo/trunk"/>
     <properties xmi:id="_C7QgkHs6EeKM-JnMHzahcg" key="plugin.repo.path" value="${plugin.repo.prefix}/MDE/${plugin.repo.version}"/>
-    <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="http://download.eclipse.org/sirius/updates/releases/2.0.4/juno"/>
-    <properties xmi:id="_n0G4oJPyEeODqo9Nw0Mw6Q" key="orbit.repo.url" value="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
-    <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="http://download.eclipse.org/eclipse/updates/3.8/"/>
-    <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="http://download.eclipse.org/modeling/emft/eef/updates/releases/1.3"/>
-    <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="http://download.eclipse.org/acceleo/updates/releases/3.4"/>
-    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="http://download.eclipse.org/ecoretools/updates/nightly/3.0.0-N20150305-021244/luna"/>
-    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="http://download.eclipse.org/diffmerge/releases/0.4.0/emf-diffmerge-site"/>
-    <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="http://download.eclipse.org/diffmerge/releases/0.4.0/edm-patterns-site"/>
+    <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="${eclipse.download.prefix}/sirius/updates/releases/2.0.5/juno"/>
+    <properties xmi:id="_n0G4oJPyEeODqo9Nw0Mw6Q" key="orbit.repo.url" value="${eclipse.download.prefix}/tools/orbit/downloads/drops/R20130827064939/repository/"/>
+    <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="${eclipse.download.prefix}/eclipse/updates/3.8/"/>
+    <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="${eclipse.download.prefix}/modeling/emft/eef/updates/releases/1.3"/>
+    <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="${eclipse.download.prefix}/acceleo/updates/releases/3.4"/>
+    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.0.0-N20150305-021244/luna"/>
+    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.4.0/emf-diffmerge-site"/>
+    <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.4.0/edm-patterns-site"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="juno"/>
@@ -142,7 +142,7 @@
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="releng">
       <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
-        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_Qp9TUP1HEeONEpLzC2FMiA" folderName="releng"/>
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="releng"/>
         <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP_juno"/>
         <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsz5GEeSicsfEyxBYkg" path="${publish}/TP_build"/>
         <components xsi:type="buildstep:Feature" xmi:id="_IH3dtD5GEeSicsfEyxBYkg" id="org.polarsys.kitalpha.releng.feature"/>
@@ -160,7 +160,7 @@
       </steps>
     </steps>
     <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
-      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" username="" password=""/>
+      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
     </scms>
     <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="https://www.polarsys.org/kitalpha/hudson/" userDeployJobName="">
       <users xmi:id="_8MIb4INCEeO4K7leE9IQQw" login="thomas.guiu@soyatec.com" permission="WRITE"/>
@@ -194,36 +194,30 @@
   </jobs>
   <jobs xmi:id="_3XksgUCuEeOkCsna5l9rlg" name="common">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_7EMvQECuEeOkCsna5l9rlg" name="common">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_RnLJgP1HEeONEpLzC2FMiA" gitLocation="_Qp9TUP1HEeONEpLzC2FMiA" folderName="common/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SNwoYP1HEeONEpLzC2FMiA" gitLocation="_Qp9TUP1HEeONEpLzC2FMiA" folderName="common/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_RnLJgP1HEeONEpLzC2FMiA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="common/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SNwoYP1HEeONEpLzC2FMiA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="common/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_qW2xMI5rEeORY9jpJq94Og" path="${publish}/TP_build"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_VO6gYBceEeSiX7noNBdBeQ" path="${publish}/TP_juno"/>
       <components xsi:type="buildstep:Feature" xmi:id="_DfwmUECvEeOkCsna5l9rlg" id="org.polarsys.kitalpha.common.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_GzpY8ECvEeOkCsna5l9rlg" component="_DfwmUECvEeOkCsna5l9rlg"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_btE9AI5uEeORY9jpJq94Og" name="common feature" id="TP_juno" profile="SDKProfile" resultSteps="_GzpY8ECvEeOkCsna5l9rlg" installResultStepsSourceFeatures="true"/>
-    <scms xsi:type="buildscm:GIT" xmi:id="_QHSrIf1HEeONEpLzC2FMiA">
-      <locations xmi:id="_Qp9TUP1HEeONEpLzC2FMiA" url="localhost:8080/kitalpha" username="admin" password="bZYSAf13neRD"/>
-    </scms>
   </jobs>
   <jobs xmi:id="_FDObEaRCEeOdPJBpl-8efw" name="accuracy">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_KBUswKRCEeOdPJBpl-8efw">
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_WTxV0KRCEeOdPJBpl-8efw" path="${publish}/TP_juno"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_T4VY8P35EeOAVuD-0y5mBw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="accuracy/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_VM4KAP35EeOAVuD-0y5mBw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="accuracy/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_T4VY8P35EeOAVuD-0y5mBw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_VM4KAP35EeOAVuD-0y5mBw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_l97wgBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_XG_igKRCEeOdPJBpl-8efw" id="org.polarsys.kitalpha.accuracy.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_dAuWAKRCEeOdPJBpl-8efw" component="_XG_igKRCEeOdPJBpl-8efw"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_ffSqMKRCEeOdPJBpl-8efw" name="accuracy feature" id="TP_juno" profile="SDKProfile" resultSteps="_dAuWAKRCEeOdPJBpl-8efw" installResultStepsSourceFeatures="true"/>
-    <scms xsi:type="buildscm:GIT" xmi:id="_KK0x0f35EeOAVuD-0y5mBw">
-      <locations xmi:id="_KK0x0v35EeOAVuD-0y5mBw" url="localhost:8080/kitalpha" username="admin" password="bZYSAf13neRD"/>
-    </scms>
   </jobs>
   <jobs xmi:id="_WrFHIC9VEeOlq-9ObYy--w" name="resourcereuse">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_e9aJsC9VEeOlq-9ObYy--w" name="resourcereuse">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIBGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resource reuse/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIRGNEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="resource reuse/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIBGNEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIRGNEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Yk0yoI5uEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_mxsIsBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_yRm-QC9VEeOlq-9ObYy--w" id="org.polarsys.kitalpha.resourcereuse.feature"/>
@@ -235,8 +229,8 @@
   </jobs>
   <jobs xmi:id="_cOYZ4J7uEeOjCb9D2yIVHQ" name="cadence">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_fnRBQJ7uEeOjCb9D2yIVHQ">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIBGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="cadence/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIRGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="cadence/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIBGQEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIRGQEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_JOYE8J70EeOjCb9D2yIVHQ" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_nnK_MBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_oZEOEJ7uEeOjCb9D2yIVHQ" id="org.polarsys.kitalpha.cadence.feature"/>
@@ -246,8 +240,8 @@
   </jobs>
   <jobs xmi:id="_RKKqAC9aEeOlq-9ObYy--w" name="report">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_RKKqAi9aEeOlq-9ObYy--w" name="report">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_5dxLYBGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="report/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_5dxLYRGQEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="report/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_5dxLYBGQEeS7tbIPWaBUAQ" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="report/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_5dxLYRGQEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="report/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_6ma90I5wEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_ouCgoBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_RKKqBi9aEeOlq-9ObYy--w" id="org.polarsys.kitalpha.report.feature"/>
@@ -259,8 +253,8 @@
   </jobs>
   <jobs xmi:id="_5pBbMLduEd-fpYD9HydZOw" name="emde">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_k3gzwLdxEd-fpYD9HydZOw" name="emde">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cBGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="emde/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cRGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="emde/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cBGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="emde/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cRGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="emde/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_8UlIwI5wEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_pgeDIBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_JqJIkLtYEd-GFvRlyJMgsw" id="org.polarsys.kitalpha.emde.ui.feature"/>
@@ -276,8 +270,8 @@
   </jobs>
   <jobs xmi:id="_Ky5S0FkcEeSo0vu-C-A3cw" name="patterns">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_Ky5S0VkcEeSo0vu-C-A3cw" name="patterns">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Ky5S0lkcEeSo0vu-C-A3cw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="patterns/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Ky5S01kcEeSo0vu-C-A3cw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="patterns/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Ky5S0lkcEeSo0vu-C-A3cw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="patterns/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Ky5S01kcEeSo0vu-C-A3cw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="patterns/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Ky5S1FkcEeSo0vu-C-A3cw" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Ky5S1VkcEeSo0vu-C-A3cw" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_Ky5S1lkcEeSo0vu-C-A3cw" id="org.polarsys.kitalpha.patterns.feature"/>
@@ -287,8 +281,8 @@
   </jobs>
   <jobs xmi:id="_RgjhUQdREeSIYrPrCxORuQ" name="diagrams" description="">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_ZB5y4AdREeSIYrPrCxORuQ" name="diagrams">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8BGfEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="diagrams/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8RGfEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="diagrams/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8BGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="diagrams/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8RGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="diagrams/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_ZB5y4wdREeSIYrPrCxORuQ" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_qroOsBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_ZB5y5AdREeSIYrPrCxORuQ" id="org.polarsys.kitalpha.representation.feature"/>
@@ -298,8 +292,8 @@
   </jobs>
   <jobs xmi:id="_VoTqsCL5EeSSoPlV7ILP2g" name="docgen">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_YByqkCL5EeSSoPlV7ILP2g" name="docgen">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkSL5EeSSoPlV7ILP2g" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="Docgen/business/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkiL5EeSSoPlV7ILP2g" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="Docgen/business/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkSL5EeSSoPlV7ILP2g" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="Docgen/business/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkiL5EeSSoPlV7ILP2g" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="Docgen/business/plugins"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_YByqkyL5EeSSoPlV7ILP2g" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_YByqlCL5EeSSoPlV7ILP2g" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_jRhSYCL5EeSSoPlV7ILP2g" id="org.polarsys.kitalpha.doc.gen.business.core.feature"/>
@@ -311,8 +305,8 @@
   </jobs>
   <jobs xmi:id="_vjsowJ7uEeOjCb9D2yIVHQ" name="composer">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_vjsowZ7uEeOjCb9D2yIVHQ">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tkRbkBGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="composer/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tkRbkRGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="composer/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tkRbkBGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tkRbkRGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_JoktoJ70EeOjCb9D2yIVHQ" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_rop3oBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_vjsoxJ7uEeOjCb9D2yIVHQ" id="org.polarsys.kitalpha.composer.feature"/>
@@ -322,8 +316,8 @@
   </jobs>
   <jobs xmi:id="_x7ip4J7uEeOjCb9D2yIVHQ" name="transposer">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_x7ip4Z7uEeOjCb9D2yIVHQ">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uRKWwBGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="transposer/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uRKWwRGVEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="transposer/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uRKWwBGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uRKWwRGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_KDXzQJ70EeOjCb9D2yIVHQ" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_sOw1YBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_x7ip5J7uEeOjCb9D2yIVHQ" id="org.polarsys.kitalpha.transposer.feature"/>
@@ -333,8 +327,8 @@
   </jobs>
   <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="architecture description/core/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="architecture description/core/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_-JSnoI5wEeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_s9Xn0BcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_ITgn0EVSEeOxuMV9a71i9w" id="org.polarsys.kitalpha.ad.sdk.feature"/>
@@ -348,8 +342,8 @@
   </jobs>
   <jobs xmi:id="_AtCFgH60EeOkCccPIIQ2Yw" name="ad dsl">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_Ef56MH60EeOkCccPIIQ2Yw" name="ad dsl">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0BGeEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="architecture description/dsl/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0RGeEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="architecture description/dsl/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0BGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0RGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Td_d4I59EeORY9jpJq94Og" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_toclIBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_Ef56On60EeOkCccPIIQ2Yw" id="org.polarsys.kitalpha.ad.ta.feature"/>
@@ -361,10 +355,10 @@
   </jobs>
   <jobs xmi:id="_eJXnwQHGEeSWLIhgOb7dcQ" name="detach_attach">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_j6USsAHGEeSWLIhgOb7dcQ" name="detachment">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fBRgoBGfEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="detachment/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fBRgoRGfEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="detachment/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_DHdd8FOGEeS0CZx9NVRo1A" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="attachment/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_DHdd8VOGEeS0CZx9NVRo1A" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="attachment/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fBRgoBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fBRgoRGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_DHdd8FOGEeS0CZx9NVRo1A" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="attachment/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_DHdd8VOGEeS0CZx9NVRo1A" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="attachment/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_j6UStQHGEeSWLIhgOb7dcQ" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_uOEasBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_j6UStgHGEeSWLIhgOb7dcQ" id="org.polarsys.kitalpha.model.detachment.feature"/>
@@ -384,14 +378,14 @@
   </jobs>
   <jobs xmi:id="_iWVjgK3VEeSJ-MyosVUkEw" name="examples">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_iWVjga3VEeSJ-MyosVUkEw" name="examples">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjgq3VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="accuracy/examples/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjg63VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="accuracy/examples/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uMjjkK3VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="cadence/examples/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uMjjka3VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="cadence/examples/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y5S_gK3VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="composer/examples/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y5S_ga3VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="composer/examples/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8X3LsK3VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="transposer/examples/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8X3Lsa3VEeSJ-MyosVUkEw" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="transposer/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjgq3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjg63VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uMjjkK3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uMjjka3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y5S_gK3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y5S_ga3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8X3LsK3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8X3Lsa3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/examples/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_iWVjhK3VEeSJ-MyosVUkEw" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_iWVjha3VEeSJ-MyosVUkEw" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_iWVjhq3VEeSJ-MyosVUkEw" id="org.polarsys.kitalpha.accuracy.examples.feature"/>
@@ -406,8 +400,8 @@
   </jobs>
   <jobs xmi:id="_m9Jf4fxHEeOQxJjwrfaNsA" name="product">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_qsm0MPxHEeOQxJjwrfaNsA">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XkY4UBGfEeS7tbIPWaBUAQ" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="product/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_gRkooD5GEeSicsfEyxBYkg" gitLocation="_KK0x0v35EeOAVuD-0y5mBw" folderName="product/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XkY4UBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_gRkooD5GEeSicsfEyxBYkg" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/plugins"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_xq408PxHEeOQxJjwrfaNsA" path="${publish}/TP_juno"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_vFFiQBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_0rQ1sPxHEeOQxJjwrfaNsA" id="org.polarsys.kitalpha.runtime.feature"/>
@@ -485,7 +479,7 @@
         <properties xmi:id="_U6KknJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
         <egfActivities xmi:id="_U6KknZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
-      <steps xsi:type="buildfile:ZipStep" xmi:id="_U6KknpWzEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.zip"/>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_bCk0wdExEeSTbrZQrXnDzg" name="tar juno results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_caErsJWzEeSPapwxSH2ZqQ" name="TP_linux-gtk-x86_64">
       <properties xmi:id="_caErsZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_linux-gtk-x86_64" type="INLINED"/>
@@ -505,7 +499,7 @@
         <properties xmi:id="_caErvJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
         <egfActivities xmi:id="_caErvZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
-      <steps xsi:type="buildfile:ZipStep" xmi:id="_caErvpWzEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.zip"/>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_jSFz4NExEeSTbrZQrXnDzg" name="tar juno results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_e0YK8JWzEeSPapwxSH2ZqQ" name="TP_macosx-cocoa-x86_64">
       <properties xmi:id="_e0YK8ZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_macosx-cocoa-x86_64" type="INLINED"/>
@@ -525,7 +519,8 @@
         <properties xmi:id="_e0YK_JWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
         <egfActivities xmi:id="_e0YK_ZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
-      <steps xsi:type="buildfile:ZipStep" xmi:id="_e0YK_pWzEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.zip"/>
+      <steps xsi:type="buildstep:AntStep" xmi:id="_Nu2DsMgDEeSUVaUqISCvPA" targetName="fixPermission" xml="&lt;target name=&quot;fixPermission&quot;>&#xD;&#xA;&#x9;&lt;chmod file=&quot;${publish}/${TP_name}/Eclipse.app/Contents/MacOS/eclipse&quot; perm=&quot;700&quot; verbose=&quot;true&quot;/>&#xD;&#xA;&lt;/target>"/>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_3s0WwcfdEeSUVaUqISCvPA" name="Tar juno results" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno-incubation.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
     </steps>
   </jobs>
   <jobs xmi:id="_Q1gsQKH8EeSCV64W9A5FeQ" name="clean all">
