@@ -158,7 +158,7 @@ public class ViewpointManagerView extends ViewPart {
 
 		createViewer(composite);
 		init();
-		ViewpointManager.INSTANCE.addListener(vpListener);
+		ViewpointManager.addListener(vpListener);
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(wsListener);
 	}
 
@@ -231,7 +231,7 @@ public class ViewpointManagerView extends ViewPart {
 	}
 
 	private void init() {
-		viewer.setInput(ViewpointManager.INSTANCE.getAvailableViewpoints());
+		viewer.setInput(ViewpointManager.getAvailableViewpoints());
 		updateButtons(null);
 	}
 
@@ -318,9 +318,11 @@ public class ViewpointManagerView extends ViewPart {
 				try {
 					ViewpointManager.INSTANCE.activate(res.getId());
 
-					// // we need a short delay to wait for new freshly installed
+					// // we need a short delay to wait for new freshly
+					// installed
 					// // bundles to be ready
-					// getSite().getShell().getDisplay().timerExec(500, new Runnable() {
+					// getSite().getShell().getDisplay().timerExec(500, new
+					// Runnable() {
 					//
 					// public void run() {
 					// ViewHelper.openViews(res);
@@ -381,7 +383,7 @@ public class ViewpointManagerView extends ViewPart {
 	@Override
 	public void dispose() {
 		super.dispose();
-		ViewpointManager.INSTANCE.removeListener(vpListener);
+		ViewpointManager.removeListener(vpListener);
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(wsListener);
 	}
 

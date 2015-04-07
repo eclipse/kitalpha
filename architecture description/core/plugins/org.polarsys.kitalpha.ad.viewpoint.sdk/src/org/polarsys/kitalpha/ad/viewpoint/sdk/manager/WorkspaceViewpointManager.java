@@ -45,7 +45,7 @@ public class WorkspaceViewpointManager extends ViewpointManager {
 				if (bundle == null)
 					return;
 				String symbolicName = bundle.getBundleDescription().getSymbolicName();
-				for (Resource res : INSTANCE.getAvailableViewpoints()) {
+				for (Resource res : getAvailableViewpoints()) {
 					if (symbolicName.equals(res.getProviderSymbolicName()))
 						try {
 							INSTANCE.desactivate(res.getId());

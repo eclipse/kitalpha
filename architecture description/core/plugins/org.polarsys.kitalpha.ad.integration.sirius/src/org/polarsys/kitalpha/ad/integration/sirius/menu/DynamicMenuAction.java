@@ -170,7 +170,7 @@ public class DynamicMenuAction implements IMenuCreator, IObjectActionDelegate {
 	 */
 	public Viewpoint[] getAvailableViewpoints() {
 		List<Viewpoint> vps = new ArrayList<Viewpoint>();
-		Resource[] resources = ViewpointManager.INSTANCE.getAvailableViewpoints();
+		Resource[] resources = ViewpointManager.getAvailableViewpoints();
 
 		ResourceSet set = new ResourceSetImpl();
 		for (Resource resource : resources) {
