@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.osgi.util.NLS;
@@ -52,11 +53,17 @@ public class ViewpointManager {
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
 	private final Set<String> activated = new HashSet<String>();
-	private final Set<String> discarded = new HashSet<String>();
-	private final List<Listener> listeners = new ArrayList<Listener>();
-	private final StateManager stateManager = new StateManager();
 
-	public Resource getViewpoint(String id) {
+	private EObject target;
+	private final static Set<String> discarded = new HashSet<String>();
+	private final static List<Listener> listeners = new ArrayList<Listener>();
+
+	// private final StateManager stateManager = new StateManager();
+	public void setTarget(EObject target) {
+		this.target = target;
+	}
+
+	public static Resource getViewpoint(String id) {
 		for (Resource res : getAvailableViewpoints()) {
 			if (id.equals(res.getId()))
 				return res;
@@ -64,7 +71,7 @@ public class ViewpointManager {
 		return null;
 	}
 
-	public void addListener(Listener l) {
+	public static void addListener(Listener l) {
 		if (listeners.contains(l))
 			return;
 		if (l instanceof EarlyListener) {
@@ -78,16 +85,16 @@ public class ViewpointManager {
 		listeners.add(l);
 	}
 
-	public void removeListener(Listener l) {
+	public static void removeListener(Listener l) {
 		listeners.remove(l);
 	}
 
-	public void pinError(Resource vp) {
+	public static void pinError(Resource vp) {
 		discarded.add(vp.getId());
 
 	}
 
-	public Resource[] getAvailableViewpoints() {
+	public static Resource[] getAvailableViewpoints() {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setDomain("AF");
 		searchCriteria.getTags().add("vp");
@@ -121,7 +128,7 @@ public class ViewpointManager {
 				r.unload();
 			}
 			set.getResources().clear();
-			stateManager.saveState();
+			// stateManager.saveState();
 		}
 	}
 
@@ -129,6 +136,7 @@ public class ViewpointManager {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
 		activated.add(vpResource.getId());
+		// TODO ajouter le vp dans le nouveau model ajouté a la resource
 		fireEvent(vpResource, ACTIVATED);
 	}
 
@@ -198,7 +206,7 @@ public class ViewpointManager {
 		desactivateBundle(providerSymbolicName);
 		activated.remove(id);
 		fireEvent(vpResource, DEACTIVATED);
-		stateManager.saveState();
+		// stateManager.saveState();
 	}
 
 	protected void fireEvent(Resource vpResource, int event) {
@@ -210,9 +218,9 @@ public class ViewpointManager {
 		}
 	}
 
-	public void loadState() {
-		stateManager.loadState();
-	}
+	// public void loadState() {
+	// stateManager.loadState();
+	// }
 
 	public class StateManager {
 		private boolean loading = false;
@@ -287,8 +295,9 @@ public class ViewpointManager {
 	private static final int ACTIVATED = 1;
 	private static final int DEACTIVATED = 2;
 
-	public static final ViewpointManager INSTANCE;
-	static {
+	public static ViewpointManager INSTANCE = new ViewpointManager();
+
+	public static ViewpointManager createInstance() {
 		ViewpointManager instance = null;
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.services.viewpoint.manager");
@@ -300,7 +309,7 @@ public class ViewpointManager {
 			AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_2, e);
 			instance = new ViewpointManager();
 		}
-		INSTANCE = instance;
+		return instance;
 	}
 
 }

@@ -25,7 +25,6 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
-import org.polarsys.kitalpha.emde.extension.ModelExtensionManager;
 
 public class ExtensionItemProviderAdapter extends ItemProviderAdapter {
 
@@ -36,11 +35,10 @@ public class ExtensionItemProviderAdapter extends ItemProviderAdapter {
 	public Collection<?> getChildren(Object object) {
 		Collection<?> children = super.getChildren(object);
 		List<Object> out = new ArrayList<Object>(children.size());
-		ModelExtensionManager mgr = ModelExtensionHelper.getInstance();
 		for (Object element : children) {
 
 			if (element instanceof EObject) {
-				if (!mgr.isExtensionModelDisabled((EObject) element))
+				if (!ModelExtensionHelper.getInstance((EObject) element).isExtensionModelDisabled((EObject) element))
 					out.add(element);
 			} else
 				out.add(element);

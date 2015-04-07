@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Egf
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.integrationdomain.egf;singleton:=true
+Bundle-Version: 0.1.0.qualifier

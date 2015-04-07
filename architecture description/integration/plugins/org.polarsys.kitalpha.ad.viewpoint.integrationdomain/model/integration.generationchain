@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="integration" factoryComponentName="org.polarsys.kitalpha.ad.viewpoint.integrationdomain.egf">
+  <elements xsi:type="generationChain:GenerationChain" name="integration">
+    <elements xsi:type="generationChain:EmfGeneration" name="Emf Generation for integration" modelPath="/org.polarsys.kitalpha.ad.viewpoint.integrationdomain/model/integration.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.ad.viewpoint.integrationdomain.model" basePackage="org.polarsys.kitalpha.ad.viewpoint.integrationdomain"/>
+  </elements>
+</generationChain:GenerationChain>
