@@ -15,7 +15,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -43,7 +42,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	public AFModelExtensionManager() {
 		super();
 		// TODO Auto-generated constructor stub
-		ViewpointManager.addListener(new EarlyListener() {
+		ViewpointManager.INSTANCE.addListener(new EarlyListener() {
 
 			private final ResourceSet set = new ResourceSetImpl();
 
@@ -75,7 +74,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 		});
 
 		// TODO: quick solution clear all data
-		ViewpointManager.addListener(new EarlyListener() {
+		ViewpointManager.INSTANCE.addListener(new EarlyListener() {
 
 			@Override
 			public void hasBeenActivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
@@ -93,7 +92,6 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 	private static final Map<String, Boolean> extension2state = new HashMap<String, Boolean>();
 	private static final Map<String, Boolean> managedByAF2state = new HashMap<String, Boolean>();
-	private final ViewpointManager vpManager = ViewpointManager.createInstance();
 
 	@Override
 	public boolean canDisableExtensionModel(ExtendedModel extended) {
@@ -104,7 +102,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 			return !managedByAF2state.get(nsURI);
 		ResourceSet set = new ResourceSetImpl();
 		try {
-			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
+			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.INSTANCE.getAvailableViewpoints()) {
 				try {
 					URI uri = URIHelper.createURI(res);
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
@@ -148,7 +146,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 		}
 		ResourceSet set = new ResourceSetImpl();
 		try {
-			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
+			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.INSTANCE.getAvailableViewpoints()) {
 				try {
 					URI uri = URIHelper.createURI(res);
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
@@ -158,7 +156,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 							// no.
 							// In other case let the super implementation answer
 							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
-								boolean vpActive = vpManager.isActive(res.getId());
+								boolean vpActive = ViewpointManager.INSTANCE.isActive(res.getId());
 								extension2state.put(nsURI, vpActive);
 								return !vpActive;
 							}
@@ -180,7 +178,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	}
 
 	protected void handleBrokenViewpoint(org.polarsys.kitalpha.resourcereuse.model.Resource res, Exception e) {
-		ViewpointManager.pinError(res);
+		ViewpointManager.INSTANCE.pinError(res);
 		String msg = "Resource '" + res.getId() + "' cannot be loaded, The viewpoint is discarded.";
 		AD_Log.getDefault().logError(msg, e);
 	}
@@ -189,11 +187,6 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	public void setExtensionModelDisabled(ExtensibleModel extensibleModel, ExtendedModel extendedModel, boolean disabled) {
 		super.setExtensionModelDisabled(extensibleModel, extendedModel, disabled);
 		extension2state.put(extendedModel.getName(), !disabled);
-	}
-
-	public void setTarget(EObject target) {
-		super.setTarget(target);
-		vpManager.setTarget(target);
 	}
 
 }

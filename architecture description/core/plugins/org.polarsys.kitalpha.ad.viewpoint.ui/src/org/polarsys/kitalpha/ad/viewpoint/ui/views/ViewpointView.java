@@ -109,7 +109,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			// (!viewpointResource.getProviderLocation().equals(Location.WORSPACE))
 			// {
 			viewpointListener = new HiddingListener(site);
-			ViewpointManager.addListener(viewpointListener);
+			ViewpointManager.INSTANCE.addListener(viewpointListener);
 			// }
 		} catch (Exception e) {
 			throw new PartInitException(e.getMessage(), e);
@@ -132,8 +132,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	}
 
 	/**
-	 * This is a callback that will allow us to create the viewer and initialize
-	 * it.
+	 * This is a callback that will allow us to create the viewer and initialize it.
 	 */
 	public void createPartControl(Composite parent) {
 

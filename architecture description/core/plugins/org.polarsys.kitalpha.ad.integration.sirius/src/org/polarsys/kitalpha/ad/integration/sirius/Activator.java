@@ -61,7 +61,7 @@ public class Activator extends AFUIActivator {
 		// load AF model manager
 		// ModelExtensionHelper.getInstance(eObject);
 
-		ViewpointManager.addListener(listener);
+		ViewpointManager.INSTANCE.addListener(listener);
 		for (SessionManagerListener l : sessionListeners)
 			SessionManager.INSTANCE.addSessionsListener(l);
 		for (ModelExtensionListener l : listeners)
@@ -79,7 +79,7 @@ public class Activator extends AFUIActivator {
 		plugin = null;
 		for (SessionManagerListener l : sessionListeners)
 			SessionManager.INSTANCE.removeSessionsListener(l);
-		ViewpointManager.removeListener(listener);
+		ViewpointManager.INSTANCE.removeListener(listener);
 		for (ModelExtensionListener l : listeners)
 			ModelExtensionHelper.removeListener(l);
 
