@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.vp.componentsample.model/src"
+    modelPluginID="org.polarsys.kitalpha.vp.componentsample.model" modelName="ComponentSample"
+    nonNLSMarkers="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" optimizedHasChildren="true" runtimeVersion="2.8"
+    usedGenPackages="platform:/plugin/org.polarsys.kitalpha.emde.model/model/eMDE.genmodel#//emde">
+  <foreignModel>../../../plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore</foreignModel>
+  <genPackages prefix="ComponentSample" basePackage="org.polarsys.kitalpha.vp.componentsample"
+      resource="XMI" disposableProviderFactory="true" generateExampleClass="false"
+      multipleEditorPages="false" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentType">
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentType/Behaviour"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentType/Data"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentType/Service"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement/description"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentModel/packages"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//Package"/>
+    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentPackage/components"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent/use"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent/type"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//SoftwareComponent"/>
+    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//HardwareComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//HardwareComponent/abstractComponent"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

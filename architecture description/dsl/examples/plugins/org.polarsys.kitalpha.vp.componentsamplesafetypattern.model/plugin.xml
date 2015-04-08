@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+      <package class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage" genModel="models/ComponentSampleSafetyPattern.genmodel" uri="http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0"/>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.util.ComponentSampleSafetyPatternResourceFactoryImpl" type="componentsamplesafetypattern"/>
+   </extension>
+
+</plugin>

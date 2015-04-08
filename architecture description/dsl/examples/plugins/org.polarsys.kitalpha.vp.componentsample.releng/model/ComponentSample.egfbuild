@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_hbuzMN06EeSdX-jDtPq_XQ" name="ComponentSample">
+  <jobs xmi:id="_hbuzMd06EeSdX-jDtPq_XQ" name="main">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_hbuzMt06EeSdX-jDtPq_XQ" type="Result"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_hbuzM906EeSdX-jDtPq_XQ" name="viewpoint_ComponentSample" id="viewpoint_ComponentSample"/>
+    <scms xsi:type="buildscm:SVN" xmi:id="_hbuzNN06EeSdX-jDtPq_XQ"/>
+  </jobs>
+  <jobs xmi:id="_hbuzNd06EeSdX-jDtPq_XQ" name="build_ComponentSample">
+    <properties xmi:id="_hbuzNt06EeSdX-jDtPq_XQ" key="target.location" value="C:/eclipse.exe" type="INLINED"/>
+    <properties xmi:id="_hbuzN906EeSdX-jDtPq_XQ" key="repository.location" value="ComponentSample/ComponentSample.git"/>
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_hbuzON06EeSdX-jDtPq_XQ" type="Result"/>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_hbuzOd06EeSdX-jDtPq_XQ" name="ComponentSample">
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_hbuzOt06EeSdX-jDtPq_XQ" path="${target.location}"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_hbuzO906EeSdX-jDtPq_XQ" id="org.polarsys.kitalpha.vp"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_hbuzPN06EeSdX-jDtPq_XQ" component="_hbuzO906EeSdX-jDtPq_XQ" generateSources="false" generateDropins="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_hbuzPd06EeSdX-jDtPq_XQ" name="ComponentSample feature" id="viewpoint_ComponentSample"/>
+    <scms xsi:type="buildscm:SVN" xmi:id="_hbuzPt06EeSdX-jDtPq_XQ">
+      <locations xmi:id="_hbuzP906EeSdX-jDtPq_XQ" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
+    </scms>
+  </jobs>
+</buildcore:Chain>

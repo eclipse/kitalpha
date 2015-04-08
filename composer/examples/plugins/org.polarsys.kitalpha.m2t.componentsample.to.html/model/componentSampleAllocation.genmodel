@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.m2t.componentsample.to.html/generated"
+    modelPluginID="org.polarsys.kitalpha.m2t.componentsample.to.html" modelName="ComponentSampleAllocation"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.genmodel#//base">
+  <foreignModel>componentsampleAllocation.ecore</foreignModel>
+  <genPackages prefix="ComponentSampleAllocation" disposableProviderFactory="true"
+      ecorePackage="componentsampleAllocation.ecore#/">
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//ComponentSampleRoot"/>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//ComponentSampleFile"/>
+    <genClasses image="false" ecoreClass="componentsampleAllocation.ecore#//ComponentType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentsampleAllocation.ecore#//ComponentType/usedComponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentsampleAllocation.ecore#//ComponentType/usedByComponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentsampleAllocation.ecore#//ComponentType/containedByComponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentsampleAllocation.ecore#//ComponentType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//ComponentModelType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentsampleAllocation.ecore#//ComponentModelType/hardwareComponents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentsampleAllocation.ecore#//ComponentModelType/softwarecomponents"/>
+    </genClasses>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//Uses"/>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//UsedBy"/>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//Contains"/>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//ContainedBy"/>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//ComponentSampleHardware">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentsampleAllocation.ecore#//ComponentSampleHardware/containsComponents"/>
+    </genClasses>
+    <genClasses ecoreClass="componentsampleAllocation.ecore#//ComponentSampleSoftware"/>
+    <genClasses image="false" ecoreClass="componentsampleAllocation.ecore#//ComponentsAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentsampleAllocation.ecore#//ComponentsAttributes/componentName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentsampleAllocation.ecore#//ComponentsAttributes/link"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

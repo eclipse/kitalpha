@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentSample:ComponentModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ComponentSample="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"
+    xmlns:ComponentSamplePerformance="http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0"
+    xmlns:ComponentSampleQualityAssessment="http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0"
+    xmlns:ComponentSampleSafety="http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0"
+    xmlns:ComponentSampleSafetyPattern="http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0">
+  <packages xmi:type="ComponentSample:ComponentPackage" name="Video System" description="">
+    <components xmi:type="ComponentSample:HardwareComponent" name="Ethernet" use="#//@packages.0/@components.1"/>
+    <components xmi:type="ComponentSample:HardwareComponent" name="Area Distribution"
+        use="#//@packages.0/@components.2"/>
+    <components xmi:type="ComponentSample:HardwareComponent" name="Seat Distribution"
+        use="#//@packages.0/@components.3"/>
+    <components xmi:type="ComponentSample:HardwareComponent" name="Video Display (VD)">
+      <ownedExtensions xmi:type="ComponentSamplePerformance:Performance" complexity="2"
+          cost="2">
+        <status overhead="true"/>
+      </ownedExtensions>
+      <ownedExtensions xmi:type="ComponentSampleQualityAssessment:QualityAssessment"
+          maturityLevel="7" confidenceLevel="High">
+        <measures criterion="" measureValue="3"/>
+      </ownedExtensions>
+      <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_C"/>
+      <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="VD Processor"
+          use="#//@packages.0/@components.3/@abstractComponent.1">
+        <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_C"/>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="Generic Passenger - System Interactions"/>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="Video Player Movie Controler"/>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="Video Player Data Packets Manager"/>
+      </abstractComponent>
+      <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="Screen">
+        <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_C"/>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="Airline Specific Passenger - System HMI"/>
+      </abstractComponent>
+    </components>
+    <components xmi:type="ComponentSample:HardwareComponent" name="Video Server (VS)"
+        use="#//@packages.0/@components.0">
+      <ownedExtensions xmi:type="ComponentSamplePerformance:Performance" name="" complexity="2"
+          cost="3">
+        <status/>
+      </ownedExtensions>
+      <ownedExtensions xmi:type="ComponentSampleQualityAssessment:QualityAssessment"
+          maturityLevel="7" confidenceLevel="Medium">
+        <measures criterion="" measureValue="5"/>
+      </ownedExtensions>
+      <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_B" state="LOST"/>
+      <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="VS Hard Disk">
+        <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_B"/>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="Data Manager">
+          <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_B"/>
+        </abstractComponent>
+      </abstractComponent>
+      <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="VS Processor"
+          use="#//@packages.0/@components.4/@abstractComponent.0">
+        <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_B"/>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="Individual Entertainment Media Server"/>
+      </abstractComponent>
+    </components>
+  </packages>
+  <packages xmi:type="ComponentSampleSafetyPattern:SafetyPackage">
+    <modes involvedComponents="#//@packages.0/@components.3/@ownedExtensions.2"/>
+  </packages>
+</ComponentSample:ComponentModel>

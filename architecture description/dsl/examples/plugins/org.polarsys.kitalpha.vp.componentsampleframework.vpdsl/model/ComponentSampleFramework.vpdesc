@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vpbuild="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpservices="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" name="ComponentSampleFramework" shortName="ComponentSampleFramework">
+  <VP_Data name="ComponentSampleFramework.data"/>
+  <VP_Aspects xsi:type="vpconf:Configuration" name="ComponentSampleFramework.conf">
+    <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
+    <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsampleframework" nsuri="http://www.polarsys.org/kitalpha/ComponentSampleFramework/1.0.0"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpservices:PropertySet" name="ComponentSampleFramework.properties">
+    <vpProperties name="Copyright" Type="String_Literal" value="PolarSys"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpservices:ServiceSet" name="ComponentSampleFramework.services">
+    <vpServices name="Service1" relatedRules="//@VP_Aspects.3/@vpRules.0"/>
+    <vpServices name="Service2" relatedRules="//@VP_Aspects.3/@vpRules.0 //@VP_Aspects.3/@vpRules.1"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpservices:RuleSet" name="ComponentSampleFramework.rules">
+    <vpRules name="RuleOne"/>
+    <vpRules name="RuleTwo"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSampleFramework.build" target_platform="C:/eclipse.exe">
+    <mapped_repositories location="ComponentSampleFramework/ComponentSampleFramework.git">
+      <features name="org.polarsys.kitalpha.vp.ComponentSampleFramework.feature"/>
+    </mapped_repositories>
+  </VP_Aspects>
+</vpdesc:Viewpoint>

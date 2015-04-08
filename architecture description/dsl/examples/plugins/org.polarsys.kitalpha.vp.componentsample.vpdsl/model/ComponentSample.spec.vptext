@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+/**
+ *	Viewpoint ComponentSample
+ *	@author: Benoît Langlois
+ *	@date: 26/08/14
+ *
+ */
+Viewpoint ComponentSample {
+	name: "ComponentSample"
+	extends ComponentSampleFramework
+	
+	Data ComponentSample.data
+	Diagrams ComponentSample.diagram
+	Services ComponentSample.services
+	Build ComponentSample2.build 
+	Configuration ComponentSample.conf
+}

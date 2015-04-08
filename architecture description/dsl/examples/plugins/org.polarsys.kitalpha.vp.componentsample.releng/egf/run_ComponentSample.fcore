@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_hcBuIN06EeSdX-jDtPq_XQ" name="run_ComponentSample">
+  <viewpointContainer xmi:id="_hcBuId06EeSdX-jDtPq_XQ">
+    <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_hcBuIt06EeSdX-jDtPq_XQ">
+      <domains xmi:type="domain:EMFDomain" xmi:id="_hcBuI906EeSdX-jDtPq_XQ" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
+          uri="platform:/resource/org.polarsys.kitalpha.vp.componentsample.releng/model/ComponentSample.egfbuild"/>
+    </viewpoints>
+  </viewpointContainer>
+  <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_hcBuJN06EeSdX-jDtPq_XQ">
+    <invocations xmi:id="_hcBuJd06EeSdX-jDtPq_XQ" invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_N4pRwI6UEd-e7viTqNBNrA">
+      <invocationContractContainer xmi:id="_hcBuJt06EeSdX-jDtPq_XQ">
+        <invocationContracts xmi:id="_hcBuJ906EeSdX-jDtPq_XQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_ad5FkY6VEd-e7viTqNBNrA">
+          <type xmi:type="domain:TypeDomain" xmi:id="_hcBuKN06EeSdX-jDtPq_XQ" domain="#_hcBuI906EeSdX-jDtPq_XQ"/>
+        </invocationContracts>
+        <invocationContracts xmi:id="_hcBuKd06EeSdX-jDtPq_XQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_npIcUJlgEd-cRYVfj6AwNg">
+          <type xmi:type="types:TypeString" xmi:id="_hcBuKt06EeSdX-jDtPq_XQ" value="platform:/resource/org.polarsys.kitalpha.vp.componentsample.releng/releng-scripts"/>
+        </invocationContracts>
+      </invocationContractContainer>
+    </invocations>
+  </orchestration>
+</fcore:FactoryComponent>

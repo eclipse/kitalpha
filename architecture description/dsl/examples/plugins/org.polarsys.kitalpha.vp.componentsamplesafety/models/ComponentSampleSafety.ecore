@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComponentSampleSafety" nsURI="http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0"
+    nsPrefix="ComponentSampleSafety">
+  <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
+      <details key="ExtendedElement" value=" http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
+      <details key="Mapping" value=" platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="criticality" eType="#//CRITICALITY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dal" eType="#//DAL_LEVEL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//STATE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="STATE">
+    <eLiterals name="OPERATIVE" literal="OPERATIVE"/>
+    <eLiterals name="LOST" value="1" literal="LOST"/>
+    <eLiterals name="ERRONEOUS" value="2" literal="ERRONEOUS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DAL_LEVEL">
+    <eLiterals name="DAL_A" literal="DAL_A"/>
+    <eLiterals name="DAL_B" value="1" literal="DAL_B"/>
+    <eLiterals name="DAL_C" value="2" literal="DAL_C"/>
+    <eLiterals name="DAL_D" value="3" literal="DAL_D"/>
+    <eLiterals name="DAL_E" value="4" literal="DAL_E"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CRITICALITY">
+    <eLiterals name="Catastrophic" literal="Catastrophic"/>
+    <eLiterals name="Hazardous" value="1" literal="Hazardous"/>
+    <eLiterals name="Major" value="2" literal="Major"/>
+    <eLiterals name="Minor" value="3" literal="Minor"/>
+    <eLiterals name="No_Safety_Effect" value="4" literal="No_Safety_Effect"/>
+  </eClassifiers>
+</ecore:EPackage>

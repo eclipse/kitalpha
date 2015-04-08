@@ -1,0 +1,42 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+ /**
+ *	Viewpoint ComponentSampleQualityAssessment
+ *	@author: Benoît Langlois
+ *	@date: 29/08/14
+ *
+ */
+import external "http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"
+
+Data ComponentSampleQualityAssessment.data {
+	Class QualityAssessment {
+		description: "Quality Assessment"
+		icon: "QualityAssessment.png"
+		extends ComponentSample.AbstractComponent
+		superClass external ComponentSample.ComponentElement
+		Attributes:
+			maturityLevel type ecore.EString
+			confidenceLevel type ecore.EEnumerator values ( "Not Assessed" , Low , Medium , High )
+			assessed type ecore.EBoolean
+		Associations:
+			basedOn refers [0,*] QualityAssessment
+			context refers [0,*] external ComponentSample.ComponentElement
+			measures contains [0,*] QualityMeasure
+	}
+	Class QualityMeasure {
+		icon: "QualityMeasure.png"
+		superClass external ComponentSample.ComponentElement
+		Attributes:
+			criterion type ecore.EString
+			measureValue type ecore.EInt
+	}
+}

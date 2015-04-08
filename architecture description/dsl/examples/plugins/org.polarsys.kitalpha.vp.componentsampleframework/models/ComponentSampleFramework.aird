@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DocgenGenchainExtension="http://www.polarsys.org/kitalpha/docgen/ecore/genchain/1.0.0" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_yDhHgEI8EeSvPZ_bPTSMKQ" selectedViews="_yE3LUEI8EeSvPZ_bPTSMKQ _yFmyMEI8EeSvPZ_bPTSMKQ _yIu-sEI8EeSvPZ_bPTSMKQ _yO2NwEI8EeSvPZ_bPTSMKQ" version="8.1.1">
+  <models xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#/"/>
+  <models xmi:type="generationChain:GenerationChain" href="ComponentSampleFramework.generationchain#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yE3LUEI8EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yFT3QEI8EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_yFT3QUI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework Documentation Details">
+      <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+      <lines xmi:type="table:DLine" xmi:id="_yFT3QkI8EeSvPZ_bPTSMKQ" label="ComponentSampleFramework Package">
+        <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+        <semanticElements xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']"/>
+      </lines>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_yFT3Q0I8EeSvPZ_bPTSMKQ" label="Text" width="800" featureName="value">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedColumnMappings[name='DD%20-%20Documentation%20text']"/>
+      </columns>
+      <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yFmyMEI8EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yHF_8EI8EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_yHF_8UI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework Model Extensibility Properties">
+      <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+      <lines xmi:type="table:DLine" xmi:id="_yHF_8kI8EeSvPZ_bPTSMKQ" label="ComponentSampleFramework Package">
+        <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+        <lines xmi:type="table:DLine" xmi:id="_yHF_80I8EeSvPZ_bPTSMKQ" label="Extensible Model">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_yHF_9EI8EeSvPZ_bPTSMKQ" label="true" column="_yHGABEI8EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_yHF_9UI8EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yHF_9kI8EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_yHF_90I8EeSvPZ_bPTSMKQ" label="Extends Model">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_yHF_-EI8EeSvPZ_bPTSMKQ" label="true" column="_yHGABEI8EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_yHF_-UI8EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yHF_-kI8EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_yHF_-0I8EeSvPZ_bPTSMKQ" label="Use UUIDs">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_yHF__EI8EeSvPZ_bPTSMKQ" label="true" column="_yHGABEI8EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_yHF__UI8EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yHF__kI8EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_yHF__0I8EeSvPZ_bPTSMKQ" label="Use ID Attributes">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_yHGAAEI8EeSvPZ_bPTSMKQ" label="false" column="_yHGABEI8EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSampleFramework.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_yHGAAUI8EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yHGAAkI8EeSvPZ_bPTSMKQ" red="246" green="139" blue="139"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']"/>
+        <cells xmi:type="table:DCell" xmi:id="_yHGAA0I8EeSvPZ_bPTSMKQ" label="" column="_yHGABUI8EeSvPZ_bPTSMKQ">
+          <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+          <semanticElements xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+        </cells>
+      </lines>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_yHGABEI8EeSvPZ_bPTSMKQ" label="Value" cells="_yHF_9EI8EeSvPZ_bPTSMKQ _yHF_-EI8EeSvPZ_bPTSMKQ _yHF__EI8EeSvPZ_bPTSMKQ _yHGAAEI8EeSvPZ_bPTSMKQ" featureName="value">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_yHGABUI8EeSvPZ_bPTSMKQ" label="Is EClass extensible ?" cells="_yHGAA0I8EeSvPZ_bPTSMKQ" featureName="name">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Is%20EClass%20extensible']"/>
+      </columns>
+      <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_yHir4EI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework Extensibility Description">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_yHir4kI8EeSvPZ_bPTSMKQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_yHir40I8EeSvPZ_bPTSMKQ" type="Sirius" element="_yHir4EI8EeSvPZ_bPTSMKQ" measurementUnit="Pixel">
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_yHir5EI8EeSvPZ_bPTSMKQ"/>
+        </data>
+      </ownedAnnotationEntries>
+      <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_yHir4UI8EeSvPZ_bPTSMKQ"/>
+      <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer"/>
+      <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yIu-sEI8EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yK0pYEI8EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_yK0pYUI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework Entities">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_yK0pZ0I8EeSvPZ_bPTSMKQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_yK0paEI8EeSvPZ_bPTSMKQ" type="Sirius" element="_yK0pYUI8EeSvPZ_bPTSMKQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_yK0pakI8EeSvPZ_bPTSMKQ" type="2001" element="_yK0pYkI8EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_yK0pbUI8EeSvPZ_bPTSMKQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_yK0pbkI8EeSvPZ_bPTSMKQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_yK-aYEI8EeSvPZ_bPTSMKQ" type="3005" element="_yK0pY0I8EeSvPZ_bPTSMKQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_yK-aYUI8EeSvPZ_bPTSMKQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yK-aYkI8EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yK0pa0I8EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yK0pbEI8EeSvPZ_bPTSMKQ" width="672" height="67"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_yK0paUI8EeSvPZ_bPTSMKQ"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_yK0pYkI8EeSvPZ_bPTSMKQ" width="-1" height="-1">
+        <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+        <semanticElements xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_yK0pY0I8EeSvPZ_bPTSMKQ" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_yK0pZEI8EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_yK0pZUI8EeSvPZ_bPTSMKQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_yK0pZkI8EeSvPZ_bPTSMKQ"/>
+      <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+      <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+      <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+      <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_yMmyEEI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework Classes">
+      <target xmi:type="ecore:EPackage" href="ComponentSampleFramework.ecore#/"/>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_yMmyEUI8EeSvPZ_bPTSMKQ" label="Name" featureName="name">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedColumnMappings[name='Name']"/>
+      </columns>
+      <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yO2NwEI8EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_yQ7RYEI8EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_yQ7RYUI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework Generation Chain">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_yQ7RfkI8EeSvPZ_bPTSMKQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_yQ7Rf0I8EeSvPZ_bPTSMKQ" type="Sirius" element="_yQ7RYUI8EeSvPZ_bPTSMKQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_yQ7RgUI8EeSvPZ_bPTSMKQ" type="2003" element="_yQ7RYkI8EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_yQ7RhEI8EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_yQ7RhUI8EeSvPZ_bPTSMKQ" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_yQ7RhkI8EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_yQ7Rh0I8EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yQ7RgkI8EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yQ7Rg0I8EeSvPZ_bPTSMKQ" y="160"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_yQ7RiEI8EeSvPZ_bPTSMKQ" type="2003" element="_yQ7RaEI8EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_yQ7Ri0I8EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_yQ7RjEI8EeSvPZ_bPTSMKQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_yQ7Rj0I8EeSvPZ_bPTSMKQ" type="3010" element="_yQ7RbkI8EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_yQ7RkEI8EeSvPZ_bPTSMKQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_yQ7RkUI8EeSvPZ_bPTSMKQ" type="3010" element="_yQ7Rc0I8EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_yQ7RkkI8EeSvPZ_bPTSMKQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_yQ7RjUI8EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_yQ7RjkI8EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_yQ7RiUI8EeSvPZ_bPTSMKQ" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yQ7RikI8EeSvPZ_bPTSMKQ" width="120" height="100"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_yQ7RgEI8EeSvPZ_bPTSMKQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="_yQ7Rk0I8EeSvPZ_bPTSMKQ" type="4001" element="_yQ7ReEI8EeSvPZ_bPTSMKQ" source="_yQ7RgUI8EeSvPZ_bPTSMKQ" target="_yQ7RiEI8EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_yQ7Rl0I8EeSvPZ_bPTSMKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yQ7RmEI8EeSvPZ_bPTSMKQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_yQ7RmUI8EeSvPZ_bPTSMKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yQ7RmkI8EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_yQ7Rm0I8EeSvPZ_bPTSMKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yQ7RnEI8EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_yQ7RlEI8EeSvPZ_bPTSMKQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_yQ7RlUI8EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yQ7RlkI8EeSvPZ_bPTSMKQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yQ7RnUI8EeSvPZ_bPTSMKQ" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yQ7RnkI8EeSvPZ_bPTSMKQ" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_yQ7RYkI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework" outgoingEdges="_yQ7ReEI8EeSvPZ_bPTSMKQ" width="12" height="10">
+        <target xmi:type="generationChain:GenerationChain" href="ComponentSampleFramework.generationchain#/"/>
+        <semanticElements xmi:type="generationChain:GenerationChain" href="ComponentSampleFramework.generationchain#/"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_yQ7RY0I8EeSvPZ_bPTSMKQ" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RZEI8EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RZUI8EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RZkI8EeSvPZ_bPTSMKQ" red="114" green="159" blue="207"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RZ0I8EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_yQ7RaEI8EeSvPZ_bPTSMKQ" name="ComponentSampleFramework" incomingEdges="_yQ7ReEI8EeSvPZ_bPTSMKQ" width="12" height="10">
+        <target xmi:type="generationChain:GenerationChain" href="ComponentSampleFramework.generationchain#//@elements.0"/>
+        <semanticElements xmi:type="generationChain:GenerationChain" href="ComponentSampleFramework.generationchain#//@elements.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_yQ7RaUI8EeSvPZ_bPTSMKQ" labelSize="10" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RakI8EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='genchain.container.id']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7Ra0I8EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RbEI8EeSvPZ_bPTSMKQ" red="233" green="185" blue="110"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RbUI8EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='genchain.container.id']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_yQ7RbkI8EeSvPZ_bPTSMKQ" name="Kitalpha eMDE Emf Generation for ComponentSampleFramework">
+          <target xmi:type="genchainExtension:EmdeGeneration" href="ComponentSampleFramework.generationchain#//@elements.0/@elements.0"/>
+          <semanticElements xmi:type="genchainExtension:EmdeGeneration" href="ComponentSampleFramework.generationchain#//@elements.0/@elements.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_yQ7Rb0I8EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RcEI8EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RcUI8EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RckI8EeSvPZ_bPTSMKQ" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_yQ7Rc0I8EeSvPZ_bPTSMKQ" name="Kitalpha Emf Documentation for ComponentSampleFramework">
+          <target xmi:type="DocgenGenchainExtension:KitalphaDocumentationGeneration" href="ComponentSampleFramework.generationchain#//@elements.0/@elements.1"/>
+          <semanticElements xmi:type="DocgenGenchainExtension:KitalphaDocumentationGeneration" href="ComponentSampleFramework.generationchain#//@elements.0/@elements.1"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_yQ7RdEI8EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RdUI8EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RdkI8EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_yQ7Rd0I8EeSvPZ_bPTSMKQ" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yQ7ReEI8EeSvPZ_bPTSMKQ" name="1" sourceNode="_yQ7RYkI8EeSvPZ_bPTSMKQ" targetNode="_yQ7RaEI8EeSvPZ_bPTSMKQ">
+        <target xmi:type="generationChain:GenerationChain" href="ComponentSampleFramework.generationchain#/"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yQ7ReUI8EeSvPZ_bPTSMKQ" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@edgeMappings[name='generation.chain.relation.id']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RekI8EeSvPZ_bPTSMKQ" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_yQ7Re0I8EeSvPZ_bPTSMKQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_yQ7RfEI8EeSvPZ_bPTSMKQ"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@edgeMappings[name='generation.chain.relation.id']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_yQ7RfUI8EeSvPZ_bPTSMKQ"/>
+      <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer"/>
+      <target xmi:type="generationChain:GenerationChain" href="ComponentSampleFramework.generationchain#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

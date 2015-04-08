@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DocgenGenchainExtension="http://www.polarsys.org/kitalpha/docgen/ecore/genchain/1.0.0" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_PsklIEI_EeSvPZ_bPTSMKQ" selectedViews="_Pt6B4EI_EeSvPZ_bPTSMKQ _PvGUsEI_EeSvPZ_bPTSMKQ _PzjW4EI_EeSvPZ_bPTSMKQ _P5V10EI_EeSvPZ_bPTSMKQ" version="8.1.1">
+  <models xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  <models xmi:type="generationChain:GenerationChain" href="ComponentSamplePerformance.generationchain#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_Pt6B4EI_EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_PupowEI_EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_PupowUI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance Documentation Details">
+      <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+      <lines xmi:type="table:DLine" xmi:id="_PupowkI_EeSvPZ_bPTSMKQ" label="ComponentSamplePerformance Package">
+        <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+        <lines xmi:type="table:DLine" xmi:id="_Pupow0I_EeSvPZ_bPTSMKQ" label="Performance">
+          <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+          <lines xmi:type="table:DLine" xmi:id="_PupoxEI_EeSvPZ_bPTSMKQ" label="status : PerformanceStatus">
+            <target xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+            <semanticElements xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+            <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']/@ownedSubLines[name='DD%20-%20EClassifier']/@ownedSubLines[name='DD%20-%20ETypedElement']"/>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_PupoxUI_EeSvPZ_bPTSMKQ" label="complexity : EInt">
+            <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+            <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+            <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']/@ownedSubLines[name='DD%20-%20EClassifier']/@ownedSubLines[name='DD%20-%20ETypedElement']"/>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_PupoxkI_EeSvPZ_bPTSMKQ" label="cost : EInt">
+            <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+            <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+            <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']/@ownedSubLines[name='DD%20-%20EClassifier']/@ownedSubLines[name='DD%20-%20ETypedElement']"/>
+          </lines>
+          <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']/@ownedSubLines[name='DD%20-%20EClassifier']"/>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_Pupox0I_EeSvPZ_bPTSMKQ" label="PerformanceStatus">
+          <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+          <lines xmi:type="table:DLine" xmi:id="_PupoyEI_EeSvPZ_bPTSMKQ" label="overhead : EBoolean">
+            <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+            <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+            <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']/@ownedSubLines[name='DD%20-%20EClassifier']/@ownedSubLines[name='DD%20-%20ETypedElement']"/>
+          </lines>
+          <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']/@ownedSubLines[name='DD%20-%20EClassifier']"/>
+        </lines>
+        <semanticElements xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedLineMappings[name='DD%20-%20Package']"/>
+      </lines>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_PupoyUI_EeSvPZ_bPTSMKQ" label="Text" width="800" featureName="value">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']/@ownedColumnMappings[name='DD%20-%20Documentation%20text']"/>
+      </columns>
+      <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']/@ownedRepresentations[name='Documentation%20Details']"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/documentation.odesign#//@ownedViewpoints[name='Kitalpha_Documentation']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_PvGUsEI_EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_Pw4dYEI_EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_Pw4dYUI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance Model Extensibility Properties">
+      <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+      <lines xmi:type="table:DLine" xmi:id="_Pw4dYkI_EeSvPZ_bPTSMKQ" label="ComponentSamplePerformance Package">
+        <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+        <lines xmi:type="table:DLine" xmi:id="_Pw4dY0I_EeSvPZ_bPTSMKQ" label="Extensible Model">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_Pw4dZEI_EeSvPZ_bPTSMKQ" label="true" column="_Pw4dfEI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.0"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_Pw4dZUI_EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Pw4dZkI_EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_Pw4dZ0I_EeSvPZ_bPTSMKQ" label="Extends Model">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_Pw4daEI_EeSvPZ_bPTSMKQ" label="true" column="_Pw4dfEI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.1"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_Pw4daUI_EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Pw4dakI_EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_Pw4da0I_EeSvPZ_bPTSMKQ" label="Use UUIDs">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_Pw4dbEI_EeSvPZ_bPTSMKQ" label="true" column="_Pw4dfEI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.2"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_Pw4dbUI_EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Pw4dbkI_EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_Pw4db0I_EeSvPZ_bPTSMKQ" label="Use ID Attributes">
+          <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+          <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20Entry']"/>
+          <cells xmi:type="table:DCell" xmi:id="_Pw4dcEI_EeSvPZ_bPTSMKQ" label="false" column="_Pw4dfEI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+            <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2Fextension%/@details.3"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_Pw4dcUI_EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Pw4dckI_EeSvPZ_bPTSMKQ" red="246" green="139" blue="139"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_Pw4dc0I_EeSvPZ_bPTSMKQ" label="Extensible: Performance -> ComponentElement, ElementExtension">
+          <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+          <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20EClass']"/>
+          <cells xmi:type="table:DCell" xmi:id="_Pw4ddEI_EeSvPZ_bPTSMKQ" label="true" column="_Pw4dfUI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+            <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_Pw4ddUI_EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Pw4ddkI_EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Is%20EClass%20extensible']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_Pw4dd0I_EeSvPZ_bPTSMKQ" label="Extensible: PerformanceStatus -> ComponentElement">
+          <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+          <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']/@ownedSubLines[name='MP%20-%20EClass']"/>
+          <cells xmi:type="table:DCell" xmi:id="_Pw4deEI_EeSvPZ_bPTSMKQ" label="true" column="_Pw4dfUI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+            <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+            <currentStyle xmi:type="table:DCellStyle" xmi:id="_Pw4deUI_EeSvPZ_bPTSMKQ">
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Pw4dekI_EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+              <backgroundStyleOrigin xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Is%20EClass%20extensible']"/>
+            </currentStyle>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedLineMappings[name='MP%20-%20Package']"/>
+        <cells xmi:type="table:DCell" xmi:id="_Pw4de0I_EeSvPZ_bPTSMKQ" label="" column="_Pw4dfUI_EeSvPZ_bPTSMKQ">
+          <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+          <semanticElements xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+        </cells>
+      </lines>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_Pw4dfEI_EeSvPZ_bPTSMKQ" label="Value" cells="_Pw4dZEI_EeSvPZ_bPTSMKQ _Pw4daEI_EeSvPZ_bPTSMKQ _Pw4dbEI_EeSvPZ_bPTSMKQ _Pw4dcEI_EeSvPZ_bPTSMKQ" featureName="value">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Value']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_Pw4dfUI_EeSvPZ_bPTSMKQ" label="Is EClass extensible ?" cells="_Pw4de0I_EeSvPZ_bPTSMKQ _Pw4ddEI_EeSvPZ_bPTSMKQ _Pw4deEI_EeSvPZ_bPTSMKQ" featureName="name">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']/@ownedColumnMappings[name='Is%20EClass%20extensible']"/>
+      </columns>
+      <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Model%20Extensibility%20Properties']"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_PxxOMEI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance Extensibility Description">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_PxxOQUI_EeSvPZ_bPTSMKQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_PxxOQkI_EeSvPZ_bPTSMKQ" type="Sirius" element="_PxxOMEI_EeSvPZ_bPTSMKQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_PxxOREI_EeSvPZ_bPTSMKQ" type="2003" element="_PxxOMUI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_PxxOR0I_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_PxxOSEI_EeSvPZ_bPTSMKQ" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_PxxOSUI_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_PxxOSkI_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_PxxORUI_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PxxORkI_EeSvPZ_bPTSMKQ" width="100" height="100"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_PxxOS0I_EeSvPZ_bPTSMKQ" type="2003" element="_PxxON0I_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_PxxOTkI_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_Px6_MEI_EeSvPZ_bPTSMKQ" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_Px6_MUI_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_Px6_MkI_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_PxxOTEI_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PxxOTUI_EeSvPZ_bPTSMKQ" y="160"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_PxxOQ0I_EeSvPZ_bPTSMKQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="_Px6_M0I_EeSvPZ_bPTSMKQ" type="4001" element="_PxxOPUI_EeSvPZ_bPTSMKQ" source="_PxxOS0I_EeSvPZ_bPTSMKQ" target="_PxxOREI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_Px6_N0I_EeSvPZ_bPTSMKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Px6_OEI_EeSvPZ_bPTSMKQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Px6_OUI_EeSvPZ_bPTSMKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Px6_OkI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Px6_O0I_EeSvPZ_bPTSMKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Px6_PEI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Px6_NEI_EeSvPZ_bPTSMKQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Px6_NUI_EeSvPZ_bPTSMKQ"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Px6_NkI_EeSvPZ_bPTSMKQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Px6_PUI_EeSvPZ_bPTSMKQ" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Px6_PkI_EeSvPZ_bPTSMKQ" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_PxxOMUI_EeSvPZ_bPTSMKQ" name="AbstractComponent" incomingEdges="_PxxOPUI_EeSvPZ_bPTSMKQ" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_PxxOMkI_EeSvPZ_bPTSMKQ" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxOM0I_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extended%20Model']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxONEI_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxONUI_EeSvPZ_bPTSMKQ" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxONkI_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extended%20Model']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_PxxON0I_EeSvPZ_bPTSMKQ" name="Performance" outgoingEdges="_PxxOPUI_EeSvPZ_bPTSMKQ" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_PxxOOEI_EeSvPZ_bPTSMKQ" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxOOUI_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extensible%20Element']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxOOkI_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxOO0I_EeSvPZ_bPTSMKQ" red="194" green="239" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxOPEI_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extensible%20Element']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_PxxOPUI_EeSvPZ_bPTSMKQ" sourceNode="_PxxON0I_EeSvPZ_bPTSMKQ" targetNode="_PxxOMUI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//Performance/%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2FconstraintMapping%/@details.0"/>
+        <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="ComponentSamplePerformance.ecore#//Performance/%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2FconstraintMapping%/@details.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_PxxOPkI_EeSvPZ_bPTSMKQ" targetArrow="InputFillClosedArrow">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@edgeMappings[name='ED%20-%20External%20Extension%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_PxxOP0I_EeSvPZ_bPTSMKQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@edgeMappings[name='ED%20-%20External%20Extension%20Link']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_PxxOQEI_EeSvPZ_bPTSMKQ"/>
+      <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer"/>
+      <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_PzjW4EI_EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_P1epgEI_EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_P1epgUI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance Entities">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_P1eph0I_EeSvPZ_bPTSMKQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_P1oagEI_EeSvPZ_bPTSMKQ" type="Sirius" element="_P1epgUI_EeSvPZ_bPTSMKQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_P4KKEEI_EeSvPZ_bPTSMKQ" visible="false" type="2003" element="_P32oHkI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKE0I_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_P4KKFEI_EeSvPZ_bPTSMKQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_P4KKLEI_EeSvPZ_bPTSMKQ" visible="false" type="3010" element="_P32oJEI_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P4KKLUI_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_P4KKLkI_EeSvPZ_bPTSMKQ" visible="false" type="3010" element="_P32oKUI_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P4KKL0I_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_P4KKFUI_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_P4KKFkI_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_P4KKEUI_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKEkI_EeSvPZ_bPTSMKQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P4KKF0I_EeSvPZ_bPTSMKQ" visible="false" type="2003" element="_P32oLkI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKGkI_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_P4KKG0I_EeSvPZ_bPTSMKQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_P4KKMEI_EeSvPZ_bPTSMKQ" visible="false" type="3010" element="_P32oNEI_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P4KKMUI_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_P4KKHEI_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_P4KKHUI_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_P4KKGEI_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKGUI_EeSvPZ_bPTSMKQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P4KKHkI_EeSvPZ_bPTSMKQ" type="2003" element="_P32oOUI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKIUI_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_P4KKIkI_EeSvPZ_bPTSMKQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_P4KKMkI_EeSvPZ_bPTSMKQ" type="3010" element="_P32oP0I_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P4KKM0I_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_P4KKNEI_EeSvPZ_bPTSMKQ" type="3010" element="_P32oREI_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P4KKNUI_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_P4KKI0I_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_P4KKJEI_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_P4KKH0I_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKIEI_EeSvPZ_bPTSMKQ" y="160"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P4KKJUI_EeSvPZ_bPTSMKQ" type="2003" element="_P32oSUI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKKEI_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_P4KKKUI_EeSvPZ_bPTSMKQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_P4KKNkI_EeSvPZ_bPTSMKQ" type="3010" element="_P32oT0I_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P4KKN0I_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_P4KKKkI_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_P4KKK0I_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_P4KKJkI_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKJ0I_EeSvPZ_bPTSMKQ" width="120" height="100"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_P1oagUI_EeSvPZ_bPTSMKQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="_P4KKOEI_EeSvPZ_bPTSMKQ" type="4001" element="_P4AZEEI_EeSvPZ_bPTSMKQ" source="_P4KKHkI_EeSvPZ_bPTSMKQ" target="_P4KKJUI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKPEI_EeSvPZ_bPTSMKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKPUI_EeSvPZ_bPTSMKQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKPkI_EeSvPZ_bPTSMKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKP0I_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKQEI_EeSvPZ_bPTSMKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKQUI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_P4KKOUI_EeSvPZ_bPTSMKQ" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_P4KKOkI_EeSvPZ_bPTSMKQ" fontColor="7490599" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P4KKO0I_EeSvPZ_bPTSMKQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKQkI_EeSvPZ_bPTSMKQ" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKQ0I_EeSvPZ_bPTSMKQ" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_P4KKREI_EeSvPZ_bPTSMKQ" visible="false" type="4001" element="_P4AZIEI_EeSvPZ_bPTSMKQ" source="_P4KKHkI_EeSvPZ_bPTSMKQ" target="_P4KKF0I_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKSEI_EeSvPZ_bPTSMKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKSUI_EeSvPZ_bPTSMKQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKSkI_EeSvPZ_bPTSMKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKS0I_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKTEI_EeSvPZ_bPTSMKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKTUI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_P4KKRUI_EeSvPZ_bPTSMKQ" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_P4KKRkI_EeSvPZ_bPTSMKQ" fontColor="7490599" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P4KKR0I_EeSvPZ_bPTSMKQ" points="[0, 0, 0, 0]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKTkI_EeSvPZ_bPTSMKQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKT0I_EeSvPZ_bPTSMKQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_P4KKUEI_EeSvPZ_bPTSMKQ" visible="false" type="4001" element="_P4AZLEI_EeSvPZ_bPTSMKQ" source="_P4KKEEI_EeSvPZ_bPTSMKQ" target="_P4KKJUI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKVEI_EeSvPZ_bPTSMKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKVUI_EeSvPZ_bPTSMKQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKVkI_EeSvPZ_bPTSMKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKV0I_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKWEI_EeSvPZ_bPTSMKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKWUI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_P4KKUUI_EeSvPZ_bPTSMKQ" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_P4KKUkI_EeSvPZ_bPTSMKQ" fontColor="7490599" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P4KKU0I_EeSvPZ_bPTSMKQ" points="[-1, -1, -1, -1]$[0, 0, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKWkI_EeSvPZ_bPTSMKQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKW0I_EeSvPZ_bPTSMKQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_P4KKXEI_EeSvPZ_bPTSMKQ" visible="false" type="4001" element="_P4AZOEI_EeSvPZ_bPTSMKQ" source="_P4KKEEI_EeSvPZ_bPTSMKQ" target="_P4KKF0I_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P4KKYEI_EeSvPZ_bPTSMKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKYUI_EeSvPZ_bPTSMKQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKYkI_EeSvPZ_bPTSMKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKY0I_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P4KKZEI_EeSvPZ_bPTSMKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P4KKZUI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_P4KKXUI_EeSvPZ_bPTSMKQ" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_P4KKXkI_EeSvPZ_bPTSMKQ" fontColor="7490599" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P4KKX0I_EeSvPZ_bPTSMKQ" points="[-1, -1, -1, -1]$[-1, -1, -1, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKZkI_EeSvPZ_bPTSMKQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P4KKZ0I_EeSvPZ_bPTSMKQ" id="(0.5,0.5)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_P4AZEUI_EeSvPZ_bPTSMKQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_P4AZEkI_EeSvPZ_bPTSMKQ">
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_P4AZFkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_P4AZF0I_EeSvPZ_bPTSMKQ" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_P4AZGEI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_P4AZIkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_P4AZI0I_EeSvPZ_bPTSMKQ" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_P4AZJEI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_P4AZLkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_P4AZL0I_EeSvPZ_bPTSMKQ" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_P4AZMEI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_P4AZOkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_P4AZO0I_EeSvPZ_bPTSMKQ" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_P4AZPEI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+          <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_P4AZE0I_EeSvPZ_bPTSMKQ">
+            <key xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_P4AZFEI_EeSvPZ_bPTSMKQ">
+              <key xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_P4AZFUI_EeSvPZ_bPTSMKQ" key="_P4AZEEI_EeSvPZ_bPTSMKQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_P4AZGUI_EeSvPZ_bPTSMKQ" value="_P4AZFkI_EeSvPZ_bPTSMKQ">
+                  <key xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+                </value>
+              </value>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_P4AZIUI_EeSvPZ_bPTSMKQ" key="_P4AZIEI_EeSvPZ_bPTSMKQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_P4AZJUI_EeSvPZ_bPTSMKQ" value="_P4AZIkI_EeSvPZ_bPTSMKQ">
+                  <key xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+                </value>
+              </value>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_P4AZLUI_EeSvPZ_bPTSMKQ" key="_P4AZLEI_EeSvPZ_bPTSMKQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_P4AZMUI_EeSvPZ_bPTSMKQ" value="_P4AZLkI_EeSvPZ_bPTSMKQ">
+                  <key xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+                </value>
+              </value>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_P4AZOUI_EeSvPZ_bPTSMKQ" key="_P4AZOEI_EeSvPZ_bPTSMKQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_P4AZPUI_EeSvPZ_bPTSMKQ" value="_P4AZOkI_EeSvPZ_bPTSMKQ">
+                  <key xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+                </value>
+              </value>
+            </value>
+          </cache>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_P32oHkI_EeSvPZ_bPTSMKQ" name="Performance" visible="false" tooltipText="" outgoingEdges="_P4AZLEI_EeSvPZ_bPTSMKQ _P4AZOEI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P32oH0I_EeSvPZ_bPTSMKQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oIEI_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Related%20EClasses']/@containerMappings[name='EC%20External%20EClasses']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oIUI_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oIkI_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oI0I_EeSvPZ_bPTSMKQ" red="255" green="252" blue="216"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Related%20EClasses']/@containerMappings[name='EC%20External%20EClasses']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P32oJEI_EeSvPZ_bPTSMKQ" name="complexity : EInt = 0" visible="false" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_P32oJUI_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oJkI_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oJ0I_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P32oKEI_EeSvPZ_bPTSMKQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P32oKUI_EeSvPZ_bPTSMKQ" name="cost : EInt = 0" visible="false" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_P32oKkI_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oK0I_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oLEI_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P32oLUI_EeSvPZ_bPTSMKQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_P32oLkI_EeSvPZ_bPTSMKQ" name="PerformanceStatus" visible="false" tooltipText="" incomingEdges="_P4AZIEI_EeSvPZ_bPTSMKQ _P4AZOEI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+        <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P32oL0I_EeSvPZ_bPTSMKQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oMEI_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Related%20EClasses']/@containerMappings[name='EC%20External%20EClasses']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oMUI_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oMkI_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oM0I_EeSvPZ_bPTSMKQ" red="255" green="252" blue="216"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Related%20EClasses']/@containerMappings[name='EC%20External%20EClasses']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P32oNEI_EeSvPZ_bPTSMKQ" name="overhead : EBoolean = false" visible="false" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_P32oNUI_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oNkI_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oN0I_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P32oOEI_EeSvPZ_bPTSMKQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_P32oOUI_EeSvPZ_bPTSMKQ" name="Performance" tooltipText="" outgoingEdges="_P4AZEEI_EeSvPZ_bPTSMKQ _P4AZIEI_EeSvPZ_bPTSMKQ" width="12" height="10">
+        <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P32oOkI_EeSvPZ_bPTSMKQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oO0I_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oPEI_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oPUI_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oPkI_EeSvPZ_bPTSMKQ" red="255" green="252" blue="216"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P32oP0I_EeSvPZ_bPTSMKQ" name="complexity : EInt = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_P32oQEI_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oQUI_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oQkI_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P32oQ0I_EeSvPZ_bPTSMKQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P32oREI_EeSvPZ_bPTSMKQ" name="cost : EInt = 0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_P32oRUI_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oRkI_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oR0I_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P32oSEI_EeSvPZ_bPTSMKQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_P32oSUI_EeSvPZ_bPTSMKQ" name="PerformanceStatus" tooltipText="" incomingEdges="_P4AZEEI_EeSvPZ_bPTSMKQ _P4AZLEI_EeSvPZ_bPTSMKQ" width="12" height="10">
+        <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+        <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P32oSkI_EeSvPZ_bPTSMKQ" backgroundStyle="Liquid">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oS0I_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oTEI_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oTUI_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oTkI_EeSvPZ_bPTSMKQ" red="255" green="252" blue="216"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P32oT0I_EeSvPZ_bPTSMKQ" name="overhead : EBoolean = false" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_P32oUEI_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oUUI_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P32oUkI_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P32oU0I_EeSvPZ_bPTSMKQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_P4AZEEI_EeSvPZ_bPTSMKQ" name="[0..1] status" sourceNode="_P32oOUI_EeSvPZ_bPTSMKQ" targetNode="_P32oSUI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <semanticElements xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_P4AZGkI_EeSvPZ_bPTSMKQ" description="_P4AZFkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZG0I_EeSvPZ_bPTSMKQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_P4AZHEI_EeSvPZ_bPTSMKQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZHUI_EeSvPZ_bPTSMKQ"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_P4AZHkI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZH0I_EeSvPZ_bPTSMKQ" red="39" green="76" blue="114"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_P4AZIEI_EeSvPZ_bPTSMKQ" name="[0..1] status" visible="false" sourceNode="_P32oOUI_EeSvPZ_bPTSMKQ" targetNode="_P32oLkI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <semanticElements xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_P4AZJkI_EeSvPZ_bPTSMKQ" description="_P4AZIkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZJ0I_EeSvPZ_bPTSMKQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_P4AZKEI_EeSvPZ_bPTSMKQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZKUI_EeSvPZ_bPTSMKQ"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_P4AZKkI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZK0I_EeSvPZ_bPTSMKQ" red="39" green="76" blue="114"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_P4AZLEI_EeSvPZ_bPTSMKQ" name="[0..1] status" visible="false" sourceNode="_P32oHkI_EeSvPZ_bPTSMKQ" targetNode="_P32oSUI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <semanticElements xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_P4AZMkI_EeSvPZ_bPTSMKQ" description="_P4AZLkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZM0I_EeSvPZ_bPTSMKQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_P4AZNEI_EeSvPZ_bPTSMKQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZNUI_EeSvPZ_bPTSMKQ"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_P4AZNkI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZN0I_EeSvPZ_bPTSMKQ" red="39" green="76" blue="114"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_P4AZOEI_EeSvPZ_bPTSMKQ" name="[0..1] status" visible="false" sourceNode="_P32oHkI_EeSvPZ_bPTSMKQ" targetNode="_P32oLkI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <semanticElements xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_P4AZPkI_EeSvPZ_bPTSMKQ" description="_P4AZOkI_EeSvPZ_bPTSMKQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZP0I_EeSvPZ_bPTSMKQ"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_P4AZQEI_EeSvPZ_bPTSMKQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZQUI_EeSvPZ_bPTSMKQ"/>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_P4AZQkI_EeSvPZ_bPTSMKQ" labelSize="6" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P4AZQ0I_EeSvPZ_bPTSMKQ" red="39" green="76" blue="114"/>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_P1ephkI_EeSvPZ_bPTSMKQ"/>
+      <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+      <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+      <activatedLayers xmi:type="description_2:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+      <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_P32oEEI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance Classes">
+      <target xmi:type="ecore:EPackage" href="ComponentSamplePerformance.ecore#/"/>
+      <lines xmi:type="table:DLine" xmi:id="_P32oEUI_EeSvPZ_bPTSMKQ" label="Performance -> ComponentElement, ElementExtension">
+        <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <lines xmi:type="table:DLine" xmi:id="_P32oEkI_EeSvPZ_bPTSMKQ" label="status : PerformanceStatus">
+          <target xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+          <semanticElements xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+          <cells xmi:type="table:DCell" xmi:id="_P32oE0I_EeSvPZ_bPTSMKQ" label="status" column="_P32oHUI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+            <semanticElements xmi:type="ecore:EReference" href="ComponentSamplePerformance.ecore#//Performance/status"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_P32oFEI_EeSvPZ_bPTSMKQ" label="complexity : EInt">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+          <cells xmi:type="table:DCell" xmi:id="_P32oFUI_EeSvPZ_bPTSMKQ" label="complexity" column="_P32oHUI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+            <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/complexity"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_P32oFkI_EeSvPZ_bPTSMKQ" label="cost : EInt">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+          <cells xmi:type="table:DCell" xmi:id="_P32oF0I_EeSvPZ_bPTSMKQ" label="cost" column="_P32oHUI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+            <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//Performance/cost"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
+        <cells xmi:type="table:DCell" xmi:id="_P32oGEI_EeSvPZ_bPTSMKQ" label="Performance" column="_P32oHUI_EeSvPZ_bPTSMKQ">
+          <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+          <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//Performance"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_P32oGUI_EeSvPZ_bPTSMKQ" label="PerformanceStatus -> ComponentElement">
+        <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+        <lines xmi:type="table:DLine" xmi:id="_P32oGkI_EeSvPZ_bPTSMKQ" label="overhead : EBoolean">
+          <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+          <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']/@ownedSubLines[name='Feature']"/>
+          <cells xmi:type="table:DCell" xmi:id="_P32oG0I_EeSvPZ_bPTSMKQ" label="overhead" column="_P32oHUI_EeSvPZ_bPTSMKQ">
+            <target xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+            <semanticElements xmi:type="ecore:EAttribute" href="ComponentSamplePerformance.ecore#//PerformanceStatus/overhead"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+        <originMapping xmi:type="description_1:LineMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedLineMappings[name='Classes%20lines']"/>
+        <cells xmi:type="table:DCell" xmi:id="_P32oHEI_EeSvPZ_bPTSMKQ" label="PerformanceStatus" column="_P32oHUI_EeSvPZ_bPTSMKQ">
+          <target xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+          <semanticElements xmi:type="ecore:EClass" href="ComponentSamplePerformance.ecore#//PerformanceStatus"/>
+        </cells>
+      </lines>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_P32oHUI_EeSvPZ_bPTSMKQ" label="Name" cells="_P32oGEI_EeSvPZ_bPTSMKQ _P32oE0I_EeSvPZ_bPTSMKQ _P32oFUI_EeSvPZ_bPTSMKQ _P32oF0I_EeSvPZ_bPTSMKQ _P32oHEI_EeSvPZ_bPTSMKQ _P32oG0I_EeSvPZ_bPTSMKQ" featureName="name">
+        <originMapping xmi:type="description_1:FeatureColumnMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']/@ownedColumnMappings[name='Name']"/>
+      </columns>
+      <description xmi:type="description_1:EditionTableDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Classes']"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_P5V10EI_EeSvPZ_bPTSMKQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_P7RvgEI_EeSvPZ_bPTSMKQ">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_P7RvgUI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance Generation Chain">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_P7RvnkI_EeSvPZ_bPTSMKQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_P7Rvn0I_EeSvPZ_bPTSMKQ" type="Sirius" element="_P7RvgUI_EeSvPZ_bPTSMKQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_P7RvoUI_EeSvPZ_bPTSMKQ" type="2003" element="_P7RvgkI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P7RvpEI_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_P7RvpUI_EeSvPZ_bPTSMKQ" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_P7RvpkI_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_P7Rvp0I_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_P7RvokI_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7Rvo0I_EeSvPZ_bPTSMKQ" y="160"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P7RvqEI_EeSvPZ_bPTSMKQ" type="2003" element="_P7RviEI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P7Rvq0I_EeSvPZ_bPTSMKQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_P7RvrEI_EeSvPZ_bPTSMKQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_P7Rvr0I_EeSvPZ_bPTSMKQ" type="3010" element="_P7RvjkI_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P7RvsEI_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_P7RvsUI_EeSvPZ_bPTSMKQ" type="3010" element="_P7Rvk0I_EeSvPZ_bPTSMKQ">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_P7RvskI_EeSvPZ_bPTSMKQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_P7RvrUI_EeSvPZ_bPTSMKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_P7RvrkI_EeSvPZ_bPTSMKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_P7RvqUI_EeSvPZ_bPTSMKQ" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7RvqkI_EeSvPZ_bPTSMKQ" width="120" height="100"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_P7RvoEI_EeSvPZ_bPTSMKQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="_P7Rvs0I_EeSvPZ_bPTSMKQ" type="4001" element="_P7RvmEI_EeSvPZ_bPTSMKQ" source="_P7RvoUI_EeSvPZ_bPTSMKQ" target="_P7RvqEI_EeSvPZ_bPTSMKQ">
+            <children xmi:type="notation:Node" xmi:id="_P7Rvt0I_EeSvPZ_bPTSMKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7RvuEI_EeSvPZ_bPTSMKQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P7RvuUI_EeSvPZ_bPTSMKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7RvukI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_P7Rvu0I_EeSvPZ_bPTSMKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7RvvEI_EeSvPZ_bPTSMKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_P7RvtEI_EeSvPZ_bPTSMKQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_P7RvtUI_EeSvPZ_bPTSMKQ" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P7RvtkI_EeSvPZ_bPTSMKQ" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P7RvvUI_EeSvPZ_bPTSMKQ" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P7RvvkI_EeSvPZ_bPTSMKQ" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_P7RvgkI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance" outgoingEdges="_P7RvmEI_EeSvPZ_bPTSMKQ" width="12" height="10">
+        <target xmi:type="generationChain:GenerationChain" href="ComponentSamplePerformance.generationchain#/"/>
+        <semanticElements xmi:type="generationChain:GenerationChain" href="ComponentSamplePerformance.generationchain#/"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P7Rvg0I_EeSvPZ_bPTSMKQ" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvhEI_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvhUI_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvhkI_EeSvPZ_bPTSMKQ" red="114" green="159" blue="207"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P7Rvh0I_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_P7RviEI_EeSvPZ_bPTSMKQ" name="ComponentSamplePerformance" incomingEdges="_P7RvmEI_EeSvPZ_bPTSMKQ" width="12" height="10">
+        <target xmi:type="generationChain:GenerationChain" href="ComponentSamplePerformance.generationchain#//@elements.0"/>
+        <semanticElements xmi:type="generationChain:GenerationChain" href="ComponentSamplePerformance.generationchain#//@elements.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_P7RviUI_EeSvPZ_bPTSMKQ" labelSize="10" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvikI_EeSvPZ_bPTSMKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='genchain.container.id']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P7Rvi0I_EeSvPZ_bPTSMKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvjEI_EeSvPZ_bPTSMKQ" red="233" green="185" blue="110"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvjUI_EeSvPZ_bPTSMKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='genchain.container.id']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P7RvjkI_EeSvPZ_bPTSMKQ" name="Kitalpha eMDE Emf Generation for ComponentSamplePerformance">
+          <target xmi:type="genchainExtension:EmdeGeneration" href="ComponentSamplePerformance.generationchain#//@elements.0/@elements.0"/>
+          <semanticElements xmi:type="genchainExtension:EmdeGeneration" href="ComponentSamplePerformance.generationchain#//@elements.0/@elements.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_P7Rvj0I_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvkEI_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvkUI_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P7RvkkI_EeSvPZ_bPTSMKQ" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_P7Rvk0I_EeSvPZ_bPTSMKQ" name="Kitalpha Emf Documentation for ComponentSamplePerformance">
+          <target xmi:type="DocgenGenchainExtension:KitalphaDocumentationGeneration" href="ComponentSamplePerformance.generationchain#//@elements.0/@elements.1"/>
+          <semanticElements xmi:type="DocgenGenchainExtension:KitalphaDocumentationGeneration" href="ComponentSamplePerformance.generationchain#//@elements.0/@elements.1"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_P7RvlEI_EeSvPZ_bPTSMKQ" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvlUI_EeSvPZ_bPTSMKQ"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvlkI_EeSvPZ_bPTSMKQ"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_P7Rvl0I_EeSvPZ_bPTSMKQ" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@containerMappings[name='root.genchain.container.id']/@subNodeMappings[name='element.id']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_P7RvmEI_EeSvPZ_bPTSMKQ" name="1" sourceNode="_P7RvgkI_EeSvPZ_bPTSMKQ" targetNode="_P7RviEI_EeSvPZ_bPTSMKQ">
+        <target xmi:type="generationChain:GenerationChain" href="ComponentSamplePerformance.generationchain#/"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_P7RvmUI_EeSvPZ_bPTSMKQ" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@edgeMappings[name='generation.chain.relation.id']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvmkI_EeSvPZ_bPTSMKQ" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_P7Rvm0I_EeSvPZ_bPTSMKQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_P7RvnEI_EeSvPZ_bPTSMKQ"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer/@edgeMappings[name='generation.chain.relation.id']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_P7RvnUI_EeSvPZ_bPTSMKQ"/>
+      <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']/@ownedRepresentations[name='genchain.diagram.id']/@defaultLayer"/>
+      <target xmi:type="generationChain:GenerationChain" href="ComponentSamplePerformance.generationchain#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.egf.genchain.diagram/description/genchain.odesign#//@ownedViewpoints[name='genchain.viewpoint.id']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

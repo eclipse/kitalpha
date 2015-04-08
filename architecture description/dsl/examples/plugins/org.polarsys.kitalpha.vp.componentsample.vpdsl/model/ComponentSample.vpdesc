@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:vpbuild="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" xmlns:vpservices="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" name="ComponentSample" shortName="ComponentSample">
+  <VP_Data name="ComponentSample.data">
+    <VP_Classes name="ComponentElement" abstract="true">
+      <VP_Class_Attributes name="name">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <VP_Class_Attributes name="description">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <Inheritences xsi:type="vpdesc:ExternalSuperClass">
+        <superClass href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement"/>
+      </Inheritences>
+    </VP_Classes>
+    <VP_Classes name="ComponentModel">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="packages" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.2"/>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="Package" abstract="true">
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="ComponentPackage">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="components" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.2"/>
+    </VP_Classes>
+    <VP_Classes name="AbstractComponent" abstract="true">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="use" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <VP_Class_Attributes name="type">
+        <owned_type xsi:type="vpdesc:LocalAttributeType" type="//@VP_Data/@VP_Enumerations.0"/>
+      </VP_Class_Attributes>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="SoftwareComponent" icon="Software-icon.png">
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.4"/>
+    </VP_Classes>
+    <VP_Classes name="HardwareComponent" icon="Hardware-icon.png">
+      <owned_annotations source="http://org.polarsys.kitalpha/documentation">
+        <owned_details key="description" value="Hardware Component"/>
+      </owned_annotations>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="abstractComponent" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.4"/>
+    </VP_Classes>
+    <VP_Enumerations name="ComponentType">
+      <ownedValues name="Behaviour" literal="Behaviour"/>
+      <ownedValues name="Data" literal="Data"/>
+      <ownedValues name="Service" literal="Service"/>
+    </VP_Enumerations>
+  </VP_Data>
+  <VP_Aspects xsi:type="vpconf:Configuration" name="ComponentSample.conf">
+    <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
+    <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsample" nsuri="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="ComponentSample.diagram">
+    <diagrams xsi:type="vpdiagram:Diagram" name="ComponentSampleDiagram">
+      <the_MappingSet>
+        <diagram_Elements xsi:type="vpdiagram:Container" name="ComponentPackageContainer">
+          <the_domain>
+            <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.3"/>
+            <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.1/@VP_Classes_Associations.0"/>
+          </the_domain>
+          <style>
+            <node_Label>
+              <value>
+                <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+              </value>
+            </node_Label>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_gray" forgroundColor="light_gray" borderColor="blue"/>
+          </style>
+          <children>
+            <owned_nodes xsi:type="vpdiagram:Container" name="HardwareComponentContainer">
+              <the_domain>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.6"/>
+                <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.3/@VP_Classes_Associations.0"/>
+              </the_domain>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                  </value>
+                </node_Label>
+                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="light_chocolate" borderColor="blue"/>
+              </style>
+              <children>
+                <owned_nodes xsi:type="vpdiagram:Container" name="InnerHardwareComponentContainer">
+                  <the_domain>
+                    <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.6"/>
+                    <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.6/@VP_Classes_Associations.0"/>
+                  </the_domain>
+                  <style>
+                    <node_Label>
+                      <value>
+                        <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                      </value>
+                    </node_Label>
+                    <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="light_chocolate" borderColor="blue"/>
+                  </style>
+                  <children reused_nodes="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0 //@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1"/>
+                </owned_nodes>
+                <owned_nodes xsi:type="vpdiagram:Node" name="SoftwareComponentNode">
+                  <the_domain>
+                    <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.5"/>
+                    <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.6/@VP_Classes_Associations.0"/>
+                  </the_domain>
+                  <style>
+                    <node_Label>
+                      <value>
+                        <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                      </value>
+                    </node_Label>
+                    <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_gray"/>
+                  </style>
+                </owned_nodes>
+              </children>
+            </owned_nodes>
+          </children>
+        </diagram_Elements>
+        <diagram_Elements xsi:type="vpdiagram:Edge" name="UseComponentToComponentEdge" source="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0 //@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0 //@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1" target="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0 //@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0 //@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1">
+          <e_description>
+            <style endDecorator="InputArrow"/>
+          </e_description>
+          <the_domain>
+            <target_Locator xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.4/@VP_Classes_Associations.0"/>
+          </the_domain>
+        </diagram_Elements>
+      </the_MappingSet>
+      <the_ActionSet>
+        <actions xsi:type="vpdiagram:Create" name="ComponentPackageContainerCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0" label="Component Package"/>
+        <actions xsi:type="vpdiagram:Delete" name="ComponentPackageContainerDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0" label="Delete"/>
+        <actions xsi:type="vpdiagram:Create" name="HardwareComponentContainerCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Hardware" icon="Hardware.png"/>
+        <actions xsi:type="vpdiagram:Delete" name="HardwareComponentContainerDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Delete"/>
+        <actions xsi:type="vpdiagram:Drop" name="HardwareComponentContainerDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Drop"/>
+        <actions xsi:type="vpdiagram:Create" name="InnerHardwareComponentContainerCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Inner Hardware" icon="Hardware.png"/>
+        <actions xsi:type="vpdiagram:Delete" name="InnerHardwareComponentContainerDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Delete"/>
+        <actions xsi:type="vpdiagram:Drop" name="InnerHardwareComponentContainerDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Drop"/>
+        <actions xsi:type="vpdiagram:Create" name="SoftwareComponentNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1" label="Software" icon="Software.png"/>
+        <actions xsi:type="vpdiagram:Delete" name="SoftwareComponentNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1" label="Delete"/>
+        <actions xsi:type="vpdiagram:Drop" name="SoftwareComponentNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1" label="Drop"/>
+        <actions xsi:type="vpdiagram:Create" name="UseComponentToComponentEdgeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.1" label="Use Link" icon="arrow-right-16-ns.png"/>
+        <actions xsi:type="vpdiagram:Delete" name="UseComponentToComponentEdgeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.1" label="Delete"/>
+        <actions xsi:type="vpdiagram:ReconnectEdge" name="UseComponentToComponentReconnectEdge" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.1" label="Reconnect Use Link"/>
+        <openActions name="GoAction" label="Go!" icon="goAction.gif"/>
+      </the_ActionSet>
+      <the_domain>
+        <the_domain xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>
+      </the_domain>
+    </diagrams>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpservices:ServiceSet" name="ComponentSample.services">
+    <vpServices name="MyService" relatedRules="//@VP_Aspects.3/@vpRules.0 //@VP_Aspects.3/@vpRules.2"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpservices:RuleSet" name="ComponentSample.rules">
+    <vpRules name="RuleOne"/>
+    <vpRules name="RuleTwo"/>
+    <vpRules name="RuleThree"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSample2.build" target_platform="D:/Eclipse/Platform/Kitalpha-0.5/kitalpha_juno_0.5.0-20140921_00-01-01/eclipse.exe">
+    <mapped_repositories location="ComponentSample/ComponentSample.git">
+      <features name="org.polarsys.kitalpha.vp.ComponentSample.feature"/>
+    </mapped_repositories>
+  </VP_Aspects>
+  <parents href="../../org.polarsys.kitalpha.vp.componentsampleframework.vpdsl/model/ComponentSampleFramework.vpdesc#/"/>
+</vpdesc:Viewpoint>

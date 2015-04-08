@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+<plugin>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl.description"
+	        tags="vpdesc"
+	        name="componentsamplesafety"
+	        path="/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl/model/ComponentSampleSafety.vpdesc"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl.resource.ComponentSampleSafety.spec"
+	        tags="Viewpoint"
+	        name="spec"
+	        path="/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl/model/ComponentSampleSafety.spec.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl.resource.ComponentSampleSafety.diagram"
+	        tags="Viewpoint"
+	        name="diagram"
+	        path="/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl/model/ComponentSampleSafety.diagram.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl.resource.ComponentSampleSafety.data"
+	        tags="Viewpoint"
+	        name="data"
+	        path="/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl/model/ComponentSampleSafety.data.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl.resource.ComponentSampleSafety.conf"
+	        tags="Viewpoint"
+	        name="conf"
+	        path="/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl/model/ComponentSampleSafety.conf.vptext"/>
+	</extension>
+</plugin>

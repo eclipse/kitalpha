@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sirius="http://www.polarsys.org/kitalpha/ad/sirius/1.0.0" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample Safety" id="org.polarsys.kitalpha.vp.componentsamplesafety" vpid="_A4gecEJAEeSvPZ_bPTSMKQ">
+  <dependencies href="../../org.polarsys.kitalpha.vp.componentsample.af/model/ComponentSample.vp#_upHvUEJfEeSX2_-AyeUK-w"/>
+  <metamodel>
+    <models href="../../org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#/"/>
+  </metamodel>
+  <representation>
+    <representations xsi:type="sirius:SiriusRepresentation">
+      <odesign href="../../org.polarsys.kitalpha.vp.componentsamplesafety.design/description/ComponentSampleSafety.odesign#/"/>
+    </representations>
+  </representation>
+</vp:Viewpoint>

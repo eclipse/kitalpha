@@ -331,5 +331,12 @@ Contributors:
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
+<!--
+   <plugin
+         id="org.polarsys.kitalpha.m2t.componentsample.to.html"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+-->
 </feature>

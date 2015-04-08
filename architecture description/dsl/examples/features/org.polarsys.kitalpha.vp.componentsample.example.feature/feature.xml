@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.polarsys.kitalpha.vp.componentsample.example.feature"
+      label="%featureName"
+      version="0.5.1.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsample.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsampleframework.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsampleperformance.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplesafety.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.vp.componentsample.runtime.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.doc.generation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

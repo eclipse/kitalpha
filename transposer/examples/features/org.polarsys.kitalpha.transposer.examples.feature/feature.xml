@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
 Copyright (c) 2014 Thales Global Services S.A.S.
  All rights reserved. This program and the accompanying materials
@@ -10,7 +9,6 @@ Copyright (c) 2014 Thales Global Services S.A.S.
 Contributors:
  Thales Global Services S.A.S - initial API and implementation
 -->
-
 <feature
       id="org.polarsys.kitalpha.transposer.examples.feature"
       label="Kitalpha Transposer Examples Feature"
@@ -48,5 +46,19 @@ Contributors:
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+<!--
+   <plugin
+         id="org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
+   <plugin
+         id="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+-->
 </feature>

@@ -1,0 +1,70 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+ 
+/**
+ *	Viewpoint ComponentSample
+ *	@author: Benoît Langlois
+ *	@date: 26/08/14
+ *
+ */
+Data ComponentSample.data {
+	// Root super-class
+	Class ComponentElement {
+		superClass external emde.ExtensibleElement
+		abstract: true
+		Attributes:
+			name type ecore.EString
+			^description type ecore.EString
+	}
+	// Common Organization
+	Class ComponentModel {
+		superClass ComponentElement
+		Associations:
+			packages contains [0,*] Package
+	}
+	Class Package {
+		superClass ComponentElement
+		abstract: true
+	}
+	
+	// Component elements
+	Class ComponentPackage {
+		superClass Package
+		Associations:
+			components contains[0,*] AbstractComponent
+	}
+	
+	Class AbstractComponent {
+		superClass ComponentElement
+		abstract: true
+		Attributes:
+			^type enum ComponentType
+		Associations:
+			use refers [0,*] AbstractComponent
+	}
+	Class SoftwareComponent {
+		icon: "Software-icon.png"
+		superClass AbstractComponent
+	}
+	Class HardwareComponent {
+		icon: "Hardware-icon.png"
+		superClass AbstractComponent
+		Annotation "http://org.polarsys.kitalpha/documentation" {
+			key: ^description value: "Hardware Component"
+		}
+		Associations:
+			abstractComponent contains [0,*] AbstractComponent
+	}
+	Enumeration ComponentType {
+		Behaviour , ^Data , Service
+	}
+}

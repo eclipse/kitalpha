@@ -1,0 +1,7 @@
+package ComponentSample
+
+context ComponentPackage
+
+inv component_package_not_empty: not(self.components->isEmpty())
+
+endpackage

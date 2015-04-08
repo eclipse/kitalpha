@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentSampleAllocation" nsURI="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0"
+    nsPrefix="componentSampleAllocation">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentSampleRoot" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//Root"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentSampleFile" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//File"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentType" abstract="true" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedComponents" upperBound="-1"
+        eType="#//Uses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedByComponent" upperBound="-1"
+        eType="#//UsedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedByComponent" eType="#//ContainedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentModelType" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.composer.metamodel.allocation.base.model/model/allocation.ecore#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareComponents" upperBound="-1"
+        eType="#//ComponentSampleHardware"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwarecomponents" upperBound="-1"
+        eType="#//ComponentSampleSoftware"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Uses" eSuperTypes="#//ComponentsAttributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsedBy" eSuperTypes="#//ComponentsAttributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Contains" eSuperTypes="#//ComponentsAttributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainedBy" eSuperTypes="#//ComponentsAttributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentSampleHardware" eSuperTypes="#//ComponentType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsComponents" upperBound="-1"
+        eType="#//Contains"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentSampleSoftware" eSuperTypes="#//ComponentType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentsAttributes" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

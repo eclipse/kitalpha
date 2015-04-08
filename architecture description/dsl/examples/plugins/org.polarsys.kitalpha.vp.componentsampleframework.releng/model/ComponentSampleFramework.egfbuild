@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_D1fHEN06EeSdX-jDtPq_XQ" name="ComponentSampleFramework">
+  <jobs xmi:id="_D1fHEd06EeSdX-jDtPq_XQ" name="main">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_D1o4EN06EeSdX-jDtPq_XQ" type="Result"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_D1o4Ed06EeSdX-jDtPq_XQ" name="viewpoint_ComponentSampleFramework" id="viewpoint_ComponentSampleFramework"/>
+    <scms xsi:type="buildscm:SVN" xmi:id="_D1yCAN06EeSdX-jDtPq_XQ"/>
+  </jobs>
+  <jobs xmi:id="_D1yCAd06EeSdX-jDtPq_XQ" name="build_ComponentSampleFramework">
+    <properties xmi:id="_D1yCAt06EeSdX-jDtPq_XQ" key="target.location" value="C:/eclipse.exe" type="INLINED"/>
+    <properties xmi:id="_D1yCA906EeSdX-jDtPq_XQ" key="repository.location" value="ComponentSampleFramework/ComponentSampleFramework.git"/>
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_D1yCBN06EeSdX-jDtPq_XQ" type="Result"/>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_D1yCBd06EeSdX-jDtPq_XQ" name="ComponentSampleFramework">
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_D1yCBt06EeSdX-jDtPq_XQ" path="${target.location}"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_D1yCB906EeSdX-jDtPq_XQ" id="org.polarsys.kitalpha.vp"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_D1yCCN06EeSdX-jDtPq_XQ" component="_D1yCB906EeSdX-jDtPq_XQ" generateSources="false" generateDropins="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_D1yCCd06EeSdX-jDtPq_XQ" name="ComponentSampleFramework feature" id="viewpoint_ComponentSampleFramework"/>
+    <scms xsi:type="buildscm:SVN" xmi:id="_D1yCCt06EeSdX-jDtPq_XQ">
+      <locations xmi:id="_D1yCC906EeSdX-jDtPq_XQ" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
+    </scms>
+  </jobs>
+</buildcore:Chain>

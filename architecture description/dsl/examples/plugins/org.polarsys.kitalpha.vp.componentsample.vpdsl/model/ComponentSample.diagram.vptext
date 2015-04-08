@@ -1,0 +1,116 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+ 
+/**
+ *	Viewpoint ComponentSample
+ *	@author: Benoît Langlois
+ *	@date: 26/08/14
+ *
+ */
+Diagrams ComponentSample.diagram {
+	Diagram "ComponentSampleDiagram" {
+		domain-context: ComponentSample.data.ComponentModel
+		Mapping {
+			Container ComponentPackageContainer {
+				domain-context: ComponentSample.data.ComponentPackage
+				provided-by association ComponentSample.data.ComponentModel.packages
+				Representation {
+					Label {
+						content: ComponentSample.data.ComponentElement.name
+						police: black
+					}
+					Style {
+						FlatStyle {
+							border: blue background: light_gray foreground: light_gray
+						}
+					}
+				}
+				Contains {
+				
+					Container HardwareComponentContainer {
+						domain-context: ComponentSample.data.HardwareComponent provided-by association ComponentSample.data.ComponentPackage.components
+						Representation {
+							Label { content: ComponentSample.data.ComponentElement.name police: black }
+							Style {
+								FlatStyle {	border: blue background: light_chocolate foreground: light_chocolate }
+							}
+						}
+						Contains {
+							
+							Container InnerHardwareComponentContainer {
+								domain-context: ComponentSample.data.HardwareComponent provided-by association ComponentSample.data.HardwareComponent.abstractComponent
+								Representation {
+									Label { content: ComponentSample.data.ComponentElement.name police: black }
+									Style {
+										FlatStyle {	border: blue background: light_chocolate foreground: light_chocolate }
+									}
+								}
+								Contains {
+									reuse InnerHardwareComponentContainer, SoftwareComponentNode
+								}
+							}
+							
+							Node SoftwareComponentNode {
+								domain-context: ComponentSample.data.SoftwareComponent provided-by association ComponentSample.data.HardwareComponent.abstractComponent
+								Representation {
+									Label { content: ComponentSample.data.ComponentElement.name police: black }
+									Style {
+										BasicStyle {border-color: black background: light_gray form: Square}
+									}
+								}
+							}
+							
+						}
+					}
+				}
+			}
+			
+			Edge UseComponentToComponentEdge {
+				association-context: ComponentSample.data.AbstractComponent.use
+				source: ComponentPackageContainer.HardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.InnerHardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.SoftwareComponentNode
+				target: ComponentPackageContainer.HardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.InnerHardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.SoftwareComponentNode
+				Representation {
+					Style { end-decorator: InputArrow color: black }
+				}
+			}
+			
+		}
+		Actions {
+			// ComponentPackageContainer actions
+			Create ComponentPackageContainerCreate { label: "Component Package" action-for: ComponentPackageContainer}
+			Delete ComponentPackageContainerDelete { label: "Delete" action-for:  ComponentPackageContainer}
+
+			// ComponentHardwareComponentContainer actions
+			Create HardwareComponentContainerCreate { label: "Hardware" action-for: ComponentPackageContainer.HardwareComponentContainer icon: "Hardware.png"}
+			Delete HardwareComponentContainerDelete { label: "Delete" action-for:  ComponentPackageContainer.HardwareComponentContainer}
+			Drop HardwareComponentContainerDrop { label: "Drop" action-for: ComponentPackageContainer.HardwareComponentContainer}
+
+			// InnerHardwareComponentContainer actions
+			Create InnerHardwareComponentContainerCreate { label: "Inner Hardware" action-for: ComponentPackageContainer.HardwareComponentContainer.InnerHardwareComponentContainer icon: "Hardware.png"}
+			Delete InnerHardwareComponentContainerDelete { label: "Delete" action-for:  ComponentPackageContainer.HardwareComponentContainer.InnerHardwareComponentContainer}
+			Drop InnerHardwareComponentContainerDrop { label: "Drop" action-for: ComponentPackageContainer.HardwareComponentContainer.InnerHardwareComponentContainer}
+
+			// SoftwareComponentNode actions
+			Create SoftwareComponentNodeCreate { label: "Software" action-for: ComponentPackageContainer.HardwareComponentContainer.SoftwareComponentNode icon: "Software.png"}
+			Delete SoftwareComponentNodeDelete { label: "Delete" action-for:  ComponentPackageContainer.HardwareComponentContainer.SoftwareComponentNode}
+			Drop SoftwareComponentNodeDrop { label: "Drop" action-for: ComponentPackageContainer.HardwareComponentContainer.SoftwareComponentNode}
+			
+			// UseComponentToComponentEdge actions
+			Create UseComponentToComponentEdgeCreate { label: "Use Link" action-for: UseComponentToComponentEdge icon: "arrow-right-16-ns.png"}
+			Delete UseComponentToComponentEdgeDelete { label: "Delete" action-for:  UseComponentToComponentEdge}
+			ReconnectEdge UseComponentToComponentReconnectEdge { label: "Reconnect Use Link" action-for:  UseComponentToComponentEdge}
+
+			// Open actions			
+			OpenAction GoAction { label: "Go!" icon: "goAction.gif"  }
+		}
+	}
+}

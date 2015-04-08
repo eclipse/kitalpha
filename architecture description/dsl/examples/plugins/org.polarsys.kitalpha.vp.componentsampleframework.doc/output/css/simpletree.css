@@ -1,0 +1,16 @@
+body {
+	background: #F4F5F8;
+	font-family: Arial;
+}
+.treeview {
+	background-color: #F4F5F8;
+}
+
+.treeview ul{ /*CSS for Simple Tree Menu*/
+	background-color: #F4F5F8;
+	font-size: 12px;
+}
+
+.treeview li{ /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+background-color: #F4F5F8;
+}

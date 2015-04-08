@@ -1,0 +1,66 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+ /**
+ *	Viewpoint ComponentSamplePerformance
+ *	@author: Benoît Langlois
+ *	@date: 27/08/14
+ *
+ */
+ 
+import external "platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"
+Diagrams ComponentSamplePerformance.diagram {
+	
+	DiagramExtension "ComponentSamplePerformanceDiagram" {
+	 extended-diagram: ComponentSampleDiagram
+		Mapping {
+			Container ComponentSamplePerformance {
+				import: HardwareComponentContainer_CM Contains {
+
+					Node PerformanceNode {
+						domain-context: ComponentSamplePerformance.data.Performance provided-by association external emde.ExtensibleElement.ownedExtensions
+						Representation {
+							Label { content: "Cost: " + ComponentSamplePerformance.data.Performance.cost + "/Complexity: " + ComponentSamplePerformance.data.Performance.complexity police: black alignment: center}
+							Style {
+								BasicStyle { border-color: black background: chocolate form: Square }
+							}
+						}
+						Contains {
+							BorderedNode PerformanceStatusNode {
+								domain-context: ComponentSamplePerformance.data.PerformanceStatus provided-by association ComponentSamplePerformance.data.Performance.status
+								Representation {
+									Label {
+										content: "Overhead: " + ComponentSamplePerformance.data.PerformanceStatus.overhead
+										position: node alignment: center
+									}
+								Style {
+									BasicStyle { background: light_chocolate form: Square }
+							   	}
+							  }
+							}
+						}
+					}
+				} 
+			}
+		}
+		Actions{
+			// PerformanceNode actions
+			Create PerformanceNodeCreate { label: "Performance" action-for: ComponentSamplePerformance.PerformanceNode}
+			Drop PerformanceNodeDrop { label: "Drop Performance" action-for:  ComponentSamplePerformance.PerformanceNode}
+			Delete PerformanceNodeDelete { label: "Delete Performance" action-for:  ComponentSamplePerformance.PerformanceNode}
+
+			// PerformanceStatusNode actions
+			Create PerformanceStatusNodeCreate { label: "Status" action-for: ComponentSamplePerformance.PerformanceNode.PerformanceStatusNode}
+			Delete QPerformanceStatusNodeDelete { label: "Delete Status" action-for:  ComponentSamplePerformance.PerformanceNode.PerformanceStatusNode}
+			Drop PerformanceStatusNodeDrop { label: "Drop Status" action-for: ComponentSamplePerformance.PerformanceNode.PerformanceStatusNode}
+		}
+	}
+}

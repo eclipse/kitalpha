@@ -1,0 +1,10 @@
+<project name="ComponentSampleFramework">
+
+	<echo message="Running Job main in ComponentSampleFramework_main/releng"/>
+	<ant dir="ComponentSampleFramework_main/releng"/>
+
+	<echo message="Running Job build_ComponentSampleFramework in ComponentSampleFramework_build_ComponentSampleFramework/releng"/>
+	<ant dir="ComponentSampleFramework_build_ComponentSampleFramework/releng"/>
+
+
+</project>

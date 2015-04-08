@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_9dQhQDJ1EeSgKpmqleldcA" selectedViews="_9dQhQTJ1EeSgKpmqleldcA" version="8.1.1">
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsampleframework/models/ComponentSampleFramework.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsampleperformance/models/ComponentSamplePerformance.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplequalityassessment/models/ComponentSampleQualityAssessment.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafetypattern/models/ComponentSampleSafetyPattern.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.mass/models/Mass.ecore#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_9dQhQTJ1EeSgKpmqleldcA" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_8860UDJ1EeSgKpmqleldcA" name="Safety - Inheritance">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_89EldzJ1EeSgKpmqleldcA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_89EleDJ1EeSgKpmqleldcA" type="Sirius" element="_8860UDJ1EeSgKpmqleldcA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_89ElejJ1EeSgKpmqleldcA" type="2003" element="_8860UTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89ElfTJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_89ElfjJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_89ElfzJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_89ElgDJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_89ElezJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElfDJ1EeSgKpmqleldcA" x="80" y="480"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_89ElgTJ1EeSgKpmqleldcA" type="2003" element="_8860VzJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89ElhDJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_89ElhTJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_89ElhjJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_89ElhzJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_89ElgjJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElgzJ1EeSgKpmqleldcA" x="80"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_89EliDJ1EeSgKpmqleldcA" type="2003" element="_8860XTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89ElizJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_89EljDJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_89EljTJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_89EljjJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_89EliTJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElijJ1EeSgKpmqleldcA" x="80" y="160"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_89EljzJ1EeSgKpmqleldcA" type="2003" element="_89ElUTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89ElkjJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_89ElkzJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_89EllDJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_89EllTJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_89ElkDJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElkTJ1EeSgKpmqleldcA" y="320"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_89ElljJ1EeSgKpmqleldcA" type="2003" element="_89ElVzJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89ElmTJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_89ElmjJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_89ElmzJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_89ElnDJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_89EllzJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElmDJ1EeSgKpmqleldcA" x="160" y="320"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_89EleTJ1EeSgKpmqleldcA"/>
+          <edges xmi:type="notation:Edge" xmi:id="_89ElnTJ1EeSgKpmqleldcA" type="4001" element="_89ElXTJ1EeSgKpmqleldcA" source="_89ElejJ1EeSgKpmqleldcA" target="_89EljzJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89EloTJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElojJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89ElozJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElpDJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89ElpTJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89ElpjJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_89ElnjJ1EeSgKpmqleldcA" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_89ElnzJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_89EloDJ1EeSgKpmqleldcA" points="[0, 0, 80, 60]$[-80, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89ElpzJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89ElqDJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_89OWUDJ1EeSgKpmqleldcA" type="4001" element="_89ElYjJ1EeSgKpmqleldcA" source="_89ElejJ1EeSgKpmqleldcA" target="_89ElljJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89OWVDJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWVTJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWVjJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWVzJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWWDJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWWTJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_89OWUTJ1EeSgKpmqleldcA" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_89OWUjJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_89OWUzJ1EeSgKpmqleldcA" points="[0, 0, -80, 60]$[80, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWWjJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWWzJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_89OWXDJ1EeSgKpmqleldcA" type="4001" element="_89ElZzJ1EeSgKpmqleldcA" source="_89EliDJ1EeSgKpmqleldcA" target="_89ElgTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89OWYDJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWYTJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWYjJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWYzJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWZDJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWZTJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_89OWXTJ1EeSgKpmqleldcA" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_89OWXjJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_89OWXzJ1EeSgKpmqleldcA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWZjJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWZzJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_89OWaDJ1EeSgKpmqleldcA" type="4001" element="_89ElbDJ1EeSgKpmqleldcA" source="_89EljzJ1EeSgKpmqleldcA" target="_89EliDJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89OWbDJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWbTJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWbjJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWbzJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWcDJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWcTJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_89OWaTJ1EeSgKpmqleldcA" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_89OWajJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_89OWazJ1EeSgKpmqleldcA" points="[0, 0, -80, 60]$[80, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWcjJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWczJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_89OWdDJ1EeSgKpmqleldcA" type="4001" element="_89ElcTJ1EeSgKpmqleldcA" source="_89ElljJ1EeSgKpmqleldcA" target="_89EliDJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_89OWeDJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWeTJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWejJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWezJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_89OWfDJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_89OWfTJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_89OWdTJ1EeSgKpmqleldcA" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_89OWdjJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_89OWdzJ1EeSgKpmqleldcA" points="[0, 0, 80, 60]$[-80, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWfjJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_89OWfzJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_8860UTJ1EeSgKpmqleldcA" name="Safety&#xA;( ComponentSampleSafety)" outgoingEdges="_89ElXTJ1EeSgKpmqleldcA _89ElYjJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8860UjJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8860UzJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8860VDJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_8860VTJ1EeSgKpmqleldcA" red="209" green="209" blue="209"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_8860VjJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_8860VzJ1EeSgKpmqleldcA" name="Element&#xA;( emde)" incomingEdges="_89ElZzJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//Element"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//Element"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8860WDJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8860WTJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8860WjJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_8860WzJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_8860XDJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_8860XTJ1EeSgKpmqleldcA" name="ExtensibleElement&#xA;( emde)" outgoingEdges="_89ElZzJ1EeSgKpmqleldcA" incomingEdges="_89ElbDJ1EeSgKpmqleldcA _89ElcTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8860XjJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8860XzJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8860YDJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_8860YTJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElUDJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_89ElUTJ1EeSgKpmqleldcA" name="ComponentElement&#xA;( ComponentSample)" outgoingEdges="_89ElbDJ1EeSgKpmqleldcA" incomingEdges="_89ElXTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_89ElUjJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElUzJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElVDJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElVTJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElVjJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_89ElVzJ1EeSgKpmqleldcA" name="ElementExtension&#xA;( emde)" outgoingEdges="_89ElcTJ1EeSgKpmqleldcA" incomingEdges="_89ElYjJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_89ElWDJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElWTJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElWjJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElWzJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElXDJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_89ElXTJ1EeSgKpmqleldcA" sourceNode="_8860UTJ1EeSgKpmqleldcA" targetNode="_89ElUTJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_89ElXjJ1EeSgKpmqleldcA" targetArrow="InputClosedArrow" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElXzJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_89ElYDJ1EeSgKpmqleldcA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElYTJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_89ElYjJ1EeSgKpmqleldcA" sourceNode="_8860UTJ1EeSgKpmqleldcA" targetNode="_89ElVzJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_89ElYzJ1EeSgKpmqleldcA" targetArrow="InputClosedArrow" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElZDJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_89ElZTJ1EeSgKpmqleldcA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElZjJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_89ElZzJ1EeSgKpmqleldcA" sourceNode="_8860XTJ1EeSgKpmqleldcA" targetNode="_8860VzJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_89ElaDJ1EeSgKpmqleldcA" targetArrow="InputClosedArrow" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElaTJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_89ElajJ1EeSgKpmqleldcA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElazJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_89ElbDJ1EeSgKpmqleldcA" sourceNode="_89ElUTJ1EeSgKpmqleldcA" targetNode="_8860XTJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_89ElbTJ1EeSgKpmqleldcA" targetArrow="InputClosedArrow" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElbjJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_89ElbzJ1EeSgKpmqleldcA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElcDJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_89ElcTJ1EeSgKpmqleldcA" sourceNode="_89ElVzJ1EeSgKpmqleldcA" targetNode="_8860XTJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_89ElcjJ1EeSgKpmqleldcA" targetArrow="InputClosedArrow" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_89ElczJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_89EldDJ1EeSgKpmqleldcA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_89EldTJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@edgeMappings[name='Inheritance%20SuperType%20Link']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_89EldjJ1EeSgKpmqleldcA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer"/>
+      <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_9ClXcDJ1EeSgKpmqleldcA" name="Safety - Containment">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9ClXgzJ1EeSgKpmqleldcA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_9ClXhDJ1EeSgKpmqleldcA" type="Sirius" element="_9ClXcDJ1EeSgKpmqleldcA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_9ClXhjJ1EeSgKpmqleldcA" type="2003" element="_9ClXcTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9ClXiTJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9ClXijJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9ClXizJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9ClXjDJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9ClXhzJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9ClXiDJ1EeSgKpmqleldcA" y="160"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9ClXjTJ1EeSgKpmqleldcA" type="2003" element="_9ClXdzJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9ClXkDJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9ClXkTJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9ClXkjJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9ClXkzJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9ClXjjJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9ClXjzJ1EeSgKpmqleldcA" width="100" height="100"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_9ClXhTJ1EeSgKpmqleldcA"/>
+          <edges xmi:type="notation:Edge" xmi:id="_9ClXlDJ1EeSgKpmqleldcA" type="4001" element="_9ClXfTJ1EeSgKpmqleldcA" source="_9ClXhjJ1EeSgKpmqleldcA" target="_9ClXjTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9ClXmDJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9ClXmTJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9ClXmjJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9ClXmzJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9ClXnDJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9ClXnTJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_9ClXlTJ1EeSgKpmqleldcA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_9ClXljJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9ClXlzJ1EeSgKpmqleldcA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9ClXnjJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9ClXnzJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9ClXcTJ1EeSgKpmqleldcA" name="Safety&#xA;( ComponentSampleSafety)" outgoingEdges="_9ClXfTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9ClXcjJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXczJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXdDJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXdTJ1EeSgKpmqleldcA" red="209" green="209" blue="209"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXdjJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Root%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9ClXdzJ1EeSgKpmqleldcA" name="ElementExtension&#xA;( emde)" incomingEdges="_9ClXfTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9ClXeDJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXeTJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXejJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXezJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXfDJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9ClXfTJ1EeSgKpmqleldcA" name="ownedExtensions" sourceNode="_9ClXcTJ1EeSgKpmqleldcA" targetNode="_9ClXdzJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EReference" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement/ownedExtensions"/>
+        <semanticElements xmi:type="ecore:EReference" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement/ownedExtensions"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_9ClXfjJ1EeSgKpmqleldcA" sourceArrow="FillDiamond" targetArrow="NoDecoration">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@edgeMappings[name='Containment%20Containment%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXfzJ1EeSgKpmqleldcA"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_9ClXgDJ1EeSgKpmqleldcA">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9ClXgTJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@edgeMappings[name='Containment%20Containment%20Link']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_9ClXgjJ1EeSgKpmqleldcA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer"/>
+      <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_9GdK0DJ1EeSgKpmqleldcA" name="Safety - Reference">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9GdK2DJ1EeSgKpmqleldcA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_9GdK2TJ1EeSgKpmqleldcA" type="Sirius" element="_9GdK0DJ1EeSgKpmqleldcA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_9GdK2zJ1EeSgKpmqleldcA" type="2003" element="_9GdK0TJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9GdK3jJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9GdK3zJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9GdK4DJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9GdK4TJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9GdK3DJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9GdK3TJ1EeSgKpmqleldcA" y="52"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_9GdK2jJ1EeSgKpmqleldcA"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9GdK0TJ1EeSgKpmqleldcA" name="Safety&#xA;( ComponentSampleSafety)" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9GdK0jJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9GdK0zJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9GdK1DJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9GdK1TJ1EeSgKpmqleldcA" red="209" green="209" blue="209"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9GdK1jJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer/@containerMappings[name='Reference%20Root%20EClass']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_9GdK1zJ1EeSgKpmqleldcA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer"/>
+      <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_9PP6cDJ1EeSgKpmqleldcA" name="Safety - Class Focus">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9PZrmzJ1EeSgKpmqleldcA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_9PZrnDJ1EeSgKpmqleldcA" type="Sirius" element="_9PP6cDJ1EeSgKpmqleldcA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_9PZrnjJ1EeSgKpmqleldcA" type="2003" element="_9PP6cTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9PZroTJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9PZrojJ1EeSgKpmqleldcA" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_9PZrszJ1EeSgKpmqleldcA" type="3010" element="_9PP6dzJ1EeSgKpmqleldcA">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_9PZrtDJ1EeSgKpmqleldcA"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_9PZrtTJ1EeSgKpmqleldcA" type="3010" element="_9PZrcDJ1EeSgKpmqleldcA">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_9PZrtjJ1EeSgKpmqleldcA"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_9PZrtzJ1EeSgKpmqleldcA" type="3010" element="_9PZrdTJ1EeSgKpmqleldcA">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_9PZruDJ1EeSgKpmqleldcA"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_9PZruTJ1EeSgKpmqleldcA" type="3010" element="_9PZrejJ1EeSgKpmqleldcA">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_9PZrujJ1EeSgKpmqleldcA"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_9PZruzJ1EeSgKpmqleldcA" type="3010" element="_9PZrfzJ1EeSgKpmqleldcA">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_9PZrvDJ1EeSgKpmqleldcA"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9PZrozJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9PZrpDJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9PZrnzJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9PZroDJ1EeSgKpmqleldcA" x="80" y="160"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9PZrpTJ1EeSgKpmqleldcA" type="2003" element="_9PZrhDJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9PZrqDJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9PZrqTJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9PZrqjJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9PZrqzJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9PZrpjJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9PZrpzJ1EeSgKpmqleldcA" width="100" height="100"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9PZrrDJ1EeSgKpmqleldcA" type="2003" element="_9PZrijJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9PZrrzJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9PZrsDJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9PZrsTJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9PZrsjJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9PZrrTJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9PZrrjJ1EeSgKpmqleldcA" x="160"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_9PZrnTJ1EeSgKpmqleldcA"/>
+          <edges xmi:type="notation:Edge" xmi:id="_9PZrvTJ1EeSgKpmqleldcA" type="4001" element="_9PZrkDJ1EeSgKpmqleldcA" source="_9PZrnjJ1EeSgKpmqleldcA" target="_9PZrpTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9PZrwTJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9PZrwjJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9PZrwzJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9PZrxDJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9PZrxTJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9PZrxjJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_9PZrvjJ1EeSgKpmqleldcA" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_9PZrvzJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9PZrwDJ1EeSgKpmqleldcA" points="[0, 0, 80, 60]$[-80, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9PZrxzJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9PZryDJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_9PZryTJ1EeSgKpmqleldcA" type="4001" element="_9PZrlTJ1EeSgKpmqleldcA" source="_9PZrnjJ1EeSgKpmqleldcA" target="_9PZrrDJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9Pi1YDJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Pi1YTJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9Pi1YjJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Pi1YzJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9Pi1ZDJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Pi1ZTJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_9PZryjJ1EeSgKpmqleldcA" routing="Rectilinear" jumpLinkStatus="Above"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_9PZryzJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9PZrzDJ1EeSgKpmqleldcA" points="[0, 0, -80, 60]$[80, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9Pi1ZjJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9Pi1ZzJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9PP6cTJ1EeSgKpmqleldcA" name="Safety&#xA;( ComponentSampleSafety)" outgoingEdges="_9PZrkDJ1EeSgKpmqleldcA _9PZrlTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9PP6cjJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PP6czJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PP6dDJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9PP6dTJ1EeSgKpmqleldcA" red="209" green="209" blue="209"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9PP6djJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9PP6dzJ1EeSgKpmqleldcA" name="name : EString">
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement/name"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement/name"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9PP6eDJ1EeSgKpmqleldcA" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PP6eTJ1EeSgKpmqleldcA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PP6ejJ1EeSgKpmqleldcA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_9PP6ezJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9PZrcDJ1EeSgKpmqleldcA" name="description : EString">
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement/description"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement/description"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9PZrcTJ1EeSgKpmqleldcA" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrcjJ1EeSgKpmqleldcA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrczJ1EeSgKpmqleldcA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_9PZrdDJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9PZrdTJ1EeSgKpmqleldcA" name="criticality : CRITICALITY">
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/criticality"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/criticality"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9PZrdjJ1EeSgKpmqleldcA" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrdzJ1EeSgKpmqleldcA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZreDJ1EeSgKpmqleldcA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_9PZreTJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9PZrejJ1EeSgKpmqleldcA" name="dal : DAL_LEVEL">
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/dal"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/dal"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9PZrezJ1EeSgKpmqleldcA" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrfDJ1EeSgKpmqleldcA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrfTJ1EeSgKpmqleldcA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_9PZrfjJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9PZrfzJ1EeSgKpmqleldcA" name="state : STATE">
+          <target xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/state"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/state"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9PZrgDJ1EeSgKpmqleldcA" labelAlignment="LEFT">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrgTJ1EeSgKpmqleldcA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrgjJ1EeSgKpmqleldcA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_9PZrgzJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']/@subNodeMappings[name='EF%20Root%20EAttribute']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9PZrhDJ1EeSgKpmqleldcA" name="ComponentElement&#xA;( ComponentSample)" incomingEdges="_9PZrkDJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9PZrhTJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrhjJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrhzJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZriDJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZriTJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9PZrijJ1EeSgKpmqleldcA" name="ElementExtension&#xA;( emde)" incomingEdges="_9PZrlTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9PZrizJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrjDJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrjTJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrjjJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrjzJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9PZrkDJ1EeSgKpmqleldcA" sourceNode="_9PP6cTJ1EeSgKpmqleldcA" targetNode="_9PZrhDJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_9PZrkTJ1EeSgKpmqleldcA" targetArrow="InputClosedArrow" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@edgeMappings[name='EF%20Direct%20SuperType%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrkjJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_9PZrkzJ1EeSgKpmqleldcA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrlDJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@edgeMappings[name='EF%20Direct%20SuperType%20Link']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9PZrlTJ1EeSgKpmqleldcA" sourceNode="_9PP6cTJ1EeSgKpmqleldcA" targetNode="_9PZrijJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_9PZrljJ1EeSgKpmqleldcA" targetArrow="InputClosedArrow" routingStyle="manhattan">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@edgeMappings[name='EF%20Direct%20SuperType%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrlzJ1EeSgKpmqleldcA" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_9PZrmDJ1EeSgKpmqleldcA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9PZrmTJ1EeSgKpmqleldcA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@edgeMappings[name='EF%20Direct%20SuperType%20Link']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_9PZrmjJ1EeSgKpmqleldcA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer"/>
+      <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_9QJSUDJ1EeSgKpmqleldcA" name="Safety - Extensibility">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_9QJSYTJ1EeSgKpmqleldcA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_9QJSYjJ1EeSgKpmqleldcA" type="Sirius" element="_9QJSUDJ1EeSgKpmqleldcA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_9QJSZDJ1EeSgKpmqleldcA" type="2003" element="_9QJSUTJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9QJSZzJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9QJSaDJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9QJSaTJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9QJSajJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9QJSZTJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9QJSZjJ1EeSgKpmqleldcA" y="160"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_9QJSazJ1EeSgKpmqleldcA" type="2003" element="_9QJSVzJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9QJSbjJ1EeSgKpmqleldcA" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_9QJSbzJ1EeSgKpmqleldcA" type="7004">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_9QJScDJ1EeSgKpmqleldcA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_9QJScTJ1EeSgKpmqleldcA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_9QJSbDJ1EeSgKpmqleldcA" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9QJSbTJ1EeSgKpmqleldcA" width="100" height="100"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_9QJSYzJ1EeSgKpmqleldcA"/>
+          <edges xmi:type="notation:Edge" xmi:id="_9QJScjJ1EeSgKpmqleldcA" type="4001" element="_9QJSXTJ1EeSgKpmqleldcA" source="_9QJSZDJ1EeSgKpmqleldcA" target="_9QJSazJ1EeSgKpmqleldcA">
+            <children xmi:type="notation:Node" xmi:id="_9QJSdjJ1EeSgKpmqleldcA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9QJSdzJ1EeSgKpmqleldcA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9QJSeDJ1EeSgKpmqleldcA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9QJSeTJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_9QJSejJ1EeSgKpmqleldcA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9QJSezJ1EeSgKpmqleldcA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_9QJSczJ1EeSgKpmqleldcA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_9QJSdDJ1EeSgKpmqleldcA"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9QJSdTJ1EeSgKpmqleldcA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9QJSfDJ1EeSgKpmqleldcA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9QJSfTJ1EeSgKpmqleldcA" id="(0.5,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9QJSUTJ1EeSgKpmqleldcA" name="Safety" outgoingEdges="_9QJSXTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9QJSUjJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSUzJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer/@containerMappings[name='Extensibility%20Root%20EClass']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSVDJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSVTJ1EeSgKpmqleldcA" red="194" green="239" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSVjJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer/@containerMappings[name='Extensibility%20Root%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9QJSVzJ1EeSgKpmqleldcA" name="AbstractComponent&#xA;( ComponentSample)" incomingEdges="_9QJSXTJ1EeSgKpmqleldcA" width="10" height="10">
+        <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+        <semanticElements xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9QJSWDJ1EeSgKpmqleldcA" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSWTJ1EeSgKpmqleldcA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSWjJ1EeSgKpmqleldcA"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSWzJ1EeSgKpmqleldcA" red="204" green="242" blue="166"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSXDJ1EeSgKpmqleldcA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMappingImport" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer/@containerMappings[name='Extensibility%20Neighbor%20EClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9QJSXTJ1EeSgKpmqleldcA" sourceNode="_9QJSUTJ1EeSgKpmqleldcA" targetNode="_9QJSVzJ1EeSgKpmqleldcA">
+        <target xmi:type="ecore:EStringToStringMapEntry" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2FconstraintMapping%/@details.0"/>
+        <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety/%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2FconstraintMapping%/@details.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_9QJSXjJ1EeSgKpmqleldcA" targetArrow="InputFillClosedArrow">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer/@edgeMappings[name='Extensibility%20Link']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_9QJSXzJ1EeSgKpmqleldcA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer/@edgeMappings[name='Extensibility%20Link']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']"/>
+      <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_9QJSYDJ1EeSgKpmqleldcA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer"/>
+      <target xmi:type="ecore:EClass" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

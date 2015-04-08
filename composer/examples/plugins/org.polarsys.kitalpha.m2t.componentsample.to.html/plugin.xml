@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0"
+            class="componentSampleAllocation.ComponentSampleAllocationPackage"
+            genModel="model/componentSampleAllocation.genmodel"/>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.composer.allocation.binding">
+      <binding
+            Description="Binding between Component Sample Ecore and Component Sample Allocation Ecore"
+            Id="org.polarsys.kitalpha.m2t.componentsample.to.html.binding"
+            Name="Component Sample to HTML Documentation"
+            NsUri="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0">
+         <businessMetamodelNsUriDeclaration
+               NsUri="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0">
+         </businessMetamodelNsUriDeclaration>
+      </binding>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.composer.allocation.strategies">
+      <strategy
+            Class="org.polarsys.kitalpha.m2t.componentsample.to.html.strategies.MultiFilesStrategy"
+            Description="Multi Files Strategy"
+            Id="org.polarsys.kitalpha.m2t.componentsample.to.html.multi.files.strategy"
+            Name="HTML Component Sample Generation Multi Files"
+            NsUri="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0">
+      </strategy>
+      <strategy
+            Class="org.polarsys.kitalpha.m2t.componentsample.to.html.strategies.OneFileStrategy"
+            Description="One File Strategy"
+            Id="org.polarsys.kitalpha.m2t.componentsample.to.html.one.file.strategy"
+            Name="HTML Component Sample Generation One File"
+            NsUri="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0">
+      </strategy>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.composer.allocation.refineries">
+      <refinery
+            Class="org.polarsys.kitalpha.m2t.componentsample.to.html.refineries.ComponentSampleRefinery"
+            Description="Component Sample Refinery for Single and Multi file strategies"
+            Id="org.polarsys.kitalpha.m2t.componentsample.to.html.refinery"
+            Name="Component Sample Refinery"
+            NsUri="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0">
+      </refinery>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.m2t.componentsample.to.html.activities.CleanGenFolder"
+            Identifier="org.polarsys.kitalpha.m2t.componentsample.to.html.cleanActivity"
+            Multiple="false"
+            Name="Folder Cleaner"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.composer.core.workflow.beforegeneration"
+            WorkflowIdentifier="org.polarsys.kitalpha.composer.core.workflow">
+         <Description>
+            This activity delete all resources in the given path. Specify carefully the path to clean in order to avoid losing you work
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.composer.cots.generators">
+      <generator
+            Class="org.polarsys.kitalpha.m2t.componentsample.to.html.sysout.generator.ComponentSampleGenerator"
+            Description="Component Sample Generator"
+            Id="org.polarsys.kitalpha.m2t.componentsample.to.html.cots"
+            Name="Component Sample Generator"
+            NsUri="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0">
+      </generator>
+   </extension>
+
+</plugin>

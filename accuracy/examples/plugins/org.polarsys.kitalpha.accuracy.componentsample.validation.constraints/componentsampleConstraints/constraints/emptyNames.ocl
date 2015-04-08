@@ -1,0 +1,7 @@
+package ComponentSample
+
+context ComponentElement
+
+inv component_null_empty_name: not(name = null)
+
+endpackage

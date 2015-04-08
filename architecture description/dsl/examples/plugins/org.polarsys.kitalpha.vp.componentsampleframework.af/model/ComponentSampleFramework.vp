@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample Framework" id="org.polarsys.kitalpha.vp.componentsampleframework" vpid="_yYhuMEI8EeSvPZ_bPTSMKQ">
+  <ruleSet vpid="_Dh2ZYt06EeSdX-jDtPq_XQ" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
+    <newRules name="RuleOne" id="ComponentSampleFramework.RuleOne" vpid="_DiAKYN06EeSdX-jDtPq_XQ" implementation="org.polarsys.kitalpha.vp.componentsampleframework.af.af.businessrules.RuleOne" language="" type="Java"/>
+    <newRules name="RuleTwo" id="ComponentSampleFramework.RuleTwo" vpid="_DiAKYd06EeSdX-jDtPq_XQ" implementation="org.polarsys.kitalpha.vp.componentsampleframework.af.af.businessrules.RuleTwo" language="" type="Java"/>
+  </ruleSet>
+  <serviceSet vpid="_DhsoYN06EeSdX-jDtPq_XQ" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
+    <newServices name="Service1" id="ComponentSampleFramework.Service1" vpid="_Dh2ZYN06EeSdX-jDtPq_XQ" relatedRules="_DiAKYN06EeSdX-jDtPq_XQ" type="execute.rules"/>
+    <newServices name="Service2" id="ComponentSampleFramework.Service2" vpid="_Dh2ZYd06EeSdX-jDtPq_XQ" relatedRules="_DiAKYN06EeSdX-jDtPq_XQ _DiAKYd06EeSdX-jDtPq_XQ" type="execute.rules"/>
+  </serviceSet>
+  <propertySet vpid="_DhjecN06EeSdX-jDtPq_XQ" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
+    <newProperties name="Copyright" id="ComponentSampleFramework.Copyright" value="PolarSys"/>
+  </propertySet>
+  <metamodel>
+    <models href="../../org.polarsys.kitalpha.vp.componentsampleframework/models/ComponentSampleFramework.ecore#/"/>
+  </metamodel>
+  <representation/>
+</vp:Viewpoint>

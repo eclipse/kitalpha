@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+<plugin>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.description"
+	        tags="vpdesc"
+	        name="componentsamplequalityassessment"
+	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.vpdesc"/>
+	</extension>
+
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.resource.ComponentSampleQualityAssessment.spec"
+	        tags="Viewpoint"
+	        name="spec"
+	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.spec.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.resource.ComponentSampleQualityAssessment.data"
+	        tags="Viewpoint"
+	        name="data"
+	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.data.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.resource.ComponentSampleQualityAssessment.conf"
+	        tags="Viewpoint"
+	        name="conf"
+	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.conf.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.resource.ComponentSampleQualityAssessment.diagram"
+	        tags="Viewpoint"
+	        name="diagram"
+	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.diagram.vptext"/>
+	</extension>
+</plugin>

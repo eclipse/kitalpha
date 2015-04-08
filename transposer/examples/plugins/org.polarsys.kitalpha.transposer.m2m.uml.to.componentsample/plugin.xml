@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<plugin>
+   <extension
+         id="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.mapping"
+         name="UML to ComponentSample Transformation Example"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            context="org.polarsys.kitalpha.transposer.transformation.context.GenericTransformationContext"
+            description="Simple Model Transformation from UML to ComponentSample"
+            domainHelper="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.domain.DomainHelper"
+            mappingName="UML to ComponentSample Mapping"
+            mappingPurpose="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.purpose"
+            private="false">
+         <mappingPackage
+               name="UML To ComponentSample">
+            <mappingElement
+                  domainMetaClass="org.eclipse.uml2.uml.Package"
+                  name="Package case"
+                  reuseExtendedElementDefaultPossibility="true"
+                  reuseExtendedElementPossibilities="true">
+               <defaultMappingPossibility
+                     completeRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.umlpackage.CompletePackageRule"
+                     enabled="true"
+                     incompleteRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.umlpackage.CompletePackageRule"
+                     name="Package Rule">
+               </defaultMappingPossibility>
+            </mappingElement>
+            <mappingElement
+                  domainMetaClass="org.eclipse.uml2.uml.Component"
+                  name="Component Case"
+                  reuseExtendedElementDefaultPossibility="true"
+                  reuseExtendedElementPossibilities="true">
+               <defaultMappingPossibility
+                     completeRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.component.CompleteComponentRule"
+                     enabled="true"
+                     incompleteRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.component.CompleteComponentRule"
+                     name="Component Rule">
+               </defaultMappingPossibility>
+            </mappingElement>
+            <mappingElement
+                  domainMetaClass="org.eclipse.uml2.uml.Model"
+                  name="Model Case"
+                  reuseExtendedElementDefaultPossibility="true"
+                  reuseExtendedElementPossibilities="true">
+               <defaultMappingPossibility
+                     completeRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.model.CompleteModelRule"
+                     enabled="true"
+                     incompleteRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.model.CompleteModelRule"
+                     name="Model Rule">
+               </defaultMappingPossibility>
+            </mappingElement>
+            <mappingElement
+                  domainMetaClass="org.eclipse.uml2.uml.Class"
+                  name="Class Case"
+                  reuseExtendedElementDefaultPossibility="true"
+                  reuseExtendedElementPossibilities="true">
+               <defaultMappingPossibility
+                     completeRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.umlclass.CompleteClassRule"
+                     enabled="true"
+                     incompleteRule="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.umlclass.CompleteClassRule"
+                     name="Class Rule">
+               </defaultMappingPossibility>
+            </mappingElement>
+         </mappingPackage>
+      </mapping>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.activities.FinalizeTransformation"
+            Identifier="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsimple.PostTransformation"
+            Multiple="false"
+            Name="Finalization of Transformation Tranformation UML To componentsample"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Description body text
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.activities.InitializeTranformation"
+            Identifier="org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.InitTranformation1"
+            Multiple="false"
+            Name="Initialization of Tranformation UML To componentsample"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Description body text
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+
+</plugin>

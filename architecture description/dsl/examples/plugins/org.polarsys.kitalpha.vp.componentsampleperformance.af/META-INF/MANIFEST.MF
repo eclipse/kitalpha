@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.polarsys.kitalpha.vp.componentsampleperformance.af
+Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsampleperformance.af;singleton:=true
+Bundle-Version: 0.5.1.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.ui,
+ org.polarsys.kitalpha.vp.componentsampleperformance,
+ org.polarsys.kitalpha.vp.componentsampleperformance.design,
+ org.polarsys.kitalpha.vp.componentsample.af
+

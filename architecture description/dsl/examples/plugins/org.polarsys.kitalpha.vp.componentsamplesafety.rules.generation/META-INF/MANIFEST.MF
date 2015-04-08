@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generation
+Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplesafety.rules.generation;singleton:=true
+Bundle-Version: 0.5.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

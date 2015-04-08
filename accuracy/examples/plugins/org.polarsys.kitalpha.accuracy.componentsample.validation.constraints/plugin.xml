@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="org.polarsys.kitalpha.accuracy.componentsample.constraintProviders"
+         point="org.eclipse.emf.validation.constraintProviders">
+      <constraintProvider
+            class="org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.providers.OCLConstraintsProvider"
+            mode="Batch">
+         <package
+               namespaceUri="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0">
+         </package>
+      </constraintProvider>
+      <constraintProvider
+            class="org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.providers.JavaConstraintsProvider"
+            mode="Batch">
+         <package
+               namespaceUri="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0">
+         </package>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <binding
+            category="Component Sample"
+            context="org.polarsys.kitalpha.accuracy.clientContext">
+      </binding>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.validation.java">
+      <JavaConstraints>
+         <JavaConstraint
+               Class="org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.java.ComponentModelRoot"
+               invariantId="inv_componentModel_Root"
+               requirementId="ComponentModel_Root">
+         </JavaConstraint>
+         <JavaConstraint
+               Class="org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.java.SoftwareComponentCycleDetection"
+               invariantId="inv_softwarecomponent_cycles"
+               requirementId="softwarecomponent_cycles">
+         </JavaConstraint>
+      </JavaConstraints>
+   </extension>
+
+</plugin>

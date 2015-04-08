@@ -1,0 +1,40 @@
+/*******************************************************************************
+ * Copyright (c) 2014 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+ /**
+ *	Viewpoint ComponentSampleSafety
+ *	@author: Benoît Langlois
+ *	@date: 28 août 2014
+ *
+ */
+
+import external "http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"
+
+Data ComponentSampleSafety.data {
+	Class Safety {
+		icon: "Safety.png"
+		extends ComponentSample.AbstractComponent
+		superClass external ComponentSample.ComponentElement
+		Attributes:
+			criticality enum CRITICALITY changeable: true ordered: true unique: true
+			dal enum DAL_LEVEL changeable: true ordered: true unique: true
+			state enum STATE changeable: true ordered: true unique: true
+	}
+	Enumeration STATE {
+		OPERATIVE literal OPERATIVE , LOST literal LOST , ERRONEOUS literal ERRONEOUS
+	}
+	Enumeration DAL_LEVEL {
+		DAL_A literal DAL_A , DAL_B literal DAL_B , DAL_C literal DAL_C , DAL_D literal DAL_D , DAL_E literal DAL_E
+	}
+	Enumeration CRITICALITY {
+		Catastrophic literal Catastrophic , Hazardous literal Hazardous , Major literal Major , Minor literal Minor , No_Safety_Effect literal No_Safety_Effect
+	}
+}

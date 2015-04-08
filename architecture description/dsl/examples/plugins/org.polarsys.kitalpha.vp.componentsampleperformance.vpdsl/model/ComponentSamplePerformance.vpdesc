@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" name="ComponentSamplePerformance" shortName="ComponentSamplePerformance">
+  <VP_Data name="ComponentSamplePerformance.data">
+    <VP_Classes name="Performance" icon="Performance.png">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="status" LocalTarget="//@VP_Data/@VP_Classes.1"/>
+      <VP_Class_Attributes name="complexity">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <VP_Class_Attributes name="cost">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <extends href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+      <Inheritences xsi:type="vpdesc:ExternalSuperClass">
+        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+      </Inheritences>
+    </VP_Classes>
+    <VP_Classes name="PerformanceStatus" icon="PerformanceStatus.png">
+      <VP_Class_Attributes name="overhead">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <Inheritences xsi:type="vpdesc:ExternalSuperClass">
+        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+      </Inheritences>
+    </VP_Classes>
+    <additionalExternalData href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
+  </VP_Data>
+  <VP_Aspects xsi:type="vpconf:Configuration" name="ComponentSamplePerformance.conf">
+    <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
+    <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsampleperformance" nsuri="http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0"/>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="ComponentSamplePerformance.diagram">
+    <diagrams xsi:type="vpdiagram:DiagramExtension" name="ComponentSamplePerformanceDiagram">
+      <the_MappingSet>
+        <diagram_Elements xsi:type="vpdiagram:Container" name="ComponentSamplePerformance">
+          <imports href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
+          <children>
+            <owned_nodes xsi:type="vpdiagram:Node" name="PerformanceNode">
+              <the_domain>
+                <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.0"/>
+                <chlidren_list xsi:type="commondata:ExternalAssociation">
+                  <reference href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement/ownedExtensions"/>
+                </chlidren_list>
+              </the_domain>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="Cost: "/>
+                    <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
+                    <expressionElements xsi:type="expression:StringElement" value="/Complexity: "/>
+                    <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                  </value>
+                </node_Label>
+                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="chocolate"/>
+              </style>
+              <children>
+                <owned_boderednodes name="PerformanceStatusNode">
+                  <the_domain>
+                    <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>
+                    <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
+                  </the_domain>
+                  <style label_position="node">
+                    <node_Label>
+                      <value>
+                        <expressionElements xsi:type="expression:StringElement" value="Overhead: "/>
+                        <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.0"/>
+                      </value>
+                    </node_Label>
+                    <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_chocolate"/>
+                  </style>
+                </owned_boderednodes>
+              </children>
+            </owned_nodes>
+          </children>
+        </diagram_Elements>
+      </the_MappingSet>
+      <the_ActionSet>
+        <actions xsi:type="vpdiagram:Create" name="PerformanceNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Performance"/>
+        <actions xsi:type="vpdiagram:Drop" name="PerformanceNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Drop Performance"/>
+        <actions xsi:type="vpdiagram:Delete" name="PerformanceNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Delete Performance"/>
+        <actions xsi:type="vpdiagram:Create" name="PerformanceStatusNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Status"/>
+        <actions xsi:type="vpdiagram:Delete" name="QPerformanceStatusNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Delete Status"/>
+        <actions xsi:type="vpdiagram:Drop" name="PerformanceStatusNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Drop Status"/>
+      </the_ActionSet>
+      <extented_diagram href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']"/>
+    </diagrams>
+    <additionalExternalGroup href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#/"/>
+  </VP_Aspects>
+  <useViewpoint href="../../org.polarsys.kitalpha.vp.componentsample.vpdsl/model/ComponentSample.vpdesc#/"/>
+</vpdesc:Viewpoint>

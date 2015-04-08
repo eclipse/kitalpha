@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %bundle-name
+Bundle-SymbolicName: org.polarsys.kitalpha.accuracy.componentsample.validation.constraints;singleton:=true
+Bundle-Version: 0.5.1.qualifier
+Bundle-Activator: org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.internal.Activator
+Bundle-Vendor: %bundle-provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.validation;visibility:=reexport,
+ org.eclipse.emf.validation.ocl;visibility:=reexport,
+ org.polarsys.kitalpha.accuracy;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport,
+ org.polarsys.kitalpha.vp.componentsample;visibility:=reexport,
+ org.polarsys.kitalpha.vp.componentsample.model;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.providers

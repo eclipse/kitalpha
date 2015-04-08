@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.polarsys.kitalpha.vp.componentsampleframework.model/src"
+    modelPluginID="org.polarsys.kitalpha.vp.componentsampleframework.model" modelName="ComponentSampleFramework"
+    nonNLSMarkers="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" optimizedHasChildren="true" runtimeVersion="2.8">
+  <foreignModel>../../../plugin/org.polarsys.kitalpha.vp.componentsampleframework/models/ComponentSampleFramework.ecore</foreignModel>
+  <genPackages prefix="ComponentSampleFramework" basePackage="org.polarsys.kitalpha.vp.componentsampleframework"
+      resource="XMI" disposableProviderFactory="true" generateExampleClass="false"
+      multipleEditorPages="false" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleframework/models/ComponentSampleFramework.ecore#/"/>
+</genmodel:GenModel>
