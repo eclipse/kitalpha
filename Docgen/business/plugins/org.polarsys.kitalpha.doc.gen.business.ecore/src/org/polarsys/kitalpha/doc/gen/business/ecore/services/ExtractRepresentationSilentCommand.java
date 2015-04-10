@@ -43,10 +43,11 @@ import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
 
 /**
- * Reworked code from {@link fr.obeo.dsl.viewpoint.ui.tools.internal.wizards.ExtractRepresentationsWizard}
+ * Reworked code from {@link org.eclipse.sirius.ui.tools.internal.wizards.ExtractRepresentationsWizard}
  * @author Boubekeur Zendagui
  */
 
+@SuppressWarnings("restriction")
 public class ExtractRepresentationSilentCommand {
 
 	private final TransactionalEditingDomain domain;
