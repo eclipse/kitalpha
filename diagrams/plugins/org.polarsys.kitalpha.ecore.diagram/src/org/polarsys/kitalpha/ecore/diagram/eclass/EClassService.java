@@ -22,7 +22,9 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -73,12 +75,45 @@ public class EClassService {
 			}
 		}
 		
-		for (EClass clazz : result) 
+		return result; 
+	}
+	
+	/**
+	 * Create {@link EOperation} label to display in the diagram.
+	 * 
+	 * <p>
+	 * <ul>
+	 * <li> If <code>eOperation parameter</code> has no name, empty name is replaced by <i> &lt&lt No name &gt&gt</i> </li>
+	 * <li> If <code>eOperation parameter</code> has a type, <i> : eType name </i> will be added to the name </li>
+	 * </ul>
+	 * </p>
+	 *  
+	 * @param eOperation the {@link EOperation} 
+	 * @return an {@link EOperation} label composed of it name and eType if they exists. 
+	 */
+	public String getEOperationLabel(EOperation eOperation){
+		String result = "";
+		
+		if (eOperation != null )
 		{
-			System.out.println(clazz.getName());
+			final String name = eOperation.getName();
+			if (name != null && name.isEmpty() == false)
+			{
+				result = name;
+			}
+			else
+			{
+				result = "<<No name>>";
+			}
+			
+			final EClassifier eType = eOperation.getEType();
+			if (eType != null)
+			{
+				result += " : " + eType.getName();
+			}
 		}
 		
-		return result; 
+		return result;
 	}
 	
 	public boolean linksPrecondition(EReference reference, Boolean containment, Boolean autoReference){
