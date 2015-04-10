@@ -12,8 +12,8 @@ package org.polarsys.kitalpha.doc.gen.business.ecore.services;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +31,7 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -43,6 +44,7 @@ import org.eclipse.gmf.runtime.common.core.util.ObjectAdapter;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditDomain;
 import org.eclipse.gmf.runtime.diagram.ui.services.layout.LayoutService;
 import org.eclipse.gmf.runtime.diagram.ui.services.layout.LayoutType;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -50,10 +52,11 @@ import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.helper.SiriusResourceHelper;
+import org.eclipse.sirius.business.api.session.ReloadingPolicy;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
-import org.eclipse.sirius.business.api.session.resource.AirdResource;
+import org.eclipse.sirius.common.tools.api.resource.ResourceSetSync.ResourceStatus;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
@@ -116,6 +119,13 @@ public class GenerateDiagramsService {
 
 			// Get a session to generate diagrams
 			final Session localSession = SessionManager.INSTANCE.getSession(airdUri, _monitor);
+			final DocgenEcoreSessionSavePolicy savingPolicy = new DocgenEcoreSessionSavePolicy(localSession);
+			localSession.setSavingPolicy(savingPolicy);
+			localSession.setReloadingPolicy(new ReloadingPolicy() {
+                public List<Action> getActions(Session session, Resource resource, ResourceStatus newStatus) {
+                    return Collections.emptyList();
+                }
+            });
 			
 			editing_domain = localSession.getTransactionalEditingDomain();
 			
@@ -128,27 +138,6 @@ public class GenerateDiagramsService {
 			
 			final CommandStack stack = localSession.getTransactionalEditingDomain().getCommandStack();
 			
-			final URI airdUri2 = airdUri;
-			stack.execute(new RecordingCommand(localSession.getTransactionalEditingDomain()) {
-				@Override
-				protected void doExecute() {
-					List<Resource> toRemove = new ArrayList<Resource>();
-					for (Resource resource : localSession.getTransactionalEditingDomain().getResourceSet().getResources()) 
-					{
-						if (resource instanceof AirdResource && resource.getURI() != airdUri2)
-							toRemove.add(resource);
-					}
-					localSession.getTransactionalEditingDomain().getResourceSet().getResources().removeAll(toRemove);
-					for (Resource resource : toRemove) 
-					{
-						resource.unload();
-						resource = null;
-					}
-					System.gc();
-				}
-			});
-			
-			
 			// generate diagrams
 			AirdGenerationRecordingCommand command = 
 				new AirdGenerationRecordingCommand(localSession.getTransactionalEditingDomain(), localSession, createNewAIRD, semantics, _monitor);
@@ -157,6 +146,7 @@ public class GenerateDiagramsService {
 			
 			// Create an aird fragment and put in it all new generated representation
 			URI fragmentUri = getFragmentUri();
+			savingPolicy.setFragmentURI(fragmentUri);
 			fragmentResource(localSession, fragmentUri , editing_domain, createdRepresentations);
 			
 			// Layout the generated representations 
@@ -170,6 +160,9 @@ public class GenerateDiagramsService {
 				localSession.close(_monitor);
 			}
 			
+			command.dispose();
+			createdRepresentations.clear();
+			stack.flush();
 //			return airdUri;
 			return fragmentUri;
 		} 
@@ -197,19 +190,24 @@ public class GenerateDiagramsService {
 	}
 	
 	private void fragmentResource(Session session, URI fragmentResourceURI, TransactionalEditingDomain domain, Collection<DRepresentation> movableRepresentations){
+		_monitor.beginTask("Creating fragment : " + fragmentResourceURI.toString(), 1);
 		ExtractRepresentationSilentCommand command = new ExtractRepresentationSilentCommand(session, fragmentResourceURI, domain, movableRepresentations);
 		command.execute();
 	}
 	
 	private void layoutNewRepresentations(final Collection<DRepresentation> createdRepresentations){
 		// Layout generated Fragment
+		_monitor.beginTask("Applying layout on representations ", 1);
 		Display.getDefault().syncExec(new Runnable() 
 		{
 			public void run() {
 				for (DRepresentation dRepresentation : createdRepresentations) 
 				{
 					DSemanticDiagram semanticDiagram = (DSemanticDiagram) dRepresentation;
-					layout(semanticDiagram, null);
+					if (semanticDiagram.getOwnedDiagramElements().size() > 1)
+					{
+						layout(semanticDiagram, null);
+					}
 				}
 			}
 		});
@@ -391,6 +389,11 @@ public class GenerateDiagramsService {
 			hints.add(diagramEP);
 			IAdaptable layoutHint = new ObjectAdapter(hints);
 			
+			diagramEP.getRoot().refresh();
+			diagramEP.getFigure().validate();
+			diagramEP.getRoot().refresh();
+			diagramEP.getRoot().getViewer().flush();
+			
 			final Runnable layoutRun = LayoutService.getInstance().layoutLayoutNodes(
 						LayoutService.getInstance().getLayoutNodes(diagramEP, gmfDiag.getChildren()), 
 						false,
@@ -398,6 +401,10 @@ public class GenerateDiagramsService {
 			
 			layoutRun.run();
 			diagramEP.deactivate();
+			diagramEP.getViewer().flush();
+			diagramEP.getViewer().getEditDomain().getCommandStack().flush();
+			diagramEP.getViewer().getControl().dispose();
+			((DiagramEditDomain) diagramEP.getViewer().getEditDomain()).removeViewer(diagramEP.getViewer());
 			editing_domain.getCommandStack().flush();
 		}
 		finally {
@@ -474,6 +481,15 @@ public class GenerateDiagramsService {
 		}
 		
 		@Override
+		public void dispose() {
+			_session = null;
+			_semanticResources.clear();
+			_createdRepresentations.clear();
+			_monitor = null;
+			super.dispose();
+		}
+		
+		@Override
 		protected void doExecute() {
 			for (Resource currentResource : _semanticResources) 
 			{
@@ -497,21 +513,16 @@ public class GenerateDiagramsService {
 					if (root == null)
 						root = resource.getContents().get(0);
 					
-//					for (EObject currentEObject : root.eContents()) 
-					// FIXME: To this in a better way. Loop over root EPackage it EClasses and it 
-					//        SubEPackages rather then eAllContents Iterator. 
-					final TreeIterator<EObject> eAllContents = root.eAllContents();
-					while (eAllContents.hasNext()) 
+					List<EClass> eClasses = getEClasses(root);
+					for (EClass eClass : eClasses) 
 					{
-						EObject currentEObject = eAllContents.next();
-						if (currentEObject instanceof EClass) 
+						String stepIndex = " (" + (eClasses.indexOf(eClass) * 5) + "/" + ( eClasses.size() * 5) + ")";
+						_monitor.beginTask("Diagram generation for : " + (eClass).getName() + stepIndex, 1);
+						Collection<DRepresentation> newRepresentation = init(eClass, viewpoint, _session);
+						if (newRepresentation.size() > 0)
 						{
-							Collection<DRepresentation> newRepresentation = init(currentEObject, viewpoint, _session);
-							if (newRepresentation.size() > 0)
-							{
-								refreshNewDiagram(_session, newRepresentation);
-								_createdRepresentations.addAll(newRepresentation);
-							}
+							refreshNewDiagram(_session, newRepresentation);
+							_createdRepresentations.addAll(newRepresentation);
 						}
 					}
 				}
@@ -523,6 +534,32 @@ public class GenerateDiagramsService {
 				if (newRepresentation.size() > 0)
 					_createdRepresentations.addAll(newRepresentation);
 			}
+		}
+		
+		private List<EClass> getEClasses(EObject root){
+			List<EClass> result = new ArrayList<EClass>();
+			
+			if (root instanceof EPackage)
+			{
+				EList<EClassifier> eClassifiers = ((EPackage) root).getEClassifiers();
+				for (EClassifier eClassifier : eClassifiers) 
+				{
+					if (eClassifier instanceof EClass)
+						result.add((EClass)eClassifier);
+				}
+				
+				EList<EPackage> eSubpackages = ((EPackage) root).getESubpackages();
+				for (EPackage ePackage : eSubpackages) 
+				{
+					List<EClass> eClasses = getEClasses(ePackage);
+					if (eClasses.isEmpty() == false)
+					{
+						result.addAll(eClasses);
+					}
+				}
+			}
+			
+			return result;
 		}
 		
 		/**
@@ -552,7 +589,9 @@ public class GenerateDiagramsService {
 			Collection<DRepresentation> result = new ArrayList<DRepresentation>();
 			for (RepresentationDescription description : viewpoint.getOwnedRepresentations()) 
 			{
-				String name = semanticObject.eGet(semanticObject.eClass().getEStructuralFeature("name")).toString() + " " + description.getName();
+				ENamedElement namedElement = (ENamedElement) semanticObject;
+				String name = namedElement.getName() + " - " + description.getName();
+//				String name = semanticObject.eGet(semanticObject.eClass().getEStructuralFeature("name")).toString() + " " + description.getName();
 				DRepresentation nRepresentation = DialectManager.INSTANCE.createRepresentation(name, semanticObject, description, session, new NullProgressMonitor());
 				if (null != nRepresentation)
 					result.add(nRepresentation);
@@ -565,11 +604,12 @@ public class GenerateDiagramsService {
 			Collection<EObject> newObject = findNewSemanticElements(session);
 			Collection<URI> newObjectFragments = new ArrayList<URI>();
 			Collection<DRepresentation> result = new ArrayList<DRepresentation>();
+			List<EObject> list4TaskStep = new ArrayList<EObject>(newObject);
 			for (Viewpoint viewpoint : getViewpoints(_session)) 
 			{
 				for (RepresentationDescription representationDescription : viewpoint.getOwnedRepresentations()) 
 				{
-					for (EObject object : newObject) 
+					for (EObject object : list4TaskStep) 
 					{
 						newObjectFragments.add(EcoreUtil.getURI(object));
 						if (object instanceof ENamedElement) 
@@ -577,6 +617,8 @@ public class GenerateDiagramsService {
 							String name = ((ENamedElement) object).getName() + " - " + representationDescription.getName();
 							try
 							{
+								String stepIndex = " (" + (list4TaskStep.indexOf(object) * 5) + "/" + ( list4TaskStep.size() * 5) + ")";
+								_monitor.beginTask("Diagram generation for : " + ((ENamedElement) object).getName() + stepIndex, 1);
 								DRepresentation representation = DialectManager.INSTANCE.createRepresentation(name, object, representationDescription, session, new NullProgressMonitor());
 								if (null != representation)
 									result.add(representation);
@@ -588,7 +630,9 @@ public class GenerateDiagramsService {
 					}
 				}
 			}
-
+			list4TaskStep.clear();
+			list4TaskStep = null;
+			
 			Collection<DSemanticDiagram> newSemanticDiagrams = getNewDSemanticDiagrams(session.getSessionResource(), newObjectFragments);
 			for (final DSemanticDiagram diagram : newSemanticDiagrams) 
 //			for (DRepresentation dRepresentation : result) 
@@ -630,7 +674,6 @@ public class GenerateDiagramsService {
 		
 		private Collection<EObject> findNewSemanticElements(Session localSession) {
 			List<EObject> oldList = new UniqueEList<EObject>();
-			List<EObject> newList = new UniqueEList<EObject>();
 			for (DSemanticDiagram diag : getRepresentation(localSession.getSessionResource())) 
 			{
 				EObject target = diag.getTarget();
@@ -641,16 +684,10 @@ public class GenerateDiagramsService {
 			if (root == null)
 				root = resource.getContents().get(0);
 			
-			Iterator<EObject> i = root.eAllContents();
-			while (i.hasNext()) 
-			{
-				EObject next = i.next();
-				if (isSupport(next))
-					newList.add(next);
-			}
-
-			newList.removeAll(oldList);
-			return newList;
+			
+			final List<EClass> eClasses = getEClasses(root);
+			eClasses.removeAll(oldList);
+			return new ArrayList<EObject>(eClasses);
 		}
 		
 		/**
