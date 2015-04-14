@@ -19,7 +19,7 @@
 
    <requires>
       <import feature="org.polarsys.kitalpha.runtime.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.resourcereuse.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.common.source.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.resourcereuse.source.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.resourcereuse.ui.source.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.composer.source.feature" version="0.5.1.qualifier"/>
