@@ -1,4 +1,4 @@
-//Generated on Wed Jun 18 09:37:15 CEST 2014 with EGF 1.1.0.v20140528-0645
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.emde.egf.model;
 
 import java.util.*;
@@ -70,6 +70,10 @@ public class ModelPluginXMLExtensionHook extends org.polarsys.kitalpha.emde.egf.
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "call_extension", out.toString());
+	}
+
+	public boolean preCondition(PatternContext ctx) throws Exception {
+		return EmdePreconditionHelper.hasEmdeFeatures(genModel);
 	}
 
 	public Map<String, Object> getParameters() {

@@ -1,4 +1,4 @@
-//Generated on Wed Jun 18 09:37:16 CEST 2014 with EGF 1.1.0.v20140528-0645
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import java.util.*;
@@ -7,6 +7,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.eclipse.egf.common.helper.*;
+import org.polarsys.kitalpha.emde.egf.utils.EmdePreconditionHelper;
 
 public class EditPluginXMLExtensionHook extends org.polarsys.kitalpha.emde.egf.PluginXMLExtensionHook {
 
@@ -69,6 +70,10 @@ public class EditPluginXMLExtensionHook extends org.polarsys.kitalpha.emde.egf.P
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "call_extension", out.toString());
+	}
+
+	public boolean preCondition(PatternContext ctx) throws Exception {
+		return EmdePreconditionHelper.hasEmdeFeatures(genModel);
 	}
 
 	public Map<String, Object> getParameters() {
