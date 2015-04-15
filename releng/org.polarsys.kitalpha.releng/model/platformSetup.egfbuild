@@ -18,6 +18,8 @@
     <featureNames>org.eclipse.emf.sdk</featureNames>
     <featureNames>org.eclipse.egf.sdk</featureNames>
     <featureNames>org.eclipse.xtext.sdk</featureNames>
+    <featureNames>org.eclipse.xsd.sdk</featureNames>
+    <featureNames>org.eclipse.emf.validation.ocl</featureNames>
     <featureNames>org.eclipse.sirius.doc.feature</featureNames>
     <featureNames>org.eclipse.sirius.runtime.ide.eef</featureNames>
     <featureNames>org.eclipse.sirius.runtime.ide.ui.acceleo</featureNames>
@@ -38,7 +40,6 @@
     <featureNames>org.eclipse.sirius.specifier.ide.ui.acceleo.source</featureNames>
     <featureNames>org.eclipse.sirius.specifier.ide.ui.source</featureNames>
     <featureNames>org.eclipse.sirius.runtime.acceleo.source</featureNames>
-    <featureNames>org.eclipse.emf.validation.ocl</featureNames>
   </steps>
   <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0pKKEeSPapwxSH2ZqQ" name="install diffmerge" id="${TP_name}" profile="${TP_profile}">
     <updateSiteUrls>${diffmerge.repo.url}</updateSiteUrls>
