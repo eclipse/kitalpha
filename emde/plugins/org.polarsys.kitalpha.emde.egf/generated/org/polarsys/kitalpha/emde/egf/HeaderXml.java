@@ -1,4 +1,4 @@
-//Generated on Tue May 13 14:21:29 CEST 2014 with EGF 1.1.0.v20140422-0640
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.emde.egf;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;

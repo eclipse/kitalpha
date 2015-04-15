@@ -1,6 +1,7 @@
-//Generated on Wed Jun 18 09:37:15 CEST 2014 with EGF 1.1.0.v20140528-0645
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.emde.egf.model;
 
+import org.polarsys.kitalpha.emde.egf.utils.EmdePreconditionHelper;
 import org.eclipse.egf.emf.pattern.base.*;
 import org.eclipse.emf.codegen.ecore.genmodel.*;
 import org.eclipse.emf.codegen.ecore.genmodel.impl.*;
@@ -284,5 +285,9 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.model.PluginXML {
 		stringBuffer.append(TEXT_43);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "call_PluginXMLExtensionHook", stringBuffer.toString());
+	}
+
+	public boolean preCondition(PatternContext ctx) throws Exception {
+		return EmdePreconditionHelper.hasEmdeFeatures(parameter);
 	}
 }

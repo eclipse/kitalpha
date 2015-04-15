@@ -6,7 +6,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.eclipse.egf.common.helper.*;
-
+import org.polarsys.kitalpha.emde.egf.utils.EmdePreconditionHelper;
 
 
 public class CLASS {

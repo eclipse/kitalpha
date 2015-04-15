@@ -1,4 +1,4 @@
-//Generated on Wed Jun 18 09:37:17 CEST 2014 with EGF 1.1.0.v20140528-0645
+//Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.emde.egf.editor.call.Editor;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -239,5 +239,9 @@ public class EditoraddItemProviderFactoriesinsert extends org.eclipse.egf.emf.pa
 		stringBuffer.append(TEXT_4);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
+	}
+
+	public boolean preCondition(PatternContext ctx) throws Exception {
+		return EmdePreconditionHelper.hasEmdeFeatures(genModel);
 	}
 }

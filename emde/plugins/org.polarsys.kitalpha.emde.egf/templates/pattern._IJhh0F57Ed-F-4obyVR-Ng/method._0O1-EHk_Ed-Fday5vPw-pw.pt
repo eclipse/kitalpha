@@ -1,0 +1,1 @@
+return EmdePreconditionHelper.hasEmdeFeatures(parameter.getEcorePackage());
