@@ -10,8 +10,10 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.emde.extension;
 
+import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -30,6 +32,10 @@ public interface ModelExtensionManager {
 	boolean isExtensionModelDisabled(EObject eObject);
 
 	void setExtensionModelDisabled(ExtensibleModel extensibleModel, ExtendedModel extendedModel, boolean disabled);
+
+	ExtensibleModel getExtensibleModel(String extensibleModel);
+
+	Collection<AdapterFactory> getExtendedModelAdapterFactories(String clazz);
 
 	List<ExtensionManagerDelegate> getDelegates();
 }

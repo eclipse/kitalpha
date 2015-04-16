@@ -44,8 +44,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	 * @param id
 	 *            my ID (must not be <code>null</code>)
 	 * @param parent
-	 *            my parent category, or <code>null</code> if none (which should
-	 *            only be the case for the {@link #GLOBAL_NAMESPACE}
+	 *            my parent category, or <code>null</code> if none (which should only be the case for the {@link #GLOBAL_NAMESPACE}
 	 */
 	public ExtensibleModel(String name, URIFactory uriFactory) {
 		super(name, uriFactory);
@@ -53,8 +52,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	}
 
 	/**
-	 * Obtains my path, which is my fully-qualified slash-separated ID that is
-	 * unique within the global namespace.
+	 * Obtains my path, which is my fully-qualified slash-separated ID that is unique within the global namespace.
 	 * 
 	 * @return my unique path
 	 */
@@ -69,8 +67,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	}
 
 	/**
-	 * Obtains my qualified name, which includes my ancestors' names separated
-	 * by slashes.
+	 * Obtains my qualified name, which includes my ancestors' names separated by slashes.
 	 * 
 	 * @return my qualified name
 	 */
@@ -82,9 +79,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	/**
 	 * Obtains all my extended models.
 	 * 
-	 * @return an unmodifiable set of the {@link ExtendedModel}s that are my
-	 *         extended models, sorted by {@link #getName name}. May be an empty
-	 *         set
+	 * @return an unmodifiable set of the {@link ExtendedModel}s that are my extended models, sorted by {@link #getName name}. May be an empty set
 	 */
 	public SortedSet<ExtendedModel> getAllExtendedModels() {
 		TreeSet<ExtendedModel> extended = new TreeSet<ExtendedModel>(extendedModels.values());
@@ -99,8 +94,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	/**
 	 * Obtains my extended models.
 	 * 
-	 * @return an unmodifiable set of the {@link ExtendedModel}s that are my
-	 *         children, sorted by {@link #getName name}. May be an empty set
+	 * @return an unmodifiable set of the {@link ExtendedModel}s that are my children, sorted by {@link #getName name}. May be an empty set
 	 */
 	public SortedSet<ExtendedModel> getExtendedModels() {
 		return Collections.unmodifiableSortedSet(new TreeSet<ExtendedModel>(extendedModels.values()));
@@ -109,8 +103,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	/**
 	 * Obtains my inherited extensible models.
 	 * 
-	 * @return an unmodifiable list of the {@link ExtensibleModel}s that are
-	 *         inherited sorted by {@link #getName name}. May be an empty set
+	 * @return an unmodifiable list of the {@link ExtensibleModel}s that are inherited sorted by {@link #getName name}. May be an empty set
 	 */
 	public SortedSet<ExtensibleModel> getInheritedExtensibleModels() {
 		if (inheritedExtensibleModels == null) {
@@ -131,8 +124,9 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 					}
 				}
 				// Process Inherited namespaces
+				ModelExtensionManager instance = ModelExtensionHelper.getInstance();
 				for (String inheritedNamespace : inheritedNamespaces) {
-					ExtensibleModel inheritedExtensibleModel = ModelExtensionDescriptor.INSTANCE.getExtensibleModel(inheritedNamespace);
+					ExtensibleModel inheritedExtensibleModel = instance.getExtensibleModel(inheritedNamespace);
 					if (inheritedExtensibleModel != null && inheritedExtensibleModels.contains(inheritedExtensibleModel) == false) {
 						inheritedExtensibleModels.add(inheritedExtensibleModel);
 					}
@@ -145,8 +139,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	/**
 	 * Obtains my inherited extended models.
 	 * 
-	 * @return an unmodifiable set of the {@link ExtendedModel}s that are
-	 *         inherited sorted by {@link #getName name}. May be an empty set
+	 * @return an unmodifiable set of the {@link ExtendedModel}s that are inherited sorted by {@link #getName name}. May be an empty set
 	 */
 	public SortedSet<ExtendedModel> getInheritedExtendedModels() {
 		if (inheritedExtendedModels == null) {
@@ -163,8 +156,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	}
 
 	/**
-	 * Obtains the extended model of mine that has the specified
-	 * <code>extended name</code>.
+	 * Obtains the extended model of mine that has the specified <code>extended name</code>.
 	 * 
 	 * @param extendedModelName_p
 	 *            the name to find
@@ -178,8 +170,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	}
 
 	/**
-	 * Obtains the inherited extended model of mine that has the specified
-	 * <code>inherited extended name</code>.
+	 * Obtains the inherited extended model of mine that has the specified <code>inherited extended name</code>.
 	 * 
 	 * @param inheritedExtendedModelName_p
 	 *            the name to find
@@ -197,8 +188,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	}
 
 	/**
-	 * Adds the specified <code>child</code> model to me. Note that this must
-	 * only be called from the constructor of <code>child</code>.
+	 * Adds the specified <code>child</code> model to me. Note that this must only be called from the constructor of <code>child</code>.
 	 * 
 	 * @param child
 	 *            my new child model

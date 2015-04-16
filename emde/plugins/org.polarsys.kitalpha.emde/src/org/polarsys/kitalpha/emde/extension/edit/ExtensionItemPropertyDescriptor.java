@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionManager;
 
 public class ExtensionItemPropertyDescriptor extends ItemPropertyDescriptor {
 
@@ -87,14 +88,13 @@ public class ExtensionItemPropertyDescriptor extends ItemPropertyDescriptor {
 		Object result = getValue(eObject, feature);
 		if (result != null && feature instanceof EReference && isMany(feature)) {
 			if (result instanceof List<?>) {
-				// ModelExtensionManager instance =
-				// ModelExtensionHelper.getInstance(eObject);
+				ModelExtensionManager instance = ModelExtensionHelper.getInstance();
 				List<EObject> eObjects = new BasicEList<EObject>();
 				for (Iterator<?> i = ((List<?>) result).iterator(); i.hasNext();) {
 					Object object = i.next();
 					if (object instanceof EObject) {
 						EObject value = (EObject) object;
-						if (!ModelExtensionHelper.getInstance(value).isExtensionModelDisabled(value)) {
+						if (!instance.isExtensionModelDisabled(value)) {
 							eObjects.add(value);
 						}
 					}
@@ -111,7 +111,7 @@ public class ExtensionItemPropertyDescriptor extends ItemPropertyDescriptor {
 	 */
 	@Override
 	public boolean canSetProperty(Object object) {
-		if (object instanceof EObject && !ModelExtensionHelper.getInstance((EObject) object).isExtensionModelDisabled((EObject) object)) {
+		if (object instanceof EObject && !ModelExtensionHelper.getInstance().isExtensionModelDisabled((EObject) object)) {
 			return super.canSetProperty(object);
 		}
 		return false;
@@ -213,7 +213,7 @@ public class ExtensionItemPropertyDescriptor extends ItemPropertyDescriptor {
 	static private void collectReachableObjectsOfType(Collection<EObject> visited, LinkedList<EObject> itemQueue, Collection<EObject> result, EObject object, EClassifier type, String extensibleModelURI) {
 		if (visited.add(object)) {
 			if (type.isInstance(object)) {
-				if (!ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(object)) {
+				if (!ModelExtensionHelper.getInstance().isExtensionModelDisabled(object)) {
 					result.add(object);
 				}
 			}

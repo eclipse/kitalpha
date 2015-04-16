@@ -11,16 +11,11 @@
 package org.polarsys.kitalpha.emde.extension;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.emde.extension.i18n.Messages;
 import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtensionManager;
 import org.polarsys.kitalpha.emde.extension.utils.Log;
@@ -31,26 +26,9 @@ import org.polarsys.kitalpha.emde.extension.utils.Log;
  */
 public class ModelExtensionHelper {
 
-	private static final Map<EObject, ModelExtensionManager> instances = new HashMap<EObject, ModelExtensionManager>();
-	private static final EObject OBJ = new EObjectImpl() {
-	};
+	private static final ModelExtensionManager instance = createInstance();
 
 	public static ModelExtensionManager getInstance() {
-		throw new UnsupportedOperationException();
-	}
-
-	public static ModelExtensionManager getInstanceSpecial() {
-		return getInstance(OBJ);
-	}
-
-	public static ModelExtensionManager getInstance(EObject ctx1) {
-		EObject ctx = EcoreUtil.getRootContainer(ctx1);
-		ModelExtensionManager instance = instances.get(ctx);
-		if (instance == null) {
-			instances.put(ctx, instance = createInstance());
-			if (!ctx.equals(OBJ))
-				((DefaultModelExtensionManager) instance).setTarget(ctx);
-		}
 		return instance;
 	}
 
