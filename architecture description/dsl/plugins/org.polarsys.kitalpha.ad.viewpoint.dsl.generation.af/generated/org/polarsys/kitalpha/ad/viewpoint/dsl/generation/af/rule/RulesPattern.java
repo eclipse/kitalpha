@@ -8,6 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
+
 //Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.rule;
 
@@ -95,7 +96,7 @@ public class RulesPattern {
 				final String projectName = ctx.getValue(
 						AfConstants.CONTRACT_PROJECT_NAME).toString();
 				final String packageName = JDTUtility
-						.getValidPackageName(projectName + ".af.businessrules.");
+						.getValidPackageName(projectName + ".businessrules.");
 				final String className = JDTUtility.getValidClassName(parameter
 						.getName());
 				final String implementation = packageName + className;

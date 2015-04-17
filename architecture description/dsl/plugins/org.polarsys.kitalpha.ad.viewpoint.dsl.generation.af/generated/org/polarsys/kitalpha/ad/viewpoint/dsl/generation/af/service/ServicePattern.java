@@ -8,6 +8,7 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
+
 //Generated with EGF 1.2.0.v20140805-0858
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.service;
 

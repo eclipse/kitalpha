@@ -11,7 +11,7 @@ if (clazz != null && clazz.trim().length() != 0){
 	if (rule.getType().equals(VpservicesPackage.eINSTANCE.getRules_Types().getEEnumLiteral(0).toString())) 
 	{
 		final String projectName = ctx.getValue(AfConstants.CONTRACT_PROJECT_NAME).toString();
-		final String packageName = JDTUtility.getValidPackageName(projectName+".af.businessrules.");
+		final String packageName = JDTUtility.getValidPackageName(projectName+".businessrules.");
 		final String className = JDTUtility.getValidClassName(parameter.getName());
 		final String implementation = packageName + className;
 		rule.setImplementation(implementation);
