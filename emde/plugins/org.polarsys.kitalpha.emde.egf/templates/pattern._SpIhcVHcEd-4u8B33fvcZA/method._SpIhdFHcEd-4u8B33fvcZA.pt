@@ -198,6 +198,41 @@ public class <%=genPackage.getResourceClassName()%> extends <%=genPackage.getImp
 		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_EXTENDED_META_DATA, Boolean.TRUE);		
 	}
+	// override to integrate the bug fix
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=412753. The bug has been
+	// resolved in EMF 2.9.1 and 2.10
+	<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+	<%}%>
+	protected void detachedHelper(<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject) {
+		if (useIDs() && unloadingContents == null) {
+			if (useUUIDs()) {
+				DETACHED_EOBJECT_TO_ID_MAP.put(eObject, getID(eObject));
+			}
+
+			if (idToEObjectMap != null && eObjectToIDMap != null) {
+				setID(eObject, null);
+			}
+		}
+		resourceImplDetachedHelper(eObject);
+	}
+	
+	// Duplicated from
+	// org.eclipse.emf.ecore.resource.impl.ResourceImpl.detachedHelper(EObject)
+	private void resourceImplDetachedHelper(<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject) {
+		Map<String, EObject> map = getIntrinsicIDToEObjectMap();
+		if (map != null) {
+			String id = <%=genModel.getImportedName("org.eclipse.emf.ecore.util.EcoreUtil")%>.getID(eObject);
+			if (id != null) {
+				map.remove(id);
+			}
+		}
+
+		if (isTrackingModification()) {
+			eObject.eAdapters().remove(modificationTrackingAdapter);
+		}
+	}
+	
 	
 <%}%>
 <%if (genPackage.isDataTypeConverters() && (genPackage.hasDocumentRoot() || org.eclipse.emf.ecore.xml.type.XMLTypePackage.eNS_URI.equals(genPackage.getNSURI()))) { boolean isXMLTypePackage = org.eclipse.emf.ecore.xml.type.XMLTypePackage.eNS_URI.equals(genPackage.getNSURI());%>

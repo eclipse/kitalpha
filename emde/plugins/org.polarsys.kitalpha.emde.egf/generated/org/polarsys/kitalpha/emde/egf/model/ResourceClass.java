@@ -1,7 +1,6 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.2.0.v20150211-1405
 package org.polarsys.kitalpha.emde.egf.model;
 
-import org.polarsys.kitalpha.emde.egf.utils.EmdePreconditionHelper;
 import org.polarsys.kitalpha.emde.egf.helper.*;
 import org.eclipse.egf.emf.pattern.base.*;
 import org.eclipse.emf.codegen.ecore.genmodel.*;
@@ -115,12 +114,12 @@ public class ResourceClass extends org.eclipse.egf.emf.pattern.model.ResourceCla
 	protected final String TEXT_85 = ".OPTION_USE_XML_NAME_TO_FEATURE_MAP, nameToFeatureMap);" + NL + "\t\tgetDefaultLoadOptions().put(";
 	protected final String TEXT_86 = ".OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);" + NL + "\t\tgetDefaultLoadOptions().put(";
 	protected final String TEXT_87 = ".OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);" + NL + "\t\tgetDefaultLoadOptions().put(";
-	protected final String TEXT_88 = ".OPTION_EXTENDED_META_DATA, Boolean.TRUE);\t\t" + NL + "\t}" + NL + "\t" + NL + "\t" + NL + "\t// override to integrate the bug fix" + NL + "\t// https://bugs.eclipse.org/bugs/show_bug.cgi?id=412753. The bug has been" + NL + "\t// resolved in EMF 2.9.1 and 2.10" + NL + "\t";
+	protected final String TEXT_88 = ".OPTION_EXTENDED_META_DATA, Boolean.TRUE);\t\t" + NL + "\t}" + NL + "\t// override to integrate the bug fix" + NL + "\t// https://bugs.eclipse.org/bugs/show_bug.cgi?id=412753. The bug has been" + NL + "\t// resolved in EMF 2.9.1 and 2.10" + NL + "\t";
 	protected final String TEXT_89 = NL + "\t@Override" + NL + "\t";
 	protected final String TEXT_90 = NL + "\tprotected void detachedHelper(";
 	protected final String TEXT_91 = " eObject) {" + NL + "\t\tif (useIDs() && unloadingContents == null) {" + NL + "\t\t\tif (useUUIDs()) {" + NL + "\t\t\t\tDETACHED_EOBJECT_TO_ID_MAP.put(eObject, getID(eObject));" + NL + "\t\t\t}" + NL + "" + NL + "\t\t\tif (idToEObjectMap != null && eObjectToIDMap != null) {" + NL + "\t\t\t\tsetID(eObject, null);" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\tresourceImplDetachedHelper(eObject);" + NL + "\t}" + NL + "\t" + NL + "\t// Duplicated from" + NL + "\t// org.eclipse.emf.ecore.resource.impl.ResourceImpl.detachedHelper(EObject)" + NL + "\tprivate void resourceImplDetachedHelper(";
 	protected final String TEXT_92 = " eObject) {" + NL + "\t\tMap<String, EObject> map = getIntrinsicIDToEObjectMap();" + NL + "\t\tif (map != null) {" + NL + "\t\t\tString id = ";
-	protected final String TEXT_93 = ".getID(eObject);" + NL + "\t\t\tif (id != null) {" + NL + "\t\t\t\tmap.remove(id);" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "" + NL + "\t\tif (isTrackingModification()) {" + NL + "\t\t\teObject.eAdapters().remove(modificationTrackingAdapter);" + NL + "\t\t}" + NL + "\t}" + NL + "\t" + NL;
+	protected final String TEXT_93 = ".getID(eObject);" + NL + "\t\t\tif (id != null) {" + NL + "\t\t\t\tmap.remove(id);" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "" + NL + "\t\tif (isTrackingModification()) {" + NL + "\t\t\teObject.eAdapters().remove(modificationTrackingAdapter);" + NL + "\t\t}" + NL + "\t}" + NL + "\t" + NL + "\t";
 	protected final String TEXT_94 = NL + "\t/**" + NL + "\t * A load option that turns of the use of the generate data converters." + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tpublic static final String OPTION_USE_DATA_CONVERTER = \"USE_DATA_CONVERTER\"; ";
 	protected final String TEXT_95 = NL + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
 	protected final String TEXT_96 = NL + "\t@Override";
@@ -1018,9 +1017,5 @@ public class ResourceClass extends org.eclipse.egf.emf.pattern.model.ResourceCla
 		genModel.emitSortedImports();
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return EmdePreconditionHelper.hasEmdeFeatures(parameter.getEcorePackage());
 	}
 }
