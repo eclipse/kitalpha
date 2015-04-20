@@ -27,7 +27,6 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.emde.extension.DefaultModelExtensionManager;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
-import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
 import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtensionManager;
 
 /**
@@ -84,7 +83,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 			public void hasBeenDeactivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 				extension2state.clear();
 				managedByAF2state.clear();
-				ModelExtensionDescriptor.INSTANCE.loadExtensibleModels();
+				loadExtensibleModels();
 			}
 
 		});
@@ -106,7 +105,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 					if (vp.getMetamodel() != null) {
 						for (EPackage pack : vp.getMetamodel().getModels()) {
-							// if the model is owned by a VP we must tell yes or no.
+							// if the model is owned by a VP we must tell yes or
+							// no.
 							// In other case let the super implementation answer
 							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
 								managedByAF2state.put(nsURI, Boolean.TRUE);
@@ -130,7 +130,9 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	}
 
 	/*
-	 * TODO we're loading all VP models at any calls ... What is the cost ? Tested on model with 14 000 logical components, we need to cache result of computations
+	 * TODO we're loading all VP models at any calls ... What is the cost ?
+	 * Tested on model with 14 000 logical components, we need to cache result
+	 * of computations
 	 */
 	public boolean isExtensionModelDisabled(ExtendedModel extended) {
 
@@ -146,7 +148,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 					if (vp.getMetamodel() != null) {
 						for (EPackage pack : vp.getMetamodel().getModels()) {
-							// if the model is owned by a VP we must tell yes or no.
+							// if the model is owned by a VP we must tell yes or
+							// no.
 							// In other case let the super implementation answer
 							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
 								boolean vpActive = ViewpointManager.INSTANCE.isActive(res.getId());
