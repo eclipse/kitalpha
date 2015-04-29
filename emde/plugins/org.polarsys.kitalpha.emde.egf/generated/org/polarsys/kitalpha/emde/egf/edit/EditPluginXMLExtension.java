@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.2.0.v20150211-1405
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import java.util.*;
@@ -7,7 +7,6 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.eclipse.egf.common.helper.*;
-import org.polarsys.kitalpha.emde.egf.utils.EmdePreconditionHelper;
 
 public class EditPluginXMLExtension {
 
@@ -67,7 +66,7 @@ public class EditPluginXMLExtension {
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return EmdePreconditionHelper.hasEmdeFeatures(genModel);
+		return true;
 	}
 
 	protected org.w3c.dom.Element root;

@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.2.0.v20150211-1405
 package org.polarsys.kitalpha.emde.egf.editor;
 
 import java.util.*;
@@ -64,7 +64,7 @@ public class ManifestMF {
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return EmdePreconditionHelper.hasEmdeFeatures(genModel);
+		return true;
 	}
 
 	protected org.eclipse.emf.codegen.ecore.genmodel.GenModel genModel;

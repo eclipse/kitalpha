@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.2.0.v20150211-1405
 package org.polarsys.kitalpha.emde.egf.editor;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -480,9 +480,5 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.editor.PluginXML {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setReporterVariables", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return EmdePreconditionHelper.hasEmdeFeatures(parameter);
 	}
 }

@@ -1,8 +1,7 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.2.0.v20150211-1405
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
-import org.polarsys.kitalpha.emde.egf.utils.EmdePreconditionHelper;
 import org.eclipse.egf.emf.pattern.base.*;
 import org.eclipse.emf.codegen.ecore.genmodel.*;
 import org.eclipse.emf.codegen.ecore.genmodel.impl.*;
@@ -658,9 +657,5 @@ public class ItemProviderAdapterFactory extends org.eclipse.egf.emf.pattern.edit
 		genModel.emitSortedImports();
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return EmdePreconditionHelper.hasEmdeFeatures(parameter.getEcorePackage());
 	}
 }
