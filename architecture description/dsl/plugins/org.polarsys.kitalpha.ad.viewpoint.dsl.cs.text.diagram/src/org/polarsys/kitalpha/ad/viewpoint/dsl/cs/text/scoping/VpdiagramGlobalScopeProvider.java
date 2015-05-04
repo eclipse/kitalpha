@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -84,20 +85,24 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		return MultimapBasedScope.createScope(result, exportedObjects, ignoreCase);	
 	}
 	
-	private static Iterable<IEObjectDescription> externalObjectDescriptions = null;
+	private static Map<EClass,Iterable<IEObjectDescription>> computedPlatformEObjectDescriptions = new HashMap<EClass, Iterable<IEObjectDescription>>();
 	
 	private Iterable<IEObjectDescription> getTaIEObjectDescription(Resource eResource,Iterable<IEObjectDescription> exportedObjects, EClass type){
 		ResourceSet resourceSet = eResource.getResourceSet();
-		if (externalObjectDescriptions == null)
+		if (computedPlatformEObjectDescriptions.containsKey(type))
 		{
-			externalObjectDescriptions = getExternalObjectDescriptions(resourceSet, exportedObjects);
+			return computedPlatformEObjectDescriptions.get(type);
+		}
+		else
+		{ 
+			Iterable<IEObjectDescription> externalObjectDescriptions = getExternalObjectDescriptions(resourceSet, exportedObjects);
 			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiDiagramDescriptions(eResource, type));
 			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiEdgeMappings(eResource, type));
 			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiNodeMappings(eResource, type));
 			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiContainerMappings(eResource, type));
+			computedPlatformEObjectDescriptions.put(type, externalObjectDescriptions);
+			return externalObjectDescriptions;
 		}
-		
-		return externalObjectDescriptions;
 	}
 	
 
