@@ -35,6 +35,8 @@ import org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPossib
 import org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.ContributedPurpose;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.ContributionFactory;
 
+import com.google.common.base.Strings;
+
 /**
  * This class provides services to load contributed rules mappings.
  * 
@@ -206,7 +208,11 @@ public final class RuleMappingExtensionService implements IRuleMappingExtensionC
     Mapping currentMapping = CommonFactory.eINSTANCE.createMapping();
     currentMapping.setName(mappingConfigurationElement_p.getAttribute(MAPPING_NAME));
     currentMapping.setDescription(mappingConfigurationElement_p.getAttribute(MAPPING_DESCRIPTION));
-    currentMapping.setPrivate(Boolean.getBoolean(mappingConfigurationElement_p.getAttribute(MAPPING_PRIVATE)));
+    
+    final String isPrivateStr = mappingConfigurationElement_p.getAttribute(MAPPING_PRIVATE);
+    final boolean isPrivate = Strings.isNullOrEmpty(isPrivateStr) ? false : Boolean.parseBoolean(isPrivateStr) ;
+    
+    currentMapping.setPrivate(isPrivate);
 
     if (mappingConfigurationElement_p.getAttribute(MAPPING_DOMAIN_HELPER) != null) {
 
