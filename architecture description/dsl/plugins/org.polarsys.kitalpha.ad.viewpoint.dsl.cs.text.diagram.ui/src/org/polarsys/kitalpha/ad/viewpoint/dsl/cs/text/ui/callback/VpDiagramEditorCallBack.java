@@ -10,13 +10,9 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback;
 
-import java.util.Collection;
-import java.util.HashSet;
-
 import org.eclipse.jface.text.contentassist.ContentAssistEvent;
 import org.eclipse.jface.text.contentassist.ICompletionListener;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Event;
@@ -28,7 +24,6 @@ import org.eclipse.xtext.ui.editor.XtextSourceViewer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.template.TemplateInterceptor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.template.VpdiagramTemplateProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.TemplateWizardAction;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.diagram.template.observer.IObserver;
 
 
 /**

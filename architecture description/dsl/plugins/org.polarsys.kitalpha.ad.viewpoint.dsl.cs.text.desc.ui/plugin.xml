@@ -414,6 +414,11 @@ Contributors:
                location="TOP_RIGHT"
                objectClass="org.eclipse.core.resources.IResource"
                state="true">
+            <enablement>
+               <objectClass
+                     name="org.eclipse.core.resources.IFile">
+               </objectClass>
+            </enablement>
          </decorator>
          <decorator
                adaptable="true"
@@ -424,6 +429,11 @@ Contributors:
                location="REPLACE"
                objectClass="org.eclipse.core.resources.IResource"
                state="true">
+            <enablement>
+               <objectClass
+                     name="org.eclipse.core.resources.IFile">
+               </objectClass>
+            </enablement>
          </decorator>
       </extension>
     

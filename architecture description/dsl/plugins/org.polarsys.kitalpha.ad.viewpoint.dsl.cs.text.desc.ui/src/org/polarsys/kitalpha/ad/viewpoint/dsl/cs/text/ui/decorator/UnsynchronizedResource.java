@@ -12,13 +12,14 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.jface.viewers.ILightweightLabelDecorator;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.ui.IDecoratorManager;
 import org.eclipse.ui.PlatformUI;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.VpdslModelResourcesManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.VpdslModelResourcesPropertysConstants;
 
 public class UnsynchronizedResource extends LabelProvider implements ILightweightLabelDecorator {
 	
@@ -47,17 +48,25 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 		
 		IResource resource = getResource(element);
 		
-		if (resource == null || !(resource.getType() == IResource.FILE)) return;
+		if (resource == null || !(resource.getType() == IResource.FILE) || !(resource.getFullPath().getFileExtension().endsWith("vptext"))) return;
 		
-		String value = VpdslModelResourcesManager.getPersistentPropertyValue(resource);
-		VpdslModelResourcesManager.reInitPersistentPropertyValue(resource, "");
-		
-		if (value != null && !value.isEmpty())
-			decoration.addPrefix(" [ " + value + " ] ");
-		else
-			decoration.addPrefix("");
-		
-		VpdslModelResourcesManager.removeResource(resource);
+		try {
+			String value = resource.getPersistentProperty(VpdslModelResourcesPropertysConstants.syncQualifiedName);
+			
+			if (value != null && value.equals("false"))
+			{
+				decoration.addPrefix("[ Unsyncronized ] ");
+			}
+			else
+			{
+				decoration.addPrefix("");
+			}
+			
+			//refresh();
+			
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -74,4 +83,6 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 		}
 		return null;
 	}
+	
+	
 }

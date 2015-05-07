@@ -22,7 +22,11 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -37,6 +41,7 @@ import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.VerifyListener;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IDecoratorManager;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
@@ -196,21 +201,13 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 
 						synchronizing = doSynchronize(file);
 
-						/**
-						 * FIXME: Show label only on the vpdesc resournce (see the associated decorator)
-						 */
-//						IResource standaloneIResource = ResourceHelper.getStandaloneIResource(projectName);
-//						if (standaloneIResource != null){
-
-//							VpdslModelResourcesManager.addResource(file);
-
-
-//							if (synchronizing){
-//								VpdslModelResourcesManager.addPersistentProperty(file, "");
-//							} else {
-//								VpdslModelResourcesManager.addPersistentProperty(file, "Unsynchronized");
-//							}
-//						}
+						//update decorators prefix
+						Display.getDefault().asyncExec(new Runnable() {
+							public void run() {
+								IDecoratorManager decoratorManager = PlatformUI.getWorkbench().getDecoratorManager();
+								decoratorManager.update("org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui.vpdesc.decorator"); 
+							}
+						});
 					}	
 				}
 			};
@@ -418,9 +415,25 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		if (diagnostics != null && !diagnostics.isEmpty()){
 			String wsResourceName = resource.getURI().lastSegment();
 			assembleMessages(diagnostics, wsResourceName);
+			
+			setPersistentProperty(resource, "false");
+			
 			return false;
 		}
+		
+		setPersistentProperty(resource, "true");
 		return true;
+	}
+	
+	private void setPersistentProperty(Resource resource, String value)
+	{
+		URI uri = resource.getURI();
+		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
+		try {
+			file.setPersistentProperty(VpdslModelResourcesPropertysConstants.syncQualifiedName, value);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void assembleMessages(EList<org.eclipse.emf.ecore.resource.Resource.Diagnostic> errors, String resourceName) {
