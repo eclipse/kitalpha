@@ -14,6 +14,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectNature;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -24,6 +25,7 @@ import org.eclipse.xtext.builder.IXtextBuilderParticipant;
 import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescription.Delta;
 import org.eclipse.xtext.resource.impl.DefaultResourceDescriptionDelta;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.NatureID;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.PluginUtil;
 
@@ -35,19 +37,24 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.PluginUtil;
  */
 public class ModelReuseUpdater implements IXtextBuilderParticipant {
 	
+	
 	public ModelReuseUpdater() {}
 
 	/**
 	 * remove model reuse extension of deleted resources
 	 */
 	public void build(IBuildContext context, IProgressMonitor monitor) throws CoreException {
-		List<Delta> deltas = context.getDeltas();
-		final IProject builtProject = context.getBuiltProject();
-		final int numberOfDeltas = deltas.size();
-		for (int i = 0 ; i < numberOfDeltas ; i++) {
-			DefaultResourceDescriptionDelta dd = (DefaultResourceDescriptionDelta) deltas.get(i);
-			if (dd.getOld()!=null && dd.getNew()==null && ResourceHelper.hasPeriodicFileExtension(dd.getUri())) {
-				handleDeletion(builtProject, dd);
+		final IProject builtProject =  context.getBuiltProject();
+		
+		if (builtProject.hasNature(NatureID.VPDSL_PROJECT_NATURE))
+		{
+			List<Delta> deltas = context.getDeltas();
+			final int numberOfDeltas = deltas.size();
+			for (int i = 0 ; i < numberOfDeltas ; i++) {
+				DefaultResourceDescriptionDelta dd = (DefaultResourceDescriptionDelta) deltas.get(i);
+				if (dd.getOld()!=null && dd.getNew()==null && ResourceHelper.hasPeriodicFileExtension(dd.getUri())) {
+					handleDeletion(builtProject, dd);
+				}
 			}
 		}
 	}
