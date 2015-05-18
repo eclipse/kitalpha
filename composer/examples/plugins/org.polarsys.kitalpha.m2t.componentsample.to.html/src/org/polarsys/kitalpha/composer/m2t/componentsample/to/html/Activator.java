@@ -8,7 +8,7 @@
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-package org.polarsys.kitalpha.m2t.componentsample.to.html;
+package org.polarsys.kitalpha.composer.m2t.componentsample.to.html;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;

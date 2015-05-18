@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.polarsys.kitalpha.m2t.componentsample.to.html;singleton:=true
+Bundle-SymbolicName: org.polarsys.kitalpha.composer.m2t.componentsample.to.html;singleton:=true
 Bundle-Version: 0.5.1.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName

@@ -31,7 +31,7 @@ import org.polarsys.kitalpha.cadence.core.api.IActivity;
 import org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters;
 import org.polarsys.kitalpha.cadence.core.api.parameter.DeclaredParameter;
 import org.polarsys.kitalpha.cadence.core.api.parameter.ParameterError;
-import org.polarsys.kitalpha.m2t.componentsample.to.html.Activator;
+import org.polarsys.kitalpha.composer.m2t.componentsample.to.html.Activator;
 
 /**
  * 
