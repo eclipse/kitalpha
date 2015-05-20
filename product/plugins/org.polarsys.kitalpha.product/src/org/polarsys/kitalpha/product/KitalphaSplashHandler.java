@@ -69,7 +69,7 @@ public class KitalphaSplashHandler extends BasicSplashHandler {
 		builder.append("Version : ");
 		builder.append(version2.getMajor()).append('.');
 		builder.append(version2.getMinor()).append('.');
-		builder.append(version2.getMicro()).append(" RC2");
+		builder.append(version2.getMicro());
 		builder.append("\n");
 		builder.append("Build id : ");
 		builder.append(version2.getQualifier());
