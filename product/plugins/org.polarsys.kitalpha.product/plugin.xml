@@ -45,7 +45,7 @@
          </property>
          <property
                name="aboutText"
-               value="Kitalpha platform provided by Thales Corporate Services S.A.S">
+               value="%productBlurb">
          </property>
          <property
                name="aboutImage"
