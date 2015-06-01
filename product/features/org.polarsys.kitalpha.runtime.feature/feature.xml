@@ -46,6 +46,7 @@
       <import feature="org.polarsys.kitalpha.doc.gen.business.core.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.patterns.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.product.feature" version="0.5.1.qualifier"/>
    </requires>
 
 </feature>
