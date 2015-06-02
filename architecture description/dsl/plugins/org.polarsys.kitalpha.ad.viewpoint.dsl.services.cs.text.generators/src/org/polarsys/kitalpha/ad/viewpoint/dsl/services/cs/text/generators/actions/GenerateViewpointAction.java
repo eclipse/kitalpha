@@ -14,14 +14,21 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.actio
 import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.internal.Activator;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.popup.LaunchVPGenerationAndBuildAction;
 
@@ -56,11 +63,26 @@ public class GenerateViewpointAction extends BaseSelectionListenerAction impleme
 			}
 		}
 		IFile standalone = ResourceHelper.getStandaloneFile(file);
-		if (standalone != null) {
-			fakeSelection = new StructuredSelection(standalone);
-			delegate.selectionChanged(action, fakeSelection);
-			delegate.run(action);
+	
+		if (standalone == null){
+			//Vpdesc doesn't exist
+			SynchronizerAction synchronizationAction = new SynchronizerAction();
+			synchronizationAction.selectionChanged(action, fakeSelection);
+			synchronizationAction.run(action);
+			standalone = ResourceHelper.getStandaloneFile(file);
 		}
+		
+		if (standalone == null)
+		{
+			Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+			IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, Messages.ViewpointDSLActions_VpdescModelNotFound_Error);
+			ErrorDialog.openError(shell, Messages.ViewpointDSLActions_Error_Title, Messages.ViewpointDSLActions_Fatal_Error_Message, status);
+			return;
+		}
+		
+		fakeSelection = new StructuredSelection(standalone);
+		delegate.selectionChanged(action, fakeSelection);
+		delegate.run(action);
 	}
 
 	public void selectionChanged(IAction action, ISelection selection) {		

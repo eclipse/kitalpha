@@ -29,6 +29,9 @@ public class Messages extends NLS {
 	public static String ViewpointDSLActions_BackwardSynchronizer_MessageDialogTitle;
 	public static String ViewpointDSLActions_GenerateViewpointAction_DefaultTitle;
 	public static String ViewpointDSLActions_EraseEmfPlugins;
+	public static String ViewpointDSLActions_VpdescModelNotFound_Error;
+	public static String ViewpointDSLActions_Error_Title;
+	public static String ViewpointDSLActions_Fatal_Error_Message;
 	
 	static {
 		// initialize resource bundle

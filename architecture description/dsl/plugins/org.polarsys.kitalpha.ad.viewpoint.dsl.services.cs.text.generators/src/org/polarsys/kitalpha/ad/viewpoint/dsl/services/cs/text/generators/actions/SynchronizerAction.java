@@ -168,7 +168,8 @@ public class SynchronizerAction extends BaseSelectionListenerAction implements I
 		return Lists.newArrayList( inputModels );
 	}
 	
-	public void selectionChanged(IAction action, ISelection selection) {	
+	public void selectionChanged(IAction action, ISelection selection) {
+		this.selection = selection;
 	}
 
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
