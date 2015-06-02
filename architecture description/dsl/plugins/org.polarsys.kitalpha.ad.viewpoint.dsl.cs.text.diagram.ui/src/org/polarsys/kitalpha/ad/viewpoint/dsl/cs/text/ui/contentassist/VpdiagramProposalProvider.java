@@ -15,9 +15,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -28,6 +28,7 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.StyledString;
@@ -38,6 +39,9 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
 
 import com.google.inject.Inject;
 
@@ -117,6 +121,40 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 		}
 	}
 	
+	private Collection<String> computeAlreadyImportedURI(EObject model)
+	{
+		if (!(model instanceof Diagrams))
+			return Collections.emptyList();
+		
+		
+		Collection<String> result = new HashSet<String>();
+		
+		Diagrams diag = (Diagrams)model;
+		
+		List<AbstractImport> imports = diag.getImports();
+		
+		for (AbstractImport import1 : imports) {
+			if (import1 instanceof ImportGroup)
+			{
+				ImportGroup importURI = (ImportGroup)import1;
+				
+				String uri = importURI.getImportedGroup();
+				
+				if (uri != null && !uri.isEmpty())
+				{
+					if (uri.startsWith("\""))
+						uri = uri.substring(1);
+					
+					if (uri.endsWith("\""))
+						uri = uri.substring(0, uri.lastIndexOf("\""));
+					result.add(uri);
+				}
+			}
+		}
+		
+		return result;
+	}
+	
 	@Override
 	public void completeImportGroup_ImportedGroup(EObject model,
 			Assignment assignment, ContentAssistContext context,
@@ -152,21 +190,36 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
          	
          if (importsModel != null && !importsModel.isEmpty())	
                  sortedList.addAll(importsModel);	
+         
+         
+         Collection<String> alreadyImported = computeAlreadyImportedURI(model.eContainer());
          	
-         	
-         for (String uri : sortedList) {	
-                 StyledString styledUri = new StyledString();	
-                 styledUri.append(uri);	
+         for (String uri : sortedList) {
+        	 
+        	 if (!alreadyImported.contains(uri))
+        	 {
                  Collection<String> modelValues = imports.get(UseLinksContentassistHelper.MODEL_KEY);
                  if (modelValues != null && modelValues.contains(uri)){	
                          acceptor.accept(createCompletionProposal(createProposal(uri),	
-                                         styledUri, image_emf, context));	
+                                         buidStyledStringFor(uri), image_emf, context));	
                  } else {	
                          acceptor.accept(createCompletionProposal(createProposal(uri),	
-                                         styledUri, image_sirius, context));	
-                 }	
+                                         buidStyledStringFor(uri), image_sirius, context));	
+                 }
+        	 }
          }
-
+	}
+	
+	private StyledString buidStyledStringFor(String uri)
+	{
+		if (URI.createURI(uri).isPlatformPlugin())
+		{
+			return new StyledString(uri, StyledString.COUNTER_STYLER);
+		}
+		else
+		{
+			return new StyledString(uri, StyledString.DECORATIONS_STYLER);
+		}
 	}
 
 	private String createProposal(String uri) {

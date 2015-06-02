@@ -243,6 +243,63 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 		return Predicates.<IEObjectDescription> alwaysTrue();
 	}
 	
+	private boolean checkAlreadyImportedDiagramURI(EObject model, String uri)
+	{
+		if (!(model instanceof Viewpoint))
+			return false;
+		
+		Viewpoint vp = (Viewpoint)model;
+		
+		List<String> dep = vp.getUseDiagramResource();
+		
+		if (!uri.startsWith("\"")) uri = "\"" + uri;
+		if (!uri.endsWith("\"")) uri = uri + "\"";
+		
+		return dep.contains(uri);
+	}
+	
+	private boolean checkAlreadyImportedWSURI(EObject model, String uri)
+	{
+		if (!(model instanceof Viewpoint))
+			return false;
+		
+		Viewpoint vp = (Viewpoint)model;
+		
+		List<String> dep = vp.getUseWorkspaceResource();
+		
+		if (!uri.startsWith("\"")) uri = "\"" + uri;
+		if (!uri.endsWith("\"")) uri = uri + "\"";
+		
+		return dep.contains(uri);
+	}
+	
+	private boolean checkAlreadyImportedEMFURI(EObject model, String uri)
+	{
+		if (!(model instanceof Viewpoint))
+			return false;
+		
+		Viewpoint vp = (Viewpoint)model;
+		
+		List<String> dep = vp.getUseAnyEMFResource();
+		
+		if (!uri.startsWith("\"")) uri = "\"" + uri;
+		if (!uri.endsWith("\"")) uri = uri + "\"";
+		
+		return dep.contains(uri);
+	}
+	
+	private StyledString buidStyledStringFor(String uri)
+	{
+		if (URI.createURI(uri).isPlatformPlugin())
+		{
+			return new StyledString(uri, StyledString.COUNTER_STYLER);
+		}
+		else
+		{
+			return new StyledString(uri, StyledString.DECORATIONS_STYLER);
+		}
+	}
+	
 	
 	//XXX: Decomment to get Content assist
 	@Override
@@ -262,14 +319,15 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 		Set<org.eclipse.sirius.viewpoint.description.Viewpoint> odesigns = siriusRegistry.getViewpoints();
 		
 		for (org.eclipse.sirius.viewpoint.description.Viewpoint viewpoint : odesigns) {
-			StyledString styledURI = new StyledString();
 			
 			String platformURI = viewpoint.eResource().getURI().toString();
-			styledURI.append(platformURI);
 			
-			acceptor.accept(createCompletionProposal(
-					"\"" + platformURI + "\"", styledURI,
-					image, context));
+			if (!checkAlreadyImportedDiagramURI(model, platformURI))
+			{
+				acceptor.accept(createCompletionProposal(
+						"\"" + platformURI + "\"", buidStyledStringFor(platformURI),
+						image, context));
+			}
 			
 		}
 	}
@@ -303,13 +361,14 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 
 		for (IContainer c : containers) {
 			String path = c.getFullPath().toString();
-			StyledString styledURI = new StyledString();
-
-			styledURI.append(path);
-
-			acceptor.accept(createCompletionProposal(
-					"\"" + path + "\"", styledURI,
-					fldr_image, context));
+			
+			if (!checkAlreadyImportedWSURI(model, path))
+			{
+				acceptor.accept(createCompletionProposal(
+						"\"" + path + "\"", new StyledString(path),
+						fldr_image, context));
+			}
+			
 		}
 		
 		//decomment if want use all workspace resources
@@ -339,17 +398,12 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 		
 		Collection<String> platformNsUri = URIConverterHelper.getPlatformURIOfAllEPackages();
 		
-		Viewpoint vp = (Viewpoint)model;
-		EList<String> usedAnyEMFModel = vp.getUseAnyEMFResource();
-		
 		for (String pUri : platformNsUri) {
 			
-			if (!usedAnyEMFModel.contains("\"" + pUri + "\"")){
-				StyledString styledUri = new StyledString();
-				styledUri.append(pUri);
+			if (!checkAlreadyImportedEMFURI(model, pUri)){
 				acceptor.accept(
 						createCompletionProposal(
-								"\"" + pUri + "\"", styledUri, image, context));
+								"\"" + pUri + "\"", buidStyledStringFor(pUri), image, context));
 			}
 		}
 	}

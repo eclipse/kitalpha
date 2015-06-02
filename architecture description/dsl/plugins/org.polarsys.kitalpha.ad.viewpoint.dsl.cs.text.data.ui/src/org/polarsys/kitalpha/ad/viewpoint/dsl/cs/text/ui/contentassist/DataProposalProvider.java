@@ -13,7 +13,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -26,6 +28,7 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -46,6 +49,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalAttributeType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataSpec;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.Import;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ImportURI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.DataGrammarAccess;
 
 import com.google.inject.Inject;
@@ -150,6 +156,34 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 			}
 		}
 	}
+	
+	
+	private Collection<String> computeAlreadyImportedURI(EObject model)
+	{
+		if (!(model instanceof DataSpec))
+			return Collections.emptyList();
+		
+		
+		Collection<String> result = new HashSet<String>();
+		
+		DataSpec dataSpec = (DataSpec)model;
+		
+		List<Import> imports = dataSpec.getImports();
+		
+		for (Import import1 : imports) {
+			if (import1 instanceof ImportURI)
+			{
+				ImportURI importURI = (ImportURI)import1;
+				
+				String uri = importURI.getImportURI();
+				
+				if (uri != null && !uri.isEmpty())
+					result.add(uri);
+			}
+		}
+		
+		return result;
+	}
 
 	public void completeImportURI_ImportURI(EObject model,
 			Assignment assignment, ContentAssistContext context,
@@ -165,25 +199,31 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 		Image image = ImageDescriptor.createFromURL(url).createImage();
 
 		Set<String> nsUris = NsUriFinder.getViewpointEPackagesNSURI(model, contentProvider);
+		Collection<String> alreadyImported = computeAlreadyImportedURI(model.eContainer());
 		
 		for (String uri : nsUris) {
-			StyledString styledUri = new StyledString();
 			
 			if (uri.startsWith("\""))
 				uri = uri.substring(1);
-			
+
 			if (uri.endsWith("\""))
 				uri = uri.substring(0, uri.length()-1);
-			
-			styledUri.append(uri);
-			
-			acceptor.accept(createCompletionProposal(createProposal(uri),
-					  styledUri, image, context));
-			
-		}
-		
-	}
 
+			if (!alreadyImported.contains(uri)){
+
+				StyledString styledUri;
+				
+				if (URI.createURI(uri).isPlatformPlugin())
+					styledUri = new StyledString(uri, StyledString.COUNTER_STYLER);
+				else
+					styledUri = new StyledString(uri, StyledString.DECORATIONS_STYLER);
+				
+				acceptor.accept(createCompletionProposal(createProposal(uri),
+						styledUri, image, context));
+			}
+		}
+	}
+	
 	private String createProposal(String uri) {
 		StringBuffer tmp = new StringBuffer();
 		tmp.append("\"").append(uri).append("\"");
