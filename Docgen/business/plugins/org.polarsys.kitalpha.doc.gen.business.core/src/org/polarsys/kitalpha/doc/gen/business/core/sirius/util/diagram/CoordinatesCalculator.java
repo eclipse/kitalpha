@@ -57,22 +57,21 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.PlatformUI;
-import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
-
-
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.SessionManager;
-import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
-
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart.ViewEdgeFigure;
 import org.eclipse.sirius.diagram.ui.tools.api.part.DiagramEditPartService;
+import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
+import org.polarsys.kitalpha.doc.gen.business.core.scope.GenerationGlobalScope;
+import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeStatus;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
 
 /**
  * @author S0021936
@@ -174,6 +173,10 @@ public class CoordinatesCalculator {
 			public void run() {
 				try {
 					postitionMap = getResultMap();
+					
+					// Clean positions of all out of scope model element 
+					postitionMap = removeObjectOutOfScope(postitionMap);
+					
 					COORDINATES_MAP.put(diagramId, postitionMap);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -181,6 +184,25 @@ public class CoordinatesCalculator {
 			}
 		});
 		return postitionMap;
+	}
+	
+	private Map<EObject, Rectangle> removeObjectOutOfScope(Map<EObject, Rectangle> postitions){
+		if (GenerationGlobalScope.getInstance().getScopeStatus().equals(ScopeStatus.LIMITED))
+		{
+			final Map<EObject, Rectangle> result = new HashMap<EObject, Rectangle>();
+			for (Entry<EObject, Rectangle> entry : postitions.entrySet()) 
+			{
+				final EObject key = entry.getKey();
+				final boolean isInScope = GenerationGlobalScope.getInstance().isCopyInScope(key);
+				if (isInScope)
+					result.put(entry.getKey(), entry.getValue());
+			}
+			return result;
+		}
+		else
+		{
+			return postitions;
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -334,7 +356,7 @@ public class CoordinatesCalculator {
 		}
 		return Collections.emptyMap();
 	}
-
+	
 	private boolean isDirectDiagramChild(View node) {
 		if (children.contains(node)) {
 			return true;

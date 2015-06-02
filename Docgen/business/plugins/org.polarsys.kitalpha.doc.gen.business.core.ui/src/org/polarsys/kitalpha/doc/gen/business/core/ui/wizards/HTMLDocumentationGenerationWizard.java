@@ -19,6 +19,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -35,19 +36,23 @@ import org.eclipse.egf.model.types.Type;
 import org.eclipse.egf.model.types.TypeString;
 import org.eclipse.egf.pattern.EGFPatternPlugin;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.TreePath;
+import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
+import org.polarsys.kitalpha.doc.gen.business.core.scope.GenerationGlobalScope;
+import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeException;
+import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeReferencesStrategy;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.ui.helper.InvokeActivityHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.LabelProviderHelper;
-
-
-import org.eclipse.sirius.business.api.session.Session;
 
 /**
  * This is a sample new wizard. Its role is to create a new file resource in the
@@ -66,6 +71,10 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 	public static final String DEFAULT_LAUNCHER_LABEL = "Default Launcher";
 
 	protected abstract Map<String, URI> getLaunchersURI();
+	
+	protected List<EObject> selectedModelElements = new ArrayList<EObject>();
+	
+	private boolean scopedGeneration = false;
 
 	/**
 	 * Constructor for HTMLDocumentationGenerationWizard.
@@ -75,13 +84,12 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 		setNeedsProgressMonitor(true);
 	}
 
-	public HTMLDocumentationGenerationWizard(
-			IStructuredSelection structuredSelection) {
+	public HTMLDocumentationGenerationWizard(IStructuredSelection structuredSelection) {
 		super();
 		setNeedsProgressMonitor(true);
-		this.selection = structuredSelection;
+		this.selection = handleSelection(structuredSelection);
 	}
-
+	
 	/**
 	 * Adding the page to the wizard.
 	 */
@@ -89,36 +97,90 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 	public void addPages() {
 		page = new HTMLDocumentationGenerationWizardPage(selection);
 		page.setLauncherUris(getLaunchersURI());
+		page.setScopedGeneration(scopedGeneration);
 		addPage(page);
 	}
+	
+	protected final ISelection handleSelection(ISelection selection_p){
+		if (selection_p instanceof TreeSelection)
+		{
+			TreeSelection treeSelection = (TreeSelection) selection_p;
+			final Object firstSelection = treeSelection.getFirstElement();
+			if (false == firstSelection instanceof IFile)
+			{
+				// Initialize the generation scope.
+				final Object[] array = treeSelection.toArray();
+				for (Object object : array) 
+				{
+					if (object instanceof EObject)
+					{
+						this.selectedModelElements.add((EObject)object);
+					}
+					else
+					{
+						throw new IllegalArgumentException("Documetation generation bad input :" + object.toString());
+					}
+				}
+				this.scopedGeneration = true;
+				// Create a new TreeSelection object containing the aird file.
+				TreePath treePath = new TreePath(new Object[]{treeSelection.getPaths()[0].getSegment(0), treeSelection.getPaths()[0].getSegment(1)});
+				selection_p = new TreeSelection(treePath);
+			}
+		}
+		return selection_p;
+	}
+	
+	private void initializeScope(ScopeReferencesStrategy referencesStrategy){
+		// Clean old scope data.
+		GenerationGlobalScope.getInstance().cleanScope();
+		
+		// Initialize scope strategies
+		GenerationGlobalScope.getInstance().setReferencesStrategy(referencesStrategy);
+		
+		// Initialize scope.
+		if (selectedModelElements != null && false == selectedModelElements.isEmpty())
+		{
+			for (EObject eObject : selectedModelElements) 
+			{
+				try {
+					GenerationGlobalScope.getInstance().addToScope(eObject);
+				} catch (ScopeException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
 
 	/**
 	 * This method is called when 'Finish' button is pressed in the wizard. We
 	 * will create an operation and run it using wizard as execution context.
 	 */
 	public boolean performFinish() {
+		initializeScope(page.getReferencesStrategy());
+		
 		LabelProviderHelper.initImageRegistry();
 		String containerName = page.getContainerName();
 		List<URI> modelURIList = getURIList(page.getModelURI());
 		final String projectName = getProjectName(containerName);
 		final String outputFolder = getOutputFolder(containerName);
-		Activity melodyLauncher = InvokeActivityHelper
-				.getActivity(getLaunchersURI().get(page.getSelectedLauncher()));
-		for (URI uri : modelURIList) {
+		Activity melodyLauncher = InvokeActivityHelper.getActivity(getLaunchersURI().get(page.getSelectedLauncher()));
+		for (URI uri : modelURIList) 
+		{
 			URI semanticResourceURI = uri;
-			if (uri.lastSegment().endsWith(".aird")) {
+			if (uri.lastSegment().endsWith(".aird")) 
+			{
 				DiagramSessionHelper.setAirdUri(uri);
 				Session session = DiagramSessionHelper.initSession();
 				Collection<Resource> resources = session.getSemanticResources();
 
-				if (!resources.isEmpty()) {
+				if (!resources.isEmpty()) 
+				{
 					Resource semanticResource = resources.iterator().next();
 					semanticResourceURI = semanticResource.getURI();
 				}
 			}
-			execute(melodyLauncher, projectName, outputFolder,
-					semanticResourceURI);
-
+			execute(melodyLauncher, projectName, outputFolder, semanticResourceURI);
 		}
 
 		return true;

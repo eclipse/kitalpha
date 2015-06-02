@@ -24,6 +24,8 @@ public class Messages extends NLS {
 	public static String HTMLDocumentationGenerationWizardPage_status_4;
 	public static String HTMLDocumentationGenerationWizardPage_stauts_1;
 	public static String HTMLDocumentationGenerationWizardPage_title;
+	
+	public static String HTMLDocumentationGenerationWizardPage_Export_Ref;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

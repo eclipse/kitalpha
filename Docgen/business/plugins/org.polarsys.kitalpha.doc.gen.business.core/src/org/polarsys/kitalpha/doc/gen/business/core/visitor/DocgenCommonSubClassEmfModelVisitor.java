@@ -11,13 +11,14 @@
 package org.polarsys.kitalpha.doc.gen.business.core.visitor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.egf.model.pattern.Pattern;
 import org.eclipse.egf.model.pattern.PatternException;
 import org.eclipse.egf.model.pattern.PatternParameter;
 import org.eclipse.egf.pattern.l10n.EGFPatternMessages;
-import org.eclipse.egf.pattern.strategy.domaindriven.SubClassEmfModelVisitor;
+//import org.eclipse.egf.pattern.strategy.domaindriven.SubClassEmfModelVisitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -25,12 +26,13 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.util.NLS;
 import org.polarsys.kitalpha.doc.gen.business.core.helper.IConceptsHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.scope.SubClassEmfModelVisitorWithScoping;
 import org.polarsys.kitalpha.doc.gen.business.core.services.ExtensionService;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexerService;
 
 
-public class DocgenCommonSubClassEmfModelVisitor extends
-		SubClassEmfModelVisitor {
+public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitorWithScoping {
+//		SubClassEmfModelVisitor {
 
 	private List<Pattern> originePatterns;
 
@@ -82,7 +84,7 @@ public class DocgenCommonSubClassEmfModelVisitor extends
 			return result;
 		}
 
-		return super.findPatterns(model);
+		return Collections.emptyList();
 	}
 
 	private void indexElement(Object model) {

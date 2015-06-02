@@ -20,6 +20,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction.LoadResourceDialog;
 import org.eclipse.jface.dialogs.IDialogPage;
 import org.eclipse.jface.viewers.ISelection;
@@ -35,10 +36,12 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
+import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeReferencesStrategy;
 import org.polarsys.kitalpha.doc.gen.business.core.ui.wizards.string.Messages;
 
 
@@ -69,6 +72,8 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 	private static final String DESCRIPTION = Messages.HTMLDocumentationGenerationWizardPage_description;
 
 	private static final String TITLE = Messages.HTMLDocumentationGenerationWizardPage_title;
+	
+	private static final String GEN_OPTION_EXPORT_REF = Messages.HTMLDocumentationGenerationWizardPage_Export_Ref;
 
 	private Text containerText;
 
@@ -79,6 +84,18 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 	private Map<String, URI> launcherUris;
 
 	private Combo combo;
+	
+	private ScopeReferencesStrategy referencesStrategy = ScopeReferencesStrategy.EXPORT;
+	
+	private boolean scopedGeneration = false;
+	
+	public boolean isScopedGeneration() {
+		return scopedGeneration;
+	}
+
+	public void setScopedGeneration(boolean scopedGeneration) {
+		this.scopedGeneration = scopedGeneration;
+	}
 
 	/**
 	 * Constructor for SampleNewWizardPage.
@@ -91,7 +108,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 		setDescription(DESCRIPTION);
 		this.selection = selection;
 	}
-
+	
 	/**
 	 * @see IDialogPage#createControl(Composite)
 	 */
@@ -100,7 +117,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 		GridLayout layout = new GridLayout();
 		container.setLayout(layout);
 		layout.numColumns = 3;
-		layout.verticalSpacing = 9;
+		layout.verticalSpacing = 10;
 		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 		Label label = new Label(container, SWT.NULL);
 		label.setText(INPUT_MODEL_TEXT);
@@ -160,11 +177,48 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 			}
 
 			combo.select(0);
-
 		}
+		
+		if (isScopedGeneration())
+			createScopeOptionsWidgets(container);
+		
 		initialize();
 		dialogChanged();
 		setControl(container);
+	}
+
+	private void createScopeOptionsWidgets(Composite container) {
+		Group optionsGroup = new Group(container, SWT.NONE);
+		optionsGroup.setText("Partial generation options");
+		GridData groupGridData = new GridData(GridData.FILL_HORIZONTAL);
+		groupGridData.horizontalSpan = 3;
+		optionsGroup.setLayoutData(groupGridData);
+		final GridLayout optionsGroupGridLayout = new GridLayout(1, false);
+		optionsGroupGridLayout.verticalSpacing = 10;
+		optionsGroup.setLayout(optionsGroupGridLayout);
+		
+		final Button referencesStrategy_cb = new Button(optionsGroup, SWT.CHECK);
+		referencesStrategy_cb.setText(GEN_OPTION_EXPORT_REF);
+		referencesStrategy_cb.setSelection(referencesStrategy.equals(ScopeReferencesStrategy.EXPORT));
+		referencesStrategy_cb.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				super.widgetSelected(e);
+				 Button btn = (Button) e.getSource();
+				 if (btn.getSelection())
+				 {
+					 referencesStrategy = ScopeReferencesStrategy.EXPORT;
+				 }
+				 else
+				 {
+					 referencesStrategy = ScopeReferencesStrategy.DONT_EXPORT;
+				 }
+			}
+		});
+	}
+
+	public ScopeReferencesStrategy getReferencesStrategy() {
+		return referencesStrategy;
 	}
 
 	/**
@@ -178,23 +232,45 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 			// if (ssel.size() > 1)
 			// return;
 			Object obj = ssel.getFirstElement();
-			if (obj instanceof IResource) {
-				IContainer container;
-				if (obj instanceof IContainer)
-					container = (IContainer) obj;
-				else
-					container = ((IResource) obj).getParent();
-				containerText.setText(container.getFullPath().toString());
-			}
-			for (Object object : ssel.toArray()) {
-				if (object instanceof IFile) {
-					IFile modelFile = (IFile) object;
-					URI uri = URI.createPlatformResourceURI(modelFile
-							.getFullPath().toString(), true);
-					this.modelURIText.setText(this.modelURIText.getText()
-							+ " " + uri.toString()); //$NON-NLS-1$
+			
+			if (obj instanceof EObject)
+			{
+				// FIXME: Do we handle multiple resource generation or only single resource generation.
+				// Let assume that the current implementation manage single resource generation.
+				final EObject modelElement = (EObject) obj;
+				URI uri = modelElement.eResource().getURI();
+				if (uri.isPlatform())
+				{
+					this.modelURIText.setText(uri.toString());
+					this.containerText.setText("/" + uri.segments()[1]);
 				}
 			}
+			else
+			{
+				// Setting the output folder path
+				if (obj instanceof IResource) 
+				{
+					IContainer container;
+					if (obj instanceof IContainer)
+						container = (IContainer) obj;
+					else
+						container = ((IResource) obj).getParent();
+
+					containerText.setText(container.getFullPath().toString());
+				}
+
+				// Setting the model URI
+				for (Object object : ssel.toArray()) 
+				{
+					if (object instanceof IFile) 
+					{
+						IFile modelFile = (IFile) object;
+						URI uri = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+						this.modelURIText.setText(this.modelURIText.getText()+ " " + uri.toString()); //$NON-NLS-1$
+					}
+				}
+			}
+			
 		}
 
 		// modelURIText.setText("new_file.mpe");
@@ -238,7 +314,6 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 	private void dialogChanged() {
 		IResource container = ResourcesPlugin.getWorkspace().getRoot()
 				.findMember(new Path(getContainerName()));
-		// String fileName = getFileName();
 		if(!(container instanceof IFolder)) {
 			updateStatus(STATUS_4);
 			return;
@@ -256,22 +331,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 			updateStatus(STATUS_3);
 			return;
 		}
-		// if (fileName.length() == 0) {
-		// updateStatus("File name must be specified");
-		// return;
-		// }
-		// if (fileName.replace('\\', '/').indexOf('/', 1) > 0) {
-		// updateStatus("File name must be valid");
-		// return;
-		// }
-		// int dotLoc = fileName.lastIndexOf('.');
-		// if (dotLoc != -1) {
-		// String ext = fileName.substring(dotLoc + 1);
-		// if (ext.equalsIgnoreCase("mpe") == false) {
-		// updateStatus("File extension must be \"mpe\"");
-		// return;
-		// }
-		// }
+		
 		updateStatus(null);
 	}
 

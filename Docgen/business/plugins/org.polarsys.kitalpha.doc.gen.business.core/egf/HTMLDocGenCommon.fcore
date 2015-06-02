@@ -437,6 +437,7 @@
               invokedContract="#_X9cLkF4yEeGfnvXFIF-hXQ"/>
         </invocationContractContainer>
       </invocations>
+      <invocations xmi:id="_FbkMQEHQEeWuloZZIJtB0g" name="Clean Scope Data" invokedActivity="#_v1xvkUHPEeWuloZZIJtB0g"/>
     </orchestration>
   </fcore:FactoryComponent>
   <fcore:FactoryComponent xmi:id="_NFDG8Of_Ed-RW5fqwaBgOQ" name="HTMLDocGen.Index builder">
@@ -951,4 +952,6 @@
   </ftask:Task>
   <ftask:Task xmi:id="_HvUzgLoOEeGH7bfHyYJ-qQ" name="Remove Collected Concept For SearchIndex task"
       kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.RemoveCollectedConceptForSearchIndex"/>
+  <ftask:Task xmi:id="_v1xvkUHPEeWuloZZIJtB0g" name="Clean.Scope.Data" kind="java"
+      implementation="org.polarsys.kitalpha.doc.gen.business.core.task.CleanScopeDataTask"/>
 </xmi:XMI>
