@@ -20,16 +20,16 @@ import org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider;
  */
 public class VpdiagramDescriptionLabelProvider extends DefaultDescriptionLabelProvider {
 
-/*
-	//Labels and icons can be computed like this:
+
+	 //Labels and icons can be computed like this:
 	
-	String text(IEObjectDescription ele) {
-	  return "my "+ele.getName();
-	}
-	 
-    String image(IEObjectDescription ele) {
-      return ele.getEClass().getName() + ".gif";
-    }	 
-*/
+//	public String text(IEObjectDescription ele) {
+//	  return "my "+ ele.getName();
+//	}
+//	 
+//	public String image(IEObjectDescription ele) {
+//      return ele.getEClass().getName() + ".gif";
+//    }	 
+
 
 }

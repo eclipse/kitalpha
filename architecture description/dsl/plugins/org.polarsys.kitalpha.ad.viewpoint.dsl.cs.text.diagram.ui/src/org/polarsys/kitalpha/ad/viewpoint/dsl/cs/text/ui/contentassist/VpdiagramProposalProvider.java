@@ -32,8 +32,14 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.sirius.diagram.description.ContainerMapping;
+import org.eclipse.sirius.diagram.description.DiagramDescription;
+import org.eclipse.sirius.diagram.description.EdgeMapping;
+import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
@@ -51,12 +57,74 @@ import com.google.inject.Inject;
 /**
  * 
  * @author Amine Lajmi
+ *         Faycal Abka
  *
  */
 public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider {
 	
+	
+	
 	@Inject
 	private IExternalContentProvider contentProvider;
+	
+	
+	@Override
+	protected StyledString getStyledDisplayString(IEObjectDescription description) {
+		
+		EObject eObjectOrProxy =  description.getEObjectOrProxy();
+		
+		if (eObjectOrProxy instanceof DiagramDescription)
+		{
+			DiagramDescription dd = (DiagramDescription)description.getEObjectOrProxy();
+			
+			String diagramName = dd.getName();
+			String simpleName = description.getName().getLastSegment();
+			
+			
+			return new StyledString(simpleName).append(new StyledString(" - " + diagramName, StyledString.COUNTER_STYLER));
+		}
+		
+		if (eObjectOrProxy instanceof EdgeMapping)
+		{
+			EdgeMapping em = (EdgeMapping)description.getEObjectOrProxy();
+			String diagramName = em.getName();
+			String simpleName = description.getName().getLastSegment();
+			
+			return new StyledString(simpleName).append(new StyledString(" - " + diagramName, StyledString.COUNTER_STYLER));
+		}
+		
+		if (eObjectOrProxy instanceof NodeMapping)
+		{
+			NodeMapping nm = (NodeMapping)description.getEObjectOrProxy();
+			String diagramName = nm.getName();
+			String simpleName = description.getName().getLastSegment();
+			
+			return new StyledString(simpleName).append(new StyledString(" - " + diagramName, StyledString.COUNTER_STYLER));
+		}
+		
+		if (eObjectOrProxy instanceof ContainerMapping)
+		{
+			ContainerMapping cm = (ContainerMapping)description.getEObjectOrProxy();
+			String diagramName = cm.getName();
+			String simpleName = description.getName().getLastSegment();
+			
+			return new StyledString(simpleName).append(new StyledString(" - " + diagramName, StyledString.COUNTER_STYLER));
+		}
+		
+		if (eObjectOrProxy instanceof Group)
+		{
+			Group group = (Group)description.getEObjectOrProxy();
+			String diagramName = group.getName();
+			String simpleName = description.getName().getLastSegment();
+			
+			return new StyledString(simpleName).append(new StyledString(" - " + diagramName, StyledString.COUNTER_STYLER));
+		}
+		
+		
+		return super.getStyledDisplayString(description);
+	};
+	
+	
 
 	@Override
 	public void completeOpenAction_Icon(EObject model, Assignment assignment,

@@ -12,8 +12,14 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.labeling;
 
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.sirius.diagram.description.ContainerMapping;
+import org.eclipse.sirius.diagram.description.DiagramDescription;
+import org.eclipse.sirius.diagram.description.EdgeMapping;
+import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider; 
  
+import com.google.common.base.Strings;
 import com.google.inject.Inject;
 
 /**
@@ -24,24 +30,56 @@ import com.google.inject.Inject;
 /**
  * 
  * @author Amine Lajmi
+ *         Faycal Abka
  *
  */
 public class VpdiagramLabelProvider extends DefaultEObjectLabelProvider {
 
+	
+	private final String PREFIX = " From the resource: ";
+	
 	@Inject
 	public VpdiagramLabelProvider(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
-
-/*
-	//Labels and icons can be computed like this:
 	
-	String text(MyModel ele) {
-	  return "my "+ele.getName();
+	String text(DiagramDescription ele) {
+		String resoureURI = ele.eResource().getURI().toString();
+		if (Strings.isNullOrEmpty(resoureURI))
+			return ele.getName();
+	  return PREFIX + resoureURI;
+	}
+	
+	String text(EdgeMapping ele) {
+		String resoureURI = ele.eResource().getURI().toString();
+		if (Strings.isNullOrEmpty(resoureURI))
+			return ele.getName();
+	  return PREFIX + resoureURI;
+	}
+	
+	String text(NodeMapping ele) {
+		String resoureURI = ele.eResource().getURI().toString();
+		if (Strings.isNullOrEmpty(resoureURI))
+			return ele.getName();
+	  return PREFIX + resoureURI;
+	}
+	
+	String text(ContainerMapping ele) {
+		String resoureURI = ele.eResource().getURI().toString();
+		if (Strings.isNullOrEmpty(resoureURI))
+			return ele.getName();
+	  return PREFIX + resoureURI;
+	}
+	
+	String text(Group ele) {
+		String resoureURI = ele.eResource().getURI().toString();
+		if (Strings.isNullOrEmpty(resoureURI))
+			return ele.getName();
+	  return PREFIX + resoureURI;
 	}
 	 
-    String image(MyModel ele) {
-      return "MyModel.gif";
-    }
-*/
+//    String image(DiagramDescription ele) {
+//      return "icons/vpdsl_file_16.png";
+//    }
+
 }

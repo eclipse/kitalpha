@@ -148,8 +148,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					importDiagrams = DoremiDiagramElementHelper.getImportedDoremiDiagramFor(root);
 					for (DiagramDescription description : importDiagrams) {
 						EcoreUtil2.resolveAll(description);
-						// trim white spaces
-						IEObjectDescription desc = EObjectDescription.create(description.getName().replaceAll(" ", ""), description, null);
+						
+						String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(description.getName());
+						IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
 						doremiExportedObjects.add(desc);
 					}
 				}
@@ -174,8 +175,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 						importDiagrams = DoremiDiagramElementHelper.getAvailableDoremiDiagramFor(root);
 						for (DiagramDescription description : importDiagrams) {
 							EcoreUtil2.resolveAll(description);
-							// trim white spaces
-							IEObjectDescription desc = EObjectDescription.create(description.getName().replaceAll(" ", ""), description, null);
+							
+							String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(description.getName());
+							IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
 							doremiExportedObjects.add(desc);
 						}
 					}
@@ -199,8 +201,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 						availableDoremiDiagramFor = DoremiDiagramElementHelper.getAvailableEdgeMappingsFor(root);
 						for (EdgeMapping description : availableDoremiDiagramFor) {
 							EcoreUtil2.resolveAll(description);
-							// trim white spaces
-							IEObjectDescription desc = EObjectDescription.create(description.getName().replaceAll(" ", ""), description, null);
+							
+							String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(description.getName());
+							IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
 							doremiExportedObjects.add(desc);
 						}
 						
@@ -225,8 +228,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 						availableDoremiDiagramFor = DoremiDiagramElementHelper.getAvailableNodeMappingsFor(root);
 						for (NodeMapping description : availableDoremiDiagramFor) {
 							EcoreUtil2.resolveAll(description);
-							// trim white spaces
-							IEObjectDescription desc = EObjectDescription.create(description.getName().replaceAll(" ", ""), description, null);
+							
+							String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(description.getName());
+							IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
 							doremiExportedObjects.add(desc);
 						}
 					}
@@ -250,8 +254,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 						availableDoremiDiagramFor = DoremiDiagramElementHelper.getAvailableContainerMappingsFor(root);
 						for (ContainerMapping description : availableDoremiDiagramFor) {
 							EcoreUtil2.resolveAll(description);
-							// trim white spaces
-							IEObjectDescription desc = EObjectDescription.create(description.getName().replaceAll(" ", ""), description, null);
+							
+							String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(description.getName());
+							IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
 							doremiExportedObjects.add(desc);
 						}
 					}
@@ -400,7 +405,8 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 			Group group = SiriusViewpointHelper.getViewpointGroup(odesignResources);	
 
 			if (group != null){	
-				IEObjectDescription desc = EObjectDescription.create(group.getName().replaceAll(" ", ""), group, null);	
+				String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(group.getName());
+				IEObjectDescription desc = EObjectDescription.create(simpleName, group, null);	
 				exportImportedObjects.add(desc);	
 			}	
 
@@ -417,8 +423,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 			List<DiagramDescription> diagramDescription = SiriusViewpointHelper.getAllDiagramDescription(odesignResources);	
 
 			if (diagramDescription != null && !diagramDescription.isEmpty()){	
-				for (DiagramDescription dd : diagramDescription) {	
-					IEObjectDescription desc = EObjectDescription.create(dd.getName().replaceAll(" ", ""), dd, null);	
+				for (DiagramDescription dd : diagramDescription) {
+					String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(dd.getName());
+					IEObjectDescription desc = EObjectDescription.create(simpleName, dd, null);	
 					exportImportedObjects.add(desc);	
 				}	
 			}	
@@ -430,7 +437,8 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 
 			if (containers != null && !containers.isEmpty()){	
 				for (ContainerMapping containerMapping : containers) {	
-					IEObjectDescription desc = EObjectDescription.create(containerMapping.getName().replaceAll(" ", ""), containerMapping, null);	
+					String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(containerMapping.getName());
+					IEObjectDescription desc = EObjectDescription.create(simpleName, containerMapping, null);	
 					exportImportedObjects.add(desc);	
 				}	
 			}	
@@ -441,8 +449,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 			List<NodeMapping> nodeMappings = SiriusViewpointHelper.getAllNodeMapping(diagramDescription);	
 
 			if (nodeMappings != null && !nodeMappings.isEmpty()){	
-				for (NodeMapping nm : nodeMappings) {	
-					IEObjectDescription desc = EObjectDescription.create(nm.getName().replaceAll(" ", ""), nm, null);	
+				for (NodeMapping nm : nodeMappings) {
+					String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(nm.getName());
+					IEObjectDescription desc = EObjectDescription.create(simpleName, nm, null);	
 					exportImportedObjects.add(desc);	
 				}	
 			}	
@@ -453,8 +462,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 			List<EdgeMapping> edgeMappings = SiriusViewpointHelper.getAllEdgeMapping(diagramDescription);	
 
 			if (edgeMappings != null && !edgeMappings.isEmpty()){	
-				for (EdgeMapping em : edgeMappings) {	
-					IEObjectDescription desc = EObjectDescription.create(em.getName().replaceAll(" ", ""), em, null);	
+				for (EdgeMapping em : edgeMappings) {
+					String simpleName = VpdiagramIdentifierNormalizerHelper.normalizeIdentifier(em.getName());
+					IEObjectDescription desc = EObjectDescription.create(simpleName, em, null);	
 					exportImportedObjects.add(desc);	
 				}	
 			}	
