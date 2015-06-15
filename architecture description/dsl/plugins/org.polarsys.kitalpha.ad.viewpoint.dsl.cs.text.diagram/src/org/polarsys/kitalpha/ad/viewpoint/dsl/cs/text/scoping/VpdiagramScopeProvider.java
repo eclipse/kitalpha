@@ -14,6 +14,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
@@ -25,6 +26,8 @@ import org.eclipse.xtext.scoping.impl.FilteringScope;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
@@ -100,20 +103,6 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	
-//	private AbstractClass getAbstractClassOf(Diagram diagram){
-//		return diagram.getThe_domain().getThe_domain();
-//	}
-//	
-//	private AbstractClass getAbstractClassOf(Node node){
-//		return node.getThe_domain().getDomain_Class();
-//	}
-//	
-//	private AbstractClass getAbstractClassOf(BorderedNode borderedNode){
-//		return borderedNode.getThe_domain().getDomain_Class();
-//	}
-	
-	
-	
 	IScope scope_LocalAssociation_reference(EObject context, EReference reference) {
 		
 		final EObject context2 = context;
@@ -170,36 +159,75 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_EdgeImport_imports(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
+		final EReference reference2 = reference;
+		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
+						
+						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
+						
+						if (diagramExtension != null)
+							return VpDiagramHelper.isValidEdge(d.getEObjectOrProxy(), diagramExtension, reference2);
+						
 						return (d.getEObjectOrProxy() instanceof EdgeMapping);
 					}
 				});
 	}
 	
 	IScope scope_Node_imports(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
+		final EReference reference2 = reference;
+		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
+						
+						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
+						
+						if (diagramExtension != null)
+							return VpDiagramHelper.isValidNode(d.getEObjectOrProxy(), diagramExtension, reference2);
+						
 						return (d.getEObjectOrProxy() instanceof NodeMapping);
 					}
 				});
 	}
 	
 	IScope scope_BorderedNode_imports(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
+		final EReference reference2 = reference;
+		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
+						
+						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
+						
+						if (diagramExtension != null)
+							return VpDiagramHelper.isValidNode(d.getEObjectOrProxy(), diagramExtension, reference2);
+						
 						return (d.getEObjectOrProxy() instanceof NodeMapping);
 					}
 				});
 	}
 	
 	IScope scope_Container_imports(EObject context, EReference reference) {
+		
+		final EObject context2 = context;
+		final EReference reference2 = reference;
+		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
+						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
+						
+						if (diagramExtension != null)
+							return VpDiagramHelper.isValidContainerMapping(d.getEObjectOrProxy(), diagramExtension, reference2);
+						
 						return (d.getEObjectOrProxy() instanceof ContainerMapping);
 					}
 				});

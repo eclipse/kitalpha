@@ -26,6 +26,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
+import org.eclipse.sirius.diagram.description.DiagramDescription;
+import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
@@ -47,6 +49,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpdiagram.SiriusViewpointHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 
 import com.google.common.cache.CacheBuilder;
@@ -712,4 +715,66 @@ public class VpDiagramHelper {
 		
 		return false;
 	}
+	
+	
+	
+	/*
+	 * Helpers methods for diagram extension
+	 */
+	
+	
+	/**
+	 * Return the first container of context with type. if there are no container with type, return null
+	 * @param context context
+	 * @param type type of container
+	 * @return
+	 */
+	public static EObject getDiagramContainerInstanceType(EObject context, EClass type)
+	{
+		if (context == null || type == null)
+			return null;
+		
+		EObject container = context.eContainer();
+		
+		while (container != null && container != context && container != EcoreUtil.getRootContainer(context))
+		{
+			if (container.eClass() == type)
+				return container;
+			
+			container = container.eContainer();
+		}
+		
+		return null;
+	}
+
+
+	public static boolean isValidContainerMapping(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
+		
+		DiagramExtension diagramExtension = (DiagramExtension)eObject;
+		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
+		EList<ContainerMapping> mappings = diagDesc.getAllContainerMappings();
+		
+		return mappings.contains(eObjectOrProxy);
+	}
+
+
+	public static boolean isValidNode(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
+		
+		DiagramExtension diagramExtension = (DiagramExtension)eObject;
+		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
+		EList<NodeMapping> nodes = diagDesc.getAllNodeMappings();
+		
+		return nodes.contains(eObjectOrProxy);
+	}
+
+
+	public static boolean isValidEdge(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
+		
+		DiagramExtension diagramExtension = (DiagramExtension)eObject;
+		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
+		EList<EdgeMapping> edges = diagDesc.getAllEdgeMappings();
+		
+		return edges.contains(eObjectOrProxy);
+	}
+	
 }
