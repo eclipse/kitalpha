@@ -108,6 +108,30 @@
             <methods xmi:id="_VoxV1p8EEeOjCb9D2yIVHQ" name="footer" patternFilePath="templates/pattern._VoxV0J8EEeOjCb9D2yIVHQ/method._VoxV1p8EEeOjCb9D2yIVHQ.pt"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_VoxV158EEeOjCb9D2yIVHQ"/>
           </elements>
+          <elements xmi:id="_Hlp4QP4DEeSW086H-yDPeg" name="build.xml_" superPattern="platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_WzN4sI6XEd-e7viTqNBNrA"
+              headerMethod="#_Hlp4Qv4DEeSW086H-yDPeg" conditionMethod="#_Hlp4RP4DEeSW086H-yDPeg"
+              initMethod="#_Hlp4Q_4DEeSW086H-yDPeg" footerMethod="#_Hlp4Rv4DEeSW086H-yDPeg">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_Hlp4Qf4DEeSW086H-yDPeg"
+                name="JET"/>
+            <methods xmi:id="_Hlp4Qv4DEeSW086H-yDPeg" name="header" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Qv4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_Hlp4Q_4DEeSW086H-yDPeg" name="init" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Q_4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_Hlp4RP4DEeSW086H-yDPeg" name="preCondition" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4RP4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_Hlp4Rf4DEeSW086H-yDPeg" name="install_buckminster" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Rf4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_Hlp4Rv4DEeSW086H-yDPeg" name="footer" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Rv4DEeSW086H-yDPeg.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Hlp4R_4DEeSW086H-yDPeg"/>
+          </elements>
+          <elements xmi:id="_5XTtwP4DEeSW086H-yDPeg" name="build.properties_" superPattern="platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_IfGS0I6XEd-e7viTqNBNrA"
+              headerMethod="#_5XTtwv4DEeSW086H-yDPeg" conditionMethod="#_5XTtxP4DEeSW086H-yDPeg"
+              initMethod="#_5XTtw_4DEeSW086H-yDPeg" footerMethod="#_5XTtxv4DEeSW086H-yDPeg">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_5XTtwf4DEeSW086H-yDPeg"
+                name="JET"/>
+            <methods xmi:id="_5XTtwv4DEeSW086H-yDPeg" name="header" patternFilePath="templates/pattern._5XTtwP4DEeSW086H-yDPeg/method._5XTtwv4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_5XTtw_4DEeSW086H-yDPeg" name="init" patternFilePath="templates/pattern._5XTtwP4DEeSW086H-yDPeg/method._5XTtw_4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_5XTtxP4DEeSW086H-yDPeg" name="preCondition" patternFilePath="templates/pattern._5XTtwP4DEeSW086H-yDPeg/method._5XTtxP4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_5XTtxf4DEeSW086H-yDPeg" name="body" patternFilePath="templates/pattern._5XTtwP4DEeSW086H-yDPeg/method._5XTtxf4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_5XTtxv4DEeSW086H-yDPeg" name="footer" patternFilePath="templates/pattern._5XTtwP4DEeSW086H-yDPeg/method._5XTtxv4DEeSW086H-yDPeg.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_5XTtx_4DEeSW086H-yDPeg"/>
+          </elements>
         </libraries>
       </viewpoints>
     </viewpointContainer>
@@ -129,7 +153,9 @@
           <invocationContracts xmi:id="_uu3doPsZEeCoDtQpfWQ4ww" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_1NT27fVqEeC5po6KbYL7IQ">
             <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_xAAZ0PsZEeCoDtQpfWQ4ww">
               <substitutions xmi:id="_zv_OIPsZEeCoDtQpfWQ4ww" replacedElement="platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_WzN4sI6XEd-e7viTqNBNrA"
-                  replacement="#_kwODMPsZEeCoDtQpfWQ4ww"/>
+                  replacement="#_Hlp4QP4DEeSW086H-yDPeg"/>
+              <substitutions xmi:id="_VnHLYP4EEeSW086H-yDPeg" replacedElement="platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_IfGS0I6XEd-e7viTqNBNrA"
+                  replacement="#_5XTtwP4DEeSW086H-yDPeg"/>
             </type>
           </invocationContracts>
         </invocationContractContainer>
