@@ -524,16 +524,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_42_0=	'Services' 
+		lv_type_42_0=	'Activity Explorer' 
     {
-        newLeafNode(lv_type_42_0, grammarAccess.getViewpointAccess().getTypeServicesKeyword_16_0_0());
+        newLeafNode(lv_type_42_0, grammarAccess.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_42_0, "Services");
+       		addWithLastConsumed($current, "type", lv_type_42_0, "Activity Explorer");
 	    }
 
 )
@@ -545,7 +545,7 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsServiceSetCrossReference_16_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsViewpointActivityExplorerCrossReference_16_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -554,16 +554,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_44_0=	'Build' 
+		lv_type_44_0=	'Services' 
     {
-        newLeafNode(lv_type_44_0, grammarAccess.getViewpointAccess().getTypeBuildKeyword_17_0_0());
+        newLeafNode(lv_type_44_0, grammarAccess.getViewpointAccess().getTypeServicesKeyword_17_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_44_0, "Build");
+       		addWithLastConsumed($current, "type", lv_type_44_0, "Services");
 	    }
 
 )
@@ -575,7 +575,7 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsBuildCrossReference_17_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsServiceSetCrossReference_17_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -584,16 +584,16 @@ ruleViewpoint returns [EObject current=null]
 )
 ))?((
 (
-		lv_type_46_0=	'Configuration' 
+		lv_type_46_0=	'Build' 
     {
-        newLeafNode(lv_type_46_0, grammarAccess.getViewpointAccess().getTypeConfigurationKeyword_18_0_0());
+        newLeafNode(lv_type_46_0, grammarAccess.getViewpointAccess().getTypeBuildKeyword_18_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getViewpointRule());
 	        }
-       		addWithLastConsumed($current, "type", lv_type_46_0, "Configuration");
+       		addWithLastConsumed($current, "type", lv_type_46_0, "Build");
 	    }
 
 )
@@ -605,16 +605,46 @@ ruleViewpoint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsConfigurationCrossReference_18_1_0()); 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsBuildCrossReference_18_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_48='}' 
+))?((
+(
+		lv_type_48_0=	'Configuration' 
     {
-    	newLeafNode(otherlv_48, grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_19());
+        newLeafNode(lv_type_48_0, grammarAccess.getViewpointAccess().getTypeConfigurationKeyword_19_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getViewpointRule());
+	        }
+       		addWithLastConsumed($current, "type", lv_type_48_0, "Configuration");
+	    }
+
+)
+)(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getViewpointRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getViewpointAccess().getVP_AspectsConfigurationCrossReference_19_1_0()); 
+	    }
+		ruleFQN		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_50='}' 
+    {
+    	newLeafNode(otherlv_50, grammarAccess.getViewpointAccess().getRightCurlyBracketKeyword_20());
     }
 )
 ;

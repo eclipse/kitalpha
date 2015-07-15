@@ -30,6 +30,7 @@ import org.eclipse.xtext.validation.IConcreteSyntaxValidator.DiagnosticListAccep
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
@@ -280,6 +281,24 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
             EList<Aspect> _vP_Aspects_14 = target.getVP_Aspects();
             EObject _get_15 = this.copier.get(key);
             _vP_Aspects_14.add(((Aspect) _get_15));
+          }
+        }
+        if ((key instanceof ViewpointActivityExplorer)) {
+          EList<Aspect> _vP_Aspects_15 = target.getVP_Aspects();
+          final Function1<Aspect,Boolean> _function_8 = new Function1<Aspect,Boolean>() {
+              public Boolean apply(final Aspect c) {
+                return Boolean.valueOf((c instanceof ViewpointActivityExplorer));
+              }
+            };
+          Aspect oldViewpointActivityExplorer = IterableExtensions.<Aspect>findFirst(_vP_Aspects_15, _function_8);
+          boolean _notEquals_11 = (!Objects.equal(oldViewpointActivityExplorer, null));
+          if (_notEquals_11) {
+            EObject _get_16 = this.copier.get(key);
+            EcoreUtil2.replace(oldViewpointActivityExplorer, _get_16);
+          } else {
+            EList<Aspect> _vP_Aspects_16 = target.getVP_Aspects();
+            EObject _get_17 = this.copier.get(key);
+            _vP_Aspects_16.add(((Aspect) _get_17));
           }
         }
       }

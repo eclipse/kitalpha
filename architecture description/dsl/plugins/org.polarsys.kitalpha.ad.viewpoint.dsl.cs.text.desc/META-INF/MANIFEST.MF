@@ -35,7 +35,9 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model,
- org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer;visibility:=reexport
 Import-Package: org.apache.log4j,
  org.eclipse.sirius.ecore.extender.business.api.accessor,
  org.eclipse.xtext.xbase.lib

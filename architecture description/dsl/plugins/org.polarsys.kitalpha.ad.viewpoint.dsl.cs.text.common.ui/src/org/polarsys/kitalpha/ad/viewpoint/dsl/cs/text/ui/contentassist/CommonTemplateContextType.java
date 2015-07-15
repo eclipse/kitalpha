@@ -25,5 +25,6 @@ public class CommonTemplateContextType extends XtextTemplateContextType {
 		super.addDefaultTemplateVariables();
 		addResolver(new CommonTemplateVariableResolver.FileName());
 		addResolver(new CommonTemplateVariableResolver.ShortName());
+		addResolver(new CommonTemplateVariableResolver.ViewpointName());
 	}
 }

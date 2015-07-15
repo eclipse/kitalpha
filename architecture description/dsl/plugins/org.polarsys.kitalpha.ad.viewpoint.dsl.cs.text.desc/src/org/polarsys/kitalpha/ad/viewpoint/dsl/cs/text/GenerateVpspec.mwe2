@@ -104,6 +104,17 @@ Workflow {
 				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.genmodel"
 				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.genmodel"
 				}
+			
+			//Activity Explorer
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore"
+			}
+			
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model/model/ViewpointActivityExplorer.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model/model/ViewpointActivityExplorer.genmodel"
+			}
 				
 			//emde
 			registerGeneratedEPackage = "org.polarsys.kitalpha.emde.model.EmdePackage"
@@ -134,7 +145,11 @@ Workflow {
 			
 			//vpdiagram
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage"
-			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/model/vpdiagram.genmodel"          
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/model/vpdiagram.genmodel"
+			
+			//Activity Explorer
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model/model/ViewpointActivityExplorer.genmodel"
         }
     
         component = DirectoryCleaner {

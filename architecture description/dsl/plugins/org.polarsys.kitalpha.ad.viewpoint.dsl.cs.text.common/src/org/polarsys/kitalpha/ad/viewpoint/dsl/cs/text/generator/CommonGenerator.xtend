@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.common.util.URI
 import org.eclipse.sirius.viewpoint.description.Group
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.polarsys.kitalpha.ad.viewpoint.dsl.^as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer
 
 abstract class CommonGenerator implements IViewpointSynchronizer {
 	
@@ -79,7 +80,7 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 					target.setVP_Data(copier.get(key) as Data)
 				}
 				
-				//FIXME without EMF refelexion
+				//FIXME without EMF refelexion or use Xtext import
 				for (EObject imp : input) {
 					if (imp.eClass.name.equals("ImportURI"))
 					{
@@ -173,6 +174,16 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 				var oldProperties =  target.VP_Aspects.findFirst(c | c instanceof PropertySet)
 				if (oldProperties != null) {
 					EcoreUtil2::replace(oldProperties, copier.get(key))
+				} else {
+					target.VP_Aspects.add(copier.get(key) as Aspect)
+				}
+			}
+			
+			if (key instanceof ViewpointActivityExplorer) {
+				var oldViewpointActivityExplorer = target.VP_Aspects.findFirst(c | c instanceof ViewpointActivityExplorer)
+				
+				if (oldViewpointActivityExplorer != null){
+					EcoreUtil2::replace(oldViewpointActivityExplorer, copier.get(key))
 				} else {
 					target.VP_Aspects.add(copier.get(key) as Aspect)
 				}

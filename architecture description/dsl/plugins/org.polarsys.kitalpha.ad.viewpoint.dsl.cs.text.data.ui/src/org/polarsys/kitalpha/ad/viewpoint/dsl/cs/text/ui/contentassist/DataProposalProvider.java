@@ -122,39 +122,7 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 	@Override
 	public void completeClass_Icon(EObject model, Assignment assignment,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		XtextResource resource = (XtextResource) model.eResource();
-		String platformString = resource.getURI().toPlatformString(true);
-		IFile myFile = ResourcesPlugin.getWorkspace().getRoot()
-				.getFile(new Path(platformString));
-		IProject currentProject = myFile.getProject();
-		IFolder iconFolder = currentProject.getFolder("icons");
-		IPath iconRelativePath = iconFolder.getProjectRelativePath();
-		List<IResource> collectICons = collectICons(iconFolder,
-				new ArrayList<IResource>());
-		
-		//To decomment later
-//		List<IResource> importedResources = getImportedResources(model);
-//		
-//		for (IResource iResource : importedResources) {
-//			collectICons = collectICons(iResource, collectICons);
-//		}
-		
-		for (IResource candidate : collectICons) {
-			if (candidate instanceof IFile) {
-				IFile xfile = (IFile) candidate;
-				try {
-					Image image = getImage(xfile.getLocation());
-					IPath projectRelativePath = xfile.getProjectRelativePath();
-					IPath makeRelativeTo = projectRelativePath
-							.makeRelativeTo(iconRelativePath);
-					acceptor.accept(createCompletionProposal(
-							"\"" + makeRelativeTo.toString() + "\"",
-							makeRelativeTo.toString(), image, context));
-				} catch (SWTException e){
-					//we don't others file except images.
-				}
-			}
-		}
+		complete_iconPath(model, assignment, context, acceptor);
 	}
 	
 	

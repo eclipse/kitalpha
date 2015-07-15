@@ -13,6 +13,8 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import java.util.List;
 
+import javax.swing.text.View;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.text.templates.SimpleTemplateVariableResolver;
 import org.eclipse.jface.text.templates.TemplateContext;
@@ -28,13 +30,18 @@ import org.eclipse.xtext.ui.editor.templates.XtextTemplateContext;
  */
 public class CommonTemplateVariableResolver extends AbstractTemplateVariableResolver {	
 	
-	public static final String FILE_NAME = "fileName";
 	
+	//file name
+	public static final String FILE_NAME = "fileName";
 	public static final String FILE_NAME_DESCRIPTION = "File name";
 	
+	//shortname
 	public static final String SHORT_NAME = "shortName";
-	
 	public static final String SHORT_NAME_DESCRIPTION = "Viewpoint short name";
+	
+	//viewpoint name
+	public static final String VIEWPOINT_NAME = "viewpointName";
+	public static final String VIEWPOINT_NAME_DESCRIPTION = "Viewpoint Complete Name";
 	
 	
 	public static class FileName extends SimpleTemplateVariableResolver {
@@ -66,6 +73,24 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			String shortName = lastSegment.substring(0, lastSegment.indexOf("."));
 			return (lastSegment!=null) ? shortName : SHORT_NAME;
 		}
+	}
+	
+	public static class ViewpointName extends SimpleTemplateVariableResolver {
+
+		protected ViewpointName() {
+			super(VIEWPOINT_NAME, VIEWPOINT_NAME_DESCRIPTION);
+		}
+		
+		protected String resolve(TemplateContext context) {
+			XtextTemplateContext castedContext = (XtextTemplateContext) context;
+			XtextDocument document =(XtextDocument)  castedContext.getDocument();
+			URI resourceURI = document.getResourceURI();
+			String _projectName = resourceURI.segment(1);
+			String projectName = _projectName.substring(0, _projectName.lastIndexOf(".")); //trim vpdsl
+			
+			return projectName != null? projectName: VIEWPOINT_NAME;
+		}
+		
 	}
 	
 	@Override

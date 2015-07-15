@@ -42,10 +42,12 @@ public class MetamodelIDs {
 	
 	public static final String SERVICES = "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpspec";
 	
+	public static final String ACTIVITY_EXPLORER = "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/viewpointactivityexplorer/1.0.0";
+	
 	/**
 	 * Default metamodel namespace patterns
 	 */
-	public static final Pattern VPDSL_NAMESPACE_PATTERN = Pattern.compile("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/(vpspec|vpconf|vpservices|vpui|vpbuild)"); //$NON-NLS-1$
+	public static final Pattern VPDSL_NAMESPACE_PATTERN = Pattern.compile("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/(vpspec|vpconf|vpservices|vpui|vpbuild|viewpointactivityexplorer)"); //$NON-NLS-1$
 	
 	public static final String DOCUMENTATION_NAMESPACE = "http://www.polarsys.org/kitalpha/ecore/documentation";
 

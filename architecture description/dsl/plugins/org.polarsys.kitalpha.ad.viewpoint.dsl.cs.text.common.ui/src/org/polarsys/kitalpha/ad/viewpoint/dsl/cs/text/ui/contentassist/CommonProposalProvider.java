@@ -16,16 +16,22 @@ import java.net.URL;
 import java.util.List;
 
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.swt.SWTException;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.AbstractCommonProposalProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 
 /**
@@ -72,5 +78,26 @@ public class CommonProposalProvider extends AbstractCommonProposalProvider {
         }
         final Image image = ImageDescriptor.createFromURL(url).createImage();
         return image;
+    }
+    
+    protected void complete_iconPath(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor){
+    	IProject project = ProjectUtil.getEclipseProjectOf(model);
+		List<IResource> resources = ProjectUtil.getFolderResources(project, "icons", IResource.FILE, false);
+		IFolder iconFolder = ProjectUtil.getFolderInProject(project, "icons");
+		IPath f_relativePath = iconFolder.getProjectRelativePath();
+		
+		for (IResource iResource : resources) {
+			IPath path = iResource.getLocation();
+			if (path != null){
+				try {
+					IPath p_relativePath = iResource.getProjectRelativePath();
+					IPath relativePath = p_relativePath.makeRelativeTo(f_relativePath);
+					ICompletionProposal proposal = createCompletionProposal("\"" + relativePath.toString() + "\"", relativePath.toString(), getImage(path), context);
+					acceptor.accept(proposal);
+				} catch (SWTException e) {
+					//Die
+				}
+			}
+		}
     }
 }

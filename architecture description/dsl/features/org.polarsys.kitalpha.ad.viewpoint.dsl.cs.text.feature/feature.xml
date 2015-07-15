@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
 Copyright (c) 2014 Thales Global Services S.A.S.
 All rights reserved. This program and the accompanying materials
@@ -10,7 +9,6 @@ http://www.eclipse.org/legal/epl-v10.html
 Contributors:
   Thales Global Services S.A.S - initial API and implementation
 -->
-
 <feature
       id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.feature"
       label="Kitalpha Viewpoint Textual DSL Feature"
@@ -157,6 +155,20 @@ Contributors:
 
    <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

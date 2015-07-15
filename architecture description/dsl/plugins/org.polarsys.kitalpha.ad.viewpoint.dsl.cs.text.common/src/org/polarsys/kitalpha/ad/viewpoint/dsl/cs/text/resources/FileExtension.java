@@ -37,6 +37,8 @@ public class FileExtension  {
 	public static final String  RULES_EXTENSION = "rules.vptext";
 
 	public static final String  DATA_EXTENSION = "data.vptext";
+	
+	public static final String ACTIVITYEXPLORER_EXTENSION = "activityexplorer.vptext";
 
 
 	private static final String[] PERIDIC_EXTENSIONS_ARRAY = new String [] {
@@ -48,7 +50,8 @@ public class FileExtension  {
 		DIAGRAM_EXTENSION, 
 		SERVICES_EXTENSION, 
 		RULES_EXTENSION,
-		DATA_EXTENSION
+		DATA_EXTENSION,
+		ACTIVITYEXPLORER_EXTENSION
 	};
 
 	public static String getByName(String name) {

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ViewpointActivityExplorer" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0"
+    nsPrefix="viewpointactivityexplorer">
+  <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//ActivityExplorerItem #//DynamicIcon #//PredicateElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOverview" eType="#//Overview"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tabName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showViewer" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelType" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicateElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasPredicate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Overview" eSuperTypes="#//DynamicIcon">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Icon" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePathOff" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityExplorerItem" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityExplorerItemID"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicIcon" abstract="true" eSuperTypes="#//Icon">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePathOn" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionExtension" eSuperTypes="#//ActivityExplorerItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendedPageID" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expanded" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filtering" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityExtension" eSuperTypes="#//PredicateElement #//Icon #//ActivityExplorerItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendedSectionID" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewpointActivityExplorer" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedNewPages" eType="#//Pages"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSectionsExtension"
+        eType="#//Sections" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivitiesExtension"
+        eType="#//Activities" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pages">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivityExplorerPages"
+        upperBound="-1" eType="#//Page" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sections">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSectionsExtensions"
+        upperBound="-1" eType="#//SectionExtension" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activities">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActivitiesExtensions"
+        upperBound="-1" eType="#//ActivityExtension" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

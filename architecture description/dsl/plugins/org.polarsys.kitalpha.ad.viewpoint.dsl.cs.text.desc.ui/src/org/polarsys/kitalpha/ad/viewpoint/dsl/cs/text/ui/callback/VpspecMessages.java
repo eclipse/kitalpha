@@ -25,6 +25,7 @@ public class VpspecMessages extends NLS {
 	public static String VpspecEditorCallback_NewDiagrams;
 	public static String VpspecEditorCallback_NewServices;
 	public static String VpspecEditorCallback_NewUserInterface;
+	public static String VpspecEditorCallback_newActivityExplorer;
 	
 	static {
 		// initialize resource bundle

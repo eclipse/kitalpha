@@ -258,6 +258,8 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 		if (selectedProposal.equals(VpspecMessages.VpspecEditorCallback_NewUserInterface)) {
 			return WizardIDs.NEW_UI_WIZARD;
 		}
+		if (selectedProposal.equals(VpspecMessages.VpspecEditorCallback_newActivityExplorer))
+			return WizardIDs.NEW_ACTIVITY_EXPLORER_WIZARD;
 		return null;
 	}
 }

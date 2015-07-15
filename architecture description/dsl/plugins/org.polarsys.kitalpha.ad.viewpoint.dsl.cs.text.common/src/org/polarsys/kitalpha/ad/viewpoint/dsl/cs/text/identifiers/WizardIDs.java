@@ -23,6 +23,7 @@ public class WizardIDs {
 	public static final String NEW_BUILD_WIZARD ="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.vpbuild.file";
 	public static final String NEW_CONF_WIZARD ="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.vpconf.file";
 	public static final String NEW_DIAGRAM_WIZARD ="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.vpdiagram.file";
-	public static final String NEW_SERVICES_WIZARD ="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.vpservices.file";
+	public static final String NEW_SERVICES_WIZARD = "org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.vpservices.file";
+	public static final String NEW_ACTIVITY_EXPLORER_WIZARD = "org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.activityexplorer.file";
 
 }

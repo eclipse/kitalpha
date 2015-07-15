@@ -300,4 +300,25 @@ Contributors:
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

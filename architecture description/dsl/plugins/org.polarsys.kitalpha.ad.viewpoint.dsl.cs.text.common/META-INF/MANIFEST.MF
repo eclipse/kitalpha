@@ -21,7 +21,8 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.model,
- org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model;visibility:=reexport
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text,

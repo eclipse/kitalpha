@@ -20,6 +20,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
 
 import com.google.inject.Inject;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
@@ -48,9 +50,11 @@ public class VpspecJavaValidator extends AbstractVpspecJavaValidator {
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
 				if (type.equals(access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue()) && !(aspects.get(index) instanceof UIDescription))
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
-				if (type.equals(access.getViewpointAccess().getTypeConfigurationKeyword_18_0_0().getValue()) && !(aspects.get(index) instanceof Configuration))
+				if (type.equals(access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue()) && !(aspects.get(index) instanceof Configuration))
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
-				if (type.equals(access.getViewpointAccess().getTypeBuildKeyword_17_0_0().getValue()) && !(aspects.get(index) instanceof Build))
+				if (type.equals(access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue()) && !(aspects.get(index) instanceof Build))
+					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
+				if (type.equals(access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue()) && !(aspects.get(index) instanceof ViewpointActivityExplorer))
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
 			}
 			EList<Viewpoint> dependencies = vp.getDependencies();

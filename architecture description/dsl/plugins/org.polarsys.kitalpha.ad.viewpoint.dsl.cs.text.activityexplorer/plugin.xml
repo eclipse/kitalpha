@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+<?eclipse version="3.4"?>
+<plugin>
+
+	 <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            default="true"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation.activityexpolorer.clientContext">
+         <selector
+               class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation.VpActivityExplorerContextSelector">
+         </selector>
+      </clientContext>
+      <binding
+            context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation.activityexpolorer.clientContext">
+         <category
+               ref="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.models.category">
+         </category>
+      </binding>
+   </extension>
+</plugin>
