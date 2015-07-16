@@ -48,6 +48,7 @@ public class VpspecSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         VP_Data=[Data|FQN]? 
 	 *         (type+='UI' VP_Aspects+=[UIDescription|FQN])? 
 	 *         (type+='Diagrams' VP_Aspects+=[DiagramSet|FQN])? 
+	 *         (type+='Activity Explorer' VP_Aspects+=[ViewpointActivityExplorer|FQN])? 
 	 *         (type+='Services' VP_Aspects+=[ServiceSet|FQN])? 
 	 *         (type+='Build' VP_Aspects+=[Build|FQN])? 
 	 *         (type+='Configuration' VP_Aspects+=[Configuration|FQN])?

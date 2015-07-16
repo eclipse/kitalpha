@@ -47,6 +47,20 @@ import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.RuleSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Service;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.VpservicesPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataSpec;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
@@ -65,19 +79,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.R
 
 import com.google.inject.Inject;
 import com.google.inject.Injector;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointElement;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.RuleSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Service;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.VpservicesPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 /**
  * 
  * @author Amine Lajmi
@@ -175,6 +176,18 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
             });
         if (aspect!=null)
         	output.put(2, backwardSynchronize((DiagramSet)aspect, loadDiagramResource(aspect, resourceSet)));
+        
+        //Activity Explorer
+        aspect = IterableExtensions.<Aspect>findFirst(aspects, new Function1<Aspect, Boolean>() {
+
+			@Override
+			public Boolean apply(Aspect c) {
+				return Boolean.valueOf((c instanceof ViewpointActivityExplorer));
+			}
+		});
+        
+        if (aspect != null)
+        	output.put(3, backwardSynchronize((ViewpointActivityExplorer)aspect, loadViewpointActivityExplorerResource(aspect, resourceSet)));
        
         //Services
         Iterable<Aspect> filter = IterableExtensions.<Aspect>filter(aspects, new Function1<Aspect,Boolean>() {
@@ -183,7 +196,7 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
               }
             });
         if (filter.iterator().hasNext())
-        	output.put(3,assembleServices(filter, loadServicesResource(filter.iterator().next(), resourceSet)));
+        	output.put(4,assembleServices(filter, loadServicesResource(filter.iterator().next(), resourceSet)));
         
         //Build
         aspect = IterableExtensions.<Aspect>findFirst(aspects, new Function1<Aspect,Boolean>() {
@@ -192,7 +205,7 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
               }
             });
         if (aspect!=null)
-        	output.put(4, backwardSynchronize((Build) aspect, loadBuildResource(aspect, resourceSet)));
+        	output.put(5, backwardSynchronize((Build) aspect, loadBuildResource(aspect, resourceSet)));
         
         //Primary resource
         return assembleViewpoint(viewpoint, output);
@@ -207,6 +220,8 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 	public abstract EObject backwardSynchronize(DiagramSet object, Resource target);
 	
 	public abstract EObject backwardSynchronize(Build object, Resource target);
+	
+	public abstract EObject backwardSynchronize(ViewpointActivityExplorer object, Resource target);
 	
 	@Override
 	public void doGenerate(Resource input, IFileSystemAccess fsa) {}
@@ -273,16 +288,19 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 			}
 			if (output.get(key) instanceof Services) {
 				viewpoint.getVP_Aspects().add(((Services) output.get(key)).getServices().get(0));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeServicesKeyword_16_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue());
 			}
 			if (output.get(key) instanceof Configuration) {
 				viewpoint.getVP_Aspects().add((Configuration) output.get(key));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeConfigurationKeyword_18_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue());
 			}
 			if (output.get(key) instanceof Build) {
-				//A remettre des que la migration du model vpbuild.
 				viewpoint.getVP_Aspects().add((Build) output.get(key));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeBuildKeyword_17_0_0().getValue());
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue());
+			}
+			if (output.get(key) instanceof ViewpointActivityExplorer) {
+				viewpoint.getVP_Aspects().add((ViewpointActivityExplorer)output.get(key));
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue());
 			}
 		}
 		return viewpoint;
@@ -407,6 +425,27 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 			if (object.eResource()!=null)
 				return object.eResource();
 		}
+		return ResourceHelper.loadResource(uris.get(0), resourceSet);
+	}
+	
+	protected Resource loadViewpointActivityExplorerResource(EObject inputObject, ResourceSet resourceSet){
+		
+		String projectName = EcoreUtil.getURI(inputObject).segment(1);
+		List<URI> uris = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.ACTIVITYEXPLORER_EXTENSION, projectName);
+		
+		if (uris.isEmpty())
+		{
+			Resource resource = ResourceHelper.createResource(GeneratorsUtil.computeURI(inputObject, FileExtension.ACTIVITYEXPLORER_EXTENSION,  null), resourceSet);
+			PluginUtil.addModelReuseExtension(projectName, inputObject, resource.getURI());
+			return resource;
+		}
+		
+		List<EObject> activityExplorerContent = ResourceHelper.loadActivityexplorerResource(uris.get(0), resourceSet);
+		for (EObject eObject : activityExplorerContent) {
+			if (eObject.eResource() != null)
+				return eObject.eResource();
+		}
+		
 		return ResourceHelper.loadResource(uris.get(0), resourceSet);
 	}
 

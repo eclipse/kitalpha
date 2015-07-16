@@ -12,34 +12,20 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 
-import java.io.IOException;
-import java.net.DatagramPacket;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
-import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -52,7 +38,6 @@ import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
@@ -64,6 +49,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentProposalLabelProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
@@ -72,7 +58,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper.URIConverterHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.WorkspaceResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
@@ -81,7 +66,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
-import com.google.common.cache.LoadingCache;
 import com.google.inject.Inject;
 
 /**
@@ -124,10 +108,13 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 						if (candidate instanceof DiagramSet && proposal.getDisplayString().matches(access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue())){
 							return;
 						}
-						if (candidate instanceof ServiceSet && proposal.getDisplayString().matches(access.getViewpointAccess().getTypeServicesKeyword_16_0_0().getValue())){
+						if (candidate instanceof ServiceSet && proposal.getDisplayString().matches(access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue())){
 							return;
 						}
-						if (candidate instanceof Configuration && proposal.getDisplayString().matches(access.getViewpointAccess().getTypeConfigurationKeyword_18_0_0().getValue())) {
+						if (candidate instanceof Configuration && proposal.getDisplayString().matches(access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue())) {
+							return;
+						}
+						if (candidate instanceof ViewpointActivityExplorer && proposal.getDisplayString().matches(access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue())){
 							return;
 						}
 					}
@@ -139,10 +126,11 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 				}			
 				//Don't propose UI, Rules, Services, and Configuration before Data	
 				if (proposal.getDisplayString().matches(access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue()) ||
-					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeConfigurationKeyword_18_0_0().getValue()) ||
-					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeBuildKeyword_17_0_0().getValue()) ||
+					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue()) ||
+					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue()) ||
 					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue()) ||
-					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeServicesKeyword_16_0_0().getValue())) {					
+					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue()) ||
+					proposal.getDisplayString().matches(access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue())) {					
 					INode currentNode = contentAssistContext.getCurrentNode();
 					INode nextSibling = currentNode.getNextSibling();
 					if (nextSibling != null) {
@@ -162,7 +150,18 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 							return;
 						}
 					}					
-				}				
+				}
+				//Don't propose Activity Explorer before
+				if (proposal.getDisplayString().matches(access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue())) {				
+					INode currentNode = contentAssistContext.getCurrentNode();
+					INode nextSibling = currentNode.getNextSibling();
+					if (nextSibling != null) {
+						String text = nextSibling.getText();
+						if (text.equals(access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue())){
+							return;
+						}
+					}					
+				}
 			}
 			getPriorityHelper().adjustKeywordPriority(proposal, contentAssistContext.getPrefix());
 			acceptor.accept(proposal);
@@ -204,13 +203,13 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	
 	Predicate<IEObjectDescription> getFilter(String aspectType) {
 		final VpspecGrammarAccess access = (VpspecGrammarAccess) grammar;
-		if (aspectType.equals(access.getViewpointAccess().getTypeBuildKeyword_17_0_0().getValue()))
+		if (aspectType.equals(access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue()))
 			return new Predicate<IEObjectDescription>() {
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof Build);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getTypeConfigurationKeyword_18_0_0().getValue()))
+		if (aspectType.equals(access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue()))
 			return new Predicate<IEObjectDescription>() {
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof Configuration);
@@ -228,7 +227,7 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 					return (d.getEObjectOrProxy() instanceof DiagramSet);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getTypeServicesKeyword_16_0_0().getValue()))
+		if (aspectType.equals(access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue()))
 			return new Predicate<IEObjectDescription>() {
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof ServiceSet);
@@ -238,6 +237,12 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 			return new Predicate<IEObjectDescription>() {
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof UIDescription);
+				}
+			};
+		if (aspectType.equals(access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue()))
+			return new Predicate<IEObjectDescription>() {
+				public boolean apply(IEObjectDescription d) {
+					return (d.getEObjectOrProxy() instanceof ViewpointActivityExplorer);
 				}
 			};
 		return Predicates.<IEObjectDescription> alwaysTrue();

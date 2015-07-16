@@ -502,6 +502,8 @@ public class ResourceHelper {
 			return loadServicesResource(file, resourceSet);
 		if (fileExtension.equals(FileExtension.DIAGRAM_EXTENSION))
 			return loadDiagramResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.ACTIVITYEXPLORER_EXTENSION))
+			return loadActivityexplorerResource(file, resourceSet);
 		return loadModel(file, resourceSet);		
 	}
 	
@@ -873,7 +875,31 @@ public class ResourceHelper {
 		}
 		return Collections.emptyList();
 	}
+	
+	
+	
+	public static List<EObject> loadActivityexplorerResource(IFile file, ResourceSet resourceSet){
+		
+		URI activityExplorerURI = computeURI(file, FileExtension.ACTIVITYEXPLORER_EXTENSION);
+		
+		if (activityExplorerURI == null)
+			return Collections.emptyList();
+		
+		return loadActivityexplorerResource(activityExplorerURI, resourceSet);
+	}
 
+
+	public static List<EObject> loadActivityexplorerResource(URI activityExplorerURI, ResourceSet resourceSet) {
+		
+		Resource activityExplorerResource = loadResource(activityExplorerURI, resourceSet);
+		
+		if (!activityExplorerResource.getContents().isEmpty()){
+			EObject activityExplorerRoot = activityExplorerResource.getContents().get(0);
+			return Lists.newArrayList(activityExplorerRoot);
+		}
+		return Collections.emptyList();
+	}
+	
 
 	public static String getProjectName(EObject object){	
 		String projectName = EcoreUtil.getURI(object).segment(1);	

@@ -27,6 +27,7 @@ public class EditorIDs {
 	public static final String DIAGRAM_EDITOR_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram";
 	public static final String SERVICES_EDITOR_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpservices";
 	public static final String UI_EDITOR_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui";
+	public static final String ACTIVITY_EXPLORER_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer";
 	
 	public static String getEditorID(String fileExtension) {
 		if (fileExtension.equals(FileExtension.BUILD_EXTENSION))
@@ -43,6 +44,9 @@ public class EditorIDs {
 			return SERVICES_EDITOR_ID;
 		if (fileExtension.equals(FileExtension.UI_EXTENSION))
 			return UI_EDITOR_ID;
+		if (fileExtension.equals(FileExtension.ACTIVITYEXPLORER_EXTENSION))
+			return ACTIVITY_EXPLORER_ID;
+		
 		return null;
 	}
 	

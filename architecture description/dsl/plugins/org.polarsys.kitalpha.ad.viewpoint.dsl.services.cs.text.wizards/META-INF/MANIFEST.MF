@@ -21,6 +21,7 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.activityexplorer,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.build,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.conf,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.data,

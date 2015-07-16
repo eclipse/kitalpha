@@ -65,7 +65,7 @@ public class CommonValueConverter extends Ecore2XtextTerminalConverters{
 			@Override
 			public Boolean toValue(String string, INode node)
 					throws ValueConverterException {
-				return string.equals("true");
+				return string != null?string.equals("true"):false;
 			}
 			
 			@Override
@@ -82,11 +82,19 @@ public class CommonValueConverter extends Ecore2XtextTerminalConverters{
 			@Override
 			public String toValue(String string, INode node)
 					throws ValueConverterException {
+				
+				if (string != null && string.startsWith("\"") && string.endsWith("\""))
+					string = string.substring(1, string.length() - 1);
+				
 				return string;
 			}
 
 			@Override
 			public String toString(String value) throws ValueConverterException {
+				
+				if (value != null && !value.startsWith("\"") && !value.endsWith("\""))
+					value = "\"" + value + "\"";
+				
 				return value;
 			}
 			

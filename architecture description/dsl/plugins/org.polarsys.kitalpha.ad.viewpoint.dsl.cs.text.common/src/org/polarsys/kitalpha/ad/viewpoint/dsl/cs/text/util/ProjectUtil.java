@@ -10,8 +10,20 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceVisitor;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
@@ -38,6 +50,78 @@ public class ProjectUtil {
 		String project2 = uri2.segment(1);
 		
 		return project1.equalsIgnoreCase(project2);
+	}
+	
+	/**
+	 * Return the project where the resource of model is defined
+	 * @param model
+	 * @return
+	 */
+	public static IProject getEclipseProjectOf(EObject model){
+		
+		if (model == null) 
+			return null;
+		
+		Resource resource = model.eResource();
+		
+		if (resource == null) 
+			return null;
+		
+		return getEclipseProjectOf(resource);
+	}
+	
+	/**
+	 * Return the project of the resource
+	 * @param resource
+	 * @return
+	 */
+	public static IProject getEclipseProjectOf(Resource resource){
+		
+		String platformString = resource.getURI().toPlatformString(true);
+		IFile myFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformString));
+		IProject project = myFile.getProject();
+		return project;
+	}
+	
+	/**
+	 * Return list of all resources in folder
+	 * @param project where the folder exists
+	 * @param folder 
+	 * @param type of the resource
+	 * @param ignoreType if the type parameter is ignored (used to return all folder resources)
+	 * @return
+	 */
+	public static List<IResource> getFolderResources(IProject project, String folder, final int type, final boolean ignoreType){
+		
+		final List<IResource> resources = new ArrayList<IResource>();
+		
+		IFolder resourcesFolder = getFolderInProject(project, folder);
+		
+		if (resourcesFolder != null) {
+			try {
+				resourcesFolder.accept(new IResourceVisitor() {
+
+					@Override
+					public boolean visit(IResource resource) throws CoreException {
+
+						if (resource.exists() && resource.isAccessible()) {
+							if (ignoreType || resource.getType() == type)
+								resources.add(resource);
+						}
+
+						return true;
+					}
+				});
+			} catch (CoreException e) {
+				return resources;
+			}
+		}
+		
+		return resources;
+	}
+	
+	public static IFolder getFolderInProject(IProject project, String folder){
+		return project.getFolder(folder);
 	}
 
 }

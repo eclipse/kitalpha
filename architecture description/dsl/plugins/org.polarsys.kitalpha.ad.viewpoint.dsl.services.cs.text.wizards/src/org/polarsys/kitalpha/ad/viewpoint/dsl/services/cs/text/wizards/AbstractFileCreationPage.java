@@ -75,7 +75,7 @@ public abstract class AbstractFileCreationPage extends WizardNewFileCreationPage
 	protected boolean validatePage() {
 		boolean apriori = super.validatePage();
 		String fileName = getFileName();
-		Pattern pattern = Pattern.compile("(.*).(ui|conf|data|spec|build|diagram|services).vptext");
+		Pattern pattern = Pattern.compile("(.*).(ui|conf|data|spec|build|diagram|services|activityexplorer).vptext");
 		boolean fileMatches = pattern.matcher(fileName).matches();
 		return (apriori && fileMatches);
 	}

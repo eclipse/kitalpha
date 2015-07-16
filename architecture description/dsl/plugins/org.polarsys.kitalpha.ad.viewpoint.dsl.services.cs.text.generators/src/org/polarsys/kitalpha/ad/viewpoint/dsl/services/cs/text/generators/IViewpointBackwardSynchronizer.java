@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IGenerator;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
@@ -42,4 +43,6 @@ public interface IViewpointBackwardSynchronizer extends IGenerator {
 	EObject backwardSynchronize(List<Aspect> services, Resource target);
 	
 	EObject backwardSynchronize(Build object, Resource target);
+	
+	EObject backwardSynchronize(ViewpointActivityExplorer object, Resource target);
 }

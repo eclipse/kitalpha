@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-name
+Bundle-Vendor: %Bundle-vendor
+Bundle-Version: 0.5.1.qualifier
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer,
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common;visibility:=reexport,
+ org.eclipse.core.resources,
+ org.eclipse.emf.validation,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.formatting,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr.internal,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation
+

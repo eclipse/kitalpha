@@ -26,7 +26,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -286,6 +285,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadDiagramResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadBuildResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadServicesResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.loadActivityexplorerResource(file, resourceSet));
 		return Lists.newArrayList( inputModels );
 	}
 	

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+              class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="activityexplorer.vptext"
+              icon="icons/vpdsl_file_16.png"
+              id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer"
+              name="Activityexplorer Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.validate">
+         <activeWhen>
+            <reference
+                    definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+              category="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common"
+              class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer"
+              name="Viewpoint Activity Explorer">
+            <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Activityexplorer"/>
+        </page>
+        <page
+            category="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Activityexplorer"/>
+        </page>
+        <page
+            category="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.templates"
+            name="Templates">
+            <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Activityexplorer"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer"
+            name="Viewpoint Activity Explorer">
+            <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Activityexplorer"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Activityexplorer"
+            label="Viewpoint Activity Explorer"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="activityexplorer.vptext">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="activityexplorer.vptext">
+        </resourceServiceProvider>
+    </extension>
+
+
+    <!-- marker definitions for org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer -->
+    <extension
+            id="activityexplorer.check.fast"
+            name="Activityexplorer Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="activityexplorer.check.normal"
+            name="Activityexplorer Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="activityexplorer.check.expensive"
+            name="Activityexplorer Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.compare.contentViewers"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="activityexplorer">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.compare.contentMergeViewers"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="activityexplorer.vptext" label="Viewpoint Activity Explorer Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.editors.documentProviders"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="activityexplorer.vptext">
+    </provider>
+  </extension>
+    <!-- quickfix marker resolution generator for org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.activityexplorer.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.activityexplorer.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.activityexplorer.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
+       	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer"
+	        class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Activityexplorer"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.compare.contentViewers"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="activityexplorer.vptext">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.compare.contentMergeViewers"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="activityexplorer.vptext" label="Activityexplorer Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.editors.documentProviders"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="activityexplorer.vptext">
+    </provider>
+  </extension>
+    <extension
+          point="org.eclipse.ui.newWizards">
+       <category
+             id="org.polarsys.kitalpha.ad.viewpoint.dsl.activityexplorer.cs.text.wizards.category"
+             name="Activity Explorer"
+             parentCategory="org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.category">
+       </category>
+       <wizard
+             category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.ad.wizard.category/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.category"
+             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.activityexplorer.ActivityExplorerWizard"
+             icon="icons/vpdsl_file_16.png"
+             id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.activityexplorer.file"
+             name="Activity Explorer File">
+       </wizard>
+    </extension>
+    <extension
+          point="org.eclipse.xtext.builder.participant">
+       <participant
+             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+       </participant>
+    </extension>
+    <extension
+          point="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui.templateprovider">
+       <TemplateProvider
+             file="templates/templates.xml"
+             target="EMF">
+       </TemplateProvider>
+    </extension>
+
+</plugin>

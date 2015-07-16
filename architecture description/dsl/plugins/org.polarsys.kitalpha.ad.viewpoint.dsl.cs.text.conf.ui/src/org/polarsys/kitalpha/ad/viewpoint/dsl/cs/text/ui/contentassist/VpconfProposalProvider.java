@@ -39,6 +39,7 @@ import com.google.inject.Inject;
 /**
  * 
  * @author Amine Lajmi
+ *         Faycal Abka
  *
  */
 public class VpconfProposalProvider extends AbstractVpconfProposalProvider {

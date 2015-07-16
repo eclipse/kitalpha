@@ -323,6 +323,36 @@ public class WizardsUtil {
 		return fileContent;
 	}
 	
+	public static String getInitialActivityExplorerContent(String shortName) {
+		String fileContent = 	
+			"/**\n" + 
+			" * Copyright (c) " + WizardsUtil.COPYRIGHT_KITALPHA + ", " + getCurrentYear() + ". All rights reserved. \n" +
+			" *\n" +
+			" *	Viewpoint " + shortName + "\n" +
+			" *	@author: " + getCurrentUserName() + "\n" +
+			" *	@date: " +  getCurrentDate()+"\n" +
+			" *\n" +
+			" */\n" +
+			"Activity Explorer " + shortName + ".activityexplorer" + " {\n\n" +
+			"}";
+		return fileContent;
+	}
+	
+	public static String getInitialActivityExplorerContent(String shortName, String fileName) {
+		String fileContent = 	
+				"/**\n" + 
+				" * Copyright (c) " + WizardsUtil.COPYRIGHT_KITALPHA + ", " + getCurrentYear() + ". All rights reserved. \n" +
+				" *\n" +
+				" *	Viewpoint " + shortName + "\n" +
+				" *	@author: " + getCurrentUserName() + "\n" +
+				" *	@date: " +  getCurrentDate()+"\n" +
+				" *\n" +
+				" */\n" +
+				"Activity Explorer " + fileName + " {\n\n" +
+				"}";
+		return fileContent;
+	}
+	
 	public static String getCurrentUserName() {
 		return System.getProperty("user.name");
 	}

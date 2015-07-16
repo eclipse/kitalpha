@@ -94,15 +94,15 @@ public class VpspecContentProposalPriorities extends ContentProposalPriorities {
 				keywordPriority = diagramPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeServicesKeyword_16_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue())) {
 				keywordPriority = serviceSetPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeBuildKeyword_17_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue())) {
 				keywordPriority = buildPriority;
 				affected = true;
 			}
-			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeConfigurationKeyword_18_0_0().getValue())) {
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue())) {
 				keywordPriority = configurationPriority;
 				affected = true;
 			}

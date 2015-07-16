@@ -27,6 +27,7 @@ import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" a
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" as expression
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" as vpservices
 import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpservices/1.0.0" as services
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" as activtyExplorer
 
 generate vpspec "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpspec/1.0.0"
 
@@ -59,6 +60,7 @@ Viewpoint returns Viewpoint:
 		('Data' VP_Data=[vpdesc::Data | FQN])?
 		(type+='UI' VP_Aspects+=[vpui::UIDescription | FQN] )?
 		(type+='Diagrams' VP_Aspects+=[vpdiagram::DiagramSet | FQN])?
+		(type+='Activity Explorer' VP_Aspects += [activtyExplorer::ViewpointActivityExplorer | FQN])?
 		(type+='Services' VP_Aspects+= [vpservices::ServiceSet | FQN])? //[services::Services | FQN])?
 		(type+='Build' VP_Aspects+=[vpbuild::Build| FQN])?
 		(type+='Configuration' VP_Aspects+=[vpconf::Configuration | FQN])?
