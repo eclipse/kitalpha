@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-name
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation;singleton:=true
+Bundle-Version: 0.5.1.qualifier
+Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.Activator
+Bundle-Vendor: %Bundle-vendor
+Require-Bundle: org.eclipse.core.runtime,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
