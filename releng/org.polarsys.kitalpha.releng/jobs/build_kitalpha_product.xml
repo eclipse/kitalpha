@@ -1,7 +1,0 @@
-<project name="kitalpha_product">
-
-	<echo message="Running Job kitalpha_product in kitalpha_product/releng"/>
-	<ant dir="kitalpha_product/releng"/>
-
-
-</project>
