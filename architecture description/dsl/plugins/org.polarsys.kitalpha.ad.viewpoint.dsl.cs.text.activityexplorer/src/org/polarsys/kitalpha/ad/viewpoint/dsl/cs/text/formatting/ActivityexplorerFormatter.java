@@ -10,6 +10,8 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.formatting;
 
+import java.util.List;
+
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
@@ -29,21 +31,57 @@ public class ActivityexplorerFormatter extends AbstractDeclarativeFormatter {
 	protected void configureFormatting(FormattingConfig c) {
 		org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess f = (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess) getGrammarAccess();
 		
-		c.setLinewrap(1).after(f.getFQNRule());
-		c.setLinewrap(1).after(f.getEIntRule());
-		c.setLinewrap(1).after(f.getEStringRule());
-		c.setLinewrap(1).after(f.getEBooleanRule());
-		
-		
-		for(Pair<Keyword, Keyword> pair: f.findKeywordPairs("{", "}")) {
-			c.setIndentation(pair.getFirst(), pair.getSecond());
-			c.setLinewrap(1).after(pair.getFirst());
-			c.setLinewrap(1).before(pair.getSecond());
-			c.setLinewrap(1).after(pair.getSecond());
-		}
-		
-		c.setLinewrap(0, 1, 2).before(f.getSL_COMMENTRule());
-		c.setLinewrap(0, 1, 2).before(f.getML_COMMENTRule());
-		c.setLinewrap(0, 1, 1).after(f.getML_COMMENTRule());
+c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
+        
+        
+        List<Keyword> ids = f.findKeywords("id");
+        for (Keyword i : ids) {
+            c.setLinewrap().before(i);
+        }
+        
+        List<Keyword> indexes = f.findKeywords("index");
+        for (Keyword k : indexes) {
+            c.setLinewrap().before(k);
+        }
+        
+        List<Keyword> predicates = f.findKeywords("predicated");
+        for (Keyword p : predicates) {
+            c.setLinewrap().before(p);
+        }
+
+        List<Keyword> extended = f.findKeywords("extended");
+        for (Keyword e : extended) {
+            c.setLinewrap().before(e);
+        }
+        
+        
+        List<Pair<Keyword, Keyword>> pairs = f.findKeywordPairs("image", "off");
+        for (Pair<Keyword, Keyword> pair : pairs) {
+            c.setLinewrap().before(pair.getFirst());
+        }
+        
+        c.setLinewrap().after(f.getOverviewAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0());
+        
+        c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_9_0());
+        c.setLinewrap().before(f.getPageAccess().getTabKeyword_10_0());
+        c.setLinewrap().before(f.getPageAccess().getShowKeyword_12_0());
+        
+        c.setLinewrap().before(f.getSectionExtensionAccess().getFilteringKeyword_10_0());
+        c.setLinewrap().before(f.getSectionExtensionAccess().getExpandedKeyword_11_0());
+        
+        c.setLinewrap().before(f.getActivityExtensionAccess().getIconKeyword_11_0());
+        
+        
+        for(Pair<Keyword, Keyword> pair: f.findKeywordPairs("{", "}")) {
+            c.setIndentation(pair.getFirst(), pair.getSecond());
+            c.setLinewrap(1).after(pair.getFirst());
+            c.setLinewrap(1).before(pair.getSecond());
+            c.setLinewrap(1).after(pair.getSecond());
+        }
+        
+        c.setLinewrap(0, 1, 2).before(f.getSL_COMMENTRule());
+        c.setLinewrap(0, 1, 2).before(f.getML_COMMENTRule());
+        c.setLinewrap(0, 1, 1).after(f.getML_COMMENTRule());
+
 	}
 }
