@@ -1,0 +1,7 @@
+<project name="Kitalpha_CTK">
+
+	<echo message="Running Job Kitalpha_CTK in Kitalpha_CTK/releng"/>
+	<ant dir="Kitalpha_CTK/releng"/>
+
+
+</project>
