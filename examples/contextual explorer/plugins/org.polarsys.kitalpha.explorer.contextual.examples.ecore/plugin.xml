@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2015 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+  Contributors:
+     Thales - initial API and implementation
+-->
+ 
+
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="Supper types"
+            isTopLevel="true"
+            name="All Supper types">
+         <availableForType
+               class="org.eclipse.emf.ecore.EClass">
+         </availableForType>
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.queries.EClassSuperClassesQuery"></basicQuery>
+         </categoryQuery>
+      </category>
+      <category
+            id="Inherited References"
+            isTopLevel="true"
+            name="Inherited References">
+       <availableForType
+               class="org.eclipse.emf.ecore.EClass">
+         </availableForType>
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.queries.EClassInheritedReferencesQuery"></basicQuery>
+         </categoryQuery>
+      </category>
+      
+       <category
+            id="Inherited Attributes"
+            isTopLevel="true"
+            name="Inherited Attributes">
+       <availableForType
+               class="org.eclipse.emf.ecore.EClass">
+         </availableForType>
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.queries.EClassInheritedAttributesQuery"></basicQuery>
+         </categoryQuery>
+      </category>
+      
+      <category
+            id="Inherited Operations"
+            isTopLevel="true"
+            name="Inherited Operations">
+       <availableForType
+               class="org.eclipse.emf.ecore.EClass">
+         </availableForType>
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.queries.EClassInheritedOperationsQuery"></basicQuery>
+         </categoryQuery>
+      </category>
+      
+       <category
+            id="Referencing EClasses"
+            isTopLevel="true"
+            name="Referencing EClasses">
+         <availableForType
+               class="org.eclipse.emf.ecore.EClass">
+         </availableForType>
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.queries.EClassReferencingEClassesQuery"></basicQuery>
+         </categoryQuery>
+      </category>
+      
+       <category
+            id="Referenced EClasses"
+            isTopLevel="true"
+            name="Referenced EClasses">
+         <availableForType
+               class="org.eclipse.emf.ecore.EClass">
+         </availableForType>
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.queries.EClassReferencedEClassesQuery"></basicQuery>
+         </categoryQuery>
+      </category>
+      
+       <category
+            id="Derived EClasses"
+            isTopLevel="true"
+            name="Derived EClasses">
+         <availableForType
+               class="org.eclipse.emf.ecore.EClass">
+         </availableForType>
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.queries.EClassDerivedEClassesQuery"></basicQuery>
+         </categoryQuery>
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.amalgam.explorer.contextual.ui.FocusInEditor">
+      <focusManager
+            class="org.polarsys.kitalpha.explorer.contextual.examples.ecore.focus.FocusInEcoreEditor"></focusManager>
+   </extension>
+
+</plugin>
