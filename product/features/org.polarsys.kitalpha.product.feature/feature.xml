@@ -19,7 +19,7 @@
 
    <requires>
       <import feature="org.eclipse.sdk" version="3.5.0" match="greaterOrEqual"/>
-      <import feature="org.polarsys.kitalpha.sdk.feature" version="0.5.0" match="greaterOrEqual"/>
+      <import feature="org.polarsys.kitalpha.runtime.feature" version="0.5.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
