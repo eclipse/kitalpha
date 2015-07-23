@@ -149,7 +149,7 @@
         <components xsi:type="buildstep:Feature" xmi:id="_IH3dtD5GEeSicsfEyxBYkg" id="org.polarsys.kitalpha.releng.feature"/>
       </steps>
       <steps xsi:type="buildstep:PublishStep" xmi:id="_J12CcD5GEeSicsfEyxBYkg" component="_IH3dtD5GEeSicsfEyxBYkg"/>
-      <steps xsi:type="buildstep:InstallStep" xmi:id="_J12CcT5GEeSicsfEyxBYkg" name="build feature" id="TP_build" profile="SDKProfile" resultSteps="_J12CcD5GEeSicsfEyxBYkg" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_J12CcT5GEeSicsfEyxBYkg" name="build feature" enabled="false" id="TP_build" profile="SDKProfile" resultSteps="_J12CcD5GEeSicsfEyxBYkg" installResultStepsSourceFeatures="true"/>
       <steps xsi:type="buildstep:AntStep" xmi:id="_BmYCoD5yEeSTuepII-sKzw" enabled="false" targetName="move_egf_to_tools2" xml="&lt;target name=&quot;move_egf_to_tools2&quot;>&#xD;&#xA;&#x9;&lt;delete dir=&quot;${tools}/egf&quot;/>&#xD;&#xA;&#x9;&lt;move file=&quot;${publish}/TP_build&quot; tofile=&quot;${tools}/egf&quot; />&#xD;&#xA;&lt;/target>"/>
       <steps xsi:type="buildstep:EgfStep" xmi:id="_BmYCoT5yEeSTuepII-sKzw" enabled="false">
         <properties xmi:id="_BmYCoj5yEeSTuepII-sKzw" key="platformPath" value="${publish}/TP_juno"/>
