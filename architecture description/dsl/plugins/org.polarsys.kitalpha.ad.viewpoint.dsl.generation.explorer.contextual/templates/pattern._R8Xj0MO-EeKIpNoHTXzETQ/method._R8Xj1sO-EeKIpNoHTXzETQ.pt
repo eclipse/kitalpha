@@ -1,0 +1,3 @@
+<%classname = javaClassName;%>
+<%projectname = ClassUtils.INSTANCE.getProjectName();%>
+<%packagename = JDTUtility.getValidPackageName(projectname + ".queries" + "."+ vpClassName);%>

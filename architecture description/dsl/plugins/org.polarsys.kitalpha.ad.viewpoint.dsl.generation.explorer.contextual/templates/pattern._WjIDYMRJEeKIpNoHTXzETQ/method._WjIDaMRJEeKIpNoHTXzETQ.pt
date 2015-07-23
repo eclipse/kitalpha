@@ -1,0 +1,9 @@
+<%if (referencingClassesList != null && referencingClassesList.size() > 0)%>
+<%{%>
+<%	for (Object clazz_o : referencingClassesList)%>
+<%	{%>
+<%		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class clazz = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) clazz_o;%>
+		import <%=ClassUtils.INSTANCE.getClassInterfaceFullyQualifiedName(clazz)%>;
+		
+<%	}%>
+<%}%>

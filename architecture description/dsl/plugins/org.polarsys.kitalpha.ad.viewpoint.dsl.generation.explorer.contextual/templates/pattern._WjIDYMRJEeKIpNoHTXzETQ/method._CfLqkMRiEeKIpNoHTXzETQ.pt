@@ -1,0 +1,29 @@
+<%Data data = (Data) parameter.eContainer();
+for (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class clazz : data.getVP_Classes()) 
+{
+	for (AbstractAssociation abstractAssociation : clazz.getVP_Classes_Associations()) 
+	{
+		if (abstractAssociation instanceof LocalClassAssociation && abstractAssociation.getType() == Association_Types.REFERENCE) 
+		{
+			LocalClassAssociation localClassAssociation = (LocalClassAssociation) abstractAssociation;
+			final org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class localTarget = localClassAssociation.getLocalTarget();
+			boolean addClass = false;
+			if ((localTarget != null && localTarget.equals(parameter))) 
+			{
+				addClass = true;
+			}
+			else
+			{
+				addClass = ContextualExplorerCategoryCompliance.isDerivedClass(parameter, localTarget);
+			}
+			
+			if (addClass)
+			{
+				if (referencingClassesList == null)
+					referencingClassesList = new ArrayList<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class>();
+
+				referencingClassesList.add(clazz);
+			}
+		}
+	}
+}%>

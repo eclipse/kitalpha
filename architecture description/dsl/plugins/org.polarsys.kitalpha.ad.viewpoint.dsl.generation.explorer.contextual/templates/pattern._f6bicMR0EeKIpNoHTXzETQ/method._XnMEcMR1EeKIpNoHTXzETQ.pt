@@ -1,0 +1,7 @@
+<%ContextualExplorerCategories cat = (ContextualExplorerCategories) category;%>
+<%String projectName = ClassUtils.INSTANCE.getProjectName();%>
+<%categoryID = ContextualExplorerCategoriesHelper.getCategoryID(cat, vpClass, projectName);%>
+<%categoryName = cat.getCategoryName();%>
+<%targetExplorerId = cat.getTargetExplorerID();%>
+<%domainClassFQN = ClassUtils.INSTANCE.getClassInterfaceFullyQualifiedName(vpClass);%>
+<%queryJavaClassFQN = ContextualExplorerCategoriesHelper.getQueryJavaClassFQN(cat, vpClass, projectName); %>

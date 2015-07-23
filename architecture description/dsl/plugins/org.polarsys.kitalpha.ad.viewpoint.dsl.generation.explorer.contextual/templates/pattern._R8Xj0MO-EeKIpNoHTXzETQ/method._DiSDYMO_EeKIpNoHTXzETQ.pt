@@ -1,0 +1,19 @@
+/**
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public class <%=classname%> implements IQuery {
+
+/**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * Default constructor
+   * @generated
+   */
+	public <%=classname%>() {
+		// TODO Auto-generated constructor stub
+	}

@@ -1,0 +1,3 @@
+<%Assert.isNotNull(vpClass, "Class in null");%>
+<%vpClassName = ClassUtils.INSTANCE.getClassInterfaceName(vpClass);%>
+<%vpClassInterfaceFullyQualifiedName = ClassUtils.INSTANCE.getClassInterfaceFullyQualifiedName(vpClass);%>
