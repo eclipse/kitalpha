@@ -45,6 +45,8 @@
       <import feature="org.polarsys.kitalpha.transposer.examples.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.transposer.examples.source.feature" version="0.5.1.qualifier"/>
       
+      <import feature="org.polarsys.kitalpha.product.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.product.source.feature" version="0.5.1.qualifier"/>
    </requires>
 
 </feature>

@@ -60,7 +60,6 @@
       <import feature="org.polarsys.kitalpha.patterns.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.patterns.source.feature" version="0.5.1.qualifier"/>
       
-      <import feature="org.polarsys.kitalpha.product.feature" version="0.5.1.qualifier"/>
    </requires>
 
 </feature>
