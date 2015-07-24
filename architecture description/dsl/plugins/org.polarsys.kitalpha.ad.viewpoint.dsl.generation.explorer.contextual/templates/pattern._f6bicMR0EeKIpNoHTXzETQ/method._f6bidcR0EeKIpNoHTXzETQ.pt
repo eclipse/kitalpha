@@ -1,0 +1,16 @@
+      <category
+            id="<%=categoryID%>"
+            isTopLevel="true"
+            name="<%=categoryName%>">
+         <targetExplorerId
+               id="<%=targetExplorerId%>">
+         </targetExplorerId>
+         <availableForType
+               class="<%=domainClassFQN%>">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="<%=queryJavaClassFQN%>">
+            </basicQuery>
+         </categoryQuery>
+      </category>

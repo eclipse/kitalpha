@@ -1,0 +1,53 @@
+
+	/**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @param object_p: The model element for which the Contextual Explorer extension is generated
+    * @return List of object to display in the parent category
+    * @generated
+    */
+	public List<Object> compute(Object object_p) {
+		List<Object> result = new ArrayList<Object>();
+		Resource resource = ((EObject)object_p).eResource();
+		if (resource != null)
+		{
+			for (TreeIterator<EObject> iter = resource.getAllContents(); iter.hasNext();) 
+			{
+				EObject eObject = iter.next();
+
+<%	for (Object clazz_o : referencingClassesList)%>
+<%	{%>
+<%		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class clazz = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) clazz_o;%>
+<%		String containgClassName = clazz.getName();%>
+<%		for (AbstractAssociation abstractAssociation : clazz.getVP_Classes_Associations()) %>
+<%		{%>
+<%			if (abstractAssociation instanceof LocalClassAssociation && %>
+<%					abstractAssociation.getType() == Association_Types.REFERENCE)%>
+<%			{%>
+<%				LocalClassAssociation vpAssociation = (LocalClassAssociation) abstractAssociation;%>
+<%				if (vpAssociation.getLocalTarget().equals(parameter) ||  
+						ContextualExplorerCategoryCompliance.isDerivedClass(parameter, vpAssociation.getLocalTarget()))%>
+<%				{%>
+<%					String vpAssociationGetterName = ClassUtils.INSTANCE.getAssociationAccesssorName(vpAssociation);%>
+
+				if (eObject instanceof <%=containgClassName%>) 
+				{
+					<%=containgClassName%> referencingElement = (<%=containgClassName%>) eObject;
+					if (referencingElement.<%=vpAssociationGetterName%>() != null &&
+<%					if (ClassUtils.isAssociationMultiple(abstractAssociation)){%>
+							referencingElement.<%=vpAssociationGetterName%>().contains(object_p))
+<%					}else{%>		
+							referencingElement.<%=vpAssociationGetterName%>().equals(object_p))
+<%					}%>
+						result.add(eObject);
+				}
+<%				}%>
+<%			}%>
+<%		}%>
+<%	}%>
+			}
+		}
+		return result;
+	}
+
+	

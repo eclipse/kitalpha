@@ -1,0 +1,4 @@
+<%classname = "ParentQuery";%>
+<%String vpClassName = ClassUtils.INSTANCE.getClassInterfaceName(parameter);%>
+<%projectname = ClassUtils.INSTANCE.getProjectName();%>
+<%packagename = JDTUtility.getValidPackageName(projectname + ".queries" + "."+ vpClassName);%>

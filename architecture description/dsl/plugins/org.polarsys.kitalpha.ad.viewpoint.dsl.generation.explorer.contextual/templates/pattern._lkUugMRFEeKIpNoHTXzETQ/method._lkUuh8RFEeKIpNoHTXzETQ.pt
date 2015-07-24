@@ -1,0 +1,32 @@
+	
+	/**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @param object_p: The model element for which the Contextual Explorer extension is generated
+    * @return List of object to display in the parent category
+    * @generated
+    */
+	public List<Object> compute(Object object_p) {
+		List<Object> result = new ArrayList<Object>();
+		<%=vpClassName%> object = (<%=vpClassName%>) object_p;
+		
+<%		for (AbstractAssociation abstractAssociation : parameter.getVP_Classes_Associations()) {%>
+<%			if (abstractAssociation instanceof ExternalClassAssociation &&%>
+<%					abstractAssociation.getType() == Association_Types.REFERENCE)%>
+<%			{%>
+<%				String vpAssociationGetterName = ClassUtils.INSTANCE.getAssociationAccesssorName(abstractAssociation);%>
+  
+<%				if (ClassUtils.isAssociationMultiple(abstractAssociation)){%> 				
+				for (EObject eObject : object.<%=vpAssociationGetterName%>())
+					result.add(eObject);
+<%				}else{%>
+				if (object.<%=vpAssociationGetterName%>() != null)	
+					result.add(object.<%=vpAssociationGetterName%>());	
+<%				}%>
+<%			}%>				
+<%		}%>
+		
+		return result;
+	}
+
+	
