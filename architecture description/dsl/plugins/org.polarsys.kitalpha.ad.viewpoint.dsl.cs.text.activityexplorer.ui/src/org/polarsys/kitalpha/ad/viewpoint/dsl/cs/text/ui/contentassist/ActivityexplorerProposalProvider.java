@@ -28,6 +28,8 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.constants.IActivityExplorerExtensionsIDs;
 
+import com.google.common.collect.Iterables;
+
 /**
  * 
  * @author Faycal Abka
@@ -167,10 +169,10 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 	
 	@Override
 	public void completeSectionExtension_ExtendedPageID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		List<String> pageIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.PAGE);
+		Iterable<String> pageIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.PAGE);
 		List<String> modelPageIds = ActivityExplorerContentAssistHelper.getNewDefinedPages(model);
 		
-		pageIds.addAll(modelPageIds);
+		pageIds = Iterables.concat(pageIds, modelPageIds);
 		
 		for (String id : pageIds) {
 			ICompletionProposal proposal = createCompletionProposal(id, getKeywordDisplayString(id), EXTENSION_ICON, context);
@@ -180,10 +182,10 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 	
 	@Override
 	public void completeActivityExtension_ExtendedSectionID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		List<String> sectionIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.SECTION);
+		Iterable<String> sectionIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.SECTION);
 		List<String> modelSectionIds = ActivityExplorerContentAssistHelper.getNewDefinedSections(model);
 		
-		sectionIds.addAll(modelSectionIds);
+		sectionIds = Iterables.concat(sectionIds, modelSectionIds);
 		
 		for (String id : sectionIds) {
 			ICompletionProposal proposal = createCompletionProposal(id, getKeywordDisplayString(id), EXTENSION_ICON, context);
