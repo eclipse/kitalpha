@@ -69,8 +69,7 @@ public class ActivityExplorerContentAssistHelper {
 
 		if (extension_p == null)
 		{
-			//TODO log the error
-			throw new RuntimeException("No Page contribution to the Activity Explorer");
+			return Collections.emptyList();
 		}
 
 		IExtension[] extensions = extension_p.getExtensions();
