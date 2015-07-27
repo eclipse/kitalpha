@@ -242,6 +242,21 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_3viaIDEFEeWlw8zUy2aPZQ" component="_JqJIkLtYEd-GFvRlyJMgsw"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_C9QF4I5xEeORY9jpJq94Og" name="emde feature" id="TP_juno" profile="SDKProfile" resultSteps="_yWFRMDY9EeOP8MSofnrGNA _3viaIDEFEeWlw8zUy2aPZQ" installResultStepsSourceFeatures="true"/>
   </jobs>
+  <jobs xmi:id="_LT5kADRbEeW5Te4c0tZ9OQ" name="contextual_explorer">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_LT5kATRbEeW5Te4c0tZ9OQ" name="contextual_explorer">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_LT5kAjRbEeW5Te4c0tZ9OQ" folderName="emde/integration/plugins">
+        <gitLocation href="kitalpha_nightly.egfbuild#_L0O-wPx8EeO7zY3f-pIrjg"/>
+      </buildLocations>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_LT5kAzRbEeW5Te4c0tZ9OQ" folderName="emde/integration/features">
+        <gitLocation href="kitalpha_nightly.egfbuild#_L0O-wPx8EeO7zY3f-pIrjg"/>
+      </buildLocations>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_LT5kBDRbEeW5Te4c0tZ9OQ" path="${publish}/TP_build"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_LT5kBTRbEeW5Te4c0tZ9OQ" path="${publish}/TP_juno"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_LT5kBjRbEeW5Te4c0tZ9OQ" id="org.polarsys.kitalpha.emde.explorer.contextual.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_LT5kBzRbEeW5Te4c0tZ9OQ" component="_LT5kBjRbEeW5Te4c0tZ9OQ"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_LT5kCDRbEeW5Te4c0tZ9OQ" name="contextual_explorer emde feature" id="TP_juno" profile="SDKProfile" resultSteps="_LT5kBzRbEeW5Te4c0tZ9OQ" installResultStepsSourceFeatures="true"/>
+  </jobs>
   <jobs xmi:id="_Ky5S0FkcEeSo0vu-C-A3cw" name="patterns">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_Ky5S0VkcEeSo0vu-C-A3cw" name="patterns">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Ky5S0lkcEeSo0vu-C-A3cw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="patterns/plugins"/>

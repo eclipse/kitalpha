@@ -23,7 +23,9 @@
       <import feature="org.polarsys.kitalpha.emde.source.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.emde.ui.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.emde.ui.source.feature" version="0.5.1.qualifier"/>
-
+      <import feature="org.polarsys.kitalpha.emde.explorer.contextual.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.explorer.contextual.source.feature" version="0.5.1.qualifier"/>
+      
       <import feature="org.polarsys.kitalpha.composer.feature" version="0.5.1.qualifier"/>
       <import feature="org.polarsys.kitalpha.composer.source.feature" version="0.5.1.qualifier"/>
 
