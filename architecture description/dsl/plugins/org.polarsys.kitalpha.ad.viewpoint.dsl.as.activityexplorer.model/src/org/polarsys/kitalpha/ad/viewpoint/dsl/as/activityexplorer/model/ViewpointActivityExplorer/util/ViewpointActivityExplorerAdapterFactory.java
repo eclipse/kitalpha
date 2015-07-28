@@ -105,28 +105,32 @@ public class ViewpointActivityExplorerAdapterFactory extends AdapterFactoryImpl 
 				return createDynamicIconAdapter();
 			}
 			@Override
-			public Adapter caseSectionExtension(SectionExtension object) {
-				return createSectionExtensionAdapter();
-			}
-			@Override
-			public Adapter caseActivityExtension(ActivityExtension object) {
-				return createActivityExtensionAdapter();
+			public Adapter caseSection(Section object) {
+				return createSectionAdapter();
 			}
 			@Override
 			public Adapter caseViewpointActivityExplorer(ViewpointActivityExplorer object) {
 				return createViewpointActivityExplorerAdapter();
 			}
 			@Override
-			public Adapter casePages(Pages object) {
-				return createPagesAdapter();
+			public Adapter casePageExtension(PageExtension object) {
+				return createPageExtensionAdapter();
 			}
 			@Override
-			public Adapter caseSections(Sections object) {
-				return createSectionsAdapter();
+			public Adapter caseSectionExtension(SectionExtension object) {
+				return createSectionExtensionAdapter();
 			}
 			@Override
-			public Adapter caseActivities(Activities object) {
-				return createActivitiesAdapter();
+			public Adapter caseActivity(Activity object) {
+				return createActivityAdapter();
+			}
+			@Override
+			public Adapter caseAbstractPage(AbstractPage object) {
+				return createAbstractPageAdapter();
+			}
+			@Override
+			public Adapter caseAbstractSection(AbstractSection object) {
+				return createAbstractSectionAdapter();
 			}
 			@Override
 			public Adapter caseViewpointElement(ViewpointElement object) {
@@ -245,6 +249,20 @@ public class ViewpointActivityExplorerAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section
+	 * @generated
+	 */
+	public Adapter createSectionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension <em>Section Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -259,16 +277,44 @@ public class ViewpointActivityExplorerAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension <em>Activity Extension</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity <em>Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity
 	 * @generated
 	 */
-	public Adapter createActivityExtensionAdapter() {
+	public Adapter createActivityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage <em>Abstract Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage
+	 * @generated
+	 */
+	public Adapter createAbstractPageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection <em>Abstract Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection
+	 * @generated
+	 */
+	public Adapter createAbstractSectionAdapter() {
 		return null;
 	}
 
@@ -287,44 +333,16 @@ public class ViewpointActivityExplorerAdapterFactory extends AdapterFactoryImpl 
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages <em>Pages</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension <em>Page Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension
 	 * @generated
 	 */
-	public Adapter createPagesAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections <em>Sections</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections
-	 * @generated
-	 */
-	public Adapter createSectionsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities <em>Activities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities
-	 * @generated
-	 */
-	public Adapter createActivitiesAdapter() {
+	public Adapter createPageExtensionAdapter() {
 		return null;
 	}
 

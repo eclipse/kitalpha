@@ -13,14 +13,15 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.ValidationStatus;
@@ -28,7 +29,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.Valid
 
 /**
  * 
- * @author Faycal Abka
+ * @author Faycal Abka, Boubekeur Zendagui
  *
  */
 public class CheckIDsValue implements IAdditionalConstraint {
@@ -43,7 +44,6 @@ public class CheckIDsValue implements IAdditionalConstraint {
 
 	@Override
 	public ValidationStatus validationRules(Object data) {
-		
 		ActivityExplorerItem item = (ActivityExplorerItem)data;
 		ViewpointActivityExplorer viewpointActivityExplorer = (ViewpointActivityExplorer)((EObject) data).eContainer().eContainer();
 		List<String> ids = getAllActivityExplorerIdsExceptItem(viewpointActivityExplorer, item);
@@ -59,63 +59,102 @@ public class CheckIDsValue implements IAdditionalConstraint {
 	public String getMessage(ValidationStatus status, Object object) {
 		ActivityExplorerItem item = (ActivityExplorerItem)object;
 		String name = item.getName();
-		
 		return Messages.bind(Messages.DuplicatedActivityExplorerId, name);
 	}
-	
-	
-	
-
 
 	private List<String> getAllActivityExplorerIdsExceptItem(ViewpointActivityExplorer viewpointActivityExplorer, ActivityExplorerItem item) {
 		List<String> ids = new ArrayList<String>();
+
+		// First Handle All available Pages.
+		List<Page> pages = getAllPages(viewpointActivityExplorer);
+		if (pages.contains(item))
+			pages.remove(item);
 		
-		List<Page> pages = getPages(viewpointActivityExplorer);
-		
-		for (Page page : pages) {
-			if (page != item){
-				String id = page.getActivityExplorerItemID();
+		for (Page page : pages) 
+		{
+			final String id = page.getActivityExplorerItemID();
+			if (id.trim().length() > 0)
 				ids.add(id);
-			}
+		}
+
+		// Second: Handle All available Sections.
+		List<Section> sections = getAllSections(viewpointActivityExplorer);
+		if (sections.contains(item))
+			sections.remove(item);
+		
+		for (Section section : sections) 
+		{
+			final String id = section.getActivityExplorerItemID();
+			if (id.trim().length() > 0)
+				ids.add(id);
 		}
 		
-		List<SectionExtension> sections = getSections(viewpointActivityExplorer);
+		// Third: Handle All available Sections.
+		List<Activity> activities = getActivities(viewpointActivityExplorer);
+		if (activities.contains(item))
+			activities.remove(item);
 		
-		for (SectionExtension section : sections) {
-			
-			if (section != item){
-				String id = section.getActivityExplorerItemID();
+		for (Activity activity : activities) 
+		{
+			String id = activity.getActivityExplorerItemID();
+			if (id.trim().length() > 0)
 				ids.add(id);
-			}
-		}
-		
-		List<ActivityExtension> activities = getActivities(viewpointActivityExplorer);
-		for (ActivityExtension activity : activities) {
-			
-			if (activity != item){
-				String id = activity.getActivityExplorerItemID();
-				ids.add(id);
-			}
 		}
 		
 		return ids;
 	}
 	
-	private List<ActivityExtension> getActivities(ViewpointActivityExplorer v){
-		Activities activities = v.getOwnedActivitiesExtension();
-		return activities != null?activities.getOwnedActivitiesExtensions():new ArrayList<ActivityExtension>();
+	/**
+	 * Return all Pages or Page Extensions defined 
+	 * @param viewpointActivityExplorer
+	 * @return
+	 */
+	private List<Page> getAllPages(ViewpointActivityExplorer viewpointActivityExplorer){
+		List<Page> result = new ArrayList<Page>();
+		List<AbstractPage> abstractPages = viewpointActivityExplorer.getOwnedPages();
+		for (AbstractPage abstractPage : abstractPages) 
+		{
+			if (abstractPage instanceof Page)
+				result.add((Page)abstractPage);
+		}
+		return result;
+	}
+	/**
+	 * Return all Section defined in all Pages.
+	 * @param viewpointActivityExplorer
+	 * @return
+	 */
+	private List<Section> getAllSections(ViewpointActivityExplorer viewpointActivityExplorer) {
+		List<Section> result = new ArrayList<Section>();
+		
+		final List<Page> pages = getAllPages(viewpointActivityExplorer);
+		for (Page page : pages) 
+		{
+			final List<Section> pageSections = page.getOwnedSections();
+			if (false == pageSections.isEmpty())
+				result.addAll(pageSections);
+		}
+		
+		return result;
 	}
 
-	private List<SectionExtension> getSections(ViewpointActivityExplorer v) {
-		Sections sections = v.getOwnedSectionsExtension();
+	/**
+	 * Return all Activities defined in all Section.
+	 * @param viewpointActivityExplorer
+	 * @return
+	 */
+	private List<Activity> getActivities(ViewpointActivityExplorer viewpointActivityExplorer){
+		List<Activity> result = new ArrayList<Activity>();
+		List<Section> sections = getAllSections(viewpointActivityExplorer);
 		
-		return sections != null? sections.getOwnedSectionsExtensions():new ArrayList<SectionExtension>();
-	}
-
-	private List<Page> getPages(ViewpointActivityExplorer v){
-		Pages pages = v.getOwnedNewPages();
+		for (Section section : sections) 
+		{
+			final List<Activity> sectionActivities = section.getOwnedActivities();
+			if (false == sectionActivities.isEmpty())
+				result.addAll(sectionActivities);
+		}
 		
-		return pages != null? pages.getOwnedActivityExplorerPages(): new ArrayList<Page>();
+		return result;
 	}
 
 }

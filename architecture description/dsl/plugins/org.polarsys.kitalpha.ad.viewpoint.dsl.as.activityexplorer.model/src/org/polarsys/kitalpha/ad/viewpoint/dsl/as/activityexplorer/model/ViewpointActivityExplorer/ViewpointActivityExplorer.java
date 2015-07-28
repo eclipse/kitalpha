@@ -11,6 +11,7 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer;
 
+import org.eclipse.emf.common.util.EList;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 
 
@@ -22,9 +23,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedNewPages <em>Owned New Pages</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionsExtension <em>Owned Sections Extension</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedActivitiesExtension <em>Owned Activities Extension</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedPages <em>Owned Pages</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionExtensions <em>Owned Section Extensions</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,115 +40,41 @@ public interface ViewpointActivityExplorer extends Aspect {
 
 
 	/**
-	 * Returns the value of the '<em><b>Owned New Pages</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Owned Pages</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage}.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned New Pages</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Owned Pages</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned New Pages</em>' containment reference.
-	 * @see #setOwnedNewPages(Pages)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getViewpointActivityExplorer_OwnedNewPages()
+	 * @return the value of the '<em>Owned Pages</em>' containment reference list.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getViewpointActivityExplorer_OwnedPages()
 	 * @model containment="true"
 	 * @generated
 	 */
-
-	Pages getOwnedNewPages();
-
-
-
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedNewPages <em>Owned New Pages</em>}' containment reference.
-
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owned New Pages</em>' containment reference.
-	 * @see #getOwnedNewPages()
-	 * @generated
-	 */
-
-	void setOwnedNewPages(Pages value);
-
-
-
+	EList<AbstractPage> getOwnedPages();
 
 
 
 
 	/**
-	 * Returns the value of the '<em><b>Owned Sections Extension</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Owned Section Extensions</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension}.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned Sections Extension</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Owned Section Extensions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Sections Extension</em>' containment reference.
-	 * @see #setOwnedSectionsExtension(Sections)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getViewpointActivityExplorer_OwnedSectionsExtension()
+	 * @return the value of the '<em>Owned Section Extensions</em>' containment reference list.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getViewpointActivityExplorer_OwnedSectionExtensions()
 	 * @model containment="true"
 	 * @generated
 	 */
-
-	Sections getOwnedSectionsExtension();
-
-
-
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionsExtension <em>Owned Sections Extension</em>}' containment reference.
-
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owned Sections Extension</em>' containment reference.
-	 * @see #getOwnedSectionsExtension()
-	 * @generated
-	 */
-
-	void setOwnedSectionsExtension(Sections value);
-
-
-
-
-
-
-
-	/**
-	 * Returns the value of the '<em><b>Owned Activities Extension</b></em>' containment reference.
-
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Owned Activities Extension</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Activities Extension</em>' containment reference.
-	 * @see #setOwnedActivitiesExtension(Activities)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getViewpointActivityExplorer_OwnedActivitiesExtension()
-	 * @model containment="true"
-	 * @generated
-	 */
-
-	Activities getOwnedActivitiesExtension();
-
-
-
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedActivitiesExtension <em>Owned Activities Extension</em>}' containment reference.
-
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owned Activities Extension</em>' containment reference.
-	 * @see #getOwnedActivitiesExtension()
-	 * @generated
-	 */
-
-	void setOwnedActivitiesExtension(Activities value);
+	EList<SectionExtension> getOwnedSectionExtensions();
 
 
 

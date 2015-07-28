@@ -21,9 +21,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoi
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedPageID <em>Extended Page ID</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isExpanded <em>Expanded</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isFiltering <em>Filtering</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedSectionID <em>Extended Section ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,122 +30,42 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoi
  * @generated
  */
 
-public interface SectionExtension extends ActivityExplorerItem {
+public interface SectionExtension extends AbstractSection {
 
 
 
 
 
 	/**
-	 * Returns the value of the '<em><b>Extended Page ID</b></em>' attribute.
+	 * Returns the value of the '<em><b>Extended Section ID</b></em>' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Extended Page ID</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Extended Section ID</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Extended Page ID</em>' attribute.
-	 * @see #setExtendedPageID(String)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getSectionExtension_ExtendedPageID()
+	 * @return the value of the '<em>Extended Section ID</em>' attribute.
+	 * @see #setExtendedSectionID(String)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getSectionExtension_ExtendedSectionID()
 	 * @model
 	 * @generated
 	 */
-
-	String getExtendedPageID();
-
-
-
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedPageID <em>Extended Page ID</em>}' attribute.
-
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Extended Page ID</em>' attribute.
-	 * @see #getExtendedPageID()
-	 * @generated
-	 */
-
-	void setExtendedPageID(String value);
-
-
-
+	String getExtendedSectionID();
 
 
 
 
 	/**
-	 * Returns the value of the '<em><b>Expanded</b></em>' attribute.
-
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Expanded</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expanded</em>' attribute.
-	 * @see #setExpanded(boolean)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getSectionExtension_Expanded()
-	 * @model
-	 * @generated
-	 */
-
-	boolean isExpanded();
-
-
-
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isExpanded <em>Expanded</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedSectionID <em>Extended Section ID</em>}' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expanded</em>' attribute.
-	 * @see #isExpanded()
+	 * @param value the new value of the '<em>Extended Section ID</em>' attribute.
+	 * @see #getExtendedSectionID()
 	 * @generated
 	 */
-
-	void setExpanded(boolean value);
-
-
-
-
-
-
-
-	/**
-	 * Returns the value of the '<em><b>Filtering</b></em>' attribute.
-
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Filtering</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filtering</em>' attribute.
-	 * @see #setFiltering(boolean)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getSectionExtension_Filtering()
-	 * @model
-	 * @generated
-	 */
-
-	boolean isFiltering();
-
-
-
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isFiltering <em>Filtering</em>}' attribute.
-
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Filtering</em>' attribute.
-	 * @see #isFiltering()
-	 * @generated
-	 */
-
-	void setFiltering(boolean value);
+	void setExtendedSectionID(String value);
 
 
 

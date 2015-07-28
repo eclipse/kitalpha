@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem} object.
@@ -41,7 +42,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoin
  * @generated
  */
 public class ActivityExplorerItemItemProvider
-	extends ItemProviderAdapter
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -71,7 +72,6 @@ public class ActivityExplorerItemItemProvider
 
 			addActivityExplorerItemIDPropertyDescriptor(object);
 			addIndexPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,30 +125,6 @@ public class ActivityExplorerItemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActivityExplorerItem_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityExplorerItem_name_feature", "_UI_ActivityExplorerItem_type"),
-				 ViewpointActivityExplorerPackage.Literals.ACTIVITY_EXPLORER_ITEM__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,7 +154,6 @@ public class ActivityExplorerItemItemProvider
 		switch (notification.getFeatureID(ActivityExplorerItem.class)) {
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID:
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX:
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -195,17 +170,6 @@ public class ActivityExplorerItemItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ViewpointActivityExplorerEditPlugin.INSTANCE;
 	}
 
 

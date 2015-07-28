@@ -87,9 +87,8 @@ public class ViewpointActivityExplorerItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES);
-			childrenFeatures.add(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION);
-			childrenFeatures.add(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION);
+			childrenFeatures.add(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES);
+			childrenFeatures.add(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS);
 		}
 		return childrenFeatures;
 	}
@@ -111,11 +110,10 @@ public class ViewpointActivityExplorerItemProvider
 	 * This returns ViewpointActivityExplorer.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ViewpointActivityExplorer.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ViewpointActivityExplorer"));
 	}
 
 	/**
@@ -146,9 +144,8 @@ public class ViewpointActivityExplorerItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewpointActivityExplorer.class)) {
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES:
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION:
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION:
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES:
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -168,35 +165,24 @@ public class ViewpointActivityExplorerItemProvider
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES,
-						 ViewpointActivityExplorerFactory.eINSTANCE.createPages()));
+						(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES,
+						 ViewpointActivityExplorerFactory.eINSTANCE.createPage()));
 
 
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION,
-						 ViewpointActivityExplorerFactory.eINSTANCE.createSections()));
+						(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES,
+						 ViewpointActivityExplorerFactory.eINSTANCE.createPageExtension()));
 
 
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION,
-						 ViewpointActivityExplorerFactory.eINSTANCE.createActivities()));
+						(ViewpointActivityExplorerPackage.Literals.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS,
+						 ViewpointActivityExplorerFactory.eINSTANCE.createSectionExtension()));
 
 
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ViewpointActivityExplorerEditPlugin.INSTANCE;
 	}
 
 

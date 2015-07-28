@@ -19,17 +19,18 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.DynamicIcon;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Icon;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Overview;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PredicateElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
@@ -90,6 +91,13 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass sectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass sectionExtensionEClass = null;
 
 	/**
@@ -97,7 +105,21 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass activityExtensionEClass = null;
+	private EClass activityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractPageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractSectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,21 +133,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pagesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sectionsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass activitiesEClass = null;
+	private EClass pageExtensionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -322,15 +330,6 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getActivityExplorerItem_Name() {
-		return (EAttribute)activityExplorerItemEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDynamicIcon() {
 		return dynamicIconEClass;
 	}
@@ -349,6 +348,33 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSection() {
+		return sectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSection_Expanded() {
+		return (EAttribute)sectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSection_Filtering() {
+		return (EAttribute)sectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSectionExtension() {
 		return sectionExtensionEClass;
 	}
@@ -358,7 +384,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSectionExtension_ExtendedPageID() {
+	public EAttribute getSectionExtension_ExtendedSectionID() {
 		return (EAttribute)sectionExtensionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -367,8 +393,8 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSectionExtension_Expanded() {
-		return (EAttribute)sectionExtensionEClass.getEStructuralFeatures().get(1);
+	public EClass getActivity() {
+		return activityEClass;
 	}
 
 	/**
@@ -376,8 +402,8 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSectionExtension_Filtering() {
-		return (EAttribute)sectionExtensionEClass.getEStructuralFeatures().get(2);
+	public EClass getAbstractPage() {
+		return abstractPageEClass;
 	}
 
 	/**
@@ -385,8 +411,8 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getActivityExtension() {
-		return activityExtensionEClass;
+	public EReference getAbstractPage_OwnedSections() {
+		return (EReference)abstractPageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -394,8 +420,17 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getActivityExtension_ExtendedSectionID() {
-		return (EAttribute)activityExtensionEClass.getEStructuralFeatures().get(0);
+	public EClass getAbstractSection() {
+		return abstractSectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbstractSection_OwnedActivities() {
+		return (EReference)abstractSectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -412,7 +447,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getViewpointActivityExplorer_OwnedNewPages() {
+	public EReference getViewpointActivityExplorer_OwnedPages() {
 		return (EReference)viewpointActivityExplorerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -421,7 +456,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getViewpointActivityExplorer_OwnedSectionsExtension() {
+	public EReference getViewpointActivityExplorer_OwnedSectionExtensions() {
 		return (EReference)viewpointActivityExplorerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -430,8 +465,8 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getViewpointActivityExplorer_OwnedActivitiesExtension() {
-		return (EReference)viewpointActivityExplorerEClass.getEStructuralFeatures().get(2);
+	public EClass getPageExtension() {
+		return pageExtensionEClass;
 	}
 
 	/**
@@ -439,53 +474,8 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPages() {
-		return pagesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPages_OwnedActivityExplorerPages() {
-		return (EReference)pagesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSections() {
-		return sectionsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSections_OwnedSectionsExtensions() {
-		return (EReference)sectionsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getActivities() {
-		return activitiesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActivities_OwnedActivitiesExtensions() {
-		return (EReference)activitiesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPageExtension_ExtendedPageID() {
+		return (EAttribute)pageExtensionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -534,32 +524,31 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		activityExplorerItemEClass = createEClass(ACTIVITY_EXPLORER_ITEM);
 		createEAttribute(activityExplorerItemEClass, ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID);
 		createEAttribute(activityExplorerItemEClass, ACTIVITY_EXPLORER_ITEM__INDEX);
-		createEAttribute(activityExplorerItemEClass, ACTIVITY_EXPLORER_ITEM__NAME);
 
 		dynamicIconEClass = createEClass(DYNAMIC_ICON);
 		createEAttribute(dynamicIconEClass, DYNAMIC_ICON__IMAGE_PATH_ON);
 
-		sectionExtensionEClass = createEClass(SECTION_EXTENSION);
-		createEAttribute(sectionExtensionEClass, SECTION_EXTENSION__EXTENDED_PAGE_ID);
-		createEAttribute(sectionExtensionEClass, SECTION_EXTENSION__EXPANDED);
-		createEAttribute(sectionExtensionEClass, SECTION_EXTENSION__FILTERING);
-
-		activityExtensionEClass = createEClass(ACTIVITY_EXTENSION);
-		createEAttribute(activityExtensionEClass, ACTIVITY_EXTENSION__EXTENDED_SECTION_ID);
+		sectionEClass = createEClass(SECTION);
+		createEAttribute(sectionEClass, SECTION__EXPANDED);
+		createEAttribute(sectionEClass, SECTION__FILTERING);
 
 		viewpointActivityExplorerEClass = createEClass(VIEWPOINT_ACTIVITY_EXPLORER);
-		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES);
-		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION);
-		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION);
+		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES);
+		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS);
 
-		pagesEClass = createEClass(PAGES);
-		createEReference(pagesEClass, PAGES__OWNED_ACTIVITY_EXPLORER_PAGES);
+		pageExtensionEClass = createEClass(PAGE_EXTENSION);
+		createEAttribute(pageExtensionEClass, PAGE_EXTENSION__EXTENDED_PAGE_ID);
 
-		sectionsEClass = createEClass(SECTIONS);
-		createEReference(sectionsEClass, SECTIONS__OWNED_SECTIONS_EXTENSIONS);
+		sectionExtensionEClass = createEClass(SECTION_EXTENSION);
+		createEAttribute(sectionExtensionEClass, SECTION_EXTENSION__EXTENDED_SECTION_ID);
 
-		activitiesEClass = createEClass(ACTIVITIES);
-		createEReference(activitiesEClass, ACTIVITIES__OWNED_ACTIVITIES_EXTENSIONS);
+		activityEClass = createEClass(ACTIVITY);
+
+		abstractPageEClass = createEClass(ABSTRACT_PAGE);
+		createEReference(abstractPageEClass, ABSTRACT_PAGE__OWNED_SECTIONS);
+
+		abstractSectionEClass = createEClass(ABSTRACT_SECTION);
+		createEReference(abstractSectionEClass, ABSTRACT_SECTION__OWNED_ACTIVITIES);
 	}
 
 	/**
@@ -597,13 +586,18 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		pageEClass.getESuperTypes().add(this.getActivityExplorerItem());
 		pageEClass.getESuperTypes().add(this.getDynamicIcon());
 		pageEClass.getESuperTypes().add(this.getPredicateElement());
+		pageEClass.getESuperTypes().add(this.getAbstractPage());
 		overviewEClass.getESuperTypes().add(this.getDynamicIcon());
+		activityExplorerItemEClass.getESuperTypes().add(theVpdescPackage.getNamedElement());
 		dynamicIconEClass.getESuperTypes().add(this.getIcon());
-		sectionExtensionEClass.getESuperTypes().add(this.getActivityExplorerItem());
-		activityExtensionEClass.getESuperTypes().add(this.getPredicateElement());
-		activityExtensionEClass.getESuperTypes().add(this.getIcon());
-		activityExtensionEClass.getESuperTypes().add(this.getActivityExplorerItem());
+		sectionEClass.getESuperTypes().add(this.getActivityExplorerItem());
+		sectionEClass.getESuperTypes().add(this.getAbstractSection());
 		viewpointActivityExplorerEClass.getESuperTypes().add(theVpdescPackage.getAspect());
+		pageExtensionEClass.getESuperTypes().add(this.getAbstractPage());
+		sectionExtensionEClass.getESuperTypes().add(this.getAbstractSection());
+		activityEClass.getESuperTypes().add(this.getPredicateElement());
+		activityEClass.getESuperTypes().add(this.getIcon());
+		activityEClass.getESuperTypes().add(this.getActivityExplorerItem());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -624,32 +618,31 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		initEClass(activityExplorerItemEClass, ActivityExplorerItem.class, "ActivityExplorerItem", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivityExplorerItem_ActivityExplorerItemID(), theEcorePackage.getEString(), "activityExplorerItemID", null, 0, 1, ActivityExplorerItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivityExplorerItem_Index(), theEcorePackage.getEInt(), "index", null, 1, 1, ActivityExplorerItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivityExplorerItem_Name(), theEcorePackage.getEString(), "name", null, 1, 1, ActivityExplorerItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dynamicIconEClass, DynamicIcon.class, "DynamicIcon", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDynamicIcon_ImagePathOn(), theEcorePackage.getEString(), "imagePathOn", null, 0, 1, DynamicIcon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sectionExtensionEClass, SectionExtension.class, "SectionExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSectionExtension_ExtendedPageID(), theEcorePackage.getEString(), "extendedPageID", null, 0, 1, SectionExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSectionExtension_Expanded(), theEcorePackage.getEBoolean(), "expanded", null, 0, 1, SectionExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSectionExtension_Filtering(), theEcorePackage.getEBoolean(), "filtering", null, 0, 1, SectionExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(activityExtensionEClass, ActivityExtension.class, "ActivityExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActivityExtension_ExtendedSectionID(), theEcorePackage.getEString(), "extendedSectionID", null, 0, 1, ActivityExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSection_Expanded(), theEcorePackage.getEBoolean(), "expanded", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSection_Filtering(), theEcorePackage.getEBoolean(), "filtering", null, 0, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewpointActivityExplorerEClass, ViewpointActivityExplorer.class, "ViewpointActivityExplorer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getViewpointActivityExplorer_OwnedNewPages(), this.getPages(), null, "ownedNewPages", null, 0, 1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getViewpointActivityExplorer_OwnedSectionsExtension(), this.getSections(), null, "ownedSectionsExtension", null, 0, 1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getViewpointActivityExplorer_OwnedActivitiesExtension(), this.getActivities(), null, "ownedActivitiesExtension", null, 0, 1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewpointActivityExplorer_OwnedPages(), this.getAbstractPage(), null, "ownedPages", null, 0, -1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewpointActivityExplorer_OwnedSectionExtensions(), this.getSectionExtension(), null, "ownedSectionExtensions", null, 0, -1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pagesEClass, Pages.class, "Pages", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPages_OwnedActivityExplorerPages(), this.getPage(), null, "ownedActivityExplorerPages", null, 0, -1, Pages.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pageExtensionEClass, PageExtension.class, "PageExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPageExtension_ExtendedPageID(), theEcorePackage.getEString(), "extendedPageID", null, 0, 1, PageExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sectionsEClass, Sections.class, "Sections", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSections_OwnedSectionsExtensions(), this.getSectionExtension(), null, "ownedSectionsExtensions", null, 0, -1, Sections.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(sectionExtensionEClass, SectionExtension.class, "SectionExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSectionExtension_ExtendedSectionID(), theEcorePackage.getEString(), "extendedSectionID", null, 0, 1, SectionExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(activitiesEClass, Activities.class, "Activities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivities_OwnedActivitiesExtensions(), this.getActivityExtension(), null, "ownedActivitiesExtensions", null, 0, -1, Activities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(abstractPageEClass, AbstractPage.class, "AbstractPage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractPage_OwnedSections(), this.getSection(), null, "ownedSections", null, 0, -1, AbstractPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(abstractSectionEClass, AbstractSection.class, "AbstractSection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractSection_OwnedActivities(), this.getActivity(), null, "ownedActivities", null, 0, -1, AbstractSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

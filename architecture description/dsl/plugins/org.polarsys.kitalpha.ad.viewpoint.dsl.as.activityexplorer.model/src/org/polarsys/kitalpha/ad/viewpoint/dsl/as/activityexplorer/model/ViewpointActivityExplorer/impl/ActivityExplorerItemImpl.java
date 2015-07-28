@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,13 +31,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoin
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityExplorerItemImpl#getActivityExplorerItemID <em>Activity Explorer Item ID</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityExplorerItemImpl#getIndex <em>Index</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityExplorerItemImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ActivityExplorerItemImpl extends EObjectImpl implements ActivityExplorerItem {
+public abstract class ActivityExplorerItemImpl extends NamedElementImpl implements ActivityExplorerItem {
 
 	/**
 	 * The default value of the '{@link #getActivityExplorerItemID() <em>Activity Explorer Item ID</em>}' attribute.
@@ -81,28 +81,6 @@ public abstract class ActivityExplorerItemImpl extends EObjectImpl implements Ac
 	 */
 	protected int index = INDEX_EDEFAULT;
 
-
-
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 
 
@@ -202,37 +180,6 @@ public abstract class ActivityExplorerItemImpl extends EObjectImpl implements Ac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-
-	public String getName() {
-
-		return name;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public void setName(String newName) {
-
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__NAME, oldName, name));
-
-	}
-
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -240,8 +187,6 @@ public abstract class ActivityExplorerItemImpl extends EObjectImpl implements Ac
 				return getActivityExplorerItemID();
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX:
 				return getIndex();
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,9 +204,6 @@ public abstract class ActivityExplorerItemImpl extends EObjectImpl implements Ac
 				return;
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX:
 				setIndex((Integer)newValue);
-				return;
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__NAME:
-				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -282,9 +224,6 @@ public abstract class ActivityExplorerItemImpl extends EObjectImpl implements Ac
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX:
 				setIndex(INDEX_EDEFAULT);
 				return;
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,8 +242,6 @@ public abstract class ActivityExplorerItemImpl extends EObjectImpl implements Ac
 				return ACTIVITY_EXPLORER_ITEM_ID_EDEFAULT == null ? activityExplorerItemID != null : !ACTIVITY_EXPLORER_ITEM_ID_EDEFAULT.equals(activityExplorerItemID);
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX:
 				return index != INDEX_EDEFAULT;
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -324,8 +261,6 @@ public abstract class ActivityExplorerItemImpl extends EObjectImpl implements Ac
 		result.append(activityExplorerItemID);
 		result.append(", index: ");
 		result.append(index);
-		result.append(", name: ");
-		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

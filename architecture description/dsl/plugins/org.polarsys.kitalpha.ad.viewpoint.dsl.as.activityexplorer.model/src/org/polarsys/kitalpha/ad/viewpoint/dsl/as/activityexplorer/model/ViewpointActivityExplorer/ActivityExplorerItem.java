@@ -11,6 +11,7 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 
@@ -24,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getActivityExplorerItemID <em>Activity Explorer Item ID</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getIndex <em>Index</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 
-public interface ActivityExplorerItem extends EObject {
+public interface ActivityExplorerItem extends NamedElement {
 
 
 
@@ -110,45 +110,6 @@ public interface ActivityExplorerItem extends EObject {
 	 */
 
 	void setIndex(int value);
-
-
-
-
-
-
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getActivityExplorerItem_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-
-	String getName();
-
-
-
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getName <em>Name</em>}' attribute.
-
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-
-	void setName(String value);
 
 
 

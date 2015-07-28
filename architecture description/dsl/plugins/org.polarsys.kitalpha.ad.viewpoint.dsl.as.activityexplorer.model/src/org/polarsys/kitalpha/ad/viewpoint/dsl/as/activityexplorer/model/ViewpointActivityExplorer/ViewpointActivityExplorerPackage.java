@@ -76,22 +76,13 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int ACTIVITY_EXPLORER_ITEM = 4;
 
 	/**
-	 * The feature id for the '<em><b>Activity Explorer Item ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Index</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_EXPLORER_ITEM__INDEX = 1;
+	int ACTIVITY_EXPLORER_ITEM__ID = VpdescPackage.NAMED_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -100,7 +91,34 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EXPLORER_ITEM__NAME = 2;
+	int ACTIVITY_EXPLORER_ITEM__NAME = VpdescPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_EXPLORER_ITEM__DESCRIPTION = VpdescPackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Activity Explorer Item ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_EXPLORER_ITEM__INDEX = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Activity Explorer Item</em>' class.
@@ -109,7 +127,7 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT = 3;
+	int ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl <em>Page</em>}' class.
@@ -120,6 +138,33 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 */
 	int PAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__ID = ACTIVITY_EXPLORER_ITEM__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__NAME = ACTIVITY_EXPLORER_ITEM__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__DESCRIPTION = ACTIVITY_EXPLORER_ITEM__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Activity Explorer Item ID</b></em>' attribute.
@@ -138,15 +183,6 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAGE__INDEX = ACTIVITY_EXPLORER_ITEM__INDEX;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__NAME = ACTIVITY_EXPLORER_ITEM__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Image Path Off</b></em>' attribute.
@@ -176,13 +212,22 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int PAGE__HAS_PREDICATE = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Owned Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__OWNED_SECTIONS = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Owned Overview</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__OWNED_OVERVIEW = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 3;
+	int PAGE__OWNED_OVERVIEW = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Tab Name</b></em>' attribute.
@@ -191,7 +236,7 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__TAB_NAME = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 4;
+	int PAGE__TAB_NAME = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Show Viewer</b></em>' attribute.
@@ -200,7 +245,7 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__SHOW_VIEWER = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 5;
+	int PAGE__SHOW_VIEWER = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Model Type</b></em>' attribute.
@@ -209,7 +254,7 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__MODEL_TYPE = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 6;
+	int PAGE__MODEL_TYPE = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -218,7 +263,7 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 7;
+	int PAGE_FEATURE_COUNT = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PredicateElementImpl <em>Predicate Element</em>}' class.
@@ -360,32 +405,23 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int OVERVIEW_FEATURE_COUNT = DYNAMIC_ICON_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionExtensionImpl <em>Section Extension</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionImpl <em>Section</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionExtensionImpl
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getSectionExtension()
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getSection()
 	 * @generated
 	 */
-	int SECTION_EXTENSION = 6;
+	int SECTION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Activity Explorer Item ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_EXTENSION__ACTIVITY_EXPLORER_ITEM_ID = ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID;
-
-	/**
-	 * The feature id for the '<em><b>Index</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION_EXTENSION__INDEX = ACTIVITY_EXPLORER_ITEM__INDEX;
+	int SECTION__ID = ACTIVITY_EXPLORER_ITEM__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -394,16 +430,43 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_EXTENSION__NAME = ACTIVITY_EXPLORER_ITEM__NAME;
+	int SECTION__NAME = ACTIVITY_EXPLORER_ITEM__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Extended Page ID</b></em>' attribute.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_EXTENSION__EXTENDED_PAGE_ID = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 0;
+	int SECTION__DESCRIPTION = ACTIVITY_EXPLORER_ITEM__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Activity Explorer Item ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__ACTIVITY_EXPLORER_ITEM_ID = ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID;
+
+	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__INDEX = ACTIVITY_EXPLORER_ITEM__INDEX;
+
+	/**
+	 * The feature id for the '<em><b>Owned Activities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__OWNED_ACTIVITIES = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Expanded</b></em>' attribute.
@@ -412,7 +475,7 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_EXTENSION__EXPANDED = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 1;
+	int SECTION__EXPANDED = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Filtering</b></em>' attribute.
@@ -421,89 +484,36 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_EXTENSION__FILTERING = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 2;
+	int SECTION__FILTERING = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Section Extension</em>' class.
+	 * The number of structural features of the '<em>Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_EXTENSION_FEATURE_COUNT = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 3;
+	int SECTION_FEATURE_COUNT = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityExtensionImpl <em>Activity Extension</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionExtensionImpl <em>Section Extension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityExtensionImpl
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getActivityExtension()
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionExtensionImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getSectionExtension()
 	 * @generated
 	 */
-	int ACTIVITY_EXTENSION = 7;
+	int SECTION_EXTENSION = 9;
 
 	/**
-	 * The feature id for the '<em><b>Has Predicate</b></em>' attribute.
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl <em>Activity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getActivity()
 	 * @generated
-	 * @ordered
 	 */
-	int ACTIVITY_EXTENSION__HAS_PREDICATE = PREDICATE_ELEMENT__HAS_PREDICATE;
-
-	/**
-	 * The feature id for the '<em><b>Image Path Off</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_EXTENSION__IMAGE_PATH_OFF = PREDICATE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Activity Explorer Item ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_EXTENSION__ACTIVITY_EXPLORER_ITEM_ID = PREDICATE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Index</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_EXTENSION__INDEX = PREDICATE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_EXTENSION__NAME = PREDICATE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Extended Section ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_EXTENSION__EXTENDED_SECTION_ID = PREDICATE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Activity Extension</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_EXTENSION_FEATURE_COUNT = PREDICATE_ELEMENT_FEATURE_COUNT + 5;
+	int ACTIVITY = 10;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerImpl <em>Viewpoint Activity Explorer</em>}' class.
@@ -513,7 +523,7 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getViewpointActivityExplorer()
 	 * @generated
 	 */
-	int VIEWPOINT_ACTIVITY_EXPLORER = 8;
+	int VIEWPOINT_ACTIVITY_EXPLORER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -543,31 +553,22 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int VIEWPOINT_ACTIVITY_EXPLORER__DESCRIPTION = VpdescPackage.ASPECT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Owned New Pages</b></em>' containment reference.
+	 * The feature id for the '<em><b>Owned Pages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES = VpdescPackage.ASPECT_FEATURE_COUNT + 0;
+	int VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES = VpdescPackage.ASPECT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Owned Sections Extension</b></em>' containment reference.
+	 * The feature id for the '<em><b>Owned Section Extensions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION = VpdescPackage.ASPECT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Owned Activities Extension</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION = VpdescPackage.ASPECT_FEATURE_COUNT + 2;
+	int VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS = VpdescPackage.ASPECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Viewpoint Activity Explorer</em>' class.
@@ -576,92 +577,199 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_ACTIVITY_EXPLORER_FEATURE_COUNT = VpdescPackage.ASPECT_FEATURE_COUNT + 3;
+	int VIEWPOINT_ACTIVITY_EXPLORER_FEATURE_COUNT = VpdescPackage.ASPECT_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PagesImpl <em>Pages</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractPageImpl <em>Abstract Page</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PagesImpl
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getPages()
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractPageImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getAbstractPage()
 	 * @generated
 	 */
-	int PAGES = 9;
+	int ABSTRACT_PAGE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Owned Activity Explorer Pages</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGES__OWNED_ACTIVITY_EXPLORER_PAGES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Pages</em>' class.
+	 * The feature id for the '<em><b>Owned Sections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGES_FEATURE_COUNT = 1;
+	int ABSTRACT_PAGE__OWNED_SECTIONS = 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionsImpl <em>Sections</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionsImpl
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getSections()
-	 * @generated
-	 */
-	int SECTIONS = 10;
-
-	/**
-	 * The feature id for the '<em><b>Owned Sections Extensions</b></em>' containment reference list.
+	 * The number of structural features of the '<em>Abstract Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTIONS__OWNED_SECTIONS_EXTENSIONS = 0;
+	int ABSTRACT_PAGE_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of structural features of the '<em>Sections</em>' class.
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageExtensionImpl <em>Page Extension</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageExtensionImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getPageExtension()
+	 * @generated
+	 */
+	int PAGE_EXTENSION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Owned Sections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTIONS_FEATURE_COUNT = 1;
+	int PAGE_EXTENSION__OWNED_SECTIONS = ABSTRACT_PAGE__OWNED_SECTIONS;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivitiesImpl <em>Activities</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivitiesImpl
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getActivities()
-	 * @generated
-	 */
-	int ACTIVITIES = 11;
-
-	/**
-	 * The feature id for the '<em><b>Owned Activities Extensions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extended Page ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITIES__OWNED_ACTIVITIES_EXTENSIONS = 0;
+	int PAGE_EXTENSION__EXTENDED_PAGE_ID = ABSTRACT_PAGE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Activities</em>' class.
+	 * The number of structural features of the '<em>Page Extension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITIES_FEATURE_COUNT = 1;
+	int PAGE_EXTENSION_FEATURE_COUNT = ABSTRACT_PAGE_FEATURE_COUNT + 1;
 
+	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractSectionImpl <em>Abstract Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractSectionImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getAbstractSection()
+	 * @generated
+	 */
+	int ABSTRACT_SECTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Owned Activities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_SECTION__OWNED_ACTIVITIES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_SECTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Owned Activities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_EXTENSION__OWNED_ACTIVITIES = ABSTRACT_SECTION__OWNED_ACTIVITIES;
+
+	/**
+	 * The feature id for the '<em><b>Extended Section ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_EXTENSION__EXTENDED_SECTION_ID = ABSTRACT_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Section Extension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_EXTENSION_FEATURE_COUNT = ABSTRACT_SECTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Has Predicate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__HAS_PREDICATE = PREDICATE_ELEMENT__HAS_PREDICATE;
+
+	/**
+	 * The feature id for the '<em><b>Image Path Off</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__IMAGE_PATH_OFF = PREDICATE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__ID = PREDICATE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__NAME = PREDICATE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__DESCRIPTION = PREDICATE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Activity Explorer Item ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__ACTIVITY_EXPLORER_ITEM_ID = PREDICATE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__INDEX = PREDICATE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Activity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_FEATURE_COUNT = PREDICATE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page <em>Page</em>}'.
@@ -813,17 +921,6 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	EAttribute getActivityExplorerItem_Index();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getName()
-	 * @see #getActivityExplorerItem()
-	 * @generated
-	 */
-	EAttribute getActivityExplorerItem_Name();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.DynamicIcon <em>Dynamic Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -845,6 +942,38 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	EAttribute getDynamicIcon_ImagePathOn();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Section</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section
+	 * @generated
+	 */
+	EClass getSection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section#isExpanded <em>Expanded</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expanded</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section#isExpanded()
+	 * @see #getSection()
+	 * @generated
+	 */
+	EAttribute getSection_Expanded();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section#isFiltering <em>Filtering</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Filtering</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section#isFiltering()
+	 * @see #getSection()
+	 * @generated
+	 */
+	EAttribute getSection_Filtering();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension <em>Section Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -855,58 +984,67 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	EClass getSectionExtension();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedPageID <em>Extended Page ID</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Extended Page ID</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedPageID()
-	 * @see #getSectionExtension()
-	 * @generated
-	 */
-	EAttribute getSectionExtension_ExtendedPageID();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isExpanded <em>Expanded</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expanded</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isExpanded()
-	 * @see #getSectionExtension()
-	 * @generated
-	 */
-	EAttribute getSectionExtension_Expanded();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isFiltering <em>Filtering</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Filtering</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#isFiltering()
-	 * @see #getSectionExtension()
-	 * @generated
-	 */
-	EAttribute getSectionExtension_Filtering();
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension <em>Activity Extension</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Activity Extension</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension
-	 * @generated
-	 */
-	EClass getActivityExtension();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension#getExtendedSectionID <em>Extended Section ID</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedSectionID <em>Extended Section ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Extended Section ID</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension#getExtendedSectionID()
-	 * @see #getActivityExtension()
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension#getExtendedSectionID()
+	 * @see #getSectionExtension()
 	 * @generated
 	 */
-	EAttribute getActivityExtension_ExtendedSectionID();
+	EAttribute getSectionExtension_ExtendedSectionID();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity <em>Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Activity</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity
+	 * @generated
+	 */
+	EClass getActivity();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage <em>Abstract Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Page</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage
+	 * @generated
+	 */
+	EClass getAbstractPage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage#getOwnedSections <em>Owned Sections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Sections</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage#getOwnedSections()
+	 * @see #getAbstractPage()
+	 * @generated
+	 */
+	EReference getAbstractPage_OwnedSections();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection <em>Abstract Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Section</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection
+	 * @generated
+	 */
+	EClass getAbstractSection();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection#getOwnedActivities <em>Owned Activities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Activities</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection#getOwnedActivities()
+	 * @see #getAbstractSection()
+	 * @generated
+	 */
+	EReference getAbstractSection_OwnedActivities();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer <em>Viewpoint Activity Explorer</em>}'.
@@ -919,100 +1057,47 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	EClass getViewpointActivityExplorer();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedNewPages <em>Owned New Pages</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedPages <em>Owned Pages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Owned New Pages</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedNewPages()
+	 * @return the meta object for the containment reference list '<em>Owned Pages</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedPages()
 	 * @see #getViewpointActivityExplorer()
 	 * @generated
 	 */
-	EReference getViewpointActivityExplorer_OwnedNewPages();
+	EReference getViewpointActivityExplorer_OwnedPages();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionsExtension <em>Owned Sections Extension</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionExtensions <em>Owned Section Extensions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Owned Sections Extension</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionsExtension()
+	 * @return the meta object for the containment reference list '<em>Owned Section Extensions</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionExtensions()
 	 * @see #getViewpointActivityExplorer()
 	 * @generated
 	 */
-	EReference getViewpointActivityExplorer_OwnedSectionsExtension();
+	EReference getViewpointActivityExplorer_OwnedSectionExtensions();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedActivitiesExtension <em>Owned Activities Extension</em>}'.
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension <em>Page Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Owned Activities Extension</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedActivitiesExtension()
-	 * @see #getViewpointActivityExplorer()
+	 * @return the meta object for class '<em>Page Extension</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension
 	 * @generated
 	 */
-	EReference getViewpointActivityExplorer_OwnedActivitiesExtension();
+	EClass getPageExtension();
 
 	/**
-	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages <em>Pages</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension#getExtendedPageID <em>Extended Page ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pages</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages
+	 * @return the meta object for the attribute '<em>Extended Page ID</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension#getExtendedPageID()
+	 * @see #getPageExtension()
 	 * @generated
 	 */
-	EClass getPages();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages#getOwnedActivityExplorerPages <em>Owned Activity Explorer Pages</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Activity Explorer Pages</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages#getOwnedActivityExplorerPages()
-	 * @see #getPages()
-	 * @generated
-	 */
-	EReference getPages_OwnedActivityExplorerPages();
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections <em>Sections</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sections</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections
-	 * @generated
-	 */
-	EClass getSections();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections#getOwnedSectionsExtensions <em>Owned Sections Extensions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Sections Extensions</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections#getOwnedSectionsExtensions()
-	 * @see #getSections()
-	 * @generated
-	 */
-	EReference getSections_OwnedSectionsExtensions();
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities <em>Activities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Activities</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities
-	 * @generated
-	 */
-	EClass getActivities();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities#getOwnedActivitiesExtensions <em>Owned Activities Extensions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Activities Extensions</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities#getOwnedActivitiesExtensions()
-	 * @see #getActivities()
-	 * @generated
-	 */
-	EReference getActivities_OwnedActivitiesExtensions();
+	EAttribute getPageExtension_ExtendedPageID();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1159,14 +1244,6 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 		EAttribute ACTIVITY_EXPLORER_ITEM__INDEX = eINSTANCE.getActivityExplorerItem_Index();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTIVITY_EXPLORER_ITEM__NAME = eINSTANCE.getActivityExplorerItem_Name();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.DynamicIconImpl <em>Dynamic Icon</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1185,6 +1262,32 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 		EAttribute DYNAMIC_ICON__IMAGE_PATH_ON = eINSTANCE.getDynamicIcon_ImagePathOn();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionImpl <em>Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getSection()
+		 * @generated
+		 */
+		EClass SECTION = eINSTANCE.getSection();
+
+		/**
+		 * The meta object literal for the '<em><b>Expanded</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECTION__EXPANDED = eINSTANCE.getSection_Expanded();
+
+		/**
+		 * The meta object literal for the '<em><b>Filtering</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECTION__FILTERING = eINSTANCE.getSection_Filtering();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionExtensionImpl <em>Section Extension</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1195,46 +1298,58 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 		EClass SECTION_EXTENSION = eINSTANCE.getSectionExtension();
 
 		/**
-		 * The meta object literal for the '<em><b>Extended Page ID</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECTION_EXTENSION__EXTENDED_PAGE_ID = eINSTANCE.getSectionExtension_ExtendedPageID();
-
-		/**
-		 * The meta object literal for the '<em><b>Expanded</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECTION_EXTENSION__EXPANDED = eINSTANCE.getSectionExtension_Expanded();
-
-		/**
-		 * The meta object literal for the '<em><b>Filtering</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECTION_EXTENSION__FILTERING = eINSTANCE.getSectionExtension_Filtering();
-
-		/**
-		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityExtensionImpl <em>Activity Extension</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityExtensionImpl
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getActivityExtension()
-		 * @generated
-		 */
-		EClass ACTIVITY_EXTENSION = eINSTANCE.getActivityExtension();
-
-		/**
 		 * The meta object literal for the '<em><b>Extended Section ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTIVITY_EXTENSION__EXTENDED_SECTION_ID = eINSTANCE.getActivityExtension_ExtendedSectionID();
+		EAttribute SECTION_EXTENSION__EXTENDED_SECTION_ID = eINSTANCE.getSectionExtension_ExtendedSectionID();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl <em>Activity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getActivity()
+		 * @generated
+		 */
+		EClass ACTIVITY = eINSTANCE.getActivity();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractPageImpl <em>Abstract Page</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractPageImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getAbstractPage()
+		 * @generated
+		 */
+		EClass ABSTRACT_PAGE = eINSTANCE.getAbstractPage();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Sections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_PAGE__OWNED_SECTIONS = eINSTANCE.getAbstractPage_OwnedSections();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractSectionImpl <em>Abstract Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractSectionImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getAbstractSection()
+		 * @generated
+		 */
+		EClass ABSTRACT_SECTION = eINSTANCE.getAbstractSection();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Activities</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_SECTION__OWNED_ACTIVITIES = eINSTANCE.getAbstractSection_OwnedActivities();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerImpl <em>Viewpoint Activity Explorer</em>}' class.
@@ -1247,82 +1362,38 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 		EClass VIEWPOINT_ACTIVITY_EXPLORER = eINSTANCE.getViewpointActivityExplorer();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned New Pages</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Owned Pages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES = eINSTANCE.getViewpointActivityExplorer_OwnedNewPages();
+		EReference VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES = eINSTANCE.getViewpointActivityExplorer_OwnedPages();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Sections Extension</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Owned Section Extensions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION = eINSTANCE.getViewpointActivityExplorer_OwnedSectionsExtension();
+		EReference VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS = eINSTANCE.getViewpointActivityExplorer_OwnedSectionExtensions();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Activities Extension</b></em>' containment reference feature.
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageExtensionImpl <em>Page Extension</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageExtensionImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getPageExtension()
 		 * @generated
 		 */
-		EReference VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION = eINSTANCE.getViewpointActivityExplorer_OwnedActivitiesExtension();
+		EClass PAGE_EXTENSION = eINSTANCE.getPageExtension();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PagesImpl <em>Pages</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PagesImpl
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getPages()
-		 * @generated
-		 */
-		EClass PAGES = eINSTANCE.getPages();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Activity Explorer Pages</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Extended Page ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PAGES__OWNED_ACTIVITY_EXPLORER_PAGES = eINSTANCE.getPages_OwnedActivityExplorerPages();
-
-		/**
-		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionsImpl <em>Sections</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.SectionsImpl
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getSections()
-		 * @generated
-		 */
-		EClass SECTIONS = eINSTANCE.getSections();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Sections Extensions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTIONS__OWNED_SECTIONS_EXTENSIONS = eINSTANCE.getSections_OwnedSectionsExtensions();
-
-		/**
-		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivitiesImpl <em>Activities</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivitiesImpl
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerPackageImpl#getActivities()
-		 * @generated
-		 */
-		EClass ACTIVITIES = eINSTANCE.getActivities();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Activities Extensions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITIES__OWNED_ACTIVITIES_EXTENSIONS = eINSTANCE.getActivities_OwnedActivitiesExtensions();
+		EAttribute PAGE_EXTENSION__EXTENDED_PAGE_ID = eINSTANCE.getPageExtension_ExtendedPageID();
 
 	}
 

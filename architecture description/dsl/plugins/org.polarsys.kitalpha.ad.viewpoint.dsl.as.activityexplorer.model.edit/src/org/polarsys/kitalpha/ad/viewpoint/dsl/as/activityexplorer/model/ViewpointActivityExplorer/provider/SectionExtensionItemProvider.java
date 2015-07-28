@@ -38,7 +38,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoin
  * @generated
  */
 public class SectionExtensionItemProvider
-	extends ActivityExplorerItemItemProvider
+	extends AbstractSectionItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -66,28 +66,26 @@ public class SectionExtensionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addExtendedPageIDPropertyDescriptor(object);
-			addExpandedPropertyDescriptor(object);
-			addFilteringPropertyDescriptor(object);
+			addExtendedSectionIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Extended Page ID feature.
+	 * This adds a property descriptor for the Extended Section ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExtendedPageIDPropertyDescriptor(Object object) {
+	protected void addExtendedSectionIDPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SectionExtension_extendedPageID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SectionExtension_extendedPageID_feature", "_UI_SectionExtension_type"),
-				 ViewpointActivityExplorerPackage.Literals.SECTION_EXTENSION__EXTENDED_PAGE_ID,
+				 getString("_UI_SectionExtension_extendedSectionID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SectionExtension_extendedSectionID_feature", "_UI_SectionExtension_type"),
+				 ViewpointActivityExplorerPackage.Literals.SECTION_EXTENSION__EXTENDED_SECTION_ID,
 				 true,
 				 false,
 				 false,
@@ -98,77 +96,28 @@ public class SectionExtensionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Expanded feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addExpandedPropertyDescriptor(Object object) {
-
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SectionExtension_expanded_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SectionExtension_expanded_feature", "_UI_SectionExtension_type"),
-				 ViewpointActivityExplorerPackage.Literals.SECTION_EXTENSION__EXPANDED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-
-	}
-
-	/**
-	 * This adds a property descriptor for the Filtering feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFilteringPropertyDescriptor(Object object) {
-
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SectionExtension_filtering_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SectionExtension_filtering_feature", "_UI_SectionExtension_type"),
-				 ViewpointActivityExplorerPackage.Literals.SECTION_EXTENSION__FILTERING,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-
-	}
-
-	/**
 	 * This returns SectionExtension.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SectionExtension.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SectionExtension"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 
-		String label = ((SectionExtension)object).getName();
+		String label = ((SectionExtension)object).getExtendedSectionID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_SectionExtension_type") :
-			"[" + getString("_UI_SectionExtension_type") + "] " + label;
+			getString("_UI_SectionExtension_type") + " " + label;
 
 	}
 
@@ -184,9 +133,7 @@ public class SectionExtensionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SectionExtension.class)) {
-			case ViewpointActivityExplorerPackage.SECTION_EXTENSION__EXTENDED_PAGE_ID:
-			case ViewpointActivityExplorerPackage.SECTION_EXTENSION__EXPANDED:
-			case ViewpointActivityExplorerPackage.SECTION_EXTENSION__FILTERING:
+			case ViewpointActivityExplorerPackage.SECTION_EXTENSION__EXTENDED_SECTION_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

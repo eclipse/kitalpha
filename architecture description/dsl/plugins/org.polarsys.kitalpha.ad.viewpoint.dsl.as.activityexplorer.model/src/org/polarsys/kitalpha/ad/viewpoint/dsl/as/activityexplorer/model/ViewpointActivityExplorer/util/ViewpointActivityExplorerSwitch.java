@@ -85,7 +85,10 @@ public class ViewpointActivityExplorerSwitch<T> extends Switch<T> {
 				if (result == null) result = caseActivityExplorerItem(page);
 				if (result == null) result = caseDynamicIcon(page);
 				if (result == null) result = casePredicateElement(page);
+				if (result == null) result = caseAbstractPage(page);
+				if (result == null) result = caseNamedElement(page);
 				if (result == null) result = caseIcon(page);
+				if (result == null) result = caseViewpointElement(page);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -112,6 +115,8 @@ public class ViewpointActivityExplorerSwitch<T> extends Switch<T> {
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM: {
 				ActivityExplorerItem activityExplorerItem = (ActivityExplorerItem)theEObject;
 				T result = caseActivityExplorerItem(activityExplorerItem);
+				if (result == null) result = caseNamedElement(activityExplorerItem);
+				if (result == null) result = caseViewpointElement(activityExplorerItem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -122,19 +127,13 @@ public class ViewpointActivityExplorerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ViewpointActivityExplorerPackage.SECTION_EXTENSION: {
-				SectionExtension sectionExtension = (SectionExtension)theEObject;
-				T result = caseSectionExtension(sectionExtension);
-				if (result == null) result = caseActivityExplorerItem(sectionExtension);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXTENSION: {
-				ActivityExtension activityExtension = (ActivityExtension)theEObject;
-				T result = caseActivityExtension(activityExtension);
-				if (result == null) result = casePredicateElement(activityExtension);
-				if (result == null) result = caseIcon(activityExtension);
-				if (result == null) result = caseActivityExplorerItem(activityExtension);
+			case ViewpointActivityExplorerPackage.SECTION: {
+				Section section = (Section)theEObject;
+				T result = caseSection(section);
+				if (result == null) result = caseActivityExplorerItem(section);
+				if (result == null) result = caseAbstractSection(section);
+				if (result == null) result = caseNamedElement(section);
+				if (result == null) result = caseViewpointElement(section);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -147,21 +146,40 @@ public class ViewpointActivityExplorerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ViewpointActivityExplorerPackage.PAGES: {
-				Pages pages = (Pages)theEObject;
-				T result = casePages(pages);
+			case ViewpointActivityExplorerPackage.PAGE_EXTENSION: {
+				PageExtension pageExtension = (PageExtension)theEObject;
+				T result = casePageExtension(pageExtension);
+				if (result == null) result = caseAbstractPage(pageExtension);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ViewpointActivityExplorerPackage.SECTIONS: {
-				Sections sections = (Sections)theEObject;
-				T result = caseSections(sections);
+			case ViewpointActivityExplorerPackage.SECTION_EXTENSION: {
+				SectionExtension sectionExtension = (SectionExtension)theEObject;
+				T result = caseSectionExtension(sectionExtension);
+				if (result == null) result = caseAbstractSection(sectionExtension);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ViewpointActivityExplorerPackage.ACTIVITIES: {
-				Activities activities = (Activities)theEObject;
-				T result = caseActivities(activities);
+			case ViewpointActivityExplorerPackage.ACTIVITY: {
+				Activity activity = (Activity)theEObject;
+				T result = caseActivity(activity);
+				if (result == null) result = casePredicateElement(activity);
+				if (result == null) result = caseIcon(activity);
+				if (result == null) result = caseActivityExplorerItem(activity);
+				if (result == null) result = caseNamedElement(activity);
+				if (result == null) result = caseViewpointElement(activity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ViewpointActivityExplorerPackage.ABSTRACT_PAGE: {
+				AbstractPage abstractPage = (AbstractPage)theEObject;
+				T result = caseAbstractPage(abstractPage);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ViewpointActivityExplorerPackage.ABSTRACT_SECTION: {
+				AbstractSection abstractSection = (AbstractSection)theEObject;
+				T result = caseAbstractSection(abstractSection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -260,6 +278,21 @@ public class ViewpointActivityExplorerSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSection(Section object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Section Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -275,17 +308,47 @@ public class ViewpointActivityExplorerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Activity Extension</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Activity Extension</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Activity</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseActivityExtension(ActivityExtension object) {
+	public T caseActivity(Activity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Page</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Page</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractPage(AbstractPage object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractSection(AbstractSection object) {
 		return null;
 	}
 
@@ -305,47 +368,17 @@ public class ViewpointActivityExplorerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pages</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Page Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pages</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Page Extension</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePages(Pages object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sections</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sections</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSections(Sections object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Activities</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Activities</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActivities(Activities object) {
+	public T casePageExtension(PageExtension object) {
 		return null;
 	}
 

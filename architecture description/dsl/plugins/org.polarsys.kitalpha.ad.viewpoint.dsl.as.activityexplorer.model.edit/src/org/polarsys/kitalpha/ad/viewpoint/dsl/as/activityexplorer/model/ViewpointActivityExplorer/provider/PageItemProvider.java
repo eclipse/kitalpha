@@ -235,6 +235,7 @@ public class PageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ViewpointActivityExplorerPackage.Literals.ABSTRACT_PAGE__OWNED_SECTIONS);
 			childrenFeatures.add(ViewpointActivityExplorerPackage.Literals.PAGE__OWNED_OVERVIEW);
 		}
 		return childrenFeatures;
@@ -257,11 +258,10 @@ public class PageItemProvider
 	 * This returns Page.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Page.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Page"));
 	}
 
 	/**
@@ -300,6 +300,7 @@ public class PageItemProvider
 			case ViewpointActivityExplorerPackage.PAGE__MODEL_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS:
 			case ViewpointActivityExplorerPackage.PAGE__OWNED_OVERVIEW:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -317,6 +318,13 @@ public class PageItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointActivityExplorerPackage.Literals.ABSTRACT_PAGE__OWNED_SECTIONS,
+						 ViewpointActivityExplorerFactory.eINSTANCE.createSection()));
+
+
 
 				newChildDescriptors.add
 					(createChildParameter

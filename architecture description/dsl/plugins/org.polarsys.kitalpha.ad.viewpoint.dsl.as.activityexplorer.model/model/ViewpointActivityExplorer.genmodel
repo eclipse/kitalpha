@@ -6,11 +6,13 @@
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
   <foreignModel>../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore</foreignModel>
   <genPackages prefix="ViewpointActivityExplorer" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model"
-      disposableProviderFactory="true" ecorePackage="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#/">
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#/">
     <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Page">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Page/ownedOverview"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Page/tabName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Page/showViewer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Page/modelType"/>
     </genClasses>
     <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//PredicateElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//PredicateElement/hasPredicate"/>
@@ -24,32 +26,30 @@
     <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ActivityExplorerItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ActivityExplorerItem/activityExplorerItemID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ActivityExplorerItem/index"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ActivityExplorerItem/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//DynamicIcon">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//DynamicIcon/imagePathOn"/>
     </genClasses>
-    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//SectionExtension">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//SectionExtension/extendedPageID"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//SectionExtension/expanded"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//SectionExtension/filtering"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ActivityExtension">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ActivityExtension/extendedSectionID"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Section">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Section/expanded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Section/filtering"/>
     </genClasses>
     <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ViewpointActivityExplorer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ViewpointActivityExplorer/ownedNewPages"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ViewpointActivityExplorer/ownedSectionsExtension"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ViewpointActivityExplorer/ownedActivitiesExtension"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ViewpointActivityExplorer/ownedPages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//ViewpointActivityExplorer/ownedSectionExtensions"/>
     </genClasses>
-    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Pages">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Pages/ownedActivityExplorerPages"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//PageExtension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//PageExtension/extendedPageID"/>
     </genClasses>
-    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Sections">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Sections/ownedSectionsExtensions"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//SectionExtension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//SectionExtension/extendedSectionID"/>
     </genClasses>
-    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Activities">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Activities/ownedActivitiesExtensions"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//Activity"/>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//AbstractPage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//AbstractPage/ownedSections"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//AbstractSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore#//AbstractSection/ownedActivities"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

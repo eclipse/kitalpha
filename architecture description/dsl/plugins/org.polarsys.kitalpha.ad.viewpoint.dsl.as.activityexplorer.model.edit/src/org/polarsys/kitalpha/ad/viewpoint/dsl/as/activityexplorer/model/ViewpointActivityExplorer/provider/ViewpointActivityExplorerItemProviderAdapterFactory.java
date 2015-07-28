@@ -14,14 +14,21 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoi
 import java.util.ArrayList;
 import java.util.Collection;
 
+import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
+import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -30,7 +37,12 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.util.ViewpointActivityExplorerAdapterFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.util.VpdescSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -41,7 +53,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoin
  * <!-- end-user-doc -->
  * @generated
  */
-public class ViewpointActivityExplorerItemProviderAdapterFactory extends ViewpointActivityExplorerAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class ViewpointActivityExplorerItemProviderAdapterFactory extends ViewpointActivityExplorerAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -57,6 +69,14 @@ public class ViewpointActivityExplorerItemProviderAdapterFactory extends Viewpoi
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+
+	/**
+	 * This helps manage the child creation extenders.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ViewpointActivityExplorerEditPlugin.INSTANCE, ViewpointActivityExplorerPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -127,6 +147,29 @@ public class ViewpointActivityExplorerItemProviderAdapterFactory extends Viewpoi
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SectionItemProvider sectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSectionAdapter() {
+		if (sectionItemProvider == null) {
+			sectionItemProvider = new SectionItemProvider(this);
+		}
+
+		return sectionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,26 +193,26 @@ public class ViewpointActivityExplorerItemProviderAdapterFactory extends Viewpoi
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension} instances.
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityExtensionItemProvider activityExtensionItemProvider;
+	protected ActivityItemProvider activityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension}.
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createActivityExtensionAdapter() {
-		if (activityExtensionItemProvider == null) {
-			activityExtensionItemProvider = new ActivityExtensionItemProvider(this);
+	public Adapter createActivityAdapter() {
+		if (activityItemProvider == null) {
+			activityItemProvider = new ActivityItemProvider(this);
 		}
 
-		return activityExtensionItemProvider;
+		return activityItemProvider;
 	}
 
 	/**
@@ -196,72 +239,26 @@ public class ViewpointActivityExplorerItemProviderAdapterFactory extends Viewpoi
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages} instances.
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PagesItemProvider pagesItemProvider;
+	protected PageExtensionItemProvider pageExtensionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages}.
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPagesAdapter() {
-		if (pagesItemProvider == null) {
-			pagesItemProvider = new PagesItemProvider(this);
+	public Adapter createPageExtensionAdapter() {
+		if (pageExtensionItemProvider == null) {
+			pageExtensionItemProvider = new PageExtensionItemProvider(this);
 		}
 
-		return pagesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SectionsItemProvider sectionsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSectionsAdapter() {
-		if (sectionsItemProvider == null) {
-			sectionsItemProvider = new SectionsItemProvider(this);
-		}
-
-		return sectionsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActivitiesItemProvider activitiesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActivitiesAdapter() {
-		if (activitiesItemProvider == null) {
-			activitiesItemProvider = new ActivitiesItemProvider(this);
-		}
-
-		return activitiesItemProvider;
+		return pageExtensionItemProvider;
 	}
 
 	/**
@@ -323,6 +320,33 @@ public class ViewpointActivityExplorerItemProviderAdapterFactory extends Viewpoi
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<IChildCreationExtender> getChildCreationExtenders() {
+		return childCreationExtenderManager.getChildCreationExtenders();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceLocator getResourceLocator() {
+		return childCreationExtenderManager;
+	}
+
+	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -365,12 +389,101 @@ public class ViewpointActivityExplorerItemProviderAdapterFactory extends Viewpoi
 	public void dispose() {
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (overviewItemProvider != null) overviewItemProvider.dispose();
-		if (sectionExtensionItemProvider != null) sectionExtensionItemProvider.dispose();
-		if (activityExtensionItemProvider != null) activityExtensionItemProvider.dispose();
+		if (sectionItemProvider != null) sectionItemProvider.dispose();
 		if (viewpointActivityExplorerItemProvider != null) viewpointActivityExplorerItemProvider.dispose();
-		if (pagesItemProvider != null) pagesItemProvider.dispose();
-		if (sectionsItemProvider != null) sectionsItemProvider.dispose();
-		if (activitiesItemProvider != null) activitiesItemProvider.dispose();
+		if (pageExtensionItemProvider != null) pageExtensionItemProvider.dispose();
+		if (sectionExtensionItemProvider != null) sectionExtensionItemProvider.dispose();
+		if (activityItemProvider != null) activityItemProvider.dispose();
+	}
+
+	/**
+	 * A child creation extender for the {@link VpdescPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class VpdescChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends VpdescSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseViewpoint(Viewpoint object) {
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
+						 ViewpointActivityExplorerFactory.eINSTANCE.createViewpointActivityExplorer()));
+
+
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+		   return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return ViewpointActivityExplorerEditPlugin.INSTANCE;
+		}
 	}
 
 }

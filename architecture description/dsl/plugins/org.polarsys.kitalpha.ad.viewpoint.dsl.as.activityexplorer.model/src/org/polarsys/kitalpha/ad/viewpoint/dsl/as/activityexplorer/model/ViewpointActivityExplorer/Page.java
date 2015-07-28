@@ -33,7 +33,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoi
  * @generated
  */
 
-public interface Page extends ActivityExplorerItem, DynamicIcon, PredicateElement {
+public interface Page extends ActivityExplorerItem, DynamicIcon, PredicateElement, AbstractPage {
 
 
 

@@ -67,12 +67,11 @@ public class ViewpointActivityExplorerFactoryImpl extends EFactoryImpl implement
 		switch (eClass.getClassifierID()) {
 			case ViewpointActivityExplorerPackage.PAGE: return createPage();
 			case ViewpointActivityExplorerPackage.OVERVIEW: return createOverview();
-			case ViewpointActivityExplorerPackage.SECTION_EXTENSION: return createSectionExtension();
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXTENSION: return createActivityExtension();
+			case ViewpointActivityExplorerPackage.SECTION: return createSection();
 			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER: return createViewpointActivityExplorer();
-			case ViewpointActivityExplorerPackage.PAGES: return createPages();
-			case ViewpointActivityExplorerPackage.SECTIONS: return createSections();
-			case ViewpointActivityExplorerPackage.ACTIVITIES: return createActivities();
+			case ViewpointActivityExplorerPackage.PAGE_EXTENSION: return createPageExtension();
+			case ViewpointActivityExplorerPackage.SECTION_EXTENSION: return createSectionExtension();
+			case ViewpointActivityExplorerPackage.ACTIVITY: return createActivity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +102,16 @@ public class ViewpointActivityExplorerFactoryImpl extends EFactoryImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Section createSection() {
+		SectionImpl section = new SectionImpl();
+		return section;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SectionExtension createSectionExtension() {
 		SectionExtensionImpl sectionExtension = new SectionExtensionImpl();
 		return sectionExtension;
@@ -113,9 +122,9 @@ public class ViewpointActivityExplorerFactoryImpl extends EFactoryImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivityExtension createActivityExtension() {
-		ActivityExtensionImpl activityExtension = new ActivityExtensionImpl();
-		return activityExtension;
+	public Activity createActivity() {
+		ActivityImpl activity = new ActivityImpl();
+		return activity;
 	}
 
 	/**
@@ -133,29 +142,9 @@ public class ViewpointActivityExplorerFactoryImpl extends EFactoryImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Pages createPages() {
-		PagesImpl pages = new PagesImpl();
-		return pages;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Sections createSections() {
-		SectionsImpl sections = new SectionsImpl();
-		return sections;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Activities createActivities() {
-		ActivitiesImpl activities = new ActivitiesImpl();
-		return activities;
+	public PageExtension createPageExtension() {
+		PageExtensionImpl pageExtension = new PageExtensionImpl();
+		return pageExtension;
 	}
 
 	/**

@@ -48,6 +48,15 @@ public interface ViewpointActivityExplorerFactory extends EFactory {
 	Overview createOverview();
 
 	/**
+	 * Returns a new object of class '<em>Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Section</em>'.
+	 * @generated
+	 */
+	Section createSection();
+
+	/**
 	 * Returns a new object of class '<em>Section Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,13 +66,13 @@ public interface ViewpointActivityExplorerFactory extends EFactory {
 	SectionExtension createSectionExtension();
 
 	/**
-	 * Returns a new object of class '<em>Activity Extension</em>'.
+	 * Returns a new object of class '<em>Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Activity Extension</em>'.
+	 * @return a new object of class '<em>Activity</em>'.
 	 * @generated
 	 */
-	ActivityExtension createActivityExtension();
+	Activity createActivity();
 
 	/**
 	 * Returns a new object of class '<em>Viewpoint Activity Explorer</em>'.
@@ -75,31 +84,13 @@ public interface ViewpointActivityExplorerFactory extends EFactory {
 	ViewpointActivityExplorer createViewpointActivityExplorer();
 
 	/**
-	 * Returns a new object of class '<em>Pages</em>'.
+	 * Returns a new object of class '<em>Page Extension</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pages</em>'.
+	 * @return a new object of class '<em>Page Extension</em>'.
 	 * @generated
 	 */
-	Pages createPages();
-
-	/**
-	 * Returns a new object of class '<em>Sections</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sections</em>'.
-	 * @generated
-	 */
-	Sections createSections();
-
-	/**
-	 * Returns a new object of class '<em>Activities</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Activities</em>'.
-	 * @generated
-	 */
-	Activities createActivities();
+	PageExtension createPageExtension();
 
 	/**
 	 * Returns the package supported by this factory.

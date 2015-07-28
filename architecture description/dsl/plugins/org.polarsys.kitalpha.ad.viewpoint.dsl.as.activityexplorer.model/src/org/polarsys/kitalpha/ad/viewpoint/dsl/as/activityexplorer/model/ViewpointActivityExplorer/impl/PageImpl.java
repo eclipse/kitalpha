@@ -11,19 +11,25 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.DynamicIcon;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Icon;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Overview;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PredicateElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
 
 /**
@@ -36,6 +42,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoin
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getImagePathOff <em>Image Path Off</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getImagePathOn <em>Image Path On</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#isHasPredicate <em>Has Predicate</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getOwnedSections <em>Owned Sections</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getOwnedOverview <em>Owned Overview</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getTabName <em>Tab Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#isShowViewer <em>Show Viewer</em>}</li>
@@ -115,6 +122,16 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 
 
 
+
+	/**
+	 * The cached value of the '{@link #getOwnedSections() <em>Owned Sections</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedSections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Section> ownedSections;
 
 	/**
 	 * The cached value of the '{@link #getOwnedOverview() <em>Owned Overview</em>}' containment reference.
@@ -325,6 +342,19 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Section> getOwnedSections() {
+
+		if (ownedSections == null) {
+			ownedSections = new EObjectContainmentEList<Section>(Section.class, this, ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS);
+		}
+		return ownedSections;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 
 	public Overview getOwnedOverview() {
 
@@ -478,6 +508,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS:
+				return ((InternalEList<?>)getOwnedSections()).basicRemove(otherEnd, msgs);
 			case ViewpointActivityExplorerPackage.PAGE__OWNED_OVERVIEW:
 				return basicSetOwnedOverview(null, msgs);
 		}
@@ -498,6 +530,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 				return getImagePathOn();
 			case ViewpointActivityExplorerPackage.PAGE__HAS_PREDICATE:
 				return isHasPredicate();
+			case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS:
+				return getOwnedSections();
 			case ViewpointActivityExplorerPackage.PAGE__OWNED_OVERVIEW:
 				return getOwnedOverview();
 			case ViewpointActivityExplorerPackage.PAGE__TAB_NAME:
@@ -515,6 +549,7 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -526,6 +561,10 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 				return;
 			case ViewpointActivityExplorerPackage.PAGE__HAS_PREDICATE:
 				setHasPredicate((Boolean)newValue);
+				return;
+			case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS:
+				getOwnedSections().clear();
+				getOwnedSections().addAll((Collection<? extends Section>)newValue);
 				return;
 			case ViewpointActivityExplorerPackage.PAGE__OWNED_OVERVIEW:
 				setOwnedOverview((Overview)newValue);
@@ -561,6 +600,9 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 			case ViewpointActivityExplorerPackage.PAGE__HAS_PREDICATE:
 				setHasPredicate(HAS_PREDICATE_EDEFAULT);
 				return;
+			case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS:
+				getOwnedSections().clear();
+				return;
 			case ViewpointActivityExplorerPackage.PAGE__OWNED_OVERVIEW:
 				setOwnedOverview((Overview)null);
 				return;
@@ -593,6 +635,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 				return IMAGE_PATH_ON_EDEFAULT == null ? imagePathOn != null : !IMAGE_PATH_ON_EDEFAULT.equals(imagePathOn);
 			case ViewpointActivityExplorerPackage.PAGE__HAS_PREDICATE:
 				return hasPredicate != HAS_PREDICATE_EDEFAULT;
+			case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS:
+				return ownedSections != null && !ownedSections.isEmpty();
 			case ViewpointActivityExplorerPackage.PAGE__OWNED_OVERVIEW:
 				return ownedOverview != null;
 			case ViewpointActivityExplorerPackage.PAGE__TAB_NAME:
@@ -631,6 +675,12 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 				default: return -1;
 			}
 		}
+		if (baseClass == AbstractPage.class) {
+			switch (derivedFeatureID) {
+				case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS: return ViewpointActivityExplorerPackage.ABSTRACT_PAGE__OWNED_SECTIONS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -656,6 +706,12 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 		if (baseClass == PredicateElement.class) {
 			switch (baseFeatureID) {
 				case ViewpointActivityExplorerPackage.PREDICATE_ELEMENT__HAS_PREDICATE: return ViewpointActivityExplorerPackage.PAGE__HAS_PREDICATE;
+				default: return -1;
+			}
+		}
+		if (baseClass == AbstractPage.class) {
+			switch (baseFeatureID) {
+				case ViewpointActivityExplorerPackage.ABSTRACT_PAGE__OWNED_SECTIONS: return ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS;
 				default: return -1;
 			}
 		}

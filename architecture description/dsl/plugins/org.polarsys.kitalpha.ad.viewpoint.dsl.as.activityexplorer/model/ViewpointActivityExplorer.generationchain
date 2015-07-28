@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="ViewpointActivityExplorer" factoryComponentName="org.eclipse.egf.chain.viewpointactivityexplorer">
   <elements xsi:type="generationChain:GenerationChain" name="ViewpointActivityExplorer">
-    <elements xsi:type="generationChain:EmfGeneration" name="EMF Generation for Viewpoint Activity Explorer" modelPath="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model"/>
+    <elements xsi:type="generationChain:EmfGeneration" name="EMF Generation for Viewpoint Activity Explorer" modelPath="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer/model/ViewpointActivityExplorer.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model"/>
   </elements>
 </generationChain:GenerationChain>

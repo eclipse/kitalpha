@@ -11,17 +11,20 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
 
@@ -34,9 +37,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AspectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerImpl#getOwnedNewPages <em>Owned New Pages</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerImpl#getOwnedSectionsExtension <em>Owned Sections Extension</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerImpl#getOwnedActivitiesExtension <em>Owned Activities Extension</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerImpl#getOwnedPages <em>Owned Pages</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ViewpointActivityExplorerImpl#getOwnedSectionExtensions <em>Owned Section Extensions</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,40 +47,28 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AspectImpl;
 public class ViewpointActivityExplorerImpl extends AspectImpl implements ViewpointActivityExplorer {
 
 	/**
-	 * The cached value of the '{@link #getOwnedNewPages() <em>Owned New Pages</em>}' containment reference.
+	 * The cached value of the '{@link #getOwnedPages() <em>Owned Pages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedNewPages()
+	 * @see #getOwnedPages()
 	 * @generated
 	 * @ordered
 	 */
-	protected Pages ownedNewPages;
+	protected EList<AbstractPage> ownedPages;
 
 
 
 
 	/**
-	 * The cached value of the '{@link #getOwnedSectionsExtension() <em>Owned Sections Extension</em>}' containment reference.
+	 * The cached value of the '{@link #getOwnedSectionExtensions() <em>Owned Section Extensions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedSectionsExtension()
+	 * @see #getOwnedSectionExtensions()
 	 * @generated
 	 * @ordered
 	 */
-	protected Sections ownedSectionsExtension;
+	protected EList<SectionExtension> ownedSectionExtensions;
 
-
-
-
-	/**
-	 * The cached value of the '{@link #getOwnedActivitiesExtension() <em>Owned Activities Extension</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnedActivitiesExtension()
-	 * @generated
-	 * @ordered
-	 */
-	protected Activities ownedActivitiesExtension;
 
 
 
@@ -112,178 +102,26 @@ public class ViewpointActivityExplorerImpl extends AspectImpl implements Viewpoi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<AbstractPage> getOwnedPages() {
 
-	public Pages getOwnedNewPages() {
-
-		return ownedNewPages;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public NotificationChain basicSetOwnedNewPages(Pages newOwnedNewPages, NotificationChain msgs) {
-
-		Pages oldOwnedNewPages = ownedNewPages;
-		ownedNewPages = newOwnedNewPages;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES, oldOwnedNewPages, newOwnedNewPages);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (ownedPages == null) {
+			ownedPages = new EObjectContainmentEList<AbstractPage>(AbstractPage.class, this, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES);
 		}
-
-		return msgs;
+		return ownedPages;
 	}
-
-
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SectionExtension> getOwnedSectionExtensions() {
 
-	public void setOwnedNewPages(Pages newOwnedNewPages) {
-
-		if (newOwnedNewPages != ownedNewPages) {
-			NotificationChain msgs = null;
-			if (ownedNewPages != null)
-				msgs = ((InternalEObject)ownedNewPages).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES, null, msgs);
-			if (newOwnedNewPages != null)
-				msgs = ((InternalEObject)newOwnedNewPages).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES, null, msgs);
-			msgs = basicSetOwnedNewPages(newOwnedNewPages, msgs);
-			if (msgs != null) msgs.dispatch();
+		if (ownedSectionExtensions == null) {
+			ownedSectionExtensions = new EObjectContainmentEList<SectionExtension>(SectionExtension.class, this, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS);
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES, newOwnedNewPages, newOwnedNewPages));
-
+		return ownedSectionExtensions;
 	}
-
-
-
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public Sections getOwnedSectionsExtension() {
-
-		return ownedSectionsExtension;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public NotificationChain basicSetOwnedSectionsExtension(Sections newOwnedSectionsExtension, NotificationChain msgs) {
-
-		Sections oldOwnedSectionsExtension = ownedSectionsExtension;
-		ownedSectionsExtension = newOwnedSectionsExtension;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION, oldOwnedSectionsExtension, newOwnedSectionsExtension);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-
-		return msgs;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public void setOwnedSectionsExtension(Sections newOwnedSectionsExtension) {
-
-		if (newOwnedSectionsExtension != ownedSectionsExtension) {
-			NotificationChain msgs = null;
-			if (ownedSectionsExtension != null)
-				msgs = ((InternalEObject)ownedSectionsExtension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION, null, msgs);
-			if (newOwnedSectionsExtension != null)
-				msgs = ((InternalEObject)newOwnedSectionsExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION, null, msgs);
-			msgs = basicSetOwnedSectionsExtension(newOwnedSectionsExtension, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION, newOwnedSectionsExtension, newOwnedSectionsExtension));
-
-	}
-
-
-
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public Activities getOwnedActivitiesExtension() {
-
-		return ownedActivitiesExtension;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public NotificationChain basicSetOwnedActivitiesExtension(Activities newOwnedActivitiesExtension, NotificationChain msgs) {
-
-		Activities oldOwnedActivitiesExtension = ownedActivitiesExtension;
-		ownedActivitiesExtension = newOwnedActivitiesExtension;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION, oldOwnedActivitiesExtension, newOwnedActivitiesExtension);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-
-		return msgs;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public void setOwnedActivitiesExtension(Activities newOwnedActivitiesExtension) {
-
-		if (newOwnedActivitiesExtension != ownedActivitiesExtension) {
-			NotificationChain msgs = null;
-			if (ownedActivitiesExtension != null)
-				msgs = ((InternalEObject)ownedActivitiesExtension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION, null, msgs);
-			if (newOwnedActivitiesExtension != null)
-				msgs = ((InternalEObject)newOwnedActivitiesExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION, null, msgs);
-			msgs = basicSetOwnedActivitiesExtension(newOwnedActivitiesExtension, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION, newOwnedActivitiesExtension, newOwnedActivitiesExtension));
-
-	}
-
-
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,12 +131,10 @@ public class ViewpointActivityExplorerImpl extends AspectImpl implements Viewpoi
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES:
-				return basicSetOwnedNewPages(null, msgs);
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION:
-				return basicSetOwnedSectionsExtension(null, msgs);
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION:
-				return basicSetOwnedActivitiesExtension(null, msgs);
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES:
+				return ((InternalEList<?>)getOwnedPages()).basicRemove(otherEnd, msgs);
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS:
+				return ((InternalEList<?>)getOwnedSectionExtensions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -311,12 +147,10 @@ public class ViewpointActivityExplorerImpl extends AspectImpl implements Viewpoi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES:
-				return getOwnedNewPages();
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION:
-				return getOwnedSectionsExtension();
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION:
-				return getOwnedActivitiesExtension();
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES:
+				return getOwnedPages();
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS:
+				return getOwnedSectionExtensions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -326,17 +160,17 @@ public class ViewpointActivityExplorerImpl extends AspectImpl implements Viewpoi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES:
-				setOwnedNewPages((Pages)newValue);
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES:
+				getOwnedPages().clear();
+				getOwnedPages().addAll((Collection<? extends AbstractPage>)newValue);
 				return;
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION:
-				setOwnedSectionsExtension((Sections)newValue);
-				return;
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION:
-				setOwnedActivitiesExtension((Activities)newValue);
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS:
+				getOwnedSectionExtensions().clear();
+				getOwnedSectionExtensions().addAll((Collection<? extends SectionExtension>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -351,14 +185,11 @@ public class ViewpointActivityExplorerImpl extends AspectImpl implements Viewpoi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES:
-				setOwnedNewPages((Pages)null);
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES:
+				getOwnedPages().clear();
 				return;
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION:
-				setOwnedSectionsExtension((Sections)null);
-				return;
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION:
-				setOwnedActivitiesExtension((Activities)null);
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS:
+				getOwnedSectionExtensions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -374,12 +205,10 @@ public class ViewpointActivityExplorerImpl extends AspectImpl implements Viewpoi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_NEW_PAGES:
-				return ownedNewPages != null;
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTIONS_EXTENSION:
-				return ownedSectionsExtension != null;
-			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_ACTIVITIES_EXTENSION:
-				return ownedActivitiesExtension != null;
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES:
+				return ownedPages != null && !ownedPages.isEmpty();
+			case ViewpointActivityExplorerPackage.VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS:
+				return ownedSectionExtensions != null && !ownedSectionExtensions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
