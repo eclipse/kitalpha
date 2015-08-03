@@ -1,0 +1,20 @@
+<%
+String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter, JavaNamingConvention.JavaUseContext.Page);
+
+String id = parameter.getActivityExplorerItemID();
+if (null == id || (null != id && id.isEmpty()))
+	id = "Page1";
+%>
+
+<extension point="org.eclipse.amalgam.explorer.activity.ui.pagesProvider">
+	<Page
+		class="<%=className%>"
+        id="<%=id%>"
+<%if (parameter.getImagePathOff() != null){%> 
+		imageOff="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+parameter.getImagePathOff()%>"<%}%>
+<%if (parameter.getImagePathOn()  != null){%> 
+		imageOn="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+parameter.getImagePathOn()%>"<%}%>
+        index="<%=parameter.getIndex()%>"
+        tabName="<%=parameter.getTabName()%>"
+        title="<%=parameter.getName()%>"
+        viewer="<%=parameter.isShowViewer()%>">

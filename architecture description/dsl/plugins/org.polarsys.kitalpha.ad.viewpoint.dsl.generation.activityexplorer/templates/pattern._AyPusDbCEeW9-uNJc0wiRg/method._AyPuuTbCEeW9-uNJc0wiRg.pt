@@ -1,0 +1,7 @@
+<%IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectname);%>
+<%NullProgressMonitor npm = new NullProgressMonitor(); %>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms", npm);%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.ui", npm);%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.amalgam.explorer.activity.ui", npm);%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime", npm);%>
+

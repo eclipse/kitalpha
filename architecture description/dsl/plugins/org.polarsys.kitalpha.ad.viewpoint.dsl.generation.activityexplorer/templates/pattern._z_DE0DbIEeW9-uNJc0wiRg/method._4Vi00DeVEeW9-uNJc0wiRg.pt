@@ -1,0 +1,10 @@
+<%
+genSectionID = false;
+final EObject activityParent = parameter.eContainer();
+if (activityParent instanceof SectionExtension)
+{ 
+	genSectionID = true;
+	SectionExtension sectionExtension = (SectionExtension) activityParent;
+	sectionID = sectionExtension.getExtendedSectionID();
+}
+%>

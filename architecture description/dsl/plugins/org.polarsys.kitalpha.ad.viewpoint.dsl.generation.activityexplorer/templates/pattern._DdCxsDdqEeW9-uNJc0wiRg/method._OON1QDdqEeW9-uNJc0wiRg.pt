@@ -1,0 +1,4 @@
+<%// the source project name is the project containing the resource containing the iconElement%>
+<%final URI resourceURI = dynamicIconElement.eResource().getURI();%>
+<%String sourceProjectName = resourceURI.segment(1);%>
+<%IconsFileHelper.copyIcon(dynamicIconElement.getImagePathOn(), sourceProjectName, activityExplorerProjectName);%>

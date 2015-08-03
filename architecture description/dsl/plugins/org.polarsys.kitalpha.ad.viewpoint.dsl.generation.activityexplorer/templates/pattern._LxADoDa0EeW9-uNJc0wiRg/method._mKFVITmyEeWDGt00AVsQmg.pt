@@ -1,0 +1,6 @@
+<%super.method_updateProjectDependecies(stringBuffer, ctx);%>
+<%// Add org.eclipse.emf.ecore%>
+<%if (genFileExtensionPredicate){%>	
+<%	IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectname);%>
+<%	PDEUtility.updateRequiredBundles(project, "org.eclipse.emf.ecore", new NullProgressMonitor());%>
+<%}%>

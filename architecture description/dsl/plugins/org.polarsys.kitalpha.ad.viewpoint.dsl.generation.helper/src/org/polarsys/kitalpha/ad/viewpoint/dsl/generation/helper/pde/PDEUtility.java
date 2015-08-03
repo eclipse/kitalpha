@@ -164,6 +164,36 @@ public class PDEUtility {
 	 ** Manifest Update Section ****  
 	 ******************************/
 	
+	public static void setActivator(IProject project, final String activatorClassFQN, IProgressMonitor monitor){
+		if (project == null)
+			return;
+		
+		synchronized (bundleLock) {
+			IFile	manifest = project.getFile(ICoreConstants.BUNDLE_FILENAME_DESCRIPTOR);
+			PDEModelUtility.modifyModel(new ModelModification(manifest) {
+				@Override
+				protected void modifyModel(IBaseModel model, IProgressMonitor innerMonitor) throws CoreException {
+					if (model instanceof IBundlePluginModelBase == false) 
+						return;
+
+					IBundlePluginModelBase bundleModel = (IBundlePluginModelBase) model;
+					IBundle bundle = bundleModel.getBundleModel().getBundle();
+
+					// update required execution environment
+					if (activatorClassFQN != null && activatorClassFQN.trim().length() > 0)
+					{
+						bundle.setHeader(Constants.BUNDLE_ACTIVATOR, activatorClassFQN);
+					}
+					else
+					{
+						throw new RuntimeException("Activator Java Class can't be null or empty");
+					}
+				}
+			}, monitor);
+		}
+	}
+	
+	
 	/**
 	 * 
 	 * @param project

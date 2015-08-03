@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.ExtensionLauncher">
+      <launcher
+            category="Aspect"
+            description="This generation enables to generate Acitivty Explorer pages, sections and activities. It allows to extends available pages with new sections and sections with new activities."
+            fcore="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_Dxy7EDU4EeWtD50BimPJow"
+            name="Amalgam Activity Explorer Generator">
+      </launcher>
+      <filter
+            java="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.filter.ActivityExplorerAspectExtensionfilter">
+      </filter>
+   </extension>
+   
+   <extension
+         point="org.eclipse.egf.core.fcore">
+      <fcore
+            id="egf/vpdslActivityExplorerGeneration.fcore">
+      </fcore>
+   </extension>
+
+
+</plugin>

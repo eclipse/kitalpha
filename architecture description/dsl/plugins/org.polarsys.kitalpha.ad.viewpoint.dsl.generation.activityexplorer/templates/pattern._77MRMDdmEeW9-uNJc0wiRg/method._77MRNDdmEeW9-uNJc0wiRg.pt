@@ -1,0 +1,2 @@
+final String imagePathOff = iconElement.getImagePathOff();
+return imagePathOff != null && imagePathOff.trim().length() > 0;

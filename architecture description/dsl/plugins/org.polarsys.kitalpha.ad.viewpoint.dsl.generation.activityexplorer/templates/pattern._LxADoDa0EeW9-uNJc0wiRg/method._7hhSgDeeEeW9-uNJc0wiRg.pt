@@ -1,0 +1,3 @@
+<%genUserPredicate = parameter.isHasPredicate();%>
+<%final String modelFileExtension = parameter.getModelType();%>
+<%genFileExtensionPredicate = null != modelFileExtension && ! modelFileExtension.isEmpty();%>

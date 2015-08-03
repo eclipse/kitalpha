@@ -1,0 +1,2 @@
+<%IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectname);%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.amalgam.explorer.activity.ui", new NullProgressMonitor());%>

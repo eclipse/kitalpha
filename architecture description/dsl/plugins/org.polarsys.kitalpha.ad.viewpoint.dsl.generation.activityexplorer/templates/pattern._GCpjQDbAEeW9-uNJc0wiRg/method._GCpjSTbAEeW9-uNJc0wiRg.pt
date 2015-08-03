@@ -1,0 +1,39 @@
+
+public class <%=classname%> implements IHyperlinkListener {
+	/**
+	 * Default constructor
+	 */
+	public <%=classname%>() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see org.eclipse.ui.forms.events.IHyperlinkListener#linkEntered(org.eclipse.ui.forms.events.HyperlinkEvent)
+	 */
+	@Override
+	public void linkEntered(HyperlinkEvent e) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see org.eclipse.ui.forms.events.IHyperlinkListener#linkExited(org.eclipse.ui.forms.events.HyperlinkEvent)
+	 */
+	@Override
+	public void linkExited(HyperlinkEvent e) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see org.eclipse.ui.forms.events.IHyperlinkListener#linkActivated(org.eclipse.ui.forms.events.HyperlinkEvent)
+	 */
+	@Override
+	public void linkActivated(HyperlinkEvent e) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
+	}
+}

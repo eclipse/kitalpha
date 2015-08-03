@@ -1,0 +1,5 @@
+<%// Set the parameters values%>
+<%NamedElement namedParameter = (NamedElement) predicatedElement ;%>
+<%classname = JavaNamingConvention.getJavaClassNameFor(namedParameter, JavaNamingConvention.JavaUseContext.Predicate);%>
+<%projectname = (String) ctx.getValue("activity.explorer.project.name");%>
+<%packagename = JavaNamingConvention.getJavaPackageNameFor(projectname, JavaNamingConvention.JavaUseContext.Predicate);%>

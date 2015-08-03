@@ -1,0 +1,2 @@
+<%projectName = (String) ctx.getValue("activity.explorer.project.name");%>
+<%overview = parameter.getOwnedOverview();%>

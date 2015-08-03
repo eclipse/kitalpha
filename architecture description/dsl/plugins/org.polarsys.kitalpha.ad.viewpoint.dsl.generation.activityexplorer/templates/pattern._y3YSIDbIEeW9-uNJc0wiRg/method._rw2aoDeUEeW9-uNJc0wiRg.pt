@@ -1,0 +1,10 @@
+<%
+genPageID = false;
+final EObject sectionParent = parameter.eContainer();
+if (sectionParent instanceof PageExtension)
+{
+	genPageID = true;
+	PageExtension pageExtension = (PageExtension) sectionParent;
+	pageID = pageExtension.getExtendedPageID();
+}
+%>

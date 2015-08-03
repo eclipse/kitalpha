@@ -75,4 +75,12 @@
       </contracts>
     </contractContainer>
   </ftask:Task>
+  <ftask:Task xmi:id="_fefMsDXJEeWqG6wz3Xijng" name="Generate.Plugin.Activator" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.util.task.GenerationPluginActivatorTask">
+    <contractContainer xmi:id="_gp5P4DXJEeWqG6wz3Xijng">
+      <contracts xmi:id="_g-KPsDXJEeWqG6wz3Xijng" name="plugin.id">
+        <type xmi:type="types:TypeString" xmi:id="_ihZkEDXJEeWqG6wz3Xijng"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
 </xmi:XMI>

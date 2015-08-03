@@ -1,0 +1,2 @@
+final String modelFileExtension = parameter.getModelType();
+return parameter.isHasPredicate() || (null != modelFileExtension && ! modelFileExtension.isEmpty());

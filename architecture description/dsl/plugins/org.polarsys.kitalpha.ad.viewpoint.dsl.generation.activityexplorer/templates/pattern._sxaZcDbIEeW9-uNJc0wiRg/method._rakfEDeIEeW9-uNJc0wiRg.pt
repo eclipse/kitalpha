@@ -1,0 +1,12 @@
+<%String description = "Description body text";%>
+<%if (null != overview && null != overview.getDescription() && false == overview.getDescription().isEmpty())%>
+<%{%>
+<%	description = overview.getDescription();%> 
+<%}%>
+		<Overview
+<%if (overview.getImagePathOff() != null){%> imageOff="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+overview.getImagePathOff()%>"<%}%>
+<%if (overview.getImagePathOn()  != null){%> imageOn="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+overview.getImagePathOn()%>"<%}%>>
+			<Description>
+				<%=description%>
+			</Description>
+		</Overview>

@@ -1,0 +1,66 @@
+/**
+ * @generated 
+ */
+public class <%=classname%> implements IPredicate {
+	/**
+	 * Default constructor
+	 * @generated
+	 */
+	public <%=classname%>() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @generated 
+	 */
+	@Override
+	public boolean isOk() {
+<%if (genUserPredicate && genFileExtensionPredicate)%>
+<%{%>
+		return fileExtensionPredicate() && userPredicate();
+<%} 
+else
+{%> return 
+<%	if (genUserPredicate){%> userPredicate(); <%}%>
+<%	if (genFileExtensionPredicate){%> fileExtensionPredicate(); <%}%>
+<%}%>
+	}
+
+<%if (genUserPredicate){%>	
+	/**
+	 * User predicate implementation
+	 * @return True if OK, false otherwise.
+	 * @generated
+	 */
+	private boolean userPredicate(){
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
+	}
+<%}%>
+<%String s_fileExtensions = parameter.getModelType();%>
+<%final String[] extensions = s_fileExtensions.split(",");%>
+<%if (genFileExtensionPredicate){%>	
+	/**
+	 * This method check if the extension of the resource file associated with the 
+	 * Sirius session is provided by viewpoint specifier.
+	 * 
+	 * @return True if the current page can be used with the current resource. 
+	 * @generated
+	 */
+	private boolean fileExtensionPredicate(){
+		final EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();
+		final Resource eResource = rootSemanticModel.eResource();
+		if (null == eResource)
+			return false;
+		
+		final URI resourceURI = eResource.getURI();
+		if (null == resourceURI)
+			return false;
+		
+		final List<String> allowedFileExtensions = Arrays.asList(<%=StringHelper.arrayToStriong(extensions)%>);
+		final String fileExtension = resourceURI.fileExtension().toLowerCase();
+		
+		return allowedFileExtensions.contains(fileExtension);
+	}
+<%}%>
+}

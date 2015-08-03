@@ -1,0 +1,1 @@
+return predicatedElement instanceof NamedElement && predicatedElement.isHasPredicate();

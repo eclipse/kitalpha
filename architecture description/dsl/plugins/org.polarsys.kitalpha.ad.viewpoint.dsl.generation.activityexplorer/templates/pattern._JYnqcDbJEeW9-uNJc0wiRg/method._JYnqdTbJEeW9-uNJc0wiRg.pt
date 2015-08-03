@@ -1,0 +1,5 @@
+<%String className = JavaNamingConvention.getJavaClassFQNFor(basePackage, (NamedElement) predicatedElement, JavaNamingConvention.JavaUseContext.Predicate);%>
+
+			<Predicate
+				class="<%=className%>">
+			</Predicate>

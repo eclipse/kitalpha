@@ -1,0 +1,21 @@
+/**
+ * @generated 
+ */
+public class <%=classname%> implements IPredicate {
+	/**
+	 * Default constructor
+	 * @generated
+	 */
+	public <%=classname%>() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @generated 
+	 */
+	@Override
+	public boolean isOk() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
+	}
+}

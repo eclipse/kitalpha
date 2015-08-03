@@ -1,0 +1,10 @@
+if (null == dynamicIconElement)
+{
+	return false;
+}
+else
+{
+	final String imagePathOn = dynamicIconElement.getImagePathOn();
+	return imagePathOn != null && imagePathOn.trim().length() > 0;
+}
+

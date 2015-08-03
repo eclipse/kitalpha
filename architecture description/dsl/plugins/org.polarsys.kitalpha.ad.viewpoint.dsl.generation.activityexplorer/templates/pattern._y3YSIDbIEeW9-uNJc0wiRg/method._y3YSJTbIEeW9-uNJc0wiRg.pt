@@ -1,0 +1,14 @@
+<%
+String id = parameter.getActivityExplorerItemID();
+if (null == id || (null != id && id.isEmpty()))
+	id = "Activity1";
+%>
+
+		<Section
+			   expanded="<%=parameter.isExpanded() ? "true" : "false"%>"
+			   filtering="<%=parameter.isFiltering() ? "true" : "false"%>"
+			   id="<%=id%>"	   
+			   index="<%=parameter.getIndex()%>"
+			   name="<%=parameter.getName()%>"
+<%if (genPageID){%>
+			   pageId="<%=pageID%>"<%}%>>

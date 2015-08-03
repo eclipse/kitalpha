@@ -1,0 +1,19 @@
+<%
+String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter, JavaNamingConvention.JavaUseContext.Activity);
+
+String id = parameter.getActivityExplorerItemID();
+if (null == id || (null != id && id.isEmpty()))
+	id = "Activity1";
+	
+boolean hasImage = parameter.getImagePathOff() != null;
+%>
+
+			<Activity
+				class="<%=className%>"
+				id="<%=id%>"
+				index="<%=parameter.getIndex()%>"
+<%if (hasImage){%> 
+				image="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+parameter.getImagePathOff()%>"<%}%>
+				name="<%=parameter.getName()%>"
+<%if (genSectionID){%>
+				sectionId="<%=sectionID%>"<%}%>>
