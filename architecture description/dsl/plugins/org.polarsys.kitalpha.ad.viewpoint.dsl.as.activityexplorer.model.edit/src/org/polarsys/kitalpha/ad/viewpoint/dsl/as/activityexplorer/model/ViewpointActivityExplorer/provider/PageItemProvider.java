@@ -74,7 +74,7 @@ public class PageItemProvider
 			addHasPredicatePropertyDescriptor(object);
 			addTabNamePropertyDescriptor(object);
 			addShowViewerPropertyDescriptor(object);
-			addModelTypePropertyDescriptor(object);
+			addFileExtensionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -200,20 +200,20 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Model Type feature.
+	 * This adds a property descriptor for the File Extensions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModelTypePropertyDescriptor(Object object) {
+	protected void addFileExtensionsPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_modelType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_modelType_feature", "_UI_Page_type"),
-				 ViewpointActivityExplorerPackage.Literals.PAGE__MODEL_TYPE,
+				 getString("_UI_Page_fileExtensions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_fileExtensions_feature", "_UI_Page_type"),
+				 ViewpointActivityExplorerPackage.Literals.PAGE__FILE_EXTENSIONS,
 				 true,
 				 false,
 				 false,
@@ -297,7 +297,7 @@ public class PageItemProvider
 			case ViewpointActivityExplorerPackage.PAGE__HAS_PREDICATE:
 			case ViewpointActivityExplorerPackage.PAGE__TAB_NAME:
 			case ViewpointActivityExplorerPackage.PAGE__SHOW_VIEWER:
-			case ViewpointActivityExplorerPackage.PAGE__MODEL_TYPE:
+			case ViewpointActivityExplorerPackage.PAGE__FILE_EXTENSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ViewpointActivityExplorerPackage.PAGE__OWNED_SECTIONS:

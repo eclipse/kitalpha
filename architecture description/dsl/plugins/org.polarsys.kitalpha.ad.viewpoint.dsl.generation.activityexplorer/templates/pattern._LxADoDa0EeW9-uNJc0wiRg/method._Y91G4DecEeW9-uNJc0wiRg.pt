@@ -37,7 +37,7 @@ else
 		throw new UnsupportedOperationException();
 	}
 <%}%>
-<%String s_fileExtensions = parameter.getModelType();%>
+<%String s_fileExtensions = parameter.getFileExtensions();%>
 <%final String[] extensions = s_fileExtensions.split(",");%>
 <%if (genFileExtensionPredicate){%>	
 	/**

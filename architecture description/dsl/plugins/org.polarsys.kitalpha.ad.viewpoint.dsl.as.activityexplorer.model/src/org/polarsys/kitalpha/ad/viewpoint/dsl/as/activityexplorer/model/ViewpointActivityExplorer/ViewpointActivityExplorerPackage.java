@@ -248,13 +248,13 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int PAGE__SHOW_VIEWER = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Model Type</b></em>' attribute.
+	 * The feature id for the '<em><b>File Extensions</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__MODEL_TYPE = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 7;
+	int PAGE__FILE_EXTENSIONS = ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -815,15 +815,15 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	EAttribute getPage_ShowViewer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getModelType <em>Model Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getFileExtensions <em>File Extensions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Model Type</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getModelType()
+	 * @return the meta object for the attribute '<em>File Extensions</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getFileExtensions()
 	 * @see #getPage()
 	 * @generated
 	 */
-	EAttribute getPage_ModelType();
+	EAttribute getPage_FileExtensions();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PredicateElement <em>Predicate Element</em>}'.
@@ -1156,12 +1156,12 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 		EAttribute PAGE__SHOW_VIEWER = eINSTANCE.getPage_ShowViewer();
 
 		/**
-		 * The meta object literal for the '<em><b>Model Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>File Extensions</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAGE__MODEL_TYPE = eINSTANCE.getPage_ModelType();
+		EAttribute PAGE__FILE_EXTENSIONS = eINSTANCE.getPage_FileExtensions();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PredicateElementImpl <em>Predicate Element</em>}' class.

@@ -240,7 +240,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_ModelType() {
+	public EAttribute getPage_FileExtensions() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -510,7 +510,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		createEReference(pageEClass, PAGE__OWNED_OVERVIEW);
 		createEAttribute(pageEClass, PAGE__TAB_NAME);
 		createEAttribute(pageEClass, PAGE__SHOW_VIEWER);
-		createEAttribute(pageEClass, PAGE__MODEL_TYPE);
+		createEAttribute(pageEClass, PAGE__FILE_EXTENSIONS);
 
 		predicateElementEClass = createEClass(PREDICATE_ELEMENT);
 		createEAttribute(predicateElementEClass, PREDICATE_ELEMENT__HAS_PREDICATE);
@@ -604,7 +604,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		initEReference(getPage_OwnedOverview(), this.getOverview(), null, "ownedOverview", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TabName(), theEcorePackage.getEString(), "tabName", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_ShowViewer(), theEcorePackage.getEBoolean(), "showViewer", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_ModelType(), theEcorePackage.getEString(), "modelType", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_FileExtensions(), theEcorePackage.getEString(), "fileExtensions", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(predicateElementEClass, PredicateElement.class, "PredicateElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPredicateElement_HasPredicate(), theEcorePackage.getEBoolean(), "hasPredicate", null, 0, 1, PredicateElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

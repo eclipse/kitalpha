@@ -46,7 +46,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoin
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getOwnedOverview <em>Owned Overview</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getTabName <em>Tab Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#isShowViewer <em>Show Viewer</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getModelType <em>Model Type</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl#getFileExtensions <em>File Extensions</em>}</li>
  * </ul>
  * </p>
  *
@@ -192,26 +192,24 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 
 
 	/**
-	 * The default value of the '{@link #getModelType() <em>Model Type</em>}' attribute.
+	 * The default value of the '{@link #getFileExtensions() <em>File Extensions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModelType()
+	 * @see #getFileExtensions()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MODEL_TYPE_EDEFAULT = null;
+	protected static final String FILE_EXTENSIONS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getModelType() <em>Model Type</em>}' attribute.
+	 * The cached value of the '{@link #getFileExtensions() <em>File Extensions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModelType()
+	 * @see #getFileExtensions()
 	 * @generated
 	 * @ordered
 	 */
-	protected String modelType = MODEL_TYPE_EDEFAULT;
-
-
+	protected String fileExtensions = FILE_EXTENSIONS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -480,9 +478,9 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 	 * @generated
 	 */
 
-	public String getModelType() {
+	public String getFileExtensions() {
 
-		return modelType;
+		return fileExtensions;
 	}
 
 	/**
@@ -491,12 +489,12 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 	 * @generated
 	 */
 
-	public void setModelType(String newModelType) {
+	public void setFileExtensions(String newFileExtensions) {
 
-		String oldModelType = modelType;
-		modelType = newModelType;
+		String oldFileExtensions = fileExtensions;
+		fileExtensions = newFileExtensions;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.PAGE__MODEL_TYPE, oldModelType, modelType));
+			eNotify(new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.PAGE__FILE_EXTENSIONS, oldFileExtensions, fileExtensions));
 
 	}
 
@@ -538,8 +536,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 				return getTabName();
 			case ViewpointActivityExplorerPackage.PAGE__SHOW_VIEWER:
 				return isShowViewer();
-			case ViewpointActivityExplorerPackage.PAGE__MODEL_TYPE:
-				return getModelType();
+			case ViewpointActivityExplorerPackage.PAGE__FILE_EXTENSIONS:
+				return getFileExtensions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -575,8 +573,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 			case ViewpointActivityExplorerPackage.PAGE__SHOW_VIEWER:
 				setShowViewer((Boolean)newValue);
 				return;
-			case ViewpointActivityExplorerPackage.PAGE__MODEL_TYPE:
-				setModelType((String)newValue);
+			case ViewpointActivityExplorerPackage.PAGE__FILE_EXTENSIONS:
+				setFileExtensions((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -612,8 +610,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 			case ViewpointActivityExplorerPackage.PAGE__SHOW_VIEWER:
 				setShowViewer(SHOW_VIEWER_EDEFAULT);
 				return;
-			case ViewpointActivityExplorerPackage.PAGE__MODEL_TYPE:
-				setModelType(MODEL_TYPE_EDEFAULT);
+			case ViewpointActivityExplorerPackage.PAGE__FILE_EXTENSIONS:
+				setFileExtensions(FILE_EXTENSIONS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -643,8 +641,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 				return TAB_NAME_EDEFAULT == null ? tabName != null : !TAB_NAME_EDEFAULT.equals(tabName);
 			case ViewpointActivityExplorerPackage.PAGE__SHOW_VIEWER:
 				return showViewer != SHOW_VIEWER_EDEFAULT;
-			case ViewpointActivityExplorerPackage.PAGE__MODEL_TYPE:
-				return MODEL_TYPE_EDEFAULT == null ? modelType != null : !MODEL_TYPE_EDEFAULT.equals(modelType);
+			case ViewpointActivityExplorerPackage.PAGE__FILE_EXTENSIONS:
+				return FILE_EXTENSIONS_EDEFAULT == null ? fileExtensions != null : !FILE_EXTENSIONS_EDEFAULT.equals(fileExtensions);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -738,8 +736,8 @@ public class PageImpl extends ActivityExplorerItemImpl implements Page {
 		result.append(tabName);
 		result.append(", showViewer: ");
 		result.append(showViewer);
-		result.append(", modelType: ");
-		result.append(modelType);
+		result.append(", fileExtensions: ");
+		result.append(fileExtensions);
 		result.append(')');
 		return result.toString();
 	}

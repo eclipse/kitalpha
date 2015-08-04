@@ -24,7 +24,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoi
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getOwnedOverview <em>Owned Overview</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getTabName <em>Tab Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#isShowViewer <em>Show Viewer</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getModelType <em>Model Type</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getFileExtensions <em>File Extensions</em>}</li>
  * </ul>
  * </p>
  *
@@ -154,37 +154,37 @@ public interface Page extends ActivityExplorerItem, DynamicIcon, PredicateElemen
 
 
 	/**
-	 * Returns the value of the '<em><b>Model Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>File Extensions</b></em>' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Model Type</em>' attribute isn't clear,
+	 * If the meaning of the '<em>File Extensions</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Model Type</em>' attribute.
-	 * @see #setModelType(String)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getPage_ModelType()
+	 * @return the value of the '<em>File Extensions</em>' attribute.
+	 * @see #setFileExtensions(String)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getPage_FileExtensions()
 	 * @model
 	 * @generated
 	 */
 
-	String getModelType();
+	String getFileExtensions();
 
 
 
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getModelType <em>Model Type</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page#getFileExtensions <em>File Extensions</em>}' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model Type</em>' attribute.
-	 * @see #getModelType()
+	 * @param value the new value of the '<em>File Extensions</em>' attribute.
+	 * @see #getFileExtensions()
 	 * @generated
 	 */
 
-	void setModelType(String value);
+	void setFileExtensions(String value);
 
 
 

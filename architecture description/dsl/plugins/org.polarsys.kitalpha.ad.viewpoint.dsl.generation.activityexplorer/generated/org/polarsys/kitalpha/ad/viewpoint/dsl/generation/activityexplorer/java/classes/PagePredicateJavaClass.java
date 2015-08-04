@@ -212,7 +212,7 @@ public class PagePredicateJavaClass
 		if (genUserPredicate) {
 			stringBuffer.append(TEXT_9);
 		}
-		String s_fileExtensions = parameter.getModelType();
+		String s_fileExtensions = parameter.getFileExtensions();
 		final String[] extensions = s_fileExtensions.split(",");
 		if (genFileExtensionPredicate) {
 			stringBuffer.append(TEXT_10);
@@ -241,7 +241,7 @@ public class PagePredicateJavaClass
 			final PatternContext ctx) throws Exception {
 
 		genUserPredicate = parameter.isHasPredicate();
-		final String modelFileExtension = parameter.getModelType();
+		final String modelFileExtension = parameter.getFileExtensions();
 		genFileExtensionPredicate = null != modelFileExtension
 				&& !modelFileExtension.isEmpty();
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -268,7 +268,7 @@ public class PagePredicateJavaClass
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		final String modelFileExtension = parameter.getModelType();
+		final String modelFileExtension = parameter.getFileExtensions();
 		return parameter.isHasPredicate()
 				|| (null != modelFileExtension && !modelFileExtension.isEmpty());
 	}
