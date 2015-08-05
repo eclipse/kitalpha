@@ -17,8 +17,6 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
@@ -333,7 +331,7 @@ public class WizardsUtil {
 			" *	@date: " +  getCurrentDate()+"\n" +
 			" *\n" +
 			" */\n" +
-			"Activity Explorer " + shortName + ".activityexplorer" + " {\n\n" +
+			"activity explorer " + shortName + ".activityexplorer" + " {\n\n" +
 			"}";
 		return fileContent;
 	}
@@ -348,7 +346,7 @@ public class WizardsUtil {
 				" *	@date: " +  getCurrentDate()+"\n" +
 				" *\n" +
 				" */\n" +
-				"Activity Explorer " + fileName + " {\n\n" +
+				"activity explorer " + fileName + " {\n\n" +
 				"}";
 		return fileContent;
 	}

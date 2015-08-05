@@ -62,14 +62,14 @@ c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
         
         c.setLinewrap().after(f.getOverviewAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0());
         
-        c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_9_0());
-        c.setLinewrap().before(f.getPageAccess().getTabKeyword_10_0());
-        c.setLinewrap().before(f.getPageAccess().getShowKeyword_12_0());
+        c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_10_0());
+        c.setLinewrap().before(f.getPageAccess().getTabKeyword_11_0());
+        c.setLinewrap().before(f.getPageAccess().getShowKeyword_13_0());
         
-        c.setLinewrap().before(f.getSectionExtensionAccess().getFilteringKeyword_10_0());
-        c.setLinewrap().before(f.getSectionExtensionAccess().getExpandedKeyword_11_0());
+//        c.setLinewrap().before(f.getSectionExtensionAccess().getFilteringKeyword_10_0());
+//        c.setLinewrap().before(f.getSectionExtensionAccess().getExpandedKeyword_11_0());
         
-        c.setLinewrap().before(f.getActivityExtensionAccess().getIconKeyword_11_0());
+//        c.setLinewrap().before(f.getActivityExtensionAccess().getIconKeyword_11_0());
         
         
         for(Pair<Keyword, Keyword> pair: f.findKeywordPairs("{", "}")) {

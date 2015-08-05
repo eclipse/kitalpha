@@ -11,90 +11,42 @@
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//ViewpointActivityExplorer"/>
       </type>
-      <alternatives xsi:type="xtext:UnorderedGroup">
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:Keyword" value="Activity"/>
-          <elements xsi:type="xtext:Keyword" value="Explorer"/>
-          <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
-          </elements>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//ViewpointActivityExplorer"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="activity"/>
+        <elements xsi:type="xtext:Keyword" value="explorer"/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="pages"/>
           <elements xsi:type="xtext:Keyword" value="{"/>
-          <elements xsi:type="xtext:Assignment" cardinality="?" feature="ownedNewPages" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="?" feature="ownedSectionsExtension" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
-        </elements>
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:Assignment" cardinality="?" feature="ownedActivitiesExtension" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+          <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedPages" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value="}"/>
         </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="Pages">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Pages"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Action">
-          <type metamodel="/0/@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Pages"/>
-          </type>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedPages" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="Pages"/>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Assignment" feature="ownedActivityExplorerPages" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedActivityExplorerPages" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="}"/>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="Sections">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Sections"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Action">
-          <type metamodel="/0/@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Sections"/>
-          </type>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="Sections"/>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Assignment" feature="ownedSectionsExtensions" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedSectionsExtensions" operator="+=">
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedSectionExtensions" operator="+=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="Activities">
+    <rules xsi:type="xtext:ParserRule" name="AbstractPage">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Activities"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//AbstractPage"/>
       </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Action">
-          <type metamodel="/0/@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Activities"/>
-          </type>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="Activities"/>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Assignment" feature="ownedActivitiesExtensions" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedActivitiesExtensions" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="}"/>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Page">
@@ -107,15 +59,21 @@
             <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Page"/>
           </type>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="Page"/>
+        <elements xsi:type="xtext:Keyword" value="page"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="model"/>
-          <elements xsi:type="xtext:Keyword" value="type"/>
-          <elements xsi:type="xtext:Assignment" feature="modelType" operator="=">
+          <elements xsi:type="xtext:Keyword" value="description"/>
+          <elements xsi:type="xtext:Assignment" feature="description" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="file"/>
+          <elements xsi:type="xtext:Keyword" value="extension"/>
+          <elements xsi:type="xtext:Assignment" feature="fileExtensions" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
           </elements>
         </elements>
@@ -130,7 +88,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.3"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="ownedOverview" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="header"/>
@@ -175,6 +133,164 @@
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
           </elements>
         </elements>
+        <elements xsi:type="xtext:Keyword" value="sections"/>
+        <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedSections" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="}"/>
+        <elements xsi:type="xtext:Keyword" value="}"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Section">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Section"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Section"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="section"/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="description"/>
+          <elements xsi:type="xtext:Assignment" feature="description" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="id"/>
+          <elements xsi:type="xtext:Assignment" feature="activityExplorerItemID" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="index"/>
+        <elements xsi:type="xtext:Assignment" feature="index" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.3"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="filtering"/>
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="filtering" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="expanded"/>
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="expanded" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="activities"/>
+          <elements xsi:type="xtext:Keyword" value="{"/>
+          <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedActivities" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="}"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="}"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Activity">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Activity"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//Activity"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="activity"/>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="description"/>
+          <elements xsi:type="xtext:Assignment" feature="description" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="id"/>
+          <elements xsi:type="xtext:Assignment" feature="activityExplorerItemID" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="index"/>
+        <elements xsi:type="xtext:Assignment" feature="index" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.3"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="predicated"/>
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="hasPredicate" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="icon"/>
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="imagePathOff" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="}"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="PageExtension">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//PageExtension"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//PageExtension"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="page"/>
+        <elements xsi:type="xtext:Keyword" value="extensions"/>
+        <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Keyword" value="extended"/>
+        <elements xsi:type="xtext:Keyword" value="page"/>
+        <elements xsi:type="xtext:Assignment" feature="extendedPageID" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedSections" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="}"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="SectionExtension">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//SectionExtension"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="/0/@metamodelDeclarations.0">
+            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//SectionExtension"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="section"/>
+        <elements xsi:type="xtext:Keyword" value="extensions"/>
+        <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Keyword" value="extended"/>
+        <elements xsi:type="xtext:Keyword" value="section"/>
+        <elements xsi:type="xtext:Assignment" feature="extendedSectionID" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="ownedActivities" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
+        </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
       </alternatives>
     </rules>
@@ -207,100 +323,6 @@
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="image"/>
           <elements xsi:type="xtext:Keyword" value="off"/>
-          <elements xsi:type="xtext:Keyword" value=":"/>
-          <elements xsi:type="xtext:Assignment" feature="imagePathOff" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="}"/>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="SectionExtension">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//SectionExtension"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Action">
-          <type metamodel="/0/@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//SectionExtension"/>
-          </type>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="section"/>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="id"/>
-          <elements xsi:type="xtext:Assignment" feature="activityExplorerItemID" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="extended"/>
-        <elements xsi:type="xtext:Keyword" value="page"/>
-        <elements xsi:type="xtext:Assignment" feature="extendedPageID" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="index"/>
-        <elements xsi:type="xtext:Assignment" feature="index" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.3"/>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="filtering"/>
-          <elements xsi:type="xtext:Keyword" value=":"/>
-          <elements xsi:type="xtext:Assignment" feature="filtering" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="expanded"/>
-          <elements xsi:type="xtext:Keyword" value=":"/>
-          <elements xsi:type="xtext:Assignment" feature="expanded" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="}"/>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="ActivityExtension">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//ActivityExtension"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Action">
-          <type metamodel="/0/@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0#//ActivityExtension"/>
-          </type>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="activity"/>
-        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="{"/>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="id"/>
-          <elements xsi:type="xtext:Assignment" feature="activityExplorerItemID" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="extended"/>
-        <elements xsi:type="xtext:Keyword" value="section"/>
-        <elements xsi:type="xtext:Assignment" feature="extendedSectionID" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="index"/>
-        <elements xsi:type="xtext:Assignment" feature="index" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.3"/>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="predicated"/>
-          <elements xsi:type="xtext:Keyword" value=":"/>
-          <elements xsi:type="xtext:Assignment" feature="hasPredicate" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="icon"/>
           <elements xsi:type="xtext:Keyword" value=":"/>
           <elements xsi:type="xtext:Assignment" feature="imagePathOff" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>

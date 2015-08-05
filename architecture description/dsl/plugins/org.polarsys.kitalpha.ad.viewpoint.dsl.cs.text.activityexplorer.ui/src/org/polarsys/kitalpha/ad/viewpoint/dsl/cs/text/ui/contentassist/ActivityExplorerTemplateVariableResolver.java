@@ -23,12 +23,10 @@ import org.eclipse.jface.text.templates.SimpleTemplateVariableResolver;
 import org.eclipse.jface.text.templates.TemplateContext;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.ui.editor.templates.XtextTemplateContext;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 
 
@@ -173,29 +171,29 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 			URI uri = EcoreUtil2.getNormalizedResourceURI(model);
 		if (updateMaps.get(uri) == null || updateMaps.get(uri)){ //Interpreted that the templates needs to be updated
 
-			Long pageIndex = getLastIndex(model.getOwnedNewPages());
-			pageIndexes.put(uri, pageIndex);
+			//Long pageIndex = getLastIndex(null); //model.getOwnedNewPages());
+			pageIndexes.put(uri, (long) 1);//pageIndex);
 
-			Long sectionIndex = getLastIndex(model.getOwnedSectionsExtension());
-			sectionIndexes.put(uri, sectionIndex);
+//			Long sectionIndex = getLastIndex(model.getOwnedSectionsExtension());
+			sectionIndexes.put(uri, (long) 1);//sectionIndex);
 
-			Long activityIndex = getLastIndex(model.getOwnedActivitiesExtension());
-			activityIndexes.put(uri, activityIndex);
+//			Long activityIndex = getLastIndex(model.getOwnedActivitiesExtension());
+			activityIndexes.put(uri, (long) 1);//activityIndex);
 			updateMaps.put(uri, false);
 		}
 	}
 	
 	
-	private static Long getLastIndex(Pages pages) {
+	private static Long getLastIndex(Page pages) {
 		List<Long> indexes = new ArrayList<Long>();
 
 		if (pages != null){
-			EList<Page> newPages = pages.getOwnedActivityExplorerPages();
+			//EList<Page> newPages = pages.getOwnedActivityExplorerPages();
 
-			for (Page page : newPages) {
-				long i = page.getIndex();
-				indexes.add(i);
-			}
+//			for (Page page : newPages) {
+//				long i = page.getIndex();
+//				indexes.add(i);
+//			}
 
 			Collections.sort(indexes);
 			Collections.reverse(indexes);
@@ -203,16 +201,16 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 		return indexes.isEmpty()? new Long(0) : indexes.get(0);
 	}
 	
-	private static Long getLastIndex(Sections sections) {
+	private static Long getLastIndex(Section sections) {
 		List<Long> indexes = new ArrayList<Long>();
 		
 		if (sections != null){
-			EList<SectionExtension> newSection = sections.getOwnedSectionsExtensions();
+			//EList<SectionExtension> newSection = sections.getOwnedSectionsExtensions();
 
-			for (SectionExtension sectionExtension : newSection) {
-				long i = sectionExtension.getIndex();
-				indexes.add(i);
-			}
+//			for (SectionExtension sectionExtension : newSection) {
+//				long i = sectionExtension.getIndex();
+//				indexes.add(i);
+//			}
 
 			Collections.sort(indexes);
 			Collections.reverse(indexes);
@@ -220,17 +218,17 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 		return indexes.isEmpty()? new Long(0) : indexes.get(0);
 	}
 	
-	private static Long getLastIndex(Activities activities) {
+	private static Long getLastIndex(Activity activities) {
 		
 		List<Long> indexes = new ArrayList<Long>();
 
 		if (activities != null){
-			EList<ActivityExtension> newActivities = activities.getOwnedActivitiesExtensions();
+			//EList<ActivityExtension> newActivities = activities.getOwnedActivitiesExtensions();
 
-			for (ActivityExtension activityExtension : newActivities) {
-				long i = activityExtension.getIndex();
-				indexes.add(i);
-			}
+//			for (ActivityExtension activityExtension : newActivities) {
+//				long i = activityExtension.getIndex();
+//				indexes.add(i);
+//			}
 
 			Collections.sort(indexes);
 			Collections.reverse(indexes);

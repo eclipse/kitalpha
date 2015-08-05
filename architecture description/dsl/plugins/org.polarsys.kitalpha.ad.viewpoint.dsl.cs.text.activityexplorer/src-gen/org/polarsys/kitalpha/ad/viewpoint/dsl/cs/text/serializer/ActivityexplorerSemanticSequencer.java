@@ -10,13 +10,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activities;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Overview;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess;
@@ -29,15 +28,9 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ViewpointActivityExplorerPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case ViewpointActivityExplorerPackage.ACTIVITIES:
-				if(context == grammarAccess.getActivitiesRule()) {
-					sequence_Activities(context, (Activities) semanticObject); 
-					return; 
-				}
-				else break;
-			case ViewpointActivityExplorerPackage.ACTIVITY_EXTENSION:
-				if(context == grammarAccess.getActivityExtensionRule()) {
-					sequence_ActivityExtension(context, (ActivityExtension) semanticObject); 
+			case ViewpointActivityExplorerPackage.ACTIVITY:
+				if(context == grammarAccess.getActivityRule()) {
+					sequence_Activity(context, (Activity) semanticObject); 
 					return; 
 				}
 				else break;
@@ -48,26 +41,28 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 				}
 				else break;
 			case ViewpointActivityExplorerPackage.PAGE:
-				if(context == grammarAccess.getPageRule()) {
+				if(context == grammarAccess.getAbstractPageRule() ||
+				   context == grammarAccess.getPageRule()) {
 					sequence_Page(context, (Page) semanticObject); 
 					return; 
 				}
 				else break;
-			case ViewpointActivityExplorerPackage.PAGES:
-				if(context == grammarAccess.getPagesRule()) {
-					sequence_Pages(context, (Pages) semanticObject); 
+			case ViewpointActivityExplorerPackage.PAGE_EXTENSION:
+				if(context == grammarAccess.getAbstractPageRule() ||
+				   context == grammarAccess.getPageExtensionRule()) {
+					sequence_PageExtension(context, (PageExtension) semanticObject); 
+					return; 
+				}
+				else break;
+			case ViewpointActivityExplorerPackage.SECTION:
+				if(context == grammarAccess.getSectionRule()) {
+					sequence_Section(context, (Section) semanticObject); 
 					return; 
 				}
 				else break;
 			case ViewpointActivityExplorerPackage.SECTION_EXTENSION:
 				if(context == grammarAccess.getSectionExtensionRule()) {
 					sequence_SectionExtension(context, (SectionExtension) semanticObject); 
-					return; 
-				}
-				else break;
-			case ViewpointActivityExplorerPackage.SECTIONS:
-				if(context == grammarAccess.getSectionsRule()) {
-					sequence_Sections(context, (Sections) semanticObject); 
 					return; 
 				}
 				else break;
@@ -83,25 +78,16 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	
 	/**
 	 * Constraint:
-	 *     (ownedActivitiesExtensions+=ActivityExtension ownedActivitiesExtensions+=ActivityExtension*)
-	 */
-	protected void sequence_Activities(EObject context, Activities semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (
 	 *         name=STRING 
+	 *         description=STRING? 
 	 *         activityExplorerItemID=FQN? 
-	 *         extendedSectionID=FQN 
 	 *         index=EInt 
 	 *         hasPredicate=EBoolean? 
 	 *         imagePathOff=STRING?
 	 *     )
 	 */
-	protected void sequence_ActivityExtension(EObject context, ActivityExtension semanticObject) {
+	protected void sequence_Activity(EObject context, Activity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -117,16 +103,27 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	
 	/**
 	 * Constraint:
+	 *     (extendedPageID=FQN ownedSections+=Section*)
+	 */
+	protected void sequence_PageExtension(EObject context, PageExtension semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         name=STRING 
-	 *         modelType=STRING? 
+	 *         description=STRING? 
+	 *         fileExtensions=STRING? 
 	 *         activityExplorerItemID=FQN? 
 	 *         index=EInt 
 	 *         ownedOverview=Overview? 
 	 *         (imagePathOn=STRING? imagePathOff=STRING?)? 
 	 *         tabName=STRING? 
 	 *         hasPredicate=EBoolean? 
-	 *         showViewer=EBoolean?
+	 *         showViewer=EBoolean? 
+	 *         ownedSections+=Section*
 	 *     )
 	 */
 	protected void sequence_Page(EObject context, Page semanticObject) {
@@ -136,23 +133,7 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	
 	/**
 	 * Constraint:
-	 *     (ownedActivityExplorerPages+=Page ownedActivityExplorerPages+=Page*)
-	 */
-	protected void sequence_Pages(EObject context, Pages semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=STRING 
-	 *         activityExplorerItemID=FQN? 
-	 *         extendedPageID=FQN 
-	 *         index=EInt 
-	 *         filtering=EBoolean? 
-	 *         expanded=EBoolean?
-	 *     )
+	 *     (extendedSectionID=FQN ownedActivities+=Activity*)
 	 */
 	protected void sequence_SectionExtension(EObject context, SectionExtension semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -161,16 +142,24 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	
 	/**
 	 * Constraint:
-	 *     (ownedSectionsExtensions+=SectionExtension ownedSectionsExtensions+=SectionExtension*)
+	 *     (
+	 *         name=STRING 
+	 *         description=STRING? 
+	 *         activityExplorerItemID=FQN? 
+	 *         index=EInt 
+	 *         filtering=EBoolean? 
+	 *         expanded=EBoolean? 
+	 *         ownedActivities+=Activity*
+	 *     )
 	 */
-	protected void sequence_Sections(EObject context, Sections semanticObject) {
+	protected void sequence_Section(EObject context, Section semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=FQN ownedNewPages=Pages? ownedSectionsExtension=Sections? ownedActivitiesExtension=Activities?)
+	 *     (name=FQN ownedPages+=Page* ownedPages+=PageExtension* ownedSectionExtensions+=SectionExtension*)
 	 */
 	protected void sequence_ViewpointActivityExplorer(EObject context, ViewpointActivityExplorer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -23,9 +23,12 @@ import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.constants.IActivityExplorerExtensionsIDs;
 
 import com.google.common.collect.Iterables;
@@ -51,8 +54,8 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 		
 		ICompletionProposal proposal;
 		
-		if (keyword.getValue().equals("Activity")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "Explorer");
+		if (keyword.getValue().equals("activity")) {
+			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "explorer");
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			return;
 		}
@@ -85,8 +88,14 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 		}
 		
 		if (keyword.getValue().equals("extended")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "page");
-			acceptProposal(proposal, contentAssistContext, acceptor);
+			EObject parentSemanticModel = getParentSemanticNodeModel(contentAssistContext);
+			
+			if (parentSemanticModel instanceof PageExtension)
+			{
+				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "page");
+				acceptProposal(proposal, contentAssistContext, acceptor);
+				return;
+			}
 			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "section");
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			return;
@@ -110,13 +119,44 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 			return;
 		}
 		
-		if (keyword.getValue().equals("model")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "type", ":");
+		if (keyword.getValue().equals("file")) {
+			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "extension", ":");
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			return;
 		}
 		
+		if (keyword.getValue().equals("page")) {
+			proposal = createCompletionProposal(keyword.toString(), getKeywordDisplayString(keyword.toString()),getImage(keyword), contentAssistContext);
+			acceptProposal(proposal, contentAssistContext, acceptor);
+			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "extensions", ":");
+			acceptProposal(proposal, contentAssistContext, acceptor);
+			return;
+		}
+		
+		if (keyword.getValue().equals("section")) {
+			
+			EObject parentSemanticModel = getParentSemanticNodeModel(contentAssistContext);
+			
+			if (parentSemanticModel instanceof SectionExtension)
+			{
+				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "extensions", ":");
+				acceptProposal(proposal, contentAssistContext, acceptor);
+				return;
+			}
+			
+			proposal = createCompletionProposal(keyword.toString(), getKeywordDisplayString(keyword.toString()),getImage(keyword), contentAssistContext);
+			acceptProposal(proposal, contentAssistContext, acceptor);
+			
+			return;
+		}
+		
 		super.completeKeyword(keyword, contentAssistContext, acceptor);
+	}
+	
+	private EObject getParentSemanticNodeModel(ContentAssistContext contentAssistContext)
+	{
+		INode node = contentAssistContext.getCurrentNode();
+		return node.getParent().getSemanticElement();
 	}
 	
 	
@@ -163,12 +203,12 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 	
 	
 	@Override
-	public void completeActivityExtension_ImagePathOff(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeActivity_ImagePathOff(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		complete_iconPath(model, assignment, context, acceptor);
 	}
 	
 	@Override
-	public void completeSectionExtension_ExtendedPageID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completePageExtension_ExtendedPageID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		Iterable<String> pageIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.PAGE);
 		List<String> modelPageIds = ActivityExplorerContentAssistHelper.getNewDefinedPages(model);
 		
@@ -181,7 +221,7 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 	}
 	
 	@Override
-	public void completeActivityExtension_ExtendedSectionID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeSectionExtension_ExtendedSectionID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		Iterable<String> sectionIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.SECTION);
 		List<String> modelSectionIds = ActivityExplorerContentAssistHelper.getNewDefinedSections(model);
 		

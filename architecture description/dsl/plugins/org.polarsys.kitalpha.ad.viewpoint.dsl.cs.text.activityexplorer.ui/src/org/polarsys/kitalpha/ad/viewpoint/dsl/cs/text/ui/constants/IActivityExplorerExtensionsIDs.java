@@ -17,9 +17,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.constants;
  */
 public interface IActivityExplorerExtensionsIDs {
 	
-	public static final String PAGE_PROVIDER 		= "com.thalesgroup.mde.dashboard.pagesProvider"; //TODO replace by org.eclipse.amalgam.explorer.activity.pagesProvider
-	public static final String SECTION_PROVIDER 	= "com.thalesgroup.mde.dashboard.sectionsProvider"; //org.eclipse.amalgam.explorer.activity.sectionsProvider
-	public static final String ACTIVITY_PROVIDER 	= "com.thalesgroup.mde.dashboard.activitiesProvider"; //org.eclipse.amalgam.explorer.activity.activitiesProvider
+	public static final String PAGE_PROVIDER 		= "org.eclipse.amalgam.explorer.activity.ui.pagesProvider";
+	public static final String SECTION_PROVIDER 	= "org.eclipse.amalgam.explorer.activity.ui.sectionsProvider";
+	public static final String ACTIVITY_PROVIDER 	= "org.eclipse.amalgam.explorer.activity.ui.activitiesProvider";
 	
 	
 	public static final int PAGE 		= 1<<1;
