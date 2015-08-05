@@ -25,12 +25,16 @@ import com.google.inject.Inject;
 public class ActivityExplorerTemplateProposalProvider extends CommonTemplateProposalProvider {
 	
 	private static final int PAGES_PRIORITY = 50;
-	private static final int SECTIONS_PRIORITY = 40;
-	private static final int ACTIVITIES_PRIORITY = 30;
+	private static final int PAGE_EXTENSIONS_PRIORITY = 40;
+	private static final int PAGE_PRIORITY = 30;
+	private static final int SECTION_EXTENSIONS_PRIORITY = 20;
+	private static final int SECTION_PRIORITY = 10;
 	
-	private static final String PAGES_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_Pages";
-	private static final String SECTIONS_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_Sections";
-	private static final String ACTVITIES_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_Activities";
+	private static final String PAGES_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_pages";
+	private static final String PAGE_EXTENSIONS_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.PageExtension";
+	private static final String PAGE_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_page";
+	private static final String SECTION_EXTENSIONS_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.SectionExtension";
+	private static final String SECTION_TEMPLATE_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_section";
 	
 	
 
@@ -49,11 +53,17 @@ public class ActivityExplorerTemplateProposalProvider extends CommonTemplateProp
 		if (contextTypeId.equals(PAGES_TEMPLATE_ID))
 			return PAGES_PRIORITY;
 		
-		if (contextTypeId.equals(SECTIONS_TEMPLATE_ID))
-			return SECTIONS_PRIORITY;
+		if (contextTypeId.equals(PAGE_EXTENSIONS_TEMPLATE_ID))
+			return PAGE_EXTENSIONS_PRIORITY;
 		
-		if (contextTypeId.equals(ACTVITIES_TEMPLATE_ID))
-			return ACTIVITIES_PRIORITY;
+		if (contextTypeId.equals(PAGE_TEMPLATE_ID))
+			return PAGE_PRIORITY;
+		
+		if (contextTypeId.equals(SECTION_EXTENSIONS_TEMPLATE_ID))
+			return SECTION_EXTENSIONS_PRIORITY;
+		
+		if (contextTypeId.equals(SECTION_TEMPLATE_ID))
+			return SECTION_PRIORITY;
 		
 		return super.getRelevance(template);
 		

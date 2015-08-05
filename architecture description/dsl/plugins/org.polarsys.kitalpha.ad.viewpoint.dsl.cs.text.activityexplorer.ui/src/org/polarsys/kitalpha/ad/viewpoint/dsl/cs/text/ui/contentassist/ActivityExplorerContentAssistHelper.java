@@ -22,10 +22,10 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Pages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Sections;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.constants.IActivityExplorerExtensionsIDs;
 
@@ -36,12 +36,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.constants.IActivityExpl
  *
  */
 public class ActivityExplorerContentAssistHelper {
-	
+
 	private static final String ID_FIELD = "id";
 	private static final String PAGE_FIELD = "Page";
 	private static final String SECTION_FIELD = "Section";
 	private static final String ACTIVITY_FIELD = "Activity";
-	
+
 	public static List<String> getActivityExplorerExtensions(final int type){
 
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
@@ -65,7 +65,7 @@ public class ActivityExplorerContentAssistHelper {
 			break;
 		}
 		}
-		
+
 
 		if (extension_p == null)
 		{
@@ -76,31 +76,31 @@ public class ActivityExplorerContentAssistHelper {
 
 		return collectContributionIds(extensions, type);
 
-		
+
 	}
 
 	private static List<String> collectContributionIds(IExtension[] extensions, final int type) {
-		
+
 		for (IExtension iExtension : extensions) {
 			IConfigurationElement[] configElts = iExtension.getConfigurationElements();
-				switch (type)
-				{
-				case IActivityExplorerExtensionsIDs.PAGE:
-				{
-					return getPages(configElts);
-				}
-				case IActivityExplorerExtensionsIDs.SECTION:
-				{
-					return getSections(configElts);
-				}
-				case IActivityExplorerExtensionsIDs.ACTIVITY:
-				{
-					return getActivities(configElts);
-				}
-				default:
-				{
-					//never execute in this block
-				}
+			switch (type)
+			{
+			case IActivityExplorerExtensionsIDs.PAGE:
+			{
+				return getPages(configElts);
+			}
+			case IActivityExplorerExtensionsIDs.SECTION:
+			{
+				return getSections(configElts);
+			}
+			case IActivityExplorerExtensionsIDs.ACTIVITY:
+			{
+				return getActivities(configElts);
+			}
+			default:
+			{
+				//never execute in this block
+			}
 			}
 		}
 		return Collections.emptyList();
@@ -117,11 +117,11 @@ public class ActivityExplorerContentAssistHelper {
 	private static List<String> getPages(IConfigurationElement[] configElts) {
 		return getIDs(configElts, PAGE_FIELD);
 	}
-	
+
 	private static List<String> getIDs(IConfigurationElement[] configElts, String name)
 	{
 		List<String> ids = new ArrayList<String>();
-		
+
 		for (IConfigurationElement c : configElts) {
 			if (c.getName().equals(name))
 			{
@@ -129,65 +129,68 @@ public class ActivityExplorerContentAssistHelper {
 				ids.add(id);
 			}
 		}
-		
+
 		return ids;
 	}
 
 	public static List<String> getNewDefinedPages(EObject model) {
 		List<String> ids = new ArrayList<String>();
-		
+
 		ViewpointActivityExplorer activityExplorer = (ViewpointActivityExplorer)EcoreUtil.getRootContainer(model);
-		Pages pages = activityExplorer.getOwnedNewPages();
-		
-		EList<Page> newPages = pages.getOwnedActivityExplorerPages();
-		
-		for (Page page : newPages) {
-			String id = page.getActivityExplorerItemID();
-			ids.add(id);
+		EList<AbstractPage> pages = activityExplorer.getOwnedPages();
+
+		for (AbstractPage page : pages) {
+			if (page instanceof Page){
+				String id = ((Page)page).getActivityExplorerItemID();
+				ids.add(id);
+			}
 		}
-		
+
 		return ids;
 	}
 
 	public static List<String> getNewDefinedSections(EObject model) {
 		List<String> ids = new ArrayList<String>();
-		
+
 		ViewpointActivityExplorer activityExplorer = (ViewpointActivityExplorer)EcoreUtil.getRootContainer(model);
-		Sections sections = activityExplorer.getOwnedSectionsExtension();
-		
-		EList<SectionExtension> newSections = sections.getOwnedSectionsExtensions();
-		
-		for (SectionExtension sectionExt : newSections) {
-			String id = sectionExt.getActivityExplorerItemID();
-			ids.add(id);
+		EList<AbstractPage> pages = activityExplorer.getOwnedPages();
+
+		for (AbstractPage page : pages) {
+			EList<Section> sections = page.getOwnedSections();
+
+			for (Section section : sections) {
+				String id = section.getActivityExplorerItemID();
+				ids.add(id);
+			}
 		}
-		
+
 		return ids;
 	}
 
 	public static int getNextIndexPage(EObject model) {
-		
+
 		ViewpointActivityExplorer activityExplorer = (ViewpointActivityExplorer)EcoreUtil.getRootContainer(model);
-		Pages pages = activityExplorer.getOwnedNewPages();
-		
+		EList<AbstractPage> pages = activityExplorer.getOwnedPages();
+
 		List<Integer> indexes = collectIndexes(pages);
-		
+
 		return indexes.size() != 0?indexes.get(indexes.size() - 1) + 1:0;
 	}
 
-	private static List<Integer> collectIndexes(Pages pages) {
+	private static List<Integer> collectIndexes(EList<AbstractPage> pages) {
 		List<Integer> indexes = new ArrayList<Integer>();
-		EList<Page> newPages = pages.getOwnedActivityExplorerPages();
-		
-		for (Page page : newPages) {
-			int i = page.getIndex();
-			indexes.add(i);
+
+		for (AbstractPage page : pages) {
+			if (page instanceof Page){
+				int i = ((Page)page).getIndex();
+				indexes.add(i);
+			}
 		}
-		
+
 		Collections.sort(indexes);
-		
+
 		return indexes;
 	}
-	
-	
+
+
 }
