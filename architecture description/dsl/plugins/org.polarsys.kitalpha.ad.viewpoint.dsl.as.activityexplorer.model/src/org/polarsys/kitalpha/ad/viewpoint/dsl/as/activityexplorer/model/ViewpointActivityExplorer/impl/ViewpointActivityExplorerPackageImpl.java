@@ -465,6 +465,15 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getViewpointActivityExplorer_AllActivities() {
+		return (EReference)viewpointActivityExplorerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPageExtension() {
 		return pageExtensionEClass;
 	}
@@ -535,6 +544,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		viewpointActivityExplorerEClass = createEClass(VIEWPOINT_ACTIVITY_EXPLORER);
 		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__OWNED_PAGES);
 		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS);
+		createEReference(viewpointActivityExplorerEClass, VIEWPOINT_ACTIVITY_EXPLORER__ALL_ACTIVITIES);
 
 		pageExtensionEClass = createEClass(PAGE_EXTENSION);
 		createEAttribute(pageExtensionEClass, PAGE_EXTENSION__EXTENDED_PAGE_ID);
@@ -629,6 +639,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		initEClass(viewpointActivityExplorerEClass, ViewpointActivityExplorer.class, "ViewpointActivityExplorer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getViewpointActivityExplorer_OwnedPages(), this.getAbstractPage(), null, "ownedPages", null, 0, -1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getViewpointActivityExplorer_OwnedSectionExtensions(), this.getSectionExtension(), null, "ownedSectionExtensions", null, 0, -1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewpointActivityExplorer_AllActivities(), this.getActivity(), null, "allActivities", null, 0, -1, ViewpointActivityExplorer.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageExtensionEClass, PageExtension.class, "PageExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPageExtension_ExtendedPageID(), theEcorePackage.getEString(), "extendedPageID", null, 0, 1, PageExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

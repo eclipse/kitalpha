@@ -571,13 +571,22 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS = VpdescPackage.ASPECT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>All Activities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT_ACTIVITY_EXPLORER__ALL_ACTIVITIES = VpdescPackage.ASPECT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Viewpoint Activity Explorer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_ACTIVITY_EXPLORER_FEATURE_COUNT = VpdescPackage.ASPECT_FEATURE_COUNT + 2;
+	int VIEWPOINT_ACTIVITY_EXPLORER_FEATURE_COUNT = VpdescPackage.ASPECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.AbstractPageImpl <em>Abstract Page</em>}' class.
@@ -1079,6 +1088,17 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	EReference getViewpointActivityExplorer_OwnedSectionExtensions();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getAllActivities <em>All Activities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Activities</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getAllActivities()
+	 * @see #getViewpointActivityExplorer()
+	 * @generated
+	 */
+	EReference getViewpointActivityExplorer_AllActivities();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension <em>Page Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1376,6 +1396,14 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VIEWPOINT_ACTIVITY_EXPLORER__OWNED_SECTION_EXTENSIONS = eINSTANCE.getViewpointActivityExplorer_OwnedSectionExtensions();
+
+		/**
+		 * The meta object literal for the '<em><b>All Activities</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIEWPOINT_ACTIVITY_EXPLORER__ALL_ACTIVITIES = eINSTANCE.getViewpointActivityExplorer_AllActivities();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageExtensionImpl <em>Page Extension</em>}' class.

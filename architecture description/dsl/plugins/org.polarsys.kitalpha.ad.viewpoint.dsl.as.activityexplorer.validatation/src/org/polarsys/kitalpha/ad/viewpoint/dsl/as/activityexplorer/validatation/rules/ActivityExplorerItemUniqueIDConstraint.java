@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -8,48 +8,40 @@
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.ids;
+
+package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.rules;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractSection;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.message.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.ValidationStatus;
 
 
 /**
- * 
  * @author Faycal Abka, Boubekeur Zendagui
- *
  */
-public class CheckIDsValue implements IAdditionalConstraint {
-
-	public CheckIDsValue() {
-	}
+public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstraint  {
 
 	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof ActivityExplorerItem;
 	}
-
+	
 	@Override
 	public ValidationStatus validationRules(Object data) {
 		ActivityExplorerItem item = (ActivityExplorerItem)data;
-		ViewpointActivityExplorer viewpointActivityExplorer = (ViewpointActivityExplorer)((EObject) data).eContainer().eContainer();
+		ViewpointActivityExplorer viewpointActivityExplorer = getViewpointActivityExplorer(item);
 		List<String> ids = getAllActivityExplorerIdsExceptItem(viewpointActivityExplorer, item);
-		
 		String id = item.getActivityExplorerItemID();
-		
 		if (ids.contains(id))
 			return ValidationStatus.Error;
 		
@@ -61,8 +53,24 @@ public class CheckIDsValue implements IAdditionalConstraint {
 		String name = item.getName();
 		return Messages.bind(Messages.DuplicatedActivityExplorerId, name);
 	}
-
-	private List<String> getAllActivityExplorerIdsExceptItem(ViewpointActivityExplorer viewpointActivityExplorer, ActivityExplorerItem item) {
+	
+	protected ViewpointActivityExplorer getViewpointActivityExplorer(ActivityExplorerItem item){
+		EObject itemCcontainer = item.eContainer();
+		if (false == itemCcontainer instanceof ViewpointActivityExplorer)
+		{
+			while (null != itemCcontainer && false == itemCcontainer instanceof ViewpointActivityExplorer) 
+			{
+				itemCcontainer = itemCcontainer.eContainer();
+			}
+		}
+		
+		if (null != itemCcontainer)
+			return (ViewpointActivityExplorer) itemCcontainer;
+		else
+			throw new RuntimeException(Messages.Validation_Runtime_CantLocateViewpointActivityExplorer);
+	}
+	
+	protected List<String> getAllActivityExplorerIdsExceptItem(ViewpointActivityExplorer viewpointActivityExplorer, ActivityExplorerItem item) {
 		List<String> ids = new ArrayList<String>();
 
 		// First Handle All available Pages.
@@ -73,7 +81,7 @@ public class CheckIDsValue implements IAdditionalConstraint {
 		for (Page page : pages) 
 		{
 			final String id = page.getActivityExplorerItemID();
-			if (id.trim().length() > 0)
+			if (id != null && id.trim().length() > 0)
 				ids.add(id);
 		}
 
@@ -85,7 +93,7 @@ public class CheckIDsValue implements IAdditionalConstraint {
 		for (Section section : sections) 
 		{
 			final String id = section.getActivityExplorerItemID();
-			if (id.trim().length() > 0)
+			if (id != null && id.trim().length() > 0)
 				ids.add(id);
 		}
 		
@@ -97,7 +105,7 @@ public class CheckIDsValue implements IAdditionalConstraint {
 		for (Activity activity : activities) 
 		{
 			String id = activity.getActivityExplorerItemID();
-			if (id.trim().length() > 0)
+			if (id != null && id.trim().length() > 0)
 				ids.add(id);
 		}
 		
@@ -109,7 +117,7 @@ public class CheckIDsValue implements IAdditionalConstraint {
 	 * @param viewpointActivityExplorer
 	 * @return
 	 */
-	private List<Page> getAllPages(ViewpointActivityExplorer viewpointActivityExplorer){
+	protected List<Page> getAllPages(ViewpointActivityExplorer viewpointActivityExplorer){
 		List<Page> result = new ArrayList<Page>();
 		List<AbstractPage> abstractPages = viewpointActivityExplorer.getOwnedPages();
 		for (AbstractPage abstractPage : abstractPages) 
@@ -124,7 +132,7 @@ public class CheckIDsValue implements IAdditionalConstraint {
 	 * @param viewpointActivityExplorer
 	 * @return
 	 */
-	private List<Section> getAllSections(ViewpointActivityExplorer viewpointActivityExplorer) {
+	protected List<Section> getAllSections(ViewpointActivityExplorer viewpointActivityExplorer) {
 		List<Section> result = new ArrayList<Section>();
 		
 		final List<Page> pages = getAllPages(viewpointActivityExplorer);
@@ -143,7 +151,7 @@ public class CheckIDsValue implements IAdditionalConstraint {
 	 * @param viewpointActivityExplorer
 	 * @return
 	 */
-	private List<Activity> getActivities(ViewpointActivityExplorer viewpointActivityExplorer){
+	protected List<Activity> getActivities(ViewpointActivityExplorer viewpointActivityExplorer){
 		List<Activity> result = new ArrayList<Activity>();
 		List<Section> sections = getAllSections(viewpointActivityExplorer);
 		

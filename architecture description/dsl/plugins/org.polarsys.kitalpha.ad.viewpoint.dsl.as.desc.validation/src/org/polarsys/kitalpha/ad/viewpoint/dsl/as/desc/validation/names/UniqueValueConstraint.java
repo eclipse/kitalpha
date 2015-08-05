@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.names;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -121,10 +122,34 @@ public class UniqueValueConstraint extends VpDescAbstractModelConstraint {
 		return eObject.eGet(eStructuralFeature);
 	}
 	
+	/**
+	 * This method analyze data parameter and keep only {@link ViewpointElement}.
+	 * @param data the data
+	 * @return a {@link List} containing only {@link ViewpointElement}.
+	 */
+	private List<ViewpointElement> keepOnlyViewpointElement(Object data){
+		List<ViewpointElement> result = new BasicEList<ViewpointElement>();
+		if (data instanceof List<?>)
+		{
+			List<?> list = (List<?>) data;
+			for (Object object : list) 
+			{
+				if (object instanceof ViewpointElement)
+					result.add((ViewpointElement) object);
+			}
+		}
+		
+		if (data instanceof ViewpointElement)
+		{
+			result.add((ViewpointElement) data);
+		}
+		
+		return result;
+	}
+	
 	@Override
 	protected boolean isValidData(EObject context, Object data) {
-		@SuppressWarnings("unchecked")
-		List<ViewpointElement> list = (List<ViewpointElement>) data;
+		List<ViewpointElement> list = keepOnlyViewpointElement(data);
 		
 		for (ViewpointElement vpElement : list) 
 		{

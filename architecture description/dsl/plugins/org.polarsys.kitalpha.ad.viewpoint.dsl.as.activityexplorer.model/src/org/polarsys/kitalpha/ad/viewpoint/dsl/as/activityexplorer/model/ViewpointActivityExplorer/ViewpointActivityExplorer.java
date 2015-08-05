@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedPages <em>Owned Pages</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getOwnedSectionExtensions <em>Owned Section Extensions</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer#getAllActivities <em>All Activities</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +76,27 @@ public interface ViewpointActivityExplorer extends Aspect {
 	 * @generated
 	 */
 	EList<SectionExtension> getOwnedSectionExtensions();
+
+
+
+
+	/**
+	 * Returns the value of the '<em><b>All Activities</b></em>' reference list.
+	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity}.
+
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Activities</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Activities</em>' reference list.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage#getViewpointActivityExplorer_AllActivities()
+	 * @model changeable="false" derived="true"
+	 * @generated
+	 */
+
+	EList<Activity> getAllActivities();
 
 
 

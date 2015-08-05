@@ -36,6 +36,8 @@
         eType="#//AbstractPage" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSectionExtensions"
         upperBound="-1" eType="#//SectionExtension" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allActivities" upperBound="-1"
+        eType="#//Activity" changeable="false" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PageExtension" eSuperTypes="#//AbstractPage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendedPageID" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>

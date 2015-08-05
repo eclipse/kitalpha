@@ -114,6 +114,18 @@ public class JavaNamingConvention {
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] No named element are not accepted");
 		
 		String javaClassName = name + context.toString();
+		
+		/* Two model element (not brother) can share the same name. Because Predicates Java classes are generated in the 
+		 * same Java package, and to avoid Java class name conflict, the first letter of the meta-class of the model element 
+		 * is added in the begin of the Java class name.
+		 * */
+		if (context.equals(JavaUseContext.Predicate))
+		{
+			final String modelElementClassName = element.eClass().getName();
+			final char firstLetter = modelElementClassName.charAt(0);
+			javaClassName = firstLetter + javaClassName;
+		}
+		
 		javaClassName = JDTUtility.getValidClassName(javaClassName);
 		
 		return javaClassName;
