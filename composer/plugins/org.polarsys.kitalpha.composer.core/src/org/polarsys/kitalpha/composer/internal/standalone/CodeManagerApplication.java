@@ -40,7 +40,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
-
 import org.polarsys.kitalpha.cadence.core.api.CadenceRegistry;
 import org.polarsys.kitalpha.cadence.core.api.IActivity;
 import org.polarsys.kitalpha.cadence.core.api.parameter.DeclaredParameter;
@@ -52,7 +51,7 @@ import org.polarsys.kitalpha.composer.api.CodeManagerRegistry;
 import org.polarsys.kitalpha.composer.api.ICodeManagerWorkflowConstants;
 import org.polarsys.kitalpha.composer.api.Parameter;
 import org.polarsys.kitalpha.composer.api.library.LibraryReuseHelper;
-import org.polarsys.kitalpha.composer.api.path.variables.ComposerVariableInterpreter;
+import org.polarsys.kitalpha.composer.api.path.ComposerPathUtils;
 import org.polarsys.kitalpha.composer.extension.points.IGenerator;
 import org.polarsys.kitalpha.composer.extension.points.IRefinery;
 import org.polarsys.kitalpha.composer.extension.points.IStrategy;
@@ -108,7 +107,8 @@ public class CodeManagerApplication implements IApplication {
 		
 		File model_f = new File(model_path);
 		
-		final String gen_path = (String)ComposerVariableInterpreter.INSTANCE.execute(gen_path0, model_f);
+		final String gen_path = ComposerPathUtils.pathVariablesDecode(gen_path0, model_f);
+		
 		File file = new File(gen_path);
 		IPath location = new Path(file.getPath());
 		IFolder gen_f = project.getFolder(location.lastSegment());

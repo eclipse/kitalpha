@@ -31,21 +31,24 @@ public class ComposerVariableInterpreter {
 	private static final String PARENT ="../"; //$NON-NLS-1$
 	private  ComposerVariablesRegistry registry = ComposerVariablesRegistry.INSTANCE;
 	
-	public Object execute(String value, Object obj){
+	public Object execute(final String value, final Object obj){
 		Object result = null;
-		IComposerVariable var = containsVariables(value);
+		
+		String path = value;
+		
+		final IComposerVariable var = containsComposerVariables(path);
 		if(var != null){
 			Object substitution = var.execute(obj);
 			String regex = DEB + var.getName();
-			if(value.startsWith(PARENT)){
+			if(path.startsWith(PARENT)){
 				File f = new File((String)substitution);
 				substitution = f.getParentFile().getAbsolutePath();
 				regex = PARENT + regex;
 			}
 			
-			result = value.replace(regex, (String)substitution);
+			result = path.replace(regex, (String)substitution);
 		}else{
-			result = value;
+			result = path;
 		}
 		return result;
 	}
@@ -58,11 +61,11 @@ public class ComposerVariableInterpreter {
 	 * @param path
 	 * @return the index of the variable
 	 */
-	private IComposerVariable containsVariables(final String path){
+	private IComposerVariable containsComposerVariables(final String path){
 		IComposerVariable var = null;
 		try {
 			if(path != null && (!path.equals("")) && path.contains(DEB)){
-				String var_name = extract(path);
+				final String var_name = extract(path);
 				if(var_name != null && !var_name.equals("")){
 					var = registry.getVariable(var_name);
 					if(var == null){
@@ -79,6 +82,7 @@ public class ComposerVariableInterpreter {
 		}
 		return var;	
 	}
+
 
 /**
  * Allows to extract the variable from string chain
