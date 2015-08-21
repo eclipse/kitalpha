@@ -21,27 +21,27 @@
 		mapName = DocGenHtmlUtil.getValidFileName(mapName);
 		CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
 		//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
-		Map<EObject, Rectangle> positionMap = calculator.getPositionMap();
+		Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 		%>
 	<div>
 	<p class="diagram-name" id="<%=id%>"><%= diagram.getName()%></p>
 	<p class="diagram">
-		<img src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= diagram.getName()%>" usemap="#<%=mapName%>" />
+		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= diagram.getName()%>" usemap="#<%=mapName%>" />
 		
 		<br/>
 		<br/>
 		<map name="<%=mapName%>">
 <%
 	
-for (Entry<EObject, Rectangle> entrySet : positionMap.entrySet()){
-		EObject key = entrySet.getKey();
-		String fileName = fileNameService.getFileName(key);
-		String fragment = helper.getElementId(key);
-		Rectangle rectangle = entrySet.getValue();
+for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()){
+		EObject value = entrySet.getValue();
+		String fileName = fileNameService.getFileName(value);
+		String fragment = helper.getElementId(value);
+		Rectangle rectangle = entrySet.getKey();
 		Point topLeft = rectangle.getTopLeft();
 		Point bottomRight = rectangle.getBottomRight();
-		String modelName = DocGenHtmlUtil.getModelName(key);%>
-			<area shape="rect" coords="<%=topLeft.x%>,<%=topLeft.y%>,<%=bottomRight.x%>,<%=bottomRight.y%>" href="../<%=modelName%>/<%=fileName%>.html#<%=fragment%>" alt="<%=fileName%>" />
+		String modelName = DocGenHtmlUtil.getModelName(value);%>
+			<area shape="rect" group="<%=fileName%>" coords="<%=topLeft.x%>,<%=topLeft.y%>,<%=bottomRight.x%>,<%=bottomRight.y%>" href="../<%=modelName%>/<%=fileName%>.html#<%=fragment%>" alt="<%=fileName%>" />
 <%	}
 %>			
 		</map>
