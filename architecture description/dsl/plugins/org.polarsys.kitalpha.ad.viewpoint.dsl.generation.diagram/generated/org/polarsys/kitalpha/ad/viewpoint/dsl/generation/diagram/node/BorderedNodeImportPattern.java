@@ -65,6 +65,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.NodeStyleImportMerger;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
+
 public class BorderedNodeImportPattern
 		extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.BorderedNodePattern {
@@ -463,7 +465,8 @@ public class BorderedNodeImportPattern
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx) && parameter.getImports() != null;
+		return DiagramGenerationConfigurationHelper.generateVSM(parameter)
+				&& parameter.getImports() != null;
 	}
 
 	protected org.eclipse.sirius.diagram.description.NodeMappingImport inm;
