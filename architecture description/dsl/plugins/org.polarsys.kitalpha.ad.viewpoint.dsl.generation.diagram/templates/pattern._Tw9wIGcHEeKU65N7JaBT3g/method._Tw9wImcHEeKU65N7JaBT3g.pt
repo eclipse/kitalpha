@@ -53,6 +53,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.NodeStyleImportMerger;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
+
 public class CLASS {
 
 	public CLASS() {
