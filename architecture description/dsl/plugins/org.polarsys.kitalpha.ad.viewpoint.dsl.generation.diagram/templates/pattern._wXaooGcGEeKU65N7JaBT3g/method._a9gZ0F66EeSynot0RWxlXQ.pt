@@ -133,11 +133,20 @@ for (NodeDescription iNodeDescription : parameter.getStyle()) {
 		}
 		
 		nStyleDesc.setResizeKind(ResizeKind.NSEW_LITERAL);
-				
+		
+	} 
+	else 
+	{
+		EcoreUtil.Copier copier = new EcoreUtil.Copier();
+		nStyleDesc = (NodeStyleDescription) copier.copy(parameter.getImports().getStyle());
+	}
+			
+	if (nStyleDesc != null)
+	{	
 		/********************** Setting Label properties ************************/
 		Label label = iNodeDescription.getNode_Label();
 		String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
-				
+		
 		if (label != null) {
 			//((ExpressionImpl) label.getValue()).adaptValue();
 			String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();

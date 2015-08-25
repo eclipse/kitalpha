@@ -67,6 +67,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.m
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 public class BorderedNodeImportPattern
 		extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.BorderedNodePattern {
@@ -402,6 +404,13 @@ public class BorderedNodeImportPattern
 
 				nStyleDesc.setResizeKind(ResizeKind.NSEW_LITERAL);
 
+			} else {
+				EcoreUtil.Copier copier = new EcoreUtil.Copier();
+				nStyleDesc = (NodeStyleDescription) copier.copy(parameter
+						.getImports().getStyle());
+			}
+
+			if (nStyleDesc != null) {
 				/********************** Setting Label properties ************************/
 				Label label = iNodeDescription.getNode_Label();
 				String labelExpression = SiriusExpressionHelper.getExpressoin(

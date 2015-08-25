@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-//Generated on Tue Jul 15 11:15:19 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150507-0831
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -65,6 +65,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.NodeStyleImportMerger;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class NodeImportPattern
 		extends
@@ -400,6 +402,13 @@ public class NodeImportPattern
 
 				nStyleDesc.setResizeKind(ResizeKind.NSEW_LITERAL);
 
+			} else {
+				EcoreUtil.Copier copier = new EcoreUtil.Copier();
+				nStyleDesc = (NodeStyleDescription) copier.copy(parameter
+						.getImports().getStyle());
+			}
+
+			if (nStyleDesc != null) {
 				/********************** Setting Label properties ************************/
 				Label label = iNodeDescription.getNode_Label();
 				String labelExpression = SiriusExpressionHelper.getExpressoin(

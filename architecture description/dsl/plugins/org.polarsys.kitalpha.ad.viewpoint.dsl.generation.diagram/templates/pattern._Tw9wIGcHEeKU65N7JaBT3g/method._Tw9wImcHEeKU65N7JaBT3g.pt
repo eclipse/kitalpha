@@ -55,6 +55,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.m
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 public class CLASS {
 
 	public CLASS() {

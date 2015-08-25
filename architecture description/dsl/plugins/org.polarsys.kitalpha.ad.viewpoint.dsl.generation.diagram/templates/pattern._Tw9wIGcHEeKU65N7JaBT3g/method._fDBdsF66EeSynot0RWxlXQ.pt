@@ -1,7 +1,8 @@
  
 NodeMapping nm = (NodeMapping) dNodeMapping;
 
-for (NodeDescription iNodeDescription : parameter.getStyle()) {
+for (NodeDescription iNodeDescription : parameter.getStyle()) 
+{
 	Condition condition = iNodeDescription.getCondition();
 	boolean conditionalStyle = false;
 	ConditionalNodeStyleDescription cnStyleDesc = null;
@@ -134,52 +135,64 @@ for (NodeDescription iNodeDescription : parameter.getStyle()) {
 		
 		nStyleDesc.setResizeKind(ResizeKind.NSEW_LITERAL);
 				
+	}
+	else
+	{
+		EcoreUtil.Copier copier = new EcoreUtil.Copier();
+		nStyleDesc = (NodeStyleDescription) copier.copy(parameter.getImports().getStyle());
+	}
+	
+	if (nStyleDesc != null)
+	{
 		/********************** Setting Label properties ************************/
 		Label label = iNodeDescription.getNode_Label();
-		String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
-				
+		String labelExpression = SiriusExpressionHelper.getExpressoin(
+				"name", ExpressionInterpreter.Feature);
+
 		if (label != null) {
 			//((ExpressionImpl) label.getValue()).adaptValue();
-			String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
-			((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
-					
+			String mParameters = VSMVariable.diagram.getInnerVariable()
+					+ "," + VSMVariable.view.getInnerVariable();
+			((ExpressionImpl) label.getValue()).adaptValue(mParameters,
+					true);
+
 			if (label.getValue() != null)
 				labelExpression = label.getValue().getValue();
-				
+
 			nStyleDesc.setLabelExpression(labelExpression);
 			nStyleDesc.setLabelSize(label.getSize());
 			nStyleDesc.setShowIcon(false);
 			nStyleDesc.setLabelAlignment(iNodeDescription.getLabel_alignement());
 			nStyleDesc.setLabelPosition(iNodeDescription.getLabel_position());
-			
-			nStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));		
-					
-			if (label.isBold() && label.isItalic())
+
+			nStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));
+
+			if (label.isBold() && label.isItalic()) 
 			{
 				nStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-			}
-			else
+			} 
+			else 
 			{
 				if (label.isBold())
 					nStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
-						
+
 				if (label.isItalic())
 					nStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
 			}
 		}
-		
+
 		/************************************************************************************************/
 		NodeStyleDescription nStyleDesc_marged = null;
 		try {
-			nStyleDesc_marged = NodeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), nStyleDesc, iNodeDescription);
-		} 
-		catch (Exception e) {
-		} 
+			nStyleDesc_marged = NodeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), 
+																	nStyleDesc,
+																	iNodeDescription);
+		} catch (Exception e) {
+		}
 		if (nStyleDesc_marged != null)
 			nStyleDesc = nStyleDesc_marged;
 		/************************************************************************************************/
-		
-				
+
 		// Add the created container style to it parent
 		if (conditionalStyle)
 			cnStyleDesc.setStyle(nStyleDesc);

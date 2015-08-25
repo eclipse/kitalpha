@@ -40,6 +40,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGene
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.ContainerStyleImportMerger;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 public class CLASS {
 
 	public CLASS() {
