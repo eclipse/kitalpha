@@ -79,18 +79,11 @@ for (EdgeDescription iEgdeDescription : parameter.getE_description()) {
 		cLabelStyleDesc.setShowIcon(false);
 		cLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(c_label.getColor()));	
 
-		if (c_label.isBold() && c_label.isItalic()) 
-		{
-			cLabelStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-		} 
-		else 
-		{
-			if (c_label.isBold())
-				cLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
-
-			if (c_label.isItalic())
-				cLabelStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
-		}
+		if (c_label.isBold())
+			cLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
+			
+		if (c_label.isItalic())
+			cLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 	}
 	else
 	{
@@ -111,18 +104,11 @@ for (EdgeDescription iEgdeDescription : parameter.getE_description()) {
 		bLabelStyleDesc.setShowIcon(false);
 		bLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(b_label.getColor()));	
 
-		if (b_label.isBold() && b_label.isItalic()) 
-		{
-			bLabelStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-		} 
-		else 
-		{
-			if (b_label.isBold())
-				bLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+		if (b_label.isBold())
+			bLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 
-			if (b_label.isItalic())
-				bLabelStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
-		}
+		if (b_label.isItalic())
+			bLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 	}
 	else
 	{
@@ -142,18 +128,12 @@ for (EdgeDescription iEgdeDescription : parameter.getE_description()) {
 		eLabelStyleDesc.setShowIcon(false);
 		eLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(e_label.getColor()));	
 
-		if (e_label.isBold() && e_label.isItalic()) 
-		{
-			eLabelStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-		} 
-		else 
-		{
-			if (e_label.isBold())
-				eLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+		if (e_label.isBold())
+			eLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 
-			if (e_label.isItalic())
-				eLabelStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
-		}
+		if (e_label.isItalic())
+			eLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
+
 	}
 	else
 	{

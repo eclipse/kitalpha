@@ -154,18 +154,12 @@ for (NodeDescription iNodeDescription : parameter.getStyle()) {
 			
 			nStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));		
 					
-			if (label.isBold() && label.isItalic())
-			{
-				nStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-			}
-			else
-			{
-				if (label.isBold())
-					nStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
-						
-				if (label.isItalic())
-					nStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
-			}
+			if (label.isBold())
+				nStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
+					
+			if (label.isItalic())
+				nStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
+			
 		}
 				
 		// Add the created container style to it parent

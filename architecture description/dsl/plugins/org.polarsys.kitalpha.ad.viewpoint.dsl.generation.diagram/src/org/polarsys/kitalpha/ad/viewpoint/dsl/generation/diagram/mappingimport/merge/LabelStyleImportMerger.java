@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,7 +61,8 @@ public abstract class LabelStyleImportMerger {
 		if (label == null || ! (label.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Bold()) && 
 			   label.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Italic())))
 		{
-			result.setLabelFormat(originalLabel.getLabelFormat());
+			result.getLabelFormat().clear();
+			result.getLabelFormat().addAll(originalLabel.getLabelFormat());
 		}
 
 		// Label Size

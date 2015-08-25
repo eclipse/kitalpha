@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150507-0831
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.edge;
 
 import java.util.*;
@@ -54,6 +54,7 @@ public class EdgeImportPattern
 	public EdgeImportPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -237,17 +238,13 @@ public class EdgeImportPattern
 				cLabelStyleDesc.setLabelColor(GenerationUtil
 						.getSystemColor(c_label.getColor()));
 
-				if (c_label.isBold() && c_label.isItalic()) {
-					cLabelStyleDesc
-							.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-				} else {
-					if (c_label.isBold())
-						cLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+				if (c_label.isBold())
+					cLabelStyleDesc.getLabelFormat().add(
+							FontFormat.BOLD_LITERAL);
 
-					if (c_label.isItalic())
-						cLabelStyleDesc
-								.setLabelFormat(FontFormat.ITALIC_LITERAL);
-				}
+				if (c_label.isItalic())
+					cLabelStyleDesc.getLabelFormat().add(
+							FontFormat.ITALIC_LITERAL);
 			} else {
 				cLabelStyleDesc = EcoreUtil.copy(parameter.getImports()
 						.getStyle().getCenterLabelStyleDescription());
@@ -269,17 +266,13 @@ public class EdgeImportPattern
 				bLabelStyleDesc.setLabelColor(GenerationUtil
 						.getSystemColor(b_label.getColor()));
 
-				if (b_label.isBold() && b_label.isItalic()) {
-					bLabelStyleDesc
-							.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-				} else {
-					if (b_label.isBold())
-						bLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+				if (b_label.isBold())
+					bLabelStyleDesc.getLabelFormat().add(
+							FontFormat.BOLD_LITERAL);
 
-					if (b_label.isItalic())
-						bLabelStyleDesc
-								.setLabelFormat(FontFormat.ITALIC_LITERAL);
-				}
+				if (b_label.isItalic())
+					bLabelStyleDesc.getLabelFormat().add(
+							FontFormat.ITALIC_LITERAL);
 			} else {
 				bLabelStyleDesc = EcoreUtil.copy(parameter.getImports()
 						.getStyle().getBeginLabelStyleDescription());
@@ -300,17 +293,14 @@ public class EdgeImportPattern
 				eLabelStyleDesc.setLabelColor(GenerationUtil
 						.getSystemColor(e_label.getColor()));
 
-				if (e_label.isBold() && e_label.isItalic()) {
-					eLabelStyleDesc
-							.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-				} else {
-					if (e_label.isBold())
-						eLabelStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+				if (e_label.isBold())
+					eLabelStyleDesc.getLabelFormat().add(
+							FontFormat.BOLD_LITERAL);
 
-					if (e_label.isItalic())
-						eLabelStyleDesc
-								.setLabelFormat(FontFormat.ITALIC_LITERAL);
-				}
+				if (e_label.isItalic())
+					eLabelStyleDesc.getLabelFormat().add(
+							FontFormat.ITALIC_LITERAL);
+
 			} else {
 				eLabelStyleDesc = EcoreUtil.copy(parameter.getImports()
 						.getStyle().getEndLabelStyleDescription());

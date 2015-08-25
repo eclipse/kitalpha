@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,8 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.3.0.v20150507-0831
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.edge;
 
 import java.util.*;
@@ -291,18 +290,13 @@ public class EdgePattern
 
 					eStyleDesc.setCenterLabelStyleDescription(cLabelStyleDesc);
 
-					if (c_label.isBold() && c_label.isItalic()) {
-						cLabelStyleDesc
-								.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-					} else {
-						if (c_label.isBold())
-							cLabelStyleDesc
-									.setLabelFormat(FontFormat.BOLD_LITERAL);
+					if (c_label.isBold())
+						cLabelStyleDesc.getLabelFormat().add(
+								FontFormat.BOLD_LITERAL);
 
-						if (c_label.isItalic())
-							cLabelStyleDesc
-									.setLabelFormat(FontFormat.ITALIC_LITERAL);
-					}
+					if (c_label.isItalic())
+						cLabelStyleDesc.getLabelFormat().add(
+								FontFormat.ITALIC_LITERAL);
 				}
 
 				/********************** Setting Begin Label properties ************************/
@@ -328,18 +322,14 @@ public class EdgePattern
 
 					eStyleDesc.setBeginLabelStyleDescription(bLabelStyleDesc);
 
-					if (b_label.isBold() && b_label.isItalic()) {
-						bLabelStyleDesc
-								.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-					} else {
-						if (b_label.isBold())
-							bLabelStyleDesc
-									.setLabelFormat(FontFormat.BOLD_LITERAL);
+					if (b_label.isBold())
+						bLabelStyleDesc.getLabelFormat().add(
+								FontFormat.BOLD_LITERAL);
 
-						if (b_label.isItalic())
-							bLabelStyleDesc
-									.setLabelFormat(FontFormat.ITALIC_LITERAL);
-					}
+					if (b_label.isItalic())
+						bLabelStyleDesc.getLabelFormat().add(
+								FontFormat.ITALIC_LITERAL);
+
 				}
 
 				/********************** Setting End Label properties ************************/
@@ -365,18 +355,14 @@ public class EdgePattern
 
 					eStyleDesc.setEndLabelStyleDescription(eLabelStyleDesc);
 
-					if (e_label.isBold() && e_label.isItalic()) {
-						eLabelStyleDesc
-								.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-					} else {
-						if (e_label.isBold())
-							eLabelStyleDesc
-									.setLabelFormat(FontFormat.BOLD_LITERAL);
+					if (e_label.isBold())
+						eLabelStyleDesc.getLabelFormat().add(
+								FontFormat.BOLD_LITERAL);
 
-						if (e_label.isItalic())
-							eLabelStyleDesc
-									.setLabelFormat(FontFormat.ITALIC_LITERAL);
-					}
+					if (e_label.isItalic())
+						eLabelStyleDesc.getLabelFormat().add(
+								FontFormat.ITALIC_LITERAL);
+
 				}
 
 				/************* Add the created container style to it parent **************/
