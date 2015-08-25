@@ -10,6 +10,9 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.precondition.interfaces;
 
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.polarsys.kitalpha.model.common.precondition.exception.InvalidPreconditionException;
+
 /**
  * 
  * @author Faycal Abka
@@ -17,6 +20,6 @@ package org.polarsys.kitalpha.model.common.precondition.interfaces;
  */
 public interface IPrecondition<T> {
 	
-	public void executePrecondition(T param);
+	public void executePrecondition(T param, IProgressMonitor monitor) throws InvalidPreconditionException;
 	
 }

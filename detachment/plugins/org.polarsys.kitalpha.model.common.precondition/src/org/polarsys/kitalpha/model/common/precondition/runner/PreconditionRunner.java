@@ -13,7 +13,7 @@ package org.polarsys.kitalpha.model.common.precondition.runner;
 import java.util.Deque;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.SubMonitor;
+import org.polarsys.kitalpha.model.common.precondition.exception.InvalidPreconditionException;
 import org.polarsys.kitalpha.model.common.precondition.interfaces.IPrecondition;
 import org.polarsys.kitalpha.model.common.precondition.scheduling.PreconditionStackBuilder;
 
@@ -29,18 +29,13 @@ public class PreconditionRunner<T> implements IPreconditionRunner<T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void run(T type, IProgressMonitor monitor) {
+	public void run(T type, IProgressMonitor monitor) throws InvalidPreconditionException {
 		stackBuilder.buildPreconditionsStack();
 		Deque<IPrecondition> stack = stackBuilder.getPreconditionsStack();
 		
-		int nbActions = stack.size();
-		
-		//TODO use it as parm of executePrecondition()
-		SubMonitor subMonitor = SubMonitor.convert(monitor, nbActions*100);
-		
 		while (!stack.isEmpty()){
 			IPrecondition precondition = stack.pop();
-			precondition.executePrecondition(type);
+			precondition.executePrecondition(type, monitor);
 		}
 		
 	}

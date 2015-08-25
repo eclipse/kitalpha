@@ -11,6 +11,7 @@
 package org.polarsys.kitalpha.model.common.precondition.runner;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.polarsys.kitalpha.model.common.precondition.exception.InvalidPreconditionException;
 
 /**
  * 
@@ -18,5 +19,5 @@ import org.eclipse.core.runtime.IProgressMonitor;
  *
  */
 public interface IPreconditionRunner<T> {
-	public void run(T type, IProgressMonitor monitor);
+	public void run(T type, IProgressMonitor monitor) throws InvalidPreconditionException;
 }

@@ -54,7 +54,7 @@ public class BackupAndSaveCommand extends ModelCommand {
 	public void exec(Resource resource, IProgressMonitor monitor) 
 			throws ModelCommandException {
 
-		URI uri = URI.createURI(resource.getURI().toString(), true);
+		URI uri = resource.getURI();
 		String plugin_id = uri.segment(1);
 
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(plugin_id);
