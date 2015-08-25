@@ -647,8 +647,10 @@ public class VpDiagramHelper {
 			return false;
 		else
 		{
+			DiagramExtension diagramExtension = (DiagramExtension)eObject;
+			DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
 			DiagramDescription diagramDescription = getDiagramDescription((ContainerMapping) eObjectOrProxy);
-			return EcoreUtil.equals(diagramDescription, eObject);
+			return EcoreUtil.equals(diagramDescription, diagDesc);
 		}
 
 //		DiagramExtension diagramExtension = (DiagramExtension)eObject;
@@ -663,8 +665,10 @@ public class VpDiagramHelper {
 			return false;
 		else
 		{
+			DiagramExtension diagramExtension = (DiagramExtension)eObject;
+			DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
 			DiagramDescription diagramDescription = getDiagramDescription((NodeMapping) eObjectOrProxy);
-			return EcoreUtil.equals(diagramDescription, eObject);
+			return EcoreUtil.equals(diagramDescription, diagDesc);
 		}
 //		DiagramExtension diagramExtension = (DiagramExtension)eObject;
 //		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
@@ -672,6 +676,7 @@ public class VpDiagramHelper {
 //
 //		return nodes.contains(eObjectOrProxy);
 	}
+
 
 
 	public static boolean isValidEdge(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
