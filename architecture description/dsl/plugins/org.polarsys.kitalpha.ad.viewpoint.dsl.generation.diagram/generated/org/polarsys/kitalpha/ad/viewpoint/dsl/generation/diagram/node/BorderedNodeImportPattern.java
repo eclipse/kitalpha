@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-//Generated on Tue Jul 15 11:15:19 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150507-0831
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -171,7 +171,8 @@ public class BorderedNodeImportPattern
 				style.setLabelColor(mapping.getStyle().getLabelColor());
 				style.setLabelExpression(mapping.getStyle()
 						.getLabelExpression());
-				style.setLabelFormat(mapping.getStyle().getLabelFormat());
+				style.getLabelFormat().addAll(
+						mapping.getStyle().getLabelFormat());
 				style.setLabelPosition(mapping.getStyle().getLabelPosition());
 				style.setLabelSize(mapping.getStyle().getLabelSize());
 			}
@@ -426,17 +427,14 @@ public class BorderedNodeImportPattern
 					nStyleDesc.setLabelColor(GenerationUtil
 							.getSystemColor(label.getColor()));
 
-					if (label.isBold() && label.isItalic()) {
-						nStyleDesc
-								.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-					} else {
-						if (label.isBold())
-							nStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
+					if (label.isBold())
+						nStyleDesc.getLabelFormat()
+								.add(FontFormat.BOLD_LITERAL);
 
-						if (label.isItalic())
-							nStyleDesc
-									.setLabelFormat(FontFormat.ITALIC_LITERAL);
-					}
+					if (label.isItalic())
+						nStyleDesc.getLabelFormat().add(
+								FontFormat.ITALIC_LITERAL);
+
 				}
 
 				/************************************************************************************************/

@@ -25,7 +25,7 @@ if (inheritsLabel)
 		style.setLabelAlignment(mapping.getStyle().getLabelAlignment());
 		style.setLabelColor(mapping.getStyle().getLabelColor());
 		style.setLabelExpression(mapping.getStyle().getLabelExpression());
-		style.setLabelFormat(mapping.getStyle().getLabelFormat());
+		style.getLabelFormat().addAll(mapping.getStyle().getLabelFormat());
 		style.setLabelPosition(mapping.getStyle().getLabelPosition());
 		style.setLabelSize(mapping.getStyle().getLabelSize());
 	}

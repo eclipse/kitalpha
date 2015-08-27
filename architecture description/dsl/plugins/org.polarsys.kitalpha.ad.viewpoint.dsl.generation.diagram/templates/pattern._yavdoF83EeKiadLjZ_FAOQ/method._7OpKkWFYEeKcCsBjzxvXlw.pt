@@ -83,18 +83,12 @@
 					cStyleDesc.setLabelSize(label.getSize());
 					cStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));	
 					
-					if (label.isBold() && label.isItalic())
-					{
-						cStyleDesc.setLabelFormat(FontFormat.BOLD_ITALIC_LITERAL);
-					}
-					else
-					{
-						if (label.isBold())
-							cStyleDesc.setLabelFormat(FontFormat.BOLD_LITERAL);
-						
-						if (label.isItalic())
-							cStyleDesc.setLabelFormat(FontFormat.ITALIC_LITERAL);
-					}
+					if (label.isBold())
+						cStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
+					
+					if (label.isItalic())
+						cStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
+					
 				}
 				
 				// Add the created container style to it parent

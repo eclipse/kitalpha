@@ -1,7 +1,5 @@
-/**
- * <copyright>
- * 
- * Copyright (c) 2014 Thales Global Services S.A.S.
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,9 +7,7 @@
  *  
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
- *   
- * </copyright>
- */
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.command;
 
@@ -26,6 +22,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.common.tools.api.interpreter.EvaluationException;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreter;
+import org.eclipse.sirius.common.tools.api.util.RefreshIdsHolder;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
@@ -144,7 +141,8 @@ public class CreateNodeCommand extends RecordingCommand {
 	 * @param parent a {@link DragAndDropTarget} element wherein the node will be created
 	 */
 	private AbstractDNode createOneNode(EObject target, AbstractNodeMapping mapping, DragAndDropTarget parent){
-		final AbstractDNodeCandidate abstractDNodeCandidate = new AbstractDNodeCandidate(mapping, target, parent); 
+		RefreshIdsHolder refreshIdsHolder = new RefreshIdsHolder();
+		final AbstractDNodeCandidate abstractDNodeCandidate = new AbstractDNodeCandidate(mapping, target, parent, refreshIdsHolder); 
 		return diagramSynchronizer.getElementSynchronizer().createNewNode(diagramMappingsManager, abstractDNodeCandidate, false);
 	}
 

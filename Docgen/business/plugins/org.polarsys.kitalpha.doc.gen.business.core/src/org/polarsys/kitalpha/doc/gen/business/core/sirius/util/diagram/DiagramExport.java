@@ -35,7 +35,7 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ui.tools.api.actions.export.ExportAction;
-import org.eclipse.sirius.ext.swt.ImageFileFormat;
+import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat;
 
 /**
  * @author S0021936, Boubekeur Zendagui

@@ -596,7 +596,7 @@ public class ExtensibilityService {
 					{
 						try
 						{
-							session.removeSemanticResource(resource, NPM);
+							session.removeSemanticResource(resource, NPM, false);
 						}catch (Exception e){
 							
 						}
