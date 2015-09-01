@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
@@ -740,41 +741,71 @@ public class VpDiagramHelper {
 		{
 			if (container.eClass() == type)
 				return container;
-			
+
 			container = container.eContainer();
 		}
-		
+
 		return null;
 	}
 
 
 	public static boolean isValidContainerMapping(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
-		
-		DiagramExtension diagramExtension = (DiagramExtension)eObject;
-		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
-		EList<ContainerMapping> mappings = diagDesc.getAllContainerMappings();
-		
-		return mappings.contains(eObjectOrProxy);
+		if (false == eObjectOrProxy instanceof ContainerMapping)
+			return false;
+		else
+		{
+			DiagramExtension diagramExtension = (DiagramExtension)eObject;
+			DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
+			DiagramDescription diagramDescription = getDiagramDescription((ContainerMapping) eObjectOrProxy);
+			return EcoreUtil.equals(diagramDescription, diagDesc);
+		}
+
+		//DiagramExtension diagramExtension = (DiagramExtension)eObject;
+		//DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
+		//EList<ContainerMapping> mappings = diagDesc.getAllContainerMappings();
+		//return mappings.contains(eObjectOrProxy);
 	}
 
 
 	public static boolean isValidNode(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
-		
-		DiagramExtension diagramExtension = (DiagramExtension)eObject;
-		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
-		EList<NodeMapping> nodes = diagDesc.getAllNodeMappings();
-		
-		return nodes.contains(eObjectOrProxy);
+		if (false == eObjectOrProxy instanceof NodeMapping)
+			return false;
+		else
+		{
+			DiagramExtension diagramExtension = (DiagramExtension)eObject;
+			DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
+			DiagramDescription diagramDescription = getDiagramDescription((NodeMapping) eObjectOrProxy);
+			return EcoreUtil.equals(diagramDescription, diagDesc);
+		}
+		//DiagramExtension diagramExtension = (DiagramExtension)eObject;
+		//DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
+		//EList<NodeMapping> nodes = diagDesc.getAllNodeMappings();
+		//
+		//return nodes.contains(eObjectOrProxy);
 	}
+
 
 
 	public static boolean isValidEdge(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
-		
+
 		DiagramExtension diagramExtension = (DiagramExtension)eObject;
 		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
 		EList<EdgeMapping> edges = diagDesc.getAllEdgeMappings();
-		
+
 		return edges.contains(eObjectOrProxy);
 	}
-	
+
+	private static DiagramDescription getDiagramDescription(AbstractNodeMapping mapping){
+		EObject parent = mapping.eContainer();
+
+		while (parent != null){
+			if (parent instanceof DiagramDescription)
+				return (DiagramDescription) parent;
+			else
+				parent = parent.eContainer();
+		}
+
+		return null;
+	}
+
 }
