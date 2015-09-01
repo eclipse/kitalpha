@@ -52,6 +52,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGene
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.ContainerStyleImportMerger;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 public class ContainerImportPattern
 		extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.ContainerPattern {
@@ -306,7 +308,13 @@ public class ContainerImportPattern
 					}
 					//doremiImageStyle.setWorkspacePath(vpImageStyle.getImagePath());
 				}
+			} else {
+				EcoreUtil.Copier copier = new EcoreUtil.Copier();
+				cStyleDesc = (ContainerStyleDescription) copier.copy(parameter
+						.getImports().getStyle());
+			}
 
+			if (cStyleDesc != null) {
 				/********************** Setting Label properties ************************/
 				Label label = iContainerDescription.getNode_Label();
 				String labelExpression = SiriusExpressionHelper.getExpressoin(

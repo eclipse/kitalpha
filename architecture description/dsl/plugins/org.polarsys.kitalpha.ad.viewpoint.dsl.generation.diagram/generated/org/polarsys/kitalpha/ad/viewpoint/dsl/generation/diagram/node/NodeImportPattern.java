@@ -66,6 +66,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.m
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 public class NodeImportPattern
 		extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.NodePattern {
@@ -401,6 +403,14 @@ public class NodeImportPattern
 
 				nStyleDesc.setResizeKind(ResizeKind.NSEW_LITERAL);
 
+			} else {
+				EcoreUtil.Copier copier = new EcoreUtil.Copier();
+				nStyleDesc = (NodeStyleDescription) copier.copy(parameter
+						.getImports().getStyle());
+				copier.copyReferences();
+			}
+
+			if (nStyleDesc != null) {
 				/********************** Setting Label properties ************************/
 				Label label = iNodeDescription.getNode_Label();
 				String labelExpression = SiriusExpressionHelper.getExpressoin(

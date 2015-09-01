@@ -1,7 +1,8 @@
  
 NodeMapping nm = (NodeMapping) dNodeMapping;
 
-for (NodeDescription iNodeDescription : parameter.getStyle()) {
+for (NodeDescription iNodeDescription : parameter.getStyle()) 
+{
 	Condition condition = iNodeDescription.getCondition();
 	boolean conditionalStyle = false;
 	ConditionalNodeStyleDescription cnStyleDesc = null;
@@ -133,7 +134,16 @@ for (NodeDescription iNodeDescription : parameter.getStyle()) {
 		}
 		
 		nStyleDesc.setResizeKind(ResizeKind.NSEW_LITERAL);
-				
+	} 
+	else 
+	{
+		EcoreUtil.Copier copier = new EcoreUtil.Copier();
+		nStyleDesc = (NodeStyleDescription) copier.copy(parameter.getImports().getStyle());
+		copier.copyReferences();
+	}
+			
+	if (nStyleDesc != null)
+	{
 		/********************** Setting Label properties ************************/
 		Label label = iNodeDescription.getNode_Label();
 		String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
