@@ -215,7 +215,7 @@ public class ExtensionHelper {
 					// used package.
 					if (((childCreationData.delegatedFeature != null) && (childCreationData.delegatedFeature.getGenPackage() == genPackage)) || ((childCreationData.createClassifier.getGenPackage() == genPackage) && ((childCreationData.delegatedFeature == null) || allUsedGenPackagesWithClassifiers.contains(childCreationData.delegatedFeature.getGenPackage())))) {
 						GenClass featureClass = childCreationData.createFeature.getGenClass();
-						GenPackage featureGenPackage = featureClass.getGenPackage();
+						GenPackage featureGenPackage = genClass.getGenPackage();
 						Map<GenClass, List<GenClass.ChildCreationData>> map = result.get(featureGenPackage);
 						if (map == null) {
 							result.put(featureGenPackage, map = new LinkedHashMap<GenClass, List<GenClass.ChildCreationData>>());
