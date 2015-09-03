@@ -12,7 +12,7 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.model.attachment.feature"
       label="Kitalpha Model Attachment Feature (Icubation)"
-      version="0.5.1.qualifier"
+      version="0.5.2.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -28,9 +28,9 @@ Contributors:
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.model.common.commands.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.model.common.scrutiny.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.model.common.share.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.commands.feature" version="0.5.2.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.scrutiny.feature" version="0.5.2.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.common.share.feature" version="0.5.2.qualifier"/>
    </requires>
 
    <plugin
