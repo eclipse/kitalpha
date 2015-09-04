@@ -58,9 +58,9 @@ Page returns activityExplorer::Page:
 		('predicated' ':' hasPredicate=EBoolean)?
 		('show' 'viewer' ':' showViewer=EBoolean)?
 		
-		'sections' '{'
+		('sections' '{'
 			(ownedSections += Section)*
-		'}'
+		'}')?
 			
 	'}'
 ;
