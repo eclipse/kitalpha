@@ -33,8 +33,9 @@ else
 	 * @generated
 	 */
 	private boolean userPredicate(){
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException();
+		// TODO: implement this method to provide the user predicate
+		// Ensure that you remove @generated or mark it @generated NOT
+		return true;
 	}
 <%}%>
 <%String s_fileExtensions = parameter.getFileExtensions();%>
@@ -47,7 +48,7 @@ else
 	 * @return True if the current page can be used with the current resource. 
 	 * @generated
 	 */
-	private boolean fileExtensionPredicate(){
+	protected boolean fileExtensionPredicate(){
 		final EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();
 		final Resource eResource = rootSemanticModel.eResource();
 		if (null == eResource)

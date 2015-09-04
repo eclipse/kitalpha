@@ -42,13 +42,24 @@ public class PagePredicateJavaClass
 	protected final String TEXT_6 = " userPredicate(); ";
 	protected final String TEXT_7 = " fileExtensionPredicate(); ";
 	protected final String TEXT_8 = NL + "\t}" + NL;
-	protected final String TEXT_9 = "\t" + NL + "\t/**" + NL
-			+ "\t * User predicate implementation" + NL
-			+ "\t * @return True if OK, false otherwise." + NL
-			+ "\t * @generated" + NL + "\t */" + NL
-			+ "\tprivate boolean userPredicate(){" + NL
-			+ "\t\t// TODO Auto-generated method stub" + NL
-			+ "\t\tthrow new UnsupportedOperationException();" + NL + "\t}";
+	protected final String TEXT_9 = "\t"
+			+ NL
+			+ "\t/**"
+			+ NL
+			+ "\t * User predicate implementation"
+			+ NL
+			+ "\t * @return True if OK, false otherwise."
+			+ NL
+			+ "\t * @generated"
+			+ NL
+			+ "\t */"
+			+ NL
+			+ "\tprivate boolean userPredicate(){"
+			+ NL
+			+ "\t\t// TODO: implement this method to provide the user predicate"
+			+ NL
+			+ "\t\t// Ensure that you remove @generated or mark it @generated NOT"
+			+ NL + "\t\treturn true;" + NL + "\t}";
 	protected final String TEXT_10 = "\t"
 			+ NL
 			+ "\t/**"
@@ -65,7 +76,7 @@ public class PagePredicateJavaClass
 			+ NL
 			+ "\t */"
 			+ NL
-			+ "\tprivate boolean fileExtensionPredicate(){"
+			+ "\tprotected boolean fileExtensionPredicate(){"
 			+ NL
 			+ "\t\tfinal EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();"
 			+ NL
@@ -90,9 +101,10 @@ public class PagePredicateJavaClass
 			+ NL
 			+ "import java.util.List;"
 			+ NL
+			+ ""
+			+ NL
 			+ "import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;"
-			+ NL + "import org.eclipse.emf.common.util.URI;" + NL
-			+ "import org.eclipse.emf.ecore.EObject;" + NL
+			+ NL + "" + NL + "import org.eclipse.emf.common.util.URI;" + NL
 			+ "import org.eclipse.emf.ecore.resource.Resource;";
 	protected final String TEXT_15 = "\t";
 	protected final String TEXT_16 = NL;

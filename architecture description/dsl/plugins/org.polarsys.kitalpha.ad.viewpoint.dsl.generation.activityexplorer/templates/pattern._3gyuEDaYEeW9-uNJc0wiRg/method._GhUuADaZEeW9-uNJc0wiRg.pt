@@ -7,15 +7,18 @@ public class <%=classname%> implements IPredicate {
 	 * @generated
 	 */
 	public <%=classname%>() {
-		// TODO Auto-generated constructor stub
+		// TODO: Auto-generated constructor stub
 	}
 
 	/**
+	 * The predicate implementation
+	 * @return True if OK, false otherwise.
 	 * @generated 
 	 */
 	@Override
 	public boolean isOk() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException();
+		// TODO: implement this method to provide the predicate
+		// Ensure that you remove @generated or mark it @generated NOT
+		return true;
 	}
 }

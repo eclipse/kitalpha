@@ -29,74 +29,72 @@ public class ActivityJavaClass
 
 	public final String NL = nl == null ? (System.getProperties()
 			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "import org.eclipse.ui.forms.events.HyperlinkEvent;"
+	protected final String TEXT_1 = "import org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter;"
 			+ NL
-			+ "import org.eclipse.ui.forms.events.IHyperlinkListener;"
-			+ NL + NL;
+			+ "import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;"
+			+ NL
+			+ "import org.eclipse.emf.ecore.EObject;"
+			+ NL
+			+ "import org.eclipse.jface.dialogs.MessageDialog;"
+			+ NL
+			+ "import org.eclipse.sirius.business.api.session.Session;"
+			+ NL
+			+ "import org.eclipse.swt.widgets.Shell;"
+			+ NL
+			+ "import org.eclipse.ui.PlatformUI;"
+			+ NL
+			+ "import org.eclipse.ui.forms.events.HyperlinkEvent;" + NL + NL;
 	protected final String TEXT_2 = NL + "public class ";
-	protected final String TEXT_3 = " implements IHyperlinkListener {" + NL
-			+ "\t/**" + NL + "\t * Default constructor" + NL + "\t */" + NL
-			+ "\tpublic ";
+	protected final String TEXT_3 = " extends AbstractHyperlinkAdapter {" + NL
+			+ "\t" + NL + "\t/**" + NL + "\t * Default constructor" + NL
+			+ "\t */" + NL + "\tpublic ";
 	protected final String TEXT_4 = "() {"
 			+ NL
-			+ "\t\t// TODO Auto-generated constructor stub"
+			+ "\t\tsuper(ActivityExplorerManager.INSTANCE.getRootSemanticModel(), ActivityExplorerManager.INSTANCE.getSession());"
+			+ NL
+			+ "\t}"
+			+ NL
+			+ "\t"
+			+ NL
+			+ "\t/**"
+			+ NL
+			+ "\t * Constructor with parameters"
+			+ NL
+			+ "\t * @param root the root model element ({@link EObject})"
+			+ NL
+			+ "\t * @param session the associated {@link Session} with the activity explorer"
+			+ NL + "\t */" + NL + "\tpublic ";
+	protected final String TEXT_5 = "(EObject root, Session session) {"
+			+ NL
+			+ "\t\tsuper(root, session);"
 			+ NL
 			+ "\t}"
 			+ NL
 			+ ""
 			+ NL
-			+ "\t/*"
+			+ "\t\t/*"
 			+ NL
 			+ "\t * (non-Javadoc)"
 			+ NL
-			+ "\t * @see org.eclipse.ui.forms.events.IHyperlinkListener#linkEntered(org.eclipse.ui.forms.events.HyperlinkEvent)"
+			+ "\t * @see org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter#linkPressed(org.eclipse.ui.forms.events.HyperlinkEvent, org.eclipse.emf.ecore.EObject, org.eclipse.sirius.business.api.session.Session)"
 			+ NL
 			+ "\t */"
 			+ NL
 			+ "\t@Override"
 			+ NL
-			+ "\tpublic void linkEntered(HyperlinkEvent e) {"
+			+ "\tprotected void linkPressed(HyperlinkEvent event, EObject project_p, Session session) {"
 			+ NL
-			+ "\t\t// TODO Auto-generated method stub"
+			+ "\t\tShell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();"
 			+ NL
-			+ "\t\tthrow new UnsupportedOperationException();"
+			+ "\t\tMessageDialog.openInformation(shell, \"Activity Explorer(";
+	protected final String TEXT_6 = ")\", "
 			+ NL
-			+ "\t}"
-			+ NL
-			+ ""
-			+ NL
-			+ "\t/*"
-			+ NL
-			+ "\t * (non-Javadoc)"
-			+ NL
-			+ "\t * @see org.eclipse.ui.forms.events.IHyperlinkListener#linkExited(org.eclipse.ui.forms.events.HyperlinkEvent)"
-			+ NL
-			+ "\t */"
-			+ NL
-			+ "\t@Override"
-			+ NL
-			+ "\tpublic void linkExited(HyperlinkEvent e) {"
-			+ NL
-			+ "\t\t// TODO Auto-generated method stub"
-			+ NL
-			+ "\t\tthrow new UnsupportedOperationException();"
-			+ NL
-			+ "\t}"
-			+ NL
-			+ ""
-			+ NL
-			+ "\t/*"
-			+ NL
-			+ "\t * (non-Javadoc)"
-			+ NL
-			+ "\t * @see org.eclipse.ui.forms.events.IHyperlinkListener#linkActivated(org.eclipse.ui.forms.events.HyperlinkEvent)"
-			+ NL + "\t */" + NL + "\t@Override" + NL
-			+ "\tpublic void linkActivated(HyperlinkEvent e) {" + NL
-			+ "\t\t// TODO Auto-generated method stub" + NL
-			+ "\t\tthrow new UnsupportedOperationException();" + NL + "\t}"
-			+ NL + "}" + NL;
-	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
+			+ "\t\t\t\t\t\t\t\t\t  \"This is a generated activity implementation.\\n (";
+	protected final String TEXT_7 = ".";
+	protected final String TEXT_8 = ".java)\");" + NL + "\t}" + NL + "}" + NL;
+	protected final String TEXT_9 = NL + " ";
+	protected final String TEXT_10 = NL;
+	protected final String TEXT_11 = NL;
 
 	public ActivityJavaClass() {
 		//Here is the constructor
@@ -133,8 +131,8 @@ public class ActivityJavaClass
 					OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_10);
+		stringBuffer.append(TEXT_11);
 		return stringBuffer.toString();
 	}
 
@@ -201,6 +199,14 @@ public class ActivityJavaClass
 		stringBuffer.append(TEXT_3);
 		stringBuffer.append(classname);
 		stringBuffer.append(TEXT_4);
+		stringBuffer.append(classname);
+		stringBuffer.append(TEXT_5);
+		stringBuffer.append(classname);
+		stringBuffer.append(TEXT_6);
+		stringBuffer.append(packagename);
+		stringBuffer.append(TEXT_7);
+		stringBuffer.append(classname);
+		stringBuffer.append(TEXT_8);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassCode",
 				stringBuffer.toString());
@@ -214,6 +220,20 @@ public class ActivityJavaClass
 				.getProject(projectname);
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms",
 				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project,
+				"org.eclipse.amalgam.explorer.activity.ui",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.emf.ecore",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.sirius",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms",
+				new NullProgressMonitor());
+		stringBuffer.append(TEXT_9);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(),
 				"updateProjectDependecies", stringBuffer.toString());
