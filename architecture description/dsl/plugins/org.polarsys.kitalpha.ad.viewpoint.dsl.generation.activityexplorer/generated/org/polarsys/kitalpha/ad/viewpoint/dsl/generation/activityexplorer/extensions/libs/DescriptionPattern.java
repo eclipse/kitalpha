@@ -102,6 +102,10 @@ public class DescriptionPattern {
 		if (null == description
 				|| (null != description && description.isEmpty()))
 			description = "Description body text";
+		else {
+			description = description.replaceAll("<", "&lt;");
+			description = description.replaceAll(">", "&gt;");
+		}
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(description);

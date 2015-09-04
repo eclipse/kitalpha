@@ -2,6 +2,11 @@
 String description = parameter.getDescription();
 if (null == description || (null != description && description.isEmpty()))
 	description = "Description body text";
+else
+{
+	description = description.replaceAll("<", "&lt;");
+	description = description.replaceAll(">", "&gt;");
+}
 %>
 
 			<Description>
