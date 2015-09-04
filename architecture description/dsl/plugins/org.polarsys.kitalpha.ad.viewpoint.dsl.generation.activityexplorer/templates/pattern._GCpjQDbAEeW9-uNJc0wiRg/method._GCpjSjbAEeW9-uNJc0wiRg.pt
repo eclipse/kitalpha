@@ -1,2 +1,9 @@
 <%IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectname);%>
 <%PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms", new NullProgressMonitor());%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.ui", new NullProgressMonitor());%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime", new NullProgressMonitor());%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.amalgam.explorer.activity.ui", new NullProgressMonitor());%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.emf.ecore", new NullProgressMonitor());%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.sirius", new NullProgressMonitor());%>
+<%PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms", new NullProgressMonitor());%>
+ 

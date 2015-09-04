@@ -38,13 +38,32 @@ public class AbstractPredicatedElementJavaClass
 	protected final String TEXT_4 = " implements IPredicate {" + NL + "\t/**"
 			+ NL + "\t * Default constructor" + NL + "\t * @generated" + NL
 			+ "\t */" + NL + "\tpublic ";
-	protected final String TEXT_5 = "() {" + NL
-			+ "\t\t// TODO Auto-generated constructor stub" + NL + "\t}" + NL
-			+ "" + NL + "\t/**" + NL + "\t * @generated " + NL + "\t */" + NL
-			+ "\t@Override" + NL + "\tpublic boolean isOk() {" + NL
-			+ "\t\t// TODO Auto-generated method stub" + NL
-			+ "\t\tthrow new UnsupportedOperationException();" + NL + "\t}"
-			+ NL + "}" + NL;
+	protected final String TEXT_5 = "() {"
+			+ NL
+			+ "\t\t// TODO: Auto-generated constructor stub"
+			+ NL
+			+ "\t}"
+			+ NL
+			+ ""
+			+ NL
+			+ "\t/**"
+			+ NL
+			+ "\t * The predicate implementation"
+			+ NL
+			+ "\t * @return True if OK, false otherwise."
+			+ NL
+			+ "\t * @generated "
+			+ NL
+			+ "\t */"
+			+ NL
+			+ "\t@Override"
+			+ NL
+			+ "\tpublic boolean isOk() {"
+			+ NL
+			+ "\t\t// TODO: implement this method to provide the predicate"
+			+ NL
+			+ "\t\t// Ensure that you remove @generated or mark it @generated NOT"
+			+ NL + "\t\treturn true;" + NL + "\t}" + NL + "}" + NL;
 	protected final String TEXT_6 = NL;
 	protected final String TEXT_7 = NL;
 
@@ -157,6 +176,19 @@ public class AbstractPredicatedElementJavaClass
 				.getProject(projectname);
 		PDEUtility.updateRequiredBundles(project,
 				"org.eclipse.amalgam.explorer.activity.ui",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project,
+				"org.eclipse.amalgam.explorer.activity.ui",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.emf.ecore",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.sirius",
+				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms",
 				new NullProgressMonitor());
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(),
