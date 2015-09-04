@@ -25,7 +25,9 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird,
+ org.eclipse.xtext.xbase.lib,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j,
  org.eclipse.core.resources,
  org.eclipse.emf.validation.model,
@@ -41,3 +43,4 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation
+

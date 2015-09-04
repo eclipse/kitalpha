@@ -29,6 +29,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getShortName <em>Short Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getName <em>Name</em>}</li>
@@ -44,7 +45,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl.ViewpointImpl#getVP_Aspects <em>VP Aspects</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

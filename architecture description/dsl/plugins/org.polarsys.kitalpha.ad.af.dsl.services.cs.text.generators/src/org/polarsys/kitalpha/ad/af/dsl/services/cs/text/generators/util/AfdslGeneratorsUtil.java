@@ -13,6 +13,8 @@ package org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.util;
 
 import java.text.DateFormat;
 
+import org.eclipse.emf.common.util.URI;
+
 /**
  * 
  * @author Amine Lajmi
@@ -32,5 +34,28 @@ public class AfdslGeneratorsUtil {
 
 	public static String getCurrentDate() {
 		return DateFormat.getDateInstance().format(new java.util.Date());
+	}
+	
+	/**
+	 * Copied from {@link org.polarsys.kitalpha.ad.common.utils.URIFix}
+	 */
+	public static class URIFix {
+
+		public static URI createPlatformPluginURI(String path, boolean encode) {
+			return createURI("platform:/plugin/", path);
+		}
+
+		public static URI createPlatformResourceURI(String path, boolean encode) {
+			return createURI("platform:/resource/", path);
+		}
+
+		private static URI createURI(String prefix, String path) {
+			String uri = prefix;
+			if (path.startsWith("/"))
+				uri += path.substring(1);
+			else
+				uri += path;
+			return URI.createURI(uri);
+		}
 	}
 }

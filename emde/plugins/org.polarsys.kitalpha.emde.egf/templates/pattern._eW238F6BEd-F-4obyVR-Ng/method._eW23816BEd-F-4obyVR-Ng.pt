@@ -57,6 +57,51 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 	extends <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor")%>
 	implements <%=genModel.getImportedName("org.eclipse.jface.viewers.ISelectionChangedListener")%><%if (genPackage.isExtensibleProviderFactory()) {%>, <%=genModel.getImportedName("org.eclipse.jface.util.IPropertyChangeListener")%><%}%>
 {
+
+	private final class RefreshViewerAction extends <%=genModel.getImportedName("org.eclipse.jface.action.Action")%> {
+		private RefreshViewerAction() {
+			super(<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.getString("_UI_RefreshViewer_menu_item"));<%=genModel.getNonNLS()%>
+		}
+
+<%if (genModel.useClassOverrideAnnotation()) {%>
+			@Override
+<%}%>
+		public boolean isEnabled() {
+			return activeEditorPart instanceof <%=genModel.getImportedName("org.eclipse.emf.common.ui.viewer.IViewerProvider")%>;
+		}
+
+<%if (genModel.useClassOverrideAnnotation()) {%>
+			@Override
+<%}%>
+		public void run() {
+			if (activeEditorPart instanceof <%=genModel.getImportedName("org.eclipse.emf.common.ui.viewer.IViewerProvider")%>) {
+				<%=genModel.getImportedName("org.eclipse.jface.viewers.Viewer")%> viewer = ((<%=genModel.getImportedName("org.eclipse.emf.common.ui.viewer.IViewerProvider")%>) activeEditorPart)
+						.getViewer();
+				if (viewer != null) {
+					viewer.refresh();
+				}
+			}
+		}
+	}
+
+	private final class ShowPropertiesViewAction extends <%=genModel.getImportedName("org.eclipse.jface.action.Action")%> {
+		private ShowPropertiesViewAction() {
+			super(<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.getString("_UI_ShowPropertiesView_menu_item"));<%=genModel.getNonNLS()%>
+		}
+
+<%if (genModel.useClassOverrideAnnotation()) {%>
+			@Override
+<%}%>
+		public void run() {
+			try {
+				getPage().showView("org.eclipse.ui.views.PropertySheet"); <%=genModel.getNonNLS()%>
+			} catch (<%=genModel.getImportedName("org.eclipse.ui.PartInitException")%> exception) {
+				<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.log(exception);
+			}
+		}
+	}
+
+
 <%if (genModel.hasCopyrightField()) {%>
 	/**
 	 * <!-- begin-user-doc -->
@@ -271,25 +316,8 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected <%=genModel.getImportedName("org.eclipse.jface.action.IAction")%> showPropertiesViewAction =
-		new <%=genModel.getImportedName("org.eclipse.jface.action.Action")%>(<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.getString("_UI_ShowPropertiesView_menu_item"))<%=genModel.getNonNLS()%>
-		{
-<%if (genModel.useClassOverrideAnnotation()) {%>
-			@Override
-<%}%>
-			public void run()
-			{
-				try
-				{
-					getPage().showView("org.eclipse.ui.views.PropertySheet");<%=genModel.getNonNLS()%>
-				}
-				catch (<%=genModel.getImportedName("org.eclipse.ui.PartInitException")%> exception)
-				{
-					<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.log(exception);
-				}
-			}
-		};
-
+	protected <%=genModel.getImportedName("org.eclipse.jface.action.IAction")%> showPropertiesViewAction = new ShowPropertiesViewAction();
+	
 	/**
 	 * This action refreshes the viewer of the current editor if the editor
 	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
@@ -297,33 +325,8 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected <%=genModel.getImportedName("org.eclipse.jface.action.IAction")%> refreshViewerAction =
-		new <%=genModel.getImportedName("org.eclipse.jface.action.Action")%>(<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.getString("_UI_RefreshViewer_menu_item"))<%=genModel.getNonNLS()%>
-		{
-<%if (genModel.useClassOverrideAnnotation()) {%>
-			@Override
-<%}%>
-			public boolean isEnabled()
-			{
-				return activeEditorPart instanceof <%=genModel.getImportedName("org.eclipse.emf.common.ui.viewer.IViewerProvider")%>;
-			}
-
-<%if (genModel.useClassOverrideAnnotation()) {%>
-			@Override
-<%}%>
-			public void run()
-			{
-				if (activeEditorPart instanceof <%=genModel.getImportedName("org.eclipse.emf.common.ui.viewer.IViewerProvider")%>)
-				{
-					<%=genModel.getImportedName("org.eclipse.jface.viewers.Viewer")%> viewer = ((<%=genModel.getImportedName("org.eclipse.emf.common.ui.viewer.IViewerProvider")%>)activeEditorPart).getViewer();
-					if (viewer != null)
-					{
-						viewer.refresh();
-					}
-				}
-			}
-		};
-
+	protected <%=genModel.getImportedName("org.eclipse.jface.action.IAction")%> refreshViewerAction = new RefreshViewerAction();
+	
 <%if (genModel.isCreationCommands()) {%>
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor

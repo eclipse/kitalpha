@@ -53,7 +53,7 @@ public class DetachmentEditorInput implements IEditorInput {
 		
 		String IMG_PATH = "icons/run_detach.gif";	//$NON-NLS-1$
 		Bundle currentBundle = Activator.getDefault().getBundle();
-		URL url = FileLocator.find(currentBundle, new Path(IMG_PATH), Collections.emptyMap());
+		URL url = FileLocator.find(currentBundle, new Path(IMG_PATH), null);
 		
 		return ImageDescriptor.createFromURL(url);
 	}

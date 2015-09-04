@@ -30,7 +30,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.xtext.ui.XtextProjectHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;

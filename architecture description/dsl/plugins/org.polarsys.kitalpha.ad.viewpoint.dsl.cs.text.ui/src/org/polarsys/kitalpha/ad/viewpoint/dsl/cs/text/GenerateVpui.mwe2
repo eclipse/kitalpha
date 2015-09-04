@@ -19,6 +19,17 @@ var file.extensions = "ui.vptext"
 var projectName = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui"
 var runtimeProject = "../${projectName}"
 
+var polarsysCopyrightHeader = "/*******************************************************************************
+ * Copyright (c) \${year} Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/"
+
 Workflow {
     bean = StandaloneSetup {
             scanClassPath = true
@@ -87,6 +98,7 @@ Workflow {
         }
     
         component = Generator {
+        	fileHeader = polarsysCopyrightHeader
             pathRtProject = runtimeProject
             pathUiProject = "${runtimeProject}.ui"
          //   pathTestProject = "${runtimeProject}.tests"
@@ -100,21 +112,13 @@ Workflow {
                 fragment = grammarAccess.GrammarAccessFragment {}
     
                 // generates Java API for the generated EPackages
-                fragment = ecore.EcoreGeneratorFragment {
-                // referencedGenModels = "
-                //  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
-                //  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
-                // "
-                }
+                fragment = ecore.EMFGeneratorFragment {}
     
                 // Serializer 2.0
                 fragment = serializer.SerializerFragment {
                 	generateStub = false
                 }
                 
-                // the serialization component (1.0)
-                // fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
-    
                 // a custom ResourceFactory for use with EMF
                 fragment = resourceFactory.ResourceFactoryFragment {
                     fileExtensions = file.extensions
@@ -132,10 +136,6 @@ Workflow {
                 //    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
                 //    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
                 }
-    
-                // scoping and exporting API
-                // fragment = scoping.ImportURIScopingFragment {}
-                // fragment = exporting.SimpleNamesFragment {}
     
                 // scoping and exporting API
                 fragment = scoping.ImportNamespacesScopingFragment {}
@@ -166,15 +166,6 @@ Workflow {
     
                 // generates a more lightweight Antlr parser and lexer tailored for content assist
                 fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
-    
-                // generates junit test support classes into Generator#pathTestProject
-          //      fragment = junit.Junit4Fragment {}
-    
-                // project wizard (optional)
-                // fragment = projectWizard.SimpleProjectWizardFragment {
-                //      generatorProjectName = "${projectName}"
-                //      modelFileExtension = file.extensions
-                // }
     
                 // rename refactoring
                 fragment = refactoring.RefactorElementNameFragment {}

@@ -12,6 +12,8 @@ Export-Package: org.polarsys.kitalpha.emde.model,
  org.polarsys.kitalpha.emde.model.impl,
  org.polarsys.kitalpha.emde.model.util
 Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.polarsys.kitalpha.emde;visibility:=reexport,
  org.polarsys.kitalpha.emde.xmi;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport

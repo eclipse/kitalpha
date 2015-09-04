@@ -216,7 +216,7 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 		extensibleElementEClass.getESuperTypes().add(this.getElement());
 		elementExtensionEClass.getESuperTypes().add(this.getExtensibleElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(extensibleElementEClass, ExtensibleElement.class, "ExtensibleElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -228,20 +228,20 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// http://www.polarsys.org/kitalpha/emde/extension
+		// http://www.polarsys.org/kitalpha/emde/1.0.0/extension
 		createExtensionAnnotations();
 		// http://com.thalesgroup.mde/simplifiedM2/Navigable
 		createNavigableAnnotations();
 	}
 
 	/**
-	 * Initializes the annotations for <b>http://www.polarsys.org/kitalpha/emde/extension</b>.
+	 * Initializes the annotations for <b>http://www.polarsys.org/kitalpha/emde/1.0.0/extension</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void createExtensionAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/extension"; //$NON-NLS-1$		
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$	
 		addAnnotation(this, source, new String[] { "useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
 				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
 		});
@@ -254,7 +254,7 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 	 * @generated
 	 */
 	protected void createNavigableAnnotations() {
-		String source = "http://com.thalesgroup.mde/simplifiedM2/Navigable"; //$NON-NLS-1$			
+		String source = "http://com.thalesgroup.mde/simplifiedM2/Navigable"; //$NON-NLS-1$	
 		addAnnotation(getExtensibleElement_OwnedExtensions(), source, new String[] {});
 	}
 

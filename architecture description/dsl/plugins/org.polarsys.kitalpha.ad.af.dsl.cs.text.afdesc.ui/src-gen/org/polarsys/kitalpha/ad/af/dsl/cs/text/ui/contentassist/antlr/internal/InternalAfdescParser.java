@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
 package org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.contentassist.antlr.internal; 
 
 import java.io.InputStream;
@@ -30,18 +20,23 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 @SuppressWarnings("all")
 public class InternalAfdescParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ArchitectureFramework'", "'{'", "'}'", "'description:'", "'shortName:'", "'Configuration'", "','", "'rootProjectName:'", "'Viewpoints'", "'.'"
     };
-    public static final int RULE_ID=4;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
+    public static final int RULE_ID=4;
     public static final int RULE_STRING=5;
     public static final int T__16=16;
     public static final int T__15=15;
@@ -51,8 +46,13 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__20=20;
     public static final int RULE_INT=6;
     public static final int RULE_WS=9;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int EOF=-1;
+    public static final int RULE_ML_COMMENT=7;
 
     // delegates
     // delegators
@@ -92,11 +92,11 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleNamedElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:61:1: entryRuleNamedElement : ruleNamedElement EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:68:1: entryRuleNamedElement : ruleNamedElement EOF ;
     public final void entryRuleNamedElement() throws RecognitionException {
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:62:1: ( ruleNamedElement EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:63:1: ruleNamedElement EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:69:1: ( ruleNamedElement EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:70:1: ruleNamedElement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNamedElementRule()); 
@@ -126,17 +126,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleNamedElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:70:1: ruleNamedElement : ( ruleArchitectureFramework ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:77:1: ruleNamedElement : ( ruleArchitectureFramework ) ;
     public final void ruleNamedElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:74:2: ( ( ruleArchitectureFramework ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:75:1: ( ruleArchitectureFramework )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:81:2: ( ( ruleArchitectureFramework ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:82:1: ( ruleArchitectureFramework )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:75:1: ( ruleArchitectureFramework )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:76:1: ruleArchitectureFramework
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:82:1: ( ruleArchitectureFramework )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:83:1: ruleArchitectureFramework
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNamedElementAccess().getArchitectureFrameworkParserRuleCall()); 
@@ -171,11 +171,11 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleArchitectureFramework"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:89:1: entryRuleArchitectureFramework : ruleArchitectureFramework EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:96:1: entryRuleArchitectureFramework : ruleArchitectureFramework EOF ;
     public final void entryRuleArchitectureFramework() throws RecognitionException {
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:90:1: ( ruleArchitectureFramework EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:91:1: ruleArchitectureFramework EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:97:1: ( ruleArchitectureFramework EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:98:1: ruleArchitectureFramework EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkRule()); 
@@ -205,23 +205,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleArchitectureFramework"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:98:1: ruleArchitectureFramework : ( ( rule__ArchitectureFramework__Group__0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:105:1: ruleArchitectureFramework : ( ( rule__ArchitectureFramework__Group__0 ) ) ;
     public final void ruleArchitectureFramework() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:102:2: ( ( ( rule__ArchitectureFramework__Group__0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:103:1: ( ( rule__ArchitectureFramework__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:109:2: ( ( ( rule__ArchitectureFramework__Group__0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:110:1: ( ( rule__ArchitectureFramework__Group__0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:103:1: ( ( rule__ArchitectureFramework__Group__0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:104:1: ( rule__ArchitectureFramework__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:110:1: ( ( rule__ArchitectureFramework__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:111:1: ( rule__ArchitectureFramework__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getGroup()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:105:1: ( rule__ArchitectureFramework__Group__0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:105:2: rule__ArchitectureFramework__Group__0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:112:1: ( rule__ArchitectureFramework__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:112:2: rule__ArchitectureFramework__Group__0
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__0_in_ruleArchitectureFramework159);
             rule__ArchitectureFramework__Group__0();
@@ -256,11 +256,11 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:117:1: entryRuleConfiguration : ruleConfiguration EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:124:1: entryRuleConfiguration : ruleConfiguration EOF ;
     public final void entryRuleConfiguration() throws RecognitionException {
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:118:1: ( ruleConfiguration EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:119:1: ruleConfiguration EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:125:1: ( ruleConfiguration EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:126:1: ruleConfiguration EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationRule()); 
@@ -290,23 +290,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:126:1: ruleConfiguration : ( ( rule__Configuration__Group__0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:133:1: ruleConfiguration : ( ( rule__Configuration__Group__0 ) ) ;
     public final void ruleConfiguration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:130:2: ( ( ( rule__Configuration__Group__0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:131:1: ( ( rule__Configuration__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:137:2: ( ( ( rule__Configuration__Group__0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:138:1: ( ( rule__Configuration__Group__0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:131:1: ( ( rule__Configuration__Group__0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:132:1: ( rule__Configuration__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:138:1: ( ( rule__Configuration__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:139:1: ( rule__Configuration__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getGroup()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:133:1: ( rule__Configuration__Group__0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:133:2: rule__Configuration__Group__0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:140:1: ( rule__Configuration__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:140:2: rule__Configuration__Group__0
             {
             pushFollow(FOLLOW_rule__Configuration__Group__0_in_ruleConfiguration219);
             rule__Configuration__Group__0();
@@ -341,11 +341,11 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleConfigurationElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:145:1: entryRuleConfigurationElement : ruleConfigurationElement EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:152:1: entryRuleConfigurationElement : ruleConfigurationElement EOF ;
     public final void entryRuleConfigurationElement() throws RecognitionException {
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:146:1: ( ruleConfigurationElement EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:147:1: ruleConfigurationElement EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:153:1: ( ruleConfigurationElement EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:154:1: ruleConfigurationElement EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationElementRule()); 
@@ -375,17 +375,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleConfigurationElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:154:1: ruleConfigurationElement : ( ruleGenerationConfiguration ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:161:1: ruleConfigurationElement : ( ruleGenerationConfiguration ) ;
     public final void ruleConfigurationElement() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:158:2: ( ( ruleGenerationConfiguration ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:159:1: ( ruleGenerationConfiguration )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:165:2: ( ( ruleGenerationConfiguration ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:166:1: ( ruleGenerationConfiguration )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:159:1: ( ruleGenerationConfiguration )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:160:1: ruleGenerationConfiguration
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:166:1: ( ruleGenerationConfiguration )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:167:1: ruleGenerationConfiguration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationElementAccess().getGenerationConfigurationParserRuleCall()); 
@@ -420,11 +420,11 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleGenerationConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:173:1: entryRuleGenerationConfiguration : ruleGenerationConfiguration EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:180:1: entryRuleGenerationConfiguration : ruleGenerationConfiguration EOF ;
     public final void entryRuleGenerationConfiguration() throws RecognitionException {
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:174:1: ( ruleGenerationConfiguration EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:175:1: ruleGenerationConfiguration EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:181:1: ( ruleGenerationConfiguration EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:182:1: ruleGenerationConfiguration EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGenerationConfigurationRule()); 
@@ -454,23 +454,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleGenerationConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:182:1: ruleGenerationConfiguration : ( ( rule__GenerationConfiguration__Group__0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:189:1: ruleGenerationConfiguration : ( ( rule__GenerationConfiguration__Group__0 ) ) ;
     public final void ruleGenerationConfiguration() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:186:2: ( ( ( rule__GenerationConfiguration__Group__0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:187:1: ( ( rule__GenerationConfiguration__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:193:2: ( ( ( rule__GenerationConfiguration__Group__0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:194:1: ( ( rule__GenerationConfiguration__Group__0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:187:1: ( ( rule__GenerationConfiguration__Group__0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:188:1: ( rule__GenerationConfiguration__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:194:1: ( ( rule__GenerationConfiguration__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:195:1: ( rule__GenerationConfiguration__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGenerationConfigurationAccess().getGroup()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:189:1: ( rule__GenerationConfiguration__Group__0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:189:2: rule__GenerationConfiguration__Group__0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:196:1: ( rule__GenerationConfiguration__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:196:2: rule__GenerationConfiguration__Group__0
             {
             pushFollow(FOLLOW_rule__GenerationConfiguration__Group__0_in_ruleGenerationConfiguration338);
             rule__GenerationConfiguration__Group__0();
@@ -505,11 +505,11 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleViewpoints"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:201:1: entryRuleViewpoints : ruleViewpoints EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:208:1: entryRuleViewpoints : ruleViewpoints EOF ;
     public final void entryRuleViewpoints() throws RecognitionException {
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:202:1: ( ruleViewpoints EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:203:1: ruleViewpoints EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:209:1: ( ruleViewpoints EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:210:1: ruleViewpoints EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsRule()); 
@@ -539,23 +539,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleViewpoints"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:210:1: ruleViewpoints : ( ( rule__Viewpoints__Group__0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:217:1: ruleViewpoints : ( ( rule__Viewpoints__Group__0 ) ) ;
     public final void ruleViewpoints() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:214:2: ( ( ( rule__Viewpoints__Group__0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:215:1: ( ( rule__Viewpoints__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:221:2: ( ( ( rule__Viewpoints__Group__0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:222:1: ( ( rule__Viewpoints__Group__0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:215:1: ( ( rule__Viewpoints__Group__0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:216:1: ( rule__Viewpoints__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:222:1: ( ( rule__Viewpoints__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:223:1: ( rule__Viewpoints__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getGroup()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:217:1: ( rule__Viewpoints__Group__0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:217:2: rule__Viewpoints__Group__0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:224:1: ( rule__Viewpoints__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:224:2: rule__Viewpoints__Group__0
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group__0_in_ruleViewpoints398);
             rule__Viewpoints__Group__0();
@@ -590,11 +590,11 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleFQN"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:229:1: entryRuleFQN : ruleFQN EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:236:1: entryRuleFQN : ruleFQN EOF ;
     public final void entryRuleFQN() throws RecognitionException {
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:230:1: ( ruleFQN EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:231:1: ruleFQN EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:237:1: ( ruleFQN EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:238:1: ruleFQN EOF
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNRule()); 
@@ -624,23 +624,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleFQN"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:238:1: ruleFQN : ( ( rule__FQN__Group__0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:245:1: ruleFQN : ( ( rule__FQN__Group__0 ) ) ;
     public final void ruleFQN() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:242:2: ( ( ( rule__FQN__Group__0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:243:1: ( ( rule__FQN__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:249:2: ( ( ( rule__FQN__Group__0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:250:1: ( ( rule__FQN__Group__0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:243:1: ( ( rule__FQN__Group__0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:244:1: ( rule__FQN__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:250:1: ( ( rule__FQN__Group__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:251:1: ( rule__FQN__Group__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getGroup()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:245:1: ( rule__FQN__Group__0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:245:2: rule__FQN__Group__0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:252:1: ( rule__FQN__Group__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:252:2: rule__FQN__Group__0
             {
             pushFollow(FOLLOW_rule__FQN__Group__0_in_ruleFQN458);
             rule__FQN__Group__0();
@@ -675,14 +675,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:259:1: rule__ArchitectureFramework__Group__0 : rule__ArchitectureFramework__Group__0__Impl rule__ArchitectureFramework__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:266:1: rule__ArchitectureFramework__Group__0 : rule__ArchitectureFramework__Group__0__Impl rule__ArchitectureFramework__Group__1 ;
     public final void rule__ArchitectureFramework__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:263:1: ( rule__ArchitectureFramework__Group__0__Impl rule__ArchitectureFramework__Group__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:264:2: rule__ArchitectureFramework__Group__0__Impl rule__ArchitectureFramework__Group__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:270:1: ( rule__ArchitectureFramework__Group__0__Impl rule__ArchitectureFramework__Group__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:271:2: rule__ArchitectureFramework__Group__0__Impl rule__ArchitectureFramework__Group__1
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__0__Impl_in_rule__ArchitectureFramework__Group__0492);
             rule__ArchitectureFramework__Group__0__Impl();
@@ -713,23 +713,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:271:1: rule__ArchitectureFramework__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:278:1: rule__ArchitectureFramework__Group__0__Impl : ( () ) ;
     public final void rule__ArchitectureFramework__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:275:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:276:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:282:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:283:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:276:1: ( () )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:277:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:283:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:284:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getArchitectureFrameworkAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:278:1: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:280:1: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:285:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:287:1: 
             {
             }
 
@@ -754,14 +754,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:290:1: rule__ArchitectureFramework__Group__1 : rule__ArchitectureFramework__Group__1__Impl rule__ArchitectureFramework__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:297:1: rule__ArchitectureFramework__Group__1 : rule__ArchitectureFramework__Group__1__Impl rule__ArchitectureFramework__Group__2 ;
     public final void rule__ArchitectureFramework__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:294:1: ( rule__ArchitectureFramework__Group__1__Impl rule__ArchitectureFramework__Group__2 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:295:2: rule__ArchitectureFramework__Group__1__Impl rule__ArchitectureFramework__Group__2
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:301:1: ( rule__ArchitectureFramework__Group__1__Impl rule__ArchitectureFramework__Group__2 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:302:2: rule__ArchitectureFramework__Group__1__Impl rule__ArchitectureFramework__Group__2
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__1__Impl_in_rule__ArchitectureFramework__Group__1553);
             rule__ArchitectureFramework__Group__1__Impl();
@@ -792,17 +792,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:302:1: rule__ArchitectureFramework__Group__1__Impl : ( 'ArchitectureFramework' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:309:1: rule__ArchitectureFramework__Group__1__Impl : ( 'ArchitectureFramework' ) ;
     public final void rule__ArchitectureFramework__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:306:1: ( ( 'ArchitectureFramework' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:307:1: ( 'ArchitectureFramework' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:313:1: ( ( 'ArchitectureFramework' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:314:1: ( 'ArchitectureFramework' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:307:1: ( 'ArchitectureFramework' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:308:1: 'ArchitectureFramework'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:314:1: ( 'ArchitectureFramework' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:315:1: 'ArchitectureFramework'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getArchitectureFrameworkKeyword_1()); 
@@ -833,14 +833,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__2"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:321:1: rule__ArchitectureFramework__Group__2 : rule__ArchitectureFramework__Group__2__Impl rule__ArchitectureFramework__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:328:1: rule__ArchitectureFramework__Group__2 : rule__ArchitectureFramework__Group__2__Impl rule__ArchitectureFramework__Group__3 ;
     public final void rule__ArchitectureFramework__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:325:1: ( rule__ArchitectureFramework__Group__2__Impl rule__ArchitectureFramework__Group__3 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:326:2: rule__ArchitectureFramework__Group__2__Impl rule__ArchitectureFramework__Group__3
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:332:1: ( rule__ArchitectureFramework__Group__2__Impl rule__ArchitectureFramework__Group__3 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:333:2: rule__ArchitectureFramework__Group__2__Impl rule__ArchitectureFramework__Group__3
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__2__Impl_in_rule__ArchitectureFramework__Group__2615);
             rule__ArchitectureFramework__Group__2__Impl();
@@ -871,22 +871,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:333:1: rule__ArchitectureFramework__Group__2__Impl : ( ( rule__ArchitectureFramework__NameAssignment_2 )? ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:340:1: rule__ArchitectureFramework__Group__2__Impl : ( ( rule__ArchitectureFramework__NameAssignment_2 )? ) ;
     public final void rule__ArchitectureFramework__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:337:1: ( ( ( rule__ArchitectureFramework__NameAssignment_2 )? ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:338:1: ( ( rule__ArchitectureFramework__NameAssignment_2 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:344:1: ( ( ( rule__ArchitectureFramework__NameAssignment_2 )? ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:345:1: ( ( rule__ArchitectureFramework__NameAssignment_2 )? )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:338:1: ( ( rule__ArchitectureFramework__NameAssignment_2 )? )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:339:1: ( rule__ArchitectureFramework__NameAssignment_2 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:345:1: ( ( rule__ArchitectureFramework__NameAssignment_2 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:346:1: ( rule__ArchitectureFramework__NameAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getNameAssignment_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:340:1: ( rule__ArchitectureFramework__NameAssignment_2 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:347:1: ( rule__ArchitectureFramework__NameAssignment_2 )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -895,7 +895,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:340:2: rule__ArchitectureFramework__NameAssignment_2
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:347:2: rule__ArchitectureFramework__NameAssignment_2
                     {
                     pushFollow(FOLLOW_rule__ArchitectureFramework__NameAssignment_2_in_rule__ArchitectureFramework__Group__2__Impl645);
                     rule__ArchitectureFramework__NameAssignment_2();
@@ -933,14 +933,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__3"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:350:1: rule__ArchitectureFramework__Group__3 : rule__ArchitectureFramework__Group__3__Impl rule__ArchitectureFramework__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:357:1: rule__ArchitectureFramework__Group__3 : rule__ArchitectureFramework__Group__3__Impl rule__ArchitectureFramework__Group__4 ;
     public final void rule__ArchitectureFramework__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:354:1: ( rule__ArchitectureFramework__Group__3__Impl rule__ArchitectureFramework__Group__4 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:355:2: rule__ArchitectureFramework__Group__3__Impl rule__ArchitectureFramework__Group__4
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:361:1: ( rule__ArchitectureFramework__Group__3__Impl rule__ArchitectureFramework__Group__4 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:362:2: rule__ArchitectureFramework__Group__3__Impl rule__ArchitectureFramework__Group__4
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__3__Impl_in_rule__ArchitectureFramework__Group__3676);
             rule__ArchitectureFramework__Group__3__Impl();
@@ -971,17 +971,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:362:1: rule__ArchitectureFramework__Group__3__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:369:1: rule__ArchitectureFramework__Group__3__Impl : ( '{' ) ;
     public final void rule__ArchitectureFramework__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:366:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:367:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:373:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:374:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:367:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:368:1: '{'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:374:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:375:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getLeftCurlyBracketKeyword_3()); 
@@ -1012,14 +1012,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__4"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:381:1: rule__ArchitectureFramework__Group__4 : rule__ArchitectureFramework__Group__4__Impl rule__ArchitectureFramework__Group__5 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:388:1: rule__ArchitectureFramework__Group__4 : rule__ArchitectureFramework__Group__4__Impl rule__ArchitectureFramework__Group__5 ;
     public final void rule__ArchitectureFramework__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:385:1: ( rule__ArchitectureFramework__Group__4__Impl rule__ArchitectureFramework__Group__5 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:386:2: rule__ArchitectureFramework__Group__4__Impl rule__ArchitectureFramework__Group__5
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:392:1: ( rule__ArchitectureFramework__Group__4__Impl rule__ArchitectureFramework__Group__5 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:393:2: rule__ArchitectureFramework__Group__4__Impl rule__ArchitectureFramework__Group__5
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__4__Impl_in_rule__ArchitectureFramework__Group__4738);
             rule__ArchitectureFramework__Group__4__Impl();
@@ -1050,22 +1050,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:393:1: rule__ArchitectureFramework__Group__4__Impl : ( ( rule__ArchitectureFramework__Group_4__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:400:1: rule__ArchitectureFramework__Group__4__Impl : ( ( rule__ArchitectureFramework__Group_4__0 )? ) ;
     public final void rule__ArchitectureFramework__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:397:1: ( ( ( rule__ArchitectureFramework__Group_4__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:398:1: ( ( rule__ArchitectureFramework__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:404:1: ( ( ( rule__ArchitectureFramework__Group_4__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:405:1: ( ( rule__ArchitectureFramework__Group_4__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:398:1: ( ( rule__ArchitectureFramework__Group_4__0 )? )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:399:1: ( rule__ArchitectureFramework__Group_4__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:405:1: ( ( rule__ArchitectureFramework__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:406:1: ( rule__ArchitectureFramework__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getGroup_4()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:400:1: ( rule__ArchitectureFramework__Group_4__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:407:1: ( rule__ArchitectureFramework__Group_4__0 )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1074,7 +1074,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:400:2: rule__ArchitectureFramework__Group_4__0
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:407:2: rule__ArchitectureFramework__Group_4__0
                     {
                     pushFollow(FOLLOW_rule__ArchitectureFramework__Group_4__0_in_rule__ArchitectureFramework__Group__4__Impl768);
                     rule__ArchitectureFramework__Group_4__0();
@@ -1112,14 +1112,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__5"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:410:1: rule__ArchitectureFramework__Group__5 : rule__ArchitectureFramework__Group__5__Impl rule__ArchitectureFramework__Group__6 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:417:1: rule__ArchitectureFramework__Group__5 : rule__ArchitectureFramework__Group__5__Impl rule__ArchitectureFramework__Group__6 ;
     public final void rule__ArchitectureFramework__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:414:1: ( rule__ArchitectureFramework__Group__5__Impl rule__ArchitectureFramework__Group__6 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:415:2: rule__ArchitectureFramework__Group__5__Impl rule__ArchitectureFramework__Group__6
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:421:1: ( rule__ArchitectureFramework__Group__5__Impl rule__ArchitectureFramework__Group__6 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:422:2: rule__ArchitectureFramework__Group__5__Impl rule__ArchitectureFramework__Group__6
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__5__Impl_in_rule__ArchitectureFramework__Group__5799);
             rule__ArchitectureFramework__Group__5__Impl();
@@ -1150,22 +1150,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__5__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:422:1: rule__ArchitectureFramework__Group__5__Impl : ( ( rule__ArchitectureFramework__Group_5__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:429:1: rule__ArchitectureFramework__Group__5__Impl : ( ( rule__ArchitectureFramework__Group_5__0 )? ) ;
     public final void rule__ArchitectureFramework__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:426:1: ( ( ( rule__ArchitectureFramework__Group_5__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:427:1: ( ( rule__ArchitectureFramework__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:433:1: ( ( ( rule__ArchitectureFramework__Group_5__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:434:1: ( ( rule__ArchitectureFramework__Group_5__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:427:1: ( ( rule__ArchitectureFramework__Group_5__0 )? )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:428:1: ( rule__ArchitectureFramework__Group_5__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:434:1: ( ( rule__ArchitectureFramework__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:435:1: ( rule__ArchitectureFramework__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getGroup_5()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:429:1: ( rule__ArchitectureFramework__Group_5__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:436:1: ( rule__ArchitectureFramework__Group_5__0 )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1174,7 +1174,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:429:2: rule__ArchitectureFramework__Group_5__0
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:436:2: rule__ArchitectureFramework__Group_5__0
                     {
                     pushFollow(FOLLOW_rule__ArchitectureFramework__Group_5__0_in_rule__ArchitectureFramework__Group__5__Impl829);
                     rule__ArchitectureFramework__Group_5__0();
@@ -1212,14 +1212,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__6"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:439:1: rule__ArchitectureFramework__Group__6 : rule__ArchitectureFramework__Group__6__Impl rule__ArchitectureFramework__Group__7 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:446:1: rule__ArchitectureFramework__Group__6 : rule__ArchitectureFramework__Group__6__Impl rule__ArchitectureFramework__Group__7 ;
     public final void rule__ArchitectureFramework__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:443:1: ( rule__ArchitectureFramework__Group__6__Impl rule__ArchitectureFramework__Group__7 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:444:2: rule__ArchitectureFramework__Group__6__Impl rule__ArchitectureFramework__Group__7
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:450:1: ( rule__ArchitectureFramework__Group__6__Impl rule__ArchitectureFramework__Group__7 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:451:2: rule__ArchitectureFramework__Group__6__Impl rule__ArchitectureFramework__Group__7
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__6__Impl_in_rule__ArchitectureFramework__Group__6860);
             rule__ArchitectureFramework__Group__6__Impl();
@@ -1250,22 +1250,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__6__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:451:1: rule__ArchitectureFramework__Group__6__Impl : ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:458:1: rule__ArchitectureFramework__Group__6__Impl : ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? ) ;
     public final void rule__ArchitectureFramework__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:455:1: ( ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:456:1: ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:462:1: ( ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:463:1: ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:456:1: ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:457:1: ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:463:1: ( ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:464:1: ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getAf_viewpointsAssignment_6()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:458:1: ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:465:1: ( rule__ArchitectureFramework__Af_viewpointsAssignment_6 )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1274,7 +1274,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:458:2: rule__ArchitectureFramework__Af_viewpointsAssignment_6
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:465:2: rule__ArchitectureFramework__Af_viewpointsAssignment_6
                     {
                     pushFollow(FOLLOW_rule__ArchitectureFramework__Af_viewpointsAssignment_6_in_rule__ArchitectureFramework__Group__6__Impl890);
                     rule__ArchitectureFramework__Af_viewpointsAssignment_6();
@@ -1312,14 +1312,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__7"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:468:1: rule__ArchitectureFramework__Group__7 : rule__ArchitectureFramework__Group__7__Impl rule__ArchitectureFramework__Group__8 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:475:1: rule__ArchitectureFramework__Group__7 : rule__ArchitectureFramework__Group__7__Impl rule__ArchitectureFramework__Group__8 ;
     public final void rule__ArchitectureFramework__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:472:1: ( rule__ArchitectureFramework__Group__7__Impl rule__ArchitectureFramework__Group__8 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:473:2: rule__ArchitectureFramework__Group__7__Impl rule__ArchitectureFramework__Group__8
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:479:1: ( rule__ArchitectureFramework__Group__7__Impl rule__ArchitectureFramework__Group__8 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:480:2: rule__ArchitectureFramework__Group__7__Impl rule__ArchitectureFramework__Group__8
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__7__Impl_in_rule__ArchitectureFramework__Group__7921);
             rule__ArchitectureFramework__Group__7__Impl();
@@ -1350,23 +1350,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__7__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:480:1: rule__ArchitectureFramework__Group__7__Impl : ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:487:1: rule__ArchitectureFramework__Group__7__Impl : ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) ) ;
     public final void rule__ArchitectureFramework__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:484:1: ( ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:485:1: ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:491:1: ( ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:492:1: ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:485:1: ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:486:1: ( rule__ArchitectureFramework__Owned_configurationAssignment_7 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:492:1: ( ( rule__ArchitectureFramework__Owned_configurationAssignment_7 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:493:1: ( rule__ArchitectureFramework__Owned_configurationAssignment_7 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getOwned_configurationAssignment_7()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:487:1: ( rule__ArchitectureFramework__Owned_configurationAssignment_7 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:487:2: rule__ArchitectureFramework__Owned_configurationAssignment_7
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:494:1: ( rule__ArchitectureFramework__Owned_configurationAssignment_7 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:494:2: rule__ArchitectureFramework__Owned_configurationAssignment_7
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Owned_configurationAssignment_7_in_rule__ArchitectureFramework__Group__7__Impl951);
             rule__ArchitectureFramework__Owned_configurationAssignment_7();
@@ -1401,14 +1401,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__8"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:497:1: rule__ArchitectureFramework__Group__8 : rule__ArchitectureFramework__Group__8__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:504:1: rule__ArchitectureFramework__Group__8 : rule__ArchitectureFramework__Group__8__Impl ;
     public final void rule__ArchitectureFramework__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:501:1: ( rule__ArchitectureFramework__Group__8__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:502:2: rule__ArchitectureFramework__Group__8__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:508:1: ( rule__ArchitectureFramework__Group__8__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:509:2: rule__ArchitectureFramework__Group__8__Impl
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group__8__Impl_in_rule__ArchitectureFramework__Group__8981);
             rule__ArchitectureFramework__Group__8__Impl();
@@ -1434,17 +1434,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group__8__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:508:1: rule__ArchitectureFramework__Group__8__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:515:1: rule__ArchitectureFramework__Group__8__Impl : ( '}' ) ;
     public final void rule__ArchitectureFramework__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:512:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:513:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:519:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:520:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:513:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:514:1: '}'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:520:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:521:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getRightCurlyBracketKeyword_8()); 
@@ -1475,14 +1475,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_4__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:545:1: rule__ArchitectureFramework__Group_4__0 : rule__ArchitectureFramework__Group_4__0__Impl rule__ArchitectureFramework__Group_4__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:552:1: rule__ArchitectureFramework__Group_4__0 : rule__ArchitectureFramework__Group_4__0__Impl rule__ArchitectureFramework__Group_4__1 ;
     public final void rule__ArchitectureFramework__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:549:1: ( rule__ArchitectureFramework__Group_4__0__Impl rule__ArchitectureFramework__Group_4__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:550:2: rule__ArchitectureFramework__Group_4__0__Impl rule__ArchitectureFramework__Group_4__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:556:1: ( rule__ArchitectureFramework__Group_4__0__Impl rule__ArchitectureFramework__Group_4__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:557:2: rule__ArchitectureFramework__Group_4__0__Impl rule__ArchitectureFramework__Group_4__1
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group_4__0__Impl_in_rule__ArchitectureFramework__Group_4__01058);
             rule__ArchitectureFramework__Group_4__0__Impl();
@@ -1513,17 +1513,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_4__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:557:1: rule__ArchitectureFramework__Group_4__0__Impl : ( 'description:' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:564:1: rule__ArchitectureFramework__Group_4__0__Impl : ( 'description:' ) ;
     public final void rule__ArchitectureFramework__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:561:1: ( ( 'description:' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:562:1: ( 'description:' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:568:1: ( ( 'description:' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:569:1: ( 'description:' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:562:1: ( 'description:' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:563:1: 'description:'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:569:1: ( 'description:' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:570:1: 'description:'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getDescriptionKeyword_4_0()); 
@@ -1554,14 +1554,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_4__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:576:1: rule__ArchitectureFramework__Group_4__1 : rule__ArchitectureFramework__Group_4__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:583:1: rule__ArchitectureFramework__Group_4__1 : rule__ArchitectureFramework__Group_4__1__Impl ;
     public final void rule__ArchitectureFramework__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:580:1: ( rule__ArchitectureFramework__Group_4__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:581:2: rule__ArchitectureFramework__Group_4__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:587:1: ( rule__ArchitectureFramework__Group_4__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:588:2: rule__ArchitectureFramework__Group_4__1__Impl
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group_4__1__Impl_in_rule__ArchitectureFramework__Group_4__11120);
             rule__ArchitectureFramework__Group_4__1__Impl();
@@ -1587,23 +1587,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_4__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:587:1: rule__ArchitectureFramework__Group_4__1__Impl : ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:594:1: rule__ArchitectureFramework__Group_4__1__Impl : ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) ) ;
     public final void rule__ArchitectureFramework__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:591:1: ( ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:592:1: ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:598:1: ( ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:599:1: ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:592:1: ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:593:1: ( rule__ArchitectureFramework__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:599:1: ( ( rule__ArchitectureFramework__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:600:1: ( rule__ArchitectureFramework__DescriptionAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getDescriptionAssignment_4_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:594:1: ( rule__ArchitectureFramework__DescriptionAssignment_4_1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:594:2: rule__ArchitectureFramework__DescriptionAssignment_4_1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:601:1: ( rule__ArchitectureFramework__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:601:2: rule__ArchitectureFramework__DescriptionAssignment_4_1
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__DescriptionAssignment_4_1_in_rule__ArchitectureFramework__Group_4__1__Impl1147);
             rule__ArchitectureFramework__DescriptionAssignment_4_1();
@@ -1638,14 +1638,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_5__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:608:1: rule__ArchitectureFramework__Group_5__0 : rule__ArchitectureFramework__Group_5__0__Impl rule__ArchitectureFramework__Group_5__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:615:1: rule__ArchitectureFramework__Group_5__0 : rule__ArchitectureFramework__Group_5__0__Impl rule__ArchitectureFramework__Group_5__1 ;
     public final void rule__ArchitectureFramework__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:612:1: ( rule__ArchitectureFramework__Group_5__0__Impl rule__ArchitectureFramework__Group_5__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:613:2: rule__ArchitectureFramework__Group_5__0__Impl rule__ArchitectureFramework__Group_5__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:619:1: ( rule__ArchitectureFramework__Group_5__0__Impl rule__ArchitectureFramework__Group_5__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:620:2: rule__ArchitectureFramework__Group_5__0__Impl rule__ArchitectureFramework__Group_5__1
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group_5__0__Impl_in_rule__ArchitectureFramework__Group_5__01181);
             rule__ArchitectureFramework__Group_5__0__Impl();
@@ -1676,17 +1676,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_5__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:620:1: rule__ArchitectureFramework__Group_5__0__Impl : ( 'shortName:' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:627:1: rule__ArchitectureFramework__Group_5__0__Impl : ( 'shortName:' ) ;
     public final void rule__ArchitectureFramework__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:624:1: ( ( 'shortName:' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:625:1: ( 'shortName:' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:631:1: ( ( 'shortName:' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:632:1: ( 'shortName:' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:625:1: ( 'shortName:' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:626:1: 'shortName:'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:632:1: ( 'shortName:' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:633:1: 'shortName:'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getShortNameKeyword_5_0()); 
@@ -1717,14 +1717,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_5__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:639:1: rule__ArchitectureFramework__Group_5__1 : rule__ArchitectureFramework__Group_5__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:646:1: rule__ArchitectureFramework__Group_5__1 : rule__ArchitectureFramework__Group_5__1__Impl ;
     public final void rule__ArchitectureFramework__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:643:1: ( rule__ArchitectureFramework__Group_5__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:644:2: rule__ArchitectureFramework__Group_5__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:650:1: ( rule__ArchitectureFramework__Group_5__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:651:2: rule__ArchitectureFramework__Group_5__1__Impl
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__Group_5__1__Impl_in_rule__ArchitectureFramework__Group_5__11243);
             rule__ArchitectureFramework__Group_5__1__Impl();
@@ -1750,23 +1750,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Group_5__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:650:1: rule__ArchitectureFramework__Group_5__1__Impl : ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:657:1: rule__ArchitectureFramework__Group_5__1__Impl : ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) ) ;
     public final void rule__ArchitectureFramework__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:654:1: ( ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:655:1: ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:661:1: ( ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:662:1: ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:655:1: ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:656:1: ( rule__ArchitectureFramework__ShortNameAssignment_5_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:662:1: ( ( rule__ArchitectureFramework__ShortNameAssignment_5_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:663:1: ( rule__ArchitectureFramework__ShortNameAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getShortNameAssignment_5_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:657:1: ( rule__ArchitectureFramework__ShortNameAssignment_5_1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:657:2: rule__ArchitectureFramework__ShortNameAssignment_5_1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:664:1: ( rule__ArchitectureFramework__ShortNameAssignment_5_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:664:2: rule__ArchitectureFramework__ShortNameAssignment_5_1
             {
             pushFollow(FOLLOW_rule__ArchitectureFramework__ShortNameAssignment_5_1_in_rule__ArchitectureFramework__Group_5__1__Impl1270);
             rule__ArchitectureFramework__ShortNameAssignment_5_1();
@@ -1801,14 +1801,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:671:1: rule__Configuration__Group__0 : rule__Configuration__Group__0__Impl rule__Configuration__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:678:1: rule__Configuration__Group__0 : rule__Configuration__Group__0__Impl rule__Configuration__Group__1 ;
     public final void rule__Configuration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:675:1: ( rule__Configuration__Group__0__Impl rule__Configuration__Group__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:676:2: rule__Configuration__Group__0__Impl rule__Configuration__Group__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:682:1: ( rule__Configuration__Group__0__Impl rule__Configuration__Group__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:683:2: rule__Configuration__Group__0__Impl rule__Configuration__Group__1
             {
             pushFollow(FOLLOW_rule__Configuration__Group__0__Impl_in_rule__Configuration__Group__01304);
             rule__Configuration__Group__0__Impl();
@@ -1839,23 +1839,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:683:1: rule__Configuration__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:690:1: rule__Configuration__Group__0__Impl : ( () ) ;
     public final void rule__Configuration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:687:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:688:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:694:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:695:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:688:1: ( () )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:689:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:695:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:696:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getConfigurationAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:690:1: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:692:1: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:697:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:699:1: 
             {
             }
 
@@ -1880,14 +1880,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:702:1: rule__Configuration__Group__1 : rule__Configuration__Group__1__Impl rule__Configuration__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:709:1: rule__Configuration__Group__1 : rule__Configuration__Group__1__Impl rule__Configuration__Group__2 ;
     public final void rule__Configuration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:706:1: ( rule__Configuration__Group__1__Impl rule__Configuration__Group__2 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:707:2: rule__Configuration__Group__1__Impl rule__Configuration__Group__2
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:713:1: ( rule__Configuration__Group__1__Impl rule__Configuration__Group__2 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:714:2: rule__Configuration__Group__1__Impl rule__Configuration__Group__2
             {
             pushFollow(FOLLOW_rule__Configuration__Group__1__Impl_in_rule__Configuration__Group__11365);
             rule__Configuration__Group__1__Impl();
@@ -1918,17 +1918,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:714:1: rule__Configuration__Group__1__Impl : ( 'Configuration' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:721:1: rule__Configuration__Group__1__Impl : ( 'Configuration' ) ;
     public final void rule__Configuration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:718:1: ( ( 'Configuration' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:719:1: ( 'Configuration' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:725:1: ( ( 'Configuration' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:726:1: ( 'Configuration' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:719:1: ( 'Configuration' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:720:1: 'Configuration'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:726:1: ( 'Configuration' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:727:1: 'Configuration'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getConfigurationKeyword_1()); 
@@ -1959,14 +1959,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__2"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:733:1: rule__Configuration__Group__2 : rule__Configuration__Group__2__Impl rule__Configuration__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:740:1: rule__Configuration__Group__2 : rule__Configuration__Group__2__Impl rule__Configuration__Group__3 ;
     public final void rule__Configuration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:737:1: ( rule__Configuration__Group__2__Impl rule__Configuration__Group__3 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:738:2: rule__Configuration__Group__2__Impl rule__Configuration__Group__3
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:744:1: ( rule__Configuration__Group__2__Impl rule__Configuration__Group__3 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:745:2: rule__Configuration__Group__2__Impl rule__Configuration__Group__3
             {
             pushFollow(FOLLOW_rule__Configuration__Group__2__Impl_in_rule__Configuration__Group__21427);
             rule__Configuration__Group__2__Impl();
@@ -1997,17 +1997,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:745:1: rule__Configuration__Group__2__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:752:1: rule__Configuration__Group__2__Impl : ( '{' ) ;
     public final void rule__Configuration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:749:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:750:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:756:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:757:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:750:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:751:1: '{'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:757:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:758:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getLeftCurlyBracketKeyword_2()); 
@@ -2038,14 +2038,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__3"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:764:1: rule__Configuration__Group__3 : rule__Configuration__Group__3__Impl rule__Configuration__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:771:1: rule__Configuration__Group__3 : rule__Configuration__Group__3__Impl rule__Configuration__Group__4 ;
     public final void rule__Configuration__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:768:1: ( rule__Configuration__Group__3__Impl rule__Configuration__Group__4 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:769:2: rule__Configuration__Group__3__Impl rule__Configuration__Group__4
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:775:1: ( rule__Configuration__Group__3__Impl rule__Configuration__Group__4 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:776:2: rule__Configuration__Group__3__Impl rule__Configuration__Group__4
             {
             pushFollow(FOLLOW_rule__Configuration__Group__3__Impl_in_rule__Configuration__Group__31489);
             rule__Configuration__Group__3__Impl();
@@ -2076,22 +2076,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:776:1: rule__Configuration__Group__3__Impl : ( ( rule__Configuration__Group_3__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:783:1: rule__Configuration__Group__3__Impl : ( ( rule__Configuration__Group_3__0 )? ) ;
     public final void rule__Configuration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:780:1: ( ( ( rule__Configuration__Group_3__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:781:1: ( ( rule__Configuration__Group_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:787:1: ( ( ( rule__Configuration__Group_3__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:788:1: ( ( rule__Configuration__Group_3__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:781:1: ( ( rule__Configuration__Group_3__0 )? )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:782:1: ( rule__Configuration__Group_3__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:788:1: ( ( rule__Configuration__Group_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:789:1: ( rule__Configuration__Group_3__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getGroup_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:783:1: ( rule__Configuration__Group_3__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:790:1: ( rule__Configuration__Group_3__0 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2100,7 +2100,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:783:2: rule__Configuration__Group_3__0
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:790:2: rule__Configuration__Group_3__0
                     {
                     pushFollow(FOLLOW_rule__Configuration__Group_3__0_in_rule__Configuration__Group__3__Impl1519);
                     rule__Configuration__Group_3__0();
@@ -2138,14 +2138,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__4"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:793:1: rule__Configuration__Group__4 : rule__Configuration__Group__4__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:800:1: rule__Configuration__Group__4 : rule__Configuration__Group__4__Impl ;
     public final void rule__Configuration__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:797:1: ( rule__Configuration__Group__4__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:798:2: rule__Configuration__Group__4__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:804:1: ( rule__Configuration__Group__4__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:805:2: rule__Configuration__Group__4__Impl
             {
             pushFollow(FOLLOW_rule__Configuration__Group__4__Impl_in_rule__Configuration__Group__41550);
             rule__Configuration__Group__4__Impl();
@@ -2171,17 +2171,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:804:1: rule__Configuration__Group__4__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:811:1: rule__Configuration__Group__4__Impl : ( '}' ) ;
     public final void rule__Configuration__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:808:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:809:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:815:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:816:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:809:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:810:1: '}'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:816:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:817:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getRightCurlyBracketKeyword_4()); 
@@ -2212,14 +2212,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:833:1: rule__Configuration__Group_3__0 : rule__Configuration__Group_3__0__Impl rule__Configuration__Group_3__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:840:1: rule__Configuration__Group_3__0 : rule__Configuration__Group_3__0__Impl rule__Configuration__Group_3__1 ;
     public final void rule__Configuration__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:837:1: ( rule__Configuration__Group_3__0__Impl rule__Configuration__Group_3__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:838:2: rule__Configuration__Group_3__0__Impl rule__Configuration__Group_3__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:844:1: ( rule__Configuration__Group_3__0__Impl rule__Configuration__Group_3__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:845:2: rule__Configuration__Group_3__0__Impl rule__Configuration__Group_3__1
             {
             pushFollow(FOLLOW_rule__Configuration__Group_3__0__Impl_in_rule__Configuration__Group_3__01619);
             rule__Configuration__Group_3__0__Impl();
@@ -2250,23 +2250,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:845:1: rule__Configuration__Group_3__0__Impl : ( ( rule__Configuration__Owned_elementAssignment_3_0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:852:1: rule__Configuration__Group_3__0__Impl : ( ( rule__Configuration__Owned_elementAssignment_3_0 ) ) ;
     public final void rule__Configuration__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:849:1: ( ( ( rule__Configuration__Owned_elementAssignment_3_0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:850:1: ( ( rule__Configuration__Owned_elementAssignment_3_0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:856:1: ( ( ( rule__Configuration__Owned_elementAssignment_3_0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:857:1: ( ( rule__Configuration__Owned_elementAssignment_3_0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:850:1: ( ( rule__Configuration__Owned_elementAssignment_3_0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:851:1: ( rule__Configuration__Owned_elementAssignment_3_0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:857:1: ( ( rule__Configuration__Owned_elementAssignment_3_0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:858:1: ( rule__Configuration__Owned_elementAssignment_3_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getOwned_elementAssignment_3_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:852:1: ( rule__Configuration__Owned_elementAssignment_3_0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:852:2: rule__Configuration__Owned_elementAssignment_3_0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:859:1: ( rule__Configuration__Owned_elementAssignment_3_0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:859:2: rule__Configuration__Owned_elementAssignment_3_0
             {
             pushFollow(FOLLOW_rule__Configuration__Owned_elementAssignment_3_0_in_rule__Configuration__Group_3__0__Impl1649);
             rule__Configuration__Owned_elementAssignment_3_0();
@@ -2301,14 +2301,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:862:1: rule__Configuration__Group_3__1 : rule__Configuration__Group_3__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:869:1: rule__Configuration__Group_3__1 : rule__Configuration__Group_3__1__Impl ;
     public final void rule__Configuration__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:866:1: ( rule__Configuration__Group_3__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:867:2: rule__Configuration__Group_3__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:873:1: ( rule__Configuration__Group_3__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:874:2: rule__Configuration__Group_3__1__Impl
             {
             pushFollow(FOLLOW_rule__Configuration__Group_3__1__Impl_in_rule__Configuration__Group_3__11679);
             rule__Configuration__Group_3__1__Impl();
@@ -2334,22 +2334,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:873:1: rule__Configuration__Group_3__1__Impl : ( ( rule__Configuration__Group_3_1__0 )* ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:880:1: rule__Configuration__Group_3__1__Impl : ( ( rule__Configuration__Group_3_1__0 )* ) ;
     public final void rule__Configuration__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:877:1: ( ( ( rule__Configuration__Group_3_1__0 )* ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:878:1: ( ( rule__Configuration__Group_3_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:884:1: ( ( ( rule__Configuration__Group_3_1__0 )* ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:885:1: ( ( rule__Configuration__Group_3_1__0 )* )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:878:1: ( ( rule__Configuration__Group_3_1__0 )* )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:879:1: ( rule__Configuration__Group_3_1__0 )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:885:1: ( ( rule__Configuration__Group_3_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:886:1: ( rule__Configuration__Group_3_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getGroup_3_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:880:1: ( rule__Configuration__Group_3_1__0 )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:887:1: ( rule__Configuration__Group_3_1__0 )*
             loop6:
             do {
                 int alt6=2;
@@ -2362,7 +2362,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:880:2: rule__Configuration__Group_3_1__0
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:887:2: rule__Configuration__Group_3_1__0
             	    {
             	    pushFollow(FOLLOW_rule__Configuration__Group_3_1__0_in_rule__Configuration__Group_3__1__Impl1706);
             	    rule__Configuration__Group_3_1__0();
@@ -2403,14 +2403,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3_1__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:894:1: rule__Configuration__Group_3_1__0 : rule__Configuration__Group_3_1__0__Impl rule__Configuration__Group_3_1__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:901:1: rule__Configuration__Group_3_1__0 : rule__Configuration__Group_3_1__0__Impl rule__Configuration__Group_3_1__1 ;
     public final void rule__Configuration__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:898:1: ( rule__Configuration__Group_3_1__0__Impl rule__Configuration__Group_3_1__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:899:2: rule__Configuration__Group_3_1__0__Impl rule__Configuration__Group_3_1__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:905:1: ( rule__Configuration__Group_3_1__0__Impl rule__Configuration__Group_3_1__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:906:2: rule__Configuration__Group_3_1__0__Impl rule__Configuration__Group_3_1__1
             {
             pushFollow(FOLLOW_rule__Configuration__Group_3_1__0__Impl_in_rule__Configuration__Group_3_1__01741);
             rule__Configuration__Group_3_1__0__Impl();
@@ -2441,17 +2441,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3_1__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:906:1: rule__Configuration__Group_3_1__0__Impl : ( ',' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:913:1: rule__Configuration__Group_3_1__0__Impl : ( ',' ) ;
     public final void rule__Configuration__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:910:1: ( ( ',' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:911:1: ( ',' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:917:1: ( ( ',' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:918:1: ( ',' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:911:1: ( ',' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:912:1: ','
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:918:1: ( ',' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:919:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getCommaKeyword_3_1_0()); 
@@ -2482,14 +2482,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3_1__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:925:1: rule__Configuration__Group_3_1__1 : rule__Configuration__Group_3_1__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:932:1: rule__Configuration__Group_3_1__1 : rule__Configuration__Group_3_1__1__Impl ;
     public final void rule__Configuration__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:929:1: ( rule__Configuration__Group_3_1__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:930:2: rule__Configuration__Group_3_1__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:936:1: ( rule__Configuration__Group_3_1__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:937:2: rule__Configuration__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_rule__Configuration__Group_3_1__1__Impl_in_rule__Configuration__Group_3_1__11803);
             rule__Configuration__Group_3_1__1__Impl();
@@ -2515,23 +2515,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Group_3_1__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:936:1: rule__Configuration__Group_3_1__1__Impl : ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:943:1: rule__Configuration__Group_3_1__1__Impl : ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) ) ;
     public final void rule__Configuration__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:940:1: ( ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:941:1: ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:947:1: ( ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:948:1: ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:941:1: ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:942:1: ( rule__Configuration__Owned_elementAssignment_3_1_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:948:1: ( ( rule__Configuration__Owned_elementAssignment_3_1_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:949:1: ( rule__Configuration__Owned_elementAssignment_3_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getOwned_elementAssignment_3_1_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:943:1: ( rule__Configuration__Owned_elementAssignment_3_1_1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:943:2: rule__Configuration__Owned_elementAssignment_3_1_1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:950:1: ( rule__Configuration__Owned_elementAssignment_3_1_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:950:2: rule__Configuration__Owned_elementAssignment_3_1_1
             {
             pushFollow(FOLLOW_rule__Configuration__Owned_elementAssignment_3_1_1_in_rule__Configuration__Group_3_1__1__Impl1830);
             rule__Configuration__Owned_elementAssignment_3_1_1();
@@ -2566,14 +2566,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:957:1: rule__GenerationConfiguration__Group__0 : rule__GenerationConfiguration__Group__0__Impl rule__GenerationConfiguration__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:964:1: rule__GenerationConfiguration__Group__0 : rule__GenerationConfiguration__Group__0__Impl rule__GenerationConfiguration__Group__1 ;
     public final void rule__GenerationConfiguration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:961:1: ( rule__GenerationConfiguration__Group__0__Impl rule__GenerationConfiguration__Group__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:962:2: rule__GenerationConfiguration__Group__0__Impl rule__GenerationConfiguration__Group__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:968:1: ( rule__GenerationConfiguration__Group__0__Impl rule__GenerationConfiguration__Group__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:969:2: rule__GenerationConfiguration__Group__0__Impl rule__GenerationConfiguration__Group__1
             {
             pushFollow(FOLLOW_rule__GenerationConfiguration__Group__0__Impl_in_rule__GenerationConfiguration__Group__01864);
             rule__GenerationConfiguration__Group__0__Impl();
@@ -2604,23 +2604,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:969:1: rule__GenerationConfiguration__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:976:1: rule__GenerationConfiguration__Group__0__Impl : ( () ) ;
     public final void rule__GenerationConfiguration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:973:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:974:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:980:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:981:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:974:1: ( () )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:975:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:981:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:982:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGenerationConfigurationAccess().getGenerationConfigurationAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:976:1: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:978:1: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:983:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:985:1: 
             {
             }
 
@@ -2645,14 +2645,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:988:1: rule__GenerationConfiguration__Group__1 : rule__GenerationConfiguration__Group__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:995:1: rule__GenerationConfiguration__Group__1 : rule__GenerationConfiguration__Group__1__Impl ;
     public final void rule__GenerationConfiguration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:992:1: ( rule__GenerationConfiguration__Group__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:993:2: rule__GenerationConfiguration__Group__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:999:1: ( rule__GenerationConfiguration__Group__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1000:2: rule__GenerationConfiguration__Group__1__Impl
             {
             pushFollow(FOLLOW_rule__GenerationConfiguration__Group__1__Impl_in_rule__GenerationConfiguration__Group__11925);
             rule__GenerationConfiguration__Group__1__Impl();
@@ -2678,23 +2678,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:999:1: rule__GenerationConfiguration__Group__1__Impl : ( ( rule__GenerationConfiguration__Group_1__0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1006:1: rule__GenerationConfiguration__Group__1__Impl : ( ( rule__GenerationConfiguration__Group_1__0 ) ) ;
     public final void rule__GenerationConfiguration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1003:1: ( ( ( rule__GenerationConfiguration__Group_1__0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1004:1: ( ( rule__GenerationConfiguration__Group_1__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1010:1: ( ( ( rule__GenerationConfiguration__Group_1__0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1011:1: ( ( rule__GenerationConfiguration__Group_1__0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1004:1: ( ( rule__GenerationConfiguration__Group_1__0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1005:1: ( rule__GenerationConfiguration__Group_1__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1011:1: ( ( rule__GenerationConfiguration__Group_1__0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1012:1: ( rule__GenerationConfiguration__Group_1__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGenerationConfigurationAccess().getGroup_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1006:1: ( rule__GenerationConfiguration__Group_1__0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1006:2: rule__GenerationConfiguration__Group_1__0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1013:1: ( rule__GenerationConfiguration__Group_1__0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1013:2: rule__GenerationConfiguration__Group_1__0
             {
             pushFollow(FOLLOW_rule__GenerationConfiguration__Group_1__0_in_rule__GenerationConfiguration__Group__1__Impl1952);
             rule__GenerationConfiguration__Group_1__0();
@@ -2729,14 +2729,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group_1__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1020:1: rule__GenerationConfiguration__Group_1__0 : rule__GenerationConfiguration__Group_1__0__Impl rule__GenerationConfiguration__Group_1__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1027:1: rule__GenerationConfiguration__Group_1__0 : rule__GenerationConfiguration__Group_1__0__Impl rule__GenerationConfiguration__Group_1__1 ;
     public final void rule__GenerationConfiguration__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1024:1: ( rule__GenerationConfiguration__Group_1__0__Impl rule__GenerationConfiguration__Group_1__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1025:2: rule__GenerationConfiguration__Group_1__0__Impl rule__GenerationConfiguration__Group_1__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1031:1: ( rule__GenerationConfiguration__Group_1__0__Impl rule__GenerationConfiguration__Group_1__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1032:2: rule__GenerationConfiguration__Group_1__0__Impl rule__GenerationConfiguration__Group_1__1
             {
             pushFollow(FOLLOW_rule__GenerationConfiguration__Group_1__0__Impl_in_rule__GenerationConfiguration__Group_1__01986);
             rule__GenerationConfiguration__Group_1__0__Impl();
@@ -2767,17 +2767,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group_1__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1032:1: rule__GenerationConfiguration__Group_1__0__Impl : ( 'rootProjectName:' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1039:1: rule__GenerationConfiguration__Group_1__0__Impl : ( 'rootProjectName:' ) ;
     public final void rule__GenerationConfiguration__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1036:1: ( ( 'rootProjectName:' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1037:1: ( 'rootProjectName:' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1043:1: ( ( 'rootProjectName:' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1044:1: ( 'rootProjectName:' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1037:1: ( 'rootProjectName:' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1038:1: 'rootProjectName:'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1044:1: ( 'rootProjectName:' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1045:1: 'rootProjectName:'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGenerationConfigurationAccess().getRootProjectNameKeyword_1_0()); 
@@ -2808,14 +2808,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group_1__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1051:1: rule__GenerationConfiguration__Group_1__1 : rule__GenerationConfiguration__Group_1__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1058:1: rule__GenerationConfiguration__Group_1__1 : rule__GenerationConfiguration__Group_1__1__Impl ;
     public final void rule__GenerationConfiguration__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1055:1: ( rule__GenerationConfiguration__Group_1__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1056:2: rule__GenerationConfiguration__Group_1__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1062:1: ( rule__GenerationConfiguration__Group_1__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1063:2: rule__GenerationConfiguration__Group_1__1__Impl
             {
             pushFollow(FOLLOW_rule__GenerationConfiguration__Group_1__1__Impl_in_rule__GenerationConfiguration__Group_1__12048);
             rule__GenerationConfiguration__Group_1__1__Impl();
@@ -2841,23 +2841,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__Group_1__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1062:1: rule__GenerationConfiguration__Group_1__1__Impl : ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1069:1: rule__GenerationConfiguration__Group_1__1__Impl : ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) ) ;
     public final void rule__GenerationConfiguration__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1066:1: ( ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1067:1: ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1073:1: ( ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1074:1: ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1067:1: ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1068:1: ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1074:1: ( ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1075:1: ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGenerationConfigurationAccess().getRootProjectNameAssignment_1_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1069:1: ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1069:2: rule__GenerationConfiguration__RootProjectNameAssignment_1_1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1076:1: ( rule__GenerationConfiguration__RootProjectNameAssignment_1_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1076:2: rule__GenerationConfiguration__RootProjectNameAssignment_1_1
             {
             pushFollow(FOLLOW_rule__GenerationConfiguration__RootProjectNameAssignment_1_1_in_rule__GenerationConfiguration__Group_1__1__Impl2075);
             rule__GenerationConfiguration__RootProjectNameAssignment_1_1();
@@ -2892,14 +2892,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1083:1: rule__Viewpoints__Group__0 : rule__Viewpoints__Group__0__Impl rule__Viewpoints__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1090:1: rule__Viewpoints__Group__0 : rule__Viewpoints__Group__0__Impl rule__Viewpoints__Group__1 ;
     public final void rule__Viewpoints__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1087:1: ( rule__Viewpoints__Group__0__Impl rule__Viewpoints__Group__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1088:2: rule__Viewpoints__Group__0__Impl rule__Viewpoints__Group__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1094:1: ( rule__Viewpoints__Group__0__Impl rule__Viewpoints__Group__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1095:2: rule__Viewpoints__Group__0__Impl rule__Viewpoints__Group__1
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group__0__Impl_in_rule__Viewpoints__Group__02109);
             rule__Viewpoints__Group__0__Impl();
@@ -2930,23 +2930,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1095:1: rule__Viewpoints__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1102:1: rule__Viewpoints__Group__0__Impl : ( () ) ;
     public final void rule__Viewpoints__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1099:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1100:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1106:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1107:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1100:1: ( () )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1101:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1107:1: ( () )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1108:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getViewpointsAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1102:1: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1104:1: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1109:1: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1111:1: 
             {
             }
 
@@ -2971,14 +2971,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1114:1: rule__Viewpoints__Group__1 : rule__Viewpoints__Group__1__Impl rule__Viewpoints__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1121:1: rule__Viewpoints__Group__1 : rule__Viewpoints__Group__1__Impl rule__Viewpoints__Group__2 ;
     public final void rule__Viewpoints__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1118:1: ( rule__Viewpoints__Group__1__Impl rule__Viewpoints__Group__2 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1119:2: rule__Viewpoints__Group__1__Impl rule__Viewpoints__Group__2
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1125:1: ( rule__Viewpoints__Group__1__Impl rule__Viewpoints__Group__2 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1126:2: rule__Viewpoints__Group__1__Impl rule__Viewpoints__Group__2
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group__1__Impl_in_rule__Viewpoints__Group__12170);
             rule__Viewpoints__Group__1__Impl();
@@ -3009,17 +3009,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1126:1: rule__Viewpoints__Group__1__Impl : ( 'Viewpoints' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1133:1: rule__Viewpoints__Group__1__Impl : ( 'Viewpoints' ) ;
     public final void rule__Viewpoints__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1130:1: ( ( 'Viewpoints' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1131:1: ( 'Viewpoints' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1137:1: ( ( 'Viewpoints' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1138:1: ( 'Viewpoints' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1131:1: ( 'Viewpoints' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1132:1: 'Viewpoints'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1138:1: ( 'Viewpoints' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1139:1: 'Viewpoints'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getViewpointsKeyword_1()); 
@@ -3050,14 +3050,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__2"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1145:1: rule__Viewpoints__Group__2 : rule__Viewpoints__Group__2__Impl rule__Viewpoints__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1152:1: rule__Viewpoints__Group__2 : rule__Viewpoints__Group__2__Impl rule__Viewpoints__Group__3 ;
     public final void rule__Viewpoints__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1149:1: ( rule__Viewpoints__Group__2__Impl rule__Viewpoints__Group__3 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1150:2: rule__Viewpoints__Group__2__Impl rule__Viewpoints__Group__3
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1156:1: ( rule__Viewpoints__Group__2__Impl rule__Viewpoints__Group__3 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1157:2: rule__Viewpoints__Group__2__Impl rule__Viewpoints__Group__3
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group__2__Impl_in_rule__Viewpoints__Group__22232);
             rule__Viewpoints__Group__2__Impl();
@@ -3088,17 +3088,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1157:1: rule__Viewpoints__Group__2__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1164:1: rule__Viewpoints__Group__2__Impl : ( '{' ) ;
     public final void rule__Viewpoints__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1161:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1162:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1168:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1169:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1162:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1163:1: '{'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1169:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1170:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getLeftCurlyBracketKeyword_2()); 
@@ -3129,14 +3129,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__3"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1176:1: rule__Viewpoints__Group__3 : rule__Viewpoints__Group__3__Impl rule__Viewpoints__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1183:1: rule__Viewpoints__Group__3 : rule__Viewpoints__Group__3__Impl rule__Viewpoints__Group__4 ;
     public final void rule__Viewpoints__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1180:1: ( rule__Viewpoints__Group__3__Impl rule__Viewpoints__Group__4 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1181:2: rule__Viewpoints__Group__3__Impl rule__Viewpoints__Group__4
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1187:1: ( rule__Viewpoints__Group__3__Impl rule__Viewpoints__Group__4 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1188:2: rule__Viewpoints__Group__3__Impl rule__Viewpoints__Group__4
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group__3__Impl_in_rule__Viewpoints__Group__32294);
             rule__Viewpoints__Group__3__Impl();
@@ -3167,22 +3167,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1188:1: rule__Viewpoints__Group__3__Impl : ( ( rule__Viewpoints__Group_3__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1195:1: rule__Viewpoints__Group__3__Impl : ( ( rule__Viewpoints__Group_3__0 )? ) ;
     public final void rule__Viewpoints__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1192:1: ( ( ( rule__Viewpoints__Group_3__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1193:1: ( ( rule__Viewpoints__Group_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1199:1: ( ( ( rule__Viewpoints__Group_3__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1200:1: ( ( rule__Viewpoints__Group_3__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1193:1: ( ( rule__Viewpoints__Group_3__0 )? )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1194:1: ( rule__Viewpoints__Group_3__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1200:1: ( ( rule__Viewpoints__Group_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1201:1: ( rule__Viewpoints__Group_3__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getGroup_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1195:1: ( rule__Viewpoints__Group_3__0 )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1202:1: ( rule__Viewpoints__Group_3__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -3191,7 +3191,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1195:2: rule__Viewpoints__Group_3__0
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1202:2: rule__Viewpoints__Group_3__0
                     {
                     pushFollow(FOLLOW_rule__Viewpoints__Group_3__0_in_rule__Viewpoints__Group__3__Impl2324);
                     rule__Viewpoints__Group_3__0();
@@ -3229,14 +3229,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__4"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1205:1: rule__Viewpoints__Group__4 : rule__Viewpoints__Group__4__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1212:1: rule__Viewpoints__Group__4 : rule__Viewpoints__Group__4__Impl ;
     public final void rule__Viewpoints__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1209:1: ( rule__Viewpoints__Group__4__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1210:2: rule__Viewpoints__Group__4__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1216:1: ( rule__Viewpoints__Group__4__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1217:2: rule__Viewpoints__Group__4__Impl
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group__4__Impl_in_rule__Viewpoints__Group__42355);
             rule__Viewpoints__Group__4__Impl();
@@ -3262,17 +3262,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1216:1: rule__Viewpoints__Group__4__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1223:1: rule__Viewpoints__Group__4__Impl : ( '}' ) ;
     public final void rule__Viewpoints__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1220:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1221:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1227:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1228:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1221:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1222:1: '}'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1228:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1229:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getRightCurlyBracketKeyword_4()); 
@@ -3303,14 +3303,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1245:1: rule__Viewpoints__Group_3__0 : rule__Viewpoints__Group_3__0__Impl rule__Viewpoints__Group_3__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1252:1: rule__Viewpoints__Group_3__0 : rule__Viewpoints__Group_3__0__Impl rule__Viewpoints__Group_3__1 ;
     public final void rule__Viewpoints__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1249:1: ( rule__Viewpoints__Group_3__0__Impl rule__Viewpoints__Group_3__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1250:2: rule__Viewpoints__Group_3__0__Impl rule__Viewpoints__Group_3__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1256:1: ( rule__Viewpoints__Group_3__0__Impl rule__Viewpoints__Group_3__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1257:2: rule__Viewpoints__Group_3__0__Impl rule__Viewpoints__Group_3__1
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group_3__0__Impl_in_rule__Viewpoints__Group_3__02424);
             rule__Viewpoints__Group_3__0__Impl();
@@ -3341,23 +3341,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1257:1: rule__Viewpoints__Group_3__0__Impl : ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1264:1: rule__Viewpoints__Group_3__0__Impl : ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) ) ;
     public final void rule__Viewpoints__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1261:1: ( ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1262:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1268:1: ( ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1269:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1262:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1263:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1269:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1270:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getOwned_viewpointsAssignment_3_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1264:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1264:2: rule__Viewpoints__Owned_viewpointsAssignment_3_0
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1271:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_0 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1271:2: rule__Viewpoints__Owned_viewpointsAssignment_3_0
             {
             pushFollow(FOLLOW_rule__Viewpoints__Owned_viewpointsAssignment_3_0_in_rule__Viewpoints__Group_3__0__Impl2454);
             rule__Viewpoints__Owned_viewpointsAssignment_3_0();
@@ -3392,14 +3392,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1274:1: rule__Viewpoints__Group_3__1 : rule__Viewpoints__Group_3__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1281:1: rule__Viewpoints__Group_3__1 : rule__Viewpoints__Group_3__1__Impl ;
     public final void rule__Viewpoints__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1278:1: ( rule__Viewpoints__Group_3__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1279:2: rule__Viewpoints__Group_3__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1285:1: ( rule__Viewpoints__Group_3__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1286:2: rule__Viewpoints__Group_3__1__Impl
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group_3__1__Impl_in_rule__Viewpoints__Group_3__12484);
             rule__Viewpoints__Group_3__1__Impl();
@@ -3425,22 +3425,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1285:1: rule__Viewpoints__Group_3__1__Impl : ( ( rule__Viewpoints__Group_3_1__0 )* ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1292:1: rule__Viewpoints__Group_3__1__Impl : ( ( rule__Viewpoints__Group_3_1__0 )* ) ;
     public final void rule__Viewpoints__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1289:1: ( ( ( rule__Viewpoints__Group_3_1__0 )* ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1290:1: ( ( rule__Viewpoints__Group_3_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1296:1: ( ( ( rule__Viewpoints__Group_3_1__0 )* ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1297:1: ( ( rule__Viewpoints__Group_3_1__0 )* )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1290:1: ( ( rule__Viewpoints__Group_3_1__0 )* )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1291:1: ( rule__Viewpoints__Group_3_1__0 )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1297:1: ( ( rule__Viewpoints__Group_3_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1298:1: ( rule__Viewpoints__Group_3_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getGroup_3_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1292:1: ( rule__Viewpoints__Group_3_1__0 )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1299:1: ( rule__Viewpoints__Group_3_1__0 )*
             loop8:
             do {
                 int alt8=2;
@@ -3453,7 +3453,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1292:2: rule__Viewpoints__Group_3_1__0
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1299:2: rule__Viewpoints__Group_3_1__0
             	    {
             	    pushFollow(FOLLOW_rule__Viewpoints__Group_3_1__0_in_rule__Viewpoints__Group_3__1__Impl2511);
             	    rule__Viewpoints__Group_3_1__0();
@@ -3494,14 +3494,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3_1__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1306:1: rule__Viewpoints__Group_3_1__0 : rule__Viewpoints__Group_3_1__0__Impl rule__Viewpoints__Group_3_1__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1313:1: rule__Viewpoints__Group_3_1__0 : rule__Viewpoints__Group_3_1__0__Impl rule__Viewpoints__Group_3_1__1 ;
     public final void rule__Viewpoints__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1310:1: ( rule__Viewpoints__Group_3_1__0__Impl rule__Viewpoints__Group_3_1__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1311:2: rule__Viewpoints__Group_3_1__0__Impl rule__Viewpoints__Group_3_1__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1317:1: ( rule__Viewpoints__Group_3_1__0__Impl rule__Viewpoints__Group_3_1__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1318:2: rule__Viewpoints__Group_3_1__0__Impl rule__Viewpoints__Group_3_1__1
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group_3_1__0__Impl_in_rule__Viewpoints__Group_3_1__02546);
             rule__Viewpoints__Group_3_1__0__Impl();
@@ -3532,17 +3532,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3_1__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1318:1: rule__Viewpoints__Group_3_1__0__Impl : ( ',' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1325:1: rule__Viewpoints__Group_3_1__0__Impl : ( ',' ) ;
     public final void rule__Viewpoints__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1322:1: ( ( ',' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1323:1: ( ',' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1329:1: ( ( ',' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1330:1: ( ',' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1323:1: ( ',' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1324:1: ','
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1330:1: ( ',' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1331:1: ','
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getCommaKeyword_3_1_0()); 
@@ -3573,14 +3573,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3_1__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1337:1: rule__Viewpoints__Group_3_1__1 : rule__Viewpoints__Group_3_1__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1344:1: rule__Viewpoints__Group_3_1__1 : rule__Viewpoints__Group_3_1__1__Impl ;
     public final void rule__Viewpoints__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1341:1: ( rule__Viewpoints__Group_3_1__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1342:2: rule__Viewpoints__Group_3_1__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1348:1: ( rule__Viewpoints__Group_3_1__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1349:2: rule__Viewpoints__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_rule__Viewpoints__Group_3_1__1__Impl_in_rule__Viewpoints__Group_3_1__12608);
             rule__Viewpoints__Group_3_1__1__Impl();
@@ -3606,23 +3606,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Group_3_1__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1348:1: rule__Viewpoints__Group_3_1__1__Impl : ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1355:1: rule__Viewpoints__Group_3_1__1__Impl : ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) ) ;
     public final void rule__Viewpoints__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1352:1: ( ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1353:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1359:1: ( ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1360:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1353:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1354:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1360:1: ( ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1361:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getOwned_viewpointsAssignment_3_1_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1355:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1355:2: rule__Viewpoints__Owned_viewpointsAssignment_3_1_1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1362:1: ( rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1362:2: rule__Viewpoints__Owned_viewpointsAssignment_3_1_1
             {
             pushFollow(FOLLOW_rule__Viewpoints__Owned_viewpointsAssignment_3_1_1_in_rule__Viewpoints__Group_3_1__1__Impl2635);
             rule__Viewpoints__Owned_viewpointsAssignment_3_1_1();
@@ -3657,14 +3657,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1369:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1376:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
     public final void rule__FQN__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1373:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1374:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1380:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1381:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
             {
             pushFollow(FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__02669);
             rule__FQN__Group__0__Impl();
@@ -3695,17 +3695,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1381:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1388:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1385:1: ( ( RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1386:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1392:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1393:1: ( RULE_ID )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1386:1: ( RULE_ID )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1387:1: RULE_ID
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1393:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1394:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
@@ -3736,14 +3736,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1398:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1405:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
     public final void rule__FQN__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1402:1: ( rule__FQN__Group__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1403:2: rule__FQN__Group__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1409:1: ( rule__FQN__Group__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1410:2: rule__FQN__Group__1__Impl
             {
             pushFollow(FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__12728);
             rule__FQN__Group__1__Impl();
@@ -3769,22 +3769,22 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1409:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1416:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
     public final void rule__FQN__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1413:1: ( ( ( rule__FQN__Group_1__0 )* ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1414:1: ( ( rule__FQN__Group_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1420:1: ( ( ( rule__FQN__Group_1__0 )* ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1421:1: ( ( rule__FQN__Group_1__0 )* )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1414:1: ( ( rule__FQN__Group_1__0 )* )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1415:1: ( rule__FQN__Group_1__0 )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1421:1: ( ( rule__FQN__Group_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1422:1: ( rule__FQN__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getGroup_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1416:1: ( rule__FQN__Group_1__0 )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1423:1: ( rule__FQN__Group_1__0 )*
             loop9:
             do {
                 int alt9=2;
@@ -3797,7 +3797,7 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1416:2: rule__FQN__Group_1__0
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1423:2: rule__FQN__Group_1__0
             	    {
             	    pushFollow(FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl2755);
             	    rule__FQN__Group_1__0();
@@ -3838,14 +3838,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group_1__0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1430:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1437:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
     public final void rule__FQN__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1434:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1435:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1441:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1442:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
             {
             pushFollow(FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__02790);
             rule__FQN__Group_1__0__Impl();
@@ -3876,17 +3876,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group_1__0__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1442:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1449:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
     public final void rule__FQN__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1446:1: ( ( '.' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1447:1: ( '.' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1453:1: ( ( '.' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1454:1: ( '.' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1447:1: ( '.' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1448:1: '.'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1454:1: ( '.' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1455:1: '.'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
@@ -3917,14 +3917,14 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group_1__1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1461:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1468:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
     public final void rule__FQN__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1465:1: ( rule__FQN__Group_1__1__Impl )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1466:2: rule__FQN__Group_1__1__Impl
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1472:1: ( rule__FQN__Group_1__1__Impl )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1473:2: rule__FQN__Group_1__1__Impl
             {
             pushFollow(FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__12852);
             rule__FQN__Group_1__1__Impl();
@@ -3950,23 +3950,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FQN__Group_1__1__Impl"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1472:1: rule__FQN__Group_1__1__Impl : ( ( RULE_ID ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1479:1: rule__FQN__Group_1__1__Impl : ( ( RULE_ID ) ) ;
     public final void rule__FQN__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1476:1: ( ( ( RULE_ID ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1477:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1483:1: ( ( ( RULE_ID ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1484:1: ( ( RULE_ID ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1477:1: ( ( RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1478:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1484:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1485:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1479:1: ( RULE_ID )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1479:3: RULE_ID
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1486:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1486:3: RULE_ID
             {
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl2880); if (state.failed) return ;
 
@@ -3997,17 +3997,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__NameAssignment_2"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1494:1: rule__ArchitectureFramework__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1501:1: rule__ArchitectureFramework__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__ArchitectureFramework__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1498:1: ( ( RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1499:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1505:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1506:1: ( RULE_ID )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1499:1: ( RULE_ID )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1500:1: RULE_ID
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1506:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1507:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getNameIDTerminalRuleCall_2_0()); 
@@ -4038,17 +4038,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__DescriptionAssignment_4_1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1509:1: rule__ArchitectureFramework__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1516:1: rule__ArchitectureFramework__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__ArchitectureFramework__DescriptionAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1513:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1514:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1520:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1521:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1514:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1515:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1521:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1522:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
@@ -4079,17 +4079,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__ShortNameAssignment_5_1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1524:1: rule__ArchitectureFramework__ShortNameAssignment_5_1 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1531:1: rule__ArchitectureFramework__ShortNameAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__ArchitectureFramework__ShortNameAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1528:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1529:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1535:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1536:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1529:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1530:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1536:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1537:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getShortNameSTRINGTerminalRuleCall_5_1_0()); 
@@ -4120,17 +4120,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Af_viewpointsAssignment_6"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1539:1: rule__ArchitectureFramework__Af_viewpointsAssignment_6 : ( ruleViewpoints ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1546:1: rule__ArchitectureFramework__Af_viewpointsAssignment_6 : ( ruleViewpoints ) ;
     public final void rule__ArchitectureFramework__Af_viewpointsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1543:1: ( ( ruleViewpoints ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1544:1: ( ruleViewpoints )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1550:1: ( ( ruleViewpoints ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1551:1: ( ruleViewpoints )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1544:1: ( ruleViewpoints )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1545:1: ruleViewpoints
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1551:1: ( ruleViewpoints )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1552:1: ruleViewpoints
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getAf_viewpointsViewpointsParserRuleCall_6_0()); 
@@ -4165,17 +4165,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ArchitectureFramework__Owned_configurationAssignment_7"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1554:1: rule__ArchitectureFramework__Owned_configurationAssignment_7 : ( ruleConfiguration ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1561:1: rule__ArchitectureFramework__Owned_configurationAssignment_7 : ( ruleConfiguration ) ;
     public final void rule__ArchitectureFramework__Owned_configurationAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1558:1: ( ( ruleConfiguration ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1559:1: ( ruleConfiguration )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1565:1: ( ( ruleConfiguration ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1566:1: ( ruleConfiguration )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1559:1: ( ruleConfiguration )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1560:1: ruleConfiguration
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1566:1: ( ruleConfiguration )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1567:1: ruleConfiguration
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureFrameworkAccess().getOwned_configurationConfigurationParserRuleCall_7_0()); 
@@ -4210,17 +4210,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Owned_elementAssignment_3_0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1569:1: rule__Configuration__Owned_elementAssignment_3_0 : ( ruleConfigurationElement ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1576:1: rule__Configuration__Owned_elementAssignment_3_0 : ( ruleConfigurationElement ) ;
     public final void rule__Configuration__Owned_elementAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1573:1: ( ( ruleConfigurationElement ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1574:1: ( ruleConfigurationElement )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1580:1: ( ( ruleConfigurationElement ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1581:1: ( ruleConfigurationElement )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1574:1: ( ruleConfigurationElement )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1575:1: ruleConfigurationElement
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1581:1: ( ruleConfigurationElement )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1582:1: ruleConfigurationElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getOwned_elementConfigurationElementParserRuleCall_3_0_0()); 
@@ -4255,17 +4255,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Configuration__Owned_elementAssignment_3_1_1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1584:1: rule__Configuration__Owned_elementAssignment_3_1_1 : ( ruleConfigurationElement ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1591:1: rule__Configuration__Owned_elementAssignment_3_1_1 : ( ruleConfigurationElement ) ;
     public final void rule__Configuration__Owned_elementAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1588:1: ( ( ruleConfigurationElement ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1589:1: ( ruleConfigurationElement )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1595:1: ( ( ruleConfigurationElement ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1596:1: ( ruleConfigurationElement )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1589:1: ( ruleConfigurationElement )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1590:1: ruleConfigurationElement
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1596:1: ( ruleConfigurationElement )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1597:1: ruleConfigurationElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getConfigurationAccess().getOwned_elementConfigurationElementParserRuleCall_3_1_1_0()); 
@@ -4300,17 +4300,17 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GenerationConfiguration__RootProjectNameAssignment_1_1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1599:1: rule__GenerationConfiguration__RootProjectNameAssignment_1_1 : ( ruleFQN ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1606:1: rule__GenerationConfiguration__RootProjectNameAssignment_1_1 : ( ruleFQN ) ;
     public final void rule__GenerationConfiguration__RootProjectNameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1603:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1604:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1610:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1611:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1604:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1605:1: ruleFQN
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1611:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1612:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGenerationConfigurationAccess().getRootProjectNameFQNParserRuleCall_1_1_0()); 
@@ -4345,23 +4345,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Owned_viewpointsAssignment_3_0"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1614:1: rule__Viewpoints__Owned_viewpointsAssignment_3_0 : ( ( RULE_ID ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1621:1: rule__Viewpoints__Owned_viewpointsAssignment_3_0 : ( ( RULE_ID ) ) ;
     public final void rule__Viewpoints__Owned_viewpointsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1618:1: ( ( ( RULE_ID ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1619:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1625:1: ( ( ( RULE_ID ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1626:1: ( ( RULE_ID ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1619:1: ( ( RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1620:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1626:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1627:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getOwned_viewpointsViewpointCrossReference_3_0_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1621:1: ( RULE_ID )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1622:1: RULE_ID
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1628:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1629:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getOwned_viewpointsViewpointIDTerminalRuleCall_3_0_0_1()); 
@@ -4398,23 +4398,23 @@ public class InternalAfdescParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Viewpoints__Owned_viewpointsAssignment_3_1_1"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1633:1: rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 : ( ( RULE_ID ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1640:1: rule__Viewpoints__Owned_viewpointsAssignment_3_1_1 : ( ( RULE_ID ) ) ;
     public final void rule__Viewpoints__Owned_viewpointsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1637:1: ( ( ( RULE_ID ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1638:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1644:1: ( ( ( RULE_ID ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1645:1: ( ( RULE_ID ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1638:1: ( ( RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1639:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1645:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1646:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getOwned_viewpointsViewpointCrossReference_3_1_1_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1640:1: ( RULE_ID )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1641:1: RULE_ID
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1647:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/ui/contentassist/antlr/internal/InternalAfdesc.g:1648:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointsAccess().getOwned_viewpointsViewpointIDTerminalRuleCall_3_1_1_0_1()); 

@@ -15,7 +15,6 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.acceleration.DiagramTextAcceleration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.VpdiagramActivator;
 
 /**
  * @author Faycal ABKA
@@ -38,7 +37,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		DiagramTextAcceleration diagramTextAcceleration = 
 				new DiagramTextAcceleration(vpClass, qualifiedNameProvider, appendable, vpClass.getName());
 		
-		long suffix = VpdiagramActivator.getAndIncrementDiagram_suffix();
+		long suffix = DiagramTextAcceleration.getAndIncrementDiagram_suffix();
 		
 		appendable.append("DiagramExtension \"diagramExtension_" + suffix + "\" {");
 		appendable.increaseIndentation().newLine();
@@ -125,7 +124,7 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 	
 	 
 	private void generateActionRootExtendDiagramNode(TreeAppendable appendable, Class domainContext){
-		long suffix = VpdiagramActivator.getAndIncrementDiagram_suffix();
+		long suffix = DiagramTextAcceleration.getAndIncrementDiagram_suffix();
 		
 		String concernedNodeFQN = domainContext.getName() + "Container." + domainContext.getName();
 		

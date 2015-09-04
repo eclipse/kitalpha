@@ -30,9 +30,11 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.validation,
  org.eclipse.core.resources,
- org.eclipse.sirius;visibility:=reexport,
+ org.eclipse.sirius,
  org.eclipse.sirius.ecore.extender,
- org.eclipse.sirius.diagram;visibility:=reexport
+ org.eclipse.sirius.diagram,
+ org.eclipse.xtext.xbase.lib,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j,
  org.eclipse.emf.validation.model,
  org.eclipse.xtext.xbase.lib

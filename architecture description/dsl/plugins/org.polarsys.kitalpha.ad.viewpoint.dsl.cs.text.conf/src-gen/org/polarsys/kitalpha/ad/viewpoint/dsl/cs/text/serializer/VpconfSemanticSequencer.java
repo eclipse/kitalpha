@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
 import com.google.inject.Inject;
@@ -30,68 +40,39 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	@Inject
 	private VpconfGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == DescAirdGenConfPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case DescAirdGenConfPackage.AIRD_GENERATION_CONFIGURATION:
-				if(context == grammarAccess.getExtensionGeneratrionConfigurationRule() ||
-				   context == grammarAccess.getModelsAirdGenerationConfigurationRule()) {
-					sequence_ModelsAirdGenerationConfiguration(context, (AirdGenerationConfiguration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ModelsAirdGenerationConfiguration(context, (AirdGenerationConfiguration) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == DocGenConfigurationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case DocGenConfigurationPackage.DOCUMENTATION_GENERATION_CONFIGURATION:
-				if(context == grammarAccess.getDocumentationGenerationConfigurationRule() ||
-				   context == grammarAccess.getExtensionGeneratrionConfigurationRule()) {
-					sequence_DocumentationGenerationConfiguration(context, (DocumentationGenerationConfiguration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DocumentationGenerationConfiguration(context, (DocumentationGenerationConfiguration) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == ConfigurationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ConfigurationPackage.DIAGRAM_GENERATION_CONFIGURATION:
-				if(context == grammarAccess.getDiagramGenerationConfigurationRule() ||
-				   context == grammarAccess.getExtensionGeneratrionConfigurationRule()) {
-					sequence_DiagramGenerationConfiguration(context, (DiagramGenerationConfiguration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DiagramGenerationConfiguration(context, (DiagramGenerationConfiguration) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == VpconfPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case VpconfPackage.CONFIGURATION:
-				if(context == grammarAccess.getConfigurationRule()) {
-					sequence_Configuration(context, (Configuration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Configuration(context, (Configuration) semanticObject); 
+				return; 
 			case VpconfPackage.GDATA:
-				if(context == grammarAccess.getGDataRule()) {
-					sequence_GData(context, (GData) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_GData(context, (GData) semanticObject); 
+				return; 
 			case VpconfPackage.GENERATION:
-				if(context == grammarAccess.getConfigurationElementRule() ||
-				   context == grammarAccess.getGenerationRule()) {
-					sequence_Generation(context, (Generation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Generation(context, (Generation) semanticObject); 
+				return; 
 			case VpconfPackage.GENERATION_CONFIGURATION:
-				if(context == grammarAccess.getConfigurationElementRule() ||
-				   context == grammarAccess.getGenerationConfigurationRule()) {
-					sequence_GenerationConfiguration(context, (GenerationConfiguration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_GenerationConfiguration(context, (GenerationConfiguration) semanticObject); 
+				return; 
 			case VpconfPackage.TARGET_APPLICATION:
-				if(context == grammarAccess.getConfigurationElementRule() ||
-				   context == grammarAccess.getTargetApplicationRule()) {
-					sequence_TargetApplication(context, (TargetApplication) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_TargetApplication(context, (TargetApplication) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}

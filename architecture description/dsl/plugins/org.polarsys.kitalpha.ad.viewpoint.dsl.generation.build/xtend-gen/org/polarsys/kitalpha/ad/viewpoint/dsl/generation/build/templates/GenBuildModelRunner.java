@@ -1,4 +1,4 @@
-/*******************************************************************************
+/**
  * Copyright (c) 2014 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
@@ -7,8 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
+ */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.templates;
 
 import org.eclipse.egf.model.domain.Domain;
@@ -48,15 +47,13 @@ public class GenBuildModelRunner {
   
   public FactoryComponent doGenerate(final String domainViewpointURI, final String lvpsShortName, final String generationPath) {
     final FactoryComponent fc = FcoreFactory.eINSTANCE.createFactoryComponent();
-    String _plus = ("run_" + lvpsShortName);
-    fc.setName(_plus);
+    fc.setName(("run_" + lvpsShortName));
     final URI uri = URI.createPlatformResourceURI(domainViewpointURI, false);
     final ViewpointContainer viewpointContainer = FcoreFactory.eINSTANCE.createViewpointContainer();
     fc.setViewpointContainer(viewpointContainer);
     final ProductionPlan plan = FprodFactory.eINSTANCE.createProductionPlan();
     final ProductionPlanInvocation invocation = FprodFactory.eINSTANCE.createProductionPlanInvocation();
-    ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
-    final ResourceSet resourceSet = _resourceSetImpl;
+    final ResourceSet resourceSet = new ResourceSetImpl();
     URI _createPlatformPluginURI = URI.createPlatformPluginURI(this.BUILD_ACTIVITY, false);
     final Resource activityResource = resourceSet.getResource(_createPlatformPluginURI, true);
     EObject _eObject = activityResource.getEObject(this.BUILD_ACTIVITY_ID);

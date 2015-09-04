@@ -38,6 +38,7 @@ public class VpuiContainerManager extends StateBasedContainerManager {
 		return super.getVisibleContainers(desc, resourceDescriptions);
 	}
 	
+	@Override
 	protected List<IContainer> getVisibleContainers(List<String> handles, IResourceDescriptions resourceDescriptions) {
 		//Default containers
 		if (handles.isEmpty())

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
 import com.google.inject.Inject;
@@ -44,8 +54,11 @@ public class VpdiagramSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     'police:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     value=Expression (ambiguity) (rule end)
 	 */
 	protected void emit_Label_PoliceKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

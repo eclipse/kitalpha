@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2014 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,11 +11,13 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.description.style.BeginLabelStyleDescription;
 import org.eclipse.sirius.diagram.description.style.CenterLabelStyleDescription;
 import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
 import org.eclipse.sirius.diagram.description.style.EndLabelStyleDescription;
+import org.eclipse.sirius.viewpoint.FontFormat;
 import org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle;
@@ -152,8 +154,14 @@ public final class EdgeStyleImportMerger {
 		if (! (viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Bold()) && 
 			   viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Italic())))
 		{
-			result.getLabelFormat().clear();
-			result.getLabelFormat().addAll(originalLabel.getLabelFormat());
+//			result.setLabelFormat(originalLabel. getLabelFormat());
+			EList<FontFormat> originalLabelFormat = originalLabel. getLabelFormat();
+			if (null != originalLabelFormat && false == originalLabelFormat.isEmpty())
+			{
+				result.getLabelFormat().clear();
+				result.getLabelFormat().addAll(originalLabelFormat);
+			}
+			
 		}
 		return result;
 	}

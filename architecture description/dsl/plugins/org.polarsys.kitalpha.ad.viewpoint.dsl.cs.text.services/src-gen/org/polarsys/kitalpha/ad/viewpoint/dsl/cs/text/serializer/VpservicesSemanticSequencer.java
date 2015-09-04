@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,55 +37,32 @@ public class VpservicesSemanticSequencer extends AbstractDelegatingSemanticSeque
 	@Inject
 	private VpservicesGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ServicesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ServicesPackage.SERVICES:
-				if(context == grammarAccess.getServicesRule()) {
-					sequence_Services(context, (Services) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Services(context, (Services) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == VpservicesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case VpservicesPackage.PROPERTY:
-				if(context == grammarAccess.getPropertyRule()) {
-					sequence_Property(context, (Property) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Property(context, (Property) semanticObject); 
+				return; 
 			case VpservicesPackage.PROPERTY_SET:
-				if(context == grammarAccess.getAspectRule() ||
-				   context == grammarAccess.getPropertySetRule()) {
-					sequence_PropertySet(context, (PropertySet) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_PropertySet(context, (PropertySet) semanticObject); 
+				return; 
 			case VpservicesPackage.RULE:
-				if(context == grammarAccess.getRuleRule()) {
-					sequence_Rule(context, (Rule) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Rule(context, (Rule) semanticObject); 
+				return; 
 			case VpservicesPackage.RULE_SET:
-				if(context == grammarAccess.getAspectRule() ||
-				   context == grammarAccess.getRuleSetRule()) {
-					sequence_RuleSet(context, (RuleSet) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_RuleSet(context, (RuleSet) semanticObject); 
+				return; 
 			case VpservicesPackage.SERVICE:
-				if(context == grammarAccess.getServiceRule()) {
-					sequence_Service(context, (Service) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Service(context, (Service) semanticObject); 
+				return; 
 			case VpservicesPackage.SERVICE_SET:
-				if(context == grammarAccess.getAspectRule() ||
-				   context == grammarAccess.getServiceSetRule()) {
-					sequence_ServiceSet(context, (ServiceSet) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ServiceSet(context, (ServiceSet) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}

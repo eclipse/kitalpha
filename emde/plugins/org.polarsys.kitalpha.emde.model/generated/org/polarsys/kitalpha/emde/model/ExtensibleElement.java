@@ -19,10 +19,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.emde.model.ExtensibleElement#getOwnedExtensions <em>Owned Extensions</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.emde.model.EmdePackage#getExtensibleElement()
  * @model abstract="true"
@@ -32,7 +32,7 @@ public interface ExtensibleElement extends Element {
 	/**
 	 * Returns the value of the '<em><b>Owned Extensions</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.emde.model.ElementExtension}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Extensions</em>' containment reference list isn't clear,

@@ -149,7 +149,7 @@ public abstract class AbstractWizard extends Wizard implements INewWizard {
 				protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
 					monitor.beginTask(org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.Messages.AbstractWizard_FileCreationTaskTitle, IProgressMonitor.UNKNOWN);
 					ResourceSet resourceSet = new ResourceSetImpl();
-					URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+					URI uri = ResourceHelper.URIFix.createPlatformResourceURI(file.getFullPath().toString(), true);
 					URI normalized = resourceSet.getURIConverter().normalize(uri);
 					XtextResource resource = (XtextResource) ResourceHelper.loadResource(normalized, resourceSet);
 					try {

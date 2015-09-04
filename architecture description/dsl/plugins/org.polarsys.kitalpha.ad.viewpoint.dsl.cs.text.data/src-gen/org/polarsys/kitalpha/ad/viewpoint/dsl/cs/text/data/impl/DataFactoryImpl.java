@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
 /**
  */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.impl;
@@ -40,7 +30,7 @@ public class DataFactoryImpl extends EFactoryImpl implements DataFactory
   {
     try
     {
-      DataFactory theDataFactory = (DataFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/data/1.0.0"); 
+      DataFactory theDataFactory = (DataFactory)EPackage.Registry.INSTANCE.getEFactory(DataPackage.eNS_URI);
       if (theDataFactory != null)
       {
         return theDataFactory;

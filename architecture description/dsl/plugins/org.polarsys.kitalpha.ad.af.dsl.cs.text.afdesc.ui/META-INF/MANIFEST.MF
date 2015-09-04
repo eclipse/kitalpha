@@ -22,5 +22,6 @@ Require-Bundle: org.eclipse.ui.editors;bundle-version="3.5.0",
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.contentassist,
- org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.contentassist.antlr
+ org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.contentassist.antlr,
+ org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.quickfix
 Bundle-Activator: org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.internal.AfdescActivator

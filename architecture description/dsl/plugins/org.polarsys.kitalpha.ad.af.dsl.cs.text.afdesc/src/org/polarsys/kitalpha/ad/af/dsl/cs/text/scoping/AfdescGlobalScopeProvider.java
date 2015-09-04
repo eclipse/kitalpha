@@ -97,7 +97,7 @@ public class AfdescGlobalScopeProvider extends DefaultGlobalScopeProvider{
 		} catch(RuntimeException ex) {
 			if (uri.isPlatformResource()) {
 				String platformString = uri.toPlatformString(true);
-				URI platformPluginURI = URI.createPlatformPluginURI(platformString, true);
+				URI platformPluginURI = AfdescResourceHelper.URIFix.createPlatformPluginURI(platformString, true);
 				return loadResource(platformPluginURI, resourceSet);
 			}
 			return null;
@@ -121,9 +121,9 @@ public class AfdescGlobalScopeProvider extends DefaultGlobalScopeProvider{
 		for (org.polarsys.kitalpha.resourcereuse.model.Resource r: resources) {
 			URI uri = null;
 			if (r.getProviderLocation().equals(Location.WORSPACE)) {
-				uri = URI.createPlatformResourceURI(r.getPath(), false);
+				uri = AfdescResourceHelper.URIFix.createPlatformResourceURI(r.getPath(), false);
 			} else {
-				uri = URI.createPlatformPluginURI(r.getPath(), false);
+				uri = AfdescResourceHelper.URIFix.createPlatformPluginURI(r.getPath(), false);
 			}
 			resourceURIs.add(uri);
 		}

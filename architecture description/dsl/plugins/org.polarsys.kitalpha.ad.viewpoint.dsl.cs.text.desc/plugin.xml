@@ -17,6 +17,7 @@ Contributors:
     <package 
        uri = "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpspec/1.0.0" 
        class = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage"
-       genModel = "org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpspec.genmodel" /> 
+       genModel = "model/generated/Vpspec.genmodel" /> 
+	
   </extension>
 </plugin>

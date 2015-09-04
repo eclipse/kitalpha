@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.emde.genchain.extension;
 
 import java.util.HashMap;
@@ -44,6 +44,7 @@ public class EmdeGenmodelPattern {
 	public EmdeGenmodelPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -88,7 +89,7 @@ public class EmdeGenmodelPattern {
 
 	protected void method_create(final StringBuffer out, final PatternContext ctx) throws Exception {
 		IPath ecorePath = new Path(parameter.getModelPath());
-		URI ecoreURI = URI.createPlatformPluginURI(ecorePath.toString(), false);
+		URI ecoreURI = URI.createPlatformResourceURI(ecorePath.toString(), false);
 
 		String fileName = ecorePath.removeFileExtension().addFileExtension("genmodel").lastSegment();
 

@@ -23,7 +23,11 @@ if (inheritsLabel)
 		style.setLabelAlignment(mapping.getStyle().getLabelAlignment());
 		style.setLabelColor(mapping.getStyle().getLabelColor());
 		style.setLabelExpression(mapping.getStyle().getLabelExpression());
-		style.getLabelFormat().addAll(mapping.getStyle().getLabelFormat());
+		List<FontFormat> labelFormat = mapping.getStyle().getLabelFormat();
+		if (null != labelFormat && false == labelFormat.isEmpty())
+		{
+			style.getLabelFormat().addAll(labelFormat);
+		}
 		style.setLabelPosition(mapping.getStyle().getLabelPosition());
 		style.setLabelSize(mapping.getStyle().getLabelSize());
 	}

@@ -95,8 +95,7 @@ for (ContainerDescription iContainerDescription : parameter.getStyle()) {
 				cStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 			
 			if (label.isItalic())
-				cStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);	
-			
+				cStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 		}
 
 

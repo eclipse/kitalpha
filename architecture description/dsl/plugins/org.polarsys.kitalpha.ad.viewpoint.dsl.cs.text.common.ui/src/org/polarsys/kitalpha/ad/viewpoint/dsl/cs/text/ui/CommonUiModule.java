@@ -45,8 +45,4 @@ public class CommonUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.te
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher> bindPrefixMatcher() {
 		return CommonPrefixMatcher.class;
 	}
-	
-//	public Class<? extends org.eclipse.xtext.ui.editor.XtextEditor> bindXtextEditor(){
-//		return VpdslEditor.class;
-//	}
 }

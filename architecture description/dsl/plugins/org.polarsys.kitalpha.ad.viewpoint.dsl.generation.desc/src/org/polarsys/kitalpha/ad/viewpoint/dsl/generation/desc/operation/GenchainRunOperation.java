@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.operation;
 
 import java.lang.reflect.InvocationTargetException;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -72,10 +73,35 @@ public class GenchainRunOperation extends AbstractGenerationOperation implements
 		public void createFeature(){
 			// Reload generation chain element to get the last version
 			URI uri = EcoreUtil.getURI(generationChain);
+			
+			//[FAB]: Avoid ResourceNotFoundException
+			//@ [BZE]: Scenario to reproduce:
+			//	1. Generation first time a vp
+			//	2. Deletes all generated projects
+			//	3. Regenerate
+			String path = uri.trimFragment().toString();
+			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(_projectName);
+			
+			IFile file = project.getFile(path);
+			
+			if (file == null || !(file.exists()))
+				return;
+			
+			//End [FAB]
+			
 			TargetPlatformResourceSet gcSet = new TargetPlatformResourceSet();
 			generationChain = (GenerationChain) gcSet.getEObject(uri, true);
 			// Fire main feature creation 
 			try {
+				
+				//[FAB] I Think this is not a good way to instantiate set. 
+				//to avoid NPE 
+				if (set == null)
+					set = new TargetPlatformResourceSet();
+				
+				//End [FAB]
+				
+				
 				generateFeaturePlugin(set, generationChain, _monitor);
 			} catch (CoreException e) {
 				e.printStackTrace();

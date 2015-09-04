@@ -1,8 +1,7 @@
  
 NodeMapping nm = (NodeMapping) dNodeMapping;
 
-for (NodeDescription iNodeDescription : parameter.getStyle()) 
-{
+for (NodeDescription iNodeDescription : parameter.getStyle()) {
 	Condition condition = iNodeDescription.getCondition();
 	boolean conditionalStyle = false;
 	ConditionalNodeStyleDescription cnStyleDesc = null;
@@ -169,7 +168,6 @@ for (NodeDescription iNodeDescription : parameter.getStyle())
 					
 			if (label.isItalic())
 				nStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
-			
 		}
 		
 		/************************************************************************************************/

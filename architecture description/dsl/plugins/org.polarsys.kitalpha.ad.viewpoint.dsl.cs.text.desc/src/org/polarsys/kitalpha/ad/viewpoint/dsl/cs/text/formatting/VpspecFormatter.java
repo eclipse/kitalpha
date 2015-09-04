@@ -46,11 +46,8 @@ public class VpspecFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1).before(f.getViewpointAccess().getUsesFilesystemKeyword_12_0());
 
 		
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeBuildKeyword_18_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeConfigurationKeyword_19_0_0());
 		c.setLinewrap(1).before(f.getViewpointAccess().getDataKeyword_13_0());
 		c.setLinewrap(1).before(f.getViewpointAccess().getTypeDiagramsKeyword_15_0_0());
-		c.setLinewrap(1).before(f.getViewpointAccess().getTypeServicesKeyword_17_0_0());
 		c.setLinewrap(1).before(f.getViewpointAccess().getTypeUIKeyword_14_0_0());
 		
 		c.setLinewrap(1).before(f.getViewpointAccess().getUsesViewpointKeyword_8_0());

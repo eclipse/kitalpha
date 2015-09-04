@@ -19,13 +19,16 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+
 import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.common.tools.api.util.FileUtil;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.SiriusPlugin;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.dialect.ExportFormat;
 import org.eclipse.sirius.ui.business.api.dialect.ExportFormat.ExportDocumentFormat;
@@ -35,10 +38,8 @@ import org.eclipse.sirius.ui.tools.api.actions.export.IAroundExport;
 import org.eclipse.sirius.ui.tools.api.actions.export.IBeforeExport;
 import org.eclipse.sirius.ui.tools.api.actions.export.IExportRepresentationsAsImagesExtension;
 import org.eclipse.sirius.ui.tools.api.actions.export.SizeTooLargeException;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.SiriusPlugin;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
+import org.eclipse.core.runtime.Status;
 
 /**
  * Reworked code from {@link ExportAction}. 

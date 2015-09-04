@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 
 import com.google.common.collect.Lists;
 
@@ -60,5 +61,28 @@ public class AfdslWizardsUtil {
 			}
 		}
 		return targets;
+	}
+	
+	/**
+	 * Copied from {@link org.polarsys.kitalpha.ad.common.utils.URIFix}
+	 */
+	public static class URIFix {
+
+		public static URI createPlatformPluginURI(String path, boolean encode) {
+			return createURI("platform:/plugin/", path);
+		}
+
+		public static URI createPlatformResourceURI(String path, boolean encode) {
+			return createURI("platform:/resource/", path);
+		}
+
+		private static URI createURI(String prefix, String path) {
+			String uri = prefix;
+			if (path.startsWith("/"))
+				uri += path.substring(1);
+			else
+				uri += path;
+			return URI.createURI(uri);
+		}
 	}
 }

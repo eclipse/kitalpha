@@ -31,9 +31,9 @@ import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManagerListener.Stub;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
+import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
-import org.polarsys.kitalpha.resourcereuse.model.Location;
 
 /**
  * @author Thomas Guiu
@@ -60,11 +60,7 @@ public class ViewpointActivationStateListener extends Stub {
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.INSTANCE.getAvailableViewpoints()) {
 				try {
-					URI uri = null;
-					if (res.getProviderLocation().equals(Location.WORSPACE))
-						uri = URI.createPlatformResourceURI(res.getPath(), false);
-					else
-						uri = URI.createPlatformPluginURI(res.getPath(), false);
+					URI uri = URIHelper.createURI(res);
 
 					List<String> siriusVps = new ArrayList<String>();
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);

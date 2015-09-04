@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright (c) 2014 Thales Global Services S.A.S.
- All rights reserved. This program and the accompanying materials
- are made available under the terms of the Eclipse Public License v1.0
- which accompanies this distribution, and is available at
- http://www.eclipse.org/legal/epl-v10.html
-
-Contributors:
- Thales Global Services S.A.S - initial API and implementation
--->
 <?eclipse version="3.0"?>
 
 <plugin>
 
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="conf.vptext"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf"
+            name="Vpconf Editor">
+        </editor>
+    </extension>
     <extension
         point="org.eclipse.ui.handlers">
         <handler
@@ -32,7 +33,27 @@ Contributors:
                     definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Editor.opened">
             </reference>
          </activeWhen>
-      </handler>
+      	</handler>
+      	<!-- copy qualified name -->
+        <handler
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+            commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
+            <activeWhen>
+				<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Editor.opened" />
+            </activeWhen>
+        </handler>
+        <handler
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+            commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
+            <activeWhen>
+            	<and>
+            		<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.XtextEditor.opened" />
+	                <iterate>
+						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+					</iterate>
+				</and>
+            </activeWhen>
+        </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
         <definition id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Editor.opened">
@@ -45,14 +66,23 @@ Contributors:
                 </with>        
             </and>
         </definition>
+        <definition id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.XtextEditor.opened">
+            <and>
+                <reference definitionId="isXtextEditorActive"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
     </extension>
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-              category="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common"
-              class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-              id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf"
-              name="Configuration">
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf"
+            name="Vpconf">
             <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Vpconf"/>
         </page>
         <page
@@ -96,6 +126,19 @@ Contributors:
             id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.validate"
             name="Validate">
       </command>
+      <!-- copy qualified name -->
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
         <menuContribution
@@ -110,6 +153,36 @@ Contributors:
                 </reference>
             </visibleWhen>
          </command>  
+         </menuContribution>
+         <!-- copy qualified name -->
+         <menuContribution locationURI="popup:#TextEditorContext?after=copy">
+         	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
+         		style="push" tooltip="Copy Qualified Name">
+            	<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Editor.opened" />
+            	</visibleWhen>
+         	</command>  
+         </menuContribution>
+         <menuContribution locationURI="menu:edit?after=copy">
+         	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+            	style="push" tooltip="Copy Qualified Name">
+            	<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Editor.opened" />
+            	</visibleWhen>
+         	</command>  
+         </menuContribution>
+         <menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName" 
+				style="push" tooltip="Copy Qualified Name">
+         		<visibleWhen checkEnabled="false">
+	            	<and>
+	            		<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.XtextEditor.opened" />
+						<iterate>
+							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+						</iterate>
+					</and>
+				</visibleWhen>
+			</command>
          </menuContribution>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -136,6 +209,19 @@ Contributors:
 
 <!-- adding resource factories -->
 
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="conf.vptext">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="conf.vptext">
+        </resourceServiceProvider>
+    </extension>
 
 
     <!-- marker definitions for org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf -->
@@ -164,7 +250,9 @@ Contributors:
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="conf.vptext"
+            >
       </participant>
    </extension>
    <extension
@@ -191,6 +279,27 @@ Contributors:
 	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
         </page>
     </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
+			<command
+				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
+				id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.OpenGeneratedCode"
+				style="push">
+					<visibleWhen checkEnabled="false">
+						<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Editor.opened" />
+					</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
+				<activeWhen>
+					<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Editor.opened" />
+				</activeWhen>
+		</handler>
+	</extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -256,7 +365,7 @@ Contributors:
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
@@ -306,61 +415,11 @@ Contributors:
             extensions="conf.vptext">
     </provider>
   </extension>
-  <extension
-        point="org.eclipse.ui.editors">
-     <editor
-           class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-           contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-           default="true"
-           extensions="conf.vptext, vptext"
-           icon="icons/vpdsl_file_16.png"
-           id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf"
-           matchingStrategy="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfMatchingStrategy"
-           name="Vptext Configuration Editor">
-     </editor>
-  </extension>
-  <extension
-        point="org.eclipse.emf.ecore.extension_parser">
-     <parser
-           class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-           type="conf.vptext">
-     </parser>
-  </extension>
-  <extension
-        point="org.eclipse.xtext.extension_resourceServiceProvider">
-     <resourceServiceProvider
-           class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-           uriExtension="conf.vptext">
-     </resourceServiceProvider>
-  </extension>
-  <extension
-        point="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui.templateprovider">
-     <TemplateProvider
-           file="templates/templates.xml"
-           target="EMF">
-     </TemplateProvider>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="conf.vptext"
+            type="text">
+    </fileTypes>
   </extension>
 
-      <extension
-          point="org.eclipse.ui.newWizards">
-          <!--
-       <category
-             id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.category"
-             name="%category.name">
-       </category>
-       -->
-       <category
-             id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.category"
-             name="%textedit.category.name"
-             parentCategory="org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.category">
-       </category>
-       <wizard
-             category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.ad.wizard.category/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.category"
-             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.conf.VpconfWizard"
-             icon="icons/vpdsl_file_16.png"
-             id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.vpconf.file"
-             name="%wizard.vpconf.file.name">
-       </wizard>
-    </extension>
-    
 </plugin>

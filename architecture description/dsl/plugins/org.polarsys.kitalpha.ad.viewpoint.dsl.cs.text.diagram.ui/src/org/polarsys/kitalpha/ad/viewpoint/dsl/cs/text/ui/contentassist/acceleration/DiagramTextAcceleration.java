@@ -20,7 +20,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration.AEdge;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration.ANode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.VpdiagramActivator;
 
 
 /**
@@ -42,6 +41,8 @@ public class DiagramTextAcceleration {
 	
 	private final String prefix;
 	
+	private static long diagram_suffix = 0;
+	
 	
 	public DiagramTextAcceleration(Class rootClass, IQualifiedNameProvider qualifiedNameProvider, TreeAppendable appendable) {
 		
@@ -51,6 +52,9 @@ public class DiagramTextAcceleration {
 		
 		dataAnalyser = new ADataAnalyser(rootClass);
 		dataAnalyser.Analyse();
+		
+		//Reset diagram suffix at each instantiation
+		DiagramTextAcceleration.diagram_suffix = 0;
 	}
 	
 	public DiagramTextAcceleration(Class rootClass, 
@@ -119,7 +123,7 @@ public class DiagramTextAcceleration {
 			 * NB: getAndIncrementDiagram_suffix() is defined in the activator
 			 * if regeneration, reimplement it or subclass the activator
 			 */
-			long suffix = VpdiagramActivator.getAndIncrementDiagram_suffix();
+			long suffix = getAndIncrementDiagram_suffix();
 			appendable.append("Create ").append(node.getName().trim()).append("_CT_" + suffix).append("{");
 			appendable.increaseIndentation().newLine();
 			appendable.append("label: \"").append(node.getVPClass().getName()).append("\" ");
@@ -336,7 +340,7 @@ public class DiagramTextAcceleration {
 			String tmp = prefix + "Container." + prefix + "." + ref.trim(); //FIXME: underscores are not good practice
 			
 			result.append(tmp);
-			if (ref != refrences[size - 1])
+			if (!ref.equals(refrences[size - 1]))
 				result.append(", ");
 		}
 		
@@ -356,5 +360,11 @@ public class DiagramTextAcceleration {
 			appendable.append(prefix).append("Container."); //FIXME: underscores are not good practice
 		}
 		return appendable;
+	}
+	
+	
+	public static long getAndIncrementDiagram_suffix()
+	{
+		return ++diagram_suffix;
 	}
 }

@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.edge;
 
 import java.util.*;
@@ -47,9 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.EdgeStyleImportMerger;
 
-public class EdgeImportPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
+public class EdgeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
 
 	public EdgeImportPattern() {
 		//Here is the constructor
@@ -76,8 +63,7 @@ public class EdgeImportPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -92,18 +78,15 @@ public class EdgeImportPattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createDoremiElement(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createDoremiElement(final StringBuffer out, final PatternContext ctx) throws Exception {
 		/************************ Creation of the Edge Mapping Import ************************/
 
-		EdgeMappingImport edgeMappingImort = DescriptionFactory.eINSTANCE
-				.createEdgeMappingImport();
+		EdgeMappingImport edgeMappingImort = DescriptionFactory.eINSTANCE.createEdgeMappingImport();
 
 		edgeMappingImort.setName(parameter.getName() + "_EMI");
 		edgeMappingImort.setLabel(parameter.getName());
@@ -113,22 +96,18 @@ public class EdgeImportPattern
 		dEdgeImportMapping = edgeMappingImort;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createDoremiElement",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createDoremiElement", out.toString());
 	}
 
-	protected void method_setParentMapping(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParentMapping(final StringBuffer out, final PatternContext ctx) throws Exception {
 		dslvpElement = parameter;
 		doremiElement = dEdgeImportMapping;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping", out.toString());
 	}
 
-	protected void method_addElementToODesign(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_addElementToODesign(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EObject vpParent = parameter.eContainer().eContainer();
 		EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
 
@@ -141,12 +120,10 @@ public class EdgeImportPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "addElementToODesign",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "addElementToODesign", out.toString());
 	}
 
-	protected void method_setStyle(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EdgeMappingImport em = (EdgeMappingImport) dEdgeImportMapping;
 
 		for (EdgeDescription iEgdeDescription : parameter.getE_description()) {
@@ -159,29 +136,20 @@ public class EdgeImportPattern
 				String acceleoExpression = "";
 				if (fEE instanceof JavaElement) {
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable()
-							+ "," + VSMVariable.container.getInnerVariable();
-					javaMethodName = JavaElementHelper
-							.addDefaultParameterToJavaMethod(javaMethodName,
-									mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(
-							javaMethodName, ExpressionInterpreter.Service);
+					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
+					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
 				}
 				if (fEE instanceof DomainElement) {
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(
-							((DomainElement) fEE).getAttribute().getName(),
-							ExpressionInterpreter.Feature);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName(), ExpressionInterpreter.Feature);
 				}
 
-				ceStyleDesc = DescriptionFactory.eINSTANCE
-						.createConditionalEdgeStyleDescription();
+				ceStyleDesc = DescriptionFactory.eINSTANCE.createConditionalEdgeStyleDescription();
 				ceStyleDesc.setPredicateExpression(acceleoExpression);
 				em.getConditionnalStyles().add(ceStyleDesc);
 			} else {
-				ceStyleDesc = DescriptionFactory.eINSTANCE
-						.createConditionalEdgeStyleDescription();
-				ceStyleDesc.setPredicateExpression(SiriusExpressionHelper
-						.getExpressoin("true"));
+				ceStyleDesc = DescriptionFactory.eINSTANCE.createConditionalEdgeStyleDescription();
+				ceStyleDesc.setPredicateExpression(SiriusExpressionHelper.getExpressoin("true"));
 				em.getConditionnalStyles().add(ceStyleDesc);
 			}
 
@@ -191,126 +159,98 @@ public class EdgeImportPattern
 
 			CenterLabelStyleDescription cLabelStyleDesc = null;
 			Label c_label = iEgdeDescription.getCenter_label();
-			String c_labelExpression = SiriusExpressionHelper.getExpressoin(
-					"name", ExpressionInterpreter.Feature);
+			String c_labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
 
 			BeginLabelStyleDescription bLabelStyleDesc = null;
 			Label b_label = iEgdeDescription.getBegin_Label();
-			String b_labelExpression = SiriusExpressionHelper.getExpressoin(
-					"name", ExpressionInterpreter.Feature);
+			String b_labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
 
 			EndLabelStyleDescription eLabelStyleDesc = null;
 			Label e_label = iEgdeDescription.getEnd_label();
-			String e_labelExpression = SiriusExpressionHelper.getExpressoin(
-					"name", ExpressionInterpreter.Feature);
+			String e_labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
 
 			if (vpStyle != null) {
-				eStyleDesc = StyleFactory.eINSTANCE
-						.createEdgeStyleDescription();
+				eStyleDesc = StyleFactory.eINSTANCE.createEdgeStyleDescription();
 				eStyleDesc.setLineStyle(vpStyle.getLineStyle());
 				eStyleDesc.setSourceArrow(vpStyle.getBeginDecorator());
 				eStyleDesc.setTargetArrow(vpStyle.getEndDecorator());
-				eStyleDesc.setStrokeColor(GenerationUtil.getSystemColor(vpStyle
-						.getColor()));
+				eStyleDesc.setStrokeColor(GenerationUtil.getSystemColor(vpStyle.getColor()));
 				eStyleDesc.setSizeComputationExpression("1");
 			} else {
 				if (b_label != null || c_label != null || e_label != null)
-					eStyleDesc = EcoreUtil.copy(parameter.getImports()
-							.getStyle());
+					eStyleDesc = EcoreUtil.copy(parameter.getImports().getStyle());
 			}
 
 			/********************** Setting Center Label properties ************************/
 
-			String mParameters = VSMVariable.diagram.getInnerVariable() + ","
-					+ VSMVariable.view.getInnerVariable();
+			String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
 
 			if (c_label != null) {
-				((ExpressionImpl) c_label.getValue()).adaptValue(mParameters,
-						true);
+				((ExpressionImpl) c_label.getValue()).adaptValue(mParameters, true);
 				if (c_label.getValue() != null)
 					c_labelExpression = c_label.getValue().getValue();
 
-				cLabelStyleDesc = StyleFactory.eINSTANCE
-						.createCenterLabelStyleDescription();
+				cLabelStyleDesc = StyleFactory.eINSTANCE.createCenterLabelStyleDescription();
 				cLabelStyleDesc.setLabelExpression(c_labelExpression);
 				cLabelStyleDesc.setLabelSize(c_label.getSize());
 				cLabelStyleDesc.setShowIcon(false);
-				cLabelStyleDesc.setLabelColor(GenerationUtil
-						.getSystemColor(c_label.getColor()));
+				cLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(c_label.getColor()));
 
 				if (c_label.isBold())
-					cLabelStyleDesc.getLabelFormat().add(
-							FontFormat.BOLD_LITERAL);
-
+					cLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 				if (c_label.isItalic())
-					cLabelStyleDesc.getLabelFormat().add(
-							FontFormat.ITALIC_LITERAL);
+					cLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 			} else {
-				cLabelStyleDesc = EcoreUtil.copy(parameter.getImports()
-						.getStyle().getCenterLabelStyleDescription());
+				cLabelStyleDesc = EcoreUtil.copy(parameter.getImports().getStyle().getCenterLabelStyleDescription());
 			}
 
 			/********************** Setting Begin Label properties ************************/
 			if (b_label != null) {
-				((ExpressionImpl) b_label.getValue()).adaptValue(mParameters,
-						true);
+				((ExpressionImpl) b_label.getValue()).adaptValue(mParameters, true);
 
 				if (b_label.getValue() != null)
 					b_labelExpression = b_label.getValue().getValue();
 
-				bLabelStyleDesc = StyleFactory.eINSTANCE
-						.createBeginLabelStyleDescription();
+				bLabelStyleDesc = StyleFactory.eINSTANCE.createBeginLabelStyleDescription();
 				bLabelStyleDesc.setLabelExpression(b_labelExpression);
 				bLabelStyleDesc.setLabelSize(b_label.getSize());
 				bLabelStyleDesc.setShowIcon(false);
-				bLabelStyleDesc.setLabelColor(GenerationUtil
-						.getSystemColor(b_label.getColor()));
+				bLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(b_label.getColor()));
 
 				if (b_label.isBold())
-					bLabelStyleDesc.getLabelFormat().add(
-							FontFormat.BOLD_LITERAL);
+					bLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 
 				if (b_label.isItalic())
-					bLabelStyleDesc.getLabelFormat().add(
-							FontFormat.ITALIC_LITERAL);
+					bLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 			} else {
-				bLabelStyleDesc = EcoreUtil.copy(parameter.getImports()
-						.getStyle().getBeginLabelStyleDescription());
+				bLabelStyleDesc = EcoreUtil.copy(parameter.getImports().getStyle().getBeginLabelStyleDescription());
 			}
 
 			/********************** Setting End Label properties ************************/
 			if (e_label != null) {
-				((ExpressionImpl) e_label.getValue()).adaptValue(mParameters,
-						true);
+				((ExpressionImpl) e_label.getValue()).adaptValue(mParameters, true);
 				if (e_label.getValue() != null)
 					e_labelExpression = e_label.getValue().getValue();
 
-				eLabelStyleDesc = StyleFactory.eINSTANCE
-						.createEndLabelStyleDescription();
+				eLabelStyleDesc = StyleFactory.eINSTANCE.createEndLabelStyleDescription();
 				eLabelStyleDesc.setLabelExpression(e_labelExpression);
 				eLabelStyleDesc.setLabelSize(e_label.getSize());
 				eLabelStyleDesc.setShowIcon(false);
-				eLabelStyleDesc.setLabelColor(GenerationUtil
-						.getSystemColor(e_label.getColor()));
+				eLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(e_label.getColor()));
 
 				if (e_label.isBold())
-					eLabelStyleDesc.getLabelFormat().add(
-							FontFormat.BOLD_LITERAL);
+					eLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 
 				if (e_label.isItalic())
-					eLabelStyleDesc.getLabelFormat().add(
-							FontFormat.ITALIC_LITERAL);
-
+					eLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 			} else {
-				eLabelStyleDesc = EcoreUtil.copy(parameter.getImports()
-						.getStyle().getEndLabelStyleDescription());
+				eLabelStyleDesc = EcoreUtil.copy(parameter.getImports().getStyle().getEndLabelStyleDescription());
 			}
 			/****************************************************************************************************/
 
 			EdgeStyleDescription eStyleDesc_merged = null;
 			try {
-				eStyleDesc_merged = EdgeStyleImportMerger.mergeStyles(parameter
-						.getImports().getStyle(), eStyleDesc, iEgdeDescription);
+				eStyleDesc_merged = EdgeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), eStyleDesc, iEgdeDescription);
 			} catch (Exception e) {
 			}
 
@@ -325,21 +265,18 @@ public class EdgeImportPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setStyle",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setStyle", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeImport parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeImport parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeImport parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.eclipse.emf.ecore.EObject dEdgeImportMapping;
 
-	public void set_dEdgeImportMapping(
-			org.eclipse.emf.ecore.EObject dEdgeImportMapping) {
+	public void set_dEdgeImportMapping(org.eclipse.emf.ecore.EObject dEdgeImportMapping) {
 		this.dEdgeImportMapping = dEdgeImportMapping;
 	}
 

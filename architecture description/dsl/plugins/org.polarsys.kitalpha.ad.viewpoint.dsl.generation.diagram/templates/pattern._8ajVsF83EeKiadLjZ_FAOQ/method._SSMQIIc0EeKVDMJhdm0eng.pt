@@ -81,7 +81,6 @@ for (EdgeDescription iEgdeDescription : parameter.getE_description()) {
 
 		if (c_label.isBold())
 			cLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
-			
 		if (c_label.isItalic())
 			cLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 	}
@@ -133,7 +132,6 @@ for (EdgeDescription iEgdeDescription : parameter.getE_description()) {
 
 		if (e_label.isItalic())
 			eLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
-
 	}
 	else
 	{

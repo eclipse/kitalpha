@@ -30,7 +30,7 @@ public class DiagramFactoryImpl extends EFactoryImpl implements DiagramFactory
   {
     try
     {
-      DiagramFactory theDiagramFactory = (DiagramFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpdiagram/1.0.0"); 
+      DiagramFactory theDiagramFactory = (DiagramFactory)EPackage.Registry.INSTANCE.getEFactory(DiagramPackage.eNS_URI);
       if (theDiagramFactory != null)
       {
         return theDiagramFactory;

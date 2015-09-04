@@ -62,7 +62,7 @@ public class SerialPeriodicResourceLoader extends AbstractResourceLoader {
 							}			
 							return new LoadResult(resource, uri);
 						} catch(WrappedException e) {
-							throw new LoadOperationException(uri, e.getCause());
+							throw new LoadOperationException(uri, e);
 						}
 					}
 
@@ -91,7 +91,13 @@ public class SerialPeriodicResourceLoader extends AbstractResourceLoader {
 					Resource resource = parent.getResource(uri, true);
 					return new LoadResult(resource, uri);
 				} catch(WrappedException e) {
-					throw new LoadOperationException(uri, e.getCause());
+					/**
+					 * FIXME This commented due to migration to mars. Ensure that the
+					 * modification work finely at the end of migration on LoadOperationException(uri, e.getCause()) 
+					 * for it second arg
+					 */
+//					throw new LoadOperationException(uri, e.getCause());
+					throw new LoadOperationException(uri, e);
 				}
 			}
 

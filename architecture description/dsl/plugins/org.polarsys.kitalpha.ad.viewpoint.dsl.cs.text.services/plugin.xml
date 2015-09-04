@@ -12,12 +12,12 @@ Contributors:
 <?eclipse version="3.0"?>
 
 <plugin>
-
-  <extension point="org.eclipse.emf.ecore.generated_package">
+    <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpservices/1.0.0" 
        class = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesPackage"
-       genModel = "org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Vpservices.genmodel" /> 
+       genModel = "model/generated/Vpservices.genmodel" /> 
+	
   </extension>
 
    <extension

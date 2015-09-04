@@ -22,20 +22,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EContentsEList.FeatureIterator;
-import org.eclipse.sirius.viewpoint.description.Group;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.MetamodelIDs;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 
 /**
  * 
@@ -402,8 +399,9 @@ public class ReferenceUtil {
 								correctURI = GeneratorsUtil.computeURI(inputObject, FileExtension.SERVICES_EXTENSION, uri_copy.toString().replaceFirst("//", "//@services.1"));
 							} else {
 								//the rest references data
-								correctURI = GeneratorsUtil.computeURI(inputObject, FileExtension.DATA_EXTENSION, uri_copy.toString().replaceFirst("/", ""));
+								correctURI = GeneratorsUtil.computeURI(inputObject, FileExtension.DATA_EXTENSION, uri_copy.toString());
 							}
+							
 							((org.eclipse.emf.ecore.InternalEObject) eObject_copy).eSetProxyURI(correctURI);
 						}					
 					}					

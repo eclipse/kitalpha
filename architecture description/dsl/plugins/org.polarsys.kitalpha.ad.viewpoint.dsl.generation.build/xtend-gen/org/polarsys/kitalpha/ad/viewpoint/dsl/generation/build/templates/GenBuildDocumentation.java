@@ -1,4 +1,4 @@
-/*******************************************************************************
+/**
  * Copyright (c) 2014 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
@@ -7,8 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
+ */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.templates;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -25,18 +24,15 @@ public class GenBuildDocumentation implements IGenerator {
   private String buildFilePath = null;
   
   public String setRepositoryURL(final String url) {
-    String _repositoryUrl = this.repositoryUrl = url;
-    return _repositoryUrl;
+    return this.repositoryUrl = url;
   }
   
   public String setBuildFilePath(final String path) {
-    String _buildFilePath = this.buildFilePath = path;
-    return _buildFilePath;
+    return this.buildFilePath = path;
   }
   
   public String setViewpointShortName(final String name) {
-    String _viewpointShortName = this.viewpointShortName = name;
-    return _viewpointShortName;
+    return this.viewpointShortName = name;
   }
   
   public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
@@ -105,7 +101,7 @@ public class GenBuildDocumentation implements IGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("5. In \"Repertoire local du module\" section, enter \"svn/svn_viewpoint\"");
     _builder.newLine();
-    _builder.append("6. In \"Build\" section, click on \"avanc\u00E9\" button");
+    _builder.append("6. In \"Build\" section, click on \"avancé\" button");
     _builder.newLine();
     _builder.append("7. In \"Fichier du build\", enter ");
     _builder.append(this.buildFilePath, "");

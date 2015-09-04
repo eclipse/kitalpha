@@ -15,11 +15,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams#getDiagrams <em>Diagrams</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage#getDiagrams()
  * @model

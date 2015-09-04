@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
 package org.polarsys.kitalpha.ad.af.dsl.cs.text.parser.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
@@ -265,10 +255,10 @@ public class InternalAfdescLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:501:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:501:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:508:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:508:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:501:11: ( '^' )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:508:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -277,7 +267,7 @@ public class InternalAfdescLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:501:11: '^'
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:508:11: '^'
                     {
                     match('^'); 
 
@@ -295,7 +285,7 @@ public class InternalAfdescLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:501:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:508:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -344,10 +334,10 @@ public class InternalAfdescLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:503:10: ( ( '0' .. '9' )+ )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:503:12: ( '0' .. '9' )+
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:510:10: ( ( '0' .. '9' )+ )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:510:12: ( '0' .. '9' )+
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:503:12: ( '0' .. '9' )+
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:510:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -361,7 +351,7 @@ public class InternalAfdescLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:503:13: '0' .. '9'
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:510:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -393,10 +383,10 @@ public class InternalAfdescLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -414,10 +404,10 @@ public class InternalAfdescLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -433,23 +423,15 @@ public class InternalAfdescLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -474,10 +456,10 @@ public class InternalAfdescLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -493,23 +475,15 @@ public class InternalAfdescLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:505:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:512:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -552,12 +526,12 @@ public class InternalAfdescLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:507:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:507:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:514:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:514:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:507:24: ( options {greedy=false; } : . )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:514:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -582,7 +556,7 @@ public class InternalAfdescLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:507:52: .
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:514:52: .
             	    {
             	    matchAny(); 
 
@@ -612,12 +586,12 @@ public class InternalAfdescLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -630,7 +604,7 @@ public class InternalAfdescLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -650,7 +624,7 @@ public class InternalAfdescLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:40: ( ( '\\r' )? '\\n' )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -659,9 +633,9 @@ public class InternalAfdescLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:41: ( '\\r' )? '\\n'
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:41: ( '\\r' )?
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -670,7 +644,7 @@ public class InternalAfdescLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:509:41: '\\r'
+                            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:516:41: '\\r'
                             {
                             match('\r'); 
 
@@ -702,10 +676,10 @@ public class InternalAfdescLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:511:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:511:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:518:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:518:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:511:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:518:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -759,8 +733,8 @@ public class InternalAfdescLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:513:16: ( . )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:513:18: .
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:520:16: ( . )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:520:18: .
             {
             matchAny(); 
 

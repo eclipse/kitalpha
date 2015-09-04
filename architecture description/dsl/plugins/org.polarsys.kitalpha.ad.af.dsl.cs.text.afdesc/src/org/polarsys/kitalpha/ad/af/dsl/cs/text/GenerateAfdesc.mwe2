@@ -21,6 +21,17 @@ var file.extensions = "aftext"
 var projectName = "org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc"
 var runtimeProject = "../${projectName}"
 
+var polarsysCopyrightHeader = "/*******************************************************************************
+ * Copyright (c) \${year} Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/"
+
 Workflow {
     bean = StandaloneSetup {
             scanClassPath = true
@@ -87,10 +98,12 @@ Workflow {
         }
     
         component = Generator {
+        	fileHeader = polarsysCopyrightHeader
             pathRtProject = runtimeProject
             pathUiProject = "${runtimeProject}.ui"
             projectNameRt = projectName
             projectNameUi = "${projectName}.ui"
+            
             language = {
                 uri = grammarURI
                 fileExtensions = file.extensions
@@ -99,7 +112,7 @@ Workflow {
                 fragment = grammarAccess.GrammarAccessFragment {}
     
                 // generates Java API for the generated EPackages
-                fragment = ecore.EcoreGeneratorFragment {}
+                fragment = ecore.EMFGeneratorFragment {}
     
                 // Serializer 2.0
                 fragment = serializer.SerializerFragment {

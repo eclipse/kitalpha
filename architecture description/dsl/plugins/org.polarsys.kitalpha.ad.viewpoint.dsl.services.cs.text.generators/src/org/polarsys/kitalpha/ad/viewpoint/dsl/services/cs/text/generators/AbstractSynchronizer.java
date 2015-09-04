@@ -286,22 +286,6 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 				viewpoint.getVP_Aspects().add(((Diagrams) output.get(key)).getDiagrams());
 				viewpoint.getType().add(grammar.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue());
 			}
-			if (output.get(key) instanceof Services) {
-				viewpoint.getVP_Aspects().add(((Services) output.get(key)).getServices().get(0));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue());
-			}
-			if (output.get(key) instanceof Configuration) {
-				viewpoint.getVP_Aspects().add((Configuration) output.get(key));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue());
-			}
-			if (output.get(key) instanceof Build) {
-				viewpoint.getVP_Aspects().add((Build) output.get(key));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue());
-			}
-			if (output.get(key) instanceof ViewpointActivityExplorer) {
-				viewpoint.getVP_Aspects().add((ViewpointActivityExplorer)output.get(key));
-				viewpoint.getType().add(grammar.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue());
-			}
 		}
 		return viewpoint;
 	}
@@ -451,7 +435,7 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 
 	protected EObject loadInputModel(IFile file , ResourceSet resourceSet) {
 		IPath emfResourcePath = file.getFullPath();
-		URI emfUri = URI.createPlatformResourceURI(emfResourcePath.toString(), true);
+		URI emfUri = ResourceHelper.URIFix.createPlatformResourceURI(emfResourcePath.toString(), true);
 		return loadInputModel(emfUri, resourceSet);
 	}
 

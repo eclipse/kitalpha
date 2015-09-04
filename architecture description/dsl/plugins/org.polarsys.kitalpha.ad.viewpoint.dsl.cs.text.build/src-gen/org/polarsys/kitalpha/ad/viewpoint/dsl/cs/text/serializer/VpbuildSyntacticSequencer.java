@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
 import com.google.inject.Inject;
@@ -53,24 +63,74 @@ public class VpbuildSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     ('triggers' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'hudson-deployment' '{' ('users' '{' '}')? (ambiguity) '}' (rule start)
+	 *     (rule start) 'hudson-deployment' '{' ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     antName=STRING ('users' '{' '}')? (ambiguity) '}' (rule end)
+	 *     antName=STRING ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     assignedNode=STRING ('users' '{' '}')? (ambiguity) '}' (rule end)
+	 *     assignedNode=STRING ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     build_id=STRING ('users' '{' '}')? (ambiguity) '}' (rule end)
+	 *     build_id=STRING ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     enabled=EBoolean ('users' '{' '}')? (ambiguity) '}' (rule end)
+	 *     enabled=EBoolean ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     jdkName=STRING ('users' '{' '}')? (ambiguity) '}' (rule end)
+	 *     jdkName=STRING ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     userDeployJobName=STRING ('users' '{' '}')? (ambiguity) '}' (rule end)
+	 *     userDeployJobName=STRING ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     userDeployServerUrl=STRING ('users' '{' '}')? (ambiguity) '}' (rule end)
+	 *     userDeployServerUrl=STRING ('users' '{' '}')? (ambiguity) generationLocation=GenerationLocation
+	 *     users+=User '}' (ambiguity) '}' (rule end)
+	 *     users+=User '}' (ambiguity) generationLocation=GenerationLocation
 	 */
 	protected void emit_HudsonDeployment___TriggersKeyword_11_0_LeftCurlyBracketKeyword_11_1_RightCurlyBracketKeyword_11_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     ('users' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'hudson-deployment' '{' (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     (rule start) 'hudson-deployment' '{' (ambiguity) ('triggers' '{' '}')? '}' (rule start)
+	 *     (rule start) 'hudson-deployment' '{' (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
+	 *     antName=STRING (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     antName=STRING (ambiguity) ('triggers' '{' '}')? '}' (rule end)
+	 *     antName=STRING (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
+	 *     assignedNode=STRING (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     assignedNode=STRING (ambiguity) ('triggers' '{' '}')? '}' (rule end)
+	 *     assignedNode=STRING (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
+	 *     build_id=STRING (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     build_id=STRING (ambiguity) ('triggers' '{' '}')? '}' (rule end)
+	 *     build_id=STRING (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
+	 *     enabled=EBoolean (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     enabled=EBoolean (ambiguity) ('triggers' '{' '}')? '}' (rule end)
+	 *     enabled=EBoolean (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
+	 *     jdkName=STRING (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     jdkName=STRING (ambiguity) ('triggers' '{' '}')? '}' (rule end)
+	 *     jdkName=STRING (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
+	 *     userDeployJobName=STRING (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     userDeployJobName=STRING (ambiguity) ('triggers' '{' '}')? '}' (rule end)
+	 *     userDeployJobName=STRING (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
+	 *     userDeployServerUrl=STRING (ambiguity) 'triggers' '{' triggers+=Trigger
+	 *     userDeployServerUrl=STRING (ambiguity) ('triggers' '{' '}')? '}' (rule end)
+	 *     userDeployServerUrl=STRING (ambiguity) ('triggers' '{' '}')? generationLocation=GenerationLocation
 	 */
 	protected void emit_HudsonDeployment___UsersKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     location=STRING (ambiguity) 'features:' (rule end)
+	 *     location=STRING (ambiguity) 'features:' features+=Feature
 	 */
 	protected void emit_Repository___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

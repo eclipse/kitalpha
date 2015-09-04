@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.emde.model/generated/"
-    editDirectory="/org.polarsys.kitalpha.emde.model.edit/generated" editorDirectory="/org.polarsys.kitalpha.emde.model.editor/src"
-    modelPluginID="org.polarsys.kitalpha.emde.model" modelName="Emde" modelPluginClass="org.polarsys.kitalpha.emde.model.EmdeModelPlugin"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.emde.model/generated/" editDirectory="/org.polarsys.kitalpha.emde.model.edit/generated"
+    editorDirectory="/org.polarsys.kitalpha.emde.model.editor/src" modelPluginID="org.polarsys.kitalpha.emde.model"
+    modelName="Emde" modelPluginClass="org.polarsys.kitalpha.emde.model.EmdeModelPlugin"
     editPluginClass="org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin"
     editorPluginClass="org.polarsys.kitalpha.emde.presentation.EmdeEditorPlugin" nonNLSMarkers="true"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
     copyrightFields="false" editPluginID="org.polarsys.kitalpha.emde.model.edit" editorPluginID="org.polarsys.kitalpha.emde.model.editor"
-    tableProviders="true" colorProviders="true" fontProviders="true">
+    tableProviders="true" colorProviders="true" fontProviders="true" operationReflection="true">
   <foreignModel>platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore</foreignModel>
   <genPackages prefix="Emde" basePackage="org.polarsys.kitalpha" resource="XMI" disposableProviderFactory="true"
       interfacePackageSuffix="model" metaDataPackageSuffix="model" classPackageSuffix="model.impl"

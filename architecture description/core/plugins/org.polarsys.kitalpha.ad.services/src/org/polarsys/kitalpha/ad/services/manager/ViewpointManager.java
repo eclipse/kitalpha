@@ -52,6 +52,7 @@ public class ViewpointManager {
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
 	private final Set<String> activated = new HashSet<String>();
+	private final Set<String> managed = new HashSet<String>();
 	private final Set<String> discarded = new HashSet<String>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
 	private final StateManager stateManager = new StateManager();
@@ -129,6 +130,7 @@ public class ViewpointManager {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
 		activated.add(vpResource.getId());
+		managed.add(vpResource.getProviderSymbolicName());
 		fireEvent(vpResource, ACTIVATED);
 	}
 
@@ -155,15 +157,14 @@ public class ViewpointManager {
 	protected void startBundle(Resource vpResource) throws ViewpointActivationException {
 		String providerSymbolicName = vpResource.getProviderSymbolicName();
 		Bundle bundle = Platform.getBundle(providerSymbolicName);
-		if (bundle == null) {
+		if (bundle == null || managed.contains(providerSymbolicName)) {
 			activateBundle(providerSymbolicName);
 			bundle = Platform.getBundle(providerSymbolicName);
 		}
 		if (bundle == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_7, providerSymbolicName));
-		// TODO peut etre qu'il faudrait utiliser un job pour eviter le sleep
+
 		try {
-			// bundle.update();
 			bundle.start(Bundle.START_TRANSIENT);
 			// wait for event dispatch
 			Thread.sleep(100);

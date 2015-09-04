@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.polarsys.kitalpha.emde.model.EmdeFactory
  * @model kind="package"
- *        annotation="http://www.polarsys.org/kitalpha/emde/extension useUUIDs='true' useIDAttributes='false'"
+ *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/extension useUUIDs='true' useIDAttributes='false'"
  * @generated
  */
 public interface EmdePackage extends EPackage {
@@ -83,6 +83,15 @@ public interface EmdePackage extends EPackage {
 	int ELEMENT_FEATURE_COUNT = 0;
 
 	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.emde.model.impl.ExtensibleElementImpl <em>Extensible Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,6 +120,15 @@ public interface EmdePackage extends EPackage {
 	int EXTENSIBLE_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Extensible Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSIBLE_ELEMENT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.emde.model.impl.ElementExtensionImpl <em>Element Extension</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +155,15 @@ public interface EmdePackage extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT_EXTENSION_FEATURE_COUNT = EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Element Extension</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_EXTENSION_OPERATION_COUNT = EXTENSIBLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.emde.model.Element <em>Element</em>}'.

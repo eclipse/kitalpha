@@ -30,7 +30,7 @@ public class VpspecFactoryImpl extends EFactoryImpl implements VpspecFactory
   {
     try
     {
-      VpspecFactory theVpspecFactory = (VpspecFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpspec/1.0.0"); 
+      VpspecFactory theVpspecFactory = (VpspecFactory)EPackage.Registry.INSTANCE.getEFactory(VpspecPackage.eNS_URI);
       if (theVpspecFactory != null)
       {
         return theVpspecFactory;

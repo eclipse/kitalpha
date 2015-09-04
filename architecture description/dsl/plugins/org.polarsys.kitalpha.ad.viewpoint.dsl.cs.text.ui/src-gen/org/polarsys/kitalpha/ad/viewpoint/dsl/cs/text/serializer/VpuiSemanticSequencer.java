@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -41,63 +41,35 @@ public class VpuiSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	@Inject
 	private VpuiGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == UiPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case UiPackage.IMPORT:
-				if(context == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Import(context, (Import) semanticObject); 
+				return; 
 			case UiPackage.USER_INTERFACE:
-				if(context == grammarAccess.getUserInterfaceRule()) {
-					sequence_UserInterface(context, (UserInterface) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_UserInterface(context, (UserInterface) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == VpuiPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case VpuiPackage.FIELD_MAPPING:
-				if(context == grammarAccess.getFieldMappingRule()) {
-					sequence_FieldMapping(context, (FieldMapping) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_FieldMapping(context, (FieldMapping) semanticObject); 
+				return; 
 			case VpuiPackage.LOCAL_CLASS:
-				if(context == grammarAccess.getDataSourceRule() ||
-				   context == grammarAccess.getLocalClassRule()) {
-					sequence_LocalClass(context, (LocalClass) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalClass(context, (LocalClass) semanticObject); 
+				return; 
 			case VpuiPackage.UI:
-				if(context == grammarAccess.getDisplayableElementRule() ||
-				   context == grammarAccess.getUIRule()) {
-					sequence_UI(context, (UI) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_UI(context, (UI) semanticObject); 
+				return; 
 			case VpuiPackage.UI_CONTAINER:
-				if(context == grammarAccess.getDisplayableElementRule() ||
-				   context == grammarAccess.getUIContainerRule()) {
-					sequence_UIContainer(context, (UIContainer) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_UIContainer(context, (UIContainer) semanticObject); 
+				return; 
 			case VpuiPackage.UI_DESCRIPTION:
-				if(context == grammarAccess.getAspectRule() ||
-				   context == grammarAccess.getUIDescriptionRule()) {
-					sequence_UIDescription(context, (UIDescription) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_UIDescription(context, (UIDescription) semanticObject); 
+				return; 
 			case VpuiPackage.UI_FIELD:
-				if(context == grammarAccess.getDisplayableElementRule() ||
-				   context == grammarAccess.getUIFieldRule()) {
-					sequence_UIField(context, (UIField) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_UIField(context, (UIField) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}

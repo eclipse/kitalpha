@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Map;
 import java.util.Properties;
 
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -25,32 +26,36 @@ import org.eclipse.core.runtime.IExecutableExtension;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.preferences.ConfigurationScope;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
-import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.dialogs.MessageDialogWithToggle;
+import org.eclipse.jface.preference.IPersistentPreferenceStore;
+import org.eclipse.jface.window.Window;
 import org.eclipse.osgi.service.datalocation.Location;
 import org.eclipse.osgi.util.NLS;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.internal.ide.ChooseWorkspaceData;
 import org.eclipse.ui.internal.ide.ChooseWorkspaceDialog;
+import org.eclipse.ui.internal.ide.IDEInternalPreferences;
 import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.eclipse.ui.internal.ide.StatusUtil;
 import org.eclipse.ui.internal.ide.application.DelayedEventsProcessor;
 import org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.services.ToolIntegrationHelper;
 
 /**
- * The whole class has been copied from
- * org.eclipse.ui.internal.ide.application.IDEApplication to customize the
- * WorkbenchAdvisor ...
+ * The whole class has been copied from org.eclipse.ui.internal.ide.application.IDEApplication to customize the WorkbenchAdvisor ...
  * 
  * @author Matthieu Helleboid
  * 
@@ -64,18 +69,30 @@ public class Application implements IApplication, IExecutableExtension {
 
 	private static final String VERSION_FILENAME = "version.ini"; //$NON-NLS-1$
 
-	private static final String WORKSPACE_VERSION_KEY = "org.eclipse.core.runtime"; //$NON-NLS-1$
+	// Use the branding plug-in of the platform feature since this is most likely
+	// to change on an update of the IDE.
+	private static final String WORKSPACE_CHECK_REFERENCE_BUNDLE_NAME = "org.eclipse.platform"; //$NON-NLS-1$
+	private static final Version WORKSPACE_CHECK_REFERENCE_BUNDLE_VERSION;
 
-	private static final String WORKSPACE_VERSION_VALUE = "1"; //$NON-NLS-1$
+	static {
+		Bundle bundle = Platform.getBundle(WORKSPACE_CHECK_REFERENCE_BUNDLE_NAME);
+		WORKSPACE_CHECK_REFERENCE_BUNDLE_VERSION = bundle != null ? bundle.getVersion() : null/* not installed */;
+	}
+
+	private static final String WORKSPACE_CHECK_REFERENCE_BUNDLE_NAME_LEGACY = "org.eclipse.core.runtime"; //$NON-NLS-1$
+	private static final String WORKSPACE_CHECK_LEGACY_VERSION_INCREMENTED = "2"; //$NON-NLS-1$ legacy version=1
 
 	private static final String PROP_EXIT_CODE = "eclipse.exitcode"; //$NON-NLS-1$
 
 	/**
-	 * A special return code that will be recognized by the launcher and used to
-	 * restart the workbench.
+	 * A special return code that will be recognized by the launcher and used to restart the workbench.
 	 */
 	private static final Integer EXIT_RELAUNCH = new Integer(24);
 
+	/**
+	 * A special return code that will be recognized by the PDE launcher and used to show an error dialog if the workspace is locked.
+	 */
+	private static final Integer EXIT_WORKSPACE_LOCKED = new Integer(15);
 	/**
 	 * The ID of the application plug-in
 	 */
@@ -91,8 +108,7 @@ public class Application implements IApplication, IExecutableExtension {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.
-	 * IApplicationContext context)
+	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app. IApplicationContext context)
 	 */
 	public Object start(IApplicationContext appContext) throws Exception {
 		Display display = createDisplay();
@@ -112,13 +128,14 @@ public class Application implements IApplication, IExecutableExtension {
 				// icon
 				// with no message.
 				shell.setText(ChooseWorkspaceDialog.getWindowTitle());
-				shell.setImages(Dialog.getDefaultImages());
+				shell.setImages(Window.getDefaultImages());
 			}
 
-			if (!checkInstanceLocation(shell)) {
+			Object instanceLocationCheck = checkInstanceLocation(shell, appContext.getArguments());
+			if (instanceLocationCheck != null) {
 				WorkbenchPlugin.unsetSplashShell(display);
-				Platform.endSplash();
-				return EXIT_OK;
+				appContext.applicationRunning();
+				return instanceLocationCheck;
 			}
 
 			// create the workbench with this advisor and run it until it exits
@@ -166,28 +183,26 @@ public class Application implements IApplication, IExecutableExtension {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org
-	 * .eclipse.core.runtime.IConfigurationElement, java.lang.String,
-	 * java.lang.Object)
+	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org .eclipse.core.runtime.IConfigurationElement, java.lang.String, java.lang.Object)
 	 */
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) {
 		// There is nothing to do for IDEApplication
 	}
 
 	/**
-	 * Return true if a valid workspace path has been set and false otherwise.
-	 * Prompt for and set the path if possible and required.
-	 * 
-	 * @return true if a valid instance location has been set and false
-	 *         otherwise
+	 * Return <code>null</code> if a valid workspace path has been set and an exit code otherwise. Prompt for and set the path if possible and required.
+	 *
+	 * @param applicationArguments
+	 *            the command line arguments
+	 * @return <code>null</code> if a valid instance location has been set and an exit code otherwise
 	 */
-	private boolean checkInstanceLocation(Shell shell) {
+	@SuppressWarnings("rawtypes")
+	private Object checkInstanceLocation(Shell shell, Map applicationArguments) {
 		// -data @none was specified but an ide requires workspace
 		Location instanceLoc = Platform.getInstanceLocation();
 		if (instanceLoc == null) {
 			MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceMandatoryTitle, IDEWorkbenchMessages.IDEApplication_workspaceMandatoryMessage);
-			return false;
+			return EXIT_OK;
 		}
 
 		// -data "/valid/path", workspace already set
@@ -195,7 +210,7 @@ public class Application implements IApplication, IExecutableExtension {
 			// make sure the meta data version is compatible (or the user has
 			// chosen to overwrite it).
 			if (!checkValidWorkspace(shell, instanceLoc.getURL())) {
-				return false;
+				return EXIT_OK;
 			}
 
 			// at this point its valid, so try to lock it and update the
@@ -203,7 +218,7 @@ public class Application implements IApplication, IExecutableExtension {
 			try {
 				if (instanceLoc.lock()) {
 					writeWorkspaceVersion();
-					return true;
+					return null;
 				}
 
 				// we failed to create the directory.
@@ -212,7 +227,10 @@ public class Application implements IApplication, IExecutableExtension {
 				// 2. directory could not be created
 				File workspaceDirectory = new File(instanceLoc.getURL().getFile());
 				if (workspaceDirectory.exists()) {
-					MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceCannotLockTitle, IDEWorkbenchMessages.IDEApplication_workspaceCannotLockMessage);
+					if (isDevLaunchMode(applicationArguments)) {
+						return EXIT_WORKSPACE_LOCKED;
+					}
+					MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceCannotLockTitle, NLS.bind(IDEWorkbenchMessages.IDEApplication_workspaceCannotLockMessage, workspaceDirectory.getAbsolutePath()));
 				} else {
 					MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceCannotBeSetTitle, IDEWorkbenchMessages.IDEApplication_workspaceCannotBeSetMessage);
 				}
@@ -221,7 +239,7 @@ public class Application implements IApplication, IExecutableExtension {
 						e);
 				MessageDialog.openError(shell, IDEWorkbenchMessages.InternalError, e.getMessage());
 			}
-			return false;
+			return EXIT_OK;
 		}
 
 		// -data @noDefault or -data not specified, prompt and set
@@ -231,7 +249,7 @@ public class Application implements IApplication, IExecutableExtension {
 		while (true) {
 			URL workspaceUrl = promptForWorkspace(shell, launchData, force);
 			if (workspaceUrl == null) {
-				return false;
+				return EXIT_OK;
 			}
 
 			// if there is an error with the first selection, then force the
@@ -241,35 +259,40 @@ public class Application implements IApplication, IExecutableExtension {
 			try {
 				// the operation will fail if the url is not a valid
 				// instance data area, so other checking is unneeded
-				if (instanceLoc.setURL(workspaceUrl, true)) {
+				if (instanceLoc.set(workspaceUrl, true)) {
 					launchData.writePersistedData();
 					writeWorkspaceVersion();
-					return true;
+					return null;
 				}
 			} catch (IllegalStateException e) {
 				MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceCannotBeSetTitle, IDEWorkbenchMessages.IDEApplication_workspaceCannotBeSetMessage);
-				return false;
+				return EXIT_OK;
+			} catch (IOException e) {
+				MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceCannotBeSetTitle, IDEWorkbenchMessages.IDEApplication_workspaceCannotBeSetMessage);
 			}
 
 			// by this point it has been determined that the workspace is
 			// already in use -- force the user to choose again
-			MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceInUseTitle, IDEWorkbenchMessages.IDEApplication_workspaceInUseMessage);
+			MessageDialog.openError(shell, IDEWorkbenchMessages.IDEApplication_workspaceInUseTitle, NLS.bind(IDEWorkbenchMessages.IDEApplication_workspaceInUseMessage, workspaceUrl.getFile()));
 		}
 	}
 
+	@SuppressWarnings("rawtypes")
+	private static boolean isDevLaunchMode(Map args) {
+		// see org.eclipse.pde.internal.core.PluginPathFinder.isDevLaunchMode()
+		if (Boolean.getBoolean("eclipse.pde.launch")) //$NON-NLS-1$
+			return true;
+		return args.containsKey("-pdelaunch"); //$NON-NLS-1$
+	}
+
 	/**
-	 * Open a workspace selection dialog on the argument shell, populating the
-	 * argument data with the user's selection. Perform first level validation
-	 * on the selection by comparing the version information. This method does
-	 * not examine the runtime state (e.g., is the workspace already locked?).
+	 * Open a workspace selection dialog on the argument shell, populating the argument data with the user's selection. Perform first level validation on the selection by comparing the version information. This method does not examine the runtime state (e.g., is the workspace already locked?).
 	 * 
 	 * @param shell
 	 * @param launchData
 	 * @param force
-	 *            setting to true makes the dialog open regardless of the
-	 *            showDialog value
-	 * @return An URL storing the selected workspace or null if the user has
-	 *         canceled the launch operation.
+	 *            setting to true makes the dialog open regardless of the showDialog value
+	 * @return An URL storing the selected workspace or null if the user has canceled the launch operation.
 	 */
 	private URL promptForWorkspace(Shell shell, ChooseWorkspaceData launchData, boolean force) {
 		URL url = null;
@@ -314,13 +337,9 @@ public class Application implements IApplication, IExecutableExtension {
 	}
 
 	/**
-	 * Return true if the argument directory is ok to use as a workspace and
-	 * false otherwise. A version check will be performed, and a confirmation
-	 * box may be displayed on the argument shell if an older version is
-	 * detected.
+	 * Return true if the argument directory is ok to use as a workspace and false otherwise. A version check will be performed, and a confirmation box may be displayed on the argument shell if an older version is detected.
 	 * 
-	 * @return true if the argument URL is ok to use as a workspace and false
-	 *         otherwise.
+	 * @return true if the argument URL is ok to use as a workspace and false otherwise.
 	 */
 	private boolean checkValidWorkspace(Shell shell, URL url) {
 		// a null url is not a valid workspace
@@ -328,8 +347,12 @@ public class Application implements IApplication, IExecutableExtension {
 			return false;
 		}
 
-		String version = readWorkspaceVersion(url);
+		if (WORKSPACE_CHECK_REFERENCE_BUNDLE_VERSION == null) {
+			// no reference bundle installed, no check possible
+			return true;
+		}
 
+		Version version = readWorkspaceVersion(url);
 		// if the version could not be read, then there is not any existing
 		// workspace data to trample, e.g., perhaps its a new directory that
 		// is just starting to be used as a workspace
@@ -337,32 +360,59 @@ public class Application implements IApplication, IExecutableExtension {
 			return true;
 		}
 
-		final int ide_version = Integer.parseInt(WORKSPACE_VERSION_VALUE);
-		int workspace_version = Integer.parseInt(version);
+		final Version ide_version = toMajorMinorVersion(WORKSPACE_CHECK_REFERENCE_BUNDLE_VERSION);
+		Version workspace_version = toMajorMinorVersion(version);
+		int versionCompareResult = workspace_version.compareTo(ide_version);
 
 		// equality test is required since any version difference (newer
 		// or older) may result in data being trampled
-		if (workspace_version == ide_version) {
+		if (versionCompareResult == 0) {
 			return true;
 		}
 
 		// At this point workspace has been detected to be from a version
 		// other than the current ide version -- find out if the user wants
 		// to use it anyhow.
-		String title = IDEWorkbenchMessages.IDEApplication_versionTitle;
-		String message = NLS.bind(IDEWorkbenchMessages.IDEApplication_versionMessage, url.getFile());
+		int severity;
+		String title;
+		String message;
+		if (versionCompareResult < 0) {
+			// Workspace < IDE. Update must be possible without issues,
+			// so only inform user about it.
+			severity = MessageDialog.INFORMATION;
+			title = IDEWorkbenchMessages.IDEApplication_versionTitle_olderWorkspace;
+			message = NLS.bind(IDEWorkbenchMessages.IDEApplication_versionMessage_olderWorkspace, url.getFile());
+		} else {
+			// Workspace > IDE. It must have been opened with a newer IDE version.
+			// Downgrade might be problematic, so warn user about it.
+			severity = MessageDialog.WARNING;
+			title = IDEWorkbenchMessages.IDEApplication_versionTitle_newerWorkspace;
+			message = NLS.bind(IDEWorkbenchMessages.IDEApplication_versionMessage_newerWorkspace, url.getFile());
+		}
 
-		MessageBox mbox = new MessageBox(shell, SWT.OK | SWT.CANCEL | SWT.ICON_WARNING | SWT.APPLICATION_MODAL);
-		mbox.setText(title);
-		mbox.setMessage(message);
-		return mbox.open() == SWT.OK;
+		IPersistentPreferenceStore prefStore = new ScopedPreferenceStore(ConfigurationScope.INSTANCE, IDEWorkbenchPlugin.IDE_WORKBENCH);
+		boolean keepOnWarning = prefStore.getBoolean(IDEInternalPreferences.WARN_ABOUT_WORKSPACE_INCOMPATIBILITY);
+		if (keepOnWarning) {
+			MessageDialogWithToggle dialog = new MessageDialogWithToggle(shell, title, null, message, severity, new String[] { IDialogConstants.OK_LABEL, IDialogConstants.CANCEL_LABEL }, 0, IDEWorkbenchMessages.IDEApplication_version_doNotWarnAgain, false);
+			if (dialog.open() != Window.OK) {
+				return false;
+			}
+			keepOnWarning = !dialog.getToggleState();
+			try {
+				prefStore.setValue(IDEInternalPreferences.WARN_ABOUT_WORKSPACE_INCOMPATIBILITY, keepOnWarning);
+				prefStore.save();
+			} catch (IOException e) {
+				IDEWorkbenchPlugin.log("Error writing to configuration preferences", //$NON-NLS-1$
+						new Status(IStatus.ERROR, IDEWorkbenchPlugin.IDE_WORKBENCH, e.getMessage(), e));
+			}
+		}
+		return true;
 	}
 
 	/**
-	 * Look at the argument URL for the workspace's version information. Return
-	 * that version if found and null otherwise.
+	 * Look at the argument URL for the workspace's version information. Return that version if found and null otherwise.
 	 */
-	private static String readWorkspaceVersion(URL workspace) {
+	private static Version readWorkspaceVersion(URL workspace) {
 		File versionFile = getVersionFile(workspace, false);
 		if (versionFile == null || !versionFile.exists()) {
 			return null;
@@ -380,21 +430,37 @@ public class Application implements IApplication, IExecutableExtension {
 				is.close();
 			}
 
-			return props.getProperty(WORKSPACE_VERSION_KEY);
+			String versionString = props.getProperty(WORKSPACE_CHECK_REFERENCE_BUNDLE_NAME);
+			if (versionString != null) {
+				return Version.parseVersion(versionString);
+			}
+			versionString = props.getProperty(WORKSPACE_CHECK_REFERENCE_BUNDLE_NAME_LEGACY);
+			if (versionString != null) {
+				return Version.parseVersion(versionString);
+			}
+			return null;
 		} catch (IOException e) {
-			IDEWorkbenchPlugin.log("Could not read version file", new Status( //$NON-NLS-1$
-					IStatus.ERROR, IDEWorkbenchPlugin.IDE_WORKBENCH, IStatus.ERROR, e.getMessage() == null ? "" : e.getMessage(), //$NON-NLS-1$, 
-					e));
+			IDEWorkbenchPlugin.log("Could not read version file " + versionFile, //$NON-NLS-1$
+					new Status(IStatus.ERROR, IDEWorkbenchPlugin.IDE_WORKBENCH, IStatus.ERROR, e.getMessage() == null ? "" : e.getMessage(), //$NON-NLS-1$
+							e));
+			return null;
+		} catch (IllegalArgumentException e) {
+			IDEWorkbenchPlugin.log("Could not parse version in " + versionFile, //$NON-NLS-1$
+					new Status(IStatus.ERROR, IDEWorkbenchPlugin.IDE_WORKBENCH, IStatus.ERROR, e.getMessage() == null ? "" : e.getMessage(), //$NON-NLS-1$
+							e));
 			return null;
 		}
 	}
 
 	/**
-	 * Write the version of the metadata into a known file overwriting any
-	 * existing file contents. Writing the version file isn't really crucial, so
-	 * the function is silent about failure
+	 * Write the version of the metadata into a known file overwriting any existing file contents. Writing the version file isn't really crucial, so the function is silent about failure
 	 */
 	private static void writeWorkspaceVersion() {
+		if (WORKSPACE_CHECK_REFERENCE_BUNDLE_VERSION == null) {
+			// no reference bundle installed, no check possible
+			return;
+		}
+
 		Location instanceLoc = Platform.getInstanceLocation();
 		if (instanceLoc == null || instanceLoc.isReadOnly()) {
 			return;
@@ -407,10 +473,17 @@ public class Application implements IApplication, IExecutableExtension {
 
 		OutputStream output = null;
 		try {
-			String versionLine = WORKSPACE_VERSION_KEY + '=' + WORKSPACE_VERSION_VALUE;
-
 			output = new FileOutputStream(versionFile);
-			output.write(versionLine.getBytes("UTF-8")); //$NON-NLS-1$
+			Properties props = new Properties();
+
+			// write new property
+			props.setProperty(WORKSPACE_CHECK_REFERENCE_BUNDLE_NAME, WORKSPACE_CHECK_REFERENCE_BUNDLE_VERSION.toString());
+
+			// write legacy property with an incremented version,
+			// so that pre-4.4 IDEs will also warn about the workspace
+			props.setProperty(WORKSPACE_CHECK_REFERENCE_BUNDLE_NAME_LEGACY, WORKSPACE_CHECK_LEGACY_VERSION_INCREMENTED);
+
+			props.store(output, null);
 		} catch (IOException e) {
 			IDEWorkbenchPlugin.log("Could not write version file", //$NON-NLS-1$
 					StatusUtil.newStatus(IStatus.ERROR, e.getMessage(), e));
@@ -426,15 +499,11 @@ public class Application implements IApplication, IExecutableExtension {
 	}
 
 	/**
-	 * The version file is stored in the metadata area of the workspace. This
-	 * method returns an URL to the file or null if the directory or file does
-	 * not exist (and the create parameter is false).
+	 * The version file is stored in the metadata area of the workspace. This method returns an URL to the file or null if the directory or file does not exist (and the create parameter is false).
 	 * 
 	 * @param create
-	 *            If the directory and file does not exist this parameter
-	 *            controls whether it will be created.
-	 * @return An url to the file or null if the version file does not exist or
-	 *         could not be created.
+	 *            If the directory and file does not exist this parameter controls whether it will be created.
+	 * @return An url to the file or null if the version file does not exist or could not be created.
 	 */
 	private static File getVersionFile(URL workspaceUrl, boolean create) {
 		if (workspaceUrl == null) {
@@ -459,6 +528,10 @@ public class Application implements IApplication, IExecutableExtension {
 			// cannot log because instance area has not been set
 			return null;
 		}
+	}
+
+	private static Version toMajorMinorVersion(Version version) {
+		return new Version(version.getMajor(), version.getMinor(), 0);
 	}
 
 	/*

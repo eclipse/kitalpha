@@ -21,7 +21,10 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.common,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
- org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common,
+ org.eclipse.xtext.xbase.lib,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -34,3 +37,4 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation
+

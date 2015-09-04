@@ -61,6 +61,7 @@ public class BackwardSynchronizerAction extends BaseSelectionListenerAction impl
 					GeneratorsUtil.toggleXtextNature(projectName);
 			}
 		}
+		
 		new BackwardSynchronizer().doBackwardSynchronize((IStructuredSelection)selection);
 	}
 }

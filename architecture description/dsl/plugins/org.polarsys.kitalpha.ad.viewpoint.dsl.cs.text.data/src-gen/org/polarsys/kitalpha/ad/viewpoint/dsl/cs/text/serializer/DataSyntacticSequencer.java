@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
@@ -67,32 +67,106 @@ public class DataSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     ('values' '(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     cardinality=Cardinalities (ambiguity) (rule end)
+	 *     cardinality=Cardinalities (ambiguity) owned_annotations+=Annotation
+	 *     changeable=EBoolean (ambiguity) (rule end)
+	 *     changeable=EBoolean (ambiguity) owned_annotations+=Annotation
+	 *     derived=EBoolean (ambiguity) (rule end)
+	 *     derived=EBoolean (ambiguity) owned_annotations+=Annotation
+	 *     isId=EBoolean (ambiguity) (rule end)
+	 *     isId=EBoolean (ambiguity) owned_annotations+=Annotation
+	 *     ordered=EBoolean (ambiguity) (rule end)
+	 *     ordered=EBoolean (ambiguity) owned_annotations+=Annotation
+	 *     owned_type=AbstractAttributeType (ambiguity) (rule end)
+	 *     owned_type=AbstractAttributeType (ambiguity) owned_annotations+=Annotation
+	 *     transient=EBoolean (ambiguity) (rule end)
+	 *     transient=EBoolean (ambiguity) owned_annotations+=Annotation
+	 *     unique=EBoolean (ambiguity) (rule end)
+	 *     unique=EBoolean (ambiguity) owned_annotations+=Annotation
+	 *     unsettable=EBoolean (ambiguity) (rule end)
+	 *     unsettable=EBoolean (ambiguity) owned_annotations+=Annotation
+	 *     volatile=EBoolean (ambiguity) (rule end)
+	 *     volatile=EBoolean (ambiguity) owned_annotations+=Annotation
 	 */
 	protected void emit_Attribute___ValuesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     'Associations:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Inheritences+=AbstractSuperClass 'Attributes:'? (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     Inheritences+=AbstractSuperClass 'Attributes:'? (ambiguity) 'Operations:'? '}' (rule end)
+	 *     VP_Class_Attributes+=Attribute (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     VP_Class_Attributes+=Attribute (ambiguity) 'Operations:'? '}' (rule end)
+	 *     abstract=EBoolean 'Attributes:'? (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     abstract=EBoolean 'Attributes:'? (ambiguity) 'Operations:'? '}' (rule end)
+	 *     description=EString 'Attributes:'? (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     description=EString 'Attributes:'? (ambiguity) 'Operations:'? '}' (rule end)
+	 *     extends+=[EClass|FQN] 'Attributes:'? (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     extends+=[EClass|FQN] 'Attributes:'? (ambiguity) 'Operations:'? '}' (rule end)
+	 *     icon=STRING 'Attributes:'? (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     icon=STRING 'Attributes:'? (ambiguity) 'Operations:'? '}' (rule end)
+	 *     name=EString '{' 'Attributes:'? (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     name=EString '{' 'Attributes:'? (ambiguity) 'Operations:'? '}' (rule end)
+	 *     owned_annotations+=Annotation 'Attributes:'? (ambiguity) 'Operations:' VP_Class_Operations+=Operation
+	 *     owned_annotations+=Annotation 'Attributes:'? (ambiguity) 'Operations:'? '}' (rule end)
 	 */
 	protected void emit_Class_AssociationsKeyword_11_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     'Attributes:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Inheritences+=AbstractSuperClass (ambiguity) 'Associations:' VP_Classes_Associations+=AbstractAssociation
+	 *     Inheritences+=AbstractSuperClass (ambiguity) 'Associations:'? 'Operations:' VP_Class_Operations+=Operation
+	 *     Inheritences+=AbstractSuperClass (ambiguity) 'Associations:'? 'Operations:'? '}' (rule end)
+	 *     abstract=EBoolean (ambiguity) 'Associations:' VP_Classes_Associations+=AbstractAssociation
+	 *     abstract=EBoolean (ambiguity) 'Associations:'? 'Operations:' VP_Class_Operations+=Operation
+	 *     abstract=EBoolean (ambiguity) 'Associations:'? 'Operations:'? '}' (rule end)
+	 *     description=EString (ambiguity) 'Associations:' VP_Classes_Associations+=AbstractAssociation
+	 *     description=EString (ambiguity) 'Associations:'? 'Operations:' VP_Class_Operations+=Operation
+	 *     description=EString (ambiguity) 'Associations:'? 'Operations:'? '}' (rule end)
+	 *     extends+=[EClass|FQN] (ambiguity) 'Associations:' VP_Classes_Associations+=AbstractAssociation
+	 *     extends+=[EClass|FQN] (ambiguity) 'Associations:'? 'Operations:' VP_Class_Operations+=Operation
+	 *     extends+=[EClass|FQN] (ambiguity) 'Associations:'? 'Operations:'? '}' (rule end)
+	 *     icon=STRING (ambiguity) 'Associations:' VP_Classes_Associations+=AbstractAssociation
+	 *     icon=STRING (ambiguity) 'Associations:'? 'Operations:' VP_Class_Operations+=Operation
+	 *     icon=STRING (ambiguity) 'Associations:'? 'Operations:'? '}' (rule end)
+	 *     name=EString '{' (ambiguity) 'Associations:' VP_Classes_Associations+=AbstractAssociation
+	 *     name=EString '{' (ambiguity) 'Associations:'? 'Operations:' VP_Class_Operations+=Operation
+	 *     name=EString '{' (ambiguity) 'Associations:'? 'Operations:'? '}' (rule end)
+	 *     owned_annotations+=Annotation (ambiguity) 'Associations:' VP_Classes_Associations+=AbstractAssociation
+	 *     owned_annotations+=Annotation (ambiguity) 'Associations:'? 'Operations:' VP_Class_Operations+=Operation
+	 *     owned_annotations+=Annotation (ambiguity) 'Associations:'? 'Operations:'? '}' (rule end)
 	 */
 	protected void emit_Class_AttributesKeyword_10_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
-	 * Syntax:
+	 * Ambiguous syntax:
 	 *     'Operations:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     Inheritences+=AbstractSuperClass 'Attributes:'? 'Associations:'? (ambiguity) '}' (rule end)
+	 *     VP_Class_Attributes+=Attribute 'Associations:'? (ambiguity) '}' (rule end)
+	 *     VP_Classes_Associations+=AbstractAssociation (ambiguity) '}' (rule end)
+	 *     abstract=EBoolean 'Attributes:'? 'Associations:'? (ambiguity) '}' (rule end)
+	 *     description=EString 'Attributes:'? 'Associations:'? (ambiguity) '}' (rule end)
+	 *     extends+=[EClass|FQN] 'Attributes:'? 'Associations:'? (ambiguity) '}' (rule end)
+	 *     icon=STRING 'Attributes:'? 'Associations:'? (ambiguity) '}' (rule end)
+	 *     name=EString '{' 'Attributes:'? 'Associations:'? (ambiguity) '}' (rule end)
+	 *     owned_annotations+=Annotation 'Attributes:'? 'Associations:'? (ambiguity) '}' (rule end)
 	 */
 	protected void emit_Class_OperationsKeyword_12_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

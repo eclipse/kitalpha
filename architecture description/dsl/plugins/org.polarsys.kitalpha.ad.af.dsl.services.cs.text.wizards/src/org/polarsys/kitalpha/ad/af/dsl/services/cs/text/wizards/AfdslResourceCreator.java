@@ -163,7 +163,7 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 		} else {
 			stringURI = '/' + dslProjectName + getSubFolders(parentFolder) + shortName+ "." + AFTEXT_EXTENSION;
 		}
-		return URI.createPlatformResourceURI(stringURI, false);	
+		return AfdslWizardsUtil.URIFix.createPlatformResourceURI(stringURI, false);	
 	}
 	
 	

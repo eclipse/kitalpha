@@ -94,9 +94,9 @@ public class VpspecGlobalScopeProvider extends DefaultGlobalScopeProvider {
 			URI uri = null;
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource r : resources) {
 				if (r.getProviderLocation().equals(Location.WORSPACE)) {
-					uri = URI.createPlatformResourceURI(r.getPath(), false);
+					uri = ResourceHelper.URIFix.createPlatformResourceURI(r.getPath(), false);
 				} else {
-					uri = URI.createPlatformPluginURI(r.getPath(), false);
+					uri = ResourceHelper.URIFix.createPlatformPluginURI(r.getPath(), false);
 				}
 				// avoid cyclic cross reference resolution
 				if (!uri.equals(context.getURI())) {

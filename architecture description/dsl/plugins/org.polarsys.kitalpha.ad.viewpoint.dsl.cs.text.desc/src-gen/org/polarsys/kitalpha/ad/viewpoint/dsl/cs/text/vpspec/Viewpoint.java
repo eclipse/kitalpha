@@ -16,6 +16,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getShortName <em>Short Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getName <em>Name</em>}</li>
@@ -31,7 +32,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getType <em>Type</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint#getVP_Aspects <em>VP Aspects</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage#getViewpoint()
  * @model

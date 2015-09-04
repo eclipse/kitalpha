@@ -1,4 +1,4 @@
-/*******************************************************************************
+/**
  * Copyright (c) 2014 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
@@ -7,8 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
+ */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.templates;
 
 import java.util.ArrayList;
@@ -23,8 +22,7 @@ public class GenBuildModel {
   public Chain doGenerate(final String targetLocation, final String repositoryLocation, final String protocol, final String rootProjectName, final String lvpsShortName, final BuildDataConfigContainer<String> buildConfig) {
     final Job mainJob = EGFBuildHelper.createMainJob("viewpoint", protocol, rootProjectName, lvpsShortName, repositoryLocation, buildConfig);
     final Job buildJob = EGFBuildHelper.createViewpointBuildJob(targetLocation, repositoryLocation, protocol, rootProjectName, lvpsShortName, buildConfig);
-    ArrayList<Job> _arrayList = new ArrayList<Job>();
-    final Collection<Job> jobs = _arrayList;
+    final Collection<Job> jobs = new ArrayList<Job>();
     jobs.add(mainJob);
     jobs.add(buildJob);
     return EGFBuildHelper.createChainOfJobs(jobs, lvpsShortName);

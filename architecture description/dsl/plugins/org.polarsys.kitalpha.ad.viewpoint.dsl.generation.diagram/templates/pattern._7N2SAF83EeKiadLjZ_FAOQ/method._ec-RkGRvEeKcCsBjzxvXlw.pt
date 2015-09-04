@@ -61,12 +61,13 @@
 					cLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(c_label.getColor()));	
 					
 					eStyleDesc.setCenterLabelStyleDescription(cLabelStyleDesc);
-				
+					
 					if (c_label.isBold())
 						cLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
-						
+		
 					if (c_label.isItalic())
 						cLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
+				
 				}
 				
 				/********************** Setting Begin Label properties ************************/
@@ -88,10 +89,10 @@
 					bLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(b_label.getColor()));	
 					
 					eStyleDesc.setBeginLabelStyleDescription(bLabelStyleDesc);
-
+					
 					if (b_label.isBold())
 						bLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
-
+		
 					if (b_label.isItalic())
 						bLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 					
@@ -116,13 +117,12 @@
 					eLabelStyleDesc.setLabelColor(GenerationUtil.getSystemColor(e_label.getColor()));	
 					
 					eStyleDesc.setEndLabelStyleDescription(eLabelStyleDesc);
-
+						
 					if (e_label.isBold())
 						eLabelStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
-
+		
 					if (e_label.isItalic())
 						eLabelStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
-					
 				}
 
 				/************* Add the created container style to it parent **************/

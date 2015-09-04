@@ -60,9 +60,14 @@ public class ScopeDiagramSerializer extends CrossReferenceSerializer {
 		Iterable<IEObjectDescription> exportedObjects = scope.getAllElements();
 		
 		
-		EObject eObject = target.eResource().getContents().get(0);
+		EObject eObject = null;
 		
-		if (eObject instanceof EPackage){
+		Resource res = target.eResource();
+		
+		if (res != null)
+			eObject = res.getContents().isEmpty()? null: res.getContents().get(0);
+		
+		if (eObject != null && eObject instanceof EPackage){
 			Resource resource = eObject.eResource();
 			
 			if (resource != null){

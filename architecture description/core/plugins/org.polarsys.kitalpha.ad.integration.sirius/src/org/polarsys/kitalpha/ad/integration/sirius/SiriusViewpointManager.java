@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
-import org.polarsys.kitalpha.resourcereuse.model.Location;
 
 /**
  * @author Thomas Guiu
@@ -36,11 +36,7 @@ public class SiriusViewpointManager {
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.INSTANCE.getAvailableViewpoints()) {
 				try {
-					URI uri = null;
-					if (res.getProviderLocation().equals(Location.WORSPACE))
-						uri = URI.createPlatformResourceURI(res.getPath(), false);
-					else
-						uri = URI.createPlatformPluginURI(res.getPath(), false);
+					URI uri = URIHelper.createURI(res);
 					org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) set.getEObject(uri, true);
 					EcoreUtil.resolveAll(vp);
 

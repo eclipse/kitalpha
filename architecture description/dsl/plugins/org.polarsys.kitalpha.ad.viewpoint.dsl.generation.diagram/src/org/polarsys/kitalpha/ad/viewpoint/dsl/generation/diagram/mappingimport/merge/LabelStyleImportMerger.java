@@ -11,6 +11,8 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.sirius.viewpoint.FontFormat;
 import org.eclipse.sirius.viewpoint.description.style.LabelStyleDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label;
@@ -61,8 +63,13 @@ public abstract class LabelStyleImportMerger {
 		if (label == null || ! (label.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Bold()) && 
 			   label.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Italic())))
 		{
-			result.getLabelFormat().clear();
-			result.getLabelFormat().addAll(originalLabel.getLabelFormat());
+//			result.setLabelFormat(originalLabel.getLabelFormat());
+			EList<FontFormat> originalLabelFormat = originalLabel. getLabelFormat();
+			if (null != originalLabelFormat && false == originalLabelFormat.isEmpty())
+			{
+				result.getLabelFormat().clear();
+				result.getLabelFormat().addAll(originalLabelFormat);
+			}
 		}
 
 		// Label Size

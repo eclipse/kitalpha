@@ -45,6 +45,16 @@ Contributors:
                 </with>        
             </and>
         </definition>
+        <definition id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.XtextEditor.opened">
+            <and>
+                <reference definitionId="isXtextEditorActive"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
     </extension>
     <extension
             point="org.eclipse.ui.preferencePages">
@@ -164,7 +174,8 @@ Contributors:
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpspecExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpspecExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="vptext,common.vptext,build.vptext,conf.vptext,data.vptext,spec.vptext,diagram.vptext,services.vptext,ui.vptext">
       </participant>
    </extension>
    <extension
@@ -256,7 +267,7 @@ Contributors:
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpspecExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpspecExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
@@ -333,6 +344,13 @@ Contributors:
            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpspecExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
            uriExtension="spec.vptext">
      </resourceServiceProvider>
+  </extension>
+  
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="spec.vptext"
+            type="text">
+    </fileTypes>
   </extension>
 
       <extension

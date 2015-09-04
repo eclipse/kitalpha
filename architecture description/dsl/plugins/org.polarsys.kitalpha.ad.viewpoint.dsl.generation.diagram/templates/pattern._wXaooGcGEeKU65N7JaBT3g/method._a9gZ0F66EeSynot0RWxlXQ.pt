@@ -169,7 +169,6 @@ for (NodeDescription iNodeDescription : parameter.getStyle()) {
 					
 			if (label.isItalic())
 				nStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
-			
 		}
 		
 		/************************************************************************************************/

@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.osgi.service.resolver.ExportPackageDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.WorkspaceResourceHelper;
 
 import com.google.common.collect.Sets;
@@ -71,7 +72,7 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 		
 		if (file.isAccessible()){
 			String path = file.getFullPath().toOSString();
-			URI uri = URI.createPlatformResourceURI(path, true);
+			URI uri = ResourceHelper.URIFix.createPlatformResourceURI(path, true);
 			ResourceSet resourceSet = new ResourceSetImpl();
 			Resource resource = resourceSet.getResource(uri, true);
 
@@ -130,7 +131,7 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 		
 		if (file.isAccessible()){
 			String path = file.getFullPath().toString();
-			URI uri = URI.createPlatformResourceURI(path, true);
+			URI uri = ResourceHelper.URIFix.createPlatformResourceURI(path, true);
 			ResourceSet resourceSet = new ResourceSetImpl();
 			Resource resource = resourceSet.getResource(uri, true);
 

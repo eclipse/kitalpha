@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
@@ -53,151 +53,74 @@ public class DataSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	@Inject
 	private DataGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == DataPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case DataPackage.DATA_SPEC:
-				if(context == grammarAccess.getDataSpecRule()) {
-					sequence_DataSpec(context, (DataSpec) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DataSpec(context, (DataSpec) semanticObject); 
+				return; 
 			case DataPackage.IMPORT_NAMESPACE:
-				if(context == grammarAccess.getAbstractImportRule() ||
-				   context == grammarAccess.getImportRule() ||
-				   context == grammarAccess.getImportNamespaceRule()) {
-					sequence_ImportNamespace(context, (ImportNamespace) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ImportNamespace(context, (ImportNamespace) semanticObject); 
+				return; 
 			case DataPackage.IMPORT_URI:
-				if(context == grammarAccess.getAbstractImportRule() ||
-				   context == grammarAccess.getImportRule() ||
-				   context == grammarAccess.getImportURIRule()) {
-					sequence_ImportURI(context, (ImportURI) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ImportURI(context, (ImportURI) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == VpdescPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case VpdescPackage.ANNOTATABLE_ELEMENT:
-				if(context == grammarAccess.getAnnotatableElementRule()) {
-					sequence_AnnotatableElement(context, (AnnotatableElement) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_AnnotatableElement(context, (AnnotatableElement) semanticObject); 
+				return; 
 			case VpdescPackage.ANNOTATION:
-				if(context == grammarAccess.getAnnotationRule()) {
-					sequence_Annotation(context, (Annotation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Annotation(context, (Annotation) semanticObject); 
+				return; 
 			case VpdescPackage.ATTRIBUTE:
-				if(context == grammarAccess.getAbstractFeatureRule() ||
-				   context == grammarAccess.getAttributeRule()) {
-					sequence_Attribute(context, (Attribute) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Attribute(context, (Attribute) semanticObject); 
+				return; 
 			case VpdescPackage.CLASS:
-				if(context == grammarAccess.getClassRule()) {
-					sequence_Class(context, (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Class(context, (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) semanticObject); 
+				return; 
 			case VpdescPackage.DATA:
-				if(context == grammarAccess.getDataRule()) {
-					sequence_Data(context, (Data) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Data(context, (Data) semanticObject); 
+				return; 
 			case VpdescPackage.DETAIL:
-				if(context == grammarAccess.getDetailRule()) {
-					sequence_Detail(context, (Detail) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Detail(context, (Detail) semanticObject); 
+				return; 
 			case VpdescPackage.ENUMERATION:
-				if(context == grammarAccess.getEnumerationRule()) {
-					sequence_Enumeration(context, (Enumeration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Enumeration(context, (Enumeration) semanticObject); 
+				return; 
 			case VpdescPackage.EXTERNAL_ATTRIBUTE_TYPE:
-				if(context == grammarAccess.getAbstractAttributeTypeRule() ||
-				   context == grammarAccess.getExternalAttributeTypeRule()) {
-					sequence_ExternalAttributeType(context, (ExternalAttributeType) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ExternalAttributeType(context, (ExternalAttributeType) semanticObject); 
+				return; 
 			case VpdescPackage.EXTERNAL_CLASS_ASSOCIATION:
-				if(context == grammarAccess.getAbstractAssociationRule() ||
-				   context == grammarAccess.getAbstractFeatureRule() ||
-				   context == grammarAccess.getExternalClassAssociationRule()) {
-					sequence_ExternalClassAssociation(context, (ExternalClassAssociation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ExternalClassAssociation(context, (ExternalClassAssociation) semanticObject); 
+				return; 
 			case VpdescPackage.EXTERNAL_SUPER_CLASS:
-				if(context == grammarAccess.getAbstractSuperClassRule() ||
-				   context == grammarAccess.getExternalSuperClassRule()) {
-					sequence_ExternalSuperClass(context, (ExternalSuperClass) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ExternalSuperClass(context, (ExternalSuperClass) semanticObject); 
+				return; 
 			case VpdescPackage.EXTERNAL_TYPE:
-				if(context == grammarAccess.getAbstractTypeRule() ||
-				   context == grammarAccess.getExternalTypeRule()) {
-					sequence_ExternalType(context, (ExternalType) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ExternalType(context, (ExternalType) semanticObject); 
+				return; 
 			case VpdescPackage.LOCAL_ATTRIBUTE_TYPE:
-				if(context == grammarAccess.getAbstractAttributeTypeRule() ||
-				   context == grammarAccess.getLocalAttributeTypeRule()) {
-					sequence_LocalAttributeType(context, (LocalAttributeType) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalAttributeType(context, (LocalAttributeType) semanticObject); 
+				return; 
 			case VpdescPackage.LOCAL_CLASS_ASSOCIATION:
-				if(context == grammarAccess.getAbstractAssociationRule() ||
-				   context == grammarAccess.getAbstractFeatureRule() ||
-				   context == grammarAccess.getLocalClassAssociationRule()) {
-					sequence_LocalClassAssociation(context, (LocalClassAssociation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalClassAssociation(context, (LocalClassAssociation) semanticObject); 
+				return; 
 			case VpdescPackage.LOCAL_SUPER_CLASS:
-				if(context == grammarAccess.getAbstractSuperClassRule() ||
-				   context == grammarAccess.getLocalSuperClassRule()) {
-					sequence_LocalSuperClass(context, (LocalSuperClass) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalSuperClass(context, (LocalSuperClass) semanticObject); 
+				return; 
 			case VpdescPackage.LOCAL_TYPE:
-				if(context == grammarAccess.getAbstractTypeRule() ||
-				   context == grammarAccess.getLocalTypeRule()) {
-					sequence_LocalType(context, (LocalType) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalType(context, (LocalType) semanticObject); 
+				return; 
 			case VpdescPackage.OPERATION:
-				if(context == grammarAccess.getOperationRule()) {
-					sequence_Operation(context, (Operation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Operation(context, (Operation) semanticObject); 
+				return; 
 			case VpdescPackage.PARAMETER:
-				if(context == grammarAccess.getParameterRule()) {
-					sequence_Parameter(context, (Parameter) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Parameter(context, (Parameter) semanticObject); 
+				return; 
 			case VpdescPackage.VALUE:
-				if(context == grammarAccess.getValueRule()) {
-					sequence_Value(context, (Value) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Value(context, (Value) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}

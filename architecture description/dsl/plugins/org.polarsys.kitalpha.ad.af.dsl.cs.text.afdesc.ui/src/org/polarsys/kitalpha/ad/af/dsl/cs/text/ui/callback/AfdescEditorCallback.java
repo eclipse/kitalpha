@@ -81,7 +81,13 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	public void afterCreatePartControl(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-		editorSupport.initializeDirtyStateSupport(this);	
+		
+		/**
+		 * FIXME This commented due to migration to mars. Ensure that the
+		 * modification work finely at the end of migration on initializrDirtyStateSupport(currentEditor)
+		 */
+//		editorSupport.initializeDirtyStateSupport(this);
+		editorSupport.initializeDirtyStateSupport(currentEditor);
 		IResource resource = editor.getResource();
 		if (resource!=null && !toggleNature.hasNature(resource.getProject()) && resource.getProject().isAccessible() && !resource.getProject().isHidden()) {
 			toggleNature.toggleNature(resource.getProject());
@@ -92,7 +98,12 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	public void beforeDispose(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-		editorSupport.removeDirtyStateSupport(this);
+		/**
+		 * FIXME This commented due to migration to mars. Ensure that the
+		 * modification work finely at the end of migration on removeDirtyStateSupport(currentEditor)
+		 */
+//		editorSupport.removeDirtyStateSupport(this);
+		editorSupport.removeDirtyStateSupport(currentEditor);
 		this.currentEditor = null;
 	}
 
@@ -100,13 +111,23 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	public boolean onValidateEditorInputState(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-		return editorSupport.isEditingPossible(this);
+		/**
+		 * FIXME This commented due to migration to mars. Ensure that the
+		 * modification work finely at the end of migration on isEditingPossible(currentEditor)
+		 */
+//		return editorSupport.isEditingPossible(this);
+		return editorSupport.isEditingPossible(currentEditor);
 	}
 
 	@Override
 	public void beforeSetInput(XtextEditor editor) {
 		if (this.currentEditor != null) {
-			editorSupport.removeDirtyStateSupport(this);
+			/**
+			 * FIXME This commented due to migration to mars. Ensure that the
+			 * modification work finely at the end of migration on removeDirtyStateSupport(currentEditor)
+			 */
+//			editorSupport.removeDirtyStateSupport(this);
+			editorSupport.removeDirtyStateSupport(currentEditor);
 		}
 	}
 
@@ -115,35 +136,65 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 		if (this.currentEditor != null) {
 			if (this.currentEditor != editor)
 				throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-			editorSupport.initializeDirtyStateSupport(this);
+			/**
+			 * FIXME This commented due to migration to mars. Ensure that the
+			 * modification work finely at the end of migration on initializrDirtyStateSupport(currentEditor)
+			 */
+//			editorSupport.initializeDirtyStateSupport(this);
+			editorSupport.initializeDirtyStateSupport(currentEditor);
 		} else {
 			this.currentEditor = editor;
 		}
 	}
 
-	@Override
+	/**
+	 * FIXME This commented due to migration to mars. Ensure that the
+	 * modification work finely at the end of migration on isDirty() is not 
+	 * defined in superclass, (modification: remove @Override annotation
+	 */
+//	@Override
 	public boolean isDirty() {
 		return currentEditor.isDirty();
 	}
 
-	@Override
+	/**
+	 * FIXME This commented due to migration to mars. Ensure that the
+	 * modification work finely at the end of migration on getDocument() is not 
+	 * defined in superclass, (modification: remove @Override annotation
+	 */
+//	@Override
 	public IXtextDocument getDocument() {
 		return currentEditor.getDocument();
 	}
 
-	@Override
+	/**
+	 * FIXME This commented due to migration to mars. Ensure that the
+	 * modification work finely at the end of migration on addVerifyListener() is not 
+	 * defined in superclass, (modification: remove @Override annotation
+	 */
+//	@Override
 	public void addVerifyListener(VerifyListener listener) {
 		ISourceViewer sourceViewer = currentEditor.getInternalSourceViewer();
 		StyledText widget = sourceViewer.getTextWidget();
 		widget.addVerifyListener(listener);
 	}
 
-	@Override
+	/**
+	 * FIXME This commented due to migration to mars. Ensure that the
+	 * modification work finely at the end of migration on getShell() is not 
+	 * defined in superclass, (modification: remove @Override annotation
+	 */
+//	@Override
 	public Shell getShell() {
 		return currentEditor.getEditorSite().getShell();
 	}
 
-	@Override
+	/**
+	 * FIXME This commented due to migration to mars. Ensure that the
+	 * modification work finely at the end of migration on removeVerifyListener() is not 
+	 * defined in superclass, (modification: remove @Override annotation
+	 */
+//	@Override
 	public void removeVerifyListener(VerifyListener listener) {
 		ISourceViewer sourceViewer = currentEditor.getInternalSourceViewer();
 		StyledText widget = sourceViewer.getTextWidget();
@@ -171,7 +222,12 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 		} else {
 			synchronizing = false;
 		}
-		editorSupport.markEditorClean(this);
+		/**
+		 * FIXME This commented due to migration to mars. Ensure that the
+		 * modification work finely at the end of migration on markEditorClean(currentEditor)
+		 */
+//		editorSupport.markEditorClean(this);
+		editorSupport.markEditorClean(currentEditor);
 	}
 	
 	protected boolean doSynchronize(IFile file) {

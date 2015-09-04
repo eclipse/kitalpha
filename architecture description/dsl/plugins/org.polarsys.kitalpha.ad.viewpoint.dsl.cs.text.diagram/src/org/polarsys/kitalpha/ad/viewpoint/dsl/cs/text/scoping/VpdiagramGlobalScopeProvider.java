@@ -126,7 +126,7 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		 * 
 		 * Check if it necessary to keep it, otherwise, to remove it.
 		 */
-		exportedObjects = Iterables.concat(exportedObjects, getImportedDiagrams(eResource));
+		//exportedObjects = Iterables.concat(exportedObjects, getImportedDiagrams(eResource));
 		exportedObjects = Iterables.concat(exportedObjects, getExternalImportDiagramObjectDescription(eResource, exportedObjects, type));
 
 		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
@@ -304,7 +304,7 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		} catch (RuntimeException ex) {
 			if (uri.isPlatformResource()) {
 				String platformString = uri.toPlatformString(true);
-				URI platformPluginURI = URI.createPlatformPluginURI(platformString, true);
+				URI platformPluginURI = ResourceHelper.URIFix.createPlatformPluginURI(platformString, true);
 				return loadEPackage(platformPluginURI.toString(), resourceSet);
 			}
 			return null;
@@ -324,8 +324,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		return exportedObjects;
 	}
 	
-	//Handle external imports
-	// [BZE] Browse resource by EReferences rather than eAllContent iterator.
 	private Iterable<IEObjectDescription> getExternalImportDiagramObjectDescription(Resource resource,
 			Iterable<IEObjectDescription> exportedObjects, EClass type){
 
@@ -358,32 +356,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 				}
 			}
 		}
-		
-		//Collection<IEObjectDescription> exportImportedObjects = new ArrayList<IEObjectDescription>();
-//		TreeIterator<EObject> it = resource.getAllContents();
-//
-//		while (it.hasNext()){
-//			EObject next = it.next();
-//
-//			for(EObject content: next.eContents()){
-//				if (content instanceof ImportGroup){
-//					ImportGroup importedOdesign = (ImportGroup)content;
-//					String platformURI = importedOdesign.getImportedGroup();
-//
-//					if (platformURI != null && !platformURI.isEmpty()){
-//						String tmpUri = platformURI.substring(1, platformURI.length() - 1).trim();
-//						
-//						boolean isEcore = isEcoreURI(tmpUri);
-//						
-//						if (isEcore){
-//							exportedObjects = Iterables.concat(exportedObjects, exportEcoreElements(tmpUri, resource, exportedObjects));
-//						} else {
-//							exportedObjects = Iterables.concat(exportedObjects, exportRepresentationElements(tmpUri, resource, exportedObjects));
-//						}
-//					}
-//				}
-//			}
-//		}
 		return exportedObjects;
 	}
 	
@@ -399,8 +371,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		Resource odesignResources = resource.getResourceSet().getResource(p_uri, true);	
 
 		if (descriptionManager != null && odesignResources != null) {	
-			// FIXME: [BZE] is this necessary
-//			EcoreUtil.resolveAll(odesignResources);	
 
 			Group group = SiriusViewpointHelper.getViewpointGroup(odesignResources);	
 
@@ -409,16 +379,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 				IEObjectDescription desc = EObjectDescription.create(simpleName, group, null);	
 				exportImportedObjects.add(desc);	
 			}	
-
-			// [BZE] We need only DiagramDescription, so why add All RepresentationDescription (Table, CrossTable, etc.) in the scope.
-			// These kind of representations are never used anywhere
-			//List<RepresentationDescription> diagramDescriptions = SiriusViewpointHelper.getAllRepresentationDescription(odesignResources);	
-			//if (diagramDescriptions != null && !diagramDescriptions.isEmpty()){	
-			//	for (RepresentationDescription dd : diagramDescriptions) {	
-			//		IEObjectDescription desc = EObjectDescription.create(dd.getName().replaceAll(" ", ""), dd, null);	
-			//		exportImportedObjects.add(desc);	
-			//	}	
-			//}	
 			
 			List<DiagramDescription> diagramDescription = SiriusViewpointHelper.getAllDiagramDescription(odesignResources);	
 
@@ -429,10 +389,7 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					exportImportedObjects.add(desc);	
 				}	
 			}	
-
-			//[BZE]: use new implementation
-			// original code. This avoid to compute DiagramDescription an other time
-			// List<ContainerMapping> containers = SiriusViewpointHelper.getAllContainerMapping(odesignResources);	
+			
 			List<ContainerMapping> containers = SiriusViewpointHelper.getAllContainerMapping(diagramDescription);
 
 			if (containers != null && !containers.isEmpty()){	
@@ -443,9 +400,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 				}	
 			}	
 
-			//[BZE]: use new implementation
-			// original code. This avoid to compute DiagramDescription an other time
-			// List<NodeMapping> nodeMappings = SiriusViewpointHelper.getAllNodeMapping(odesignResources);
 			List<NodeMapping> nodeMappings = SiriusViewpointHelper.getAllNodeMapping(diagramDescription);	
 
 			if (nodeMappings != null && !nodeMappings.isEmpty()){	
@@ -456,9 +410,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 				}	
 			}	
 
-			//[BZE]: use new implementation
-			// original code. This avoid to compute DiagramDescription an other time
-			// List<EdgeMapping> edgeMappings = SiriusViewpointHelper.getAllEdgeMapping(odesignResources);
 			List<EdgeMapping> edgeMappings = SiriusViewpointHelper.getAllEdgeMapping(diagramDescription);	
 
 			if (edgeMappings != null && !edgeMappings.isEmpty()){	

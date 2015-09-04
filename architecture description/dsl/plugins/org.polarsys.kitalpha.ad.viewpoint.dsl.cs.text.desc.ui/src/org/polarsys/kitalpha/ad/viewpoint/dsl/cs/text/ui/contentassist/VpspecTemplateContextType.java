@@ -48,6 +48,10 @@ public class VpspecTemplateContextType extends CommonTemplateContextType impleme
 
 	@Override
 	public void notifyResolver(String proposal) {
-		currentFile = proposal;
+		setCurrentFile(proposal);
+	}
+	
+	private static void setCurrentFile(String currentFile) {
+		VpspecTemplateContextType.currentFile = currentFile;
 	}
 }

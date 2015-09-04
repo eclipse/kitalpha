@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
 package org.polarsys.kitalpha.ad.af.dsl.cs.text.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
@@ -29,18 +19,23 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 @SuppressWarnings("all")
 public class InternalAfdescParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ArchitectureFramework'", "'{'", "'description:'", "'shortName:'", "'}'", "'Configuration'", "','", "'rootProjectName:'", "'Viewpoints'", "'.'"
     };
-    public static final int RULE_ID=4;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
+    public static final int RULE_ID=4;
     public static final int RULE_STRING=5;
     public static final int T__16=16;
     public static final int T__15=15;
@@ -50,8 +45,13 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__20=20;
     public static final int RULE_INT=6;
     public static final int RULE_WS=9;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int EOF=-1;
+    public static final int RULE_ML_COMMENT=7;
 
     // delegates
     // delegators
@@ -92,7 +92,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNamedElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:67:1: entryRuleNamedElement returns [EObject current=null] : iv_ruleNamedElement= ruleNamedElement EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:74:1: entryRuleNamedElement returns [EObject current=null] : iv_ruleNamedElement= ruleNamedElement EOF ;
     public final EObject entryRuleNamedElement() throws RecognitionException {
         EObject current = null;
 
@@ -100,8 +100,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:68:2: (iv_ruleNamedElement= ruleNamedElement EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:69:2: iv_ruleNamedElement= ruleNamedElement EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:75:2: (iv_ruleNamedElement= ruleNamedElement EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:76:2: iv_ruleNamedElement= ruleNamedElement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNamedElementRule()); 
@@ -132,7 +132,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNamedElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:76:1: ruleNamedElement returns [EObject current=null] : this_ArchitectureFramework_0= ruleArchitectureFramework ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:83:1: ruleNamedElement returns [EObject current=null] : this_ArchitectureFramework_0= ruleArchitectureFramework ;
     public final EObject ruleNamedElement() throws RecognitionException {
         EObject current = null;
 
@@ -142,8 +142,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:79:28: (this_ArchitectureFramework_0= ruleArchitectureFramework )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:81:5: this_ArchitectureFramework_0= ruleArchitectureFramework
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:86:28: (this_ArchitectureFramework_0= ruleArchitectureFramework )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:88:5: this_ArchitectureFramework_0= ruleArchitectureFramework
             {
             if ( state.backtracking==0 ) {
                
@@ -181,7 +181,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArchitectureFramework"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:97:1: entryRuleArchitectureFramework returns [EObject current=null] : iv_ruleArchitectureFramework= ruleArchitectureFramework EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:104:1: entryRuleArchitectureFramework returns [EObject current=null] : iv_ruleArchitectureFramework= ruleArchitectureFramework EOF ;
     public final EObject entryRuleArchitectureFramework() throws RecognitionException {
         EObject current = null;
 
@@ -189,8 +189,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:98:2: (iv_ruleArchitectureFramework= ruleArchitectureFramework EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:99:2: iv_ruleArchitectureFramework= ruleArchitectureFramework EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:105:2: (iv_ruleArchitectureFramework= ruleArchitectureFramework EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:106:2: iv_ruleArchitectureFramework= ruleArchitectureFramework EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getArchitectureFrameworkRule()); 
@@ -221,7 +221,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArchitectureFramework"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:106:1: ruleArchitectureFramework returns [EObject current=null] : ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:113:1: ruleArchitectureFramework returns [EObject current=null] : ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' ) ;
     public final EObject ruleArchitectureFramework() throws RecognitionException {
         EObject current = null;
 
@@ -241,14 +241,14 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:109:28: ( ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:110:1: ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:116:28: ( ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:117:1: ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:110:1: ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:110:2: () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:117:1: ( () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:117:2: () otherlv_1= 'ArchitectureFramework' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )? (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )? ( (lv_af_viewpoints_8_0= ruleViewpoints ) )? ( (lv_owned_configuration_9_0= ruleConfiguration ) ) otherlv_10= '}'
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:110:2: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:111:5: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:117:2: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:118:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -266,7 +266,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getArchitectureFrameworkAccess().getArchitectureFrameworkKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:120:1: ( (lv_name_2_0= RULE_ID ) )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:127:1: ( (lv_name_2_0= RULE_ID ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -275,10 +275,10 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:121:1: (lv_name_2_0= RULE_ID )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:128:1: (lv_name_2_0= RULE_ID )
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:121:1: (lv_name_2_0= RULE_ID )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:122:3: lv_name_2_0= RULE_ID
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:128:1: (lv_name_2_0= RULE_ID )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:129:3: lv_name_2_0= RULE_ID
                     {
                     lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleArchitectureFramework238); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -313,7 +313,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_3, grammarAccess.getArchitectureFrameworkAccess().getLeftCurlyBracketKeyword_3());
                   
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:142:1: (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:149:1: (otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) ) )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -322,7 +322,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:142:3: otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:149:3: otherlv_4= 'description:' ( (lv_description_5_0= RULE_STRING ) )
                     {
                     otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleArchitectureFramework269); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -330,11 +330,11 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_4, grammarAccess.getArchitectureFrameworkAccess().getDescriptionKeyword_4_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:146:1: ( (lv_description_5_0= RULE_STRING ) )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:147:1: (lv_description_5_0= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:153:1: ( (lv_description_5_0= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:154:1: (lv_description_5_0= RULE_STRING )
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:147:1: (lv_description_5_0= RULE_STRING )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:148:3: lv_description_5_0= RULE_STRING
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:154:1: (lv_description_5_0= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:155:3: lv_description_5_0= RULE_STRING
                     {
                     lv_description_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArchitectureFramework286); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -366,7 +366,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:164:4: (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:171:4: (otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) ) )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -375,7 +375,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:164:6: otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:171:6: otherlv_6= 'shortName:' ( (lv_shortName_7_0= RULE_STRING ) )
                     {
                     otherlv_6=(Token)match(input,14,FOLLOW_14_in_ruleArchitectureFramework306); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -383,11 +383,11 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_6, grammarAccess.getArchitectureFrameworkAccess().getShortNameKeyword_5_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:168:1: ( (lv_shortName_7_0= RULE_STRING ) )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:169:1: (lv_shortName_7_0= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:175:1: ( (lv_shortName_7_0= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:176:1: (lv_shortName_7_0= RULE_STRING )
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:169:1: (lv_shortName_7_0= RULE_STRING )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:170:3: lv_shortName_7_0= RULE_STRING
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:176:1: (lv_shortName_7_0= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:177:3: lv_shortName_7_0= RULE_STRING
                     {
                     lv_shortName_7_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleArchitectureFramework323); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -419,7 +419,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:186:4: ( (lv_af_viewpoints_8_0= ruleViewpoints ) )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:193:4: ( (lv_af_viewpoints_8_0= ruleViewpoints ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -428,10 +428,10 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:187:1: (lv_af_viewpoints_8_0= ruleViewpoints )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:194:1: (lv_af_viewpoints_8_0= ruleViewpoints )
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:187:1: (lv_af_viewpoints_8_0= ruleViewpoints )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:188:3: lv_af_viewpoints_8_0= ruleViewpoints
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:194:1: (lv_af_viewpoints_8_0= ruleViewpoints )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:195:3: lv_af_viewpoints_8_0= ruleViewpoints
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -465,11 +465,11 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:204:3: ( (lv_owned_configuration_9_0= ruleConfiguration ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:205:1: (lv_owned_configuration_9_0= ruleConfiguration )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:211:3: ( (lv_owned_configuration_9_0= ruleConfiguration ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:212:1: (lv_owned_configuration_9_0= ruleConfiguration )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:205:1: (lv_owned_configuration_9_0= ruleConfiguration )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:206:3: lv_owned_configuration_9_0= ruleConfiguration
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:212:1: (lv_owned_configuration_9_0= ruleConfiguration )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:213:3: lv_owned_configuration_9_0= ruleConfiguration
             {
             if ( state.backtracking==0 ) {
                
@@ -529,7 +529,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:234:1: entryRuleConfiguration returns [EObject current=null] : iv_ruleConfiguration= ruleConfiguration EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:241:1: entryRuleConfiguration returns [EObject current=null] : iv_ruleConfiguration= ruleConfiguration EOF ;
     public final EObject entryRuleConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -537,8 +537,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:235:2: (iv_ruleConfiguration= ruleConfiguration EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:236:2: iv_ruleConfiguration= ruleConfiguration EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:242:2: (iv_ruleConfiguration= ruleConfiguration EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:243:2: iv_ruleConfiguration= ruleConfiguration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConfigurationRule()); 
@@ -569,7 +569,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:243:1: ruleConfiguration returns [EObject current=null] : ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:250:1: ruleConfiguration returns [EObject current=null] : ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' ) ;
     public final EObject ruleConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -585,14 +585,14 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:246:28: ( ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:247:1: ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:253:28: ( ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:254:1: ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:247:1: ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:247:2: () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:254:1: ( () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:254:2: () otherlv_1= 'Configuration' otherlv_2= '{' ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )? otherlv_6= '}'
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:247:2: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:248:5: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:254:2: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:255:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -616,7 +616,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_2, grammarAccess.getConfigurationAccess().getLeftCurlyBracketKeyword_2());
                   
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:261:1: ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:268:1: ( ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )* )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -625,13 +625,13 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:261:2: ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )*
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:268:2: ( (lv_owned_element_3_0= ruleConfigurationElement ) ) (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )*
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:261:2: ( (lv_owned_element_3_0= ruleConfigurationElement ) )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:262:1: (lv_owned_element_3_0= ruleConfigurationElement )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:268:2: ( (lv_owned_element_3_0= ruleConfigurationElement ) )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:269:1: (lv_owned_element_3_0= ruleConfigurationElement )
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:262:1: (lv_owned_element_3_0= ruleConfigurationElement )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:263:3: lv_owned_element_3_0= ruleConfigurationElement
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:269:1: (lv_owned_element_3_0= ruleConfigurationElement )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:270:3: lv_owned_element_3_0= ruleConfigurationElement
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -662,7 +662,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:279:2: (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )*
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:286:2: (otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) ) )*
                     loop5:
                     do {
                         int alt5=2;
@@ -675,7 +675,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:279:4: otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:286:4: otherlv_4= ',' ( (lv_owned_element_5_0= ruleConfigurationElement ) )
                     	    {
                     	    otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleConfiguration524); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -683,11 +683,11 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                     	          	newLeafNode(otherlv_4, grammarAccess.getConfigurationAccess().getCommaKeyword_3_1_0());
                     	          
                     	    }
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:283:1: ( (lv_owned_element_5_0= ruleConfigurationElement ) )
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:284:1: (lv_owned_element_5_0= ruleConfigurationElement )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:290:1: ( (lv_owned_element_5_0= ruleConfigurationElement ) )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:291:1: (lv_owned_element_5_0= ruleConfigurationElement )
                     	    {
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:284:1: (lv_owned_element_5_0= ruleConfigurationElement )
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:285:3: lv_owned_element_5_0= ruleConfigurationElement
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:291:1: (lv_owned_element_5_0= ruleConfigurationElement )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:292:3: lv_owned_element_5_0= ruleConfigurationElement
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
@@ -762,7 +762,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfigurationElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:313:1: entryRuleConfigurationElement returns [EObject current=null] : iv_ruleConfigurationElement= ruleConfigurationElement EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:320:1: entryRuleConfigurationElement returns [EObject current=null] : iv_ruleConfigurationElement= ruleConfigurationElement EOF ;
     public final EObject entryRuleConfigurationElement() throws RecognitionException {
         EObject current = null;
 
@@ -770,8 +770,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:314:2: (iv_ruleConfigurationElement= ruleConfigurationElement EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:315:2: iv_ruleConfigurationElement= ruleConfigurationElement EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:321:2: (iv_ruleConfigurationElement= ruleConfigurationElement EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:322:2: iv_ruleConfigurationElement= ruleConfigurationElement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getConfigurationElementRule()); 
@@ -802,7 +802,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfigurationElement"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:322:1: ruleConfigurationElement returns [EObject current=null] : this_GenerationConfiguration_0= ruleGenerationConfiguration ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:329:1: ruleConfigurationElement returns [EObject current=null] : this_GenerationConfiguration_0= ruleGenerationConfiguration ;
     public final EObject ruleConfigurationElement() throws RecognitionException {
         EObject current = null;
 
@@ -812,8 +812,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:325:28: (this_GenerationConfiguration_0= ruleGenerationConfiguration )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:327:5: this_GenerationConfiguration_0= ruleGenerationConfiguration
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:332:28: (this_GenerationConfiguration_0= ruleGenerationConfiguration )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:334:5: this_GenerationConfiguration_0= ruleGenerationConfiguration
             {
             if ( state.backtracking==0 ) {
                
@@ -851,7 +851,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGenerationConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:343:1: entryRuleGenerationConfiguration returns [EObject current=null] : iv_ruleGenerationConfiguration= ruleGenerationConfiguration EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:350:1: entryRuleGenerationConfiguration returns [EObject current=null] : iv_ruleGenerationConfiguration= ruleGenerationConfiguration EOF ;
     public final EObject entryRuleGenerationConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -859,8 +859,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:344:2: (iv_ruleGenerationConfiguration= ruleGenerationConfiguration EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:345:2: iv_ruleGenerationConfiguration= ruleGenerationConfiguration EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:351:2: (iv_ruleGenerationConfiguration= ruleGenerationConfiguration EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:352:2: iv_ruleGenerationConfiguration= ruleGenerationConfiguration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGenerationConfigurationRule()); 
@@ -891,7 +891,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGenerationConfiguration"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:352:1: ruleGenerationConfiguration returns [EObject current=null] : ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:359:1: ruleGenerationConfiguration returns [EObject current=null] : ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) ) ;
     public final EObject ruleGenerationConfiguration() throws RecognitionException {
         EObject current = null;
 
@@ -902,14 +902,14 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:355:28: ( ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:356:1: ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:362:28: ( ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:363:1: ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:356:1: ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:356:2: () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:363:1: ( () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:363:2: () (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:356:2: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:357:5: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:363:2: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:364:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -921,8 +921,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:362:2: (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:362:4: otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:369:2: (otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:369:4: otherlv_1= 'rootProjectName:' ( (lv_rootProjectName_2_0= ruleFQN ) )
             {
             otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleGenerationConfiguration744); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -930,11 +930,11 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getGenerationConfigurationAccess().getRootProjectNameKeyword_1_0());
                   
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:366:1: ( (lv_rootProjectName_2_0= ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:367:1: (lv_rootProjectName_2_0= ruleFQN )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:373:1: ( (lv_rootProjectName_2_0= ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:374:1: (lv_rootProjectName_2_0= ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:367:1: (lv_rootProjectName_2_0= ruleFQN )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:368:3: lv_rootProjectName_2_0= ruleFQN
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:374:1: (lv_rootProjectName_2_0= ruleFQN )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:375:3: lv_rootProjectName_2_0= ruleFQN
             {
             if ( state.backtracking==0 ) {
                
@@ -991,7 +991,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleViewpoints"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:392:1: entryRuleViewpoints returns [EObject current=null] : iv_ruleViewpoints= ruleViewpoints EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:399:1: entryRuleViewpoints returns [EObject current=null] : iv_ruleViewpoints= ruleViewpoints EOF ;
     public final EObject entryRuleViewpoints() throws RecognitionException {
         EObject current = null;
 
@@ -999,8 +999,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:393:2: (iv_ruleViewpoints= ruleViewpoints EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:394:2: iv_ruleViewpoints= ruleViewpoints EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:400:2: (iv_ruleViewpoints= ruleViewpoints EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:401:2: iv_ruleViewpoints= ruleViewpoints EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getViewpointsRule()); 
@@ -1031,7 +1031,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleViewpoints"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:401:1: ruleViewpoints returns [EObject current=null] : ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:408:1: ruleViewpoints returns [EObject current=null] : ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' ) ;
     public final EObject ruleViewpoints() throws RecognitionException {
         EObject current = null;
 
@@ -1045,14 +1045,14 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:404:28: ( ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:405:1: ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:411:28: ( ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:412:1: ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:405:1: ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:405:2: () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}'
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:412:1: ( () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}' )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:412:2: () otherlv_1= 'Viewpoints' otherlv_2= '{' ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )? otherlv_6= '}'
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:405:2: ()
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:406:5: 
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:412:2: ()
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:413:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -1076,7 +1076,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_2, grammarAccess.getViewpointsAccess().getLeftCurlyBracketKeyword_2());
                   
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:419:1: ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )?
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:426:1: ( ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )* )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1085,13 +1085,13 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:419:2: ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )*
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:426:2: ( (otherlv_3= RULE_ID ) ) (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )*
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:419:2: ( (otherlv_3= RULE_ID ) )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:420:1: (otherlv_3= RULE_ID )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:426:2: ( (otherlv_3= RULE_ID ) )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:427:1: (otherlv_3= RULE_ID )
                     {
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:420:1: (otherlv_3= RULE_ID )
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:421:3: otherlv_3= RULE_ID
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:427:1: (otherlv_3= RULE_ID )
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:428:3: otherlv_3= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -1112,7 +1112,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:432:2: (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )*
+                    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:439:2: (otherlv_4= ',' ( (otherlv_5= RULE_ID ) ) )*
                     loop7:
                     do {
                         int alt7=2;
@@ -1125,7 +1125,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:432:4: otherlv_4= ',' ( (otherlv_5= RULE_ID ) )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:439:4: otherlv_4= ',' ( (otherlv_5= RULE_ID ) )
                     	    {
                     	    otherlv_4=(Token)match(input,17,FOLLOW_17_in_ruleViewpoints904); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -1133,11 +1133,11 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                     	          	newLeafNode(otherlv_4, grammarAccess.getViewpointsAccess().getCommaKeyword_3_1_0());
                     	          
                     	    }
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:436:1: ( (otherlv_5= RULE_ID ) )
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:437:1: (otherlv_5= RULE_ID )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:443:1: ( (otherlv_5= RULE_ID ) )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:444:1: (otherlv_5= RULE_ID )
                     	    {
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:437:1: (otherlv_5= RULE_ID )
-                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:438:3: otherlv_5= RULE_ID
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:444:1: (otherlv_5= RULE_ID )
+                    	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:445:3: otherlv_5= RULE_ID
                     	    {
                     	    if ( state.backtracking==0 ) {
 
@@ -1202,7 +1202,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFQN"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:461:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:468:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -1210,8 +1210,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:462:2: (iv_ruleFQN= ruleFQN EOF )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:463:2: iv_ruleFQN= ruleFQN EOF
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:469:2: (iv_ruleFQN= ruleFQN EOF )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:470:2: iv_ruleFQN= ruleFQN EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFQNRule()); 
@@ -1242,7 +1242,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFQN"
-    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:470:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) ;
+    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:477:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1253,11 +1253,11 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:473:28: ( (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:474:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:480:28: ( (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:481:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
             {
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:474:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:474:6: this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:481:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:481:6: this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1028); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -1270,7 +1270,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
                   newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
                   
             }
-            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:481:1: (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
+            // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:488:1: (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1283,7 +1283,7 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:482:2: kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID )
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:489:2: kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID )
             	    {
             	    kw=(Token)match(input,20,FOLLOW_20_in_ruleFQN1047); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -1292,8 +1292,8 @@ public class InternalAfdescParser extends AbstractInternalAntlrParser {
             	              newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             	          
             	    }
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:487:1: ( ( RULE_ID )=>this_ID_2= RULE_ID )
-            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:487:2: ( RULE_ID )=>this_ID_2= RULE_ID
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:494:1: ( ( RULE_ID )=>this_ID_2= RULE_ID )
+            	    // ../org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc/src-gen/org/polarsys/kitalpha/ad/af/dsl/cs/text/parser/antlr/internal/InternalAfdesc.g:494:2: ( RULE_ID )=>this_ID_2= RULE_ID
             	    {
             	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1068); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {

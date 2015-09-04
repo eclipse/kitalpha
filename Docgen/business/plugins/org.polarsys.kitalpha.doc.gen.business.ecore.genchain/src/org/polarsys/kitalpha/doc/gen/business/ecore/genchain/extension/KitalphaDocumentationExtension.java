@@ -30,7 +30,7 @@ import org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExten
  * @author Thomas Guiu, Boubekeur Zendagui
  */
 public class KitalphaDocumentationExtension extends DefaultEmfDocumentationExtension { 
-	private static final URI PATTERN = URI.createPlatformPluginURI("org.polarsys.kitalpha.doc.gen.business.ecore.genchain/egf/DocgenGenchainExtension.fcore#_UcpgMB1kEeSL-4aCmHxj2g", false);
+	private static final URI PATTERN = URI.createURI("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore.genchain/egf/DocgenGenchainExtension.fcore#_UcpgMB1kEeSL-4aCmHxj2g", false);
 
 	private static final List<String> CONFLICT_LIST = Arrays.asList(new String[] { "basic.documentation.generation" });
 

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="ASCII"?>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildfile="http://www.eclipse.org/egf/1.0.0/buildfile" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_sdk">
+  <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
+    <properties xmi:id="_kt6SMEE8EeOcseK798bpbA" key="egf.repo.url" value="https://hudson.eclipse.org/egf/job/buckminster-egf-mars/15/artifact/result/publish/org.eclipse.egf.site/site.p2/"/>
+    <properties xmi:id="_MWwdkPlvEeCFCIE_fWd_VQ" key="cloudsmith.download.prefix" value="http://download.eclipse.org/external/"/>
+    <properties xmi:id="_MlqcQPlvEeCFCIE_fWd_VQ" key="polarion.download.prefix" value="http://download.eclipse.org/external/"/>
+    <properties xmi:id="_LPrgwPlvEeCFCIE_fWd_VQ" key="eclipse.download.prefix" value="http://download.eclipse.org"/>
+    <properties xmi:id="_p3huoPmBEeCFCIE_fWd_VQ" key="plugin.repo.prefix" value="http://svn.orchestra.ors.services.thales/plugins_repo/trunk"/>
+    <properties xmi:id="_C7QgkHs6EeKM-JnMHzahcg" key="plugin.repo.path" value="${plugin.repo.prefix}/MDE/${plugin.repo.version}"/>
+    <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="${eclipse.download.prefix}/sirius/updates/stable/3.1.0-S20150717-101708/mars"/>
+    <properties xmi:id="_n0G4oJPyEeODqo9Nw0Mw6Q" key="orbit.repo.url" value="${eclipse.download.prefix}/tools/orbit/downloads/drops/R20130827064939/repository/"/>
+    <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="${eclipse.download.prefix}/releases/${eclipse_version}"/>
+    <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="${eclipse.download.prefix}/modeling/emft/eef/updates/milestones/1.5/S201501090502/"/>
+    <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="${eclipse.download.prefix}/modeling/m2t/acceleo/updates/releases/3.4"/>
+    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.0.x/luna"/>
+    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.4.0/emf-diffmerge-site"/>
+    <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.4.0/edm-patterns-site"/>
+    <properties xmi:id="_tAs5kCO3EeWTOe3dES9kkg" key="amalgam.repo.url" value="http://download.eclipse.org/modeling/amalgam/updates/nightly/1.7.x/mars/"/>
+    <properties xmi:id="_p_oyYDIHEeW5Te4c0tZ9OQ" key="kitalphaCTK.repo.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_CTK/lastSuccessfulBuild/artifact/result/publish/kitalpha_ctk/site.p2"/>
+  </propertyPackages>
+  <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
+    <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="mars"/>
+    <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="0.5.1RC1"/>
+    <properties xmi:id="_3c6QMI5lEeOQ8YcnVfa6Wg" key="guava.version" value="11.0.2.v201303041551"/>
+  </propertyPackages>
+  <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
+    <properties xmi:id="_pAapkPq5EeKXG4Dej4PCUQ" key="main_version" value="trunk"/>
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_Hh5UQJKEEeSPapwxSH2ZqQ" name="TP_mars">
+      <properties xmi:id="_S07kMJKDEeSPapwxSH2ZqQ" key="TP_name" value="TP_mars" type="INLINED"/>
+      <properties xmi:id="_eG7gEJKHEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
+      <properties xmi:id="_eayQMJKHEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
+      <properties xmi:id="_evriIJKHEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
+      <properties xmi:id="_d2Gu0aF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
+      <steps xsi:type="buildcore:ReuseStep" xmi:id="_Cs0RIJKDEeSPapwxSH2ZqQ" name="">
+        <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
+      </steps>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_jTST4D5LEeSicsfEyxBYkg" name="TP_mars" enabled="false">
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_CxGu8EhiEeOxuMV9a71i9w" name="TP_mars" id="TP_mars" profile="SDKProfile" p2_os="win32" p2_ws="win32" p2_arch="x86">
+        <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
+        <featureNames>org.eclipse.sdk</featureNames>
+        <productNames>org.eclipse.sdk.ide</productNames>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_whSTII5rEeORY9jpJq94Og" name="install cots features" id="TP_mars" profile="SDKProfile" p2_os="win32" p2_ws="win32" p2_arch="x86">
+        <updateSiteUrls>${egf.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${orbit.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+        <updateSiteUrls>${eef.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${acceleo.repo.url}</updateSiteUrls>
+        <featureNames>org.eclipse.uml2.sdk</featureNames>
+        <featureNames>org.eclipse.emf.eef.sdk-feature</featureNames>
+        <featureNames>org.eclipse.acceleo.sdk</featureNames>
+        <featureNames>org.eclipse.emf.sdk</featureNames>
+        <featureNames>org.eclipse.egf.sdk</featureNames>
+        <featureNames>org.eclipse.xtext.sdk</featureNames>
+        <featureNames>org.eclipse.sirius.doc.feature</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.eef</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui.acceleo</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.xtext</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ocl</featureNames>
+        <featureNames>org.eclipse.sirius.runtime</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui.acceleo</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.acceleo</featureNames>
+        <featureNames>org.eclipse.sirius.doc.feature.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.eef.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui.acceleo.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.xtext.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ocl.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.source</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui.acceleo.source</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.acceleo.source</featureNames>
+        <featureNames>org.eclipse.emf.validation.ocl</featureNames>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_k9zM4AdAEeSxv713mpB8TA" name="install diffmerge" id="TP_mars" profile="SDKProfile">
+        <updateSiteUrls>${diffmerge.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${diffmerge.patterns.repo.url}</updateSiteUrls>
+        <featureNames>org.eclipse.emf.diffmerge.sdk.source.feature</featureNames>
+        <featureNames>org.eclipse.emf.diffmerge.sdk.feature</featureNames>
+        <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.feature</featureNames>
+        <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.source.feature</featureNames>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="__PUF8NtbEeO9cbt6PUft4g" name="install cots features" enabled="false" id="TP_mars" profile="SDKProfile">
+        <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+        <updateSiteUrls>${egf.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${orbit.repo.url}</updateSiteUrls>
+        <featureNames>org.eclipse.uml2.sdk</featureNames>
+        <featureNames>org.eclipse.emf.eef.sdk-feature</featureNames>
+        <featureNames>org.eclipse.acceleo.sdk</featureNames>
+        <featureNames>org.eclipse.emf.sdk</featureNames>
+        <featureNames>org.eclipse.egf.sdk</featureNames>
+        <featureNames>org.eclipse.xtext.sdk</featureNames>
+        <featureNames>org.eclipse.sirius.doc.feature</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.eef</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui.acceleo</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.xtext</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ocl</featureNames>
+        <featureNames>org.eclipse.sirius.runtime</featureNames>
+        <featureNames>org.eclipse.sirius.samples</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui.acceleo</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.acceleo</featureNames>
+        <featureNames>org.eclipse.sirius.doc.feature.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.eef.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui.acceleo.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.ui.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ide.xtext.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.ocl.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.source</featureNames>
+        <featureNames>org.eclipse.sirius.samples.source</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui.acceleo.source</featureNames>
+        <featureNames>org.eclipse.sirius.specifier.ide.ui.source</featureNames>
+        <featureNames>org.eclipse.sirius.runtime.acceleo.source</featureNames>
+        <featureNames>org.eclipse.emf.validation.ocl</featureNames>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_zQqL0KRWEeOdPJBpl-8efw" name="update cots features" enabled="false" id="TP_mars" profile="SDKProfile">
+        <updateSiteUrls>${eclipse.download.prefix}/releases/kepler</updateSiteUrls>
+        <featureNames>org.eclipse.acceleo</featureNames>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_gzKhgFkbEeSo0vu-C-A3cw" name="install ecoretools2" id="TP_mars" profile="SDKProfile">
+        <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
+        <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
+      </steps>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_mxKwAD5LEeSicsfEyxBYkg" name="TP_build">
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_c8yE0D5LEeSicsfEyxBYkg" name="install egf TP_build" id="TP_build" profile="SDKProfile" p2_os="" p2_ws="" p2_arch="">
+        <updateSiteUrls>${egf.repo.url}</updateSiteUrls>
+        <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+        <featureNames>org.eclipse.egf.sdk</featureNames>
+        <featureNames>org.eclipse.sdk</featureNames>
+        <productNames>org.eclipse.sdk.ide</productNames>
+      </steps>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="releng">
+      <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="releng"/>
+        <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP_mars"/>
+        <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsz5GEeSicsfEyxBYkg" path="${publish}/TP_build"/>
+        <components xsi:type="buildstep:Feature" xmi:id="_IH3dtD5GEeSicsfEyxBYkg" id="org.polarsys.kitalpha.releng.feature"/>
+      </steps>
+      <steps xsi:type="buildstep:PublishStep" xmi:id="_J12CcD5GEeSicsfEyxBYkg" component="_IH3dtD5GEeSicsfEyxBYkg"/>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_J12CcT5GEeSicsfEyxBYkg" name="build feature" id="TP_build" profile="SDKProfile" resultSteps="_J12CcD5GEeSicsfEyxBYkg" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:AntStep" xmi:id="_BmYCoD5yEeSTuepII-sKzw" enabled="false" targetName="move_egf_to_tools2" xml="&lt;target name=&quot;move_egf_to_tools2&quot;>&#xD;&#xA;&#x9;&lt;delete dir=&quot;${tools}/egf&quot;/>&#xD;&#xA;&#x9;&lt;move file=&quot;${publish}/TP_build&quot; tofile=&quot;${tools}/egf&quot; />&#xD;&#xA;&lt;/target>"/>
+      <steps xsi:type="buildstep:EgfStep" xmi:id="_BmYCoT5yEeSTuepII-sKzw" enabled="false">
+        <properties xmi:id="_BmYCoj5yEeSTuepII-sKzw" key="platformPath" value="${publish}/TP_mars"/>
+        <properties xmi:id="_BmYCoz5yEeSTuepII-sKzw" key="version" value="${mdk_version}"/>
+        <properties xmi:id="_BmYCpD5yEeSTuepII-sKzw" key="buildId" value="${timestamp}"/>
+        <properties xmi:id="_BmYCpT5yEeSTuepII-sKzw" key="product" value="org.polarsys.kitalpha.product"/>
+        <properties xmi:id="_BmYCpj5yEeSTuepII-sKzw" key="application" value="org.polarsys.kitalpha.application"/>
+        <egfActivities xmi:id="_BmYCpz5yEeSTuepII-sKzw" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
+      </steps>
+    </steps>
+    <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
+      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
+    </scms>
+    <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="https://www.polarsys.org/kitalpha/hudson/" userDeployJobName="">
+      <users xmi:id="_8MIb4INCEeO4K7leE9IQQw" login="thomas.guiu@soyatec.com" permission="WRITE"/>
+      <triggers xsi:type="builddeploy:SCMTrigger" xmi:id="_PkkxEAYrEeGvu-Y1KM--ag"/>
+      <triggers xsi:type="builddeploy:CronTrigger" xmi:id="_AmyRsQ8MEeKIuPgeX8UkeA" planning="* * * * 5"/>
+      <generationLocation xsi:type="buildscm:GITGenerationLocation" xmi:id="_UkTtQPx8EeO7zY3f-pIrjg" folderName="releng/org.polarsys.kitalpha.releng/jobs" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg"/>
+    </deployment>
+  </jobs>
+  <jobs xmi:id="_5pBbMLduEd-fpYD9HydZOw" name="emde">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_k3gzwLdxEd-fpYD9HydZOw" name="emde">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cBGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="emde/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_lDg7cRGVEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="emde/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_8UlIwI5wEeORY9jpJq94Og" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_pgeDIBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_wH7XkDY9EeOP8MSofnrGNA" id="org.polarsys.kitalpha.emde.sdk.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_yWFRMDY9EeOP8MSofnrGNA" component="_wH7XkDY9EeOP8MSofnrGNA"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_C9QF4I5xEeORY9jpJq94Og" name="emde feature" id="TP_mars" profile="SDKProfile" resultSteps="_yWFRMDY9EeOP8MSofnrGNA" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_RgjhUQdREeSIYrPrCxORuQ" name="diagrams" description="">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_ZB5y4AdREeSIYrPrCxORuQ" name="diagrams">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8BGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="diagrams/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8RGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="diagrams/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_ZB5y4wdREeSIYrPrCxORuQ" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_qroOsBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_ZB5y5AdREeSIYrPrCxORuQ" id="org.polarsys.kitalpha.representation.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_ZB5y5QdREeSIYrPrCxORuQ" component="_ZB5y5AdREeSIYrPrCxORuQ"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_ZB5y5gdREeSIYrPrCxORuQ" name="diagrams representation feature" id="TP_mars" profile="SDKProfile" resultSteps="_ZB5y5QdREeSIYrPrCxORuQ" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_VoTqsCL5EeSSoPlV7ILP2g" name="docgen">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_YByqkCL5EeSSoPlV7ILP2g" name="docgen">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkSL5EeSSoPlV7ILP2g" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="Docgen/business/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkiL5EeSSoPlV7ILP2g" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="Docgen/business/plugins"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_YByqkyL5EeSSoPlV7ILP2g" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_YByqlCL5EeSSoPlV7ILP2g" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_YByqlSL5EeSSoPlV7ILP2g" id="org.polarsys.kitalpha.doc.gen.business.ecore.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_n1bicCL5EeSSoPlV7ILP2g" component="_YByqlSL5EeSSoPlV7ILP2g"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_q9jxACL5EeSSoPlV7ILP2g" name="docgen features" id="TP_mars" profile="SDKProfile" resultSteps="_n1bicCL5EeSSoPlV7ILP2g" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_-JSnoI5wEeORY9jpJq94Og" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_s9Xn0BcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_ITgn0EVSEeOxuMV9a71i9w" id="org.polarsys.kitalpha.ad.sdk.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_UtSA4EVSEeOxuMV9a71i9w" description="" component="_ITgn0EVSEeOxuMV9a71i9w"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" id="TP_mars" profile="SDKProfile" resultSteps="_UtSA4EVSEeOxuMV9a71i9w" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_AtCFgH60EeOkCccPIIQ2Yw" name="ad dsl">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_Ef56MH60EeOkCccPIIQ2Yw" name="ad dsl">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0BGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0RGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Td_d4I59EeORY9jpJq94Og" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_toclIBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_Ef56On60EeOkCccPIIQ2Yw" id="org.polarsys.kitalpha.ad.ta.feature"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_5Y3VkJQCEeODqo9Nw0Mw6Q" id="org.polarsys.kitalpha.ad.dsl.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_oWQScH60EeOkCccPIIQ2Yw" component="_Ef56On60EeOkCccPIIQ2Yw"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_9w00UJQCEeODqo9Nw0Mw6Q" component="_5Y3VkJQCEeODqo9Nw0Mw6Q"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_VjH-YI59EeORY9jpJq94Og" name="addsl feature" id="TP_mars" profile="SDKProfile" resultSteps="_oWQScH60EeOkCccPIIQ2Yw _9w00UJQCEeODqo9Nw0Mw6Q" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_iWVjgK3VEeSJ-MyosVUkEw" name="examples">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_iWVjga3VEeSJ-MyosVUkEw" name="examples">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjgq3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjg63VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uMjjkK3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_uMjjka3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y5S_gK3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y5S_ga3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8X3LsK3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/examples/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8X3Lsa3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/examples/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_iWVjhK3VEeSJ-MyosVUkEw" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_iWVjha3VEeSJ-MyosVUkEw" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_iWVjhq3VEeSJ-MyosVUkEw" id="org.polarsys.kitalpha.accuracy.examples.feature"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_iWVjh63VEeSJ-MyosVUkEw" id="org.polarsys.kitalpha.cadence.examples.feature"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_HmdLEK3WEeSJ-MyosVUkEw" id="org.polarsys.kitalpha.composer.examples.feature"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_KfKdkK3WEeSJ-MyosVUkEw" id="org.polarsys.kitalpha.transposer.examples.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_iWVjia3VEeSJ-MyosVUkEw" component="_iWVjh63VEeSJ-MyosVUkEw"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_MaI8gK3WEeSJ-MyosVUkEw" description="" component="_HmdLEK3WEeSJ-MyosVUkEw"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_NI444K3WEeSJ-MyosVUkEw" component="_KfKdkK3WEeSJ-MyosVUkEw"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_iWVjiq3VEeSJ-MyosVUkEw" name="examples feature" id="TP_mars" profile="SDKProfile" resultSteps="_iWVjia3VEeSJ-MyosVUkEw _MaI8gK3WEeSJ-MyosVUkEw _NI444K3WEeSJ-MyosVUkEw" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_m9Jf4fxHEeOQxJjwrfaNsA" name="product">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_qsm0MPxHEeOQxJjwrfaNsA">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XkY4UBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_gRkooD5GEeSicsfEyxBYkg" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/plugins"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_xq408PxHEeOQxJjwrfaNsA" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_vFFiQBcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_4ioI0PxHEeOQxJjwrfaNsA" id="org.polarsys.kitalpha.sdk.feature"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_Qo_14DHpEeW5Te4c0tZ9OQ" id="org.polarsys.kitalpha.product.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_CYMfwPxIEeOQxJjwrfaNsA" component="_4ioI0PxHEeOQxJjwrfaNsA"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_ScvrcDHpEeW5Te4c0tZ9OQ" component="_Qo_14DHpEeW5Te4c0tZ9OQ"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_FSKWgPxIEeOQxJjwrfaNsA" name="sdk feature" id="TP_mars" profile="SDKProfile" resultSteps="_CYMfwPxIEeOQxJjwrfaNsA _ScvrcDHpEeW5Te4c0tZ9OQ" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_32V0wDY9EeOP8MSofnrGNA" name="All in one">
+    <steps xsi:type="buildstep:AntStep" xmi:id="_A3txYD5oEeSTuepII-sKzw" targetName="move_egf_to_tools2" xml="&lt;target name=&quot;move_egf_to_tools2&quot;>&#xD;&#xA;&#x9;&lt;delete dir=&quot;${tools}/egf&quot;/>&#xD;&#xA;&#x9;&lt;move file=&quot;${publish}/TP_build&quot; tofile=&quot;${tools}/egf&quot; />&#xD;&#xA;&lt;/target>"/>
+    <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha_sdk" id="kitalpha_sdk" publishSteps="_9w00UJQCEeODqo9Nw0Mw6Q _UtSA4EVSEeOxuMV9a71i9w _oWQScH60EeOkCccPIIQ2Yw _yWFRMDY9EeOP8MSofnrGNA _CYMfwPxIEeOQxJjwrfaNsA _n1bicCL5EeSSoPlV7ILP2g _J12CcD5GEeSicsfEyxBYkg _MaI8gK3WEeSJ-MyosVUkEw _NI444K3WEeSJ-MyosVUkEw _iWVjia3VEeSJ-MyosVUkEw _ScvrcDHpEeW5Te4c0tZ9OQ _ZB5y5QdREeSIYrPrCxORuQ"/>
+    <steps xsi:type="buildstep:AntStep" xmi:id="_i74IQbTJEeOS77taL_kqbA" name="fix eclipse.ini" enabled="false" targetName="fixConfig" xml="&lt;target name=&quot;fixConfig&quot;>&#xD;&#xA;&#x9;&lt;echo file=&quot;${publish}/TP_mars/eclipse.ini&quot;>-showLocation&#xD;&#xA;-startup&#xD;&#xA;plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar&#xD;&#xA;--launcher.library&#xD;&#xA;plugins/org.eclipse.equinox.launcher.win32.win32.x86_1.1.200.v20120913-144807&#xD;&#xA;-showsplash&#xD;&#xA;org.eclipse.platform&#xD;&#xA;--launcher.XXMaxPermSize&#xD;&#xA;256m&#xD;&#xA;--launcher.defaultAction&#xD;&#xA;openFile&#xD;&#xA;-vmargs&#xD;&#xA;-Xms128m&#xD;&#xA;-Xmx512m&#xD;&#xA;-XX:PermSize=64M&#xD;&#xA;-XX:MaxPermSize=512M&#xD;&#xA;&lt;/echo>&#xD;&#xA;&lt;/target>"/>
+    <steps xsi:type="buildfile:ZipStep" xmi:id="_gp8m8EhiEeOxuMV9a71i9w" name="zip juno results" enabled="false" baseDir="${publish}/TP_mars" destinationFilePath="${publish}/kitalpha_juno_${kitalpha_version}-${timestamp}-incubation.zip"/>
+    <steps xsi:type="buildfile:DeleteStep" xmi:id="_-3BCMDY9EeOP8MSofnrGNA" name="" enabled="false" resultSteps="_yWFRMDY9EeOP8MSofnrGNA _UtSA4EVSEeOxuMV9a71i9w" installSteps="_whSTII5rEeORY9jpJq94Og"/>
+  </jobs>
+  <jobs xmi:id="_5jxR4JKWEeSPapwxSH2ZqQ" name="platforms">
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_KLyusJKEEeSPapwxSH2ZqQ" name="TP_win32-win32-x86">
+      <properties xmi:id="_KLyusZKEEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86" type="INLINED"/>
+      <properties xmi:id="_0awbkJKUEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
+      <properties xmi:id="_0awbkZKUEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
+      <properties xmi:id="_0awbkpKUEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
+      <properties xmi:id="_m8Pz8KF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
+      <steps xsi:type="buildcore:ReuseStep" xmi:id="_KLyuspKEEeSPapwxSH2ZqQ" name="">
+        <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_HE0cEJKXEeSPapwxSH2ZqQ" name="install kitalpha" id="${TP_name}" profile="SDKProfile" resultSteps="_8qpRQDY9EeOP8MSofnrGNA" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:EgfStep" xmi:id="_A3txYT5oEeSTuepII-sKzw">
+        <properties xmi:id="_A3txYj5oEeSTuepII-sKzw" key="platformPath" value="${publish}/${TP_name}"/>
+        <properties xmi:id="_A3txYz5oEeSTuepII-sKzw" key="version" value="${mdk_version}"/>
+        <properties xmi:id="_A3txZD5oEeSTuepII-sKzw" key="buildId" value="${timestamp}"/>
+        <properties xmi:id="_SJU7wD5rEeSTuepII-sKzw" key="product" value="org.polarsys.kitalpha.product"/>
+        <properties xmi:id="_Sg35ED5rEeSTuepII-sKzw" key="application" value="org.polarsys.kitalpha.application"/>
+        <egfActivities xmi:id="_A3txZT5oEeSTuepII-sKzw" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
+      </steps>
+      <steps xsi:type="buildfile:ZipStep" xmi:id="_YEebIJKXEeSPapwxSH2ZqQ" name="zip mars results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars-incubation.zip"/>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_NAn1cJWzEeSPapwxSH2ZqQ" name="TP_win32-win32-x86_64">
+      <properties xmi:id="_NAn1cZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86_64" type="INLINED"/>
+      <properties xmi:id="_NAn1cpWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
+      <properties xmi:id="_NAn1c5WzEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
+      <properties xmi:id="_NAn1dJWzEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
+      <properties xmi:id="_pPK40KF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
+      <steps xsi:type="buildcore:ReuseStep" xmi:id="_NAn1dZWzEeSPapwxSH2ZqQ" name="">
+        <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_NAn1dpWzEeSPapwxSH2ZqQ" name="install kitalpha" id="${TP_name}" profile="SDKProfile" resultSteps="_8qpRQDY9EeOP8MSofnrGNA" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:EgfStep" xmi:id="_NAn1d5WzEeSPapwxSH2ZqQ">
+        <properties xmi:id="_NAn1eJWzEeSPapwxSH2ZqQ" key="platformPath" value="${publish}/${TP_name}"/>
+        <properties xmi:id="_NAn1eZWzEeSPapwxSH2ZqQ" key="version" value="${mdk_version}"/>
+        <properties xmi:id="_NAn1epWzEeSPapwxSH2ZqQ" key="buildId" value="${timestamp}"/>
+        <properties xmi:id="_NAn1e5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product"/>
+        <properties xmi:id="_NAn1fJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
+        <egfActivities xmi:id="_NAn1fZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
+      </steps>
+      <steps xsi:type="buildfile:ZipStep" xmi:id="_NAn1fpWzEeSPapwxSH2ZqQ" name="zip mars results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars-incubation.zip"/>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_U6KkkJWzEeSPapwxSH2ZqQ" name="TP_linux-gtk-x86">
+      <properties xmi:id="_U6KkkZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_linux-gtk-x86" type="INLINED"/>
+      <properties xmi:id="_U6KkkpWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
+      <properties xmi:id="_U6Kkk5WzEeSPapwxSH2ZqQ" key="TP_os" value="linux" type="INLINED"/>
+      <properties xmi:id="_U6KklJWzEeSPapwxSH2ZqQ" key="TP_ws" value="gtk" type="INLINED"/>
+      <properties xmi:id="_pgc2EKF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
+      <steps xsi:type="buildcore:ReuseStep" xmi:id="_U6KklZWzEeSPapwxSH2ZqQ" name="">
+        <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_U6KklpWzEeSPapwxSH2ZqQ" name="install kitalpha" id="${TP_name}" profile="SDKProfile" resultSteps="_8qpRQDY9EeOP8MSofnrGNA" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:EgfStep" xmi:id="_U6Kkl5WzEeSPapwxSH2ZqQ">
+        <properties xmi:id="_U6KkmJWzEeSPapwxSH2ZqQ" key="platformPath" value="${publish}/${TP_name}"/>
+        <properties xmi:id="_U6KkmZWzEeSPapwxSH2ZqQ" key="version" value="${mdk_version}"/>
+        <properties xmi:id="_U6KkmpWzEeSPapwxSH2ZqQ" key="buildId" value="${timestamp}"/>
+        <properties xmi:id="_U6Kkm5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product"/>
+        <properties xmi:id="_U6KknJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
+        <egfActivities xmi:id="_U6KknZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
+      </steps>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_bCk0wdExEeSTbrZQrXnDzg" name="tar juno results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars-incubation.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_caErsJWzEeSPapwxSH2ZqQ" name="TP_linux-gtk-x86_64">
+      <properties xmi:id="_caErsZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_linux-gtk-x86_64" type="INLINED"/>
+      <properties xmi:id="_caErspWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
+      <properties xmi:id="_caErs5WzEeSPapwxSH2ZqQ" key="TP_os" value="linux" type="INLINED"/>
+      <properties xmi:id="_caErtJWzEeSPapwxSH2ZqQ" key="TP_ws" value="gtk" type="INLINED"/>
+      <properties xmi:id="_pyx8MKF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
+      <steps xsi:type="buildcore:ReuseStep" xmi:id="_caErtZWzEeSPapwxSH2ZqQ" name="">
+        <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_caErtpWzEeSPapwxSH2ZqQ" name="install kitalpha" id="${TP_name}" profile="SDKProfile" resultSteps="_8qpRQDY9EeOP8MSofnrGNA" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:EgfStep" xmi:id="_caErt5WzEeSPapwxSH2ZqQ">
+        <properties xmi:id="_caEruJWzEeSPapwxSH2ZqQ" key="platformPath" value="${publish}/${TP_name}"/>
+        <properties xmi:id="_caEruZWzEeSPapwxSH2ZqQ" key="version" value="${mdk_version}"/>
+        <properties xmi:id="_caErupWzEeSPapwxSH2ZqQ" key="buildId" value="${timestamp}"/>
+        <properties xmi:id="_caEru5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product"/>
+        <properties xmi:id="_caErvJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
+        <egfActivities xmi:id="_caErvZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
+      </steps>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_jSFz4NExEeSTbrZQrXnDzg" name="tar mars results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars-incubation.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
+    </steps>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_e0YK8JWzEeSPapwxSH2ZqQ" name="TP_macosx-cocoa-x86_64">
+      <properties xmi:id="_e0YK8ZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_macosx-cocoa-x86_64" type="INLINED"/>
+      <properties xmi:id="_e0YK8pWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
+      <properties xmi:id="_e0YK85WzEeSPapwxSH2ZqQ" key="TP_os" value="macosx" type="INLINED"/>
+      <properties xmi:id="_e0YK9JWzEeSPapwxSH2ZqQ" key="TP_ws" value="cocoa" type="INLINED"/>
+      <properties xmi:id="_qDBXoKF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
+      <steps xsi:type="buildcore:ReuseStep" xmi:id="_e0YK9ZWzEeSPapwxSH2ZqQ" name="">
+        <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_3DxKYJKCEeSPapwxSH2ZqQ"/>
+      </steps>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_e0YK9pWzEeSPapwxSH2ZqQ" name="install kitalpha" id="${TP_name}" profile="SDKProfile" resultSteps="_8qpRQDY9EeOP8MSofnrGNA" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:EgfStep" xmi:id="_e0YK95WzEeSPapwxSH2ZqQ">
+        <properties xmi:id="_e0YK-JWzEeSPapwxSH2ZqQ" key="platformPath" value="${publish}/${TP_name}"/>
+        <properties xmi:id="_e0YK-ZWzEeSPapwxSH2ZqQ" key="version" value="${mdk_version}"/>
+        <properties xmi:id="_e0YK-pWzEeSPapwxSH2ZqQ" key="buildId" value="${timestamp}"/>
+        <properties xmi:id="_e0YK-5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product"/>
+        <properties xmi:id="_e0YK_JWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
+        <egfActivities xmi:id="_e0YK_ZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
+      </steps>
+      <steps xsi:type="buildstep:AntStep" xmi:id="_Nu2DsMgDEeSUVaUqISCvPA" enabled="false" targetName="fixPermission" xml="&lt;target name=&quot;fixPermission&quot;>&#xD;&#xA;&#x9;&lt;chmod file=&quot;${publish}/${TP_name}/Eclipse.app/Contents/MacOS/eclipse&quot; perm=&quot;700&quot; verbose=&quot;true&quot;/>&#xD;&#xA;&lt;/target>"/>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_3s0WwcfdEeSUVaUqISCvPA" name="Tar mars results" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars-incubation.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
+    </steps>
+  </jobs>
+  <jobs xmi:id="_Q1gsQKH8EeSCV64W9A5FeQ" name="clean all">
+    <steps xsi:type="buildstep:AntStep" xmi:id="_R7SokKH8EeSCV64W9A5FeQ" targetName="cleanUp" xml="&lt;target name=&quot;cleanUp&quot;>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.accuracy.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.dsl.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.integration.sirius.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.runtime.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.ta.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.cadence.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.common.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.composer.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.doc.gen.business.core.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.doc.gen.business.ecore.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.genchain.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.attachment.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.commands.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.scrutiny.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.share.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.detachment.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.patterns.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.product.feature&quot;/>&#xD;&#xA;     &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.releng.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.report.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.report.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.representation.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.resourcereuse.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.resourcereuse.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.runtime.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.transposer.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.cadence.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.composer.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.transposer.examples.feature&quot;/>&#xD;&#xA;&lt;/target>&#xD;&#xA;"/>
+  </jobs>
+</buildcore:Chain>

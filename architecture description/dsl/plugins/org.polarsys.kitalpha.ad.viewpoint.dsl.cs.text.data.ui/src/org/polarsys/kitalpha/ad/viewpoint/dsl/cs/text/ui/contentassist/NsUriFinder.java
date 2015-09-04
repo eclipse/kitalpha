@@ -12,9 +12,11 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -23,10 +25,16 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.resource.XtextResource;
+
+import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainViewpointHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper.URIConverterHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.EditorIDs;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 
@@ -131,28 +139,55 @@ public class NsUriFinder {
 			return platformsUri;
 	}
 	
+		
+	//FIXME duplicate code in UseLinksContentAssistHelper
 	private static Viewpoint getRootViewpoint(EObject model, String projectName, IExternalContentProvider externalProvider){
 		
-		ResourceSet fakeResourceSet = new ResourceSetImpl();
+		ResourceSet fakeResourceSet = new ResourceSetImpl();	
 		XtextResource resource;
+		Viewpoint viewpoint = null; //result
 		
-		ResourceHelper.loadPrimaryResource(projectName, fakeResourceSet);
+		ResourceHelper.loadPrimaryResource(projectName, fakeResourceSet);	
 		URI uri = ResourceHelper.getPrimaryResourceURI(projectName);
 		
-		resource = (XtextResource) fakeResourceSet.getResource(uri, false);
-		String text = externalProvider.getActualContentProvider().getContent(uri);
+		resource = (XtextResource) fakeResourceSet.getResource(uri, false);	
+		String text = null;
 		
-		if (text != null && !text.isEmpty() && resource != null)
-			try {
-				resource.reparse(text);
-			} catch (IOException e) {
-				e.printStackTrace();
+		IEditorReference vpspecEditor = getOpenedEditor(uri);
+		
+		try {
+			if (vpspecEditor != null)
+			{
+				XtextEditor editor = (XtextEditor) vpspecEditor.getEditor(false);
+				text = editor.getDirtyStateEditorSupport().getDirtyStateManager().getActualContentProvider().getContent(uri);
+
+				if (text != null && !text.isEmpty() && resource != null)
+				{
+					resource.reparse(text);
+				}
+				else
+				{
+					if (resource != null)
+						resource.load(Collections.emptyMap());
+				}
 			}
-		
-		Viewpoint viewpoint = getCurrentViewpoint(resource);
+			else
+			{
+				if (resource != null)
+				{
+					resource.load(Collections.emptyMap());
+				}
+				
+			}
+			
+			viewpoint = getCurrentViewpoint(resource); 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		return viewpoint;
 	}
+	
 	
 	//FIXME put these 2 methods in an abstract class in common plugin to be shared by Data 
 	//NsUriFinder too (they are duplicated!)
@@ -165,6 +200,37 @@ public class NsUriFinder {
 					return (Viewpoint)v;
 			}
 		}
+		return null;
+	}
+
+	private static IEditorReference getOpenedEditor(URI uri) {
+
+		IEditorReference[] editors = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences();
+
+		for (IEditorReference iEditorReference : editors) {
+			String id = iEditorReference.getId();
+
+			if (id.equals(EditorIDs.VPSPEC_EDITOR_ID))
+			{
+				try {
+					IFile file = iEditorReference.getEditorInput().getAdapter(IFile.class);
+
+					if (file != null)
+					{
+						String project = file.getProject().getName().toString();
+						String segment = uri.segment(1);
+
+						if (project.equalsIgnoreCase(segment))
+							return iEditorReference;
+					}
+
+				} catch (PartInitException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
 		return null;
 	}
 }

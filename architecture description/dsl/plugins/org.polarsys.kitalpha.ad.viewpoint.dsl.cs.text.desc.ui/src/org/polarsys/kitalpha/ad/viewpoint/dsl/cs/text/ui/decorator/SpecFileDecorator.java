@@ -13,10 +13,14 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator;
 
 import java.net.URL;
 import java.util.Collections;
+import java.util.Map;
+
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -30,10 +34,10 @@ import org.osgi.framework.Bundle;
  */
 public class SpecFileDecorator implements ILightweightLabelDecorator {
 	
-	final static Bundle bundle = Platform.getBundle("org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui"); //$NON-NLS-1$
-	final static URL url = FileLocator.find(bundle, new Path("icons/spec_overlay.gif"), Collections.emptyMap()); //$NON-NLS-1$
-	
-	private static final ImageDescriptor IMG_OVERLAY = ImageDescriptor.createFromURL(url);
+	Bundle bundle = Platform.getBundle("org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui"); //$NON-NLS-1$
+	URL url = FileLocator.find(bundle, new Path("icons/spec_overlay.gif"), null); //$NON-NLS-1$
+
+	private final ImageDescriptor IMG_OVERLAY = ImageDescriptor.createFromURL(url);
 
 	@Override
 	public void addListener(ILabelProviderListener listener) {

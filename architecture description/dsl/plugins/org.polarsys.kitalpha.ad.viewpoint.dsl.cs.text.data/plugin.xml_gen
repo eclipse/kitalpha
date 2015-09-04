@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/data/1.0.0" 
        class = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataPackage"
-       genModel = "org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/Data.genmodel" /> 
+       genModel = "model/generated/Data.genmodel" /> 
 	
   </extension>
 

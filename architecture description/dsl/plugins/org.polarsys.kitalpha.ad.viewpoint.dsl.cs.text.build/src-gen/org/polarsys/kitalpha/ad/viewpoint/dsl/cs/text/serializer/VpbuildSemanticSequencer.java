@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
 import com.google.inject.Inject;
@@ -31,64 +41,36 @@ public class VpbuildSemanticSequencer extends AbstractDelegatingSemanticSequence
 	@Inject
 	private VpbuildGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == VpbuildPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case VpbuildPackage.BUILD:
-				if(context == grammarAccess.getBuildRule()) {
-					sequence_Build(context, (Build) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Build(context, (Build) semanticObject); 
+				return; 
 			case VpbuildPackage.CRON:
-				if(context == grammarAccess.getCronRule() ||
-				   context == grammarAccess.getTriggerRule()) {
-					sequence_Cron(context, (Cron) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Cron(context, (Cron) semanticObject); 
+				return; 
 			case VpbuildPackage.FEATURE:
-				if(context == grammarAccess.getFeatureRule()) {
-					sequence_Feature(context, (Feature) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Feature(context, (Feature) semanticObject); 
+				return; 
 			case VpbuildPackage.GENERATION_LOCATION:
-				if(context == grammarAccess.getGenerationLocationRule()) {
-					sequence_GenerationLocation(context, (GenerationLocation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_GenerationLocation(context, (GenerationLocation) semanticObject); 
+				return; 
 			case VpbuildPackage.HUDSON_DEPLOYMENT:
-				if(context == grammarAccess.getHudsonDeploymentRule()) {
-					sequence_HudsonDeployment(context, (HudsonDeployment) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_HudsonDeployment(context, (HudsonDeployment) semanticObject); 
+				return; 
 			case VpbuildPackage.REPOSITORY:
-				if(context == grammarAccess.getRepositoryRule()) {
-					sequence_Repository(context, (Repository) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Repository(context, (Repository) semanticObject); 
+				return; 
 			case VpbuildPackage.SCM:
-				if(context == grammarAccess.getSCMRule() ||
-				   context == grammarAccess.getTriggerRule()) {
-					sequence_SCM(context, (SCM) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_SCM(context, (SCM) semanticObject); 
+				return; 
 			case VpbuildPackage.SOURCE_FOLDER:
-				if(context == grammarAccess.getSourceFoulderRule()) {
-					sequence_SourceFoulder(context, (SourceFolder) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_SourceFoulder(context, (SourceFolder) semanticObject); 
+				return; 
 			case VpbuildPackage.USER:
-				if(context == grammarAccess.getUserRule()) {
-					sequence_User(context, (User) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_User(context, (User) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}

@@ -82,7 +82,6 @@
 					cStyleDesc.setLabelExpression(labelExpression);
 					cStyleDesc.setLabelSize(label.getSize());
 					cStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));	
-					
 					if (label.isBold())
 						cStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 					

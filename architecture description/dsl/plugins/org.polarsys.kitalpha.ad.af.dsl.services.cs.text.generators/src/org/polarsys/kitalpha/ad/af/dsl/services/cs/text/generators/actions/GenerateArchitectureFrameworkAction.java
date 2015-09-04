@@ -19,8 +19,10 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.messages.Messages;
 
@@ -37,11 +39,9 @@ public class GenerateArchitectureFrameworkAction extends BaseSelectionListenerAc
 	
 	private ISelection fakeSelection;	
 	
-	//private GenerateArchitectureFramework delegate;
 	
 	public GenerateArchitectureFrameworkAction() {
 		super(Messages.AFDSLActions_GenerateAFAction_DefaultTitle);
-		//delegate = new GenerateArchitectureFramework();	
 	}
 	
 	protected GenerateArchitectureFrameworkAction(String text) {
@@ -59,14 +59,23 @@ public class GenerateArchitectureFrameworkAction extends BaseSelectionListenerAc
 				break;
 			}
 		}
-		IPath trimmed = file.getFullPath().removeFileExtension().removeFileExtension();
-		IPath xmiPath = trimmed.addFileExtension(AFDESC_EXTENSION);
-		IFile xmiFile = ResourcesPlugin.getWorkspace().getRoot().getFile(xmiPath);
-		if (xmiFile.exists()) {
-			fakeSelection = new StructuredSelection(xmiFile);
-			//delegate.selectionChanged(action, fakeSelection);
-			//delegate.run(action);
-		}	
+		
+		if (file != null)
+		{
+			IPath trimmed = file.getFullPath().removeFileExtension().removeFileExtension();
+			IPath xmiPath = trimmed.addFileExtension(AFDESC_EXTENSION);
+			IFile xmiFile = ResourcesPlugin.getWorkspace().getRoot().getFile(xmiPath);
+			if (xmiFile.exists()) {
+				fakeSelection = new StructuredSelection(xmiFile);
+			}
+		}
+		else
+		{
+			MessageBox message = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+			message.setText("Error");
+			message.setMessage("The command cannot retrieve the resouce from the selection");
+			message.open();
+		}
 	}
 
 	@Override

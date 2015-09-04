@@ -141,7 +141,7 @@ public class JavaUtil {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return folder;
 	}
 	
 	public static void createPackage(String projectName, String packageName){

@@ -87,7 +87,7 @@ public class ExternalDataHelper {
 			//Delegate finding packages to contributed loaders
 			Map<String, URI> packagesFound = findPackagesInScopeURIs(patternList);
 			for (Map.Entry<String, URI> candidate : packagesFound.entrySet()) {
-				if (!packagesInScopeURIs.containsKey(candidate)){
+				if (!packagesInScopeURIs.containsKey(candidate.getKey())){
 					packagesInScopeURIs.put(candidate.getKey(), candidate.getValue());
 				}
 			}
@@ -197,7 +197,7 @@ public class ExternalDataHelper {
 		} catch (RuntimeException ex) {
 			if (uri.isPlatformResource()) {
 				String platformString = uri.toPlatformString(true);
-				URI platformPluginURI = URI.createPlatformPluginURI(platformString, true);
+				URI platformPluginURI = ResourceHelper.URIFix.createPlatformPluginURI(platformString, true);
 				return loadEPackage(platformPluginURI.toString(), resourceSet);
 			}
 			return null;

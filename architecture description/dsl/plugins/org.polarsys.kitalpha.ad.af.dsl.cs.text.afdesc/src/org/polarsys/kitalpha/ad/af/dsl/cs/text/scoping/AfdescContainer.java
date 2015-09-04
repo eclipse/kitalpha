@@ -26,6 +26,7 @@ import org.polarsys.kitalpha.resourcereuse.model.Location;
 /**
  * 
  * @author Amine Lajmi
+ *         Faycal Abka
  *
  */
 public class AfdescContainer extends StateBasedContainer {
@@ -40,9 +41,9 @@ public class AfdescContainer extends StateBasedContainer {
 		for (org.polarsys.kitalpha.resourcereuse.model.Resource r: resources) {
 			URI uri = null;
 			if (r.getProviderLocation().equals(Location.WORSPACE)) {
-				uri = URI.createPlatformResourceURI(r.getPath(), false);
+				uri = AfdescResourceHelper.URIFix.createPlatformResourceURI(r.getPath(), false);
 			} else {
-				uri = URI.createPlatformPluginURI(r.getPath(), false);
+				uri = AfdescResourceHelper.URIFix.createPlatformPluginURI(r.getPath(), false);
 			}
 			resourceURIs.add(uri);
 		}

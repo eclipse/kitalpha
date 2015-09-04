@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.EcoreUtil2;
+import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.util.AfdslGeneratorsUtil;
 
 /**
  * 
@@ -39,14 +40,14 @@ public class Synchronizer {
 	public boolean doSynchronize(IFile file) {	
 		boolean result = false;
 		ResourceSet resourceSet = new ResourceSetImpl();
-		URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
+		URI uri = AfdslGeneratorsUtil.URIFix.createPlatformResourceURI(file.getFullPath().toString(), false);
 		Resource textResource = resourceSet.getResource(uri, true);
 		if (textResource!=null) {
 			EObject textRoot = textResource.getContents().get(0);
 			EcoreUtil.resolveAll(textRoot);
-			EObject clone = EcoreUtil2.clone(textRoot);
+			EObject clone = EcoreUtil2.copy(textRoot);
 			IPath emfResourcePath = file.getFullPath().removeFileExtension().addFileExtension(AFDESC_EXTENSION);
-			URI emfURI = URI.createPlatformResourceURI(emfResourcePath.toString(), true);
+			URI emfURI = AfdslGeneratorsUtil.URIFix.createPlatformResourceURI(emfResourcePath.toString(), true);
 			Resource emfResource = resourceSet.createResource(emfURI);		
 			emfResource.getContents().add(0, clone);
 			try {

@@ -35,7 +35,7 @@ public class EmdeFactoryImpl extends EFactoryImpl implements EmdeFactory {
 	 */
 	public static EmdeFactory init() {
 		try {
-			EmdeFactory theEmdeFactory = (EmdeFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/emde/1.0.0"); //$NON-NLS-1$ 
+			EmdeFactory theEmdeFactory = (EmdeFactory) EPackage.Registry.INSTANCE.getEFactory(EmdePackage.eNS_URI);
 			if (theEmdeFactory != null) {
 				return theEmdeFactory;
 			}

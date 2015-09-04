@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr.internal; 
 
 import org.eclipse.xtext.*;
@@ -30,6 +20,16 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 @SuppressWarnings("all")
 public class InternalVpuiParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
@@ -103,7 +103,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUserInterface"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:68:1: entryRuleUserInterface returns [EObject current=null] : iv_ruleUserInterface= ruleUserInterface EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:75:1: entryRuleUserInterface returns [EObject current=null] : iv_ruleUserInterface= ruleUserInterface EOF ;
     public final EObject entryRuleUserInterface() throws RecognitionException {
         EObject current = null;
 
@@ -111,8 +111,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:69:2: (iv_ruleUserInterface= ruleUserInterface EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:70:2: iv_ruleUserInterface= ruleUserInterface EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:76:2: (iv_ruleUserInterface= ruleUserInterface EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:77:2: iv_ruleUserInterface= ruleUserInterface EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUserInterfaceRule()); 
@@ -143,7 +143,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUserInterface"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:77:1: ruleUserInterface returns [EObject current=null] : ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:84:1: ruleUserInterface returns [EObject current=null] : ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) ) ;
     public final EObject ruleUserInterface() throws RecognitionException {
         EObject current = null;
 
@@ -155,14 +155,14 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:80:28: ( ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:81:1: ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:87:28: ( ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:88:1: ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:81:1: ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:81:2: () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:88:1: ( () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:88:2: () ( (lv_imports_1_0= ruleImport ) )* ( (lv_uiDescription_2_0= ruleAspect ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:81:2: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:82:5: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:88:2: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:89:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -174,7 +174,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:87:2: ( (lv_imports_1_0= ruleImport ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:94:2: ( (lv_imports_1_0= ruleImport ) )*
             loop1:
             do {
                 int alt1=2;
@@ -187,10 +187,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:88:1: (lv_imports_1_0= ruleImport )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:95:1: (lv_imports_1_0= ruleImport )
             	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:88:1: (lv_imports_1_0= ruleImport )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:89:3: lv_imports_1_0= ruleImport
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:95:1: (lv_imports_1_0= ruleImport )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:96:3: lv_imports_1_0= ruleImport
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -227,11 +227,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:105:3: ( (lv_uiDescription_2_0= ruleAspect ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:106:1: (lv_uiDescription_2_0= ruleAspect )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:112:3: ( (lv_uiDescription_2_0= ruleAspect ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:113:1: (lv_uiDescription_2_0= ruleAspect )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:106:1: (lv_uiDescription_2_0= ruleAspect )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:107:3: lv_uiDescription_2_0= ruleAspect
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:113:1: (lv_uiDescription_2_0= ruleAspect )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:114:3: lv_uiDescription_2_0= ruleAspect
             {
             if ( state.backtracking==0 ) {
                
@@ -285,7 +285,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImport"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:131:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:138:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
     public final EObject entryRuleImport() throws RecognitionException {
         EObject current = null;
 
@@ -293,8 +293,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:132:2: (iv_ruleImport= ruleImport EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:133:2: iv_ruleImport= ruleImport EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:139:2: (iv_ruleImport= ruleImport EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:140:2: iv_ruleImport= ruleImport EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getImportRule()); 
@@ -325,7 +325,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImport"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:140:1: ruleImport returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:147:1: ruleImport returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) ) ;
     public final EObject ruleImport() throws RecognitionException {
         EObject current = null;
 
@@ -336,11 +336,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:143:28: ( (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:144:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:150:28: ( (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:151:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:144:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:144:3: otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:151:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:151:3: otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleFQN ) )
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleImport245); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -348,11 +348,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:148:1: ( (lv_importedNamespace_1_0= ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:149:1: (lv_importedNamespace_1_0= ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:155:1: ( (lv_importedNamespace_1_0= ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:156:1: (lv_importedNamespace_1_0= ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:149:1: (lv_importedNamespace_1_0= ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:150:3: lv_importedNamespace_1_0= ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:156:1: (lv_importedNamespace_1_0= ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:157:3: lv_importedNamespace_1_0= ruleFQN
             {
             if ( state.backtracking==0 ) {
                
@@ -406,7 +406,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAspect"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:174:1: entryRuleAspect returns [EObject current=null] : iv_ruleAspect= ruleAspect EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:181:1: entryRuleAspect returns [EObject current=null] : iv_ruleAspect= ruleAspect EOF ;
     public final EObject entryRuleAspect() throws RecognitionException {
         EObject current = null;
 
@@ -414,8 +414,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:175:2: (iv_ruleAspect= ruleAspect EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:176:2: iv_ruleAspect= ruleAspect EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:182:2: (iv_ruleAspect= ruleAspect EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:183:2: iv_ruleAspect= ruleAspect EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAspectRule()); 
@@ -446,7 +446,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAspect"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:183:1: ruleAspect returns [EObject current=null] : this_UIDescription_0= ruleUIDescription ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:190:1: ruleAspect returns [EObject current=null] : this_UIDescription_0= ruleUIDescription ;
     public final EObject ruleAspect() throws RecognitionException {
         EObject current = null;
 
@@ -456,8 +456,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:186:28: (this_UIDescription_0= ruleUIDescription )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:188:5: this_UIDescription_0= ruleUIDescription
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:193:28: (this_UIDescription_0= ruleUIDescription )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:195:5: this_UIDescription_0= ruleUIDescription
             {
             if ( state.backtracking==0 ) {
                
@@ -495,7 +495,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUIDescription"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:204:1: entryRuleUIDescription returns [EObject current=null] : iv_ruleUIDescription= ruleUIDescription EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:211:1: entryRuleUIDescription returns [EObject current=null] : iv_ruleUIDescription= ruleUIDescription EOF ;
     public final EObject entryRuleUIDescription() throws RecognitionException {
         EObject current = null;
 
@@ -503,8 +503,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:205:2: (iv_ruleUIDescription= ruleUIDescription EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:206:2: iv_ruleUIDescription= ruleUIDescription EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:212:2: (iv_ruleUIDescription= ruleUIDescription EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:213:2: iv_ruleUIDescription= ruleUIDescription EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUIDescriptionRule()); 
@@ -535,7 +535,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUIDescription"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:213:1: ruleUIDescription returns [EObject current=null] : ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:220:1: ruleUIDescription returns [EObject current=null] : ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' ) ;
     public final EObject ruleUIDescription() throws RecognitionException {
         EObject current = null;
 
@@ -550,14 +550,14 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:216:28: ( ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:217:1: ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:223:28: ( ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:224:1: ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:217:1: ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:217:2: () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:224:1: ( () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:224:2: () otherlv_1= 'UIDescription' ( (lv_name_2_0= ruleFQN ) ) otherlv_3= '{' ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )* otherlv_5= '}'
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:217:2: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:218:5: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:224:2: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:225:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -575,11 +575,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getUIDescriptionAccess().getUIDescriptionKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:227:1: ( (lv_name_2_0= ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:228:1: (lv_name_2_0= ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:234:1: ( (lv_name_2_0= ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:235:1: (lv_name_2_0= ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:228:1: (lv_name_2_0= ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:229:3: lv_name_2_0= ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:235:1: (lv_name_2_0= ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:236:3: lv_name_2_0= ruleFQN
             {
             if ( state.backtracking==0 ) {
                
@@ -616,7 +616,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_3, grammarAccess.getUIDescriptionAccess().getLeftCurlyBracketKeyword_3());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:249:1: ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:256:1: ( ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI ) )*
             loop2:
             do {
                 int alt2=2;
@@ -629,10 +629,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:249:2: ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:256:2: ( ( ruleUI ) )=> (lv_UIs_4_0= ruleUI )
             	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:254:1: (lv_UIs_4_0= ruleUI )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:255:3: lv_UIs_4_0= ruleUI
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:261:1: (lv_UIs_4_0= ruleUI )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:262:3: lv_UIs_4_0= ruleUI
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -698,7 +698,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUI"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:285:1: entryRuleUI returns [EObject current=null] : iv_ruleUI= ruleUI EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:292:1: entryRuleUI returns [EObject current=null] : iv_ruleUI= ruleUI EOF ;
     public final EObject entryRuleUI() throws RecognitionException {
         EObject current = null;
 
@@ -706,8 +706,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:286:2: (iv_ruleUI= ruleUI EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:287:2: iv_ruleUI= ruleUI EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:293:2: (iv_ruleUI= ruleUI EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:294:2: iv_ruleUI= ruleUI EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUIRule()); 
@@ -738,7 +738,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUI"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:294:1: ruleUI returns [EObject current=null] : ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:301:1: ruleUI returns [EObject current=null] : ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' ) ;
     public final EObject ruleUI() throws RecognitionException {
         EObject current = null;
 
@@ -758,14 +758,14 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:297:28: ( ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:298:1: ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:304:28: ( ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:305:1: ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:298:1: ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:298:2: () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:305:1: ( () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:305:2: () otherlv_1= 'UI' ( (lv_name_2_0= ruleEString ) )? ( (lv_UI_DataSource_3_0= ruleDataSource ) )? otherlv_4= '{' (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )? ( (lv_UI_Containers_7_0= ruleUIContainer ) )* otherlv_8= '}'
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:298:2: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:299:5: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:305:2: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:306:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -783,7 +783,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getUIAccess().getUIKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:308:1: ( (lv_name_2_0= ruleEString ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:315:1: ( (lv_name_2_0= ruleEString ) )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -792,10 +792,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:309:1: (lv_name_2_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:316:1: (lv_name_2_0= ruleEString )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:309:1: (lv_name_2_0= ruleEString )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:310:3: lv_name_2_0= ruleEString
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:316:1: (lv_name_2_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:317:3: lv_name_2_0= ruleEString
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -829,7 +829,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:326:3: ( (lv_UI_DataSource_3_0= ruleDataSource ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:333:3: ( (lv_UI_DataSource_3_0= ruleDataSource ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -838,10 +838,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:327:1: (lv_UI_DataSource_3_0= ruleDataSource )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:334:1: (lv_UI_DataSource_3_0= ruleDataSource )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:327:1: (lv_UI_DataSource_3_0= ruleDataSource )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:328:3: lv_UI_DataSource_3_0= ruleDataSource
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:334:1: (lv_UI_DataSource_3_0= ruleDataSource )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:335:3: lv_UI_DataSource_3_0= ruleDataSource
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -881,7 +881,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_4, grammarAccess.getUIAccess().getLeftCurlyBracketKeyword_4());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:348:1: (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:355:1: (otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -890,7 +890,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:348:3: otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:355:3: otherlv_5= 'label:' ( (lv_label_6_0= ruleEString ) )
                     {
                     otherlv_5=(Token)match(input,16,FOLLOW_16_in_ruleUI688); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -898,11 +898,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_5, grammarAccess.getUIAccess().getLabelKeyword_5_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:352:1: ( (lv_label_6_0= ruleEString ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:353:1: (lv_label_6_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:359:1: ( (lv_label_6_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:360:1: (lv_label_6_0= ruleEString )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:353:1: (lv_label_6_0= ruleEString )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:354:3: lv_label_6_0= ruleEString
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:360:1: (lv_label_6_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:361:3: lv_label_6_0= ruleEString
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -939,7 +939,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:370:4: ( (lv_UI_Containers_7_0= ruleUIContainer ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:377:4: ( (lv_UI_Containers_7_0= ruleUIContainer ) )*
             loop6:
             do {
                 int alt6=2;
@@ -952,10 +952,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:371:1: (lv_UI_Containers_7_0= ruleUIContainer )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:378:1: (lv_UI_Containers_7_0= ruleUIContainer )
             	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:371:1: (lv_UI_Containers_7_0= ruleUIContainer )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:372:3: lv_UI_Containers_7_0= ruleUIContainer
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:378:1: (lv_UI_Containers_7_0= ruleUIContainer )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:379:3: lv_UI_Containers_7_0= ruleUIContainer
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -1021,7 +1021,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUIContainer"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:400:1: entryRuleUIContainer returns [EObject current=null] : iv_ruleUIContainer= ruleUIContainer EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:407:1: entryRuleUIContainer returns [EObject current=null] : iv_ruleUIContainer= ruleUIContainer EOF ;
     public final EObject entryRuleUIContainer() throws RecognitionException {
         EObject current = null;
 
@@ -1029,8 +1029,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:401:2: (iv_ruleUIContainer= ruleUIContainer EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:402:2: iv_ruleUIContainer= ruleUIContainer EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:408:2: (iv_ruleUIContainer= ruleUIContainer EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:409:2: iv_ruleUIContainer= ruleUIContainer EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUIContainerRule()); 
@@ -1061,7 +1061,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUIContainer"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:409:1: ruleUIContainer returns [EObject current=null] : ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:416:1: ruleUIContainer returns [EObject current=null] : ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' ) ;
     public final EObject ruleUIContainer() throws RecognitionException {
         EObject current = null;
 
@@ -1088,14 +1088,14 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:412:28: ( ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:413:1: ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:419:28: ( ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:420:1: ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:413:1: ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:413:2: () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:420:1: ( () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:420:2: () otherlv_1= 'Container' ( (lv_name_2_0= ruleEString ) )? otherlv_3= '{' (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )? (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )? ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )? otherlv_12= '}'
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:413:2: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:414:5: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:420:2: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:421:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -1113,7 +1113,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getUIContainerAccess().getContainerKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:423:1: ( (lv_name_2_0= ruleEString ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:430:1: ( (lv_name_2_0= ruleEString ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1122,10 +1122,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:424:1: (lv_name_2_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:431:1: (lv_name_2_0= ruleEString )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:424:1: (lv_name_2_0= ruleEString )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:425:3: lv_name_2_0= ruleEString
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:431:1: (lv_name_2_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:432:3: lv_name_2_0= ruleEString
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1165,7 +1165,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_3, grammarAccess.getUIContainerAccess().getLeftCurlyBracketKeyword_3());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:445:1: (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:452:1: (otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1174,7 +1174,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:445:3: otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:452:3: otherlv_4= 'label:' ( (lv_label_5_0= ruleEString ) )
                     {
                     otherlv_4=(Token)match(input,16,FOLLOW_16_in_ruleUIContainer884); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1182,11 +1182,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_4, grammarAccess.getUIContainerAccess().getLabelKeyword_4_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:449:1: ( (lv_label_5_0= ruleEString ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:450:1: (lv_label_5_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:456:1: ( (lv_label_5_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:457:1: (lv_label_5_0= ruleEString )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:450:1: (lv_label_5_0= ruleEString )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:451:3: lv_label_5_0= ruleEString
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:457:1: (lv_label_5_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:458:3: lv_label_5_0= ruleEString
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1223,7 +1223,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:467:4: (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:474:4: (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1232,7 +1232,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:467:6: otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:474:6: otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,18,FOLLOW_18_in_ruleUIContainer920); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1240,11 +1240,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_6, grammarAccess.getUIContainerAccess().getDescriptionKeyword_5_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:471:1: ( (lv_description_7_0= ruleEString ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:472:1: (lv_description_7_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:478:1: ( (lv_description_7_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:479:1: (lv_description_7_0= ruleEString )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:472:1: (lv_description_7_0= ruleEString )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:473:3: lv_description_7_0= ruleEString
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:479:1: (lv_description_7_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:480:3: lv_description_7_0= ruleEString
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1281,7 +1281,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:489:4: ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:496:4: ( ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )* )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1290,13 +1290,13 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:489:5: ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:496:5: ( (lv_UI_fields_8_0= ruleUIField ) ) ( (lv_UI_fields_9_0= ruleUIField ) )*
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:489:5: ( (lv_UI_fields_8_0= ruleUIField ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:490:1: (lv_UI_fields_8_0= ruleUIField )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:496:5: ( (lv_UI_fields_8_0= ruleUIField ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:497:1: (lv_UI_fields_8_0= ruleUIField )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:490:1: (lv_UI_fields_8_0= ruleUIField )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:491:3: lv_UI_fields_8_0= ruleUIField
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:497:1: (lv_UI_fields_8_0= ruleUIField )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:498:3: lv_UI_fields_8_0= ruleUIField
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1327,7 +1327,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:507:2: ( (lv_UI_fields_9_0= ruleUIField ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:514:2: ( (lv_UI_fields_9_0= ruleUIField ) )*
                     loop10:
                     do {
                         int alt10=2;
@@ -1340,10 +1340,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:508:1: (lv_UI_fields_9_0= ruleUIField )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:515:1: (lv_UI_fields_9_0= ruleUIField )
                     	    {
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:508:1: (lv_UI_fields_9_0= ruleUIField )
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:509:3: lv_UI_fields_9_0= ruleUIField
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:515:1: (lv_UI_fields_9_0= ruleUIField )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:516:3: lv_UI_fields_9_0= ruleUIField
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
@@ -1386,7 +1386,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:525:5: ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:532:5: ( ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )* )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1395,13 +1395,13 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:525:6: ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:532:6: ( (lv_subContainers_10_0= ruleUIContainer ) ) ( (lv_subContainers_11_0= ruleUIContainer ) )*
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:525:6: ( (lv_subContainers_10_0= ruleUIContainer ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:526:1: (lv_subContainers_10_0= ruleUIContainer )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:532:6: ( (lv_subContainers_10_0= ruleUIContainer ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:533:1: (lv_subContainers_10_0= ruleUIContainer )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:526:1: (lv_subContainers_10_0= ruleUIContainer )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:527:3: lv_subContainers_10_0= ruleUIContainer
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:533:1: (lv_subContainers_10_0= ruleUIContainer )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:534:3: lv_subContainers_10_0= ruleUIContainer
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1432,7 +1432,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:543:2: ( (lv_subContainers_11_0= ruleUIContainer ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:550:2: ( (lv_subContainers_11_0= ruleUIContainer ) )*
                     loop12:
                     do {
                         int alt12=2;
@@ -1445,10 +1445,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:544:1: (lv_subContainers_11_0= ruleUIContainer )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:551:1: (lv_subContainers_11_0= ruleUIContainer )
                     	    {
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:544:1: (lv_subContainers_11_0= ruleUIContainer )
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:545:3: lv_subContainers_11_0= ruleUIContainer
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:551:1: (lv_subContainers_11_0= ruleUIContainer )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:552:3: lv_subContainers_11_0= ruleUIContainer
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
@@ -1520,7 +1520,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataSource"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:573:1: entryRuleDataSource returns [EObject current=null] : iv_ruleDataSource= ruleDataSource EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:580:1: entryRuleDataSource returns [EObject current=null] : iv_ruleDataSource= ruleDataSource EOF ;
     public final EObject entryRuleDataSource() throws RecognitionException {
         EObject current = null;
 
@@ -1528,8 +1528,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:574:2: (iv_ruleDataSource= ruleDataSource EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:575:2: iv_ruleDataSource= ruleDataSource EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:581:2: (iv_ruleDataSource= ruleDataSource EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:582:2: iv_ruleDataSource= ruleDataSource EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDataSourceRule()); 
@@ -1560,7 +1560,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataSource"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:582:1: ruleDataSource returns [EObject current=null] : this_LocalClass_0= ruleLocalClass ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:589:1: ruleDataSource returns [EObject current=null] : this_LocalClass_0= ruleLocalClass ;
     public final EObject ruleDataSource() throws RecognitionException {
         EObject current = null;
 
@@ -1570,8 +1570,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:585:28: (this_LocalClass_0= ruleLocalClass )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:587:5: this_LocalClass_0= ruleLocalClass
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:592:28: (this_LocalClass_0= ruleLocalClass )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:594:5: this_LocalClass_0= ruleLocalClass
             {
             if ( state.backtracking==0 ) {
                
@@ -1609,7 +1609,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLocalClass"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:603:1: entryRuleLocalClass returns [EObject current=null] : iv_ruleLocalClass= ruleLocalClass EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:610:1: entryRuleLocalClass returns [EObject current=null] : iv_ruleLocalClass= ruleLocalClass EOF ;
     public final EObject entryRuleLocalClass() throws RecognitionException {
         EObject current = null;
 
@@ -1617,8 +1617,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:604:2: (iv_ruleLocalClass= ruleLocalClass EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:605:2: iv_ruleLocalClass= ruleLocalClass EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:611:2: (iv_ruleLocalClass= ruleLocalClass EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:612:2: iv_ruleLocalClass= ruleLocalClass EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLocalClassRule()); 
@@ -1649,7 +1649,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocalClass"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:612:1: ruleLocalClass returns [EObject current=null] : ( () otherlv_1= 'for' ( ( ruleFQN ) ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:619:1: ruleLocalClass returns [EObject current=null] : ( () otherlv_1= 'for' ( ( ruleFQN ) ) ) ;
     public final EObject ruleLocalClass() throws RecognitionException {
         EObject current = null;
 
@@ -1658,14 +1658,14 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:615:28: ( ( () otherlv_1= 'for' ( ( ruleFQN ) ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:616:1: ( () otherlv_1= 'for' ( ( ruleFQN ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:622:28: ( ( () otherlv_1= 'for' ( ( ruleFQN ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:623:1: ( () otherlv_1= 'for' ( ( ruleFQN ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:616:1: ( () otherlv_1= 'for' ( ( ruleFQN ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:616:2: () otherlv_1= 'for' ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:623:1: ( () otherlv_1= 'for' ( ( ruleFQN ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:623:2: () otherlv_1= 'for' ( ( ruleFQN ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:616:2: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:617:5: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:623:2: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:624:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -1683,11 +1683,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getLocalClassAccess().getForKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:626:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:627:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:633:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:634:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:627:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:628:3: ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:634:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:635:3: ruleFQN
             {
             if ( state.backtracking==0 ) {
 
@@ -1740,7 +1740,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUIField"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:649:1: entryRuleUIField returns [EObject current=null] : iv_ruleUIField= ruleUIField EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:656:1: entryRuleUIField returns [EObject current=null] : iv_ruleUIField= ruleUIField EOF ;
     public final EObject entryRuleUIField() throws RecognitionException {
         EObject current = null;
 
@@ -1748,8 +1748,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:650:2: (iv_ruleUIField= ruleUIField EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:651:2: iv_ruleUIField= ruleUIField EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:657:2: (iv_ruleUIField= ruleUIField EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:658:2: iv_ruleUIField= ruleUIField EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUIFieldRule()); 
@@ -1780,7 +1780,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUIField"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:658:1: ruleUIField returns [EObject current=null] : ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:665:1: ruleUIField returns [EObject current=null] : ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) ) ;
     public final EObject ruleUIField() throws RecognitionException {
         EObject current = null;
 
@@ -1804,14 +1804,14 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:661:28: ( ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:662:1: ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:668:28: ( ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:669:1: ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:662:1: ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:662:2: () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:669:1: ( () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:669:2: () otherlv_1= 'Field' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )? (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )? otherlv_10= ',' ( (lv_Mapping_11_0= ruleFieldMapping ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:662:2: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:663:5: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:669:2: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:670:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -1829,11 +1829,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getUIFieldAccess().getFieldKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:672:1: ( (lv_name_2_0= ruleEString ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:673:1: (lv_name_2_0= ruleEString )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:679:1: ( (lv_name_2_0= ruleEString ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:680:1: (lv_name_2_0= ruleEString )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:673:1: (lv_name_2_0= ruleEString )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:674:3: lv_name_2_0= ruleEString
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:680:1: (lv_name_2_0= ruleEString )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:681:3: lv_name_2_0= ruleEString
             {
             if ( state.backtracking==0 ) {
                
@@ -1864,7 +1864,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:690:2: (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:697:2: (otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) ) )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -1873,7 +1873,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:690:4: otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:697:4: otherlv_3= 'label:' ( (lv_label_4_0= ruleEString ) )
                     {
                     otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleUIField1378); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1881,11 +1881,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_3, grammarAccess.getUIFieldAccess().getLabelKeyword_3_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:694:1: ( (lv_label_4_0= ruleEString ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:695:1: (lv_label_4_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:701:1: ( (lv_label_4_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:702:1: (lv_label_4_0= ruleEString )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:695:1: (lv_label_4_0= ruleEString )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:696:3: lv_label_4_0= ruleEString
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:702:1: (lv_label_4_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:703:3: lv_label_4_0= ruleEString
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1922,7 +1922,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:712:4: (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:719:4: (otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ',' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1931,7 +1931,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:712:6: otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ','
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:719:6: otherlv_5= 'description:' ( (lv_description_6_0= ruleEString ) ) otherlv_7= ','
                     {
                     otherlv_5=(Token)match(input,18,FOLLOW_18_in_ruleUIField1414); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1939,11 +1939,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_5, grammarAccess.getUIFieldAccess().getDescriptionKeyword_4_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:716:1: ( (lv_description_6_0= ruleEString ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:717:1: (lv_description_6_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:723:1: ( (lv_description_6_0= ruleEString ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:724:1: (lv_description_6_0= ruleEString )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:717:1: (lv_description_6_0= ruleEString )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:718:3: lv_description_6_0= ruleEString
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:724:1: (lv_description_6_0= ruleEString )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:725:3: lv_description_6_0= ruleEString
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -1986,7 +1986,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:738:3: (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:745:3: (otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) ) )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1995,7 +1995,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:738:5: otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:745:5: otherlv_8= 'type' ( (lv_type_9_0= ruleUI_Field_Type ) )
                     {
                     otherlv_8=(Token)match(input,22,FOLLOW_22_in_ruleUIField1462); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2003,11 +2003,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                           	newLeafNode(otherlv_8, grammarAccess.getUIFieldAccess().getTypeKeyword_5_0());
                           
                     }
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:742:1: ( (lv_type_9_0= ruleUI_Field_Type ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:743:1: (lv_type_9_0= ruleUI_Field_Type )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:749:1: ( (lv_type_9_0= ruleUI_Field_Type ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:750:1: (lv_type_9_0= ruleUI_Field_Type )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:743:1: (lv_type_9_0= ruleUI_Field_Type )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:744:3: lv_type_9_0= ruleUI_Field_Type
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:750:1: (lv_type_9_0= ruleUI_Field_Type )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:751:3: lv_type_9_0= ruleUI_Field_Type
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -2050,11 +2050,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_10, grammarAccess.getUIFieldAccess().getCommaKeyword_6());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:764:1: ( (lv_Mapping_11_0= ruleFieldMapping ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:765:1: (lv_Mapping_11_0= ruleFieldMapping )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:771:1: ( (lv_Mapping_11_0= ruleFieldMapping ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:772:1: (lv_Mapping_11_0= ruleFieldMapping )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:765:1: (lv_Mapping_11_0= ruleFieldMapping )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:766:3: lv_Mapping_11_0= ruleFieldMapping
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:772:1: (lv_Mapping_11_0= ruleFieldMapping )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:773:3: lv_Mapping_11_0= ruleFieldMapping
             {
             if ( state.backtracking==0 ) {
                
@@ -2108,7 +2108,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFieldMapping"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:790:1: entryRuleFieldMapping returns [EObject current=null] : iv_ruleFieldMapping= ruleFieldMapping EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:797:1: entryRuleFieldMapping returns [EObject current=null] : iv_ruleFieldMapping= ruleFieldMapping EOF ;
     public final EObject entryRuleFieldMapping() throws RecognitionException {
         EObject current = null;
 
@@ -2116,8 +2116,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:791:2: (iv_ruleFieldMapping= ruleFieldMapping EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:792:2: iv_ruleFieldMapping= ruleFieldMapping EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:798:2: (iv_ruleFieldMapping= ruleFieldMapping EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:799:2: iv_ruleFieldMapping= ruleFieldMapping EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFieldMappingRule()); 
@@ -2148,7 +2148,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFieldMapping"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:799:1: ruleFieldMapping returns [EObject current=null] : ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:806:1: ruleFieldMapping returns [EObject current=null] : ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? ) ;
     public final EObject ruleFieldMapping() throws RecognitionException {
         EObject current = null;
 
@@ -2157,14 +2157,14 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:802:28: ( ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:803:1: ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:809:28: ( ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:810:1: ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:803:1: ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:803:2: () otherlv_1= 'mapped-to' ( ( ruleFQN ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:810:1: ( () otherlv_1= 'mapped-to' ( ( ruleFQN ) )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:810:2: () otherlv_1= 'mapped-to' ( ( ruleFQN ) )?
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:803:2: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:804:5: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:810:2: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:811:5: 
             {
             if ( state.backtracking==0 ) {
 
@@ -2182,7 +2182,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getFieldMappingAccess().getMappedToKeyword_1());
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:813:1: ( ( ruleFQN ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:820:1: ( ( ruleFQN ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2191,10 +2191,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:814:1: ( ruleFQN )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:821:1: ( ruleFQN )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:814:1: ( ruleFQN )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:815:3: ruleFQN
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:821:1: ( ruleFQN )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:822:3: ruleFQN
                     {
                     if ( state.backtracking==0 ) {
 
@@ -2250,7 +2250,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:836:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:843:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -2258,8 +2258,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:837:2: (iv_ruleEString= ruleEString EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:838:2: iv_ruleEString= ruleEString EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:844:2: (iv_ruleEString= ruleEString EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:845:2: iv_ruleEString= ruleEString EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEStringRule()); 
@@ -2290,7 +2290,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:845:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:852:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2300,10 +2300,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:848:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:849:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:855:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:856:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:849:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:856:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2322,7 +2322,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:849:6: this_STRING_0= RULE_STRING
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:856:6: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEString1722); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2339,7 +2339,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:857:10: this_ID_1= RULE_ID
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:864:10: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEString1748); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2378,7 +2378,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFQN"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:872:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:879:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -2386,8 +2386,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:873:2: (iv_ruleFQN= ruleFQN EOF )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:874:2: iv_ruleFQN= ruleFQN EOF
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:880:2: (iv_ruleFQN= ruleFQN EOF )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:881:2: iv_ruleFQN= ruleFQN EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFQNRule()); 
@@ -2418,7 +2418,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFQN"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:881:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:888:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2429,11 +2429,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:884:28: ( (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:885:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:891:28: ( (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:892:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:885:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:885:6: this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:892:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:892:6: this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1845); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2446,7 +2446,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                   newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
                   
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:892:1: (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:899:1: (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
             loop19:
             do {
                 int alt19=2;
@@ -2459,7 +2459,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:893:2: kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:900:2: kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID )
             	    {
             	    kw=(Token)match(input,24,FOLLOW_24_in_ruleFQN1864); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -2468,8 +2468,8 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
             	              newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             	          
             	    }
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:898:1: ( ( RULE_ID )=>this_ID_2= RULE_ID )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:898:2: ( RULE_ID )=>this_ID_2= RULE_ID
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:905:1: ( ( RULE_ID )=>this_ID_2= RULE_ID )
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:905:2: ( RULE_ID )=>this_ID_2= RULE_ID
             	    {
             	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN1885); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
@@ -2517,7 +2517,7 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUI_Field_Type"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:917:1: ruleUI_Field_Type returns [Enumerator current=null] : ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:924:1: ruleUI_Field_Type returns [Enumerator current=null] : ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) ) ;
     public final Enumerator ruleUI_Field_Type() throws RecognitionException {
         Enumerator current = null;
 
@@ -2530,10 +2530,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:919:28: ( ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:920:1: ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:926:28: ( ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:927:1: ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:920:1: ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:927:1: ( (enumLiteral_0= 'text' ) | (enumLiteral_1= 'textarea' ) | (enumLiteral_2= 'checkbox' ) | (enumLiteral_3= 'radiobox' ) | (enumLiteral_4= 'simpleChoiceList' ) | (enumLiteral_5= 'multipleChoiceList' ) )
             int alt20=6;
             switch ( input.LA(1) ) {
             case 25:
@@ -2576,10 +2576,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
             switch (alt20) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:920:2: (enumLiteral_0= 'text' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:927:2: (enumLiteral_0= 'text' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:920:2: (enumLiteral_0= 'text' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:920:4: enumLiteral_0= 'text'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:927:2: (enumLiteral_0= 'text' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:927:4: enumLiteral_0= 'text'
                     {
                     enumLiteral_0=(Token)match(input,25,FOLLOW_25_in_ruleUI_Field_Type1951); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2595,10 +2595,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:926:6: (enumLiteral_1= 'textarea' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:933:6: (enumLiteral_1= 'textarea' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:926:6: (enumLiteral_1= 'textarea' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:926:8: enumLiteral_1= 'textarea'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:933:6: (enumLiteral_1= 'textarea' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:933:8: enumLiteral_1= 'textarea'
                     {
                     enumLiteral_1=(Token)match(input,26,FOLLOW_26_in_ruleUI_Field_Type1968); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2614,10 +2614,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:932:6: (enumLiteral_2= 'checkbox' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:939:6: (enumLiteral_2= 'checkbox' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:932:6: (enumLiteral_2= 'checkbox' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:932:8: enumLiteral_2= 'checkbox'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:939:6: (enumLiteral_2= 'checkbox' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:939:8: enumLiteral_2= 'checkbox'
                     {
                     enumLiteral_2=(Token)match(input,27,FOLLOW_27_in_ruleUI_Field_Type1985); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2633,10 +2633,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:938:6: (enumLiteral_3= 'radiobox' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:945:6: (enumLiteral_3= 'radiobox' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:938:6: (enumLiteral_3= 'radiobox' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:938:8: enumLiteral_3= 'radiobox'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:945:6: (enumLiteral_3= 'radiobox' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:945:8: enumLiteral_3= 'radiobox'
                     {
                     enumLiteral_3=(Token)match(input,28,FOLLOW_28_in_ruleUI_Field_Type2002); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2652,10 +2652,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:944:6: (enumLiteral_4= 'simpleChoiceList' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:951:6: (enumLiteral_4= 'simpleChoiceList' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:944:6: (enumLiteral_4= 'simpleChoiceList' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:944:8: enumLiteral_4= 'simpleChoiceList'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:951:6: (enumLiteral_4= 'simpleChoiceList' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:951:8: enumLiteral_4= 'simpleChoiceList'
                     {
                     enumLiteral_4=(Token)match(input,29,FOLLOW_29_in_ruleUI_Field_Type2019); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2671,10 +2671,10 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:950:6: (enumLiteral_5= 'multipleChoiceList' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:957:6: (enumLiteral_5= 'multipleChoiceList' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:950:6: (enumLiteral_5= 'multipleChoiceList' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:950:8: enumLiteral_5= 'multipleChoiceList'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:957:6: (enumLiteral_5= 'multipleChoiceList' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:957:8: enumLiteral_5= 'multipleChoiceList'
                     {
                     enumLiteral_5=(Token)match(input,30,FOLLOW_30_in_ruleUI_Field_Type2036); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2712,11 +2712,11 @@ public class InternalVpuiParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalVpui
     public final void synpred1_InternalVpui_fragment() throws RecognitionException {   
-        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:249:2: ( ( ruleUI ) )
-        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:250:1: ( ruleUI )
+        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:256:2: ( ( ruleUI ) )
+        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:257:1: ( ruleUI )
         {
-        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:250:1: ( ruleUI )
-        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:251:1: ruleUI
+        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:257:1: ( ruleUI )
+        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpui.g:258:1: ruleUI
         {
         pushFollow(FOLLOW_ruleUI_in_synpred1_InternalVpui495);
         ruleUI();

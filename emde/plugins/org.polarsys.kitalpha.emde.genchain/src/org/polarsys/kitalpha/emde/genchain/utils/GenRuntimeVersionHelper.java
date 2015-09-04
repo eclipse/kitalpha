@@ -34,6 +34,12 @@ public class GenRuntimeVersionHelper {
 			genmodelVersion = GenRuntimeVersion.get("2.7");
 		if (version.getQualifier().startsWith("2_8"))
 			genmodelVersion = GenRuntimeVersion.get("2.8");
+		if (version.getQualifier().startsWith("2_9"))
+			genmodelVersion = GenRuntimeVersion.get("2.9");
+		if (version.getQualifier().startsWith("2_10"))
+			genmodelVersion = GenRuntimeVersion.get("2.10");
+		if (version.getQualifier().startsWith("2_11"))
+			genmodelVersion = GenRuntimeVersion.get("2.11");
 		if (genmodelVersion == null)
 			throw new IllegalStateException("unexpected version for org.eclipse.egf.emf.pattern bundle: " + version);
 

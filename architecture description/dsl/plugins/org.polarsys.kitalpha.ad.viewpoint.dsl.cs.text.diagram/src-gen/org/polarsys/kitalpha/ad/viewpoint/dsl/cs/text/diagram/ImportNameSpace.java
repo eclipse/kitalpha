@@ -10,10 +10,10 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage#getImportNameSpace()
  * @model

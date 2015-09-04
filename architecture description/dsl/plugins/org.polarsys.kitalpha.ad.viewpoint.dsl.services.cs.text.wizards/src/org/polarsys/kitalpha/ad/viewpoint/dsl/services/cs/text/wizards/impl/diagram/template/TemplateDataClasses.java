@@ -42,8 +42,9 @@ public class TemplateDataClasses extends Wizard implements ISelectionNotificatio
 			for (Class class1 : selectedClasses) {
 				notifyObservators(class1);
 			}
+			page.dispose();
 		}
-		page.dispose();
+		
 		return true;
 	}
 	

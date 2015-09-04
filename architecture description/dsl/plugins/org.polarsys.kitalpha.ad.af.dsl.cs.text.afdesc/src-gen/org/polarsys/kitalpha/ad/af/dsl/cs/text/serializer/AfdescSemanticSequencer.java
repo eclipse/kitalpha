@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2015 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -36,34 +36,21 @@ public class AfdescSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	@Inject
 	private AfdescGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == AfdescPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case AfdescPackage.ARCHITECTURE_FRAMEWORK:
-				if(context == grammarAccess.getArchitectureFrameworkRule() ||
-				   context == grammarAccess.getNamedElementRule()) {
-					sequence_ArchitectureFramework(context, (ArchitectureFramework) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ArchitectureFramework(context, (ArchitectureFramework) semanticObject); 
+				return; 
 			case AfdescPackage.CONFIGURATION:
-				if(context == grammarAccess.getConfigurationRule()) {
-					sequence_Configuration(context, (Configuration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Configuration(context, (Configuration) semanticObject); 
+				return; 
 			case AfdescPackage.GENERATION_CONFIGURATION:
-				if(context == grammarAccess.getConfigurationElementRule() ||
-				   context == grammarAccess.getGenerationConfigurationRule()) {
-					sequence_GenerationConfiguration(context, (GenerationConfiguration) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_GenerationConfiguration(context, (GenerationConfiguration) semanticObject); 
+				return; 
 			case AfdescPackage.VIEWPOINTS:
-				if(context == grammarAccess.getViewpointsRule()) {
-					sequence_Viewpoints(context, (Viewpoints) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Viewpoints(context, (Viewpoints) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}

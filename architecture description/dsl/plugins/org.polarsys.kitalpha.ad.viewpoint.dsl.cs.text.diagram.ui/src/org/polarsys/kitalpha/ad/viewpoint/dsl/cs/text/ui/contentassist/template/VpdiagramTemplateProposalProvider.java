@@ -53,8 +53,13 @@ public class VpdiagramTemplateProposalProvider extends
 		
 		super(templateStore, registry, helper);
 		this.templateStore = templateStore;
-		interceptor = new TemplateInterceptor();
+		interceptor = createTemplateInterceptor();
 		
+	}
+	
+	private TemplateInterceptor createTemplateInterceptor()
+	{
+		return new TemplateInterceptor();
 	}
 	
 	

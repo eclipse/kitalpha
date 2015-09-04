@@ -16,8 +16,10 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.Synchronizer;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.messages.Messages;
@@ -48,7 +50,17 @@ public class SynchronizeAction extends BaseSelectionListenerAction implements IO
 		Object obj = structuredSelection.getFirstElement();
 		IFile file = (IFile) Platform.getAdapterManager().getAdapter(obj, IFile.class);
 		delegate = new Synchronizer();
-		delegate.doSynchronize(file);		
+		if (file != null)
+		{
+			delegate.doSynchronize(file);
+		}
+		else
+		{
+			MessageBox message = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+			message.setText("Error");
+			message.setMessage("The command cannot retrieve the resouce from the selection");
+			message.open();
+		}
 	}
 	
 	@Override

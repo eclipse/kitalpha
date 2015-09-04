@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
 import com.google.inject.Inject;
@@ -70,325 +80,150 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	@Inject
 	private VpdiagramGrammarAccess grammarAccess;
 	
+	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == CommondataPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case CommondataPackage.EXTERNAL_ASSOCIATION:
-				if(context == grammarAccess.getAbstractAssociation2Rule() ||
-				   context == grammarAccess.getExternalAssociationRule()) {
-					sequence_ExternalAssociation(context, (ExternalAssociation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ExternalAssociation(context, (ExternalAssociation) semanticObject); 
+				return; 
 			case CommondataPackage.EXTERNAL_ATTRIBUTE:
-				if(context == grammarAccess.getAbstractAttributeRule() ||
-				   context == grammarAccess.getExternalAttributeRule()) {
-					sequence_ExternalAttribute(context, (ExternalAttribute) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ExternalAttribute(context, (ExternalAttribute) semanticObject); 
+				return; 
 			case CommondataPackage.EXTERNAL_CLASS:
-				if(context == grammarAccess.getAbstractClassRule() ||
-				   context == grammarAccess.getExternalClassRule()) {
-					sequence_ExternalClass(context, (ExternalClass) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ExternalClass(context, (ExternalClass) semanticObject); 
+				return; 
 			case CommondataPackage.LOCAL_ASSOCIATION:
-				if(context == grammarAccess.getAbstractAssociation2Rule() ||
-				   context == grammarAccess.getLocalAssociationRule()) {
-					sequence_LocalAssociation(context, (LocalAssociation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalAssociation(context, (LocalAssociation) semanticObject); 
+				return; 
 			case CommondataPackage.LOCAL_ATTRIBUTE:
-				if(context == grammarAccess.getAbstractAttributeRule() ||
-				   context == grammarAccess.getLocalAttributeRule()) {
-					sequence_LocalAttribute(context, (LocalAttribute) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalAttribute(context, (LocalAttribute) semanticObject); 
+				return; 
 			case CommondataPackage.LOCAL_CLASS:
-				if(context == grammarAccess.getAbstractClassRule() ||
-				   context == grammarAccess.getLocalClass2Rule()) {
-					sequence_LocalClass2(context, (LocalClass) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_LocalClass2(context, (LocalClass) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == DiagramPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case DiagramPackage.DIAGRAMS:
-				if(context == grammarAccess.getDiagramsRule()) {
-					sequence_Diagrams(context, (Diagrams) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Diagrams(context, (Diagrams) semanticObject); 
+				return; 
 			case DiagramPackage.IMPORT_GROUP:
-				if(context == grammarAccess.getAbstractImportRule() ||
-				   context == grammarAccess.getImportGroupRule()) {
-					sequence_ImportGroup(context, (ImportGroup) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ImportGroup(context, (ImportGroup) semanticObject); 
+				return; 
 			case DiagramPackage.IMPORT_NAME_SPACE:
-				if(context == grammarAccess.getAbstractImportRule() ||
-				   context == grammarAccess.getImportNameSpaceRule()) {
-					sequence_ImportNameSpace(context, (ImportNameSpace) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ImportNameSpace(context, (ImportNameSpace) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == ExpressionPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ExpressionPackage.DOMAIN_ELEMENT:
-				if(context == grammarAccess.getDomainElementRule() ||
-				   context == grammarAccess.getExpressionElementRule() ||
-				   context == grammarAccess.getForeignExpressionElementRule()) {
-					sequence_DomainElement(context, (DomainElement) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DomainElement(context, (DomainElement) semanticObject); 
+				return; 
 			case ExpressionPackage.EXPRESSION:
-				if(context == grammarAccess.getExpressionRule()) {
-					sequence_Expression(context, (Expression) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Expression(context, (Expression) semanticObject); 
+				return; 
 			case ExpressionPackage.JAVA_ELEMENT:
-				if(context == grammarAccess.getExpressionElementRule() ||
-				   context == grammarAccess.getForeignExpressionElementRule() ||
-				   context == grammarAccess.getJavaElementRule()) {
-					sequence_JavaElement(context, (JavaElement) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_JavaElement(context, (JavaElement) semanticObject); 
+				return; 
 			case ExpressionPackage.STRING_ELEMENT:
-				if(context == grammarAccess.getExpressionElementRule() ||
-				   context == grammarAccess.getStringElementRule()) {
-					sequence_StringElement(context, (StringElement) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_StringElement(context, (StringElement) semanticObject); 
+				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == VpdiagramPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case VpdiagramPackage.ACTION_SET:
-				if(context == grammarAccess.getActionSetRule()) {
-					sequence_ActionSet(context, (ActionSet) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ActionSet(context, (ActionSet) semanticObject); 
+				return; 
 			case VpdiagramPackage.BASIC_STYLE:
-				if(context == grammarAccess.getAbstractNodeStyleRule() ||
-				   context == grammarAccess.getBasicStyleRule()) {
-					sequence_BasicStyle(context, (BasicStyle) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_BasicStyle(context, (BasicStyle) semanticObject); 
+				return; 
 			case VpdiagramPackage.BORDERED_NODE:
-				if(context == grammarAccess.getAbstractNodeRule() ||
-				   context == grammarAccess.getBorderedNodeRule() ||
-				   context == grammarAccess.getDiagramElementRule()) {
-					sequence_BorderedNode(context, (BorderedNode) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_BorderedNode(context, (BorderedNode) semanticObject); 
+				return; 
 			case VpdiagramPackage.CONDITION:
-				if(context == grammarAccess.getConditionRule()) {
-					sequence_Condition(context, (Condition) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Condition(context, (Condition) semanticObject); 
+				return; 
 			case VpdiagramPackage.CONTAINER:
-				if(context == grammarAccess.getAbstractNodeRule() ||
-				   context == grammarAccess.getContainerRule() ||
-				   context == grammarAccess.getDiagramChildrenRule() ||
-				   context == grammarAccess.getDiagramElementRule()) {
-					sequence_Container(context, (Container) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Container(context, (Container) semanticObject); 
+				return; 
 			case VpdiagramPackage.CONTAINER_CHILDREN:
-				if(context == grammarAccess.getContainerChildrenRule()) {
-					sequence_ContainerChildren(context, (ContainerChildren) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ContainerChildren(context, (ContainerChildren) semanticObject); 
+				return; 
 			case VpdiagramPackage.CONTAINER_DESCRIPTION:
-				if(context == grammarAccess.getAbstractDescriptionRule() ||
-				   context == grammarAccess.getContainerDescriptionRule()) {
-					sequence_ContainerDescription(context, (ContainerDescription) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ContainerDescription(context, (ContainerDescription) semanticObject); 
+				return; 
 			case VpdiagramPackage.CREATE:
-				if(context == grammarAccess.getActionRule() ||
-				   context == grammarAccess.getCreateRule()) {
-					sequence_Create(context, (Create) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Create(context, (Create) semanticObject); 
+				return; 
 			case VpdiagramPackage.DELETE:
-				if(context == grammarAccess.getActionRule() ||
-				   context == grammarAccess.getDeleteRule()) {
-					sequence_Delete(context, (Delete) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Delete(context, (Delete) semanticObject); 
+				return; 
 			case VpdiagramPackage.DIAGRAM:
-				if(context == grammarAccess.getDiagramRule() ||
-				   context == grammarAccess.getDiagramRepresentationRule()) {
-					sequence_Diagram(context, (Diagram) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Diagram(context, (Diagram) semanticObject); 
+				return; 
 			case VpdiagramPackage.DIAGRAM_EXTENSION:
-				if(context == grammarAccess.getDiagramExtensionRule() ||
-				   context == grammarAccess.getDiagramRepresentationRule()) {
-					sequence_DiagramExtension(context, (DiagramExtension) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DiagramExtension(context, (DiagramExtension) semanticObject); 
+				return; 
 			case VpdiagramPackage.DIAGRAM_SET:
-				if(context == grammarAccess.getAspectRule() ||
-				   context == grammarAccess.getDiagramSetRule()) {
-					sequence_DiagramSet(context, (DiagramSet) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DiagramSet(context, (DiagramSet) semanticObject); 
+				return; 
 			case VpdiagramPackage.DOMAIN_CONTAINER:
-				if(context == grammarAccess.getDomainContainerRule()) {
-					sequence_DomainContainer(context, (DomainContainer) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_DomainContainer(context, (DomainContainer) semanticObject); 
+				return; 
 			case VpdiagramPackage.DROP:
-				if(context == grammarAccess.getActionRule() ||
-				   context == grammarAccess.getDropRule()) {
-					sequence_Drop(context, (Drop) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Drop(context, (Drop) semanticObject); 
+				return; 
 			case VpdiagramPackage.EDGE:
-				if(context == grammarAccess.getAbstractEdgeRule() ||
-				   context == grammarAccess.getDiagramChildrenRule() ||
-				   context == grammarAccess.getDiagramElementRule() ||
-				   context == grammarAccess.getEdgeRule()) {
-					sequence_Edge(context, (Edge) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Edge(context, (Edge) semanticObject); 
+				return; 
 			case VpdiagramPackage.EDGE_DESCRIPTION:
-				if(context == grammarAccess.getEdgeDescriptionRule()) {
-					sequence_EdgeDescription(context, (EdgeDescription) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EdgeDescription(context, (EdgeDescription) semanticObject); 
+				return; 
 			case VpdiagramPackage.EDGE_DOMAIN_ASSOCIATION:
-				if(context == grammarAccess.getEdgeDomainAssociationRule()) {
-					sequence_EdgeDomainAssociation(context, (EdgeDomainAssociation) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EdgeDomainAssociation(context, (EdgeDomainAssociation) semanticObject); 
+				return; 
 			case VpdiagramPackage.EDGE_DOMAIN_ELEMENT:
-				if(context == grammarAccess.getEdgeDomainElementRule()) {
-					sequence_EdgeDomainElement(context, (EdgeDomainElement) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EdgeDomainElement(context, (EdgeDomainElement) semanticObject); 
+				return; 
 			case VpdiagramPackage.EDGE_IMPORT:
-				if(context == grammarAccess.getAbstractEdgeRule() ||
-				   context == grammarAccess.getDiagramChildrenRule() ||
-				   context == grammarAccess.getDiagramElementRule() ||
-				   context == grammarAccess.getEdgeImportRule()) {
-					sequence_EdgeImport(context, (EdgeImport) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EdgeImport(context, (EdgeImport) semanticObject); 
+				return; 
 			case VpdiagramPackage.EDGE_STYLE:
-				if(context == grammarAccess.getEdgeStyleRule()) {
-					sequence_EdgeStyle(context, (EdgeStyle) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EdgeStyle(context, (EdgeStyle) semanticObject); 
+				return; 
 			case VpdiagramPackage.FLAT_STYLE:
-				if(context == grammarAccess.getAbstractContainerStyleRule() ||
-				   context == grammarAccess.getFlatStyleRule()) {
-					sequence_FlatStyle(context, (FlatStyle) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_FlatStyle(context, (FlatStyle) semanticObject); 
+				return; 
 			case VpdiagramPackage.HISTOGRAM_SECTION:
-				if(context == grammarAccess.getHistogramSectionRule()) {
-					sequence_HistogramSection(context, (HistogramSection) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_HistogramSection(context, (HistogramSection) semanticObject); 
+				return; 
 			case VpdiagramPackage.HISTOGRAM_STYLE:
-				if(context == grammarAccess.getAbstractNodeStyleRule() ||
-				   context == grammarAccess.getHistogramStyleRule()) {
-					sequence_HistogramStyle(context, (HistogramStyle) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_HistogramStyle(context, (HistogramStyle) semanticObject); 
+				return; 
 			case VpdiagramPackage.IMAGE_STYLE:
-				if(context == grammarAccess.getAbstractContainerStyleRule() ||
-				   context == grammarAccess.getAbstractNodeStyleRule() ||
-				   context == grammarAccess.getImageStyleRule()) {
-					sequence_ImageStyle(context, (ImageStyle) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ImageStyle(context, (ImageStyle) semanticObject); 
+				return; 
 			case VpdiagramPackage.LABEL:
-				if(context == grammarAccess.getLabelRule()) {
-					sequence_Label(context, (Label) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Label(context, (Label) semanticObject); 
+				return; 
 			case VpdiagramPackage.MAPPING_SET:
-				if(context == grammarAccess.getMappingSetRule()) {
-					sequence_MappingSet(context, (MappingSet) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_MappingSet(context, (MappingSet) semanticObject); 
+				return; 
 			case VpdiagramPackage.NODE:
-				if(context == grammarAccess.getAbstractNodeRule() ||
-				   context == grammarAccess.getDiagramChildrenRule() ||
-				   context == grammarAccess.getDiagramElementRule() ||
-				   context == grammarAccess.getNodeRule()) {
-					sequence_Node(context, (Node) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Node(context, (Node) semanticObject); 
+				return; 
 			case VpdiagramPackage.NODE_CHILDREN:
-				if(context == grammarAccess.getNodeChildrenRule()) {
-					sequence_NodeChildren(context, (NodeChildren) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_NodeChildren(context, (NodeChildren) semanticObject); 
+				return; 
 			case VpdiagramPackage.NODE_DESCRIPTION:
-				if(context == grammarAccess.getAbstractDescriptionRule() ||
-				   context == grammarAccess.getNodeDescriptionRule()) {
-					sequence_NodeDescription(context, (NodeDescription) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_NodeDescription(context, (NodeDescription) semanticObject); 
+				return; 
 			case VpdiagramPackage.NODE_DOMAIN_ELEMENT:
-				if(context == grammarAccess.getNodeDomainElementRule()) {
-					sequence_NodeDomainElement(context, (NodeDomainElement) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_NodeDomainElement(context, (NodeDomainElement) semanticObject); 
+				return; 
 			case VpdiagramPackage.OPEN_ACTION:
-				if(context == grammarAccess.getOpenActionRule()) {
-					sequence_OpenAction(context, (OpenAction) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_OpenAction(context, (OpenAction) semanticObject); 
+				return; 
 			case VpdiagramPackage.RECONNECT_EDGE:
-				if(context == grammarAccess.getActionRule() ||
-				   context == grammarAccess.getReconnectEdgeRule()) {
-					sequence_ReconnectEdge(context, (ReconnectEdge) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_ReconnectEdge(context, (ReconnectEdge) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}

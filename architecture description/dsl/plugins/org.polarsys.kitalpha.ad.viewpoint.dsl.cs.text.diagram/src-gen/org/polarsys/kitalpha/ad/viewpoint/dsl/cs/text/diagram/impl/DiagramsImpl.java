@@ -30,11 +30,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramsImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.DiagramsImpl#getDiagrams <em>Diagrams</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

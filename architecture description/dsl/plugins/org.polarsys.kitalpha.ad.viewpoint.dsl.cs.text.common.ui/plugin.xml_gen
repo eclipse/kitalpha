@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright (c) 2014 Thales Global Services S.A.S.
- All rights reserved. This program and the accompanying materials
- are made available under the terms of the Eclipse Public License v1.0
- which accompanies this distribution, and is available at
- http://www.eclipse.org/legal/epl-v10.html
-
-Contributors:
- Thales Global Services S.A.S - initial API and implementation
--->
 <?eclipse version="3.0"?>
 
 <plugin>
-   <extension-point id="templateprovider" name="Template Provider" schema="schema/templateprovider.exsd"/>
 
-<!--
     <extension
             point="org.eclipse.ui.editors">
         <editor
@@ -26,7 +14,6 @@ Contributors:
             name="Common Editor">
         </editor>
     </extension>
--->
     <extension
         point="org.eclipse.ui.handlers">
         <handler
@@ -46,7 +33,27 @@ Contributors:
                     definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.Editor.opened">
             </reference>
          </activeWhen>
-      </handler>
+      	</handler>
+      	<!-- copy qualified name -->
+        <handler
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+            commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
+            <activeWhen>
+				<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.Editor.opened" />
+            </activeWhen>
+        </handler>
+        <handler
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+            commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
+            <activeWhen>
+            	<and>
+            		<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.XtextEditor.opened" />
+	                <iterate>
+						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+					</iterate>
+				</and>
+            </activeWhen>
+        </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
         <definition id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.Editor.opened">
@@ -59,19 +66,25 @@ Contributors:
                 </with>        
             </and>
         </definition>
+        <definition id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.XtextEditor.opened">
+            <and>
+                <reference definitionId="isXtextEditorActive"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
     </extension>
-
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-              category="org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference.page"
-              class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.preferences.CommonPreferencePage"
-              id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common"
-              name="Text">
-         <!--   <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Common"/>-->
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common"
+            name="Common">
+            <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Common"/>
         </page>
-      
-      <!--
         <page
             category="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common"
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
@@ -86,9 +99,7 @@ Contributors:
             name="Templates">
             <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Common"/>
         </page>
-        -->
     </extension>
-
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
@@ -115,6 +126,19 @@ Contributors:
             id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.validate"
             name="Validate">
       </command>
+      <!-- copy qualified name -->
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
         <menuContribution
@@ -129,6 +153,36 @@ Contributors:
                 </reference>
             </visibleWhen>
          </command>  
+         </menuContribution>
+         <!-- copy qualified name -->
+         <menuContribution locationURI="popup:#TextEditorContext?after=copy">
+         	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
+         		style="push" tooltip="Copy Qualified Name">
+            	<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.Editor.opened" />
+            	</visibleWhen>
+         	</command>  
+         </menuContribution>
+         <menuContribution locationURI="menu:edit?after=copy">
+         	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+            	style="push" tooltip="Copy Qualified Name">
+            	<visibleWhen checkEnabled="false">
+                	<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.Editor.opened" />
+            	</visibleWhen>
+         	</command>  
+         </menuContribution>
+         <menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName" 
+				style="push" tooltip="Copy Qualified Name">
+         		<visibleWhen checkEnabled="false">
+	            	<and>
+	            		<reference definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.XtextEditor.opened" />
+						<iterate>
+							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+						</iterate>
+					</and>
+				</visibleWhen>
+			</command>
          </menuContribution>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -203,98 +257,5 @@ Contributors:
             </attribute>
         </markerResolutionGenerator>
     </extension>
-   	<!-- Rename Refactoring -->
-	<extension point="org.eclipse.ui.handlers">
-		<handler 
-			class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
-			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
-			<activeWhen>
-				<reference
-					definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.Editor.opened">
-				</reference>
-			</activeWhen>
-		</handler>
-	</extension>
-    <extension point="org.eclipse.ui.menus">
-         <menuContribution
-            locationURI="popup:#TextEditorContext?after=group.edit">
-         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
-               style="push">
-            <visibleWhen checkEnabled="false">
-               <reference
-                     definitionId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.Editor.opened">
-               </reference>
-            </visibleWhen>
-         </command>
-      </menuContribution>
-   </extension>
-   
-   <!--
-   <extension point="org.eclipse.ui.preferencePages">
-	    <page
-	        category="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common"
-	        class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.refactoring"
-	        name="Refactoring">
-	        <keywordReference id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.keyword_Common"/>
-	    </page>
-	</extension>
-	-->
-	
-   <extension
-         point="org.eclipse.xtext.ui.shared.overridingGuiceModule">
-      <module
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.OverrideSharedModule">
-      </module>
-   </extension>
-   <extension
-         point="org.eclipse.xtext.builder.participant">
-      <participant
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder.FileExtensionEditorMapper">
-      </participant>
-   </extension>
-   <extension
-         point="org.eclipse.xtext.builder.participant">
-      <participant
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder.ModelReuseUpdater">
-      </participant>
-   </extension>
-   <!--
-   <extension
-         point="org.eclipse.ui.decorators">
-      <decorator
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator.VptextLabelDecorator"
-            icon="icons/vpdsl_file_16.png"
-            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.ui.file.decorator"
-            label="Vptext File"
-            state="false">
-         <enablement>
-            <objectClass
-                  name="org.eclipse.core.resources.IFile">
-            </objectClass>
-         </enablement>
-      </decorator>
-       <decorator
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator.VptextFolderLabelDecorator"
-            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.ui.folder.decorator"
-            label="Vptext Folder"
-            state="false">
-         <enablement>
-            <objectClass
-                  name="org.eclipse.core.resources.IFolder">
-            </objectClass>
-         </enablement>
-      </decorator>
-   </extension>
-   
-      <extension
-         point="org.eclipse.core.contenttype.contentTypes">
-      <content-type
-            file-extensions="vptext"
-            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.content-type"
-            name="Vptext File"
-            priority="normal">
-      </content-type>
-   </extension>
--->
+
 </plugin>

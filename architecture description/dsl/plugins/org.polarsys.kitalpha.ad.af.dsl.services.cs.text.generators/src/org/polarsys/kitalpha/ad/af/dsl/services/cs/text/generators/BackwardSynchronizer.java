@@ -52,14 +52,14 @@ public class BackwardSynchronizer {
 	
 	public void backwardSynchronize(IFile file) {
 		IPath emfResourcePath = file.getFullPath();
-		URI emfUri = URI.createPlatformResourceURI(emfResourcePath.toString(), true);	
+		URI emfUri = AfdslGeneratorsUtil.URIFix.createPlatformResourceURI(emfResourcePath.toString(), true);	
 		ResourceSet resourceSet = new ResourceSetImpl();
 		afdescResource = resourceSet.getResource(emfUri, true);
 		ArchitectureFramework modelRoot = (ArchitectureFramework) afdescResource.getContents().get(0);
 		if (modelRoot !=null) {
 			EcoreUtil.resolveAll(modelRoot);
 			IPath xtextResourcePath = file.getFullPath().removeFileExtension().addFileExtension(AFTEXT_EXTENSION);
-			URI xtextUri = URI.createPlatformResourceURI(xtextResourcePath.toString(), true);
+			URI xtextUri = AfdslGeneratorsUtil.URIFix.createPlatformResourceURI(xtextResourcePath.toString(), true);
 			aftextResource = (XtextResource) resourceSet.createResource(xtextUri);	
 			initializeAftextResource(modelRoot);
 		}

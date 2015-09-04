@@ -22,10 +22,7 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -39,8 +36,6 @@ import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.VerifyListener;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IDecoratorManager;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
@@ -49,9 +44,7 @@ import org.eclipse.xtext.builder.nature.NatureAddingEditorCallback;
 import org.eclipse.xtext.builder.nature.ToggleXtextNatureAction;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
-import org.eclipse.xtext.ui.editor.DirtyStateEditorSupport;
 import org.eclipse.xtext.ui.editor.XtextEditor;
-import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 import org.eclipse.xtext.util.CancelIndicator;
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator;
@@ -79,9 +72,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
 	@Inject
 	private ToggleXtextNatureAction toggleNature;
-	
-	@Inject
-	private DirtyStateEditorSupport editorSupport;
 	
 	@Inject
 	private Injector injector;
@@ -115,7 +105,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	public void afterCreatePartControl(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
-		editorSupport.initializeDirtyStateSupport(this);	
+		
 		IResource resource = editor.getResource();
 		if (resource!=null && !toggleNature.hasNature(resource.getProject()) && resource.getProject().isAccessible() && !resource.getProject().isHidden()) {
 			toggleNature.toggleNature(resource.getProject());
@@ -126,7 +116,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	public void beforeDispose(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
-		editorSupport.removeDirtyStateSupport(this);
+		
 		this.currentEditor = null;
 	}
 
@@ -134,14 +124,11 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	public boolean onValidateEditorInputState(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
-		return editorSupport.isEditingPossible(this);
+		return currentEditor.getDirtyStateEditorSupport().isEditingPossible(currentEditor);
 	}
 
 	@Override
 	public void beforeSetInput(XtextEditor editor) {
-		if (this.currentEditor != null) {
-			editorSupport.removeDirtyStateSupport(this);
-		}
 	}
 
 	@Override
@@ -149,32 +136,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		if (this.currentEditor != null) {
 			if (this.currentEditor != editor)
 				throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
-			editorSupport.initializeDirtyStateSupport(this);
 		} else {
 			this.currentEditor = editor;
 		}
-	}
-
-	@Override
-	public boolean isDirty() {
-		return currentEditor.isDirty();
-	}
-
-	@Override
-	public IXtextDocument getDocument() {
-		return currentEditor.getDocument();
-	}
-
-	@Override
-	public void addVerifyListener(VerifyListener listener) {
-		ISourceViewer sourceViewer = currentEditor.getInternalSourceViewer();
-		StyledText widget = sourceViewer.getTextWidget();
-		widget.addVerifyListener(listener);
-	}
-
-	@Override
-	public Shell getShell() {
-		return currentEditor.getEditorSite().getShell();
 	}
 
 	public void removeVerifyListener(VerifyListener listener) {
@@ -197,16 +161,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 				public void run() {			
 					if (!synchronizing) {
 						IFile file = (IFile) current.getEditorInput().getAdapter(IFile.class);						
-
 						synchronizing = doSynchronize(file);
-
-						//update decorators prefix
-						Display.getDefault().asyncExec(new Runnable() {
-							public void run() {
-								IDecoratorManager decoratorManager = PlatformUI.getWorkbench().getDecoratorManager();
-								decoratorManager.update("org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui.vpdesc.decorator"); 
-							}
-						});
 					}	
 				}
 			};
@@ -215,7 +170,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		} else {
 			synchronizing = false;
 		}
-		editorSupport.markEditorClean(this);
 	}
 	
 	protected boolean doSynchronize(IFile file) {
@@ -285,7 +239,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadDiagramResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadBuildResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadServicesResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadActivityexplorerResource(file, resourceSet));
 		return Lists.newArrayList( inputModels );
 	}
 	
@@ -368,25 +321,28 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		
 		EList<EObject> content = resource.getContents();
 
-		org.eclipse.emf.common.util.Diagnostic result = 
-				Diagnostician.INSTANCE.validate(EcoreUtil.getRootContainer(content.get(0)));
+		if (content != null && !content.isEmpty())
+		{
+			org.eclipse.emf.common.util.Diagnostic result = 
+					Diagnostician.INSTANCE.validate(EcoreUtil.getRootContainer(content.get(0)));
 
 
-		if (result.getSeverity() == IStatus.ERROR){
-			String wsResourceName = resource.getURI().lastSegment();
-			assembleValidationMessages(result, wsResourceName);
-			return false;
+			if (result.getSeverity() == IStatus.ERROR){
+				String wsResourceName = resource.getURI().lastSegment();
+				assembleValidationMessages(result, wsResourceName);
+				return false;
+			}
 		}
-
 
 		return true;
 	}
 
 	private void assembleValidationMessages(
 			org.eclipse.emf.common.util.Diagnostic result, String resourceName) {
-		List<org.eclipse.emf.common.util.Diagnostic> children = result.getChildren();
+		
+		List<org.eclipse.emf.common.util.Diagnostic> children = result != null? result.getChildren(): null;
 
-		if (result != null && !result.getChildren().isEmpty()){
+		if (children != null && !children.isEmpty()){
 			for (org.eclipse.emf.common.util.Diagnostic diagnostic : children) {
 				if (diagnostic.getSeverity() == IStatus.ERROR){
 					if (!messages.containsKey(resourceName)){
@@ -415,25 +371,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		if (diagnostics != null && !diagnostics.isEmpty()){
 			String wsResourceName = resource.getURI().lastSegment();
 			assembleMessages(diagnostics, wsResourceName);
-			
-			setPersistentProperty(resource, "false");
-			
 			return false;
 		}
-		
-		setPersistentProperty(resource, "true");
 		return true;
-	}
-	
-	private void setPersistentProperty(Resource resource, String value)
-	{
-		URI uri = resource.getURI();
-		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
-		try {
-			file.setPersistentProperty(VpdslModelResourcesPropertysConstants.syncQualifiedName, value);
-		} catch (CoreException e) {
-			e.printStackTrace();
-		}
 	}
 
 	private void assembleMessages(EList<org.eclipse.emf.ecore.resource.Resource.Diagnostic> errors, String resourceName) {

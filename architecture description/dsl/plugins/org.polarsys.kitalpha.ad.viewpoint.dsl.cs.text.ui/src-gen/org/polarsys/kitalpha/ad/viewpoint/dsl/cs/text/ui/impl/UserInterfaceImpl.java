@@ -1,18 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.impl;
 
@@ -44,11 +30,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UserInterface;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.impl.UserInterfaceImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.impl.UserInterfaceImpl#getUiDescription <em>Ui Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

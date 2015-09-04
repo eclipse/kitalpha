@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.XtextResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataFactory;
@@ -77,6 +78,7 @@ public class BackwardSynchronizer extends AbstractSynchronizer {
 
 	public EObject backwardSynchronize(UIDescription inputAspect, Resource resource) {
 		XtextResource textResource = (XtextResource) resource;
+		EcoreUtil.resolveAll(inputAspect);
 		String newContent = null;
 		EObject clone = copier.get(inputAspect);
 		if (textResource.getContents().isEmpty()) {

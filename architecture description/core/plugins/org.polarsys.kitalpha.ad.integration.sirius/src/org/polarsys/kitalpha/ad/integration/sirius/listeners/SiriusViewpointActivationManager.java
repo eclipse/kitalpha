@@ -30,9 +30,9 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.progress.IProgressService;
+import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
-import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 public final class SiriusViewpointActivationManager implements Listener {
@@ -46,9 +46,7 @@ public final class SiriusViewpointActivationManager implements Listener {
 	}
 
 	private URI getURI(Resource res) {
-		if (res.getProviderLocation().equals(Location.WORSPACE))
-			return URI.createPlatformResourceURI(res.getPath(), false);
-		return URI.createPlatformPluginURI(res.getPath(), false);
+		return URIHelper.createURI(res);
 	}
 
 	private void updateActiveViewpoint(URI vpURI, boolean activate) {

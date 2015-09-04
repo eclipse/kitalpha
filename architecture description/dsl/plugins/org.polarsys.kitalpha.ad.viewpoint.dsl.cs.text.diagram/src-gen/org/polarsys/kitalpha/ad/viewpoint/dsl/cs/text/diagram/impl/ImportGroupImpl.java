@@ -17,10 +17,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl.ImportGroupImpl#getImportedGroup <em>Imported Group</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

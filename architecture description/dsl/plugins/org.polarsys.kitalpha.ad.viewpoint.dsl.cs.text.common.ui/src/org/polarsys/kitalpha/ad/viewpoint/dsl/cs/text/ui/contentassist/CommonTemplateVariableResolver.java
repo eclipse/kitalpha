@@ -69,9 +69,9 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			XtextDocument document =(XtextDocument)  castedContext.getDocument();
 			URI uri = document.getResourceURI();
-			String lastSegment = uri.trimFileExtension().lastSegment();
-			String shortName = lastSegment.substring(0, lastSegment.indexOf("."));
-			return (lastSegment!=null) ? shortName : SHORT_NAME;
+			String lastSegment = uri != null? uri.trimFileExtension().lastSegment(): null;
+			String shortName = lastSegment != null? lastSegment.substring(0, lastSegment.indexOf(".")): null;
+			return (lastSegment!= null) ? shortName : SHORT_NAME;
 		}
 	}
 	

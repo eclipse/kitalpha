@@ -115,22 +115,6 @@ public class VpspecTemplateProposalProvider extends CommonTemplateProposalProvid
 					}
 					
 					//Don't propose UI, Rules, Configuration, and Services before Data	
-					if (contextTypeId.matches(TemplateIDs.TEMPLATE_PREFIX + SEPARATOR + "kw_" + UI.class.getSimpleName()) ||
-							contextTypeId.matches(TemplateIDs.TEMPLATE_PREFIX + SEPARATOR + "kw_" + access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue()) ||
-							contextTypeId.matches(TemplateIDs.TEMPLATE_PREFIX + SEPARATOR + "kw_" + access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue()) ||
-							contextTypeId.matches(TemplateIDs.TEMPLATE_PREFIX + SEPARATOR + "kw_" + access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue()) ||
-							contextTypeId.matches(TemplateIDs.TEMPLATE_PREFIX + SEPARATOR + "kw_" + access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue()) ||
-							contextTypeId.matches(TemplateIDs.TEMPLATE_PREFIX + SEPARATOR + "kw_" + access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue())) {
-						
-						INode currentNode = context.getCurrentNode();
-						INode nextSibling = currentNode.getNextSibling();
-						if (nextSibling != null) {
-							String text = nextSibling.getText();
-							if (text.equals(access.getViewpointAccess().getDataKeyword_13_0().getValue())){
-								return;
-							}
-						}
-					}
 					
 					//Don't propose Diagram before UI	
 					if (contextTypeId.matches(TemplateIDs.TEMPLATE_PREFIX + SEPARATOR + "kw_" + access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue())) {						
@@ -188,26 +172,14 @@ public class VpspecTemplateProposalProvider extends CommonTemplateProposalProvid
 	
 	protected String getTemplatePattern(String templateIdentifier, String shortName) {		
 		VpspecGrammarAccess access = (VpspecGrammarAccess)grammar;		
-		if (templateIdentifier.equals(TemplateIDs.NEW_BUILD_TEMPLATE)) {
-			return access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue() + " " + VARIABLE_NAME;
-		}
-		if (templateIdentifier.equals(TemplateIDs.NEW_CONFIGURATION_TEMPLATE)) {
-			return access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue() + " " + VARIABLE_NAME;
-		}
 		if (templateIdentifier.equals(TemplateIDs.NEW_DATA_TEMPLATE)) {
 			return access.getViewpointAccess().getDataKeyword_13_0().getValue() + " "  + VARIABLE_NAME;
 		}
 		if (templateIdentifier.equals(TemplateIDs.NEW_DIAGRAM_TEMPLATE)) {
 			return access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue() + " "  + VARIABLE_NAME;
 		}
-		if (templateIdentifier.equals(TemplateIDs.NEW_SERVICES_TEMPLATE)) {
-			return access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue() + " "  + VARIABLE_NAME;
-		}
 		if (templateIdentifier.equals(TemplateIDs.NEW_UI_TEMPLATE)) {
 			return access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue() + " "  + VARIABLE_NAME;
-		}
-		if (templateIdentifier.equals(TemplateIDs.NEW_ACTIVITY_EXPLORER_TEMPLATE)) {
-			return access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue() + " "  + VARIABLE_NAME;
 		}
 		return null;
 	}
