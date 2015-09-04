@@ -52,6 +52,7 @@ public class ActivityexplorerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPageAccess().getGroup_11(), "rule__Page__Group_11__0");
 					put(grammarAccess.getPageAccess().getGroup_12(), "rule__Page__Group_12__0");
 					put(grammarAccess.getPageAccess().getGroup_13(), "rule__Page__Group_13__0");
+					put(grammarAccess.getPageAccess().getGroup_14(), "rule__Page__Group_14__0");
 					put(grammarAccess.getSectionAccess().getGroup(), "rule__Section__Group__0");
 					put(grammarAccess.getSectionAccess().getGroup_4(), "rule__Section__Group_4__0");
 					put(grammarAccess.getSectionAccess().getGroup_5(), "rule__Section__Group_5__0");
@@ -86,7 +87,7 @@ public class ActivityexplorerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPageAccess().getTabNameAssignment_11_2(), "rule__Page__TabNameAssignment_11_2");
 					put(grammarAccess.getPageAccess().getHasPredicateAssignment_12_2(), "rule__Page__HasPredicateAssignment_12_2");
 					put(grammarAccess.getPageAccess().getShowViewerAssignment_13_3(), "rule__Page__ShowViewerAssignment_13_3");
-					put(grammarAccess.getPageAccess().getOwnedSectionsAssignment_16(), "rule__Page__OwnedSectionsAssignment_16");
+					put(grammarAccess.getPageAccess().getOwnedSectionsAssignment_14_2(), "rule__Page__OwnedSectionsAssignment_14_2");
 					put(grammarAccess.getSectionAccess().getNameAssignment_2(), "rule__Section__NameAssignment_2");
 					put(grammarAccess.getSectionAccess().getDescriptionAssignment_4_1(), "rule__Section__DescriptionAssignment_4_1");
 					put(grammarAccess.getSectionAccess().getActivityExplorerItemIDAssignment_5_1(), "rule__Section__ActivityExplorerItemIDAssignment_5_1");

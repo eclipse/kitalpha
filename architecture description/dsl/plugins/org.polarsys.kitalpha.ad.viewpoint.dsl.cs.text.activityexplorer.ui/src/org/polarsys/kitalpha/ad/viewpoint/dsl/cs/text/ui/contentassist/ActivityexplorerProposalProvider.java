@@ -126,7 +126,7 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 		}
 		
 		if (keyword.getValue().equals("page")) {
-			proposal = createCompletionProposal(keyword.toString(), getKeywordDisplayString(keyword.toString()),getImage(keyword), contentAssistContext);
+			proposal = createCompletionProposal(keyword.getValue(), getKeywordDisplayString(keyword.getValue()),getImage(keyword), contentAssistContext);
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "extensions", ":");
 			acceptProposal(proposal, contentAssistContext, acceptor);
@@ -144,7 +144,7 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 				return;
 			}
 			
-			proposal = createCompletionProposal(keyword.toString(), getKeywordDisplayString(keyword.toString()),getImage(keyword), contentAssistContext);
+			proposal = createCompletionProposal(keyword.getValue(), getKeywordDisplayString(keyword.getValue()),getImage(keyword), contentAssistContext);
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			
 			return;
@@ -158,6 +158,7 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 		INode node = contentAssistContext.getCurrentNode();
 		return node.getParent().getSemanticElement();
 	}
+	
 	
 	
 	protected StyledString getKeywordDisplayString(String keyword) {

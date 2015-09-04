@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalActivityexplorerParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'activity'", "'explorer'", "'{'", "'}'", "'pages'", "'page'", "'index'", "'sections'", "'description'", "'file'", "'extension'", "'id'", "'header'", "'image'", "'on'", "':'", "'off'", "'tab'", "'name'", "'predicated'", "'show'", "'viewer'", "'section'", "'filtering'", "'expanded'", "'activities'", "'icon'", "'extensions'", "'extended'", "'Overview'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'true'", "'false'", "'activity'", "'explorer'", "'{'", "'}'", "'pages'", "'page'", "'index'", "'description'", "'file'", "'extension'", "'id'", "'header'", "'image'", "'on'", "':'", "'off'", "'tab'", "'name'", "'predicated'", "'show'", "'viewer'", "'sections'", "'section'", "'filtering'", "'expanded'", "'activities'", "'icon'", "'extensions'", "'extended'", "'Overview'", "'.'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -2540,7 +2540,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==21) ) {
+            if ( (LA6_0==20) ) {
                 alt6=1;
             }
             switch (alt6) {
@@ -2640,7 +2640,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==22) ) {
+            if ( (LA7_0==21) ) {
                 alt7=1;
             }
             switch (alt7) {
@@ -2740,7 +2740,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==24) ) {
+            if ( (LA8_0==23) ) {
                 alt8=1;
             }
             switch (alt8) {
@@ -3108,7 +3108,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==25) ) {
+            if ( (LA10_0==24) ) {
                 alt10=1;
             }
             switch (alt10) {
@@ -3208,7 +3208,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==30) ) {
+            if ( (LA11_0==29) ) {
                 alt11=1;
             }
             switch (alt11) {
@@ -3308,7 +3308,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==32) ) {
+            if ( (LA12_0==31) ) {
                 alt12=1;
             }
             switch (alt12) {
@@ -3408,7 +3408,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==33) ) {
+            if ( (LA13_0==32) ) {
                 alt13=1;
             }
             switch (alt13) {
@@ -3489,24 +3489,45 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group__14__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1218:1: rule__Page__Group__14__Impl : ( 'sections' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1218:1: rule__Page__Group__14__Impl : ( ( rule__Page__Group_14__0 )? ) ;
     public final void rule__Page__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1222:1: ( ( 'sections' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1223:1: ( 'sections' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1222:1: ( ( ( rule__Page__Group_14__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1223:1: ( ( rule__Page__Group_14__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1223:1: ( 'sections' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1224:1: 'sections'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1223:1: ( ( rule__Page__Group_14__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1224:1: ( rule__Page__Group_14__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPageAccess().getSectionsKeyword_14()); 
+               before(grammarAccess.getPageAccess().getGroup_14()); 
             }
-            match(input,20,FOLLOW_20_in_rule__Page__Group__14__Impl2439); if (state.failed) return ;
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1225:1: ( rule__Page__Group_14__0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==34) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1225:2: rule__Page__Group_14__0
+                    {
+                    pushFollow(FOLLOW_rule__Page__Group_14__0_in_rule__Page__Group__14__Impl2438);
+                    rule__Page__Group_14__0();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+                    break;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPageAccess().getSectionsKeyword_14()); 
+               after(grammarAccess.getPageAccess().getGroup_14()); 
             }
 
             }
@@ -3530,22 +3551,17 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group__15"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1237:1: rule__Page__Group__15 : rule__Page__Group__15__Impl rule__Page__Group__16 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1235:1: rule__Page__Group__15 : rule__Page__Group__15__Impl ;
     public final void rule__Page__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1241:1: ( rule__Page__Group__15__Impl rule__Page__Group__16 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1242:2: rule__Page__Group__15__Impl rule__Page__Group__16
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1239:1: ( rule__Page__Group__15__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1240:2: rule__Page__Group__15__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group__15__Impl_in_rule__Page__Group__152470);
+            pushFollow(FOLLOW_rule__Page__Group__15__Impl_in_rule__Page__Group__152469);
             rule__Page__Group__15__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group__16_in_rule__Page__Group__152473);
-            rule__Page__Group__16();
 
             state._fsp--;
             if (state.failed) return ;
@@ -3568,24 +3584,24 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group__15__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1249:1: rule__Page__Group__15__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1246:1: rule__Page__Group__15__Impl : ( '}' ) ;
     public final void rule__Page__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1253:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1254:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1250:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1251:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1254:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1255:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1251:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1252:1: '}'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_15()); 
+               before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_15()); 
             }
-            match(input,15,FOLLOW_15_in_rule__Page__Group__15__Impl2501); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__Page__Group__15__Impl2497); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_15()); 
+               after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_15()); 
             }
 
             }
@@ -3608,282 +3624,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Page__Group__15__Impl"
 
 
-    // $ANTLR start "rule__Page__Group__16"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1268:1: rule__Page__Group__16 : rule__Page__Group__16__Impl rule__Page__Group__17 ;
-    public final void rule__Page__Group__16() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1272:1: ( rule__Page__Group__16__Impl rule__Page__Group__17 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1273:2: rule__Page__Group__16__Impl rule__Page__Group__17
-            {
-            pushFollow(FOLLOW_rule__Page__Group__16__Impl_in_rule__Page__Group__162532);
-            rule__Page__Group__16__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group__17_in_rule__Page__Group__162535);
-            rule__Page__Group__17();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Page__Group__16"
-
-
-    // $ANTLR start "rule__Page__Group__16__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1280:1: rule__Page__Group__16__Impl : ( ( rule__Page__OwnedSectionsAssignment_16 )* ) ;
-    public final void rule__Page__Group__16__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1284:1: ( ( ( rule__Page__OwnedSectionsAssignment_16 )* ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1285:1: ( ( rule__Page__OwnedSectionsAssignment_16 )* )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1285:1: ( ( rule__Page__OwnedSectionsAssignment_16 )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1286:1: ( rule__Page__OwnedSectionsAssignment_16 )*
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getPageAccess().getOwnedSectionsAssignment_16()); 
-            }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1287:1: ( rule__Page__OwnedSectionsAssignment_16 )*
-            loop14:
-            do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
-
-                if ( (LA14_0==35) ) {
-                    alt14=1;
-                }
-
-
-                switch (alt14) {
-            	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1287:2: rule__Page__OwnedSectionsAssignment_16
-            	    {
-            	    pushFollow(FOLLOW_rule__Page__OwnedSectionsAssignment_16_in_rule__Page__Group__16__Impl2562);
-            	    rule__Page__OwnedSectionsAssignment_16();
-
-            	    state._fsp--;
-            	    if (state.failed) return ;
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop14;
-                }
-            } while (true);
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getPageAccess().getOwnedSectionsAssignment_16()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Page__Group__16__Impl"
-
-
-    // $ANTLR start "rule__Page__Group__17"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1297:1: rule__Page__Group__17 : rule__Page__Group__17__Impl rule__Page__Group__18 ;
-    public final void rule__Page__Group__17() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1301:1: ( rule__Page__Group__17__Impl rule__Page__Group__18 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1302:2: rule__Page__Group__17__Impl rule__Page__Group__18
-            {
-            pushFollow(FOLLOW_rule__Page__Group__17__Impl_in_rule__Page__Group__172593);
-            rule__Page__Group__17__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group__18_in_rule__Page__Group__172596);
-            rule__Page__Group__18();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Page__Group__17"
-
-
-    // $ANTLR start "rule__Page__Group__17__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1309:1: rule__Page__Group__17__Impl : ( '}' ) ;
-    public final void rule__Page__Group__17__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1313:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1314:1: ( '}' )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1314:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1315:1: '}'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_17()); 
-            }
-            match(input,16,FOLLOW_16_in_rule__Page__Group__17__Impl2624); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_17()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Page__Group__17__Impl"
-
-
-    // $ANTLR start "rule__Page__Group__18"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1328:1: rule__Page__Group__18 : rule__Page__Group__18__Impl ;
-    public final void rule__Page__Group__18() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1332:1: ( rule__Page__Group__18__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1333:2: rule__Page__Group__18__Impl
-            {
-            pushFollow(FOLLOW_rule__Page__Group__18__Impl_in_rule__Page__Group__182655);
-            rule__Page__Group__18__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Page__Group__18"
-
-
-    // $ANTLR start "rule__Page__Group__18__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1339:1: rule__Page__Group__18__Impl : ( '}' ) ;
-    public final void rule__Page__Group__18__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1343:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1344:1: ( '}' )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1344:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1345:1: '}'
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_18()); 
-            }
-            match(input,16,FOLLOW_16_in_rule__Page__Group__18__Impl2683); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_18()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Page__Group__18__Impl"
-
-
     // $ANTLR start "rule__Page__Group_4__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1396:1: rule__Page__Group_4__0 : rule__Page__Group_4__0__Impl rule__Page__Group_4__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1297:1: rule__Page__Group_4__0 : rule__Page__Group_4__0__Impl rule__Page__Group_4__1 ;
     public final void rule__Page__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1400:1: ( rule__Page__Group_4__0__Impl rule__Page__Group_4__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1401:2: rule__Page__Group_4__0__Impl rule__Page__Group_4__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1301:1: ( rule__Page__Group_4__0__Impl rule__Page__Group_4__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1302:2: rule__Page__Group_4__0__Impl rule__Page__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_4__0__Impl_in_rule__Page__Group_4__02752);
+            pushFollow(FOLLOW_rule__Page__Group_4__0__Impl_in_rule__Page__Group_4__02560);
             rule__Page__Group_4__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_4__1_in_rule__Page__Group_4__02755);
+            pushFollow(FOLLOW_rule__Page__Group_4__1_in_rule__Page__Group_4__02563);
             rule__Page__Group_4__1();
 
             state._fsp--;
@@ -3907,22 +3663,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_4__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1408:1: rule__Page__Group_4__0__Impl : ( 'description' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1309:1: rule__Page__Group_4__0__Impl : ( 'description' ) ;
     public final void rule__Page__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1412:1: ( ( 'description' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1413:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1313:1: ( ( 'description' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1314:1: ( 'description' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1413:1: ( 'description' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1414:1: 'description'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1314:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1315:1: 'description'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getDescriptionKeyword_4_0()); 
             }
-            match(input,21,FOLLOW_21_in_rule__Page__Group_4__0__Impl2783); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__Page__Group_4__0__Impl2591); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getDescriptionKeyword_4_0()); 
             }
@@ -3948,16 +3704,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_4__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1427:1: rule__Page__Group_4__1 : rule__Page__Group_4__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1328:1: rule__Page__Group_4__1 : rule__Page__Group_4__1__Impl ;
     public final void rule__Page__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1431:1: ( rule__Page__Group_4__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1432:2: rule__Page__Group_4__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1332:1: ( rule__Page__Group_4__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1333:2: rule__Page__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_4__1__Impl_in_rule__Page__Group_4__12814);
+            pushFollow(FOLLOW_rule__Page__Group_4__1__Impl_in_rule__Page__Group_4__12622);
             rule__Page__Group_4__1__Impl();
 
             state._fsp--;
@@ -3981,25 +3737,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_4__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1438:1: rule__Page__Group_4__1__Impl : ( ( rule__Page__DescriptionAssignment_4_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1339:1: rule__Page__Group_4__1__Impl : ( ( rule__Page__DescriptionAssignment_4_1 ) ) ;
     public final void rule__Page__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1442:1: ( ( ( rule__Page__DescriptionAssignment_4_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1443:1: ( ( rule__Page__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1343:1: ( ( ( rule__Page__DescriptionAssignment_4_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1344:1: ( ( rule__Page__DescriptionAssignment_4_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1443:1: ( ( rule__Page__DescriptionAssignment_4_1 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1444:1: ( rule__Page__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1344:1: ( ( rule__Page__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1345:1: ( rule__Page__DescriptionAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getDescriptionAssignment_4_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1445:1: ( rule__Page__DescriptionAssignment_4_1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1445:2: rule__Page__DescriptionAssignment_4_1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1346:1: ( rule__Page__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1346:2: rule__Page__DescriptionAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Page__DescriptionAssignment_4_1_in_rule__Page__Group_4__1__Impl2841);
+            pushFollow(FOLLOW_rule__Page__DescriptionAssignment_4_1_in_rule__Page__Group_4__1__Impl2649);
             rule__Page__DescriptionAssignment_4_1();
 
             state._fsp--;
@@ -4032,21 +3788,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_5__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1459:1: rule__Page__Group_5__0 : rule__Page__Group_5__0__Impl rule__Page__Group_5__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1360:1: rule__Page__Group_5__0 : rule__Page__Group_5__0__Impl rule__Page__Group_5__1 ;
     public final void rule__Page__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1463:1: ( rule__Page__Group_5__0__Impl rule__Page__Group_5__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1464:2: rule__Page__Group_5__0__Impl rule__Page__Group_5__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1364:1: ( rule__Page__Group_5__0__Impl rule__Page__Group_5__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1365:2: rule__Page__Group_5__0__Impl rule__Page__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_5__0__Impl_in_rule__Page__Group_5__02875);
+            pushFollow(FOLLOW_rule__Page__Group_5__0__Impl_in_rule__Page__Group_5__02683);
             rule__Page__Group_5__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_5__1_in_rule__Page__Group_5__02878);
+            pushFollow(FOLLOW_rule__Page__Group_5__1_in_rule__Page__Group_5__02686);
             rule__Page__Group_5__1();
 
             state._fsp--;
@@ -4070,22 +3826,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_5__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1471:1: rule__Page__Group_5__0__Impl : ( 'file' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1372:1: rule__Page__Group_5__0__Impl : ( 'file' ) ;
     public final void rule__Page__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1475:1: ( ( 'file' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1476:1: ( 'file' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1376:1: ( ( 'file' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1377:1: ( 'file' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1476:1: ( 'file' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1477:1: 'file'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1377:1: ( 'file' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1378:1: 'file'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getFileKeyword_5_0()); 
             }
-            match(input,22,FOLLOW_22_in_rule__Page__Group_5__0__Impl2906); if (state.failed) return ;
+            match(input,21,FOLLOW_21_in_rule__Page__Group_5__0__Impl2714); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getFileKeyword_5_0()); 
             }
@@ -4111,21 +3867,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_5__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1490:1: rule__Page__Group_5__1 : rule__Page__Group_5__1__Impl rule__Page__Group_5__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1391:1: rule__Page__Group_5__1 : rule__Page__Group_5__1__Impl rule__Page__Group_5__2 ;
     public final void rule__Page__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1494:1: ( rule__Page__Group_5__1__Impl rule__Page__Group_5__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1495:2: rule__Page__Group_5__1__Impl rule__Page__Group_5__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1395:1: ( rule__Page__Group_5__1__Impl rule__Page__Group_5__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1396:2: rule__Page__Group_5__1__Impl rule__Page__Group_5__2
             {
-            pushFollow(FOLLOW_rule__Page__Group_5__1__Impl_in_rule__Page__Group_5__12937);
+            pushFollow(FOLLOW_rule__Page__Group_5__1__Impl_in_rule__Page__Group_5__12745);
             rule__Page__Group_5__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_5__2_in_rule__Page__Group_5__12940);
+            pushFollow(FOLLOW_rule__Page__Group_5__2_in_rule__Page__Group_5__12748);
             rule__Page__Group_5__2();
 
             state._fsp--;
@@ -4149,22 +3905,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_5__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1502:1: rule__Page__Group_5__1__Impl : ( 'extension' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1403:1: rule__Page__Group_5__1__Impl : ( 'extension' ) ;
     public final void rule__Page__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1506:1: ( ( 'extension' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1507:1: ( 'extension' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1407:1: ( ( 'extension' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1408:1: ( 'extension' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1507:1: ( 'extension' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1508:1: 'extension'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1408:1: ( 'extension' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1409:1: 'extension'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getExtensionKeyword_5_1()); 
             }
-            match(input,23,FOLLOW_23_in_rule__Page__Group_5__1__Impl2968); if (state.failed) return ;
+            match(input,22,FOLLOW_22_in_rule__Page__Group_5__1__Impl2776); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getExtensionKeyword_5_1()); 
             }
@@ -4190,16 +3946,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_5__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1521:1: rule__Page__Group_5__2 : rule__Page__Group_5__2__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1422:1: rule__Page__Group_5__2 : rule__Page__Group_5__2__Impl ;
     public final void rule__Page__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1525:1: ( rule__Page__Group_5__2__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1526:2: rule__Page__Group_5__2__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1426:1: ( rule__Page__Group_5__2__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1427:2: rule__Page__Group_5__2__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_5__2__Impl_in_rule__Page__Group_5__22999);
+            pushFollow(FOLLOW_rule__Page__Group_5__2__Impl_in_rule__Page__Group_5__22807);
             rule__Page__Group_5__2__Impl();
 
             state._fsp--;
@@ -4223,25 +3979,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_5__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1532:1: rule__Page__Group_5__2__Impl : ( ( rule__Page__FileExtensionsAssignment_5_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1433:1: rule__Page__Group_5__2__Impl : ( ( rule__Page__FileExtensionsAssignment_5_2 ) ) ;
     public final void rule__Page__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1536:1: ( ( ( rule__Page__FileExtensionsAssignment_5_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1537:1: ( ( rule__Page__FileExtensionsAssignment_5_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1437:1: ( ( ( rule__Page__FileExtensionsAssignment_5_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1438:1: ( ( rule__Page__FileExtensionsAssignment_5_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1537:1: ( ( rule__Page__FileExtensionsAssignment_5_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1538:1: ( rule__Page__FileExtensionsAssignment_5_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1438:1: ( ( rule__Page__FileExtensionsAssignment_5_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1439:1: ( rule__Page__FileExtensionsAssignment_5_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getFileExtensionsAssignment_5_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1539:1: ( rule__Page__FileExtensionsAssignment_5_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1539:2: rule__Page__FileExtensionsAssignment_5_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1440:1: ( rule__Page__FileExtensionsAssignment_5_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1440:2: rule__Page__FileExtensionsAssignment_5_2
             {
-            pushFollow(FOLLOW_rule__Page__FileExtensionsAssignment_5_2_in_rule__Page__Group_5__2__Impl3026);
+            pushFollow(FOLLOW_rule__Page__FileExtensionsAssignment_5_2_in_rule__Page__Group_5__2__Impl2834);
             rule__Page__FileExtensionsAssignment_5_2();
 
             state._fsp--;
@@ -4274,21 +4030,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_6__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1555:1: rule__Page__Group_6__0 : rule__Page__Group_6__0__Impl rule__Page__Group_6__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1456:1: rule__Page__Group_6__0 : rule__Page__Group_6__0__Impl rule__Page__Group_6__1 ;
     public final void rule__Page__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1559:1: ( rule__Page__Group_6__0__Impl rule__Page__Group_6__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1560:2: rule__Page__Group_6__0__Impl rule__Page__Group_6__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1460:1: ( rule__Page__Group_6__0__Impl rule__Page__Group_6__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1461:2: rule__Page__Group_6__0__Impl rule__Page__Group_6__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_6__0__Impl_in_rule__Page__Group_6__03062);
+            pushFollow(FOLLOW_rule__Page__Group_6__0__Impl_in_rule__Page__Group_6__02870);
             rule__Page__Group_6__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_6__1_in_rule__Page__Group_6__03065);
+            pushFollow(FOLLOW_rule__Page__Group_6__1_in_rule__Page__Group_6__02873);
             rule__Page__Group_6__1();
 
             state._fsp--;
@@ -4312,22 +4068,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_6__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1567:1: rule__Page__Group_6__0__Impl : ( 'id' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1468:1: rule__Page__Group_6__0__Impl : ( 'id' ) ;
     public final void rule__Page__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1571:1: ( ( 'id' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1572:1: ( 'id' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1472:1: ( ( 'id' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1473:1: ( 'id' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1572:1: ( 'id' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1573:1: 'id'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1473:1: ( 'id' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1474:1: 'id'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getIdKeyword_6_0()); 
             }
-            match(input,24,FOLLOW_24_in_rule__Page__Group_6__0__Impl3093); if (state.failed) return ;
+            match(input,23,FOLLOW_23_in_rule__Page__Group_6__0__Impl2901); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getIdKeyword_6_0()); 
             }
@@ -4353,16 +4109,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_6__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1586:1: rule__Page__Group_6__1 : rule__Page__Group_6__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1487:1: rule__Page__Group_6__1 : rule__Page__Group_6__1__Impl ;
     public final void rule__Page__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1590:1: ( rule__Page__Group_6__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1591:2: rule__Page__Group_6__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1491:1: ( rule__Page__Group_6__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1492:2: rule__Page__Group_6__1__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_6__1__Impl_in_rule__Page__Group_6__13124);
+            pushFollow(FOLLOW_rule__Page__Group_6__1__Impl_in_rule__Page__Group_6__12932);
             rule__Page__Group_6__1__Impl();
 
             state._fsp--;
@@ -4386,25 +4142,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_6__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1597:1: rule__Page__Group_6__1__Impl : ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1498:1: rule__Page__Group_6__1__Impl : ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) ) ;
     public final void rule__Page__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1601:1: ( ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1602:1: ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1502:1: ( ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1503:1: ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1602:1: ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1603:1: ( rule__Page__ActivityExplorerItemIDAssignment_6_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1503:1: ( ( rule__Page__ActivityExplorerItemIDAssignment_6_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1504:1: ( rule__Page__ActivityExplorerItemIDAssignment_6_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getActivityExplorerItemIDAssignment_6_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1604:1: ( rule__Page__ActivityExplorerItemIDAssignment_6_1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1604:2: rule__Page__ActivityExplorerItemIDAssignment_6_1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1505:1: ( rule__Page__ActivityExplorerItemIDAssignment_6_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1505:2: rule__Page__ActivityExplorerItemIDAssignment_6_1
             {
-            pushFollow(FOLLOW_rule__Page__ActivityExplorerItemIDAssignment_6_1_in_rule__Page__Group_6__1__Impl3151);
+            pushFollow(FOLLOW_rule__Page__ActivityExplorerItemIDAssignment_6_1_in_rule__Page__Group_6__1__Impl2959);
             rule__Page__ActivityExplorerItemIDAssignment_6_1();
 
             state._fsp--;
@@ -4437,21 +4193,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1618:1: rule__Page__Group_10__0 : rule__Page__Group_10__0__Impl rule__Page__Group_10__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1519:1: rule__Page__Group_10__0 : rule__Page__Group_10__0__Impl rule__Page__Group_10__1 ;
     public final void rule__Page__Group_10__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1622:1: ( rule__Page__Group_10__0__Impl rule__Page__Group_10__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1623:2: rule__Page__Group_10__0__Impl rule__Page__Group_10__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1523:1: ( rule__Page__Group_10__0__Impl rule__Page__Group_10__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1524:2: rule__Page__Group_10__0__Impl rule__Page__Group_10__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_10__0__Impl_in_rule__Page__Group_10__03185);
+            pushFollow(FOLLOW_rule__Page__Group_10__0__Impl_in_rule__Page__Group_10__02993);
             rule__Page__Group_10__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10__1_in_rule__Page__Group_10__03188);
+            pushFollow(FOLLOW_rule__Page__Group_10__1_in_rule__Page__Group_10__02996);
             rule__Page__Group_10__1();
 
             state._fsp--;
@@ -4475,22 +4231,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1630:1: rule__Page__Group_10__0__Impl : ( 'header' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1531:1: rule__Page__Group_10__0__Impl : ( 'header' ) ;
     public final void rule__Page__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1634:1: ( ( 'header' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1635:1: ( 'header' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1535:1: ( ( 'header' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1536:1: ( 'header' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1635:1: ( 'header' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1636:1: 'header'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1536:1: ( 'header' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1537:1: 'header'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getHeaderKeyword_10_0()); 
             }
-            match(input,25,FOLLOW_25_in_rule__Page__Group_10__0__Impl3216); if (state.failed) return ;
+            match(input,24,FOLLOW_24_in_rule__Page__Group_10__0__Impl3024); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getHeaderKeyword_10_0()); 
             }
@@ -4516,21 +4272,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1649:1: rule__Page__Group_10__1 : rule__Page__Group_10__1__Impl rule__Page__Group_10__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1550:1: rule__Page__Group_10__1 : rule__Page__Group_10__1__Impl rule__Page__Group_10__2 ;
     public final void rule__Page__Group_10__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1653:1: ( rule__Page__Group_10__1__Impl rule__Page__Group_10__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1654:2: rule__Page__Group_10__1__Impl rule__Page__Group_10__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1554:1: ( rule__Page__Group_10__1__Impl rule__Page__Group_10__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1555:2: rule__Page__Group_10__1__Impl rule__Page__Group_10__2
             {
-            pushFollow(FOLLOW_rule__Page__Group_10__1__Impl_in_rule__Page__Group_10__13247);
+            pushFollow(FOLLOW_rule__Page__Group_10__1__Impl_in_rule__Page__Group_10__13055);
             rule__Page__Group_10__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10__2_in_rule__Page__Group_10__13250);
+            pushFollow(FOLLOW_rule__Page__Group_10__2_in_rule__Page__Group_10__13058);
             rule__Page__Group_10__2();
 
             state._fsp--;
@@ -4554,22 +4310,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1661:1: rule__Page__Group_10__1__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1562:1: rule__Page__Group_10__1__Impl : ( '{' ) ;
     public final void rule__Page__Group_10__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1665:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1666:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1566:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1567:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1666:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1667:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1567:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1568:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_10_1()); 
             }
-            match(input,15,FOLLOW_15_in_rule__Page__Group_10__1__Impl3278); if (state.failed) return ;
+            match(input,15,FOLLOW_15_in_rule__Page__Group_10__1__Impl3086); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_10_1()); 
             }
@@ -4595,21 +4351,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1680:1: rule__Page__Group_10__2 : rule__Page__Group_10__2__Impl rule__Page__Group_10__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1581:1: rule__Page__Group_10__2 : rule__Page__Group_10__2__Impl rule__Page__Group_10__3 ;
     public final void rule__Page__Group_10__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1684:1: ( rule__Page__Group_10__2__Impl rule__Page__Group_10__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1685:2: rule__Page__Group_10__2__Impl rule__Page__Group_10__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1585:1: ( rule__Page__Group_10__2__Impl rule__Page__Group_10__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1586:2: rule__Page__Group_10__2__Impl rule__Page__Group_10__3
             {
-            pushFollow(FOLLOW_rule__Page__Group_10__2__Impl_in_rule__Page__Group_10__23309);
+            pushFollow(FOLLOW_rule__Page__Group_10__2__Impl_in_rule__Page__Group_10__23117);
             rule__Page__Group_10__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10__3_in_rule__Page__Group_10__23312);
+            pushFollow(FOLLOW_rule__Page__Group_10__3_in_rule__Page__Group_10__23120);
             rule__Page__Group_10__3();
 
             state._fsp--;
@@ -4633,37 +4389,37 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1692:1: rule__Page__Group_10__2__Impl : ( ( rule__Page__Group_10_2__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1593:1: rule__Page__Group_10__2__Impl : ( ( rule__Page__Group_10_2__0 )? ) ;
     public final void rule__Page__Group_10__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1696:1: ( ( ( rule__Page__Group_10_2__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1697:1: ( ( rule__Page__Group_10_2__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1597:1: ( ( ( rule__Page__Group_10_2__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1598:1: ( ( rule__Page__Group_10_2__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1697:1: ( ( rule__Page__Group_10_2__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1698:1: ( rule__Page__Group_10_2__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1598:1: ( ( rule__Page__Group_10_2__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1599:1: ( rule__Page__Group_10_2__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getGroup_10_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1699:1: ( rule__Page__Group_10_2__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1600:1: ( rule__Page__Group_10_2__0 )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==26) ) {
+            if ( (LA15_0==25) ) {
                 int LA15_1 = input.LA(2);
 
-                if ( (LA15_1==27) ) {
+                if ( (LA15_1==26) ) {
                     alt15=1;
                 }
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1699:2: rule__Page__Group_10_2__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1600:2: rule__Page__Group_10_2__0
                     {
-                    pushFollow(FOLLOW_rule__Page__Group_10_2__0_in_rule__Page__Group_10__2__Impl3339);
+                    pushFollow(FOLLOW_rule__Page__Group_10_2__0_in_rule__Page__Group_10__2__Impl3147);
                     rule__Page__Group_10_2__0();
 
                     state._fsp--;
@@ -4699,21 +4455,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1709:1: rule__Page__Group_10__3 : rule__Page__Group_10__3__Impl rule__Page__Group_10__4 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1610:1: rule__Page__Group_10__3 : rule__Page__Group_10__3__Impl rule__Page__Group_10__4 ;
     public final void rule__Page__Group_10__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1713:1: ( rule__Page__Group_10__3__Impl rule__Page__Group_10__4 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1714:2: rule__Page__Group_10__3__Impl rule__Page__Group_10__4
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1614:1: ( rule__Page__Group_10__3__Impl rule__Page__Group_10__4 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1615:2: rule__Page__Group_10__3__Impl rule__Page__Group_10__4
             {
-            pushFollow(FOLLOW_rule__Page__Group_10__3__Impl_in_rule__Page__Group_10__33370);
+            pushFollow(FOLLOW_rule__Page__Group_10__3__Impl_in_rule__Page__Group_10__33178);
             rule__Page__Group_10__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10__4_in_rule__Page__Group_10__33373);
+            pushFollow(FOLLOW_rule__Page__Group_10__4_in_rule__Page__Group_10__33181);
             rule__Page__Group_10__4();
 
             state._fsp--;
@@ -4737,33 +4493,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1721:1: rule__Page__Group_10__3__Impl : ( ( rule__Page__Group_10_3__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1622:1: rule__Page__Group_10__3__Impl : ( ( rule__Page__Group_10_3__0 )? ) ;
     public final void rule__Page__Group_10__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1725:1: ( ( ( rule__Page__Group_10_3__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1726:1: ( ( rule__Page__Group_10_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1626:1: ( ( ( rule__Page__Group_10_3__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1627:1: ( ( rule__Page__Group_10_3__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1726:1: ( ( rule__Page__Group_10_3__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1727:1: ( rule__Page__Group_10_3__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1627:1: ( ( rule__Page__Group_10_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1628:1: ( rule__Page__Group_10_3__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getGroup_10_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1728:1: ( rule__Page__Group_10_3__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1629:1: ( rule__Page__Group_10_3__0 )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==26) ) {
+            if ( (LA16_0==25) ) {
                 alt16=1;
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1728:2: rule__Page__Group_10_3__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1629:2: rule__Page__Group_10_3__0
                     {
-                    pushFollow(FOLLOW_rule__Page__Group_10_3__0_in_rule__Page__Group_10__3__Impl3400);
+                    pushFollow(FOLLOW_rule__Page__Group_10_3__0_in_rule__Page__Group_10__3__Impl3208);
                     rule__Page__Group_10_3__0();
 
                     state._fsp--;
@@ -4799,16 +4555,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__4"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1738:1: rule__Page__Group_10__4 : rule__Page__Group_10__4__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1639:1: rule__Page__Group_10__4 : rule__Page__Group_10__4__Impl ;
     public final void rule__Page__Group_10__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1742:1: ( rule__Page__Group_10__4__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1743:2: rule__Page__Group_10__4__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1643:1: ( rule__Page__Group_10__4__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1644:2: rule__Page__Group_10__4__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_10__4__Impl_in_rule__Page__Group_10__43431);
+            pushFollow(FOLLOW_rule__Page__Group_10__4__Impl_in_rule__Page__Group_10__43239);
             rule__Page__Group_10__4__Impl();
 
             state._fsp--;
@@ -4832,22 +4588,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10__4__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1749:1: rule__Page__Group_10__4__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1650:1: rule__Page__Group_10__4__Impl : ( '}' ) ;
     public final void rule__Page__Group_10__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1753:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1754:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1654:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1655:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1754:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1755:1: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1655:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1656:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_10_4()); 
             }
-            match(input,16,FOLLOW_16_in_rule__Page__Group_10__4__Impl3459); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__Page__Group_10__4__Impl3267); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_10_4()); 
             }
@@ -4873,21 +4629,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1778:1: rule__Page__Group_10_2__0 : rule__Page__Group_10_2__0__Impl rule__Page__Group_10_2__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1679:1: rule__Page__Group_10_2__0 : rule__Page__Group_10_2__0__Impl rule__Page__Group_10_2__1 ;
     public final void rule__Page__Group_10_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1782:1: ( rule__Page__Group_10_2__0__Impl rule__Page__Group_10_2__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1783:2: rule__Page__Group_10_2__0__Impl rule__Page__Group_10_2__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1683:1: ( rule__Page__Group_10_2__0__Impl rule__Page__Group_10_2__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1684:2: rule__Page__Group_10_2__0__Impl rule__Page__Group_10_2__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_2__0__Impl_in_rule__Page__Group_10_2__03500);
+            pushFollow(FOLLOW_rule__Page__Group_10_2__0__Impl_in_rule__Page__Group_10_2__03308);
             rule__Page__Group_10_2__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10_2__1_in_rule__Page__Group_10_2__03503);
+            pushFollow(FOLLOW_rule__Page__Group_10_2__1_in_rule__Page__Group_10_2__03311);
             rule__Page__Group_10_2__1();
 
             state._fsp--;
@@ -4911,22 +4667,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1790:1: rule__Page__Group_10_2__0__Impl : ( 'image' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1691:1: rule__Page__Group_10_2__0__Impl : ( 'image' ) ;
     public final void rule__Page__Group_10_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1794:1: ( ( 'image' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1795:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1695:1: ( ( 'image' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1696:1: ( 'image' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1795:1: ( 'image' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1796:1: 'image'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1696:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1697:1: 'image'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getImageKeyword_10_2_0()); 
             }
-            match(input,26,FOLLOW_26_in_rule__Page__Group_10_2__0__Impl3531); if (state.failed) return ;
+            match(input,25,FOLLOW_25_in_rule__Page__Group_10_2__0__Impl3339); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getImageKeyword_10_2_0()); 
             }
@@ -4952,21 +4708,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1809:1: rule__Page__Group_10_2__1 : rule__Page__Group_10_2__1__Impl rule__Page__Group_10_2__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1710:1: rule__Page__Group_10_2__1 : rule__Page__Group_10_2__1__Impl rule__Page__Group_10_2__2 ;
     public final void rule__Page__Group_10_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1813:1: ( rule__Page__Group_10_2__1__Impl rule__Page__Group_10_2__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1814:2: rule__Page__Group_10_2__1__Impl rule__Page__Group_10_2__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1714:1: ( rule__Page__Group_10_2__1__Impl rule__Page__Group_10_2__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1715:2: rule__Page__Group_10_2__1__Impl rule__Page__Group_10_2__2
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_2__1__Impl_in_rule__Page__Group_10_2__13562);
+            pushFollow(FOLLOW_rule__Page__Group_10_2__1__Impl_in_rule__Page__Group_10_2__13370);
             rule__Page__Group_10_2__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10_2__2_in_rule__Page__Group_10_2__13565);
+            pushFollow(FOLLOW_rule__Page__Group_10_2__2_in_rule__Page__Group_10_2__13373);
             rule__Page__Group_10_2__2();
 
             state._fsp--;
@@ -4990,22 +4746,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1821:1: rule__Page__Group_10_2__1__Impl : ( 'on' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1722:1: rule__Page__Group_10_2__1__Impl : ( 'on' ) ;
     public final void rule__Page__Group_10_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1825:1: ( ( 'on' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1826:1: ( 'on' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1726:1: ( ( 'on' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1727:1: ( 'on' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1826:1: ( 'on' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1827:1: 'on'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1727:1: ( 'on' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1728:1: 'on'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getOnKeyword_10_2_1()); 
             }
-            match(input,27,FOLLOW_27_in_rule__Page__Group_10_2__1__Impl3593); if (state.failed) return ;
+            match(input,26,FOLLOW_26_in_rule__Page__Group_10_2__1__Impl3401); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getOnKeyword_10_2_1()); 
             }
@@ -5031,21 +4787,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1840:1: rule__Page__Group_10_2__2 : rule__Page__Group_10_2__2__Impl rule__Page__Group_10_2__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1741:1: rule__Page__Group_10_2__2 : rule__Page__Group_10_2__2__Impl rule__Page__Group_10_2__3 ;
     public final void rule__Page__Group_10_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1844:1: ( rule__Page__Group_10_2__2__Impl rule__Page__Group_10_2__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1845:2: rule__Page__Group_10_2__2__Impl rule__Page__Group_10_2__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1745:1: ( rule__Page__Group_10_2__2__Impl rule__Page__Group_10_2__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1746:2: rule__Page__Group_10_2__2__Impl rule__Page__Group_10_2__3
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_2__2__Impl_in_rule__Page__Group_10_2__23624);
+            pushFollow(FOLLOW_rule__Page__Group_10_2__2__Impl_in_rule__Page__Group_10_2__23432);
             rule__Page__Group_10_2__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10_2__3_in_rule__Page__Group_10_2__23627);
+            pushFollow(FOLLOW_rule__Page__Group_10_2__3_in_rule__Page__Group_10_2__23435);
             rule__Page__Group_10_2__3();
 
             state._fsp--;
@@ -5069,22 +4825,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1852:1: rule__Page__Group_10_2__2__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1753:1: rule__Page__Group_10_2__2__Impl : ( ':' ) ;
     public final void rule__Page__Group_10_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1856:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1857:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1757:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1758:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1857:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1858:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1758:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1759:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getColonKeyword_10_2_2()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Page__Group_10_2__2__Impl3655); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Page__Group_10_2__2__Impl3463); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getColonKeyword_10_2_2()); 
             }
@@ -5110,16 +4866,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1871:1: rule__Page__Group_10_2__3 : rule__Page__Group_10_2__3__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1772:1: rule__Page__Group_10_2__3 : rule__Page__Group_10_2__3__Impl ;
     public final void rule__Page__Group_10_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1875:1: ( rule__Page__Group_10_2__3__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1876:2: rule__Page__Group_10_2__3__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1776:1: ( rule__Page__Group_10_2__3__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1777:2: rule__Page__Group_10_2__3__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_2__3__Impl_in_rule__Page__Group_10_2__33686);
+            pushFollow(FOLLOW_rule__Page__Group_10_2__3__Impl_in_rule__Page__Group_10_2__33494);
             rule__Page__Group_10_2__3__Impl();
 
             state._fsp--;
@@ -5143,25 +4899,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_2__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1882:1: rule__Page__Group_10_2__3__Impl : ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1783:1: rule__Page__Group_10_2__3__Impl : ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) ) ;
     public final void rule__Page__Group_10_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1886:1: ( ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1887:1: ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1787:1: ( ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1788:1: ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1887:1: ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1888:1: ( rule__Page__ImagePathOnAssignment_10_2_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1788:1: ( ( rule__Page__ImagePathOnAssignment_10_2_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1789:1: ( rule__Page__ImagePathOnAssignment_10_2_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getImagePathOnAssignment_10_2_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1889:1: ( rule__Page__ImagePathOnAssignment_10_2_3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1889:2: rule__Page__ImagePathOnAssignment_10_2_3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1790:1: ( rule__Page__ImagePathOnAssignment_10_2_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1790:2: rule__Page__ImagePathOnAssignment_10_2_3
             {
-            pushFollow(FOLLOW_rule__Page__ImagePathOnAssignment_10_2_3_in_rule__Page__Group_10_2__3__Impl3713);
+            pushFollow(FOLLOW_rule__Page__ImagePathOnAssignment_10_2_3_in_rule__Page__Group_10_2__3__Impl3521);
             rule__Page__ImagePathOnAssignment_10_2_3();
 
             state._fsp--;
@@ -5194,21 +4950,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1907:1: rule__Page__Group_10_3__0 : rule__Page__Group_10_3__0__Impl rule__Page__Group_10_3__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1808:1: rule__Page__Group_10_3__0 : rule__Page__Group_10_3__0__Impl rule__Page__Group_10_3__1 ;
     public final void rule__Page__Group_10_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1911:1: ( rule__Page__Group_10_3__0__Impl rule__Page__Group_10_3__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1912:2: rule__Page__Group_10_3__0__Impl rule__Page__Group_10_3__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1812:1: ( rule__Page__Group_10_3__0__Impl rule__Page__Group_10_3__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1813:2: rule__Page__Group_10_3__0__Impl rule__Page__Group_10_3__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_3__0__Impl_in_rule__Page__Group_10_3__03751);
+            pushFollow(FOLLOW_rule__Page__Group_10_3__0__Impl_in_rule__Page__Group_10_3__03559);
             rule__Page__Group_10_3__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10_3__1_in_rule__Page__Group_10_3__03754);
+            pushFollow(FOLLOW_rule__Page__Group_10_3__1_in_rule__Page__Group_10_3__03562);
             rule__Page__Group_10_3__1();
 
             state._fsp--;
@@ -5232,22 +4988,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1919:1: rule__Page__Group_10_3__0__Impl : ( 'image' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1820:1: rule__Page__Group_10_3__0__Impl : ( 'image' ) ;
     public final void rule__Page__Group_10_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1923:1: ( ( 'image' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1924:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1824:1: ( ( 'image' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1825:1: ( 'image' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1924:1: ( 'image' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1925:1: 'image'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1825:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1826:1: 'image'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getImageKeyword_10_3_0()); 
             }
-            match(input,26,FOLLOW_26_in_rule__Page__Group_10_3__0__Impl3782); if (state.failed) return ;
+            match(input,25,FOLLOW_25_in_rule__Page__Group_10_3__0__Impl3590); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getImageKeyword_10_3_0()); 
             }
@@ -5273,21 +5029,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1938:1: rule__Page__Group_10_3__1 : rule__Page__Group_10_3__1__Impl rule__Page__Group_10_3__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1839:1: rule__Page__Group_10_3__1 : rule__Page__Group_10_3__1__Impl rule__Page__Group_10_3__2 ;
     public final void rule__Page__Group_10_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1942:1: ( rule__Page__Group_10_3__1__Impl rule__Page__Group_10_3__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1943:2: rule__Page__Group_10_3__1__Impl rule__Page__Group_10_3__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1843:1: ( rule__Page__Group_10_3__1__Impl rule__Page__Group_10_3__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1844:2: rule__Page__Group_10_3__1__Impl rule__Page__Group_10_3__2
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_3__1__Impl_in_rule__Page__Group_10_3__13813);
+            pushFollow(FOLLOW_rule__Page__Group_10_3__1__Impl_in_rule__Page__Group_10_3__13621);
             rule__Page__Group_10_3__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10_3__2_in_rule__Page__Group_10_3__13816);
+            pushFollow(FOLLOW_rule__Page__Group_10_3__2_in_rule__Page__Group_10_3__13624);
             rule__Page__Group_10_3__2();
 
             state._fsp--;
@@ -5311,22 +5067,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1950:1: rule__Page__Group_10_3__1__Impl : ( 'off' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1851:1: rule__Page__Group_10_3__1__Impl : ( 'off' ) ;
     public final void rule__Page__Group_10_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1954:1: ( ( 'off' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1955:1: ( 'off' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1855:1: ( ( 'off' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1856:1: ( 'off' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1955:1: ( 'off' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1956:1: 'off'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1856:1: ( 'off' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1857:1: 'off'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getOffKeyword_10_3_1()); 
             }
-            match(input,29,FOLLOW_29_in_rule__Page__Group_10_3__1__Impl3844); if (state.failed) return ;
+            match(input,28,FOLLOW_28_in_rule__Page__Group_10_3__1__Impl3652); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getOffKeyword_10_3_1()); 
             }
@@ -5352,21 +5108,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1969:1: rule__Page__Group_10_3__2 : rule__Page__Group_10_3__2__Impl rule__Page__Group_10_3__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1870:1: rule__Page__Group_10_3__2 : rule__Page__Group_10_3__2__Impl rule__Page__Group_10_3__3 ;
     public final void rule__Page__Group_10_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1973:1: ( rule__Page__Group_10_3__2__Impl rule__Page__Group_10_3__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1974:2: rule__Page__Group_10_3__2__Impl rule__Page__Group_10_3__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1874:1: ( rule__Page__Group_10_3__2__Impl rule__Page__Group_10_3__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1875:2: rule__Page__Group_10_3__2__Impl rule__Page__Group_10_3__3
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_3__2__Impl_in_rule__Page__Group_10_3__23875);
+            pushFollow(FOLLOW_rule__Page__Group_10_3__2__Impl_in_rule__Page__Group_10_3__23683);
             rule__Page__Group_10_3__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_10_3__3_in_rule__Page__Group_10_3__23878);
+            pushFollow(FOLLOW_rule__Page__Group_10_3__3_in_rule__Page__Group_10_3__23686);
             rule__Page__Group_10_3__3();
 
             state._fsp--;
@@ -5390,22 +5146,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1981:1: rule__Page__Group_10_3__2__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1882:1: rule__Page__Group_10_3__2__Impl : ( ':' ) ;
     public final void rule__Page__Group_10_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1985:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1986:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1886:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1887:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1986:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1987:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1887:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1888:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getColonKeyword_10_3_2()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Page__Group_10_3__2__Impl3906); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Page__Group_10_3__2__Impl3714); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getColonKeyword_10_3_2()); 
             }
@@ -5431,16 +5187,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2000:1: rule__Page__Group_10_3__3 : rule__Page__Group_10_3__3__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1901:1: rule__Page__Group_10_3__3 : rule__Page__Group_10_3__3__Impl ;
     public final void rule__Page__Group_10_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2004:1: ( rule__Page__Group_10_3__3__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2005:2: rule__Page__Group_10_3__3__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1905:1: ( rule__Page__Group_10_3__3__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1906:2: rule__Page__Group_10_3__3__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_10_3__3__Impl_in_rule__Page__Group_10_3__33937);
+            pushFollow(FOLLOW_rule__Page__Group_10_3__3__Impl_in_rule__Page__Group_10_3__33745);
             rule__Page__Group_10_3__3__Impl();
 
             state._fsp--;
@@ -5464,25 +5220,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_10_3__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2011:1: rule__Page__Group_10_3__3__Impl : ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1912:1: rule__Page__Group_10_3__3__Impl : ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) ) ;
     public final void rule__Page__Group_10_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2015:1: ( ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2016:1: ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1916:1: ( ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1917:1: ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2016:1: ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2017:1: ( rule__Page__ImagePathOffAssignment_10_3_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1917:1: ( ( rule__Page__ImagePathOffAssignment_10_3_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1918:1: ( rule__Page__ImagePathOffAssignment_10_3_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getImagePathOffAssignment_10_3_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2018:1: ( rule__Page__ImagePathOffAssignment_10_3_3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2018:2: rule__Page__ImagePathOffAssignment_10_3_3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1919:1: ( rule__Page__ImagePathOffAssignment_10_3_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1919:2: rule__Page__ImagePathOffAssignment_10_3_3
             {
-            pushFollow(FOLLOW_rule__Page__ImagePathOffAssignment_10_3_3_in_rule__Page__Group_10_3__3__Impl3964);
+            pushFollow(FOLLOW_rule__Page__ImagePathOffAssignment_10_3_3_in_rule__Page__Group_10_3__3__Impl3772);
             rule__Page__ImagePathOffAssignment_10_3_3();
 
             state._fsp--;
@@ -5515,21 +5271,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_11__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2036:1: rule__Page__Group_11__0 : rule__Page__Group_11__0__Impl rule__Page__Group_11__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1937:1: rule__Page__Group_11__0 : rule__Page__Group_11__0__Impl rule__Page__Group_11__1 ;
     public final void rule__Page__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2040:1: ( rule__Page__Group_11__0__Impl rule__Page__Group_11__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2041:2: rule__Page__Group_11__0__Impl rule__Page__Group_11__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1941:1: ( rule__Page__Group_11__0__Impl rule__Page__Group_11__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1942:2: rule__Page__Group_11__0__Impl rule__Page__Group_11__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_11__0__Impl_in_rule__Page__Group_11__04002);
+            pushFollow(FOLLOW_rule__Page__Group_11__0__Impl_in_rule__Page__Group_11__03810);
             rule__Page__Group_11__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_11__1_in_rule__Page__Group_11__04005);
+            pushFollow(FOLLOW_rule__Page__Group_11__1_in_rule__Page__Group_11__03813);
             rule__Page__Group_11__1();
 
             state._fsp--;
@@ -5553,22 +5309,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_11__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2048:1: rule__Page__Group_11__0__Impl : ( 'tab' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1949:1: rule__Page__Group_11__0__Impl : ( 'tab' ) ;
     public final void rule__Page__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2052:1: ( ( 'tab' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2053:1: ( 'tab' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1953:1: ( ( 'tab' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1954:1: ( 'tab' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2053:1: ( 'tab' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2054:1: 'tab'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1954:1: ( 'tab' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1955:1: 'tab'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getTabKeyword_11_0()); 
             }
-            match(input,30,FOLLOW_30_in_rule__Page__Group_11__0__Impl4033); if (state.failed) return ;
+            match(input,29,FOLLOW_29_in_rule__Page__Group_11__0__Impl3841); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getTabKeyword_11_0()); 
             }
@@ -5594,21 +5350,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_11__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2067:1: rule__Page__Group_11__1 : rule__Page__Group_11__1__Impl rule__Page__Group_11__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1968:1: rule__Page__Group_11__1 : rule__Page__Group_11__1__Impl rule__Page__Group_11__2 ;
     public final void rule__Page__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2071:1: ( rule__Page__Group_11__1__Impl rule__Page__Group_11__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2072:2: rule__Page__Group_11__1__Impl rule__Page__Group_11__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1972:1: ( rule__Page__Group_11__1__Impl rule__Page__Group_11__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1973:2: rule__Page__Group_11__1__Impl rule__Page__Group_11__2
             {
-            pushFollow(FOLLOW_rule__Page__Group_11__1__Impl_in_rule__Page__Group_11__14064);
+            pushFollow(FOLLOW_rule__Page__Group_11__1__Impl_in_rule__Page__Group_11__13872);
             rule__Page__Group_11__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_11__2_in_rule__Page__Group_11__14067);
+            pushFollow(FOLLOW_rule__Page__Group_11__2_in_rule__Page__Group_11__13875);
             rule__Page__Group_11__2();
 
             state._fsp--;
@@ -5632,22 +5388,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_11__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2079:1: rule__Page__Group_11__1__Impl : ( 'name' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1980:1: rule__Page__Group_11__1__Impl : ( 'name' ) ;
     public final void rule__Page__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2083:1: ( ( 'name' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2084:1: ( 'name' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1984:1: ( ( 'name' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1985:1: ( 'name' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2084:1: ( 'name' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2085:1: 'name'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1985:1: ( 'name' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1986:1: 'name'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getNameKeyword_11_1()); 
             }
-            match(input,31,FOLLOW_31_in_rule__Page__Group_11__1__Impl4095); if (state.failed) return ;
+            match(input,30,FOLLOW_30_in_rule__Page__Group_11__1__Impl3903); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getNameKeyword_11_1()); 
             }
@@ -5673,16 +5429,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_11__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2098:1: rule__Page__Group_11__2 : rule__Page__Group_11__2__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1999:1: rule__Page__Group_11__2 : rule__Page__Group_11__2__Impl ;
     public final void rule__Page__Group_11__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2102:1: ( rule__Page__Group_11__2__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2103:2: rule__Page__Group_11__2__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2003:1: ( rule__Page__Group_11__2__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2004:2: rule__Page__Group_11__2__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_11__2__Impl_in_rule__Page__Group_11__24126);
+            pushFollow(FOLLOW_rule__Page__Group_11__2__Impl_in_rule__Page__Group_11__23934);
             rule__Page__Group_11__2__Impl();
 
             state._fsp--;
@@ -5706,25 +5462,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_11__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2109:1: rule__Page__Group_11__2__Impl : ( ( rule__Page__TabNameAssignment_11_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2010:1: rule__Page__Group_11__2__Impl : ( ( rule__Page__TabNameAssignment_11_2 ) ) ;
     public final void rule__Page__Group_11__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2113:1: ( ( ( rule__Page__TabNameAssignment_11_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2114:1: ( ( rule__Page__TabNameAssignment_11_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2014:1: ( ( ( rule__Page__TabNameAssignment_11_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2015:1: ( ( rule__Page__TabNameAssignment_11_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2114:1: ( ( rule__Page__TabNameAssignment_11_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2115:1: ( rule__Page__TabNameAssignment_11_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2015:1: ( ( rule__Page__TabNameAssignment_11_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2016:1: ( rule__Page__TabNameAssignment_11_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getTabNameAssignment_11_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2116:1: ( rule__Page__TabNameAssignment_11_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2116:2: rule__Page__TabNameAssignment_11_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2017:1: ( rule__Page__TabNameAssignment_11_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2017:2: rule__Page__TabNameAssignment_11_2
             {
-            pushFollow(FOLLOW_rule__Page__TabNameAssignment_11_2_in_rule__Page__Group_11__2__Impl4153);
+            pushFollow(FOLLOW_rule__Page__TabNameAssignment_11_2_in_rule__Page__Group_11__2__Impl3961);
             rule__Page__TabNameAssignment_11_2();
 
             state._fsp--;
@@ -5757,21 +5513,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_12__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2132:1: rule__Page__Group_12__0 : rule__Page__Group_12__0__Impl rule__Page__Group_12__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2033:1: rule__Page__Group_12__0 : rule__Page__Group_12__0__Impl rule__Page__Group_12__1 ;
     public final void rule__Page__Group_12__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2136:1: ( rule__Page__Group_12__0__Impl rule__Page__Group_12__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2137:2: rule__Page__Group_12__0__Impl rule__Page__Group_12__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2037:1: ( rule__Page__Group_12__0__Impl rule__Page__Group_12__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2038:2: rule__Page__Group_12__0__Impl rule__Page__Group_12__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_12__0__Impl_in_rule__Page__Group_12__04189);
+            pushFollow(FOLLOW_rule__Page__Group_12__0__Impl_in_rule__Page__Group_12__03997);
             rule__Page__Group_12__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_12__1_in_rule__Page__Group_12__04192);
+            pushFollow(FOLLOW_rule__Page__Group_12__1_in_rule__Page__Group_12__04000);
             rule__Page__Group_12__1();
 
             state._fsp--;
@@ -5795,22 +5551,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_12__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2144:1: rule__Page__Group_12__0__Impl : ( 'predicated' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2045:1: rule__Page__Group_12__0__Impl : ( 'predicated' ) ;
     public final void rule__Page__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2148:1: ( ( 'predicated' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2149:1: ( 'predicated' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2049:1: ( ( 'predicated' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2050:1: ( 'predicated' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2149:1: ( 'predicated' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2150:1: 'predicated'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2050:1: ( 'predicated' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2051:1: 'predicated'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getPredicatedKeyword_12_0()); 
             }
-            match(input,32,FOLLOW_32_in_rule__Page__Group_12__0__Impl4220); if (state.failed) return ;
+            match(input,31,FOLLOW_31_in_rule__Page__Group_12__0__Impl4028); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getPredicatedKeyword_12_0()); 
             }
@@ -5836,21 +5592,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_12__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2163:1: rule__Page__Group_12__1 : rule__Page__Group_12__1__Impl rule__Page__Group_12__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2064:1: rule__Page__Group_12__1 : rule__Page__Group_12__1__Impl rule__Page__Group_12__2 ;
     public final void rule__Page__Group_12__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2167:1: ( rule__Page__Group_12__1__Impl rule__Page__Group_12__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2168:2: rule__Page__Group_12__1__Impl rule__Page__Group_12__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2068:1: ( rule__Page__Group_12__1__Impl rule__Page__Group_12__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2069:2: rule__Page__Group_12__1__Impl rule__Page__Group_12__2
             {
-            pushFollow(FOLLOW_rule__Page__Group_12__1__Impl_in_rule__Page__Group_12__14251);
+            pushFollow(FOLLOW_rule__Page__Group_12__1__Impl_in_rule__Page__Group_12__14059);
             rule__Page__Group_12__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_12__2_in_rule__Page__Group_12__14254);
+            pushFollow(FOLLOW_rule__Page__Group_12__2_in_rule__Page__Group_12__14062);
             rule__Page__Group_12__2();
 
             state._fsp--;
@@ -5874,22 +5630,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_12__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2175:1: rule__Page__Group_12__1__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2076:1: rule__Page__Group_12__1__Impl : ( ':' ) ;
     public final void rule__Page__Group_12__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2179:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2180:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2080:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2081:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2180:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2181:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2081:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2082:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getColonKeyword_12_1()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Page__Group_12__1__Impl4282); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Page__Group_12__1__Impl4090); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getColonKeyword_12_1()); 
             }
@@ -5915,16 +5671,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_12__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2194:1: rule__Page__Group_12__2 : rule__Page__Group_12__2__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2095:1: rule__Page__Group_12__2 : rule__Page__Group_12__2__Impl ;
     public final void rule__Page__Group_12__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2198:1: ( rule__Page__Group_12__2__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2199:2: rule__Page__Group_12__2__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2099:1: ( rule__Page__Group_12__2__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2100:2: rule__Page__Group_12__2__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_12__2__Impl_in_rule__Page__Group_12__24313);
+            pushFollow(FOLLOW_rule__Page__Group_12__2__Impl_in_rule__Page__Group_12__24121);
             rule__Page__Group_12__2__Impl();
 
             state._fsp--;
@@ -5948,25 +5704,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_12__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2205:1: rule__Page__Group_12__2__Impl : ( ( rule__Page__HasPredicateAssignment_12_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2106:1: rule__Page__Group_12__2__Impl : ( ( rule__Page__HasPredicateAssignment_12_2 ) ) ;
     public final void rule__Page__Group_12__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2209:1: ( ( ( rule__Page__HasPredicateAssignment_12_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2210:1: ( ( rule__Page__HasPredicateAssignment_12_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2110:1: ( ( ( rule__Page__HasPredicateAssignment_12_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2111:1: ( ( rule__Page__HasPredicateAssignment_12_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2210:1: ( ( rule__Page__HasPredicateAssignment_12_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2211:1: ( rule__Page__HasPredicateAssignment_12_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2111:1: ( ( rule__Page__HasPredicateAssignment_12_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2112:1: ( rule__Page__HasPredicateAssignment_12_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getHasPredicateAssignment_12_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2212:1: ( rule__Page__HasPredicateAssignment_12_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2212:2: rule__Page__HasPredicateAssignment_12_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2113:1: ( rule__Page__HasPredicateAssignment_12_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2113:2: rule__Page__HasPredicateAssignment_12_2
             {
-            pushFollow(FOLLOW_rule__Page__HasPredicateAssignment_12_2_in_rule__Page__Group_12__2__Impl4340);
+            pushFollow(FOLLOW_rule__Page__HasPredicateAssignment_12_2_in_rule__Page__Group_12__2__Impl4148);
             rule__Page__HasPredicateAssignment_12_2();
 
             state._fsp--;
@@ -5999,21 +5755,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2228:1: rule__Page__Group_13__0 : rule__Page__Group_13__0__Impl rule__Page__Group_13__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2129:1: rule__Page__Group_13__0 : rule__Page__Group_13__0__Impl rule__Page__Group_13__1 ;
     public final void rule__Page__Group_13__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2232:1: ( rule__Page__Group_13__0__Impl rule__Page__Group_13__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2233:2: rule__Page__Group_13__0__Impl rule__Page__Group_13__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2133:1: ( rule__Page__Group_13__0__Impl rule__Page__Group_13__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2134:2: rule__Page__Group_13__0__Impl rule__Page__Group_13__1
             {
-            pushFollow(FOLLOW_rule__Page__Group_13__0__Impl_in_rule__Page__Group_13__04376);
+            pushFollow(FOLLOW_rule__Page__Group_13__0__Impl_in_rule__Page__Group_13__04184);
             rule__Page__Group_13__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_13__1_in_rule__Page__Group_13__04379);
+            pushFollow(FOLLOW_rule__Page__Group_13__1_in_rule__Page__Group_13__04187);
             rule__Page__Group_13__1();
 
             state._fsp--;
@@ -6037,22 +5793,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2240:1: rule__Page__Group_13__0__Impl : ( 'show' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2141:1: rule__Page__Group_13__0__Impl : ( 'show' ) ;
     public final void rule__Page__Group_13__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2244:1: ( ( 'show' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2245:1: ( 'show' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2145:1: ( ( 'show' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2146:1: ( 'show' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2245:1: ( 'show' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2246:1: 'show'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2146:1: ( 'show' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2147:1: 'show'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getShowKeyword_13_0()); 
             }
-            match(input,33,FOLLOW_33_in_rule__Page__Group_13__0__Impl4407); if (state.failed) return ;
+            match(input,32,FOLLOW_32_in_rule__Page__Group_13__0__Impl4215); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getShowKeyword_13_0()); 
             }
@@ -6078,21 +5834,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2259:1: rule__Page__Group_13__1 : rule__Page__Group_13__1__Impl rule__Page__Group_13__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2160:1: rule__Page__Group_13__1 : rule__Page__Group_13__1__Impl rule__Page__Group_13__2 ;
     public final void rule__Page__Group_13__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2263:1: ( rule__Page__Group_13__1__Impl rule__Page__Group_13__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2264:2: rule__Page__Group_13__1__Impl rule__Page__Group_13__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2164:1: ( rule__Page__Group_13__1__Impl rule__Page__Group_13__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2165:2: rule__Page__Group_13__1__Impl rule__Page__Group_13__2
             {
-            pushFollow(FOLLOW_rule__Page__Group_13__1__Impl_in_rule__Page__Group_13__14438);
+            pushFollow(FOLLOW_rule__Page__Group_13__1__Impl_in_rule__Page__Group_13__14246);
             rule__Page__Group_13__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_13__2_in_rule__Page__Group_13__14441);
+            pushFollow(FOLLOW_rule__Page__Group_13__2_in_rule__Page__Group_13__14249);
             rule__Page__Group_13__2();
 
             state._fsp--;
@@ -6116,22 +5872,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2271:1: rule__Page__Group_13__1__Impl : ( 'viewer' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2172:1: rule__Page__Group_13__1__Impl : ( 'viewer' ) ;
     public final void rule__Page__Group_13__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2275:1: ( ( 'viewer' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2276:1: ( 'viewer' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2176:1: ( ( 'viewer' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2177:1: ( 'viewer' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2276:1: ( 'viewer' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2277:1: 'viewer'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2177:1: ( 'viewer' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2178:1: 'viewer'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getViewerKeyword_13_1()); 
             }
-            match(input,34,FOLLOW_34_in_rule__Page__Group_13__1__Impl4469); if (state.failed) return ;
+            match(input,33,FOLLOW_33_in_rule__Page__Group_13__1__Impl4277); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getViewerKeyword_13_1()); 
             }
@@ -6157,21 +5913,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2290:1: rule__Page__Group_13__2 : rule__Page__Group_13__2__Impl rule__Page__Group_13__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2191:1: rule__Page__Group_13__2 : rule__Page__Group_13__2__Impl rule__Page__Group_13__3 ;
     public final void rule__Page__Group_13__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2294:1: ( rule__Page__Group_13__2__Impl rule__Page__Group_13__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2295:2: rule__Page__Group_13__2__Impl rule__Page__Group_13__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2195:1: ( rule__Page__Group_13__2__Impl rule__Page__Group_13__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2196:2: rule__Page__Group_13__2__Impl rule__Page__Group_13__3
             {
-            pushFollow(FOLLOW_rule__Page__Group_13__2__Impl_in_rule__Page__Group_13__24500);
+            pushFollow(FOLLOW_rule__Page__Group_13__2__Impl_in_rule__Page__Group_13__24308);
             rule__Page__Group_13__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Page__Group_13__3_in_rule__Page__Group_13__24503);
+            pushFollow(FOLLOW_rule__Page__Group_13__3_in_rule__Page__Group_13__24311);
             rule__Page__Group_13__3();
 
             state._fsp--;
@@ -6195,22 +5951,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2302:1: rule__Page__Group_13__2__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2203:1: rule__Page__Group_13__2__Impl : ( ':' ) ;
     public final void rule__Page__Group_13__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2306:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2307:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2207:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2208:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2307:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2308:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2208:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2209:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getColonKeyword_13_2()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Page__Group_13__2__Impl4531); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Page__Group_13__2__Impl4339); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getColonKeyword_13_2()); 
             }
@@ -6236,16 +5992,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2321:1: rule__Page__Group_13__3 : rule__Page__Group_13__3__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2222:1: rule__Page__Group_13__3 : rule__Page__Group_13__3__Impl ;
     public final void rule__Page__Group_13__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2325:1: ( rule__Page__Group_13__3__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2326:2: rule__Page__Group_13__3__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2226:1: ( rule__Page__Group_13__3__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2227:2: rule__Page__Group_13__3__Impl
             {
-            pushFollow(FOLLOW_rule__Page__Group_13__3__Impl_in_rule__Page__Group_13__34562);
+            pushFollow(FOLLOW_rule__Page__Group_13__3__Impl_in_rule__Page__Group_13__34370);
             rule__Page__Group_13__3__Impl();
 
             state._fsp--;
@@ -6269,25 +6025,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__Group_13__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2332:1: rule__Page__Group_13__3__Impl : ( ( rule__Page__ShowViewerAssignment_13_3 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2233:1: rule__Page__Group_13__3__Impl : ( ( rule__Page__ShowViewerAssignment_13_3 ) ) ;
     public final void rule__Page__Group_13__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2336:1: ( ( ( rule__Page__ShowViewerAssignment_13_3 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2337:1: ( ( rule__Page__ShowViewerAssignment_13_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2237:1: ( ( ( rule__Page__ShowViewerAssignment_13_3 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2238:1: ( ( rule__Page__ShowViewerAssignment_13_3 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2337:1: ( ( rule__Page__ShowViewerAssignment_13_3 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2338:1: ( rule__Page__ShowViewerAssignment_13_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2238:1: ( ( rule__Page__ShowViewerAssignment_13_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2239:1: ( rule__Page__ShowViewerAssignment_13_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getShowViewerAssignment_13_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2339:1: ( rule__Page__ShowViewerAssignment_13_3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2339:2: rule__Page__ShowViewerAssignment_13_3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2240:1: ( rule__Page__ShowViewerAssignment_13_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2240:2: rule__Page__ShowViewerAssignment_13_3
             {
-            pushFollow(FOLLOW_rule__Page__ShowViewerAssignment_13_3_in_rule__Page__Group_13__3__Impl4589);
+            pushFollow(FOLLOW_rule__Page__ShowViewerAssignment_13_3_in_rule__Page__Group_13__3__Impl4397);
             rule__Page__ShowViewerAssignment_13_3();
 
             state._fsp--;
@@ -6319,22 +6075,361 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Page__Group_13__3__Impl"
 
 
+    // $ANTLR start "rule__Page__Group_14__0"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2258:1: rule__Page__Group_14__0 : rule__Page__Group_14__0__Impl rule__Page__Group_14__1 ;
+    public final void rule__Page__Group_14__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2262:1: ( rule__Page__Group_14__0__Impl rule__Page__Group_14__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2263:2: rule__Page__Group_14__0__Impl rule__Page__Group_14__1
+            {
+            pushFollow(FOLLOW_rule__Page__Group_14__0__Impl_in_rule__Page__Group_14__04435);
+            rule__Page__Group_14__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__Page__Group_14__1_in_rule__Page__Group_14__04438);
+            rule__Page__Group_14__1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__0"
+
+
+    // $ANTLR start "rule__Page__Group_14__0__Impl"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2270:1: rule__Page__Group_14__0__Impl : ( 'sections' ) ;
+    public final void rule__Page__Group_14__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2274:1: ( ( 'sections' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2275:1: ( 'sections' )
+            {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2275:1: ( 'sections' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2276:1: 'sections'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getPageAccess().getSectionsKeyword_14_0()); 
+            }
+            match(input,34,FOLLOW_34_in_rule__Page__Group_14__0__Impl4466); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getPageAccess().getSectionsKeyword_14_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__0__Impl"
+
+
+    // $ANTLR start "rule__Page__Group_14__1"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2289:1: rule__Page__Group_14__1 : rule__Page__Group_14__1__Impl rule__Page__Group_14__2 ;
+    public final void rule__Page__Group_14__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2293:1: ( rule__Page__Group_14__1__Impl rule__Page__Group_14__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2294:2: rule__Page__Group_14__1__Impl rule__Page__Group_14__2
+            {
+            pushFollow(FOLLOW_rule__Page__Group_14__1__Impl_in_rule__Page__Group_14__14497);
+            rule__Page__Group_14__1__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__Page__Group_14__2_in_rule__Page__Group_14__14500);
+            rule__Page__Group_14__2();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__1"
+
+
+    // $ANTLR start "rule__Page__Group_14__1__Impl"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2301:1: rule__Page__Group_14__1__Impl : ( '{' ) ;
+    public final void rule__Page__Group_14__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2305:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2306:1: ( '{' )
+            {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2306:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2307:1: '{'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_14_1()); 
+            }
+            match(input,15,FOLLOW_15_in_rule__Page__Group_14__1__Impl4528); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_14_1()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__1__Impl"
+
+
+    // $ANTLR start "rule__Page__Group_14__2"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2320:1: rule__Page__Group_14__2 : rule__Page__Group_14__2__Impl rule__Page__Group_14__3 ;
+    public final void rule__Page__Group_14__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2324:1: ( rule__Page__Group_14__2__Impl rule__Page__Group_14__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2325:2: rule__Page__Group_14__2__Impl rule__Page__Group_14__3
+            {
+            pushFollow(FOLLOW_rule__Page__Group_14__2__Impl_in_rule__Page__Group_14__24559);
+            rule__Page__Group_14__2__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_rule__Page__Group_14__3_in_rule__Page__Group_14__24562);
+            rule__Page__Group_14__3();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__2"
+
+
+    // $ANTLR start "rule__Page__Group_14__2__Impl"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2332:1: rule__Page__Group_14__2__Impl : ( ( rule__Page__OwnedSectionsAssignment_14_2 )* ) ;
+    public final void rule__Page__Group_14__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2336:1: ( ( ( rule__Page__OwnedSectionsAssignment_14_2 )* ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2337:1: ( ( rule__Page__OwnedSectionsAssignment_14_2 )* )
+            {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2337:1: ( ( rule__Page__OwnedSectionsAssignment_14_2 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2338:1: ( rule__Page__OwnedSectionsAssignment_14_2 )*
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getPageAccess().getOwnedSectionsAssignment_14_2()); 
+            }
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2339:1: ( rule__Page__OwnedSectionsAssignment_14_2 )*
+            loop17:
+            do {
+                int alt17=2;
+                int LA17_0 = input.LA(1);
+
+                if ( (LA17_0==35) ) {
+                    alt17=1;
+                }
+
+
+                switch (alt17) {
+            	case 1 :
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2339:2: rule__Page__OwnedSectionsAssignment_14_2
+            	    {
+            	    pushFollow(FOLLOW_rule__Page__OwnedSectionsAssignment_14_2_in_rule__Page__Group_14__2__Impl4589);
+            	    rule__Page__OwnedSectionsAssignment_14_2();
+
+            	    state._fsp--;
+            	    if (state.failed) return ;
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop17;
+                }
+            } while (true);
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getPageAccess().getOwnedSectionsAssignment_14_2()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__2__Impl"
+
+
+    // $ANTLR start "rule__Page__Group_14__3"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2349:1: rule__Page__Group_14__3 : rule__Page__Group_14__3__Impl ;
+    public final void rule__Page__Group_14__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2353:1: ( rule__Page__Group_14__3__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2354:2: rule__Page__Group_14__3__Impl
+            {
+            pushFollow(FOLLOW_rule__Page__Group_14__3__Impl_in_rule__Page__Group_14__34620);
+            rule__Page__Group_14__3__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__3"
+
+
+    // $ANTLR start "rule__Page__Group_14__3__Impl"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2360:1: rule__Page__Group_14__3__Impl : ( '}' ) ;
+    public final void rule__Page__Group_14__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2364:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2365:1: ( '}' )
+            {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2365:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2366:1: '}'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_14_3()); 
+            }
+            match(input,16,FOLLOW_16_in_rule__Page__Group_14__3__Impl4648); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_14_3()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_14__3__Impl"
+
+
     // $ANTLR start "rule__Section__Group__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2357:1: rule__Section__Group__0 : rule__Section__Group__0__Impl rule__Section__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2387:1: rule__Section__Group__0 : rule__Section__Group__0__Impl rule__Section__Group__1 ;
     public final void rule__Section__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2361:1: ( rule__Section__Group__0__Impl rule__Section__Group__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2362:2: rule__Section__Group__0__Impl rule__Section__Group__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2391:1: ( rule__Section__Group__0__Impl rule__Section__Group__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2392:2: rule__Section__Group__0__Impl rule__Section__Group__1
             {
-            pushFollow(FOLLOW_rule__Section__Group__0__Impl_in_rule__Section__Group__04627);
+            pushFollow(FOLLOW_rule__Section__Group__0__Impl_in_rule__Section__Group__04687);
             rule__Section__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__1_in_rule__Section__Group__04630);
+            pushFollow(FOLLOW_rule__Section__Group__1_in_rule__Section__Group__04690);
             rule__Section__Group__1();
 
             state._fsp--;
@@ -6358,23 +6453,23 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2369:1: rule__Section__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2399:1: rule__Section__Group__0__Impl : ( () ) ;
     public final void rule__Section__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2373:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2374:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2403:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2404:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2374:1: ( () )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2375:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2404:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2405:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getSectionAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2376:1: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2378:1: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2406:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2408:1: 
             {
             }
 
@@ -6399,21 +6494,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2388:1: rule__Section__Group__1 : rule__Section__Group__1__Impl rule__Section__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2418:1: rule__Section__Group__1 : rule__Section__Group__1__Impl rule__Section__Group__2 ;
     public final void rule__Section__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2392:1: ( rule__Section__Group__1__Impl rule__Section__Group__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2393:2: rule__Section__Group__1__Impl rule__Section__Group__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2422:1: ( rule__Section__Group__1__Impl rule__Section__Group__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2423:2: rule__Section__Group__1__Impl rule__Section__Group__2
             {
-            pushFollow(FOLLOW_rule__Section__Group__1__Impl_in_rule__Section__Group__14688);
+            pushFollow(FOLLOW_rule__Section__Group__1__Impl_in_rule__Section__Group__14748);
             rule__Section__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__2_in_rule__Section__Group__14691);
+            pushFollow(FOLLOW_rule__Section__Group__2_in_rule__Section__Group__14751);
             rule__Section__Group__2();
 
             state._fsp--;
@@ -6437,22 +6532,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2400:1: rule__Section__Group__1__Impl : ( 'section' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2430:1: rule__Section__Group__1__Impl : ( 'section' ) ;
     public final void rule__Section__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2404:1: ( ( 'section' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2405:1: ( 'section' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2434:1: ( ( 'section' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2435:1: ( 'section' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2405:1: ( 'section' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2406:1: 'section'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2435:1: ( 'section' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2436:1: 'section'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getSectionKeyword_1()); 
             }
-            match(input,35,FOLLOW_35_in_rule__Section__Group__1__Impl4719); if (state.failed) return ;
+            match(input,35,FOLLOW_35_in_rule__Section__Group__1__Impl4779); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getSectionKeyword_1()); 
             }
@@ -6478,21 +6573,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2419:1: rule__Section__Group__2 : rule__Section__Group__2__Impl rule__Section__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2449:1: rule__Section__Group__2 : rule__Section__Group__2__Impl rule__Section__Group__3 ;
     public final void rule__Section__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2423:1: ( rule__Section__Group__2__Impl rule__Section__Group__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2424:2: rule__Section__Group__2__Impl rule__Section__Group__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2453:1: ( rule__Section__Group__2__Impl rule__Section__Group__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2454:2: rule__Section__Group__2__Impl rule__Section__Group__3
             {
-            pushFollow(FOLLOW_rule__Section__Group__2__Impl_in_rule__Section__Group__24750);
+            pushFollow(FOLLOW_rule__Section__Group__2__Impl_in_rule__Section__Group__24810);
             rule__Section__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__3_in_rule__Section__Group__24753);
+            pushFollow(FOLLOW_rule__Section__Group__3_in_rule__Section__Group__24813);
             rule__Section__Group__3();
 
             state._fsp--;
@@ -6516,25 +6611,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2431:1: rule__Section__Group__2__Impl : ( ( rule__Section__NameAssignment_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2461:1: rule__Section__Group__2__Impl : ( ( rule__Section__NameAssignment_2 ) ) ;
     public final void rule__Section__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2435:1: ( ( ( rule__Section__NameAssignment_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2436:1: ( ( rule__Section__NameAssignment_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2465:1: ( ( ( rule__Section__NameAssignment_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2466:1: ( ( rule__Section__NameAssignment_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2436:1: ( ( rule__Section__NameAssignment_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2437:1: ( rule__Section__NameAssignment_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2466:1: ( ( rule__Section__NameAssignment_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2467:1: ( rule__Section__NameAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getNameAssignment_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2438:1: ( rule__Section__NameAssignment_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2438:2: rule__Section__NameAssignment_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2468:1: ( rule__Section__NameAssignment_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2468:2: rule__Section__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__Section__NameAssignment_2_in_rule__Section__Group__2__Impl4780);
+            pushFollow(FOLLOW_rule__Section__NameAssignment_2_in_rule__Section__Group__2__Impl4840);
             rule__Section__NameAssignment_2();
 
             state._fsp--;
@@ -6567,21 +6662,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2448:1: rule__Section__Group__3 : rule__Section__Group__3__Impl rule__Section__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2478:1: rule__Section__Group__3 : rule__Section__Group__3__Impl rule__Section__Group__4 ;
     public final void rule__Section__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2452:1: ( rule__Section__Group__3__Impl rule__Section__Group__4 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2453:2: rule__Section__Group__3__Impl rule__Section__Group__4
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2482:1: ( rule__Section__Group__3__Impl rule__Section__Group__4 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2483:2: rule__Section__Group__3__Impl rule__Section__Group__4
             {
-            pushFollow(FOLLOW_rule__Section__Group__3__Impl_in_rule__Section__Group__34810);
+            pushFollow(FOLLOW_rule__Section__Group__3__Impl_in_rule__Section__Group__34870);
             rule__Section__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__4_in_rule__Section__Group__34813);
+            pushFollow(FOLLOW_rule__Section__Group__4_in_rule__Section__Group__34873);
             rule__Section__Group__4();
 
             state._fsp--;
@@ -6605,22 +6700,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2460:1: rule__Section__Group__3__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2490:1: rule__Section__Group__3__Impl : ( '{' ) ;
     public final void rule__Section__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2464:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2465:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2494:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2495:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2465:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2466:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2495:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2496:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_3()); 
             }
-            match(input,15,FOLLOW_15_in_rule__Section__Group__3__Impl4841); if (state.failed) return ;
+            match(input,15,FOLLOW_15_in_rule__Section__Group__3__Impl4901); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_3()); 
             }
@@ -6646,21 +6741,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__4"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2479:1: rule__Section__Group__4 : rule__Section__Group__4__Impl rule__Section__Group__5 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2509:1: rule__Section__Group__4 : rule__Section__Group__4__Impl rule__Section__Group__5 ;
     public final void rule__Section__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2483:1: ( rule__Section__Group__4__Impl rule__Section__Group__5 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2484:2: rule__Section__Group__4__Impl rule__Section__Group__5
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2513:1: ( rule__Section__Group__4__Impl rule__Section__Group__5 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2514:2: rule__Section__Group__4__Impl rule__Section__Group__5
             {
-            pushFollow(FOLLOW_rule__Section__Group__4__Impl_in_rule__Section__Group__44872);
+            pushFollow(FOLLOW_rule__Section__Group__4__Impl_in_rule__Section__Group__44932);
             rule__Section__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__5_in_rule__Section__Group__44875);
+            pushFollow(FOLLOW_rule__Section__Group__5_in_rule__Section__Group__44935);
             rule__Section__Group__5();
 
             state._fsp--;
@@ -6684,33 +6779,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2491:1: rule__Section__Group__4__Impl : ( ( rule__Section__Group_4__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2521:1: rule__Section__Group__4__Impl : ( ( rule__Section__Group_4__0 )? ) ;
     public final void rule__Section__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2495:1: ( ( ( rule__Section__Group_4__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2496:1: ( ( rule__Section__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2525:1: ( ( ( rule__Section__Group_4__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2526:1: ( ( rule__Section__Group_4__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2496:1: ( ( rule__Section__Group_4__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2497:1: ( rule__Section__Group_4__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2526:1: ( ( rule__Section__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2527:1: ( rule__Section__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getGroup_4()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2498:1: ( rule__Section__Group_4__0 )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2528:1: ( rule__Section__Group_4__0 )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA17_0==21) ) {
-                alt17=1;
+            if ( (LA18_0==20) ) {
+                alt18=1;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2498:2: rule__Section__Group_4__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2528:2: rule__Section__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Section__Group_4__0_in_rule__Section__Group__4__Impl4902);
+                    pushFollow(FOLLOW_rule__Section__Group_4__0_in_rule__Section__Group__4__Impl4962);
                     rule__Section__Group_4__0();
 
                     state._fsp--;
@@ -6746,21 +6841,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__5"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2508:1: rule__Section__Group__5 : rule__Section__Group__5__Impl rule__Section__Group__6 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2538:1: rule__Section__Group__5 : rule__Section__Group__5__Impl rule__Section__Group__6 ;
     public final void rule__Section__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2512:1: ( rule__Section__Group__5__Impl rule__Section__Group__6 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2513:2: rule__Section__Group__5__Impl rule__Section__Group__6
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2542:1: ( rule__Section__Group__5__Impl rule__Section__Group__6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2543:2: rule__Section__Group__5__Impl rule__Section__Group__6
             {
-            pushFollow(FOLLOW_rule__Section__Group__5__Impl_in_rule__Section__Group__54933);
+            pushFollow(FOLLOW_rule__Section__Group__5__Impl_in_rule__Section__Group__54993);
             rule__Section__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__6_in_rule__Section__Group__54936);
+            pushFollow(FOLLOW_rule__Section__Group__6_in_rule__Section__Group__54996);
             rule__Section__Group__6();
 
             state._fsp--;
@@ -6784,33 +6879,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__5__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2520:1: rule__Section__Group__5__Impl : ( ( rule__Section__Group_5__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2550:1: rule__Section__Group__5__Impl : ( ( rule__Section__Group_5__0 )? ) ;
     public final void rule__Section__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2524:1: ( ( ( rule__Section__Group_5__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2525:1: ( ( rule__Section__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2554:1: ( ( ( rule__Section__Group_5__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2555:1: ( ( rule__Section__Group_5__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2525:1: ( ( rule__Section__Group_5__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2526:1: ( rule__Section__Group_5__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2555:1: ( ( rule__Section__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2556:1: ( rule__Section__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getGroup_5()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2527:1: ( rule__Section__Group_5__0 )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2557:1: ( rule__Section__Group_5__0 )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA18_0==24) ) {
-                alt18=1;
+            if ( (LA19_0==23) ) {
+                alt19=1;
             }
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2527:2: rule__Section__Group_5__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2557:2: rule__Section__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__Section__Group_5__0_in_rule__Section__Group__5__Impl4963);
+                    pushFollow(FOLLOW_rule__Section__Group_5__0_in_rule__Section__Group__5__Impl5023);
                     rule__Section__Group_5__0();
 
                     state._fsp--;
@@ -6846,21 +6941,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2537:1: rule__Section__Group__6 : rule__Section__Group__6__Impl rule__Section__Group__7 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2567:1: rule__Section__Group__6 : rule__Section__Group__6__Impl rule__Section__Group__7 ;
     public final void rule__Section__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2541:1: ( rule__Section__Group__6__Impl rule__Section__Group__7 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2542:2: rule__Section__Group__6__Impl rule__Section__Group__7
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2571:1: ( rule__Section__Group__6__Impl rule__Section__Group__7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2572:2: rule__Section__Group__6__Impl rule__Section__Group__7
             {
-            pushFollow(FOLLOW_rule__Section__Group__6__Impl_in_rule__Section__Group__64994);
+            pushFollow(FOLLOW_rule__Section__Group__6__Impl_in_rule__Section__Group__65054);
             rule__Section__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__7_in_rule__Section__Group__64997);
+            pushFollow(FOLLOW_rule__Section__Group__7_in_rule__Section__Group__65057);
             rule__Section__Group__7();
 
             state._fsp--;
@@ -6884,22 +6979,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__6__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2549:1: rule__Section__Group__6__Impl : ( 'index' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2579:1: rule__Section__Group__6__Impl : ( 'index' ) ;
     public final void rule__Section__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2553:1: ( ( 'index' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2554:1: ( 'index' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2583:1: ( ( 'index' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2584:1: ( 'index' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2554:1: ( 'index' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2555:1: 'index'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2584:1: ( 'index' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2585:1: 'index'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getIndexKeyword_6()); 
             }
-            match(input,19,FOLLOW_19_in_rule__Section__Group__6__Impl5025); if (state.failed) return ;
+            match(input,19,FOLLOW_19_in_rule__Section__Group__6__Impl5085); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getIndexKeyword_6()); 
             }
@@ -6925,21 +7020,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2568:1: rule__Section__Group__7 : rule__Section__Group__7__Impl rule__Section__Group__8 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2598:1: rule__Section__Group__7 : rule__Section__Group__7__Impl rule__Section__Group__8 ;
     public final void rule__Section__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2572:1: ( rule__Section__Group__7__Impl rule__Section__Group__8 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2573:2: rule__Section__Group__7__Impl rule__Section__Group__8
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2602:1: ( rule__Section__Group__7__Impl rule__Section__Group__8 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2603:2: rule__Section__Group__7__Impl rule__Section__Group__8
             {
-            pushFollow(FOLLOW_rule__Section__Group__7__Impl_in_rule__Section__Group__75056);
+            pushFollow(FOLLOW_rule__Section__Group__7__Impl_in_rule__Section__Group__75116);
             rule__Section__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__8_in_rule__Section__Group__75059);
+            pushFollow(FOLLOW_rule__Section__Group__8_in_rule__Section__Group__75119);
             rule__Section__Group__8();
 
             state._fsp--;
@@ -6963,25 +7058,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__7__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2580:1: rule__Section__Group__7__Impl : ( ( rule__Section__IndexAssignment_7 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2610:1: rule__Section__Group__7__Impl : ( ( rule__Section__IndexAssignment_7 ) ) ;
     public final void rule__Section__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2584:1: ( ( ( rule__Section__IndexAssignment_7 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2585:1: ( ( rule__Section__IndexAssignment_7 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2614:1: ( ( ( rule__Section__IndexAssignment_7 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2615:1: ( ( rule__Section__IndexAssignment_7 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2585:1: ( ( rule__Section__IndexAssignment_7 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2586:1: ( rule__Section__IndexAssignment_7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2615:1: ( ( rule__Section__IndexAssignment_7 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2616:1: ( rule__Section__IndexAssignment_7 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getIndexAssignment_7()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2587:1: ( rule__Section__IndexAssignment_7 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2587:2: rule__Section__IndexAssignment_7
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2617:1: ( rule__Section__IndexAssignment_7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2617:2: rule__Section__IndexAssignment_7
             {
-            pushFollow(FOLLOW_rule__Section__IndexAssignment_7_in_rule__Section__Group__7__Impl5086);
+            pushFollow(FOLLOW_rule__Section__IndexAssignment_7_in_rule__Section__Group__7__Impl5146);
             rule__Section__IndexAssignment_7();
 
             state._fsp--;
@@ -7014,21 +7109,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__8"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2597:1: rule__Section__Group__8 : rule__Section__Group__8__Impl rule__Section__Group__9 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2627:1: rule__Section__Group__8 : rule__Section__Group__8__Impl rule__Section__Group__9 ;
     public final void rule__Section__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2601:1: ( rule__Section__Group__8__Impl rule__Section__Group__9 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2602:2: rule__Section__Group__8__Impl rule__Section__Group__9
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2631:1: ( rule__Section__Group__8__Impl rule__Section__Group__9 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2632:2: rule__Section__Group__8__Impl rule__Section__Group__9
             {
-            pushFollow(FOLLOW_rule__Section__Group__8__Impl_in_rule__Section__Group__85116);
+            pushFollow(FOLLOW_rule__Section__Group__8__Impl_in_rule__Section__Group__85176);
             rule__Section__Group__8__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__9_in_rule__Section__Group__85119);
+            pushFollow(FOLLOW_rule__Section__Group__9_in_rule__Section__Group__85179);
             rule__Section__Group__9();
 
             state._fsp--;
@@ -7052,33 +7147,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__8__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2609:1: rule__Section__Group__8__Impl : ( ( rule__Section__Group_8__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2639:1: rule__Section__Group__8__Impl : ( ( rule__Section__Group_8__0 )? ) ;
     public final void rule__Section__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2613:1: ( ( ( rule__Section__Group_8__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2614:1: ( ( rule__Section__Group_8__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2643:1: ( ( ( rule__Section__Group_8__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2644:1: ( ( rule__Section__Group_8__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2614:1: ( ( rule__Section__Group_8__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2615:1: ( rule__Section__Group_8__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2644:1: ( ( rule__Section__Group_8__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2645:1: ( rule__Section__Group_8__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getGroup_8()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2616:1: ( rule__Section__Group_8__0 )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2646:1: ( rule__Section__Group_8__0 )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA19_0==36) ) {
-                alt19=1;
+            if ( (LA20_0==36) ) {
+                alt20=1;
             }
-            switch (alt19) {
+            switch (alt20) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2616:2: rule__Section__Group_8__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2646:2: rule__Section__Group_8__0
                     {
-                    pushFollow(FOLLOW_rule__Section__Group_8__0_in_rule__Section__Group__8__Impl5146);
+                    pushFollow(FOLLOW_rule__Section__Group_8__0_in_rule__Section__Group__8__Impl5206);
                     rule__Section__Group_8__0();
 
                     state._fsp--;
@@ -7114,21 +7209,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__9"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2626:1: rule__Section__Group__9 : rule__Section__Group__9__Impl rule__Section__Group__10 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2656:1: rule__Section__Group__9 : rule__Section__Group__9__Impl rule__Section__Group__10 ;
     public final void rule__Section__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2630:1: ( rule__Section__Group__9__Impl rule__Section__Group__10 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2631:2: rule__Section__Group__9__Impl rule__Section__Group__10
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2660:1: ( rule__Section__Group__9__Impl rule__Section__Group__10 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2661:2: rule__Section__Group__9__Impl rule__Section__Group__10
             {
-            pushFollow(FOLLOW_rule__Section__Group__9__Impl_in_rule__Section__Group__95177);
+            pushFollow(FOLLOW_rule__Section__Group__9__Impl_in_rule__Section__Group__95237);
             rule__Section__Group__9__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__10_in_rule__Section__Group__95180);
+            pushFollow(FOLLOW_rule__Section__Group__10_in_rule__Section__Group__95240);
             rule__Section__Group__10();
 
             state._fsp--;
@@ -7152,33 +7247,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__9__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2638:1: rule__Section__Group__9__Impl : ( ( rule__Section__Group_9__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2668:1: rule__Section__Group__9__Impl : ( ( rule__Section__Group_9__0 )? ) ;
     public final void rule__Section__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2642:1: ( ( ( rule__Section__Group_9__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2643:1: ( ( rule__Section__Group_9__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2672:1: ( ( ( rule__Section__Group_9__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2673:1: ( ( rule__Section__Group_9__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2643:1: ( ( rule__Section__Group_9__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2644:1: ( rule__Section__Group_9__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2673:1: ( ( rule__Section__Group_9__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2674:1: ( rule__Section__Group_9__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getGroup_9()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2645:1: ( rule__Section__Group_9__0 )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2675:1: ( rule__Section__Group_9__0 )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA20_0==37) ) {
-                alt20=1;
+            if ( (LA21_0==37) ) {
+                alt21=1;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2645:2: rule__Section__Group_9__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2675:2: rule__Section__Group_9__0
                     {
-                    pushFollow(FOLLOW_rule__Section__Group_9__0_in_rule__Section__Group__9__Impl5207);
+                    pushFollow(FOLLOW_rule__Section__Group_9__0_in_rule__Section__Group__9__Impl5267);
                     rule__Section__Group_9__0();
 
                     state._fsp--;
@@ -7214,21 +7309,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__10"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2655:1: rule__Section__Group__10 : rule__Section__Group__10__Impl rule__Section__Group__11 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2685:1: rule__Section__Group__10 : rule__Section__Group__10__Impl rule__Section__Group__11 ;
     public final void rule__Section__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2659:1: ( rule__Section__Group__10__Impl rule__Section__Group__11 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2660:2: rule__Section__Group__10__Impl rule__Section__Group__11
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2689:1: ( rule__Section__Group__10__Impl rule__Section__Group__11 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2690:2: rule__Section__Group__10__Impl rule__Section__Group__11
             {
-            pushFollow(FOLLOW_rule__Section__Group__10__Impl_in_rule__Section__Group__105238);
+            pushFollow(FOLLOW_rule__Section__Group__10__Impl_in_rule__Section__Group__105298);
             rule__Section__Group__10__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group__11_in_rule__Section__Group__105241);
+            pushFollow(FOLLOW_rule__Section__Group__11_in_rule__Section__Group__105301);
             rule__Section__Group__11();
 
             state._fsp--;
@@ -7252,33 +7347,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__10__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2667:1: rule__Section__Group__10__Impl : ( ( rule__Section__Group_10__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2697:1: rule__Section__Group__10__Impl : ( ( rule__Section__Group_10__0 )? ) ;
     public final void rule__Section__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2671:1: ( ( ( rule__Section__Group_10__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2672:1: ( ( rule__Section__Group_10__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2701:1: ( ( ( rule__Section__Group_10__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2702:1: ( ( rule__Section__Group_10__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2672:1: ( ( rule__Section__Group_10__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2673:1: ( rule__Section__Group_10__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2702:1: ( ( rule__Section__Group_10__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2703:1: ( rule__Section__Group_10__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getGroup_10()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2674:1: ( rule__Section__Group_10__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2704:1: ( rule__Section__Group_10__0 )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA21_0==38) ) {
-                alt21=1;
+            if ( (LA22_0==38) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2674:2: rule__Section__Group_10__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2704:2: rule__Section__Group_10__0
                     {
-                    pushFollow(FOLLOW_rule__Section__Group_10__0_in_rule__Section__Group__10__Impl5268);
+                    pushFollow(FOLLOW_rule__Section__Group_10__0_in_rule__Section__Group__10__Impl5328);
                     rule__Section__Group_10__0();
 
                     state._fsp--;
@@ -7314,16 +7409,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__11"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2684:1: rule__Section__Group__11 : rule__Section__Group__11__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2714:1: rule__Section__Group__11 : rule__Section__Group__11__Impl ;
     public final void rule__Section__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2688:1: ( rule__Section__Group__11__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2689:2: rule__Section__Group__11__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2718:1: ( rule__Section__Group__11__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2719:2: rule__Section__Group__11__Impl
             {
-            pushFollow(FOLLOW_rule__Section__Group__11__Impl_in_rule__Section__Group__115299);
+            pushFollow(FOLLOW_rule__Section__Group__11__Impl_in_rule__Section__Group__115359);
             rule__Section__Group__11__Impl();
 
             state._fsp--;
@@ -7347,22 +7442,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group__11__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2695:1: rule__Section__Group__11__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2725:1: rule__Section__Group__11__Impl : ( '}' ) ;
     public final void rule__Section__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2699:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2700:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2729:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2730:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2700:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2701:1: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2730:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2731:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_11()); 
             }
-            match(input,16,FOLLOW_16_in_rule__Section__Group__11__Impl5327); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__Section__Group__11__Impl5387); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_11()); 
             }
@@ -7388,21 +7483,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_4__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2738:1: rule__Section__Group_4__0 : rule__Section__Group_4__0__Impl rule__Section__Group_4__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2768:1: rule__Section__Group_4__0 : rule__Section__Group_4__0__Impl rule__Section__Group_4__1 ;
     public final void rule__Section__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2742:1: ( rule__Section__Group_4__0__Impl rule__Section__Group_4__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2743:2: rule__Section__Group_4__0__Impl rule__Section__Group_4__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2772:1: ( rule__Section__Group_4__0__Impl rule__Section__Group_4__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2773:2: rule__Section__Group_4__0__Impl rule__Section__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Section__Group_4__0__Impl_in_rule__Section__Group_4__05382);
+            pushFollow(FOLLOW_rule__Section__Group_4__0__Impl_in_rule__Section__Group_4__05442);
             rule__Section__Group_4__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_4__1_in_rule__Section__Group_4__05385);
+            pushFollow(FOLLOW_rule__Section__Group_4__1_in_rule__Section__Group_4__05445);
             rule__Section__Group_4__1();
 
             state._fsp--;
@@ -7426,22 +7521,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_4__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2750:1: rule__Section__Group_4__0__Impl : ( 'description' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2780:1: rule__Section__Group_4__0__Impl : ( 'description' ) ;
     public final void rule__Section__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2754:1: ( ( 'description' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2755:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2784:1: ( ( 'description' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2785:1: ( 'description' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2755:1: ( 'description' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2756:1: 'description'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2785:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2786:1: 'description'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getDescriptionKeyword_4_0()); 
             }
-            match(input,21,FOLLOW_21_in_rule__Section__Group_4__0__Impl5413); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__Section__Group_4__0__Impl5473); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getDescriptionKeyword_4_0()); 
             }
@@ -7467,16 +7562,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_4__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2769:1: rule__Section__Group_4__1 : rule__Section__Group_4__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2799:1: rule__Section__Group_4__1 : rule__Section__Group_4__1__Impl ;
     public final void rule__Section__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2773:1: ( rule__Section__Group_4__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2774:2: rule__Section__Group_4__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2803:1: ( rule__Section__Group_4__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2804:2: rule__Section__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Section__Group_4__1__Impl_in_rule__Section__Group_4__15444);
+            pushFollow(FOLLOW_rule__Section__Group_4__1__Impl_in_rule__Section__Group_4__15504);
             rule__Section__Group_4__1__Impl();
 
             state._fsp--;
@@ -7500,25 +7595,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_4__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2780:1: rule__Section__Group_4__1__Impl : ( ( rule__Section__DescriptionAssignment_4_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2810:1: rule__Section__Group_4__1__Impl : ( ( rule__Section__DescriptionAssignment_4_1 ) ) ;
     public final void rule__Section__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2784:1: ( ( ( rule__Section__DescriptionAssignment_4_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2785:1: ( ( rule__Section__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2814:1: ( ( ( rule__Section__DescriptionAssignment_4_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2815:1: ( ( rule__Section__DescriptionAssignment_4_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2785:1: ( ( rule__Section__DescriptionAssignment_4_1 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2786:1: ( rule__Section__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2815:1: ( ( rule__Section__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2816:1: ( rule__Section__DescriptionAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getDescriptionAssignment_4_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2787:1: ( rule__Section__DescriptionAssignment_4_1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2787:2: rule__Section__DescriptionAssignment_4_1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2817:1: ( rule__Section__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2817:2: rule__Section__DescriptionAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Section__DescriptionAssignment_4_1_in_rule__Section__Group_4__1__Impl5471);
+            pushFollow(FOLLOW_rule__Section__DescriptionAssignment_4_1_in_rule__Section__Group_4__1__Impl5531);
             rule__Section__DescriptionAssignment_4_1();
 
             state._fsp--;
@@ -7551,21 +7646,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_5__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2801:1: rule__Section__Group_5__0 : rule__Section__Group_5__0__Impl rule__Section__Group_5__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2831:1: rule__Section__Group_5__0 : rule__Section__Group_5__0__Impl rule__Section__Group_5__1 ;
     public final void rule__Section__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2805:1: ( rule__Section__Group_5__0__Impl rule__Section__Group_5__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2806:2: rule__Section__Group_5__0__Impl rule__Section__Group_5__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2835:1: ( rule__Section__Group_5__0__Impl rule__Section__Group_5__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2836:2: rule__Section__Group_5__0__Impl rule__Section__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Section__Group_5__0__Impl_in_rule__Section__Group_5__05505);
+            pushFollow(FOLLOW_rule__Section__Group_5__0__Impl_in_rule__Section__Group_5__05565);
             rule__Section__Group_5__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_5__1_in_rule__Section__Group_5__05508);
+            pushFollow(FOLLOW_rule__Section__Group_5__1_in_rule__Section__Group_5__05568);
             rule__Section__Group_5__1();
 
             state._fsp--;
@@ -7589,22 +7684,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_5__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2813:1: rule__Section__Group_5__0__Impl : ( 'id' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2843:1: rule__Section__Group_5__0__Impl : ( 'id' ) ;
     public final void rule__Section__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2817:1: ( ( 'id' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2818:1: ( 'id' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2847:1: ( ( 'id' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2848:1: ( 'id' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2818:1: ( 'id' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2819:1: 'id'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2848:1: ( 'id' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2849:1: 'id'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getIdKeyword_5_0()); 
             }
-            match(input,24,FOLLOW_24_in_rule__Section__Group_5__0__Impl5536); if (state.failed) return ;
+            match(input,23,FOLLOW_23_in_rule__Section__Group_5__0__Impl5596); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getIdKeyword_5_0()); 
             }
@@ -7630,16 +7725,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_5__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2832:1: rule__Section__Group_5__1 : rule__Section__Group_5__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2862:1: rule__Section__Group_5__1 : rule__Section__Group_5__1__Impl ;
     public final void rule__Section__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2836:1: ( rule__Section__Group_5__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2837:2: rule__Section__Group_5__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2866:1: ( rule__Section__Group_5__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2867:2: rule__Section__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__Section__Group_5__1__Impl_in_rule__Section__Group_5__15567);
+            pushFollow(FOLLOW_rule__Section__Group_5__1__Impl_in_rule__Section__Group_5__15627);
             rule__Section__Group_5__1__Impl();
 
             state._fsp--;
@@ -7663,25 +7758,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_5__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2843:1: rule__Section__Group_5__1__Impl : ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2873:1: rule__Section__Group_5__1__Impl : ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) ) ;
     public final void rule__Section__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2847:1: ( ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2848:1: ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2877:1: ( ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2878:1: ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2848:1: ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2849:1: ( rule__Section__ActivityExplorerItemIDAssignment_5_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2878:1: ( ( rule__Section__ActivityExplorerItemIDAssignment_5_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2879:1: ( rule__Section__ActivityExplorerItemIDAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getActivityExplorerItemIDAssignment_5_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2850:1: ( rule__Section__ActivityExplorerItemIDAssignment_5_1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2850:2: rule__Section__ActivityExplorerItemIDAssignment_5_1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2880:1: ( rule__Section__ActivityExplorerItemIDAssignment_5_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2880:2: rule__Section__ActivityExplorerItemIDAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__Section__ActivityExplorerItemIDAssignment_5_1_in_rule__Section__Group_5__1__Impl5594);
+            pushFollow(FOLLOW_rule__Section__ActivityExplorerItemIDAssignment_5_1_in_rule__Section__Group_5__1__Impl5654);
             rule__Section__ActivityExplorerItemIDAssignment_5_1();
 
             state._fsp--;
@@ -7714,21 +7809,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_8__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2864:1: rule__Section__Group_8__0 : rule__Section__Group_8__0__Impl rule__Section__Group_8__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2894:1: rule__Section__Group_8__0 : rule__Section__Group_8__0__Impl rule__Section__Group_8__1 ;
     public final void rule__Section__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2868:1: ( rule__Section__Group_8__0__Impl rule__Section__Group_8__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2869:2: rule__Section__Group_8__0__Impl rule__Section__Group_8__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2898:1: ( rule__Section__Group_8__0__Impl rule__Section__Group_8__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2899:2: rule__Section__Group_8__0__Impl rule__Section__Group_8__1
             {
-            pushFollow(FOLLOW_rule__Section__Group_8__0__Impl_in_rule__Section__Group_8__05628);
+            pushFollow(FOLLOW_rule__Section__Group_8__0__Impl_in_rule__Section__Group_8__05688);
             rule__Section__Group_8__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_8__1_in_rule__Section__Group_8__05631);
+            pushFollow(FOLLOW_rule__Section__Group_8__1_in_rule__Section__Group_8__05691);
             rule__Section__Group_8__1();
 
             state._fsp--;
@@ -7752,22 +7847,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_8__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2876:1: rule__Section__Group_8__0__Impl : ( 'filtering' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2906:1: rule__Section__Group_8__0__Impl : ( 'filtering' ) ;
     public final void rule__Section__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2880:1: ( ( 'filtering' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2881:1: ( 'filtering' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2910:1: ( ( 'filtering' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2911:1: ( 'filtering' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2881:1: ( 'filtering' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2882:1: 'filtering'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2911:1: ( 'filtering' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2912:1: 'filtering'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getFilteringKeyword_8_0()); 
             }
-            match(input,36,FOLLOW_36_in_rule__Section__Group_8__0__Impl5659); if (state.failed) return ;
+            match(input,36,FOLLOW_36_in_rule__Section__Group_8__0__Impl5719); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getFilteringKeyword_8_0()); 
             }
@@ -7793,21 +7888,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_8__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2895:1: rule__Section__Group_8__1 : rule__Section__Group_8__1__Impl rule__Section__Group_8__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2925:1: rule__Section__Group_8__1 : rule__Section__Group_8__1__Impl rule__Section__Group_8__2 ;
     public final void rule__Section__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2899:1: ( rule__Section__Group_8__1__Impl rule__Section__Group_8__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2900:2: rule__Section__Group_8__1__Impl rule__Section__Group_8__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2929:1: ( rule__Section__Group_8__1__Impl rule__Section__Group_8__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2930:2: rule__Section__Group_8__1__Impl rule__Section__Group_8__2
             {
-            pushFollow(FOLLOW_rule__Section__Group_8__1__Impl_in_rule__Section__Group_8__15690);
+            pushFollow(FOLLOW_rule__Section__Group_8__1__Impl_in_rule__Section__Group_8__15750);
             rule__Section__Group_8__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_8__2_in_rule__Section__Group_8__15693);
+            pushFollow(FOLLOW_rule__Section__Group_8__2_in_rule__Section__Group_8__15753);
             rule__Section__Group_8__2();
 
             state._fsp--;
@@ -7831,22 +7926,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_8__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2907:1: rule__Section__Group_8__1__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2937:1: rule__Section__Group_8__1__Impl : ( ':' ) ;
     public final void rule__Section__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2911:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2912:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2941:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2942:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2912:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2913:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2942:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2943:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getColonKeyword_8_1()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Section__Group_8__1__Impl5721); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Section__Group_8__1__Impl5781); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getColonKeyword_8_1()); 
             }
@@ -7872,16 +7967,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_8__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2926:1: rule__Section__Group_8__2 : rule__Section__Group_8__2__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2956:1: rule__Section__Group_8__2 : rule__Section__Group_8__2__Impl ;
     public final void rule__Section__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2930:1: ( rule__Section__Group_8__2__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2931:2: rule__Section__Group_8__2__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2960:1: ( rule__Section__Group_8__2__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2961:2: rule__Section__Group_8__2__Impl
             {
-            pushFollow(FOLLOW_rule__Section__Group_8__2__Impl_in_rule__Section__Group_8__25752);
+            pushFollow(FOLLOW_rule__Section__Group_8__2__Impl_in_rule__Section__Group_8__25812);
             rule__Section__Group_8__2__Impl();
 
             state._fsp--;
@@ -7905,25 +8000,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_8__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2937:1: rule__Section__Group_8__2__Impl : ( ( rule__Section__FilteringAssignment_8_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2967:1: rule__Section__Group_8__2__Impl : ( ( rule__Section__FilteringAssignment_8_2 ) ) ;
     public final void rule__Section__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2941:1: ( ( ( rule__Section__FilteringAssignment_8_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2942:1: ( ( rule__Section__FilteringAssignment_8_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2971:1: ( ( ( rule__Section__FilteringAssignment_8_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2972:1: ( ( rule__Section__FilteringAssignment_8_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2942:1: ( ( rule__Section__FilteringAssignment_8_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2943:1: ( rule__Section__FilteringAssignment_8_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2972:1: ( ( rule__Section__FilteringAssignment_8_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2973:1: ( rule__Section__FilteringAssignment_8_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getFilteringAssignment_8_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2944:1: ( rule__Section__FilteringAssignment_8_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2944:2: rule__Section__FilteringAssignment_8_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2974:1: ( rule__Section__FilteringAssignment_8_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2974:2: rule__Section__FilteringAssignment_8_2
             {
-            pushFollow(FOLLOW_rule__Section__FilteringAssignment_8_2_in_rule__Section__Group_8__2__Impl5779);
+            pushFollow(FOLLOW_rule__Section__FilteringAssignment_8_2_in_rule__Section__Group_8__2__Impl5839);
             rule__Section__FilteringAssignment_8_2();
 
             state._fsp--;
@@ -7956,21 +8051,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_9__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2960:1: rule__Section__Group_9__0 : rule__Section__Group_9__0__Impl rule__Section__Group_9__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2990:1: rule__Section__Group_9__0 : rule__Section__Group_9__0__Impl rule__Section__Group_9__1 ;
     public final void rule__Section__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2964:1: ( rule__Section__Group_9__0__Impl rule__Section__Group_9__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2965:2: rule__Section__Group_9__0__Impl rule__Section__Group_9__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2994:1: ( rule__Section__Group_9__0__Impl rule__Section__Group_9__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2995:2: rule__Section__Group_9__0__Impl rule__Section__Group_9__1
             {
-            pushFollow(FOLLOW_rule__Section__Group_9__0__Impl_in_rule__Section__Group_9__05815);
+            pushFollow(FOLLOW_rule__Section__Group_9__0__Impl_in_rule__Section__Group_9__05875);
             rule__Section__Group_9__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_9__1_in_rule__Section__Group_9__05818);
+            pushFollow(FOLLOW_rule__Section__Group_9__1_in_rule__Section__Group_9__05878);
             rule__Section__Group_9__1();
 
             state._fsp--;
@@ -7994,22 +8089,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_9__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2972:1: rule__Section__Group_9__0__Impl : ( 'expanded' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3002:1: rule__Section__Group_9__0__Impl : ( 'expanded' ) ;
     public final void rule__Section__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2976:1: ( ( 'expanded' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2977:1: ( 'expanded' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3006:1: ( ( 'expanded' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3007:1: ( 'expanded' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2977:1: ( 'expanded' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2978:1: 'expanded'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3007:1: ( 'expanded' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3008:1: 'expanded'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getExpandedKeyword_9_0()); 
             }
-            match(input,37,FOLLOW_37_in_rule__Section__Group_9__0__Impl5846); if (state.failed) return ;
+            match(input,37,FOLLOW_37_in_rule__Section__Group_9__0__Impl5906); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getExpandedKeyword_9_0()); 
             }
@@ -8035,21 +8130,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_9__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2991:1: rule__Section__Group_9__1 : rule__Section__Group_9__1__Impl rule__Section__Group_9__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3021:1: rule__Section__Group_9__1 : rule__Section__Group_9__1__Impl rule__Section__Group_9__2 ;
     public final void rule__Section__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2995:1: ( rule__Section__Group_9__1__Impl rule__Section__Group_9__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:2996:2: rule__Section__Group_9__1__Impl rule__Section__Group_9__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3025:1: ( rule__Section__Group_9__1__Impl rule__Section__Group_9__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3026:2: rule__Section__Group_9__1__Impl rule__Section__Group_9__2
             {
-            pushFollow(FOLLOW_rule__Section__Group_9__1__Impl_in_rule__Section__Group_9__15877);
+            pushFollow(FOLLOW_rule__Section__Group_9__1__Impl_in_rule__Section__Group_9__15937);
             rule__Section__Group_9__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_9__2_in_rule__Section__Group_9__15880);
+            pushFollow(FOLLOW_rule__Section__Group_9__2_in_rule__Section__Group_9__15940);
             rule__Section__Group_9__2();
 
             state._fsp--;
@@ -8073,22 +8168,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_9__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3003:1: rule__Section__Group_9__1__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3033:1: rule__Section__Group_9__1__Impl : ( ':' ) ;
     public final void rule__Section__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3007:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3008:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3037:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3038:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3008:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3009:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3038:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3039:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getColonKeyword_9_1()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Section__Group_9__1__Impl5908); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Section__Group_9__1__Impl5968); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getColonKeyword_9_1()); 
             }
@@ -8114,16 +8209,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_9__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3022:1: rule__Section__Group_9__2 : rule__Section__Group_9__2__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3052:1: rule__Section__Group_9__2 : rule__Section__Group_9__2__Impl ;
     public final void rule__Section__Group_9__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3026:1: ( rule__Section__Group_9__2__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3027:2: rule__Section__Group_9__2__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3056:1: ( rule__Section__Group_9__2__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3057:2: rule__Section__Group_9__2__Impl
             {
-            pushFollow(FOLLOW_rule__Section__Group_9__2__Impl_in_rule__Section__Group_9__25939);
+            pushFollow(FOLLOW_rule__Section__Group_9__2__Impl_in_rule__Section__Group_9__25999);
             rule__Section__Group_9__2__Impl();
 
             state._fsp--;
@@ -8147,25 +8242,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_9__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3033:1: rule__Section__Group_9__2__Impl : ( ( rule__Section__ExpandedAssignment_9_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3063:1: rule__Section__Group_9__2__Impl : ( ( rule__Section__ExpandedAssignment_9_2 ) ) ;
     public final void rule__Section__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3037:1: ( ( ( rule__Section__ExpandedAssignment_9_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3038:1: ( ( rule__Section__ExpandedAssignment_9_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3067:1: ( ( ( rule__Section__ExpandedAssignment_9_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3068:1: ( ( rule__Section__ExpandedAssignment_9_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3038:1: ( ( rule__Section__ExpandedAssignment_9_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3039:1: ( rule__Section__ExpandedAssignment_9_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3068:1: ( ( rule__Section__ExpandedAssignment_9_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3069:1: ( rule__Section__ExpandedAssignment_9_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getExpandedAssignment_9_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3040:1: ( rule__Section__ExpandedAssignment_9_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3040:2: rule__Section__ExpandedAssignment_9_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3070:1: ( rule__Section__ExpandedAssignment_9_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3070:2: rule__Section__ExpandedAssignment_9_2
             {
-            pushFollow(FOLLOW_rule__Section__ExpandedAssignment_9_2_in_rule__Section__Group_9__2__Impl5966);
+            pushFollow(FOLLOW_rule__Section__ExpandedAssignment_9_2_in_rule__Section__Group_9__2__Impl6026);
             rule__Section__ExpandedAssignment_9_2();
 
             state._fsp--;
@@ -8198,21 +8293,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3056:1: rule__Section__Group_10__0 : rule__Section__Group_10__0__Impl rule__Section__Group_10__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3086:1: rule__Section__Group_10__0 : rule__Section__Group_10__0__Impl rule__Section__Group_10__1 ;
     public final void rule__Section__Group_10__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3060:1: ( rule__Section__Group_10__0__Impl rule__Section__Group_10__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3061:2: rule__Section__Group_10__0__Impl rule__Section__Group_10__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3090:1: ( rule__Section__Group_10__0__Impl rule__Section__Group_10__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3091:2: rule__Section__Group_10__0__Impl rule__Section__Group_10__1
             {
-            pushFollow(FOLLOW_rule__Section__Group_10__0__Impl_in_rule__Section__Group_10__06002);
+            pushFollow(FOLLOW_rule__Section__Group_10__0__Impl_in_rule__Section__Group_10__06062);
             rule__Section__Group_10__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_10__1_in_rule__Section__Group_10__06005);
+            pushFollow(FOLLOW_rule__Section__Group_10__1_in_rule__Section__Group_10__06065);
             rule__Section__Group_10__1();
 
             state._fsp--;
@@ -8236,22 +8331,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3068:1: rule__Section__Group_10__0__Impl : ( 'activities' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3098:1: rule__Section__Group_10__0__Impl : ( 'activities' ) ;
     public final void rule__Section__Group_10__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3072:1: ( ( 'activities' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3073:1: ( 'activities' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3102:1: ( ( 'activities' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3103:1: ( 'activities' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3073:1: ( 'activities' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3074:1: 'activities'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3103:1: ( 'activities' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3104:1: 'activities'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getActivitiesKeyword_10_0()); 
             }
-            match(input,38,FOLLOW_38_in_rule__Section__Group_10__0__Impl6033); if (state.failed) return ;
+            match(input,38,FOLLOW_38_in_rule__Section__Group_10__0__Impl6093); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getActivitiesKeyword_10_0()); 
             }
@@ -8277,21 +8372,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3087:1: rule__Section__Group_10__1 : rule__Section__Group_10__1__Impl rule__Section__Group_10__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3117:1: rule__Section__Group_10__1 : rule__Section__Group_10__1__Impl rule__Section__Group_10__2 ;
     public final void rule__Section__Group_10__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3091:1: ( rule__Section__Group_10__1__Impl rule__Section__Group_10__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3092:2: rule__Section__Group_10__1__Impl rule__Section__Group_10__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3121:1: ( rule__Section__Group_10__1__Impl rule__Section__Group_10__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3122:2: rule__Section__Group_10__1__Impl rule__Section__Group_10__2
             {
-            pushFollow(FOLLOW_rule__Section__Group_10__1__Impl_in_rule__Section__Group_10__16064);
+            pushFollow(FOLLOW_rule__Section__Group_10__1__Impl_in_rule__Section__Group_10__16124);
             rule__Section__Group_10__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_10__2_in_rule__Section__Group_10__16067);
+            pushFollow(FOLLOW_rule__Section__Group_10__2_in_rule__Section__Group_10__16127);
             rule__Section__Group_10__2();
 
             state._fsp--;
@@ -8315,22 +8410,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3099:1: rule__Section__Group_10__1__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3129:1: rule__Section__Group_10__1__Impl : ( '{' ) ;
     public final void rule__Section__Group_10__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3103:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3104:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3133:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3134:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3104:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3105:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3134:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3135:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_10_1()); 
             }
-            match(input,15,FOLLOW_15_in_rule__Section__Group_10__1__Impl6095); if (state.failed) return ;
+            match(input,15,FOLLOW_15_in_rule__Section__Group_10__1__Impl6155); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_10_1()); 
             }
@@ -8356,21 +8451,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3118:1: rule__Section__Group_10__2 : rule__Section__Group_10__2__Impl rule__Section__Group_10__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3148:1: rule__Section__Group_10__2 : rule__Section__Group_10__2__Impl rule__Section__Group_10__3 ;
     public final void rule__Section__Group_10__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3122:1: ( rule__Section__Group_10__2__Impl rule__Section__Group_10__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3123:2: rule__Section__Group_10__2__Impl rule__Section__Group_10__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3152:1: ( rule__Section__Group_10__2__Impl rule__Section__Group_10__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3153:2: rule__Section__Group_10__2__Impl rule__Section__Group_10__3
             {
-            pushFollow(FOLLOW_rule__Section__Group_10__2__Impl_in_rule__Section__Group_10__26126);
+            pushFollow(FOLLOW_rule__Section__Group_10__2__Impl_in_rule__Section__Group_10__26186);
             rule__Section__Group_10__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Section__Group_10__3_in_rule__Section__Group_10__26129);
+            pushFollow(FOLLOW_rule__Section__Group_10__3_in_rule__Section__Group_10__26189);
             rule__Section__Group_10__3();
 
             state._fsp--;
@@ -8394,37 +8489,37 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3130:1: rule__Section__Group_10__2__Impl : ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3160:1: rule__Section__Group_10__2__Impl : ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* ) ;
     public final void rule__Section__Group_10__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3134:1: ( ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3135:1: ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3164:1: ( ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3165:1: ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3135:1: ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3136:1: ( rule__Section__OwnedActivitiesAssignment_10_2 )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3165:1: ( ( rule__Section__OwnedActivitiesAssignment_10_2 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3166:1: ( rule__Section__OwnedActivitiesAssignment_10_2 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getOwnedActivitiesAssignment_10_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3137:1: ( rule__Section__OwnedActivitiesAssignment_10_2 )*
-            loop22:
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3167:1: ( rule__Section__OwnedActivitiesAssignment_10_2 )*
+            loop23:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA22_0==13) ) {
-                    alt22=1;
+                if ( (LA23_0==13) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt23) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3137:2: rule__Section__OwnedActivitiesAssignment_10_2
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3167:2: rule__Section__OwnedActivitiesAssignment_10_2
             	    {
-            	    pushFollow(FOLLOW_rule__Section__OwnedActivitiesAssignment_10_2_in_rule__Section__Group_10__2__Impl6156);
+            	    pushFollow(FOLLOW_rule__Section__OwnedActivitiesAssignment_10_2_in_rule__Section__Group_10__2__Impl6216);
             	    rule__Section__OwnedActivitiesAssignment_10_2();
 
             	    state._fsp--;
@@ -8434,7 +8529,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop23;
                 }
             } while (true);
 
@@ -8463,16 +8558,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3147:1: rule__Section__Group_10__3 : rule__Section__Group_10__3__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3177:1: rule__Section__Group_10__3 : rule__Section__Group_10__3__Impl ;
     public final void rule__Section__Group_10__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3151:1: ( rule__Section__Group_10__3__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3152:2: rule__Section__Group_10__3__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3181:1: ( rule__Section__Group_10__3__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3182:2: rule__Section__Group_10__3__Impl
             {
-            pushFollow(FOLLOW_rule__Section__Group_10__3__Impl_in_rule__Section__Group_10__36187);
+            pushFollow(FOLLOW_rule__Section__Group_10__3__Impl_in_rule__Section__Group_10__36247);
             rule__Section__Group_10__3__Impl();
 
             state._fsp--;
@@ -8496,22 +8591,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__Group_10__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3158:1: rule__Section__Group_10__3__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3188:1: rule__Section__Group_10__3__Impl : ( '}' ) ;
     public final void rule__Section__Group_10__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3162:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3163:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3192:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3193:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3163:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3164:1: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3193:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3194:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_10_3()); 
             }
-            match(input,16,FOLLOW_16_in_rule__Section__Group_10__3__Impl6215); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__Section__Group_10__3__Impl6275); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_10_3()); 
             }
@@ -8537,21 +8632,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3185:1: rule__Activity__Group__0 : rule__Activity__Group__0__Impl rule__Activity__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3215:1: rule__Activity__Group__0 : rule__Activity__Group__0__Impl rule__Activity__Group__1 ;
     public final void rule__Activity__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3189:1: ( rule__Activity__Group__0__Impl rule__Activity__Group__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3190:2: rule__Activity__Group__0__Impl rule__Activity__Group__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3219:1: ( rule__Activity__Group__0__Impl rule__Activity__Group__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3220:2: rule__Activity__Group__0__Impl rule__Activity__Group__1
             {
-            pushFollow(FOLLOW_rule__Activity__Group__0__Impl_in_rule__Activity__Group__06254);
+            pushFollow(FOLLOW_rule__Activity__Group__0__Impl_in_rule__Activity__Group__06314);
             rule__Activity__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__1_in_rule__Activity__Group__06257);
+            pushFollow(FOLLOW_rule__Activity__Group__1_in_rule__Activity__Group__06317);
             rule__Activity__Group__1();
 
             state._fsp--;
@@ -8575,23 +8670,23 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3197:1: rule__Activity__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3227:1: rule__Activity__Group__0__Impl : ( () ) ;
     public final void rule__Activity__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3201:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3202:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3231:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3232:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3202:1: ( () )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3203:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3232:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3233:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getActivityAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3204:1: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3206:1: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3234:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3236:1: 
             {
             }
 
@@ -8616,21 +8711,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3216:1: rule__Activity__Group__1 : rule__Activity__Group__1__Impl rule__Activity__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3246:1: rule__Activity__Group__1 : rule__Activity__Group__1__Impl rule__Activity__Group__2 ;
     public final void rule__Activity__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3220:1: ( rule__Activity__Group__1__Impl rule__Activity__Group__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3221:2: rule__Activity__Group__1__Impl rule__Activity__Group__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3250:1: ( rule__Activity__Group__1__Impl rule__Activity__Group__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3251:2: rule__Activity__Group__1__Impl rule__Activity__Group__2
             {
-            pushFollow(FOLLOW_rule__Activity__Group__1__Impl_in_rule__Activity__Group__16315);
+            pushFollow(FOLLOW_rule__Activity__Group__1__Impl_in_rule__Activity__Group__16375);
             rule__Activity__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__2_in_rule__Activity__Group__16318);
+            pushFollow(FOLLOW_rule__Activity__Group__2_in_rule__Activity__Group__16378);
             rule__Activity__Group__2();
 
             state._fsp--;
@@ -8654,22 +8749,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3228:1: rule__Activity__Group__1__Impl : ( 'activity' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3258:1: rule__Activity__Group__1__Impl : ( 'activity' ) ;
     public final void rule__Activity__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3232:1: ( ( 'activity' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3233:1: ( 'activity' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3262:1: ( ( 'activity' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3263:1: ( 'activity' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3233:1: ( 'activity' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3234:1: 'activity'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3263:1: ( 'activity' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3264:1: 'activity'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getActivityKeyword_1()); 
             }
-            match(input,13,FOLLOW_13_in_rule__Activity__Group__1__Impl6346); if (state.failed) return ;
+            match(input,13,FOLLOW_13_in_rule__Activity__Group__1__Impl6406); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getActivityKeyword_1()); 
             }
@@ -8695,21 +8790,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3247:1: rule__Activity__Group__2 : rule__Activity__Group__2__Impl rule__Activity__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3277:1: rule__Activity__Group__2 : rule__Activity__Group__2__Impl rule__Activity__Group__3 ;
     public final void rule__Activity__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3251:1: ( rule__Activity__Group__2__Impl rule__Activity__Group__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3252:2: rule__Activity__Group__2__Impl rule__Activity__Group__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3281:1: ( rule__Activity__Group__2__Impl rule__Activity__Group__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3282:2: rule__Activity__Group__2__Impl rule__Activity__Group__3
             {
-            pushFollow(FOLLOW_rule__Activity__Group__2__Impl_in_rule__Activity__Group__26377);
+            pushFollow(FOLLOW_rule__Activity__Group__2__Impl_in_rule__Activity__Group__26437);
             rule__Activity__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__3_in_rule__Activity__Group__26380);
+            pushFollow(FOLLOW_rule__Activity__Group__3_in_rule__Activity__Group__26440);
             rule__Activity__Group__3();
 
             state._fsp--;
@@ -8733,25 +8828,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3259:1: rule__Activity__Group__2__Impl : ( ( rule__Activity__NameAssignment_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3289:1: rule__Activity__Group__2__Impl : ( ( rule__Activity__NameAssignment_2 ) ) ;
     public final void rule__Activity__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3263:1: ( ( ( rule__Activity__NameAssignment_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3264:1: ( ( rule__Activity__NameAssignment_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3293:1: ( ( ( rule__Activity__NameAssignment_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3294:1: ( ( rule__Activity__NameAssignment_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3264:1: ( ( rule__Activity__NameAssignment_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3265:1: ( rule__Activity__NameAssignment_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3294:1: ( ( rule__Activity__NameAssignment_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3295:1: ( rule__Activity__NameAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getNameAssignment_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3266:1: ( rule__Activity__NameAssignment_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3266:2: rule__Activity__NameAssignment_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3296:1: ( rule__Activity__NameAssignment_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3296:2: rule__Activity__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__Activity__NameAssignment_2_in_rule__Activity__Group__2__Impl6407);
+            pushFollow(FOLLOW_rule__Activity__NameAssignment_2_in_rule__Activity__Group__2__Impl6467);
             rule__Activity__NameAssignment_2();
 
             state._fsp--;
@@ -8784,21 +8879,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3276:1: rule__Activity__Group__3 : rule__Activity__Group__3__Impl rule__Activity__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3306:1: rule__Activity__Group__3 : rule__Activity__Group__3__Impl rule__Activity__Group__4 ;
     public final void rule__Activity__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3280:1: ( rule__Activity__Group__3__Impl rule__Activity__Group__4 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3281:2: rule__Activity__Group__3__Impl rule__Activity__Group__4
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3310:1: ( rule__Activity__Group__3__Impl rule__Activity__Group__4 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3311:2: rule__Activity__Group__3__Impl rule__Activity__Group__4
             {
-            pushFollow(FOLLOW_rule__Activity__Group__3__Impl_in_rule__Activity__Group__36437);
+            pushFollow(FOLLOW_rule__Activity__Group__3__Impl_in_rule__Activity__Group__36497);
             rule__Activity__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__4_in_rule__Activity__Group__36440);
+            pushFollow(FOLLOW_rule__Activity__Group__4_in_rule__Activity__Group__36500);
             rule__Activity__Group__4();
 
             state._fsp--;
@@ -8822,22 +8917,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3288:1: rule__Activity__Group__3__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3318:1: rule__Activity__Group__3__Impl : ( '{' ) ;
     public final void rule__Activity__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3292:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3293:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3322:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3323:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3293:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3294:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3323:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3324:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_3()); 
             }
-            match(input,15,FOLLOW_15_in_rule__Activity__Group__3__Impl6468); if (state.failed) return ;
+            match(input,15,FOLLOW_15_in_rule__Activity__Group__3__Impl6528); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_3()); 
             }
@@ -8863,21 +8958,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__4"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3307:1: rule__Activity__Group__4 : rule__Activity__Group__4__Impl rule__Activity__Group__5 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3337:1: rule__Activity__Group__4 : rule__Activity__Group__4__Impl rule__Activity__Group__5 ;
     public final void rule__Activity__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3311:1: ( rule__Activity__Group__4__Impl rule__Activity__Group__5 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3312:2: rule__Activity__Group__4__Impl rule__Activity__Group__5
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3341:1: ( rule__Activity__Group__4__Impl rule__Activity__Group__5 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3342:2: rule__Activity__Group__4__Impl rule__Activity__Group__5
             {
-            pushFollow(FOLLOW_rule__Activity__Group__4__Impl_in_rule__Activity__Group__46499);
+            pushFollow(FOLLOW_rule__Activity__Group__4__Impl_in_rule__Activity__Group__46559);
             rule__Activity__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__5_in_rule__Activity__Group__46502);
+            pushFollow(FOLLOW_rule__Activity__Group__5_in_rule__Activity__Group__46562);
             rule__Activity__Group__5();
 
             state._fsp--;
@@ -8901,33 +8996,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3319:1: rule__Activity__Group__4__Impl : ( ( rule__Activity__Group_4__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3349:1: rule__Activity__Group__4__Impl : ( ( rule__Activity__Group_4__0 )? ) ;
     public final void rule__Activity__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3323:1: ( ( ( rule__Activity__Group_4__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3324:1: ( ( rule__Activity__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3353:1: ( ( ( rule__Activity__Group_4__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3354:1: ( ( rule__Activity__Group_4__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3324:1: ( ( rule__Activity__Group_4__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3325:1: ( rule__Activity__Group_4__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3354:1: ( ( rule__Activity__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3355:1: ( rule__Activity__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getGroup_4()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3326:1: ( rule__Activity__Group_4__0 )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3356:1: ( rule__Activity__Group_4__0 )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA23_0==21) ) {
-                alt23=1;
+            if ( (LA24_0==20) ) {
+                alt24=1;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3326:2: rule__Activity__Group_4__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3356:2: rule__Activity__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Activity__Group_4__0_in_rule__Activity__Group__4__Impl6529);
+                    pushFollow(FOLLOW_rule__Activity__Group_4__0_in_rule__Activity__Group__4__Impl6589);
                     rule__Activity__Group_4__0();
 
                     state._fsp--;
@@ -8963,21 +9058,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__5"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3336:1: rule__Activity__Group__5 : rule__Activity__Group__5__Impl rule__Activity__Group__6 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3366:1: rule__Activity__Group__5 : rule__Activity__Group__5__Impl rule__Activity__Group__6 ;
     public final void rule__Activity__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3340:1: ( rule__Activity__Group__5__Impl rule__Activity__Group__6 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3341:2: rule__Activity__Group__5__Impl rule__Activity__Group__6
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3370:1: ( rule__Activity__Group__5__Impl rule__Activity__Group__6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3371:2: rule__Activity__Group__5__Impl rule__Activity__Group__6
             {
-            pushFollow(FOLLOW_rule__Activity__Group__5__Impl_in_rule__Activity__Group__56560);
+            pushFollow(FOLLOW_rule__Activity__Group__5__Impl_in_rule__Activity__Group__56620);
             rule__Activity__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__6_in_rule__Activity__Group__56563);
+            pushFollow(FOLLOW_rule__Activity__Group__6_in_rule__Activity__Group__56623);
             rule__Activity__Group__6();
 
             state._fsp--;
@@ -9001,33 +9096,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__5__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3348:1: rule__Activity__Group__5__Impl : ( ( rule__Activity__Group_5__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3378:1: rule__Activity__Group__5__Impl : ( ( rule__Activity__Group_5__0 )? ) ;
     public final void rule__Activity__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3352:1: ( ( ( rule__Activity__Group_5__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3353:1: ( ( rule__Activity__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3382:1: ( ( ( rule__Activity__Group_5__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3383:1: ( ( rule__Activity__Group_5__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3353:1: ( ( rule__Activity__Group_5__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3354:1: ( rule__Activity__Group_5__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3383:1: ( ( rule__Activity__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3384:1: ( rule__Activity__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getGroup_5()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3355:1: ( rule__Activity__Group_5__0 )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3385:1: ( rule__Activity__Group_5__0 )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA24_0==24) ) {
-                alt24=1;
+            if ( (LA25_0==23) ) {
+                alt25=1;
             }
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3355:2: rule__Activity__Group_5__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3385:2: rule__Activity__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__Activity__Group_5__0_in_rule__Activity__Group__5__Impl6590);
+                    pushFollow(FOLLOW_rule__Activity__Group_5__0_in_rule__Activity__Group__5__Impl6650);
                     rule__Activity__Group_5__0();
 
                     state._fsp--;
@@ -9063,21 +9158,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3365:1: rule__Activity__Group__6 : rule__Activity__Group__6__Impl rule__Activity__Group__7 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3395:1: rule__Activity__Group__6 : rule__Activity__Group__6__Impl rule__Activity__Group__7 ;
     public final void rule__Activity__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3369:1: ( rule__Activity__Group__6__Impl rule__Activity__Group__7 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3370:2: rule__Activity__Group__6__Impl rule__Activity__Group__7
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3399:1: ( rule__Activity__Group__6__Impl rule__Activity__Group__7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3400:2: rule__Activity__Group__6__Impl rule__Activity__Group__7
             {
-            pushFollow(FOLLOW_rule__Activity__Group__6__Impl_in_rule__Activity__Group__66621);
+            pushFollow(FOLLOW_rule__Activity__Group__6__Impl_in_rule__Activity__Group__66681);
             rule__Activity__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__7_in_rule__Activity__Group__66624);
+            pushFollow(FOLLOW_rule__Activity__Group__7_in_rule__Activity__Group__66684);
             rule__Activity__Group__7();
 
             state._fsp--;
@@ -9101,22 +9196,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__6__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3377:1: rule__Activity__Group__6__Impl : ( 'index' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3407:1: rule__Activity__Group__6__Impl : ( 'index' ) ;
     public final void rule__Activity__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3381:1: ( ( 'index' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3382:1: ( 'index' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3411:1: ( ( 'index' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3412:1: ( 'index' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3382:1: ( 'index' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3383:1: 'index'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3412:1: ( 'index' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3413:1: 'index'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getIndexKeyword_6()); 
             }
-            match(input,19,FOLLOW_19_in_rule__Activity__Group__6__Impl6652); if (state.failed) return ;
+            match(input,19,FOLLOW_19_in_rule__Activity__Group__6__Impl6712); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getIndexKeyword_6()); 
             }
@@ -9142,21 +9237,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3396:1: rule__Activity__Group__7 : rule__Activity__Group__7__Impl rule__Activity__Group__8 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3426:1: rule__Activity__Group__7 : rule__Activity__Group__7__Impl rule__Activity__Group__8 ;
     public final void rule__Activity__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3400:1: ( rule__Activity__Group__7__Impl rule__Activity__Group__8 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3401:2: rule__Activity__Group__7__Impl rule__Activity__Group__8
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3430:1: ( rule__Activity__Group__7__Impl rule__Activity__Group__8 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3431:2: rule__Activity__Group__7__Impl rule__Activity__Group__8
             {
-            pushFollow(FOLLOW_rule__Activity__Group__7__Impl_in_rule__Activity__Group__76683);
+            pushFollow(FOLLOW_rule__Activity__Group__7__Impl_in_rule__Activity__Group__76743);
             rule__Activity__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__8_in_rule__Activity__Group__76686);
+            pushFollow(FOLLOW_rule__Activity__Group__8_in_rule__Activity__Group__76746);
             rule__Activity__Group__8();
 
             state._fsp--;
@@ -9180,25 +9275,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__7__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3408:1: rule__Activity__Group__7__Impl : ( ( rule__Activity__IndexAssignment_7 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3438:1: rule__Activity__Group__7__Impl : ( ( rule__Activity__IndexAssignment_7 ) ) ;
     public final void rule__Activity__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3412:1: ( ( ( rule__Activity__IndexAssignment_7 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3413:1: ( ( rule__Activity__IndexAssignment_7 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3442:1: ( ( ( rule__Activity__IndexAssignment_7 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3443:1: ( ( rule__Activity__IndexAssignment_7 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3413:1: ( ( rule__Activity__IndexAssignment_7 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3414:1: ( rule__Activity__IndexAssignment_7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3443:1: ( ( rule__Activity__IndexAssignment_7 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3444:1: ( rule__Activity__IndexAssignment_7 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getIndexAssignment_7()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3415:1: ( rule__Activity__IndexAssignment_7 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3415:2: rule__Activity__IndexAssignment_7
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3445:1: ( rule__Activity__IndexAssignment_7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3445:2: rule__Activity__IndexAssignment_7
             {
-            pushFollow(FOLLOW_rule__Activity__IndexAssignment_7_in_rule__Activity__Group__7__Impl6713);
+            pushFollow(FOLLOW_rule__Activity__IndexAssignment_7_in_rule__Activity__Group__7__Impl6773);
             rule__Activity__IndexAssignment_7();
 
             state._fsp--;
@@ -9231,21 +9326,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__8"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3425:1: rule__Activity__Group__8 : rule__Activity__Group__8__Impl rule__Activity__Group__9 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3455:1: rule__Activity__Group__8 : rule__Activity__Group__8__Impl rule__Activity__Group__9 ;
     public final void rule__Activity__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3429:1: ( rule__Activity__Group__8__Impl rule__Activity__Group__9 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3430:2: rule__Activity__Group__8__Impl rule__Activity__Group__9
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3459:1: ( rule__Activity__Group__8__Impl rule__Activity__Group__9 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3460:2: rule__Activity__Group__8__Impl rule__Activity__Group__9
             {
-            pushFollow(FOLLOW_rule__Activity__Group__8__Impl_in_rule__Activity__Group__86743);
+            pushFollow(FOLLOW_rule__Activity__Group__8__Impl_in_rule__Activity__Group__86803);
             rule__Activity__Group__8__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__9_in_rule__Activity__Group__86746);
+            pushFollow(FOLLOW_rule__Activity__Group__9_in_rule__Activity__Group__86806);
             rule__Activity__Group__9();
 
             state._fsp--;
@@ -9269,33 +9364,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__8__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3437:1: rule__Activity__Group__8__Impl : ( ( rule__Activity__Group_8__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3467:1: rule__Activity__Group__8__Impl : ( ( rule__Activity__Group_8__0 )? ) ;
     public final void rule__Activity__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3441:1: ( ( ( rule__Activity__Group_8__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3442:1: ( ( rule__Activity__Group_8__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3471:1: ( ( ( rule__Activity__Group_8__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3472:1: ( ( rule__Activity__Group_8__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3442:1: ( ( rule__Activity__Group_8__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3443:1: ( rule__Activity__Group_8__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3472:1: ( ( rule__Activity__Group_8__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3473:1: ( rule__Activity__Group_8__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getGroup_8()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3444:1: ( rule__Activity__Group_8__0 )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3474:1: ( rule__Activity__Group_8__0 )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA25_0==32) ) {
-                alt25=1;
+            if ( (LA26_0==31) ) {
+                alt26=1;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3444:2: rule__Activity__Group_8__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3474:2: rule__Activity__Group_8__0
                     {
-                    pushFollow(FOLLOW_rule__Activity__Group_8__0_in_rule__Activity__Group__8__Impl6773);
+                    pushFollow(FOLLOW_rule__Activity__Group_8__0_in_rule__Activity__Group__8__Impl6833);
                     rule__Activity__Group_8__0();
 
                     state._fsp--;
@@ -9331,21 +9426,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__9"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3454:1: rule__Activity__Group__9 : rule__Activity__Group__9__Impl rule__Activity__Group__10 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3484:1: rule__Activity__Group__9 : rule__Activity__Group__9__Impl rule__Activity__Group__10 ;
     public final void rule__Activity__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3458:1: ( rule__Activity__Group__9__Impl rule__Activity__Group__10 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3459:2: rule__Activity__Group__9__Impl rule__Activity__Group__10
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3488:1: ( rule__Activity__Group__9__Impl rule__Activity__Group__10 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3489:2: rule__Activity__Group__9__Impl rule__Activity__Group__10
             {
-            pushFollow(FOLLOW_rule__Activity__Group__9__Impl_in_rule__Activity__Group__96804);
+            pushFollow(FOLLOW_rule__Activity__Group__9__Impl_in_rule__Activity__Group__96864);
             rule__Activity__Group__9__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group__10_in_rule__Activity__Group__96807);
+            pushFollow(FOLLOW_rule__Activity__Group__10_in_rule__Activity__Group__96867);
             rule__Activity__Group__10();
 
             state._fsp--;
@@ -9369,33 +9464,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__9__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3466:1: rule__Activity__Group__9__Impl : ( ( rule__Activity__Group_9__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3496:1: rule__Activity__Group__9__Impl : ( ( rule__Activity__Group_9__0 )? ) ;
     public final void rule__Activity__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3470:1: ( ( ( rule__Activity__Group_9__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3471:1: ( ( rule__Activity__Group_9__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3500:1: ( ( ( rule__Activity__Group_9__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3501:1: ( ( rule__Activity__Group_9__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3471:1: ( ( rule__Activity__Group_9__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3472:1: ( rule__Activity__Group_9__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3501:1: ( ( rule__Activity__Group_9__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3502:1: ( rule__Activity__Group_9__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getGroup_9()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3473:1: ( rule__Activity__Group_9__0 )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3503:1: ( rule__Activity__Group_9__0 )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA26_0==39) ) {
-                alt26=1;
+            if ( (LA27_0==39) ) {
+                alt27=1;
             }
-            switch (alt26) {
+            switch (alt27) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3473:2: rule__Activity__Group_9__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3503:2: rule__Activity__Group_9__0
                     {
-                    pushFollow(FOLLOW_rule__Activity__Group_9__0_in_rule__Activity__Group__9__Impl6834);
+                    pushFollow(FOLLOW_rule__Activity__Group_9__0_in_rule__Activity__Group__9__Impl6894);
                     rule__Activity__Group_9__0();
 
                     state._fsp--;
@@ -9431,16 +9526,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__10"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3483:1: rule__Activity__Group__10 : rule__Activity__Group__10__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3513:1: rule__Activity__Group__10 : rule__Activity__Group__10__Impl ;
     public final void rule__Activity__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3487:1: ( rule__Activity__Group__10__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3488:2: rule__Activity__Group__10__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3517:1: ( rule__Activity__Group__10__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3518:2: rule__Activity__Group__10__Impl
             {
-            pushFollow(FOLLOW_rule__Activity__Group__10__Impl_in_rule__Activity__Group__106865);
+            pushFollow(FOLLOW_rule__Activity__Group__10__Impl_in_rule__Activity__Group__106925);
             rule__Activity__Group__10__Impl();
 
             state._fsp--;
@@ -9464,22 +9559,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group__10__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3494:1: rule__Activity__Group__10__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3524:1: rule__Activity__Group__10__Impl : ( '}' ) ;
     public final void rule__Activity__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3498:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3499:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3528:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3529:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3499:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3500:1: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3529:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3530:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_10()); 
             }
-            match(input,16,FOLLOW_16_in_rule__Activity__Group__10__Impl6893); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__Activity__Group__10__Impl6953); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_10()); 
             }
@@ -9505,21 +9600,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_4__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3535:1: rule__Activity__Group_4__0 : rule__Activity__Group_4__0__Impl rule__Activity__Group_4__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3565:1: rule__Activity__Group_4__0 : rule__Activity__Group_4__0__Impl rule__Activity__Group_4__1 ;
     public final void rule__Activity__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3539:1: ( rule__Activity__Group_4__0__Impl rule__Activity__Group_4__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3540:2: rule__Activity__Group_4__0__Impl rule__Activity__Group_4__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3569:1: ( rule__Activity__Group_4__0__Impl rule__Activity__Group_4__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3570:2: rule__Activity__Group_4__0__Impl rule__Activity__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Activity__Group_4__0__Impl_in_rule__Activity__Group_4__06946);
+            pushFollow(FOLLOW_rule__Activity__Group_4__0__Impl_in_rule__Activity__Group_4__07006);
             rule__Activity__Group_4__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group_4__1_in_rule__Activity__Group_4__06949);
+            pushFollow(FOLLOW_rule__Activity__Group_4__1_in_rule__Activity__Group_4__07009);
             rule__Activity__Group_4__1();
 
             state._fsp--;
@@ -9543,22 +9638,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_4__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3547:1: rule__Activity__Group_4__0__Impl : ( 'description' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3577:1: rule__Activity__Group_4__0__Impl : ( 'description' ) ;
     public final void rule__Activity__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3551:1: ( ( 'description' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3552:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3581:1: ( ( 'description' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3582:1: ( 'description' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3552:1: ( 'description' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3553:1: 'description'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3582:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3583:1: 'description'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getDescriptionKeyword_4_0()); 
             }
-            match(input,21,FOLLOW_21_in_rule__Activity__Group_4__0__Impl6977); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__Activity__Group_4__0__Impl7037); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getDescriptionKeyword_4_0()); 
             }
@@ -9584,16 +9679,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_4__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3566:1: rule__Activity__Group_4__1 : rule__Activity__Group_4__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3596:1: rule__Activity__Group_4__1 : rule__Activity__Group_4__1__Impl ;
     public final void rule__Activity__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3570:1: ( rule__Activity__Group_4__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3571:2: rule__Activity__Group_4__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3600:1: ( rule__Activity__Group_4__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3601:2: rule__Activity__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Activity__Group_4__1__Impl_in_rule__Activity__Group_4__17008);
+            pushFollow(FOLLOW_rule__Activity__Group_4__1__Impl_in_rule__Activity__Group_4__17068);
             rule__Activity__Group_4__1__Impl();
 
             state._fsp--;
@@ -9617,25 +9712,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_4__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3577:1: rule__Activity__Group_4__1__Impl : ( ( rule__Activity__DescriptionAssignment_4_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3607:1: rule__Activity__Group_4__1__Impl : ( ( rule__Activity__DescriptionAssignment_4_1 ) ) ;
     public final void rule__Activity__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3581:1: ( ( ( rule__Activity__DescriptionAssignment_4_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3582:1: ( ( rule__Activity__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3611:1: ( ( ( rule__Activity__DescriptionAssignment_4_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3612:1: ( ( rule__Activity__DescriptionAssignment_4_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3582:1: ( ( rule__Activity__DescriptionAssignment_4_1 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3583:1: ( rule__Activity__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3612:1: ( ( rule__Activity__DescriptionAssignment_4_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3613:1: ( rule__Activity__DescriptionAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getDescriptionAssignment_4_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3584:1: ( rule__Activity__DescriptionAssignment_4_1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3584:2: rule__Activity__DescriptionAssignment_4_1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3614:1: ( rule__Activity__DescriptionAssignment_4_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3614:2: rule__Activity__DescriptionAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Activity__DescriptionAssignment_4_1_in_rule__Activity__Group_4__1__Impl7035);
+            pushFollow(FOLLOW_rule__Activity__DescriptionAssignment_4_1_in_rule__Activity__Group_4__1__Impl7095);
             rule__Activity__DescriptionAssignment_4_1();
 
             state._fsp--;
@@ -9668,21 +9763,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_5__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3598:1: rule__Activity__Group_5__0 : rule__Activity__Group_5__0__Impl rule__Activity__Group_5__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3628:1: rule__Activity__Group_5__0 : rule__Activity__Group_5__0__Impl rule__Activity__Group_5__1 ;
     public final void rule__Activity__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3602:1: ( rule__Activity__Group_5__0__Impl rule__Activity__Group_5__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3603:2: rule__Activity__Group_5__0__Impl rule__Activity__Group_5__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3632:1: ( rule__Activity__Group_5__0__Impl rule__Activity__Group_5__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3633:2: rule__Activity__Group_5__0__Impl rule__Activity__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Activity__Group_5__0__Impl_in_rule__Activity__Group_5__07069);
+            pushFollow(FOLLOW_rule__Activity__Group_5__0__Impl_in_rule__Activity__Group_5__07129);
             rule__Activity__Group_5__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group_5__1_in_rule__Activity__Group_5__07072);
+            pushFollow(FOLLOW_rule__Activity__Group_5__1_in_rule__Activity__Group_5__07132);
             rule__Activity__Group_5__1();
 
             state._fsp--;
@@ -9706,22 +9801,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_5__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3610:1: rule__Activity__Group_5__0__Impl : ( 'id' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3640:1: rule__Activity__Group_5__0__Impl : ( 'id' ) ;
     public final void rule__Activity__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3614:1: ( ( 'id' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3615:1: ( 'id' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3644:1: ( ( 'id' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3645:1: ( 'id' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3615:1: ( 'id' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3616:1: 'id'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3645:1: ( 'id' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3646:1: 'id'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getIdKeyword_5_0()); 
             }
-            match(input,24,FOLLOW_24_in_rule__Activity__Group_5__0__Impl7100); if (state.failed) return ;
+            match(input,23,FOLLOW_23_in_rule__Activity__Group_5__0__Impl7160); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getIdKeyword_5_0()); 
             }
@@ -9747,16 +9842,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_5__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3629:1: rule__Activity__Group_5__1 : rule__Activity__Group_5__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3659:1: rule__Activity__Group_5__1 : rule__Activity__Group_5__1__Impl ;
     public final void rule__Activity__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3633:1: ( rule__Activity__Group_5__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3634:2: rule__Activity__Group_5__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3663:1: ( rule__Activity__Group_5__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3664:2: rule__Activity__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__Activity__Group_5__1__Impl_in_rule__Activity__Group_5__17131);
+            pushFollow(FOLLOW_rule__Activity__Group_5__1__Impl_in_rule__Activity__Group_5__17191);
             rule__Activity__Group_5__1__Impl();
 
             state._fsp--;
@@ -9780,25 +9875,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_5__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3640:1: rule__Activity__Group_5__1__Impl : ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3670:1: rule__Activity__Group_5__1__Impl : ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) ) ;
     public final void rule__Activity__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3644:1: ( ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3645:1: ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3674:1: ( ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3675:1: ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3645:1: ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3646:1: ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3675:1: ( ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3676:1: ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getActivityExplorerItemIDAssignment_5_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3647:1: ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3647:2: rule__Activity__ActivityExplorerItemIDAssignment_5_1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3677:1: ( rule__Activity__ActivityExplorerItemIDAssignment_5_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3677:2: rule__Activity__ActivityExplorerItemIDAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__Activity__ActivityExplorerItemIDAssignment_5_1_in_rule__Activity__Group_5__1__Impl7158);
+            pushFollow(FOLLOW_rule__Activity__ActivityExplorerItemIDAssignment_5_1_in_rule__Activity__Group_5__1__Impl7218);
             rule__Activity__ActivityExplorerItemIDAssignment_5_1();
 
             state._fsp--;
@@ -9831,21 +9926,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_8__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3661:1: rule__Activity__Group_8__0 : rule__Activity__Group_8__0__Impl rule__Activity__Group_8__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3691:1: rule__Activity__Group_8__0 : rule__Activity__Group_8__0__Impl rule__Activity__Group_8__1 ;
     public final void rule__Activity__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3665:1: ( rule__Activity__Group_8__0__Impl rule__Activity__Group_8__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3666:2: rule__Activity__Group_8__0__Impl rule__Activity__Group_8__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3695:1: ( rule__Activity__Group_8__0__Impl rule__Activity__Group_8__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3696:2: rule__Activity__Group_8__0__Impl rule__Activity__Group_8__1
             {
-            pushFollow(FOLLOW_rule__Activity__Group_8__0__Impl_in_rule__Activity__Group_8__07192);
+            pushFollow(FOLLOW_rule__Activity__Group_8__0__Impl_in_rule__Activity__Group_8__07252);
             rule__Activity__Group_8__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group_8__1_in_rule__Activity__Group_8__07195);
+            pushFollow(FOLLOW_rule__Activity__Group_8__1_in_rule__Activity__Group_8__07255);
             rule__Activity__Group_8__1();
 
             state._fsp--;
@@ -9869,22 +9964,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_8__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3673:1: rule__Activity__Group_8__0__Impl : ( 'predicated' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3703:1: rule__Activity__Group_8__0__Impl : ( 'predicated' ) ;
     public final void rule__Activity__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3677:1: ( ( 'predicated' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3678:1: ( 'predicated' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3707:1: ( ( 'predicated' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3708:1: ( 'predicated' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3678:1: ( 'predicated' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3679:1: 'predicated'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3708:1: ( 'predicated' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3709:1: 'predicated'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getPredicatedKeyword_8_0()); 
             }
-            match(input,32,FOLLOW_32_in_rule__Activity__Group_8__0__Impl7223); if (state.failed) return ;
+            match(input,31,FOLLOW_31_in_rule__Activity__Group_8__0__Impl7283); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getPredicatedKeyword_8_0()); 
             }
@@ -9910,21 +10005,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_8__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3692:1: rule__Activity__Group_8__1 : rule__Activity__Group_8__1__Impl rule__Activity__Group_8__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3722:1: rule__Activity__Group_8__1 : rule__Activity__Group_8__1__Impl rule__Activity__Group_8__2 ;
     public final void rule__Activity__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3696:1: ( rule__Activity__Group_8__1__Impl rule__Activity__Group_8__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3697:2: rule__Activity__Group_8__1__Impl rule__Activity__Group_8__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3726:1: ( rule__Activity__Group_8__1__Impl rule__Activity__Group_8__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3727:2: rule__Activity__Group_8__1__Impl rule__Activity__Group_8__2
             {
-            pushFollow(FOLLOW_rule__Activity__Group_8__1__Impl_in_rule__Activity__Group_8__17254);
+            pushFollow(FOLLOW_rule__Activity__Group_8__1__Impl_in_rule__Activity__Group_8__17314);
             rule__Activity__Group_8__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group_8__2_in_rule__Activity__Group_8__17257);
+            pushFollow(FOLLOW_rule__Activity__Group_8__2_in_rule__Activity__Group_8__17317);
             rule__Activity__Group_8__2();
 
             state._fsp--;
@@ -9948,22 +10043,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_8__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3704:1: rule__Activity__Group_8__1__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3734:1: rule__Activity__Group_8__1__Impl : ( ':' ) ;
     public final void rule__Activity__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3708:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3709:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3738:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3739:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3709:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3710:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3739:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3740:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getColonKeyword_8_1()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Activity__Group_8__1__Impl7285); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Activity__Group_8__1__Impl7345); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getColonKeyword_8_1()); 
             }
@@ -9989,16 +10084,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_8__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3723:1: rule__Activity__Group_8__2 : rule__Activity__Group_8__2__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3753:1: rule__Activity__Group_8__2 : rule__Activity__Group_8__2__Impl ;
     public final void rule__Activity__Group_8__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3727:1: ( rule__Activity__Group_8__2__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3728:2: rule__Activity__Group_8__2__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3757:1: ( rule__Activity__Group_8__2__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3758:2: rule__Activity__Group_8__2__Impl
             {
-            pushFollow(FOLLOW_rule__Activity__Group_8__2__Impl_in_rule__Activity__Group_8__27316);
+            pushFollow(FOLLOW_rule__Activity__Group_8__2__Impl_in_rule__Activity__Group_8__27376);
             rule__Activity__Group_8__2__Impl();
 
             state._fsp--;
@@ -10022,25 +10117,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_8__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3734:1: rule__Activity__Group_8__2__Impl : ( ( rule__Activity__HasPredicateAssignment_8_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3764:1: rule__Activity__Group_8__2__Impl : ( ( rule__Activity__HasPredicateAssignment_8_2 ) ) ;
     public final void rule__Activity__Group_8__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3738:1: ( ( ( rule__Activity__HasPredicateAssignment_8_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3739:1: ( ( rule__Activity__HasPredicateAssignment_8_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3768:1: ( ( ( rule__Activity__HasPredicateAssignment_8_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3769:1: ( ( rule__Activity__HasPredicateAssignment_8_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3739:1: ( ( rule__Activity__HasPredicateAssignment_8_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3740:1: ( rule__Activity__HasPredicateAssignment_8_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3769:1: ( ( rule__Activity__HasPredicateAssignment_8_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3770:1: ( rule__Activity__HasPredicateAssignment_8_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getHasPredicateAssignment_8_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3741:1: ( rule__Activity__HasPredicateAssignment_8_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3741:2: rule__Activity__HasPredicateAssignment_8_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3771:1: ( rule__Activity__HasPredicateAssignment_8_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3771:2: rule__Activity__HasPredicateAssignment_8_2
             {
-            pushFollow(FOLLOW_rule__Activity__HasPredicateAssignment_8_2_in_rule__Activity__Group_8__2__Impl7343);
+            pushFollow(FOLLOW_rule__Activity__HasPredicateAssignment_8_2_in_rule__Activity__Group_8__2__Impl7403);
             rule__Activity__HasPredicateAssignment_8_2();
 
             state._fsp--;
@@ -10073,21 +10168,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_9__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3757:1: rule__Activity__Group_9__0 : rule__Activity__Group_9__0__Impl rule__Activity__Group_9__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3787:1: rule__Activity__Group_9__0 : rule__Activity__Group_9__0__Impl rule__Activity__Group_9__1 ;
     public final void rule__Activity__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3761:1: ( rule__Activity__Group_9__0__Impl rule__Activity__Group_9__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3762:2: rule__Activity__Group_9__0__Impl rule__Activity__Group_9__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3791:1: ( rule__Activity__Group_9__0__Impl rule__Activity__Group_9__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3792:2: rule__Activity__Group_9__0__Impl rule__Activity__Group_9__1
             {
-            pushFollow(FOLLOW_rule__Activity__Group_9__0__Impl_in_rule__Activity__Group_9__07379);
+            pushFollow(FOLLOW_rule__Activity__Group_9__0__Impl_in_rule__Activity__Group_9__07439);
             rule__Activity__Group_9__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group_9__1_in_rule__Activity__Group_9__07382);
+            pushFollow(FOLLOW_rule__Activity__Group_9__1_in_rule__Activity__Group_9__07442);
             rule__Activity__Group_9__1();
 
             state._fsp--;
@@ -10111,22 +10206,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_9__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3769:1: rule__Activity__Group_9__0__Impl : ( 'icon' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3799:1: rule__Activity__Group_9__0__Impl : ( 'icon' ) ;
     public final void rule__Activity__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3773:1: ( ( 'icon' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3774:1: ( 'icon' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3803:1: ( ( 'icon' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3804:1: ( 'icon' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3774:1: ( 'icon' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3775:1: 'icon'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3804:1: ( 'icon' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3805:1: 'icon'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getIconKeyword_9_0()); 
             }
-            match(input,39,FOLLOW_39_in_rule__Activity__Group_9__0__Impl7410); if (state.failed) return ;
+            match(input,39,FOLLOW_39_in_rule__Activity__Group_9__0__Impl7470); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getIconKeyword_9_0()); 
             }
@@ -10152,21 +10247,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_9__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3788:1: rule__Activity__Group_9__1 : rule__Activity__Group_9__1__Impl rule__Activity__Group_9__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3818:1: rule__Activity__Group_9__1 : rule__Activity__Group_9__1__Impl rule__Activity__Group_9__2 ;
     public final void rule__Activity__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3792:1: ( rule__Activity__Group_9__1__Impl rule__Activity__Group_9__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3793:2: rule__Activity__Group_9__1__Impl rule__Activity__Group_9__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3822:1: ( rule__Activity__Group_9__1__Impl rule__Activity__Group_9__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3823:2: rule__Activity__Group_9__1__Impl rule__Activity__Group_9__2
             {
-            pushFollow(FOLLOW_rule__Activity__Group_9__1__Impl_in_rule__Activity__Group_9__17441);
+            pushFollow(FOLLOW_rule__Activity__Group_9__1__Impl_in_rule__Activity__Group_9__17501);
             rule__Activity__Group_9__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Activity__Group_9__2_in_rule__Activity__Group_9__17444);
+            pushFollow(FOLLOW_rule__Activity__Group_9__2_in_rule__Activity__Group_9__17504);
             rule__Activity__Group_9__2();
 
             state._fsp--;
@@ -10190,22 +10285,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_9__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3800:1: rule__Activity__Group_9__1__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3830:1: rule__Activity__Group_9__1__Impl : ( ':' ) ;
     public final void rule__Activity__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3804:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3805:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3834:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3835:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3805:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3806:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3835:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3836:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getColonKeyword_9_1()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Activity__Group_9__1__Impl7472); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Activity__Group_9__1__Impl7532); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getColonKeyword_9_1()); 
             }
@@ -10231,16 +10326,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_9__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3819:1: rule__Activity__Group_9__2 : rule__Activity__Group_9__2__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3849:1: rule__Activity__Group_9__2 : rule__Activity__Group_9__2__Impl ;
     public final void rule__Activity__Group_9__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3823:1: ( rule__Activity__Group_9__2__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3824:2: rule__Activity__Group_9__2__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3853:1: ( rule__Activity__Group_9__2__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3854:2: rule__Activity__Group_9__2__Impl
             {
-            pushFollow(FOLLOW_rule__Activity__Group_9__2__Impl_in_rule__Activity__Group_9__27503);
+            pushFollow(FOLLOW_rule__Activity__Group_9__2__Impl_in_rule__Activity__Group_9__27563);
             rule__Activity__Group_9__2__Impl();
 
             state._fsp--;
@@ -10264,25 +10359,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__Group_9__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3830:1: rule__Activity__Group_9__2__Impl : ( ( rule__Activity__ImagePathOffAssignment_9_2 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3860:1: rule__Activity__Group_9__2__Impl : ( ( rule__Activity__ImagePathOffAssignment_9_2 ) ) ;
     public final void rule__Activity__Group_9__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3834:1: ( ( ( rule__Activity__ImagePathOffAssignment_9_2 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3835:1: ( ( rule__Activity__ImagePathOffAssignment_9_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3864:1: ( ( ( rule__Activity__ImagePathOffAssignment_9_2 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3865:1: ( ( rule__Activity__ImagePathOffAssignment_9_2 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3835:1: ( ( rule__Activity__ImagePathOffAssignment_9_2 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3836:1: ( rule__Activity__ImagePathOffAssignment_9_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3865:1: ( ( rule__Activity__ImagePathOffAssignment_9_2 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3866:1: ( rule__Activity__ImagePathOffAssignment_9_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getImagePathOffAssignment_9_2()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3837:1: ( rule__Activity__ImagePathOffAssignment_9_2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3837:2: rule__Activity__ImagePathOffAssignment_9_2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3867:1: ( rule__Activity__ImagePathOffAssignment_9_2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3867:2: rule__Activity__ImagePathOffAssignment_9_2
             {
-            pushFollow(FOLLOW_rule__Activity__ImagePathOffAssignment_9_2_in_rule__Activity__Group_9__2__Impl7530);
+            pushFollow(FOLLOW_rule__Activity__ImagePathOffAssignment_9_2_in_rule__Activity__Group_9__2__Impl7590);
             rule__Activity__ImagePathOffAssignment_9_2();
 
             state._fsp--;
@@ -10315,21 +10410,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3853:1: rule__PageExtension__Group__0 : rule__PageExtension__Group__0__Impl rule__PageExtension__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3883:1: rule__PageExtension__Group__0 : rule__PageExtension__Group__0__Impl rule__PageExtension__Group__1 ;
     public final void rule__PageExtension__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3857:1: ( rule__PageExtension__Group__0__Impl rule__PageExtension__Group__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3858:2: rule__PageExtension__Group__0__Impl rule__PageExtension__Group__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3887:1: ( rule__PageExtension__Group__0__Impl rule__PageExtension__Group__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3888:2: rule__PageExtension__Group__0__Impl rule__PageExtension__Group__1
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__0__Impl_in_rule__PageExtension__Group__07566);
+            pushFollow(FOLLOW_rule__PageExtension__Group__0__Impl_in_rule__PageExtension__Group__07626);
             rule__PageExtension__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__1_in_rule__PageExtension__Group__07569);
+            pushFollow(FOLLOW_rule__PageExtension__Group__1_in_rule__PageExtension__Group__07629);
             rule__PageExtension__Group__1();
 
             state._fsp--;
@@ -10353,23 +10448,23 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3865:1: rule__PageExtension__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3895:1: rule__PageExtension__Group__0__Impl : ( () ) ;
     public final void rule__PageExtension__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3869:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3870:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3899:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3900:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3870:1: ( () )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3871:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3900:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3901:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getPageExtensionAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3872:1: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3874:1: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3902:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3904:1: 
             {
             }
 
@@ -10394,21 +10489,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3884:1: rule__PageExtension__Group__1 : rule__PageExtension__Group__1__Impl rule__PageExtension__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3914:1: rule__PageExtension__Group__1 : rule__PageExtension__Group__1__Impl rule__PageExtension__Group__2 ;
     public final void rule__PageExtension__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3888:1: ( rule__PageExtension__Group__1__Impl rule__PageExtension__Group__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3889:2: rule__PageExtension__Group__1__Impl rule__PageExtension__Group__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3918:1: ( rule__PageExtension__Group__1__Impl rule__PageExtension__Group__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3919:2: rule__PageExtension__Group__1__Impl rule__PageExtension__Group__2
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__1__Impl_in_rule__PageExtension__Group__17627);
+            pushFollow(FOLLOW_rule__PageExtension__Group__1__Impl_in_rule__PageExtension__Group__17687);
             rule__PageExtension__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__2_in_rule__PageExtension__Group__17630);
+            pushFollow(FOLLOW_rule__PageExtension__Group__2_in_rule__PageExtension__Group__17690);
             rule__PageExtension__Group__2();
 
             state._fsp--;
@@ -10432,22 +10527,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3896:1: rule__PageExtension__Group__1__Impl : ( 'page' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3926:1: rule__PageExtension__Group__1__Impl : ( 'page' ) ;
     public final void rule__PageExtension__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3900:1: ( ( 'page' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3901:1: ( 'page' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3930:1: ( ( 'page' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3931:1: ( 'page' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3901:1: ( 'page' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3902:1: 'page'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3931:1: ( 'page' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3932:1: 'page'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getPageKeyword_1()); 
             }
-            match(input,18,FOLLOW_18_in_rule__PageExtension__Group__1__Impl7658); if (state.failed) return ;
+            match(input,18,FOLLOW_18_in_rule__PageExtension__Group__1__Impl7718); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageExtensionAccess().getPageKeyword_1()); 
             }
@@ -10473,21 +10568,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3915:1: rule__PageExtension__Group__2 : rule__PageExtension__Group__2__Impl rule__PageExtension__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3945:1: rule__PageExtension__Group__2 : rule__PageExtension__Group__2__Impl rule__PageExtension__Group__3 ;
     public final void rule__PageExtension__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3919:1: ( rule__PageExtension__Group__2__Impl rule__PageExtension__Group__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3920:2: rule__PageExtension__Group__2__Impl rule__PageExtension__Group__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3949:1: ( rule__PageExtension__Group__2__Impl rule__PageExtension__Group__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3950:2: rule__PageExtension__Group__2__Impl rule__PageExtension__Group__3
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__2__Impl_in_rule__PageExtension__Group__27689);
+            pushFollow(FOLLOW_rule__PageExtension__Group__2__Impl_in_rule__PageExtension__Group__27749);
             rule__PageExtension__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__3_in_rule__PageExtension__Group__27692);
+            pushFollow(FOLLOW_rule__PageExtension__Group__3_in_rule__PageExtension__Group__27752);
             rule__PageExtension__Group__3();
 
             state._fsp--;
@@ -10511,22 +10606,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3927:1: rule__PageExtension__Group__2__Impl : ( 'extensions' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3957:1: rule__PageExtension__Group__2__Impl : ( 'extensions' ) ;
     public final void rule__PageExtension__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3931:1: ( ( 'extensions' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3932:1: ( 'extensions' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3961:1: ( ( 'extensions' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3962:1: ( 'extensions' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3932:1: ( 'extensions' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3933:1: 'extensions'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3962:1: ( 'extensions' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3963:1: 'extensions'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getExtensionsKeyword_2()); 
             }
-            match(input,40,FOLLOW_40_in_rule__PageExtension__Group__2__Impl7720); if (state.failed) return ;
+            match(input,40,FOLLOW_40_in_rule__PageExtension__Group__2__Impl7780); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageExtensionAccess().getExtensionsKeyword_2()); 
             }
@@ -10552,21 +10647,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3946:1: rule__PageExtension__Group__3 : rule__PageExtension__Group__3__Impl rule__PageExtension__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3976:1: rule__PageExtension__Group__3 : rule__PageExtension__Group__3__Impl rule__PageExtension__Group__4 ;
     public final void rule__PageExtension__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3950:1: ( rule__PageExtension__Group__3__Impl rule__PageExtension__Group__4 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3951:2: rule__PageExtension__Group__3__Impl rule__PageExtension__Group__4
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3980:1: ( rule__PageExtension__Group__3__Impl rule__PageExtension__Group__4 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3981:2: rule__PageExtension__Group__3__Impl rule__PageExtension__Group__4
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__3__Impl_in_rule__PageExtension__Group__37751);
+            pushFollow(FOLLOW_rule__PageExtension__Group__3__Impl_in_rule__PageExtension__Group__37811);
             rule__PageExtension__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__4_in_rule__PageExtension__Group__37754);
+            pushFollow(FOLLOW_rule__PageExtension__Group__4_in_rule__PageExtension__Group__37814);
             rule__PageExtension__Group__4();
 
             state._fsp--;
@@ -10590,22 +10685,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3958:1: rule__PageExtension__Group__3__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3988:1: rule__PageExtension__Group__3__Impl : ( '{' ) ;
     public final void rule__PageExtension__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3962:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3963:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3992:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3993:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3963:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3964:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3993:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3994:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getLeftCurlyBracketKeyword_3()); 
             }
-            match(input,15,FOLLOW_15_in_rule__PageExtension__Group__3__Impl7782); if (state.failed) return ;
+            match(input,15,FOLLOW_15_in_rule__PageExtension__Group__3__Impl7842); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageExtensionAccess().getLeftCurlyBracketKeyword_3()); 
             }
@@ -10631,21 +10726,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__4"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3977:1: rule__PageExtension__Group__4 : rule__PageExtension__Group__4__Impl rule__PageExtension__Group__5 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4007:1: rule__PageExtension__Group__4 : rule__PageExtension__Group__4__Impl rule__PageExtension__Group__5 ;
     public final void rule__PageExtension__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3981:1: ( rule__PageExtension__Group__4__Impl rule__PageExtension__Group__5 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3982:2: rule__PageExtension__Group__4__Impl rule__PageExtension__Group__5
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4011:1: ( rule__PageExtension__Group__4__Impl rule__PageExtension__Group__5 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4012:2: rule__PageExtension__Group__4__Impl rule__PageExtension__Group__5
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__4__Impl_in_rule__PageExtension__Group__47813);
+            pushFollow(FOLLOW_rule__PageExtension__Group__4__Impl_in_rule__PageExtension__Group__47873);
             rule__PageExtension__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__5_in_rule__PageExtension__Group__47816);
+            pushFollow(FOLLOW_rule__PageExtension__Group__5_in_rule__PageExtension__Group__47876);
             rule__PageExtension__Group__5();
 
             state._fsp--;
@@ -10669,22 +10764,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3989:1: rule__PageExtension__Group__4__Impl : ( 'extended' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4019:1: rule__PageExtension__Group__4__Impl : ( 'extended' ) ;
     public final void rule__PageExtension__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3993:1: ( ( 'extended' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3994:1: ( 'extended' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4023:1: ( ( 'extended' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4024:1: ( 'extended' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3994:1: ( 'extended' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:3995:1: 'extended'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4024:1: ( 'extended' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4025:1: 'extended'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getExtendedKeyword_4()); 
             }
-            match(input,41,FOLLOW_41_in_rule__PageExtension__Group__4__Impl7844); if (state.failed) return ;
+            match(input,41,FOLLOW_41_in_rule__PageExtension__Group__4__Impl7904); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageExtensionAccess().getExtendedKeyword_4()); 
             }
@@ -10710,21 +10805,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__5"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4008:1: rule__PageExtension__Group__5 : rule__PageExtension__Group__5__Impl rule__PageExtension__Group__6 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4038:1: rule__PageExtension__Group__5 : rule__PageExtension__Group__5__Impl rule__PageExtension__Group__6 ;
     public final void rule__PageExtension__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4012:1: ( rule__PageExtension__Group__5__Impl rule__PageExtension__Group__6 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4013:2: rule__PageExtension__Group__5__Impl rule__PageExtension__Group__6
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4042:1: ( rule__PageExtension__Group__5__Impl rule__PageExtension__Group__6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4043:2: rule__PageExtension__Group__5__Impl rule__PageExtension__Group__6
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__5__Impl_in_rule__PageExtension__Group__57875);
+            pushFollow(FOLLOW_rule__PageExtension__Group__5__Impl_in_rule__PageExtension__Group__57935);
             rule__PageExtension__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__6_in_rule__PageExtension__Group__57878);
+            pushFollow(FOLLOW_rule__PageExtension__Group__6_in_rule__PageExtension__Group__57938);
             rule__PageExtension__Group__6();
 
             state._fsp--;
@@ -10748,22 +10843,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__5__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4020:1: rule__PageExtension__Group__5__Impl : ( 'page' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4050:1: rule__PageExtension__Group__5__Impl : ( 'page' ) ;
     public final void rule__PageExtension__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4024:1: ( ( 'page' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4025:1: ( 'page' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4054:1: ( ( 'page' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4055:1: ( 'page' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4025:1: ( 'page' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4026:1: 'page'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4055:1: ( 'page' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4056:1: 'page'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getPageKeyword_5()); 
             }
-            match(input,18,FOLLOW_18_in_rule__PageExtension__Group__5__Impl7906); if (state.failed) return ;
+            match(input,18,FOLLOW_18_in_rule__PageExtension__Group__5__Impl7966); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageExtensionAccess().getPageKeyword_5()); 
             }
@@ -10789,21 +10884,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4039:1: rule__PageExtension__Group__6 : rule__PageExtension__Group__6__Impl rule__PageExtension__Group__7 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4069:1: rule__PageExtension__Group__6 : rule__PageExtension__Group__6__Impl rule__PageExtension__Group__7 ;
     public final void rule__PageExtension__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4043:1: ( rule__PageExtension__Group__6__Impl rule__PageExtension__Group__7 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4044:2: rule__PageExtension__Group__6__Impl rule__PageExtension__Group__7
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4073:1: ( rule__PageExtension__Group__6__Impl rule__PageExtension__Group__7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4074:2: rule__PageExtension__Group__6__Impl rule__PageExtension__Group__7
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__6__Impl_in_rule__PageExtension__Group__67937);
+            pushFollow(FOLLOW_rule__PageExtension__Group__6__Impl_in_rule__PageExtension__Group__67997);
             rule__PageExtension__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__7_in_rule__PageExtension__Group__67940);
+            pushFollow(FOLLOW_rule__PageExtension__Group__7_in_rule__PageExtension__Group__68000);
             rule__PageExtension__Group__7();
 
             state._fsp--;
@@ -10827,25 +10922,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__6__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4051:1: rule__PageExtension__Group__6__Impl : ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4081:1: rule__PageExtension__Group__6__Impl : ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) ) ;
     public final void rule__PageExtension__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4055:1: ( ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4056:1: ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4085:1: ( ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4086:1: ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4056:1: ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4057:1: ( rule__PageExtension__ExtendedPageIDAssignment_6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4086:1: ( ( rule__PageExtension__ExtendedPageIDAssignment_6 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4087:1: ( rule__PageExtension__ExtendedPageIDAssignment_6 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getExtendedPageIDAssignment_6()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4058:1: ( rule__PageExtension__ExtendedPageIDAssignment_6 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4058:2: rule__PageExtension__ExtendedPageIDAssignment_6
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4088:1: ( rule__PageExtension__ExtendedPageIDAssignment_6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4088:2: rule__PageExtension__ExtendedPageIDAssignment_6
             {
-            pushFollow(FOLLOW_rule__PageExtension__ExtendedPageIDAssignment_6_in_rule__PageExtension__Group__6__Impl7967);
+            pushFollow(FOLLOW_rule__PageExtension__ExtendedPageIDAssignment_6_in_rule__PageExtension__Group__6__Impl8027);
             rule__PageExtension__ExtendedPageIDAssignment_6();
 
             state._fsp--;
@@ -10878,21 +10973,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4068:1: rule__PageExtension__Group__7 : rule__PageExtension__Group__7__Impl rule__PageExtension__Group__8 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4098:1: rule__PageExtension__Group__7 : rule__PageExtension__Group__7__Impl rule__PageExtension__Group__8 ;
     public final void rule__PageExtension__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4072:1: ( rule__PageExtension__Group__7__Impl rule__PageExtension__Group__8 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4073:2: rule__PageExtension__Group__7__Impl rule__PageExtension__Group__8
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4102:1: ( rule__PageExtension__Group__7__Impl rule__PageExtension__Group__8 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4103:2: rule__PageExtension__Group__7__Impl rule__PageExtension__Group__8
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__7__Impl_in_rule__PageExtension__Group__77997);
+            pushFollow(FOLLOW_rule__PageExtension__Group__7__Impl_in_rule__PageExtension__Group__78057);
             rule__PageExtension__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__PageExtension__Group__8_in_rule__PageExtension__Group__78000);
+            pushFollow(FOLLOW_rule__PageExtension__Group__8_in_rule__PageExtension__Group__78060);
             rule__PageExtension__Group__8();
 
             state._fsp--;
@@ -10916,37 +11011,37 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__7__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4080:1: rule__PageExtension__Group__7__Impl : ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4110:1: rule__PageExtension__Group__7__Impl : ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* ) ;
     public final void rule__PageExtension__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4084:1: ( ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4085:1: ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4114:1: ( ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4115:1: ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4085:1: ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4086:1: ( rule__PageExtension__OwnedSectionsAssignment_7 )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4115:1: ( ( rule__PageExtension__OwnedSectionsAssignment_7 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4116:1: ( rule__PageExtension__OwnedSectionsAssignment_7 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getOwnedSectionsAssignment_7()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4087:1: ( rule__PageExtension__OwnedSectionsAssignment_7 )*
-            loop27:
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4117:1: ( rule__PageExtension__OwnedSectionsAssignment_7 )*
+            loop28:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( (LA27_0==35) ) {
-                    alt27=1;
+                if ( (LA28_0==35) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt28) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4087:2: rule__PageExtension__OwnedSectionsAssignment_7
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4117:2: rule__PageExtension__OwnedSectionsAssignment_7
             	    {
-            	    pushFollow(FOLLOW_rule__PageExtension__OwnedSectionsAssignment_7_in_rule__PageExtension__Group__7__Impl8027);
+            	    pushFollow(FOLLOW_rule__PageExtension__OwnedSectionsAssignment_7_in_rule__PageExtension__Group__7__Impl8087);
             	    rule__PageExtension__OwnedSectionsAssignment_7();
 
             	    state._fsp--;
@@ -10956,7 +11051,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop28;
                 }
             } while (true);
 
@@ -10985,16 +11080,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__8"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4097:1: rule__PageExtension__Group__8 : rule__PageExtension__Group__8__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4127:1: rule__PageExtension__Group__8 : rule__PageExtension__Group__8__Impl ;
     public final void rule__PageExtension__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4101:1: ( rule__PageExtension__Group__8__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4102:2: rule__PageExtension__Group__8__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4131:1: ( rule__PageExtension__Group__8__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4132:2: rule__PageExtension__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__PageExtension__Group__8__Impl_in_rule__PageExtension__Group__88058);
+            pushFollow(FOLLOW_rule__PageExtension__Group__8__Impl_in_rule__PageExtension__Group__88118);
             rule__PageExtension__Group__8__Impl();
 
             state._fsp--;
@@ -11018,22 +11113,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__Group__8__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4108:1: rule__PageExtension__Group__8__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4138:1: rule__PageExtension__Group__8__Impl : ( '}' ) ;
     public final void rule__PageExtension__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4112:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4113:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4142:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4143:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4113:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4114:1: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4143:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4144:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getRightCurlyBracketKeyword_8()); 
             }
-            match(input,16,FOLLOW_16_in_rule__PageExtension__Group__8__Impl8086); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__PageExtension__Group__8__Impl8146); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageExtensionAccess().getRightCurlyBracketKeyword_8()); 
             }
@@ -11059,21 +11154,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4145:1: rule__SectionExtension__Group__0 : rule__SectionExtension__Group__0__Impl rule__SectionExtension__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4175:1: rule__SectionExtension__Group__0 : rule__SectionExtension__Group__0__Impl rule__SectionExtension__Group__1 ;
     public final void rule__SectionExtension__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4149:1: ( rule__SectionExtension__Group__0__Impl rule__SectionExtension__Group__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4150:2: rule__SectionExtension__Group__0__Impl rule__SectionExtension__Group__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4179:1: ( rule__SectionExtension__Group__0__Impl rule__SectionExtension__Group__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4180:2: rule__SectionExtension__Group__0__Impl rule__SectionExtension__Group__1
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__0__Impl_in_rule__SectionExtension__Group__08135);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__0__Impl_in_rule__SectionExtension__Group__08195);
             rule__SectionExtension__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__1_in_rule__SectionExtension__Group__08138);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__1_in_rule__SectionExtension__Group__08198);
             rule__SectionExtension__Group__1();
 
             state._fsp--;
@@ -11097,23 +11192,23 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4157:1: rule__SectionExtension__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4187:1: rule__SectionExtension__Group__0__Impl : ( () ) ;
     public final void rule__SectionExtension__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4161:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4162:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4191:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4192:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4162:1: ( () )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4163:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4192:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4193:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getSectionExtensionAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4164:1: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4166:1: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4194:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4196:1: 
             {
             }
 
@@ -11138,21 +11233,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4176:1: rule__SectionExtension__Group__1 : rule__SectionExtension__Group__1__Impl rule__SectionExtension__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4206:1: rule__SectionExtension__Group__1 : rule__SectionExtension__Group__1__Impl rule__SectionExtension__Group__2 ;
     public final void rule__SectionExtension__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4180:1: ( rule__SectionExtension__Group__1__Impl rule__SectionExtension__Group__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4181:2: rule__SectionExtension__Group__1__Impl rule__SectionExtension__Group__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4210:1: ( rule__SectionExtension__Group__1__Impl rule__SectionExtension__Group__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4211:2: rule__SectionExtension__Group__1__Impl rule__SectionExtension__Group__2
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__1__Impl_in_rule__SectionExtension__Group__18196);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__1__Impl_in_rule__SectionExtension__Group__18256);
             rule__SectionExtension__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__2_in_rule__SectionExtension__Group__18199);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__2_in_rule__SectionExtension__Group__18259);
             rule__SectionExtension__Group__2();
 
             state._fsp--;
@@ -11176,22 +11271,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4188:1: rule__SectionExtension__Group__1__Impl : ( 'section' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4218:1: rule__SectionExtension__Group__1__Impl : ( 'section' ) ;
     public final void rule__SectionExtension__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4192:1: ( ( 'section' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4193:1: ( 'section' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4222:1: ( ( 'section' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4223:1: ( 'section' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4193:1: ( 'section' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4194:1: 'section'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4223:1: ( 'section' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4224:1: 'section'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getSectionKeyword_1()); 
             }
-            match(input,35,FOLLOW_35_in_rule__SectionExtension__Group__1__Impl8227); if (state.failed) return ;
+            match(input,35,FOLLOW_35_in_rule__SectionExtension__Group__1__Impl8287); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionExtensionAccess().getSectionKeyword_1()); 
             }
@@ -11217,21 +11312,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4207:1: rule__SectionExtension__Group__2 : rule__SectionExtension__Group__2__Impl rule__SectionExtension__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4237:1: rule__SectionExtension__Group__2 : rule__SectionExtension__Group__2__Impl rule__SectionExtension__Group__3 ;
     public final void rule__SectionExtension__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4211:1: ( rule__SectionExtension__Group__2__Impl rule__SectionExtension__Group__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4212:2: rule__SectionExtension__Group__2__Impl rule__SectionExtension__Group__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4241:1: ( rule__SectionExtension__Group__2__Impl rule__SectionExtension__Group__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4242:2: rule__SectionExtension__Group__2__Impl rule__SectionExtension__Group__3
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__2__Impl_in_rule__SectionExtension__Group__28258);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__2__Impl_in_rule__SectionExtension__Group__28318);
             rule__SectionExtension__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__3_in_rule__SectionExtension__Group__28261);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__3_in_rule__SectionExtension__Group__28321);
             rule__SectionExtension__Group__3();
 
             state._fsp--;
@@ -11255,22 +11350,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4219:1: rule__SectionExtension__Group__2__Impl : ( 'extensions' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4249:1: rule__SectionExtension__Group__2__Impl : ( 'extensions' ) ;
     public final void rule__SectionExtension__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4223:1: ( ( 'extensions' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4224:1: ( 'extensions' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4253:1: ( ( 'extensions' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4254:1: ( 'extensions' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4224:1: ( 'extensions' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4225:1: 'extensions'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4254:1: ( 'extensions' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4255:1: 'extensions'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getExtensionsKeyword_2()); 
             }
-            match(input,40,FOLLOW_40_in_rule__SectionExtension__Group__2__Impl8289); if (state.failed) return ;
+            match(input,40,FOLLOW_40_in_rule__SectionExtension__Group__2__Impl8349); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionExtensionAccess().getExtensionsKeyword_2()); 
             }
@@ -11296,21 +11391,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4238:1: rule__SectionExtension__Group__3 : rule__SectionExtension__Group__3__Impl rule__SectionExtension__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4268:1: rule__SectionExtension__Group__3 : rule__SectionExtension__Group__3__Impl rule__SectionExtension__Group__4 ;
     public final void rule__SectionExtension__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4242:1: ( rule__SectionExtension__Group__3__Impl rule__SectionExtension__Group__4 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4243:2: rule__SectionExtension__Group__3__Impl rule__SectionExtension__Group__4
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4272:1: ( rule__SectionExtension__Group__3__Impl rule__SectionExtension__Group__4 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4273:2: rule__SectionExtension__Group__3__Impl rule__SectionExtension__Group__4
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__3__Impl_in_rule__SectionExtension__Group__38320);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__3__Impl_in_rule__SectionExtension__Group__38380);
             rule__SectionExtension__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__4_in_rule__SectionExtension__Group__38323);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__4_in_rule__SectionExtension__Group__38383);
             rule__SectionExtension__Group__4();
 
             state._fsp--;
@@ -11334,22 +11429,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4250:1: rule__SectionExtension__Group__3__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4280:1: rule__SectionExtension__Group__3__Impl : ( '{' ) ;
     public final void rule__SectionExtension__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4254:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4255:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4284:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4285:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4255:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4256:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4285:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4286:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getLeftCurlyBracketKeyword_3()); 
             }
-            match(input,15,FOLLOW_15_in_rule__SectionExtension__Group__3__Impl8351); if (state.failed) return ;
+            match(input,15,FOLLOW_15_in_rule__SectionExtension__Group__3__Impl8411); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionExtensionAccess().getLeftCurlyBracketKeyword_3()); 
             }
@@ -11375,21 +11470,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__4"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4269:1: rule__SectionExtension__Group__4 : rule__SectionExtension__Group__4__Impl rule__SectionExtension__Group__5 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4299:1: rule__SectionExtension__Group__4 : rule__SectionExtension__Group__4__Impl rule__SectionExtension__Group__5 ;
     public final void rule__SectionExtension__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4273:1: ( rule__SectionExtension__Group__4__Impl rule__SectionExtension__Group__5 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4274:2: rule__SectionExtension__Group__4__Impl rule__SectionExtension__Group__5
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4303:1: ( rule__SectionExtension__Group__4__Impl rule__SectionExtension__Group__5 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4304:2: rule__SectionExtension__Group__4__Impl rule__SectionExtension__Group__5
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__4__Impl_in_rule__SectionExtension__Group__48382);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__4__Impl_in_rule__SectionExtension__Group__48442);
             rule__SectionExtension__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__5_in_rule__SectionExtension__Group__48385);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__5_in_rule__SectionExtension__Group__48445);
             rule__SectionExtension__Group__5();
 
             state._fsp--;
@@ -11413,22 +11508,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4281:1: rule__SectionExtension__Group__4__Impl : ( 'extended' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4311:1: rule__SectionExtension__Group__4__Impl : ( 'extended' ) ;
     public final void rule__SectionExtension__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4285:1: ( ( 'extended' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4286:1: ( 'extended' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4315:1: ( ( 'extended' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4316:1: ( 'extended' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4286:1: ( 'extended' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4287:1: 'extended'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4316:1: ( 'extended' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4317:1: 'extended'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getExtendedKeyword_4()); 
             }
-            match(input,41,FOLLOW_41_in_rule__SectionExtension__Group__4__Impl8413); if (state.failed) return ;
+            match(input,41,FOLLOW_41_in_rule__SectionExtension__Group__4__Impl8473); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionExtensionAccess().getExtendedKeyword_4()); 
             }
@@ -11454,21 +11549,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__5"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4300:1: rule__SectionExtension__Group__5 : rule__SectionExtension__Group__5__Impl rule__SectionExtension__Group__6 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4330:1: rule__SectionExtension__Group__5 : rule__SectionExtension__Group__5__Impl rule__SectionExtension__Group__6 ;
     public final void rule__SectionExtension__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4304:1: ( rule__SectionExtension__Group__5__Impl rule__SectionExtension__Group__6 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4305:2: rule__SectionExtension__Group__5__Impl rule__SectionExtension__Group__6
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4334:1: ( rule__SectionExtension__Group__5__Impl rule__SectionExtension__Group__6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4335:2: rule__SectionExtension__Group__5__Impl rule__SectionExtension__Group__6
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__5__Impl_in_rule__SectionExtension__Group__58444);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__5__Impl_in_rule__SectionExtension__Group__58504);
             rule__SectionExtension__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__6_in_rule__SectionExtension__Group__58447);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__6_in_rule__SectionExtension__Group__58507);
             rule__SectionExtension__Group__6();
 
             state._fsp--;
@@ -11492,22 +11587,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__5__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4312:1: rule__SectionExtension__Group__5__Impl : ( 'section' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4342:1: rule__SectionExtension__Group__5__Impl : ( 'section' ) ;
     public final void rule__SectionExtension__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4316:1: ( ( 'section' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4317:1: ( 'section' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4346:1: ( ( 'section' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4347:1: ( 'section' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4317:1: ( 'section' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4318:1: 'section'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4347:1: ( 'section' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4348:1: 'section'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getSectionKeyword_5()); 
             }
-            match(input,35,FOLLOW_35_in_rule__SectionExtension__Group__5__Impl8475); if (state.failed) return ;
+            match(input,35,FOLLOW_35_in_rule__SectionExtension__Group__5__Impl8535); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionExtensionAccess().getSectionKeyword_5()); 
             }
@@ -11533,21 +11628,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4331:1: rule__SectionExtension__Group__6 : rule__SectionExtension__Group__6__Impl rule__SectionExtension__Group__7 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4361:1: rule__SectionExtension__Group__6 : rule__SectionExtension__Group__6__Impl rule__SectionExtension__Group__7 ;
     public final void rule__SectionExtension__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4335:1: ( rule__SectionExtension__Group__6__Impl rule__SectionExtension__Group__7 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4336:2: rule__SectionExtension__Group__6__Impl rule__SectionExtension__Group__7
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4365:1: ( rule__SectionExtension__Group__6__Impl rule__SectionExtension__Group__7 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4366:2: rule__SectionExtension__Group__6__Impl rule__SectionExtension__Group__7
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__6__Impl_in_rule__SectionExtension__Group__68506);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__6__Impl_in_rule__SectionExtension__Group__68566);
             rule__SectionExtension__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__7_in_rule__SectionExtension__Group__68509);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__7_in_rule__SectionExtension__Group__68569);
             rule__SectionExtension__Group__7();
 
             state._fsp--;
@@ -11571,25 +11666,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__6__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4343:1: rule__SectionExtension__Group__6__Impl : ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4373:1: rule__SectionExtension__Group__6__Impl : ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) ) ;
     public final void rule__SectionExtension__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4347:1: ( ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4348:1: ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4377:1: ( ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4378:1: ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4348:1: ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4349:1: ( rule__SectionExtension__ExtendedSectionIDAssignment_6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4378:1: ( ( rule__SectionExtension__ExtendedSectionIDAssignment_6 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4379:1: ( rule__SectionExtension__ExtendedSectionIDAssignment_6 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getExtendedSectionIDAssignment_6()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4350:1: ( rule__SectionExtension__ExtendedSectionIDAssignment_6 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4350:2: rule__SectionExtension__ExtendedSectionIDAssignment_6
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4380:1: ( rule__SectionExtension__ExtendedSectionIDAssignment_6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4380:2: rule__SectionExtension__ExtendedSectionIDAssignment_6
             {
-            pushFollow(FOLLOW_rule__SectionExtension__ExtendedSectionIDAssignment_6_in_rule__SectionExtension__Group__6__Impl8536);
+            pushFollow(FOLLOW_rule__SectionExtension__ExtendedSectionIDAssignment_6_in_rule__SectionExtension__Group__6__Impl8596);
             rule__SectionExtension__ExtendedSectionIDAssignment_6();
 
             state._fsp--;
@@ -11622,21 +11717,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4360:1: rule__SectionExtension__Group__7 : rule__SectionExtension__Group__7__Impl rule__SectionExtension__Group__8 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4390:1: rule__SectionExtension__Group__7 : rule__SectionExtension__Group__7__Impl rule__SectionExtension__Group__8 ;
     public final void rule__SectionExtension__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4364:1: ( rule__SectionExtension__Group__7__Impl rule__SectionExtension__Group__8 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4365:2: rule__SectionExtension__Group__7__Impl rule__SectionExtension__Group__8
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4394:1: ( rule__SectionExtension__Group__7__Impl rule__SectionExtension__Group__8 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4395:2: rule__SectionExtension__Group__7__Impl rule__SectionExtension__Group__8
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__7__Impl_in_rule__SectionExtension__Group__78566);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__7__Impl_in_rule__SectionExtension__Group__78626);
             rule__SectionExtension__Group__7__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__SectionExtension__Group__8_in_rule__SectionExtension__Group__78569);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__8_in_rule__SectionExtension__Group__78629);
             rule__SectionExtension__Group__8();
 
             state._fsp--;
@@ -11660,37 +11755,37 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__7__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4372:1: rule__SectionExtension__Group__7__Impl : ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4402:1: rule__SectionExtension__Group__7__Impl : ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* ) ;
     public final void rule__SectionExtension__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4376:1: ( ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4377:1: ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4406:1: ( ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4407:1: ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4377:1: ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4378:1: ( rule__SectionExtension__OwnedActivitiesAssignment_7 )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4407:1: ( ( rule__SectionExtension__OwnedActivitiesAssignment_7 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4408:1: ( rule__SectionExtension__OwnedActivitiesAssignment_7 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getOwnedActivitiesAssignment_7()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4379:1: ( rule__SectionExtension__OwnedActivitiesAssignment_7 )*
-            loop28:
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4409:1: ( rule__SectionExtension__OwnedActivitiesAssignment_7 )*
+            loop29:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA28_0==13) ) {
-                    alt28=1;
+                if ( (LA29_0==13) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt29) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4379:2: rule__SectionExtension__OwnedActivitiesAssignment_7
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4409:2: rule__SectionExtension__OwnedActivitiesAssignment_7
             	    {
-            	    pushFollow(FOLLOW_rule__SectionExtension__OwnedActivitiesAssignment_7_in_rule__SectionExtension__Group__7__Impl8596);
+            	    pushFollow(FOLLOW_rule__SectionExtension__OwnedActivitiesAssignment_7_in_rule__SectionExtension__Group__7__Impl8656);
             	    rule__SectionExtension__OwnedActivitiesAssignment_7();
 
             	    state._fsp--;
@@ -11700,7 +11795,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop29;
                 }
             } while (true);
 
@@ -11729,16 +11824,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__8"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4389:1: rule__SectionExtension__Group__8 : rule__SectionExtension__Group__8__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4419:1: rule__SectionExtension__Group__8 : rule__SectionExtension__Group__8__Impl ;
     public final void rule__SectionExtension__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4393:1: ( rule__SectionExtension__Group__8__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4394:2: rule__SectionExtension__Group__8__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4423:1: ( rule__SectionExtension__Group__8__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4424:2: rule__SectionExtension__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__SectionExtension__Group__8__Impl_in_rule__SectionExtension__Group__88627);
+            pushFollow(FOLLOW_rule__SectionExtension__Group__8__Impl_in_rule__SectionExtension__Group__88687);
             rule__SectionExtension__Group__8__Impl();
 
             state._fsp--;
@@ -11762,22 +11857,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__Group__8__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4400:1: rule__SectionExtension__Group__8__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4430:1: rule__SectionExtension__Group__8__Impl : ( '}' ) ;
     public final void rule__SectionExtension__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4404:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4405:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4434:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4435:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4405:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4406:1: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4435:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4436:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getRightCurlyBracketKeyword_8()); 
             }
-            match(input,16,FOLLOW_16_in_rule__SectionExtension__Group__8__Impl8655); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__SectionExtension__Group__8__Impl8715); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionExtensionAccess().getRightCurlyBracketKeyword_8()); 
             }
@@ -11803,21 +11898,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4437:1: rule__Overview__Group__0 : rule__Overview__Group__0__Impl rule__Overview__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4467:1: rule__Overview__Group__0 : rule__Overview__Group__0__Impl rule__Overview__Group__1 ;
     public final void rule__Overview__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4441:1: ( rule__Overview__Group__0__Impl rule__Overview__Group__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4442:2: rule__Overview__Group__0__Impl rule__Overview__Group__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4471:1: ( rule__Overview__Group__0__Impl rule__Overview__Group__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4472:2: rule__Overview__Group__0__Impl rule__Overview__Group__1
             {
-            pushFollow(FOLLOW_rule__Overview__Group__0__Impl_in_rule__Overview__Group__08704);
+            pushFollow(FOLLOW_rule__Overview__Group__0__Impl_in_rule__Overview__Group__08764);
             rule__Overview__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group__1_in_rule__Overview__Group__08707);
+            pushFollow(FOLLOW_rule__Overview__Group__1_in_rule__Overview__Group__08767);
             rule__Overview__Group__1();
 
             state._fsp--;
@@ -11841,23 +11936,23 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4449:1: rule__Overview__Group__0__Impl : ( () ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4479:1: rule__Overview__Group__0__Impl : ( () ) ;
     public final void rule__Overview__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4453:1: ( ( () ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4454:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4483:1: ( ( () ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4484:1: ( () )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4454:1: ( () )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4455:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4484:1: ( () )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4485:1: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getOverviewAction_0()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4456:1: ()
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4458:1: 
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4486:1: ()
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4488:1: 
             {
             }
 
@@ -11882,21 +11977,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4468:1: rule__Overview__Group__1 : rule__Overview__Group__1__Impl rule__Overview__Group__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4498:1: rule__Overview__Group__1 : rule__Overview__Group__1__Impl rule__Overview__Group__2 ;
     public final void rule__Overview__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4472:1: ( rule__Overview__Group__1__Impl rule__Overview__Group__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4473:2: rule__Overview__Group__1__Impl rule__Overview__Group__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4502:1: ( rule__Overview__Group__1__Impl rule__Overview__Group__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4503:2: rule__Overview__Group__1__Impl rule__Overview__Group__2
             {
-            pushFollow(FOLLOW_rule__Overview__Group__1__Impl_in_rule__Overview__Group__18765);
+            pushFollow(FOLLOW_rule__Overview__Group__1__Impl_in_rule__Overview__Group__18825);
             rule__Overview__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group__2_in_rule__Overview__Group__18768);
+            pushFollow(FOLLOW_rule__Overview__Group__2_in_rule__Overview__Group__18828);
             rule__Overview__Group__2();
 
             state._fsp--;
@@ -11920,22 +12015,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4480:1: rule__Overview__Group__1__Impl : ( 'Overview' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4510:1: rule__Overview__Group__1__Impl : ( 'Overview' ) ;
     public final void rule__Overview__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4484:1: ( ( 'Overview' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4485:1: ( 'Overview' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4514:1: ( ( 'Overview' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4515:1: ( 'Overview' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4485:1: ( 'Overview' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4486:1: 'Overview'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4515:1: ( 'Overview' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4516:1: 'Overview'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getOverviewKeyword_1()); 
             }
-            match(input,42,FOLLOW_42_in_rule__Overview__Group__1__Impl8796); if (state.failed) return ;
+            match(input,42,FOLLOW_42_in_rule__Overview__Group__1__Impl8856); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getOverviewKeyword_1()); 
             }
@@ -11961,21 +12056,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4499:1: rule__Overview__Group__2 : rule__Overview__Group__2__Impl rule__Overview__Group__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4529:1: rule__Overview__Group__2 : rule__Overview__Group__2__Impl rule__Overview__Group__3 ;
     public final void rule__Overview__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4503:1: ( rule__Overview__Group__2__Impl rule__Overview__Group__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4504:2: rule__Overview__Group__2__Impl rule__Overview__Group__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4533:1: ( rule__Overview__Group__2__Impl rule__Overview__Group__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4534:2: rule__Overview__Group__2__Impl rule__Overview__Group__3
             {
-            pushFollow(FOLLOW_rule__Overview__Group__2__Impl_in_rule__Overview__Group__28827);
+            pushFollow(FOLLOW_rule__Overview__Group__2__Impl_in_rule__Overview__Group__28887);
             rule__Overview__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group__3_in_rule__Overview__Group__28830);
+            pushFollow(FOLLOW_rule__Overview__Group__3_in_rule__Overview__Group__28890);
             rule__Overview__Group__3();
 
             state._fsp--;
@@ -11999,22 +12094,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4511:1: rule__Overview__Group__2__Impl : ( '{' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4541:1: rule__Overview__Group__2__Impl : ( '{' ) ;
     public final void rule__Overview__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4515:1: ( ( '{' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4516:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4545:1: ( ( '{' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4546:1: ( '{' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4516:1: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4517:1: '{'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4546:1: ( '{' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4547:1: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getLeftCurlyBracketKeyword_2()); 
             }
-            match(input,15,FOLLOW_15_in_rule__Overview__Group__2__Impl8858); if (state.failed) return ;
+            match(input,15,FOLLOW_15_in_rule__Overview__Group__2__Impl8918); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getLeftCurlyBracketKeyword_2()); 
             }
@@ -12040,21 +12135,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4530:1: rule__Overview__Group__3 : rule__Overview__Group__3__Impl rule__Overview__Group__4 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4560:1: rule__Overview__Group__3 : rule__Overview__Group__3__Impl rule__Overview__Group__4 ;
     public final void rule__Overview__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4534:1: ( rule__Overview__Group__3__Impl rule__Overview__Group__4 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4535:2: rule__Overview__Group__3__Impl rule__Overview__Group__4
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4564:1: ( rule__Overview__Group__3__Impl rule__Overview__Group__4 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4565:2: rule__Overview__Group__3__Impl rule__Overview__Group__4
             {
-            pushFollow(FOLLOW_rule__Overview__Group__3__Impl_in_rule__Overview__Group__38889);
+            pushFollow(FOLLOW_rule__Overview__Group__3__Impl_in_rule__Overview__Group__38949);
             rule__Overview__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group__4_in_rule__Overview__Group__38892);
+            pushFollow(FOLLOW_rule__Overview__Group__4_in_rule__Overview__Group__38952);
             rule__Overview__Group__4();
 
             state._fsp--;
@@ -12078,33 +12173,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4542:1: rule__Overview__Group__3__Impl : ( ( rule__Overview__Group_3__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4572:1: rule__Overview__Group__3__Impl : ( ( rule__Overview__Group_3__0 )? ) ;
     public final void rule__Overview__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4546:1: ( ( ( rule__Overview__Group_3__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4547:1: ( ( rule__Overview__Group_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4576:1: ( ( ( rule__Overview__Group_3__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4577:1: ( ( rule__Overview__Group_3__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4547:1: ( ( rule__Overview__Group_3__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4548:1: ( rule__Overview__Group_3__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4577:1: ( ( rule__Overview__Group_3__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4578:1: ( rule__Overview__Group_3__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getGroup_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4549:1: ( rule__Overview__Group_3__0 )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4579:1: ( rule__Overview__Group_3__0 )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA29_0==21) ) {
-                alt29=1;
+            if ( (LA30_0==20) ) {
+                alt30=1;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4549:2: rule__Overview__Group_3__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4579:2: rule__Overview__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Overview__Group_3__0_in_rule__Overview__Group__3__Impl8919);
+                    pushFollow(FOLLOW_rule__Overview__Group_3__0_in_rule__Overview__Group__3__Impl8979);
                     rule__Overview__Group_3__0();
 
                     state._fsp--;
@@ -12140,21 +12235,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__4"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4559:1: rule__Overview__Group__4 : rule__Overview__Group__4__Impl rule__Overview__Group__5 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4589:1: rule__Overview__Group__4 : rule__Overview__Group__4__Impl rule__Overview__Group__5 ;
     public final void rule__Overview__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4563:1: ( rule__Overview__Group__4__Impl rule__Overview__Group__5 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4564:2: rule__Overview__Group__4__Impl rule__Overview__Group__5
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4593:1: ( rule__Overview__Group__4__Impl rule__Overview__Group__5 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4594:2: rule__Overview__Group__4__Impl rule__Overview__Group__5
             {
-            pushFollow(FOLLOW_rule__Overview__Group__4__Impl_in_rule__Overview__Group__48950);
+            pushFollow(FOLLOW_rule__Overview__Group__4__Impl_in_rule__Overview__Group__49010);
             rule__Overview__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group__5_in_rule__Overview__Group__48953);
+            pushFollow(FOLLOW_rule__Overview__Group__5_in_rule__Overview__Group__49013);
             rule__Overview__Group__5();
 
             state._fsp--;
@@ -12178,37 +12273,37 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__4__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4571:1: rule__Overview__Group__4__Impl : ( ( rule__Overview__Group_4__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4601:1: rule__Overview__Group__4__Impl : ( ( rule__Overview__Group_4__0 )? ) ;
     public final void rule__Overview__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4575:1: ( ( ( rule__Overview__Group_4__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4576:1: ( ( rule__Overview__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4605:1: ( ( ( rule__Overview__Group_4__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4606:1: ( ( rule__Overview__Group_4__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4576:1: ( ( rule__Overview__Group_4__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4577:1: ( rule__Overview__Group_4__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4606:1: ( ( rule__Overview__Group_4__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4607:1: ( rule__Overview__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getGroup_4()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4578:1: ( rule__Overview__Group_4__0 )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4608:1: ( rule__Overview__Group_4__0 )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA30_0==26) ) {
-                int LA30_1 = input.LA(2);
+            if ( (LA31_0==25) ) {
+                int LA31_1 = input.LA(2);
 
-                if ( (LA30_1==27) ) {
-                    alt30=1;
+                if ( (LA31_1==26) ) {
+                    alt31=1;
                 }
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4578:2: rule__Overview__Group_4__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4608:2: rule__Overview__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Overview__Group_4__0_in_rule__Overview__Group__4__Impl8980);
+                    pushFollow(FOLLOW_rule__Overview__Group_4__0_in_rule__Overview__Group__4__Impl9040);
                     rule__Overview__Group_4__0();
 
                     state._fsp--;
@@ -12244,21 +12339,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__5"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4588:1: rule__Overview__Group__5 : rule__Overview__Group__5__Impl rule__Overview__Group__6 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4618:1: rule__Overview__Group__5 : rule__Overview__Group__5__Impl rule__Overview__Group__6 ;
     public final void rule__Overview__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4592:1: ( rule__Overview__Group__5__Impl rule__Overview__Group__6 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4593:2: rule__Overview__Group__5__Impl rule__Overview__Group__6
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4622:1: ( rule__Overview__Group__5__Impl rule__Overview__Group__6 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4623:2: rule__Overview__Group__5__Impl rule__Overview__Group__6
             {
-            pushFollow(FOLLOW_rule__Overview__Group__5__Impl_in_rule__Overview__Group__59011);
+            pushFollow(FOLLOW_rule__Overview__Group__5__Impl_in_rule__Overview__Group__59071);
             rule__Overview__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group__6_in_rule__Overview__Group__59014);
+            pushFollow(FOLLOW_rule__Overview__Group__6_in_rule__Overview__Group__59074);
             rule__Overview__Group__6();
 
             state._fsp--;
@@ -12282,33 +12377,33 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__5__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4600:1: rule__Overview__Group__5__Impl : ( ( rule__Overview__Group_5__0 )? ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4630:1: rule__Overview__Group__5__Impl : ( ( rule__Overview__Group_5__0 )? ) ;
     public final void rule__Overview__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4604:1: ( ( ( rule__Overview__Group_5__0 )? ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4605:1: ( ( rule__Overview__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4634:1: ( ( ( rule__Overview__Group_5__0 )? ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4635:1: ( ( rule__Overview__Group_5__0 )? )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4605:1: ( ( rule__Overview__Group_5__0 )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4606:1: ( rule__Overview__Group_5__0 )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4635:1: ( ( rule__Overview__Group_5__0 )? )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4636:1: ( rule__Overview__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getGroup_5()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4607:1: ( rule__Overview__Group_5__0 )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4637:1: ( rule__Overview__Group_5__0 )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA31_0==26) ) {
-                alt31=1;
+            if ( (LA32_0==25) ) {
+                alt32=1;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4607:2: rule__Overview__Group_5__0
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4637:2: rule__Overview__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__Overview__Group_5__0_in_rule__Overview__Group__5__Impl9041);
+                    pushFollow(FOLLOW_rule__Overview__Group_5__0_in_rule__Overview__Group__5__Impl9101);
                     rule__Overview__Group_5__0();
 
                     state._fsp--;
@@ -12344,16 +12439,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4617:1: rule__Overview__Group__6 : rule__Overview__Group__6__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4647:1: rule__Overview__Group__6 : rule__Overview__Group__6__Impl ;
     public final void rule__Overview__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4621:1: ( rule__Overview__Group__6__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4622:2: rule__Overview__Group__6__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4651:1: ( rule__Overview__Group__6__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4652:2: rule__Overview__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__Overview__Group__6__Impl_in_rule__Overview__Group__69072);
+            pushFollow(FOLLOW_rule__Overview__Group__6__Impl_in_rule__Overview__Group__69132);
             rule__Overview__Group__6__Impl();
 
             state._fsp--;
@@ -12377,22 +12472,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group__6__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4628:1: rule__Overview__Group__6__Impl : ( '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4658:1: rule__Overview__Group__6__Impl : ( '}' ) ;
     public final void rule__Overview__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4632:1: ( ( '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4633:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4662:1: ( ( '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4663:1: ( '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4633:1: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4634:1: '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4663:1: ( '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4664:1: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getRightCurlyBracketKeyword_6()); 
             }
-            match(input,16,FOLLOW_16_in_rule__Overview__Group__6__Impl9100); if (state.failed) return ;
+            match(input,16,FOLLOW_16_in_rule__Overview__Group__6__Impl9160); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getRightCurlyBracketKeyword_6()); 
             }
@@ -12418,21 +12513,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_3__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4661:1: rule__Overview__Group_3__0 : rule__Overview__Group_3__0__Impl rule__Overview__Group_3__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4691:1: rule__Overview__Group_3__0 : rule__Overview__Group_3__0__Impl rule__Overview__Group_3__1 ;
     public final void rule__Overview__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4665:1: ( rule__Overview__Group_3__0__Impl rule__Overview__Group_3__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4666:2: rule__Overview__Group_3__0__Impl rule__Overview__Group_3__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4695:1: ( rule__Overview__Group_3__0__Impl rule__Overview__Group_3__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4696:2: rule__Overview__Group_3__0__Impl rule__Overview__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Overview__Group_3__0__Impl_in_rule__Overview__Group_3__09145);
+            pushFollow(FOLLOW_rule__Overview__Group_3__0__Impl_in_rule__Overview__Group_3__09205);
             rule__Overview__Group_3__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group_3__1_in_rule__Overview__Group_3__09148);
+            pushFollow(FOLLOW_rule__Overview__Group_3__1_in_rule__Overview__Group_3__09208);
             rule__Overview__Group_3__1();
 
             state._fsp--;
@@ -12456,22 +12551,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_3__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4673:1: rule__Overview__Group_3__0__Impl : ( 'description' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4703:1: rule__Overview__Group_3__0__Impl : ( 'description' ) ;
     public final void rule__Overview__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4677:1: ( ( 'description' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4678:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4707:1: ( ( 'description' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4708:1: ( 'description' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4678:1: ( 'description' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4679:1: 'description'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4708:1: ( 'description' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4709:1: 'description'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getDescriptionKeyword_3_0()); 
             }
-            match(input,21,FOLLOW_21_in_rule__Overview__Group_3__0__Impl9176); if (state.failed) return ;
+            match(input,20,FOLLOW_20_in_rule__Overview__Group_3__0__Impl9236); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getDescriptionKeyword_3_0()); 
             }
@@ -12497,16 +12592,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_3__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4692:1: rule__Overview__Group_3__1 : rule__Overview__Group_3__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4722:1: rule__Overview__Group_3__1 : rule__Overview__Group_3__1__Impl ;
     public final void rule__Overview__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4696:1: ( rule__Overview__Group_3__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4697:2: rule__Overview__Group_3__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4726:1: ( rule__Overview__Group_3__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4727:2: rule__Overview__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Overview__Group_3__1__Impl_in_rule__Overview__Group_3__19207);
+            pushFollow(FOLLOW_rule__Overview__Group_3__1__Impl_in_rule__Overview__Group_3__19267);
             rule__Overview__Group_3__1__Impl();
 
             state._fsp--;
@@ -12530,25 +12625,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_3__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4703:1: rule__Overview__Group_3__1__Impl : ( ( rule__Overview__DescriptionAssignment_3_1 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4733:1: rule__Overview__Group_3__1__Impl : ( ( rule__Overview__DescriptionAssignment_3_1 ) ) ;
     public final void rule__Overview__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4707:1: ( ( ( rule__Overview__DescriptionAssignment_3_1 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4708:1: ( ( rule__Overview__DescriptionAssignment_3_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4737:1: ( ( ( rule__Overview__DescriptionAssignment_3_1 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4738:1: ( ( rule__Overview__DescriptionAssignment_3_1 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4708:1: ( ( rule__Overview__DescriptionAssignment_3_1 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4709:1: ( rule__Overview__DescriptionAssignment_3_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4738:1: ( ( rule__Overview__DescriptionAssignment_3_1 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4739:1: ( rule__Overview__DescriptionAssignment_3_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getDescriptionAssignment_3_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4710:1: ( rule__Overview__DescriptionAssignment_3_1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4710:2: rule__Overview__DescriptionAssignment_3_1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4740:1: ( rule__Overview__DescriptionAssignment_3_1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4740:2: rule__Overview__DescriptionAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Overview__DescriptionAssignment_3_1_in_rule__Overview__Group_3__1__Impl9234);
+            pushFollow(FOLLOW_rule__Overview__DescriptionAssignment_3_1_in_rule__Overview__Group_3__1__Impl9294);
             rule__Overview__DescriptionAssignment_3_1();
 
             state._fsp--;
@@ -12581,21 +12676,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4724:1: rule__Overview__Group_4__0 : rule__Overview__Group_4__0__Impl rule__Overview__Group_4__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4754:1: rule__Overview__Group_4__0 : rule__Overview__Group_4__0__Impl rule__Overview__Group_4__1 ;
     public final void rule__Overview__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4728:1: ( rule__Overview__Group_4__0__Impl rule__Overview__Group_4__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4729:2: rule__Overview__Group_4__0__Impl rule__Overview__Group_4__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4758:1: ( rule__Overview__Group_4__0__Impl rule__Overview__Group_4__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4759:2: rule__Overview__Group_4__0__Impl rule__Overview__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Overview__Group_4__0__Impl_in_rule__Overview__Group_4__09268);
+            pushFollow(FOLLOW_rule__Overview__Group_4__0__Impl_in_rule__Overview__Group_4__09328);
             rule__Overview__Group_4__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group_4__1_in_rule__Overview__Group_4__09271);
+            pushFollow(FOLLOW_rule__Overview__Group_4__1_in_rule__Overview__Group_4__09331);
             rule__Overview__Group_4__1();
 
             state._fsp--;
@@ -12619,22 +12714,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4736:1: rule__Overview__Group_4__0__Impl : ( 'image' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4766:1: rule__Overview__Group_4__0__Impl : ( 'image' ) ;
     public final void rule__Overview__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4740:1: ( ( 'image' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4741:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4770:1: ( ( 'image' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4771:1: ( 'image' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4741:1: ( 'image' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4742:1: 'image'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4771:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4772:1: 'image'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getImageKeyword_4_0()); 
             }
-            match(input,26,FOLLOW_26_in_rule__Overview__Group_4__0__Impl9299); if (state.failed) return ;
+            match(input,25,FOLLOW_25_in_rule__Overview__Group_4__0__Impl9359); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getImageKeyword_4_0()); 
             }
@@ -12660,21 +12755,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4755:1: rule__Overview__Group_4__1 : rule__Overview__Group_4__1__Impl rule__Overview__Group_4__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4785:1: rule__Overview__Group_4__1 : rule__Overview__Group_4__1__Impl rule__Overview__Group_4__2 ;
     public final void rule__Overview__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4759:1: ( rule__Overview__Group_4__1__Impl rule__Overview__Group_4__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4760:2: rule__Overview__Group_4__1__Impl rule__Overview__Group_4__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4789:1: ( rule__Overview__Group_4__1__Impl rule__Overview__Group_4__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4790:2: rule__Overview__Group_4__1__Impl rule__Overview__Group_4__2
             {
-            pushFollow(FOLLOW_rule__Overview__Group_4__1__Impl_in_rule__Overview__Group_4__19330);
+            pushFollow(FOLLOW_rule__Overview__Group_4__1__Impl_in_rule__Overview__Group_4__19390);
             rule__Overview__Group_4__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group_4__2_in_rule__Overview__Group_4__19333);
+            pushFollow(FOLLOW_rule__Overview__Group_4__2_in_rule__Overview__Group_4__19393);
             rule__Overview__Group_4__2();
 
             state._fsp--;
@@ -12698,22 +12793,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4767:1: rule__Overview__Group_4__1__Impl : ( 'on' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4797:1: rule__Overview__Group_4__1__Impl : ( 'on' ) ;
     public final void rule__Overview__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4771:1: ( ( 'on' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4772:1: ( 'on' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4801:1: ( ( 'on' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4802:1: ( 'on' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4772:1: ( 'on' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4773:1: 'on'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4802:1: ( 'on' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4803:1: 'on'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getOnKeyword_4_1()); 
             }
-            match(input,27,FOLLOW_27_in_rule__Overview__Group_4__1__Impl9361); if (state.failed) return ;
+            match(input,26,FOLLOW_26_in_rule__Overview__Group_4__1__Impl9421); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getOnKeyword_4_1()); 
             }
@@ -12739,21 +12834,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4786:1: rule__Overview__Group_4__2 : rule__Overview__Group_4__2__Impl rule__Overview__Group_4__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4816:1: rule__Overview__Group_4__2 : rule__Overview__Group_4__2__Impl rule__Overview__Group_4__3 ;
     public final void rule__Overview__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4790:1: ( rule__Overview__Group_4__2__Impl rule__Overview__Group_4__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4791:2: rule__Overview__Group_4__2__Impl rule__Overview__Group_4__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4820:1: ( rule__Overview__Group_4__2__Impl rule__Overview__Group_4__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4821:2: rule__Overview__Group_4__2__Impl rule__Overview__Group_4__3
             {
-            pushFollow(FOLLOW_rule__Overview__Group_4__2__Impl_in_rule__Overview__Group_4__29392);
+            pushFollow(FOLLOW_rule__Overview__Group_4__2__Impl_in_rule__Overview__Group_4__29452);
             rule__Overview__Group_4__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group_4__3_in_rule__Overview__Group_4__29395);
+            pushFollow(FOLLOW_rule__Overview__Group_4__3_in_rule__Overview__Group_4__29455);
             rule__Overview__Group_4__3();
 
             state._fsp--;
@@ -12777,22 +12872,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4798:1: rule__Overview__Group_4__2__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4828:1: rule__Overview__Group_4__2__Impl : ( ':' ) ;
     public final void rule__Overview__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4802:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4803:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4832:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4833:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4803:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4804:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4833:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4834:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getColonKeyword_4_2()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Overview__Group_4__2__Impl9423); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Overview__Group_4__2__Impl9483); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getColonKeyword_4_2()); 
             }
@@ -12818,16 +12913,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4817:1: rule__Overview__Group_4__3 : rule__Overview__Group_4__3__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4847:1: rule__Overview__Group_4__3 : rule__Overview__Group_4__3__Impl ;
     public final void rule__Overview__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4821:1: ( rule__Overview__Group_4__3__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4822:2: rule__Overview__Group_4__3__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4851:1: ( rule__Overview__Group_4__3__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4852:2: rule__Overview__Group_4__3__Impl
             {
-            pushFollow(FOLLOW_rule__Overview__Group_4__3__Impl_in_rule__Overview__Group_4__39454);
+            pushFollow(FOLLOW_rule__Overview__Group_4__3__Impl_in_rule__Overview__Group_4__39514);
             rule__Overview__Group_4__3__Impl();
 
             state._fsp--;
@@ -12851,25 +12946,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_4__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4828:1: rule__Overview__Group_4__3__Impl : ( ( rule__Overview__ImagePathOnAssignment_4_3 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4858:1: rule__Overview__Group_4__3__Impl : ( ( rule__Overview__ImagePathOnAssignment_4_3 ) ) ;
     public final void rule__Overview__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4832:1: ( ( ( rule__Overview__ImagePathOnAssignment_4_3 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4833:1: ( ( rule__Overview__ImagePathOnAssignment_4_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4862:1: ( ( ( rule__Overview__ImagePathOnAssignment_4_3 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4863:1: ( ( rule__Overview__ImagePathOnAssignment_4_3 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4833:1: ( ( rule__Overview__ImagePathOnAssignment_4_3 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4834:1: ( rule__Overview__ImagePathOnAssignment_4_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4863:1: ( ( rule__Overview__ImagePathOnAssignment_4_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4864:1: ( rule__Overview__ImagePathOnAssignment_4_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getImagePathOnAssignment_4_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4835:1: ( rule__Overview__ImagePathOnAssignment_4_3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4835:2: rule__Overview__ImagePathOnAssignment_4_3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4865:1: ( rule__Overview__ImagePathOnAssignment_4_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4865:2: rule__Overview__ImagePathOnAssignment_4_3
             {
-            pushFollow(FOLLOW_rule__Overview__ImagePathOnAssignment_4_3_in_rule__Overview__Group_4__3__Impl9481);
+            pushFollow(FOLLOW_rule__Overview__ImagePathOnAssignment_4_3_in_rule__Overview__Group_4__3__Impl9541);
             rule__Overview__ImagePathOnAssignment_4_3();
 
             state._fsp--;
@@ -12902,21 +12997,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4853:1: rule__Overview__Group_5__0 : rule__Overview__Group_5__0__Impl rule__Overview__Group_5__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4883:1: rule__Overview__Group_5__0 : rule__Overview__Group_5__0__Impl rule__Overview__Group_5__1 ;
     public final void rule__Overview__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4857:1: ( rule__Overview__Group_5__0__Impl rule__Overview__Group_5__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4858:2: rule__Overview__Group_5__0__Impl rule__Overview__Group_5__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4887:1: ( rule__Overview__Group_5__0__Impl rule__Overview__Group_5__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4888:2: rule__Overview__Group_5__0__Impl rule__Overview__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Overview__Group_5__0__Impl_in_rule__Overview__Group_5__09519);
+            pushFollow(FOLLOW_rule__Overview__Group_5__0__Impl_in_rule__Overview__Group_5__09579);
             rule__Overview__Group_5__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group_5__1_in_rule__Overview__Group_5__09522);
+            pushFollow(FOLLOW_rule__Overview__Group_5__1_in_rule__Overview__Group_5__09582);
             rule__Overview__Group_5__1();
 
             state._fsp--;
@@ -12940,22 +13035,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4865:1: rule__Overview__Group_5__0__Impl : ( 'image' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4895:1: rule__Overview__Group_5__0__Impl : ( 'image' ) ;
     public final void rule__Overview__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4869:1: ( ( 'image' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4870:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4899:1: ( ( 'image' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4900:1: ( 'image' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4870:1: ( 'image' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4871:1: 'image'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4900:1: ( 'image' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4901:1: 'image'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getImageKeyword_5_0()); 
             }
-            match(input,26,FOLLOW_26_in_rule__Overview__Group_5__0__Impl9550); if (state.failed) return ;
+            match(input,25,FOLLOW_25_in_rule__Overview__Group_5__0__Impl9610); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getImageKeyword_5_0()); 
             }
@@ -12981,21 +13076,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4884:1: rule__Overview__Group_5__1 : rule__Overview__Group_5__1__Impl rule__Overview__Group_5__2 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4914:1: rule__Overview__Group_5__1 : rule__Overview__Group_5__1__Impl rule__Overview__Group_5__2 ;
     public final void rule__Overview__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4888:1: ( rule__Overview__Group_5__1__Impl rule__Overview__Group_5__2 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4889:2: rule__Overview__Group_5__1__Impl rule__Overview__Group_5__2
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4918:1: ( rule__Overview__Group_5__1__Impl rule__Overview__Group_5__2 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4919:2: rule__Overview__Group_5__1__Impl rule__Overview__Group_5__2
             {
-            pushFollow(FOLLOW_rule__Overview__Group_5__1__Impl_in_rule__Overview__Group_5__19581);
+            pushFollow(FOLLOW_rule__Overview__Group_5__1__Impl_in_rule__Overview__Group_5__19641);
             rule__Overview__Group_5__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group_5__2_in_rule__Overview__Group_5__19584);
+            pushFollow(FOLLOW_rule__Overview__Group_5__2_in_rule__Overview__Group_5__19644);
             rule__Overview__Group_5__2();
 
             state._fsp--;
@@ -13019,22 +13114,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4896:1: rule__Overview__Group_5__1__Impl : ( 'off' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4926:1: rule__Overview__Group_5__1__Impl : ( 'off' ) ;
     public final void rule__Overview__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4900:1: ( ( 'off' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4901:1: ( 'off' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4930:1: ( ( 'off' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4931:1: ( 'off' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4901:1: ( 'off' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4902:1: 'off'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4931:1: ( 'off' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4932:1: 'off'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getOffKeyword_5_1()); 
             }
-            match(input,29,FOLLOW_29_in_rule__Overview__Group_5__1__Impl9612); if (state.failed) return ;
+            match(input,28,FOLLOW_28_in_rule__Overview__Group_5__1__Impl9672); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getOffKeyword_5_1()); 
             }
@@ -13060,21 +13155,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4915:1: rule__Overview__Group_5__2 : rule__Overview__Group_5__2__Impl rule__Overview__Group_5__3 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4945:1: rule__Overview__Group_5__2 : rule__Overview__Group_5__2__Impl rule__Overview__Group_5__3 ;
     public final void rule__Overview__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4919:1: ( rule__Overview__Group_5__2__Impl rule__Overview__Group_5__3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4920:2: rule__Overview__Group_5__2__Impl rule__Overview__Group_5__3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4949:1: ( rule__Overview__Group_5__2__Impl rule__Overview__Group_5__3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4950:2: rule__Overview__Group_5__2__Impl rule__Overview__Group_5__3
             {
-            pushFollow(FOLLOW_rule__Overview__Group_5__2__Impl_in_rule__Overview__Group_5__29643);
+            pushFollow(FOLLOW_rule__Overview__Group_5__2__Impl_in_rule__Overview__Group_5__29703);
             rule__Overview__Group_5__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__Overview__Group_5__3_in_rule__Overview__Group_5__29646);
+            pushFollow(FOLLOW_rule__Overview__Group_5__3_in_rule__Overview__Group_5__29706);
             rule__Overview__Group_5__3();
 
             state._fsp--;
@@ -13098,22 +13193,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__2__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4927:1: rule__Overview__Group_5__2__Impl : ( ':' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4957:1: rule__Overview__Group_5__2__Impl : ( ':' ) ;
     public final void rule__Overview__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4931:1: ( ( ':' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4932:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4961:1: ( ( ':' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4962:1: ( ':' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4932:1: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4933:1: ':'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4962:1: ( ':' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4963:1: ':'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getColonKeyword_5_2()); 
             }
-            match(input,28,FOLLOW_28_in_rule__Overview__Group_5__2__Impl9674); if (state.failed) return ;
+            match(input,27,FOLLOW_27_in_rule__Overview__Group_5__2__Impl9734); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getColonKeyword_5_2()); 
             }
@@ -13139,16 +13234,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4946:1: rule__Overview__Group_5__3 : rule__Overview__Group_5__3__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4976:1: rule__Overview__Group_5__3 : rule__Overview__Group_5__3__Impl ;
     public final void rule__Overview__Group_5__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4950:1: ( rule__Overview__Group_5__3__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4951:2: rule__Overview__Group_5__3__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4980:1: ( rule__Overview__Group_5__3__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4981:2: rule__Overview__Group_5__3__Impl
             {
-            pushFollow(FOLLOW_rule__Overview__Group_5__3__Impl_in_rule__Overview__Group_5__39705);
+            pushFollow(FOLLOW_rule__Overview__Group_5__3__Impl_in_rule__Overview__Group_5__39765);
             rule__Overview__Group_5__3__Impl();
 
             state._fsp--;
@@ -13172,25 +13267,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__Group_5__3__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4957:1: rule__Overview__Group_5__3__Impl : ( ( rule__Overview__ImagePathOffAssignment_5_3 ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4987:1: rule__Overview__Group_5__3__Impl : ( ( rule__Overview__ImagePathOffAssignment_5_3 ) ) ;
     public final void rule__Overview__Group_5__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4961:1: ( ( ( rule__Overview__ImagePathOffAssignment_5_3 ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4962:1: ( ( rule__Overview__ImagePathOffAssignment_5_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4991:1: ( ( ( rule__Overview__ImagePathOffAssignment_5_3 ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4992:1: ( ( rule__Overview__ImagePathOffAssignment_5_3 ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4962:1: ( ( rule__Overview__ImagePathOffAssignment_5_3 ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4963:1: ( rule__Overview__ImagePathOffAssignment_5_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4992:1: ( ( rule__Overview__ImagePathOffAssignment_5_3 ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4993:1: ( rule__Overview__ImagePathOffAssignment_5_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getImagePathOffAssignment_5_3()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4964:1: ( rule__Overview__ImagePathOffAssignment_5_3 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4964:2: rule__Overview__ImagePathOffAssignment_5_3
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4994:1: ( rule__Overview__ImagePathOffAssignment_5_3 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4994:2: rule__Overview__ImagePathOffAssignment_5_3
             {
-            pushFollow(FOLLOW_rule__Overview__ImagePathOffAssignment_5_3_in_rule__Overview__Group_5__3__Impl9732);
+            pushFollow(FOLLOW_rule__Overview__ImagePathOffAssignment_5_3_in_rule__Overview__Group_5__3__Impl9792);
             rule__Overview__ImagePathOffAssignment_5_3();
 
             state._fsp--;
@@ -13223,21 +13318,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4982:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5012:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
     public final void rule__FQN__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4986:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4987:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5016:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5017:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
             {
-            pushFollow(FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__09770);
+            pushFollow(FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__09830);
             rule__FQN__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__09773);
+            pushFollow(FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__09833);
             rule__FQN__Group__1();
 
             state._fsp--;
@@ -13261,22 +13356,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4994:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5024:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4998:1: ( ( RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4999:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5028:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5029:1: ( RULE_ID )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:4999:1: ( RULE_ID )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5000:1: RULE_ID
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5029:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5030:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl9800); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl9860); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
             }
@@ -13302,16 +13397,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5011:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5041:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
     public final void rule__FQN__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5015:1: ( rule__FQN__Group__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5016:2: rule__FQN__Group__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5045:1: ( rule__FQN__Group__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5046:2: rule__FQN__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__19829);
+            pushFollow(FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__19889);
             rule__FQN__Group__1__Impl();
 
             state._fsp--;
@@ -13335,37 +13430,37 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5022:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5052:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
     public final void rule__FQN__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5026:1: ( ( ( rule__FQN__Group_1__0 )* ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5027:1: ( ( rule__FQN__Group_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5056:1: ( ( ( rule__FQN__Group_1__0 )* ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5057:1: ( ( rule__FQN__Group_1__0 )* )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5027:1: ( ( rule__FQN__Group_1__0 )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5028:1: ( rule__FQN__Group_1__0 )*
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5057:1: ( ( rule__FQN__Group_1__0 )* )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5058:1: ( rule__FQN__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getGroup_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5029:1: ( rule__FQN__Group_1__0 )*
-            loop32:
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5059:1: ( rule__FQN__Group_1__0 )*
+            loop33:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA32_0==43) ) {
-                    alt32=1;
+                if ( (LA33_0==43) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt33) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5029:2: rule__FQN__Group_1__0
+            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5059:2: rule__FQN__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl9856);
+            	    pushFollow(FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl9916);
             	    rule__FQN__Group_1__0();
 
             	    state._fsp--;
@@ -13375,7 +13470,7 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop33;
                 }
             } while (true);
 
@@ -13404,21 +13499,21 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__0"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5043:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5073:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
     public final void rule__FQN__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5047:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5048:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5077:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5078:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
             {
-            pushFollow(FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__09891);
+            pushFollow(FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__09951);
             rule__FQN__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__09894);
+            pushFollow(FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__09954);
             rule__FQN__Group_1__1();
 
             state._fsp--;
@@ -13442,22 +13537,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__0__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5055:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5085:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
     public final void rule__FQN__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5059:1: ( ( '.' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5060:1: ( '.' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5089:1: ( ( '.' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5090:1: ( '.' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5060:1: ( '.' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5061:1: '.'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5090:1: ( '.' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5091:1: '.'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             }
-            match(input,43,FOLLOW_43_in_rule__FQN__Group_1__0__Impl9922); if (state.failed) return ;
+            match(input,43,FOLLOW_43_in_rule__FQN__Group_1__0__Impl9982); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             }
@@ -13483,16 +13578,16 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5074:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5104:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
     public final void rule__FQN__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5078:1: ( rule__FQN__Group_1__1__Impl )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5079:2: rule__FQN__Group_1__1__Impl
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5108:1: ( rule__FQN__Group_1__1__Impl )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5109:2: rule__FQN__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__19953);
+            pushFollow(FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__110013);
             rule__FQN__Group_1__1__Impl();
 
             state._fsp--;
@@ -13516,25 +13611,25 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__FQN__Group_1__1__Impl"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5085:1: rule__FQN__Group_1__1__Impl : ( ( RULE_ID ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5115:1: rule__FQN__Group_1__1__Impl : ( ( RULE_ID ) ) ;
     public final void rule__FQN__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5089:1: ( ( ( RULE_ID ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5090:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5119:1: ( ( ( RULE_ID ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5120:1: ( ( RULE_ID ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5090:1: ( ( RULE_ID ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5091:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5120:1: ( ( RULE_ID ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5121:1: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1()); 
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5092:1: ( RULE_ID )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5092:3: RULE_ID
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5122:1: ( RULE_ID )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5122:3: RULE_ID
             {
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl9981); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl10041); if (state.failed) return ;
 
             }
 
@@ -13563,22 +13658,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ViewpointActivityExplorer__NameAssignment_3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5107:1: rule__ViewpointActivityExplorer__NameAssignment_3 : ( ruleFQN ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5137:1: rule__ViewpointActivityExplorer__NameAssignment_3 : ( ruleFQN ) ;
     public final void rule__ViewpointActivityExplorer__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5111:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5112:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5141:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5142:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5112:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5113:1: ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5142:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5143:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointActivityExplorerAccess().getNameFQNParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_rule__ViewpointActivityExplorer__NameAssignment_310020);
+            pushFollow(FOLLOW_ruleFQN_in_rule__ViewpointActivityExplorer__NameAssignment_310080);
             ruleFQN();
 
             state._fsp--;
@@ -13608,22 +13703,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5122:1: rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_2 : ( rulePage ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5152:1: rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_2 : ( rulePage ) ;
     public final void rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5126:1: ( ( rulePage ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5127:1: ( rulePage )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5156:1: ( ( rulePage ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5157:1: ( rulePage )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5127:1: ( rulePage )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5128:1: rulePage
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5157:1: ( rulePage )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5158:1: rulePage
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointActivityExplorerAccess().getOwnedPagesPageParserRuleCall_5_2_0()); 
             }
-            pushFollow(FOLLOW_rulePage_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_210051);
+            pushFollow(FOLLOW_rulePage_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_210111);
             rulePage();
 
             state._fsp--;
@@ -13653,22 +13748,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ViewpointActivityExplorer__OwnedPagesAssignment_6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5137:1: rule__ViewpointActivityExplorer__OwnedPagesAssignment_6 : ( rulePageExtension ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5167:1: rule__ViewpointActivityExplorer__OwnedPagesAssignment_6 : ( rulePageExtension ) ;
     public final void rule__ViewpointActivityExplorer__OwnedPagesAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5141:1: ( ( rulePageExtension ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5142:1: ( rulePageExtension )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5171:1: ( ( rulePageExtension ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5172:1: ( rulePageExtension )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5142:1: ( rulePageExtension )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5143:1: rulePageExtension
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5172:1: ( rulePageExtension )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5173:1: rulePageExtension
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointActivityExplorerAccess().getOwnedPagesPageExtensionParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_rulePageExtension_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_610082);
+            pushFollow(FOLLOW_rulePageExtension_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_610142);
             rulePageExtension();
 
             state._fsp--;
@@ -13698,22 +13793,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5152:1: rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_7 : ( ruleSectionExtension ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5182:1: rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_7 : ( ruleSectionExtension ) ;
     public final void rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5156:1: ( ( ruleSectionExtension ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5157:1: ( ruleSectionExtension )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5186:1: ( ( ruleSectionExtension ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5187:1: ( ruleSectionExtension )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5157:1: ( ruleSectionExtension )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5158:1: ruleSectionExtension
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5187:1: ( ruleSectionExtension )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5188:1: ruleSectionExtension
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getViewpointActivityExplorerAccess().getOwnedSectionExtensionsSectionExtensionParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleSectionExtension_in_rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_710113);
+            pushFollow(FOLLOW_ruleSectionExtension_in_rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_710173);
             ruleSectionExtension();
 
             state._fsp--;
@@ -13743,22 +13838,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__NameAssignment_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5167:1: rule__Page__NameAssignment_2 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5197:1: rule__Page__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Page__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5171:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5172:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5201:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5202:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5172:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5173:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5202:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5203:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__NameAssignment_210144); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__NameAssignment_210204); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             }
@@ -13784,22 +13879,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__DescriptionAssignment_4_1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5182:1: rule__Page__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5212:1: rule__Page__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__Page__DescriptionAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5186:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5187:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5216:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5217:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5187:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5188:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5217:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5218:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__DescriptionAssignment_4_110175); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__DescriptionAssignment_4_110235); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
             }
@@ -13825,22 +13920,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__FileExtensionsAssignment_5_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5197:1: rule__Page__FileExtensionsAssignment_5_2 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5227:1: rule__Page__FileExtensionsAssignment_5_2 : ( RULE_STRING ) ;
     public final void rule__Page__FileExtensionsAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5201:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5202:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5231:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5232:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5202:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5203:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5232:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5233:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getFileExtensionsSTRINGTerminalRuleCall_5_2_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__FileExtensionsAssignment_5_210206); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__FileExtensionsAssignment_5_210266); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getFileExtensionsSTRINGTerminalRuleCall_5_2_0()); 
             }
@@ -13866,22 +13961,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__ActivityExplorerItemIDAssignment_6_1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5212:1: rule__Page__ActivityExplorerItemIDAssignment_6_1 : ( ruleFQN ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5242:1: rule__Page__ActivityExplorerItemIDAssignment_6_1 : ( ruleFQN ) ;
     public final void rule__Page__ActivityExplorerItemIDAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5216:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5217:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5246:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5247:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5217:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5218:1: ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5247:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5248:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getActivityExplorerItemIDFQNParserRuleCall_6_1_0()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_rule__Page__ActivityExplorerItemIDAssignment_6_110237);
+            pushFollow(FOLLOW_ruleFQN_in_rule__Page__ActivityExplorerItemIDAssignment_6_110297);
             ruleFQN();
 
             state._fsp--;
@@ -13911,22 +14006,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__IndexAssignment_8"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5227:1: rule__Page__IndexAssignment_8 : ( ruleEInt ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5257:1: rule__Page__IndexAssignment_8 : ( ruleEInt ) ;
     public final void rule__Page__IndexAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5231:1: ( ( ruleEInt ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5232:1: ( ruleEInt )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5261:1: ( ( ruleEInt ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5262:1: ( ruleEInt )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5232:1: ( ruleEInt )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5233:1: ruleEInt
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5262:1: ( ruleEInt )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5263:1: ruleEInt
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getIndexEIntParserRuleCall_8_0()); 
             }
-            pushFollow(FOLLOW_ruleEInt_in_rule__Page__IndexAssignment_810268);
+            pushFollow(FOLLOW_ruleEInt_in_rule__Page__IndexAssignment_810328);
             ruleEInt();
 
             state._fsp--;
@@ -13956,22 +14051,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__OwnedOverviewAssignment_9"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5242:1: rule__Page__OwnedOverviewAssignment_9 : ( ruleOverview ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5272:1: rule__Page__OwnedOverviewAssignment_9 : ( ruleOverview ) ;
     public final void rule__Page__OwnedOverviewAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5246:1: ( ( ruleOverview ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5247:1: ( ruleOverview )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5276:1: ( ( ruleOverview ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5277:1: ( ruleOverview )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5247:1: ( ruleOverview )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5248:1: ruleOverview
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5277:1: ( ruleOverview )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5278:1: ruleOverview
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getOwnedOverviewOverviewParserRuleCall_9_0()); 
             }
-            pushFollow(FOLLOW_ruleOverview_in_rule__Page__OwnedOverviewAssignment_910299);
+            pushFollow(FOLLOW_ruleOverview_in_rule__Page__OwnedOverviewAssignment_910359);
             ruleOverview();
 
             state._fsp--;
@@ -14001,22 +14096,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__ImagePathOnAssignment_10_2_3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5257:1: rule__Page__ImagePathOnAssignment_10_2_3 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5287:1: rule__Page__ImagePathOnAssignment_10_2_3 : ( RULE_STRING ) ;
     public final void rule__Page__ImagePathOnAssignment_10_2_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5261:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5262:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5291:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5292:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5262:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5263:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5292:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5293:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getImagePathOnSTRINGTerminalRuleCall_10_2_3_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__ImagePathOnAssignment_10_2_310330); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__ImagePathOnAssignment_10_2_310390); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getImagePathOnSTRINGTerminalRuleCall_10_2_3_0()); 
             }
@@ -14042,22 +14137,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__ImagePathOffAssignment_10_3_3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5272:1: rule__Page__ImagePathOffAssignment_10_3_3 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5302:1: rule__Page__ImagePathOffAssignment_10_3_3 : ( RULE_STRING ) ;
     public final void rule__Page__ImagePathOffAssignment_10_3_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5276:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5277:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5306:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5307:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5277:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5278:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5307:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5308:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getImagePathOffSTRINGTerminalRuleCall_10_3_3_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__ImagePathOffAssignment_10_3_310361); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__ImagePathOffAssignment_10_3_310421); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getImagePathOffSTRINGTerminalRuleCall_10_3_3_0()); 
             }
@@ -14083,22 +14178,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__TabNameAssignment_11_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5287:1: rule__Page__TabNameAssignment_11_2 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5317:1: rule__Page__TabNameAssignment_11_2 : ( RULE_STRING ) ;
     public final void rule__Page__TabNameAssignment_11_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5291:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5292:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5321:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5322:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5292:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5293:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5322:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5323:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getTabNameSTRINGTerminalRuleCall_11_2_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__TabNameAssignment_11_210392); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Page__TabNameAssignment_11_210452); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getTabNameSTRINGTerminalRuleCall_11_2_0()); 
             }
@@ -14124,22 +14219,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__HasPredicateAssignment_12_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5302:1: rule__Page__HasPredicateAssignment_12_2 : ( ruleEBoolean ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5332:1: rule__Page__HasPredicateAssignment_12_2 : ( ruleEBoolean ) ;
     public final void rule__Page__HasPredicateAssignment_12_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5306:1: ( ( ruleEBoolean ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5307:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5336:1: ( ( ruleEBoolean ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5337:1: ( ruleEBoolean )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5307:1: ( ruleEBoolean )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5308:1: ruleEBoolean
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5337:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5338:1: ruleEBoolean
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getHasPredicateEBooleanParserRuleCall_12_2_0()); 
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_rule__Page__HasPredicateAssignment_12_210423);
+            pushFollow(FOLLOW_ruleEBoolean_in_rule__Page__HasPredicateAssignment_12_210483);
             ruleEBoolean();
 
             state._fsp--;
@@ -14169,22 +14264,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Page__ShowViewerAssignment_13_3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5317:1: rule__Page__ShowViewerAssignment_13_3 : ( ruleEBoolean ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5347:1: rule__Page__ShowViewerAssignment_13_3 : ( ruleEBoolean ) ;
     public final void rule__Page__ShowViewerAssignment_13_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5321:1: ( ( ruleEBoolean ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5322:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5351:1: ( ( ruleEBoolean ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5352:1: ( ruleEBoolean )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5322:1: ( ruleEBoolean )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5323:1: ruleEBoolean
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5352:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5353:1: ruleEBoolean
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getShowViewerEBooleanParserRuleCall_13_3_0()); 
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_rule__Page__ShowViewerAssignment_13_310454);
+            pushFollow(FOLLOW_ruleEBoolean_in_rule__Page__ShowViewerAssignment_13_310514);
             ruleEBoolean();
 
             state._fsp--;
@@ -14213,29 +14308,29 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Page__ShowViewerAssignment_13_3"
 
 
-    // $ANTLR start "rule__Page__OwnedSectionsAssignment_16"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5332:1: rule__Page__OwnedSectionsAssignment_16 : ( ruleSection ) ;
-    public final void rule__Page__OwnedSectionsAssignment_16() throws RecognitionException {
+    // $ANTLR start "rule__Page__OwnedSectionsAssignment_14_2"
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5362:1: rule__Page__OwnedSectionsAssignment_14_2 : ( ruleSection ) ;
+    public final void rule__Page__OwnedSectionsAssignment_14_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5336:1: ( ( ruleSection ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5337:1: ( ruleSection )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5366:1: ( ( ruleSection ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5367:1: ( ruleSection )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5337:1: ( ruleSection )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5338:1: ruleSection
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5367:1: ( ruleSection )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5368:1: ruleSection
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getPageAccess().getOwnedSectionsSectionParserRuleCall_16_0()); 
+               before(grammarAccess.getPageAccess().getOwnedSectionsSectionParserRuleCall_14_2_0()); 
             }
-            pushFollow(FOLLOW_ruleSection_in_rule__Page__OwnedSectionsAssignment_1610485);
+            pushFollow(FOLLOW_ruleSection_in_rule__Page__OwnedSectionsAssignment_14_210545);
             ruleSection();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getPageAccess().getOwnedSectionsSectionParserRuleCall_16_0()); 
+               after(grammarAccess.getPageAccess().getOwnedSectionsSectionParserRuleCall_14_2_0()); 
             }
 
             }
@@ -14255,26 +14350,26 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Page__OwnedSectionsAssignment_16"
+    // $ANTLR end "rule__Page__OwnedSectionsAssignment_14_2"
 
 
     // $ANTLR start "rule__Section__NameAssignment_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5347:1: rule__Section__NameAssignment_2 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5377:1: rule__Section__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Section__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5351:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5352:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5381:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5382:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5352:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5353:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5382:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5383:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Section__NameAssignment_210516); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Section__NameAssignment_210576); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             }
@@ -14300,22 +14395,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__DescriptionAssignment_4_1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5362:1: rule__Section__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5392:1: rule__Section__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__Section__DescriptionAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5366:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5367:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5396:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5397:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5367:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5368:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5397:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5398:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Section__DescriptionAssignment_4_110547); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Section__DescriptionAssignment_4_110607); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getSectionAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
             }
@@ -14341,22 +14436,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__ActivityExplorerItemIDAssignment_5_1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5377:1: rule__Section__ActivityExplorerItemIDAssignment_5_1 : ( ruleFQN ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5407:1: rule__Section__ActivityExplorerItemIDAssignment_5_1 : ( ruleFQN ) ;
     public final void rule__Section__ActivityExplorerItemIDAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5381:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5382:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5411:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5412:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5382:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5383:1: ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5412:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5413:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getActivityExplorerItemIDFQNParserRuleCall_5_1_0()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_rule__Section__ActivityExplorerItemIDAssignment_5_110578);
+            pushFollow(FOLLOW_ruleFQN_in_rule__Section__ActivityExplorerItemIDAssignment_5_110638);
             ruleFQN();
 
             state._fsp--;
@@ -14386,22 +14481,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__IndexAssignment_7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5392:1: rule__Section__IndexAssignment_7 : ( ruleEInt ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5422:1: rule__Section__IndexAssignment_7 : ( ruleEInt ) ;
     public final void rule__Section__IndexAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5396:1: ( ( ruleEInt ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5397:1: ( ruleEInt )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5426:1: ( ( ruleEInt ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5427:1: ( ruleEInt )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5397:1: ( ruleEInt )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5398:1: ruleEInt
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5427:1: ( ruleEInt )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5428:1: ruleEInt
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getIndexEIntParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleEInt_in_rule__Section__IndexAssignment_710609);
+            pushFollow(FOLLOW_ruleEInt_in_rule__Section__IndexAssignment_710669);
             ruleEInt();
 
             state._fsp--;
@@ -14431,22 +14526,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__FilteringAssignment_8_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5407:1: rule__Section__FilteringAssignment_8_2 : ( ruleEBoolean ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5437:1: rule__Section__FilteringAssignment_8_2 : ( ruleEBoolean ) ;
     public final void rule__Section__FilteringAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5411:1: ( ( ruleEBoolean ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5412:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5441:1: ( ( ruleEBoolean ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5442:1: ( ruleEBoolean )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5412:1: ( ruleEBoolean )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5413:1: ruleEBoolean
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5442:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5443:1: ruleEBoolean
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getFilteringEBooleanParserRuleCall_8_2_0()); 
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_rule__Section__FilteringAssignment_8_210640);
+            pushFollow(FOLLOW_ruleEBoolean_in_rule__Section__FilteringAssignment_8_210700);
             ruleEBoolean();
 
             state._fsp--;
@@ -14476,22 +14571,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__ExpandedAssignment_9_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5422:1: rule__Section__ExpandedAssignment_9_2 : ( ruleEBoolean ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5452:1: rule__Section__ExpandedAssignment_9_2 : ( ruleEBoolean ) ;
     public final void rule__Section__ExpandedAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5426:1: ( ( ruleEBoolean ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5427:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5456:1: ( ( ruleEBoolean ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5457:1: ( ruleEBoolean )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5427:1: ( ruleEBoolean )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5428:1: ruleEBoolean
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5457:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5458:1: ruleEBoolean
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getExpandedEBooleanParserRuleCall_9_2_0()); 
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_rule__Section__ExpandedAssignment_9_210671);
+            pushFollow(FOLLOW_ruleEBoolean_in_rule__Section__ExpandedAssignment_9_210731);
             ruleEBoolean();
 
             state._fsp--;
@@ -14521,22 +14616,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Section__OwnedActivitiesAssignment_10_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5437:1: rule__Section__OwnedActivitiesAssignment_10_2 : ( ruleActivity ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5467:1: rule__Section__OwnedActivitiesAssignment_10_2 : ( ruleActivity ) ;
     public final void rule__Section__OwnedActivitiesAssignment_10_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5441:1: ( ( ruleActivity ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5442:1: ( ruleActivity )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5471:1: ( ( ruleActivity ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5472:1: ( ruleActivity )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5442:1: ( ruleActivity )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5443:1: ruleActivity
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5472:1: ( ruleActivity )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5473:1: ruleActivity
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionAccess().getOwnedActivitiesActivityParserRuleCall_10_2_0()); 
             }
-            pushFollow(FOLLOW_ruleActivity_in_rule__Section__OwnedActivitiesAssignment_10_210702);
+            pushFollow(FOLLOW_ruleActivity_in_rule__Section__OwnedActivitiesAssignment_10_210762);
             ruleActivity();
 
             state._fsp--;
@@ -14566,22 +14661,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__NameAssignment_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5452:1: rule__Activity__NameAssignment_2 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5482:1: rule__Activity__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Activity__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5456:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5457:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5486:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5487:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5457:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5458:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5487:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5488:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Activity__NameAssignment_210733); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Activity__NameAssignment_210793); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             }
@@ -14607,22 +14702,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__DescriptionAssignment_4_1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5467:1: rule__Activity__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5497:1: rule__Activity__DescriptionAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__Activity__DescriptionAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5471:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5472:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5501:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5502:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5472:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5473:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5502:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5503:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Activity__DescriptionAssignment_4_110764); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Activity__DescriptionAssignment_4_110824); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
             }
@@ -14648,22 +14743,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__ActivityExplorerItemIDAssignment_5_1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5482:1: rule__Activity__ActivityExplorerItemIDAssignment_5_1 : ( ruleFQN ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5512:1: rule__Activity__ActivityExplorerItemIDAssignment_5_1 : ( ruleFQN ) ;
     public final void rule__Activity__ActivityExplorerItemIDAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5486:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5487:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5516:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5517:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5487:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5488:1: ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5517:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5518:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getActivityExplorerItemIDFQNParserRuleCall_5_1_0()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_rule__Activity__ActivityExplorerItemIDAssignment_5_110795);
+            pushFollow(FOLLOW_ruleFQN_in_rule__Activity__ActivityExplorerItemIDAssignment_5_110855);
             ruleFQN();
 
             state._fsp--;
@@ -14693,22 +14788,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__IndexAssignment_7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5497:1: rule__Activity__IndexAssignment_7 : ( ruleEInt ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5527:1: rule__Activity__IndexAssignment_7 : ( ruleEInt ) ;
     public final void rule__Activity__IndexAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5501:1: ( ( ruleEInt ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5502:1: ( ruleEInt )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5531:1: ( ( ruleEInt ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5532:1: ( ruleEInt )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5502:1: ( ruleEInt )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5503:1: ruleEInt
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5532:1: ( ruleEInt )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5533:1: ruleEInt
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getIndexEIntParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleEInt_in_rule__Activity__IndexAssignment_710826);
+            pushFollow(FOLLOW_ruleEInt_in_rule__Activity__IndexAssignment_710886);
             ruleEInt();
 
             state._fsp--;
@@ -14738,22 +14833,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__HasPredicateAssignment_8_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5512:1: rule__Activity__HasPredicateAssignment_8_2 : ( ruleEBoolean ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5542:1: rule__Activity__HasPredicateAssignment_8_2 : ( ruleEBoolean ) ;
     public final void rule__Activity__HasPredicateAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5516:1: ( ( ruleEBoolean ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5517:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5546:1: ( ( ruleEBoolean ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5547:1: ( ruleEBoolean )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5517:1: ( ruleEBoolean )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5518:1: ruleEBoolean
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5547:1: ( ruleEBoolean )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5548:1: ruleEBoolean
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getHasPredicateEBooleanParserRuleCall_8_2_0()); 
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_rule__Activity__HasPredicateAssignment_8_210857);
+            pushFollow(FOLLOW_ruleEBoolean_in_rule__Activity__HasPredicateAssignment_8_210917);
             ruleEBoolean();
 
             state._fsp--;
@@ -14783,22 +14878,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Activity__ImagePathOffAssignment_9_2"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5527:1: rule__Activity__ImagePathOffAssignment_9_2 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5557:1: rule__Activity__ImagePathOffAssignment_9_2 : ( RULE_STRING ) ;
     public final void rule__Activity__ImagePathOffAssignment_9_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5531:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5532:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5561:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5562:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5532:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5533:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5562:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5563:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getActivityAccess().getImagePathOffSTRINGTerminalRuleCall_9_2_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Activity__ImagePathOffAssignment_9_210888); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Activity__ImagePathOffAssignment_9_210948); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getActivityAccess().getImagePathOffSTRINGTerminalRuleCall_9_2_0()); 
             }
@@ -14824,22 +14919,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__ExtendedPageIDAssignment_6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5542:1: rule__PageExtension__ExtendedPageIDAssignment_6 : ( ruleFQN ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5572:1: rule__PageExtension__ExtendedPageIDAssignment_6 : ( ruleFQN ) ;
     public final void rule__PageExtension__ExtendedPageIDAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5546:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5547:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5576:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5577:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5547:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5548:1: ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5577:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5578:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getExtendedPageIDFQNParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_rule__PageExtension__ExtendedPageIDAssignment_610919);
+            pushFollow(FOLLOW_ruleFQN_in_rule__PageExtension__ExtendedPageIDAssignment_610979);
             ruleFQN();
 
             state._fsp--;
@@ -14869,22 +14964,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__PageExtension__OwnedSectionsAssignment_7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5557:1: rule__PageExtension__OwnedSectionsAssignment_7 : ( ruleSection ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5587:1: rule__PageExtension__OwnedSectionsAssignment_7 : ( ruleSection ) ;
     public final void rule__PageExtension__OwnedSectionsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5561:1: ( ( ruleSection ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5562:1: ( ruleSection )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5591:1: ( ( ruleSection ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5592:1: ( ruleSection )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5562:1: ( ruleSection )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5563:1: ruleSection
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5592:1: ( ruleSection )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5593:1: ruleSection
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageExtensionAccess().getOwnedSectionsSectionParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleSection_in_rule__PageExtension__OwnedSectionsAssignment_710950);
+            pushFollow(FOLLOW_ruleSection_in_rule__PageExtension__OwnedSectionsAssignment_711010);
             ruleSection();
 
             state._fsp--;
@@ -14914,22 +15009,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__ExtendedSectionIDAssignment_6"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5572:1: rule__SectionExtension__ExtendedSectionIDAssignment_6 : ( ruleFQN ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5602:1: rule__SectionExtension__ExtendedSectionIDAssignment_6 : ( ruleFQN ) ;
     public final void rule__SectionExtension__ExtendedSectionIDAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5576:1: ( ( ruleFQN ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5577:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5606:1: ( ( ruleFQN ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5607:1: ( ruleFQN )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5577:1: ( ruleFQN )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5578:1: ruleFQN
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5607:1: ( ruleFQN )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5608:1: ruleFQN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getExtendedSectionIDFQNParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_rule__SectionExtension__ExtendedSectionIDAssignment_610981);
+            pushFollow(FOLLOW_ruleFQN_in_rule__SectionExtension__ExtendedSectionIDAssignment_611041);
             ruleFQN();
 
             state._fsp--;
@@ -14959,22 +15054,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__SectionExtension__OwnedActivitiesAssignment_7"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5587:1: rule__SectionExtension__OwnedActivitiesAssignment_7 : ( ruleActivity ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:1: rule__SectionExtension__OwnedActivitiesAssignment_7 : ( ruleActivity ) ;
     public final void rule__SectionExtension__OwnedActivitiesAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5591:1: ( ( ruleActivity ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5592:1: ( ruleActivity )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5621:1: ( ( ruleActivity ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5622:1: ( ruleActivity )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5592:1: ( ruleActivity )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5593:1: ruleActivity
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5622:1: ( ruleActivity )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5623:1: ruleActivity
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getSectionExtensionAccess().getOwnedActivitiesActivityParserRuleCall_7_0()); 
             }
-            pushFollow(FOLLOW_ruleActivity_in_rule__SectionExtension__OwnedActivitiesAssignment_711012);
+            pushFollow(FOLLOW_ruleActivity_in_rule__SectionExtension__OwnedActivitiesAssignment_711072);
             ruleActivity();
 
             state._fsp--;
@@ -15004,22 +15099,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__DescriptionAssignment_3_1"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5602:1: rule__Overview__DescriptionAssignment_3_1 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5632:1: rule__Overview__DescriptionAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__Overview__DescriptionAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5606:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5607:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5636:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5637:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5607:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5608:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5637:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5638:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Overview__DescriptionAssignment_3_111043); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Overview__DescriptionAssignment_3_111103); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0()); 
             }
@@ -15045,22 +15140,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__ImagePathOnAssignment_4_3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:1: rule__Overview__ImagePathOnAssignment_4_3 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5647:1: rule__Overview__ImagePathOnAssignment_4_3 : ( RULE_STRING ) ;
     public final void rule__Overview__ImagePathOnAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5621:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5622:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5651:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5652:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5622:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5623:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5652:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5653:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getImagePathOnSTRINGTerminalRuleCall_4_3_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOnAssignment_4_311074); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOnAssignment_4_311134); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getImagePathOnSTRINGTerminalRuleCall_4_3_0()); 
             }
@@ -15086,22 +15181,22 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Overview__ImagePathOffAssignment_5_3"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5632:1: rule__Overview__ImagePathOffAssignment_5_3 : ( RULE_STRING ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5662:1: rule__Overview__ImagePathOffAssignment_5_3 : ( RULE_STRING ) ;
     public final void rule__Overview__ImagePathOffAssignment_5_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5636:1: ( ( RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5637:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5666:1: ( ( RULE_STRING ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5667:1: ( RULE_STRING )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5637:1: ( RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5638:1: RULE_STRING
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5667:1: ( RULE_STRING )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5668:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOverviewAccess().getImagePathOffSTRINGTerminalRuleCall_5_3_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOffAssignment_5_311105); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOffAssignment_5_311165); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOverviewAccess().getImagePathOffSTRINGTerminalRuleCall_5_3_0()); 
             }
@@ -15206,403 +15301,405 @@ public class InternalActivityexplorerParser extends AbstractInternalContentAssis
     public static final BitSet FOLLOW_rule__Page__Group__2__Impl_in_rule__Page__Group__21676 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_rule__Page__Group__3_in_rule__Page__Group__21679 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__NameAssignment_2_in_rule__Page__Group__2__Impl1706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__3__Impl_in_rule__Page__Group__31736 = new BitSet(new long[]{0x0000000001680000L});
+    public static final BitSet FOLLOW_rule__Page__Group__3__Impl_in_rule__Page__Group__31736 = new BitSet(new long[]{0x0000000000B80000L});
     public static final BitSet FOLLOW_rule__Page__Group__4_in_rule__Page__Group__31739 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_rule__Page__Group__3__Impl1767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__4__Impl_in_rule__Page__Group__41798 = new BitSet(new long[]{0x0000000001680000L});
+    public static final BitSet FOLLOW_rule__Page__Group__4__Impl_in_rule__Page__Group__41798 = new BitSet(new long[]{0x0000000000B80000L});
     public static final BitSet FOLLOW_rule__Page__Group__5_in_rule__Page__Group__41801 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group_4__0_in_rule__Page__Group__4__Impl1828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__5__Impl_in_rule__Page__Group__51859 = new BitSet(new long[]{0x0000000001680000L});
+    public static final BitSet FOLLOW_rule__Page__Group__5__Impl_in_rule__Page__Group__51859 = new BitSet(new long[]{0x0000000000B80000L});
     public static final BitSet FOLLOW_rule__Page__Group__6_in_rule__Page__Group__51862 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group_5__0_in_rule__Page__Group__5__Impl1889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__6__Impl_in_rule__Page__Group__61920 = new BitSet(new long[]{0x0000000001680000L});
+    public static final BitSet FOLLOW_rule__Page__Group__6__Impl_in_rule__Page__Group__61920 = new BitSet(new long[]{0x0000000000B80000L});
     public static final BitSet FOLLOW_rule__Page__Group__7_in_rule__Page__Group__61923 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group_6__0_in_rule__Page__Group__6__Impl1950 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group__7__Impl_in_rule__Page__Group__71981 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Page__Group__8_in_rule__Page__Group__71984 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_rule__Page__Group__7__Impl2012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__8__Impl_in_rule__Page__Group__82043 = new BitSet(new long[]{0x0000040342100000L});
+    public static final BitSet FOLLOW_rule__Page__Group__8__Impl_in_rule__Page__Group__82043 = new BitSet(new long[]{0x00000405A1010000L});
     public static final BitSet FOLLOW_rule__Page__Group__9_in_rule__Page__Group__82046 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__IndexAssignment_8_in_rule__Page__Group__8__Impl2073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__9__Impl_in_rule__Page__Group__92103 = new BitSet(new long[]{0x0000040342100000L});
+    public static final BitSet FOLLOW_rule__Page__Group__9__Impl_in_rule__Page__Group__92103 = new BitSet(new long[]{0x00000405A1010000L});
     public static final BitSet FOLLOW_rule__Page__Group__10_in_rule__Page__Group__92106 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__OwnedOverviewAssignment_9_in_rule__Page__Group__9__Impl2133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__10__Impl_in_rule__Page__Group__102164 = new BitSet(new long[]{0x0000040342100000L});
+    public static final BitSet FOLLOW_rule__Page__Group__10__Impl_in_rule__Page__Group__102164 = new BitSet(new long[]{0x00000405A1010000L});
     public static final BitSet FOLLOW_rule__Page__Group__11_in_rule__Page__Group__102167 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group_10__0_in_rule__Page__Group__10__Impl2194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__11__Impl_in_rule__Page__Group__112225 = new BitSet(new long[]{0x0000040342100000L});
+    public static final BitSet FOLLOW_rule__Page__Group__11__Impl_in_rule__Page__Group__112225 = new BitSet(new long[]{0x00000405A1010000L});
     public static final BitSet FOLLOW_rule__Page__Group__12_in_rule__Page__Group__112228 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group_11__0_in_rule__Page__Group__11__Impl2255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__12__Impl_in_rule__Page__Group__122286 = new BitSet(new long[]{0x0000040342100000L});
+    public static final BitSet FOLLOW_rule__Page__Group__12__Impl_in_rule__Page__Group__122286 = new BitSet(new long[]{0x00000405A1010000L});
     public static final BitSet FOLLOW_rule__Page__Group__13_in_rule__Page__Group__122289 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group_12__0_in_rule__Page__Group__12__Impl2316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__13__Impl_in_rule__Page__Group__132347 = new BitSet(new long[]{0x0000040342100000L});
+    public static final BitSet FOLLOW_rule__Page__Group__13__Impl_in_rule__Page__Group__132347 = new BitSet(new long[]{0x00000405A1010000L});
     public static final BitSet FOLLOW_rule__Page__Group__14_in_rule__Page__Group__132350 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Page__Group_13__0_in_rule__Page__Group__13__Impl2377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__14__Impl_in_rule__Page__Group__142408 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Page__Group__14__Impl_in_rule__Page__Group__142408 = new BitSet(new long[]{0x00000405A1010000L});
     public static final BitSet FOLLOW_rule__Page__Group__15_in_rule__Page__Group__142411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Page__Group__14__Impl2439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__15__Impl_in_rule__Page__Group__152470 = new BitSet(new long[]{0x0000000800010000L});
-    public static final BitSet FOLLOW_rule__Page__Group__16_in_rule__Page__Group__152473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Page__Group__15__Impl2501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__16__Impl_in_rule__Page__Group__162532 = new BitSet(new long[]{0x0000000800010000L});
-    public static final BitSet FOLLOW_rule__Page__Group__17_in_rule__Page__Group__162535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__OwnedSectionsAssignment_16_in_rule__Page__Group__16__Impl2562 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__17__Impl_in_rule__Page__Group__172593 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__Page__Group__18_in_rule__Page__Group__172596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Page__Group__17__Impl2624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group__18__Impl_in_rule__Page__Group__182655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Page__Group__18__Impl2683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_4__0__Impl_in_rule__Page__Group_4__02752 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Page__Group_4__1_in_rule__Page__Group_4__02755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Page__Group_4__0__Impl2783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_4__1__Impl_in_rule__Page__Group_4__12814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__DescriptionAssignment_4_1_in_rule__Page__Group_4__1__Impl2841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_5__0__Impl_in_rule__Page__Group_5__02875 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__Page__Group_5__1_in_rule__Page__Group_5__02878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Page__Group_5__0__Impl2906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_5__1__Impl_in_rule__Page__Group_5__12937 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Page__Group_5__2_in_rule__Page__Group_5__12940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Page__Group_5__1__Impl2968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_5__2__Impl_in_rule__Page__Group_5__22999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__FileExtensionsAssignment_5_2_in_rule__Page__Group_5__2__Impl3026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_6__0__Impl_in_rule__Page__Group_6__03062 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Page__Group_6__1_in_rule__Page__Group_6__03065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Page__Group_6__0__Impl3093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_6__1__Impl_in_rule__Page__Group_6__13124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__ActivityExplorerItemIDAssignment_6_1_in_rule__Page__Group_6__1__Impl3151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__0__Impl_in_rule__Page__Group_10__03185 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__1_in_rule__Page__Group_10__03188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Page__Group_10__0__Impl3216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__1__Impl_in_rule__Page__Group_10__13247 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__2_in_rule__Page__Group_10__13250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Page__Group_10__1__Impl3278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__2__Impl_in_rule__Page__Group_10__23309 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__3_in_rule__Page__Group_10__23312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__0_in_rule__Page__Group_10__2__Impl3339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__3__Impl_in_rule__Page__Group_10__33370 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__4_in_rule__Page__Group_10__33373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__0_in_rule__Page__Group_10__3__Impl3400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10__4__Impl_in_rule__Page__Group_10__43431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Page__Group_10__4__Impl3459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__0__Impl_in_rule__Page__Group_10_2__03500 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__1_in_rule__Page__Group_10_2__03503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Page__Group_10_2__0__Impl3531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__1__Impl_in_rule__Page__Group_10_2__13562 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__2_in_rule__Page__Group_10_2__13565 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Page__Group_10_2__1__Impl3593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__2__Impl_in_rule__Page__Group_10_2__23624 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__3_in_rule__Page__Group_10_2__23627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Page__Group_10_2__2__Impl3655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_2__3__Impl_in_rule__Page__Group_10_2__33686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__ImagePathOnAssignment_10_2_3_in_rule__Page__Group_10_2__3__Impl3713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__0__Impl_in_rule__Page__Group_10_3__03751 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__1_in_rule__Page__Group_10_3__03754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Page__Group_10_3__0__Impl3782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__1__Impl_in_rule__Page__Group_10_3__13813 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__2_in_rule__Page__Group_10_3__13816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Page__Group_10_3__1__Impl3844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__2__Impl_in_rule__Page__Group_10_3__23875 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__3_in_rule__Page__Group_10_3__23878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Page__Group_10_3__2__Impl3906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_10_3__3__Impl_in_rule__Page__Group_10_3__33937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__ImagePathOffAssignment_10_3_3_in_rule__Page__Group_10_3__3__Impl3964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_11__0__Impl_in_rule__Page__Group_11__04002 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_11__1_in_rule__Page__Group_11__04005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Page__Group_11__0__Impl4033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_11__1__Impl_in_rule__Page__Group_11__14064 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Page__Group_11__2_in_rule__Page__Group_11__14067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__Page__Group_11__1__Impl4095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_11__2__Impl_in_rule__Page__Group_11__24126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__TabNameAssignment_11_2_in_rule__Page__Group_11__2__Impl4153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_12__0__Impl_in_rule__Page__Group_12__04189 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_12__1_in_rule__Page__Group_12__04192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Page__Group_12__0__Impl4220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_12__1__Impl_in_rule__Page__Group_12__14251 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Page__Group_12__2_in_rule__Page__Group_12__14254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Page__Group_12__1__Impl4282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_12__2__Impl_in_rule__Page__Group_12__24313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__HasPredicateAssignment_12_2_in_rule__Page__Group_12__2__Impl4340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_13__0__Impl_in_rule__Page__Group_13__04376 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_13__1_in_rule__Page__Group_13__04379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__Page__Group_13__0__Impl4407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_13__1__Impl_in_rule__Page__Group_13__14438 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Page__Group_13__2_in_rule__Page__Group_13__14441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__Page__Group_13__1__Impl4469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_13__2__Impl_in_rule__Page__Group_13__24500 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Page__Group_13__3_in_rule__Page__Group_13__24503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Page__Group_13__2__Impl4531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__Group_13__3__Impl_in_rule__Page__Group_13__34562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Page__ShowViewerAssignment_13_3_in_rule__Page__Group_13__3__Impl4589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__0__Impl_in_rule__Section__Group__04627 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Section__Group__1_in_rule__Section__Group__04630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__1__Impl_in_rule__Section__Group__14688 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Section__Group__2_in_rule__Section__Group__14691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Section__Group__1__Impl4719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__2__Impl_in_rule__Section__Group__24750 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Section__Group__3_in_rule__Section__Group__24753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__NameAssignment_2_in_rule__Section__Group__2__Impl4780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__3__Impl_in_rule__Section__Group__34810 = new BitSet(new long[]{0x0000000001280000L});
-    public static final BitSet FOLLOW_rule__Section__Group__4_in_rule__Section__Group__34813 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Section__Group__3__Impl4841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__4__Impl_in_rule__Section__Group__44872 = new BitSet(new long[]{0x0000000001280000L});
-    public static final BitSet FOLLOW_rule__Section__Group__5_in_rule__Section__Group__44875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_4__0_in_rule__Section__Group__4__Impl4902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__5__Impl_in_rule__Section__Group__54933 = new BitSet(new long[]{0x0000000001280000L});
-    public static final BitSet FOLLOW_rule__Section__Group__6_in_rule__Section__Group__54936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_5__0_in_rule__Section__Group__5__Impl4963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__6__Impl_in_rule__Section__Group__64994 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Section__Group__7_in_rule__Section__Group__64997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Section__Group__6__Impl5025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__7__Impl_in_rule__Section__Group__75056 = new BitSet(new long[]{0x0000007000010000L});
-    public static final BitSet FOLLOW_rule__Section__Group__8_in_rule__Section__Group__75059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__IndexAssignment_7_in_rule__Section__Group__7__Impl5086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__8__Impl_in_rule__Section__Group__85116 = new BitSet(new long[]{0x0000007000010000L});
-    public static final BitSet FOLLOW_rule__Section__Group__9_in_rule__Section__Group__85119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_8__0_in_rule__Section__Group__8__Impl5146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__9__Impl_in_rule__Section__Group__95177 = new BitSet(new long[]{0x0000007000010000L});
-    public static final BitSet FOLLOW_rule__Section__Group__10_in_rule__Section__Group__95180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_9__0_in_rule__Section__Group__9__Impl5207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__10__Impl_in_rule__Section__Group__105238 = new BitSet(new long[]{0x0000007000010000L});
-    public static final BitSet FOLLOW_rule__Section__Group__11_in_rule__Section__Group__105241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__0_in_rule__Section__Group__10__Impl5268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group__11__Impl_in_rule__Section__Group__115299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Section__Group__11__Impl5327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_4__0__Impl_in_rule__Section__Group_4__05382 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Section__Group_4__1_in_rule__Section__Group_4__05385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Section__Group_4__0__Impl5413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_4__1__Impl_in_rule__Section__Group_4__15444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__DescriptionAssignment_4_1_in_rule__Section__Group_4__1__Impl5471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_5__0__Impl_in_rule__Section__Group_5__05505 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Section__Group_5__1_in_rule__Section__Group_5__05508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Section__Group_5__0__Impl5536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_5__1__Impl_in_rule__Section__Group_5__15567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__ActivityExplorerItemIDAssignment_5_1_in_rule__Section__Group_5__1__Impl5594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_8__0__Impl_in_rule__Section__Group_8__05628 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Section__Group_8__1_in_rule__Section__Group_8__05631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__Section__Group_8__0__Impl5659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_8__1__Impl_in_rule__Section__Group_8__15690 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Section__Group_8__2_in_rule__Section__Group_8__15693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Section__Group_8__1__Impl5721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_8__2__Impl_in_rule__Section__Group_8__25752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__FilteringAssignment_8_2_in_rule__Section__Group_8__2__Impl5779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_9__0__Impl_in_rule__Section__Group_9__05815 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Section__Group_9__1_in_rule__Section__Group_9__05818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Section__Group_9__0__Impl5846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_9__1__Impl_in_rule__Section__Group_9__15877 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Section__Group_9__2_in_rule__Section__Group_9__15880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Section__Group_9__1__Impl5908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_9__2__Impl_in_rule__Section__Group_9__25939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__ExpandedAssignment_9_2_in_rule__Section__Group_9__2__Impl5966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__0__Impl_in_rule__Section__Group_10__06002 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__1_in_rule__Section__Group_10__06005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Section__Group_10__0__Impl6033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__1__Impl_in_rule__Section__Group_10__16064 = new BitSet(new long[]{0x0000000000012000L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__2_in_rule__Section__Group_10__16067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Section__Group_10__1__Impl6095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__2__Impl_in_rule__Section__Group_10__26126 = new BitSet(new long[]{0x0000000000012000L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__3_in_rule__Section__Group_10__26129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Section__OwnedActivitiesAssignment_10_2_in_rule__Section__Group_10__2__Impl6156 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__Section__Group_10__3__Impl_in_rule__Section__Group_10__36187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Section__Group_10__3__Impl6215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__0__Impl_in_rule__Activity__Group__06254 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__1_in_rule__Activity__Group__06257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__1__Impl_in_rule__Activity__Group__16315 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Activity__Group__2_in_rule__Activity__Group__16318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Activity__Group__1__Impl6346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__2__Impl_in_rule__Activity__Group__26377 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__3_in_rule__Activity__Group__26380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__NameAssignment_2_in_rule__Activity__Group__2__Impl6407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__3__Impl_in_rule__Activity__Group__36437 = new BitSet(new long[]{0x0000000001280000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__4_in_rule__Activity__Group__36440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Activity__Group__3__Impl6468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__4__Impl_in_rule__Activity__Group__46499 = new BitSet(new long[]{0x0000000001280000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__5_in_rule__Activity__Group__46502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_4__0_in_rule__Activity__Group__4__Impl6529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__5__Impl_in_rule__Activity__Group__56560 = new BitSet(new long[]{0x0000000001280000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__6_in_rule__Activity__Group__56563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_5__0_in_rule__Activity__Group__5__Impl6590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__6__Impl_in_rule__Activity__Group__66621 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Activity__Group__7_in_rule__Activity__Group__66624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Activity__Group__6__Impl6652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__7__Impl_in_rule__Activity__Group__76683 = new BitSet(new long[]{0x0000008100010000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__8_in_rule__Activity__Group__76686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__IndexAssignment_7_in_rule__Activity__Group__7__Impl6713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__8__Impl_in_rule__Activity__Group__86743 = new BitSet(new long[]{0x0000008100010000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__9_in_rule__Activity__Group__86746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_8__0_in_rule__Activity__Group__8__Impl6773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__9__Impl_in_rule__Activity__Group__96804 = new BitSet(new long[]{0x0000008100010000L});
-    public static final BitSet FOLLOW_rule__Activity__Group__10_in_rule__Activity__Group__96807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_9__0_in_rule__Activity__Group__9__Impl6834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__10__Impl_in_rule__Activity__Group__106865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Activity__Group__10__Impl6893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_4__0__Impl_in_rule__Activity__Group_4__06946 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Activity__Group_4__1_in_rule__Activity__Group_4__06949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Activity__Group_4__0__Impl6977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_4__1__Impl_in_rule__Activity__Group_4__17008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__DescriptionAssignment_4_1_in_rule__Activity__Group_4__1__Impl7035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_5__0__Impl_in_rule__Activity__Group_5__07069 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Activity__Group_5__1_in_rule__Activity__Group_5__07072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Activity__Group_5__0__Impl7100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_5__1__Impl_in_rule__Activity__Group_5__17131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__ActivityExplorerItemIDAssignment_5_1_in_rule__Activity__Group_5__1__Impl7158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_8__0__Impl_in_rule__Activity__Group_8__07192 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Activity__Group_8__1_in_rule__Activity__Group_8__07195 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Activity__Group_8__0__Impl7223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_8__1__Impl_in_rule__Activity__Group_8__17254 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Activity__Group_8__2_in_rule__Activity__Group_8__17257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Activity__Group_8__1__Impl7285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_8__2__Impl_in_rule__Activity__Group_8__27316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__HasPredicateAssignment_8_2_in_rule__Activity__Group_8__2__Impl7343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_9__0__Impl_in_rule__Activity__Group_9__07379 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Activity__Group_9__1_in_rule__Activity__Group_9__07382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__Activity__Group_9__0__Impl7410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_9__1__Impl_in_rule__Activity__Group_9__17441 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Activity__Group_9__2_in_rule__Activity__Group_9__17444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Activity__Group_9__1__Impl7472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_9__2__Impl_in_rule__Activity__Group_9__27503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__ImagePathOffAssignment_9_2_in_rule__Activity__Group_9__2__Impl7530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__0__Impl_in_rule__PageExtension__Group__07566 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__1_in_rule__PageExtension__Group__07569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__1__Impl_in_rule__PageExtension__Group__17627 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__2_in_rule__PageExtension__Group__17630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__PageExtension__Group__1__Impl7658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__2__Impl_in_rule__PageExtension__Group__27689 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__3_in_rule__PageExtension__Group__27692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__PageExtension__Group__2__Impl7720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__3__Impl_in_rule__PageExtension__Group__37751 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__4_in_rule__PageExtension__Group__37754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__PageExtension__Group__3__Impl7782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__4__Impl_in_rule__PageExtension__Group__47813 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__5_in_rule__PageExtension__Group__47816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__PageExtension__Group__4__Impl7844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__5__Impl_in_rule__PageExtension__Group__57875 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__6_in_rule__PageExtension__Group__57878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__PageExtension__Group__5__Impl7906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__6__Impl_in_rule__PageExtension__Group__67937 = new BitSet(new long[]{0x0000000800010000L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__7_in_rule__PageExtension__Group__67940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__ExtendedPageIDAssignment_6_in_rule__PageExtension__Group__6__Impl7967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__7__Impl_in_rule__PageExtension__Group__77997 = new BitSet(new long[]{0x0000000800010000L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__8_in_rule__PageExtension__Group__78000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__OwnedSectionsAssignment_7_in_rule__PageExtension__Group__7__Impl8027 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__PageExtension__Group__8__Impl_in_rule__PageExtension__Group__88058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__PageExtension__Group__8__Impl8086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__0__Impl_in_rule__SectionExtension__Group__08135 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__1_in_rule__SectionExtension__Group__08138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__1__Impl_in_rule__SectionExtension__Group__18196 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__2_in_rule__SectionExtension__Group__18199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__SectionExtension__Group__1__Impl8227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__2__Impl_in_rule__SectionExtension__Group__28258 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__3_in_rule__SectionExtension__Group__28261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__SectionExtension__Group__2__Impl8289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__3__Impl_in_rule__SectionExtension__Group__38320 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__4_in_rule__SectionExtension__Group__38323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__SectionExtension__Group__3__Impl8351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__4__Impl_in_rule__SectionExtension__Group__48382 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__5_in_rule__SectionExtension__Group__48385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__SectionExtension__Group__4__Impl8413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__5__Impl_in_rule__SectionExtension__Group__58444 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__6_in_rule__SectionExtension__Group__58447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__SectionExtension__Group__5__Impl8475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__6__Impl_in_rule__SectionExtension__Group__68506 = new BitSet(new long[]{0x0000000000012000L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__7_in_rule__SectionExtension__Group__68509 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__ExtendedSectionIDAssignment_6_in_rule__SectionExtension__Group__6__Impl8536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__7__Impl_in_rule__SectionExtension__Group__78566 = new BitSet(new long[]{0x0000000000012000L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__8_in_rule__SectionExtension__Group__78569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__OwnedActivitiesAssignment_7_in_rule__SectionExtension__Group__7__Impl8596 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_rule__SectionExtension__Group__8__Impl_in_rule__SectionExtension__Group__88627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__SectionExtension__Group__8__Impl8655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group__0__Impl_in_rule__Overview__Group__08704 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_rule__Overview__Group__1_in_rule__Overview__Group__08707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group__1__Impl_in_rule__Overview__Group__18765 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Overview__Group__2_in_rule__Overview__Group__18768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__Overview__Group__1__Impl8796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group__2__Impl_in_rule__Overview__Group__28827 = new BitSet(new long[]{0x0000000004210000L});
-    public static final BitSet FOLLOW_rule__Overview__Group__3_in_rule__Overview__Group__28830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Overview__Group__2__Impl8858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group__3__Impl_in_rule__Overview__Group__38889 = new BitSet(new long[]{0x0000000004210000L});
-    public static final BitSet FOLLOW_rule__Overview__Group__4_in_rule__Overview__Group__38892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_3__0_in_rule__Overview__Group__3__Impl8919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group__4__Impl_in_rule__Overview__Group__48950 = new BitSet(new long[]{0x0000000004210000L});
-    public static final BitSet FOLLOW_rule__Overview__Group__5_in_rule__Overview__Group__48953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__0_in_rule__Overview__Group__4__Impl8980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group__5__Impl_in_rule__Overview__Group__59011 = new BitSet(new long[]{0x0000000004210000L});
-    public static final BitSet FOLLOW_rule__Overview__Group__6_in_rule__Overview__Group__59014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__0_in_rule__Overview__Group__5__Impl9041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group__6__Impl_in_rule__Overview__Group__69072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Overview__Group__6__Impl9100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_3__0__Impl_in_rule__Overview__Group_3__09145 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Overview__Group_3__1_in_rule__Overview__Group_3__09148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Overview__Group_3__0__Impl9176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_3__1__Impl_in_rule__Overview__Group_3__19207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__DescriptionAssignment_3_1_in_rule__Overview__Group_3__1__Impl9234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__0__Impl_in_rule__Overview__Group_4__09268 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__1_in_rule__Overview__Group_4__09271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Overview__Group_4__0__Impl9299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__1__Impl_in_rule__Overview__Group_4__19330 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__2_in_rule__Overview__Group_4__19333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Overview__Group_4__1__Impl9361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__2__Impl_in_rule__Overview__Group_4__29392 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__3_in_rule__Overview__Group_4__29395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Overview__Group_4__2__Impl9423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_4__3__Impl_in_rule__Overview__Group_4__39454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__ImagePathOnAssignment_4_3_in_rule__Overview__Group_4__3__Impl9481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__0__Impl_in_rule__Overview__Group_5__09519 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__1_in_rule__Overview__Group_5__09522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Overview__Group_5__0__Impl9550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__1__Impl_in_rule__Overview__Group_5__19581 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__2_in_rule__Overview__Group_5__19584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Overview__Group_5__1__Impl9612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__2__Impl_in_rule__Overview__Group_5__29643 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__3_in_rule__Overview__Group_5__29646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Overview__Group_5__2__Impl9674 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__Group_5__3__Impl_in_rule__Overview__Group_5__39705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Overview__ImagePathOffAssignment_5_3_in_rule__Overview__Group_5__3__Impl9732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__09770 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__09773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl9800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__19829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl9856 = new BitSet(new long[]{0x0000080000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__09891 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__09894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__FQN__Group_1__0__Impl9922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__19953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl9981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__ViewpointActivityExplorer__NameAssignment_310020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePage_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_210051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePageExtension_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_610082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSectionExtension_in_rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_710113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__NameAssignment_210144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__DescriptionAssignment_4_110175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__FileExtensionsAssignment_5_210206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__Page__ActivityExplorerItemIDAssignment_6_110237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEInt_in_rule__Page__IndexAssignment_810268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOverview_in_rule__Page__OwnedOverviewAssignment_910299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__ImagePathOnAssignment_10_2_310330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__ImagePathOffAssignment_10_3_310361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__TabNameAssignment_11_210392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Page__HasPredicateAssignment_12_210423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Page__ShowViewerAssignment_13_310454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSection_in_rule__Page__OwnedSectionsAssignment_1610485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Section__NameAssignment_210516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Section__DescriptionAssignment_4_110547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__Section__ActivityExplorerItemIDAssignment_5_110578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEInt_in_rule__Section__IndexAssignment_710609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Section__FilteringAssignment_8_210640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Section__ExpandedAssignment_9_210671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActivity_in_rule__Section__OwnedActivitiesAssignment_10_210702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Activity__NameAssignment_210733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Activity__DescriptionAssignment_4_110764 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__Activity__ActivityExplorerItemIDAssignment_5_110795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEInt_in_rule__Activity__IndexAssignment_710826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Activity__HasPredicateAssignment_8_210857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Activity__ImagePathOffAssignment_9_210888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__PageExtension__ExtendedPageIDAssignment_610919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSection_in_rule__PageExtension__OwnedSectionsAssignment_710950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__SectionExtension__ExtendedSectionIDAssignment_610981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActivity_in_rule__SectionExtension__OwnedActivitiesAssignment_711012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Overview__DescriptionAssignment_3_111043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOnAssignment_4_311074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOffAssignment_5_311105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__0_in_rule__Page__Group__14__Impl2438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group__15__Impl_in_rule__Page__Group__152469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Page__Group__15__Impl2497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_4__0__Impl_in_rule__Page__Group_4__02560 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Page__Group_4__1_in_rule__Page__Group_4__02563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Page__Group_4__0__Impl2591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_4__1__Impl_in_rule__Page__Group_4__12622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__DescriptionAssignment_4_1_in_rule__Page__Group_4__1__Impl2649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_5__0__Impl_in_rule__Page__Group_5__02683 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_rule__Page__Group_5__1_in_rule__Page__Group_5__02686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Page__Group_5__0__Impl2714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_5__1__Impl_in_rule__Page__Group_5__12745 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Page__Group_5__2_in_rule__Page__Group_5__12748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Page__Group_5__1__Impl2776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_5__2__Impl_in_rule__Page__Group_5__22807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__FileExtensionsAssignment_5_2_in_rule__Page__Group_5__2__Impl2834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_6__0__Impl_in_rule__Page__Group_6__02870 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Page__Group_6__1_in_rule__Page__Group_6__02873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Page__Group_6__0__Impl2901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_6__1__Impl_in_rule__Page__Group_6__12932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__ActivityExplorerItemIDAssignment_6_1_in_rule__Page__Group_6__1__Impl2959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__0__Impl_in_rule__Page__Group_10__02993 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__1_in_rule__Page__Group_10__02996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Page__Group_10__0__Impl3024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__1__Impl_in_rule__Page__Group_10__13055 = new BitSet(new long[]{0x0000000002010000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__2_in_rule__Page__Group_10__13058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Page__Group_10__1__Impl3086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__2__Impl_in_rule__Page__Group_10__23117 = new BitSet(new long[]{0x0000000002010000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__3_in_rule__Page__Group_10__23120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__0_in_rule__Page__Group_10__2__Impl3147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__3__Impl_in_rule__Page__Group_10__33178 = new BitSet(new long[]{0x0000000002010000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__4_in_rule__Page__Group_10__33181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__0_in_rule__Page__Group_10__3__Impl3208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10__4__Impl_in_rule__Page__Group_10__43239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Page__Group_10__4__Impl3267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__0__Impl_in_rule__Page__Group_10_2__03308 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__1_in_rule__Page__Group_10_2__03311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Page__Group_10_2__0__Impl3339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__1__Impl_in_rule__Page__Group_10_2__13370 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__2_in_rule__Page__Group_10_2__13373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Page__Group_10_2__1__Impl3401 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__2__Impl_in_rule__Page__Group_10_2__23432 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__3_in_rule__Page__Group_10_2__23435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Page__Group_10_2__2__Impl3463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_2__3__Impl_in_rule__Page__Group_10_2__33494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__ImagePathOnAssignment_10_2_3_in_rule__Page__Group_10_2__3__Impl3521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__0__Impl_in_rule__Page__Group_10_3__03559 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__1_in_rule__Page__Group_10_3__03562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Page__Group_10_3__0__Impl3590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__1__Impl_in_rule__Page__Group_10_3__13621 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__2_in_rule__Page__Group_10_3__13624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Page__Group_10_3__1__Impl3652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__2__Impl_in_rule__Page__Group_10_3__23683 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__3_in_rule__Page__Group_10_3__23686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Page__Group_10_3__2__Impl3714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_10_3__3__Impl_in_rule__Page__Group_10_3__33745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__ImagePathOffAssignment_10_3_3_in_rule__Page__Group_10_3__3__Impl3772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_11__0__Impl_in_rule__Page__Group_11__03810 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_11__1_in_rule__Page__Group_11__03813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Page__Group_11__0__Impl3841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_11__1__Impl_in_rule__Page__Group_11__13872 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Page__Group_11__2_in_rule__Page__Group_11__13875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Page__Group_11__1__Impl3903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_11__2__Impl_in_rule__Page__Group_11__23934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__TabNameAssignment_11_2_in_rule__Page__Group_11__2__Impl3961 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_12__0__Impl_in_rule__Page__Group_12__03997 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_12__1_in_rule__Page__Group_12__04000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Page__Group_12__0__Impl4028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_12__1__Impl_in_rule__Page__Group_12__14059 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Page__Group_12__2_in_rule__Page__Group_12__14062 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Page__Group_12__1__Impl4090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_12__2__Impl_in_rule__Page__Group_12__24121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__HasPredicateAssignment_12_2_in_rule__Page__Group_12__2__Impl4148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_13__0__Impl_in_rule__Page__Group_13__04184 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_13__1_in_rule__Page__Group_13__04187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Page__Group_13__0__Impl4215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_13__1__Impl_in_rule__Page__Group_13__14246 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Page__Group_13__2_in_rule__Page__Group_13__14249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__Page__Group_13__1__Impl4277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_13__2__Impl_in_rule__Page__Group_13__24308 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Page__Group_13__3_in_rule__Page__Group_13__24311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Page__Group_13__2__Impl4339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_13__3__Impl_in_rule__Page__Group_13__34370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__ShowViewerAssignment_13_3_in_rule__Page__Group_13__3__Impl4397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__0__Impl_in_rule__Page__Group_14__04435 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__1_in_rule__Page__Group_14__04438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__Page__Group_14__0__Impl4466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__1__Impl_in_rule__Page__Group_14__14497 = new BitSet(new long[]{0x0000000800010000L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__2_in_rule__Page__Group_14__14500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Page__Group_14__1__Impl4528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__2__Impl_in_rule__Page__Group_14__24559 = new BitSet(new long[]{0x0000000800010000L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__3_in_rule__Page__Group_14__24562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Page__OwnedSectionsAssignment_14_2_in_rule__Page__Group_14__2__Impl4589 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Page__Group_14__3__Impl_in_rule__Page__Group_14__34620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Page__Group_14__3__Impl4648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__0__Impl_in_rule__Section__Group__04687 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Section__Group__1_in_rule__Section__Group__04690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__1__Impl_in_rule__Section__Group__14748 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Section__Group__2_in_rule__Section__Group__14751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Section__Group__1__Impl4779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__2__Impl_in_rule__Section__Group__24810 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Section__Group__3_in_rule__Section__Group__24813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__NameAssignment_2_in_rule__Section__Group__2__Impl4840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__3__Impl_in_rule__Section__Group__34870 = new BitSet(new long[]{0x0000000000980000L});
+    public static final BitSet FOLLOW_rule__Section__Group__4_in_rule__Section__Group__34873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Section__Group__3__Impl4901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__4__Impl_in_rule__Section__Group__44932 = new BitSet(new long[]{0x0000000000980000L});
+    public static final BitSet FOLLOW_rule__Section__Group__5_in_rule__Section__Group__44935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_4__0_in_rule__Section__Group__4__Impl4962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__5__Impl_in_rule__Section__Group__54993 = new BitSet(new long[]{0x0000000000980000L});
+    public static final BitSet FOLLOW_rule__Section__Group__6_in_rule__Section__Group__54996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_5__0_in_rule__Section__Group__5__Impl5023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__6__Impl_in_rule__Section__Group__65054 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Section__Group__7_in_rule__Section__Group__65057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Section__Group__6__Impl5085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__7__Impl_in_rule__Section__Group__75116 = new BitSet(new long[]{0x0000007000010000L});
+    public static final BitSet FOLLOW_rule__Section__Group__8_in_rule__Section__Group__75119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__IndexAssignment_7_in_rule__Section__Group__7__Impl5146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__8__Impl_in_rule__Section__Group__85176 = new BitSet(new long[]{0x0000007000010000L});
+    public static final BitSet FOLLOW_rule__Section__Group__9_in_rule__Section__Group__85179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_8__0_in_rule__Section__Group__8__Impl5206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__9__Impl_in_rule__Section__Group__95237 = new BitSet(new long[]{0x0000007000010000L});
+    public static final BitSet FOLLOW_rule__Section__Group__10_in_rule__Section__Group__95240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_9__0_in_rule__Section__Group__9__Impl5267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__10__Impl_in_rule__Section__Group__105298 = new BitSet(new long[]{0x0000007000010000L});
+    public static final BitSet FOLLOW_rule__Section__Group__11_in_rule__Section__Group__105301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__0_in_rule__Section__Group__10__Impl5328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group__11__Impl_in_rule__Section__Group__115359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Section__Group__11__Impl5387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_4__0__Impl_in_rule__Section__Group_4__05442 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Section__Group_4__1_in_rule__Section__Group_4__05445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Section__Group_4__0__Impl5473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_4__1__Impl_in_rule__Section__Group_4__15504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__DescriptionAssignment_4_1_in_rule__Section__Group_4__1__Impl5531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_5__0__Impl_in_rule__Section__Group_5__05565 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Section__Group_5__1_in_rule__Section__Group_5__05568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Section__Group_5__0__Impl5596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_5__1__Impl_in_rule__Section__Group_5__15627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__ActivityExplorerItemIDAssignment_5_1_in_rule__Section__Group_5__1__Impl5654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_8__0__Impl_in_rule__Section__Group_8__05688 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Section__Group_8__1_in_rule__Section__Group_8__05691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__Section__Group_8__0__Impl5719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_8__1__Impl_in_rule__Section__Group_8__15750 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Section__Group_8__2_in_rule__Section__Group_8__15753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Section__Group_8__1__Impl5781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_8__2__Impl_in_rule__Section__Group_8__25812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__FilteringAssignment_8_2_in_rule__Section__Group_8__2__Impl5839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_9__0__Impl_in_rule__Section__Group_9__05875 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Section__Group_9__1_in_rule__Section__Group_9__05878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Section__Group_9__0__Impl5906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_9__1__Impl_in_rule__Section__Group_9__15937 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Section__Group_9__2_in_rule__Section__Group_9__15940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Section__Group_9__1__Impl5968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_9__2__Impl_in_rule__Section__Group_9__25999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__ExpandedAssignment_9_2_in_rule__Section__Group_9__2__Impl6026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__0__Impl_in_rule__Section__Group_10__06062 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__1_in_rule__Section__Group_10__06065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__Section__Group_10__0__Impl6093 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__1__Impl_in_rule__Section__Group_10__16124 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__2_in_rule__Section__Group_10__16127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Section__Group_10__1__Impl6155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__2__Impl_in_rule__Section__Group_10__26186 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__3_in_rule__Section__Group_10__26189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Section__OwnedActivitiesAssignment_10_2_in_rule__Section__Group_10__2__Impl6216 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__Section__Group_10__3__Impl_in_rule__Section__Group_10__36247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Section__Group_10__3__Impl6275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__0__Impl_in_rule__Activity__Group__06314 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__1_in_rule__Activity__Group__06317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__1__Impl_in_rule__Activity__Group__16375 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Activity__Group__2_in_rule__Activity__Group__16378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Activity__Group__1__Impl6406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__2__Impl_in_rule__Activity__Group__26437 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__3_in_rule__Activity__Group__26440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__NameAssignment_2_in_rule__Activity__Group__2__Impl6467 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__3__Impl_in_rule__Activity__Group__36497 = new BitSet(new long[]{0x0000000000980000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__4_in_rule__Activity__Group__36500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Activity__Group__3__Impl6528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__4__Impl_in_rule__Activity__Group__46559 = new BitSet(new long[]{0x0000000000980000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__5_in_rule__Activity__Group__46562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_4__0_in_rule__Activity__Group__4__Impl6589 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__5__Impl_in_rule__Activity__Group__56620 = new BitSet(new long[]{0x0000000000980000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__6_in_rule__Activity__Group__56623 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_5__0_in_rule__Activity__Group__5__Impl6650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__6__Impl_in_rule__Activity__Group__66681 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Activity__Group__7_in_rule__Activity__Group__66684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Activity__Group__6__Impl6712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__7__Impl_in_rule__Activity__Group__76743 = new BitSet(new long[]{0x0000008080010000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__8_in_rule__Activity__Group__76746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__IndexAssignment_7_in_rule__Activity__Group__7__Impl6773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__8__Impl_in_rule__Activity__Group__86803 = new BitSet(new long[]{0x0000008080010000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__9_in_rule__Activity__Group__86806 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_8__0_in_rule__Activity__Group__8__Impl6833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__9__Impl_in_rule__Activity__Group__96864 = new BitSet(new long[]{0x0000008080010000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__10_in_rule__Activity__Group__96867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_9__0_in_rule__Activity__Group__9__Impl6894 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__10__Impl_in_rule__Activity__Group__106925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Activity__Group__10__Impl6953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_4__0__Impl_in_rule__Activity__Group_4__07006 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Activity__Group_4__1_in_rule__Activity__Group_4__07009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Activity__Group_4__0__Impl7037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_4__1__Impl_in_rule__Activity__Group_4__17068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__DescriptionAssignment_4_1_in_rule__Activity__Group_4__1__Impl7095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_5__0__Impl_in_rule__Activity__Group_5__07129 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Activity__Group_5__1_in_rule__Activity__Group_5__07132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Activity__Group_5__0__Impl7160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_5__1__Impl_in_rule__Activity__Group_5__17191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__ActivityExplorerItemIDAssignment_5_1_in_rule__Activity__Group_5__1__Impl7218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_8__0__Impl_in_rule__Activity__Group_8__07252 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Activity__Group_8__1_in_rule__Activity__Group_8__07255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Activity__Group_8__0__Impl7283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_8__1__Impl_in_rule__Activity__Group_8__17314 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Activity__Group_8__2_in_rule__Activity__Group_8__17317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Activity__Group_8__1__Impl7345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_8__2__Impl_in_rule__Activity__Group_8__27376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__HasPredicateAssignment_8_2_in_rule__Activity__Group_8__2__Impl7403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_9__0__Impl_in_rule__Activity__Group_9__07439 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Activity__Group_9__1_in_rule__Activity__Group_9__07442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__Activity__Group_9__0__Impl7470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_9__1__Impl_in_rule__Activity__Group_9__17501 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Activity__Group_9__2_in_rule__Activity__Group_9__17504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Activity__Group_9__1__Impl7532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_9__2__Impl_in_rule__Activity__Group_9__27563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__ImagePathOffAssignment_9_2_in_rule__Activity__Group_9__2__Impl7590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__0__Impl_in_rule__PageExtension__Group__07626 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__1_in_rule__PageExtension__Group__07629 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__1__Impl_in_rule__PageExtension__Group__17687 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__2_in_rule__PageExtension__Group__17690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__PageExtension__Group__1__Impl7718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__2__Impl_in_rule__PageExtension__Group__27749 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__3_in_rule__PageExtension__Group__27752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__PageExtension__Group__2__Impl7780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__3__Impl_in_rule__PageExtension__Group__37811 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__4_in_rule__PageExtension__Group__37814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__PageExtension__Group__3__Impl7842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__4__Impl_in_rule__PageExtension__Group__47873 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__5_in_rule__PageExtension__Group__47876 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__PageExtension__Group__4__Impl7904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__5__Impl_in_rule__PageExtension__Group__57935 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__6_in_rule__PageExtension__Group__57938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__PageExtension__Group__5__Impl7966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__6__Impl_in_rule__PageExtension__Group__67997 = new BitSet(new long[]{0x0000000800010000L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__7_in_rule__PageExtension__Group__68000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__ExtendedPageIDAssignment_6_in_rule__PageExtension__Group__6__Impl8027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__7__Impl_in_rule__PageExtension__Group__78057 = new BitSet(new long[]{0x0000000800010000L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__8_in_rule__PageExtension__Group__78060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__OwnedSectionsAssignment_7_in_rule__PageExtension__Group__7__Impl8087 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__PageExtension__Group__8__Impl_in_rule__PageExtension__Group__88118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__PageExtension__Group__8__Impl8146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__0__Impl_in_rule__SectionExtension__Group__08195 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__1_in_rule__SectionExtension__Group__08198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__1__Impl_in_rule__SectionExtension__Group__18256 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__2_in_rule__SectionExtension__Group__18259 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__SectionExtension__Group__1__Impl8287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__2__Impl_in_rule__SectionExtension__Group__28318 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__3_in_rule__SectionExtension__Group__28321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__SectionExtension__Group__2__Impl8349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__3__Impl_in_rule__SectionExtension__Group__38380 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__4_in_rule__SectionExtension__Group__38383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__SectionExtension__Group__3__Impl8411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__4__Impl_in_rule__SectionExtension__Group__48442 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__5_in_rule__SectionExtension__Group__48445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__SectionExtension__Group__4__Impl8473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__5__Impl_in_rule__SectionExtension__Group__58504 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__6_in_rule__SectionExtension__Group__58507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__SectionExtension__Group__5__Impl8535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__6__Impl_in_rule__SectionExtension__Group__68566 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__7_in_rule__SectionExtension__Group__68569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__ExtendedSectionIDAssignment_6_in_rule__SectionExtension__Group__6__Impl8596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__7__Impl_in_rule__SectionExtension__Group__78626 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__8_in_rule__SectionExtension__Group__78629 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__OwnedActivitiesAssignment_7_in_rule__SectionExtension__Group__7__Impl8656 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_rule__SectionExtension__Group__8__Impl_in_rule__SectionExtension__Group__88687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__SectionExtension__Group__8__Impl8715 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group__0__Impl_in_rule__Overview__Group__08764 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_rule__Overview__Group__1_in_rule__Overview__Group__08767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group__1__Impl_in_rule__Overview__Group__18825 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Overview__Group__2_in_rule__Overview__Group__18828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__Overview__Group__1__Impl8856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group__2__Impl_in_rule__Overview__Group__28887 = new BitSet(new long[]{0x0000000002110000L});
+    public static final BitSet FOLLOW_rule__Overview__Group__3_in_rule__Overview__Group__28890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Overview__Group__2__Impl8918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group__3__Impl_in_rule__Overview__Group__38949 = new BitSet(new long[]{0x0000000002110000L});
+    public static final BitSet FOLLOW_rule__Overview__Group__4_in_rule__Overview__Group__38952 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_3__0_in_rule__Overview__Group__3__Impl8979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group__4__Impl_in_rule__Overview__Group__49010 = new BitSet(new long[]{0x0000000002110000L});
+    public static final BitSet FOLLOW_rule__Overview__Group__5_in_rule__Overview__Group__49013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__0_in_rule__Overview__Group__4__Impl9040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group__5__Impl_in_rule__Overview__Group__59071 = new BitSet(new long[]{0x0000000002110000L});
+    public static final BitSet FOLLOW_rule__Overview__Group__6_in_rule__Overview__Group__59074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__0_in_rule__Overview__Group__5__Impl9101 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group__6__Impl_in_rule__Overview__Group__69132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Overview__Group__6__Impl9160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_3__0__Impl_in_rule__Overview__Group_3__09205 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Overview__Group_3__1_in_rule__Overview__Group_3__09208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Overview__Group_3__0__Impl9236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_3__1__Impl_in_rule__Overview__Group_3__19267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__DescriptionAssignment_3_1_in_rule__Overview__Group_3__1__Impl9294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__0__Impl_in_rule__Overview__Group_4__09328 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__1_in_rule__Overview__Group_4__09331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Overview__Group_4__0__Impl9359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__1__Impl_in_rule__Overview__Group_4__19390 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__2_in_rule__Overview__Group_4__19393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Overview__Group_4__1__Impl9421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__2__Impl_in_rule__Overview__Group_4__29452 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__3_in_rule__Overview__Group_4__29455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Overview__Group_4__2__Impl9483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_4__3__Impl_in_rule__Overview__Group_4__39514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__ImagePathOnAssignment_4_3_in_rule__Overview__Group_4__3__Impl9541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__0__Impl_in_rule__Overview__Group_5__09579 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__1_in_rule__Overview__Group_5__09582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Overview__Group_5__0__Impl9610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__1__Impl_in_rule__Overview__Group_5__19641 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__2_in_rule__Overview__Group_5__19644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Overview__Group_5__1__Impl9672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__2__Impl_in_rule__Overview__Group_5__29703 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__3_in_rule__Overview__Group_5__29706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Overview__Group_5__2__Impl9734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__Group_5__3__Impl_in_rule__Overview__Group_5__39765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Overview__ImagePathOffAssignment_5_3_in_rule__Overview__Group_5__3__Impl9792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__09830 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__09833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl9860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__19889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl9916 = new BitSet(new long[]{0x0000080000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__09951 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__09954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__FQN__Group_1__0__Impl9982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__110013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl10041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__ViewpointActivityExplorer__NameAssignment_310080 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePage_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_210111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePageExtension_in_rule__ViewpointActivityExplorer__OwnedPagesAssignment_610142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSectionExtension_in_rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_710173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__NameAssignment_210204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__DescriptionAssignment_4_110235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__FileExtensionsAssignment_5_210266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Page__ActivityExplorerItemIDAssignment_6_110297 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEInt_in_rule__Page__IndexAssignment_810328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOverview_in_rule__Page__OwnedOverviewAssignment_910359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__ImagePathOnAssignment_10_2_310390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__ImagePathOffAssignment_10_3_310421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Page__TabNameAssignment_11_210452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Page__HasPredicateAssignment_12_210483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Page__ShowViewerAssignment_13_310514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSection_in_rule__Page__OwnedSectionsAssignment_14_210545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Section__NameAssignment_210576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Section__DescriptionAssignment_4_110607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Section__ActivityExplorerItemIDAssignment_5_110638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEInt_in_rule__Section__IndexAssignment_710669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Section__FilteringAssignment_8_210700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Section__ExpandedAssignment_9_210731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivity_in_rule__Section__OwnedActivitiesAssignment_10_210762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Activity__NameAssignment_210793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Activity__DescriptionAssignment_4_110824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Activity__ActivityExplorerItemIDAssignment_5_110855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEInt_in_rule__Activity__IndexAssignment_710886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_rule__Activity__HasPredicateAssignment_8_210917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Activity__ImagePathOffAssignment_9_210948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__PageExtension__ExtendedPageIDAssignment_610979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSection_in_rule__PageExtension__OwnedSectionsAssignment_711010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__SectionExtension__ExtendedSectionIDAssignment_611041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivity_in_rule__SectionExtension__OwnedActivitiesAssignment_711072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Overview__DescriptionAssignment_3_111103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOnAssignment_4_311134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Overview__ImagePathOffAssignment_5_311165 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -19,6 +19,7 @@ public class ActivityexplorerSyntacticSequencer extends AbstractSyntacticSequenc
 
 	protected ActivityexplorerGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Page___HeaderKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_4__q;
+	protected AbstractElementAlias match_Page___SectionsKeyword_14_0_LeftCurlyBracketKeyword_14_1_RightCurlyBracketKeyword_14_3__q;
 	protected AbstractElementAlias match_Section___ActivitiesKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q;
 	protected AbstractElementAlias match_ViewpointActivityExplorer___PagesKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
 	
@@ -26,6 +27,7 @@ public class ActivityexplorerSyntacticSequencer extends AbstractSyntacticSequenc
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ActivityexplorerGrammarAccess) access;
 		match_Page___HeaderKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPageAccess().getHeaderKeyword_10_0()), new TokenAlias(false, false, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_10_1()), new TokenAlias(false, false, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_10_4()));
+		match_Page___SectionsKeyword_14_0_LeftCurlyBracketKeyword_14_1_RightCurlyBracketKeyword_14_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPageAccess().getSectionsKeyword_14_0()), new TokenAlias(false, false, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_14_1()), new TokenAlias(false, false, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_14_3()));
 		match_Section___ActivitiesKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSectionAccess().getActivitiesKeyword_10_0()), new TokenAlias(false, false, grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_10_1()), new TokenAlias(false, false, grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_10_3()));
 		match_ViewpointActivityExplorer___PagesKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getViewpointActivityExplorerAccess().getPagesKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getViewpointActivityExplorerAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getViewpointActivityExplorerAccess().getRightCurlyBracketKeyword_5_3()));
 	}
@@ -44,6 +46,8 @@ public class ActivityexplorerSyntacticSequencer extends AbstractSyntacticSequenc
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_Page___HeaderKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_4__q.equals(syntax))
 				emit_Page___HeaderKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Page___SectionsKeyword_14_0_LeftCurlyBracketKeyword_14_1_RightCurlyBracketKeyword_14_3__q.equals(syntax))
+				emit_Page___SectionsKeyword_14_0_LeftCurlyBracketKeyword_14_1_RightCurlyBracketKeyword_14_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Section___ActivitiesKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q.equals(syntax))
 				emit_Section___ActivitiesKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ViewpointActivityExplorer___PagesKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q.equals(syntax))
@@ -57,6 +61,14 @@ public class ActivityexplorerSyntacticSequencer extends AbstractSyntacticSequenc
 	 *     ('header' '{' '}')?
 	 */
 	protected void emit_Page___HeaderKeyword_10_0_LeftCurlyBracketKeyword_10_1_RightCurlyBracketKeyword_10_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('sections' '{' '}')?
+	 */
+	protected void emit_Page___SectionsKeyword_14_0_LeftCurlyBracketKeyword_14_1_RightCurlyBracketKeyword_14_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

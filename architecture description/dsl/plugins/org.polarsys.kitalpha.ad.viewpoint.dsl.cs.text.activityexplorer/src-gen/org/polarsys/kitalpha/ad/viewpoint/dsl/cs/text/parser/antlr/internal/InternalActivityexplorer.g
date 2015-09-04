@@ -502,18 +502,18 @@ rulePage returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_35='sections' 
+))?(	otherlv_35='sections' 
     {
-    	newLeafNode(otherlv_35, grammarAccess.getPageAccess().getSectionsKeyword_14());
+    	newLeafNode(otherlv_35, grammarAccess.getPageAccess().getSectionsKeyword_14_0());
     }
 	otherlv_36='{' 
     {
-    	newLeafNode(otherlv_36, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_15());
+    	newLeafNode(otherlv_36, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_14_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPageAccess().getOwnedSectionsSectionParserRuleCall_16_0()); 
+	        newCompositeNode(grammarAccess.getPageAccess().getOwnedSectionsSectionParserRuleCall_14_2_0()); 
 	    }
 		lv_ownedSections_37_0=ruleSection		{
 	        if ($current==null) {
@@ -530,11 +530,11 @@ rulePage returns [EObject current=null]
 )
 )*	otherlv_38='}' 
     {
-    	newLeafNode(otherlv_38, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_17());
+    	newLeafNode(otherlv_38, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_14_3());
     }
-	otherlv_39='}' 
+)?	otherlv_39='}' 
     {
-    	newLeafNode(otherlv_39, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_18());
+    	newLeafNode(otherlv_39, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_15());
     }
 )
 ;
