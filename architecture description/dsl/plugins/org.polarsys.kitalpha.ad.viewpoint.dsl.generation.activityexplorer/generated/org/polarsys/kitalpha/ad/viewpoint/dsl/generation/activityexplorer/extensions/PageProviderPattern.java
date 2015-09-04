@@ -37,18 +37,17 @@ public class PageProviderPattern {
 	protected final String TEXT_11 = "\"" + NL + "        viewer=\"";
 	protected final String TEXT_12 = "\">";
 	protected final String TEXT_13 = "\t</Page>" + NL + "</extension>" + NL;
-	protected final String TEXT_14 = " ";
-	protected final String TEXT_15 = NL + "\t\t<Overview";
-	protected final String TEXT_16 = " imageOff=\"";
-	protected final String TEXT_17 = "\"";
-	protected final String TEXT_18 = " imageOn=\"";
-	protected final String TEXT_19 = "\"";
-	protected final String TEXT_20 = ">" + NL + "\t\t\t<Description>" + NL
+	protected final String TEXT_14 = NL + "\t\t<Overview";
+	protected final String TEXT_15 = " imageOff=\"";
+	protected final String TEXT_16 = "\"";
+	protected final String TEXT_17 = " imageOn=\"";
+	protected final String TEXT_18 = "\"";
+	protected final String TEXT_19 = ">" + NL + "\t\t\t<Description>" + NL
 			+ "\t\t\t\t";
-	protected final String TEXT_21 = NL + "\t\t\t</Description>" + NL
+	protected final String TEXT_20 = NL + "\t\t\t</Description>" + NL
 			+ "\t\t</Overview>";
+	protected final String TEXT_21 = NL;
 	protected final String TEXT_22 = NL;
-	protected final String TEXT_23 = NL;
 
 	public PageProviderPattern() {
 		//Here is the constructor
@@ -85,8 +84,8 @@ public class PageProviderPattern {
 					OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
+		stringBuffer.append(TEXT_21);
 		stringBuffer.append(TEXT_22);
-		stringBuffer.append(TEXT_23);
 		return stringBuffer.toString();
 	}
 
@@ -251,24 +250,27 @@ public class PageProviderPattern {
 		if (null != overview && null != overview.getDescription()
 				&& false == overview.getDescription().isEmpty()) {
 			description = overview.getDescription();
-			stringBuffer.append(TEXT_14);
+			description = description.replaceAll("<", "&lt;");
+			description = description.replaceAll(">", "&gt;");
 		}
-		stringBuffer.append(TEXT_15);
-		if (overview.getImagePathOff() != null) {
-			stringBuffer.append(TEXT_16);
+		stringBuffer.append(TEXT_14);
+		if (overview.getImagePathOff() != null
+				&& false == overview.getImagePathOff().isEmpty()) {
+			stringBuffer.append(TEXT_15);
 			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/"
 					+ overview.getImagePathOff());
-			stringBuffer.append(TEXT_17);
+			stringBuffer.append(TEXT_16);
 		}
-		if (overview.getImagePathOn() != null) {
-			stringBuffer.append(TEXT_18);
+		if (overview.getImagePathOn() != null
+				&& false == overview.getImagePathOn().isEmpty()) {
+			stringBuffer.append(TEXT_17);
 			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/"
 					+ overview.getImagePathOn());
-			stringBuffer.append(TEXT_19);
+			stringBuffer.append(TEXT_18);
 		}
-		stringBuffer.append(TEXT_20);
+		stringBuffer.append(TEXT_19);
 		stringBuffer.append(description);
-		stringBuffer.append(TEXT_21);
+		stringBuffer.append(TEXT_20);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genOverview",
 				stringBuffer.toString());

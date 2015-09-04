@@ -1,11 +1,13 @@
-<%String description = "Description body text";%>
-<%if (null != overview && null != overview.getDescription() && false == overview.getDescription().isEmpty())%>
-<%{%>
-<%	description = overview.getDescription();%> 
-<%}%>
+<%String description = "Description body text";
+if (null != overview && null != overview.getDescription() && false == overview.getDescription().isEmpty())
+{
+	description = overview.getDescription();
+	description = description.replaceAll("<", "&lt;");
+	description = description.replaceAll(">", "&gt;");
+}%>
 		<Overview
-<%if (overview.getImagePathOff() != null){%> imageOff="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+overview.getImagePathOff()%>"<%}%>
-<%if (overview.getImagePathOn()  != null){%> imageOn="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+overview.getImagePathOn()%>"<%}%>>
+<%if (overview.getImagePathOff() != null && false == overview.getImagePathOff().isEmpty()){%> imageOff="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+overview.getImagePathOff()%>"<%}%>
+<%if (overview.getImagePathOn()  != null && false == overview.getImagePathOn().isEmpty()){%> imageOn="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+overview.getImagePathOn()%>"<%}%>>
 			<Description>
 				<%=description%>
 			</Description>
