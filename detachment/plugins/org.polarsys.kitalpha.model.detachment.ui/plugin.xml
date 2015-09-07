@@ -48,6 +48,13 @@ Contributors:
                label="%MODEL_MODEL_DETACHMENT_NAME"
                menubarPath="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription/detachment">
          </action>
+         <action
+               class="org.polarsys.kitalpha.model.detachment.ui.action.ModelDetachmentAction"
+               icon="icons/detach_icon.png"
+               id="org.polarsys.kitalpha.model.detachment.ui.menu.contextual.action.detachment"
+               label="%MODEL_MODEL_DETACHMENT_NAME"
+               menubarPath="additions">
+         </action>
       </objectContribution>
    </extension>
 
