@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %BundleName
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper
+Bundle-Version: 0.5.2.qualifier
+Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;bundle-version="2.8.3",
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model;bundle-version="0.5.1",
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model;bundle-version="0.5.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions
+Bundle-Vendor: %BundleVendor

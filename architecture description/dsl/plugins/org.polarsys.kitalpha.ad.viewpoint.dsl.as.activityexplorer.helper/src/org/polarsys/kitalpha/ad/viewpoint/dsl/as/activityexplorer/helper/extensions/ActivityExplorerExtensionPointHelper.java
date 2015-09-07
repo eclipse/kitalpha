@@ -9,7 +9,7 @@
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.helper;
+package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions;
 
 import java.util.ArrayList;
 import java.util.List;
