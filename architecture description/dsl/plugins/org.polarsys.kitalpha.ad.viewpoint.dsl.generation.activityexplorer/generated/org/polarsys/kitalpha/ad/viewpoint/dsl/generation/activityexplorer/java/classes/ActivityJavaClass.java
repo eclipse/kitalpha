@@ -86,15 +86,15 @@ public class ActivityJavaClass
 			+ NL
 			+ "\t\tShell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();"
 			+ NL
-			+ "\t\tMessageDialog.openInformation(shell, \"Activity Explorer(";
-	protected final String TEXT_6 = ")\", "
-			+ NL
-			+ "\t\t\t\t\t\t\t\t\t  \"This is a generated activity implementation.\\n (";
-	protected final String TEXT_7 = ".";
-	protected final String TEXT_8 = ".java)\");" + NL + "\t}" + NL + "}" + NL;
-	protected final String TEXT_9 = NL + " ";
-	protected final String TEXT_10 = NL;
+			+ "\t\tMessageDialog.openInformation(shell, \"Activity Explorer - ";
+	protected final String TEXT_6 = "\", " + NL
+			+ "\t\t\t\t\t\t\t\t\t  \"Default implementation for ";
+	protected final String TEXT_7 = ".\\n ";
+	protected final String TEXT_8 = ".";
+	protected final String TEXT_9 = ".java\");" + NL + "\t}" + NL + "}" + NL;
+	protected final String TEXT_10 = NL + " ";
 	protected final String TEXT_11 = NL;
+	protected final String TEXT_12 = NL;
 
 	public ActivityJavaClass() {
 		//Here is the constructor
@@ -131,8 +131,8 @@ public class ActivityJavaClass
 					OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_10);
 		stringBuffer.append(TEXT_11);
+		stringBuffer.append(TEXT_12);
 		return stringBuffer.toString();
 	}
 
@@ -201,12 +201,14 @@ public class ActivityJavaClass
 		stringBuffer.append(TEXT_4);
 		stringBuffer.append(classname);
 		stringBuffer.append(TEXT_5);
-		stringBuffer.append(classname);
+		stringBuffer.append(parameter.getName());
 		stringBuffer.append(TEXT_6);
-		stringBuffer.append(packagename);
+		stringBuffer.append(parameter.getName());
 		stringBuffer.append(TEXT_7);
-		stringBuffer.append(classname);
+		stringBuffer.append(packagename);
 		stringBuffer.append(TEXT_8);
+		stringBuffer.append(classname);
+		stringBuffer.append(TEXT_9);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassCode",
 				stringBuffer.toString());
@@ -233,7 +235,7 @@ public class ActivityJavaClass
 				new NullProgressMonitor());
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms",
 				new NullProgressMonitor());
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_10);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(),
 				"updateProjectDependecies", stringBuffer.toString());

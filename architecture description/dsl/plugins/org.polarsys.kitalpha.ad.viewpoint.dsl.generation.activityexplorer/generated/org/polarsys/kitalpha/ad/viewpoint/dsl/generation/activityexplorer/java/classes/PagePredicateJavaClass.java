@@ -105,7 +105,8 @@ public class PagePredicateJavaClass
 			+ NL
 			+ "import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;"
 			+ NL + "" + NL + "import org.eclipse.emf.common.util.URI;" + NL
-			+ "import org.eclipse.emf.ecore.resource.Resource;";
+			+ "import org.eclipse.emf.ecore.resource.Resource;" + NL
+			+ "import org.eclipse.emf.ecore.EObject;";
 	protected final String TEXT_15 = "\t";
 	protected final String TEXT_16 = NL;
 	protected final String TEXT_17 = NL;

@@ -9,4 +9,5 @@ import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerMana
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EObject;
 <%}%>

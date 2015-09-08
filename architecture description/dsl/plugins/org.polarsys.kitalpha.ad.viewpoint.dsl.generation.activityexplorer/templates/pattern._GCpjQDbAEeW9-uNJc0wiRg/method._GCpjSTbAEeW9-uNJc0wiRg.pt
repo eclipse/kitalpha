@@ -24,7 +24,7 @@ public class <%=classname%> extends AbstractHyperlinkAdapter {
 	@Override
 	protected void linkPressed(HyperlinkEvent event, EObject project_p, Session session) {
 		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-		MessageDialog.openInformation(shell, "Activity Explorer(<%=classname%>)", 
-									  "This is a generated activity implementation.\n (<%=packagename%>.<%=classname%>.java)");
+		MessageDialog.openInformation(shell, "Activity Explorer - <%=parameter.getName()%>", 
+									  "Default implementation for <%=parameter.getName()%>.\n <%=packagename%>.<%=classname%>.java");
 	}
 }
