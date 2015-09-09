@@ -30,6 +30,6 @@ public class NamesValidityChecker{
 			nameCopy = name.replace(".", "");
 		
 		// Check name content
-		return Pattern.matches("^([A-Za-z0-9_-]+$)", nameCopy);
+		return Pattern.matches("^([A-Za-z0-9_]+$)", nameCopy);
 	}
 }
