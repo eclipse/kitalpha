@@ -40,6 +40,16 @@
             constraint="vpElement.FreeErrorConstraint"
             name="Extended Page and Section ID existence">
       </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.rules.IconOnFileExistsConstraint"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Icon Path">
+      </addition>
+      <addition
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.rules.IconOffFileExistsConstraint"
+            constraint="vpElement.FreeErrorConstraint"
+            name="Icon Off Path">
+      </addition>
    </extension>
 
    <extension

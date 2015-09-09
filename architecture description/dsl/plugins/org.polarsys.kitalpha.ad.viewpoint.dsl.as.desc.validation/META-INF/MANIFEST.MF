@@ -17,6 +17,7 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.constraint,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.exception,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.icons,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.names,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.typeselements,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.utils
