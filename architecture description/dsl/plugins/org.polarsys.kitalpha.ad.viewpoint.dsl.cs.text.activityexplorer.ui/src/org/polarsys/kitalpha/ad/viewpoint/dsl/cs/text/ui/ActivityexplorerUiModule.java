@@ -27,7 +27,7 @@ public class ActivityexplorerUiModule extends org.polarsys.kitalpha.ad.viewpoint
 	
 	@Override
 	public Class<? extends IEObjectHover> bindIEObjectHover() {
-		return CommonEObjectHover.class;
+		return org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.ActivityExplorerHover.class;
 	}
 	
 	@Override
@@ -47,4 +47,5 @@ public class ActivityexplorerUiModule extends org.polarsys.kitalpha.ad.viewpoint
 	public Class<? extends org.eclipse.xtext.ui.editor.IXtextEditorCallback> bindIXtextEditorCallback() {
 		return CommonEditorCallback.class;
 	}
+	
 }

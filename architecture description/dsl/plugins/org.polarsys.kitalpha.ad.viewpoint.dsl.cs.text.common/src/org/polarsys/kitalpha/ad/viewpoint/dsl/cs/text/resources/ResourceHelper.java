@@ -40,6 +40,8 @@ import org.eclipse.xtext.resource.IResourceServiceProvider;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Provider;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
@@ -902,11 +904,6 @@ public class ResourceHelper {
 	
 
 	public static String getProjectName(EObject object){	
-		String projectName = EcoreUtil.getURI(object).segment(1);	
-
-		if (projectName == null || projectName.isEmpty())	
-			throw new RuntimeException("Could not find the project where is defined the EObject: " + object);	
-
-		return projectName; 	
+		return CoreModelHelper.getProjectName(object); 	
 	}
 }

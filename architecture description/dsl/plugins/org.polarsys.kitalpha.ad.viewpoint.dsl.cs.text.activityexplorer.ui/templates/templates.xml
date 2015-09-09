@@ -113,7 +113,7 @@
 		}&#13;
 	}&#13;
 }</template>
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_activity" id="6" deleted="false" description="new activity" enabled="true" name="activity">activity "${activityName}" &#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_activity" id="6" deleted="false" description="new activity" enabled="true" name="activity">activity "${activityName}" {&#13;
 	description "&lt;p&gt;description&lt;/p&gt;"&#13;
 	id ${viewpointName}.${activityName_id}&#13;
 	index ${activityIndex}&#13;

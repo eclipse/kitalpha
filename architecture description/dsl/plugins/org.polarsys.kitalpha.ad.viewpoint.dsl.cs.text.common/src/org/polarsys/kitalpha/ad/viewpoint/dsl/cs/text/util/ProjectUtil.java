@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,14 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+
+import com.google.inject.Inject;
 
 /**
  * 
@@ -122,6 +130,34 @@ public class ProjectUtil {
 	
 	public static IFolder getFolderInProject(IProject project, String folder){
 		return project.getFolder(folder);
+	}
+	
+	/**
+	 * get Root Project name. The caller must check if it is
+	 * the right project
+	 * @param eObject
+	 * @return
+	 */
+	public static EObject getRootViewpoint(EObject eObject, IExternalContentProvider contentProvider){
+		String projectName = ResourceHelper.getProjectName(eObject);
+		ResourceSet fakeResourceSet = new ResourceSetImpl();
+		XtextResource resource;
+		
+		ResourceHelper.loadPrimaryResource(projectName, fakeResourceSet);
+		URI uri = ResourceHelper.getPrimaryResourceURI(projectName);
+		
+		resource = (XtextResource) fakeResourceSet.getResource(uri, false);
+		String text = contentProvider.getActualContentProvider().getContent(uri);
+		
+		if (text != null && !text.isEmpty() && resource != null){
+			try {
+				resource.reparse(text);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return resource.getContents().get(0);
 	}
 
 }
