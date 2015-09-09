@@ -31,6 +31,10 @@ public class Messages extends NLS {
 	
 	public static String Validation_Runtime_CantLocateViewpointActivityExplorer;
 	
+	public static String Validation_Icon_IconExistence_IconOff;
+	public static String Validation_Icon_IconOnExistence_IconOff;
+	public static String Validation_Icon_DynamicIconOnExistence_IconOn;
+	
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
