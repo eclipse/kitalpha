@@ -79,4 +79,21 @@ public class CoreModelHelper {
 		else
 			return null;
 	}
+	
+	/**
+	 * Copied from ResourceHelper.
+	 * @param object
+	 * @return The project where this object was instantiated
+	 * 
+	 */
+	public static String getProjectName(EObject object){	
+		String projectName = EcoreUtil.getURI(object).segment(1);	
+
+		if (projectName == null || projectName.isEmpty())	
+			throw new RuntimeException("Could not find the project where is defined the EObject: " + object);	
+
+		return projectName; 	
+	}
+	
+	
 }

@@ -11,12 +11,15 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
@@ -24,14 +27,22 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions.ActivityExplorerExtensionPointHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.constants.IActivityExplorerExtensionsIDs;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.helpers.ActivityExplorerAspectHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 
-import com.google.common.collect.Iterables;
+import com.google.inject.Inject;
 
 /**
  * 
@@ -45,6 +56,9 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 	private static final Bundle PDE_CORE_UI_BUNDLE = Platform.getBundle(BUNDLE_EXTENSION_ICON);
 	private static final URL ICONURL = FileLocator.find(PDE_CORE_UI_BUNDLE, new Path(EXTENSION_PATH_ICON), null);
 	private static final Image EXTENSION_ICON = ImageDescriptor.createFromURL(ICONURL).createImage();
+	
+	@Inject
+	IExternalContentProvider contentProvider;
 	
 	
 	//TODO restrect the proposal of keyword following where they appear
@@ -210,10 +224,12 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 	
 	@Override
 	public void completePageExtension_ExtendedPageID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		Iterable<String> pageIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.PAGE);
-		List<String> modelPageIds = ActivityExplorerContentAssistHelper.getNewDefinedPages(model);
+		Viewpoint root = getRootContainer(model);
 		
-		pageIds = Iterables.concat(pageIds, modelPageIds);
+		List<String> pageIds = ActivityExplorerAspectHelper.getViewpointPagesIDs(root);
+		pageIds.addAll(ActivityExplorerAspectHelper.getUsedViewpointPagesIDs(root));
+		pageIds.addAll(ActivityExplorerExtensionPointHelper.getPlateformePagesIDs());
+		pageIds.addAll(getLocalPageIds(model));
 		
 		for (String id : pageIds) {
 			ICompletionProposal proposal = createCompletionProposal(id, getKeywordDisplayString(id), EXTENSION_ICON, context);
@@ -221,27 +237,59 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 		}
 	}
 	
+	private List<String> getLocalPageIds(EObject model){
+		List<String> result = new ArrayList<String>();
+		ViewpointActivityExplorer current = (ViewpointActivityExplorer) EcoreUtil.getRootContainer(model);
+		
+		EList<AbstractPage> ownedPages = current.getOwnedPages();
+		
+		for (AbstractPage p : ownedPages) {
+			if (p instanceof Page)
+				result.add(((Page) p).getActivityExplorerItemID());
+		}
+		
+		return result;
+	}
+	
+	
 	@Override
 	public void completeSectionExtension_ExtendedSectionID(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		Iterable<String> sectionIds = ActivityExplorerContentAssistHelper.getActivityExplorerExtensions(IActivityExplorerExtensionsIDs.SECTION);
-		List<String> modelSectionIds = ActivityExplorerContentAssistHelper.getNewDefinedSections(model);
 		
-		sectionIds = Iterables.concat(sectionIds, modelSectionIds);
 		
+		Viewpoint root = getRootContainer(model);
+		
+		List<String> sectionIds = ActivityExplorerAspectHelper.getUsedViewpointSectionsIDs(root);
+		sectionIds.addAll(ActivityExplorerAspectHelper.getUsedViewpointSectionsIDs(root));
+		sectionIds.addAll(ActivityExplorerExtensionPointHelper.getPlateformeSectionsIDs());
+		sectionIds.addAll(getLocalSectionIds(model));
+
 		for (String id : sectionIds) {
 			ICompletionProposal proposal = createCompletionProposal(id, getKeywordDisplayString(id), EXTENSION_ICON, context);
 			acceptor.accept(proposal);
 		}
 	}
 	
-	
-	public void completePage_Index(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		int index = ActivityExplorerContentAssistHelper.getNextIndexPage(model);
+	private List<String> getLocalSectionIds(EObject model){
+		List<String> result = new ArrayList<String>();
+		ViewpointActivityExplorer current = (ViewpointActivityExplorer) EcoreUtil.getRootContainer(model);
 		
-		ICompletionProposal proposal = createCompletionProposal(String.valueOf(index), getKeywordDisplayString(String.valueOf(index)), null, context);
-		acceptor.accept(proposal);
+		EList<AbstractPage> ownedPages = current.getOwnedPages();
+		
+		for (AbstractPage p : ownedPages) {
+			EList<Section> ownedSections = p.getOwnedSections();
+			for (Section section : ownedSections) {
+				result.add(section.getActivityExplorerItemID());
+			}
+		}
+		return result;
 	}
 	
-	
-	
+	private Viewpoint getRootContainer(EObject eObject){
+		EObject root = ProjectUtil.getRootViewpoint(eObject, contentProvider);
+		
+		if (root instanceof Viewpoint)
+			return (Viewpoint)root;
+		
+		return null;
+	}
 }

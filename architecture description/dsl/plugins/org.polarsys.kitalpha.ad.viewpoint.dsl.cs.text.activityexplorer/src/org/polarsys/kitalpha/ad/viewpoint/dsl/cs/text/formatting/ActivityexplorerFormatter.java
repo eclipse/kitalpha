@@ -54,17 +54,48 @@ c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
             c.setLinewrap().before(e);
         }
         
+        List<Keyword> filterings = f.findKeywords("filtering");
+        for (Keyword _f : filterings) {
+            c.setLinewrap().before(_f);
+        }
         
-        List<Pair<Keyword, Keyword>> pairs = f.findKeywordPairs("image", "off");
-        for (Pair<Keyword, Keyword> pair : pairs) {
+        List<Keyword> expanded = f.findKeywords("expanded");
+        for (Keyword e : expanded) {
+            c.setLinewrap().before(e);
+        }
+        
+        List<Keyword> activities = f.findKeywords("activities");
+        for (Keyword a : activities) {
+            c.setLinewrap().before(a);
+        }
+        
+        List<Keyword> _activities = f.findKeywords("activity");
+        for (Keyword a : _activities) {
+            c.setLinewrap().before(a);
+        }
+        
+        List<Keyword> icons = f.findKeywords("icon");
+        for (Keyword i : icons) {
+            c.setLinewrap().before(i);
+        }
+        
+        List<Pair<Keyword, Keyword>> pairsOff = f.findKeywordPairs("image", "off");
+        for (Pair<Keyword, Keyword> pair : pairsOff) {
             c.setLinewrap().before(pair.getFirst());
         }
         
-        c.setLinewrap().after(f.getOverviewAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0());
+        List<Pair<Keyword, Keyword>> pairsOn = f.findKeywordPairs("image", "on");
+        for (Pair<Keyword, Keyword> pair : pairsOn) {
+            c.setLinewrap().before(pair.getFirst());
+        }
+        
+        //c.setLinewrap().after(f.getOverviewAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0());
         
         c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_10_0());
         c.setLinewrap().before(f.getPageAccess().getTabKeyword_11_0());
         c.setLinewrap().before(f.getPageAccess().getShowKeyword_13_0());
+        
+        c.setLinewrap().before(f.getPageAccess().getSectionsKeyword_14_0());
         
 //        c.setLinewrap().before(f.getSectionExtensionAccess().getFilteringKeyword_10_0());
 //        c.setLinewrap().before(f.getSectionExtensionAccess().getExpandedKeyword_11_0());

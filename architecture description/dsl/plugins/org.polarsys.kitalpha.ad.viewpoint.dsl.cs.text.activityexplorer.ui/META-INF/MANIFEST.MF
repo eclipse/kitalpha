@@ -17,7 +17,9 @@ Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer;
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards,
  org.eclipse.xtext.common.types.ui,
- org.eclipse.xtext.ui.codetemplates.ui
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
