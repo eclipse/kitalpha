@@ -65,6 +65,7 @@ public class ActivityItemProvider
 			addDescriptionPropertyDescriptor(object);
 			addActivityExplorerItemIDPropertyDescriptor(object);
 			addIndexPropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -214,6 +215,30 @@ public class ActivityItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLabelPropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActivityExplorerItem_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityExplorerItem_label_feature", "_UI_ActivityExplorerItem_type"),
+				 ViewpointActivityExplorerPackage.Literals.ACTIVITY_EXPLORER_ITEM__LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+
+	}
+
+	/**
 	 * This returns Activity.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -258,6 +283,7 @@ public class ActivityItemProvider
 			case ViewpointActivityExplorerPackage.ACTIVITY__DESCRIPTION:
 			case ViewpointActivityExplorerPackage.ACTIVITY__ACTIVITY_EXPLORER_ITEM_ID:
 			case ViewpointActivityExplorerPackage.ACTIVITY__INDEX:
+			case ViewpointActivityExplorerPackage.ACTIVITY__LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

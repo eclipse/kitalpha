@@ -30,6 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl#getActivityExplorerItemID <em>Activity Explorer Item ID</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl#getIndex <em>Index</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.ActivityImpl#getLabel <em>Label</em>}</li>
  * </ul>
  * </p>
  *
@@ -155,6 +156,26 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 	 * @ordered
 	 */
 	protected int index = INDEX_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LABEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String label = LABEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -326,6 +347,32 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
+	public String getLabel() {
+
+		return label;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public void setLabel(String newLabel) {
+
+		String oldLabel = label;
+		label = newLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ViewpointActivityExplorerPackage.ACTIVITY__LABEL, oldLabel, label));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -341,6 +388,8 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 				return getActivityExplorerItemID();
 			case ViewpointActivityExplorerPackage.ACTIVITY__INDEX:
 				return getIndex();
+			case ViewpointActivityExplorerPackage.ACTIVITY__LABEL:
+				return getLabel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -370,6 +419,9 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 				return;
 			case ViewpointActivityExplorerPackage.ACTIVITY__INDEX:
 				setIndex((Integer)newValue);
+				return;
+			case ViewpointActivityExplorerPackage.ACTIVITY__LABEL:
+				setLabel((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -401,6 +453,9 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 			case ViewpointActivityExplorerPackage.ACTIVITY__INDEX:
 				setIndex(INDEX_EDEFAULT);
 				return;
+			case ViewpointActivityExplorerPackage.ACTIVITY__LABEL:
+				setLabel(LABEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -425,6 +480,8 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 				return ACTIVITY_EXPLORER_ITEM_ID_EDEFAULT == null ? activityExplorerItemID != null : !ACTIVITY_EXPLORER_ITEM_ID_EDEFAULT.equals(activityExplorerItemID);
 			case ViewpointActivityExplorerPackage.ACTIVITY__INDEX:
 				return index != INDEX_EDEFAULT;
+			case ViewpointActivityExplorerPackage.ACTIVITY__LABEL:
+				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -459,6 +516,7 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 			switch (derivedFeatureID) {
 				case ViewpointActivityExplorerPackage.ACTIVITY__ACTIVITY_EXPLORER_ITEM_ID: return ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID;
 				case ViewpointActivityExplorerPackage.ACTIVITY__INDEX: return ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX;
+				case ViewpointActivityExplorerPackage.ACTIVITY__LABEL: return ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__LABEL;
 				default: return -1;
 			}
 		}
@@ -495,6 +553,7 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 			switch (baseFeatureID) {
 				case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID: return ViewpointActivityExplorerPackage.ACTIVITY__ACTIVITY_EXPLORER_ITEM_ID;
 				case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX: return ViewpointActivityExplorerPackage.ACTIVITY__INDEX;
+				case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__LABEL: return ViewpointActivityExplorerPackage.ACTIVITY__LABEL;
 				default: return -1;
 			}
 		}
@@ -523,6 +582,8 @@ public class ActivityImpl extends PredicateElementImpl implements Activity {
 		result.append(activityExplorerItemID);
 		result.append(", index: ");
 		result.append(index);
+		result.append(", label: ");
+		result.append(label);
 		result.append(')');
 		return result.toString();
 	}

@@ -330,6 +330,15 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getActivityExplorerItem_Label() {
+		return (EAttribute)activityExplorerItemEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDynamicIcon() {
 		return dynamicIconEClass;
 	}
@@ -533,6 +542,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		activityExplorerItemEClass = createEClass(ACTIVITY_EXPLORER_ITEM);
 		createEAttribute(activityExplorerItemEClass, ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID);
 		createEAttribute(activityExplorerItemEClass, ACTIVITY_EXPLORER_ITEM__INDEX);
+		createEAttribute(activityExplorerItemEClass, ACTIVITY_EXPLORER_ITEM__LABEL);
 
 		dynamicIconEClass = createEClass(DYNAMIC_ICON);
 		createEAttribute(dynamicIconEClass, DYNAMIC_ICON__IMAGE_PATH_ON);
@@ -628,6 +638,7 @@ public class ViewpointActivityExplorerPackageImpl extends EPackageImpl implement
 		initEClass(activityExplorerItemEClass, ActivityExplorerItem.class, "ActivityExplorerItem", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivityExplorerItem_ActivityExplorerItemID(), theEcorePackage.getEString(), "activityExplorerItemID", null, 0, 1, ActivityExplorerItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivityExplorerItem_Index(), theEcorePackage.getEInt(), "index", null, 1, 1, ActivityExplorerItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivityExplorerItem_Label(), theEcorePackage.getEString(), "label", null, 0, 1, ActivityExplorerItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dynamicIconEClass, DynamicIcon.class, "DynamicIcon", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDynamicIcon_ImagePathOn(), theEcorePackage.getEString(), "imagePathOn", null, 0, 1, DynamicIcon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

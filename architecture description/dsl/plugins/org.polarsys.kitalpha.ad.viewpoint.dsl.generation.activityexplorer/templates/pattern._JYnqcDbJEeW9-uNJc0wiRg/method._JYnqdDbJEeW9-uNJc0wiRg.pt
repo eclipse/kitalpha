@@ -1,1 +1,1 @@
-return predicatedElement instanceof NamedElement && predicatedElement.isHasPredicate();
+return predicatedElement instanceof NamedElement && PredicateHelper.generatePredicate(predicatedElement);

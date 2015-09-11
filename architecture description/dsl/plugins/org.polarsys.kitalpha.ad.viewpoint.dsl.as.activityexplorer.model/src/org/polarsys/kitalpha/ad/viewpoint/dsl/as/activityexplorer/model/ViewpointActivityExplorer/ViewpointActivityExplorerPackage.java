@@ -121,13 +121,22 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int ACTIVITY_EXPLORER_ITEM__INDEX = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_EXPLORER_ITEM__LABEL = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Activity Explorer Item</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ACTIVITY_EXPLORER_ITEM_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.PageImpl <em>Page</em>}' class.
@@ -183,6 +192,15 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAGE__INDEX = ACTIVITY_EXPLORER_ITEM__INDEX;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__LABEL = ACTIVITY_EXPLORER_ITEM__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Image Path Off</b></em>' attribute.
@@ -458,6 +476,15 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @ordered
 	 */
 	int SECTION__INDEX = ACTIVITY_EXPLORER_ITEM__INDEX;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__LABEL = ACTIVITY_EXPLORER_ITEM__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Owned Activities</b></em>' containment reference list.
@@ -772,13 +799,22 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	int ACTIVITY__INDEX = PREDICATE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__LABEL = PREDICATE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FEATURE_COUNT = PREDICATE_ELEMENT_FEATURE_COUNT + 6;
+	int ACTIVITY_FEATURE_COUNT = PREDICATE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page <em>Page</em>}'.
@@ -928,6 +964,17 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getActivityExplorerItem_Index();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem#getLabel()
+	 * @see #getActivityExplorerItem()
+	 * @generated
+	 */
+	EAttribute getActivityExplorerItem_Label();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.DynamicIcon <em>Dynamic Icon</em>}'.
@@ -1262,6 +1309,14 @@ public interface ViewpointActivityExplorerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTIVITY_EXPLORER_ITEM__INDEX = eINSTANCE.getActivityExplorerItem_Index();
+
+		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY_EXPLORER_ITEM__LABEL = eINSTANCE.getActivityExplorerItem_Label();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.impl.DynamicIconImpl <em>Dynamic Icon</em>}' class.
