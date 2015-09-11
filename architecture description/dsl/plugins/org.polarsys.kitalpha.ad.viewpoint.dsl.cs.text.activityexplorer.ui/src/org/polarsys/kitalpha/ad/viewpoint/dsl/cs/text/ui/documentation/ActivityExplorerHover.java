@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITextViewer;
@@ -37,6 +38,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 public class ActivityExplorerHover extends CommonEObjectHover {
 	
 	private static boolean descriptionSelector = false;
+	private static boolean iconSelector = false;
+	private static boolean activitiesSelectors = false;
+	private static boolean headerSelector = false;
 	
 	@Override
 	protected Pair<EObject, IRegion> getXtextElementAt(XtextResource resource, final int offset) {
@@ -44,9 +48,18 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		if (parseResult != null){
 			ILeafNode leafNode = NodeModelUtils.findLeafNodeAtOffset(parseResult.getRootNode(), offset);
 			String value = leafNode.getText();
+			
+			if (value != null && value.equals("page")){ //$NON-NLS-1$
+				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
+				if (semanticObject != null && semanticObject instanceof Page){
+					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
+				}
+			}
+			
 			if (value != null && value.equals("header")){ //$NON-NLS-1$
 				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
 				if (semanticObject != null && semanticObject instanceof Page){
+					headerSelector = true;
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
 			}
@@ -62,6 +75,29 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 			if (value != null && value.equals("icon")){ //$NON-NLS-1$
 				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
 				if (semanticObject != null && semanticObject instanceof Activity){
+					iconSelector = true;
+					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
+				}
+			}
+			
+			if (value != null && value.equals("activity")){ //$NON-NLS-1$
+				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
+				if (semanticObject != null && semanticObject instanceof Activity){
+					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
+				}
+			}
+			
+			if (value != null && value.equals("activities")){ //$NON-NLS-1$
+				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
+				if (semanticObject != null && semanticObject instanceof Section){
+					activitiesSelectors = true;
+					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
+				}
+			}
+			
+			if (value != null && value.equals("section")){ //$NON-NLS-1$
+				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
+				if (semanticObject != null && semanticObject instanceof Section){
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
 			}
@@ -78,13 +114,26 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 			
 			if (first instanceof Page){
 				Page page = (Page)first;
-				return getHeaderHTMLText(page);
+				if (headerSelector){
+					return getHeaderHTMLText(page);
+				}
+				
+				return getPageHTMLText(page);
 			}
 			
 			if (first instanceof Section){
 				Section section = (Section)first;
-				descriptionSelector = false;
-				return section.getDescription();
+				if (descriptionSelector){
+					descriptionSelector = false;
+					return section.getDescription();
+				}
+				
+				if (activitiesSelectors){
+					activitiesSelectors = false;
+					return getActivitiesHTMLText(section);
+				}
+				
+				return getSectionHTMLText(section);
 			}
 			
 			if (first instanceof Activity){
@@ -96,6 +145,48 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 			return super.getHoverInfo(first, textViewer, hoverRegion);
 	}
 
+	private Object getPageHTMLText(Page page) {
+		StringBuffer result = new StringBuffer();
+		EList<Section> ownedSections = page.getOwnedSections();
+		
+		result.append("<table border='0' width='100%'><tr><td colspan='2'><b>").append(page.getName()).append("</b></td></tr>");
+		result.append("<tr><td width='20'></td><td>");
+		for (Section section : ownedSections) {
+			result.append(getSectionHTMLText(section));
+		}
+		result.append("</td></tr></table>");
+		
+		return result.toString();
+	}
+
+	private Object getSectionHTMLText(Section section) {
+		StringBuffer result = new StringBuffer();
+		
+		result.append("<table border='0' width='100%'>");
+		result.append("<tr>");
+		result.append("<td  colspan='2' style='background:#CFCBFF; color:#333333'>");
+		result.append(section.getName());
+		result.append("</td>");
+		result.append("</tr><tr>");
+		result.append("<td width='80'></td><td>");
+		result.append(getActivitiesHTMLText(section));
+		result.append("</td></tr></table>");
+		
+		return result.toString();
+	}
+
+	private Object getActivitiesHTMLText(Section section) {
+		StringBuffer result = new StringBuffer();
+		EList<Activity> ownedActivities = section.getOwnedActivities();
+		
+		for (Activity activity : ownedActivities) {
+			result.append(getActivityDescription(activity));
+			result.append("<br/>");
+		}
+		
+		return result.toString();
+	}
+
 	private Object getActivityHTMLText(Activity activity) {
 		
 		if (descriptionSelector){
@@ -103,6 +194,36 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 			return activity.getDescription();
 		}
 		
+		if (iconSelector){
+			iconSelector = false;
+			return getActivityIcon(activity);
+		}
+		
+		
+		return getActivityDescription(activity);
+	}
+
+	private Object getActivityDescription(Activity activity) {
+		StringBuffer result = new StringBuffer();
+		
+		result.append("<table border='0' width='100%'>");
+		result.append("<tr>");
+		result.append("<td  width='80'>");
+		result.append(getActivityIcon(activity));
+		result.append("</td>");
+		result.append("<td>");
+		result.append(getLink(activity));
+		result.append("</td>");
+		result.append("</table>");
+		
+		return result.toString();
+	}
+
+	private Object getLink(Activity activity) {
+		return "<a style='text-decoration: none; color:#000099'>" + activity.getName() + "</a>";
+	}
+
+	private Object getActivityIcon(Activity activity) {
 		StringBuffer result = new StringBuffer();
 		
 		String iconPath = activity.getImagePathOff();
@@ -138,7 +259,7 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 
 		Pair<IFile, IFile> icons = getIconFiles(overview, imageOn, imageOff);
 
-		result.append("<table border='0'>")
+		result.append("<table border='0' width='100%'>")
 		.append("<tr><td width='150'><img src='");
 
 		if (icons.getFirst() != null)
@@ -182,7 +303,7 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		
 		Pair<IFile, IFile> icons = getIconFiles(page, iconOn, iconOff);
 		
-		result.append("<table border='0'>").append("<tr><td>");
+		result.append("<table border='0' width='100%'>").append("<tr><td>");
 		appendIconPath(result, icons.getFirst(), iconOn);
 		result.append("</td><td>");
 		appendIconPath(result, icons.getSecond(), iconOff);

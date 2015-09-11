@@ -37,6 +37,7 @@ c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
         List<Keyword> ids = f.findKeywords("id");
         for (Keyword i : ids) {
             c.setLinewrap().before(i);
+            c.setNoLinewrap().after(i);
         }
         
         List<Keyword> indexes = f.findKeywords("index");
@@ -79,6 +80,11 @@ c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
             c.setLinewrap().before(i);
         }
         
+        List<Keyword> descriptions = f.findKeywords("description");
+        for (Keyword d : descriptions) {
+            c.setNoLinewrap().after(d);
+        }
+        
         List<Pair<Keyword, Keyword>> pairsOff = f.findKeywordPairs("image", "off");
         for (Pair<Keyword, Keyword> pair : pairsOff) {
             c.setLinewrap().before(pair.getFirst());
@@ -89,7 +95,6 @@ c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
             c.setLinewrap().before(pair.getFirst());
         }
         
-        //c.setLinewrap().after(f.getOverviewAccess().getDescriptionSTRINGTerminalRuleCall_3_1_0());
         
         c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_10_0());
         c.setLinewrap().before(f.getPageAccess().getTabKeyword_11_0());
