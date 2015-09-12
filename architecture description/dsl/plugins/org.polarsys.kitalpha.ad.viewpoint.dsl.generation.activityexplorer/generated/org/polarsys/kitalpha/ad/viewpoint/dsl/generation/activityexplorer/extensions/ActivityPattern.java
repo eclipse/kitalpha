@@ -9,6 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
 
 public class ActivityPattern {
 	protected static String nl;
@@ -197,6 +198,12 @@ public class ActivityPattern {
 			id = "Activity1";
 
 		boolean hasImage = parameter.getImagePathOff() != null;
+		final boolean labelIsSet = parameter
+				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE
+						.getActivityExplorerItem_Label());
+		final String name = labelIsSet
+				&& false == parameter.getLabel().isEmpty() ? parameter
+				.getLabel() : parameter.getName();
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(className);
@@ -212,7 +219,7 @@ public class ActivityPattern {
 			stringBuffer.append(TEXT_6);
 		}
 		stringBuffer.append(TEXT_7);
-		stringBuffer.append(parameter.getName());
+		stringBuffer.append(name);
 		stringBuffer.append(TEXT_8);
 		if (genSectionID) {
 			stringBuffer.append(TEXT_9);

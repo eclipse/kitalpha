@@ -4,6 +4,9 @@ String className = JavaNamingConvention.getJavaClassFQNFor(projectName, paramete
 String id = parameter.getActivityExplorerItemID();
 if (null == id || (null != id && id.isEmpty()))
 	id = "Page1";
+
+final boolean labelIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel() : parameter.getName();
 %>
 
 <extension point="org.eclipse.amalgam.explorer.activity.ui.pagesProvider">
@@ -16,5 +19,5 @@ if (null == id || (null != id && id.isEmpty()))
 		imageOn="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+parameter.getImagePathOn()%>"<%}%>
         index="<%=parameter.getIndex()%>"
         tabName="<%=parameter.getTabName()%>"
-        title="<%=parameter.getName()%>"
+        title="<%=name%>"
         viewer="<%=parameter.isShowViewer()%>">

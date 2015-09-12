@@ -9,6 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.JavaNamingConvention;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.PredicateHelper;
 
 public class PredicatePattern {
 	protected static String nl;
@@ -126,6 +127,6 @@ public class PredicatePattern {
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
 		return predicatedElement instanceof NamedElement
-				&& predicatedElement.isHasPredicate();
+				&& PredicateHelper.generatePredicate(predicatedElement);
 	}
 }

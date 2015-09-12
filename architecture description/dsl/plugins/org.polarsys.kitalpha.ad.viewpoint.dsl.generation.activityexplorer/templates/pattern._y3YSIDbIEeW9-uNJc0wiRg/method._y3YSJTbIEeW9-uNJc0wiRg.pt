@@ -2,6 +2,9 @@
 String id = parameter.getActivityExplorerItemID();
 if (null == id || (null != id && id.isEmpty()))
 	id = "Activity1";
+
+final boolean labelIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel() : parameter.getName();
 %>
 
 		<Section
@@ -9,6 +12,6 @@ if (null == id || (null != id && id.isEmpty()))
 			   filtering="<%=parameter.isFiltering() ? "true" : "false"%>"
 			   id="<%=id%>"	   
 			   index="<%=parameter.getIndex()%>"
-			   name="<%=parameter.getName()%>"
+			   name="<%=name%>"
 <%if (genPageID){%>
 			   pageId="<%=pageID%>"<%}%>>

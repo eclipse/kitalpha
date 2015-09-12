@@ -6,6 +6,8 @@ if (null == id || (null != id && id.isEmpty()))
 	id = "Activity1";
 	
 boolean hasImage = parameter.getImagePathOff() != null;
+final boolean labelIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel() : parameter.getName();
 %>
 
 			<Activity
@@ -14,6 +16,6 @@ boolean hasImage = parameter.getImagePathOff() != null;
 				index="<%=parameter.getIndex()%>"
 <%if (hasImage){%> 
 				image="<%=IconsFileHelper.ICONS_FOLDER_NAME+"/"+parameter.getImagePathOff()%>"<%}%>
-				name="<%=parameter.getName()%>"
+				name="<%=name%>"
 <%if (genSectionID){%>
 				sectionId="<%=sectionID%>"<%}%>>

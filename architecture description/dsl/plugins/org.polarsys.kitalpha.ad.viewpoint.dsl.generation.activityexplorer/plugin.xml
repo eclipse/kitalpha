@@ -19,7 +19,7 @@ Contributors:
             category="Aspect"
             description="This generation enables to generate Acitivty Explorer pages, sections and activities. It allows to extends available pages with new sections and sections with new activities."
             fcore="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_Dxy7EDU4EeWtD50BimPJow"
-            name="Amalgam Activity Explorer Generator">
+            name="Amalgam Activity Explorer Generation">
       </launcher>
       <filter
             java="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.filter.ActivityExplorerAspectExtensionfilter">

@@ -72,6 +72,7 @@ public class ActivityExplorerItemItemProvider
 
 			addActivityExplorerItemIDPropertyDescriptor(object);
 			addIndexPropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,6 +126,30 @@ public class ActivityExplorerItemItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLabelPropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ActivityExplorerItem_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActivityExplorerItem_label_feature", "_UI_ActivityExplorerItem_type"),
+				 ViewpointActivityExplorerPackage.Literals.ACTIVITY_EXPLORER_ITEM__LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,6 +179,7 @@ public class ActivityExplorerItemItemProvider
 		switch (notification.getFeatureID(ActivityExplorerItem.class)) {
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__ACTIVITY_EXPLORER_ITEM_ID:
 			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__INDEX:
+			case ViewpointActivityExplorerPackage.ACTIVITY_EXPLORER_ITEM__LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

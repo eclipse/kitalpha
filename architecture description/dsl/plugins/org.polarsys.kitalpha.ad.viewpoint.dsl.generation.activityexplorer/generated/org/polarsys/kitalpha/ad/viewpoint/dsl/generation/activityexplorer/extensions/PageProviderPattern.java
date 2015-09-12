@@ -9,6 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Overview;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.*;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
 
 public class PageProviderPattern {
 	protected static String nl;
@@ -203,6 +204,13 @@ public class PageProviderPattern {
 		if (null == id || (null != id && id.isEmpty()))
 			id = "Page1";
 
+		final boolean labelIsSet = parameter
+				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE
+						.getActivityExplorerItem_Label());
+		final String name = labelIsSet
+				&& false == parameter.getLabel().isEmpty() ? parameter
+				.getLabel() : parameter.getName();
+
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(className);
 		stringBuffer.append(TEXT_2);
@@ -225,7 +233,7 @@ public class PageProviderPattern {
 		stringBuffer.append(TEXT_9);
 		stringBuffer.append(parameter.getTabName());
 		stringBuffer.append(TEXT_10);
-		stringBuffer.append(parameter.getName());
+		stringBuffer.append(name);
 		stringBuffer.append(TEXT_11);
 		stringBuffer.append(parameter.isShowViewer());
 		stringBuffer.append(TEXT_12);

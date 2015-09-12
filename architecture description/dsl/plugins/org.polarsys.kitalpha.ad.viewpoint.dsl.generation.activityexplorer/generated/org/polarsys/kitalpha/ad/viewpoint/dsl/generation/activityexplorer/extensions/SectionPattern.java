@@ -8,6 +8,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
 
 public class SectionPattern {
 	protected static String nl;
@@ -160,6 +161,13 @@ public class SectionPattern {
 		if (null == id || (null != id && id.isEmpty()))
 			id = "Activity1";
 
+		final boolean labelIsSet = parameter
+				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE
+						.getActivityExplorerItem_Label());
+		final String name = labelIsSet
+				&& false == parameter.getLabel().isEmpty() ? parameter
+				.getLabel() : parameter.getName();
+
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(parameter.isExpanded() ? "true" : "false");
 		stringBuffer.append(TEXT_3);
@@ -169,7 +177,7 @@ public class SectionPattern {
 		stringBuffer.append(TEXT_5);
 		stringBuffer.append(parameter.getIndex());
 		stringBuffer.append(TEXT_6);
-		stringBuffer.append(parameter.getName());
+		stringBuffer.append(name);
 		stringBuffer.append(TEXT_7);
 		if (genPageID) {
 			stringBuffer.append(TEXT_8);

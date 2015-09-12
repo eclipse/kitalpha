@@ -12,6 +12,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -155,9 +156,10 @@ public class ActivityExplorerAspectHelper {
 			return viewpoint.getUseViewpoint();
 			
 		}
-		else
-		{
-			throw new RuntimeException("Are you sure that the element is a viewpoint element ??");
-		}
+//		else
+//		{
+//			throw new RuntimeException("Are you sure that the element is a viewpoint element ??");
+//		}
+		return Collections.emptyList();
 	}
 }
