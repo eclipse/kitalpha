@@ -11,7 +11,10 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.helpers;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
@@ -45,7 +48,9 @@ public class ActivityExplorerAspectHelper {
 	
 	public static List<String> getUsedViewpointPagesIDs(Viewpoint model){
 		final List<String> result = new ArrayList<String>();
-		EList<Viewpoint> viewpoints = model.getUseViewpoint();
+		Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
+		
+		collectAllviewpoints(model, viewpoints);		
 		
 		for (Viewpoint viewpoint : viewpoints) {
 			List<String> viewpointPagesIDs = getViewpointPagesIDs(viewpoint);
@@ -55,12 +60,41 @@ public class ActivityExplorerAspectHelper {
 		return result;
 	}
 	
+	private static void collectAllviewpoints(Viewpoint viewpoint, Set<Viewpoint> result){
+		if (viewpoint != null){
+			List<Viewpoint> viewpoints = getDirectViewpointsOf(viewpoint);
+			result.addAll(viewpoints);
+			for (Viewpoint v : viewpoints) {
+				collectAllviewpoints(v, result);
+			}
+		}
+	}
+
+
+	private static List<Viewpoint> getDirectViewpointsOf(Viewpoint model) {
+		
+		EList<Viewpoint> viewpoints = model.getUseViewpoint();
+		EList<Viewpoint> parents = model.getParents();
+		EList<Viewpoint> dependencies = model.getDependencies();
+
+		List<Viewpoint> viewpointsCopy = new ArrayList<Viewpoint>();
+		viewpointsCopy.addAll(viewpoints);
+		viewpointsCopy.addAll(parents);
+		viewpointsCopy.addAll(dependencies);
+		
+		return viewpointsCopy;
+	}
+	
+	
 	
 	public static List<String> getUsedViewpointSectionsIDs(Viewpoint model){
 		final List<String> result = new ArrayList<String>();
-		List<Viewpoint> usedViewpoints = model.getUseViewpoint();
 		
-		for (Viewpoint viewpoint : usedViewpoints) 
+		Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
+		
+		collectAllviewpoints(model, viewpoints);
+		
+		for (Viewpoint viewpoint : viewpoints) 
 		{
 			List<String> vewpointSectionsIDs = getViewpointSectionsIDs(viewpoint);
 			if (vewpointSectionsIDs.isEmpty() == false)
