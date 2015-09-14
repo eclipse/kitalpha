@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <templates>
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_pages" id="1" deleted="false" description="new pages" enabled="true" name="pages">pages {&#13;
-	page "${pageName}" {&#13;
+	page ${pageName} {&#13;
 		file extension "${fileExtension}"&#13;
 		id ${viewpointName}.${pageName_id}&#13;
+		label "Page Label"&#13;
 		index ${pageIndex}&#13;
 		Overview {&#13;
 			description "&lt;p&gt;&lt;b&gt;title&lt;/b&gt;&lt;/p&gt;&lt;p&gt;description&lt;/p&gt;"&#13;
@@ -17,16 +18,18 @@
 		tab name  "${tabName}"&#13;
 		show viewer : true&#13;
 		sections {&#13;
-			section "${sectionName}" {&#13;
+			section ${sectionName} {&#13;
 				description "&lt;p&gt;description&lt;/p&gt;"&#13;
 				id ${viewpointName}.${sectionName_id}&#13;
+				label "Section Label"&#13;
 				index ${sectionIndex}&#13;
 				filtering : true&#13;
 				expanded : false&#13;
 				activities {&#13;
-					activity "${activityName}" {&#13;
+					activity ${activityName} {&#13;
 					description "&lt;p&gt;description&lt;/p&gt;"&#13;
 						id ${viewpointName}.${activityName_id}&#13;
+						label "Activity Label"&#13;
 						index ${activityIndex}&#13;
 						predicated : false&#13;
 						icon : "${iconPath}"&#13;
@@ -37,15 +40,17 @@
 	}&#13;
 }</template>
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_sections" id="2" deleted="false" description="new sections" enabled="true" name="sections">sections {&amp;#13;&#13;
-		section "${sectionName}" {&amp;#13;&#13;
+		section ${sectionName} {&amp;#13;&#13;
 			description "&lt;p&gt;description&lt;/p&gt;"&#13;
 			id ${viewpointName}.${sectionName_id}&amp;#13;&#13;
+			label "Section Label"&#13;
 			index ${sectionIndex}&amp;#13;&#13;
 			filtering : true&amp;#13;&#13;
 			expanded : false&amp;#13;&#13;
 			activities {&amp;#13;&#13;
-				activity "${activityName}" {&amp;#13;&#13;
+				activity ${activityName} {&amp;#13;&#13;
 				id ${viewpointName}.${activityName_id}&amp;#13;&#13;
+				label "Activity Label"&#13;
 				index ${activityIndex}&amp;#13;&#13;
 				predicated : false&amp;#13;&#13;
 				icon : "${iconPath}"&amp;#13;&#13;
@@ -55,17 +60,19 @@
 }&amp;#13;
 </template>
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_activities" id="3" deleted="false" description="new activties" enabled="true" name="activities">activities {&#13;
-	activity "${activityName}" {&#13;
+	activity ${activityName} {&#13;
 		description "&lt;p&gt;description&lt;/p&gt;"&#13;
 		id ${viewpointName}.${activityName_id}&#13;
+		label "Activity Label"&#13;
 		index ${activityIndex}&#13;
 		predicated : false&#13;
 		icon : "${iconPath}"&#13;
 	}&#13;
 }</template>
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_page" id="4" deleted="false" description="new page" enabled="true" name="page">page "${pageName}" {&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_page" id="4" deleted="false" description="new page" enabled="true" name="page">page ${pageName} {&#13;
 	file extension "${fileExtension}"&#13;
 	id ${viewpointName}.${pageName_id}&#13;
+	label "Page Label"&#13;
 	index ${pageIndex}&#13;
 	Overview {&#13;
 		description "&lt;p&gt;&lt;b&gt;title&lt;/b&gt;&lt;/p&gt;&lt;p&gt;description&lt;/p&gt;"&#13;
@@ -79,16 +86,18 @@
 	tab name  "${tabName}"&#13;
 	show viewer : true&#13;
 	sections {&#13;
-		section "${sectionName}" {&#13;
+		section ${sectionName} {&#13;
 			description "&lt;p&gt;description&lt;/p&gt;"&#13;
 			id ${viewpointName}.${sectionName_id}&#13;
+			label "Section Label"&#13;
 			index ${sectionIndex}&#13;
 			filtering : true&#13;
 			expanded : false&#13;
 			activities {&#13;
-				activity "${activityName}" {&#13;
+				activity ${activityName} {&#13;
 					description "&lt;p&gt;description&lt;/p&gt;"&#13;
 					id ${viewpointName}.${activityName_id}&#13;
+					label "Section Label"&#13;
 					index ${activityIndex}&#13;
 					predicated : false&#13;
 					icon : "${iconPath}"&#13;
@@ -97,41 +106,46 @@
 		}&#13;
 	}&#13;
 }</template>
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_section" id="5" deleted="false" description="new section" enabled="true" name="section">section "${sectionName}" {&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_section" id="5" deleted="false" description="new section" enabled="true" name="section">section ${sectionName} {&#13;
 	description "&lt;p&gt;description&lt;/p&gt;"&#13;
 	id ${viewpointName}.${sectionName_id}&#13;
+	label "Section Label"&#13;
 	index ${sectionIndex}&#13;
 	filtering : true&#13;
 	expanded : false&#13;
 	activities {&#13;
-		activity "${activityName}" {&#13;
+		activity ${activityName} {&#13;
 			description "&lt;p&gt;description&lt;/p&gt;"&#13;
 			id ${viewpointName}.${activityName_id}&#13;
+			label "Activity Label"&#13;
 			index ${activityIndex}&#13;
 			predicated : false&#13;
 			icon : "${iconPath}"&#13;
 		}&#13;
 	}&#13;
 }</template>
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_activity" id="6" deleted="false" description="new activity" enabled="true" name="activity">activity "${activityName}" {&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.kw_activity" id="6" deleted="false" description="new activity" enabled="true" name="activity">activity ${activityName} {&#13;
 	description "&lt;p&gt;description&lt;/p&gt;"&#13;
 	id ${viewpointName}.${activityName_id}&#13;
+	label "Activity Label"&#13;
 	index ${activityIndex}&#13;
 	predicated : false&#13;
 	icon : "${iconPath}"&#13;
 }</template>
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.PageExtension" id="7" deleted="false" description="new page extensions" enabled="true" name="page extensions">page extensions {&#13;
 	extended page ${pageId}&#13;
-	section "${sectionName}" {&#13;
+	section ${sectionName} {&#13;
 		description "&lt;p&gt;description&lt;/p&gt;"&#13;
 		id ${viewpointName}.${sectionName_id}&#13;
+		label "Section Label"&#13;
 		index ${sectionIndex}&#13;
 		filtering : true&#13;
 		expanded : false&#13;
 		activities {&#13;
-			activity "${activityName}" {&#13;
+			activity ${activityName} {&#13;
 				description "&lt;p&gt;description&lt;/p&gt;"&#13;
 				id ${viewpointName}.${activityName_id}&#13;
+				label "Activity Label"&#13;
 				index ${activityIndex}&#13;
 				predicated : false&#13;
 				icon : "${iconPath}"&#13;
@@ -141,9 +155,10 @@
 }</template>
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.SectionExtension" id="8" deleted="false" description="new section extensions" enabled="true" name="section extensions">section extensions {&#13;
 	extended section ${sectionId}&#13;
-	activity "${activityName}" {&#13;
+	activity ${activityName} {&#13;
 		description "&lt;p&gt;description&lt;/p&gt;"&#13;
 		id ${viewpointName}.${activityName_id}&#13;
+		label "Activity Label"&#13;
 		index ${activityIndex}&#13;
 		predicated : false&#13;
 		icon : "${iconPath}"&#13;

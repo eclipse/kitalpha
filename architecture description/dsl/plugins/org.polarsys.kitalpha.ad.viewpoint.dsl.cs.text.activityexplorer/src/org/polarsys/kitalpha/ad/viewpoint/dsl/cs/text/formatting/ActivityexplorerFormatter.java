@@ -31,7 +31,7 @@ public class ActivityexplorerFormatter extends AbstractDeclarativeFormatter {
 	protected void configureFormatting(FormattingConfig c) {
 		org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess f = (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess) getGrammarAccess();
 		
-c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
+		c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
         
         
         List<Keyword> ids = f.findKeywords("id");
@@ -85,6 +85,11 @@ c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
             c.setNoLinewrap().after(d);
         }
         
+        List<Keyword> labels = f.findKeywords("label");
+        for (Keyword l : labels) {
+            c.setLinewrap().before(l);
+        }
+        
         List<Pair<Keyword, Keyword>> pairsOff = f.findKeywordPairs("image", "off");
         for (Pair<Keyword, Keyword> pair : pairsOff) {
             c.setLinewrap().before(pair.getFirst());
@@ -96,11 +101,11 @@ c.setLinewrap().before(f.getOverviewAccess().getOverviewKeyword_1());
         }
         
         
-        c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_10_0());
-        c.setLinewrap().before(f.getPageAccess().getTabKeyword_11_0());
-        c.setLinewrap().before(f.getPageAccess().getShowKeyword_13_0());
+        c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_11_0());
+        c.setLinewrap().before(f.getPageAccess().getTabKeyword_12_0());
+        c.setLinewrap().before(f.getPageAccess().getShowKeyword_14_0());
         
-        c.setLinewrap().before(f.getPageAccess().getSectionsKeyword_14_0());
+        c.setLinewrap().before(f.getPageAccess().getSectionsKeyword_15_0());
         
 //        c.setLinewrap().before(f.getSectionExtensionAccess().getFilteringKeyword_10_0());
 //        c.setLinewrap().before(f.getSectionExtensionAccess().getExpandedKeyword_11_0());

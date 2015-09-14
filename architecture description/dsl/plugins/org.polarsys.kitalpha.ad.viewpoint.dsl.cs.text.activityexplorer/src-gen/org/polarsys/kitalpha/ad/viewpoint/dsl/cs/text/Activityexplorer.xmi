@@ -61,7 +61,7 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="page"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -81,6 +81,12 @@
           <elements xsi:type="xtext:Keyword" value="id"/>
           <elements xsi:type="xtext:Assignment" feature="activityExplorerItemID" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="label"/>
+          <elements xsi:type="xtext:Assignment" feature="label" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value="index"/>
@@ -156,7 +162,7 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="section"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -169,6 +175,12 @@
           <elements xsi:type="xtext:Keyword" value="id"/>
           <elements xsi:type="xtext:Assignment" feature="activityExplorerItemID" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="label"/>
+          <elements xsi:type="xtext:Assignment" feature="label" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value="index"/>
@@ -212,7 +224,7 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="activity"/>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Group" cardinality="?">
@@ -225,6 +237,12 @@
           <elements xsi:type="xtext:Keyword" value="id"/>
           <elements xsi:type="xtext:Assignment" feature="activityExplorerItemID" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="label"/>
+          <elements xsi:type="xtext:Assignment" feature="label" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.2"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value="index"/>

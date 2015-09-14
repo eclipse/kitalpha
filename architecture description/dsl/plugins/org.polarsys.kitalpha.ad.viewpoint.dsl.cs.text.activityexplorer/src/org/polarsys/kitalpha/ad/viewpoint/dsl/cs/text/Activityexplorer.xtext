@@ -40,11 +40,12 @@ AbstractPage returns activityExplorer::AbstractPage:
 Page returns activityExplorer::Page:
 	{activityExplorer::Page}
 	
-	'page' name=STRING
+	'page' name=ID
 	'{'
 		('description' description=STRING)?
 		('file' 'extension' fileExtensions = STRING)?
 		('id' activityExplorerItemID=FQN)?
+		('label' label=STRING)?
 		'index' index=EInt
 		
 		(ownedOverview=Overview)?
@@ -68,10 +69,11 @@ Page returns activityExplorer::Page:
 
 Section returns activityExplorer::Section:
 	{activityExplorer::Section}
-	'section' name=STRING
+	'section' name=ID
 	'{'
 		('description' description=STRING)?
 		('id' activityExplorerItemID=FQN)?
+		('label' label=STRING)?
 		'index' index = EInt
 		('filtering' ':' filtering = EBoolean)?
 		('expanded' ':' expanded = EBoolean)?
@@ -83,10 +85,11 @@ Section returns activityExplorer::Section:
 
 Activity returns activityExplorer::Activity:
 	{activityExplorer::Activity}
-	'activity' name=STRING
+	'activity' name=ID
 	'{'
 		('description' description=STRING)?
 		('id' activityExplorerItemID=FQN)?
+		('label' label=STRING)?
 		'index' index=EInt
 		('predicated' ':' hasPredicate=EBoolean)?
 		('icon' ':' imagePathOff=STRING)?

@@ -79,9 +79,10 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * Constraint:
 	 *     (
-	 *         name=STRING 
+	 *         name=ID 
 	 *         description=STRING? 
 	 *         activityExplorerItemID=FQN? 
+	 *         label=STRING? 
 	 *         index=EInt 
 	 *         hasPredicate=EBoolean? 
 	 *         imagePathOff=STRING?
@@ -113,10 +114,11 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * Constraint:
 	 *     (
-	 *         name=STRING 
+	 *         name=ID 
 	 *         description=STRING? 
 	 *         fileExtensions=STRING? 
 	 *         activityExplorerItemID=FQN? 
+	 *         label=STRING? 
 	 *         index=EInt 
 	 *         ownedOverview=Overview? 
 	 *         (imagePathOn=STRING? imagePathOff=STRING?)? 
@@ -143,9 +145,10 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * Constraint:
 	 *     (
-	 *         name=STRING 
+	 *         name=ID 
 	 *         description=STRING? 
 	 *         activityExplorerItemID=FQN? 
+	 *         label=STRING? 
 	 *         index=EInt 
 	 *         filtering=EBoolean? 
 	 *         expanded=EBoolean? 

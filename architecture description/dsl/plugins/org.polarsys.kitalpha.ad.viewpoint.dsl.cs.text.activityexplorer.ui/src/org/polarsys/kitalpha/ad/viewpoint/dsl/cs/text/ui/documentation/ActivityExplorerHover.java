@@ -25,6 +25,7 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.util.Pair;
 import org.eclipse.xtext.util.Tuples;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ActivityExplorerItem;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Overview;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
@@ -149,7 +150,9 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		StringBuffer result = new StringBuffer();
 		EList<Section> ownedSections = page.getOwnedSections();
 		
-		result.append("<table border='0' width='100%'><tr><td colspan='2'><b>").append(page.getName()).append("</b></td></tr>");
+		result.append("<table border='0' width='100%'><tr><td colspan='2'><b>");
+		setLabelOrName(page, result);
+		result.append("</b></td></tr>");
 		result.append("<tr><td width='20'></td><td>");
 		for (Section section : ownedSections) {
 			result.append(getSectionHTMLText(section));
@@ -165,7 +168,7 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		result.append("<table border='0' width='100%'>");
 		result.append("<tr>");
 		result.append("<td  colspan='2' style='background:#CFCBFF; color:#333333'>");
-		result.append(section.getName());
+		setLabelOrName(section, result);
 		result.append("</td>");
 		result.append("</tr><tr>");
 		result.append("<td width='80'></td><td>");
@@ -220,7 +223,10 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 	}
 
 	private Object getLink(Activity activity) {
-		return "<a style='text-decoration: none; color:#000099'>" + activity.getName() + "</a>";
+		String label = activity.getLabel();
+		if (label == null || label.isEmpty())
+			label = activity.getName();
+		return "<a style='text-decoration: none; color:#000099'>" + label + "</a>";
 	}
 
 	private Object getActivityIcon(Activity activity) {
@@ -319,5 +325,13 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		else
 			buf.append("icons/").append(iconName);
 		buf.append("'/>");
+	}
+	
+	private void setLabelOrName(ActivityExplorerItem item, StringBuffer buffer){
+		String label = item.getLabel();
+		if (label == null || label.isEmpty())
+			label = item.getName();
+		
+		buffer.append(label);
 	}
 }
