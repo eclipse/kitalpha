@@ -72,4 +72,14 @@ Contributors:
 	        name="build"
 	        path="/org.polarsys.kitalpha.vp.componentsampleframework.vpdsl/model/ComponentSampleFramework.build.vptext"/>
 	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsampleframework.vpdsl.resource.ComponentSampleFramework.activityexplorer"
+	        tags="Viewpoint"
+	        name="activityexplorer"
+	        path="/org.polarsys.kitalpha.vp.componentsampleframework.vpdsl/model/ComponentSampleFramework.activityexplorer.vptext"/>
+	</extension>
 </plugin>

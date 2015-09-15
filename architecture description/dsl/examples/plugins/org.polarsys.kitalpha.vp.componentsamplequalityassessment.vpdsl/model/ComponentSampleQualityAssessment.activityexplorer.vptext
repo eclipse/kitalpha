@@ -1,0 +1,39 @@
+/**
+ * Copyright (c) PolarSys, 2015. All rights reserved. 
+ *
+ *	Viewpoint ComponentSampleQualityAssessment
+ *	@author: S0020807
+ *	@date: 14/09/15
+ *
+ */
+activity explorer ComponentSampleQualityAssessment.activityexplorer {
+	page extensions {
+		extended page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
+		section ComponentSampleQualityAssessmentViewpointActivation {
+			description "<p>Start/Stop Component sample Quality Assessment Viewpoint</p>"
+			id org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.stop.^section
+			label "Component Sample Quality Assessment Viewpoint"
+			index 5
+			filtering : false
+			expanded : false
+			activities {
+				activity StartComponentSampleQualityAssessmentViewpoint {
+					description "Start Component sample Quality Assessment Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.^activity
+					label "Start"
+					index 1
+					predicated : false
+					icon : "start.png"
+				}
+				activity StopComponentSampleQualityAssessmentViewpoint {
+					description "Stop Component sample Quality Assessment Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.^activity
+					label "Stop"
+					index 2
+					predicated : false
+					icon : "stop.png"
+				}
+			}
+		}
+	}
+}

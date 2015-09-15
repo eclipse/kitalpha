@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension point="org.eclipse.amalgam.explorer.activity.ui.pagesProvider">
+	<Page
+		class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.page.ComponentSampleArchitecturePage"
+        id="org.polarsys.kitalpha.vp.componentsample.activity.explorer.architecture" 
+		imageOff="icons/csa_off.png" 
+		imageOn="icons/csa_on.png"
+        index="1"
+        tabName="Component Sample Architecture"
+        title="Component Sample Architecture"
+        viewer="true">
+			<Description>
+				Description body text
+			</Description>
+			<Predicate
+				class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.predicate.PComponentSampleArchitecturePredicate">
+			</Predicate>
+
+		<Overview imageOff="icons/csa_off.png" imageOn="icons/csa_on.png">
+			<Description>
+				&lt;p&gt;&lt;b&gt;Component Sample Architecture&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Create a new Component Sample Architecture&lt;/p&gt;
+			</Description>
+		</Overview>
+
+		<Section
+			   expanded="false"
+			   filtering="true"
+			   id="org.polarsys.kitalpha.vp.componentsample.activity.explorer.architecture.section"	   
+			   index="1"
+			   name="Diagrams of Component Sample Architecture">
+			<Description>
+				&lt;p&gt;Create a new Component Sample Architecture Diagram&lt;/p&gt;
+			</Description>
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity.SetModelNameActivity"
+				id="org.polarsys.kitalpha.vp.componentsample.activity.explorer.architecture.name.setting.activity"
+				index="1" 
+				image="icons/set_name2.png"
+				name="Set Name To Component Sample Model">
+			<Description>
+				Set a name to Component Sample Model
+			</Description>			</Activity>
+
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity.CreateNewDiagramActivity"
+				id="org.polarsys.kitalpha.vp.componentsample.activity.explorer.architecture.activity"
+				index="2" 
+				image="icons/create_diagram.png"
+				name="Create a new Diagram">
+			<Description>
+				Create a new Component sample Diagram
+			</Description>			</Activity>
+		</Section>
+	</Page>
+</extension>
+<extension
+      point="org.eclipse.amalgam.explorer.activity.ui.sectionsProvider">
+
+		<Section
+			   expanded="false"
+			   filtering="false"
+			   id="org.polarsys.kitalpha.vp.componentsample.start.stop.section"	   
+			   index="3"
+			   name="Component Sample Viewpoint"
+			   pageId="org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management">
+			<Description>
+				&lt;p&gt;Start/Stop Component sample Viewpoint&lt;/p&gt;
+			</Description>
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity.StartComponentSampleViewpointActivity"
+				id="org.polarsys.kitalpha.vp.componentsample.start.activity"
+				index="1" 
+				image="icons/start.png"
+				name="Start">
+			<Description>
+				Start Component sample Viewpoint
+			</Description>			</Activity>
+
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity.StopComponentSampleViewpointActivity"
+				id="org.polarsys.kitalpha.vp.componentsample.start.activity"
+				index="2" 
+				image="icons/stop.png"
+				name="Stop">
+			<Description>
+				Stop Component sample Viewpoint
+			</Description>			</Activity>
+		</Section>
+</extension>
+</plugin>

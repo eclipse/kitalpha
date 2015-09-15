@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+      point="org.eclipse.amalgam.explorer.activity.ui.sectionsProvider">
+
+		<Section
+			   expanded="false"
+			   filtering="false"
+			   id="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.stop.section"	   
+			   index="4"
+			   name="Component Sample Performance Viewpoint"
+			   pageId="org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management">
+			<Description>
+				&lt;p&gt;Start/Stop Component sample Performance Viewpoint&lt;/p&gt;
+			</Description>
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.activity.StartComponentSamplePerformanceViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.activity"
+				index="1" 
+				image="icons/start.png"
+				name="Start">
+			<Description>
+				Start Component sample Performance Viewpoint
+			</Description>			</Activity>
+
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.activity.StopComponentSamplePerformanceViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.activity"
+				index="2" 
+				image="icons/stop.png"
+				name="Stop">
+			<Description>
+				Stop Component sample Performance Viewpoint
+			</Description>			</Activity>
+		</Section>
+</extension>
+</plugin>

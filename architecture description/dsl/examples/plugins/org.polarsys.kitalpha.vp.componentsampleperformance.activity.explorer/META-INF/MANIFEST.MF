@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Explorer
+Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Activator: org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.Activator
+Require-Bundle: org.eclipse.ui.workbench,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms,
+ org.eclipse.ui,
+ org.eclipse.amalgam.explorer.activity.ui,
+ org.eclipse.emf.ecore,
+ org.eclipse.sirius,
+ org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer;visibility:=reexport
+Export-Package: org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer,
+ org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.activity

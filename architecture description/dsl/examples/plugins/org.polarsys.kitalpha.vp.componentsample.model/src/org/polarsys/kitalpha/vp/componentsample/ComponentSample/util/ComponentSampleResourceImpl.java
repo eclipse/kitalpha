@@ -19,10 +19,12 @@ import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLLoad;
@@ -182,6 +184,34 @@ public class ComponentSampleResourceImpl extends XMIResourceImpl {
 				Boolean.TRUE);
 		getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA,
 				Boolean.TRUE);
+	}
+
+	@Override
+	protected void detachedHelper(EObject eObject) {
+		if (useIDs() && unloadingContents == null) {
+			if (useUUIDs()) {
+				DETACHED_EOBJECT_TO_ID_MAP.put(eObject, getID(eObject));
+			}
+
+			if (idToEObjectMap != null && eObjectToIDMap != null) {
+				setID(eObject, null);
+			}
+		}
+		resourceImplDetachedHelper(eObject);
+	}
+
+	private void resourceImplDetachedHelper(EObject eObject) {
+		Map<String, EObject> map = getIntrinsicIDToEObjectMap();
+		if (map != null) {
+			String id = EcoreUtil.getID(eObject);
+			if (id != null) {
+				map.remove(id);
+			}
+		}
+
+		if (isTrackingModification()) {
+			eObject.eAdapters().remove(modificationTrackingAdapter);
+		}
 	}
 
 } //ComponentSampleResourceImpl

@@ -64,4 +64,14 @@ Contributors:
 	        name="diagram"
 	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.diagram.vptext"/>
 	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.resource.ComponentSampleQualityAssessment.activityexplorer"
+	        tags="Viewpoint"
+	        name="activityexplorer"
+	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.activityexplorer.vptext"/>
+	</extension>
 </plugin>
