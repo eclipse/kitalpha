@@ -4,7 +4,7 @@
       label="Kitalpha Runtime Feature (Incubation)"
       version="0.5.1.qualifier"
       provider-name="%providerName"
-      plugin="org.polarsys.kitalpha.product">
+      >
 
    <description>
       %description
