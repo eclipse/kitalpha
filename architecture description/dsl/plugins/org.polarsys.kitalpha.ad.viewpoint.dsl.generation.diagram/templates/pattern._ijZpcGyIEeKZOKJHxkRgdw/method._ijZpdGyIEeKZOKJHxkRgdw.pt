@@ -1,1 +1,3 @@
-return super.preCondition(ctx) && ! ((ActionSet)parameter).getActions().isEmpty();
+final ActionSet actionSet = (ActionSet)parameter;
+final boolean hasActions = actionSet.getActions().isEmpty() == false || actionSet.getOpenActions().isEmpty() == false;
+return super.preCondition(ctx) && hasActions;
