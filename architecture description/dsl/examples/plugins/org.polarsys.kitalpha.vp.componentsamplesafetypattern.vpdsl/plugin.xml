@@ -63,4 +63,14 @@ Contributors:
 	        name="diagram"
 	        path="/org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl/model/ComponentSampleSafetyPattern.diagram.vptext"/>
 	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl.resource.ComponentSampleSafetyPattern.activityexplorer"
+	        tags="Viewpoint"
+	        name="activityexplorer"
+	        path="/org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl/model/ComponentSampleSafetyPattern.activityexplorer.vptext"/>
+	</extension>
 </plugin>

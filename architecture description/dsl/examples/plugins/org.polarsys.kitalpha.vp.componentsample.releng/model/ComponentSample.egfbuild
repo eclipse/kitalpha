@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="ASCII"?>
-<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_hbuzMN06EeSdX-jDtPq_XQ" name="ComponentSample">
-  <jobs xmi:id="_hbuzMd06EeSdX-jDtPq_XQ" name="main">
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_hbuzMt06EeSdX-jDtPq_XQ" type="Result"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_hbuzM906EeSdX-jDtPq_XQ" name="viewpoint_ComponentSample" id="viewpoint_ComponentSample"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_hbuzNN06EeSdX-jDtPq_XQ"/>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_PBs3cFrnEeWKQ63gCNyo_g" name="ComponentSample">
+  <jobs xmi:id="_PBs3cVrnEeWKQ63gCNyo_g" name="main">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_PB2BYFrnEeWKQ63gCNyo_g" type="Result"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_PB2BYVrnEeWKQ63gCNyo_g" name="viewpoint_ComponentSample" id="viewpoint_ComponentSample"/>
+    <scms xsi:type="buildscm:SVN" xmi:id="_PCStUFrnEeWKQ63gCNyo_g"/>
   </jobs>
-  <jobs xmi:id="_hbuzNd06EeSdX-jDtPq_XQ" name="build_ComponentSample">
-    <properties xmi:id="_hbuzNt06EeSdX-jDtPq_XQ" key="target.location" value="C:/eclipse.exe" type="INLINED"/>
-    <properties xmi:id="_hbuzN906EeSdX-jDtPq_XQ" key="repository.location" value="ComponentSample/ComponentSample.git"/>
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_hbuzON06EeSdX-jDtPq_XQ" type="Result"/>
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_hbuzOd06EeSdX-jDtPq_XQ" name="ComponentSample">
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_hbuzOt06EeSdX-jDtPq_XQ" path="${target.location}"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_hbuzO906EeSdX-jDtPq_XQ" id="org.polarsys.kitalpha.vp"/>
+  <jobs xmi:id="_PCStUVrnEeWKQ63gCNyo_g" name="build_ComponentSample">
+    <properties xmi:id="_PCStUlrnEeWKQ63gCNyo_g" key="target.location" value="D:/Eclipse/Platform/Kitalpha-0.5/kitalpha_juno_0.5.0-20140921_00-01-01/eclipse.exe" type="INLINED"/>
+    <properties xmi:id="_PCStU1rnEeWKQ63gCNyo_g" key="repository.location" value="ComponentSample/ComponentSample.git"/>
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_PCStVFrnEeWKQ63gCNyo_g" type="Result"/>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_PCStVVrnEeWKQ63gCNyo_g" name="ComponentSample">
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_PCStVlrnEeWKQ63gCNyo_g" path="${target.location}"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_PCStV1rnEeWKQ63gCNyo_g" id="org.polarsys.kitalpha.vp"/>
     </steps>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_hbuzPN06EeSdX-jDtPq_XQ" component="_hbuzO906EeSdX-jDtPq_XQ" generateSources="false" generateDropins="true"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_hbuzPd06EeSdX-jDtPq_XQ" name="ComponentSample feature" id="viewpoint_ComponentSample"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_hbuzPt06EeSdX-jDtPq_XQ">
-      <locations xmi:id="_hbuzP906EeSdX-jDtPq_XQ" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_PCStWFrnEeWKQ63gCNyo_g" component="_PCStV1rnEeWKQ63gCNyo_g" generateSources="false" generateDropins="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_PCStWVrnEeWKQ63gCNyo_g" name="ComponentSample feature" id="viewpoint_ComponentSample"/>
+    <scms xsi:type="buildscm:SVN" xmi:id="_PCStWlrnEeWKQ63gCNyo_g">
+      <locations xmi:id="_PCStW1rnEeWKQ63gCNyo_g" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
     </scms>
   </jobs>
 </buildcore:Chain>

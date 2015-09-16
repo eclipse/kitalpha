@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+      point="org.eclipse.amalgam.explorer.activity.ui.sectionsProvider">
+
+		<Section
+			   expanded="false"
+			   filtering="false"
+			   id="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.stop.section"	   
+			   index="5"
+			   name="Component Sample Quality Assessment Viewpoint"
+			   pageId="org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management">
+			<Description>
+				&lt;p&gt;Start/Stop Component sample Quality Assessment Viewpoint&lt;/p&gt;
+			</Description>
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer.activity.StartComponentSampleQualityAssessmentViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.activity"
+				index="1" 
+				image="icons/start.png"
+				name="Start">
+			<Description>
+				Start Component sample Quality Assessment Viewpoint
+			</Description>			</Activity>
+
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer.activity.StopComponentSampleQualityAssessmentViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.activity"
+				index="2" 
+				image="icons/stop.png"
+				name="Stop">
+			<Description>
+				Stop Component sample Quality Assessment Viewpoint
+			</Description>			</Activity>
+		</Section>
+</extension>
+</plugin>

@@ -12,9 +12,9 @@
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_NbesRkI_EeSvPZ_bPTSMKQ"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_zQDwcN06EeSdX-jDtPq_XQ" name="ComponentSamplePerformance invocation"
+      <invocations xmi:id="_I5jjUFt9EeWgnNCY2z_OeQ" name="ComponentSamplePerformance invocation"
           invokedActivity="#_NbesR0I_EeSvPZ_bPTSMKQ">
-        <invocationContractContainer xmi:id="_zQDwcd06EeSdX-jDtPq_XQ"/>
+        <invocationContractContainer xmi:id="_I5jjUVt9EeWgnNCY2z_OeQ"/>
       </invocations>
     </orchestration>
   </fcore:FactoryComponent>
@@ -28,9 +28,9 @@
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_NbesTUI_EeSvPZ_bPTSMKQ"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_zQNhcN06EeSdX-jDtPq_XQ" name="ComponentSamplePerformance invocation"
+      <invocations xmi:id="_I53FUFt9EeWgnNCY2z_OeQ" name="ComponentSamplePerformance invocation"
           invokedActivity="#_NbesUEI_EeSvPZ_bPTSMKQ">
-        <invocationContractContainer xmi:id="_zQNhcd06EeSdX-jDtPq_XQ"/>
+        <invocationContractContainer xmi:id="_I53FUVt9EeWgnNCY2z_OeQ"/>
       </invocations>
     </orchestration>
   </fcore:FactoryComponent>
@@ -44,27 +44,27 @@
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_NbesU0I_EeSvPZ_bPTSMKQ">
       <orchestrationParameterContainer xmi:id="_NbesVEI_EeSvPZ_bPTSMKQ">
         <orchestrationParameters xmi:id="_NbesVUI_EeSvPZ_bPTSMKQ" name="generation extension"
-            invocationContracts="#_zQNhdt06EeSdX-jDtPq_XQ #_zQNhe906EeSdX-jDtPq_XQ">
+            invocationContracts="#_I53FVlt9EeWgnNCY2z_OeQ #_I53FW1t9EeWgnNCY2z_OeQ">
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_NbesVkI_EeSvPZ_bPTSMKQ"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_zQNhct06EeSdX-jDtPq_XQ" name="emf.gen.model.common invocation"
+      <invocations xmi:id="_I53FUlt9EeWgnNCY2z_OeQ" name="emf.gen.model.common invocation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.model.fcore#_fpAN4VhCEd-5FJ833LkcRA">
-        <invocationContractContainer xmi:id="_zQNhc906EeSdX-jDtPq_XQ">
-          <invocationContracts xmi:id="_zQNhdN06EeSdX-jDtPq_XQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.model.fcore#_orkvcVjjEd-5FJ833LkcRA">
-            <type xmi:type="domain:TypeDomain" xmi:id="_zQNhdd06EeSdX-jDtPq_XQ" domain="#_NeKM0EI_EeSvPZ_bPTSMKQ"/>
+        <invocationContractContainer xmi:id="_I53FU1t9EeWgnNCY2z_OeQ">
+          <invocationContracts xmi:id="_I53FVFt9EeWgnNCY2z_OeQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.model.fcore#_orkvcVjjEd-5FJ833LkcRA">
+            <type xmi:type="domain:TypeDomain" xmi:id="_I53FVVt9EeWgnNCY2z_OeQ" domain="#_NeKM0EI_EeSvPZ_bPTSMKQ"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_zQNhdt06EeSdX-jDtPq_XQ" orchestrationParameter="#_NbesVUI_EeSvPZ_bPTSMKQ"
+          <invocationContracts xmi:id="_I53FVlt9EeWgnNCY2z_OeQ" orchestrationParameter="#_NbesVUI_EeSvPZ_bPTSMKQ"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.model.fcore#_orkvdVjjEd-5FJ833LkcRA"/>
         </invocationContractContainer>
       </invocations>
-      <invocations xmi:id="_zQNhd906EeSdX-jDtPq_XQ" name="emf.gen.edit.common invocation"
+      <invocations xmi:id="_I53FV1t9EeWgnNCY2z_OeQ" name="emf.gen.edit.common invocation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.edit.fcore#__rEKAFjjEd-5FJ833LkcRA">
-        <invocationContractContainer xmi:id="_zQNheN06EeSdX-jDtPq_XQ">
-          <invocationContracts xmi:id="_zQNhed06EeSdX-jDtPq_XQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.edit.fcore#__rEKAljjEd-5FJ833LkcRA">
-            <type xmi:type="domain:TypeDomain" xmi:id="_zQNhet06EeSdX-jDtPq_XQ" domain="#_NeKM0EI_EeSvPZ_bPTSMKQ"/>
+        <invocationContractContainer xmi:id="_I53FWFt9EeWgnNCY2z_OeQ">
+          <invocationContracts xmi:id="_I53FWVt9EeWgnNCY2z_OeQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.edit.fcore#__rEKAljjEd-5FJ833LkcRA">
+            <type xmi:type="domain:TypeDomain" xmi:id="_I53FWlt9EeWgnNCY2z_OeQ" domain="#_NeKM0EI_EeSvPZ_bPTSMKQ"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_zQNhe906EeSdX-jDtPq_XQ" orchestrationParameter="#_NbesVUI_EeSvPZ_bPTSMKQ"
+          <invocationContracts xmi:id="_I53FW1t9EeWgnNCY2z_OeQ" orchestrationParameter="#_NbesVUI_EeSvPZ_bPTSMKQ"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.edit.fcore#__rEKBljjEd-5FJ833LkcRA"/>
         </invocationContractContainer>
       </invocations>

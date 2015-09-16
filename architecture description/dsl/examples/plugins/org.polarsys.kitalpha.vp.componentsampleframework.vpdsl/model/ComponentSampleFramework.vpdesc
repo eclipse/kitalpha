@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vpbuild="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpservices="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" name="ComponentSampleFramework" shortName="ComponentSampleFramework">
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpbuild="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpservices="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" name="ComponentSampleFramework" shortName="ComponentSampleFramework">
   <VP_Data name="ComponentSampleFramework.data"/>
   <VP_Aspects xsi:type="vpconf:Configuration" name="ComponentSampleFramework.conf">
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
@@ -20,5 +20,18 @@
     <mapped_repositories location="ComponentSampleFramework/ComponentSampleFramework.git">
       <features name="org.polarsys.kitalpha.vp.ComponentSampleFramework.feature"/>
     </mapped_repositories>
+  </VP_Aspects>
+  <VP_Aspects xsi:type="viewpointactivityexplorer:ViewpointActivityExplorer" name="ComponentSampleFramework.activityexplorer">
+    <ownedPages xsi:type="viewpointactivityexplorer:Page" name="ComponentSampleViewpointManagementPage" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management" index="2" label="Component Sample Viewpoints" imagePathOff="vp_management_off.png" imagePathOn="vp_management_on.png" tabName="Component Sample Viewpoints" fileExtensions="componentsample">
+      <ownedSections name="StopOrStartAllViewpoints" description="&lt;p>Start or Stop all component sample viewpoints.&lt;/p>" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsampleframework.start.stop.all.componentsample.viewpoints" index="1" label="Start or Stop All Component Sample Viewpoints">
+        <ownedActivities imagePathOff="start_all.png" name="StartAll" description="Start All Component sample Viewpoints" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsampleframework.start.all.viewpoints" index="1" label="Start All"/>
+        <ownedActivities imagePathOff="stop_all.png" name="StopAll" description="Stop All Component sample Viewpoints" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsampleframework.stop.all.viewpoints" index="2" label="Stop All"/>
+      </ownedSections>
+      <ownedSections name="StartStopComponentSampleAF" description="&lt;p>Start/Stop Component sample framework viewpoint&lt;/p>" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.section" index="2" label="Component Sample Framework">
+        <ownedActivities imagePathOff="start.png" name="StartComponentSampleFramework" description="Start Component sample framework viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.start.section" index="1" label="Start"/>
+        <ownedActivities imagePathOff="Stop.png" name="StopComponentSampleFramework" description="Stop Component sample framework viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.stop.section" index="2" label="Stop"/>
+      </ownedSections>
+      <ownedOverview imagePathOff="vp_management_off.png" imagePathOn="vp_management_on.png" description="&lt;p>&lt;b>Component Sample Viewpoints&lt;/b>&lt;/p>&lt;p>Start and Stop Component Sample Viewpoints&lt;/p>"/>
+    </ownedPages>
   </VP_Aspects>
 </vpdesc:Viewpoint>

@@ -1,0 +1,39 @@
+/**
+ * Copyright (c) PolarSys, 2015. All rights reserved. 
+ *
+ *	Viewpoint ComponentSamplePerformance
+ *	@author: S0020807
+ *	@date: 14/09/15
+ *
+ */
+activity explorer ComponentSamplePerformance.activityexplorer {
+	page extensions {
+		extended page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
+		section ComponentSamplePerformanceViewpointActivation {
+			description "<p>Start/Stop Component sample Performance Viewpoint</p>"
+			id org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.stop.^section
+			label "Component Sample Performance Viewpoint"
+			index 4
+			filtering : false
+			expanded : false
+			activities {
+				activity StartComponentSamplePerformanceViewpoint {
+					description "Start Component sample Performance Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.^activity
+					label "Start"
+					index 1
+					predicated : false
+					icon : "start.png"
+				}
+				activity StopComponentSamplePerformanceViewpoint {
+					description "Stop Component sample Performance Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.^activity
+					label "Stop"
+					index 2
+					predicated : false
+					icon : "stop.png"
+				}
+			}
+		}
+	}
+}

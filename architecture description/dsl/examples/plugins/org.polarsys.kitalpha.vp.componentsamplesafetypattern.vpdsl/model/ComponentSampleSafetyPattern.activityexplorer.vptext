@@ -1,0 +1,41 @@
+/**
+ * Copyright (c) PolarSys, 2015. All rights reserved. 
+ *
+ *	Viewpoint ComponentSampleSafetyPattern
+ *	@author: S0020807
+ *	@date: 14/09/15
+ * 
+ */
+activity explorer ComponentSampleSafetyPattern.activityexplorer {
+	
+	page extensions {
+		extended page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
+		section ComponentSampleSafetyPatternViewpointActivation {
+			description "<p>Start/Stop Component sample Safety Pattern Viewpoint</p>"
+			id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.start.stop.^section
+			label "Component Sample Safety Pattern Viewpoint"
+			index 7
+			filtering : false
+			expanded : false
+			activities {
+				activity StartComponentSampleSafetyPatternViewpoint {
+					description "Start Component sample Safety Pattern Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.start.^activity
+					label "Start"
+					index 1
+					predicated : false
+					icon : "start.png"
+				}
+				activity StopComponentSampleSafetyPatternViewpoint {
+					description "Stop Component sample Safety Pattern Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.start.^activity
+					label "Stop"
+					index 2
+					predicated : false
+					icon : "stop.png"
+				}
+			}
+		}
+	}
+
+}
