@@ -12,12 +12,12 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.exception.SelfContainedAspectException;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
@@ -33,8 +33,9 @@ public class ActivityExplorerAspectHelper {
 
 	/**
 	 * @return IDs of all vpdsl pages accessible by viewpoint dependencies
+	 * @throws SelfContainedAspectException 
 	 */
-	public static List<String> getUsedViewpointPagesIDs(EObject anyModelElement){
+	public static List<String> getUsedViewpointPagesIDs(EObject anyModelElement) throws SelfContainedAspectException{
 		final List<String> result = new ArrayList<String>();
 		List<Viewpoint> usedViewpoints = getUsedViewpoints(anyModelElement);
 		for (Viewpoint viewpoint : usedViewpoints) 
@@ -48,8 +49,9 @@ public class ActivityExplorerAspectHelper {
 	
 	/**
 	 * @return IDs of all vpdsl pages accessible by viewpoint dependencies
+	 * @throws SelfContainedAspectException 
 	 */
-	public static List<String> getUsedViewpointSectionsIDs(EObject anyModelElement){
+	public static List<String> getUsedViewpointSectionsIDs(EObject anyModelElement) throws SelfContainedAspectException{
 		final List<String> result = new ArrayList<String>();
 		List<Viewpoint> usedViewpoints = getUsedViewpoints(anyModelElement);
 		for (Viewpoint viewpoint : usedViewpoints) 
@@ -137,29 +139,48 @@ public class ActivityExplorerAspectHelper {
 				}
 			}
 		}
-		else
-		{
-			throw new RuntimeException("Are you sure that the element is a viewpoint element ??");
-		}
 		return null;
 	}
 	
 	/**
 	 * @param anyModelElement any element of a viewpoint
 	 * @return Return the list of used {@link Viewpoint} by the viewpoint containing the anyModelElement object
+	 * @throws SelfContainedAspectException 
 	 */
-	private static final List<Viewpoint> getUsedViewpoints(EObject anyModelElement){
-		EObject rootContainer = anyModelElement.eResource().getContents().get(0);
+	private static final List<Viewpoint> getUsedViewpoints(EObject anyModelElement) throws SelfContainedAspectException{
+		List<Viewpoint> result = new ArrayList<Viewpoint>();
+		EObject rootContainer = EcoreUtil.getRootContainer(anyModelElement);
 		if (rootContainer instanceof Viewpoint)
 		{
 			final Viewpoint viewpoint = (Viewpoint) rootContainer;
-			return viewpoint.getUseViewpoint();
+			final EList<Viewpoint> usedViewpoints = viewpoint.getUseViewpoint();
+			if (usedViewpoints.isEmpty() == false)
+				result.addAll(usedViewpoints);
 			
+			final EList<Viewpoint> parentViewpoint = viewpoint.getParents();
+			if (parentViewpoint.isEmpty() == false)
+				result.addAll(parentViewpoint);
+			
+			final EList<Viewpoint> dependencyViewpoint = viewpoint.getDependencies();
+			if (dependencyViewpoint.isEmpty() == false)
+				result.addAll(dependencyViewpoint);
+			
+			List<Viewpoint> result2 = new ArrayList<Viewpoint>();
+			for (Viewpoint iViewpoint : result) 
+			{
+				final List<Viewpoint> recursiveViewpoints = getUsedViewpoints(iViewpoint);
+				if (recursiveViewpoints.isEmpty() == false)
+					result2.addAll(recursiveViewpoints);
+			}
+			
+			if (result2.isEmpty() == false)
+				result.addAll(result2);
 		}
-//		else
-//		{
-//			throw new RuntimeException("Are you sure that the element is a viewpoint element ??");
-//		}
-		return Collections.emptyList();
+		else
+		{
+			throw new SelfContainedAspectException();
+		}
+		
+		return result;
 	}
 }

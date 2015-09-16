@@ -14,6 +14,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.exception.SelfContainedAspectException;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
@@ -43,9 +44,15 @@ public class PageAndSectionExtendedElementIDExists implements IAdditionalConstra
 	public ValidationStatus validationRules(Object data) {
 		if (data instanceof PageExtension)
 		{
+			List<String> usedViewpointPagesIDs;
+			try {
+				usedViewpointPagesIDs = ActivityExplorerAspectHelper.getUsedViewpointPagesIDs((EObject) data);
+			} catch (SelfContainedAspectException e) {
+				return ValidationStatus.None;
+			}
+			
 			final String extendedPageID = ((PageExtension) data).getExtendedPageID();
 			List<String> plateformePagesIDs = ActivityExplorerExtensionPointHelper.getPlateformePagesIDs();
-			List<String> usedViewpointPagesIDs = ActivityExplorerAspectHelper.getUsedViewpointPagesIDs((EObject) data);
 			List<String> viewpointPagesIDs = ActivityExplorerAspectHelper.getViewpointPagesIDs((EObject) data);
 			boolean idFound = plateformePagesIDs.contains(extendedPageID) || usedViewpointPagesIDs.contains(extendedPageID) || viewpointPagesIDs.contains(extendedPageID);
 			return idFound ? ValidationStatus.Ok : ValidationStatus.Error;
@@ -53,9 +60,15 @@ public class PageAndSectionExtendedElementIDExists implements IAdditionalConstra
 		
 		if (data instanceof SectionExtension)
 		{
+			List<String> usedViewpointSectionsIDs;
+			try {
+				usedViewpointSectionsIDs = ActivityExplorerAspectHelper.getUsedViewpointSectionsIDs((EObject) data);
+			} catch (SelfContainedAspectException e) {
+				return ValidationStatus.None;
+			}
+			
 			final String extendedSectionID = ((SectionExtension) data).getExtendedSectionID();
 			List<String> plateformeSectionsIDs = ActivityExplorerExtensionPointHelper.getPlateformeSectionsIDs();
-			List<String> usedViewpointSectionsIDs = ActivityExplorerAspectHelper.getUsedViewpointSectionsIDs((EObject) data);
 			List<String> viewpointSectionsIDs = ActivityExplorerAspectHelper.getViewpointSectionsIDs((EObject) data);
 			boolean idFound = plateformeSectionsIDs.contains(extendedSectionID) || usedViewpointSectionsIDs.contains(extendedSectionID) || viewpointSectionsIDs.contains(extendedSectionID);
 			return  idFound ? ValidationStatus.Ok : ValidationStatus.Error;
