@@ -31,7 +31,7 @@ public abstract class AbstractAFSpecProjectWizardPage  extends WizardPage {
 	 * @return True if data are well formated, false else.
 	 */
 	protected boolean vpDataChanged(String data, String message, boolean isProject) {
-		String msg = "\n Only [a-z A-Z 0-9 _ -] character are allowed";
+		String msg = "\n Only [a-z A-Z 0-9 _] character are allowed";
 		if (! NamesValidityChecker.isValid(data, isProject))
 		{
 			updateStatus(message + msg);
