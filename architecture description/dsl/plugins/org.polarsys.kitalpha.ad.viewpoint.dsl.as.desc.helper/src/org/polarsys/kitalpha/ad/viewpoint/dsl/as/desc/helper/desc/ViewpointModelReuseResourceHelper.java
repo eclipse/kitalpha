@@ -157,11 +157,11 @@ public class ViewpointModelReuseResourceHelper {
 		switch (resourceLocation) 
 		{
 			case WORSPACE:
-				uri = URI.createPlatformResourceURI(resourcePath, false);
+				uri = URI.createURI("platform:/resource" + resourcePath, false);
 			break;
 			case PLATFORM:
 			case TARGET:
-				uri = URI.createPlatformPluginURI(resourcePath, false);
+				uri = URI.createURI("platform:/plugin" + resourcePath, false);
 			break;
 		}
 		return uri;
