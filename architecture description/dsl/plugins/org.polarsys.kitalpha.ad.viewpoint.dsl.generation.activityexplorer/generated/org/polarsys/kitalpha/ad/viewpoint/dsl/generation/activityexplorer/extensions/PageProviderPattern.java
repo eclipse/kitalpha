@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,10 +21,8 @@ public class PageProviderPattern {
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = NL
-			+ "<extension point=\"org.eclipse.amalgam.explorer.activity.ui.pagesProvider\">"
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = NL + "<extension point=\"org.eclipse.amalgam.explorer.activity.ui.pagesProvider\">"
 			+ NL + "\t<Page" + NL + "\t\tclass=\"";
 	protected final String TEXT_2 = "\"" + NL + "        id=\"";
 	protected final String TEXT_3 = "\"";
@@ -43,10 +41,8 @@ public class PageProviderPattern {
 	protected final String TEXT_16 = "\"";
 	protected final String TEXT_17 = " imageOn=\"";
 	protected final String TEXT_18 = "\"";
-	protected final String TEXT_19 = ">" + NL + "\t\t\t<Description>" + NL
-			+ "\t\t\t\t";
-	protected final String TEXT_20 = NL + "\t\t\t</Description>" + NL
-			+ "\t\t</Overview>";
+	protected final String TEXT_19 = ">" + NL + "\t\t\t<Description>" + NL + "\t\t\t\t";
+	protected final String TEXT_20 = NL + "\t\t\t</Description>" + NL + "\t\t</Overview>";
 	protected final String TEXT_21 = NL;
 	protected final String TEXT_22 = NL;
 
@@ -81,8 +77,7 @@ public class PageProviderPattern {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_21);
@@ -100,10 +95,9 @@ public class PageProviderPattern {
 			final Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg",
+					ctx_local, parameters);
 		}
 
 		{
@@ -111,10 +105,9 @@ public class PageProviderPattern {
 			parameters.put("predicatedElement", this.parameter);
 			parameters.put("basePackage", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg",
+					ctx_local, parameters);
 		}
 
 		method_genOverview(new StringBuffer(), ictx);
@@ -123,10 +116,9 @@ public class PageProviderPattern {
 			parameters.put("dynamicIconElement", this.overview);
 			parameters.put("activityExplorerProjectName", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg",
+					ctx_local, parameters);
 		}
 
 		{
@@ -141,10 +133,9 @@ public class PageProviderPattern {
 			parameters.put("dynamicIconElement", this.parameter);
 			parameters.put("activityExplorerProjectName", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg",
+					ctx_local, parameters);
 		}
 
 		if (ictx.useReporter()) {
@@ -152,8 +143,7 @@ public class PageProviderPattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -184,104 +174,93 @@ public class PageProviderPattern {
 		return parameters;
 	}
 
-	protected void method_initParameter(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_initParameter(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		projectName = (String) ctx.getValue("activity.explorer.project.name");
 		overview = parameter.getOwnedOverview();
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "initParameter",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initParameter", stringBuffer.toString());
 	}
 
-	protected void method_genPageBegin(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genPageBegin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		String className = JavaNamingConvention.getJavaClassFQNFor(projectName,
-				parameter, JavaNamingConvention.JavaUseContext.Page);
+		String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter,
+				JavaNamingConvention.JavaUseContext.Page);
 
 		String id = parameter.getActivityExplorerItemID();
 		if (null == id || (null != id && id.isEmpty()))
 			id = "Page1";
 
 		final boolean labelIsSet = parameter
-				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE
-						.getActivityExplorerItem_Label());
-		final String name = labelIsSet
-				&& false == parameter.getLabel().isEmpty() ? parameter
-				.getLabel() : parameter.getName();
+				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+		final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel()
+				: parameter.getName();
+
+		final boolean tabNameIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getPage_TabName());
+		final String tabName = tabNameIsSet && false == parameter.getTabName().isEmpty() ? parameter.getTabName()
+				: name;
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(className);
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(id);
 		stringBuffer.append(TEXT_3);
-		if (parameter.getImagePathOff() != null) {
+		if (parameter.getImagePathOff() != null && parameter.getImagePathOff().isEmpty() == false) {
 			stringBuffer.append(TEXT_4);
-			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/"
-					+ parameter.getImagePathOff());
+			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + parameter.getImagePathOff());
 			stringBuffer.append(TEXT_5);
 		}
-		if (parameter.getImagePathOn() != null) {
+		if (parameter.getImagePathOn() != null && parameter.getImagePathOn().isEmpty() == false) {
 			stringBuffer.append(TEXT_6);
-			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/"
-					+ parameter.getImagePathOn());
+			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + parameter.getImagePathOn());
 			stringBuffer.append(TEXT_7);
 		}
 		stringBuffer.append(TEXT_8);
 		stringBuffer.append(parameter.getIndex());
 		stringBuffer.append(TEXT_9);
-		stringBuffer.append(parameter.getTabName());
+		stringBuffer.append(tabName);
 		stringBuffer.append(TEXT_10);
 		stringBuffer.append(name);
 		stringBuffer.append(TEXT_11);
 		stringBuffer.append(parameter.isShowViewer());
 		stringBuffer.append(TEXT_12);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genPageBegin",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genPageBegin", stringBuffer.toString());
 	}
 
-	protected void method_genPageEnd(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genPageEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_13);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genPageEnd",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genPageEnd", stringBuffer.toString());
 	}
 
-	protected void method_genOverview(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genOverview(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String description = "Description body text";
-		if (null != overview && null != overview.getDescription()
-				&& false == overview.getDescription().isEmpty()) {
+		if (null != overview && null != overview.getDescription() && false == overview.getDescription().isEmpty()) {
 			description = overview.getDescription();
 			description = description.replaceAll("<", "&lt;");
 			description = description.replaceAll(">", "&gt;");
 		}
-		stringBuffer.append(TEXT_14);
-		if (overview.getImagePathOff() != null
-				&& false == overview.getImagePathOff().isEmpty()) {
-			stringBuffer.append(TEXT_15);
-			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/"
-					+ overview.getImagePathOff());
-			stringBuffer.append(TEXT_16);
+		if (overview != null) {
+			stringBuffer.append(TEXT_14);
+			if (overview.getImagePathOff() != null && false == overview.getImagePathOff().isEmpty()) {
+				stringBuffer.append(TEXT_15);
+				stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + overview.getImagePathOff());
+				stringBuffer.append(TEXT_16);
+			}
+			if (overview.getImagePathOn() != null && false == overview.getImagePathOn().isEmpty()) {
+				stringBuffer.append(TEXT_17);
+				stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + overview.getImagePathOn());
+				stringBuffer.append(TEXT_18);
+			}
+			stringBuffer.append(TEXT_19);
+			stringBuffer.append(description);
+			stringBuffer.append(TEXT_20);
 		}
-		if (overview.getImagePathOn() != null
-				&& false == overview.getImagePathOn().isEmpty()) {
-			stringBuffer.append(TEXT_17);
-			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/"
-					+ overview.getImagePathOn());
-			stringBuffer.append(TEXT_18);
-		}
-		stringBuffer.append(TEXT_19);
-		stringBuffer.append(description);
-		stringBuffer.append(TEXT_20);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genOverview",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genOverview", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
