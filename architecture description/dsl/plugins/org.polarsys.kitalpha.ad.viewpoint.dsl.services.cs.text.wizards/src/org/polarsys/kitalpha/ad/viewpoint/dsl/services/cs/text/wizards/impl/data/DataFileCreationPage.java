@@ -16,8 +16,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.dat
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.AbstractFileCreationPage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.data.DataWizard;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.data.Messages;
 
 
 /**

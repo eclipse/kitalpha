@@ -30,7 +30,6 @@ import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.AbstractCommonProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 

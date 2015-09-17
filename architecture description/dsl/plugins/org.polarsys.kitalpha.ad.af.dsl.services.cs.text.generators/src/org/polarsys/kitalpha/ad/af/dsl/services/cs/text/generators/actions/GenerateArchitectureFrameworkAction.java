@@ -24,6 +24,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
+import org.polarsys.kitalpha.ad.af.dsl.as.servicies.action.popup.GenerateArchitectureFramework;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.messages.Messages;
 
 //import org.polarsys.kitalpha.ad.af.dsl.servicies.action.popup.GenerateArchitectureFramework;
@@ -37,11 +38,13 @@ public class GenerateArchitectureFrameworkAction extends BaseSelectionListenerAc
 
 	public static final String AFDESC_EXTENSION = "afdesc";
 	
-	private ISelection fakeSelection;	
+	private ISelection fakeSelection;
+	IObjectActionDelegate delegate;
 	
 	
 	public GenerateArchitectureFrameworkAction() {
 		super(Messages.AFDSLActions_GenerateAFAction_DefaultTitle);
+		delegate = new GenerateArchitectureFramework();
 	}
 	
 	protected GenerateArchitectureFrameworkAction(String text) {
@@ -67,6 +70,8 @@ public class GenerateArchitectureFrameworkAction extends BaseSelectionListenerAc
 			IFile xmiFile = ResourcesPlugin.getWorkspace().getRoot().getFile(xmiPath);
 			if (xmiFile.exists()) {
 				fakeSelection = new StructuredSelection(xmiFile);
+				delegate.selectionChanged(action, fakeSelection);
+				delegate.run(action);
 			}
 		}
 		else

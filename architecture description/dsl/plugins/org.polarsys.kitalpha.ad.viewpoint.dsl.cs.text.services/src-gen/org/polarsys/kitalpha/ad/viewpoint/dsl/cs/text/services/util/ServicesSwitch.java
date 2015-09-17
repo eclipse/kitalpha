@@ -4,10 +4,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.*;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesPackage;
 
 /**
  * <!-- begin-user-doc -->

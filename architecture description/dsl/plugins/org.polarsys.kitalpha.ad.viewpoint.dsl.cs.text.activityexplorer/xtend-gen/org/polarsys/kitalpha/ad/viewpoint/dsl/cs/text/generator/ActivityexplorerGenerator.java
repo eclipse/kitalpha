@@ -10,13 +10,14 @@
  */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator;
 
-import com.google.common.base.Objects;
 import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.CommonGenerator;
+
+import com.google.common.base.Objects;
 
 /**
  * @author Faycal Abka

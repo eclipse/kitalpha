@@ -3,7 +3,6 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.AbstractImport;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataPackage;
 

@@ -24,22 +24,19 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateAcceptor;
 import org.eclipse.xtext.ui.editor.templates.ContextTypeIdHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.TemplateIDs;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateProposalProvider;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
-
-import com.google.inject.Inject;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.TemplateIDs;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
+
+import com.google.inject.Inject;
 
 /**
  * 
@@ -180,6 +177,18 @@ public class VpspecTemplateProposalProvider extends CommonTemplateProposalProvid
 		}
 		if (templateIdentifier.equals(TemplateIDs.NEW_UI_TEMPLATE)) {
 			return access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue() + " "  + VARIABLE_NAME;
+		}
+		if (templateIdentifier.equals(TemplateIDs.NEW_SERVICES_TEMPLATE)) {
+			return access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue() + " " + VARIABLE_NAME;
+		}
+		if (templateIdentifier.equals(TemplateIDs.NEW_BUILD_TEMPLATE)) {
+			return access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue() + " " + VARIABLE_NAME;
+		}
+		if (templateIdentifier.equals(TemplateIDs.NEW_CONFIGURATION_TEMPLATE)) {
+			return access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue() + " " + VARIABLE_NAME;
+		}
+		if (templateIdentifier.equals(TemplateIDs.NEW_ACTIVITY_EXPLORER_TEMPLATE)) {
+			return access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue() + " " + VARIABLE_NAME;
 		}
 		return null;
 	}

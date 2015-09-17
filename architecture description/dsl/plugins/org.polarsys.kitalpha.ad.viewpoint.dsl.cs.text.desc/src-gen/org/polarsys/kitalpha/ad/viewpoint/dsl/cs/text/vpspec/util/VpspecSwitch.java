@@ -4,10 +4,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.*;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
 
 /**
  * <!-- begin-user-doc -->

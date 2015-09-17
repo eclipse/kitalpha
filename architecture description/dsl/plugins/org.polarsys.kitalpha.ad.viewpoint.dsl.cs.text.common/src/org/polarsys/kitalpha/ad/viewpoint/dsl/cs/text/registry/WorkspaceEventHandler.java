@@ -65,12 +65,10 @@ public class WorkspaceEventHandler implements IResourceChangeListener {
 		
 		switch (changes.getKind()) {
 		case IResourceDelta.CONTENT: {
-			System.err.println("Content: " + changes.getFullPath());
 			handleContent(changes.getResource());
 			break;
 		}
 		case IResourceDelta.REMOVED: {
-			System.err.println("Removed: " + changes.getFullPath());
 			handleRemove(changes.getResource());
 			break;
 		}

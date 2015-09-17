@@ -19,8 +19,6 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.scoping.impl.FilteringScope;
-
-import com.google.common.base.Predicate;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Cardinalities;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
@@ -34,6 +32,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI_Field_Type;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
+
+import com.google.common.base.Predicate;
 
 /**
  * 

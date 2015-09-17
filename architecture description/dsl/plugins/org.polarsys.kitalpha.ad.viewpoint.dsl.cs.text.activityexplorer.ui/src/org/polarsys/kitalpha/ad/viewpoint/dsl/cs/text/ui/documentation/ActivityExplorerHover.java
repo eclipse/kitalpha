@@ -230,20 +230,24 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 	}
 
 	private Object getActivityIcon(Activity activity) {
+		
 		StringBuffer result = new StringBuffer();
 		
 		String iconPath = activity.getImagePathOff();
-		IProject project = ProjectUtil.getEclipseProjectOf(activity);
-		IFolder iconsFolder = ProjectUtil.getFolderInProject(project, "icons");
-		IFile icon = iconsFolder.getFile(iconPath);
-		
-		result.append("<img src='");
-		if (icon != null)
-			result.append(icon.getLocation().toPortableString());
-		else
-			result.append("icons/").append(iconPath);
-		
-		result.append("'/>");
+
+		if (iconPath != null && !iconPath.isEmpty()){
+			IProject project = ProjectUtil.getEclipseProjectOf(activity);
+			IFolder iconsFolder = ProjectUtil.getFolderInProject(project, "icons");
+			IFile icon = iconsFolder.getFile(iconPath);
+
+			result.append("<img src='");
+			if (icon != null)
+				result.append(icon.getLocation().toPortableString());
+			else
+				result.append("icons/").append(iconPath);
+
+			result.append("'/>");
+		}
 		
 		return result.toString();
 	}
@@ -287,10 +291,17 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 	}
 	
 	protected Pair<IFile, IFile> getIconFiles(EObject eObject, String first, String second){
+		IFile firstIcon = null;
+		IFile secondIcon = null;
+		
 		IProject project = ProjectUtil.getEclipseProjectOf(eObject);
 		IFolder iconsFolder = ProjectUtil.getFolderInProject(project, "icons");
-		IFile firstIcon = iconsFolder.getFile(first);
-		IFile secondIcon = iconsFolder.getFile(second);
+		
+		if (first != null && !first.isEmpty())
+			firstIcon = iconsFolder.getFile(first);
+		
+		if (second != null && !first.isEmpty())
+			secondIcon = iconsFolder.getFile(second);
 		
 		return Tuples.create(firstIcon, secondIcon);
 	}
@@ -309,11 +320,18 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		
 		Pair<IFile, IFile> icons = getIconFiles(page, iconOn, iconOff);
 		
-		result.append("<table border='0' width='100%'>").append("<tr><td>");
-		appendIconPath(result, icons.getFirst(), iconOn);
-		result.append("</td><td>");
-		appendIconPath(result, icons.getSecond(), iconOff);
-		result.append("</td></table>");
+		result.append("<table border='0' width='100%'>").append("<tr>");
+		if (icons.getFirst() != null){
+			result.append("<td>");
+			appendIconPath(result, icons.getFirst(), iconOn);
+			result.append("</td>");
+		}
+		if (icons.getSecond() != null){
+			result.append("<td>");
+			appendIconPath(result, icons.getSecond(), iconOff);
+			result.append("</td>");
+		}
+		result.append("</tr></table>");
 		
 		return result.toString();
 	}

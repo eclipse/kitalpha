@@ -4,12 +4,10 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.*;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesPackage;
 
 /**
  * <!-- begin-user-doc -->

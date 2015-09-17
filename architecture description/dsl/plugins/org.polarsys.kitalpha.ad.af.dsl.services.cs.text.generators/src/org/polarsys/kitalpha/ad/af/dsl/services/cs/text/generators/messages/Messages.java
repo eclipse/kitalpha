@@ -19,7 +19,7 @@ import org.eclipse.osgi.util.NLS;
  *
  */
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "org.polarsys.kitalpha.ad.af.dsl.cs.text.generators.messages.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.messages.messages"; //$NON-NLS-1$
 	public static String AFDSLActions_BackwardSynchronizer_GeneratorMessage;
 	public static String AFDSLActions_BackwardSynchronizer_UnresolvedProxy;
 	public static String AFDSLActions_BackwardSynchronizer_SerializationException;

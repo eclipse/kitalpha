@@ -3,9 +3,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
 

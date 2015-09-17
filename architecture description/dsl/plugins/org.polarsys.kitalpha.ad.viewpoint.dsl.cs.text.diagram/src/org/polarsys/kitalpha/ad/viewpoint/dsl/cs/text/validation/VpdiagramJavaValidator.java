@@ -11,9 +11,6 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation.AbstractVpdiagramJavaValidator;
- 
-
 public class VpdiagramJavaValidator extends AbstractVpdiagramJavaValidator {
 
 //	@Check

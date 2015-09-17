@@ -5,12 +5,14 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.*;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace;
 
 /**
  * <!-- begin-user-doc -->

@@ -5,11 +5,8 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesPackage;

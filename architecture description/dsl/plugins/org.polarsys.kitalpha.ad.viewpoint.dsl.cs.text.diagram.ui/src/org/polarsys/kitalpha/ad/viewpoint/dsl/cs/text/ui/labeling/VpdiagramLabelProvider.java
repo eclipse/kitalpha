@@ -17,8 +17,8 @@ import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.viewpoint.description.Group;
-import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider; 
- 
+import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+
 import com.google.common.base.Strings;
 import com.google.inject.Inject;
 

@@ -31,13 +31,6 @@ import org.eclipse.xtext.conversion.ValueConverterException;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateAcceptor;
 import org.eclipse.xtext.ui.editor.templates.ContextTypeIdHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateProposalProvider;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
-
-import com.google.inject.Inject;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
@@ -45,6 +38,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalAttributeType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalAttributeType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
+
+import com.google.inject.Inject;
 
 /**
  * 

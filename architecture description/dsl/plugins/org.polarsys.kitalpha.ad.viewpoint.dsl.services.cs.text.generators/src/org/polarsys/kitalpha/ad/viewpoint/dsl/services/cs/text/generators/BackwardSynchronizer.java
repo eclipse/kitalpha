@@ -18,6 +18,13 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.XtextResource;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataSpec;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramFactory;
@@ -29,14 +36,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UiFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UserInterface;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.GeneratorsUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.ReferenceUtil;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 
 /**
  * 
