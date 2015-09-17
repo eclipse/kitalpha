@@ -37,14 +37,13 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
-
-import com.google.common.collect.Lists;
-import com.google.inject.Provider;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
+
+import com.google.common.collect.Lists;
+import com.google.inject.Provider;
 
 
 /**

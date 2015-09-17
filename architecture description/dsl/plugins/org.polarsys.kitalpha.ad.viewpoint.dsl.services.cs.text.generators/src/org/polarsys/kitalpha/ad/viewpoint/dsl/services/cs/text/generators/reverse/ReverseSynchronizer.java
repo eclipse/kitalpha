@@ -15,15 +15,14 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.XtextResource;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataSpec;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.BackwardSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.GeneratorsUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.ReferenceUtil;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 
 /**
  * 

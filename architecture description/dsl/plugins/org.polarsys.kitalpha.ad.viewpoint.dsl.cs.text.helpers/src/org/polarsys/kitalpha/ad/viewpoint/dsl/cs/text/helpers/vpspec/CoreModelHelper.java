@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 
 /**

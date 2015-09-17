@@ -11,8 +11,6 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.VpbuildStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages 
  * without equinox extension registry

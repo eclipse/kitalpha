@@ -30,7 +30,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.resource.XtextResource;
-
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreDomainViewpointHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper.URIConverterHelper;

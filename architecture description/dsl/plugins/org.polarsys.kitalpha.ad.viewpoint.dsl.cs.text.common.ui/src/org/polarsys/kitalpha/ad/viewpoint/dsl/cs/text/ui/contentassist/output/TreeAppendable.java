@@ -11,6 +11,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output;
 
 import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.util.IAcceptor;
 

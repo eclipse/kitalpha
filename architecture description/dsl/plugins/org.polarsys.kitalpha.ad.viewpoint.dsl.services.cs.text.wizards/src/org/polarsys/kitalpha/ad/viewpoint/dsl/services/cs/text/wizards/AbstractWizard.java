@@ -34,11 +34,10 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.xtext.resource.XtextResource;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.PluginUtil;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreModelHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.PluginUtil;
 
 /**
  * 

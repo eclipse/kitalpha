@@ -17,7 +17,6 @@ import org.eclipse.emf.common.util.URI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.internal.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.GeneratorsUtil;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.extension.IConcreteSyntaxResourceInitialize;
 
 /**

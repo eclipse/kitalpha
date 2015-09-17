@@ -13,8 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import java.util.List;
 
-import javax.swing.text.View;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.text.templates.SimpleTemplateVariableResolver;
 import org.eclipse.jface.text.templates.TemplateContext;

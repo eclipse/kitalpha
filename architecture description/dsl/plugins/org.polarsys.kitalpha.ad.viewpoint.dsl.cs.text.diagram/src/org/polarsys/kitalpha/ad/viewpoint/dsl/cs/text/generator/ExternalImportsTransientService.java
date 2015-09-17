@@ -11,10 +11,10 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator;	
 
-import org.eclipse.emf.ecore.EObject;	
-import org.eclipse.emf.ecore.EStructuralFeature;	
-import org.eclipse.xtext.parsetree.reconstr.impl.DefaultTransientValueService;	
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;	
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.parsetree.reconstr.impl.DefaultTransientValueService;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 
 /**

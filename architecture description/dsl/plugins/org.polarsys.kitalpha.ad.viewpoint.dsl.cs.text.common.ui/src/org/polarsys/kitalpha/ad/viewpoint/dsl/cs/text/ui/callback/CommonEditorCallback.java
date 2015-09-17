@@ -239,6 +239,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadDiagramResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadBuildResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.loadServicesResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.loadActivityexplorerResource(file, resourceSet));
 		return Lists.newArrayList( inputModels );
 	}
 	

@@ -42,10 +42,10 @@ import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewer;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 import org.eclipse.xtext.ui.editor.templates.XtextTemplateContextType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.WizardIDs;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.CommonEditorCallback;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpspecTemplateContextType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.ReferenceUtil;
 //decomment the import when the migration has finished
@@ -53,7 +53,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.R
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.AbstractWizard;
 
 import com.google.inject.Inject;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 
 /**
  * 

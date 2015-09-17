@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.dia
 import java.util.Collection;
 
 import org.eclipse.jface.wizard.IWizard;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;

@@ -13,8 +13,6 @@
  */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateContextType;
-
 /**
  * 
  * @author Amine Lajmi

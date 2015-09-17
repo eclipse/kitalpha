@@ -15,8 +15,8 @@ import org.eclipse.xtext.parsetree.reconstr.impl.TokenUtil;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.IScopeProvider;
-import org.eclipse.xtext.serializer.diagnostic.ITokenDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
+import org.eclipse.xtext.serializer.diagnostic.ITokenDiagnosticProvider;
 import org.eclipse.xtext.serializer.tokens.CrossReferenceSerializer;
 import org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer;
 

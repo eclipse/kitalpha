@@ -10,7 +10,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.polarsys.kitalpha.ad.af.dsl.servicies.project,
  org.polarsys.kitalpha.ad.af.dsl.as.desc.model,
- org.eclipse.xtext
+ org.eclipse.xtext,
+ org.polarsys.kitalpha.ad.af.dsl.servicies.action
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators,

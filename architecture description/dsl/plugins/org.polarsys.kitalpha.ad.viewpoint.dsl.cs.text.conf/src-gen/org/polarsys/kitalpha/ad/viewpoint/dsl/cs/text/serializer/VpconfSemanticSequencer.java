@@ -10,16 +10,8 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
-import com.google.inject.Inject;
-import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
@@ -33,6 +25,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.De
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.DescAirdGenConfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocGenConfigurationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer {

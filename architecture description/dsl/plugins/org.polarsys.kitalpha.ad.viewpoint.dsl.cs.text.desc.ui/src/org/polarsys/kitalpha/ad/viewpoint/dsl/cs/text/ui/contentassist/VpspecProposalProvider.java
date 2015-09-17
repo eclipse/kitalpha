@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.ILabelProvider;
-
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.swt.graphics.Image;
@@ -47,21 +46,15 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ContentProposalLabelProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
-
 import org.osgi.framework.Bundle;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helper.URIConverterHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.WorkspaceResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.AbstractVpspecProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 
 import com.google.common.base.Predicate;

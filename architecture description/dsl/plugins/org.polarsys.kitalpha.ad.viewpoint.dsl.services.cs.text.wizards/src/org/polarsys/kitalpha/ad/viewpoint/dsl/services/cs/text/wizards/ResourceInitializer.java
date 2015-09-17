@@ -36,7 +36,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.PluginUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.util.WizardsUtil;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.extensions.IConcreteSyntaxResourceCreator;
 
 /**

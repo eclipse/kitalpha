@@ -15,7 +15,6 @@ import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.ErrorDialog;
@@ -27,10 +26,9 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.popup.LaunchVPGenerationAndBuildAction;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.internal.Activator;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.action.popup.LaunchVPGenerationAndBuildAction;
 
 /**
  * 

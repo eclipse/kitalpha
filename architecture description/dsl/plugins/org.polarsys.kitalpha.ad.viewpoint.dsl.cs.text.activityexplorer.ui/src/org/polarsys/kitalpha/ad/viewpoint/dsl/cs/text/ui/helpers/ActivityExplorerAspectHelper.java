@@ -11,7 +11,6 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.helpers;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

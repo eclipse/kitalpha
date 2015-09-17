@@ -14,19 +14,14 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.validation.Check;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.validation.AbstractVpspecJavaValidator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
 
 import com.google.inject.Inject;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
  
 /**
  * 

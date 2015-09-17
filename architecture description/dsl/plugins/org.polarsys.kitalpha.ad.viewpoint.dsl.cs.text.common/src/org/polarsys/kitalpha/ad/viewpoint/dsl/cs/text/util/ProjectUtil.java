@@ -28,11 +28,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
+import org.eclipse.xtext.resource.XtextResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
-
-import com.google.inject.Inject;
 
 /**
  * 

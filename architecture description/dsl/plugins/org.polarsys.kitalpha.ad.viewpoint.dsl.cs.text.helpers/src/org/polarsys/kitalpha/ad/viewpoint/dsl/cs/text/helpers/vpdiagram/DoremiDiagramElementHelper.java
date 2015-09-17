@@ -23,6 +23,7 @@ import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation;
 
 
 /**

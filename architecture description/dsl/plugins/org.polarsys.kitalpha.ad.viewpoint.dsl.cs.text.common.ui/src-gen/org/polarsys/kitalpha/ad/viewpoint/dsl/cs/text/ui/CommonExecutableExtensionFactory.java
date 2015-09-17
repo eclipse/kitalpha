@@ -12,10 +12,9 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.CommonActivator;
 
 import com.google.inject.Injector;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.CommonActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

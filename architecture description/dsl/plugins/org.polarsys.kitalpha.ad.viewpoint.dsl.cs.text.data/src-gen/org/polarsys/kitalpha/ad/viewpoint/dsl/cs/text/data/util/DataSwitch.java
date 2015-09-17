@@ -4,10 +4,13 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.*;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.AbstractImport;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataSpec;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.Import;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ImportNamespace;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ImportURI;
 
 /**
  * <!-- begin-user-doc -->

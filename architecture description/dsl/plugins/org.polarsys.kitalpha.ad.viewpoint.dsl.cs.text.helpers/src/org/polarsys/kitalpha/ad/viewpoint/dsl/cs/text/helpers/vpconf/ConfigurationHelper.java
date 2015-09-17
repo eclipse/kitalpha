@@ -12,7 +12,6 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpconf;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ConfigurationElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;

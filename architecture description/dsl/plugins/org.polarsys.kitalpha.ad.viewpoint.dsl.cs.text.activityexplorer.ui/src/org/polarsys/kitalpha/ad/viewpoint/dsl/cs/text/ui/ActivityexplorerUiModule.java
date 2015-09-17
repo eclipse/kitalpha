@@ -15,7 +15,6 @@ import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.CommonEditorCallback;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.ActivityExplorerTemplateContextType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateStore;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
 
 /**
  * Use this class to register components to be used within the IDE.

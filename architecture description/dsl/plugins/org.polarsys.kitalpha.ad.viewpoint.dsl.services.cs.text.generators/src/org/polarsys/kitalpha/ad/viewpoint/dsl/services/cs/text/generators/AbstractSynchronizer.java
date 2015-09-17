@@ -67,7 +67,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHe
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.EditorIDs;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UserInterface;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.PluginUtil;

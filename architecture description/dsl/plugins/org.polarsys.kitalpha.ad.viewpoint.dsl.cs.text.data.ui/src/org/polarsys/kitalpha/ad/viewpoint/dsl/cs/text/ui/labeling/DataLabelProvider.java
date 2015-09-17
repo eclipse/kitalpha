@@ -14,8 +14,8 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.labeling;
 
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider; 
- 
+import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+
 import com.google.inject.Inject;
 
 /**

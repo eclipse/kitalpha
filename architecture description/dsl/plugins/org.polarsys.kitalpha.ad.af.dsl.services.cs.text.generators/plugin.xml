@@ -82,7 +82,7 @@ Contributors:
 	             icon="icons/afdsl_generate_resource.png"
 	             id="org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.backwardsynchronizer"
 	             label="Generate aftext file"
-	             menubarPath="org.polarsys.kitalpha.ad.af.dsl.menu/main">
+	             menubarPath="org.polarsys.kitalpha.ad.af.dsl.servicies.action.menu/main">
 	       </action>
 	    </objectContribution>
 	   

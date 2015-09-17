@@ -20,19 +20,18 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EContentsEList.FeatureIterator;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.MetamodelIDs;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
-
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.EMFResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointResources;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.MetamodelIDs;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
 
 /**
  * 
