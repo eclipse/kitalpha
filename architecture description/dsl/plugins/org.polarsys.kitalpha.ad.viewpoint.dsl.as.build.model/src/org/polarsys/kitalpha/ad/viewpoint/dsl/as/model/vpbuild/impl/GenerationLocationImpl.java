@@ -26,16 +26,15 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.GenerationLocationImpl#getFolder <em>Folder</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.GenerationLocationImpl#getUrl <em>Url</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class GenerationLocationImpl extends EObjectImpl implements
-		GenerationLocation {
+public class GenerationLocationImpl extends EObjectImpl implements GenerationLocation {
 
 	/**
 	 * The default value of the '{@link #getFolder() <em>Folder</em>}' attribute.
@@ -83,9 +82,7 @@ public class GenerationLocationImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected GenerationLocationImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -120,8 +117,7 @@ public class GenerationLocationImpl extends EObjectImpl implements
 		String oldFolder = folder;
 		folder = newFolder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.GENERATION_LOCATION__FOLDER, oldFolder,
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.GENERATION_LOCATION__FOLDER, oldFolder,
 					folder));
 
 	}
@@ -148,8 +144,8 @@ public class GenerationLocationImpl extends EObjectImpl implements
 		String oldUrl = url;
 		url = newUrl;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.GENERATION_LOCATION__URL, oldUrl, url));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.GENERATION_LOCATION__URL, oldUrl,
+					url));
 
 	}
 
@@ -214,11 +210,9 @@ public class GenerationLocationImpl extends EObjectImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case VpbuildPackage.GENERATION_LOCATION__FOLDER:
-			return FOLDER_EDEFAULT == null ? folder != null : !FOLDER_EDEFAULT
-					.equals(folder);
+			return FOLDER_EDEFAULT == null ? folder != null : !FOLDER_EDEFAULT.equals(folder);
 		case VpbuildPackage.GENERATION_LOCATION__URL:
-			return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT
-					.equals(url);
+			return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
 		}
 		return super.eIsSet(featureID);
 	}

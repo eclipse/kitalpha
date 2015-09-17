@@ -39,12 +39,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AspectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.BuildImpl#getTarget_platform <em>Target platform</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.BuildImpl#getMapped_repositories <em>Mapped repositories</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.BuildImpl#getHudsonDeployment <em>Hudson Deployment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -96,9 +96,7 @@ public class BuildImpl extends AspectImpl implements Build {
 	 * @generated
 	 */
 	protected BuildImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -133,9 +131,8 @@ public class BuildImpl extends AspectImpl implements Build {
 		String oldTarget_platform = target_platform;
 		target_platform = newTarget_platform;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.BUILD__TARGET_PLATFORM, oldTarget_platform,
-					target_platform));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.BUILD__TARGET_PLATFORM,
+					oldTarget_platform, target_platform));
 
 	}
 
@@ -148,8 +145,7 @@ public class BuildImpl extends AspectImpl implements Build {
 	public EList<Repository> getMapped_repositories() {
 
 		if (mapped_repositories == null) {
-			mapped_repositories = new EObjectContainmentEList<Repository>(
-					Repository.class, this,
+			mapped_repositories = new EObjectContainmentEList<Repository>(Repository.class, this,
 					VpbuildPackage.BUILD__MAPPED_REPOSITORIES);
 		}
 		return mapped_repositories;
@@ -172,15 +168,13 @@ public class BuildImpl extends AspectImpl implements Build {
 	 * @generated
 	 */
 
-	public NotificationChain basicSetHudsonDeployment(
-			HudsonDeployment newHudsonDeployment, NotificationChain msgs) {
+	public NotificationChain basicSetHudsonDeployment(HudsonDeployment newHudsonDeployment, NotificationChain msgs) {
 
 		HudsonDeployment oldHudsonDeployment = hudsonDeployment;
 		hudsonDeployment = newHudsonDeployment;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, VpbuildPackage.BUILD__HUDSON_DEPLOYMENT,
-					oldHudsonDeployment, newHudsonDeployment);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					VpbuildPackage.BUILD__HUDSON_DEPLOYMENT, oldHudsonDeployment, newHudsonDeployment);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -201,21 +195,16 @@ public class BuildImpl extends AspectImpl implements Build {
 		if (newHudsonDeployment != hudsonDeployment) {
 			NotificationChain msgs = null;
 			if (hudsonDeployment != null)
-				msgs = ((InternalEObject) hudsonDeployment).eInverseRemove(
-						this, EOPPOSITE_FEATURE_BASE
-								- VpbuildPackage.BUILD__HUDSON_DEPLOYMENT,
-						null, msgs);
+				msgs = ((InternalEObject) hudsonDeployment).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - VpbuildPackage.BUILD__HUDSON_DEPLOYMENT, null, msgs);
 			if (newHudsonDeployment != null)
-				msgs = ((InternalEObject) newHudsonDeployment).eInverseAdd(
-						this, EOPPOSITE_FEATURE_BASE
-								- VpbuildPackage.BUILD__HUDSON_DEPLOYMENT,
-						null, msgs);
+				msgs = ((InternalEObject) newHudsonDeployment).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - VpbuildPackage.BUILD__HUDSON_DEPLOYMENT, null, msgs);
 			msgs = basicSetHudsonDeployment(newHudsonDeployment, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.BUILD__HUDSON_DEPLOYMENT,
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.BUILD__HUDSON_DEPLOYMENT,
 					newHudsonDeployment, newHudsonDeployment));
 
 	}
@@ -226,12 +215,10 @@ public class BuildImpl extends AspectImpl implements Build {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case VpbuildPackage.BUILD__MAPPED_REPOSITORIES:
-			return ((InternalEList<?>) getMapped_repositories()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getMapped_repositories()).basicRemove(otherEnd, msgs);
 		case VpbuildPackage.BUILD__HUDSON_DEPLOYMENT:
 			return basicSetHudsonDeployment(null, msgs);
 		}
@@ -270,8 +257,7 @@ public class BuildImpl extends AspectImpl implements Build {
 			return;
 		case VpbuildPackage.BUILD__MAPPED_REPOSITORIES:
 			getMapped_repositories().clear();
-			getMapped_repositories().addAll(
-					(Collection<? extends Repository>) newValue);
+			getMapped_repositories().addAll((Collection<? extends Repository>) newValue);
 			return;
 		case VpbuildPackage.BUILD__HUDSON_DEPLOYMENT:
 			setHudsonDeployment((HudsonDeployment) newValue);
@@ -313,8 +299,7 @@ public class BuildImpl extends AspectImpl implements Build {
 			return TARGET_PLATFORM_EDEFAULT == null ? target_platform != null
 					: !TARGET_PLATFORM_EDEFAULT.equals(target_platform);
 		case VpbuildPackage.BUILD__MAPPED_REPOSITORIES:
-			return mapped_repositories != null
-					&& !mapped_repositories.isEmpty();
+			return mapped_repositories != null && !mapped_repositories.isEmpty();
 		case VpbuildPackage.BUILD__HUDSON_DEPLOYMENT:
 			return hudsonDeployment != null;
 		}

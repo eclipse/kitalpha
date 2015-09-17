@@ -15,21 +15,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.internal.runtime.Product;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.eclipse.egf.model.domain.EMFDomain;
-import org.eclipse.egf.producer.l10n.ProducerMessages;
 import org.eclipse.emf.common.util.EList;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util.BuildVPConfigurationHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util.JavaUtil;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Repository;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util.BuildVPConfigurationHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util.JavaUtil;
 
 /**
  * 

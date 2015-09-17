@@ -1,16 +1,25 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr.internal; 
 
-import org.antlr.runtime.BitSet;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.TokenStream;
-import org.eclipse.emf.common.util.Enumerator;
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpbuildGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 /*******************************************************************************
  * Copyright (c) 2015 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
@@ -24,8 +33,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpbuildGrammarAcc
 @SuppressWarnings("all")
 public class InternalVpbuildParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Build'", "'{'", "'target-platform:'", "'}'", "'repository:'", "'features:'", "'folder'", "'hudson-deployment'", "'ant:'", "'assigned-node:'", "'build-id:'", "'enable:'", "'jdk-name:'", "'user-deploy-job-name:'", "'user-deploy-server-url:'", "'users'", "'triggers'", "'generation-location:'", "'url:'", "'SCM'", "'Cron'", "'login:'", "'permission:'", "'.'", "'true'", "'false'", "'svn://'", "'svn+ssh://'", "'WRITE'", "'EXECUTE'", "'READ'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Build'", "'{'", "'target-platform:'", "'}'", "'repository:'", "'features:'", "'folder'", "'hudson-deployment'", "'ant:'", "'assigned-node:'", "'build-id:'", "'enable:'", "'jdk-name:'", "'user-deploy-job-name:'", "'user-deploy-server-url:'", "'users'", "'triggers'", "'generation-location:'", "'url:'", "'SCM'", "'Cron'", "'login:'", "'permission:'", "'.'", "'true'", "'false'", "'git'", "'svn://'", "'svn+ssh://'", "'WRITE'", "'EXECUTE'", "'READ'"
     };
+    public static final int T__42=42;
     public static final int RULE_ID=5;
     public static final int T__40=40;
     public static final int T__41=41;
@@ -2730,47 +2740,57 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtocolType"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1029:1: ruleProtocolType returns [Enumerator current=null] : ( (enumLiteral_0= 'svn://' ) | (enumLiteral_1= 'svn+ssh://' ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1029:1: ruleProtocolType returns [Enumerator current=null] : ( (enumLiteral_0= 'git' ) | (enumLiteral_1= 'svn://' ) | (enumLiteral_2= 'svn+ssh://' ) ) ;
     public final Enumerator ruleProtocolType() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
 
          enterRule(); 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1031:28: ( ( (enumLiteral_0= 'svn://' ) | (enumLiteral_1= 'svn+ssh://' ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:1: ( (enumLiteral_0= 'svn://' ) | (enumLiteral_1= 'svn+ssh://' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1031:28: ( ( (enumLiteral_0= 'git' ) | (enumLiteral_1= 'svn://' ) | (enumLiteral_2= 'svn+ssh://' ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:1: ( (enumLiteral_0= 'git' ) | (enumLiteral_1= 'svn://' ) | (enumLiteral_2= 'svn+ssh://' ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:1: ( (enumLiteral_0= 'svn://' ) | (enumLiteral_1= 'svn+ssh://' ) )
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==37) ) {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:1: ( (enumLiteral_0= 'git' ) | (enumLiteral_1= 'svn://' ) | (enumLiteral_2= 'svn+ssh://' ) )
+            int alt23=3;
+            switch ( input.LA(1) ) {
+            case 37:
+                {
                 alt23=1;
-            }
-            else if ( (LA23_0==38) ) {
+                }
+                break;
+            case 38:
+                {
                 alt23=2;
-            }
-            else {
+                }
+                break;
+            case 39:
+                {
+                alt23=3;
+                }
+                break;
+            default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
+
             switch (alt23) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:2: (enumLiteral_0= 'svn://' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:2: (enumLiteral_0= 'git' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:2: (enumLiteral_0= 'svn://' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:4: enumLiteral_0= 'svn://'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:2: (enumLiteral_0= 'git' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1032:4: enumLiteral_0= 'git'
                     {
                     enumLiteral_0=(Token)match(input,37,FOLLOW_37_in_ruleProtocolType2158); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_0()); 
+                              current = grammarAccess.getProtocolTypeAccess().getGitEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_0, grammarAccess.getProtocolTypeAccess().getGitEnumLiteralDeclaration_0()); 
                           
                     }
 
@@ -2780,16 +2800,35 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1038:6: (enumLiteral_1= 'svn+ssh://' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1038:6: (enumLiteral_1= 'svn://' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1038:6: (enumLiteral_1= 'svn+ssh://' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1038:8: enumLiteral_1= 'svn+ssh://'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1038:6: (enumLiteral_1= 'svn://' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1038:8: enumLiteral_1= 'svn://'
                     {
                     enumLiteral_1=(Token)match(input,38,FOLLOW_38_in_ruleProtocolType2175); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_1()); 
+                              current = grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_1, grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_1()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1044:6: (enumLiteral_2= 'svn+ssh://' )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1044:6: (enumLiteral_2= 'svn+ssh://' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1044:8: enumLiteral_2= 'svn+ssh://'
+                    {
+                    enumLiteral_2=(Token)match(input,39,FOLLOW_39_in_ruleProtocolType2192); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_2, grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_2()); 
                           
                     }
 
@@ -2821,7 +2860,7 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUserPermission"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1048:1: ruleUserPermission returns [Enumerator current=null] : ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1054:1: ruleUserPermission returns [Enumerator current=null] : ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) ) ;
     public final Enumerator ruleUserPermission() throws RecognitionException {
         Enumerator current = null;
 
@@ -2831,23 +2870,23 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1050:28: ( ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1051:1: ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1056:28: ( ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:1: ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1051:1: ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:1: ( (enumLiteral_0= 'WRITE' ) | (enumLiteral_1= 'EXECUTE' ) | (enumLiteral_2= 'READ' ) )
             int alt24=3;
             switch ( input.LA(1) ) {
-            case 39:
+            case 40:
                 {
                 alt24=1;
                 }
                 break;
-            case 40:
+            case 41:
                 {
                 alt24=2;
                 }
                 break;
-            case 41:
+            case 42:
                 {
                 alt24=3;
                 }
@@ -2862,12 +2901,12 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
 
             switch (alt24) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1051:2: (enumLiteral_0= 'WRITE' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:2: (enumLiteral_0= 'WRITE' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1051:2: (enumLiteral_0= 'WRITE' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1051:4: enumLiteral_0= 'WRITE'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:2: (enumLiteral_0= 'WRITE' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:4: enumLiteral_0= 'WRITE'
                     {
-                    enumLiteral_0=(Token)match(input,39,FOLLOW_39_in_ruleUserPermission2220); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,40,FOLLOW_40_in_ruleUserPermission2237); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUserPermissionAccess().getWRITEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -2881,12 +2920,12 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:6: (enumLiteral_1= 'EXECUTE' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1063:6: (enumLiteral_1= 'EXECUTE' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:6: (enumLiteral_1= 'EXECUTE' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1057:8: enumLiteral_1= 'EXECUTE'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1063:6: (enumLiteral_1= 'EXECUTE' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1063:8: enumLiteral_1= 'EXECUTE'
                     {
-                    enumLiteral_1=(Token)match(input,40,FOLLOW_40_in_ruleUserPermission2237); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,41,FOLLOW_41_in_ruleUserPermission2254); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUserPermissionAccess().getEXECUTEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -2900,12 +2939,12 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1063:6: (enumLiteral_2= 'READ' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1069:6: (enumLiteral_2= 'READ' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1063:6: (enumLiteral_2= 'READ' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1063:8: enumLiteral_2= 'READ'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1069:6: (enumLiteral_2= 'READ' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpbuild.g:1069:8: enumLiteral_2= 'READ'
                     {
-                    enumLiteral_2=(Token)match(input,41,FOLLOW_41_in_ruleUserPermission2254); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,42,FOLLOW_42_in_ruleUserPermission2271); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUserPermissionAccess().getREADEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -2956,7 +2995,7 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14_in_ruleBuild254 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRepository_in_entryRuleRepository290 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRepository300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleRepository346 = new BitSet(new long[]{0x0000006000000000L});
+    public static final BitSet FOLLOW_15_in_ruleRepository346 = new BitSet(new long[]{0x000000E000000000L});
     public static final BitSet FOLLOW_ruleProtocolType_in_ruleRepository367 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleRepository384 = new BitSet(new long[]{0x0000000000011000L});
     public static final BitSet FOLLOW_12_in_ruleRepository402 = new BitSet(new long[]{0x0000000000024000L});
@@ -3018,7 +3057,7 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleUser1650 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_ruleUser1696 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleUser1713 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_33_in_ruleUser1731 = new BitSet(new long[]{0x0000038000000000L});
+    public static final BitSet FOLLOW_33_in_ruleUser1731 = new BitSet(new long[]{0x0000070000000000L});
     public static final BitSet FOLLOW_ruleUserPermission_in_ruleUser1752 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeature_in_entryRuleFeature1790 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFeature1800 = new BitSet(new long[]{0x0000000000000002L});
@@ -3034,8 +3073,9 @@ public class InternalVpbuildParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_36_in_ruleEBoolean2102 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_ruleProtocolType2158 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_38_in_ruleProtocolType2175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleUserPermission2220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleProtocolType2192 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_40_in_ruleUserPermission2237 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_41_in_ruleUserPermission2254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleUserPermission2271 = new BitSet(new long[]{0x0000000000000002L});
 
 }

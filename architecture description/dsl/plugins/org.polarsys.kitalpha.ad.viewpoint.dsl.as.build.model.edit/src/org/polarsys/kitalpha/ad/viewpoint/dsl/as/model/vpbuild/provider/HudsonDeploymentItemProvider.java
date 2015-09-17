@@ -15,11 +15,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -31,7 +28,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.HudsonDeployment;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
@@ -42,9 +38,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -86,15 +81,11 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	protected void addAntNamePropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_HudsonDeployment_antName_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_antName_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__ANT_NAME,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HudsonDeployment_antName_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_antName_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_HudsonDeployment_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__ANT_NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -108,15 +99,11 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	protected void addAssignedNodePropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_HudsonDeployment_assignedNode_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_assignedNode_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__ASSIGNED_NODE,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HudsonDeployment_assignedNode_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_assignedNode_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_HudsonDeployment_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__ASSIGNED_NODE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -130,15 +117,11 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	protected void addBuild_idPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_HudsonDeployment_build_id_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_build_id_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__BUILD_ID,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HudsonDeployment_build_id_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_build_id_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_HudsonDeployment_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__BUILD_ID, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -152,15 +135,11 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	protected void addEnabledPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_HudsonDeployment_enabled_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_enabled_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__ENABLED,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HudsonDeployment_enabled_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_enabled_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_HudsonDeployment_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__ENABLED, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 
 	}
@@ -174,15 +153,11 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	protected void addJdkNamePropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_HudsonDeployment_jdkName_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_jdkName_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__JDK_NAME,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HudsonDeployment_jdkName_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_jdkName_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_HudsonDeployment_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__JDK_NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -196,15 +171,11 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	protected void addUserDeployJobNamePropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_HudsonDeployment_userDeployJobName_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_userDeployJobName_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HudsonDeployment_userDeployJobName_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", //$NON-NLS-1$
+								"_UI_HudsonDeployment_userDeployJobName_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$
+						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -218,15 +189,11 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	protected void addUserDeployServerUrlPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_HudsonDeployment_userDeployServerUrl_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_HudsonDeployment_userDeployServerUrl_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_HudsonDeployment_userDeployServerUrl_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", //$NON-NLS-1$
+								"_UI_HudsonDeployment_userDeployServerUrl_feature", "_UI_HudsonDeployment_type"), //$NON-NLS-1$ //$NON-NLS-2$
+						VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -240,16 +207,12 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USERS);
-			childrenFeatures
-					.add(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__GENERATION_LOCATION);
-			childrenFeatures
-					.add(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS);
+			childrenFeatures.add(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USERS);
+			childrenFeatures.add(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__GENERATION_LOCATION);
+			childrenFeatures.add(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS);
 		}
 		return childrenFeatures;
 	}
@@ -285,8 +248,7 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/HudsonDeployment")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/HudsonDeployment")); //$NON-NLS-1$
 	}
 
 	/**
@@ -299,7 +261,8 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	public String getText(Object object) {
 
 		String label = ((HudsonDeployment) object).getAntName();
-		return label == null || label.length() == 0 ? getString("_UI_HudsonDeployment_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ? getString("_UI_HudsonDeployment_type") //$NON-NLS-1$
+				:
 				getString("_UI_HudsonDeployment_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 
 	}
@@ -323,14 +286,12 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 		case VpbuildPackage.HUDSON_DEPLOYMENT__JDK_NAME:
 		case VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME:
 		case VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case VpbuildPackage.HUDSON_DEPLOYMENT__USERS:
 		case VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION:
 		case VpbuildPackage.HUDSON_DEPLOYMENT__TRIGGERS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -344,28 +305,22 @@ public class HudsonDeploymentItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USERS,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__USERS,
 				VpbuildFactory.eINSTANCE.createUser()));
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.HUDSON_DEPLOYMENT__GENERATION_LOCATION,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__GENERATION_LOCATION,
 				VpbuildFactory.eINSTANCE.createGenerationLocation()));
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS,
 				VpbuildFactory.eINSTANCE.createTrigger()));
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS,
 				VpbuildFactory.eINSTANCE.createCron()));
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.HUDSON_DEPLOYMENT__TRIGGERS,
 				VpbuildFactory.eINSTANCE.createSCM()));
 
 	}

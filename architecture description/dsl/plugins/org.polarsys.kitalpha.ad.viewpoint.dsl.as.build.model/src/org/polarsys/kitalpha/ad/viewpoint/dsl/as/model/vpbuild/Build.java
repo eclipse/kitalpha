@@ -22,12 +22,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build#getTarget_platform <em>Target platform</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build#getMapped_repositories <em>Mapped repositories</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build#getHudsonDeployment <em>Hudson Deployment</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage#getBuild()
  * @model
@@ -37,7 +37,7 @@ public interface Build extends Aspect {
 
 	/**
 	 * Returns the value of the '<em><b>Target platform</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target platform</em>' attribute isn't clear,
@@ -55,7 +55,7 @@ public interface Build extends Aspect {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build#getTarget_platform <em>Target platform</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Target platform</em>' attribute.
@@ -68,7 +68,7 @@ public interface Build extends Aspect {
 	/**
 	 * Returns the value of the '<em><b>Mapped repositories</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Repository}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Mapped repositories</em>' containment reference list isn't clear,
@@ -85,7 +85,7 @@ public interface Build extends Aspect {
 
 	/**
 	 * Returns the value of the '<em><b>Hudson Deployment</b></em>' containment reference.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Hudson Deployment</em>' containment reference isn't clear,
@@ -103,7 +103,7 @@ public interface Build extends Aspect {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build#getHudsonDeployment <em>Hudson Deployment</em>}' containment reference.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Hudson Deployment</em>' containment reference.

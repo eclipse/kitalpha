@@ -16,28 +16,15 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.AspectItemProvider;
-
-import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Build} object.
@@ -45,9 +32,7 @@ import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BuildItemProvider extends AspectItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class BuildItemProvider extends AspectItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -83,15 +68,11 @@ public class BuildItemProvider extends AspectItemProvider implements
 	protected void addTarget_platformPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Build_target_platform_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Build_target_platform_feature", "_UI_Build_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.BUILD__TARGET_PLATFORM, true,
-						false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Build_target_platform_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Build_target_platform_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_Build_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.BUILD__TARGET_PLATFORM, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -105,14 +86,11 @@ public class BuildItemProvider extends AspectItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(VpbuildPackage.Literals.BUILD__MAPPED_REPOSITORIES);
-			childrenFeatures
-					.add(VpbuildPackage.Literals.BUILD__HUDSON_DEPLOYMENT);
+			childrenFeatures.add(VpbuildPackage.Literals.BUILD__MAPPED_REPOSITORIES);
+			childrenFeatures.add(VpbuildPackage.Literals.BUILD__HUDSON_DEPLOYMENT);
 		}
 		return childrenFeatures;
 	}
@@ -148,8 +126,7 @@ public class BuildItemProvider extends AspectItemProvider implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Build")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Build")); //$NON-NLS-1$
 	}
 
 	/**
@@ -162,7 +139,8 @@ public class BuildItemProvider extends AspectItemProvider implements
 	public String getText(Object object) {
 
 		String label = ((Build) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Build_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ? getString("_UI_Build_type") //$NON-NLS-1$
+				:
 				getString("_UI_Build_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 
 	}
@@ -180,13 +158,11 @@ public class BuildItemProvider extends AspectItemProvider implements
 
 		switch (notification.getFeatureID(Build.class)) {
 		case VpbuildPackage.BUILD__TARGET_PLATFORM:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case VpbuildPackage.BUILD__MAPPED_REPOSITORIES:
 		case VpbuildPackage.BUILD__HUDSON_DEPLOYMENT:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -200,16 +176,13 @@ public class BuildItemProvider extends AspectItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.BUILD__MAPPED_REPOSITORIES,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.BUILD__MAPPED_REPOSITORIES,
 				VpbuildFactory.eINSTANCE.createRepository()));
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.BUILD__HUDSON_DEPLOYMENT,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.BUILD__HUDSON_DEPLOYMENT,
 				VpbuildFactory.eINSTANCE.createHudsonDeployment()));
 
 	}

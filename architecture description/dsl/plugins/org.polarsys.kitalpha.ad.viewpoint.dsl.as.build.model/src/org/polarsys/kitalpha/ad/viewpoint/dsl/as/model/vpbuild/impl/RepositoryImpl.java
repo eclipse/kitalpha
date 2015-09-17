@@ -39,13 +39,13 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.RepositoryImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.RepositoryImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.RepositoryImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.RepositoryImpl#getFolders <em>Folders</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -59,7 +59,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ProtocolType PROTOCOL_EDEFAULT = ProtocolType.SVNSSH;
+	protected static final ProtocolType PROTOCOL_EDEFAULT = ProtocolType.GIT;
 
 	/**
 	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' attribute.
@@ -117,9 +117,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 * @generated
 	 */
 	protected RepositoryImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -154,8 +152,8 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 		ProtocolType oldProtocol = protocol;
 		protocol = newProtocol == null ? PROTOCOL_EDEFAULT : newProtocol;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.REPOSITORY__PROTOCOL, oldProtocol, protocol));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.REPOSITORY__PROTOCOL, oldProtocol,
+					protocol));
 
 	}
 
@@ -181,8 +179,8 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 		String oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.REPOSITORY__LOCATION, oldLocation, location));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.REPOSITORY__LOCATION, oldLocation,
+					location));
 
 	}
 
@@ -195,8 +193,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	public EList<Feature> getFeatures() {
 
 		if (features == null) {
-			features = new EObjectContainmentEList<Feature>(Feature.class,
-					this, VpbuildPackage.REPOSITORY__FEATURES);
+			features = new EObjectContainmentEList<Feature>(Feature.class, this, VpbuildPackage.REPOSITORY__FEATURES);
 		}
 		return features;
 	}
@@ -210,8 +207,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	public EList<SourceFolder> getFolders() {
 
 		if (folders == null) {
-			folders = new EObjectContainmentEList<SourceFolder>(
-					SourceFolder.class, this,
+			folders = new EObjectContainmentEList<SourceFolder>(SourceFolder.class, this,
 					VpbuildPackage.REPOSITORY__FOLDERS);
 		}
 		return folders;
@@ -223,15 +219,12 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case VpbuildPackage.REPOSITORY__FEATURES:
-			return ((InternalEList<?>) getFeatures()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getFeatures()).basicRemove(otherEnd, msgs);
 		case VpbuildPackage.REPOSITORY__FOLDERS:
-			return ((InternalEList<?>) getFolders())
-					.basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getFolders()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -318,8 +311,7 @@ public class RepositoryImpl extends EObjectImpl implements Repository {
 		case VpbuildPackage.REPOSITORY__PROTOCOL:
 			return protocol != PROTOCOL_EDEFAULT;
 		case VpbuildPackage.REPOSITORY__LOCATION:
-			return LOCATION_EDEFAULT == null ? location != null
-					: !LOCATION_EDEFAULT.equals(location);
+			return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 		case VpbuildPackage.REPOSITORY__FEATURES:
 			return features != null && !features.isEmpty();
 		case VpbuildPackage.REPOSITORY__FOLDERS:

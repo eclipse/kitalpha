@@ -21,7 +21,6 @@ import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.Chain;
-import org.eclipse.egf.portfolio.eclipse.build.buildcore.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -29,8 +28,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.templates.GenBuildModel;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util.BuildDataConfigContainer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util.JavaUtil;
-
-import com.google.inject.binder.ConstantBindingBuilder;
 
 
 /**

@@ -34,11 +34,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.UserImpl#getLogin <em>Login</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.UserImpl#getPermission <em>Permission</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -90,9 +90,7 @@ public class UserImpl extends EObjectImpl implements User {
 	 * @generated
 	 */
 	protected UserImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -127,8 +125,7 @@ public class UserImpl extends EObjectImpl implements User {
 		String oldLogin = login;
 		login = newLogin;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.USER__LOGIN, oldLogin, login));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.USER__LOGIN, oldLogin, login));
 
 	}
 
@@ -152,11 +149,10 @@ public class UserImpl extends EObjectImpl implements User {
 	public void setPermission(UserPermission newPermission) {
 
 		UserPermission oldPermission = permission;
-		permission = newPermission == null ? PERMISSION_EDEFAULT
-				: newPermission;
+		permission = newPermission == null ? PERMISSION_EDEFAULT : newPermission;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.USER__PERMISSION, oldPermission, permission));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.USER__PERMISSION, oldPermission,
+					permission));
 
 	}
 
@@ -222,8 +218,7 @@ public class UserImpl extends EObjectImpl implements User {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case VpbuildPackage.USER__LOGIN:
-			return LOGIN_EDEFAULT == null ? login != null : !LOGIN_EDEFAULT
-					.equals(login);
+			return LOGIN_EDEFAULT == null ? login != null : !LOGIN_EDEFAULT.equals(login);
 		case VpbuildPackage.USER__PERMISSION:
 			return permission != PERMISSION_EDEFAULT;
 		}

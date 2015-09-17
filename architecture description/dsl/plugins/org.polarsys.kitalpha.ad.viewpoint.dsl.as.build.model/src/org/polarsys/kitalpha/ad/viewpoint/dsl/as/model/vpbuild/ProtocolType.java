@@ -28,14 +28,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ProtocolType implements Enumerator {
 	/**
-	 * The '<em><b>Svnssh</b></em>' literal object.
+	 * The '<em><b>Git</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SVNSSH_VALUE
+	 * @see #GIT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SVNSSH(1, "svnssh", "svnssh"), //$NON-NLS-1$ //$NON-NLS-2$
+	GIT(0, "git", "git"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Svn</b></em>' literal object.
@@ -45,22 +45,30 @@ public enum ProtocolType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SVN(0, "svn", "svn"); //$NON-NLS-1$ //$NON-NLS-2$
+	SVN(1, "svn", "svn"), /**
+							* The '<em><b>Svnssh</b></em>' literal object.
+							* <!-- begin-user-doc -->
+							* <!-- end-user-doc -->
+							* @see #SVNSSH_VALUE
+							* @generated
+							* @ordered
+							*/
+	SVNSSH(2, "svnssh", "svnssh"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>Svnssh</b></em>' literal value.
+	 * The '<em><b>Git</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Svnssh</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Git</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SVNSSH
-	 * @model name="svnssh"
+	 * @see #GIT
+	 * @model name="git"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SVNSSH_VALUE = 1;
+	public static final int GIT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Svn</b></em>' literal value.
@@ -75,7 +83,22 @@ public enum ProtocolType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SVN_VALUE = 0;
+	public static final int SVN_VALUE = 1;
+
+	/**
+	 * The '<em><b>Svnssh</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Svnssh</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SVNSSH
+	 * @model name="svnssh"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SVNSSH_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Protocol Type</b></em>' enumerators.
@@ -83,8 +106,7 @@ public enum ProtocolType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ProtocolType[] VALUES_ARRAY = new ProtocolType[] {
-			SVNSSH, SVN, };
+	private static final ProtocolType[] VALUES_ARRAY = new ProtocolType[] { GIT, SVN, SVNSSH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Protocol Type</b></em>' enumerators.
@@ -92,13 +114,14 @@ public enum ProtocolType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ProtocolType> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ProtocolType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Protocol Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ProtocolType get(String literal) {
@@ -115,6 +138,8 @@ public enum ProtocolType implements Enumerator {
 	 * Returns the '<em><b>Protocol Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ProtocolType getByName(String name) {
@@ -131,14 +156,18 @@ public enum ProtocolType implements Enumerator {
 	 * Returns the '<em><b>Protocol Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ProtocolType get(int value) {
 		switch (value) {
-		case SVNSSH_VALUE:
-			return SVNSSH;
+		case GIT_VALUE:
+			return GIT;
 		case SVN_VALUE:
 			return SVN;
+		case SVNSSH_VALUE:
+			return SVNSSH;
 		}
 		return null;
 	}

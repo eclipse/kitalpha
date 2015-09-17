@@ -1029,16 +1029,22 @@ ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 ruleProtocolType returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='svn://' 
+((	enumLiteral_0='git' 
 	{
-        $current = grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getProtocolTypeAccess().getGitEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getProtocolTypeAccess().getGitEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='svn+ssh://' 
+    |(	enumLiteral_1='svn://' 
 	{
-        $current = grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='svn+ssh://' 
+	{
+        $current = grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_2()); 
     }
 ));
 

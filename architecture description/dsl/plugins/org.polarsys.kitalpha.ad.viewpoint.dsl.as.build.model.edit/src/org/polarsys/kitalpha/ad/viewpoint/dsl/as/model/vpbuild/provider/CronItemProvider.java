@@ -15,14 +15,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Cron;
 
 /**
@@ -31,9 +24,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Cron;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CronItemProvider extends TriggerItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class CronItemProvider extends TriggerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,8 +58,7 @@ public class CronItemProvider extends TriggerItemProvider implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Cron")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Cron")); //$NON-NLS-1$
 	}
 
 	/**
@@ -81,7 +71,8 @@ public class CronItemProvider extends TriggerItemProvider implements
 	public String getText(Object object) {
 
 		String label = ((Cron) object).getPlanning();
-		return label == null || label.length() == 0 ? getString("_UI_Cron_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ? getString("_UI_Cron_type") //$NON-NLS-1$
+				:
 				getString("_UI_Cron_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 
 	}
@@ -107,8 +98,7 @@ public class CronItemProvider extends TriggerItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

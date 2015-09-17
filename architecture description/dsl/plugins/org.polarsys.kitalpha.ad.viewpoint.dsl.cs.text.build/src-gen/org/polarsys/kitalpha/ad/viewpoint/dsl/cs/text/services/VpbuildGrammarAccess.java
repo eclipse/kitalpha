@@ -10,25 +10,16 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.EnumLiteralDeclaration;
-import org.eclipse.xtext.EnumRule;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
 
 @Singleton
 public class VpbuildGrammarAccess extends AbstractGrammarElementFinder {
@@ -603,29 +594,37 @@ public class VpbuildGrammarAccess extends AbstractGrammarElementFinder {
 	public class ProtocolTypeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ProtocolType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cSvnEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cSvnSvnKeyword_0_0 = (Keyword)cSvnEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cSvnsshEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cSvnsshSvnSshKeyword_1_0 = (Keyword)cSvnsshEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cGitEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cGitGitKeyword_0_0 = (Keyword)cGitEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSvnEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSvnSvnKeyword_1_0 = (Keyword)cSvnEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cSvnsshEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cSvnsshSvnSshKeyword_2_0 = (Keyword)cSvnsshEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum ProtocolType returns vpbuild::ProtocolType:
-		//	svn="svn://" | svnssh="svn+ssh://";
+		//	git | svn="svn://" | svnssh="svn+ssh://";
 		public EnumRule getRule() { return rule; }
 
-		//svn="svn://" | svnssh="svn+ssh://"
+		//git | svn="svn://" | svnssh="svn+ssh://"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//git
+		public EnumLiteralDeclaration getGitEnumLiteralDeclaration_0() { return cGitEnumLiteralDeclaration_0; }
+
+		//"git"
+		public Keyword getGitGitKeyword_0_0() { return cGitGitKeyword_0_0; }
+
 		//svn="svn://"
-		public EnumLiteralDeclaration getSvnEnumLiteralDeclaration_0() { return cSvnEnumLiteralDeclaration_0; }
+		public EnumLiteralDeclaration getSvnEnumLiteralDeclaration_1() { return cSvnEnumLiteralDeclaration_1; }
 
 		//"svn://"
-		public Keyword getSvnSvnKeyword_0_0() { return cSvnSvnKeyword_0_0; }
+		public Keyword getSvnSvnKeyword_1_0() { return cSvnSvnKeyword_1_0; }
 
 		//svnssh="svn+ssh://"
-		public EnumLiteralDeclaration getSvnsshEnumLiteralDeclaration_1() { return cSvnsshEnumLiteralDeclaration_1; }
+		public EnumLiteralDeclaration getSvnsshEnumLiteralDeclaration_2() { return cSvnsshEnumLiteralDeclaration_2; }
 
 		//"svn+ssh://"
-		public Keyword getSvnsshSvnSshKeyword_1_0() { return cSvnsshSvnSshKeyword_1_0; }
+		public Keyword getSvnsshSvnSshKeyword_2_0() { return cSvnsshSvnSshKeyword_2_0; }
 	}
 
 	public class UserPermissionElements extends AbstractEnumRuleElementFinder {
@@ -830,7 +829,7 @@ public class VpbuildGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ProtocolType returns vpbuild::ProtocolType:
-	//	svn="svn://" | svnssh="svn+ssh://";
+	//	git | svn="svn://" | svnssh="svn+ssh://";
 	public ProtocolTypeElements getProtocolTypeAccess() {
 		return unknownRuleProtocolType;
 	}

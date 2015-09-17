@@ -103,12 +103,17 @@ public class CreateBuildDocumentationTask implements ITaskProduction {
 	}
 	
 	private String reconcile(String repositoryProtocol,	String repositoryLocation) {
+		if (repositoryProtocol.equals("git"))
+			return "git http://" + repositoryLocation;
+		
 		if (repositoryProtocol.equals("svn")) {
 			return "svn://"+repositoryLocation;
 		}
-		else if (repositoryProtocol.equals("svnssh")) {
+		
+		if (repositoryProtocol.equals("svnssh")) {
 			return "svn+ssh://"+repositoryLocation;
 		}
+		
 		throw new RuntimeException(Messages.GeneratorError_RepositoryProtocolNotFound);
 	}
 

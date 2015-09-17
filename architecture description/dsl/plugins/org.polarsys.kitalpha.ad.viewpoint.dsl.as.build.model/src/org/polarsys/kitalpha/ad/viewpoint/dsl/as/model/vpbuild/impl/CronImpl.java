@@ -19,8 +19,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Cron</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
@@ -31,9 +29,7 @@ public class CronImpl extends TriggerImpl implements Cron {
 	 * @generated
 	 */
 	protected CronImpl() {
-
 		super();
-
 	}
 
 	/**
