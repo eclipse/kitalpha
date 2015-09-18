@@ -19,8 +19,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>SCM</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
@@ -31,9 +29,7 @@ public class SCMImpl extends TriggerImpl implements SCM {
 	 * @generated
 	 */
 	protected SCMImpl() {
-
 		super();
-
 	}
 
 	/**

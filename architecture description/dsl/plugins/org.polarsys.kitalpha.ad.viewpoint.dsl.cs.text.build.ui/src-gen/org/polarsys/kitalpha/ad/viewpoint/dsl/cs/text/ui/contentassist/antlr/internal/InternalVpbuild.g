@@ -498,17 +498,24 @@ rule__ProtocolType__Alternatives
     }
 :
 (
-{ before(grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_0()); }
-(	'svn://' 
+{ before(grammarAccess.getProtocolTypeAccess().getGitEnumLiteralDeclaration_0()); }
+(	'git' 
 )
-{ after(grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_0()); }
+{ after(grammarAccess.getProtocolTypeAccess().getGitEnumLiteralDeclaration_0()); }
 )
 
     |(
-{ before(grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_1()); }
+{ before(grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_1()); }
+(	'svn://' 
+)
+{ after(grammarAccess.getProtocolTypeAccess().getSvnEnumLiteralDeclaration_1()); }
+)
+
+    |(
+{ before(grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_2()); }
 (	'svn+ssh://' 
 )
-{ after(grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_1()); }
+{ after(grammarAccess.getProtocolTypeAccess().getSvnsshEnumLiteralDeclaration_2()); }
 )
 
 ;

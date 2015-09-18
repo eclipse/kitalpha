@@ -15,9 +15,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -29,7 +27,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.GenerationLocation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
 
@@ -39,9 +36,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GenerationLocationItemProvider extends ItemProviderAdapter
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class GenerationLocationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,15 +74,11 @@ public class GenerationLocationItemProvider extends ItemProviderAdapter
 	protected void addFolderPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_GenerationLocation_folder_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_GenerationLocation_folder_feature", "_UI_GenerationLocation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.GENERATION_LOCATION__FOLDER,
-						true, false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GenerationLocation_folder_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_GenerationLocation_folder_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_GenerationLocation_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.GENERATION_LOCATION__FOLDER, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -100,15 +92,11 @@ public class GenerationLocationItemProvider extends ItemProviderAdapter
 	protected void addUrlPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_GenerationLocation_url_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_GenerationLocation_url_feature", "_UI_GenerationLocation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.GENERATION_LOCATION__URL, true,
-						false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GenerationLocation_url_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_GenerationLocation_url_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_GenerationLocation_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.GENERATION_LOCATION__URL, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -131,8 +119,7 @@ public class GenerationLocationItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/GenerationLocation")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/GenerationLocation")); //$NON-NLS-1$
 	}
 
 	/**
@@ -145,7 +132,8 @@ public class GenerationLocationItemProvider extends ItemProviderAdapter
 	public String getText(Object object) {
 
 		String label = ((GenerationLocation) object).getFolder();
-		return label == null || label.length() == 0 ? getString("_UI_GenerationLocation_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ? getString("_UI_GenerationLocation_type") //$NON-NLS-1$
+				:
 				getString("_UI_GenerationLocation_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 
 	}
@@ -164,8 +152,7 @@ public class GenerationLocationItemProvider extends ItemProviderAdapter
 		switch (notification.getFeatureID(GenerationLocation.class)) {
 		case VpbuildPackage.GENERATION_LOCATION__FOLDER:
 		case VpbuildPackage.GENERATION_LOCATION__URL:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -179,8 +166,7 @@ public class GenerationLocationItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

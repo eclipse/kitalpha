@@ -38,7 +38,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 	public static VpbuildFactory init() {
 		try {
 			VpbuildFactory theVpbuildFactory = (VpbuildFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0"); //$NON-NLS-1$ 
+					.getEFactory(VpbuildPackage.eNS_URI);
 			if (theVpbuildFactory != null) {
 				return theVpbuildFactory;
 			}
@@ -87,8 +87,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 		case VpbuildPackage.SCM:
 			return createSCM();
 		default:
-			throw new IllegalArgumentException(
-					"The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -105,8 +104,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 		case VpbuildPackage.USER_PERMISSION:
 			return createUserPermissionFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -123,8 +121,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 		case VpbuildPackage.USER_PERMISSION:
 			return convertUserPermissionToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -233,8 +230,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProtocolType createProtocolTypeFromString(EDataType eDataType,
-			String initialValue) {
+	public ProtocolType createProtocolTypeFromString(EDataType eDataType, String initialValue) {
 		ProtocolType result = ProtocolType.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
@@ -247,8 +243,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertProtocolTypeToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertProtocolTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -257,8 +252,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UserPermission createUserPermissionFromString(EDataType eDataType,
-			String initialValue) {
+	public UserPermission createUserPermissionFromString(EDataType eDataType, String initialValue) {
 		UserPermission result = UserPermission.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
@@ -271,8 +265,7 @@ public class VpbuildFactoryImpl extends EFactoryImpl implements VpbuildFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertUserPermissionToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertUserPermissionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

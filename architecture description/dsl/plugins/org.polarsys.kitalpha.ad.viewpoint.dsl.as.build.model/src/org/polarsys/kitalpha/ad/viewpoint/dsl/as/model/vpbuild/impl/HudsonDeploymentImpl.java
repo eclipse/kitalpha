@@ -38,6 +38,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.HudsonDeploymentImpl#getAntName <em>Ant Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.HudsonDeploymentImpl#getAssignedNode <em>Assigned Node</em>}</li>
@@ -50,12 +51,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.HudsonDeploymentImpl#getGenerationLocation <em>Generation Location</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.HudsonDeploymentImpl#getTriggers <em>Triggers</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class HudsonDeploymentImpl extends EObjectImpl implements
-		HudsonDeployment {
+public class HudsonDeploymentImpl extends EObjectImpl implements HudsonDeployment {
 
 	/**
 	 * The default value of the '{@link #getAntName() <em>Ant Name</em>}' attribute.
@@ -233,9 +232,7 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected HudsonDeploymentImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -270,9 +267,8 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		String oldAntName = antName;
 		antName = newAntName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__ANT_NAME, oldAntName,
-					antName));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.HUDSON_DEPLOYMENT__ANT_NAME,
+					oldAntName, antName));
 
 	}
 
@@ -298,8 +294,7 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		String oldAssignedNode = assignedNode;
 		assignedNode = newAssignedNode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__ASSIGNED_NODE,
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.HUDSON_DEPLOYMENT__ASSIGNED_NODE,
 					oldAssignedNode, assignedNode));
 
 	}
@@ -326,9 +321,8 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		String oldBuild_id = build_id;
 		build_id = newBuild_id;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__BUILD_ID, oldBuild_id,
-					build_id));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.HUDSON_DEPLOYMENT__BUILD_ID,
+					oldBuild_id, build_id));
 
 	}
 
@@ -354,8 +348,7 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		boolean oldEnabled = enabled;
 		enabled = newEnabled;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__ENABLED, oldEnabled,
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.HUDSON_DEPLOYMENT__ENABLED, oldEnabled,
 					enabled));
 
 	}
@@ -382,9 +375,8 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		String oldJdkName = jdkName;
 		jdkName = newJdkName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__JDK_NAME, oldJdkName,
-					jdkName));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.HUDSON_DEPLOYMENT__JDK_NAME,
+					oldJdkName, jdkName));
 
 	}
 
@@ -411,8 +403,7 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		userDeployJobName = newUserDeployJobName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME,
-					oldUserDeployJobName, userDeployJobName));
+					VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME, oldUserDeployJobName, userDeployJobName));
 
 	}
 
@@ -425,8 +416,7 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 	public EList<User> getUsers() {
 
 		if (users == null) {
-			users = new EObjectContainmentEList<User>(User.class, this,
-					VpbuildPackage.HUDSON_DEPLOYMENT__USERS);
+			users = new EObjectContainmentEList<User>(User.class, this, VpbuildPackage.HUDSON_DEPLOYMENT__USERS);
 		}
 		return users;
 	}
@@ -454,8 +444,8 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		userDeployServerUrl = newUserDeployServerUrl;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL,
-					oldUserDeployServerUrl, userDeployServerUrl));
+					VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL, oldUserDeployServerUrl,
+					userDeployServerUrl));
 
 	}
 
@@ -476,16 +466,15 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 
-	public NotificationChain basicSetGenerationLocation(
-			GenerationLocation newGenerationLocation, NotificationChain msgs) {
+	public NotificationChain basicSetGenerationLocation(GenerationLocation newGenerationLocation,
+			NotificationChain msgs) {
 
 		GenerationLocation oldGenerationLocation = generationLocation;
 		generationLocation = newGenerationLocation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION,
-					oldGenerationLocation, newGenerationLocation);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION, oldGenerationLocation,
+					newGenerationLocation);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -506,25 +495,16 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 		if (newGenerationLocation != generationLocation) {
 			NotificationChain msgs = null;
 			if (generationLocation != null)
-				msgs = ((InternalEObject) generationLocation)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION,
-								null, msgs);
+				msgs = ((InternalEObject) generationLocation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION, null, msgs);
 			if (newGenerationLocation != null)
-				msgs = ((InternalEObject) newGenerationLocation)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION,
-								null, msgs);
+				msgs = ((InternalEObject) newGenerationLocation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION, null, msgs);
 			msgs = basicSetGenerationLocation(newGenerationLocation, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION,
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION,
 					newGenerationLocation, newGenerationLocation));
 
 	}
@@ -538,8 +518,8 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 	public EList<Trigger> getTriggers() {
 
 		if (triggers == null) {
-			triggers = new EObjectContainmentEList<Trigger>(Trigger.class,
-					this, VpbuildPackage.HUDSON_DEPLOYMENT__TRIGGERS);
+			triggers = new EObjectContainmentEList<Trigger>(Trigger.class, this,
+					VpbuildPackage.HUDSON_DEPLOYMENT__TRIGGERS);
 		}
 		return triggers;
 	}
@@ -550,16 +530,14 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case VpbuildPackage.HUDSON_DEPLOYMENT__USERS:
 			return ((InternalEList<?>) getUsers()).basicRemove(otherEnd, msgs);
 		case VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION:
 			return basicSetGenerationLocation(null, msgs);
 		case VpbuildPackage.HUDSON_DEPLOYMENT__TRIGGERS:
-			return ((InternalEList<?>) getTriggers()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getTriggers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -692,19 +670,15 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case VpbuildPackage.HUDSON_DEPLOYMENT__ANT_NAME:
-			return ANT_NAME_EDEFAULT == null ? antName != null
-					: !ANT_NAME_EDEFAULT.equals(antName);
+			return ANT_NAME_EDEFAULT == null ? antName != null : !ANT_NAME_EDEFAULT.equals(antName);
 		case VpbuildPackage.HUDSON_DEPLOYMENT__ASSIGNED_NODE:
-			return ASSIGNED_NODE_EDEFAULT == null ? assignedNode != null
-					: !ASSIGNED_NODE_EDEFAULT.equals(assignedNode);
+			return ASSIGNED_NODE_EDEFAULT == null ? assignedNode != null : !ASSIGNED_NODE_EDEFAULT.equals(assignedNode);
 		case VpbuildPackage.HUDSON_DEPLOYMENT__BUILD_ID:
-			return BUILD_ID_EDEFAULT == null ? build_id != null
-					: !BUILD_ID_EDEFAULT.equals(build_id);
+			return BUILD_ID_EDEFAULT == null ? build_id != null : !BUILD_ID_EDEFAULT.equals(build_id);
 		case VpbuildPackage.HUDSON_DEPLOYMENT__ENABLED:
 			return enabled != ENABLED_EDEFAULT;
 		case VpbuildPackage.HUDSON_DEPLOYMENT__JDK_NAME:
-			return JDK_NAME_EDEFAULT == null ? jdkName != null
-					: !JDK_NAME_EDEFAULT.equals(jdkName);
+			return JDK_NAME_EDEFAULT == null ? jdkName != null : !JDK_NAME_EDEFAULT.equals(jdkName);
 		case VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME:
 			return USER_DEPLOY_JOB_NAME_EDEFAULT == null ? userDeployJobName != null
 					: !USER_DEPLOY_JOB_NAME_EDEFAULT.equals(userDeployJobName);
@@ -712,8 +686,7 @@ public class HudsonDeploymentImpl extends EObjectImpl implements
 			return users != null && !users.isEmpty();
 		case VpbuildPackage.HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL:
 			return USER_DEPLOY_SERVER_URL_EDEFAULT == null ? userDeployServerUrl != null
-					: !USER_DEPLOY_SERVER_URL_EDEFAULT
-							.equals(userDeployServerUrl);
+					: !USER_DEPLOY_SERVER_URL_EDEFAULT.equals(userDeployServerUrl);
 		case VpbuildPackage.HUDSON_DEPLOYMENT__GENERATION_LOCATION:
 			return generationLocation != null;
 		case VpbuildPackage.HUDSON_DEPLOYMENT__TRIGGERS:

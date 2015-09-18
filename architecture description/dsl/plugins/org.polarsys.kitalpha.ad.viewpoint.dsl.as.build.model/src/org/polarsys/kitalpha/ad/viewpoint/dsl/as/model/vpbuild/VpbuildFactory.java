@@ -28,8 +28,7 @@ public interface VpbuildFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	VpbuildFactory eINSTANCE = org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.VpbuildFactoryImpl
-			.init();
+	VpbuildFactory eINSTANCE = org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.VpbuildFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Build</em>'.

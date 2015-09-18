@@ -26,10 +26,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.TriggerImpl#getPlanning <em>Planning</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -61,9 +61,7 @@ public class TriggerImpl extends EObjectImpl implements Trigger {
 	 * @generated
 	 */
 	protected TriggerImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -98,8 +96,8 @@ public class TriggerImpl extends EObjectImpl implements Trigger {
 		String oldPlanning = planning;
 		planning = newPlanning;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.TRIGGER__PLANNING, oldPlanning, planning));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.TRIGGER__PLANNING, oldPlanning,
+					planning));
 
 	}
 
@@ -156,8 +154,7 @@ public class TriggerImpl extends EObjectImpl implements Trigger {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case VpbuildPackage.TRIGGER__PLANNING:
-			return PLANNING_EDEFAULT == null ? planning != null
-					: !PLANNING_EDEFAULT.equals(planning);
+			return PLANNING_EDEFAULT == null ? planning != null : !PLANNING_EDEFAULT.equals(planning);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -21,6 +21,7 @@ import org.eclipse.egf.portfolio.eclipse.build.buildcore.Chain;
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.Job;
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.Property;
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.PropertyType;
+import org.eclipse.egf.portfolio.eclipse.build.buildcore.SCM;
 import org.eclipse.egf.portfolio.eclipse.build.builddeploy.BuilddeployFactory;
 import org.eclipse.egf.portfolio.eclipse.build.builddeploy.CronTrigger;
 import org.eclipse.egf.portfolio.eclipse.build.builddeploy.HudsonDeployment;
@@ -28,6 +29,11 @@ import org.eclipse.egf.portfolio.eclipse.build.builddeploy.PermissionType;
 import org.eclipse.egf.portfolio.eclipse.build.builddeploy.SCMTrigger;
 import org.eclipse.egf.portfolio.eclipse.build.builddeploy.User;
 import org.eclipse.egf.portfolio.eclipse.build.buildscm.BuildscmFactory;
+import org.eclipse.egf.portfolio.eclipse.build.buildscm.GIT;
+import org.eclipse.egf.portfolio.eclipse.build.buildscm.GITBuildLocation;
+import org.eclipse.egf.portfolio.eclipse.build.buildscm.GITGenerationLocation;
+import org.eclipse.egf.portfolio.eclipse.build.buildscm.GITLocation;
+import org.eclipse.egf.portfolio.eclipse.build.buildscm.GITProtocol;
 import org.eclipse.egf.portfolio.eclipse.build.buildscm.SVN;
 import org.eclipse.egf.portfolio.eclipse.build.buildscm.SVNBuildLocation;
 import org.eclipse.egf.portfolio.eclipse.build.buildscm.SVNGenerationLocation;
@@ -90,20 +96,29 @@ public class EGFBuildHelper {
 		//create an install step
 		InstallStep install = createInstallStep("viewpoint_" + lvpsShortName);
 		install.setName("viewpoint_" + lvpsShortName);
+		install.setProfile("SDKProfil");
+		
 		
 		//add the install step to the job
 		mainJob.getSteps().add(install);
 		
-		//create an SVN and SVN Location
-		SVN svn = BuildscmFactory.eINSTANCE.createSVN();
+		SCM scm = null;
 		
-		//add SVN to the job
-		mainJob.setScms(svn);
+		//create repository Location
+//		if (protocol.contains("svn")){ //$NON-NLS-1$
+//			scm = BuildscmFactory.eINSTANCE.createSVN();
+//		} else {
+//			//It is git
+//			scm = BuildscmFactory.eINSTANCE.createGIT();
+//		}
+//		
+//		mainJob.setScms(scm);
+		
 		
 		//create hudson deployment
 		if (conf.iscanManageCronTriggers() || conf.iscanManageGenerationLocation() || conf.iscanManageHudsonProperties()
 				|| conf.iscanManageSCMTriggers() ||  conf.iscanManageUsers()){
-			HudsonDeployment hudson = createHudsonDeployment(conf, svn, lvpsShortName, protocol, rootProjectName, repositoryLocation);
+			HudsonDeployment hudson = createHudsonDeployment(conf, scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
 
 			//add hudson deployment to the main job
 			mainJob.setDeployment(hudson);
@@ -137,20 +152,33 @@ public class EGFBuildHelper {
 		buildJob.getProperties().add(createProperty(GeneratorConstants.TARGET_LOCATION, targetLocation, PropertyType.INLINED));
 		buildJob.getProperties().add(createProperty(GeneratorConstants.REPOSITORY_LOCATION, repositoryLocation, PropertyType.RUNTIME));
 		
+		BuildStep buildStep = null;
 		
-		//add SVN Location
-		SVN svn = BuildscmFactory.eINSTANCE.createSVN();
-		SVNLocation svnLocation = createSVNLocation("svn_viewpoint", protocol);
-		svn.getLocations().add(svnLocation);
-		
-		//add SVN to the job
-		buildJob.setScms(svn);
+		if (protocol.contains("svn")){ //$NON-NLS-1$
+			//add SVN Location
+			SVN svn = BuildscmFactory.eINSTANCE.createSVN();
+			SVNLocation svnLocation = createSVNLocation("svn_viewpoint", protocol);
+			svn.getLocations().add(svnLocation);
+
+			//add SVN to the job
+			buildJob.setScms(svn);
+			
+			buildStep = createBuildStep(conf, svnLocation);
+		} else {
+			GIT git = BuildscmFactory.eINSTANCE.createGIT();
+			GITLocation gitLocation = createGITLocation("git_viewpoint", protocol);
+			
+			git.setLocations(gitLocation);
+			gitLocation.setBranch("master");
+			
+			buildJob.setScms(git);
+			buildStep = createBuildStep(conf, gitLocation);
+		}
 		
 		//add a clean step to the job
 		buildJob.getSteps().add(createCleanStep());
 		
-		//create a build steps to the job
-		BuildStep buildStep = createBuildStep(conf, svnLocation);
+		
 		
 		buildStep.setName(lvpsShortName);
 		
@@ -183,6 +211,7 @@ public class EGFBuildHelper {
 		//create install step
 		InstallStep install = createInstallStep("viewpoint_" + lvpsShortName);
 		install.setName(lvpsShortName + " feature");
+		install.setProfile("SDKProfil");
 		
 		//add install step to the job
 		buildJob.getSteps().add(install);
@@ -191,6 +220,55 @@ public class EGFBuildHelper {
 	}
 	
 	
+	private static BuildStep createBuildStep(BuildDataConfigContainer<String> conf, GITLocation gitLocation) {
+		BuildStep build = BuildstepFactory.eINSTANCE.createBuildStep();
+		
+		List<String> sourceFolders = conf.getList(GeneratorConstants.SOURCE_FOLDERS);
+		if (sourceFolders != null){
+			for(String folder: sourceFolders){
+				GITBuildLocation gitBuildLocation = BuildscmFactory.eINSTANCE.createGITBuildLocation();
+				gitBuildLocation.setFolderName(folder);
+				gitBuildLocation.setGitLocation(gitLocation);
+				build.getBuildLocations().add(gitBuildLocation);
+			}
+		}
+
+		return build;
+	}
+
+
+	private static GITLocation createGITLocation(String url, String protocol) {
+		GITLocation location = BuildscmFactory.eINSTANCE.createGITLocation();
+		
+		location.setProtocol(GITProtocol.HTTP);
+		location.setLocalPath(url); //Local Path
+		location.setUrl("${" + GeneratorConstants.REPOSITORY_LOCATION + "}");
+		
+		return location;
+	}
+	
+	/**
+	 * Create an SVNLocation
+	 * 
+	 * @param url
+	 * @param protocol
+	 * @return SVNLocation
+	 */
+	public static SVNLocation createSVNLocation(String url, String protocol) {
+
+		SVNLocation svn_location = BuildscmFactory.eINSTANCE.createSVNLocation();
+		if (protocol.equals(PROTOCOL_SVN))
+			svn_location.setProtocol(SVNProtocol.SVN);
+		if (protocol.equals(PROTOCOL_SSH))
+			svn_location.setProtocol(SVNProtocol.SVNSSH);
+		svn_location.setLocalPath(url); //Local path
+		
+		svn_location.setUrl("${" + GeneratorConstants.REPOSITORY_LOCATION + "}");
+
+		return svn_location;
+	}
+
+
 	private static Property createProperty(String key, String value, PropertyType type){
 		Property prop = BuildcoreFactory.eINSTANCE.createProperty();
 		prop.setKey(key);
@@ -219,38 +297,18 @@ public class EGFBuildHelper {
 		return install;
 	}
 
-	/**
-	 * Create an SVNLocation
-	 * 
-	 * @param local_path
-	 * @param protocol
-	 * @return SVNLocation
-	 */
-	public static SVNLocation createSVNLocation(String local_path, String protocol) {
-
-		SVNLocation svn_location = BuildscmFactory.eINSTANCE.createSVNLocation();
-		if (protocol.equals(PROTOCOL_SVN))
-			svn_location.setProtocol(SVNProtocol.SVN);
-		if (protocol.equals(PROTOCOL_SSH))
-			svn_location.setProtocol(SVNProtocol.SVNSSH);
-		svn_location.setLocalPath(local_path);
-		
-		svn_location.setUrl("${" + GeneratorConstants.REPOSITORY_LOCATION + "}");
-
-		return svn_location;
-	}
 	
 	/**
 	 * 
 	 * @param conf
-	 * @param svn
+	 * @param scm
 	 * @param rootProjectName 
 	 * @param repositoryLocation 
 	 * @return
 	 */
 
 	public static HudsonDeployment createHudsonDeployment(
-			BuildDataConfigContainer<String> conf, SVN svn, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
+			BuildDataConfigContainer<String> conf, SCM scm, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
 
 		HudsonDeployment hudsonDeployment = BuilddeployFactory.eINSTANCE
 				.createHudsonDeployment();
@@ -264,7 +322,7 @@ public class EGFBuildHelper {
 
 		if (conf.iscanManageGenerationLocation())
 			setHudsonGenerationLocation(hudsonDeployment,
-					conf.getMap(GeneratorConstants.GENERATION_LOCATION), svn, lvpsShortName, protocol, rootProjectName, repositoryLocation);
+					conf.getMap(GeneratorConstants.GENERATION_LOCATION), scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
 
 		if (conf.iscanManageCronTriggers())
 			setHudsonCronTriggers(hudsonDeployment,
@@ -311,8 +369,58 @@ public class EGFBuildHelper {
 	}
 
 	private static void setHudsonGenerationLocation(
-			HudsonDeployment hudsonDeployment, Map<String, String> generationLocation, SVN svn, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
+			HudsonDeployment hudsonDeployment, Map<String, String> generationLocation, SCM scm, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
 
+		if (protocol.contains("svn"))
+			generateSVNLocation(hudsonDeployment, generationLocation, scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
+		else
+			generateGitLocation(hudsonDeployment, generationLocation, scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
+			
+
+	}
+
+
+	private static void generateGitLocation(HudsonDeployment hudsonDeployment, Map<String, String> generationLocation, SCM scm, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
+		
+		GITGenerationLocation gitGenerationLocation = BuildscmFactory.eINSTANCE.createGITGenerationLocation();
+
+		if (generationLocation != null){
+			for(String key: generationLocation.keySet()){
+
+				gitGenerationLocation.setFolderName(key);
+				GITLocation gitLocation = BuildscmFactory.eINSTANCE.createGITLocation();
+
+				String url = generationLocation.get(key);
+				if (url != null){
+
+					gitLocation.setUrl(generationLocation.get(key));
+					gitLocation.setLocalPath(lvpsShortName + "_releng");
+
+				} else {
+					if (repositoryLocation.endsWith("/"))
+						url = repositoryLocation + rootProjectName + "." + lvpsShortName + ".releng";
+					else
+						url = repositoryLocation + "/" + rootProjectName + "." + lvpsShortName + ".releng";
+					gitLocation.setUrl(url);
+				}
+
+					gitLocation.setProtocol(GITProtocol.HTTP);
+
+//				if (scm instanceof GIT)
+//					((GIT)scm).getLocations();
+				
+				gitGenerationLocation.setGitLocation(gitLocation);
+
+				break;
+			}
+		}
+		
+		hudsonDeployment.setGenerationLocation(gitGenerationLocation);
+	}
+
+
+	private static void generateSVNLocation(HudsonDeployment hudsonDeployment, Map<String, String> generationLocation,
+			SCM scm, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
 		SVNGenerationLocation svnGenerationLocation = BuildscmFactory.eINSTANCE.createSVNGenerationLocation();
 
 		if (generationLocation != null){
@@ -340,7 +448,9 @@ public class EGFBuildHelper {
 				if (protocol.equals(PROTOCOL_SSH))
 					svnLocation.setProtocol(SVNProtocol.SVNSSH);
 
-				svn.getLocations().add(svnLocation);
+				if (scm instanceof SVN)
+					((SVN)scm).getLocations().add(svnLocation);
+				
 				svnGenerationLocation.setSvnLocation(svnLocation);
 
 				break;
@@ -348,7 +458,6 @@ public class EGFBuildHelper {
 		}
 		
 		hudsonDeployment.setGenerationLocation(svnGenerationLocation);
-
 	}
 
 	private static void setHudsonCronTriggers(

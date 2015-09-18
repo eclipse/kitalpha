@@ -66,8 +66,7 @@ public interface VpbuildPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	VpbuildPackage eINSTANCE = org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.VpbuildPackageImpl
-			.init();
+	VpbuildPackage eINSTANCE = org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.VpbuildPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.BuildImpl <em>Build</em>}' class.
@@ -962,8 +961,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUILD__TARGET_PLATFORM = eINSTANCE
-				.getBuild_Target_platform();
+		EAttribute BUILD__TARGET_PLATFORM = eINSTANCE.getBuild_Target_platform();
 
 		/**
 		 * The meta object literal for the '<em><b>Mapped repositories</b></em>' containment reference list feature.
@@ -971,8 +969,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUILD__MAPPED_REPOSITORIES = eINSTANCE
-				.getBuild_Mapped_repositories();
+		EReference BUILD__MAPPED_REPOSITORIES = eINSTANCE.getBuild_Mapped_repositories();
 
 		/**
 		 * The meta object literal for the '<em><b>Hudson Deployment</b></em>' containment reference feature.
@@ -980,8 +977,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUILD__HUDSON_DEPLOYMENT = eINSTANCE
-				.getBuild_HudsonDeployment();
+		EReference BUILD__HUDSON_DEPLOYMENT = eINSTANCE.getBuild_HudsonDeployment();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.RepositoryImpl <em>Repository</em>}' class.
@@ -1077,8 +1073,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HUDSON_DEPLOYMENT__ANT_NAME = eINSTANCE
-				.getHudsonDeployment_AntName();
+		EAttribute HUDSON_DEPLOYMENT__ANT_NAME = eINSTANCE.getHudsonDeployment_AntName();
 
 		/**
 		 * The meta object literal for the '<em><b>Assigned Node</b></em>' attribute feature.
@@ -1086,8 +1081,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HUDSON_DEPLOYMENT__ASSIGNED_NODE = eINSTANCE
-				.getHudsonDeployment_AssignedNode();
+		EAttribute HUDSON_DEPLOYMENT__ASSIGNED_NODE = eINSTANCE.getHudsonDeployment_AssignedNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Build id</b></em>' attribute feature.
@@ -1095,8 +1089,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HUDSON_DEPLOYMENT__BUILD_ID = eINSTANCE
-				.getHudsonDeployment_Build_id();
+		EAttribute HUDSON_DEPLOYMENT__BUILD_ID = eINSTANCE.getHudsonDeployment_Build_id();
 
 		/**
 		 * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
@@ -1104,8 +1097,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HUDSON_DEPLOYMENT__ENABLED = eINSTANCE
-				.getHudsonDeployment_Enabled();
+		EAttribute HUDSON_DEPLOYMENT__ENABLED = eINSTANCE.getHudsonDeployment_Enabled();
 
 		/**
 		 * The meta object literal for the '<em><b>Jdk Name</b></em>' attribute feature.
@@ -1113,8 +1105,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HUDSON_DEPLOYMENT__JDK_NAME = eINSTANCE
-				.getHudsonDeployment_JdkName();
+		EAttribute HUDSON_DEPLOYMENT__JDK_NAME = eINSTANCE.getHudsonDeployment_JdkName();
 
 		/**
 		 * The meta object literal for the '<em><b>User Deploy Job Name</b></em>' attribute feature.
@@ -1122,8 +1113,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME = eINSTANCE
-				.getHudsonDeployment_UserDeployJobName();
+		EAttribute HUDSON_DEPLOYMENT__USER_DEPLOY_JOB_NAME = eINSTANCE.getHudsonDeployment_UserDeployJobName();
 
 		/**
 		 * The meta object literal for the '<em><b>Users</b></em>' containment reference list feature.
@@ -1131,8 +1121,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HUDSON_DEPLOYMENT__USERS = eINSTANCE
-				.getHudsonDeployment_Users();
+		EReference HUDSON_DEPLOYMENT__USERS = eINSTANCE.getHudsonDeployment_Users();
 
 		/**
 		 * The meta object literal for the '<em><b>User Deploy Server Url</b></em>' attribute feature.
@@ -1140,8 +1129,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL = eINSTANCE
-				.getHudsonDeployment_UserDeployServerUrl();
+		EAttribute HUDSON_DEPLOYMENT__USER_DEPLOY_SERVER_URL = eINSTANCE.getHudsonDeployment_UserDeployServerUrl();
 
 		/**
 		 * The meta object literal for the '<em><b>Generation Location</b></em>' containment reference feature.
@@ -1149,8 +1137,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HUDSON_DEPLOYMENT__GENERATION_LOCATION = eINSTANCE
-				.getHudsonDeployment_GenerationLocation();
+		EReference HUDSON_DEPLOYMENT__GENERATION_LOCATION = eINSTANCE.getHudsonDeployment_GenerationLocation();
 
 		/**
 		 * The meta object literal for the '<em><b>Triggers</b></em>' containment reference list feature.
@@ -1158,8 +1145,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HUDSON_DEPLOYMENT__TRIGGERS = eINSTANCE
-				.getHudsonDeployment_Triggers();
+		EReference HUDSON_DEPLOYMENT__TRIGGERS = eINSTANCE.getHudsonDeployment_Triggers();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.UserImpl <em>User</em>}' class.
@@ -1203,8 +1189,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GENERATION_LOCATION__FOLDER = eINSTANCE
-				.getGenerationLocation_Folder();
+		EAttribute GENERATION_LOCATION__FOLDER = eINSTANCE.getGenerationLocation_Folder();
 
 		/**
 		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
@@ -1212,8 +1197,7 @@ public interface VpbuildPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GENERATION_LOCATION__URL = eINSTANCE
-				.getGenerationLocation_Url();
+		EAttribute GENERATION_LOCATION__URL = eINSTANCE.getGenerationLocation_Url();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.TriggerImpl <em>Trigger</em>}' class.

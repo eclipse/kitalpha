@@ -84,7 +84,7 @@ public class WizardsUtil {
 			" */\n" +
 			"Build " + shortName + ".build" + " {\n" +
 			"	target-platform: " + "\"" + projectTargetPlatform + "\"" + "\n" +
-			"	repository: " + "svn+ssh:// \"" + shortName + "/" + shortName + ".git\"" + "\n" +
+			"	repository: git " + "\"http://shortName" + "/" + shortName + ".git\"" + "\n" +
 			"	features: " + projectRootFeatures +"." + shortName + ".feature" + "\n" +
 			"}";
 		return fileContent;
@@ -92,7 +92,7 @@ public class WizardsUtil {
 	
 	public static String getInitialBuildContent(String shortName, String fileName) {
 		
-		String projectTargetPlatform = PreferencesConstants.getBuildPreferences(PreferencesConstants.TARGET_PLATFORM_PREF);
+		String projectTargetPlatform = "C://eclipse.exe"; //PreferencesConstants.getBuildPreferences(PreferencesConstants.TARGET_PLATFORM_PREF);
 		String projectRootFeatures = PreferencesConstants.getBuildPreferences(PreferencesConstants.FEATURES_ROOT_PATH);
 		
 		String fileContent = 	
@@ -106,7 +106,7 @@ public class WizardsUtil {
 			" */\n" +
 			"Build " + fileName + " {\n" +
 			"	target-platform: " + "\"" + projectTargetPlatform + "\"" + "\n" +
-			"	repository: " + "svn+ssh:// \"" + shortName + "/" + shortName + ".git\"" + "\n" +
+			"	repository: git " + "\"http://shortName" + "/" + shortName + ".git\"" + "\n" +
 			"	features: " + projectRootFeatures + "." + shortName + ".feature" + "\n" +
 			"}";
 		return fileContent;

@@ -16,11 +16,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -32,13 +29,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.ProtocolType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Repository;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
-
-import org.polarsys.kitalpha.emde.model.edit.provider.ExtensionItemProviderAdapter;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Repository} object.
@@ -47,9 +41,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.ExtensionItemProviderAdapt
  * <!-- end-user-doc -->
  * @generated
  */
-public class RepositoryItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class RepositoryItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -86,15 +79,11 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements
 	protected void addProtocolPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Repository_protocol_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Repository_protocol_feature", "_UI_Repository_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.REPOSITORY__PROTOCOL, true,
-						false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Repository_protocol_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Repository_protocol_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_Repository_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.REPOSITORY__PROTOCOL, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -108,15 +97,11 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements
 	protected void addLocationPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Repository_location_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Repository_location_feature", "_UI_Repository_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.REPOSITORY__LOCATION, true,
-						false, false,
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Repository_location_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Repository_location_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_Repository_type"), //$NON-NLS-1$
+						VpbuildPackage.Literals.REPOSITORY__LOCATION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
@@ -130,8 +115,7 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VpbuildPackage.Literals.REPOSITORY__FEATURES);
@@ -171,8 +155,7 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Repository")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Repository")); //$NON-NLS-1$
 	}
 
 	/**
@@ -186,7 +169,8 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements
 
 		ProtocolType labelValue = ((Repository) object).getProtocol();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_Repository_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ? getString("_UI_Repository_type") //$NON-NLS-1$
+				:
 				getString("_UI_Repository_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 
 	}
@@ -205,13 +189,11 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements
 		switch (notification.getFeatureID(Repository.class)) {
 		case VpbuildPackage.REPOSITORY__PROTOCOL:
 		case VpbuildPackage.REPOSITORY__LOCATION:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case VpbuildPackage.REPOSITORY__FEATURES:
 		case VpbuildPackage.REPOSITORY__FOLDERS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -225,16 +207,13 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.REPOSITORY__FEATURES,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.REPOSITORY__FEATURES,
 				VpbuildFactory.eINSTANCE.createFeature()));
 
-		newChildDescriptors.add(createChildParameter(
-				VpbuildPackage.Literals.REPOSITORY__FOLDERS,
+		newChildDescriptors.add(createChildParameter(VpbuildPackage.Literals.REPOSITORY__FOLDERS,
 				VpbuildFactory.eINSTANCE.createSourceFolder()));
 
 	}

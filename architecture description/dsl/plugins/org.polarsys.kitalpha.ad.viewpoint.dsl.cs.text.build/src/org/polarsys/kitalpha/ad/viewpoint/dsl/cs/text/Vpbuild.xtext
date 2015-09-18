@@ -98,7 +98,9 @@ User returns vpbuild::User:
 
 
 enum ProtocolType returns vpbuild::ProtocolType:
-	svn='svn://' | svnssh='svn+ssh://'
+	git='git' 		|
+	svn='svn://' 	| 
+	svnssh='svn+ssh://'
 ;
 
 enum UserPermission returns vpbuild::UserPermission:

@@ -16,9 +16,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -30,11 +28,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Feature;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
-
-import org.polarsys.kitalpha.emde.model.edit.provider.ExtensionItemProviderAdapter;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.Feature} object.
@@ -43,9 +38,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.ExtensionItemProviderAdapt
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureItemProvider extends ItemProviderAdapter implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FeatureItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -81,16 +75,11 @@ public class FeatureItemProvider extends ItemProviderAdapter implements
 	protected void addNamePropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Feature_name_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Feature_name_feature", "_UI_Feature_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						VpbuildPackage.Literals.FEATURE__NAME, true, false,
-						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feature_name_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Feature_name_feature", "_UI_Feature_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						VpbuildPackage.Literals.FEATURE__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 
 	}
 
@@ -112,8 +101,7 @@ public class FeatureItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Feature")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature")); //$NON-NLS-1$
 	}
 
 	/**
@@ -126,7 +114,8 @@ public class FeatureItemProvider extends ItemProviderAdapter implements
 	public String getText(Object object) {
 
 		String label = ((Feature) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Feature_type") : //$NON-NLS-1$
+		return label == null || label.length() == 0 ? getString("_UI_Feature_type") //$NON-NLS-1$
+				:
 				getString("_UI_Feature_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 
 	}
@@ -144,8 +133,7 @@ public class FeatureItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(Feature.class)) {
 		case VpbuildPackage.FEATURE__NAME:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -159,8 +147,7 @@ public class FeatureItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

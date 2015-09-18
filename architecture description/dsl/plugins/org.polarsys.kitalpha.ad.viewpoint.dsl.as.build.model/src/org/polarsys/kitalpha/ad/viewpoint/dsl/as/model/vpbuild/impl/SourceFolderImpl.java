@@ -26,10 +26,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.SourceFolderImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -61,9 +61,7 @@ public class SourceFolderImpl extends EObjectImpl implements SourceFolder {
 	 * @generated
 	 */
 	protected SourceFolderImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -98,8 +96,7 @@ public class SourceFolderImpl extends EObjectImpl implements SourceFolder {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.SOURCE_FOLDER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.SOURCE_FOLDER__NAME, oldName, name));
 
 	}
 
@@ -156,8 +153,7 @@ public class SourceFolderImpl extends EObjectImpl implements SourceFolder {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case VpbuildPackage.SOURCE_FOLDER__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}

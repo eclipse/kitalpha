@@ -12,13 +12,9 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.VpdescEditPlugin;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
 
 /**
@@ -51,8 +47,7 @@ public final class VpbuildEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public VpbuildEditPlugin() {
-		super(new ResourceLocator[] { VpdescEditPlugin.INSTANCE,
-				EcoreEditPlugin.INSTANCE, EmdeEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { VpdescEditPlugin.INSTANCE, EcoreEditPlugin.INSTANCE, EmdeEditPlugin.INSTANCE, });
 	}
 
 	/**

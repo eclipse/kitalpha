@@ -27,10 +27,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.impl.FeatureImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -62,9 +62,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * @generated
 	 */
 	protected FeatureImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -99,8 +97,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					VpbuildPackage.FEATURE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, VpbuildPackage.FEATURE__NAME, oldName, name));
 
 	}
 
@@ -157,8 +154,7 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case VpbuildPackage.FEATURE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}

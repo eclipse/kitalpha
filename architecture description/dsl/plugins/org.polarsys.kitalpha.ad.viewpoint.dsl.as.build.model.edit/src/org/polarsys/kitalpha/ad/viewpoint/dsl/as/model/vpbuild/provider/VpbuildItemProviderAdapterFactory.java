@@ -18,15 +18,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -40,10 +35,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.VpbuildPackage;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider.customizations.BuildItemProviderCustom;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider.customizations.CronItemProviderCustom;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider.customizations.FeatureItemProviderCustom;
@@ -55,10 +48,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider.customiz
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider.customizations.TriggerItemProviderCustom;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider.customizations.UserItemProviderCustom;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.util.VpbuildAdapterFactory;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.util.VpdescSwitch;
 
 /**
@@ -71,8 +62,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.util.VpdescSwitch;
  * @generated
  */
 public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
-		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable,
-		IChildCreationExtender {
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -229,8 +219,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 	@Override
 	public Adapter createHudsonDeploymentAdapter() {
 		if (hudsonDeploymentItemProvider == null) {
-			hudsonDeploymentItemProvider = new HudsonDeploymentItemProviderCustom(
-					this);
+			hudsonDeploymentItemProvider = new HudsonDeploymentItemProviderCustom(this);
 		}
 
 		return hudsonDeploymentItemProvider;
@@ -276,8 +265,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 	@Override
 	public Adapter createGenerationLocationAdapter() {
 		if (generationLocationItemProvider == null) {
-			generationLocationItemProvider = new GenerationLocationItemProviderCustom(
-					this);
+			generationLocationItemProvider = new GenerationLocationItemProviderCustom(this);
 		}
 
 		return generationLocationItemProvider;
@@ -359,8 +347,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -369,8 +356,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -404,8 +390,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -427,10 +412,8 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Collection<?> getNewChildDescriptors(Object object,
-			EditingDomain editingDomain) {
-		return childCreationExtenderManager.getNewChildDescriptors(object,
-				editingDomain);
+	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
 
 	/**
@@ -511,8 +494,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class VpdescChildCreationExtender implements
-			IChildCreationExtender {
+	public static class VpdescChildCreationExtender implements IChildCreationExtender {
 		/**
 		 * The switch for creating child descriptors specific to each extended class.
 		 * <!-- begin-user-doc -->
@@ -542,8 +524,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			CreationSwitch(List<Object> newChildDescriptors,
-					EditingDomain editingDomain) {
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
@@ -556,8 +537,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 			@Override
 			public Object caseViewpoint(Viewpoint object) {
 
-				newChildDescriptors.add(createChildParameter(
-						VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
+				newChildDescriptors.add(createChildParameter(VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
 						VpbuildFactory.eINSTANCE.createBuild()));
 
 				return null;
@@ -568,8 +548,7 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			protected CommandParameter createChildParameter(Object feature,
-					Object child) {
+			protected CommandParameter createChildParameter(Object feature, Object child) {
 				return new CommandParameter(null, feature, child);
 			}
 
@@ -580,11 +559,9 @@ public class VpbuildItemProviderAdapterFactory extends VpbuildAdapterFactory
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Collection<Object> getNewChildDescriptors(Object object,
-				EditingDomain editingDomain) {
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain)
-					.doSwitch((EObject) object);
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
 			return result;
 		}
 
