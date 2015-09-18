@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.sdk.feature"
       label="Kitalpha SDK Feature (Incubation)"
-      version="0.5.1.qualifier"
+      version="1.0.0.qualifier"
       provider-name="%providerName"
       plugin="org.polarsys.kitalpha.product">
 
@@ -19,35 +19,35 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.runtime.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.runtime.feature" version="1.0.0.qualifier"/>
 
-      <import feature="org.polarsys.kitalpha.ad.sdk.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.sdk.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.sdk.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.sdk.source.feature" version="1.0.0.qualifier"/>
 
-      <import feature="org.polarsys.kitalpha.ad.ta.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.ta.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.ta.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.ta.source.feature" version="1.0.0.qualifier"/>
 
-      <import feature="org.polarsys.kitalpha.ad.dsl.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.dsl.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.dsl.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.dsl.source.feature" version="1.0.0.qualifier"/>
 
-      <import feature="org.polarsys.kitalpha.representation.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.representation.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.representation.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.representation.source.feature" version="1.0.0.qualifier"/>
 
-      <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.source.feature" version="1.0.0.qualifier"/>
 
-      <import feature="org.polarsys.kitalpha.emde.sdk.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.emde.sdk.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.sdk.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.sdk.source.feature" version="1.0.0.qualifier"/>
 
-      <import feature="org.polarsys.kitalpha.cadence.examples.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.cadence.examples.source.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.composer.examples.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.composer.examples.source.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.transposer.examples.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.transposer.examples.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.cadence.examples.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.cadence.examples.source.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.composer.examples.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.composer.examples.source.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.transposer.examples.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.transposer.examples.source.feature" version="1.0.0.qualifier"/>
       
-      <import feature="org.polarsys.kitalpha.product.feature" version="0.5.1.qualifier"/>
-      <import feature="org.polarsys.kitalpha.product.source.feature" version="0.5.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.product.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.product.source.feature" version="1.0.0.qualifier"/>
    </requires>
 
 </feature>

@@ -20,7 +20,7 @@
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="mars"/>
-    <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="0.5.1RC1"/>
+    <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.0.0"/>
     <properties xmi:id="_3c6QMI5lEeOQ8YcnVfa6Wg" key="guava.version" value="11.0.2.v201303041551"/>
   </propertyPackages>
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
