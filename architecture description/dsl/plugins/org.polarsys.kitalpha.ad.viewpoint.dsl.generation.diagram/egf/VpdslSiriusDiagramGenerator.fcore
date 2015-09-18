@@ -402,12 +402,15 @@
             <methods xmi:id="_6EINBmyBEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._6EINBmyBEeKZOKJHxkRgdw.pt"/>
             <methods xmi:id="_dwYYoGyDEeKZOKJHxkRgdw" name="addToolToToolSection"
                 patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._dwYYoGyDEeKZOKJHxkRgdw.pt"/>
+            <methods xmi:id="_PPC5QF0_EeWed-u7r2GG3g" name="setToolPrecondition" patternFilePath="templates/pattern._6EINAGyBEeKZOKJHxkRgdw/method._PPC5QF0_EeWed-u7r2GG3g.pt"/>
             <variables xmi:id="_9G4MUGyBEeKZOKJHxkRgdw" name="abstractToolDescription"
                 type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
             <variables xmi:id="_jAiQYGyTEeKZOKJHxkRgdw" name="dslvpToolElement" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_6EINB2yBEeKZOKJHxkRgdw"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_SriyMGyDEeKZOKJHxkRgdw"
                 called="#_6EINBWyBEeKZOKJHxkRgdw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_Pk830F0_EeWed-u7r2GG3g"
+                called="#_PPC5QF0_EeWed-u7r2GG3g"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_ekYocGyDEeKZOKJHxkRgdw"
                 called="#_dwYYoGyDEeKZOKJHxkRgdw"/>
           </elements>

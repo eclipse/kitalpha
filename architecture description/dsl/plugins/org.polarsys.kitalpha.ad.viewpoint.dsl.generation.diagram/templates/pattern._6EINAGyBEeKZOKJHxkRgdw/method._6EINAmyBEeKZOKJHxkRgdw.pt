@@ -11,6 +11,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.eclipse.sirius.diagram.description.tool.ToolSection;
 import org.eclipse.sirius.viewpoint.description.tool.ToolEntry;
 
+import org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Action;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction;
+
 
 public class CLASS {
 

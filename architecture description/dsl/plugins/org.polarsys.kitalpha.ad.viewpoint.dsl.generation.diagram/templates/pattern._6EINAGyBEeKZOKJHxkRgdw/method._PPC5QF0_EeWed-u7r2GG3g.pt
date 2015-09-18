@@ -1,0 +1,21 @@
+
+if (dslvpToolElement != null && abstractToolDescription != null)
+{
+	String precondition = null;
+	
+	if (dslvpToolElement instanceof OpenAction) 
+	{
+		precondition = ((OpenAction) dslvpToolElement).getPrecondition();
+	}
+	
+	if (dslvpToolElement instanceof Action) 
+	{
+		precondition = ((Action) dslvpToolElement).getPrecondition();
+	}
+	
+	if (precondition != null && precondition.isEmpty()== false)
+	{
+		((AbstractToolDescription) abstractToolDescription).setPrecondition(precondition);
+	}
+}
+
