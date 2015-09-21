@@ -22,6 +22,8 @@ public class Messages extends NLS {
 	public static String VpspecJavaValidator_TypeMismatch;
 	public static String VpspecJavaValidator_ForbiddenSelfDependency;
 	public static String VpspecJavaValidator_ForbiddenSelfInheritance;
+	public static String VpspecJavaValidator_NotExistingModel;
+	public static String VpspecJavaValidator_NotExistingDiagramModel;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
