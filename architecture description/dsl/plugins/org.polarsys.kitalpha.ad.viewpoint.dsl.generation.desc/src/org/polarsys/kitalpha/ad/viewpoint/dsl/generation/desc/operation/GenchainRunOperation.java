@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.operation;
 
 import java.lang.reflect.InvocationTargetException;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -34,12 +33,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.AbstractGenerationEvent;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.listener.IGenerationListener;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.manager.GenerationEventManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.type.ViewpointGenerationEndEvent;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
 
 /**
  * @author Boubekeur Zendagui
@@ -74,33 +72,12 @@ public class GenchainRunOperation extends AbstractGenerationOperation implements
 			// Reload generation chain element to get the last version
 			URI uri = EcoreUtil.getURI(generationChain);
 			
-			//[FAB]: Avoid ResourceNotFoundException
-			//@ [BZE]: Scenario to reproduce:
-			//	1. Generation first time a vp
-			//	2. Deletes all generated projects
-			//	3. Regenerate
-			String path = uri.trimFragment().toString();
-			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(_projectName);
-			
-			IFile file = project.getFile(path);
-			
-			if (file == null || !(file.exists()))
-				return;
-			
-			//End [FAB]
-			
 			TargetPlatformResourceSet gcSet = new TargetPlatformResourceSet();
 			generationChain = (GenerationChain) gcSet.getEObject(uri, true);
 			// Fire main feature creation 
 			try {
-				
-				//[FAB] I Think this is not a good way to instantiate set. 
-				//to avoid NPE 
 				if (set == null)
 					set = new TargetPlatformResourceSet();
-				
-				//End [FAB]
-				
 				
 				generateFeaturePlugin(set, generationChain, _monitor);
 			} catch (CoreException e) {

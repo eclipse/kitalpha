@@ -29,6 +29,33 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.manager.Generatio
 
 public class AFViewpointGenerationOrchetrator{
 	
+	/** Associated {@link ArchitectureFramework} **/
+	private ArchitectureFramework afDescription;
+	
+	/** The Generation graph **/
+	private GenerationGraph generationGraph;
+	
+	private VpGenerationListenerForOrchestration listener;
+	
+	/**
+	 * Default constructor
+	 * @param af_description The associated {@link ArchitectureFramework}
+	 */
+	public AFViewpointGenerationOrchetrator(ArchitectureFramework af_description) {
+		afDescription = af_description;
+		generationGraph = new GenerationGraph(af_description);
+	}
+	
+	/**
+	 * @return the number of the viewpoint to generate
+	 */
+	public int getNumberOfViewpointToGenerate(){
+		if (generationGraph != null && generationGraph.getOwnedNodes().size() > 0)
+			return generationGraph.getOwnedNodes().size();
+		
+		return -1;
+	}
+	
 	/**
 	 * This method manages vpdsl viewpoint generation. It launch the generation 
 	 * of one vpdsl viewpoint and create a listener that listen to 
@@ -38,10 +65,7 @@ public class AFViewpointGenerationOrchetrator{
 	 * generation of the next vpdsl viewpoints registered in 
 	 * <code>_viewpointToGenerate<code> list.
 	 */
-	public void orchestrateVPGeneration(ArchitectureFramework af_description,
-										String afModelStringURI, 
-										IProgressMonitor monitor){
-		GenerationGraph generationGraph = new GenerationGraph(af_description);
+	public void orchestrateVPGeneration(String afModelStringURI, IProgressMonitor monitor){
 		if (generationGraph.isEmpty() == false)
 		{
 			// Check if there is cycles
@@ -57,14 +81,17 @@ public class AFViewpointGenerationOrchetrator{
 			// Create the generation Stack
 			GenerationStack stack = new GenerationStack();
 			stack.compute(generationGraph);
-			stack.print();
+//			stack.print();
 			Stack<Viewpoint> vpStack = stack.getViewpointStack();
 			
 			// Create the viewpoint generation listener
-			VpGenerationListenerForOrchestration listener = 
-				new VpGenerationListenerForOrchestration(vpStack, af_description, afModelStringURI, monitor);
+			listener = new VpGenerationListenerForOrchestration(vpStack, afDescription, afModelStringURI, monitor);
 			// Register it
 			GenerationEventManager.getInstance().addGenerationListener(listener);
 		}
+	}
+	
+	public void dispose(){
+		GenerationEventManager.getInstance().removeGenerationListener(listener);
 	}
 }
