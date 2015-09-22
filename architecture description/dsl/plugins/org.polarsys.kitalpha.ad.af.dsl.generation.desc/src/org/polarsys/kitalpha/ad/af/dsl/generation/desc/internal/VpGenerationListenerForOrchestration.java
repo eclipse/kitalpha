@@ -20,6 +20,7 @@ import java.util.Stack;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -52,13 +53,17 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 	private ArchitectureFramework _afSpecification = null;
 	private String _afModelStringURI = null;
 	
+	private boolean _listenerIsActive = false;
+	
 	protected static final ViewpointGenerationHelper _generationHelper = new ViewpointGenerationHelper();
 	
-	private IProgressMonitor _monitor = null;
+	private IProgressMonitor _monitor = new NullProgressMonitor();
 	
 	/**
-	 * Constructor with parameters
+	 * 
 	 * @param viewpointToGenerate
+	 * @param afSpecification
+	 * @param afModelStringURI
 	 * @param monitor
 	 */
 	public VpGenerationListenerForOrchestration(Stack<Viewpoint> viewpointToGenerate, 
@@ -71,6 +76,7 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 		_afSpecification = afSpecification;
 		_afModelStringURI = afModelStringURI;
 		_monitor = monitor;
+		_listenerIsActive = true;
 		
 		Viewpoint vp = viewpointToGenerate.pop();
 		_generationHelper.generateViewpoint(vp, monitor);
@@ -90,11 +96,11 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 		
 		if (event instanceof ViewpointGenerationEndEvent)
 		{
-			if ( _viewpointToGenerate != null && _viewpointToGenerate.isEmpty() == false )
+			if (_listenerIsActive && _viewpointToGenerate != null && _viewpointToGenerate.isEmpty() == false )
 			{
 				generateViewpoint();
 			}
-			else
+			else if ( _listenerIsActive )
 			{
 				updateAFRequiredBundles();
 				patchAFModel();

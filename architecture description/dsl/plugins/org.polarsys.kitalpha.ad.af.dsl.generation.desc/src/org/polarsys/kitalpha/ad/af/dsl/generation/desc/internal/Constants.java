@@ -27,6 +27,8 @@ public class Constants {
 	
 	public static final String CONTRACT_PROJECT_NAME = "af.project.name";
 	
+	public static final String CONTRACT_PACKAGE_AF = "package.af";
+	
 	public static final String CONTRACT_FEATURE_LABEL = "af.feature.label";
 	
 	public static final String CONTRACT_FEATURE_NAME = "af.feature.name";
@@ -38,5 +40,7 @@ public class Constants {
 	public static final String CONTRACT_INCLUDE_PLUGIN_NAME_LIST = "include.plugin.names.list";
 	
 	public static final String CONTRACT_INCLUDE_FEATUE_NAME_LIST = "include.feature.names.list";
+	
+	public static final String CONTRACT_NUMBER_VIEWPOINT_TO_GENERATE = "number.of.viewpoint.to.generate";
 	
 }
