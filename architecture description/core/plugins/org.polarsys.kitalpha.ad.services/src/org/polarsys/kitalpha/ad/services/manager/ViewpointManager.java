@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.osgi.util.NLS;
@@ -49,15 +50,24 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 public class ViewpointManager {
 
 	private static final String STATE_FILENAME = "viewpointManager.state";
+	protected static final ViewpointManager INSTANCE;
+	
+	private final static Set<String> discarded = new HashSet<String>();
+	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
+	private final List<Listener> listeners = new ArrayList<Listener>();
+	private static final int ACTIVATED = 1;
+	private static final int DEACTIVATED = 2;
+	private static final int DISPLAYED = 4;
+	private static final int FILTERED = 8;
+	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
 	private final Set<String> activated = new HashSet<String>();
-	private final Set<String> managed = new HashSet<String>();
-	private final Set<String> discarded = new HashSet<String>();
-	private final List<Listener> listeners = new ArrayList<Listener>();
+    private final Set<String> managed = new HashSet<String>();
+	private ResourceSet target;
 	private final StateManager stateManager = new StateManager();
 
-	public Resource getViewpoint(String id) {
+	public static Resource getViewpoint(String id) {
 		for (Resource res : getAvailableViewpoints()) {
 			if (id.equals(res.getId()))
 				return res;
@@ -65,30 +75,12 @@ public class ViewpointManager {
 		return null;
 	}
 
-	public void addListener(Listener l) {
-		if (listeners.contains(l))
-			return;
-		if (l instanceof EarlyListener) {
-			for (int i = 0; i < listeners.size(); i++) {
-				if (!(listeners.get(i) instanceof EarlyListener)) {
-					listeners.add(i, l);
-					return;
-				}
-			}
-		}
-		listeners.add(l);
-	}
-
-	public void removeListener(Listener l) {
-		listeners.remove(l);
-	}
-
-	public void pinError(Resource vp) {
+	public static void pinError(Resource vp) {
 		discarded.add(vp.getId());
 
 	}
 
-	public Resource[] getAvailableViewpoints() {
+	public static Resource[] getAvailableViewpoints() {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setDomain("AF");
 		searchCriteria.getTags().add("vp");
@@ -105,6 +97,14 @@ public class ViewpointManager {
 
 	public boolean isActive(String id) {
 		return activated.contains(id);
+	}
+
+	public boolean isUsed(String id) {
+		return isActive(id);
+	}
+
+	public boolean isFiltered(String id) {
+		return false;
 	}
 
 	public void activate(String id) throws ViewpointActivationException {
@@ -202,12 +202,58 @@ public class ViewpointManager {
 		stateManager.saveState();
 	}
 
+	public static void addOverallListener(OverallListener l) {
+		if (overallListeners.contains(l))
+			return;
+		overallListeners.add(l);
+	}
+
+	public static void removeOverallListener(OverallListener l) {
+		overallListeners.remove(l);
+	}
+
+	public void addListener(Listener l) {
+		if (listeners.contains(l))
+			return;
+		listeners.add(l);
+	}
+
+	public void removeListener(Listener l) {
+		listeners.remove(l);
+	}
+
 	protected void fireEvent(Resource vpResource, int event) {
 		for (Listener l : listeners.toArray(new Listener[listeners.size()])) {
-			if (event == ACTIVATED)
+			switch (event) {
+			case ACTIVATED:
 				l.hasBeenActivated(vpResource);
-			else if (event == DEACTIVATED)
+				break;
+			case DEACTIVATED:
 				l.hasBeenDeactivated(vpResource);
+				break;
+			case FILTERED:
+				l.hasBeenFiltered(vpResource);
+				break;
+			case DISPLAYED:
+				l.hasBeenDisplayed(vpResource);
+				break;
+			}
+		}
+		for (OverallListener l : overallListeners.toArray(new OverallListener[overallListeners.size()])) {
+			switch (event) {
+			case ACTIVATED:
+				l.hasBeenActivated(target, vpResource);
+				break;
+			case DEACTIVATED:
+				l.hasBeenDeactivated(target, vpResource);
+				break;
+			case FILTERED:
+				l.hasBeenFiltered(target, vpResource);
+				break;
+			case DISPLAYED:
+				l.hasBeenDisplayed(target, vpResource);
+				break;
+			}
 		}
 	}
 
@@ -275,20 +321,35 @@ public class ViewpointManager {
 
 	}
 
+	public static interface OverallListener {
+		void hasBeenActivated(Object ctx, Resource vp);
+
+		void hasBeenDeactivated(Object ctx, Resource vp);
+
+		void hasBeenFiltered(Object ctx, Resource vp);
+
+		void hasBeenDisplayed(Object ctx, Resource vp);
+	}
+
 	public static interface Listener {
 		void hasBeenActivated(Resource vp);
 
 		void hasBeenDeactivated(Resource vp);
+
+		void hasBeenFiltered(Resource vp);
+
+		void hasBeenDisplayed(Resource vp);
+
 	}
 
-	public static interface EarlyListener extends Listener {
-
+	public static ViewpointManager getInstance(EObject ctx1) {
+		return INSTANCE;
 	}
 
-	private static final int ACTIVATED = 1;
-	private static final int DEACTIVATED = 2;
-
-	public static final ViewpointManager INSTANCE;
+	public static ViewpointManager getInstance(final ResourceSet ctx) {
+		return INSTANCE;
+	}
+	
 	static {
 		ViewpointManager instance = null;
 		try {

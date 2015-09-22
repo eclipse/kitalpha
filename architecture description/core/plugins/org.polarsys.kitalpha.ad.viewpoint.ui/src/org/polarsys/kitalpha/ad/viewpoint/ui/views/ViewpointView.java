@@ -31,6 +31,7 @@ import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -56,7 +57,7 @@ import org.polarsys.kitalpha.ad.af.coredomain.af.model.edit.provider.AfItemProvi
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.edit.provider.ToolsItemProviderAdapterFactory;
@@ -90,7 +91,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	private ComposedAdapterFactory adapterFactory;
 	private AdapterFactoryEditingDomain editingDomain;
 	private String resourceId;
-	private Listener viewpointListener;
+	private OverallListener viewpointListener;
 	private FormToolkit toolkit;
 	private CTabFolder folder;
 
@@ -101,15 +102,15 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			initResource();
 
 			// activate the VP if the user open its registered view
-			if (!ViewpointManager.INSTANCE.isActive(resourceId))
-				ViewpointManager.INSTANCE.activate(resourceId);
+			if (!ViewpointManager.getInstance((EObject)null).isActive(resourceId))
+				ViewpointManager.getInstance((EObject)null).activate(resourceId);
 			// if the VP is desactivated we need to close the related view. This
 			// is not automatic if the VP is living into the platform/target
 			// if
 			// (!viewpointResource.getProviderLocation().equals(Location.WORSPACE))
 			// {
 			viewpointListener = new HiddingListener(site);
-			ViewpointManager.INSTANCE.addListener(viewpointListener);
+			ViewpointManager.addOverallListener(viewpointListener);
 			// }
 		} catch (Exception e) {
 			throw new PartInitException(e.getMessage(), e);
@@ -176,7 +177,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			selectionProvider.dispose();
 		}
 		if (viewpointListener != null)
-			ViewpointManager.INSTANCE.removeListener(viewpointListener);
+			ViewpointManager.removeOverallListener(viewpointListener);
 		viewpointListener = null;
 		viewpointResource = null;
 		super.dispose();
@@ -205,8 +206,6 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			tab.setSelectionProvider(selectionProvider);
 			tab.init();
 		}
-		// projectListener.selectionChanged(null, new
-		// StructuredSelection(selectionProvider.getSelection()));
 	}
 
 	public void updatePartName() {
@@ -261,14 +260,14 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		propertySheetPage.setPropertySourceProvider(new org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider(adapterFactory));
 	}
 
-	private final class HiddingListener implements Listener {
+	private final class HiddingListener implements OverallListener {
 		private final IViewSite site;
 
 		private HiddingListener(IViewSite site) {
 			this.site = site;
 		}
 
-		public void hasBeenDeactivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+		public void hasBeenDeactivated(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 			if (resourceId != null && resourceId.equals(vp.getId())) {
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 					public void run() {
@@ -278,7 +277,15 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			}
 		}
 
-		public void hasBeenActivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+		public void hasBeenActivated(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+		}
+
+		@Override
+		public void hasBeenFiltered(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+		}
+
+		@Override
+		public void hasBeenDisplayed(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 		}
 	}
 
@@ -294,10 +301,8 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 					long modelTimeStamp = modelManager.getResourceManager().getModelTimeStamp();
 					// no need to refresh if changes come from this view
 					if (timeStamp == modelTimeStamp) {
-						// System.out.println("Reload discarded");
 						return Status.OK_STATUS;
 					}
-					// System.out.println("Reload ...");
 					disposeModel();
 					try {
 						initResource();

@@ -16,6 +16,9 @@ import java.util.List;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.polarsys.kitalpha.emde.extension.i18n.Messages;
 import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtensionManager;
 import org.polarsys.kitalpha.emde.extension.utils.Log;
@@ -28,7 +31,17 @@ public class ModelExtensionHelper {
 
 	private static final ModelExtensionManager instance = createInstance();
 
-	public static ModelExtensionManager getInstance() {
+	public static ModelExtensionManager getInstance(Resource resource) {
+		return getInstance();
+	}
+	public static ModelExtensionManager getInstance(final ResourceSet ctx) {
+		return getInstance();
+	}
+	public static ModelExtensionManager getInstance(EObject ctx) {
+		return getInstance();
+	}
+
+	private static ModelExtensionManager getInstance() {
 		return instance;
 	}
 
@@ -59,27 +72,13 @@ public class ModelExtensionHelper {
 		return mgr;
 	}
 
-	private final static List<ModelExtensionListener> listeners = new ArrayList<ModelExtensionListener>();
-
-	public static void addListener(ModelExtensionListener l) {
-		if (!listeners.contains(l))
-			listeners.add(l);
+	public static void addOverallListener(ModelExtensionOverallListener l) {
+		DefaultModelExtensionManager.addOverallListener(l);
 	}
 
-	public static void removeListener(ModelExtensionListener l) {
-		listeners.remove(l);
+	public static void removeOverallListener(ModelExtensionOverallListener l) {
+		DefaultModelExtensionManager.removeOverallListener(l);
 	}
 
-	static void fireExtensionEvent(String nsURI, boolean enable) {
-		for (ModelExtensionListener l : listeners) {
-			try {
-				if (enable)
-					l.modelEnabled(nsURI);
-				else
-					l.modelDisabled(nsURI);
-			} catch (Exception e) {
-				Log.RUNTIME.logError(Messages.Listener_Error, e);
-			}
-		}
-	}
+
 }

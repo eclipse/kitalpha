@@ -86,7 +86,7 @@ public class EmdeViewerFilterAction extends ViewerFilterAction {
 	}
 
 	public void runWithEvent(Event event) {
-		ModelExtensionHelper.getInstance().setExtensionModelDisabled(getExtensibleModel(), getExtendedModel(), !isChecked());
+		ModelExtensionHelper.getInstance(resource).setExtensionModelDisabled(getExtensibleModel(), getExtendedModel(), !isChecked());
 		refreshViewers();
 		super.runWithEvent(event);
 	}

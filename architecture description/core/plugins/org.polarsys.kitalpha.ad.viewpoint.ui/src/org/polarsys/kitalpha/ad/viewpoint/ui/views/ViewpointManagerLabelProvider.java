@@ -11,6 +11,7 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
@@ -29,7 +30,7 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 		if (columnIndex != 0)
 			return null;
 		Resource vp = (Resource) element;
-		if (ViewpointManager.INSTANCE.isActive(vp.getId()))
+		if (ViewpointManager.getInstance((EObject)null).isUsed(vp.getId()))
 			return Activator.getDefault().getImage(AFImages.RUNNING_VP);
 		return Activator.getDefault().getImage(AFImages.VP);
 	}
@@ -40,7 +41,7 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 		case 0:
 			return vp.getName();
 		case 1:
-			return ViewpointManager.INSTANCE.isActive(vp.getId()) ? "Active" : "Unactive";
+			return ViewpointManager.getInstance((EObject)null).isUsed(vp.getId()) ? "Active" : "Unactive";
 		case 2:
 			return vp.getProviderLocation().toString();
 		case 3:

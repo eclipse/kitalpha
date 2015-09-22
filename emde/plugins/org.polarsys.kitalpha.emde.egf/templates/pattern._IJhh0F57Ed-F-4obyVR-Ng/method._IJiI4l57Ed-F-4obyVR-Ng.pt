@@ -983,11 +983,6 @@ public class <%=genPackage.getEditorClassName()%>
 		// Create the editing domain with a special command stack.
 		//
 		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new <%=_HashMapOfResourceToBoolean%>());
-<%if (genPackage.isExtensibleProviderFactory()) {%>
-		// Register this editor for ExtendedModel state
-		//
-		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.addListener(this);
-<%}%>		
 	}
 
 	/**
@@ -1257,8 +1252,8 @@ public class <%=genPackage.getEditorClassName()%>
 		// Create new extension actions
 		<%=genModel.getImportedName("java.util.Collection")%><<%=genModel.getImportedName("org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction")%>> extensionActions = new <%=genModel.getImportedName("java.util.ArrayList")%><EmdeViewerFilterAction>();		
 		String extensibleModelURI = resource_p.getContents().get(0).eClass().getEPackage().getNsURI();
-		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionManager")%> helper = <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance();
-		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ExtensibleModel")%> extensibleModel = helper.getExtensibleModel(extensibleModelURI);
+		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionManager")%> helper = <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance(resource_p);
+		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ExtensibleModel")%> extensibleModel = <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor")%>.INSTANCE.getExtensibleModel(extensibleModelURI);
 		if (extensibleModel != null) {		
 			for (<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ExtendedModel")%> extendedModel : extensibleModel.getAllExtendedModels()) {
 				<%=genModel.getImportedName("org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction")%> filterAction = new EmdeViewerFilterAction(resource_p, extensibleModel, extendedModel) {
@@ -2644,7 +2639,7 @@ public class <%=genPackage.getEditorClassName()%>
 		}
 		// Unregister this editor for ExtendedModel state
 		//
-		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.removeListener(this);
+		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance(getEditingDomain().getResourceSet()).removeListener(this);
 <%}%>		
 
 		if (getActionBarContributor().getActiveEditor() == this)

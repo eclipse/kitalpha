@@ -17,6 +17,7 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
@@ -119,13 +120,23 @@ public class ViewpointManagerView extends ViewPart {
 	private Action stopAction;
 	private Action refreshAction;
 	private OpenViewAction openViewAction;
-	private ViewpointManager.Listener vpListener = new ViewpointManager.Listener() {
+	private ViewpointManager.OverallListener vpListener = new ViewpointManager.OverallListener() {
 
-		public void hasBeenDeactivated(Resource vp) {
+		public void hasBeenDeactivated(Object ctx, Resource vp) {
 			performInit();
 		}
 
-		public void hasBeenActivated(Resource vp) {
+		public void hasBeenActivated(Object ctx, Resource vp) {
+			performInit();
+		}
+
+		@Override
+		public void hasBeenFiltered(Object ctx, Resource vp) {
+			performInit();
+		}
+
+		@Override
+		public void hasBeenDisplayed(Object ctx, Resource vp) {
 			performInit();
 		}
 	};
@@ -158,7 +169,7 @@ public class ViewpointManagerView extends ViewPart {
 
 		createViewer(composite);
 		init();
-		ViewpointManager.INSTANCE.addListener(vpListener);
+		ViewpointManager.addOverallListener(vpListener);
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(wsListener);
 	}
 
@@ -231,7 +242,7 @@ public class ViewpointManagerView extends ViewPart {
 	}
 
 	private void init() {
-		viewer.setInput(ViewpointManager.INSTANCE.getAvailableViewpoints());
+		viewer.setInput(ViewpointManager.getAvailableViewpoints());
 		updateButtons(null);
 	}
 
@@ -292,7 +303,7 @@ public class ViewpointManagerView extends ViewPart {
 		int size = selection == null ? 0 : selection.size();
 		if (size == 1) {
 			Resource res = (Resource) selection.getFirstElement();
-			boolean active = ViewpointManager.INSTANCE.isActive(res.getId());
+			boolean active = ViewpointManager.getInstance((EObject)null).isUsed(res.getId());
 			startAction.setEnabled(!active);
 			stopAction.setEnabled(active);
 			openViewAction.setEnabled(active);
@@ -313,10 +324,10 @@ public class ViewpointManagerView extends ViewPart {
 				if (size != 1)
 					return;
 				final Resource res = (Resource) ss.getFirstElement();
-				if (ViewpointManager.INSTANCE.isActive(res.getId()))
+				if (ViewpointManager.getInstance((EObject)null).isActive(res.getId()))
 					return;
 				try {
-					ViewpointManager.INSTANCE.activate(res.getId());
+					ViewpointManager.getInstance((EObject)null).activate(res.getId());
 
 					// // we need a short delay to wait for new freshly installed
 					// // bundles to be ready
@@ -343,10 +354,10 @@ public class ViewpointManagerView extends ViewPart {
 				if (size != 1)
 					return;
 				Resource res = (Resource) ss.getFirstElement();
-				if (!ViewpointManager.INSTANCE.isActive(res.getId()))
+				if (!ViewpointManager.getInstance((EObject)null).isActive(res.getId()))
 					return;
 				try {
-					ViewpointManager.INSTANCE.desactivate(res.getId());
+					ViewpointManager.getInstance((EObject)null).desactivate(res.getId());
 				} catch (ViewpointActivationException e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					Activator.getDefault().logError(e);
@@ -381,7 +392,7 @@ public class ViewpointManagerView extends ViewPart {
 	@Override
 	public void dispose() {
 		super.dispose();
-		ViewpointManager.INSTANCE.removeListener(vpListener);
+		ViewpointManager.removeOverallListener(vpListener);
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(wsListener);
 	}
 

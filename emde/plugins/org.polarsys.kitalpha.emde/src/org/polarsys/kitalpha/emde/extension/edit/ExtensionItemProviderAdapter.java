@@ -36,11 +36,10 @@ public class ExtensionItemProviderAdapter extends ItemProviderAdapter {
 	public Collection<?> getChildren(Object object) {
 		Collection<?> children = super.getChildren(object);
 		List<Object> out = new ArrayList<Object>(children.size());
-		ModelExtensionManager mgr = ModelExtensionHelper.getInstance();
 		for (Object element : children) {
 
 			if (element instanceof EObject) {
-				if (!mgr.isExtensionModelDisabled((EObject) element))
+				if (!ModelExtensionHelper.getInstance((EObject) element).isExtensionModelDisabled((EObject) element))
 					out.add(element);
 			} else
 				out.add(element);

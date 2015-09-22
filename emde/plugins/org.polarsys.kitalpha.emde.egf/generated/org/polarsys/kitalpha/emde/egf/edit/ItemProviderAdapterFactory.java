@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20150507-0831
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -141,7 +141,7 @@ public class ItemProviderAdapterFactory extends org.eclipse.egf.emf.pattern.edit
 	protected final String TEXT_110 = "Object case";
 	protected final String TEXT_111 = "(";
 	protected final String TEXT_112 = " object)" + NL + "\t\t\t{" + NL + "\t\t\t\t// begin-extension-code" + NL + "\t\t\t\tif (";
-	protected final String TEXT_113 = ".getInstance().isExtensionModelDisabled(";
+	protected final String TEXT_113 = ".getInstance(object).isExtensionModelDisabled(";
 	protected final String TEXT_114 = ".getRootContainer(object).eClass().getEPackage().getNsURI(), \"";
 	protected final String TEXT_115 = "\")) {";
 	protected final String TEXT_116 = NL + "\t\t\t\t\treturn null;\t\t\t\t" + NL + "\t\t\t\t}" + NL + "\t\t\t\t// end-extension-code";
