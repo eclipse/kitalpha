@@ -76,7 +76,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	@Inject
 	private Injector injector;
 	
-	private boolean synchronizing;
 	
 	private boolean isResourceClean = true;
 	
@@ -90,7 +89,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
 	
 	public CommonEditorCallback() {
-		synchronizing = false;
 	}
 	
 	public Injector getInjector() {
@@ -105,7 +103,6 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	public void afterCreatePartControl(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
-		
 		IResource resource = editor.getResource();
 		if (resource!=null && !toggleNature.hasNature(resource.getProject()) && resource.getProject().isAccessible() && !resource.getProject().isHidden()) {
 			toggleNature.toggleNature(resource.getProject());
@@ -155,23 +152,17 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
 
-		if (!synchronizing) {
-			final XtextEditor current = editor;
-			Runnable runnable = new Runnable() {		
-				public void run() {			
-					if (!synchronizing) {
-						IFile file = (IFile) current.getEditorInput().getAdapter(IFile.class);						
-						synchronizing = doSynchronize(file);
-					}	
-				}
-			};
-			if (runnable != null)
-				update(runnable);
-		} else {
-			synchronizing = false;
-		}
+		final XtextEditor current = editor;
+		Runnable runnable = new Runnable() {		
+			public void run() {			
+				IFile file = (IFile) current.getEditorInput().getAdapter(IFile.class);						
+				doSynchronize(file);
+			}
+		};
+		if (runnable != null)
+			update(runnable);
 	}
-	
+
 	protected boolean doSynchronize(IFile file) {
 		boolean result = false;
 		XtextResourceSet resourceSet = getInjector().getInstance(XtextResourceSet.class);
@@ -184,7 +175,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 			
 			isResourceClean = true; //reset
 			
-			if (validate(inputObjects) && canSynchronize(file, projectName)){
+			if (validate(inputObjects)){
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetObject);
 
 				if (synchronizedObject!=null) {
@@ -233,13 +224,13 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 
 	protected List<EObject> loadInputModels(IFile file, ResourceSet resourceSet) {
 		Iterable<EObject> inputModels = Collections.emptyList();
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadDataResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadConfigurationResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadUIResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadDiagramResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadBuildResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadServicesResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadActivityexplorerResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadDataResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadConfigurationResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadUIResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadDiagramResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndloadBuildResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadServicesResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadActivityexplorerResource(file, resourceSet));
 		return Lists.newArrayList( inputModels );
 	}
 	
@@ -272,7 +263,8 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		}
 	}
 	
-	
+
+	//TODO delete this method and underlying methods because they ares not used
 	protected boolean canSynchronize(IFile file, String projectName){
 		XtextResourceSet resourceSet = getInjector().getInstance(XtextResourceSet.class);
 		loadInputModels(file, resourceSet);

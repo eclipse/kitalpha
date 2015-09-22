@@ -42,7 +42,7 @@
 			Cron "00 * * * *"&#13;
 			SCM "06 * * * *"&#13;
 		}&#13;
-		generation-location: "releng-script" url: "svn.polarsys.corp.kitalpha/svnroot/plugin.releng"&#13;
+		generation-location: "releng-script" url: "git.polarsys.corp.kitalpha/git/plugin.releng"&#13;
 	}&#13;	
 }&#13;
 </template>

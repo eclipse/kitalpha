@@ -200,7 +200,7 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 			
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
-			if (validate(inputObjects) && canSynchronize(file, projectName)){
+			if (validate(inputObjects)){
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
 				
 				if (synchronizedObject!=null) {
