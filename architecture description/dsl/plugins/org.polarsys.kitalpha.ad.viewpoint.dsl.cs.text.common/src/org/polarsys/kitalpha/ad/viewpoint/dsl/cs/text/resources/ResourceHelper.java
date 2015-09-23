@@ -21,6 +21,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -29,9 +30,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.emf.ecore.resource.Resource.IOWrappedException;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
@@ -659,6 +662,37 @@ public class ResourceHelper {
 		}
 		return Collections.emptyList();
 	}
+	
+	/**
+	 * Loads the Build resource from the given file in the given resource set
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndloadBuildResource(IFile file, ResourceSet resourceSet) {
+		URI buildResourceURI = computeURI(file, FileExtension.BUILD_EXTENSION);
+		if (buildResourceURI==null)
+			return Collections.emptyList();
+		return validateAndLoadBuildResource(buildResourceURI, resourceSet);
+	}
+	
+	/**
+	 * Loads the Build resource with the given URI in the given resource set
+	 * 
+	 * @param buildResourceURI
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadBuildResource(URI buildResourceURI, ResourceSet resourceSet) {
+		Resource buildResource = loadResource(buildResourceURI, resourceSet);
+		if (!buildResource.getContents().isEmpty()) {
+			EObject buildRoot = buildResource.getContents().get(0);
+			if (isValid(buildRoot))
+				return Lists.newArrayList(buildRoot);
+		}
+		return Collections.emptyList();
+	}
 
 	/**
 	 * Loads the Data resource from the given file in the given resource set
@@ -692,6 +726,56 @@ public class ResourceHelper {
 		return Collections.emptyList();
 	}
 	
+	
+	/**
+	 * Loads the Data resource from the given file in the given resource set
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadDataResource(IFile file, ResourceSet resourceSet) {
+		URI dataResourceURI = computeURI(file, FileExtension.DATA_EXTENSION);
+		if (dataResourceURI==null)
+			throw new RuntimeException (Messages.ResourceHelper_DataModelNotFound);
+		return validateAndLoadDataResource(dataResourceURI, resourceSet);
+	}
+
+	/**
+	 * Loads the Data resource with the given URI in the given resource set
+	 * if the resource contains error, return emptylist
+	 * @param dataResourceURI
+	 * @param resourceSet
+	 * @return 
+	 */
+	public static List<EObject> validateAndLoadDataResource(URI dataResourceURI, ResourceSet resourceSet) {
+		Resource dataResource = loadResource(dataResourceURI, resourceSet);
+		
+		if (!dataResource.getContents().isEmpty()) {
+			EObject dataRoot = dataResource.getContents().get(0);
+			loadExternalLibrary(resourceSet);
+			EcoreUtil2.resolveAll(dataRoot);
+			if (isValid(dataRoot))
+				return dataRoot.eContents();
+		}
+		
+		return Collections.emptyList();
+	}
+	
+	
+	
+	private static boolean isValid(EObject eObject) {
+		Resource eResource = eObject.eResource();
+		EList<Diagnostic> errors = eResource.getErrors();
+		
+		boolean empty = errors.isEmpty();
+		org.eclipse.emf.common.util.Diagnostic result = 
+				Diagnostician.INSTANCE.validate(EcoreUtil.getRootContainer(eObject));
+		
+		return empty &= (result.getSeverity() != IStatus.ERROR);
+
+	}
+
 	
 	/**
 	 * Loads the Data resource with the given URI, imported uri in the given resource set
@@ -791,6 +875,39 @@ public class ResourceHelper {
 		}
 		return Collections.emptyList();
 	}
+	
+	/**
+	 * Loads the UI resource from the given file in the given resource set
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadUIResource(IFile file, ResourceSet resourceSet) {
+		URI uiResourceURI = computeURI(file, FileExtension.UI_EXTENSION);
+		if (uiResourceURI==null)
+			return Collections.emptyList();
+		return validateAndLoadUIResource(uiResourceURI, resourceSet);
+	}
+	
+	
+	/**
+	 * Loads the UI resource with the given URI in the given resource set
+	 * 
+	 * @param uiResourceURI
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadUIResource(URI uiResourceURI, ResourceSet resourceSet) {
+		Resource uiResource = loadResource(uiResourceURI, resourceSet);
+		if (uiResource != null && !uiResource.getContents().isEmpty()) {
+			EObject uiRoot = uiResource.getContents().get(0);
+			
+			if (isValid(uiRoot))
+				return uiRoot.eContents();
+		}
+		return Collections.emptyList();
+	}
 
 	/**
 	 * Loads the Diagram resource from the given file in the given resource set
@@ -821,6 +938,37 @@ public class ResourceHelper {
 		}
 		return Collections.emptyList();
 	}
+	
+	/**
+	 * Loads the Diagram resource from the given file in the given resource set
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadDiagramResource(IFile file, ResourceSet resourceSet) {
+		URI diagramResourceURI = computeURI(file, FileExtension.DIAGRAM_EXTENSION);
+		if (diagramResourceURI==null)
+			return Collections.emptyList();
+		return validateAndLoadDiagramResource(diagramResourceURI, resourceSet);
+	}
+	
+	/**
+	 * Loads the Diagram resource with the given URI in the given resource set
+	 * 
+	 * @param diagramResourceURI
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadDiagramResource(URI diagramResourceURI, ResourceSet resourceSet) {
+		Resource diagramResource = loadResource(diagramResourceURI, resourceSet);
+		if (diagramResource != null && !diagramResource.getContents().isEmpty()) {
+			EObject diagramRoot = diagramResource.getContents().get(0);
+			if (isValid(diagramRoot))
+				return diagramRoot.eContents();
+		}
+		return Collections.emptyList();
+	}
 
 	/**
 	 * Loads the Configuration resource from the given file in the given resource set
@@ -848,6 +996,37 @@ public class ResourceHelper {
 		if (configurationResource != null && !configurationResource.getContents().isEmpty()) {
 			EObject configurationRoot = configurationResource.getContents().get(0);
 			return Lists.newArrayList(configurationRoot);
+		}
+		return Collections.emptyList();
+	}
+	
+	/**
+	 * Loads the Configuration resource from the given file in the given resource set
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadConfigurationResource(IFile file, ResourceSet resourceSet) {
+		URI configurationResourceURI = computeURI(file, FileExtension.CONFIGURATION_EXTENSION);
+		if (configurationResourceURI==null)
+			return Collections.emptyList();
+		return validateAndLoadConfigurationResource(configurationResourceURI, resourceSet);
+	}
+	
+	/**
+	 * Loads the Configuration resource with the given URI in the given resource set
+	 * 
+	 * @param configurationResourceURI
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadConfigurationResource(URI configurationResourceURI, ResourceSet resourceSet) {
+		Resource configurationResource = loadResource(configurationResourceURI, resourceSet);
+		if (configurationResource != null && !configurationResource.getContents().isEmpty()) {
+			EObject configurationRoot = configurationResource.getContents().get(0);
+			if (isValid(configurationRoot))
+				return Lists.newArrayList(configurationRoot);
 		}
 		return Collections.emptyList();
 	}
@@ -883,6 +1062,38 @@ public class ResourceHelper {
 		return Collections.emptyList();
 	}
 	
+	/**
+	 * Loads the Services resource from the given file in the given resource set
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadServicesResource(IFile file, ResourceSet resourceSet) {
+		URI servicesResourceURI = computeURI(file, FileExtension.SERVICES_EXTENSION);
+		if (servicesResourceURI==null)
+			return Collections.emptyList();
+		return validateAndLoadServicesResource(servicesResourceURI, resourceSet);
+	}
+	
+	/**
+	 * Loads the S resource with the given URI in the given resource set
+	 * 
+	 * @param servicesResourceURI
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadServicesResource(URI servicesResourceURI, ResourceSet resourceSet) {
+		Resource servicesResource = loadResource(servicesResourceURI, resourceSet);
+		if (servicesResource != null && !servicesResource.getContents().isEmpty()) {
+			EObject servicesResourceRoot = servicesResource.getContents().get(0);
+			List<EObject> contents = servicesResourceRoot.eContents();
+			if (isValid(servicesResourceRoot))
+				return contents;
+		}
+		return Collections.emptyList();
+	}
+	
 	
 	
 	public static List<EObject> loadActivityexplorerResource(IFile file, ResourceSet resourceSet){
@@ -906,7 +1117,29 @@ public class ResourceHelper {
 		}
 		return Collections.emptyList();
 	}
+
+	public static List<EObject> validateAndLoadActivityexplorerResource(IFile file, ResourceSet resourceSet){
+
+		URI activityExplorerURI = computeURI(file, FileExtension.ACTIVITYEXPLORER_EXTENSION);
+
+		if (activityExplorerURI == null)
+			return Collections.emptyList();
+
+		return validateAndLoadActivityexplorerResource(activityExplorerURI, resourceSet);
+	}
+
 	
+	public static List<EObject> validateAndLoadActivityexplorerResource(URI activityExplorerURI, ResourceSet resourceSet) {
+
+		Resource activityExplorerResource = loadResource(activityExplorerURI, resourceSet);
+
+		if (!activityExplorerResource.getContents().isEmpty()){
+			EObject activityExplorerRoot = activityExplorerResource.getContents().get(0);
+			if (isValid(activityExplorerRoot))
+				return Lists.newArrayList(activityExplorerRoot);
+		}
+		return Collections.emptyList();
+	}
 
 	public static String getProjectName(EObject object){	
 		return CoreModelHelper.getProjectName(object); 	

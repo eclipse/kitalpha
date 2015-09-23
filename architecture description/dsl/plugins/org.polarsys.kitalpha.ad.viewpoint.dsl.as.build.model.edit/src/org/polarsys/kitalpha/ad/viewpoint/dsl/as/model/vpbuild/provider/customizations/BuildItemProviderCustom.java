@@ -29,5 +29,10 @@ public class BuildItemProviderCustom extends BuildItemProvider {
 	public String getText(Object object) {
 		return super.getText(object);
 	}
+	
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Build.png")); //$NON-NLS-1$
+	}
 
 }

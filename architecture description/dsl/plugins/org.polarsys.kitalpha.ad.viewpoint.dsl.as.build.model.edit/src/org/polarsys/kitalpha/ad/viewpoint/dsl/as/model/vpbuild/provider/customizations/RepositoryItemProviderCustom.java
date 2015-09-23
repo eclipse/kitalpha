@@ -38,11 +38,11 @@ public class RepositoryItemProviderCustom extends RepositoryItemProvider {
 		
 		buf.append("Repository: ");
 		if (label == null)
-			buf.append("Unknown Protocol");
+			buf.append("[Unknown Protocol] ");
 		if (label.equals("svnssh"))
-			buf.append("svn+ssh://");
+			buf.append("[svn+ssh] ");
 		if (label.equals("svn"))
-			buf.append("svn://");
+			buf.append("[svn] ");
 		
 		if (url == null)
 			buf.append("Unknown repository");
@@ -51,4 +51,8 @@ public class RepositoryItemProviderCustom extends RepositoryItemProvider {
 		return buf.toString();
 	}
 
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/repo.png")); //$NON-NLS-1$
+	}
 }
