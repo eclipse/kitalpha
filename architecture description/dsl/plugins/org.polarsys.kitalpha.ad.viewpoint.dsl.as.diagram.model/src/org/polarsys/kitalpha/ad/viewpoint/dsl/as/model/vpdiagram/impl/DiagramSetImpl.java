@@ -38,12 +38,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramSetImpl#getDiagrams <em>Diagrams</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramSetImpl#getAdditionalExternalGroup <em>Additional External Group</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramSetImpl#getAdditionalExternalData <em>Additional External Data</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -105,6 +105,7 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 	 */
 
 	public EList<DiagramRepresentation> getDiagrams() {
+
 		if (diagrams == null) {
 			diagrams = new EObjectContainmentEList<DiagramRepresentation>(DiagramRepresentation.class, this, VpdiagramPackage.DIAGRAM_SET__DIAGRAMS);
 		}
@@ -117,6 +118,7 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 	 * @generated
 	 */
 	public EList<Group> getAdditionalExternalGroup() {
+
 		if (additionalExternalGroup == null) {
 			additionalExternalGroup = new EObjectResolvingEList<Group>(Group.class, this, VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP);
 		}
@@ -129,6 +131,7 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 	 * @generated
 	 */
 	public EList<EPackage> getAdditionalExternalData() {
+
 		if (additionalExternalData == null) {
 			additionalExternalData = new EObjectResolvingEList<EPackage>(EPackage.class, this, VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA);
 		}

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getStyle <em>Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getBegin_Label <em>Begin Label</em>}</li>
@@ -27,7 +28,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getEnd_label <em>End label</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getCondition <em>Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getEdgeDescription()
  * @model
@@ -37,6 +37,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' containment reference isn't clear,
@@ -54,6 +55,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getStyle <em>Style</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Style</em>' containment reference.
@@ -65,6 +67,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Begin Label</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Begin Label</em>' containment reference isn't clear,
@@ -82,6 +85,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getBegin_Label <em>Begin Label</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Begin Label</em>' containment reference.
@@ -93,6 +97,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Center label</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Center label</em>' containment reference isn't clear,
@@ -110,6 +115,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getCenter_label <em>Center label</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Center label</em>' containment reference.
@@ -121,6 +127,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>End label</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>End label</em>' containment reference isn't clear,
@@ -138,6 +145,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getEnd_label <em>End label</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>End label</em>' containment reference.
@@ -149,6 +157,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
@@ -166,6 +175,7 @@ public interface EdgeDescription extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription#getCondition <em>Condition</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Condition</em>' containment reference.

@@ -23,6 +23,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Foreig
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getMinValue <em>Min Value</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getMaxValue <em>Max Value</em>}</li>
@@ -30,7 +31,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Foreig
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getForgroundColor <em>Forground Color</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getHistogramSection()
  * @model
@@ -40,6 +40,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Min Value</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Min Value</em>' containment reference isn't clear,
@@ -57,6 +58,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getMinValue <em>Min Value</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Min Value</em>' containment reference.
@@ -68,6 +70,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Max Value</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Max Value</em>' containment reference isn't clear,
@@ -85,6 +88,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getMaxValue <em>Max Value</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Max Value</em>' containment reference.
@@ -96,6 +100,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' containment reference isn't clear,
@@ -113,6 +118,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getValue <em>Value</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' containment reference.
@@ -125,6 +131,7 @@ public interface HistogramSection extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Background Color</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.description.SystemColors}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Background Color</em>' attribute isn't clear,
@@ -143,6 +150,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getBackgroundColor <em>Background Color</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Background Color</em>' attribute.
@@ -156,6 +164,7 @@ public interface HistogramSection extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Forground Color</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.description.SystemColors}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Forground Color</em>' attribute isn't clear,
@@ -174,6 +183,7 @@ public interface HistogramSection extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSection#getForgroundColor <em>Forground Color</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Forground Color</em>' attribute.

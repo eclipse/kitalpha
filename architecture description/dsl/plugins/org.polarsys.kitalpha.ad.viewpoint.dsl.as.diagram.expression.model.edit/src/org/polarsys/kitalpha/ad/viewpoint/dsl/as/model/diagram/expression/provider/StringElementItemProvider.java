@@ -36,9 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.String
  * <!-- end-user-doc -->
  * @generated
  */
-public class StringElementItemProvider extends ExpressionElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class StringElementItemProvider extends ExpressionElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

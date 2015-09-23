@@ -104,7 +104,9 @@ public class AbstractNodeItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_AbstractNode_type");
+
 	}
 
 	/**
@@ -138,10 +140,12 @@ public class AbstractNodeItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ABSTRACT_NODE__THE_DOMAIN,
-				 VpdiagramFactory.eINSTANCE.createNodeDomainElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ABSTRACT_NODE__THE_DOMAIN,
+						 VpdiagramFactory.eINSTANCE.createNodeDomainElement()));
+
+
 	}
 
 	/**

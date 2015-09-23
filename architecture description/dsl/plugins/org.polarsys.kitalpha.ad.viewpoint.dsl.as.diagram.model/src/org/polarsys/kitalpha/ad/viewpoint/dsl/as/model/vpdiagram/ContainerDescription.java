@@ -18,10 +18,10 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescription#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getContainerDescription()
  * @model
@@ -31,6 +31,7 @@ public interface ContainerDescription extends AbstractDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' containment reference isn't clear,
@@ -48,6 +49,7 @@ public interface ContainerDescription extends AbstractDescription {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescription#getStyle <em>Style</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Style</em>' containment reference.

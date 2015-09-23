@@ -22,8 +22,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaEl
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Foreign Expression Element</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
@@ -35,9 +33,7 @@ public abstract class ForeignExpressionElementImpl extends
 	 * @generated
 	 */
 	protected ForeignExpressionElementImpl() {
-
 		super();
-
 	}
 
 	/**

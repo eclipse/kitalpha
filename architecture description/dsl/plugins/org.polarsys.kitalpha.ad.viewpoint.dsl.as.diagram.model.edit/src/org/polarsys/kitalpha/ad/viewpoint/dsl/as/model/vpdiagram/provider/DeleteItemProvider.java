@@ -16,12 +16,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete;
 
 /**
@@ -30,9 +25,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DeleteItemProvider extends ActionItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class DeleteItemProvider extends ActionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -77,10 +70,12 @@ public class DeleteItemProvider extends ActionItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((Delete)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Delete_type") :
 			getString("_UI_Delete_type") + " " + label;
+
 	}
 
 	/**

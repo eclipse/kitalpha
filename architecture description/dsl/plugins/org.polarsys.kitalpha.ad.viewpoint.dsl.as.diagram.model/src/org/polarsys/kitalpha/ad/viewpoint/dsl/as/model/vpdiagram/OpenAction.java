@@ -20,12 +20,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction#getLabel <em>Label</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction#getPrecondition <em>Precondition</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction#getIcon <em>Icon</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getOpenAction()
  * @model
@@ -35,6 +35,7 @@ public interface OpenAction extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Label</em>' attribute isn't clear,
@@ -52,6 +53,7 @@ public interface OpenAction extends NamedElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction#getLabel <em>Label</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Label</em>' attribute.
@@ -63,6 +65,7 @@ public interface OpenAction extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Precondition</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Precondition</em>' attribute isn't clear,
@@ -80,6 +83,7 @@ public interface OpenAction extends NamedElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction#getPrecondition <em>Precondition</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Precondition</em>' attribute.
@@ -91,6 +95,7 @@ public interface OpenAction extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
@@ -108,6 +113,7 @@ public interface OpenAction extends NamedElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction#getIcon <em>Icon</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Icon</em>' attribute.

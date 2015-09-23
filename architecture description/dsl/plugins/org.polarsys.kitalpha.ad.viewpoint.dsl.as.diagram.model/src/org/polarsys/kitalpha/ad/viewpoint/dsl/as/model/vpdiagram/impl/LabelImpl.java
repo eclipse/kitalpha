@@ -28,6 +28,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.LabelImpl#getSize <em>Size</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.LabelImpl#isBold <em>Bold</em>}</li>
@@ -35,7 +36,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.LabelImpl#getValue <em>Value</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.LabelImpl#getColor <em>Color</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -157,6 +157,7 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public int getSize() {
+
 		return size;
 	}
 
@@ -167,10 +168,12 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public void setSize(int newSize) {
+
 		int oldSize = size;
 		size = newSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.LABEL__SIZE, oldSize, size));
+
 	}
 
 	/**
@@ -180,6 +183,7 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public boolean isBold() {
+
 		return bold;
 	}
 
@@ -190,10 +194,12 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public void setBold(boolean newBold) {
+
 		boolean oldBold = bold;
 		bold = newBold;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.LABEL__BOLD, oldBold, bold));
+
 	}
 
 	/**
@@ -203,6 +209,7 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public boolean isItalic() {
+
 		return italic;
 	}
 
@@ -213,10 +220,12 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public void setItalic(boolean newItalic) {
+
 		boolean oldItalic = italic;
 		italic = newItalic;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.LABEL__ITALIC, oldItalic, italic));
+
 	}
 
 	/**
@@ -226,6 +235,7 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public Expression getValue() {
+
 		return value;
 	}
 
@@ -237,12 +247,14 @@ public class LabelImpl extends EObjectImpl implements Label {
 
 	public NotificationChain basicSetValue(Expression newValue,
 			NotificationChain msgs) {
+
 		Expression oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.LABEL__VALUE, oldValue, newValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -253,6 +265,7 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public void setValue(Expression newValue) {
+
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
@@ -264,6 +277,7 @@ public class LabelImpl extends EObjectImpl implements Label {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.LABEL__VALUE, newValue, newValue));
+
 	}
 
 	/**
@@ -273,6 +287,7 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public SystemColors getColor() {
+
 		return color;
 	}
 
@@ -283,10 +298,12 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 */
 
 	public void setColor(SystemColors newColor) {
+
 		SystemColors oldColor = color;
 		color = newColor == null ? COLOR_EDEFAULT : newColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.LABEL__COLOR, oldColor, color));
+
 	}
 
 	/**

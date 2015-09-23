@@ -18,10 +18,10 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create#getIcon <em>Icon</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getCreate()
  * @model
@@ -31,6 +31,7 @@ public interface Create extends Action {
 
 	/**
 	 * Returns the value of the '<em><b>Icon</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Icon</em>' attribute isn't clear,
@@ -48,6 +49,7 @@ public interface Create extends Action {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create#getIcon <em>Icon</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Icon</em>' attribute.

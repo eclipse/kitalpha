@@ -75,6 +75,7 @@ public class NodeDomainElementItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addQueryPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -88,6 +89,7 @@ public class NodeDomainElementItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -185,25 +187,33 @@ public class NodeDomainElementItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__DOMAIN_CLASS,
-				 CommondataFactory.eINSTANCE.createExternalClass()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__DOMAIN_CLASS,
+						 CommondataFactory.eINSTANCE.createExternalClass()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__DOMAIN_CLASS,
-				 CommondataFactory.eINSTANCE.createLocalClass()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__CHLIDREN_LIST,
-				 CommondataFactory.eINSTANCE.createExternalAssociation()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__CHLIDREN_LIST,
-				 CommondataFactory.eINSTANCE.createLocalAssociation()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__DOMAIN_CLASS,
+						 CommondataFactory.eINSTANCE.createLocalClass()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__CHLIDREN_LIST,
+						 CommondataFactory.eINSTANCE.createExternalAssociation()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_DOMAIN_ELEMENT__CHLIDREN_LIST,
+						 CommondataFactory.eINSTANCE.createLocalAssociation()));
+
+
 	}
 
 	/**

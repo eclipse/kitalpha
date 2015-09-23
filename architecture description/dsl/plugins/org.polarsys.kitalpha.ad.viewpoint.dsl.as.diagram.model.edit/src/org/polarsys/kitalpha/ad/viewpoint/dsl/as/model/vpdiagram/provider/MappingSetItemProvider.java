@@ -115,7 +115,9 @@ public class MappingSetItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_MappingSet_type");
+
 	}
 
 	/**
@@ -149,25 +151,33 @@ public class MappingSetItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
-				 VpdiagramFactory.eINSTANCE.createNode()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
+						 VpdiagramFactory.eINSTANCE.createNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
-				 VpdiagramFactory.eINSTANCE.createEdge()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
-				 VpdiagramFactory.eINSTANCE.createEdgeImport()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
-				 VpdiagramFactory.eINSTANCE.createContainer()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
+						 VpdiagramFactory.eINSTANCE.createEdge()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
+						 VpdiagramFactory.eINSTANCE.createEdgeImport()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.MAPPING_SET__DIAGRAM_ELEMENTS,
+						 VpdiagramFactory.eINSTANCE.createContainer()));
+
+
 	}
 
 	/**

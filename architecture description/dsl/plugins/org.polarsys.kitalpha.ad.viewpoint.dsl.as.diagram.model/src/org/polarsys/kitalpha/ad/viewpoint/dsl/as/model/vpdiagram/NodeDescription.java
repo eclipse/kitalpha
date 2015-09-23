@@ -22,12 +22,12 @@ import org.eclipse.sirius.viewpoint.LabelAlignment;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription#getStyle <em>Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription#getLabel_position <em>Label position</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription#getLabel_alignement <em>Label alignement</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getNodeDescription()
  * @model
@@ -37,6 +37,7 @@ public interface NodeDescription extends AbstractDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' containment reference isn't clear,
@@ -54,6 +55,7 @@ public interface NodeDescription extends AbstractDescription {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription#getStyle <em>Style</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Style</em>' containment reference.
@@ -66,6 +68,7 @@ public interface NodeDescription extends AbstractDescription {
 	/**
 	 * Returns the value of the '<em><b>Label position</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.diagram.LabelPosition}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Label position</em>' attribute isn't clear,
@@ -84,6 +87,7 @@ public interface NodeDescription extends AbstractDescription {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription#getLabel_position <em>Label position</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Label position</em>' attribute.
@@ -97,6 +101,7 @@ public interface NodeDescription extends AbstractDescription {
 	/**
 	 * Returns the value of the '<em><b>Label alignement</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.LabelAlignment}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Label alignement</em>' attribute isn't clear,
@@ -115,6 +120,7 @@ public interface NodeDescription extends AbstractDescription {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription#getLabel_alignement <em>Label alignement</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Label alignement</em>' attribute.

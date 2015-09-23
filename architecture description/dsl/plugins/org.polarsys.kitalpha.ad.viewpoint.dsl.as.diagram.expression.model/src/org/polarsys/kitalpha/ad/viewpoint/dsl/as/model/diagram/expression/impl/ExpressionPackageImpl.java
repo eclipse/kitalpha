@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.AbstractComputableElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.DomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expression;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ExpressionElement;
@@ -78,6 +79,13 @@ public class ExpressionPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	private EClass foreignExpressionElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractComputableElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -247,6 +255,15 @@ public class ExpressionPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAbstractComputableElement() {
+		return abstractComputableElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExpressionFactory getExpressionFactory() {
 		return (ExpressionFactory)getEFactoryInstance();
 	}
@@ -286,6 +303,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements
 		expressionElementEClass = createEClass(EXPRESSION_ELEMENT);
 
 		foreignExpressionElementEClass = createEClass(FOREIGN_EXPRESSION_ELEMENT);
+
+		abstractComputableElementEClass = createEClass(ABSTRACT_COMPUTABLE_ELEMENT);
 	}
 
 	/**
@@ -320,8 +339,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements
 
 		// Add supertypes to classes
 		javaElementEClass.getESuperTypes().add(this.getForeignExpressionElement());
+		javaElementEClass.getESuperTypes().add(this.getAbstractComputableElement());
 		domainElementEClass.getESuperTypes().add(this.getForeignExpressionElement());
 		stringElementEClass.getESuperTypes().add(this.getExpressionElement());
+		stringElementEClass.getESuperTypes().add(this.getAbstractComputableElement());
 		foreignExpressionElementEClass.getESuperTypes().add(this.getExpressionElement());
 
 		// Initialize classes and features; add operations and parameters
@@ -341,6 +362,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements
 		initEClass(expressionElementEClass, ExpressionElement.class, "ExpressionElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(foreignExpressionElementEClass, ForeignExpressionElement.class, "ForeignExpressionElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(abstractComputableElementEClass, AbstractComputableElement.class, "AbstractComputableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

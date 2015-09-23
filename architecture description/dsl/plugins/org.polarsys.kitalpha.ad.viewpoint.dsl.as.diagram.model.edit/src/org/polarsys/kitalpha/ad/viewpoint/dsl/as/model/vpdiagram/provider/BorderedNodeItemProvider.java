@@ -18,12 +18,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
@@ -37,9 +32,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * @generated
  */
-public class BorderedNodeItemProvider extends AbstractNodeItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class BorderedNodeItemProvider extends AbstractNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,6 +69,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -89,6 +83,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -98,6 +93,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -111,6 +107,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -120,6 +117,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -133,6 +131,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -142,6 +141,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 	 * @generated
 	 */
 	protected void addImportsPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -155,6 +155,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 				 null,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -213,10 +214,12 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((BorderedNode)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_BorderedNode_type") :
 			getString("_UI_BorderedNode_type") + " " + label;
+
 	}
 
 	/**
@@ -255,10 +258,12 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.BORDERED_NODE__STYLE,
-				 VpdiagramFactory.eINSTANCE.createNodeDescription()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.BORDERED_NODE__STYLE,
+						 VpdiagramFactory.eINSTANCE.createNodeDescription()));
+
+
 	}
 
 }

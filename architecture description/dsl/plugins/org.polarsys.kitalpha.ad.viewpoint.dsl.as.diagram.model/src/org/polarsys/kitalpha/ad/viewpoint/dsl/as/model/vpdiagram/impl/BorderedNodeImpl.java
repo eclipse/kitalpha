@@ -36,6 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getName <em>Name</em>}</li>
@@ -43,7 +44,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -155,6 +155,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public String getId() {
+
 		return id;
 	}
 
@@ -165,10 +166,12 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public void setId(String newId) {
+
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.BORDERED_NODE__ID, oldId, id));
+
 	}
 
 	/**
@@ -178,6 +181,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public String getName() {
+
 		return name;
 	}
 
@@ -188,10 +192,12 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public void setName(String newName) {
+
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.BORDERED_NODE__NAME, oldName, name));
+
 	}
 
 	/**
@@ -201,6 +207,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public String getDescription() {
+
 		return description;
 	}
 
@@ -211,10 +218,12 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public void setDescription(String newDescription) {
+
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.BORDERED_NODE__DESCRIPTION, oldDescription, description));
+
 	}
 
 	/**
@@ -224,6 +233,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public NodeMapping getImports() {
+
 		if (imports != null && imports.eIsProxy()) {
 			InternalEObject oldImports = (InternalEObject)imports;
 			imports = (NodeMapping)eResolveProxy(oldImports);
@@ -242,6 +252,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public NodeMapping basicGetImports() {
+
 		return imports;
 	}
 
@@ -252,10 +263,12 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public void setImports(NodeMapping newImports) {
+
 		NodeMapping oldImports = imports;
 		imports = newImports;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.BORDERED_NODE__IMPORTS, oldImports, imports));
+
 	}
 
 	/**
@@ -265,6 +278,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 */
 
 	public EList<NodeDescription> getStyle() {
+
 		if (style == null) {
 			style = new EObjectContainmentEList<NodeDescription>(NodeDescription.class, this, VpdiagramPackage.BORDERED_NODE__STYLE);
 		}

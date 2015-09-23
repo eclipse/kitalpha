@@ -1007,10 +1007,13 @@ public class VpdiagramItemProviderAdapterFactory extends
 			 */
 			@Override
 			public Object caseViewpoint(Viewpoint object) {
+
 				newChildDescriptors.add
 					(createChildParameter
 						(VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
 						 VpdiagramFactory.eINSTANCE.createDiagramSet()));
+
+
 
 				return null;
 			}
@@ -1033,8 +1036,8 @@ public class VpdiagramItemProviderAdapterFactory extends
 		 */
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-		   return result;
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
 		}
 
 		/**

@@ -28,12 +28,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.OpenActionImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.OpenActionImpl#getPrecondition <em>Precondition</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.OpenActionImpl#getIcon <em>Icon</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -125,6 +125,7 @@ public class OpenActionImpl extends NamedElementImpl implements OpenAction {
 	 */
 
 	public String getLabel() {
+
 		return label;
 	}
 
@@ -135,10 +136,12 @@ public class OpenActionImpl extends NamedElementImpl implements OpenAction {
 	 */
 
 	public void setLabel(String newLabel) {
+
 		String oldLabel = label;
 		label = newLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.OPEN_ACTION__LABEL, oldLabel, label));
+
 	}
 
 	/**
@@ -148,6 +151,7 @@ public class OpenActionImpl extends NamedElementImpl implements OpenAction {
 	 */
 
 	public String getPrecondition() {
+
 		return precondition;
 	}
 
@@ -158,10 +162,12 @@ public class OpenActionImpl extends NamedElementImpl implements OpenAction {
 	 */
 
 	public void setPrecondition(String newPrecondition) {
+
 		String oldPrecondition = precondition;
 		precondition = newPrecondition;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.OPEN_ACTION__PRECONDITION, oldPrecondition, precondition));
+
 	}
 
 	/**
@@ -171,6 +177,7 @@ public class OpenActionImpl extends NamedElementImpl implements OpenAction {
 	 */
 
 	public String getIcon() {
+
 		return icon;
 	}
 
@@ -181,10 +188,12 @@ public class OpenActionImpl extends NamedElementImpl implements OpenAction {
 	 */
 
 	public void setIcon(String newIcon) {
+
 		String oldIcon = icon;
 		icon = newIcon;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.OPEN_ACTION__ICON, oldIcon, icon));
+
 	}
 
 	/**

@@ -8,7 +8,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         transient="true" defaultValueLiteral="Empty"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JavaElement" eSuperTypes="#//ForeignExpressionElement">
+  <eClassifiers xsi:type="ecore:EClass" name="JavaElement" eSuperTypes="#//ForeignExpressionElement #//AbstractComputableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -16,10 +16,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StringElement" eSuperTypes="#//ExpressionElement">
+  <eClassifiers xsi:type="ecore:EClass" name="StringElement" eSuperTypes="#//ExpressionElement #//AbstractComputableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExpressionElement" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ForeignExpressionElement" abstract="true"
       eSuperTypes="#//ExpressionElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractComputableElement" abstract="true"/>
 </ecore:EPackage>

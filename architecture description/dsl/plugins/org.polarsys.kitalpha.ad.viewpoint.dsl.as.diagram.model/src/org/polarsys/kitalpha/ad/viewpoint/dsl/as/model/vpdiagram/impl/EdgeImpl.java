@@ -36,12 +36,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeImpl#getThe_domain <em>The domain</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -103,6 +103,7 @@ public class EdgeImpl extends AbstractEdgeImpl implements Edge {
 	 */
 
 	public EList<DiagramElement> getSource() {
+
 		if (source == null) {
 			source = new EObjectResolvingEList<DiagramElement>(DiagramElement.class, this, VpdiagramPackage.EDGE__SOURCE);
 		}
@@ -116,6 +117,7 @@ public class EdgeImpl extends AbstractEdgeImpl implements Edge {
 	 */
 
 	public EList<DiagramElement> getTarget() {
+
 		if (target == null) {
 			target = new EObjectResolvingEList<DiagramElement>(DiagramElement.class, this, VpdiagramPackage.EDGE__TARGET);
 		}
@@ -129,6 +131,7 @@ public class EdgeImpl extends AbstractEdgeImpl implements Edge {
 	 */
 
 	public EdgeDomainAssociation getThe_domain() {
+
 		return the_domain;
 	}
 
@@ -140,12 +143,14 @@ public class EdgeImpl extends AbstractEdgeImpl implements Edge {
 
 	public NotificationChain basicSetThe_domain(
 			EdgeDomainAssociation newThe_domain, NotificationChain msgs) {
+
 		EdgeDomainAssociation oldThe_domain = the_domain;
 		the_domain = newThe_domain;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE__THE_DOMAIN, oldThe_domain, newThe_domain);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -156,6 +161,7 @@ public class EdgeImpl extends AbstractEdgeImpl implements Edge {
 	 */
 
 	public void setThe_domain(EdgeDomainAssociation newThe_domain) {
+
 		if (newThe_domain != the_domain) {
 			NotificationChain msgs = null;
 			if (the_domain != null)
@@ -167,6 +173,7 @@ public class EdgeImpl extends AbstractEdgeImpl implements Edge {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE__THE_DOMAIN, newThe_domain, newThe_domain));
+
 	}
 
 	/**

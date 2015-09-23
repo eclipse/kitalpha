@@ -119,7 +119,9 @@ public class EdgeDescriptionItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_EdgeDescription_type");
+
 	}
 
 	/**
@@ -157,30 +159,40 @@ public class EdgeDescriptionItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE_DESCRIPTION__STYLE,
-				 VpdiagramFactory.eINSTANCE.createEdgeStyle()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE_DESCRIPTION__STYLE,
+						 VpdiagramFactory.eINSTANCE.createEdgeStyle()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE_DESCRIPTION__BEGIN_LABEL,
-				 VpdiagramFactory.eINSTANCE.createLabel()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE_DESCRIPTION__CENTER_LABEL,
-				 VpdiagramFactory.eINSTANCE.createLabel()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE_DESCRIPTION__END_LABEL,
-				 VpdiagramFactory.eINSTANCE.createLabel()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE_DESCRIPTION__BEGIN_LABEL,
+						 VpdiagramFactory.eINSTANCE.createLabel()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE_DESCRIPTION__CONDITION,
-				 VpdiagramFactory.eINSTANCE.createCondition()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE_DESCRIPTION__CENTER_LABEL,
+						 VpdiagramFactory.eINSTANCE.createLabel()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE_DESCRIPTION__END_LABEL,
+						 VpdiagramFactory.eINSTANCE.createLabel()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE_DESCRIPTION__CONDITION,
+						 VpdiagramFactory.eINSTANCE.createCondition()));
+
+
 	}
 
 	/**

@@ -24,12 +24,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getDiagrams <em>Diagrams</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getAdditionalExternalGroup <em>Additional External Group</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet#getAdditionalExternalData <em>Additional External Data</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getDiagramSet()
  * @model
@@ -40,6 +40,7 @@ public interface DiagramSet extends Aspect {
 	/**
 	 * Returns the value of the '<em><b>Diagrams</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Diagrams</em>' containment reference list isn't clear,
@@ -57,6 +58,7 @@ public interface DiagramSet extends Aspect {
 	/**
 	 * Returns the value of the '<em><b>Additional External Group</b></em>' reference list.
 	 * The list contents are of type {@link org.eclipse.sirius.viewpoint.description.Group}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Additional External Group</em>' reference isn't clear,
@@ -73,6 +75,7 @@ public interface DiagramSet extends Aspect {
 	/**
 	 * Returns the value of the '<em><b>Additional External Data</b></em>' reference list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EPackage}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Additional External Data</em>' reference list isn't clear,

@@ -106,7 +106,9 @@ public class AbstractDescriptionItemProvider extends
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_AbstractDescription_type");
+
 	}
 
 	/**
@@ -141,15 +143,19 @@ public class AbstractDescriptionItemProvider extends
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ABSTRACT_DESCRIPTION__NODE_LABEL,
-				 VpdiagramFactory.eINSTANCE.createLabel()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ABSTRACT_DESCRIPTION__NODE_LABEL,
+						 VpdiagramFactory.eINSTANCE.createLabel()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ABSTRACT_DESCRIPTION__CONDITION,
-				 VpdiagramFactory.eINSTANCE.createCondition()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ABSTRACT_DESCRIPTION__CONDITION,
+						 VpdiagramFactory.eINSTANCE.createCondition()));
+
+
 	}
 
 	/**

@@ -21,10 +21,10 @@ import org.eclipse.sirius.viewpoint.description.SystemColors;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNodeStyle#getBorderColor <em>Border Color</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getAbstractNodeStyle()
  * @model abstract="true"
@@ -35,6 +35,7 @@ public interface AbstractNodeStyle extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Border Color</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.description.SystemColors}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Border Color</em>' attribute isn't clear,
@@ -53,6 +54,7 @@ public interface AbstractNodeStyle extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNodeStyle#getBorderColor <em>Border Color</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Border Color</em>' attribute.

@@ -45,11 +45,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.ExpressionImpl#getExpressionElements <em>Expression Elements</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.ExpressionImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -91,9 +91,7 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 	 * @generated
 	 */
 	protected ExpressionImpl() {
-
 		super();
-
 	}
 
 	/**

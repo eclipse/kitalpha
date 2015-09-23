@@ -80,6 +80,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addLineStylePropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -93,6 +94,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -102,6 +104,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addBeginDecoratorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -115,6 +118,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -124,6 +128,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addEndDecoratorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -137,6 +142,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -146,6 +152,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -159,6 +166,7 @@ public class EdgeStyleItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**

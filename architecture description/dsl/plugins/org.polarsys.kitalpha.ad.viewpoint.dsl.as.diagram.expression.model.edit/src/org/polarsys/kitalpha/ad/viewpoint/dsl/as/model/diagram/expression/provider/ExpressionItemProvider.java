@@ -184,27 +184,24 @@ public class ExpressionItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.EXPRESSION__EXPRESSION_ELEMENTS,
-				 ExpressionFactory.eINSTANCE.createJavaElement()));
-
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.EXPRESSION__EXPRESSION_ELEMENTS,
+						 ExpressionFactory.eINSTANCE.createJavaElement()));
 
 
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.EXPRESSION__EXPRESSION_ELEMENTS,
-				 ExpressionFactory.eINSTANCE.createDomainElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.EXPRESSION__EXPRESSION_ELEMENTS,
+						 ExpressionFactory.eINSTANCE.createDomainElement()));
 
 
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.EXPRESSION__EXPRESSION_ELEMENTS,
-				 ExpressionFactory.eINSTANCE.createStringElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.EXPRESSION__EXPRESSION_ELEMENTS,
+						 ExpressionFactory.eINSTANCE.createStringElement()));
 
 
 	}

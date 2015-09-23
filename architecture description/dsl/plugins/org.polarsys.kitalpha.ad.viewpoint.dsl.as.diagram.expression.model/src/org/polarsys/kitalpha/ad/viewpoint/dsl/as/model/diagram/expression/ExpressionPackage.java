@@ -224,6 +224,25 @@ public interface ExpressionPackage extends EPackage {
 	int STRING_ELEMENT_FEATURE_COUNT = EXPRESSION_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.AbstractComputableElementImpl <em>Abstract Computable Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.AbstractComputableElementImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.ExpressionPackageImpl#getAbstractComputableElement()
+	 * @generated
+	 */
+	int ABSTRACT_COMPUTABLE_ELEMENT = 6;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Computable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMPUTABLE_ELEMENT_FEATURE_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -337,6 +356,16 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getForeignExpressionElement();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.AbstractComputableElement <em>Abstract Computable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Computable Element</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.AbstractComputableElement
+	 * @generated
+	 */
+	EClass getAbstractComputableElement();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -459,6 +488,16 @@ public interface ExpressionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FOREIGN_EXPRESSION_ELEMENT = eINSTANCE.getForeignExpressionElement();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.AbstractComputableElementImpl <em>Abstract Computable Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.AbstractComputableElementImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.ExpressionPackageImpl#getAbstractComputableElement()
+		 * @generated
+		 */
+		EClass ABSTRACT_COMPUTABLE_ELEMENT = eINSTANCE.getAbstractComputableElement();
 
 	}
 

@@ -31,10 +31,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DomainContainerImpl#getThe_domain <em>The domain</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -76,6 +76,7 @@ public class DomainContainerImpl extends EObjectImpl implements DomainContainer 
 	 */
 
 	public AbstractClass getThe_domain() {
+
 		return the_domain;
 	}
 
@@ -87,12 +88,14 @@ public class DomainContainerImpl extends EObjectImpl implements DomainContainer 
 
 	public NotificationChain basicSetThe_domain(AbstractClass newThe_domain,
 			NotificationChain msgs) {
+
 		AbstractClass oldThe_domain = the_domain;
 		the_domain = newThe_domain;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DOMAIN_CONTAINER__THE_DOMAIN, oldThe_domain, newThe_domain);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -103,6 +106,7 @@ public class DomainContainerImpl extends EObjectImpl implements DomainContainer 
 	 */
 
 	public void setThe_domain(AbstractClass newThe_domain) {
+
 		if (newThe_domain != the_domain) {
 			NotificationChain msgs = null;
 			if (the_domain != null)
@@ -114,6 +118,7 @@ public class DomainContainerImpl extends EObjectImpl implements DomainContainer 
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DOMAIN_CONTAINER__THE_DOMAIN, newThe_domain, newThe_domain));
+
 	}
 
 	/**

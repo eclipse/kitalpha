@@ -28,10 +28,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.String
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.StringElementImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -64,9 +64,7 @@ public class StringElementImpl extends ExpressionElementImpl implements
 	 * @generated
 	 */
 	protected StringElementImpl() {
-
 		super();
-
 	}
 
 	/**

@@ -154,15 +154,19 @@ public class DomainContainerItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.DOMAIN_CONTAINER__THE_DOMAIN,
-				 CommondataFactory.eINSTANCE.createExternalClass()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.DOMAIN_CONTAINER__THE_DOMAIN,
+						 CommondataFactory.eINSTANCE.createExternalClass()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.DOMAIN_CONTAINER__THE_DOMAIN,
-				 CommondataFactory.eINSTANCE.createLocalClass()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.DOMAIN_CONTAINER__THE_DOMAIN,
+						 CommondataFactory.eINSTANCE.createLocalClass()));
+
+
 	}
 
 	/**

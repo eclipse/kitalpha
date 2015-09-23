@@ -69,6 +69,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramFactor
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.ConfigurationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.impl.ConfigurationPackageImpl;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.VpstylecustomizationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl;
 
@@ -422,9 +423,9 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		// Initialize simple dependencies
 		CommondataPackage.eINSTANCE.eClass();
-		DiagramPackage.eINSTANCE.eClass();
 		ExpressionPackage.eINSTANCE.eClass();
 		VpconfPackage.eINSTANCE.eClass();
+		VpstylecustomizationPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ConfigurationPackageImpl theConfigurationPackage = (ConfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConfigurationPackage.eNS_URI) instanceof ConfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConfigurationPackage.eNS_URI) : ConfigurationPackage.eINSTANCE);
@@ -507,6 +508,15 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 */
 	public EReference getDiagramExtension_Extented_diagram() {
 		return (EReference)diagramExtensionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiagramExtension_OwnedCustomizations() {
+		return (EReference)diagramExtensionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1581,6 +1591,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		diagramExtensionEClass = createEClass(DIAGRAM_EXTENSION);
 		createEReference(diagramExtensionEClass, DIAGRAM_EXTENSION__EXTENTED_DIAGRAM);
+		createEReference(diagramExtensionEClass, DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS);
 
 		actionSetEClass = createEClass(ACTION_SET);
 		createEReference(actionSetEClass, ACTION_SET__ACTIONS);
@@ -1765,6 +1776,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		ConfigurationPackage theConfigurationPackage = (ConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ConfigurationPackage.eNS_URI);
 		VpdescPackage theVpdescPackage = (VpdescPackage)EPackage.Registry.INSTANCE.getEPackage(VpdescPackage.eNS_URI);
 		DescriptionPackage theDescriptionPackage = (DescriptionPackage)EPackage.Registry.INSTANCE.getEPackage(DescriptionPackage.eNS_URI);
+		VpstylecustomizationPackage theVpstylecustomizationPackage = (VpstylecustomizationPackage)EPackage.Registry.INSTANCE.getEPackage(VpstylecustomizationPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 		org.eclipse.sirius.viewpoint.description.DescriptionPackage theDescriptionPackage_1 = (org.eclipse.sirius.viewpoint.description.DescriptionPackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.sirius.viewpoint.description.DescriptionPackage.eNS_URI);
@@ -1820,6 +1832,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		initEClass(diagramExtensionEClass, DiagramExtension.class, "DiagramExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagramExtension_Extented_diagram(), theDescriptionPackage.getDiagramDescription(), null, "extented_diagram", null, 1, 1, DiagramExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramExtension_OwnedCustomizations(), theVpstylecustomizationPackage.getCustomizations(), null, "ownedCustomizations", null, 0, -1, DiagramExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionSetEClass, ActionSet.class, "ActionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionSet_Actions(), this.getAction(), null, "actions", null, 0, -1, ActionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

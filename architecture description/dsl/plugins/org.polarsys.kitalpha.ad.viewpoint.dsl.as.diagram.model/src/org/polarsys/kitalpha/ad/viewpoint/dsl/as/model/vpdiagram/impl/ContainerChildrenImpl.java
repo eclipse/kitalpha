@@ -36,11 +36,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ContainerChildrenImpl#getOwned_nodes <em>Owned nodes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ContainerChildrenImpl#getReused_nodes <em>Reused nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -93,6 +93,7 @@ public class ContainerChildrenImpl extends EObjectImpl implements
 	 */
 
 	public EList<AbstractNode> getOwned_nodes() {
+
 		if (owned_nodes == null) {
 			owned_nodes = new EObjectContainmentEList<AbstractNode>(AbstractNode.class, this, VpdiagramPackage.CONTAINER_CHILDREN__OWNED_NODES);
 		}
@@ -106,6 +107,7 @@ public class ContainerChildrenImpl extends EObjectImpl implements
 	 */
 
 	public EList<AbstractNode> getReused_nodes() {
+
 		if (reused_nodes == null) {
 			reused_nodes = new EObjectResolvingEList<AbstractNode>(AbstractNode.class, this, VpdiagramPackage.CONTAINER_CHILDREN__REUSED_NODES);
 		}

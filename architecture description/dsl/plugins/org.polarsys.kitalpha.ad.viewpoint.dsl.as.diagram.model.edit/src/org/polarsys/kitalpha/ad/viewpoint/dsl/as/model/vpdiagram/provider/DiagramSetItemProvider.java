@@ -20,12 +20,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.AspectItemProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
@@ -38,9 +33,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * @generated
  */
-public class DiagramSetItemProvider extends AspectItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class DiagramSetItemProvider extends AspectItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -75,6 +68,7 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 	 * @generated
 	 */
 	protected void addAdditionalExternalGroupPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -88,6 +82,7 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 				 null,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -97,6 +92,7 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 	 * @generated
 	 */
 	protected void addAdditionalExternalDataPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -110,6 +106,7 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 				 null,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -162,10 +159,12 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((DiagramSet)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DiagramSet_type") :
 			getString("_UI_DiagramSet_type") + " " + label;
+
 	}
 
 	/**
@@ -199,15 +198,19 @@ public class DiagramSetItemProvider extends AspectItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.DIAGRAM_SET__DIAGRAMS,
-				 VpdiagramFactory.eINSTANCE.createDiagram()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.DIAGRAM_SET__DIAGRAMS,
+						 VpdiagramFactory.eINSTANCE.createDiagram()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.DIAGRAM_SET__DIAGRAMS,
-				 VpdiagramFactory.eINSTANCE.createDiagramExtension()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.DIAGRAM_SET__DIAGRAMS,
+						 VpdiagramFactory.eINSTANCE.createDiagramExtension()));
+
+
 	}
 
 	/**

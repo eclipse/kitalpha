@@ -32,12 +32,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeDomainElementImpl#getDomain_Class <em>Domain Class</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeDomainElementImpl#getChlidren_list <em>Chlidren list</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeDomainElementImpl#getQuery <em>Query</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -110,6 +110,7 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 	 */
 
 	public AbstractClass getDomain_Class() {
+
 		return domain_Class;
 	}
 
@@ -121,12 +122,14 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetDomain_Class(
 			AbstractClass newDomain_Class, NotificationChain msgs) {
+
 		AbstractClass oldDomain_Class = domain_Class;
 		domain_Class = newDomain_Class;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DOMAIN_ELEMENT__DOMAIN_CLASS, oldDomain_Class, newDomain_Class);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -137,6 +140,7 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 	 */
 
 	public void setDomain_Class(AbstractClass newDomain_Class) {
+
 		if (newDomain_Class != domain_Class) {
 			NotificationChain msgs = null;
 			if (domain_Class != null)
@@ -148,6 +152,7 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DOMAIN_ELEMENT__DOMAIN_CLASS, newDomain_Class, newDomain_Class));
+
 	}
 
 	/**
@@ -157,6 +162,7 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 	 */
 
 	public AbstractAssociation getChlidren_list() {
+
 		return chlidren_list;
 	}
 
@@ -168,12 +174,14 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetChlidren_list(
 			AbstractAssociation newChlidren_list, NotificationChain msgs) {
+
 		AbstractAssociation oldChlidren_list = chlidren_list;
 		chlidren_list = newChlidren_list;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DOMAIN_ELEMENT__CHLIDREN_LIST, oldChlidren_list, newChlidren_list);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -184,6 +192,7 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 	 */
 
 	public void setChlidren_list(AbstractAssociation newChlidren_list) {
+
 		if (newChlidren_list != chlidren_list) {
 			NotificationChain msgs = null;
 			if (chlidren_list != null)
@@ -195,6 +204,7 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DOMAIN_ELEMENT__CHLIDREN_LIST, newChlidren_list, newChlidren_list));
+
 	}
 
 	/**
@@ -204,6 +214,7 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 	 */
 
 	public String getQuery() {
+
 		return query;
 	}
 
@@ -214,10 +225,12 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 	 */
 
 	public void setQuery(String newQuery) {
+
 		String oldQuery = query;
 		query = newQuery;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DOMAIN_ELEMENT__QUERY, oldQuery, query));
+
 	}
 
 	/**

@@ -33,10 +33,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractEdgeImpl#getE_description <em>Edescription</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,6 +79,7 @@ public abstract class AbstractEdgeImpl extends DiagramChildrenImpl implements
 	 */
 
 	public EList<EdgeDescription> getE_description() {
+
 		if (e_description == null) {
 			e_description = new EObjectContainmentEList<EdgeDescription>(EdgeDescription.class, this, VpdiagramPackage.ABSTRACT_EDGE__EDESCRIPTION);
 		}

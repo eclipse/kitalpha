@@ -32,11 +32,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramRepresentationImpl#getThe_MappingSet <em>The Mapping Set</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramRepresentationImpl#getThe_ActionSet <em>The Action Set</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -89,6 +89,7 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 	 */
 
 	public MappingSet getThe_MappingSet() {
+
 		return the_MappingSet;
 	}
 
@@ -100,12 +101,14 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 
 	public NotificationChain basicSetThe_MappingSet(
 			MappingSet newThe_MappingSet, NotificationChain msgs) {
+
 		MappingSet oldThe_MappingSet = the_MappingSet;
 		the_MappingSet = newThe_MappingSet;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_MAPPING_SET, oldThe_MappingSet, newThe_MappingSet);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -116,6 +119,7 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 	 */
 
 	public void setThe_MappingSet(MappingSet newThe_MappingSet) {
+
 		if (newThe_MappingSet != the_MappingSet) {
 			NotificationChain msgs = null;
 			if (the_MappingSet != null)
@@ -127,6 +131,7 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_MAPPING_SET, newThe_MappingSet, newThe_MappingSet));
+
 	}
 
 	/**
@@ -136,6 +141,7 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 	 */
 
 	public ActionSet getThe_ActionSet() {
+
 		return the_ActionSet;
 	}
 
@@ -147,12 +153,14 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 
 	public NotificationChain basicSetThe_ActionSet(ActionSet newThe_ActionSet,
 			NotificationChain msgs) {
+
 		ActionSet oldThe_ActionSet = the_ActionSet;
 		the_ActionSet = newThe_ActionSet;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET, oldThe_ActionSet, newThe_ActionSet);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -163,6 +171,7 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 	 */
 
 	public void setThe_ActionSet(ActionSet newThe_ActionSet) {
+
 		if (newThe_ActionSet != the_ActionSet) {
 			NotificationChain msgs = null;
 			if (the_ActionSet != null)
@@ -174,6 +183,7 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET, newThe_ActionSet, newThe_ActionSet));
+
 	}
 
 	/**

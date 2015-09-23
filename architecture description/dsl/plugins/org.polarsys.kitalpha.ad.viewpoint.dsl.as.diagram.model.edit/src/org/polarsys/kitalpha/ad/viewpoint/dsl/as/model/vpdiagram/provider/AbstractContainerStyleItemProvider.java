@@ -69,7 +69,9 @@ public class AbstractContainerStyleItemProvider extends
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_AbstractContainerStyle_type");
+
 	}
 
 	/**

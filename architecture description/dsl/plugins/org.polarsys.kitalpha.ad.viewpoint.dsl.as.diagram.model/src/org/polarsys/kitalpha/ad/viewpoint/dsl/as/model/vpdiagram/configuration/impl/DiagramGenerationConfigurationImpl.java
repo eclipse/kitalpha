@@ -19,10 +19,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.D
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.impl.DiagramGenerationConfigurationImpl#isOverwriteVSM <em>Overwrite VSM</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -72,6 +72,7 @@ public class DiagramGenerationConfigurationImpl extends ExtensionGeneratrionConf
 	 * @generated
 	 */
 	public boolean isOverwriteVSM() {
+
 		return overwriteVSM;
 	}
 
@@ -81,10 +82,12 @@ public class DiagramGenerationConfigurationImpl extends ExtensionGeneratrionConf
 	 * @generated
 	 */
 	public void setOverwriteVSM(boolean newOverwriteVSM) {
+
 		boolean oldOverwriteVSM = overwriteVSM;
 		overwriteVSM = newOverwriteVSM;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.DIAGRAM_GENERATION_CONFIGURATION__OVERWRITE_VSM, oldOverwriteVSM, overwriteVSM));
+
 	}
 
 	/**

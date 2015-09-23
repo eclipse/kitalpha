@@ -36,11 +36,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionSetImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionSetImpl#getOpenActions <em>Open Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -92,6 +92,7 @@ public class ActionSetImpl extends EObjectImpl implements ActionSet {
 	 */
 
 	public EList<Action> getActions() {
+
 		if (actions == null) {
 			actions = new EObjectContainmentEList<Action>(Action.class, this, VpdiagramPackage.ACTION_SET__ACTIONS);
 		}
@@ -105,6 +106,7 @@ public class ActionSetImpl extends EObjectImpl implements ActionSet {
 	 */
 
 	public EList<OpenAction> getOpenActions() {
+
 		if (openActions == null) {
 			openActions = new EObjectContainmentEList<OpenAction>(OpenAction.class, this, VpdiagramPackage.ACTION_SET__OPEN_ACTIONS);
 		}

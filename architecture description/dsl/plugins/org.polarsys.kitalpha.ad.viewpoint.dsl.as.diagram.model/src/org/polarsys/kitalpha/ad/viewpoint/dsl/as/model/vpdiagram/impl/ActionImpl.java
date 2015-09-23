@@ -30,12 +30,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionImpl#getTool_For <em>Tool For</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionImpl#getPrecondition <em>Precondition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -117,6 +117,7 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 */
 
 	public DiagramElement getTool_For() {
+
 		if (tool_For != null && tool_For.eIsProxy()) {
 			InternalEObject oldTool_For = (InternalEObject)tool_For;
 			tool_For = (DiagramElement)eResolveProxy(oldTool_For);
@@ -135,6 +136,7 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 */
 
 	public DiagramElement basicGetTool_For() {
+
 		return tool_For;
 	}
 
@@ -145,10 +147,12 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 */
 
 	public void setTool_For(DiagramElement newTool_For) {
+
 		DiagramElement oldTool_For = tool_For;
 		tool_For = newTool_For;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ACTION__TOOL_FOR, oldTool_For, tool_For));
+
 	}
 
 	/**
@@ -158,6 +162,7 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 */
 
 	public String getLabel() {
+
 		return label;
 	}
 
@@ -168,10 +173,12 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 */
 
 	public void setLabel(String newLabel) {
+
 		String oldLabel = label;
 		label = newLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ACTION__LABEL, oldLabel, label));
+
 	}
 
 	/**
@@ -181,6 +188,7 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 */
 
 	public String getPrecondition() {
+
 		return precondition;
 	}
 
@@ -191,10 +199,12 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 */
 
 	public void setPrecondition(String newPrecondition) {
+
 		String oldPrecondition = precondition;
 		precondition = newPrecondition;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ACTION__PRECONDITION, oldPrecondition, precondition));
+
 	}
 
 	/**

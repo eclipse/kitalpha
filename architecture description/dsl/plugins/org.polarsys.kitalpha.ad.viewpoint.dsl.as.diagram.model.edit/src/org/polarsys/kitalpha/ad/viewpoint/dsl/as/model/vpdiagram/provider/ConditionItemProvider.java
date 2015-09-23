@@ -115,7 +115,9 @@ public class ConditionItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_Condition_type");
+
 	}
 
 	/**
@@ -149,15 +151,19 @@ public class ConditionItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.CONDITION__EXPRESSION,
-				 ExpressionFactory.eINSTANCE.createJavaElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.CONDITION__EXPRESSION,
+						 ExpressionFactory.eINSTANCE.createJavaElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.CONDITION__EXPRESSION,
-				 ExpressionFactory.eINSTANCE.createDomainElement()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.CONDITION__EXPRESSION,
+						 ExpressionFactory.eINSTANCE.createDomainElement()));
+
+
 	}
 
 	/**

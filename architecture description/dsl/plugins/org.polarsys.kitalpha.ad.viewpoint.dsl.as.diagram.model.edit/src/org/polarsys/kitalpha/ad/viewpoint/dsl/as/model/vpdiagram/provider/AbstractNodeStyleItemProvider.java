@@ -74,6 +74,7 @@ public class AbstractNodeStyleItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addBorderColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -87,6 +88,7 @@ public class AbstractNodeStyleItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -97,11 +99,13 @@ public class AbstractNodeStyleItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
+
 		SystemColors labelValue = ((AbstractNodeStyle)object).getBorderColor();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_AbstractNodeStyle_type") :
 			getString("_UI_AbstractNodeStyle_type") + " " + label;
+
 	}
 
 	/**

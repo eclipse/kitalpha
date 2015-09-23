@@ -31,11 +31,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDomainAssociationImpl#getTarget_Locator <em>Target Locator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDomainAssociationImpl#getTarget_query <em>Target query</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -98,6 +98,7 @@ public class EdgeDomainAssociationImpl extends EObjectImpl implements
 	 */
 
 	public AbstractAssociation getTarget_Locator() {
+
 		return target_Locator;
 	}
 
@@ -109,12 +110,14 @@ public class EdgeDomainAssociationImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetTarget_Locator(
 			AbstractAssociation newTarget_Locator, NotificationChain msgs) {
+
 		AbstractAssociation oldTarget_Locator = target_Locator;
 		target_Locator = newTarget_Locator;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ASSOCIATION__TARGET_LOCATOR, oldTarget_Locator, newTarget_Locator);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -125,6 +128,7 @@ public class EdgeDomainAssociationImpl extends EObjectImpl implements
 	 */
 
 	public void setTarget_Locator(AbstractAssociation newTarget_Locator) {
+
 		if (newTarget_Locator != target_Locator) {
 			NotificationChain msgs = null;
 			if (target_Locator != null)
@@ -136,6 +140,7 @@ public class EdgeDomainAssociationImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ASSOCIATION__TARGET_LOCATOR, newTarget_Locator, newTarget_Locator));
+
 	}
 
 	/**
@@ -145,6 +150,7 @@ public class EdgeDomainAssociationImpl extends EObjectImpl implements
 	 */
 
 	public String getTarget_query() {
+
 		return target_query;
 	}
 
@@ -155,10 +161,12 @@ public class EdgeDomainAssociationImpl extends EObjectImpl implements
 	 */
 
 	public void setTarget_query(String newTarget_query) {
+
 		String oldTarget_query = target_query;
 		target_query = newTarget_query;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ASSOCIATION__TARGET_QUERY, oldTarget_query, target_query));
+
 	}
 
 	/**

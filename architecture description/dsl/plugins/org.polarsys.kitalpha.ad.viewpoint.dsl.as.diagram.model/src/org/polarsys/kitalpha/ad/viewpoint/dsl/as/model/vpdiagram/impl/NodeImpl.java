@@ -35,13 +35,13 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeImpl#getThe_domain <em>The domain</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeImpl#getChildren <em>Children</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -113,6 +113,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public NodeDomainElement getThe_domain() {
+
 		return the_domain;
 	}
 
@@ -124,12 +125,14 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 
 	public NotificationChain basicSetThe_domain(
 			NodeDomainElement newThe_domain, NotificationChain msgs) {
+
 		NodeDomainElement oldThe_domain = the_domain;
 		the_domain = newThe_domain;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE__THE_DOMAIN, oldThe_domain, newThe_domain);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -140,6 +143,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public void setThe_domain(NodeDomainElement newThe_domain) {
+
 		if (newThe_domain != the_domain) {
 			NotificationChain msgs = null;
 			if (the_domain != null)
@@ -151,6 +155,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE__THE_DOMAIN, newThe_domain, newThe_domain));
+
 	}
 
 	/**
@@ -160,6 +165,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public EList<NodeDescription> getStyle() {
+
 		if (style == null) {
 			style = new EObjectContainmentEList<NodeDescription>(NodeDescription.class, this, VpdiagramPackage.NODE__STYLE);
 		}
@@ -173,6 +179,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public NodeMapping getImports() {
+
 		if (imports != null && imports.eIsProxy()) {
 			InternalEObject oldImports = (InternalEObject)imports;
 			imports = (NodeMapping)eResolveProxy(oldImports);
@@ -191,6 +198,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public NodeMapping basicGetImports() {
+
 		return imports;
 	}
 
@@ -201,10 +209,12 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public void setImports(NodeMapping newImports) {
+
 		NodeMapping oldImports = imports;
 		imports = newImports;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE__IMPORTS, oldImports, imports));
+
 	}
 
 	/**
@@ -214,6 +224,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public NodeChildren getChildren() {
+
 		return children;
 	}
 
@@ -225,12 +236,14 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 
 	public NotificationChain basicSetChildren(NodeChildren newChildren,
 			NotificationChain msgs) {
+
 		NodeChildren oldChildren = children;
 		children = newChildren;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE__CHILDREN, oldChildren, newChildren);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -241,6 +254,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 */
 
 	public void setChildren(NodeChildren newChildren) {
+
 		if (newChildren != children) {
 			NotificationChain msgs = null;
 			if (children != null)
@@ -252,6 +266,7 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE__CHILDREN, newChildren, newChildren));
+
 	}
 
 	/**

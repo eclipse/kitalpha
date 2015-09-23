@@ -21,12 +21,12 @@ import org.eclipse.sirius.diagram.description.NodeMapping;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node#getStyle <em>Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node#getChildren <em>Children</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getNode()
  * @model
@@ -37,6 +37,7 @@ public interface Node extends DiagramChildren, AbstractNode {
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' containment reference list isn't clear,
@@ -53,6 +54,7 @@ public interface Node extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Imports</em>' reference isn't clear,
@@ -70,6 +72,7 @@ public interface Node extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node#getImports <em>Imports</em>}' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Imports</em>' reference.
@@ -81,6 +84,7 @@ public interface Node extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Returns the value of the '<em><b>Children</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Children</em>' containment reference isn't clear,
@@ -98,6 +102,7 @@ public interface Node extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node#getChildren <em>Children</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Children</em>' containment reference.

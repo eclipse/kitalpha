@@ -19,12 +19,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
@@ -40,9 +35,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContainerItemProvider extends DiagramChildrenItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ContainerItemProvider extends DiagramChildrenItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -136,6 +129,7 @@ public class ContainerItemProvider extends DiagramChildrenItemProvider
 	 * @generated
 	 */
 	protected void addContentLayoutPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -149,6 +143,7 @@ public class ContainerItemProvider extends DiagramChildrenItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -209,10 +204,12 @@ public class ContainerItemProvider extends DiagramChildrenItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((Container)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Container_type") :
 			getString("_UI_Container_type") + " " + label;
+
 	}
 
 	/**
@@ -251,20 +248,26 @@ public class ContainerItemProvider extends DiagramChildrenItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ABSTRACT_NODE__THE_DOMAIN,
-				 VpdiagramFactory.eINSTANCE.createNodeDomainElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ABSTRACT_NODE__THE_DOMAIN,
+						 VpdiagramFactory.eINSTANCE.createNodeDomainElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.CONTAINER__STYLE,
-				 VpdiagramFactory.eINSTANCE.createContainerDescription()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.CONTAINER__CHILDREN,
-				 VpdiagramFactory.eINSTANCE.createContainerChildren()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.CONTAINER__STYLE,
+						 VpdiagramFactory.eINSTANCE.createContainerDescription()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.CONTAINER__CHILDREN,
+						 VpdiagramFactory.eINSTANCE.createContainerChildren()));
+
+
 	}
 
 }

@@ -22,10 +22,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DomainContainer#getThe_domain <em>The domain</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getDomainContainer()
  * @model
@@ -35,6 +35,7 @@ public interface DomainContainer extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>The domain</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>The domain</em>' containment reference isn't clear,
@@ -52,6 +53,7 @@ public interface DomainContainer extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DomainContainer#getThe_domain <em>The domain</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>The domain</em>' containment reference.

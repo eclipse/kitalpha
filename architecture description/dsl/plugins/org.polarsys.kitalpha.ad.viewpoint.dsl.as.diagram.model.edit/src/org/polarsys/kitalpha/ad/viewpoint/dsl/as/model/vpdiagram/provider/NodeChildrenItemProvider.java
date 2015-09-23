@@ -74,6 +74,7 @@ public class NodeChildrenItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addReused_boderednodesPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -87,6 +88,7 @@ public class NodeChildrenItemProvider extends ItemProviderAdapter
 				 null,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -178,10 +180,12 @@ public class NodeChildrenItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_CHILDREN__OWNED_BODEREDNODES,
-				 VpdiagramFactory.eINSTANCE.createBorderedNode()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_CHILDREN__OWNED_BODEREDNODES,
+						 VpdiagramFactory.eINSTANCE.createBorderedNode()));
+
+
 	}
 
 	/**

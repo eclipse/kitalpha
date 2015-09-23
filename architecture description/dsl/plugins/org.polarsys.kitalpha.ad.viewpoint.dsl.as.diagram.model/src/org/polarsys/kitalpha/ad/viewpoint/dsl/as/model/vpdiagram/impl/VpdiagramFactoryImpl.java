@@ -38,7 +38,7 @@ public class VpdiagramFactoryImpl extends EFactoryImpl implements
 	 */
 	public static VpdiagramFactory init() {
 		try {
-			VpdiagramFactory theVpdiagramFactory = (VpdiagramFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0"); 
+			VpdiagramFactory theVpdiagramFactory = (VpdiagramFactory)EPackage.Registry.INSTANCE.getEFactory(VpdiagramPackage.eNS_URI);
 			if (theVpdiagramFactory != null) {
 				return theVpdiagramFactory;
 			}

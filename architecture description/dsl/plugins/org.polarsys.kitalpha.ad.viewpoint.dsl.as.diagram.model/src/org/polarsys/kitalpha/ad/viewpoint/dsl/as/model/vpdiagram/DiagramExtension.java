@@ -11,7 +11,9 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations;
 
 
 /**
@@ -21,10 +23,11 @@ import org.eclipse.sirius.diagram.description.DiagramDescription;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getExtented_diagram <em>Extented diagram</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getOwnedCustomizations <em>Owned Customizations</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getDiagramExtension()
  * @model
@@ -34,6 +37,7 @@ public interface DiagramExtension extends DiagramRepresentation {
 
 	/**
 	 * Returns the value of the '<em><b>Extented diagram</b></em>' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Extented diagram</em>' reference isn't clear,
@@ -51,6 +55,7 @@ public interface DiagramExtension extends DiagramRepresentation {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getExtented_diagram <em>Extented diagram</em>}' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Extented diagram</em>' reference.
@@ -59,5 +64,23 @@ public interface DiagramExtension extends DiagramRepresentation {
 	 */
 
 	void setExtented_diagram(DiagramDescription value);
+
+	/**
+	 * Returns the value of the '<em><b>Owned Customizations</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations}.
+
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Owned Customizations</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owned Customizations</em>' containment reference list.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getDiagramExtension_OwnedCustomizations()
+	 * @model containment="true"
+	 * @generated
+	 */
+
+	EList<Customizations> getOwnedCustomizations();
 
 } // DiagramExtension

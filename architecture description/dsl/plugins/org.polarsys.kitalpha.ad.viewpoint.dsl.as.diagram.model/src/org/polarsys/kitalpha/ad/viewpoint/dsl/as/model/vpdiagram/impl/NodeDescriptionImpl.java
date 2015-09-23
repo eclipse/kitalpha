@@ -28,12 +28,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeDescriptionImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeDescriptionImpl#getLabel_position <em>Label position</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeDescriptionImpl#getLabel_alignement <em>Label alignement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -116,6 +116,7 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public AbstractNodeStyle getStyle() {
+
 		return style;
 	}
 
@@ -127,12 +128,14 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 
 	public NotificationChain basicSetStyle(AbstractNodeStyle newStyle,
 			NotificationChain msgs) {
+
 		AbstractNodeStyle oldStyle = style;
 		style = newStyle;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DESCRIPTION__STYLE, oldStyle, newStyle);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -143,6 +146,7 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public void setStyle(AbstractNodeStyle newStyle) {
+
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null)
@@ -154,6 +158,7 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DESCRIPTION__STYLE, newStyle, newStyle));
+
 	}
 
 	/**
@@ -163,6 +168,7 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public LabelPosition getLabel_position() {
+
 		return label_position;
 	}
 
@@ -173,10 +179,12 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public void setLabel_position(LabelPosition newLabel_position) {
+
 		LabelPosition oldLabel_position = label_position;
 		label_position = newLabel_position == null ? LABEL_POSITION_EDEFAULT : newLabel_position;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DESCRIPTION__LABEL_POSITION, oldLabel_position, label_position));
+
 	}
 
 	/**
@@ -186,6 +194,7 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public LabelAlignment getLabel_alignement() {
+
 		return label_alignement;
 	}
 
@@ -196,10 +205,12 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public void setLabel_alignement(LabelAlignment newLabel_alignement) {
+
 		LabelAlignment oldLabel_alignement = label_alignement;
 		label_alignement = newLabel_alignement == null ? LABEL_ALIGNEMENT_EDEFAULT : newLabel_alignement;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.NODE_DESCRIPTION__LABEL_ALIGNEMENT, oldLabel_alignement, label_alignement));
+
 	}
 
 	/**

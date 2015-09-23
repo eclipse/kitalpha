@@ -28,10 +28,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaEl
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.JavaElementImpl#getMethod <em>Method</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -64,9 +64,7 @@ public class JavaElementImpl extends ForeignExpressionElementImpl implements
 	 * @generated
 	 */
 	protected JavaElementImpl() {
-
 		super();
-
 	}
 
 	/**

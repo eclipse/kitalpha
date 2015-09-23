@@ -22,13 +22,13 @@ import org.eclipse.sirius.diagram.description.ContainerMapping;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container#getStyle <em>Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container#getChildren <em>Children</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container#getContentLayout <em>Content Layout</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getContainer()
  * @model
@@ -39,6 +39,7 @@ public interface Container extends DiagramChildren, AbstractNode {
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescription}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' containment reference list isn't clear,
@@ -55,6 +56,7 @@ public interface Container extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Imports</em>' reference isn't clear,
@@ -72,6 +74,7 @@ public interface Container extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container#getImports <em>Imports</em>}' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Imports</em>' reference.
@@ -83,6 +86,7 @@ public interface Container extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Returns the value of the '<em><b>Children</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Children</em>' containment reference isn't clear,
@@ -100,6 +104,7 @@ public interface Container extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container#getChildren <em>Children</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Children</em>' containment reference.
@@ -112,6 +117,7 @@ public interface Container extends DiagramChildren, AbstractNode {
 	/**
 	 * Returns the value of the '<em><b>Content Layout</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.diagram.ContainerLayout}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Layout</em>' attribute isn't clear,
@@ -130,6 +136,7 @@ public interface Container extends DiagramChildren, AbstractNode {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container#getContentLayout <em>Content Layout</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Content Layout</em>' attribute.

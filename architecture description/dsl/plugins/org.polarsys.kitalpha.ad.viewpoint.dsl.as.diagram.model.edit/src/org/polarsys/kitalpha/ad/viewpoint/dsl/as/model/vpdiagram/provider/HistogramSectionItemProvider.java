@@ -77,6 +77,7 @@ public class HistogramSectionItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addBackgroundColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -90,6 +91,7 @@ public class HistogramSectionItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -99,6 +101,7 @@ public class HistogramSectionItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addForgroundColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -112,6 +115,7 @@ public class HistogramSectionItemProvider extends ItemProviderAdapter
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -219,35 +223,47 @@ public class HistogramSectionItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MIN_VALUE,
-				 ExpressionFactory.eINSTANCE.createJavaElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MIN_VALUE,
+						 ExpressionFactory.eINSTANCE.createJavaElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MIN_VALUE,
-				 ExpressionFactory.eINSTANCE.createDomainElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MAX_VALUE,
-				 ExpressionFactory.eINSTANCE.createJavaElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MAX_VALUE,
-				 ExpressionFactory.eINSTANCE.createDomainElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MIN_VALUE,
+						 ExpressionFactory.eINSTANCE.createDomainElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.HISTOGRAM_SECTION__VALUE,
-				 ExpressionFactory.eINSTANCE.createJavaElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.HISTOGRAM_SECTION__VALUE,
-				 ExpressionFactory.eINSTANCE.createDomainElement()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MAX_VALUE,
+						 ExpressionFactory.eINSTANCE.createJavaElement()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.HISTOGRAM_SECTION__MAX_VALUE,
+						 ExpressionFactory.eINSTANCE.createDomainElement()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.HISTOGRAM_SECTION__VALUE,
+						 ExpressionFactory.eINSTANCE.createJavaElement()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.HISTOGRAM_SECTION__VALUE,
+						 ExpressionFactory.eINSTANCE.createDomainElement()));
+
+
 	}
 
 	/**

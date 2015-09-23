@@ -25,13 +25,13 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.FlatStyleImpl#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.FlatStyleImpl#getForgroundColor <em>Forground Color</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.FlatStyleImpl#getBorderColor <em>Border Color</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.FlatStyleImpl#getBackgroundStyle <em>Background Style</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -144,6 +144,7 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public SystemColors getBackgroundColor() {
+
 		return backgroundColor;
 	}
 
@@ -154,10 +155,12 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public void setBackgroundColor(SystemColors newBackgroundColor) {
+
 		SystemColors oldBackgroundColor = backgroundColor;
 		backgroundColor = newBackgroundColor == null ? BACKGROUND_COLOR_EDEFAULT : newBackgroundColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.FLAT_STYLE__BACKGROUND_COLOR, oldBackgroundColor, backgroundColor));
+
 	}
 
 	/**
@@ -167,6 +170,7 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public SystemColors getForgroundColor() {
+
 		return forgroundColor;
 	}
 
@@ -177,10 +181,12 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public void setForgroundColor(SystemColors newForgroundColor) {
+
 		SystemColors oldForgroundColor = forgroundColor;
 		forgroundColor = newForgroundColor == null ? FORGROUND_COLOR_EDEFAULT : newForgroundColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.FLAT_STYLE__FORGROUND_COLOR, oldForgroundColor, forgroundColor));
+
 	}
 
 	/**
@@ -190,6 +196,7 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public SystemColors getBorderColor() {
+
 		return borderColor;
 	}
 
@@ -200,10 +207,12 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public void setBorderColor(SystemColors newBorderColor) {
+
 		SystemColors oldBorderColor = borderColor;
 		borderColor = newBorderColor == null ? BORDER_COLOR_EDEFAULT : newBorderColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.FLAT_STYLE__BORDER_COLOR, oldBorderColor, borderColor));
+
 	}
 
 	/**
@@ -213,6 +222,7 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public BackgroundStyle getBackgroundStyle() {
+
 		return backgroundStyle;
 	}
 
@@ -223,10 +233,12 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 */
 
 	public void setBackgroundStyle(BackgroundStyle newBackgroundStyle) {
+
 		BackgroundStyle oldBackgroundStyle = backgroundStyle;
 		backgroundStyle = newBackgroundStyle == null ? BACKGROUND_STYLE_EDEFAULT : newBackgroundStyle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.FLAT_STYLE__BACKGROUND_STYLE, oldBackgroundStyle, backgroundStyle));
+
 	}
 
 	/**

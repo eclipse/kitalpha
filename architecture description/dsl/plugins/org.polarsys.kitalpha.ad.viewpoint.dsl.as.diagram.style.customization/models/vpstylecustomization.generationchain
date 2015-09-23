@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="vpstylecustomization" factoryComponentName="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.fc">
+  <elements xsi:type="generationChain:GenerationChain" name="vpstylecustomization">
+    <elements xsi:type="generationChain:EmfGeneration" name="Emf Generation for vpstylecustomization" modelPath="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization/models/vpstylecustomization.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model"/>
+  </elements>
+</generationChain:GenerationChain>

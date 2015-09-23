@@ -25,10 +25,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeImportImpl#getImports <em>Imports</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -70,6 +70,7 @@ public class EdgeImportImpl extends AbstractEdgeImpl implements EdgeImport {
 	 */
 
 	public EdgeMapping getImports() {
+
 		if (imports != null && imports.eIsProxy()) {
 			InternalEObject oldImports = (InternalEObject)imports;
 			imports = (EdgeMapping)eResolveProxy(oldImports);
@@ -88,6 +89,7 @@ public class EdgeImportImpl extends AbstractEdgeImpl implements EdgeImport {
 	 */
 
 	public EdgeMapping basicGetImports() {
+
 		return imports;
 	}
 
@@ -98,10 +100,12 @@ public class EdgeImportImpl extends AbstractEdgeImpl implements EdgeImport {
 	 */
 
 	public void setImports(EdgeMapping newImports) {
+
 		EdgeMapping oldImports = imports;
 		imports = newImports;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_IMPORT__IMPORTS, oldImports, imports));
+
 	}
 
 	/**
