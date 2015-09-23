@@ -19,12 +19,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.sirius.diagram.description.NodeMapping;
@@ -39,9 +34,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * @generated
  */
-public class NodeItemProvider extends DiagramChildrenItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class NodeItemProvider extends DiagramChildrenItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -185,10 +178,12 @@ public class NodeItemProvider extends DiagramChildrenItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((Node)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Node_type") :
 			getString("_UI_Node_type") + " " + label;
+
 	}
 
 	/**
@@ -224,20 +219,26 @@ public class NodeItemProvider extends DiagramChildrenItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ABSTRACT_NODE__THE_DOMAIN,
-				 VpdiagramFactory.eINSTANCE.createNodeDomainElement()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ABSTRACT_NODE__THE_DOMAIN,
+						 VpdiagramFactory.eINSTANCE.createNodeDomainElement()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE__STYLE,
-				 VpdiagramFactory.eINSTANCE.createNodeDescription()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE__CHILDREN,
-				 VpdiagramFactory.eINSTANCE.createNodeChildren()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE__STYLE,
+						 VpdiagramFactory.eINSTANCE.createNodeDescription()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE__CHILDREN,
+						 VpdiagramFactory.eINSTANCE.createNodeChildren()));
+
+
 	}
 
 }

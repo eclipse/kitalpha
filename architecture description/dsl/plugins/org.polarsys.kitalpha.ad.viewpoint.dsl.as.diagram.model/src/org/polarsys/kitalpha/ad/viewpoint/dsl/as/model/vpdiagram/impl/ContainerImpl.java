@@ -36,6 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ContainerImpl#getThe_domain <em>The domain</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ContainerImpl#getStyle <em>Style</em>}</li>
@@ -43,7 +44,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ContainerImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ContainerImpl#getContentLayout <em>Content Layout</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -135,6 +135,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public NodeDomainElement getThe_domain() {
+
 		return the_domain;
 	}
 
@@ -146,12 +147,14 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 
 	public NotificationChain basicSetThe_domain(
 			NodeDomainElement newThe_domain, NotificationChain msgs) {
+
 		NodeDomainElement oldThe_domain = the_domain;
 		the_domain = newThe_domain;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER__THE_DOMAIN, oldThe_domain, newThe_domain);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -162,6 +165,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public void setThe_domain(NodeDomainElement newThe_domain) {
+
 		if (newThe_domain != the_domain) {
 			NotificationChain msgs = null;
 			if (the_domain != null)
@@ -173,6 +177,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER__THE_DOMAIN, newThe_domain, newThe_domain));
+
 	}
 
 	/**
@@ -182,6 +187,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public EList<ContainerDescription> getStyle() {
+
 		if (style == null) {
 			style = new EObjectContainmentEList<ContainerDescription>(ContainerDescription.class, this, VpdiagramPackage.CONTAINER__STYLE);
 		}
@@ -195,6 +201,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public ContainerMapping getImports() {
+
 		if (imports != null && imports.eIsProxy()) {
 			InternalEObject oldImports = (InternalEObject)imports;
 			imports = (ContainerMapping)eResolveProxy(oldImports);
@@ -213,6 +220,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public ContainerMapping basicGetImports() {
+
 		return imports;
 	}
 
@@ -223,10 +231,12 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public void setImports(ContainerMapping newImports) {
+
 		ContainerMapping oldImports = imports;
 		imports = newImports;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER__IMPORTS, oldImports, imports));
+
 	}
 
 	/**
@@ -236,6 +246,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public ContainerChildren getChildren() {
+
 		return children;
 	}
 
@@ -247,12 +258,14 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 
 	public NotificationChain basicSetChildren(ContainerChildren newChildren,
 			NotificationChain msgs) {
+
 		ContainerChildren oldChildren = children;
 		children = newChildren;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER__CHILDREN, oldChildren, newChildren);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -263,6 +276,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public void setChildren(ContainerChildren newChildren) {
+
 		if (newChildren != children) {
 			NotificationChain msgs = null;
 			if (children != null)
@@ -274,6 +288,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER__CHILDREN, newChildren, newChildren));
+
 	}
 
 	/**
@@ -283,6 +298,7 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public ContainerLayout getContentLayout() {
+
 		return contentLayout;
 	}
 
@@ -293,10 +309,12 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 */
 
 	public void setContentLayout(ContainerLayout newContentLayout) {
+
 		ContainerLayout oldContentLayout = contentLayout;
 		contentLayout = newContentLayout == null ? CONTENT_LAYOUT_EDEFAULT : newContentLayout;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER__CONTENT_LAYOUT, oldContentLayout, contentLayout));
+
 	}
 
 	/**

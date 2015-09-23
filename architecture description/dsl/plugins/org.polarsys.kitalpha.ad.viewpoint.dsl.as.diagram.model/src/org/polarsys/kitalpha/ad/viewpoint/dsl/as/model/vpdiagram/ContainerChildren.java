@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerChildren#getOwned_nodes <em>Owned nodes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerChildren#getReused_nodes <em>Reused nodes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getContainerChildren()
  * @model
@@ -37,6 +37,7 @@ public interface ContainerChildren extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Owned nodes</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned nodes</em>' containment reference list isn't clear,
@@ -54,6 +55,7 @@ public interface ContainerChildren extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Reused nodes</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Reused nodes</em>' reference list isn't clear,

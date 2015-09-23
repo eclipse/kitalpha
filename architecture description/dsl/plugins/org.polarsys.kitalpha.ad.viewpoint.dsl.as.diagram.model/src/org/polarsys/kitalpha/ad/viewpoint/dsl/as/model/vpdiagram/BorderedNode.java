@@ -21,11 +21,11 @@ import org.eclipse.sirius.diagram.description.NodeMapping;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getBorderedNode()
  * @model
@@ -35,6 +35,7 @@ public interface BorderedNode extends AbstractNode, DiagramElement {
 
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Imports</em>' reference isn't clear,
@@ -52,6 +53,7 @@ public interface BorderedNode extends AbstractNode, DiagramElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode#getImports <em>Imports</em>}' reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Imports</em>' reference.
@@ -64,6 +66,7 @@ public interface BorderedNode extends AbstractNode, DiagramElement {
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' containment reference list isn't clear,

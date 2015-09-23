@@ -27,13 +27,13 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeStyleImpl#getLineStyle <em>Line Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeStyleImpl#getBeginDecorator <em>Begin Decorator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeStyleImpl#getEndDecorator <em>End Decorator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeStyleImpl#getColor <em>Color</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -145,6 +145,7 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public LineStyle getLineStyle() {
+
 		return lineStyle;
 	}
 
@@ -155,10 +156,12 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public void setLineStyle(LineStyle newLineStyle) {
+
 		LineStyle oldLineStyle = lineStyle;
 		lineStyle = newLineStyle == null ? LINE_STYLE_EDEFAULT : newLineStyle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_STYLE__LINE_STYLE, oldLineStyle, lineStyle));
+
 	}
 
 	/**
@@ -168,6 +171,7 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public EdgeArrows getBeginDecorator() {
+
 		return beginDecorator;
 	}
 
@@ -178,10 +182,12 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public void setBeginDecorator(EdgeArrows newBeginDecorator) {
+
 		EdgeArrows oldBeginDecorator = beginDecorator;
 		beginDecorator = newBeginDecorator == null ? BEGIN_DECORATOR_EDEFAULT : newBeginDecorator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_STYLE__BEGIN_DECORATOR, oldBeginDecorator, beginDecorator));
+
 	}
 
 	/**
@@ -191,6 +197,7 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public EdgeArrows getEndDecorator() {
+
 		return endDecorator;
 	}
 
@@ -201,10 +208,12 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public void setEndDecorator(EdgeArrows newEndDecorator) {
+
 		EdgeArrows oldEndDecorator = endDecorator;
 		endDecorator = newEndDecorator == null ? END_DECORATOR_EDEFAULT : newEndDecorator;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_STYLE__END_DECORATOR, oldEndDecorator, endDecorator));
+
 	}
 
 	/**
@@ -214,6 +223,7 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public SystemColors getColor() {
+
 		return color;
 	}
 
@@ -224,10 +234,12 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 */
 
 	public void setColor(SystemColors newColor) {
+
 		SystemColors oldColor = color;
 		color = newColor == null ? COLOR_EDEFAULT : newColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_STYLE__COLOR, oldColor, color));
+
 	}
 
 	/**

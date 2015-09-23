@@ -33,10 +33,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.HistogramStyleImpl#getSections <em>Sections</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,6 +79,7 @@ public class HistogramStyleImpl extends AbstractNodeStyleImpl implements
 	 */
 
 	public EList<HistogramSection> getSections() {
+
 		if (sections == null) {
 			sections = new EObjectContainmentEList<HistogramSection>(HistogramSection.class, this, VpdiagramPackage.HISTOGRAM_STYLE__SECTIONS);
 		}

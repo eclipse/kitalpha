@@ -18,16 +18,16 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.StringElement#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ExpressionPackage#getStringElement()
  * @model
  * @generated
  */
-public interface StringElement extends ExpressionElement {
+public interface StringElement extends ExpressionElement, AbstractComputableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

@@ -27,5 +27,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model.edit;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model.edit;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model.edit;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper
 Bundle-ActivationPolicy: lazy

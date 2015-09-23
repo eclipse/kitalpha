@@ -23,6 +23,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expres
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#getSize <em>Size</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#isBold <em>Bold</em>}</li>
@@ -30,7 +31,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expres
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#getValue <em>Value</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#getColor <em>Color</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getLabel()
  * @model
@@ -41,6 +41,7 @@ public interface Label extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' attribute.
 	 * The default value is <code>"8"</code>.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Size</em>' attribute isn't clear,
@@ -58,6 +59,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#getSize <em>Size</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Size</em>' attribute.
@@ -69,6 +71,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Bold</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bold</em>' attribute isn't clear,
@@ -86,6 +89,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#isBold <em>Bold</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bold</em>' attribute.
@@ -97,6 +101,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Italic</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Italic</em>' attribute isn't clear,
@@ -114,6 +119,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#isItalic <em>Italic</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Italic</em>' attribute.
@@ -125,6 +131,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' containment reference isn't clear,
@@ -142,6 +149,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#getValue <em>Value</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' containment reference.
@@ -155,6 +163,7 @@ public interface Label extends EObject {
 	 * Returns the value of the '<em><b>Color</b></em>' attribute.
 	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.description.SystemColors}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Color</em>' attribute isn't clear,
@@ -173,6 +182,7 @@ public interface Label extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label#getColor <em>Color</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Color</em>' attribute.

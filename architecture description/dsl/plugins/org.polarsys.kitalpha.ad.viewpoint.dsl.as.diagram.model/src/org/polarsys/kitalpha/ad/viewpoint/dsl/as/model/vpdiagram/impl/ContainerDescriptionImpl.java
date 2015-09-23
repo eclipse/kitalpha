@@ -29,10 +29,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ContainerDescriptionImpl#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -75,6 +75,7 @@ public class ContainerDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public AbstractContainerStyle getStyle() {
+
 		return style;
 	}
 
@@ -86,12 +87,14 @@ public class ContainerDescriptionImpl extends AbstractDescriptionImpl implements
 
 	public NotificationChain basicSetStyle(AbstractContainerStyle newStyle,
 			NotificationChain msgs) {
+
 		AbstractContainerStyle oldStyle = style;
 		style = newStyle;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER_DESCRIPTION__STYLE, oldStyle, newStyle);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -102,6 +105,7 @@ public class ContainerDescriptionImpl extends AbstractDescriptionImpl implements
 	 */
 
 	public void setStyle(AbstractContainerStyle newStyle) {
+
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null)
@@ -113,6 +117,7 @@ public class ContainerDescriptionImpl extends AbstractDescriptionImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONTAINER_DESCRIPTION__STYLE, newStyle, newStyle));
+
 	}
 
 	/**

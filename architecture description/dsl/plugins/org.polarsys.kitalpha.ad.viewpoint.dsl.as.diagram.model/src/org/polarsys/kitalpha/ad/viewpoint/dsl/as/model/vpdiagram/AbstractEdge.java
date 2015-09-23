@@ -20,10 +20,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractEdge#getE_description <em>Edescription</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getAbstractEdge()
  * @model abstract="true"
@@ -34,6 +34,7 @@ public interface AbstractEdge extends DiagramChildren {
 	/**
 	 * Returns the value of the '<em><b>Edescription</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Edescription</em>' containment reference list isn't clear,

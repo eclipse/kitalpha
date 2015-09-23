@@ -16,25 +16,16 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.specification.SpecificationElementHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.NamedElementItemProvider;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Action;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 
@@ -44,9 +35,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionItemProvider extends NamedElementItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ActionItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -138,6 +127,7 @@ public class ActionItemProvider extends NamedElementItemProvider implements
 	 * @generated
 	 */
 	protected void addLabelPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -151,6 +141,7 @@ public class ActionItemProvider extends NamedElementItemProvider implements
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -160,6 +151,7 @@ public class ActionItemProvider extends NamedElementItemProvider implements
 	 * @generated
 	 */
 	protected void addPreconditionPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -173,6 +165,7 @@ public class ActionItemProvider extends NamedElementItemProvider implements
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -183,10 +176,12 @@ public class ActionItemProvider extends NamedElementItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((Action)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Action_type") :
 			getString("_UI_Action_type") + " " + label;
+
 	}
 
 	/**

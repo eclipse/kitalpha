@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren#getOwned_boderednodes <em>Owned boderednodes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren#getReused_boderednodes <em>Reused boderednodes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getNodeChildren()
  * @model
@@ -37,6 +37,7 @@ public interface NodeChildren extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Owned boderednodes</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned boderednodes</em>' containment reference list isn't clear,
@@ -54,6 +55,7 @@ public interface NodeChildren extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Reused boderednodes</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Reused boderednodes</em>' reference list isn't clear,

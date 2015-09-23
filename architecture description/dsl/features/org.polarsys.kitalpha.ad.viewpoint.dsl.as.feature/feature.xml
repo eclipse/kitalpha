@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014 Thales Global Services S.A.S.
+Copyright (c) 2014-2015 Thales Global Services S.A.S.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -334,5 +334,23 @@ Contributors:
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>

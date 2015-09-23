@@ -20,8 +20,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Diagram Children</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

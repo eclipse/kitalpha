@@ -22,11 +22,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractAssoci
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation#getTarget_Locator <em>Target Locator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation#getTarget_query <em>Target query</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getEdgeDomainAssociation()
  * @model
@@ -36,6 +36,7 @@ public interface EdgeDomainAssociation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Target Locator</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target Locator</em>' containment reference isn't clear,
@@ -53,6 +54,7 @@ public interface EdgeDomainAssociation extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation#getTarget_Locator <em>Target Locator</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Target Locator</em>' containment reference.
@@ -64,6 +66,7 @@ public interface EdgeDomainAssociation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Target query</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target query</em>' attribute isn't clear,
@@ -81,6 +84,7 @@ public interface EdgeDomainAssociation extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainAssociation#getTarget_query <em>Target query</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Target query</em>' attribute.

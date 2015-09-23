@@ -76,6 +76,7 @@ public class EdgeDomainAssociationItemProvider extends
 	 * @generated
 	 */
 	protected void addTarget_queryPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -89,6 +90,7 @@ public class EdgeDomainAssociationItemProvider extends
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -184,15 +186,19 @@ public class EdgeDomainAssociationItemProvider extends
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE_DOMAIN_ASSOCIATION__TARGET_LOCATOR,
-				 CommondataFactory.eINSTANCE.createExternalAssociation()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE_DOMAIN_ASSOCIATION__TARGET_LOCATOR,
+						 CommondataFactory.eINSTANCE.createExternalAssociation()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE_DOMAIN_ASSOCIATION__TARGET_LOCATOR,
-				 CommondataFactory.eINSTANCE.createLocalAssociation()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE_DOMAIN_ASSOCIATION__TARGET_LOCATOR,
+						 CommondataFactory.eINSTANCE.createLocalAssociation()));
+
+
 	}
 
 	/**

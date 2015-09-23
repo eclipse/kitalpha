@@ -11,10 +11,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratri
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration#isOverwriteVSM <em>Overwrite VSM</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.ConfigurationPackage#getDiagramGenerationConfiguration()
  * @model
@@ -23,6 +23,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratri
 public interface DiagramGenerationConfiguration extends ExtensionGeneratrionConfiguration {
 	/**
 	 * Returns the value of the '<em><b>Overwrite VSM</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Overwrite VSM</em>' attribute isn't clear,
@@ -39,6 +40,7 @@ public interface DiagramGenerationConfiguration extends ExtensionGeneratrionConf
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration#isOverwriteVSM <em>Overwrite VSM</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Overwrite VSM</em>' attribute.

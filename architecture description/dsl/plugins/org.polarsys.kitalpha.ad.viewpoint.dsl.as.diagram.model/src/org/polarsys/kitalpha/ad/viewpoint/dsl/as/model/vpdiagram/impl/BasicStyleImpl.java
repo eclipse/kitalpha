@@ -25,11 +25,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BasicStyleImpl#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BasicStyleImpl#getForm <em>Form</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -101,6 +101,7 @@ public class BasicStyleImpl extends AbstractNodeStyleImpl implements BasicStyle 
 	 */
 
 	public SystemColors getBackgroundColor() {
+
 		return backgroundColor;
 	}
 
@@ -111,10 +112,12 @@ public class BasicStyleImpl extends AbstractNodeStyleImpl implements BasicStyle 
 	 */
 
 	public void setBackgroundColor(SystemColors newBackgroundColor) {
+
 		SystemColors oldBackgroundColor = backgroundColor;
 		backgroundColor = newBackgroundColor == null ? BACKGROUND_COLOR_EDEFAULT : newBackgroundColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.BASIC_STYLE__BACKGROUND_COLOR, oldBackgroundColor, backgroundColor));
+
 	}
 
 	/**
@@ -124,6 +127,7 @@ public class BasicStyleImpl extends AbstractNodeStyleImpl implements BasicStyle 
 	 */
 
 	public Node_Form getForm() {
+
 		return form;
 	}
 
@@ -134,10 +138,12 @@ public class BasicStyleImpl extends AbstractNodeStyleImpl implements BasicStyle 
 	 */
 
 	public void setForm(Node_Form newForm) {
+
 		Node_Form oldForm = form;
 		form = newForm == null ? FORM_EDEFAULT : newForm;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.BASIC_STYLE__FORM, oldForm, form));
+
 	}
 
 	/**

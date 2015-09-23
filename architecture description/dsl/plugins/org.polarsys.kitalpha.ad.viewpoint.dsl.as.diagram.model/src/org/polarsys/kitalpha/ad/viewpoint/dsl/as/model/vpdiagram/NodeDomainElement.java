@@ -23,12 +23,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement#getDomain_Class <em>Domain Class</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement#getChlidren_list <em>Chlidren list</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement#getQuery <em>Query</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getNodeDomainElement()
  * @model
@@ -38,6 +38,7 @@ public interface NodeDomainElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Domain Class</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Domain Class</em>' containment reference isn't clear,
@@ -55,6 +56,7 @@ public interface NodeDomainElement extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement#getDomain_Class <em>Domain Class</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Domain Class</em>' containment reference.
@@ -66,6 +68,7 @@ public interface NodeDomainElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Chlidren list</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Chlidren list</em>' containment reference isn't clear,
@@ -83,6 +86,7 @@ public interface NodeDomainElement extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement#getChlidren_list <em>Chlidren list</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Chlidren list</em>' containment reference.
@@ -94,6 +98,7 @@ public interface NodeDomainElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Query</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Query</em>' attribute isn't clear,
@@ -111,6 +116,7 @@ public interface NodeDomainElement extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement#getQuery <em>Query</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Query</em>' attribute.

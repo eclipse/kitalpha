@@ -20,12 +20,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge#getSource <em>Source</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge#getTarget <em>Target</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge#getThe_domain <em>The domain</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getEdge()
  * @model
@@ -36,6 +36,7 @@ public interface Edge extends AbstractEdge {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference list isn't clear,
@@ -53,6 +54,7 @@ public interface Edge extends AbstractEdge {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target</em>' reference list isn't clear,
@@ -69,6 +71,7 @@ public interface Edge extends AbstractEdge {
 
 	/**
 	 * Returns the value of the '<em><b>The domain</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>The domain</em>' containment reference isn't clear,
@@ -86,6 +89,7 @@ public interface Edge extends AbstractEdge {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge#getThe_domain <em>The domain</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>The domain</em>' containment reference.

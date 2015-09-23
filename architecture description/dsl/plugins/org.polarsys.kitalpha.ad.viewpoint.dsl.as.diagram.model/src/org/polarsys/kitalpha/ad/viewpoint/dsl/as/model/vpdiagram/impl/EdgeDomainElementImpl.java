@@ -31,12 +31,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDomainElementImpl#getSource_Locator <em>Source Locator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDomainElementImpl#getThe_Domain <em>The Domain</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDomainElementImpl#getSource_query <em>Source query</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -109,6 +109,7 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 	 */
 
 	public AbstractAssociation getSource_Locator() {
+
 		return source_Locator;
 	}
 
@@ -120,12 +121,14 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 
 	public NotificationChain basicSetSource_Locator(
 			AbstractAssociation newSource_Locator, NotificationChain msgs) {
+
 		AbstractAssociation oldSource_Locator = source_Locator;
 		source_Locator = newSource_Locator;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ELEMENT__SOURCE_LOCATOR, oldSource_Locator, newSource_Locator);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -136,6 +139,7 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 	 */
 
 	public void setSource_Locator(AbstractAssociation newSource_Locator) {
+
 		if (newSource_Locator != source_Locator) {
 			NotificationChain msgs = null;
 			if (source_Locator != null)
@@ -147,6 +151,7 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ELEMENT__SOURCE_LOCATOR, newSource_Locator, newSource_Locator));
+
 	}
 
 	/**
@@ -156,6 +161,7 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 	 */
 
 	public AbstractClass getThe_Domain() {
+
 		return the_Domain;
 	}
 
@@ -167,12 +173,14 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 
 	public NotificationChain basicSetThe_Domain(AbstractClass newThe_Domain,
 			NotificationChain msgs) {
+
 		AbstractClass oldThe_Domain = the_Domain;
 		the_Domain = newThe_Domain;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ELEMENT__THE_DOMAIN, oldThe_Domain, newThe_Domain);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -183,6 +191,7 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 	 */
 
 	public void setThe_Domain(AbstractClass newThe_Domain) {
+
 		if (newThe_Domain != the_Domain) {
 			NotificationChain msgs = null;
 			if (the_Domain != null)
@@ -194,6 +203,7 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ELEMENT__THE_DOMAIN, newThe_Domain, newThe_Domain));
+
 	}
 
 	/**
@@ -203,6 +213,7 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 	 */
 
 	public String getSource_query() {
+
 		return source_query;
 	}
 
@@ -213,10 +224,12 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 	 */
 
 	public void setSource_query(String newSource_query) {
+
 		String oldSource_query = source_query;
 		source_query = newSource_query;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DOMAIN_ELEMENT__SOURCE_QUERY, oldSource_query, source_query));
+
 	}
 
 	/**

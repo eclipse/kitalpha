@@ -20,11 +20,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation#getThe_MappingSet <em>The Mapping Set</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation#getThe_ActionSet <em>The Action Set</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getDiagramRepresentation()
  * @model abstract="true"
@@ -34,6 +34,7 @@ public interface DiagramRepresentation extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>The Mapping Set</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>The Mapping Set</em>' containment reference isn't clear,
@@ -51,6 +52,7 @@ public interface DiagramRepresentation extends NamedElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation#getThe_MappingSet <em>The Mapping Set</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>The Mapping Set</em>' containment reference.
@@ -62,6 +64,7 @@ public interface DiagramRepresentation extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>The Action Set</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>The Action Set</em>' containment reference isn't clear,
@@ -79,6 +82,7 @@ public interface DiagramRepresentation extends NamedElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation#getThe_ActionSet <em>The Action Set</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>The Action Set</em>' containment reference.

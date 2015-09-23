@@ -4,12 +4,11 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.CommandParameter;
@@ -26,7 +25,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.util.VpconfSwitch;
@@ -254,10 +252,13 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 			 */
 			@Override
 			public Object caseGeneration(Generation object) {
+
 				newChildDescriptors.add
 					(createChildParameter
 						(VpconfPackage.Literals.GENERATION__OWNED_EXTENSION_GEN_CONF,
 						 ConfigurationFactory.eINSTANCE.createDiagramGenerationConfiguration()));
+
+
 
 				return null;
 			}
@@ -280,8 +281,8 @@ public class ConfigurationItemProviderAdapterFactory extends ConfigurationAdapte
 		 */
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-		   return result;
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
 		}
 
 		/**

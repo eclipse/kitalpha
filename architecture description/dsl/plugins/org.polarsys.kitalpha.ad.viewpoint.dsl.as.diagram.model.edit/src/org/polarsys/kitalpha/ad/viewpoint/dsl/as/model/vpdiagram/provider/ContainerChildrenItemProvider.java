@@ -74,6 +74,7 @@ public class ContainerChildrenItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addReused_nodesPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -87,6 +88,7 @@ public class ContainerChildrenItemProvider extends ItemProviderAdapter
 				 null,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -178,20 +180,26 @@ public class ContainerChildrenItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.CONTAINER_CHILDREN__OWNED_NODES,
-				 VpdiagramFactory.eINSTANCE.createNode()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.CONTAINER_CHILDREN__OWNED_NODES,
+						 VpdiagramFactory.eINSTANCE.createNode()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.CONTAINER_CHILDREN__OWNED_NODES,
-				 VpdiagramFactory.eINSTANCE.createContainer()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.CONTAINER_CHILDREN__OWNED_NODES,
-				 VpdiagramFactory.eINSTANCE.createBorderedNode()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.CONTAINER_CHILDREN__OWNED_NODES,
+						 VpdiagramFactory.eINSTANCE.createContainer()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.CONTAINER_CHILDREN__OWNED_NODES,
+						 VpdiagramFactory.eINSTANCE.createBorderedNode()));
+
+
 	}
 
 	/**

@@ -18,10 +18,10 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ImageStyle#getImagePath <em>Image Path</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getImageStyle()
  * @model
@@ -31,6 +31,7 @@ public interface ImageStyle extends AbstractNodeStyle, AbstractContainerStyle {
 
 	/**
 	 * Returns the value of the '<em><b>Image Path</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Image Path</em>' attribute isn't clear,
@@ -48,6 +49,7 @@ public interface ImageStyle extends AbstractNodeStyle, AbstractContainerStyle {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ImageStyle#getImagePath <em>Image Path</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Image Path</em>' attribute.

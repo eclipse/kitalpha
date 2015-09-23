@@ -16,18 +16,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
@@ -38,9 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * @generated
  */
-public class EdgeItemProvider extends AbstractEdgeItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EdgeItemProvider extends AbstractEdgeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -75,6 +65,7 @@ public class EdgeItemProvider extends AbstractEdgeItemProvider implements
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -88,6 +79,7 @@ public class EdgeItemProvider extends AbstractEdgeItemProvider implements
 				 null,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -97,6 +89,7 @@ public class EdgeItemProvider extends AbstractEdgeItemProvider implements
 	 * @generated
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -110,6 +103,7 @@ public class EdgeItemProvider extends AbstractEdgeItemProvider implements
 				 null,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -162,10 +156,12 @@ public class EdgeItemProvider extends AbstractEdgeItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((Edge)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Edge_type") :
 			getString("_UI_Edge_type") + " " + label;
+
 	}
 
 	/**
@@ -199,15 +195,19 @@ public class EdgeItemProvider extends AbstractEdgeItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE__THE_DOMAIN,
-				 VpdiagramFactory.eINSTANCE.createEdgeDomainAssociation()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE__THE_DOMAIN,
+						 VpdiagramFactory.eINSTANCE.createEdgeDomainAssociation()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.EDGE__THE_DOMAIN,
-				 VpdiagramFactory.eINSTANCE.createEdgeDomainElement()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.EDGE__THE_DOMAIN,
+						 VpdiagramFactory.eINSTANCE.createEdgeDomainElement()));
+
+
 	}
 
 }

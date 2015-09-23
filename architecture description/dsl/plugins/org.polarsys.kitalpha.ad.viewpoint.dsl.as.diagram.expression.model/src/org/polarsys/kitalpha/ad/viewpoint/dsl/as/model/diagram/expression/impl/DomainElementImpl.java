@@ -31,10 +31,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.impl.DomainElementImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -57,9 +57,7 @@ public class DomainElementImpl extends ForeignExpressionElementImpl implements
 	 * @generated
 	 */
 	protected DomainElementImpl() {
-
 		super();
-
 	}
 
 	/**

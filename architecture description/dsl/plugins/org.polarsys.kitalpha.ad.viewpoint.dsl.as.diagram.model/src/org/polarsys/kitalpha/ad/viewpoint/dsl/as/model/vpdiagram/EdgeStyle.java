@@ -23,13 +23,13 @@ import org.eclipse.sirius.viewpoint.description.SystemColors;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getLineStyle <em>Line Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getBeginDecorator <em>Begin Decorator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getEndDecorator <em>End Decorator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getColor <em>Color</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getEdgeStyle()
  * @model
@@ -40,6 +40,7 @@ public interface EdgeStyle extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Line Style</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.diagram.LineStyle}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Line Style</em>' attribute isn't clear,
@@ -58,6 +59,7 @@ public interface EdgeStyle extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getLineStyle <em>Line Style</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Line Style</em>' attribute.
@@ -71,6 +73,7 @@ public interface EdgeStyle extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Begin Decorator</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.diagram.EdgeArrows}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Begin Decorator</em>' attribute isn't clear,
@@ -89,6 +92,7 @@ public interface EdgeStyle extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getBeginDecorator <em>Begin Decorator</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Begin Decorator</em>' attribute.
@@ -102,6 +106,7 @@ public interface EdgeStyle extends EObject {
 	/**
 	 * Returns the value of the '<em><b>End Decorator</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.diagram.EdgeArrows}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>End Decorator</em>' attribute isn't clear,
@@ -120,6 +125,7 @@ public interface EdgeStyle extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getEndDecorator <em>End Decorator</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>End Decorator</em>' attribute.
@@ -133,6 +139,7 @@ public interface EdgeStyle extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Color</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.description.SystemColors}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Color</em>' attribute isn't clear,
@@ -151,6 +158,7 @@ public interface EdgeStyle extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeStyle#getColor <em>Color</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Color</em>' attribute.

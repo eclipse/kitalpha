@@ -32,6 +32,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDescriptionImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDescriptionImpl#getBegin_Label <em>Begin Label</em>}</li>
@@ -39,7 +40,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDescriptionImpl#getEnd_label <em>End label</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.EdgeDescriptionImpl#getCondition <em>Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -121,6 +121,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public EdgeStyle getStyle() {
+
 		return style;
 	}
 
@@ -132,12 +133,14 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 
 	public NotificationChain basicSetStyle(EdgeStyle newStyle,
 			NotificationChain msgs) {
+
 		EdgeStyle oldStyle = style;
 		style = newStyle;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__STYLE, oldStyle, newStyle);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -148,6 +151,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public void setStyle(EdgeStyle newStyle) {
+
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null)
@@ -159,6 +163,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__STYLE, newStyle, newStyle));
+
 	}
 
 	/**
@@ -168,6 +173,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public Label getBegin_Label() {
+
 		return begin_Label;
 	}
 
@@ -179,12 +185,14 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 
 	public NotificationChain basicSetBegin_Label(Label newBegin_Label,
 			NotificationChain msgs) {
+
 		Label oldBegin_Label = begin_Label;
 		begin_Label = newBegin_Label;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__BEGIN_LABEL, oldBegin_Label, newBegin_Label);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -195,6 +203,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public void setBegin_Label(Label newBegin_Label) {
+
 		if (newBegin_Label != begin_Label) {
 			NotificationChain msgs = null;
 			if (begin_Label != null)
@@ -206,6 +215,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__BEGIN_LABEL, newBegin_Label, newBegin_Label));
+
 	}
 
 	/**
@@ -215,6 +225,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public Label getCenter_label() {
+
 		return center_label;
 	}
 
@@ -226,12 +237,14 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 
 	public NotificationChain basicSetCenter_label(Label newCenter_label,
 			NotificationChain msgs) {
+
 		Label oldCenter_label = center_label;
 		center_label = newCenter_label;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__CENTER_LABEL, oldCenter_label, newCenter_label);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -242,6 +255,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public void setCenter_label(Label newCenter_label) {
+
 		if (newCenter_label != center_label) {
 			NotificationChain msgs = null;
 			if (center_label != null)
@@ -253,6 +267,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__CENTER_LABEL, newCenter_label, newCenter_label));
+
 	}
 
 	/**
@@ -262,6 +277,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public Label getEnd_label() {
+
 		return end_label;
 	}
 
@@ -273,12 +289,14 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 
 	public NotificationChain basicSetEnd_label(Label newEnd_label,
 			NotificationChain msgs) {
+
 		Label oldEnd_label = end_label;
 		end_label = newEnd_label;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__END_LABEL, oldEnd_label, newEnd_label);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -289,6 +307,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public void setEnd_label(Label newEnd_label) {
+
 		if (newEnd_label != end_label) {
 			NotificationChain msgs = null;
 			if (end_label != null)
@@ -300,6 +319,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__END_LABEL, newEnd_label, newEnd_label));
+
 	}
 
 	/**
@@ -309,6 +329,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public Condition getCondition() {
+
 		return condition;
 	}
 
@@ -320,12 +341,14 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 
 	public NotificationChain basicSetCondition(Condition newCondition,
 			NotificationChain msgs) {
+
 		Condition oldCondition = condition;
 		condition = newCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__CONDITION, oldCondition, newCondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -336,6 +359,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 */
 
 	public void setCondition(Condition newCondition) {
+
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
 			if (condition != null)
@@ -347,6 +371,7 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.EDGE_DESCRIPTION__CONDITION, newCondition, newCondition));
+
 	}
 
 	/**

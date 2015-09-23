@@ -31,11 +31,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractDescriptionImpl#getNode_Label <em>Node Label</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractDescriptionImpl#getCondition <em>Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -88,6 +88,7 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 	 */
 
 	public Label getNode_Label() {
+
 		return node_Label;
 	}
 
@@ -99,12 +100,14 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetNode_Label(Label newNode_Label,
 			NotificationChain msgs) {
+
 		Label oldNode_Label = node_Label;
 		node_Label = newNode_Label;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ABSTRACT_DESCRIPTION__NODE_LABEL, oldNode_Label, newNode_Label);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -115,6 +118,7 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 	 */
 
 	public void setNode_Label(Label newNode_Label) {
+
 		if (newNode_Label != node_Label) {
 			NotificationChain msgs = null;
 			if (node_Label != null)
@@ -126,6 +130,7 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ABSTRACT_DESCRIPTION__NODE_LABEL, newNode_Label, newNode_Label));
+
 	}
 
 	/**
@@ -135,6 +140,7 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 	 */
 
 	public Condition getCondition() {
+
 		return condition;
 	}
 
@@ -146,12 +152,14 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetCondition(Condition newCondition,
 			NotificationChain msgs) {
+
 		Condition oldCondition = condition;
 		condition = newCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ABSTRACT_DESCRIPTION__CONDITION, oldCondition, newCondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -162,6 +170,7 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 	 */
 
 	public void setCondition(Condition newCondition) {
+
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
 			if (condition != null)
@@ -173,6 +182,7 @@ public abstract class AbstractDescriptionImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ABSTRACT_DESCRIPTION__CONDITION, newCondition, newCondition));
+
 	}
 
 	/**

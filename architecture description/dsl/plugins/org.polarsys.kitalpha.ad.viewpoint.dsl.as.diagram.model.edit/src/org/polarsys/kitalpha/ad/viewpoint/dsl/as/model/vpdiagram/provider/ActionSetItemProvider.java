@@ -116,7 +116,9 @@ public class ActionSetItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_ActionSet_type");
+
 	}
 
 	/**
@@ -151,30 +153,40 @@ public class ActionSetItemProvider extends ItemProviderAdapter
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
-				 VpdiagramFactory.eINSTANCE.createCreate()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
+						 VpdiagramFactory.eINSTANCE.createCreate()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
-				 VpdiagramFactory.eINSTANCE.createDelete()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
-				 VpdiagramFactory.eINSTANCE.createReconnectEdge()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
-				 VpdiagramFactory.eINSTANCE.createDrop()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
+						 VpdiagramFactory.eINSTANCE.createDelete()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.ACTION_SET__OPEN_ACTIONS,
-				 VpdiagramFactory.eINSTANCE.createOpenAction()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
+						 VpdiagramFactory.eINSTANCE.createReconnectEdge()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ACTION_SET__ACTIONS,
+						 VpdiagramFactory.eINSTANCE.createDrop()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.ACTION_SET__OPEN_ACTIONS,
+						 VpdiagramFactory.eINSTANCE.createOpenAction()));
+
+
 	}
 
 	/**

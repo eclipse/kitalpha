@@ -26,10 +26,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.CreateImpl#getIcon <em>Icon</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -81,6 +81,7 @@ public class CreateImpl extends ActionImpl implements Create {
 	 */
 
 	public String getIcon() {
+
 		return icon;
 	}
 
@@ -91,10 +92,12 @@ public class CreateImpl extends ActionImpl implements Create {
 	 */
 
 	public void setIcon(String newIcon) {
+
 		String oldIcon = icon;
 		icon = newIcon;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CREATE__ICON, oldIcon, icon));
+
 	}
 
 	/**

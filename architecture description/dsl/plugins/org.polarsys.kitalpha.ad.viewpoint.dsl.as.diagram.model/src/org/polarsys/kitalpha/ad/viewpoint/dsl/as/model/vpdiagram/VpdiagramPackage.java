@@ -269,13 +269,22 @@ public interface VpdiagramPackage extends EPackage {
 	int DIAGRAM_EXTENSION__EXTENTED_DIAGRAM = DIAGRAM_REPRESENTATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Owned Customizations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS = DIAGRAM_REPRESENTATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Diagram Extension</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_EXTENSION_FEATURE_COUNT = DIAGRAM_REPRESENTATION_FEATURE_COUNT + 1;
+	int DIAGRAM_EXTENSION_FEATURE_COUNT = DIAGRAM_REPRESENTATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionSetImpl <em>Action Set</em>}' class.
@@ -2407,6 +2416,17 @@ public interface VpdiagramPackage extends EPackage {
 	EReference getDiagramExtension_Extented_diagram();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getOwnedCustomizations <em>Owned Customizations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Customizations</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getOwnedCustomizations()
+	 * @see #getDiagramExtension()
+	 * @generated
+	 */
+	EReference getDiagramExtension_OwnedCustomizations();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ActionSet <em>Action Set</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3715,6 +3735,14 @@ public interface VpdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DIAGRAM_EXTENSION__EXTENTED_DIAGRAM = eINSTANCE.getDiagramExtension_Extented_diagram();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Customizations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS = eINSTANCE.getDiagramExtension_OwnedCustomizations();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionSetImpl <em>Action Set</em>}' class.

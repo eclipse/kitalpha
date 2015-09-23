@@ -26,10 +26,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ImageStyleImpl#getImagePath <em>Image Path</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -81,6 +81,7 @@ public class ImageStyleImpl extends AbstractNodeStyleImpl implements ImageStyle 
 	 */
 
 	public String getImagePath() {
+
 		return imagePath;
 	}
 
@@ -91,10 +92,12 @@ public class ImageStyleImpl extends AbstractNodeStyleImpl implements ImageStyle 
 	 */
 
 	public void setImagePath(String newImagePath) {
+
 		String oldImagePath = imagePath;
 		imagePath = newImagePath;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.IMAGE_STYLE__IMAGE_PATH, oldImagePath, imagePath));
+
 	}
 
 	/**

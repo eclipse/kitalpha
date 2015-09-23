@@ -31,10 +31,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ConditionImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -76,6 +76,7 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	 */
 
 	public ForeignExpressionElement getExpression() {
+
 		return expression;
 	}
 
@@ -87,12 +88,14 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 
 	public NotificationChain basicSetExpression(
 			ForeignExpressionElement newExpression, NotificationChain msgs) {
+
 		ForeignExpressionElement oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONDITION__EXPRESSION, oldExpression, newExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -103,6 +106,7 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	 */
 
 	public void setExpression(ForeignExpressionElement newExpression) {
+
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
 			if (expression != null)
@@ -114,6 +118,7 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.CONDITION__EXPRESSION, newExpression, newExpression));
+
 	}
 
 	/**

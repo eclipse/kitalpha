@@ -11,13 +11,20 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,10 +32,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramExtensionImpl#getExtented_diagram <em>Extented diagram</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramExtensionImpl#getOwnedCustomizations <em>Owned Customizations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -44,6 +52,16 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 	 * @ordered
 	 */
 	protected DiagramDescription extented_diagram;
+
+	/**
+	 * The cached value of the '{@link #getOwnedCustomizations() <em>Owned Customizations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedCustomizations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Customizations> ownedCustomizations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,6 +89,7 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 	 */
 
 	public DiagramDescription getExtented_diagram() {
+
 		if (extented_diagram != null && extented_diagram.eIsProxy()) {
 			InternalEObject oldExtented_diagram = (InternalEObject)extented_diagram;
 			extented_diagram = (DiagramDescription)eResolveProxy(oldExtented_diagram);
@@ -89,6 +108,7 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 	 */
 
 	public DiagramDescription basicGetExtented_diagram() {
+
 		return extented_diagram;
 	}
 
@@ -99,10 +119,40 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 	 */
 
 	public void setExtented_diagram(DiagramDescription newExtented_diagram) {
+
 		DiagramDescription oldExtented_diagram = extented_diagram;
 		extented_diagram = newExtented_diagram;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DIAGRAM_EXTENSION__EXTENTED_DIAGRAM, oldExtented_diagram, extented_diagram));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public EList<Customizations> getOwnedCustomizations() {
+
+		if (ownedCustomizations == null) {
+			ownedCustomizations = new EObjectContainmentEList<Customizations>(Customizations.class, this, VpdiagramPackage.DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS);
+		}
+		return ownedCustomizations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case VpdiagramPackage.DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS:
+				return ((InternalEList<?>)getOwnedCustomizations()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -116,6 +166,8 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 			case VpdiagramPackage.DIAGRAM_EXTENSION__EXTENTED_DIAGRAM:
 				if (resolve) return getExtented_diagram();
 				return basicGetExtented_diagram();
+			case VpdiagramPackage.DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS:
+				return getOwnedCustomizations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,11 +177,16 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VpdiagramPackage.DIAGRAM_EXTENSION__EXTENTED_DIAGRAM:
 				setExtented_diagram((DiagramDescription)newValue);
+				return;
+			case VpdiagramPackage.DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS:
+				getOwnedCustomizations().clear();
+				getOwnedCustomizations().addAll((Collection<? extends Customizations>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -146,6 +203,9 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 			case VpdiagramPackage.DIAGRAM_EXTENSION__EXTENTED_DIAGRAM:
 				setExtented_diagram((DiagramDescription)null);
 				return;
+			case VpdiagramPackage.DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS:
+				getOwnedCustomizations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -160,6 +220,8 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 		switch (featureID) {
 			case VpdiagramPackage.DIAGRAM_EXTENSION__EXTENTED_DIAGRAM:
 				return extented_diagram != null;
+			case VpdiagramPackage.DIAGRAM_EXTENSION__OWNED_CUSTOMIZATIONS:
+				return ownedCustomizations != null && !ownedCustomizations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

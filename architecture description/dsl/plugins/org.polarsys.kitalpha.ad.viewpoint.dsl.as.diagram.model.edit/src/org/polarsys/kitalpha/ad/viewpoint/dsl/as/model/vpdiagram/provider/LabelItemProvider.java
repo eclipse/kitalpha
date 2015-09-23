@@ -78,6 +78,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addSizePropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -91,6 +92,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -100,6 +102,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addBoldPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -113,6 +116,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -122,6 +126,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addItalicPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -135,6 +140,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -144,6 +150,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -157,6 +164,7 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -274,10 +282,12 @@ public class LabelItemProvider extends ItemProviderAdapter implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.LABEL__VALUE,
-				 ExpressionFactory.eINSTANCE.createExpression()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.LABEL__VALUE,
+						 ExpressionFactory.eINSTANCE.createExpression()));
+
+
 	}
 
 	/**

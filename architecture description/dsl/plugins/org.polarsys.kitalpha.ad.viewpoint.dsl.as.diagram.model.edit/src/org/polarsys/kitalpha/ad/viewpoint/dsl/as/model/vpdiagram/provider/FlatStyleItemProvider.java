@@ -16,17 +16,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.eclipse.sirius.viewpoint.description.SystemColors;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.FlatStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
@@ -37,9 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * @generated
  */
-public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,6 +67,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 	 * @generated
 	 */
 	protected void addBackgroundColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -89,6 +81,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -98,6 +91,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 	 * @generated
 	 */
 	protected void addForgroundColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -111,6 +105,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -120,6 +115,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 	 * @generated
 	 */
 	protected void addBorderColorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -133,6 +129,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -142,6 +139,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 	 * @generated
 	 */
 	protected void addBackgroundStylePropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -155,6 +153,7 @@ public class FlatStyleItemProvider extends AbstractContainerStyleItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**

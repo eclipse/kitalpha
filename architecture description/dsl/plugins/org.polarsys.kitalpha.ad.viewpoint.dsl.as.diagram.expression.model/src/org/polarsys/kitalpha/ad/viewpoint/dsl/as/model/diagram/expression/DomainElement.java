@@ -20,10 +20,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.DomainElement#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ExpressionPackage#getDomainElement()
  * @model

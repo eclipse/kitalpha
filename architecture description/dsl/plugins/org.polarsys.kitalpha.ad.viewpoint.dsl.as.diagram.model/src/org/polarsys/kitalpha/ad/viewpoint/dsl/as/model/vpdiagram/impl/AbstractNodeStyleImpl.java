@@ -28,10 +28,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractNodeStyleImpl#getBorderColor <em>Border Color</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -84,6 +84,7 @@ public abstract class AbstractNodeStyleImpl extends EObjectImpl implements
 	 */
 
 	public SystemColors getBorderColor() {
+
 		return borderColor;
 	}
 
@@ -94,10 +95,12 @@ public abstract class AbstractNodeStyleImpl extends EObjectImpl implements
 	 */
 
 	public void setBorderColor(SystemColors newBorderColor) {
+
 		SystemColors oldBorderColor = borderColor;
 		borderColor = newBorderColor == null ? BORDER_COLOR_EDEFAULT : newBorderColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.ABSTRACT_NODE_STYLE__BORDER_COLOR, oldBorderColor, borderColor));
+
 	}
 
 	/**

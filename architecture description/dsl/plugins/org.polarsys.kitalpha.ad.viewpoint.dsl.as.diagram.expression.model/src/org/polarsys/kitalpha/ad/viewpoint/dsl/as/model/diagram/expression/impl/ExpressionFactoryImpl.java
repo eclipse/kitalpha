@@ -37,7 +37,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements
 	 */
 	public static ExpressionFactory init() {
 		try {
-			ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0"); 
+			ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory(ExpressionPackage.eNS_URI);
 			if (theExpressionFactory != null) {
 				return theExpressionFactory;
 			}

@@ -23,6 +23,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.C
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.VpstylecustomizationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,9 +87,9 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 
 		// Initialize simple dependencies
 		CommondataPackage.eINSTANCE.eClass();
-		DiagramPackage.eINSTANCE.eClass();
 		ExpressionPackage.eINSTANCE.eClass();
 		VpconfPackage.eINSTANCE.eClass();
+		VpstylecustomizationPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		VpdiagramPackageImpl theVpdiagramPackage = (VpdiagramPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(VpdiagramPackage.eNS_URI) instanceof VpdiagramPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(VpdiagramPackage.eNS_URI) : VpdiagramPackage.eINSTANCE);

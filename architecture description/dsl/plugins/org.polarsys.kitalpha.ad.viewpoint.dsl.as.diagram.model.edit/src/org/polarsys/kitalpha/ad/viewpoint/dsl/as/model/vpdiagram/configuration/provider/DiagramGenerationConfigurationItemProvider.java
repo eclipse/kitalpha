@@ -8,24 +8,14 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.provider.ExtensionGeneratrionConfigurationItemProvider;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.ConfigurationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider.VpdiagramEditPlugin;
 
 /**
@@ -35,13 +25,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider.Vpdiag
  * @generated
  */
 public class DiagramGenerationConfigurationItemProvider
-	extends ExtensionGeneratrionConfigurationItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExtensionGeneratrionConfigurationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -75,6 +59,7 @@ public class DiagramGenerationConfigurationItemProvider
 	 * @generated
 	 */
 	protected void addOverwriteVSMPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -88,6 +73,7 @@ public class DiagramGenerationConfigurationItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -109,8 +95,10 @@ public class DiagramGenerationConfigurationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
+
 		DiagramGenerationConfiguration diagramGenerationConfiguration = (DiagramGenerationConfiguration)object;
 		return getString("_UI_DiagramGenerationConfiguration_type") + " " + diagramGenerationConfiguration.isOverwriteVSM();
+
 	}
 
 	/**

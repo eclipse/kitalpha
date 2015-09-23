@@ -100,6 +100,10 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 				return createForeignExpressionElementAdapter();
 			}
 			@Override
+			public Adapter caseAbstractComputableElement(AbstractComputableElement object) {
+				return createAbstractComputableElementAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -199,6 +203,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createForeignExpressionElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.AbstractComputableElement <em>Abstract Computable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.AbstractComputableElement
+	 * @generated
+	 */
+	public Adapter createAbstractComputableElementAdapter() {
 		return null;
 	}
 

@@ -36,11 +36,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeChildrenImpl#getOwned_boderednodes <em>Owned boderednodes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeChildrenImpl#getReused_boderednodes <em>Reused boderednodes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -92,6 +92,7 @@ public class NodeChildrenImpl extends EObjectImpl implements NodeChildren {
 	 */
 
 	public EList<BorderedNode> getOwned_boderednodes() {
+
 		if (owned_boderednodes == null) {
 			owned_boderednodes = new EObjectContainmentEList<BorderedNode>(BorderedNode.class, this, VpdiagramPackage.NODE_CHILDREN__OWNED_BODEREDNODES);
 		}
@@ -105,6 +106,7 @@ public class NodeChildrenImpl extends EObjectImpl implements NodeChildren {
 	 */
 
 	public EList<BorderedNode> getReused_boderednodes() {
+
 		if (reused_boderednodes == null) {
 			reused_boderednodes = new EObjectResolvingEList<BorderedNode>(BorderedNode.class, this, VpdiagramPackage.NODE_CHILDREN__REUSED_BODEREDNODES);
 		}

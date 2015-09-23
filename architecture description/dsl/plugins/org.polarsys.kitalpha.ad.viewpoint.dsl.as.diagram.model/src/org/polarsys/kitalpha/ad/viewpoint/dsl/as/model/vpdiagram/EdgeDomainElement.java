@@ -21,12 +21,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement#getSource_Locator <em>Source Locator</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement#getThe_Domain <em>The Domain</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement#getSource_query <em>Source query</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getEdgeDomainElement()
  * @model
@@ -36,6 +36,7 @@ public interface EdgeDomainElement extends EdgeDomainAssociation {
 
 	/**
 	 * Returns the value of the '<em><b>Source Locator</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source Locator</em>' containment reference isn't clear,
@@ -53,6 +54,7 @@ public interface EdgeDomainElement extends EdgeDomainAssociation {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement#getSource_Locator <em>Source Locator</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Source Locator</em>' containment reference.
@@ -64,6 +66,7 @@ public interface EdgeDomainElement extends EdgeDomainAssociation {
 
 	/**
 	 * Returns the value of the '<em><b>The Domain</b></em>' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>The Domain</em>' containment reference isn't clear,
@@ -81,6 +84,7 @@ public interface EdgeDomainElement extends EdgeDomainAssociation {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement#getThe_Domain <em>The Domain</em>}' containment reference.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>The Domain</em>' containment reference.
@@ -92,6 +96,7 @@ public interface EdgeDomainElement extends EdgeDomainAssociation {
 
 	/**
 	 * Returns the value of the '<em><b>Source query</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source query</em>' attribute isn't clear,
@@ -109,6 +114,7 @@ public interface EdgeDomainElement extends EdgeDomainAssociation {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDomainElement#getSource_query <em>Source query</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Source query</em>' attribute.

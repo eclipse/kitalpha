@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vpstylecustomization" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/vpstylecustomization/1.0.0"
+    nsPrefix="vpstylecustomization">
+  <eClassifiers xsi:type="ecore:EClass" name="Customizations">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCustomizationDescriptions"
+        upperBound="-1" eType="#//StyleCustomizationDescriptions" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCustomizationReuse"
+        upperBound="-1" eType="#//StyleCustomizationReuse" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractCustomization" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applyonAll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleCustomizationDescriptions" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCustomizations" upperBound="-1"
+        eType="#//AbstractCustomization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="precondtionExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleCustomizationReuse" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reusedCustomization" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/EStructuralFeatureCustomization"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomizationExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedExpressionElement"
+        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//AbstractComputableElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelCustomization" eSuperTypes="#//AbstractCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/ColorDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedLabelAlignment" eType="#//LabelAlignmentCustomization"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/style/BasicLabelStyleDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//FontFormat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showIcon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//CustomizationExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelAlignmentCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/style/LabelStyleDescription"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//LabelAlignment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColorCustomization" eSuperTypes="#//AbstractCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/ColorDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorUseCase" eType="#//ColorUseCase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeStyleCustomization" eSuperTypes="#//AbstractCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/EdgeStyleDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="centeredSourceMappings"
+        upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/DiagramElementMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="centeredTargetMappings"
+        upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/DiagramElementMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beginLabelStyleDescription"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/BeginLabelStyleDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="centerLabelStyleDescription"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/CenterLabelStyleDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endLabelStyleDescription"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/EndLabelStyleDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineStyle" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//LineStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceArrow" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//EdgeArrows"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetArrow" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//EdgeArrows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sizeComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="routingStyle" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//EdgeRouting"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foldingStyle" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/FoldingStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endCentering" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/CenteringStyle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractNodeStyleCustomization" abstract="true"
+      eSuperTypes="#//AbstractCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tooltipExpression" eType="#//CustomizationExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="borderSizeComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerStyleCustomization" eSuperTypes="#//AbstractNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/ContainerStyleDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSpecificContainerStyleCustomization"
+        upperBound="-1" eType="#//SpecificContainerStyleCustomization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arcWith" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arcHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roundedCorner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificContainerStyleCustomization"
+      abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/ContainerStyleDescription"
+        volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ShapeContainerStyleCustomization" eSuperTypes="#//SpecificContainerStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shape" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//ContainerShape"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlatContainerStyleCustomization" eSuperTypes="#//SpecificContainerStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundStyle" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//BackgroundStyle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerWorkspaceImageCustomization"
+      eSuperTypes="#//SpecificContainerStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workspacePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeStyleCustomization" eSuperTypes="#//AbstractNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/NodeStyleDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSpecificNodeStyleCustomization"
+        upperBound="-1" eType="#//SpecificNodeStyleCustomization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sizeComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelPosition" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//LabelPosition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hideLabelByDefault" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resizeKind" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//ResizeKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificNodeStyleCustomization" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/NodeStyleDescription"
+        volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EllipseCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="horizontalDiameterComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verticalDiameterComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LozengeCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="widthComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="heightComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SquareCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BundledImageCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shape" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//BundledImageShape"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DotCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strokeSizeComputationExpression"
+        eType="#//CustomizationExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GaugeCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/style/GaugeSectionDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignement" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//AlignmentKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeWorkspaceImageCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workspacePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ColorUseCase">
+    <eLiterals name="Border" literal="Border"/>
+    <eLiterals name="Color" value="1" literal="Color"/>
+    <eLiterals name="Background" value="2" literal="Background"/>
+    <eLiterals name="Foreground" value="3" literal="Foreground"/>
+  </eClassifiers>
+</ecore:EPackage>

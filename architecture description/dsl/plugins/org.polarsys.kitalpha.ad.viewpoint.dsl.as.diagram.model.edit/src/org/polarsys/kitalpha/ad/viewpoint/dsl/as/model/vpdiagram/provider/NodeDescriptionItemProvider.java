@@ -18,15 +18,9 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.eclipse.sirius.diagram.LabelPosition;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
@@ -38,9 +32,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * @generated
  */
 public class NodeDescriptionItemProvider extends
-		AbstractDescriptionItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+		AbstractDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -75,6 +67,7 @@ public class NodeDescriptionItemProvider extends
 	 * @generated
 	 */
 	protected void addLabel_positionPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -88,6 +81,7 @@ public class NodeDescriptionItemProvider extends
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -97,6 +91,7 @@ public class NodeDescriptionItemProvider extends
 	 * @generated
 	 */
 	protected void addLabel_alignementPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -110,6 +105,7 @@ public class NodeDescriptionItemProvider extends
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -208,20 +204,26 @@ public class NodeDescriptionItemProvider extends
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_DESCRIPTION__STYLE,
-				 VpdiagramFactory.eINSTANCE.createBasicStyle()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_DESCRIPTION__STYLE,
+						 VpdiagramFactory.eINSTANCE.createBasicStyle()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_DESCRIPTION__STYLE,
-				 VpdiagramFactory.eINSTANCE.createImageStyle()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdiagramPackage.Literals.NODE_DESCRIPTION__STYLE,
-				 VpdiagramFactory.eINSTANCE.createHistogramStyle()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_DESCRIPTION__STYLE,
+						 VpdiagramFactory.eINSTANCE.createImageStyle()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.NODE_DESCRIPTION__STYLE,
+						 VpdiagramFactory.eINSTANCE.createHistogramStyle()));
+
+
 	}
 
 }

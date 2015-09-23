@@ -37,9 +37,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaEl
  * @generated
  */
 public class JavaElementItemProvider extends
-		ForeignExpressionElementItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+		ForeignExpressionElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

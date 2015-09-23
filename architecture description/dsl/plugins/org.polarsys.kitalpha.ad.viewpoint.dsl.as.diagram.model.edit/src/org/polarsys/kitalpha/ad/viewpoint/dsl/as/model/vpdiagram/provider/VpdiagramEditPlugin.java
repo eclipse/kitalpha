@@ -13,19 +13,15 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider;
 
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.viewpoint.provider.SiriusEditPlugin;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.provider.CommondataEditPlugin;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.provider.ExpressionEditPlugin;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.provider.VpconfEditPlugin;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.VpdescEditPlugin;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.provider.VpstylecustomizationEditPlugin;
 
 /**
  * This is the central singleton for the Vpdiagram edit plugin.
@@ -66,6 +62,7 @@ public final class VpdiagramEditPlugin extends EMFPlugin {
 		     SiriusEditPlugin.INSTANCE,
 		     VpconfEditPlugin.INSTANCE,
 		     VpdescEditPlugin.INSTANCE,
+		     VpstylecustomizationEditPlugin.INSTANCE,
 		   });
 	}
 

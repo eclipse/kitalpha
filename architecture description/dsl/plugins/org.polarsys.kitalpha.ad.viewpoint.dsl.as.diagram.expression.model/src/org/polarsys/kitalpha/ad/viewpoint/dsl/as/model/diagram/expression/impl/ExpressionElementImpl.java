@@ -22,8 +22,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expres
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
@@ -35,9 +33,7 @@ public abstract class ExpressionElementImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected ExpressionElementImpl() {
-
 		super();
-
 	}
 
 	/**

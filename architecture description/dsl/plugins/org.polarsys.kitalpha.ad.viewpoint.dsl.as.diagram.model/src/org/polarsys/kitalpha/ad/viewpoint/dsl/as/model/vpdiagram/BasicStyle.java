@@ -21,11 +21,11 @@ import org.eclipse.sirius.viewpoint.description.SystemColors;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicStyle#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicStyle#getForm <em>Form</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getBasicStyle()
  * @model
@@ -36,6 +36,7 @@ public interface BasicStyle extends AbstractNodeStyle {
 	/**
 	 * Returns the value of the '<em><b>Background Color</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.description.SystemColors}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Background Color</em>' attribute isn't clear,
@@ -54,6 +55,7 @@ public interface BasicStyle extends AbstractNodeStyle {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicStyle#getBackgroundColor <em>Background Color</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Background Color</em>' attribute.
@@ -67,6 +69,7 @@ public interface BasicStyle extends AbstractNodeStyle {
 	/**
 	 * Returns the value of the '<em><b>Form</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node_Form}.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Form</em>' attribute isn't clear,
@@ -85,6 +88,7 @@ public interface BasicStyle extends AbstractNodeStyle {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicStyle#getForm <em>Form</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Form</em>' attribute.

@@ -18,16 +18,16 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement#getMethod <em>Method</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ExpressionPackage#getJavaElement()
  * @model
  * @generated
  */
-public interface JavaElement extends ForeignExpressionElement {
+public interface JavaElement extends ForeignExpressionElement, AbstractComputableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Method</b></em>' attribute.

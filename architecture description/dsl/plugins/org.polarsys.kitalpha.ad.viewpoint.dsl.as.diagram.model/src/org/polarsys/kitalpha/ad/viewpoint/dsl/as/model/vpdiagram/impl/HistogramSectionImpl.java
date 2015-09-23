@@ -28,6 +28,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.HistogramSectionImpl#getMinValue <em>Min Value</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.HistogramSectionImpl#getMaxValue <em>Max Value</em>}</li>
@@ -35,7 +36,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.HistogramSectionImpl#getBackgroundColor <em>Background Color</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.HistogramSectionImpl#getForgroundColor <em>Forground Color</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -138,6 +138,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public ForeignExpressionElement getMinValue() {
+
 		return minValue;
 	}
 
@@ -149,12 +150,14 @@ public class HistogramSectionImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetMinValue(
 			ForeignExpressionElement newMinValue, NotificationChain msgs) {
+
 		ForeignExpressionElement oldMinValue = minValue;
 		minValue = newMinValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__MIN_VALUE, oldMinValue, newMinValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -165,6 +168,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public void setMinValue(ForeignExpressionElement newMinValue) {
+
 		if (newMinValue != minValue) {
 			NotificationChain msgs = null;
 			if (minValue != null)
@@ -176,6 +180,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__MIN_VALUE, newMinValue, newMinValue));
+
 	}
 
 	/**
@@ -185,6 +190,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public ForeignExpressionElement getMaxValue() {
+
 		return maxValue;
 	}
 
@@ -196,12 +202,14 @@ public class HistogramSectionImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetMaxValue(
 			ForeignExpressionElement newMaxValue, NotificationChain msgs) {
+
 		ForeignExpressionElement oldMaxValue = maxValue;
 		maxValue = newMaxValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__MAX_VALUE, oldMaxValue, newMaxValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -212,6 +220,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public void setMaxValue(ForeignExpressionElement newMaxValue) {
+
 		if (newMaxValue != maxValue) {
 			NotificationChain msgs = null;
 			if (maxValue != null)
@@ -223,6 +232,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__MAX_VALUE, newMaxValue, newMaxValue));
+
 	}
 
 	/**
@@ -232,6 +242,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public ForeignExpressionElement getValue() {
+
 		return value;
 	}
 
@@ -243,12 +254,14 @@ public class HistogramSectionImpl extends EObjectImpl implements
 
 	public NotificationChain basicSetValue(ForeignExpressionElement newValue,
 			NotificationChain msgs) {
+
 		ForeignExpressionElement oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__VALUE, oldValue, newValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
+
 		return msgs;
 	}
 
@@ -259,6 +272,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public void setValue(ForeignExpressionElement newValue) {
+
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
@@ -270,6 +284,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__VALUE, newValue, newValue));
+
 	}
 
 	/**
@@ -279,6 +294,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public SystemColors getBackgroundColor() {
+
 		return backgroundColor;
 	}
 
@@ -289,10 +305,12 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public void setBackgroundColor(SystemColors newBackgroundColor) {
+
 		SystemColors oldBackgroundColor = backgroundColor;
 		backgroundColor = newBackgroundColor == null ? BACKGROUND_COLOR_EDEFAULT : newBackgroundColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__BACKGROUND_COLOR, oldBackgroundColor, backgroundColor));
+
 	}
 
 	/**
@@ -302,6 +320,7 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public SystemColors getForgroundColor() {
+
 		return forgroundColor;
 	}
 
@@ -312,10 +331,12 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 */
 
 	public void setForgroundColor(SystemColors newForgroundColor) {
+
 		SystemColors oldForgroundColor = forgroundColor;
 		forgroundColor = newForgroundColor == null ? FORGROUND_COLOR_EDEFAULT : newForgroundColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.HISTOGRAM_SECTION__FORGROUND_COLOR, oldForgroundColor, forgroundColor));
+
 	}
 
 	/**

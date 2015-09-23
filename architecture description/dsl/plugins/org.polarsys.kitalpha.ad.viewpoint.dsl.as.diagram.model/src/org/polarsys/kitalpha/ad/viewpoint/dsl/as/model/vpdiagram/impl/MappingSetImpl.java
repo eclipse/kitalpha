@@ -35,10 +35,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.MappingSetImpl#getDiagram_Elements <em>Diagram Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -80,6 +80,7 @@ public class MappingSetImpl extends EObjectImpl implements MappingSet {
 	 */
 
 	public EList<DiagramChildren> getDiagram_Elements() {
+
 		if (diagram_Elements == null) {
 			diagram_Elements = new EObjectContainmentEList<DiagramChildren>(DiagramChildren.class, this, VpdiagramPackage.MAPPING_SET__DIAGRAM_ELEMENTS);
 		}
