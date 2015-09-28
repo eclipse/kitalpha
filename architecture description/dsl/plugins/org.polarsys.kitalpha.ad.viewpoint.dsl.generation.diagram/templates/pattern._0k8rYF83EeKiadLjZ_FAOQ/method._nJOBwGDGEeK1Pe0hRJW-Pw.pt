@@ -152,7 +152,7 @@ for (NodeDescription iNodeDescription : parameter.getStyle()) {
 				
 			nStyleDesc.setLabelExpression(labelExpression);
 			nStyleDesc.setLabelSize(label.getSize());
-			nStyleDesc.setShowIcon(false);
+			nStyleDesc.setShowIcon(true);
 
 					
 			nStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));	
