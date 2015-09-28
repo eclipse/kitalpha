@@ -167,34 +167,6 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 		super.completeKeyword(keyword, contentAssistContext, acceptor);
 	}
 	
-	private EObject getParentSemanticNodeModel(ContentAssistContext contentAssistContext)
-	{
-		INode node = contentAssistContext.getCurrentNode();
-		return node.getParent().getSemanticElement();
-	}
-	
-	
-	
-	protected StyledString getKeywordDisplayString(String keyword) {
-		return new StyledString(keyword);
-	}
-	
-	private void acceptProposal(ICompletionProposal proposal, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
-		getPriorityHelper().adjustKeywordPriority(proposal, contentAssistContext.getPrefix());
-		acceptor.accept(proposal);
-	}
-	
-	private ICompletionProposal createProposalForComplexKeyword(Keyword keyword, ContentAssistContext contentAssistContext, String... suffixes){
-		StringBuffer buf = new StringBuffer(keyword.getValue());
-		
-		for (String suffix : suffixes) {
-			buf.append(" ").append(suffix);
-		}
-		
-		return createCompletionProposal(buf.toString(), getKeywordDisplayString(buf.toString()),
-				getImage(keyword), contentAssistContext);
-	}
-	
 
 	@Override
 	public void completePage_ImagePathOn(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

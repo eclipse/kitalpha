@@ -12,6 +12,7 @@
  /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
@@ -24,7 +25,11 @@ import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" as
 import "http://www.eclipse.org/sirius/1.1.0" as sirius
 import "http://www.eclipse.org/sirius/diagram/1.1.0" as siriusDiagram
 import "http://www.eclipse.org/sirius/description/1.1.0" as siriusDescription
-import "http://www.eclipse.org/sirius/diagram/description/1.1.0" as siriusDiagramDescription 
+
+import "http://www.eclipse.org/sirius/diagram/description/1.1.0" as siriusDiagramDescription
+import "http://www.eclipse.org/sirius/diagram/description/style/1.1.0" as siriusDDStyle
+import "http://www.eclipse.org/sirius/description/style/1.1.0" as siriusDStyle
+import "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/vpstylecustomization/1.0.0" as styleCusto
 
 generate diagram "http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/cs/text/vpdiagram/1.0.0"
 
@@ -114,6 +119,7 @@ DiagramExtension returns vpdiagram::DiagramRepresentation:
 		('extended-diagram:' extented_diagram=[siriusDiagramDescription::DiagramDescription| FQN])?
 		(the_MappingSet = MappingSet)?
 		(the_ActionSet = ActionSet)?
+		(ownedCustomizations+=Customizations)?
 	'}'
 ;
 
@@ -372,6 +378,273 @@ EdgeDomainElement returns vpdiagram::EdgeDomainAssociation:
 	(('source-query:' source_query= STRING) | ('source-association:' source_Locator=AbstractAssociation2))
 ;
 
+
+/**********************************************
+ * 				Style customization
+ **********************************************/
+ 
+Customizations returns styleCusto::Customizations:
+	{styleCusto::Customizations}
+	'customizations' '{'
+	(ownedCustomizationDescriptions+=StyleCustomizationDescriptions (ownedCustomizationDescriptions+=StyleCustomizationDescriptions)*)?
+	(ownedCustomizationReuse+=StyleCustomizationReuse (ownedCustomizationReuse+=StyleCustomizationReuse)*)?
+	'}'
+;
+
+StyleCustomizationDescriptions returns styleCusto::StyleCustomizationDescriptions:
+	{styleCusto::StyleCustomizationDescriptions}
+	'customization' name=ID ('when' '(' precondtionExpression=CustomizationExpression ')')? 'with' '{'
+		(ownedCustomizations+=AbstractCustomization (ownedCustomizations+=AbstractCustomization)*)?
+	'}'
+;
+
+AbstractCustomization returns styleCusto::AbstractCustomization:
+	EdgeStyleCustomization		|
+	ColorCustomization			|
+	LabelCustomization			|
+	AbstractNodeStyleCustomization
+;
+
+EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
+	{styleCusto::EdgeStyleCustomization}
+	'edge' '(' (appliedOn+=[siriusDDStyle::EdgeStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::EdgeStyleDescription | STRING])*)')' '['
+		('over' 'all' 'edges' '->' applyonAll=EBoolean)?
+		('source' '->' sourceArrow=EdgeArrows)?
+		('target' '->' targetArrow=EdgeArrows)?
+		('routing' '->' routingStyle=EdgeRouting)?
+		('folding' '->' foldingStyle=FoldingStyle)?
+		('center' 'source' 'mappings' '->' (centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping | STRING] (','
+			centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping | STRING])*))?
+		('center' 'target' 'mappings' '->' (centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping | STRING] (','
+			centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping | STRING])*))?
+		('begin' 'label' 'style' 'description' '->' beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription | STRING])?
+		('center' 'label' 'style' 'description' '->' centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription | STRING])?
+		('end' 'label' 'style' 'description' '->' endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription | STRING])?
+		('line' 'style' '->' lineStyle=LineStyle)?
+		('size' '->' sizeComputationExpression=CustomizationExpression)?
+		('end' 'centring' '->' endCentering=CenterStyle)?
+	']'
+;
+
+ColorCustomization returns styleCusto::ColorCustomization:
+	{styleCusto::ColorCustomization}
+	'color' '(' (appliedOn+=[ecore::EObject | STRING] (',' appliedOn+=[ecore::EObject | STRING])*) ')' '['
+		('over' 'all' 'colors' '->' applyonAll=EBoolean)?
+		('color' '->' color = [siriusDescription::ColorDescription | STRING])
+		('color' 'use' 'case' '->' colorUseCase=ColorUseCase)?
+	']'
+;
+
+LabelCustomization returns styleCusto::LabelCustomization:
+	{styleCusto::LabelCustomization}
+	'label' '('(appliedOn+=[siriusDStyle::BasicLabelStyleDescription | STRING] (',' appliedOn+=[siriusDStyle::BasicLabelStyleDescription | STRING])*)')' '['
+		('over' 'all' 'labels' '->' applyonAll=EBoolean)?
+		(ownedLabelAlignment=LabelAlignementCustomization)?
+		('size' '->' size = EInt)?
+		('format' '->' format = FontFormat)?
+		('color' '->' color = [siriusDescription::ColorDescription | STRING])
+		(
+		'icon' '['
+			'show' '->' showIcon=EBoolean
+			'path' '->' iconPath=EString
+		']'
+		)?
+		
+		('expression' '->' expression=CustomizationExpression)?
+	']'
+;
+
+LabelAlignementCustomization returns styleCusto::LabelAlignmentCustomization:
+	{styleCusto::LabelAlignmentCustomization}
+	'alignment' '->' alignment = LabelAlignment
+;
+
+AbstractNodeStyleCustomization returns styleCusto::AbstractNodeStyleCustomization:
+	ContainerStyleCustomization	|
+	NodeStyleCustomization
+;
+
+ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
+	{styleCusto::ContainerStyleCustomization}
+	'container' '(' (appliedOn+=[siriusDDStyle::ContainerStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::ContainerStyleDescription | STRING])*) ')' '['
+		('over' 'all' 'containers' '->' applyonAll=EBoolean)?
+		('width' '->' arcWith = EInt)?
+		('height' '->' arcHeight = EInt)?
+		('round' 'corner' '->' roundedCorner=EBoolean)?
+		('tooltip' 'expression' '->' tooltipExpression=CustomizationExpression)?
+		('border' 'dimension' '->' borderSizeComputationExpression=CustomizationExpression)?
+		(ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization)*
+	']'
+;
+
+SpecificContainerStyleCustomization returns styleCusto::SpecificContainerStyleCustomization:
+	ContainerWorkspaceImageCustomization			|
+	FlatContainerStyleCustomization					|
+	ShapeContainerStyleCustomization
+;
+
+ContainerWorkspaceImageCustomization returns styleCusto::ContainerWorkspaceImageCustomization:
+	{styleCusto::ContainerWorkspaceImageCustomization}
+	'workspace' '->' workspacePath = EString
+;
+
+FlatContainerStyleCustomization returns styleCusto::FlatContainerStyleCustomization:
+	{styleCusto::FlatContainerStyleCustomization}
+	'background' '->' backgroundStyle = BackgroundStyle
+;
+
+ShapeContainerStyleCustomization returns styleCusto::ShapeContainerStyleCustomization:
+	{styleCusto::ShapeContainerStyleCustomization}
+	'shape' '->' shape = ContainerShape
+;
+
+NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
+	{styleCusto::NodeStyleCustomization}
+	'node' '('(appliedOn+=[siriusDDStyle::NodeStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::NodeStyleDescription | STRING])*)')' '['
+		('over' 'all' 'nodes' '->' applyonAll=EBoolean)?
+		('label' 'position' '->' labelPosition=LabelPosition)?
+		('hide' 'label' '->' hideLabelByDefault=EBoolean)?
+		('resize' 'kind' '->' resizeKind=ResizeKind)?
+		('tooltip' 'expression' '->' tooltipExpression=CustomizationExpression)?
+		('border' 'dimension' '->' borderSizeComputationExpression=CustomizationExpression)?
+		('size' 'dimension' '->' sizeComputationExpression=CustomizationExpression)?
+		(ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization)*
+	']'
+;
+
+SpecificNodeStyleCustomization returns styleCusto::SpecificNodeStyleCustomization:
+	BundledImageCustomization				|
+	LozengeCustomization					|
+	GaugeCustomization						|
+	EllipseCustomization					|
+	NodeWorkspaceImageCustomization			|
+	SquareCustomization						|
+	DotCustomization
+;
+
+BundledImageCustomization returns styleCusto::BundledImageCustomization:
+	{styleCusto::BundledImageCustomization}
+	'shape' '->' shape = BundledImageShape
+;
+
+LozengeCustomization returns styleCusto::LozengeCustomization:
+	{styleCusto::LozengeCustomization}
+	'lozenge' 'dimension' '->' '['
+		'width' '->' widthComputationExpression=CustomizationExpression
+		'heigh' '->' heightComputationExpression=CustomizationExpression
+	']'
+;
+
+GaugeCustomization returns styleCusto::GaugeCustomization:
+	{styleCusto::GaugeCustomization}
+	'gauge' 'alignment' '->' alignement = AlignmentKind
+;
+
+EllipseCustomization returns styleCusto::EllipseCustomization:
+	{styleCusto::EllipseCustomization}
+	'ellipse' 'dimension' '->' '[' 
+		'horizontal' '->' horizontalDiameterComputationExpression=CustomizationExpression
+		'vertical' '->' verticalDiameterComputationExpression=CustomizationExpression
+	']'
+;
+
+NodeWorkspaceImageCustomization returns styleCusto::NodeWorkspaceImageCustomization:
+	{styleCusto::NodeWorkspaceImageCustomization}
+	'workspace' '->' workspacePath = EString
+;
+
+SquareCustomization returns styleCusto::SquareCustomization:
+	{styleCusto::SquareCustomization}
+	'square' 'dimension' '->'
+	'[' 
+		'width' '->' width=EInt
+		'height' '->' height=EInt
+	']'
+;
+
+DotCustomization returns styleCusto::DotCustomization:
+	{styleCusto::DotCustomization}
+	'stroke' 'dimension' '->' strokeSizeComputationExpression=CustomizationExpression
+;
+
+
+StyleCustomizationReuse returns styleCusto::StyleCustomizationReuse:
+	{styleCusto::StyleCustomizationReuse}
+	'reuse' (reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization | STRING] (','
+		reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization | STRING])*)
+	'on' (appliedOn+=[ecore::EObject | STRING] (',' 
+		appliedOn+=[ecore::EObject | STRING])*)
+;
+
+CustomizationExpression returns styleCusto::CustomizationExpression:
+	{styleCusto::CustomizationExpression}
+	ownedExpressionElement=AbstractComputableElement
+;
+
+ 
+ /*********************************************
+  * 			Enum
+  *********************************************/
+  
+enum AlignmentKind returns siriusDiagram::AlignmentKind:
+	HORIZONTAL = 'HORIZONTAL'		|
+	SQUARE = 'SQUARE'				|
+	VERTICAL = 'VERTICAL'
+;
+  
+enum BundledImageShape returns siriusDiagram::BundledImageShape:
+	dot = 'dot'				|
+	ring = 'ring'			|
+	square = 'square'		|
+	stroke = 'stroke'		|
+	triangle = 'triangle'
+;
+  
+enum ResizeKind returns siriusDiagram::ResizeKind:
+	NONE = 'NONE'				|
+	NSEW = 'NSEW'				|
+	EAST_WEST = 'EAST_WEST' 	|
+	NORTH_SOUTH ='NORTH_SOUTH'  
+;
+  
+enum ContainerShape returns siriusDiagram::ContainerShape:
+	parallelogram = 'parallelogram'
+;
+  
+enum FontFormat returns sirius::FontFormat:
+	italic = 'italic'				|
+	bold = 'bold'					|
+	underline = 'underline'			|
+	strike_through = 'strike_through'
+;
+  
+enum CenterStyle returns siriusDiagramDescription::CenteringStyle:
+	Both = 'Both'			|
+	None = 'None'			|
+	Source = 'Source'		|
+	Target = 'Target'
+;
+  
+enum FoldingStyle returns siriusDiagramDescription::FoldingStyle:
+	NONE = 'NONE'		|
+	SOURCE = 'SOURCE'	|
+	TARGET = 'TARGET'
+;
+  
+enum EdgeRouting returns siriusDiagram::EdgeRouting:
+	straight = 'straight'	|
+	manhattan = 'manhattan'	|
+	tree = 'tree'
+;
+
+enum ColorUseCase returns styleCusto::ColorUseCase:
+	Border = 'Border'			|
+	Color = 'Color'				|
+	Background = 'Background'	|
+	Foreground = 'foreground'
+;
+
+
 enum Node_Form returns vpdiagram::Node_Form:
 	Square='Square' |
 	Lozenge='Lozenge' |
@@ -505,6 +778,10 @@ Expression returns expression::Expression:
  //	(value = EString)?
  	(expressionElements+=ExpressionElement ( '+' expressionElements+=ExpressionElement)* )?
  ;
+ 
+AbstractComputableElement returns expression::AbstractComputableElement:
+	JavaElement | StringElement
+;
 
 ExpressionElement returns expression::ExpressionElement:
 	ForeignExpressionElement | StringElement
@@ -514,7 +791,7 @@ ForeignExpressionElement returns expression::ForeignExpressionElement:
 	JavaElement | DomainElement
 ;
 
-JavaElement returns expression::ForeignExpressionElement:
+JavaElement returns expression::JavaElement:
 	{expression::JavaElement}
 	'Java' (method=FQN)
 ;
@@ -524,7 +801,7 @@ DomainElement returns expression::ForeignExpressionElement:
 	(attribute = [vpdesc::Attribute | FQN])
 ;
 
-StringElement returns expression::ExpressionElement:
+StringElement returns expression::StringElement:
 	{expression::StringElement}
 	(value = STRING)
 ;

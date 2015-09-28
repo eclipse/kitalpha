@@ -84,6 +84,16 @@ Workflow {
 				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model/model/commondata.genmodel"
 				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model/model/commondata.genmodel"
 				}
+				
+			//style customization
+			uriMap = {
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization/model/vpstylecustomization.ecore"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization/model/vpstylecustomization.ecore"
+				}	
+			uriMap = {	
+				from = "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model/models/vpstylecustomization.genmodel"
+				to = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model/models/vpstylecustomization.genmodel"
+				}
 	
 			
 			//vpspec
@@ -102,12 +112,19 @@ Workflow {
 			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.CommondataPackage"
 			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model/model/commondata.genmodel"
 			
+			registerGeneratedEPackage = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.VpstylecustomizationPackage"
+			registerGenModelFile = "platform:/resource/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model/models/vpstylecustomization.genmodel"
+			
 			//sirius viewpoint
 			registerGeneratedEPackage =	"org.eclipse.sirius.viewpoint.ViewpointPackage"
 			//sirius description
 			registerGeneratedEPackage =	"org.eclipse.sirius.viewpoint.description.DescriptionPackage"     
 			//sirius diagram description
-			registerGeneratedEPackage = "org.eclipse.sirius.diagram.description.DescriptionPackage"     
+			registerGeneratedEPackage = "org.eclipse.sirius.diagram.description.DescriptionPackage"
+			
+			registerGeneratedEPackage = "org.eclipse.sirius.viewpoint.description.style.StylePackage"
+			
+			registerGeneratedEPackage = "org.eclipse.sirius.diagram.description.style.StylePackage"
         }
     
         component = DirectoryCleaner {

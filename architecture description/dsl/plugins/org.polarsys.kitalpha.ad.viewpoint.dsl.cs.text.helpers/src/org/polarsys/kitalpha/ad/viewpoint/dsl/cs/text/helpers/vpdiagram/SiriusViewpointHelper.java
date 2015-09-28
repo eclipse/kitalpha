@@ -24,9 +24,20 @@ import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
+import org.eclipse.sirius.diagram.description.style.HideLabelCapabilityStyleDescription;
+import org.eclipse.sirius.viewpoint.description.ColorDescription;
+import org.eclipse.sirius.viewpoint.description.ConditionalStyleDescription;
 import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
+import org.eclipse.sirius.viewpoint.description.SystemColor;
+import org.eclipse.sirius.viewpoint.description.SytemColorsPalette;
+import org.eclipse.sirius.viewpoint.description.UserColor;
+import org.eclipse.sirius.viewpoint.description.UserColorsPalette;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
+import org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
+import org.eclipse.sirius.viewpoint.description.style.StyleDescription;
+import org.eclipse.sirius.viewpoint.description.style.TooltipStyleDescription;
 
 /**
  * 
@@ -322,4 +333,189 @@ public class SiriusViewpointHelper {
 		return result;
 	}
 	
+	
+	public static List<StyleDescription> getAllStyleDescriptionFromEdgeMappings(List<EdgeMapping> edgeMappings){
+		List<StyleDescription> result = new ArrayList<StyleDescription>();
+		
+		
+		if (edgeMappings != null && !edgeMappings.isEmpty()){
+			for (EdgeMapping edge : edgeMappings) {
+				result.add(edge.getStyle());
+			}
+		}
+		
+		return result;
+	}
+	
+	public static List<ConditionalStyleDescription> getAllConditionalStyleDescriptionFromMappings(List<EdgeMapping> edgeMappings){
+		List<ConditionalStyleDescription> result = new ArrayList<ConditionalStyleDescription>();
+		
+		if (edgeMappings != null && !edgeMappings.isEmpty()){
+			for (EdgeMapping edge : edgeMappings) {
+				result.addAll(edge.getConditionnalStyles());
+			}
+		}
+		
+		return result;
+	}
+	
+	//TODO rework -- all methods after
+	public static List<StyleDescription> getAllStyleDescription(List<DiagramDescription> diagrams){
+		List<StyleDescription> result = new ArrayList<StyleDescription>();
+		
+		for (DiagramDescription diagramDescription : diagrams) {
+			findAllStyleDescriptions(diagramDescription, result);
+		}
+		
+		return result;
+	}
+
+	private static void findAllStyleDescriptions(DiagramDescription diagramDescription, List<StyleDescription> result) {
+		TreeIterator<EObject> eAllContents = diagramDescription.eAllContents();
+		
+		while (eAllContents.hasNext()){
+			EObject next = eAllContents.next();
+			if (next instanceof StyleDescription){
+				result.add((StyleDescription) next);
+			}
+		}
+	}
+	
+	public static List<BasicLabelStyleDescription> getAllBasicLabelDescription(List<DiagramDescription> diagrams){
+		List<BasicLabelStyleDescription> result = new ArrayList<BasicLabelStyleDescription>();
+		
+		for (DiagramDescription diagramDescription : diagrams) {
+			findAllBasicLabelDescription(diagramDescription, result);
+		}
+		
+		return result;
+	}
+
+	private static void findAllBasicLabelDescription(DiagramDescription diagramDescription, List<BasicLabelStyleDescription> result) {
+		TreeIterator<EObject> eAllContents = diagramDescription.eAllContents();
+		
+		while (eAllContents.hasNext()){
+			EObject next = eAllContents.next();
+			if (next instanceof BasicLabelStyleDescription){
+				result.add((BasicLabelStyleDescription) next);
+			}
+		}
+	}
+	
+	public static List<TooltipStyleDescription> getAllToolTipStyleDescription(List<DiagramDescription> diagrams){
+		List<TooltipStyleDescription> result = new ArrayList<TooltipStyleDescription>();
+		
+		for (DiagramDescription diagramDescription : diagrams) {
+			findAllToolTipStyleDescription(diagramDescription, result);
+		}
+		
+		return result;
+	}
+
+	private static void findAllToolTipStyleDescription(DiagramDescription diagramDescription, List<TooltipStyleDescription> result) {
+		TreeIterator<EObject> eAllContents = diagramDescription.eAllContents();
+		
+		while (eAllContents.hasNext()){
+			EObject next = eAllContents.next();
+			if (next instanceof TooltipStyleDescription){
+				result.add((TooltipStyleDescription) next);
+			}
+		}
+	}
+	
+	public static List<HideLabelCapabilityStyleDescription> getAllHideLabelCapabilityStyleDescription(List<DiagramDescription> diagrams){
+		List<HideLabelCapabilityStyleDescription> result = new ArrayList<HideLabelCapabilityStyleDescription>();
+		
+		for (DiagramDescription diagramDescription : diagrams) {
+			findAllHideLabelCapabilityStyleDescription(diagramDescription, result);
+		}
+		
+		return result;
+	}
+
+	private static void findAllHideLabelCapabilityStyleDescription(DiagramDescription diagramDescription, List<HideLabelCapabilityStyleDescription> result) {
+		TreeIterator<EObject> eAllContents = diagramDescription.eAllContents();
+		
+		while (eAllContents.hasNext()){
+			EObject next = eAllContents.next();
+			if (next instanceof HideLabelCapabilityStyleDescription){
+				result.add((HideLabelCapabilityStyleDescription) next);
+			}
+		}
+	}
+	
+	public static List<UserColor> getAllUserColor(Resource resource){
+		List<UserColor> result = new ArrayList<UserColor>();
+		
+		Group group = getGroup(resource);
+		findAllUserColor(group, result);
+		
+		return result;
+	}
+	
+	private static void findAllUserColor(Group group, List<UserColor> result) {
+		if (group != null){
+			EList<UserColorsPalette> userColorsPalettes = group.getUserColorsPalettes();
+			
+			for (UserColorsPalette userColorsPalette : userColorsPalettes) {
+				EList<UserColor> entries = userColorsPalette.getEntries();
+				result.addAll(entries);
+			}
+		}
+	}
+
+	public static List<ColorDescription> getAllSystemColor(Resource resource){
+		List<ColorDescription> result = new ArrayList<ColorDescription>();
+		
+		Group group = getGroup(resource);
+		findAllColorDescription(group, result);
+		return result;
+	}
+
+	private static Group getGroup(Resource resource) {
+		final EList<EObject> contents = resource.getContents();
+		if (contents != null && ! contents.isEmpty())
+		{
+			final EObject eObject = contents.get(0);
+			if (eObject instanceof Group)
+			{
+				return (Group)eObject;
+			}
+		}
+		return null;
+	}
+	
+
+	private static void findAllColorDescription(Group group, List<ColorDescription> result) {
+		if (group != null)
+			findAllSystemColors(group, result);
+	}
+
+	private static void findAllSystemColors(Group group, List<ColorDescription> result) {
+		SytemColorsPalette systemColorsPalette = group.getSystemColorsPalette();
+		EList<SystemColor> entries = systemColorsPalette.getEntries();
+		
+		result.addAll(entries);
+	}
+	
+	public static List<ContainerStyleDescription> getAllContainerStyleDescription(List<DiagramDescription> diagrams){
+		List<ContainerStyleDescription> result = new ArrayList<ContainerStyleDescription>();
+		
+		for (DiagramDescription diagramDescription : diagrams) {
+			findAllContainerStyleDescription(diagramDescription, result);
+		}
+		
+		return result;
+	}
+
+	private static void findAllContainerStyleDescription(DiagramDescription diagramDescription, List<ContainerStyleDescription> result) {
+		TreeIterator<EObject> eAllContents = diagramDescription.eAllContents();
+		
+		while (eAllContents.hasNext()){
+			EObject next = eAllContents.next();
+			if (next instanceof ColorDescription){
+				result.add((ContainerStyleDescription) next);
+			}
+		}
+	}
 }

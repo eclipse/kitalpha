@@ -769,10 +769,17 @@ public class ResourceHelper {
 		EList<Diagnostic> errors = eResource.getErrors();
 		
 		boolean empty = errors.isEmpty();
-		org.eclipse.emf.common.util.Diagnostic result = 
-				Diagnostician.INSTANCE.validate(EcoreUtil.getRootContainer(eObject));
 		
-		return empty &= (result.getSeverity() != IStatus.ERROR);
+		
+		EObject rootContainer = EcoreUtil.getRootContainer(eObject);
+		
+		if (rootContainer != null){
+			org.eclipse.emf.common.util.Diagnostic result = 
+					Diagnostician.INSTANCE.validate(rootContainer);
+			empty &= (result.getSeverity() != IStatus.ERROR);
+		}
+		
+		return empty;
 
 	}
 
