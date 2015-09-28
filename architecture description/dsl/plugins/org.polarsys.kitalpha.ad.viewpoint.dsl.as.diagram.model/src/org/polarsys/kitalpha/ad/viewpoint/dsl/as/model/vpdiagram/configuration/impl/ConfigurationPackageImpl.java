@@ -87,7 +87,6 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 
 		// Initialize simple dependencies
 		CommondataPackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
 		VpconfPackage.eINSTANCE.eClass();
 		VpstylecustomizationPackage.eINSTANCE.eClass();
 

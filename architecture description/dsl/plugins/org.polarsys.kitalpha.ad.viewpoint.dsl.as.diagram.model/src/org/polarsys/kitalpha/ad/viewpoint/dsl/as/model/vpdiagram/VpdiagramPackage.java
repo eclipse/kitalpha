@@ -269,7 +269,7 @@ public interface VpdiagramPackage extends EPackage {
 	int DIAGRAM_EXTENSION__EXTENTED_DIAGRAM = DIAGRAM_REPRESENTATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Owned Customizations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Customizations</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2416,10 +2416,10 @@ public interface VpdiagramPackage extends EPackage {
 	EReference getDiagramExtension_Extented_diagram();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getOwnedCustomizations <em>Owned Customizations</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getOwnedCustomizations <em>Owned Customizations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Customizations</em>'.
+	 * @return the meta object for the containment reference '<em>Owned Customizations</em>'.
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getOwnedCustomizations()
 	 * @see #getDiagramExtension()
 	 * @generated
@@ -3737,7 +3737,7 @@ public interface VpdiagramPackage extends EPackage {
 		EReference DIAGRAM_EXTENSION__EXTENTED_DIAGRAM = eINSTANCE.getDiagramExtension_Extented_diagram();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Customizations</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Customizations</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

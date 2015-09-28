@@ -66,8 +66,7 @@ public interface DiagramExtension extends DiagramRepresentation {
 	void setExtented_diagram(DiagramDescription value);
 
 	/**
-	 * Returns the value of the '<em><b>Owned Customizations</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations}.
+	 * Returns the value of the '<em><b>Owned Customizations</b></em>' containment reference.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -75,12 +74,25 @@ public interface DiagramExtension extends DiagramRepresentation {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Customizations</em>' containment reference list.
+	 * @return the value of the '<em>Owned Customizations</em>' containment reference.
+	 * @see #setOwnedCustomizations(Customizations)
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getDiagramExtension_OwnedCustomizations()
 	 * @model containment="true"
 	 * @generated
 	 */
 
-	EList<Customizations> getOwnedCustomizations();
+	Customizations getOwnedCustomizations();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension#getOwnedCustomizations <em>Owned Customizations</em>}' containment reference.
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Owned Customizations</em>' containment reference.
+	 * @see #getOwnedCustomizations()
+	 * @generated
+	 */
+
+	void setOwnedCustomizations(Customizations value);
 
 } // DiagramExtension

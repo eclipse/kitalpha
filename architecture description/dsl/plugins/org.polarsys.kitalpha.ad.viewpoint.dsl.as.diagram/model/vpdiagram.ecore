@@ -16,8 +16,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DiagramExtension" eSuperTypes="#//DiagramRepresentation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extented_diagram" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//description/DiagramDescription"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCustomizations" upperBound="-1"
-        eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization/models/vpstylecustomization.ecore#//Customizations"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCustomizations" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization/models/vpstylecustomization.ecore#//Customizations"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionSet">
