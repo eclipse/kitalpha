@@ -423,7 +423,6 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		// Initialize simple dependencies
 		CommondataPackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
 		VpconfPackage.eINSTANCE.eClass();
 		VpstylecustomizationPackage.eINSTANCE.eClass();
 
@@ -1832,7 +1831,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		initEClass(diagramExtensionEClass, DiagramExtension.class, "DiagramExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagramExtension_Extented_diagram(), theDescriptionPackage.getDiagramDescription(), null, "extented_diagram", null, 1, 1, DiagramExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiagramExtension_OwnedCustomizations(), theVpstylecustomizationPackage.getCustomizations(), null, "ownedCustomizations", null, 0, -1, DiagramExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramExtension_OwnedCustomizations(), theVpstylecustomizationPackage.getCustomizations(), null, "ownedCustomizations", null, 0, 1, DiagramExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionSetEClass, ActionSet.class, "ActionSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionSet_Actions(), this.getAction(), null, "actions", null, 0, -1, ActionSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
