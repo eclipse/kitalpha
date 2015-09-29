@@ -24,10 +24,10 @@ import org.polarsys.kitalpha.ad.integration.sirius.listeners.DiagramUpdater;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.SiriusViewpointActivationManager;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.ViewpointActivationStateListener;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFUIActivator;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
-import org.polarsys.kitalpha.emde.extension.ModelExtensionListener;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionOverallListener;
 
 public class Activator extends AFUIActivator {
 
@@ -38,9 +38,9 @@ public class Activator extends AFUIActivator {
 	public static final URI GENERIC_VP_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='ad']", false);
 	public static final URI FILTER_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']", false);
 
-	private final Listener listener = new SiriusViewpointActivationManager();
+	private final OverallListener listener = new SiriusViewpointActivationManager();
 	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener() };
-	private final ModelExtensionListener[] listeners = { new DiagramUpdater() };
+	private final ModelExtensionOverallListener[] listeners = { new DiagramUpdater() };
 
 	private static Activator plugin;
 	private static Set<Viewpoint> viewpoints;
@@ -58,14 +58,12 @@ public class Activator extends AFUIActivator {
 		viewpoints = new HashSet<Viewpoint>();
 		viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(AF_DESIGN));
 
-		// load AF model manager
-		ModelExtensionHelper.getInstance();
 
-		ViewpointManager.INSTANCE.addListener(listener);
+		ViewpointManager.addOverallListener(listener);
 		for (SessionManagerListener l : sessionListeners)
 			SessionManager.INSTANCE.addSessionsListener(l);
-		for (ModelExtensionListener l : listeners)
-			ModelExtensionHelper.addListener(l);
+		for (ModelExtensionOverallListener l : listeners)
+			ModelExtensionHelper.addOverallListener(l);
 
 	}
 
@@ -79,9 +77,9 @@ public class Activator extends AFUIActivator {
 		plugin = null;
 		for (SessionManagerListener l : sessionListeners)
 			SessionManager.INSTANCE.removeSessionsListener(l);
-		ViewpointManager.INSTANCE.removeListener(listener);
-		for (ModelExtensionListener l : listeners)
-			ModelExtensionHelper.removeListener(l);
+		ViewpointManager.removeOverallListener(listener);
+		for (ModelExtensionOverallListener l : listeners)
+			ModelExtensionHelper.removeOverallListener(l);
 
 		if (viewpoints != null) {
 			for (final Viewpoint viewpoint : viewpoints) {

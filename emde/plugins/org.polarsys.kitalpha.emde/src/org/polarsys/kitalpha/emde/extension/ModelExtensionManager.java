@@ -33,9 +33,10 @@ public interface ModelExtensionManager {
 
 	void setExtensionModelDisabled(ExtensibleModel extensibleModel, ExtendedModel extendedModel, boolean disabled);
 
-	ExtensibleModel getExtensibleModel(String extensibleModel);
-
-	Collection<AdapterFactory> getExtendedModelAdapterFactories(String clazz);
-
 	List<ExtensionManagerDelegate> getDelegates();
+
+	void addListener(ModelExtensionListener l);
+
+	void removeListener(ModelExtensionListener l);
+
 }

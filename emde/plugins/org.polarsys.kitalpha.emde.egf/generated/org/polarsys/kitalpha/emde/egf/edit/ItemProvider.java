@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20150507-0831
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -62,7 +62,7 @@ public class ItemProvider extends org.eclipse.egf.emf.pattern.edit.ItemProvider 
 	protected final String TEXT_33 = "Value != null && ";
 	protected final String TEXT_34 = "Value instanceof ";
 	protected final String TEXT_35 = " && ";
-	protected final String TEXT_36 = ".getInstance().isExtensionModelDisabled((EObject) ";
+	protected final String TEXT_36 = ".getInstance(eObject).isExtensionModelDisabled((EObject) ";
 	protected final String TEXT_37 = "Value)) {" + NL + "\t\t\t\t\titemPropertyDescriptors.remove(";
 	protected final String TEXT_38 = "PropertyDescriptor);" + NL + "\t\t\t\t} else if (";
 	protected final String TEXT_39 = "Value == null && ";

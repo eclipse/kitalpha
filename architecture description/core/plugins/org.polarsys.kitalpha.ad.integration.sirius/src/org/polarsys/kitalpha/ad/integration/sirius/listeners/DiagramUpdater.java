@@ -21,19 +21,19 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
-import org.polarsys.kitalpha.emde.extension.ModelExtensionListener;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionOverallListener;
 
 /**
  * @author Thomas Guiu
  * 
  */
-public class DiagramUpdater implements ModelExtensionListener {
+public class DiagramUpdater implements ModelExtensionOverallListener {
 
-	public void modelEnabled(String nsURI) {
+	public void modelEnabled(Object ctx, String nsURI) {
 		refresh();
 	}
 
-	public void modelDisabled(String nsURI) {
+	public void modelDisabled(Object ctx, String nsURI) {
 		refresh();
 	}
 

@@ -22,6 +22,7 @@ import java.util.Map;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
@@ -170,7 +171,7 @@ public class DynamicMenuAction implements IMenuCreator, IObjectActionDelegate {
 	 */
 	public Viewpoint[] getAvailableViewpoints() {
 		List<Viewpoint> vps = new ArrayList<Viewpoint>();
-		Resource[] resources = ViewpointManager.INSTANCE.getAvailableViewpoints();
+		Resource[] resources = ViewpointManager.getAvailableViewpoints();
 
 		ResourceSet set = new ResourceSetImpl();
 		for (Resource resource : resources) {
@@ -189,7 +190,7 @@ public class DynamicMenuAction implements IMenuCreator, IObjectActionDelegate {
 
 	private void computeActiveServices(Map<Viewpoint, ModelManager> vp2mgr, Map<Viewpoint, List<ViewpointElement>> vp2elt) {
 		for (Viewpoint vp : sort(getAvailableViewpoints())) {
-			if (vp.isAbstract() || !ViewpointManager.INSTANCE.isActive(vp.getId())) {
+			if (vp.isAbstract() || !ViewpointManager.getInstance((EObject)null).isActive(vp.getId())) {
 				continue;
 			}
 			ModelManager vpMgr = ModelManager.createWorkspaceManager(vp);

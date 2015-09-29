@@ -285,11 +285,11 @@ public class AFIntegrationManager {
 	private void saveAFModel(Viewpoint viewpoint) throws AFIntegrationException{
 		try {
 			// Save the state of the AF Viewpoint
-			boolean vpWasActif = ViewpointManager.INSTANCE.isActive(viewpoint.getId());
+			boolean vpWasActif = ViewpointManager.getInstance((EObject)null).isActive(viewpoint.getId());
 			
 			// Shutdown the AF Viewpoint
 			if (vpWasActif)
-				ViewpointManager.INSTANCE.desactivate(viewpoint.getId());
+				ViewpointManager.getInstance((EObject)null).desactivate(viewpoint.getId());
 			
 			// Save the Resource containing the AF Model
 			Resource resource = viewpoint.eResource();
@@ -297,7 +297,7 @@ public class AFIntegrationManager {
 			
 			// Start the AF Viewpoint only if it was running before save operation
 			if (vpWasActif)
-				ViewpointManager.INSTANCE.activate(viewpoint.getId());
+				ViewpointManager.getInstance((EObject)null).activate(viewpoint.getId());
 			
 		} catch (IOException e) {
 			throw new AFIntegrationException(AFIntegrationException.Patch_Model,

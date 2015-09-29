@@ -450,7 +450,7 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 			public <%=genClass.getTypeParameters()%>Object case<%=genPackage.getClassUniqueName(genClass)%>(<%=genClass.getImportedInterfaceName()%><%=genClass.getInterfaceTypeArguments()%> object)
 			{
 				// begin-extension-code
-				if (<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance().isExtensionModelDisabled(<%=genModel.getImportedName("org.eclipse.emf.ecore.util.EcoreUtil")%>.getRootContainer(object).eClass().getEPackage().getNsURI(), "<%=genPackage.getNSURI()%>")) {<%=genModel.getNonNLS()%>
+				if (<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance(object).isExtensionModelDisabled(<%=genModel.getImportedName("org.eclipse.emf.ecore.util.EcoreUtil")%>.getRootContainer(object).eClass().getEPackage().getNsURI(), "<%=genPackage.getNSURI()%>")) {<%=genModel.getNonNLS()%>
 					return null;				
 				}
 				// end-extension-code

@@ -11,6 +11,7 @@
 package org.polarsys.kitalpha.emde.explorer.contextual.filter;
 
 import org.eclipse.amalgam.explorer.contextual.core.filter.ICandidateElementFilter;
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionManager;
 
@@ -36,8 +37,11 @@ public class ExplorerContextualEmdeFilter implements ICandidateElementFilter {
 	 */
 	@Override
 	public boolean accept(Object object) {
-		ModelExtensionManager mgr = ModelExtensionHelper.getInstance();
-		return ! mgr.isExtensionModelDisabled(object);
+		if (object instanceof EObject)
+		{
+			return ! ModelExtensionHelper.getInstance((EObject)object).isExtensionModelDisabled(object);
+		}
+		return false;
 	}
 
 }

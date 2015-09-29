@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.project.AfProjectManager;
@@ -51,10 +52,10 @@ public class AfProjectManagerTask implements ITaskProduction {
 			
 			// Check if the viewpoint is active. If this is the case, so disable
 			// it in order begin modification/manipulation in order to avoid problems 
-			if (ViewpointManager.INSTANCE.isActive(vpID))
+			if (ViewpointManager.getInstance((EObject)null).isActive(vpID))
 			{
 				wasVPActive = true;
-				ViewpointManager.INSTANCE.desactivate(vpID);
+				ViewpointManager.getInstance((EObject)null).desactivate(vpID);
 			}
 			// AF Project creation
 			IProject afProject = AfProjectManager.INSTANCE.createProject(projectName, vpName, vpShortName, vpID, monitor);
@@ -68,7 +69,7 @@ public class AfProjectManagerTask implements ITaskProduction {
 			
 			// Activate the viewpoint if it was disabled by the current task. 
 			if (wasVPActive)
-				ViewpointManager.INSTANCE.activate(vpID);
+				ViewpointManager.getInstance((EObject)null).activate(vpID);
 			
 		} catch (CoreException e) {
 			e.printStackTrace();

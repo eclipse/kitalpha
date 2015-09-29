@@ -34,7 +34,7 @@ public class SiriusViewpointManager {
 	protected void load() {
 		ResourceSet set = new ResourceSetImpl();
 		try {
-			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.INSTANCE.getAvailableViewpoints()) {
+			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
 				try {
 					URI uri = URIHelper.createURI(res);
 					org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) set.getEObject(uri, true);

@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.session.Session;
@@ -33,25 +34,33 @@ import org.eclipse.ui.progress.IProgressService;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
-public final class SiriusViewpointActivationManager implements Listener {
+public final class SiriusViewpointActivationManager implements OverallListener {
 
-	public void hasBeenDeactivated(Resource vp) {
-		updateActiveViewpoint(getURI(vp), false);
+	public void hasBeenDeactivated(Object ctx, Resource vp) {
+		updateActiveViewpoint(ctx, getURI(vp), false);
 	}
 
-	public void hasBeenActivated(Resource vp) {
-		updateActiveViewpoint(getURI(vp), true);
+	public void hasBeenActivated(Object ctx, Resource vp) {
+		updateActiveViewpoint(ctx, getURI(vp), true);
+	}
+
+	public void hasBeenFiltered(Object ctx, Resource vp) {
+		updateActiveViewpoint(ctx, getURI(vp), false);
+	}
+
+	public void hasBeenDisplayed(Object ctx, Resource vp) {
+		updateActiveViewpoint(ctx, getURI(vp), true);
 	}
 
 	private URI getURI(Resource res) {
 		return URIHelper.createURI(res);
 	}
-
-	private void updateActiveViewpoint(URI vpURI, boolean activate) {
+ 
+	private void updateActiveViewpoint(Object ctx, URI vpURI, boolean activate) {
 		ViewpointSelectionCallback callback = new ViewpointSelectionCallback();
-
 		for (Session session : SessionManager.INSTANCE.getSessions()) {
 			final TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
 			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) domain.getResourceSet().getEObject(vpURI, true);
@@ -72,7 +81,7 @@ public final class SiriusViewpointActivationManager implements Listener {
 
 		}
 	}
-
+	
 	public void execute(final TransactionalEditingDomain domain, final RecordingCommand command) {
 		final IProgressService ps = PlatformUI.getWorkbench().getProgressService();
 		try {

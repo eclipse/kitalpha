@@ -52,7 +52,7 @@ public class AfProjectManager {
 	private IProject _project = null;
 	
 	/**
-	 * Temporaire, doivent disparaitre après bonne implémentation du merge des Plugin.xml
+	 * Temporaire, doivent disparaitre aprï¿½s bonne implï¿½mentation du merge des Plugin.xml
 	 * */
 	protected String _vpName = "";  
 	protected String _viewpointShortName = ""; 
@@ -133,7 +133,7 @@ public class AfProjectManager {
 	}
 	
 	private Viewpoint getExistingViewpoint(String viewpointID){
-		org.polarsys.kitalpha.resourcereuse.model.Resource[] viewpoints = ViewpointManager.INSTANCE.getAvailableViewpoints();
+		org.polarsys.kitalpha.resourcereuse.model.Resource[] viewpoints = ViewpointManager.getAvailableViewpoints();
 		for (org.polarsys.kitalpha.resourcereuse.model.Resource resource : viewpoints) 
 		{
 			if (resource.getId().equals(viewpointID) && 
@@ -180,10 +180,10 @@ public class AfProjectManager {
 			@Override
 			protected void execute(IProgressMonitor monitor) throws CoreException,
 					InvocationTargetException, InterruptedException {
-				boolean vpWasActif = ViewpointManager.INSTANCE.isActive(_vp.getId());
+				boolean vpWasActif = ViewpointManager.getInstance((EObject)null).isActive(_vp.getId());
 				try {
 					if (vpWasActif)
-						ViewpointManager.INSTANCE.desactivate(_vp.getId());
+						ViewpointManager.getInstance((EObject)null).desactivate(_vp.getId());
 				} catch (ViewpointActivationException e1) {
 					e1.printStackTrace();
 				}
@@ -208,7 +208,7 @@ public class AfProjectManager {
 				if (vpWasActif)
 				{
 					try {
-						ViewpointManager.INSTANCE.activate(_vp.getId());
+						ViewpointManager.getInstance((EObject)null).activate(_vp.getId());
 					} catch (ViewpointActivationException e) {
 						e.printStackTrace();
 					}

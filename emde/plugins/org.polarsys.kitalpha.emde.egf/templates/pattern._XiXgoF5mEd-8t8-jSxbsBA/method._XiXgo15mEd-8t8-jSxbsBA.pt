@@ -101,7 +101,7 @@ public class <%=genClass.getProviderClassName()%>
 			// Process <%=genFeature.getQualifiedFeatureAccessor()%>
 			if (<%=genFeature.getName()%>PropertyDescriptor != null) {
 				Object <%=genFeature.getName()%>Value = eObject.eGet(<%=genFeature.getQualifiedFeatureAccessor()%>, true);
-				if (<%=genFeature.getName()%>Value != null && <%=genFeature.getName()%>Value instanceof <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> && <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance().isExtensionModelDisabled((EObject) <%=genFeature.getName()%>Value)) {
+				if (<%=genFeature.getName()%>Value != null && <%=genFeature.getName()%>Value instanceof <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> && <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance(eObject).isExtensionModelDisabled((EObject) <%=genFeature.getName()%>Value)) {
 					itemPropertyDescriptors.remove(<%=genFeature.getName()%>PropertyDescriptor);
 				} else if (<%=genFeature.getName()%>Value == null && <%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ExtensionModelManager")%>.getAnyType(eObject, <%=genFeature.getQualifiedFeatureAccessor()%>) != null) {
 					itemPropertyDescriptors.remove(<%=genFeature.getName()%>PropertyDescriptor);				  					
