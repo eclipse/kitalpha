@@ -24,10 +24,13 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.SWTException;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
@@ -99,4 +102,30 @@ public class CommonProposalProvider extends AbstractCommonProposalProvider {
 			}
 		}
     }
+    
+    protected StyledString getKeywordDisplayString(String keyword) {
+		return new StyledString(keyword);
+	}
+    
+    protected ICompletionProposal createProposalForComplexKeyword(Keyword keyword, ContentAssistContext contentAssistContext, String... suffixes){
+		StringBuffer buf = new StringBuffer(keyword.getValue());
+		
+		for (String suffix : suffixes) {
+			buf.append(" ").append(suffix);
+		}
+		
+		return createCompletionProposal(buf.toString(), getKeywordDisplayString(buf.toString()),
+				getImage(keyword), contentAssistContext);
+	}
+    
+    protected void acceptProposal(ICompletionProposal proposal, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
+		getPriorityHelper().adjustKeywordPriority(proposal, contentAssistContext.getPrefix());
+		acceptor.accept(proposal);
+	}
+    
+    protected EObject getParentSemanticNodeModel(ContentAssistContext contentAssistContext)
+	{
+		INode node = contentAssistContext.getCurrentNode();
+		return node.getParent().getSemanticElement();
+	}
 }

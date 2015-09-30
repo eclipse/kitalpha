@@ -169,6 +169,70 @@ BorderedNode borderedNodeName {&#13;
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.kw_import" deleted="false" description="Import External Representation" enabled="true" id="15" name="Import external">import external ${cursor}</template>
 
 
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Diagram" deleted="false" description="Generate Diagrams for all classes" enabled="true" id="16" name="New Diagram">
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Diagram" deleted="false" description="Generate Diagrams for all classes" enabled="true" id="16" name="New Diagram"></template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeStyleCustomization" deleted="false" description="New edge Style Customization" enabled="true" id="17" name="Edge Style Customization">edge ("${edgeCustomization:CrossReference('vpstylecustomization.EdgeStyleCustomization.appliedOn')}") [&#13;
+	over all edges -> false&#13;
+	source -> Diamond&#13;
+	target -> Diamond&#13;
+	routing -> manhattan&#13;
+	folding -> TARGET&#13;
+	center source mappings -> "${centerSourceMappings:CrossReference('vpstylecustomization.EdgeStyleCustomization.centeredSourceMappings')}"&#13;
+	center target mappings -> "${centerTargetMapping:CrossReference('vpstylecustomization.EdgeStyleCustomization.centeredTargetMappings')}"&#13;
+	begin label style description -> "${beginLabelStyleDescription:CrossReference('vpstylecustomization.EdgeStyleCustomization.beginLabelStyleDescription')}"&#13;
+	center label style description -> "${centerLabelStyleDescription:CrossReference('vpstylecustomization.EdgeStyleCustomization.centerLabelStyleDescription')}"&#13;
+	end label style description -> "${endLabelStyleDescription:CrossReference('vpstylecustomization.EdgeStyleCustomization.endLabelStyleDescription')}"&#13;
+	line style -> solid&#13;
+	size -> "Size Expression"&#13;
+	end centring -> Both&#13;
+]&#13;
 </template>
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ColorCustomization" deleted="false" description="New Color Customization" enabled="true" id="18" name="Color Customization">color ("${colorStyle:CrossReference('vpstylecustomization.ColorDescription.appliedOn')}")[&#13;
+	over all colors -> false&#13;
+	color -> "blue"&#13;
+	color use case -> Background&#13;
+]&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelCustomization" deleted="false" description="New Label Style Customization" enabled="true" id="19" name="Label Style Customization">label ("${labelStyle:CrossReference('vpstylecustomization.LabelCustomization.appliedOn')}")[&#13;
+	over all labels -> false&#13;
+	alignment -> left&#13;
+	size -> 12&#13;
+	format -> bold&#13;
+	color -> "blue"&#13;
+	icon [&#13;
+		show -> true&#13;
+		path -> "/path/"&#13;
+	]&#13;
+	expression -> "label expression"&#13;
+]&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerStyleCustomization" deleted="false" description="New Container Style Customization" enabled="true" id="20" name="Container Style Customization">container ("${containerStyle:CrossReference('vpstylecustomization.ContainerStyleCustomization.appliedOn')}")[&#13;
+	over all containers -> false&#13;
+	width -> 12&#13;
+	height -> 12&#13;
+	round corner -> true&#13;
+	tooltip expression -> "tooltip computing expression"&#13;
+	border dimension -> "border computing expression"&#13;
+	//add specific style customization&#13;
+	// workspace, background and shape&#13;
+]&#13;
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeStyleCustomization" deleted="false" description="New Node Style Customization" enabled="true" id="21" name="Node Style Customization">node ("${nodeStyle:CrossReference('vpstylecustomization.NodeStyleCustomization.appliedOn')}")[
+	over all nodes -> false
+	label position -> border
+	hide label -> false
+	resize kind -> NONE
+	tooltip expression -> "tooltip computing expression"
+	border dimension -> "border computing expression"
+	size dimension -> "size computing expression"
+	//add Specific node style
+	//	shape, lozenge dimension, gauge alignment, ellipse dimension
+	//	workspace, square dimension and stroke dimension
+]
+</template>
+
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.kw_reuse" deleted="false" description="New Reuse Style Customization" enabled="true" id="22" name="Reuse Style Customization">reuse "${reusedCustomization:CrossReference('vpstylecustomization.StyleCustomizationReuse.reusedCustomization')}" on "${on:CrossReference('vpstylecustomization.StyleCustomizationReuse.appliedOn')}"</template>
 </templates>

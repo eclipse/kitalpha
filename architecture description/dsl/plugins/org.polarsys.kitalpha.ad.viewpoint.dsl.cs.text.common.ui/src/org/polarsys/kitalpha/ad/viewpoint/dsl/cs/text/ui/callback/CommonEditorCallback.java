@@ -186,6 +186,8 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 						result = true;
 					} catch (IOException e) {
 						e.printStackTrace();
+					} finally {
+						inputObjects.clear();
 					}
 				}
 			} else {

@@ -14,10 +14,21 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.sirius.diagram.description.ConditionalEdgeStyleDescription;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
+import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.diagram.description.style.BeginLabelStyleDescription;
+import org.eclipse.sirius.diagram.description.style.CenterLabelStyleDescription;
+import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
+import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
+import org.eclipse.sirius.diagram.description.style.EndLabelStyleDescription;
+import org.eclipse.sirius.diagram.description.style.NodeStyleDescription;
+import org.eclipse.sirius.viewpoint.description.ColorDescription;
+import org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
+import org.eclipse.sirius.viewpoint.description.style.StyleDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
@@ -263,5 +274,116 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 						return (d.getEObjectOrProxy() instanceof BorderedNode && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
 				});
+	}
+	
+	IScope scope_EdgeStyleCustomization_appliedOn(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof EdgeStyleDescription || 
+								d.getEObjectOrProxy() instanceof ConditionalEdgeStyleDescription;
+					}
+		});
+	}
+	
+	IScope scope_EdgeStyleCustomization_centeredSourceMappings(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof DiagramElementMapping;
+					}
+		});
+	}
+	
+	IScope scope_EdgeStyleCustomization_centeredTargetMappings(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof DiagramElementMapping;
+					}
+		});
+	}
+	
+	IScope scope_EdgeStyleCustomization_beginLabelStyleDescription(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof BeginLabelStyleDescription;
+					}
+		});
+	}
+	
+	IScope scope_EdgeStyleCustomization_centerLabelStyleDescription(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof CenterLabelStyleDescription;
+					}
+		});
+	}
+	
+	IScope scope_EdgeStyleCustomization_endLabelStyleDescription(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof EndLabelStyleDescription;
+					}
+		});
+	}
+	
+	IScope scope_ColorCustomization_appliedOn(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						EObject candidate = d.getEObjectOrProxy();
+						return candidate instanceof StyleDescription;
+					}
+		});
+	}
+	
+	IScope scope_LabelCustomization_appliedOn(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof BasicLabelStyleDescription;
+					}
+		});
+	}
+	
+	IScope scope_LabelCustomization_color(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof ColorDescription;
+					}
+		});
+	}
+	
+	IScope scope_ColorCustomization_color(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof ColorDescription;
+					}
+		});
+	}
+	
+	
+	IScope scope_ContainerStyleCustomization_appliedOn(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof ContainerStyleDescription;
+					}
+		});
+	}
+	
+	IScope scope_NodeStyleCustomization_appliedOn(EObject context, EReference reference){
+		return new FilteringScope(delegateGetScope(context, reference), 
+				new Predicate<IEObjectDescription>() {
+					public boolean apply(IEObjectDescription d){
+						return d.getEObjectOrProxy() instanceof NodeStyleDescription;
+					}
+		});
 	}
 }

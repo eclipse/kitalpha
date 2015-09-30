@@ -10,10 +10,18 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
+import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
+import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
+import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
+import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.CommondataPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.ExternalAssociation;
@@ -60,13 +68,32 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainEleme
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ReconnectEdge;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.BundledImageCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ContainerStyleCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ContainerWorkspaceImageCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.CustomizationExpression;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.DotCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EdgeStyleCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EllipseCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.FlatContainerStyleCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.GaugeCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelAlignmentCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LozengeCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.NodeStyleCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.NodeWorkspaceImageCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ShapeContainerStyleCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.SquareCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationDescriptions;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationReuse;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.VpstylecustomizationPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpdiagramGrammarAccess;
-
-import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -219,6 +246,68 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 				sequence_ReconnectEdge(context, (ReconnectEdge) semanticObject); 
 				return; 
 			}
+		else if(semanticObject.eClass().getEPackage() == VpstylecustomizationPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case VpstylecustomizationPackage.BUNDLED_IMAGE_CUSTOMIZATION:
+				sequence_BundledImageCustomization(context, (BundledImageCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION:
+				sequence_ColorCustomization(context, (ColorCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.CONTAINER_STYLE_CUSTOMIZATION:
+				sequence_ContainerStyleCustomization(context, (ContainerStyleCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.CONTAINER_WORKSPACE_IMAGE_CUSTOMIZATION:
+				sequence_ContainerWorkspaceImageCustomization(context, (ContainerWorkspaceImageCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.CUSTOMIZATION_EXPRESSION:
+				sequence_CustomizationExpression(context, (CustomizationExpression) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.CUSTOMIZATIONS:
+				sequence_Customizations(context, (Customizations) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.DOT_CUSTOMIZATION:
+				sequence_DotCustomization(context, (DotCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.EDGE_STYLE_CUSTOMIZATION:
+				sequence_EdgeStyleCustomization(context, (EdgeStyleCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.ELLIPSE_CUSTOMIZATION:
+				sequence_EllipseCustomization(context, (EllipseCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.FLAT_CONTAINER_STYLE_CUSTOMIZATION:
+				sequence_FlatContainerStyleCustomization(context, (FlatContainerStyleCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.GAUGE_CUSTOMIZATION:
+				sequence_GaugeCustomization(context, (GaugeCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.LABEL_ALIGNMENT_CUSTOMIZATION:
+				sequence_LabelAlignementCustomization(context, (LabelAlignmentCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION:
+				sequence_LabelCustomization(context, (LabelCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.LOZENGE_CUSTOMIZATION:
+				sequence_LozengeCustomization(context, (LozengeCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.NODE_STYLE_CUSTOMIZATION:
+				sequence_NodeStyleCustomization(context, (NodeStyleCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.NODE_WORKSPACE_IMAGE_CUSTOMIZATION:
+				sequence_NodeWorkspaceImageCustomization(context, (NodeWorkspaceImageCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.SHAPE_CONTAINER_STYLE_CUSTOMIZATION:
+				sequence_ShapeContainerStyleCustomization(context, (ShapeContainerStyleCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.SQUARE_CUSTOMIZATION:
+				sequence_SquareCustomization(context, (SquareCustomization) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.STYLE_CUSTOMIZATION_DESCRIPTIONS:
+				sequence_StyleCustomizationDescriptions(context, (StyleCustomizationDescriptions) semanticObject); 
+				return; 
+			case VpstylecustomizationPackage.STYLE_CUSTOMIZATION_REUSE:
+				sequence_StyleCustomizationReuse(context, (StyleCustomizationReuse) semanticObject); 
+				return; 
+			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
@@ -245,6 +334,24 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (name=EString imports=[NodeMapping|FQN]? the_domain=NodeDomainElement? style+=NodeDescription*)
 	 */
 	protected void sequence_BorderedNode(EObject context, BorderedNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     shape=BundledImageShape
+	 */
+	protected void sequence_BundledImageCustomization(EObject context, BundledImageCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (appliedOn+=[EObject|STRING] appliedOn+=[EObject|STRING]* applyonAll=EBoolean? color=[ColorDescription|STRING] colorUseCase=ColorUseCase?)
+	 */
+	protected void sequence_ColorCustomization(EObject context, ColorCustomization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -286,6 +393,34 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Constraint:
 	 *     (
+	 *         appliedOn+=[ContainerStyleDescription|STRING] 
+	 *         appliedOn+=[ContainerStyleDescription|STRING]* 
+	 *         applyonAll=EBoolean? 
+	 *         arcWith=EInt? 
+	 *         arcHeight=EInt? 
+	 *         roundedCorner=EBoolean? 
+	 *         tooltipExpression=CustomizationExpression? 
+	 *         borderSizeComputationExpression=CustomizationExpression? 
+	 *         ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization*
+	 *     )
+	 */
+	protected void sequence_ContainerStyleCustomization(EObject context, ContainerStyleCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     workspacePath=EString
+	 */
+	protected void sequence_ContainerWorkspaceImageCustomization(EObject context, ContainerWorkspaceImageCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
 	 *         name=EString 
 	 *         imports=[ContainerMapping|FQN]? 
 	 *         the_domain=NodeDomainElement? 
@@ -310,6 +445,34 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     ownedExpressionElement=AbstractComputableElement
+	 */
+	protected void sequence_CustomizationExpression(EObject context, CustomizationExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, VpstylecustomizationPackage.Literals.CUSTOMIZATION_EXPRESSION__OWNED_EXPRESSION_ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VpstylecustomizationPackage.Literals.CUSTOMIZATION_EXPRESSION__OWNED_EXPRESSION_ELEMENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCustomizationExpressionAccess().getOwnedExpressionElementAbstractComputableElementParserRuleCall_1_0(), semanticObject.getOwnedExpressionElement());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         (ownedCustomizationDescriptions+=StyleCustomizationDescriptions ownedCustomizationDescriptions+=StyleCustomizationDescriptions*)? 
+	 *         (ownedCustomizationReuse+=StyleCustomizationReuse ownedCustomizationReuse+=StyleCustomizationReuse*)?
+	 *     )
+	 */
+	protected void sequence_Customizations(EObject context, Customizations semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=EString precondition=EString? label=STRING? tool_For=[DiagramElement|FQN])
 	 */
 	protected void sequence_Delete(EObject context, Delete semanticObject) {
@@ -319,7 +482,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING extented_diagram=[DiagramDescription|FQN]? the_MappingSet=MappingSet? the_ActionSet=ActionSet?)
+	 *     (name=STRING extented_diagram=[DiagramDescription|FQN]? the_MappingSet=MappingSet? the_ActionSet=ActionSet? ownedCustomizations+=Customizations?)
 	 */
 	protected void sequence_DiagramExtension(EObject context, DiagramExtension semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -387,6 +550,15 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     strokeSizeComputationExpression=CustomizationExpression
+	 */
+	protected void sequence_DotCustomization(EObject context, DotCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=EString precondition=EString? label=STRING? tool_For=[DiagramElement|FQN])
 	 */
 	protected void sequence_Drop(EObject context, Drop semanticObject) {
@@ -436,6 +608,31 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         appliedOn+=[EdgeStyleDescription|STRING] 
+	 *         appliedOn+=[EdgeStyleDescription|STRING]* 
+	 *         applyonAll=EBoolean? 
+	 *         sourceArrow=EdgeArrows? 
+	 *         targetArrow=EdgeArrows? 
+	 *         routingStyle=EdgeRouting? 
+	 *         foldingStyle=FoldingStyle? 
+	 *         (centeredSourceMappings+=[DiagramElementMapping|STRING] centeredSourceMappings+=[DiagramElementMapping|STRING]*)? 
+	 *         (centeredTargetMappings+=[DiagramElementMapping|STRING] centeredTargetMappings+=[DiagramElementMapping|STRING]*)? 
+	 *         beginLabelStyleDescription=[BeginLabelStyleDescription|STRING]? 
+	 *         centerLabelStyleDescription=[CenterLabelStyleDescription|STRING]? 
+	 *         endLabelStyleDescription=[EndLabelStyleDescription|STRING]? 
+	 *         lineStyle=LineStyle? 
+	 *         sizeComputationExpression=CustomizationExpression? 
+	 *         endCentering=CenterStyle?
+	 *     )
+	 */
+	protected void sequence_EdgeStyleCustomization(EObject context, EdgeStyleCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (lineStyle=LineStyle? beginDecorator=EdgeArrows? endDecorator=EdgeArrows? color=SystemColors?)
 	 */
 	protected void sequence_EdgeStyle(EObject context, EdgeStyle semanticObject) {
@@ -456,6 +653,15 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     )
 	 */
 	protected void sequence_Edge(EObject context, Edge semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (horizontalDiameterComputationExpression=CustomizationExpression verticalDiameterComputationExpression=CustomizationExpression)
+	 */
+	protected void sequence_EllipseCustomization(EObject context, EllipseCustomization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -519,9 +725,27 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     backgroundStyle=BackgroundStyle
+	 */
+	protected void sequence_FlatContainerStyleCustomization(EObject context, FlatContainerStyleCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (borderColor=SystemColors? (backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)? forgroundColor=SystemColors?)
 	 */
 	protected void sequence_FlatStyle(EObject context, FlatStyle semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     alignement=AlignmentKind
+	 */
+	protected void sequence_GaugeCustomization(EObject context, GaugeCustomization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -609,6 +833,34 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     alignment=LabelAlignment
+	 */
+	protected void sequence_LabelAlignementCustomization(EObject context, LabelAlignmentCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         appliedOn+=[BasicLabelStyleDescription|STRING] 
+	 *         appliedOn+=[BasicLabelStyleDescription|STRING]* 
+	 *         applyonAll=EBoolean? 
+	 *         ownedLabelAlignment=LabelAlignementCustomization? 
+	 *         size=EInt? 
+	 *         format=FontFormat? 
+	 *         color=[ColorDescription|STRING] 
+	 *         (showIcon=EBoolean iconPath=EString)? 
+	 *         expression=CustomizationExpression?
+	 *     )
+	 */
+	protected void sequence_LabelCustomization(EObject context, LabelCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (value=Expression (bold?='bold'? italic?='italic'? color=SystemColors? size=EInt?)?)
 	 */
 	protected void sequence_Label(EObject context, Label semanticObject) {
@@ -666,6 +918,15 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     (widthComputationExpression=CustomizationExpression heightComputationExpression=CustomizationExpression)
+	 */
+	protected void sequence_LozengeCustomization(EObject context, LozengeCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (diagram_Elements+=DiagramChildren*)
 	 */
 	protected void sequence_MappingSet(EObject context, MappingSet semanticObject) {
@@ -702,6 +963,35 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         appliedOn+=[NodeStyleDescription|STRING] 
+	 *         appliedOn+=[NodeStyleDescription|STRING]* 
+	 *         applyonAll=EBoolean? 
+	 *         labelPosition=LabelPosition? 
+	 *         hideLabelByDefault=EBoolean? 
+	 *         resizeKind=ResizeKind? 
+	 *         tooltipExpression=CustomizationExpression? 
+	 *         borderSizeComputationExpression=CustomizationExpression? 
+	 *         sizeComputationExpression=CustomizationExpression? 
+	 *         ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization*
+	 *     )
+	 */
+	protected void sequence_NodeStyleCustomization(EObject context, NodeStyleCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     workspacePath=EString
+	 */
+	protected void sequence_NodeWorkspaceImageCustomization(EObject context, NodeWorkspaceImageCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=EString imports=[NodeMapping|FQN]? the_domain=NodeDomainElement? style+=NodeDescription* children=NodeChildren?)
 	 */
 	protected void sequence_Node(EObject context, Node semanticObject) {
@@ -729,6 +1019,24 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
+	 *     shape=ContainerShape
+	 */
+	protected void sequence_ShapeContainerStyleCustomization(EObject context, ShapeContainerStyleCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (width=EInt height=EInt)
+	 */
+	protected void sequence_SquareCustomization(EObject context, SquareCustomization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=STRING
 	 */
 	protected void sequence_StringElement(EObject context, StringElement semanticObject) {
@@ -740,5 +1048,32 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getStringElementAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         precondtionExpression=CustomizationExpression? 
+	 *         (ownedCustomizations+=AbstractCustomization ownedCustomizations+=AbstractCustomization*)?
+	 *     )
+	 */
+	protected void sequence_StyleCustomizationDescriptions(EObject context, StyleCustomizationDescriptions semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         reusedCustomization+=[EStructuralFeatureCustomization|STRING] 
+	 *         reusedCustomization+=[EStructuralFeatureCustomization|STRING]* 
+	 *         appliedOn+=[EObject|STRING] 
+	 *         appliedOn+=[EObject|STRING]*
+	 *     )
+	 */
+	protected void sequence_StyleCustomizationReuse(EObject context, StyleCustomizationReuse semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }
