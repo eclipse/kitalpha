@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.QualityAssessment.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.qualityassessment.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.QualityAssessment.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned Viewpoint elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.qualityassessment.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.QualityAssessment.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced viewpoint elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.qualityassessment.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.QualityAssessment.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Referenced Melody Advance elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.qualityassessment.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.QualityAssessment.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Viewpoint Element">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.qualityassessment.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.QualityMeasure.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.queries.qualitymeasure.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>
