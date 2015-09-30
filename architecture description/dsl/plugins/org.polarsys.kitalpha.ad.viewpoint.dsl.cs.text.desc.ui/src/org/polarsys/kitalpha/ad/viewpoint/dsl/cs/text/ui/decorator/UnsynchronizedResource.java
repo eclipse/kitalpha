@@ -11,15 +11,16 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.jface.viewers.ILightweightLabelDecorator;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.ui.IDecoratorManager;
-import org.eclipse.ui.PlatformUI;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.VpdslModelResourcesPropertysConstants;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
+import org.eclipse.swt.widgets.Display;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourcesPropertysConstants;
 
 public class UnsynchronizedResource extends LabelProvider implements ILightweightLabelDecorator {
 	
@@ -29,29 +30,17 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 	public UnsynchronizedResource() {
 	}
 	
-	public static UnsynchronizedResource getUnsynchronizationResource(){
-		IDecoratorManager decoratorManager = getDecoratorManager();
-		
-		if (decoratorManager.getEnabled(DECORATOR_ID)){
-			return (UnsynchronizedResource)decoratorManager.getBaseLabelProvider(DECORATOR_ID);
-		}
-		
-		return null;
-	}
-	
-	private static IDecoratorManager getDecoratorManager(){
-		return PlatformUI.getWorkbench().getDecoratorManager();
-	}
 	
 	@Override
 	public void decorate(Object element, IDecoration decoration) {
 		
-		IResource resource = getResource(element);
+		IFile resource = getResource(element);
 		
 		if (resource == null || !(resource.getType() == IResource.FILE) || !(resource.getFullPath().getFileExtension().endsWith("vptext"))) return;
 		
 		try {
-			String value = resource.getPersistentProperty(VpdslModelResourcesPropertysConstants.syncQualifiedName);
+			
+			String value = resource.getPersistentProperty(ResourcesPropertysConstants.syncQualifiedName);
 			
 			if (value != null && value.equals("false"))
 			{
@@ -62,7 +51,14 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 				decoration.addPrefix("");
 			}
 			
-			//refresh();
+			final LabelProviderChangedEvent event = new LabelProviderChangedEvent(this);
+			Display.getDefault().syncExec(new Runnable() {
+				
+				@Override
+				public void run() {
+					fireLabelProviderChanged(event);
+				}
+			});
 			
 		} catch (CoreException e) {
 			e.printStackTrace();
@@ -71,15 +67,15 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 	}
 	
 	
-	private IResource getResource(Object object) 
+	private IFile getResource(Object object) 
 	{
-		if (object instanceof IResource) 
+		if (object instanceof IFile) 
 		{
-			return (IResource) object;
+			return (IFile) object;
 		}
 		if (object instanceof IAdaptable) 
 		{
-			return (IResource) ((IAdaptable) object).getAdapter(IResource.class);
+			return (IFile) ((IAdaptable) object).getAdapter(IFile.class);
 		}
 		return null;
 	}

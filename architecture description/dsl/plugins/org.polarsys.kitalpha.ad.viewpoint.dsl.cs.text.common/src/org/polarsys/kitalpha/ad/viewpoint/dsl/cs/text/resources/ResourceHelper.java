@@ -20,8 +20,12 @@ import java.util.Map;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -41,6 +45,8 @@ import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess.EBooleanElements;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess.EBooleanElements;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
@@ -688,8 +694,12 @@ public class ResourceHelper {
 		Resource buildResource = loadResource(buildResourceURI, resourceSet);
 		if (!buildResource.getContents().isEmpty()) {
 			EObject buildRoot = buildResource.getContents().get(0);
-			if (isValid(buildRoot))
+			IFile file = getFileFromURI(buildResourceURI);
+			if (isValid(buildRoot)){
+				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
 				return Lists.newArrayList(buildRoot);
+			}
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
 		}
 		return Collections.emptyList();
 	}
@@ -743,7 +753,7 @@ public class ResourceHelper {
 
 	/**
 	 * Loads the Data resource with the given URI in the given resource set
-	 * if the resource contains error, return emptylist
+	 * if the resource contains error, return empty list
 	 * @param dataResourceURI
 	 * @param resourceSet
 	 * @return 
@@ -755,14 +765,22 @@ public class ResourceHelper {
 			EObject dataRoot = dataResource.getContents().get(0);
 			loadExternalLibrary(resourceSet);
 			EcoreUtil2.resolveAll(dataRoot);
-			if (isValid(dataRoot))
+			IFile file = getFileFromURI(dataResourceURI);
+			if (isValid(dataRoot)){
+				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
 				return dataRoot.eContents();
+			}
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
 		}
 		
 		return Collections.emptyList();
 	}
-	
-	
+
+	private static IFile getFileFromURI(URI dataResourceURI) {
+		Path path = new Path(dataResourceURI.toPlatformString(true));
+		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
+		return file;
+	}
 	
 	private static boolean isValid(EObject eObject) {
 		Resource eResource = eObject.eResource();
@@ -778,7 +796,7 @@ public class ResourceHelper {
 					Diagnostician.INSTANCE.validate(rootContainer);
 			empty &= (result.getSeverity() != IStatus.ERROR);
 		}
-		
+				
 		return empty;
 
 	}
@@ -909,9 +927,12 @@ public class ResourceHelper {
 		Resource uiResource = loadResource(uiResourceURI, resourceSet);
 		if (uiResource != null && !uiResource.getContents().isEmpty()) {
 			EObject uiRoot = uiResource.getContents().get(0);
-			
-			if (isValid(uiRoot))
+			IFile file = getFileFromURI(uiResourceURI);
+			if (isValid(uiRoot)){
+				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
 				return uiRoot.eContents();
+			}
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
 		}
 		return Collections.emptyList();
 	}
@@ -971,8 +992,12 @@ public class ResourceHelper {
 		Resource diagramResource = loadResource(diagramResourceURI, resourceSet);
 		if (diagramResource != null && !diagramResource.getContents().isEmpty()) {
 			EObject diagramRoot = diagramResource.getContents().get(0);
-			if (isValid(diagramRoot))
+			IFile file = getFileFromURI(diagramResourceURI);
+			if (isValid(diagramRoot)){
+				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
 				return diagramRoot.eContents();
+			}
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
 		}
 		return Collections.emptyList();
 	}
@@ -1032,8 +1057,12 @@ public class ResourceHelper {
 		Resource configurationResource = loadResource(configurationResourceURI, resourceSet);
 		if (configurationResource != null && !configurationResource.getContents().isEmpty()) {
 			EObject configurationRoot = configurationResource.getContents().get(0);
-			if (isValid(configurationRoot))
+			IFile file = getFileFromURI(configurationResourceURI);
+			if (isValid(configurationRoot)){
+				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
 				return Lists.newArrayList(configurationRoot);
+			}
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
 		}
 		return Collections.emptyList();
 	}
@@ -1095,8 +1124,12 @@ public class ResourceHelper {
 		if (servicesResource != null && !servicesResource.getContents().isEmpty()) {
 			EObject servicesResourceRoot = servicesResource.getContents().get(0);
 			List<EObject> contents = servicesResourceRoot.eContents();
-			if (isValid(servicesResourceRoot))
+			IFile file = getFileFromURI(servicesResourceURI);
+			if (isValid(servicesResourceRoot)){
+				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
 				return contents;
+			}
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
 		}
 		return Collections.emptyList();
 	}
@@ -1142,11 +1175,38 @@ public class ResourceHelper {
 
 		if (!activityExplorerResource.getContents().isEmpty()){
 			EObject activityExplorerRoot = activityExplorerResource.getContents().get(0);
-			if (isValid(activityExplorerRoot))
+			IFile file = getFileFromURI(activityExplorerURI);
+			if (isValid(activityExplorerRoot)){
+				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
 				return Lists.newArrayList(activityExplorerRoot);
+			}
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
 		}
 		return Collections.emptyList();
 	}
+
+	/**
+	 * Set the property propertyId of the resource to the boolean value
+	 * @param propertyId must be not null
+	 * @param resource must be not null
+	 * @param value must be strings "true" or "false"
+	 */
+	public static void setProperty(org.eclipse.core.runtime.QualifiedName propertyId, IResource resource, String value){
+		if (propertyId == null ||
+				resource == null || !resource.exists() ||
+				value == null || value.isEmpty()){
+			return;
+		}
+		
+		try {
+			resource.setPersistentProperty(propertyId, value);
+			resource.refreshLocal(IResource.DEPTH_ZERO, new NullProgressMonitor());
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
 
 	public static String getProjectName(EObject object){	
 		return CoreModelHelper.getProjectName(object); 	

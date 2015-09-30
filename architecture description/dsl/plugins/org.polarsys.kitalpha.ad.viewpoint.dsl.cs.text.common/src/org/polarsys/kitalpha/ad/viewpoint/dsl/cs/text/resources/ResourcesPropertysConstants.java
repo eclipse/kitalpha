@@ -1,4 +1,4 @@
-package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback;
+package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources;
 
 import org.eclipse.core.runtime.QualifiedName;
 
@@ -7,7 +7,7 @@ import org.eclipse.core.runtime.QualifiedName;
  * @author Faycal Abka
  *
  */
-public class VpdslModelResourcesPropertysConstants {
+public class ResourcesPropertysConstants {
 	
 	public final static QualifiedName syncQualifiedName = new QualifiedName("org.polarsys.kitalpha.viewpoint.cs.text.resource", "Prefix");
 	

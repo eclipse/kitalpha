@@ -32,7 +32,7 @@ public class BuildItemProviderCustom extends BuildItemProvider {
 	
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Build.png")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/build.png")); //$NON-NLS-1$
 	}
 
 }
