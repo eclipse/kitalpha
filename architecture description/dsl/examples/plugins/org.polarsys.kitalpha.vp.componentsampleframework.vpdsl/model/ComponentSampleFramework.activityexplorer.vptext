@@ -6,25 +6,25 @@
  *	@date: 14/09/15
  *
  */
-activity explorer ComponentSampleFramework.activityexplorer {
+activity-explorer ComponentSampleFramework.activityexplorer {
 	
 	pages {
 		page ComponentSampleViewpointManagementPage {
-			file extension "componentsample"
+			file-extension "componentsample"
 			id org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
 			label "Component Sample Viewpoints"
 			index 2
 			Overview {
 				description "<p><b>Component Sample Viewpoints</b></p><p>Start and Stop Component Sample Viewpoints</p>"
-				image on :  "vp_management_on.png"
-				image off : "vp_management_off.png"
+				image-on :  "vp_management_on.png"
+				image-off : "vp_management_off.png"
 			}
 			header {
-				image on : "vp_management_on.png"
-				image off : "vp_management_off.png"
+				image-on : "vp_management_on.png"
+				image-off : "vp_management_off.png"
 			}
-			tab name  "Component Sample Viewpoints"
-			show viewer : false
+			tab-name  "Component Sample Viewpoints"
+			show-viewer : false
 			sections {
 				section StopOrStartAllViewpoints {
 					description "<p>Start or Stop all component sample viewpoints.</p>"
@@ -74,7 +74,7 @@ activity explorer ComponentSampleFramework.activityexplorer {
 							label "Stop"
 							index 2
 							predicated : false
-							icon : "Stop.png"
+							icon : "stop.png"
 						}
 					}
 				}

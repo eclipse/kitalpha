@@ -107,8 +107,7 @@ public enum STATE implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final STATE[] VALUES_ARRAY = new STATE[] { OPERATIVE, LOST,
-			ERRONEOUS, };
+	private static final STATE[] VALUES_ARRAY = new STATE[] { OPERATIVE, LOST, ERRONEOUS, };
 
 	/**
 	 * A public read-only list of all the '<em><b>STATE</b></em>' enumerators.
@@ -116,13 +115,14 @@ public enum STATE implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<STATE> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<STATE> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>STATE</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static STATE get(String literal) {
@@ -139,6 +139,8 @@ public enum STATE implements Enumerator {
 	 * Returns the '<em><b>STATE</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static STATE getByName(String name) {
@@ -155,6 +157,8 @@ public enum STATE implements Enumerator {
 	 * Returns the '<em><b>STATE</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static STATE get(int value) {

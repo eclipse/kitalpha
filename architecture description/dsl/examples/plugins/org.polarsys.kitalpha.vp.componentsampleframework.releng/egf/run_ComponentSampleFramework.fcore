@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
     xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
-    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_D8VV8N06EeSdX-jDtPq_XQ" name="run_ComponentSampleFramework">
-  <viewpointContainer xmi:id="_D8VV8d06EeSdX-jDtPq_XQ">
-    <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_D8VV8t06EeSdX-jDtPq_XQ">
-      <domains xmi:type="domain:EMFDomain" xmi:id="_D8VV8906EeSdX-jDtPq_XQ" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_y7RDkGkQEeWGsuz71d277w" name="run_ComponentSampleFramework">
+  <viewpointContainer xmi:id="_y7RDkWkQEeWGsuz71d277w">
+    <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_y7RDkmkQEeWGsuz71d277w">
+      <domains xmi:type="domain:EMFDomain" xmi:id="_y7RDk2kQEeWGsuz71d277w" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
           uri="platform:/resource/org.polarsys.kitalpha.vp.componentsampleframework.releng/model/ComponentSampleFramework.egfbuild"/>
     </viewpoints>
   </viewpointContainer>
-  <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_D8VV9N06EeSdX-jDtPq_XQ">
-    <invocations xmi:id="_D8VV9d06EeSdX-jDtPq_XQ" invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_N4pRwI6UEd-e7viTqNBNrA">
-      <invocationContractContainer xmi:id="_D8VV9t06EeSdX-jDtPq_XQ">
-        <invocationContracts xmi:id="_D8VV9906EeSdX-jDtPq_XQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_ad5FkY6VEd-e7viTqNBNrA">
-          <type xmi:type="domain:TypeDomain" xmi:id="_D8VV-N06EeSdX-jDtPq_XQ" domain="#_D8VV8906EeSdX-jDtPq_XQ"/>
+  <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_y7RDlGkQEeWGsuz71d277w">
+    <invocations xmi:id="_y7RDlWkQEeWGsuz71d277w" invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_N4pRwI6UEd-e7viTqNBNrA">
+      <invocationContractContainer xmi:id="_y7RDlmkQEeWGsuz71d277w">
+        <invocationContracts xmi:id="_y7RDl2kQEeWGsuz71d277w" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_ad5FkY6VEd-e7viTqNBNrA">
+          <type xmi:type="domain:TypeDomain" xmi:id="_y7RDmGkQEeWGsuz71d277w" domain="#_y7RDk2kQEeWGsuz71d277w"/>
         </invocationContracts>
-        <invocationContracts xmi:id="_D8VV-d06EeSdX-jDtPq_XQ" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_npIcUJlgEd-cRYVfj6AwNg">
-          <type xmi:type="types:TypeString" xmi:id="_D8VV-t06EeSdX-jDtPq_XQ" value="platform:/resource/org.polarsys.kitalpha.vp.componentsampleframework.releng/releng-scripts"/>
+        <invocationContracts xmi:id="_y7RDmWkQEeWGsuz71d277w" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_npIcUJlgEd-cRYVfj6AwNg">
+          <type xmi:type="types:TypeString" xmi:id="_y7RDmmkQEeWGsuz71d277w" value="platform:/resource/org.polarsys.kitalpha.vp.componentsampleframework.releng/releng-scripts"/>
         </invocationContracts>
       </invocationContractContainer>
     </invocations>

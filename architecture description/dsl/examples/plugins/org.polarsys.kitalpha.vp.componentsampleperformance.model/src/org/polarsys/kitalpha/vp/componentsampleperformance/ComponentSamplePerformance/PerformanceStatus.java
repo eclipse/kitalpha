@@ -19,10 +19,10 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus#isOverhead <em>Overhead</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage#getPerformanceStatus()
  * @model
@@ -33,7 +33,7 @@ public interface PerformanceStatus extends ComponentElement {
 
 	/**
 	 * Returns the value of the '<em><b>Overhead</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Overhead</em>' attribute isn't clear,
@@ -51,7 +51,7 @@ public interface PerformanceStatus extends ComponentElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus#isOverhead <em>Overhead</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Overhead</em>' attribute.

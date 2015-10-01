@@ -14,12 +14,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.*;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyFactory;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,8 +29,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
-		ComponentSampleSafetyFactory {
+public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements ComponentSampleSafetyFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -37,8 +38,7 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 	 */
 	public static ComponentSampleSafetyFactory init() {
 		try {
-			ComponentSampleSafetyFactory theComponentSampleSafetyFactory = (ComponentSampleSafetyFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0"); //$NON-NLS-1$ 
+			ComponentSampleSafetyFactory theComponentSampleSafetyFactory = (ComponentSampleSafetyFactory) EPackage.Registry.INSTANCE.getEFactory(ComponentSampleSafetyPackage.eNS_URI);
 			if (theComponentSampleSafetyFactory != null) {
 				return theComponentSampleSafetyFactory;
 			}
@@ -69,8 +69,7 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 		case ComponentSampleSafetyPackage.SAFETY:
 			return createSafety();
 		default:
-			throw new IllegalArgumentException(
-					"The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -89,8 +88,7 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 		case ComponentSampleSafetyPackage.CRITICALITY:
 			return createCRITICALITYFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -109,8 +107,7 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 		case ComponentSampleSafetyPackage.CRITICALITY:
 			return convertCRITICALITYToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -132,8 +129,7 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 	public STATE createSTATEFromString(EDataType eDataType, String initialValue) {
 		STATE result = STATE.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -151,12 +147,10 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DAL_LEVEL createDAL_LEVELFromString(EDataType eDataType,
-			String initialValue) {
+	public DAL_LEVEL createDAL_LEVELFromString(EDataType eDataType, String initialValue) {
 		DAL_LEVEL result = DAL_LEVEL.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -165,8 +159,7 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertDAL_LEVELToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertDAL_LEVELToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -175,12 +168,10 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CRITICALITY createCRITICALITYFromString(EDataType eDataType,
-			String initialValue) {
+	public CRITICALITY createCRITICALITYFromString(EDataType eDataType, String initialValue) {
 		CRITICALITY result = CRITICALITY.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -189,8 +180,7 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertCRITICALITYToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertCRITICALITYToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -19,40 +19,27 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.ui.action.ViewerFilterAction;
-
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
-
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.emf.ecore.presentation.EcoreEditorPlugin;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-
 import org.eclipse.emf.edit.ui.action.ControlAction;
 import org.eclipse.emf.edit.ui.action.CreateChildAction;
 import org.eclipse.emf.edit.ui.action.CreateSiblingAction;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.action.ValidateAction;
-
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
@@ -64,10 +51,8 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.SubContributionItem;
-
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
-
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -75,30 +60,21 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
-
 import org.eclipse.swt.SWT;
-
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-
 import org.eclipse.swt.graphics.Image;
-
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
-
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
-
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-
 import org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction;
-
 import org.polarsys.kitalpha.emde.ui.i18n.Messages;
 
 /**
@@ -108,9 +84,43 @@ import org.polarsys.kitalpha.emde.ui.i18n.Messages;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleActionBarContributor extends
-		EditingDomainActionBarContributor implements ISelectionChangedListener,
-		IPropertyChangeListener {
+public class ComponentSampleActionBarContributor extends EditingDomainActionBarContributor implements ISelectionChangedListener, IPropertyChangeListener {
+	private final class RefreshViewerAction extends Action {
+		private RefreshViewerAction() {
+			super(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")); //$NON-NLS-1$
+		}
+
+		@Override
+		public boolean isEnabled() {
+			return activeEditorPart instanceof IViewerProvider;
+		}
+
+		@Override
+		public void run() {
+			if (activeEditorPart instanceof IViewerProvider) {
+				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+				if (viewer != null) {
+					viewer.refresh();
+				}
+			}
+		}
+	}
+
+	private final class ShowPropertiesViewAction extends Action {
+		private ShowPropertiesViewAction() {
+			super(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")); //$NON-NLS-1$
+		}
+
+		@Override
+		public void run() {
+			try {
+				getPage().showView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
+			} catch (PartInitException exception) {
+				ComponentSampleEditorPlugin.INSTANCE.log(exception);
+			}
+		}
+	}
+
 	/**
 	 * ExtendedLoadResourceAction.
 	 * <!-- begin-user-doc -->
@@ -125,9 +135,7 @@ public class ComponentSampleActionBarContributor extends
 		 */
 		@Override
 		public void run() {
-			ExtendedLoadResourceDialog loadResourceDialog = new ExtendedLoadResourceDialog(
-					PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-							.getShell(), domain);
+			ExtendedLoadResourceDialog loadResourceDialog = new ExtendedLoadResourceDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), domain);
 			loadResourceDialog.open();
 		}
 
@@ -136,8 +144,7 @@ public class ComponentSampleActionBarContributor extends
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public static class ExtendedLoadResourceDialog extends
-				LoadResourceAction.LoadResourceDialog {
+		public static class ExtendedLoadResourceDialog extends LoadResourceAction.LoadResourceDialog {
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -154,21 +161,16 @@ public class ComponentSampleActionBarContributor extends
 			 */
 			@Override
 			protected Control createDialogArea(Composite parent) {
-				Composite composite = (Composite) super
-						.createDialogArea(parent);
+				Composite composite = (Composite) super.createDialogArea(parent);
 				Composite buttonComposite = (Composite) composite.getChildren()[0];
-				Button browseRegisteredPackagesButton = new Button(
-						buttonComposite, SWT.PUSH);
-				browseRegisteredPackagesButton
-						.setText(EcoreEditorPlugin.INSTANCE
-								.getString("_UI_BrowseRegisteredPackages_label")); //$NON-NLS-1$
+				Button browseRegisteredPackagesButton = new Button(buttonComposite, SWT.PUSH);
+				browseRegisteredPackagesButton.setText(EcoreEditorPlugin.INSTANCE.getString("_UI_BrowseRegisteredPackages_label")); //$NON-NLS-1$
 				prepareBrowseRegisteredPackagesButton(browseRegisteredPackagesButton);
 				{
 					FormData data = new FormData();
 					Control[] children = buttonComposite.getChildren();
 					data.left = new FormAttachment(0, 0);
-					data.right = new FormAttachment(children[0],
-							-CONTROL_OFFSET);
+					data.right = new FormAttachment(children[0], -CONTROL_OFFSET);
 					browseRegisteredPackagesButton.setLayoutData(data);
 				}
 				return composite;
@@ -179,75 +181,53 @@ public class ComponentSampleActionBarContributor extends
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			protected void prepareBrowseRegisteredPackagesButton(
-					Button browseRegisteredPackagesButton) {
-				browseRegisteredPackagesButton
-						.addSelectionListener(new SelectionAdapter() {
-							/**
-							 * <!-- begin-user-doc -->
-							 * <!-- end-user-doc -->
-							 * @generated
-							 */
-							@Override
-							public void widgetSelected(SelectionEvent event) {
-								RegisteredPackageDialog registeredPackageDialog = new RegisteredPackageDialog(
-										getShell());
-								registeredPackageDialog.open();
-								Object[] result = registeredPackageDialog
-										.getResult();
-								if (result != null) {
-									List<?> nsURIs = Arrays.asList(result);
-									ResourceSet resourceSet = new ResourceSetImpl();
-									resourceSet
-											.getURIConverter()
-											.getURIMap()
-											.putAll(EcorePlugin
-													.computePlatformURIMap());
-									StringBuffer uris = new StringBuffer();
-									Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin
-											.getEPackageNsURIToGenModelLocationMap();
-									for (int i = 0, length = result.length; i < length; i++) {
-										URI location = ePackageNsURItoGenModelLocationMap
-												.get(result[i]);
-										Resource resource = resourceSet
-												.getResource(location, true);
-										EcoreUtil.resolveAll(resource);
-									}
-									for (Resource resource : resourceSet
-											.getResources()) {
-										for (TreeIterator<?> j = new EcoreUtil.ContentTreeIterator<Object>(
-												resource.getContents()) {
-											private static final long serialVersionUID = 1L;
+			protected void prepareBrowseRegisteredPackagesButton(Button browseRegisteredPackagesButton) {
+				browseRegisteredPackagesButton.addSelectionListener(new SelectionAdapter() {
+					/**
+					 * <!-- begin-user-doc -->
+					 * <!-- end-user-doc -->
+					 * @generated
+					 */
+					@Override
+					public void widgetSelected(SelectionEvent event) {
+						RegisteredPackageDialog registeredPackageDialog = new RegisteredPackageDialog(getShell());
+						registeredPackageDialog.open();
+						Object[] result = registeredPackageDialog.getResult();
+						if (result != null) {
+							List<?> nsURIs = Arrays.asList(result);
+							ResourceSet resourceSet = new ResourceSetImpl();
+							resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap());
+							StringBuffer uris = new StringBuffer();
+							Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap();
+							for (int i = 0, length = result.length; i < length; i++) {
+								URI location = ePackageNsURItoGenModelLocationMap.get(result[i]);
+								Resource resource = resourceSet.getResource(location, true);
+								EcoreUtil.resolveAll(resource);
+							}
+							for (Resource resource : resourceSet.getResources()) {
+								for (TreeIterator<?> j = new EcoreUtil.ContentTreeIterator<Object>(resource.getContents()) {
+									private static final long serialVersionUID = 1L;
 
-											@Override
-											protected Iterator<? extends EObject> getEObjectChildren(
-													EObject eObject) {
-												return eObject instanceof EPackage ? ((EPackage) eObject)
-														.getESubpackages()
-														.iterator()
-														: Collections
-																.<EObject> emptyList()
-																.iterator();
-											}
-										}; j.hasNext();) {
-											Object content = j.next();
-											if (content instanceof EPackage) {
-												EPackage ePackage = (EPackage) content;
-												if (nsURIs.contains(ePackage
-														.getNsURI())) {
-													uris.append(resource
-															.getURI());
-													uris.append("  ");
-													break;
-												}
-											}
+									@Override
+									protected Iterator<? extends EObject> getEObjectChildren(EObject eObject) {
+										return eObject instanceof EPackage ? ((EPackage) eObject).getESubpackages().iterator() : Collections.<EObject> emptyList().iterator();
+									}
+								};j.hasNext();) {
+									Object content = j.next();
+									if (content instanceof EPackage) {
+										EPackage ePackage = (EPackage) content;
+										if (nsURIs.contains(ePackage.getNsURI())) {
+											uris.append(resource.getURI());
+											uris.append("  ");
+											break;
 										}
 									}
-									uriField.setText((uriField.getText() + "  " + uris
-											.toString()).trim());
 								}
 							}
-						});
+							uriField.setText((uriField.getText() + "  " + uris.toString()).trim());
+						}
+					}
+				});
 			}
 		}
 
@@ -256,8 +236,7 @@ public class ComponentSampleActionBarContributor extends
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public static class RegisteredPackageDialog extends
-				ElementListSelectionDialog {
+		public static class RegisteredPackageDialog extends ElementListSelectionDialog {
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -267,25 +246,17 @@ public class ComponentSampleActionBarContributor extends
 				super(parent, new LabelProvider() {
 					@Override
 					public Image getImage(Object element) {
-						return ExtendedImageRegistry.getInstance().getImage(
-								EcoreEditPlugin.INSTANCE
-										.getImage("full/obj16/EPackage")); //$NON-NLS-1$
+						return ExtendedImageRegistry.getInstance().getImage(EcoreEditPlugin.INSTANCE.getImage("full/obj16/EPackage")); //$NON-NLS-1$
 					}
 				});
 				setMultipleSelection(true);
-				setMessage(EcoreEditorPlugin.INSTANCE
-						.getString("_UI_SelectRegisteredPackageURI")); //$NON-NLS-1$
+				setMessage(EcoreEditorPlugin.INSTANCE.getString("_UI_SelectRegisteredPackageURI")); //$NON-NLS-1$
 				setFilter("*");
-				Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin
-						.getEPackageNsURIToGenModelLocationMap();
-				Object[] result = ePackageNsURItoGenModelLocationMap.keySet()
-						.toArray(
-								new Object[ePackageNsURItoGenModelLocationMap
-										.size()]);
+				Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap();
+				Object[] result = ePackageNsURItoGenModelLocationMap.keySet().toArray(new Object[ePackageNsURItoGenModelLocationMap.size()]);
 				Arrays.sort(result);
 				setElements(result);
-				setTitle(EcoreEditorPlugin.INSTANCE
-						.getString("_UI_PackageSelection_label")); //$NON-NLS-1$
+				setTitle(EcoreEditorPlugin.INSTANCE.getString("_UI_PackageSelection_label")); //$NON-NLS-1$
 			}
 		}
 
@@ -313,19 +284,7 @@ public class ComponentSampleActionBarContributor extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IAction showPropertiesViewAction = new Action(
-			ComponentSampleEditorPlugin.INSTANCE
-					.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
-	{
-		@Override
-		public void run() {
-			try {
-				getPage().showView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
-			} catch (PartInitException exception) {
-				ComponentSampleEditorPlugin.INSTANCE.log(exception);
-			}
-		}
-	};
+	protected IAction showPropertiesViewAction = new ShowPropertiesViewAction();
 
 	/**
 	 * This action refreshes the viewer of the current editor if the editor
@@ -334,26 +293,7 @@ public class ComponentSampleActionBarContributor extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IAction refreshViewerAction = new Action(
-			ComponentSampleEditorPlugin.INSTANCE
-					.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
-	{
-		@Override
-		public boolean isEnabled() {
-			return activeEditorPart instanceof IViewerProvider;
-		}
-
-		@Override
-		public void run() {
-			if (activeEditorPart instanceof IViewerProvider) {
-				Viewer viewer = ((IViewerProvider) activeEditorPart)
-						.getViewer();
-				if (viewer != null) {
-					viewer.refresh();
-				}
-			}
-		}
-	};
+	protected IAction refreshViewerAction = new RefreshViewerAction();
 
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
@@ -435,8 +375,7 @@ public class ComponentSampleActionBarContributor extends
 		if (event.getSource() instanceof ViewerFilterAction) {
 			// Fake a selection changed event to update the menus.
 			if (selectionProvider.getSelection() != null) {
-				selectionChanged(new SelectionChangedEvent(selectionProvider,
-						selectionProvider.getSelection()));
+				selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
 			}
 		}
 	}
@@ -464,9 +403,7 @@ public class ComponentSampleActionBarContributor extends
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(
-				ComponentSampleEditorPlugin.INSTANCE
-						.getString("_UI_ComponentSampleEditor_menu"), "org.polarsys.kitalpha.vp.componentsample.ComponentSampleMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
+		IMenuManager submenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_ComponentSampleEditor_menu"), "org.polarsys.kitalpha.vp.componentsample.ComponentSampleMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
 		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
 		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
 		submenuManager.add(new Separator("actions")); //$NON-NLS-1$
@@ -474,24 +411,18 @@ public class ComponentSampleActionBarContributor extends
 		submenuManager.add(new Separator("additions-end")); //$NON-NLS-1$
 
 		// Prepare Model Extension Menu Manager
-		extensionViewerFilterMenuManager = new MenuManager(
-				Messages._UI_Model_Extensions);
-		submenuManager.insertBefore(
-				"additions-end", extensionViewerFilterMenuManager); //$NON-NLS-1$
+		extensionViewerFilterMenuManager = new MenuManager(Messages._UI_Model_Extensions);
+		submenuManager.insertBefore("additions-end", extensionViewerFilterMenuManager); //$NON-NLS-1$
 		submenuManager.insertBefore("additions-end", new Separator()); //$NON-NLS-1$
 
 		// Prepare for CreateChild item addition or removal.
 		//
-		createChildMenuManager = new MenuManager(
-				ComponentSampleEditorPlugin.INSTANCE
-						.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
+		createChildMenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
 		submenuManager.insertBefore("additions", createChildMenuManager); //$NON-NLS-1$
 
 		// Prepare for CreateSibling item addition or removal.
 		//
-		createSiblingMenuManager = new MenuManager(
-				ComponentSampleEditorPlugin.INSTANCE
-						.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
+		createSiblingMenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
 		submenuManager.insertBefore("additions", createSiblingMenuManager); //$NON-NLS-1$
 
 		// Force an update because Eclipse hides empty menus now.
@@ -538,8 +469,7 @@ public class ComponentSampleActionBarContributor extends
 			// Fake a selection changed event to update the menus.
 			//
 			if (selectionProvider.getSelection() != null) {
-				selectionChanged(new SelectionChangedEvent(selectionProvider,
-						selectionProvider.getSelection()));
+				selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
 			}
 		}
 	}
@@ -573,10 +503,8 @@ public class ComponentSampleActionBarContributor extends
 		// Current Selection
 		ISelection selection = event.getSelection();
 		Object selectedObject = null;
-		if (selection instanceof IStructuredSelection
-				&& ((IStructuredSelection) selection).size() == 1) {
-			selectedObject = ((IStructuredSelection) selection)
-					.getFirstElement();
+		if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
+			selectedObject = ((IStructuredSelection) selection).getFirstElement();
 		}
 
 		Resource resource = null;
@@ -589,8 +517,7 @@ public class ComponentSampleActionBarContributor extends
 			if (resource.equals(currentResource) == false) {
 				if (currentResource != null) {
 					if (extensionViewerFilterMenuManager != null) {
-						depopulateManager(extensionViewerFilterMenuManager,
-								currentResourceEmdeViewerFilterActions);
+						depopulateManager(extensionViewerFilterMenuManager, currentResourceEmdeViewerFilterActions);
 					}
 					currentResourceEmdeViewerFilterActions = null;
 				}
@@ -609,11 +536,9 @@ public class ComponentSampleActionBarContributor extends
 
 		// Populate EmdeViewerFilterActions if necessary
 		if (currentResourceEmdeViewerFilterActions == null) {
-			currentResourceEmdeViewerFilterActions = ((ComponentSampleEditor) activeEditorPart)
-					.getEmdeViewerFilterActions(currentResource);
+			currentResourceEmdeViewerFilterActions = ((ComponentSampleEditor) activeEditorPart).getEmdeViewerFilterActions(currentResource);
 			if (extensionViewerFilterMenuManager != null) {
-				populateManager(extensionViewerFilterMenuManager,
-						currentResourceEmdeViewerFilterActions, null);
+				populateManager(extensionViewerFilterMenuManager, currentResourceEmdeViewerFilterActions, null);
 				extensionViewerFilterMenuManager.update(true);
 			}
 		}
@@ -624,29 +549,23 @@ public class ComponentSampleActionBarContributor extends
 		Collection<?> newSiblingDescriptors = null;
 
 		if (selectedObject != null) {
-			EditingDomain domain = ((IEditingDomainProvider) activeEditorPart)
-					.getEditingDomain();
+			EditingDomain domain = ((IEditingDomainProvider) activeEditorPart).getEditingDomain();
 
-			newChildDescriptors = domain.getNewChildDescriptors(selectedObject,
-					null);
-			newSiblingDescriptors = domain.getNewChildDescriptors(null,
-					selectedObject);
+			newChildDescriptors = domain.getNewChildDescriptors(selectedObject, null);
+			newSiblingDescriptors = domain.getNewChildDescriptors(null, selectedObject);
 		}
 
 		// Generate actions for selection; populate and redraw the menus.
 		//
-		createChildActions = generateCreateChildActions(newChildDescriptors,
-				selection);
-		createSiblingActions = generateCreateSiblingActions(
-				newSiblingDescriptors, selection);
+		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
+		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
 
 		if (createChildMenuManager != null) {
 			populateManager(createChildMenuManager, createChildActions, null);
 			createChildMenuManager.update(true);
 		}
 		if (createSiblingMenuManager != null) {
-			populateManager(createSiblingMenuManager, createSiblingActions,
-					null);
+			populateManager(createSiblingMenuManager, createSiblingActions, null);
 			createSiblingMenuManager.update(true);
 		}
 	}
@@ -658,13 +577,11 @@ public class ComponentSampleActionBarContributor extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<IAction> generateCreateChildActions(
-			Collection<?> descriptors, ISelection selection) {
+	protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
 		if (descriptors != null) {
 			for (Object descriptor : descriptors) {
-				actions.add(new CreateChildAction(activeEditorPart, selection,
-						descriptor));
+				actions.add(new CreateChildAction(activeEditorPart, selection, descriptor));
 			}
 		}
 		return actions;
@@ -677,13 +594,11 @@ public class ComponentSampleActionBarContributor extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<IAction> generateCreateSiblingActions(
-			Collection<?> descriptors, ISelection selection) {
+	protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
 		if (descriptors != null) {
 			for (Object descriptor : descriptors) {
-				actions.add(new CreateSiblingAction(activeEditorPart,
-						selection, descriptor));
+				actions.add(new CreateSiblingAction(activeEditorPart, selection, descriptor));
 			}
 		}
 		return actions;
@@ -698,8 +613,7 @@ public class ComponentSampleActionBarContributor extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void populateManager(IContributionManager manager,
-			Collection<? extends IAction> actions, String contributionID) {
+	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
 		if (actions != null) {
 			for (IAction action : actions) {
 				if (contributionID != null) {
@@ -718,8 +632,7 @@ public class ComponentSampleActionBarContributor extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void depopulateManager(IContributionManager manager,
-			Collection<? extends IAction> actions) {
+	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
 		if (actions != null) {
 			IContributionItem[] items = manager.getItems();
 			for (int i = 0; i < items.length; i++) {
@@ -727,15 +640,13 @@ public class ComponentSampleActionBarContributor extends
 				//
 				IContributionItem contributionItem = items[i];
 				while (contributionItem instanceof SubContributionItem) {
-					contributionItem = ((SubContributionItem) contributionItem)
-							.getInnerItem();
+					contributionItem = ((SubContributionItem) contributionItem).getInnerItem();
 				}
 
 				// Delete the ActionContributionItems with matching action.
 				//
 				if (contributionItem instanceof ActionContributionItem) {
-					IAction action = ((ActionContributionItem) contributionItem)
-							.getAction();
+					IAction action = ((ActionContributionItem) contributionItem).getAction();
 					if (actions.contains(action)) {
 						manager.remove(contributionItem);
 					}
@@ -755,22 +666,16 @@ public class ComponentSampleActionBarContributor extends
 		super.menuAboutToShow(menuManager);
 		MenuManager submenuManager = null;
 
-		submenuManager = new MenuManager(
-				ComponentSampleEditorPlugin.INSTANCE
-						.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
+		submenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
 		populateManager(submenuManager, createChildActions, null);
 		menuManager.insertBefore("edit", submenuManager); //$NON-NLS-1$
 
-		submenuManager = new MenuManager(
-				ComponentSampleEditorPlugin.INSTANCE
-						.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
+		submenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager); //$NON-NLS-1$
 
-		MenuManager extensionMenuManager = new MenuManager(
-				Messages._UI_Model_Extensions);
-		populateManager(extensionMenuManager,
-				currentResourceEmdeViewerFilterActions, null);
+		MenuManager extensionMenuManager = new MenuManager(Messages._UI_Model_Extensions);
+		populateManager(extensionMenuManager, currentResourceEmdeViewerFilterActions, null);
 		menuManager.insertAfter("additions", extensionMenuManager); //$NON-NLS-1$		
 		menuManager.insertAfter("additions", new Separator()); //$NON-NLS-1$    
 	}

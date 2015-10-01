@@ -13,15 +13,11 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
@@ -38,8 +34,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  *
  * @generated
  */
-public class ComponentModelImpl extends ComponentElementImpl implements
-		ComponentModel {
+public class ComponentModelImpl extends ComponentElementImpl implements ComponentModel {
 
 	/**
 	 * The cached value of the '{@link #getPackages() <em>Packages</em>}' containment reference list.
@@ -82,8 +77,8 @@ public class ComponentModelImpl extends ComponentElementImpl implements
 
 		if (packages == null) {
 			packages = new EObjectContainmentEList<org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package>(
-					org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package.class,
-					this, ComponentSamplePackage.COMPONENT_MODEL__PACKAGES);
+					org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package.class, this,
+					ComponentSamplePackage.COMPONENT_MODEL__PACKAGES);
 		}
 		return packages;
 	}
@@ -94,12 +89,10 @@ public class ComponentModelImpl extends ComponentElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ComponentSamplePackage.COMPONENT_MODEL__PACKAGES:
-			return ((InternalEList<?>) getPackages()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getPackages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,8 +122,8 @@ public class ComponentModelImpl extends ComponentElementImpl implements
 		switch (featureID) {
 		case ComponentSamplePackage.COMPONENT_MODEL__PACKAGES:
 			getPackages().clear();
-			getPackages()
-					.addAll((Collection<? extends org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package>) newValue);
+			getPackages().addAll(
+					(Collection<? extends org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

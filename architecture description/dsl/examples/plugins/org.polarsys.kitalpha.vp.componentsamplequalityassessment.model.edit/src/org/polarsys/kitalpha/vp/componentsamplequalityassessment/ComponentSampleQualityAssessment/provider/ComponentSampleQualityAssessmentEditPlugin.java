@@ -11,11 +11,8 @@
 package org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentSampleEditPlugin;
 
 /**
@@ -48,8 +45,7 @@ public final class ComponentSampleQualityAssessmentEditPlugin extends EMFPlugin 
 	 * @generated
 	 */
 	public ComponentSampleQualityAssessmentEditPlugin() {
-		super(new ResourceLocator[] { EmdeEditPlugin.INSTANCE,
-				ComponentSampleEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { EmdeEditPlugin.INSTANCE, ComponentSampleEditPlugin.INSTANCE, });
 	}
 
 	/**

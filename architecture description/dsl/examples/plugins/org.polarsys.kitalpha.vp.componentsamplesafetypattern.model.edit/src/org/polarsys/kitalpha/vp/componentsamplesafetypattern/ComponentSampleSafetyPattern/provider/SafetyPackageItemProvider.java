@@ -16,11 +16,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -28,15 +25,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.PackageItemProvider;
-
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyFactory;
-
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternFactory;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage;
@@ -47,9 +39,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * <!-- end-user-doc -->
  * @generated
  */
-public class SafetyPackageItemProvider extends PackageItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SafetyPackageItemProvider extends PackageItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -87,12 +77,10 @@ public class SafetyPackageItemProvider extends PackageItemProvider implements
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ComponentSampleSafetyPatternPackage.Literals.SAFETY_PACKAGE__MODES);
+			childrenFeatures.add(ComponentSampleSafetyPatternPackage.Literals.SAFETY_PACKAGE__MODES);
 		}
 		return childrenFeatures;
 	}
@@ -118,8 +106,7 @@ public class SafetyPackageItemProvider extends PackageItemProvider implements
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/SafetyPackage")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SafetyPackage")); //$NON-NLS-1$
 	}
 
 	/**
@@ -150,8 +137,7 @@ public class SafetyPackageItemProvider extends PackageItemProvider implements
 
 		switch (notification.getFeatureID(SafetyPackage.class)) {
 		case ComponentSampleSafetyPatternPackage.SAFETY_PACKAGE__MODES:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -165,16 +151,12 @@ public class SafetyPackageItemProvider extends PackageItemProvider implements
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					ComponentSampleSafetyFactory.eINSTANCE.createSafety());
-			if (NewChildDescriptorHelper.isValidCommand(object,
-					commandParameter)) {
+			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSampleSafetyFactory.eINSTANCE.createSafety());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
 		}
@@ -182,12 +164,8 @@ public class SafetyPackageItemProvider extends PackageItemProvider implements
 
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(
-					ComponentSampleSafetyPatternPackage.Literals.SAFETY_PACKAGE__MODES,
-					ComponentSampleSafetyPatternFactory.eINSTANCE
-							.createSafetyMode());
-			if (NewChildDescriptorHelper.isValidCommand(object,
-					commandParameter)) {
+			CommandParameter commandParameter = createChildParameter(ComponentSampleSafetyPatternPackage.Literals.SAFETY_PACKAGE__MODES, ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyMode());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
 		}

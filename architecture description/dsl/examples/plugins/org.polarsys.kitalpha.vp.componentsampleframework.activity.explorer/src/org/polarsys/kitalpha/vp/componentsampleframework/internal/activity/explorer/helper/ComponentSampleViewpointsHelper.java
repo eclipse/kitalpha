@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.vp.componentsampleframework.internal.activity.expl
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
 import org.eclipse.swt.graphics.Image;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -31,7 +32,7 @@ public class ComponentSampleViewpointsHelper {
 	
 	public static List<String> getComponentSampleVp()
 	{
-		Resource[] resources = ViewpointManager.INSTANCE.getAvailableViewpoints();
+		Resource[] resources = ViewpointManager.getAvailableViewpoints();
 		List<String> result = new ArrayList<String>();
 		
 		for (Resource resource : resources) 
@@ -45,12 +46,13 @@ public class ComponentSampleViewpointsHelper {
 		return result;
 	}
 	
-	
 	public static Image getImageState(String vpId) {
+		final ViewpointManager vpManager = ViewpointManager.getInstance(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
 		
 		if (vpId.equalsIgnoreCase(IComponentSampleConstants.COMPONENTSAMPLE_FRAMEWORK))
 		{
-			if (ViewpointManager.INSTANCE.isActive(vpId))
+			
+			if (vpManager.isActive(vpId))
 			{
 				return Activator.getDefault().getImage(IComponentSampleConstants.COMPONENTSAMPLE_FRAMEWORK_ON_IMAGE_STATE);
 			}
@@ -59,7 +61,7 @@ public class ComponentSampleViewpointsHelper {
 		
 		if (vpId.equalsIgnoreCase(IComponentSampleConstants.COMPONENTSAMPLE))
 		{
-			if (ViewpointManager.INSTANCE.isActive(vpId))
+			if (vpManager.isActive(vpId))
 			{
 				return Activator.getDefault().getImage(IComponentSampleConstants.COMPONENTSAMPLE_ON_IMAGE_STATE);
 			}
@@ -68,7 +70,7 @@ public class ComponentSampleViewpointsHelper {
 		
 		if (vpId.equalsIgnoreCase(IComponentSampleConstants.COMPONENTSAMPLE_PERFORMANCE))
 		{
-			if (ViewpointManager.INSTANCE.isActive(vpId))
+			if (vpManager.isActive(vpId))
 			{
 				return Activator.getDefault().getImage(IComponentSampleConstants.COMPONENTSAMPLE_PERFO_ON_IMAGE_STATE);
 			}
@@ -77,7 +79,7 @@ public class ComponentSampleViewpointsHelper {
 		
 		if (vpId.equalsIgnoreCase(IComponentSampleConstants.COMPONENTSAMPLE_QUALITY_ASSESSMENT))
 		{
-			if (ViewpointManager.INSTANCE.isActive(vpId))
+			if (vpManager.isActive(vpId))
 			{
 				return Activator.getDefault().getImage(IComponentSampleConstants.COMPONENTSAMPLE_QUALITY_ASSESSMENT_ON_IMAGE_STATE);
 			}
@@ -86,7 +88,7 @@ public class ComponentSampleViewpointsHelper {
 		
 		if (vpId.equalsIgnoreCase(IComponentSampleConstants.COMPONENTSAMPLE_SAFETY))
 		{
-			if (ViewpointManager.INSTANCE.isActive(vpId))
+			if (vpManager.isActive(vpId))
 			{
 				return Activator.getDefault().getImage(IComponentSampleConstants.COMPONENTSAMPLE_SAFETY_ON_IMAGE_STATE);
 			}
@@ -95,7 +97,7 @@ public class ComponentSampleViewpointsHelper {
 		
 		if (vpId.equalsIgnoreCase(IComponentSampleConstants.COMPONENTSAMPLE_SAFETY_PATTERN))
 		{
-			if (ViewpointManager.INSTANCE.isActive(vpId))
+			if (vpManager.isActive(vpId))
 			{
 				return Activator.getDefault().getImage(IComponentSampleConstants.COMPONENTSAMPLE_SAFETY_PATTERN_ON_IMAGE_STATE);
 			}
@@ -108,28 +110,30 @@ public class ComponentSampleViewpointsHelper {
 	
 	public static void handleViewpointActivation(String action, String vpid) throws ViewpointActivationException
 	{
+		final ViewpointManager vpManager = ViewpointManager.getInstance(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
+		
 		if (action != null && !action.isEmpty())
 		{
 			if (action.equals(START_LABEL))
 			{
-				ViewpointManager.INSTANCE.activate(vpid);
+				vpManager.activate(vpid);
 			}
 			else
 			{
-				ViewpointManager.INSTANCE.desactivate(vpid);
+				vpManager.desactivate(vpid);
 			}
 		} 
 		else
 		{
 			//Suppose used state links
 			
-			if (ViewpointManager.INSTANCE.isActive(vpid))
+			if (vpManager.isActive(vpid))
 			{
-				ViewpointManager.INSTANCE.desactivate(vpid);
+				vpManager.desactivate(vpid);
 			}
 			else
 			{
-				ViewpointManager.INSTANCE.activate(vpid);
+				vpManager.activate(vpid);
 			}
 		}
 	}

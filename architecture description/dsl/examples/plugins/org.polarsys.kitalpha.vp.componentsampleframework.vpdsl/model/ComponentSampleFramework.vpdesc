@@ -17,7 +17,7 @@
     <vpRules name="RuleTwo"/>
   </VP_Aspects>
   <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSampleFramework.build" target_platform="C:/eclipse.exe">
-    <mapped_repositories location="ComponentSampleFramework/ComponentSampleFramework.git">
+    <mapped_repositories protocol="svnssh" location="ComponentSampleFramework/ComponentSampleFramework.git">
       <features name="org.polarsys.kitalpha.vp.ComponentSampleFramework.feature"/>
     </mapped_repositories>
   </VP_Aspects>
@@ -29,7 +29,7 @@
       </ownedSections>
       <ownedSections name="StartStopComponentSampleAF" description="&lt;p>Start/Stop Component sample framework viewpoint&lt;/p>" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.section" index="2" label="Component Sample Framework">
         <ownedActivities imagePathOff="start.png" name="StartComponentSampleFramework" description="Start Component sample framework viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.start.section" index="1" label="Start"/>
-        <ownedActivities imagePathOff="Stop.png" name="StopComponentSampleFramework" description="Stop Component sample framework viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.stop.section" index="2" label="Stop"/>
+        <ownedActivities imagePathOff="stop.png" name="StopComponentSampleFramework" description="Stop Component sample framework viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.stop.section" index="2" label="Stop"/>
       </ownedSections>
       <ownedOverview imagePathOff="vp_management_off.png" imagePathOn="vp_management_on.png" description="&lt;p>&lt;b>Component Sample Viewpoints&lt;/b>&lt;/p>&lt;p>Start and Stop Component Sample Viewpoints&lt;/p>"/>
     </ownedPages>

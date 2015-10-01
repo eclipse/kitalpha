@@ -11,11 +11,8 @@
 package org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
 
 /**

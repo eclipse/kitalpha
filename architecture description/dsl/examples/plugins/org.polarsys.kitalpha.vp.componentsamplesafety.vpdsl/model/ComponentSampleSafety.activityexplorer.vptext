@@ -6,9 +6,9 @@
  *	@date: 14/09/15
  *
  */
-activity explorer ComponentSampleSafety.activityexplorer {
-	page extensions {
-		extended page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
+activity-explorer ComponentSampleSafety.activityexplorer {
+	page-extensions {
+		extended-page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
 		section ComponentSampleSafetyViewpointActivation {
 			description "<p>Start/Stop Component sample Safety Viewpoint</p>"
 			id org.polarsys.kitalpha.vp.ComponentSampleSafety.start.stop.^section

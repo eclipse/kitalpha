@@ -6,9 +6,9 @@
  *	@date: 14/09/15
  *
  */
-activity explorer ComponentSamplePerformance.activityexplorer {
-	page extensions {
-		extended page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
+activity-explorer ComponentSamplePerformance.activityexplorer {
+	page-extensions {
+		extended-page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
 		section ComponentSamplePerformanceViewpointActivation {
 			description "<p>Start/Stop Component sample Performance Viewpoint</p>"
 			id org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.stop.^section

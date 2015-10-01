@@ -15,7 +15,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,7 +24,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
@@ -35,9 +33,8 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractComponentItemProvider extends ComponentElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class AbstractComponentItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -77,17 +74,13 @@ public class AbstractComponentItemProvider extends ComponentElementItemProvider
 	protected void addUsePropertyDescriptor(Object object) {
 
 		// begin-extension-code
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
 				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-						getResourceLocator(),
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 						getString("_UI_AbstractComponent_use_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_AbstractComponent_use_feature", "_UI_AbstractComponent_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__USE,
-						true, false, true, null, null,
+						getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_use_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_AbstractComponent_type"), //$NON-NLS-1$
+						ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__USE, true, false, true, null, null,
 						// begin-extension-code
 						null));
 		// end-extension-code
@@ -102,17 +95,13 @@ public class AbstractComponentItemProvider extends ComponentElementItemProvider
 	protected void addTypePropertyDescriptor(Object object) {
 
 		// begin-extension-code
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
 				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-						getResourceLocator(),
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 						getString("_UI_AbstractComponent_type_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_AbstractComponent_type_feature", "_UI_AbstractComponent_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__TYPE,
-						true, false, false,
+						getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_type_feature", //$NON-NLS-1$//$NON-NLS-2$
+								"_UI_AbstractComponent_type"), //$NON-NLS-1$
+						ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 						// begin-extension-code
 						null));
@@ -147,8 +136,7 @@ public class AbstractComponentItemProvider extends ComponentElementItemProvider
 
 		switch (notification.getFeatureID(AbstractComponent.class)) {
 		case ComponentSamplePackage.ABSTRACT_COMPONENT__TYPE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -162,8 +150,7 @@ public class AbstractComponentItemProvider extends ComponentElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

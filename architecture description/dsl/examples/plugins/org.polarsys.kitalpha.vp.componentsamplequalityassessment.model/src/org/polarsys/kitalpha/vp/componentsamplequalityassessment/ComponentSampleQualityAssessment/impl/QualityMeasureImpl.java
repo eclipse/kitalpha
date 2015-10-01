@@ -11,13 +11,9 @@
 package org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl;
-
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage;
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure;
 
@@ -35,8 +31,7 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  *
  * @generated
  */
-public class QualityMeasureImpl extends ComponentElementImpl implements
-		QualityMeasure {
+public class QualityMeasureImpl extends ComponentElementImpl implements QualityMeasure {
 
 	/**
 	 * The default value of the '{@link #getCriterion() <em>Criterion</em>}' attribute.
@@ -121,11 +116,7 @@ public class QualityMeasureImpl extends ComponentElementImpl implements
 		String oldCriterion = criterion;
 		criterion = newCriterion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__CRITERION,
-					oldCriterion, criterion));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__CRITERION, oldCriterion, criterion));
 
 	}
 
@@ -151,11 +142,7 @@ public class QualityMeasureImpl extends ComponentElementImpl implements
 		int oldMeasureValue = measureValue;
 		measureValue = newMeasureValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__MEASURE_VALUE,
-					oldMeasureValue, measureValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__MEASURE_VALUE, oldMeasureValue, measureValue));
 
 	}
 
@@ -220,8 +207,7 @@ public class QualityMeasureImpl extends ComponentElementImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__CRITERION:
-			return CRITERION_EDEFAULT == null ? criterion != null
-					: !CRITERION_EDEFAULT.equals(criterion);
+			return CRITERION_EDEFAULT == null ? criterion != null : !CRITERION_EDEFAULT.equals(criterion);
 		case ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__MEASURE_VALUE:
 			return measureValue != MEASURE_VALUE_EDEFAULT;
 		}

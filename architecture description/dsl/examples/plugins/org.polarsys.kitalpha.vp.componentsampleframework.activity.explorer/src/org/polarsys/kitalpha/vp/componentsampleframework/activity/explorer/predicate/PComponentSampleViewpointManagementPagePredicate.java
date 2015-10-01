@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.predicate;
 
@@ -23,8 +23,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 /**
  * @generated 
  */
-public class PComponentSampleViewpointManagementPagePredicate implements
-		IPredicate {
+public class PComponentSampleViewpointManagementPagePredicate implements IPredicate {
 	/**
 	 * Default constructor
 	 * @generated
@@ -49,8 +48,7 @@ public class PComponentSampleViewpointManagementPagePredicate implements
 	 * @generated
 	 */
 	protected boolean fileExtensionPredicate() {
-		final EObject rootSemanticModel = ActivityExplorerManager.INSTANCE
-				.getRootSemanticModel();
+		final EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();
 		final Resource eResource = rootSemanticModel.eResource();
 		if (null == eResource)
 			return false;
@@ -59,8 +57,7 @@ public class PComponentSampleViewpointManagementPagePredicate implements
 		if (null == resourceURI)
 			return false;
 
-		final List<String> allowedFileExtensions = Arrays
-				.asList("componentsample");
+		final List<String> allowedFileExtensions = Arrays.asList("componentsample");
 		final String fileExtension = resourceURI.fileExtension().toLowerCase();
 
 		return allowedFileExtensions.contains(fileExtension);

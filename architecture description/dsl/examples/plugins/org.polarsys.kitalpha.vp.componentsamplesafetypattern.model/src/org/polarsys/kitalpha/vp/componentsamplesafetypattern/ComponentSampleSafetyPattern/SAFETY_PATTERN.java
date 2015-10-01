@@ -83,8 +83,7 @@ public enum SAFETY_PATTERN implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final SAFETY_PATTERN[] VALUES_ARRAY = new SAFETY_PATTERN[] {
-			INTEGRITY, AVAILABILITY, };
+	private static final SAFETY_PATTERN[] VALUES_ARRAY = new SAFETY_PATTERN[] { INTEGRITY, AVAILABILITY, };
 
 	/**
 	 * A public read-only list of all the '<em><b>SAFETY PATTERN</b></em>' enumerators.
@@ -92,13 +91,14 @@ public enum SAFETY_PATTERN implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<SAFETY_PATTERN> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<SAFETY_PATTERN> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>SAFETY PATTERN</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static SAFETY_PATTERN get(String literal) {
@@ -115,6 +115,8 @@ public enum SAFETY_PATTERN implements Enumerator {
 	 * Returns the '<em><b>SAFETY PATTERN</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static SAFETY_PATTERN getByName(String name) {
@@ -131,6 +133,8 @@ public enum SAFETY_PATTERN implements Enumerator {
 	 * Returns the '<em><b>SAFETY PATTERN</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static SAFETY_PATTERN get(int value) {

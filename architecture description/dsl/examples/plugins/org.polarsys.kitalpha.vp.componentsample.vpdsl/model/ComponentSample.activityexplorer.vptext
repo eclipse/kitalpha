@@ -6,25 +6,25 @@
  *	@date: 14/09/15
  *
  */
-activity explorer ComponentSample.activityexplorer {
+activity-explorer ComponentSample.activityexplorer {
 	
 	pages {
 		page ComponentSampleArchitecture {
-			file extension "componentsample"
+			file-extension "componentsample"
 			id org.polarsys.kitalpha.vp.componentsample.^activity.^explorer.architecture 
 			label "Component Sample Architecture"
 			index 1
 			Overview {
 				description "<p><b>Component Sample Architecture</b></p><p>Create a new Component Sample Architecture</p>"
-				image on :  "csa_on.png"
-				image off : "csa_off.png"
+				image-on :  "csa_on.png"
+				image-off : "csa_off.png"
 			}
 			header {
-				image on : "csa_on.png"
-				image off : "csa_off.png"
+				image-on : "csa_on.png"
+				image-off : "csa_off.png"
 			}
-			tab name  "Component Sample Architecture"
-			show viewer : true
+			tab-name  "Component Sample Architecture"
+			show-viewer : true
 			sections {
 				section DiagramsComponentSample {
 					description "<p>Create a new Component Sample Architecture Diagram</p>"
@@ -56,8 +56,8 @@ activity explorer ComponentSample.activityexplorer {
 		}
 	}
 	
-	page extensions {
-		extended page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
+	page-extensions {
+		extended-page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
 		section ComponentSampleViewpointActivation {
 			description "<p>Start/Stop Component sample Viewpoint</p>"
 			id org.polarsys.kitalpha.vp.componentsample.start.stop.^section

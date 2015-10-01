@@ -1,3 +1,5 @@
+package org.polarsys.kitalpha.vp.componentsample.design.service;
+
 /*******************************************************************************
  * Copyright (c) 2014 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
@@ -9,16 +11,6 @@
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 // Generated on 22.09.2014 at 03:53:03 CEST by Viewpoint DSL Generator V 0.1
-
-package org.polarsys.kitalpha.vp.componentsample.design.service;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.diagram.DDiagramElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,10 +24,10 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 
 public class ComponentSampleOpenJavaService {
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ComponentSampleOpenJavaService() {
 		// TODO Auto-generated method stub
 	}

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_PBs3cFrnEeWKQ63gCNyo_g" name="ComponentSample">
-  <jobs xmi:id="_PBs3cVrnEeWKQ63gCNyo_g" name="main">
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_PB2BYFrnEeWKQ63gCNyo_g" type="Result"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_PB2BYVrnEeWKQ63gCNyo_g" name="viewpoint_ComponentSample" id="viewpoint_ComponentSample"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_PCStUFrnEeWKQ63gCNyo_g"/>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_fJ5VYGkREeWGsuz71d277w" name="ComponentSample">
+  <jobs xmi:id="_fJ5VYWkREeWGsuz71d277w" name="main">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_fJ5VYmkREeWGsuz71d277w" type="Result"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_fJ5VY2kREeWGsuz71d277w" name="viewpoint_ComponentSample" id="viewpoint_ComponentSample" profile="SDKProfil"/>
   </jobs>
-  <jobs xmi:id="_PCStUVrnEeWKQ63gCNyo_g" name="build_ComponentSample">
-    <properties xmi:id="_PCStUlrnEeWKQ63gCNyo_g" key="target.location" value="D:/Eclipse/Platform/Kitalpha-0.5/kitalpha_juno_0.5.0-20140921_00-01-01/eclipse.exe" type="INLINED"/>
-    <properties xmi:id="_PCStU1rnEeWKQ63gCNyo_g" key="repository.location" value="ComponentSample/ComponentSample.git"/>
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_PCStVFrnEeWKQ63gCNyo_g" type="Result"/>
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_PCStVVrnEeWKQ63gCNyo_g" name="ComponentSample">
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_PCStVlrnEeWKQ63gCNyo_g" path="${target.location}"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_PCStV1rnEeWKQ63gCNyo_g" id="org.polarsys.kitalpha.vp"/>
+  <jobs xmi:id="_fJ5VZGkREeWGsuz71d277w" name="build_ComponentSample">
+    <properties xmi:id="_fJ5VZWkREeWGsuz71d277w" key="target.location" value="D:/Eclipse/Platform/Kitalpha-0.5/kitalpha_juno_0.5.0-20140921_00-01-01/eclipse.exe" type="INLINED"/>
+    <properties xmi:id="_fJ5VZmkREeWGsuz71d277w" key="repository.location" value="ComponentSample/ComponentSample.git"/>
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_fJ5VZ2kREeWGsuz71d277w" type="Result"/>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_fJ5VaGkREeWGsuz71d277w" name="ComponentSample">
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_fJ5VaWkREeWGsuz71d277w" path="${target.location}"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_fJ5VamkREeWGsuz71d277w" id="org.polarsys.kitalpha.vp"/>
     </steps>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_PCStWFrnEeWKQ63gCNyo_g" component="_PCStV1rnEeWKQ63gCNyo_g" generateSources="false" generateDropins="true"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_PCStWVrnEeWKQ63gCNyo_g" name="ComponentSample feature" id="viewpoint_ComponentSample"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_PCStWlrnEeWKQ63gCNyo_g">
-      <locations xmi:id="_PCStW1rnEeWKQ63gCNyo_g" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_fJ5Va2kREeWGsuz71d277w" component="_fJ5VamkREeWGsuz71d277w" generateSources="false" generateDropins="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_fJ5VbGkREeWGsuz71d277w" name="ComponentSample feature" id="viewpoint_ComponentSample" profile="SDKProfil"/>
+    <scms xsi:type="buildscm:SVN" xmi:id="_fJ5VbWkREeWGsuz71d277w">
+      <locations xmi:id="_fJ5VbmkREeWGsuz71d277w" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
     </scms>
   </jobs>
 </buildcore:Chain>

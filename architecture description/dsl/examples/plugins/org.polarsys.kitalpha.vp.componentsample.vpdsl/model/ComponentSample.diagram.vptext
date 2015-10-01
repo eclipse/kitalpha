@@ -54,26 +54,23 @@ Diagrams ComponentSample.diagram {
 										FlatStyle {	border: blue background: light_chocolate foreground: light_chocolate }
 									}
 								}
-								Contains {
-									reuse InnerHardwareComponentContainer, SoftwareComponentNode
-								}
 							}
 							
 							Node SoftwareComponentNode {
 								domain-context: ComponentSample.data.SoftwareComponent provided-by association ComponentSample.data.HardwareComponent.abstractComponent
 								Representation {
-									Label { content: ComponentSample.data.ComponentElement.name police: black }
+									Label { content: ComponentSample.data.ComponentElement.name police: black  }
 									Style {
 										BasicStyle {border-color: black background: light_gray form: Square}
 									}
 								}
 							}
 							
-						}
+						} 
 					}
 				}
 			}
-			
+			 
 			Edge UseComponentToComponentEdge {
 				association-context: ComponentSample.data.AbstractComponent.use
 				source: ComponentPackageContainer.HardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.InnerHardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.SoftwareComponentNode
@@ -110,7 +107,7 @@ Diagrams ComponentSample.diagram {
 			ReconnectEdge UseComponentToComponentReconnectEdge { label: "Reconnect Use Link" action-for:  UseComponentToComponentEdge}
 
 			// Open actions			
-			OpenAction GoAction { label: "Go!" icon: "goAction.gif"  }
+			OpenAction MyAction { label: "My Action!" icon: "goAction.gif"  }
 		}
 	}
 }

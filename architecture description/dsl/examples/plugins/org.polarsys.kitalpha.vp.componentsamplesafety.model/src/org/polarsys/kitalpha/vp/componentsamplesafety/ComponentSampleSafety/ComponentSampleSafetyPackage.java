@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
 /**
@@ -63,8 +62,7 @@ public interface ComponentSampleSafetyPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSampleSafetyPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.ComponentSampleSafetyPackageImpl
-			.init();
+	ComponentSampleSafetyPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.ComponentSampleSafetyPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.SafetyImpl <em>Safety</em>}' class.

@@ -12,13 +12,9 @@
 package org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentSampleEditPlugin;
-
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.provider.ComponentSampleSafetyEditPlugin;
 
 /**
@@ -51,9 +47,7 @@ public final class ComponentSampleSafetyPatternEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public ComponentSampleSafetyPatternEditPlugin() {
-		super(new ResourceLocator[] { EmdeEditPlugin.INSTANCE,
-				ComponentSampleSafetyEditPlugin.INSTANCE,
-				ComponentSampleEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { EmdeEditPlugin.INSTANCE, ComponentSampleSafetyEditPlugin.INSTANCE, ComponentSampleEditPlugin.INSTANCE, });
 	}
 
 	/**

@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activity;
 
@@ -20,4 +20,5 @@ public class StartComponentSampleFrameworkActivity extends AbstractComponentsamp
 	public void linkActivated(HyperlinkEvent e) {
 		_linkActivated(e, IComponentSampleConstants.COMPONENTSAMPLE_FRAMEWORK);
 	}
+
 }

@@ -157,8 +157,7 @@ public enum DAL_LEVEL implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DAL_LEVEL[] VALUES_ARRAY = new DAL_LEVEL[] { DAL_A,
-			DAL_B, DAL_C, DAL_D, DAL_E, };
+	private static final DAL_LEVEL[] VALUES_ARRAY = new DAL_LEVEL[] { DAL_A, DAL_B, DAL_C, DAL_D, DAL_E, };
 
 	/**
 	 * A public read-only list of all the '<em><b>DAL LEVEL</b></em>' enumerators.
@@ -166,13 +165,14 @@ public enum DAL_LEVEL implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<DAL_LEVEL> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<DAL_LEVEL> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>DAL LEVEL</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static DAL_LEVEL get(String literal) {
@@ -189,6 +189,8 @@ public enum DAL_LEVEL implements Enumerator {
 	 * Returns the '<em><b>DAL LEVEL</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static DAL_LEVEL getByName(String name) {
@@ -205,6 +207,8 @@ public enum DAL_LEVEL implements Enumerator {
 	 * Returns the '<em><b>DAL LEVEL</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static DAL_LEVEL get(int value) {

@@ -2,11 +2,13 @@
 <generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="ComponentSamplePerformance" factoryComponentName="org.polarsys.kitalpha.vp.componentsampleperformance">
   <elements xsi:type="generationChain:GenerationChain" name="ComponentSamplePerformance">
     <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for ComponentSamplePerformance" modelPath="/org.polarsys.kitalpha.vp.componentsampleperformance/models/ComponentSamplePerformance.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.vp.componentsampleperformance.model" basePackage="org.polarsys.kitalpha.vp.componentsampleperformance"/>
-    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for null">
+    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for ComponentSamplePerformance">
       <additions>org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl</additions>
     </elements>
-    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for null">
+    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for ComponentSamplePerformance">
       <additions>org.polarsys.kitalpha.vp.componentsampleperformance.representation.feature</additions>
+      <additions>org.polarsys.kitalpha.vp.componentsampleperformance.af.feature</additions>
+      <additions>org.polarsys.kitalpha.vp.componentsampleperformance.rules.feature</additions>
     </elements>
   </elements>
 </generationChain:GenerationChain>

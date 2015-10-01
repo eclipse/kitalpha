@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.polarsys.kitalpha.vp.componentsampleframework.feature"
+      label="ComponentSampleFramework Feature"
+      version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsampleframework.representation.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsampleframework.af.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsampleframework.rules.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.vp.componentsampleframework.model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.vp.componentsampleframework"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.vp.componentsampleframework.vpdsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.vp.componentsampleframework.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

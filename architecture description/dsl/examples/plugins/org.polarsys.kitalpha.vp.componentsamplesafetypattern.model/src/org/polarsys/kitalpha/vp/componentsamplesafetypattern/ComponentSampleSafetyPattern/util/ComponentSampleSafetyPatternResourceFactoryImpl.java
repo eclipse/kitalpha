@@ -12,9 +12,7 @@
 package org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.util;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
 /**
@@ -24,8 +22,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
  * @see org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.util.ComponentSampleSafetyPatternResourceImpl
  * @generated
  */
-public class ComponentSampleSafetyPatternResourceFactoryImpl extends
-		ResourceFactoryImpl {
+public class ComponentSampleSafetyPatternResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->

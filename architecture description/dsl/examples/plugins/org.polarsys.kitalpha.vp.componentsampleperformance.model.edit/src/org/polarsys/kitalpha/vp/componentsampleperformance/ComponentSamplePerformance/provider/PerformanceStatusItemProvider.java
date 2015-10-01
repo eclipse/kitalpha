@@ -15,9 +15,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,13 +25,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentElementItemProvider;
-
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformanceFactory;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus;
@@ -44,9 +38,7 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * @generated
  */
-public class PerformanceStatusItemProvider extends ComponentElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PerformanceStatusItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -85,18 +77,11 @@ public class PerformanceStatusItemProvider extends ComponentElementItemProvider
 	protected void addOverheadPropertyDescriptor(Object object) {
 
 		// begin-extension-code
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
 				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PerformanceStatus_overhead_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_PerformanceStatus_overhead_feature", "_UI_PerformanceStatus_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePerformancePackage.Literals.PERFORMANCE_STATUS__OVERHEAD,
-						true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_PerformanceStatus_overhead_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_PerformanceStatus_overhead_feature", "_UI_PerformanceStatus_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ComponentSamplePerformancePackage.Literals.PERFORMANCE_STATUS__OVERHEAD, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
 						// begin-extension-code
 						null));
 		// end-extension-code
@@ -110,8 +95,7 @@ public class PerformanceStatusItemProvider extends ComponentElementItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/PerformanceStatus")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PerformanceStatus")); //$NON-NLS-1$
 	}
 
 	/**
@@ -142,8 +126,7 @@ public class PerformanceStatusItemProvider extends ComponentElementItemProvider
 
 		switch (notification.getFeatureID(PerformanceStatus.class)) {
 		case ComponentSamplePerformancePackage.PERFORMANCE_STATUS__OVERHEAD:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -157,17 +140,12 @@ public class PerformanceStatusItemProvider extends ComponentElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					ComponentSamplePerformanceFactory.eINSTANCE
-							.createPerformance());
-			if (NewChildDescriptorHelper.isValidCommand(object,
-					commandParameter)) {
+			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
 		}

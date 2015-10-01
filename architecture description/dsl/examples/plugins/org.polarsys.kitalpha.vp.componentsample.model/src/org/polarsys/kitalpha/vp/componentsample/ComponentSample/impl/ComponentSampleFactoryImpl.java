@@ -14,11 +14,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentPackage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleFactory;
@@ -33,8 +30,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponen
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleFactoryImpl extends EFactoryImpl implements
-		ComponentSampleFactory {
+public class ComponentSampleFactoryImpl extends EFactoryImpl implements ComponentSampleFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -44,7 +40,7 @@ public class ComponentSampleFactoryImpl extends EFactoryImpl implements
 	public static ComponentSampleFactory init() {
 		try {
 			ComponentSampleFactory theComponentSampleFactory = (ComponentSampleFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"); //$NON-NLS-1$ 
+					.getEFactory(ComponentSamplePackage.eNS_URI);
 			if (theComponentSampleFactory != null) {
 				return theComponentSampleFactory;
 			}
@@ -81,8 +77,7 @@ public class ComponentSampleFactoryImpl extends EFactoryImpl implements
 		case ComponentSamplePackage.HARDWARE_COMPONENT:
 			return createHardwareComponent();
 		default:
-			throw new IllegalArgumentException(
-					"The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -97,8 +92,7 @@ public class ComponentSampleFactoryImpl extends EFactoryImpl implements
 		case ComponentSamplePackage.COMPONENT_TYPE:
 			return createComponentTypeFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -113,8 +107,7 @@ public class ComponentSampleFactoryImpl extends EFactoryImpl implements
 		case ComponentSamplePackage.COMPONENT_TYPE:
 			return convertComponentTypeToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -163,8 +156,7 @@ public class ComponentSampleFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentType createComponentTypeFromString(EDataType eDataType,
-			String initialValue) {
+	public ComponentType createComponentTypeFromString(EDataType eDataType, String initialValue) {
 		ComponentType result = ComponentType.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
@@ -177,8 +169,7 @@ public class ComponentSampleFactoryImpl extends EFactoryImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertComponentTypeToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertComponentTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -27,8 +27,7 @@ public interface ComponentSampleQualityAssessmentFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSampleQualityAssessmentFactory eINSTANCE = org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.ComponentSampleQualityAssessmentFactoryImpl
-			.init();
+	ComponentSampleQualityAssessmentFactory eINSTANCE = org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.ComponentSampleQualityAssessmentFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Quality Assessment</em>'.

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.ComponentModel.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.componentmodel.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.ComponentModel.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned Viewpoint elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.componentmodel.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.ComponentPackage.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentPackage">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.componentpackage.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.ComponentPackage.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned Viewpoint elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentPackage">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.componentpackage.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.SoftwareComponent.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.softwarecomponent.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.SoftwareComponent.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Viewpoint Element">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.softwarecomponent.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.HardwareComponent.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponent">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.hardwarecomponent.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.HardwareComponent.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned Viewpoint elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponent">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.hardwarecomponent.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.HardwareComponent.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Viewpoint Element">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponent">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.hardwarecomponent.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>

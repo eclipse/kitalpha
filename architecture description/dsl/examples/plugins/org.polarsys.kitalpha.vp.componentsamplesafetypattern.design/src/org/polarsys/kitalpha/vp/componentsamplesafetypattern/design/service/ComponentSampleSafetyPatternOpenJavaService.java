@@ -1,3 +1,5 @@
+package org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service;
+
 /*******************************************************************************
  * Copyright (c) 2014 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
@@ -11,16 +13,6 @@
 
 // Generated on 22.09.2014 at 12:07:08 CEST by Viewpoint DSL Generator V 0.1
 
-package org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.diagram.DDiagramElement;
-
 /**
  * <!-- begin-user-doc -->
  * This class is an implementation of the DoReMi JavaExtension '<em><b>[org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service.ComponentSampleSafetyPatternOpenJavaService]</b></em>'.
@@ -33,10 +25,10 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 
 public class ComponentSampleSafetyPatternOpenJavaService {
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ComponentSampleSafetyPatternOpenJavaService() {
 		// TODO Auto-generated method stub
 	}

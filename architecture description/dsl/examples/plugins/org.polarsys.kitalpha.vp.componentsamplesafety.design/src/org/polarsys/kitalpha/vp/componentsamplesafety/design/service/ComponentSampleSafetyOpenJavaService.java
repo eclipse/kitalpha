@@ -9,17 +9,9 @@
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-// Generated on 22.09.2014 at 12:05:46 CEST by Viewpoint DSL Generator V 0.1
-
 package org.polarsys.kitalpha.vp.componentsamplesafety.design.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.diagram.DDiagramElement;
+// Generated on 22.09.2014 at 12:05:46 CEST by Viewpoint DSL Generator V 0.1
 
 /**
  * <!-- begin-user-doc -->
@@ -33,10 +25,10 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 
 public class ComponentSampleSafetyOpenJavaService {
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ComponentSampleSafetyOpenJavaService() {
 		// TODO Auto-generated method stub
 	}

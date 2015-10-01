@@ -7,12 +7,13 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activity;
 
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.ActivityExplorerPage;
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.BasicSessionActivityExplorerPage;
+import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -25,6 +26,7 @@ import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.const
  */
 public class StartAllActivity extends AbstractComponentsampleHyperLink {
 
+
 	private static final String START_LABEL = "Start All";
 
 	@Override
@@ -33,15 +35,15 @@ public class StartAllActivity extends AbstractComponentsampleHyperLink {
 	}
 
 	@Override
-	protected void _linkActivated(HyperlinkEvent e, String vpid){
-		if (e.getLabel() != null && !e.getLabel().isEmpty())
-		{
-			if (e.getLabel().equals(START_LABEL))
-			{
-				ActivityExplorerPage page = (BasicSessionActivityExplorerPage) getPage(IComponentSampleConstants.VIEWPOINTS_MANAGEMENT_PAGE_ID);
+	protected void _linkActivated(HyperlinkEvent e, String vpid) {
+		if (e.getLabel() != null && !e.getLabel().isEmpty()) {
+			if (e.getLabel().equals(START_LABEL)) {
+				ActivityExplorerPage page = (BasicSessionActivityExplorerPage) getPage(
+						IComponentSampleConstants.VIEWPOINTS_MANAGEMENT_PAGE_ID);
 				for (String _vpid : IComponentSampleConstants.ALL_COMPONENTSAMPLE_VIEWPOINTS) {
 					try {
-						ViewpointManager.INSTANCE.activate(_vpid);
+						ViewpointManager.getInstance(ActivityExplorerManager.INSTANCE.getRootSemanticModel())
+								.activate(_vpid);
 						notify(page, _vpid);
 					} catch (ViewpointActivationException e1) {
 						//Do nothing

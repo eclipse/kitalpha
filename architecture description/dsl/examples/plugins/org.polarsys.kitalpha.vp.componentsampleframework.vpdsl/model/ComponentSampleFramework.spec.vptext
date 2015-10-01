@@ -18,7 +18,7 @@
 Viewpoint ComponentSampleFramework {
 	name: "ComponentSampleFramework"
 	Data ComponentSampleFramework.data
-	Activity Explorer ComponentSampleFramework.activityexplorer
+	Activity-Explorer ComponentSampleFramework.activityexplorer
 	Services ComponentSampleFramework.services
 //	Build ComponentSampleFramework.build
 	Configuration ComponentSampleFramework.conf

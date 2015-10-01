@@ -16,13 +16,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
-
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage;
-
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternFactory;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
@@ -34,8 +30,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleSafetyPatternPackageImpl extends EPackageImpl
-		implements ComponentSampleSafetyPatternPackage {
+public class ComponentSampleSafetyPatternPackageImpl extends EPackageImpl implements ComponentSampleSafetyPatternPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,13 +92,10 @@ public class ComponentSampleSafetyPatternPackageImpl extends EPackageImpl
 	 */
 	public static ComponentSampleSafetyPatternPackage init() {
 		if (isInited)
-			return (ComponentSampleSafetyPatternPackage) EPackage.Registry.INSTANCE
-					.getEPackage(ComponentSampleSafetyPatternPackage.eNS_URI);
+			return (ComponentSampleSafetyPatternPackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSampleSafetyPatternPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentSampleSafetyPatternPackageImpl theComponentSampleSafetyPatternPackage = (ComponentSampleSafetyPatternPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ComponentSampleSafetyPatternPackageImpl ? EPackage.Registry.INSTANCE
-				.get(eNS_URI) : new ComponentSampleSafetyPatternPackageImpl());
+		ComponentSampleSafetyPatternPackageImpl theComponentSampleSafetyPatternPackage = (ComponentSampleSafetyPatternPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentSampleSafetyPatternPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSampleSafetyPatternPackageImpl());
 
 		isInited = true;
 
@@ -120,9 +112,7 @@ public class ComponentSampleSafetyPatternPackageImpl extends EPackageImpl
 		theComponentSampleSafetyPatternPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(
-				ComponentSampleSafetyPatternPackage.eNS_URI,
-				theComponentSampleSafetyPatternPackage);
+		EPackage.Registry.INSTANCE.put(ComponentSampleSafetyPatternPackage.eNS_URI, theComponentSampleSafetyPatternPackage);
 		return theComponentSampleSafetyPatternPackage;
 	}
 
@@ -245,57 +235,29 @@ public class ComponentSampleSafetyPatternPackageImpl extends EPackageImpl
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE
-				.getEPackage(ComponentSamplePackage.eNS_URI);
-		ComponentSampleSafetyPackage theComponentSampleSafetyPackage = (ComponentSampleSafetyPackage) EPackage.Registry.INSTANCE
-				.getEPackage(ComponentSampleSafetyPackage.eNS_URI);
+		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSamplePackage.eNS_URI);
+		ComponentSampleSafetyPackage theComponentSampleSafetyPackage = (ComponentSampleSafetyPackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSampleSafetyPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		safetyPackageEClass.getESuperTypes().add(
-				theComponentSamplePackage.getPackage());
-		safetyModeEClass.getESuperTypes().add(
-				theComponentSamplePackage.getComponentElement());
+		safetyPackageEClass.getESuperTypes().add(theComponentSamplePackage.getPackage());
+		safetyModeEClass.getESuperTypes().add(theComponentSamplePackage.getComponentElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(
-				safetyPackageEClass,
-				SafetyPackage.class,
-				"SafetyPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getSafetyPackage_Modes(),
-				this.getSafetyMode(),
-				null,
-				"modes", null, 0, -1, SafetyPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(safetyPackageEClass, SafetyPackage.class, "SafetyPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getSafetyPackage_Modes(), this.getSafetyMode(), null, "modes", null, 0, -1, SafetyPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(
-				safetyModeEClass,
-				SafetyMode.class,
-				"SafetyMode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getSafetyMode_InvolvedComponents(),
-				theComponentSampleSafetyPackage.getSafety(),
-				null,
-				"involvedComponents", null, 0, -1, SafetyMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getSafetyMode_Pattern(),
-				this.getSAFETY_PATTERN(),
-				"pattern", null, 0, 1, SafetyMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(safetyModeEClass, SafetyMode.class, "SafetyMode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getSafetyMode_InvolvedComponents(), theComponentSampleSafetyPackage.getSafety(), null, "involvedComponents", null, 0, -1, SafetyMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getSafetyMode_Pattern(), this.getSAFETY_PATTERN(), "pattern", null, 0, 1, SafetyMode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
-		initEEnum(
-				safetY_PATTERNEEnum,
-				org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN.class,
-				"SAFETY_PATTERN"); //$NON-NLS-1$
-		addEEnumLiteral(
-				safetY_PATTERNEEnum,
-				org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN.INTEGRITY);
-		addEEnumLiteral(
-				safetY_PATTERNEEnum,
-				org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN.AVAILABILITY);
+		initEEnum(safetY_PATTERNEEnum, org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN.class, "SAFETY_PATTERN"); //$NON-NLS-1$
+		addEEnumLiteral(safetY_PATTERNEEnum, org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN.INTEGRITY);
+		addEEnumLiteral(safetY_PATTERNEEnum, org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN.AVAILABILITY);
 
 		// Create resource
 		createResource(eNS_URI);

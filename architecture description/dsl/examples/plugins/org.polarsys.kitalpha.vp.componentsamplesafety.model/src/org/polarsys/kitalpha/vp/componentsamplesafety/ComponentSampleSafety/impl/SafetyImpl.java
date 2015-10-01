@@ -11,13 +11,9 @@
 package org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl;
-
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY;
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL;
@@ -142,12 +138,9 @@ public class SafetyImpl extends ComponentElementImpl implements Safety {
 	public void setCriticality(CRITICALITY newCriticality) {
 
 		CRITICALITY oldCriticality = criticality;
-		criticality = newCriticality == null ? CRITICALITY_EDEFAULT
-				: newCriticality;
+		criticality = newCriticality == null ? CRITICALITY_EDEFAULT : newCriticality;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSampleSafetyPackage.SAFETY__CRITICALITY,
-					oldCriticality, criticality));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__CRITICALITY, oldCriticality, criticality));
 
 	}
 
@@ -173,8 +166,7 @@ public class SafetyImpl extends ComponentElementImpl implements Safety {
 		DAL_LEVEL oldDal = dal;
 		dal = newDal == null ? DAL_EDEFAULT : newDal;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSampleSafetyPackage.SAFETY__DAL, oldDal, dal));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__DAL, oldDal, dal));
 
 	}
 
@@ -200,8 +192,7 @@ public class SafetyImpl extends ComponentElementImpl implements Safety {
 		STATE oldState = state;
 		state = newState == null ? STATE_EDEFAULT : newState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSampleSafetyPackage.SAFETY__STATE, oldState, state));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__STATE, oldState, state));
 
 	}
 

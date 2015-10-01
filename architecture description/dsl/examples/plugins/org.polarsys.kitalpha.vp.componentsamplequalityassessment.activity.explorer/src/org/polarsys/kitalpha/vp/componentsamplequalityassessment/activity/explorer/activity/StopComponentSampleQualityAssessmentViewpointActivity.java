@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer.activity;
 
@@ -20,8 +20,8 @@ import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.const
  * @author Faycal Abka
  *
  */
-public class StopComponentSampleQualityAssessmentViewpointActivity extends
-AbstractComponentsampleHyperLink {
+public class StopComponentSampleQualityAssessmentViewpointActivity extends AbstractComponentsampleHyperLink {
+
 
 	@Override
 	public void linkActivated(HyperlinkEvent e) {

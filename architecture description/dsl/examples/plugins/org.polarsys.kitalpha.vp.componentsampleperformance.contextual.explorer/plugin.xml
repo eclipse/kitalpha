@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.Performance.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.performance.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.Performance.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned Viewpoint elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.performance.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.PerformanceStatus.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.performancestatus.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>

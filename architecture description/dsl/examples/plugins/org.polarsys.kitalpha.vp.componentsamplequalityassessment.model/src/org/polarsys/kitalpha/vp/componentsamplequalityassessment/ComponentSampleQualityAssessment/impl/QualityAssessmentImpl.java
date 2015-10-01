@@ -14,22 +14,15 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl;
-
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage;
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment;
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure;
@@ -53,8 +46,7 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  *
  * @generated
  */
-public class QualityAssessmentImpl extends ComponentElementImpl implements
-		QualityAssessment {
+public class QualityAssessmentImpl extends ComponentElementImpl implements QualityAssessment {
 
 	/**
 	 * The cached value of the '{@link #getBasedOn() <em>Based On</em>}' reference list.
@@ -176,10 +168,7 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 	public EList<QualityAssessment> getBasedOn() {
 
 		if (basedOn == null) {
-			basedOn = new EObjectResolvingEList<QualityAssessment>(
-					QualityAssessment.class,
-					this,
-					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__BASED_ON);
+			basedOn = new EObjectResolvingEList<QualityAssessment>(QualityAssessment.class, this, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__BASED_ON);
 		}
 		return basedOn;
 	}
@@ -193,10 +182,7 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 	public EList<ComponentElement> getContext() {
 
 		if (context == null) {
-			context = new EObjectResolvingEList<ComponentElement>(
-					ComponentElement.class,
-					this,
-					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONTEXT);
+			context = new EObjectResolvingEList<ComponentElement>(ComponentElement.class, this, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONTEXT);
 		}
 		return context;
 	}
@@ -210,10 +196,7 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 	public EList<QualityMeasure> getMeasures() {
 
 		if (measures == null) {
-			measures = new EObjectContainmentEList<QualityMeasure>(
-					QualityMeasure.class,
-					this,
-					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES);
+			measures = new EObjectContainmentEList<QualityMeasure>(QualityMeasure.class, this, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES);
 		}
 		return measures;
 	}
@@ -240,11 +223,7 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 		String oldMaturityLevel = maturityLevel;
 		maturityLevel = newMaturityLevel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MATURITY_LEVEL,
-					oldMaturityLevel, maturityLevel));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MATURITY_LEVEL, oldMaturityLevel, maturityLevel));
 
 	}
 
@@ -268,14 +247,9 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 	public void setConfidenceLevel(confidenceLevel_Type newConfidenceLevel) {
 
 		confidenceLevel_Type oldConfidenceLevel = confidenceLevel;
-		confidenceLevel = newConfidenceLevel == null ? CONFIDENCE_LEVEL_EDEFAULT
-				: newConfidenceLevel;
+		confidenceLevel = newConfidenceLevel == null ? CONFIDENCE_LEVEL_EDEFAULT : newConfidenceLevel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL,
-					oldConfidenceLevel, confidenceLevel));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL, oldConfidenceLevel, confidenceLevel));
 
 	}
 
@@ -301,11 +275,7 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 		boolean oldAssessed = assessed;
 		assessed = newAssessed;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__ASSESSED,
-					oldAssessed, assessed));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__ASSESSED, oldAssessed, assessed));
 
 	}
 
@@ -315,12 +285,10 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES:
-			return ((InternalEList<?>) getMeasures()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getMeasures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -360,18 +328,15 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 		switch (featureID) {
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__BASED_ON:
 			getBasedOn().clear();
-			getBasedOn().addAll(
-					(Collection<? extends QualityAssessment>) newValue);
+			getBasedOn().addAll((Collection<? extends QualityAssessment>) newValue);
 			return;
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONTEXT:
 			getContext().clear();
-			getContext().addAll(
-					(Collection<? extends ComponentElement>) newValue);
+			getContext().addAll((Collection<? extends ComponentElement>) newValue);
 			return;
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES:
 			getMeasures().clear();
-			getMeasures().addAll(
-					(Collection<? extends QualityMeasure>) newValue);
+			getMeasures().addAll((Collection<? extends QualityMeasure>) newValue);
 			return;
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MATURITY_LEVEL:
 			setMaturityLevel((String) newValue);
@@ -431,8 +396,7 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES:
 			return measures != null && !measures.isEmpty();
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MATURITY_LEVEL:
-			return MATURITY_LEVEL_EDEFAULT == null ? maturityLevel != null
-					: !MATURITY_LEVEL_EDEFAULT.equals(maturityLevel);
+			return MATURITY_LEVEL_EDEFAULT == null ? maturityLevel != null : !MATURITY_LEVEL_EDEFAULT.equals(maturityLevel);
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL:
 			return confidenceLevel != CONFIDENCE_LEVEL_EDEFAULT;
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__ASSESSED:

@@ -14,17 +14,12 @@ package org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSaf
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.PackageImpl;
-
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage;
@@ -84,9 +79,7 @@ public class SafetyPackageImpl extends PackageImpl implements SafetyPackage {
 	public EList<SafetyMode> getModes() {
 
 		if (modes == null) {
-			modes = new EObjectContainmentEList<SafetyMode>(SafetyMode.class,
-					this,
-					ComponentSampleSafetyPatternPackage.SAFETY_PACKAGE__MODES);
+			modes = new EObjectContainmentEList<SafetyMode>(SafetyMode.class, this, ComponentSampleSafetyPatternPackage.SAFETY_PACKAGE__MODES);
 		}
 		return modes;
 	}
@@ -97,8 +90,7 @@ public class SafetyPackageImpl extends PackageImpl implements SafetyPackage {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ComponentSampleSafetyPatternPackage.SAFETY_PACKAGE__MODES:
 			return ((InternalEList<?>) getModes()).basicRemove(otherEnd, msgs);

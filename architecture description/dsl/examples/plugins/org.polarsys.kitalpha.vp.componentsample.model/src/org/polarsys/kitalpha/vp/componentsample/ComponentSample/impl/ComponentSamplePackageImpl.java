@@ -15,11 +15,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
@@ -36,8 +33,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponen
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSamplePackageImpl extends EPackageImpl implements
-		ComponentSamplePackage {
+public class ComponentSamplePackageImpl extends EPackageImpl implements ComponentSamplePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,13 +130,12 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 */
 	public static ComponentSamplePackage init() {
 		if (isInited)
-			return (ComponentSamplePackage) EPackage.Registry.INSTANCE
-					.getEPackage(ComponentSamplePackage.eNS_URI);
+			return (ComponentSamplePackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSamplePackage.eNS_URI);
 
 		// Obtain or create and register package
 		ComponentSamplePackageImpl theComponentSamplePackage = (ComponentSamplePackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ComponentSamplePackageImpl ? EPackage.Registry.INSTANCE
-				.get(eNS_URI) : new ComponentSamplePackageImpl());
+				.get(eNS_URI) instanceof ComponentSamplePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new ComponentSamplePackageImpl());
 
 		isInited = true;
 
@@ -157,8 +152,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 		theComponentSamplePackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ComponentSamplePackage.eNS_URI,
-				theComponentSamplePackage);
+		EPackage.Registry.INSTANCE.put(ComponentSamplePackage.eNS_URI, theComponentSamplePackage);
 		return theComponentSamplePackage;
 	}
 
@@ -177,8 +171,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getComponentElement_Name() {
-		return (EAttribute) componentElementEClass.getEStructuralFeatures()
-				.get(0);
+		return (EAttribute) componentElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -187,8 +180,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getComponentElement_Description() {
-		return (EAttribute) componentElementEClass.getEStructuralFeatures()
-				.get(1);
+		return (EAttribute) componentElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -206,8 +198,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getComponentModel_Packages() {
-		return (EReference) componentModelEClass.getEStructuralFeatures()
-				.get(0);
+		return (EReference) componentModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -234,8 +225,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getComponentPackage_Components() {
-		return (EReference) componentPackageEClass.getEStructuralFeatures()
-				.get(0);
+		return (EReference) componentPackageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -253,8 +243,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getAbstractComponent_Use() {
-		return (EReference) abstractComponentEClass.getEStructuralFeatures()
-				.get(0);
+		return (EReference) abstractComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -263,8 +252,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EAttribute getAbstractComponent_Type() {
-		return (EAttribute) abstractComponentEClass.getEStructuralFeatures()
-				.get(1);
+		return (EAttribute) abstractComponentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -291,8 +279,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	public EReference getHardwareComponent_AbstractComponent() {
-		return (EReference) hardwareComponentEClass.getEStructuralFeatures()
-				.get(0);
+		return (EReference) hardwareComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -352,8 +339,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 		softwareComponentEClass = createEClass(SOFTWARE_COMPONENT);
 
 		hardwareComponentEClass = createEClass(HARDWARE_COMPONENT);
-		createEReference(hardwareComponentEClass,
-				HARDWARE_COMPONENT__ABSTRACT_COMPONENT);
+		createEReference(hardwareComponentEClass, HARDWARE_COMPONENT__ABSTRACT_COMPONENT);
 
 		// Create enums
 		componentTypeEEnum = createEEnum(COMPONENT_TYPE);
@@ -384,93 +370,63 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE
-				.getEPackage(EmdePackage.eNS_URI);
+		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentElementEClass.getESuperTypes().add(
-				theEmdePackage.getExtensibleElement());
+		componentElementEClass.getESuperTypes().add(theEmdePackage.getExtensibleElement());
 		componentModelEClass.getESuperTypes().add(this.getComponentElement());
 		packageEClass.getESuperTypes().add(this.getComponentElement());
 		componentPackageEClass.getESuperTypes().add(this.getPackage());
-		abstractComponentEClass.getESuperTypes()
-				.add(this.getComponentElement());
-		softwareComponentEClass.getESuperTypes().add(
-				this.getAbstractComponent());
-		hardwareComponentEClass.getESuperTypes().add(
-				this.getAbstractComponent());
+		abstractComponentEClass.getESuperTypes().add(this.getComponentElement());
+		softwareComponentEClass.getESuperTypes().add(this.getAbstractComponent());
+		hardwareComponentEClass.getESuperTypes().add(this.getAbstractComponent());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(
-				componentElementEClass,
-				ComponentElement.class,
-				"ComponentElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getComponentElement_Name(),
-				ecorePackage.getEString(),
-				"name", null, 0, 1, ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getComponentElement_Description(),
-				ecorePackage.getEString(),
-				"description", null, 0, 1, ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(componentElementEClass, ComponentElement.class, "ComponentElement", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, //$NON-NLS-1$
+				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, //$NON-NLS-1$
+				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(
-				componentModelEClass,
-				ComponentModel.class,
-				"ComponentModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getComponentModel_Packages(),
-				this.getPackage(),
-				null,
-				"packages", null, 0, -1, ComponentModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(componentModelEClass, ComponentModel.class, "ComponentModel", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentModel_Packages(), this.getPackage(), null, "packages", null, 0, -1, //$NON-NLS-1$
+				ComponentModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(
-				packageEClass,
-				org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package.class,
-				"Package", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(packageEClass, org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package.class, "Package", //$NON-NLS-1$
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(
-				componentPackageEClass,
-				ComponentPackage.class,
-				"ComponentPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getComponentPackage_Components(),
-				this.getAbstractComponent(),
-				null,
-				"components", null, 0, -1, ComponentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(componentPackageEClass, ComponentPackage.class, "ComponentPackage", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentPackage_Components(), this.getAbstractComponent(), null, "components", null, 0, -1, //$NON-NLS-1$
+				ComponentPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(
-				abstractComponentEClass,
-				AbstractComponent.class,
-				"AbstractComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getAbstractComponent_Use(),
-				this.getAbstractComponent(),
-				null,
-				"use", null, 0, -1, AbstractComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getAbstractComponent_Type(),
-				this.getComponentType(),
-				"type", null, 0, 1, AbstractComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(abstractComponentEClass, AbstractComponent.class, "AbstractComponent", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractComponent_Use(), this.getAbstractComponent(), null, "use", null, 0, -1, //$NON-NLS-1$
+				AbstractComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractComponent_Type(), this.getComponentType(), "type", null, 0, 1, //$NON-NLS-1$
+				AbstractComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(
-				softwareComponentEClass,
-				SoftwareComponent.class,
-				"SoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(softwareComponentEClass, SoftwareComponent.class, "SoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(
-				hardwareComponentEClass,
-				HardwareComponent.class,
-				"HardwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getHardwareComponent_AbstractComponent(),
-				this.getAbstractComponent(),
-				null,
-				"abstractComponent", null, 0, -1, HardwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(hardwareComponentEClass, HardwareComponent.class, "HardwareComponent", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHardwareComponent_AbstractComponent(), this.getAbstractComponent(), null, "abstractComponent", //$NON-NLS-1$
+				null, 0, -1, HardwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentTypeEEnum, ComponentType.class, "ComponentType"); //$NON-NLS-1$
@@ -493,9 +449,8 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	protected void createDocumentationAnnotations() {
-		String source = "http://org.polarsys.kitalpha/documentation"; //$NON-NLS-1$		
-		addAnnotation(hardwareComponentEClass, source, new String[] {
-				"description", "Hardware Component" //$NON-NLS-1$ //$NON-NLS-2$
+		String source = "http://org.polarsys.kitalpha/documentation"; //$NON-NLS-1$	
+		addAnnotation(hardwareComponentEClass, source, new String[] { "description", "Hardware Component" //$NON-NLS-1$ //$NON-NLS-2$
 		});
 	}
 

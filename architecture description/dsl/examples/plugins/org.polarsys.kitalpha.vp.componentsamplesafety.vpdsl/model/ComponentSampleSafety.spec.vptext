@@ -21,6 +21,6 @@ Viewpoint ComponentSampleSafety {
 	
 	Data ComponentSampleSafety.data
 	Diagrams ComponentSampleSafety.diagram
-	Activity Explorer ComponentSampleSafety.activityexplorer
+	Activity-Explorer ComponentSampleSafety.activityexplorer
 	Configuration ComponentSampleSafety.conf
 }

@@ -21,6 +21,6 @@ Viewpoint ComponentSamplePerformance {
 	
 	Data ComponentSamplePerformance.data
 	Diagrams ComponentSamplePerformance.diagram
-	Activity Explorer ComponentSamplePerformance.activityexplorer
+	Activity-Explorer ComponentSamplePerformance.activityexplorer
 	Configuration ComponentSamplePerformance.conf
 }
