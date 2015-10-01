@@ -22,11 +22,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
-import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.resource.IExternalContentSupport.IExternalContentProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
@@ -34,9 +32,7 @@ import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions.ActivityExplorerExtensionPointHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.AbstractPage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.helpers.ActivityExplorerAspectHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
@@ -57,110 +53,31 @@ public class ActivityexplorerProposalProvider extends AbstractActivityexplorerPr
 	private static final URL ICONURL = FileLocator.find(PDE_CORE_UI_BUNDLE, new Path(EXTENSION_PATH_ICON), null);
 	private static final Image EXTENSION_ICON = ImageDescriptor.createFromURL(ICONURL).createImage();
 	
+	private static final ArrayList<String> ACTIVITY_EXPLORER_KEYWORDS = new ArrayList<String>();
+	
+	static {
+		ACTIVITY_EXPLORER_KEYWORDS.add("image-on");
+		ACTIVITY_EXPLORER_KEYWORDS.add("image-off");
+		ACTIVITY_EXPLORER_KEYWORDS.add("predicated");
+		ACTIVITY_EXPLORER_KEYWORDS.add("show-viewer");
+		ACTIVITY_EXPLORER_KEYWORDS.add("filtering");
+		ACTIVITY_EXPLORER_KEYWORDS.add("expanded");
+		ACTIVITY_EXPLORER_KEYWORDS.add("icon");
+	}
+	
 	@Inject
 	IExternalContentProvider contentProvider;
 	
 	
-	//TODO restrect the proposal of keyword following where they appear
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext,
 			ICompletionProposalAcceptor acceptor) {
 		
 		ICompletionProposal proposal;
 		
-		if (keyword.getValue().equals("activity")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "explorer");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("tab")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "name");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("image")) {
-
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "off", ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "on", ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("predicated")) {
+		if (ACTIVITY_EXPLORER_KEYWORDS.contains(keyword.getValue())){
 			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, ":");
 			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("show")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "viewer", ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("extended")) {
-			EObject parentSemanticModel = getParentSemanticNodeModel(contentAssistContext);
-			
-			if (parentSemanticModel instanceof PageExtension)
-			{
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "page");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "section");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("icon")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("filtering")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("expanded")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("file")) {
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "extension", ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("page")) {
-			proposal = createCompletionProposal(keyword.getValue(), getKeywordDisplayString(keyword.getValue()),getImage(keyword), contentAssistContext);
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "extensions", ":");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("section")) {
-			
-			EObject parentSemanticModel = getParentSemanticNodeModel(contentAssistContext);
-			
-			if (parentSemanticModel instanceof SectionExtension)
-			{
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "extensions", ":");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-			
-			proposal = createCompletionProposal(keyword.getValue(), getKeywordDisplayString(keyword.getValue()),getImage(keyword), contentAssistContext);
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			
 			return;
 		}
 		

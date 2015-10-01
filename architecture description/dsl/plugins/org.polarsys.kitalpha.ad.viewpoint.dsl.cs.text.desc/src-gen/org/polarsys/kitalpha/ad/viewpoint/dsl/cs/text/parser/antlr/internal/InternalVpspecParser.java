@@ -1,15 +1,24 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr.internal; 
 
-import org.antlr.runtime.BitSet;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.TokenStream;
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
 import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 /*******************************************************************************
  * Copyright (c) 2015 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
@@ -23,7 +32,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAcce
 @SuppressWarnings("all")
 public class InternalVpspecParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Viewpoint'", "'{'", "'name:'", "'description:'", "'extends'", "','", "'aggregates'", "'uses viewpoint'", "'uses model'", "'uses diagram'", "'uses workspace'", "'uses filesystem'", "'Data'", "'UI'", "'Diagrams'", "'Activity Explorer'", "'Services'", "'Build'", "'Configuration'", "'}'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Viewpoint'", "'{'", "'name:'", "'description:'", "'extends'", "','", "'aggregates'", "'uses viewpoint'", "'uses-model'", "'uses-diagram'", "'uses-workspace'", "'uses-filesystem'", "'Data'", "'UI'", "'Diagrams'", "'Activity-Explorer'", "'Services'", "'Build'", "'Configuration'", "'}'", "'.'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -134,7 +143,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleViewpoint"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:83:1: ruleViewpoint returns [EObject current=null] : ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:83:1: ruleViewpoint returns [EObject current=null] : ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses-model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses-diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses-workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses-filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity-Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' ) ;
     public final EObject ruleViewpoint() throws RecognitionException {
         EObject current = null;
 
@@ -188,11 +197,11 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:86:28: ( ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:87:1: ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:86:28: ( ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses-model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses-diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses-workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses-filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity-Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:87:1: ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses-model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses-diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses-workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses-filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity-Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:87:1: ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:87:2: () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:87:1: ( () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses-model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses-diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses-workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses-filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity-Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:87:2: () otherlv_1= 'Viewpoint' ( (lv_shortName_2_0= RULE_ID ) )? otherlv_3= '{' (otherlv_4= 'name:' ( (lv_name_5_0= RULE_STRING ) ) ) (otherlv_6= 'description:' ( (lv_description_7_0= ruleEString ) ) )? (otherlv_8= 'extends' ( ( ruleFQN ) ) (otherlv_10= ',' ( ( ruleFQN ) ) )* )? (otherlv_12= 'aggregates' ( ( ruleFQN ) ) (otherlv_14= ',' ( ( ruleFQN ) ) )* )? (otherlv_16= 'uses viewpoint' ( ( ruleFQN ) ) (otherlv_18= ',' ( ( ruleFQN ) ) )* )? (otherlv_20= 'uses-model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )? (otherlv_24= 'uses-diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )? (otherlv_28= 'uses-workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )? (otherlv_32= 'uses-filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )? (otherlv_36= 'Data' ( ( ruleFQN ) ) )? ( ( (lv_type_38_0= 'UI' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_40_0= 'Diagrams' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_42_0= 'Activity-Explorer' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_44_0= 'Services' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_46_0= 'Build' ) ) ( ( ruleFQN ) ) )? ( ( (lv_type_48_0= 'Configuration' ) ) ( ( ruleFQN ) ) )? otherlv_50= '}'
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:87:2: ()
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:88:5: 
@@ -723,7 +732,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:277:6: (otherlv_20= 'uses model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:277:6: (otherlv_20= 'uses-model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )* )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -732,7 +741,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:277:8: otherlv_20= 'uses model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:277:8: otherlv_20= 'uses-model' ( (lv_useAnyEMFResource_21_0= ruleEString ) ) (otherlv_22= ',' ( (lv_useAnyEMFResource_23_0= ruleEString ) ) )*
                     {
                     otherlv_20=(Token)match(input,19,FOLLOW_19_in_ruleViewpoint479); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -846,7 +855,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:321:6: (otherlv_24= 'uses diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:321:6: (otherlv_24= 'uses-diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )* )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -855,7 +864,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:321:8: otherlv_24= 'uses diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:321:8: otherlv_24= 'uses-diagram' ( (lv_useDiagramResource_25_0= ruleEString ) ) (otherlv_26= ',' ( (lv_useDiagramResource_27_0= ruleEString ) ) )*
                     {
                     otherlv_24=(Token)match(input,20,FOLLOW_20_in_ruleViewpoint551); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -969,7 +978,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:365:6: (otherlv_28= 'uses workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:365:6: (otherlv_28= 'uses-workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )* )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -978,7 +987,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:365:8: otherlv_28= 'uses workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:365:8: otherlv_28= 'uses-workspace' ( (lv_useWorkspaceResource_29_0= ruleEString ) ) (otherlv_30= ',' ( (lv_useWorkspaceResource_31_0= ruleEString ) ) )*
                     {
                     otherlv_28=(Token)match(input,21,FOLLOW_21_in_ruleViewpoint623); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1092,7 +1101,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:409:6: (otherlv_32= 'uses filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:409:6: (otherlv_32= 'uses-filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )* )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1101,7 +1110,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:409:8: otherlv_32= 'uses filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )*
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:409:8: otherlv_32= 'uses-filesystem' ( (lv_useFSResource_33_0= ruleEString ) ) (otherlv_34= ',' ( (lv_useFSResource_35_0= ruleEString ) ) )*
                     {
                     otherlv_32=(Token)match(input,22,FOLLOW_22_in_ruleViewpoint695); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1426,7 +1435,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:532:4: ( ( (lv_type_42_0= 'Activity Explorer' ) ) ( ( ruleFQN ) ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:532:4: ( ( (lv_type_42_0= 'Activity-Explorer' ) ) ( ( ruleFQN ) ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -1435,13 +1444,13 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:532:5: ( (lv_type_42_0= 'Activity Explorer' ) ) ( ( ruleFQN ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:532:5: ( (lv_type_42_0= 'Activity-Explorer' ) ) ( ( ruleFQN ) )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:532:5: ( (lv_type_42_0= 'Activity Explorer' ) )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:533:1: (lv_type_42_0= 'Activity Explorer' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:532:5: ( (lv_type_42_0= 'Activity-Explorer' ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:533:1: (lv_type_42_0= 'Activity-Explorer' )
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:533:1: (lv_type_42_0= 'Activity Explorer' )
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:534:3: lv_type_42_0= 'Activity Explorer'
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:533:1: (lv_type_42_0= 'Activity-Explorer' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:534:3: lv_type_42_0= 'Activity-Explorer'
                     {
                     lv_type_42_0=(Token)match(input,26,FOLLOW_26_in_ruleViewpoint925); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1454,7 +1463,7 @@ public class InternalVpspecParser extends AbstractInternalAntlrParser {
                       	        if (current==null) {
                       	            current = createModelElement(grammarAccess.getViewpointRule());
                       	        }
-                             		addWithLastConsumed(current, "type", lv_type_42_0, "Activity Explorer");
+                             		addWithLastConsumed(current, "type", lv_type_42_0, "Activity-Explorer");
                       	    
                     }
 

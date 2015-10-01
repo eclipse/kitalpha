@@ -10,10 +10,10 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr;
 
+import com.google.inject.Inject;
+
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
-
-import com.google.inject.Inject;
 
 public class VpspecParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

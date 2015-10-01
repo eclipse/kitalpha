@@ -25,5 +25,5 @@ public class TemplateIDs {
 	public static final String NEW_DIAGRAM_TEMPLATE ="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_Diagrams";
 	public static final String NEW_SERVICES_TEMPLATE ="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_Services";
 	public static final String NEW_DATA_TEMPLATE ="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_Data";
-	public static final String NEW_ACTIVITY_EXPLORER_TEMPLATE = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_Activity Explorer";
+	public static final String NEW_ACTIVITY_EXPLORER_TEMPLATE = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_Activity-Explorer";
 }

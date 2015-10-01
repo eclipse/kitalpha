@@ -33,16 +33,10 @@ import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ContainerStyleCustomization;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EdgeStyleCustomization;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.NodeStyleCustomization;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationDescriptions;
 
 /**
@@ -56,25 +50,56 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Styl
  */
 public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider {
 	
-	private static final ArrayList<String> SIMPLE_KEYWORDS = new ArrayList<String>();
+	private static final ArrayList<String> KEYWORDS_STYLE = new ArrayList<String>();
 	
 	static {
-		SIMPLE_KEYWORDS.add("source");
-		SIMPLE_KEYWORDS.add("target");
-		SIMPLE_KEYWORDS.add("routing");
-		SIMPLE_KEYWORDS.add("folding");
-		SIMPLE_KEYWORDS.add("alignment");
-		SIMPLE_KEYWORDS.add("format");
-		SIMPLE_KEYWORDS.add("show");
-		SIMPLE_KEYWORDS.add("path");
-		SIMPLE_KEYWORDS.add("expression");
-		SIMPLE_KEYWORDS.add("width");
-		SIMPLE_KEYWORDS.add("height");
-		SIMPLE_KEYWORDS.add("background");
-		SIMPLE_KEYWORDS.add("shape");
-		SIMPLE_KEYWORDS.add("workspace");
-		SIMPLE_KEYWORDS.add("horizontal");
-		SIMPLE_KEYWORDS.add("vertical");
+		KEYWORDS_STYLE.add("over-all-edges");
+		KEYWORDS_STYLE.add("source");
+		KEYWORDS_STYLE.add("target");
+		KEYWORDS_STYLE.add("routing");
+		KEYWORDS_STYLE.add("folding");
+		KEYWORDS_STYLE.add("center-source-mappings");
+		KEYWORDS_STYLE.add("center-target-mappings");
+		KEYWORDS_STYLE.add("begin-label-style-description");
+		KEYWORDS_STYLE.add("center-label-style-description");
+		KEYWORDS_STYLE.add("end-label-style-description");
+		KEYWORDS_STYLE.add("line-style");
+		KEYWORDS_STYLE.add("size");
+		KEYWORDS_STYLE.add("end-centring");
+		
+		KEYWORDS_STYLE.add("over-all-colors");
+		KEYWORDS_STYLE.add("color-use-case");
+
+		KEYWORDS_STYLE.add("over-all-labels");
+		KEYWORDS_STYLE.add("format");
+		KEYWORDS_STYLE.add("expression");
+		KEYWORDS_STYLE.add("alignment");
+		KEYWORDS_STYLE.add("show");
+		KEYWORDS_STYLE.add("path");
+		
+		KEYWORDS_STYLE.add("over-all-containers");
+		KEYWORDS_STYLE.add("width");
+		KEYWORDS_STYLE.add("height");
+		KEYWORDS_STYLE.add("round-corner");
+		KEYWORDS_STYLE.add("tooltip-expression");
+		KEYWORDS_STYLE.add("border-dimension");
+		KEYWORDS_STYLE.add("workspace");
+		KEYWORDS_STYLE.add("background");
+		KEYWORDS_STYLE.add("shape");
+		
+		
+		KEYWORDS_STYLE.add("over-all-nodes");
+		KEYWORDS_STYLE.add("label-position");
+		KEYWORDS_STYLE.add("hide-label");
+		KEYWORDS_STYLE.add("resize-kind");
+		KEYWORDS_STYLE.add("size-dimension");
+		KEYWORDS_STYLE.add("gauge-alignment");
+		KEYWORDS_STYLE.add("lozenge-dimension");
+		KEYWORDS_STYLE.add("ellipse-dimension");
+		KEYWORDS_STYLE.add("square-dimension");
+		KEYWORDS_STYLE.add("stroke-dimension");
+		KEYWORDS_STYLE.add("horizontal");
+		KEYWORDS_STYLE.add("vertical");
 	}
 	
 	@Override
@@ -83,75 +108,8 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 		
 		ICompletionProposal proposal;
 		
-		if (SIMPLE_KEYWORDS.contains(keyword.getValue())){
+		if (KEYWORDS_STYLE.contains(keyword.getValue())){
 			proposal = createProposalForComplexKeyword(keyword, contentAssistContext);
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("over")){
-			EObject container = getParentSemanticNodeModel(contentAssistContext);
-			if (container instanceof EdgeStyleCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "all", "edges");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-			
-			if (container instanceof ColorCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "all", "colors");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-			
-			if (container instanceof LabelCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "all", "labels");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-			
-			if (container instanceof ContainerStyleCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "all", "containers");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-			
-			if (container instanceof NodeStyleCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "all", "nodes");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-		}
-		
-		if (keyword.getValue().equals("center")){
-			EObject container = getParentSemanticNodeModel(contentAssistContext);
-
-			if (container instanceof EdgeStyleCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "source", "mappings");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "target", "mappings");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "label", "style", "description");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-				return;
-			}
-		}
-		
-		if (keyword.getValue().equals("begin")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "label", "style", "description");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("end")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "label", "style", "description");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "centring");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("line")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "style");
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			return;
 		}
@@ -167,99 +125,6 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			proposal = createProposalForComplexKeyword(keyword, contentAssistContext);
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			
-			if (container instanceof ColorCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "use", "case");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-			}
-			
-			return;
-		}
-		
-		if (keyword.getValue().equals("size")){
-			EObject container = getParentSemanticNodeModel(contentAssistContext);
-			
-			if (container instanceof NodeStyleCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "dimension");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-			} else {
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext);
-				acceptProposal(proposal, contentAssistContext, acceptor);
-			}
-			return;
-		}
-		
-		if (keyword.getValue().equals("icon")){
-			proposal = super.createProposalForComplexKeyword(keyword, contentAssistContext);
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("round")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "corner");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("tooltip")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "expression");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("border")){
-			EObject eObject = getParentSemanticNodeModel(contentAssistContext);
-			
-			if (eObject instanceof NodeStyleCustomization){
-				String lastValue = NodeModelUtils.getTokenText(contentAssistContext.getLastCompleteNode());
-				if (lastValue.contains("->")){
-					super.completeKeyword(keyword, contentAssistContext, acceptor);
-					return;
-				}
-			}
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "dimension");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("label")){
-			EObject container = getParentSemanticNodeModel(contentAssistContext);
-			
-			if (container instanceof NodeStyleCustomization){
-				proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "position");
-				acceptProposal(proposal, contentAssistContext, acceptor);
-			} else {
-				super.completeKeyword(keyword, contentAssistContext, acceptor);
-			}
-			return;
-		}
-		
-		if (keyword.getValue().equals("hide")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "label");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("resize")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "kind");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("lozenge") || keyword.getValue().equals("ellipse")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "dimension");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("gauge")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "alignment");
-			acceptProposal(proposal, contentAssistContext, acceptor);
-			return;
-		}
-		
-		if (keyword.getValue().equals("square") || keyword.getValue().equals("stroke")){
-			proposal = createProposalForComplexKeyword(keyword, contentAssistContext, "dimension");
-			acceptProposal(proposal, contentAssistContext, acceptor);
 			return;
 		}
 		

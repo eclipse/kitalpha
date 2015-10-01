@@ -10,23 +10,16 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
 
 @Singleton
 public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
@@ -164,12 +157,12 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//	dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
 		// ("uses viewpoint"
 		//	useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
-		// ("uses model"
-		//	useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram" useDiagramResource+=EString (","
-		//	useDiagramResource+=EString)*)? ("uses workspace" useWorkspaceResource+=EString (","
-		//	useWorkspaceResource+=EString)*)? ("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
+		// ("uses-model"
+		//	useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses-diagram" useDiagramResource+=EString (","
+		//	useDiagramResource+=EString)*)? ("uses-workspace" useWorkspaceResource+=EString (","
+		//	useWorkspaceResource+=EString)*)? ("uses-filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
 		//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
-		//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Activity Explorer"
+		//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Activity-Explorer"
 		//	VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+="Services"
 		//	VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 		// (type+="Build"
@@ -182,12 +175,12 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
 		// ("uses viewpoint"
 		//useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
-		// ("uses model"
-		//useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram" useDiagramResource+=EString (","
-		//useDiagramResource+=EString)*)? ("uses workspace" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
-		//("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data" VP_Data=[vpdesc::Data|FQN])?
+		// ("uses-model"
+		//useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses-diagram" useDiagramResource+=EString (","
+		//useDiagramResource+=EString)*)? ("uses-workspace" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
+		//("uses-filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data" VP_Data=[vpdesc::Data|FQN])?
 		//(type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams" VP_Aspects+=[vpdiagram::DiagramSet|FQN])?
-		//(type+="Activity Explorer" VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+="Services"
+		//(type+="Activity-Explorer" VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+="Services"
 		//VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 		// (type+="Build"
 		//VP_Aspects+=[vpbuild::Build|FQN])? (type+="Configuration" VP_Aspects+=[vpconf::Configuration|FQN])? "}"
@@ -322,10 +315,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getUseViewpointViewpointFQNParserRuleCall_8_2_1_0_1() { return cUseViewpointViewpointFQNParserRuleCall_8_2_1_0_1; }
 
-		//("uses model" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)?
+		//("uses-model" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"uses model"
+		//"uses-model"
 		public Keyword getUsesModelKeyword_9_0() { return cUsesModelKeyword_9_0; }
 
 		//useAnyEMFResource+=EString
@@ -346,10 +339,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseAnyEMFResourceEStringParserRuleCall_9_2_1_0() { return cUseAnyEMFResourceEStringParserRuleCall_9_2_1_0; }
 
-		//("uses diagram" useDiagramResource+=EString ("," useDiagramResource+=EString)*)?
+		//("uses-diagram" useDiagramResource+=EString ("," useDiagramResource+=EString)*)?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"uses diagram"
+		//"uses-diagram"
 		public Keyword getUsesDiagramKeyword_10_0() { return cUsesDiagramKeyword_10_0; }
 
 		//useDiagramResource+=EString
@@ -370,10 +363,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseDiagramResourceEStringParserRuleCall_10_2_1_0() { return cUseDiagramResourceEStringParserRuleCall_10_2_1_0; }
 
-		//("uses workspace" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
+		//("uses-workspace" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"uses workspace"
+		//"uses-workspace"
 		public Keyword getUsesWorkspaceKeyword_11_0() { return cUsesWorkspaceKeyword_11_0; }
 
 		//useWorkspaceResource+=EString
@@ -394,10 +387,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseWorkspaceResourceEStringParserRuleCall_11_2_1_0() { return cUseWorkspaceResourceEStringParserRuleCall_11_2_1_0; }
 
-		//("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)?
+		//("uses-filesystem" useFSResource+=EString ("," useFSResource+=EString)*)?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//"uses filesystem"
+		//"uses-filesystem"
 		public Keyword getUsesFilesystemKeyword_12_0() { return cUsesFilesystemKeyword_12_0; }
 
 		//useFSResource+=EString
@@ -469,13 +462,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_AspectsDiagramSetFQNParserRuleCall_15_1_0_1() { return cVP_AspectsDiagramSetFQNParserRuleCall_15_1_0_1; }
 
-		//(type+="Activity Explorer" VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])?
+		//(type+="Activity-Explorer" VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])?
 		public Group getGroup_16() { return cGroup_16; }
 
-		//type+="Activity Explorer"
+		//type+="Activity-Explorer"
 		public Assignment getTypeAssignment_16_0() { return cTypeAssignment_16_0; }
 
-		//"Activity Explorer"
+		//"Activity-Explorer"
 		public Keyword getTypeActivityExplorerKeyword_16_0_0() { return cTypeActivityExplorerKeyword_16_0_0; }
 
 		//VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN]
@@ -598,12 +591,12 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 	//	dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
 	// ("uses viewpoint"
 	//	useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
-	// ("uses model"
-	//	useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram" useDiagramResource+=EString (","
-	//	useDiagramResource+=EString)*)? ("uses workspace" useWorkspaceResource+=EString (","
-	//	useWorkspaceResource+=EString)*)? ("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
+	// ("uses-model"
+	//	useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses-diagram" useDiagramResource+=EString (","
+	//	useDiagramResource+=EString)*)? ("uses-workspace" useWorkspaceResource+=EString (","
+	//	useWorkspaceResource+=EString)*)? ("uses-filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
 	//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
-	//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Activity Explorer"
+	//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Activity-Explorer"
 	//	VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+="Services"
 	//	VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
 	// (type+="Build"

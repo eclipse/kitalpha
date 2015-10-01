@@ -29,7 +29,7 @@
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_UI" deleted="false" description="New User Interface" enabled="true" id="6" name="UI">
 </template>
 
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_Activity Explorer" deleted="false" description="New Activity Explorer" enabled="true" id="7" name="Activity Explorer">
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.kw_Activity-Explorer" deleted="false" description="New Activity Explorer" enabled="true" id="7" name="Activity Explorer">
 </template>
 
 

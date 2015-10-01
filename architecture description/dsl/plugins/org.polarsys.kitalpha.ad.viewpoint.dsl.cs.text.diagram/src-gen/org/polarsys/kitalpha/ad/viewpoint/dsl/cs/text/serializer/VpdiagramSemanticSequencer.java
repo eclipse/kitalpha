@@ -482,7 +482,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=STRING extented_diagram=[DiagramDescription|FQN]? the_MappingSet=MappingSet? the_ActionSet=ActionSet? ownedCustomizations+=Customizations?)
+	 *     (name=STRING extented_diagram=[DiagramDescription|FQN]? the_MappingSet=MappingSet? the_ActionSet=ActionSet? ownedCustomizations=Customizations?)
 	 */
 	protected void sequence_DiagramExtension(EObject context, DiagramExtension semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -3,23 +3,16 @@
  */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
 
 @Singleton
 public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder {
@@ -29,84 +22,80 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ViewpointActivityExplorer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cViewpointActivityExplorerAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cActivityKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cExplorerKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameFQNParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cPagesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cOwnedPagesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cOwnedPagesPageParserRuleCall_5_2_0 = (RuleCall)cOwnedPagesAssignment_5_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
-		private final Assignment cOwnedPagesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cOwnedPagesPageExtensionParserRuleCall_6_0 = (RuleCall)cOwnedPagesAssignment_6.eContents().get(0);
-		private final Assignment cOwnedSectionExtensionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cOwnedSectionExtensionsSectionExtensionParserRuleCall_7_0 = (RuleCall)cOwnedSectionExtensionsAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cActivityExplorerKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameFQNParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cPagesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cOwnedPagesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cOwnedPagesPageParserRuleCall_4_2_0 = (RuleCall)cOwnedPagesAssignment_4_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
+		private final Assignment cOwnedPagesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOwnedPagesPageExtensionParserRuleCall_5_0 = (RuleCall)cOwnedPagesAssignment_5.eContents().get(0);
+		private final Assignment cOwnedSectionExtensionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cOwnedSectionExtensionsSectionExtensionParserRuleCall_6_0 = (RuleCall)cOwnedSectionExtensionsAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		/// **
 		// * @author: Faycal ABKA
 		// * / ViewpointActivityExplorer returns activityExplorer::ViewpointActivityExplorer:
-		//	{activityExplorer::ViewpointActivityExplorer} "activity" "explorer" name=FQN "{" ("pages" "{" ownedPages+=Page* "}")?
+		//	{activityExplorer::ViewpointActivityExplorer} "activity-explorer" name=FQN "{" ("pages" "{" ownedPages+=Page* "}")?
 		//	ownedPages+=PageExtension* ownedSectionExtensions+=SectionExtension* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{activityExplorer::ViewpointActivityExplorer} "activity" "explorer" name=FQN "{" ("pages" "{" ownedPages+=Page* "}")?
+		//{activityExplorer::ViewpointActivityExplorer} "activity-explorer" name=FQN "{" ("pages" "{" ownedPages+=Page* "}")?
 		//ownedPages+=PageExtension* ownedSectionExtensions+=SectionExtension* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{activityExplorer::ViewpointActivityExplorer}
 		public Action getViewpointActivityExplorerAction_0() { return cViewpointActivityExplorerAction_0; }
 
-		//"activity"
-		public Keyword getActivityKeyword_1() { return cActivityKeyword_1; }
-
-		//"explorer"
-		public Keyword getExplorerKeyword_2() { return cExplorerKeyword_2; }
+		//"activity-explorer"
+		public Keyword getActivityExplorerKeyword_1() { return cActivityExplorerKeyword_1; }
 
 		//name=FQN
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//FQN
-		public RuleCall getNameFQNParserRuleCall_3_0() { return cNameFQNParserRuleCall_3_0; }
+		public RuleCall getNameFQNParserRuleCall_2_0() { return cNameFQNParserRuleCall_2_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//("pages" "{" ownedPages+=Page* "}")?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"pages"
-		public Keyword getPagesKeyword_5_0() { return cPagesKeyword_5_0; }
+		public Keyword getPagesKeyword_4_0() { return cPagesKeyword_4_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 
 		//ownedPages+=Page*
-		public Assignment getOwnedPagesAssignment_5_2() { return cOwnedPagesAssignment_5_2; }
+		public Assignment getOwnedPagesAssignment_4_2() { return cOwnedPagesAssignment_4_2; }
 
 		//Page
-		public RuleCall getOwnedPagesPageParserRuleCall_5_2_0() { return cOwnedPagesPageParserRuleCall_5_2_0; }
+		public RuleCall getOwnedPagesPageParserRuleCall_4_2_0() { return cOwnedPagesPageParserRuleCall_4_2_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5_3() { return cRightCurlyBracketKeyword_5_3; }
+		public Keyword getRightCurlyBracketKeyword_4_3() { return cRightCurlyBracketKeyword_4_3; }
 
 		//ownedPages+=PageExtension*
-		public Assignment getOwnedPagesAssignment_6() { return cOwnedPagesAssignment_6; }
+		public Assignment getOwnedPagesAssignment_5() { return cOwnedPagesAssignment_5; }
 
 		//PageExtension
-		public RuleCall getOwnedPagesPageExtensionParserRuleCall_6_0() { return cOwnedPagesPageExtensionParserRuleCall_6_0; }
+		public RuleCall getOwnedPagesPageExtensionParserRuleCall_5_0() { return cOwnedPagesPageExtensionParserRuleCall_5_0; }
 
 		//ownedSectionExtensions+=SectionExtension*
-		public Assignment getOwnedSectionExtensionsAssignment_7() { return cOwnedSectionExtensionsAssignment_7; }
+		public Assignment getOwnedSectionExtensionsAssignment_6() { return cOwnedSectionExtensionsAssignment_6; }
 
 		//SectionExtension
-		public RuleCall getOwnedSectionExtensionsSectionExtensionParserRuleCall_7_0() { return cOwnedSectionExtensionsSectionExtensionParserRuleCall_7_0; }
+		public RuleCall getOwnedSectionExtensionsSectionExtensionParserRuleCall_6_0() { return cOwnedSectionExtensionsSectionExtensionParserRuleCall_6_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class AbstractPageElements extends AbstractParserRuleElementFinder {
@@ -142,10 +131,9 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		private final Assignment cDescriptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cDescriptionAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cFileKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cExtensionKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cFileExtensionsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cFileExtensionsSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cFileExtensionsAssignment_5_2.eContents().get(0);
+		private final Keyword cFileExtensionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cFileExtensionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cFileExtensionsSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cFileExtensionsAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cIdKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cActivityExplorerItemIDAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
@@ -163,34 +151,30 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		private final Keyword cHeaderKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		private final Group cGroup_11_2 = (Group)cGroup_11.eContents().get(2);
-		private final Keyword cImageKeyword_11_2_0 = (Keyword)cGroup_11_2.eContents().get(0);
-		private final Keyword cOnKeyword_11_2_1 = (Keyword)cGroup_11_2.eContents().get(1);
-		private final Keyword cColonKeyword_11_2_2 = (Keyword)cGroup_11_2.eContents().get(2);
-		private final Assignment cImagePathOnAssignment_11_2_3 = (Assignment)cGroup_11_2.eContents().get(3);
-		private final RuleCall cImagePathOnSTRINGTerminalRuleCall_11_2_3_0 = (RuleCall)cImagePathOnAssignment_11_2_3.eContents().get(0);
+		private final Keyword cImageOnKeyword_11_2_0 = (Keyword)cGroup_11_2.eContents().get(0);
+		private final Keyword cColonKeyword_11_2_1 = (Keyword)cGroup_11_2.eContents().get(1);
+		private final Assignment cImagePathOnAssignment_11_2_2 = (Assignment)cGroup_11_2.eContents().get(2);
+		private final RuleCall cImagePathOnSTRINGTerminalRuleCall_11_2_2_0 = (RuleCall)cImagePathOnAssignment_11_2_2.eContents().get(0);
 		private final Group cGroup_11_3 = (Group)cGroup_11.eContents().get(3);
-		private final Keyword cImageKeyword_11_3_0 = (Keyword)cGroup_11_3.eContents().get(0);
-		private final Keyword cOffKeyword_11_3_1 = (Keyword)cGroup_11_3.eContents().get(1);
-		private final Keyword cColonKeyword_11_3_2 = (Keyword)cGroup_11_3.eContents().get(2);
-		private final Assignment cImagePathOffAssignment_11_3_3 = (Assignment)cGroup_11_3.eContents().get(3);
-		private final RuleCall cImagePathOffSTRINGTerminalRuleCall_11_3_3_0 = (RuleCall)cImagePathOffAssignment_11_3_3.eContents().get(0);
+		private final Keyword cImageOffKeyword_11_3_0 = (Keyword)cGroup_11_3.eContents().get(0);
+		private final Keyword cColonKeyword_11_3_1 = (Keyword)cGroup_11_3.eContents().get(1);
+		private final Assignment cImagePathOffAssignment_11_3_2 = (Assignment)cGroup_11_3.eContents().get(2);
+		private final RuleCall cImagePathOffSTRINGTerminalRuleCall_11_3_2_0 = (RuleCall)cImagePathOffAssignment_11_3_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_11_4 = (Keyword)cGroup_11.eContents().get(4);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cTabKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cNameKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Assignment cTabNameAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
-		private final RuleCall cTabNameSTRINGTerminalRuleCall_12_2_0 = (RuleCall)cTabNameAssignment_12_2.eContents().get(0);
+		private final Keyword cTabNameKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cTabNameAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cTabNameSTRINGTerminalRuleCall_12_1_0 = (RuleCall)cTabNameAssignment_12_1.eContents().get(0);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
 		private final Keyword cPredicatedKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
 		private final Keyword cColonKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
 		private final Assignment cHasPredicateAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
 		private final RuleCall cHasPredicateEBooleanParserRuleCall_13_2_0 = (RuleCall)cHasPredicateAssignment_13_2.eContents().get(0);
 		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-		private final Keyword cShowKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cViewerKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Keyword cColonKeyword_14_2 = (Keyword)cGroup_14.eContents().get(2);
-		private final Assignment cShowViewerAssignment_14_3 = (Assignment)cGroup_14.eContents().get(3);
-		private final RuleCall cShowViewerEBooleanParserRuleCall_14_3_0 = (RuleCall)cShowViewerAssignment_14_3.eContents().get(0);
+		private final Keyword cShowViewerKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Keyword cColonKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
+		private final Assignment cShowViewerAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
+		private final RuleCall cShowViewerEBooleanParserRuleCall_14_2_0 = (RuleCall)cShowViewerAssignment_14_2.eContents().get(0);
 		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
 		private final Keyword cSectionsKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
@@ -200,18 +184,18 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//Page returns activityExplorer::Page:
-		//	{activityExplorer::Page} "page" name=ID "{" ("description" description=STRING)? ("file" "extension"
+		//	{activityExplorer::Page} "page" name=ID "{" ("description" description=STRING)? ("file-extension"
 		//	fileExtensions=STRING)? ("id" activityExplorerItemID=FQN)? ("label" label=STRING)? "index" index=EInt
-		//	ownedOverview=Overview? ("header" "{" ("image" "on" ":" imagePathOn=STRING)? ("image" "off" ":" imagePathOff=STRING)?
-		//	"}")? ("tab" "name" tabName=STRING)? ("predicated" ":" hasPredicate=EBoolean)? ("show" "viewer" ":"
-		//	showViewer=EBoolean)? ("sections" "{" ownedSections+=Section* "}")? "}";
+		//	ownedOverview=Overview? ("header" "{" ("image-on" ":" imagePathOn=STRING)? ("image-off" ":" imagePathOff=STRING)?
+		//	"}")? ("tab-name" tabName=STRING)? ("predicated" ":" hasPredicate=EBoolean)? ("show-viewer" ":" showViewer=EBoolean)?
+		//	("sections" "{" ownedSections+=Section* "}")? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{activityExplorer::Page} "page" name=ID "{" ("description" description=STRING)? ("file" "extension"
+		//{activityExplorer::Page} "page" name=ID "{" ("description" description=STRING)? ("file-extension"
 		//fileExtensions=STRING)? ("id" activityExplorerItemID=FQN)? ("label" label=STRING)? "index" index=EInt
-		//ownedOverview=Overview? ("header" "{" ("image" "on" ":" imagePathOn=STRING)? ("image" "off" ":" imagePathOff=STRING)?
-		//"}")? ("tab" "name" tabName=STRING)? ("predicated" ":" hasPredicate=EBoolean)? ("show" "viewer" ":"
-		//showViewer=EBoolean)? ("sections" "{" ownedSections+=Section* "}")? "}"
+		//ownedOverview=Overview? ("header" "{" ("image-on" ":" imagePathOn=STRING)? ("image-off" ":" imagePathOff=STRING)?
+		//"}")? ("tab-name" tabName=STRING)? ("predicated" ":" hasPredicate=EBoolean)? ("show-viewer" ":" showViewer=EBoolean)?
+		//("sections" "{" ownedSections+=Section* "}")? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{activityExplorer::Page}
@@ -241,20 +225,17 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_4_1_0() { return cDescriptionSTRINGTerminalRuleCall_4_1_0; }
 
-		//("file" "extension" fileExtensions=STRING)?
+		//("file-extension" fileExtensions=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"file"
-		public Keyword getFileKeyword_5_0() { return cFileKeyword_5_0; }
-
-		//"extension"
-		public Keyword getExtensionKeyword_5_1() { return cExtensionKeyword_5_1; }
+		//"file-extension"
+		public Keyword getFileExtensionKeyword_5_0() { return cFileExtensionKeyword_5_0; }
 
 		//fileExtensions=STRING
-		public Assignment getFileExtensionsAssignment_5_2() { return cFileExtensionsAssignment_5_2; }
+		public Assignment getFileExtensionsAssignment_5_1() { return cFileExtensionsAssignment_5_1; }
 
 		//STRING
-		public RuleCall getFileExtensionsSTRINGTerminalRuleCall_5_2_0() { return cFileExtensionsSTRINGTerminalRuleCall_5_2_0; }
+		public RuleCall getFileExtensionsSTRINGTerminalRuleCall_5_1_0() { return cFileExtensionsSTRINGTerminalRuleCall_5_1_0; }
 
 		//("id" activityExplorerItemID=FQN)?
 		public Group getGroup_6() { return cGroup_6; }
@@ -295,7 +276,7 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		//Overview
 		public RuleCall getOwnedOverviewOverviewParserRuleCall_10_0() { return cOwnedOverviewOverviewParserRuleCall_10_0; }
 
-		//("header" "{" ("image" "on" ":" imagePathOn=STRING)? ("image" "off" ":" imagePathOff=STRING)? "}")?
+		//("header" "{" ("image-on" ":" imagePathOn=STRING)? ("image-off" ":" imagePathOff=STRING)? "}")?
 		public Group getGroup_11() { return cGroup_11; }
 
 		//"header"
@@ -304,59 +285,50 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_11_1() { return cLeftCurlyBracketKeyword_11_1; }
 
-		//("image" "on" ":" imagePathOn=STRING)?
+		//("image-on" ":" imagePathOn=STRING)?
 		public Group getGroup_11_2() { return cGroup_11_2; }
 
-		//"image"
-		public Keyword getImageKeyword_11_2_0() { return cImageKeyword_11_2_0; }
-
-		//"on"
-		public Keyword getOnKeyword_11_2_1() { return cOnKeyword_11_2_1; }
+		//"image-on"
+		public Keyword getImageOnKeyword_11_2_0() { return cImageOnKeyword_11_2_0; }
 
 		//":"
-		public Keyword getColonKeyword_11_2_2() { return cColonKeyword_11_2_2; }
+		public Keyword getColonKeyword_11_2_1() { return cColonKeyword_11_2_1; }
 
 		//imagePathOn=STRING
-		public Assignment getImagePathOnAssignment_11_2_3() { return cImagePathOnAssignment_11_2_3; }
+		public Assignment getImagePathOnAssignment_11_2_2() { return cImagePathOnAssignment_11_2_2; }
 
 		//STRING
-		public RuleCall getImagePathOnSTRINGTerminalRuleCall_11_2_3_0() { return cImagePathOnSTRINGTerminalRuleCall_11_2_3_0; }
+		public RuleCall getImagePathOnSTRINGTerminalRuleCall_11_2_2_0() { return cImagePathOnSTRINGTerminalRuleCall_11_2_2_0; }
 
-		//("image" "off" ":" imagePathOff=STRING)?
+		//("image-off" ":" imagePathOff=STRING)?
 		public Group getGroup_11_3() { return cGroup_11_3; }
 
-		//"image"
-		public Keyword getImageKeyword_11_3_0() { return cImageKeyword_11_3_0; }
-
-		//"off"
-		public Keyword getOffKeyword_11_3_1() { return cOffKeyword_11_3_1; }
+		//"image-off"
+		public Keyword getImageOffKeyword_11_3_0() { return cImageOffKeyword_11_3_0; }
 
 		//":"
-		public Keyword getColonKeyword_11_3_2() { return cColonKeyword_11_3_2; }
+		public Keyword getColonKeyword_11_3_1() { return cColonKeyword_11_3_1; }
 
 		//imagePathOff=STRING
-		public Assignment getImagePathOffAssignment_11_3_3() { return cImagePathOffAssignment_11_3_3; }
+		public Assignment getImagePathOffAssignment_11_3_2() { return cImagePathOffAssignment_11_3_2; }
 
 		//STRING
-		public RuleCall getImagePathOffSTRINGTerminalRuleCall_11_3_3_0() { return cImagePathOffSTRINGTerminalRuleCall_11_3_3_0; }
+		public RuleCall getImagePathOffSTRINGTerminalRuleCall_11_3_2_0() { return cImagePathOffSTRINGTerminalRuleCall_11_3_2_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_11_4() { return cRightCurlyBracketKeyword_11_4; }
 
-		//("tab" "name" tabName=STRING)?
+		//("tab-name" tabName=STRING)?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//"tab"
-		public Keyword getTabKeyword_12_0() { return cTabKeyword_12_0; }
-
-		//"name"
-		public Keyword getNameKeyword_12_1() { return cNameKeyword_12_1; }
+		//"tab-name"
+		public Keyword getTabNameKeyword_12_0() { return cTabNameKeyword_12_0; }
 
 		//tabName=STRING
-		public Assignment getTabNameAssignment_12_2() { return cTabNameAssignment_12_2; }
+		public Assignment getTabNameAssignment_12_1() { return cTabNameAssignment_12_1; }
 
 		//STRING
-		public RuleCall getTabNameSTRINGTerminalRuleCall_12_2_0() { return cTabNameSTRINGTerminalRuleCall_12_2_0; }
+		public RuleCall getTabNameSTRINGTerminalRuleCall_12_1_0() { return cTabNameSTRINGTerminalRuleCall_12_1_0; }
 
 		//("predicated" ":" hasPredicate=EBoolean)?
 		public Group getGroup_13() { return cGroup_13; }
@@ -373,23 +345,20 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		//EBoolean
 		public RuleCall getHasPredicateEBooleanParserRuleCall_13_2_0() { return cHasPredicateEBooleanParserRuleCall_13_2_0; }
 
-		//("show" "viewer" ":" showViewer=EBoolean)?
+		//("show-viewer" ":" showViewer=EBoolean)?
 		public Group getGroup_14() { return cGroup_14; }
 
-		//"show"
-		public Keyword getShowKeyword_14_0() { return cShowKeyword_14_0; }
-
-		//"viewer"
-		public Keyword getViewerKeyword_14_1() { return cViewerKeyword_14_1; }
+		//"show-viewer"
+		public Keyword getShowViewerKeyword_14_0() { return cShowViewerKeyword_14_0; }
 
 		//":"
-		public Keyword getColonKeyword_14_2() { return cColonKeyword_14_2; }
+		public Keyword getColonKeyword_14_1() { return cColonKeyword_14_1; }
 
 		//showViewer=EBoolean
-		public Assignment getShowViewerAssignment_14_3() { return cShowViewerAssignment_14_3; }
+		public Assignment getShowViewerAssignment_14_2() { return cShowViewerAssignment_14_2; }
 
 		//EBoolean
-		public RuleCall getShowViewerEBooleanParserRuleCall_14_3_0() { return cShowViewerEBooleanParserRuleCall_14_3_0; }
+		public RuleCall getShowViewerEBooleanParserRuleCall_14_2_0() { return cShowViewerEBooleanParserRuleCall_14_2_0; }
 
 		//("sections" "{" ownedSections+=Section* "}")?
 		public Group getGroup_15() { return cGroup_15; }
@@ -721,116 +690,99 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PageExtension");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPageExtensionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cPageKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cExtensionsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cExtendedKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cPageKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cExtendedPageIDAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cExtendedPageIDFQNParserRuleCall_6_0 = (RuleCall)cExtendedPageIDAssignment_6.eContents().get(0);
-		private final Assignment cOwnedSectionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cOwnedSectionsSectionParserRuleCall_7_0 = (RuleCall)cOwnedSectionsAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cPageExtensionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cExtendedPageKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cExtendedPageIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cExtendedPageIDFQNParserRuleCall_4_0 = (RuleCall)cExtendedPageIDAssignment_4.eContents().get(0);
+		private final Assignment cOwnedSectionsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOwnedSectionsSectionParserRuleCall_5_0 = (RuleCall)cOwnedSectionsAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//PageExtension returns activityExplorer::PageExtension:
-		//	{activityExplorer::PageExtension} "page" "extensions" "{" "extended" "page" extendedPageID=FQN
-		//	ownedSections+=Section* "}";
+		//	{activityExplorer::PageExtension} "page-extensions" "{" "extended-page" extendedPageID=FQN ownedSections+=Section*
+		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{activityExplorer::PageExtension} "page" "extensions" "{" "extended" "page" extendedPageID=FQN ownedSections+=Section*
-		//"}"
+		//{activityExplorer::PageExtension} "page-extensions" "{" "extended-page" extendedPageID=FQN ownedSections+=Section* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{activityExplorer::PageExtension}
 		public Action getPageExtensionAction_0() { return cPageExtensionAction_0; }
 
-		//"page"
-		public Keyword getPageKeyword_1() { return cPageKeyword_1; }
-
-		//"extensions"
-		public Keyword getExtensionsKeyword_2() { return cExtensionsKeyword_2; }
+		//"page-extensions"
+		public Keyword getPageExtensionsKeyword_1() { return cPageExtensionsKeyword_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"extended"
-		public Keyword getExtendedKeyword_4() { return cExtendedKeyword_4; }
-
-		//"page"
-		public Keyword getPageKeyword_5() { return cPageKeyword_5; }
+		//"extended-page"
+		public Keyword getExtendedPageKeyword_3() { return cExtendedPageKeyword_3; }
 
 		//extendedPageID=FQN
-		public Assignment getExtendedPageIDAssignment_6() { return cExtendedPageIDAssignment_6; }
+		public Assignment getExtendedPageIDAssignment_4() { return cExtendedPageIDAssignment_4; }
 
 		//FQN
-		public RuleCall getExtendedPageIDFQNParserRuleCall_6_0() { return cExtendedPageIDFQNParserRuleCall_6_0; }
+		public RuleCall getExtendedPageIDFQNParserRuleCall_4_0() { return cExtendedPageIDFQNParserRuleCall_4_0; }
 
 		//ownedSections+=Section*
-		public Assignment getOwnedSectionsAssignment_7() { return cOwnedSectionsAssignment_7; }
+		public Assignment getOwnedSectionsAssignment_5() { return cOwnedSectionsAssignment_5; }
 
 		//Section
-		public RuleCall getOwnedSectionsSectionParserRuleCall_7_0() { return cOwnedSectionsSectionParserRuleCall_7_0; }
+		public RuleCall getOwnedSectionsSectionParserRuleCall_5_0() { return cOwnedSectionsSectionParserRuleCall_5_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class SectionExtensionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SectionExtension");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSectionExtensionAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cSectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cExtensionsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cExtendedKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cSectionKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cExtendedSectionIDAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cExtendedSectionIDFQNParserRuleCall_6_0 = (RuleCall)cExtendedSectionIDAssignment_6.eContents().get(0);
-		private final Assignment cOwnedActivitiesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cOwnedActivitiesActivityParserRuleCall_7_0 = (RuleCall)cOwnedActivitiesAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cSectionExtensionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cExtendedSectionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cExtendedSectionIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cExtendedSectionIDFQNParserRuleCall_4_0 = (RuleCall)cExtendedSectionIDAssignment_4.eContents().get(0);
+		private final Assignment cOwnedActivitiesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOwnedActivitiesActivityParserRuleCall_5_0 = (RuleCall)cOwnedActivitiesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SectionExtension returns activityExplorer::SectionExtension:
-		//	{activityExplorer::SectionExtension} "section" "extensions" "{" "extended" "section" extendedSectionID=FQN
+		//	{activityExplorer::SectionExtension} "section-extensions" "{" "extended-section" extendedSectionID=FQN
 		//	ownedActivities+=Activity* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{activityExplorer::SectionExtension} "section" "extensions" "{" "extended" "section" extendedSectionID=FQN
+		//{activityExplorer::SectionExtension} "section-extensions" "{" "extended-section" extendedSectionID=FQN
 		//ownedActivities+=Activity* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{activityExplorer::SectionExtension}
 		public Action getSectionExtensionAction_0() { return cSectionExtensionAction_0; }
 
-		//"section"
-		public Keyword getSectionKeyword_1() { return cSectionKeyword_1; }
-
-		//"extensions"
-		public Keyword getExtensionsKeyword_2() { return cExtensionsKeyword_2; }
+		//"section-extensions"
+		public Keyword getSectionExtensionsKeyword_1() { return cSectionExtensionsKeyword_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"extended"
-		public Keyword getExtendedKeyword_4() { return cExtendedKeyword_4; }
-
-		//"section"
-		public Keyword getSectionKeyword_5() { return cSectionKeyword_5; }
+		//"extended-section"
+		public Keyword getExtendedSectionKeyword_3() { return cExtendedSectionKeyword_3; }
 
 		//extendedSectionID=FQN
-		public Assignment getExtendedSectionIDAssignment_6() { return cExtendedSectionIDAssignment_6; }
+		public Assignment getExtendedSectionIDAssignment_4() { return cExtendedSectionIDAssignment_4; }
 
 		//FQN
-		public RuleCall getExtendedSectionIDFQNParserRuleCall_6_0() { return cExtendedSectionIDFQNParserRuleCall_6_0; }
+		public RuleCall getExtendedSectionIDFQNParserRuleCall_4_0() { return cExtendedSectionIDFQNParserRuleCall_4_0; }
 
 		//ownedActivities+=Activity*
-		public Assignment getOwnedActivitiesAssignment_7() { return cOwnedActivitiesAssignment_7; }
+		public Assignment getOwnedActivitiesAssignment_5() { return cOwnedActivitiesAssignment_5; }
 
 		//Activity
-		public RuleCall getOwnedActivitiesActivityParserRuleCall_7_0() { return cOwnedActivitiesActivityParserRuleCall_7_0; }
+		public RuleCall getOwnedActivitiesActivityParserRuleCall_5_0() { return cOwnedActivitiesActivityParserRuleCall_5_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class OverviewElements extends AbstractParserRuleElementFinder {
@@ -844,26 +796,24 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		private final Assignment cDescriptionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cDescriptionAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cImageKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cOnKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Keyword cColonKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Assignment cImagePathOnAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-		private final RuleCall cImagePathOnSTRINGTerminalRuleCall_4_3_0 = (RuleCall)cImagePathOnAssignment_4_3.eContents().get(0);
+		private final Keyword cImageOnKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cImagePathOnAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cImagePathOnSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cImagePathOnAssignment_4_2.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cImageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cOffKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Keyword cColonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Assignment cImagePathOffAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-		private final RuleCall cImagePathOffSTRINGTerminalRuleCall_5_3_0 = (RuleCall)cImagePathOffAssignment_5_3.eContents().get(0);
+		private final Keyword cImageOffKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cImagePathOffAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cImagePathOffSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cImagePathOffAssignment_5_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Overview returns activityExplorer::Overview:
-		//	{activityExplorer::Overview} "Overview" "{" ("description" description=STRING)? ("image" "on" ":"
-		//	imagePathOn=STRING)? ("image" "off" ":" imagePathOff=STRING)? "}";
+		//	{activityExplorer::Overview} "Overview" "{" ("description" description=STRING)? ("image-on" ":" imagePathOn=STRING)?
+		//	("image-off" ":" imagePathOff=STRING)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{activityExplorer::Overview} "Overview" "{" ("description" description=STRING)? ("image" "on" ":" imagePathOn=STRING)?
-		//("image" "off" ":" imagePathOff=STRING)? "}"
+		//{activityExplorer::Overview} "Overview" "{" ("description" description=STRING)? ("image-on" ":" imagePathOn=STRING)?
+		//("image-off" ":" imagePathOff=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{activityExplorer::Overview}
@@ -887,41 +837,35 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_3_1_0() { return cDescriptionSTRINGTerminalRuleCall_3_1_0; }
 
-		//("image" "on" ":" imagePathOn=STRING)?
+		//("image-on" ":" imagePathOn=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"image"
-		public Keyword getImageKeyword_4_0() { return cImageKeyword_4_0; }
-
-		//"on"
-		public Keyword getOnKeyword_4_1() { return cOnKeyword_4_1; }
+		//"image-on"
+		public Keyword getImageOnKeyword_4_0() { return cImageOnKeyword_4_0; }
 
 		//":"
-		public Keyword getColonKeyword_4_2() { return cColonKeyword_4_2; }
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 
 		//imagePathOn=STRING
-		public Assignment getImagePathOnAssignment_4_3() { return cImagePathOnAssignment_4_3; }
+		public Assignment getImagePathOnAssignment_4_2() { return cImagePathOnAssignment_4_2; }
 
 		//STRING
-		public RuleCall getImagePathOnSTRINGTerminalRuleCall_4_3_0() { return cImagePathOnSTRINGTerminalRuleCall_4_3_0; }
+		public RuleCall getImagePathOnSTRINGTerminalRuleCall_4_2_0() { return cImagePathOnSTRINGTerminalRuleCall_4_2_0; }
 
-		//("image" "off" ":" imagePathOff=STRING)?
+		//("image-off" ":" imagePathOff=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"image"
-		public Keyword getImageKeyword_5_0() { return cImageKeyword_5_0; }
-
-		//"off"
-		public Keyword getOffKeyword_5_1() { return cOffKeyword_5_1; }
+		//"image-off"
+		public Keyword getImageOffKeyword_5_0() { return cImageOffKeyword_5_0; }
 
 		//":"
-		public Keyword getColonKeyword_5_2() { return cColonKeyword_5_2; }
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 
 		//imagePathOff=STRING
-		public Assignment getImagePathOffAssignment_5_3() { return cImagePathOffAssignment_5_3; }
+		public Assignment getImagePathOffAssignment_5_2() { return cImagePathOffAssignment_5_2; }
 
 		//STRING
-		public RuleCall getImagePathOffSTRINGTerminalRuleCall_5_3_0() { return cImagePathOffSTRINGTerminalRuleCall_5_3_0; }
+		public RuleCall getImagePathOffSTRINGTerminalRuleCall_5_2_0() { return cImagePathOffSTRINGTerminalRuleCall_5_2_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -986,7 +930,7 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 	/// **
 	// * @author: Faycal ABKA
 	// * / ViewpointActivityExplorer returns activityExplorer::ViewpointActivityExplorer:
-	//	{activityExplorer::ViewpointActivityExplorer} "activity" "explorer" name=FQN "{" ("pages" "{" ownedPages+=Page* "}")?
+	//	{activityExplorer::ViewpointActivityExplorer} "activity-explorer" name=FQN "{" ("pages" "{" ownedPages+=Page* "}")?
 	//	ownedPages+=PageExtension* ownedSectionExtensions+=SectionExtension* "}";
 	public ViewpointActivityExplorerElements getViewpointActivityExplorerAccess() {
 		return pViewpointActivityExplorer;
@@ -1007,11 +951,11 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//Page returns activityExplorer::Page:
-	//	{activityExplorer::Page} "page" name=ID "{" ("description" description=STRING)? ("file" "extension"
+	//	{activityExplorer::Page} "page" name=ID "{" ("description" description=STRING)? ("file-extension"
 	//	fileExtensions=STRING)? ("id" activityExplorerItemID=FQN)? ("label" label=STRING)? "index" index=EInt
-	//	ownedOverview=Overview? ("header" "{" ("image" "on" ":" imagePathOn=STRING)? ("image" "off" ":" imagePathOff=STRING)?
-	//	"}")? ("tab" "name" tabName=STRING)? ("predicated" ":" hasPredicate=EBoolean)? ("show" "viewer" ":"
-	//	showViewer=EBoolean)? ("sections" "{" ownedSections+=Section* "}")? "}";
+	//	ownedOverview=Overview? ("header" "{" ("image-on" ":" imagePathOn=STRING)? ("image-off" ":" imagePathOff=STRING)?
+	//	"}")? ("tab-name" tabName=STRING)? ("predicated" ":" hasPredicate=EBoolean)? ("show-viewer" ":" showViewer=EBoolean)?
+	//	("sections" "{" ownedSections+=Section* "}")? "}";
 	public PageElements getPageAccess() {
 		return pPage;
 	}
@@ -1045,8 +989,8 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//PageExtension returns activityExplorer::PageExtension:
-	//	{activityExplorer::PageExtension} "page" "extensions" "{" "extended" "page" extendedPageID=FQN
-	//	ownedSections+=Section* "}";
+	//	{activityExplorer::PageExtension} "page-extensions" "{" "extended-page" extendedPageID=FQN ownedSections+=Section*
+	//	"}";
 	public PageExtensionElements getPageExtensionAccess() {
 		return pPageExtension;
 	}
@@ -1056,7 +1000,7 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//SectionExtension returns activityExplorer::SectionExtension:
-	//	{activityExplorer::SectionExtension} "section" "extensions" "{" "extended" "section" extendedSectionID=FQN
+	//	{activityExplorer::SectionExtension} "section-extensions" "{" "extended-section" extendedSectionID=FQN
 	//	ownedActivities+=Activity* "}";
 	public SectionExtensionElements getSectionExtensionAccess() {
 		return pSectionExtension;
@@ -1067,8 +1011,8 @@ public class ActivityexplorerGrammarAccess extends AbstractGrammarElementFinder 
 	}
 
 	//Overview returns activityExplorer::Overview:
-	//	{activityExplorer::Overview} "Overview" "{" ("description" description=STRING)? ("image" "on" ":"
-	//	imagePathOn=STRING)? ("image" "off" ":" imagePathOff=STRING)? "}";
+	//	{activityExplorer::Overview} "Overview" "{" ("description" description=STRING)? ("image-on" ":" imagePathOn=STRING)?
+	//	("image-off" ":" imagePathOff=STRING)? "}";
 	public OverviewElements getOverviewAccess() {
 		return pOverview;
 	}

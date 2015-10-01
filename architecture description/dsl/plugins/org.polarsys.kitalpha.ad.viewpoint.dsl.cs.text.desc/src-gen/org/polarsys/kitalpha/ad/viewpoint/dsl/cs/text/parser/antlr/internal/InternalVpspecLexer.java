@@ -1,17 +1,14 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr.internal;
 
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.DFA;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.IntStream;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.parser.antlr.Lexer;
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalVpspecLexer extends Lexer {
@@ -229,10 +226,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:7: ( 'uses model' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:9: 'uses model'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:7: ( 'uses-model' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:9: 'uses-model'
             {
-            match("uses model"); 
+            match("uses-model"); 
 
 
             }
@@ -250,10 +247,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:7: ( 'uses diagram' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:9: 'uses diagram'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:7: ( 'uses-diagram' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:9: 'uses-diagram'
             {
-            match("uses diagram"); 
+            match("uses-diagram"); 
 
 
             }
@@ -271,10 +268,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:7: ( 'uses workspace' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:9: 'uses workspace'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:7: ( 'uses-workspace' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:9: 'uses-workspace'
             {
-            match("uses workspace"); 
+            match("uses-workspace"); 
 
 
             }
@@ -292,10 +289,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:7: ( 'uses filesystem' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:9: 'uses filesystem'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:7: ( 'uses-filesystem' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:9: 'uses-filesystem'
             {
-            match("uses filesystem"); 
+            match("uses-filesystem"); 
 
 
             }
@@ -376,10 +373,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:26:7: ( 'Activity Explorer' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:26:9: 'Activity Explorer'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:26:7: ( 'Activity-Explorer' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:26:9: 'Activity-Explorer'
             {
-            match("Activity Explorer"); 
+            match("Activity-Explorer"); 
 
 
             }
@@ -1204,8 +1201,8 @@ public class InternalVpspecLexer extends Lexer {
     static final String DFA12_eotS =
         "\1\uffff\1\32\1\uffff\3\32\1\uffff\10\32\2\uffff\1\30\2\uffff\3"+
         "\30\2\uffff\1\32\2\uffff\3\32\1\uffff\4\32\1\70\4\32\7\uffff\10"+
-        "\32\1\uffff\12\32\1\117\6\32\1\uffff\3\32\2\uffff\3\32\1\141\5\32"+
-        "\5\uffff\3\32\1\uffff\3\32\1\155\7\32\1\uffff\1\32\1\166\1\32\1"+
+        "\32\1\uffff\12\32\1\120\6\32\1\uffff\3\32\3\uffff\3\32\1\141\5\32"+
+        "\4\uffff\3\32\1\uffff\3\32\1\155\7\32\1\uffff\1\32\1\166\1\32\1"+
         "\170\1\32\1\172\2\32\3\uffff\1\32\1\uffff\1\32\1\177\2\32\1\uffff"+
         "\1\32\1\uffff\1\32\1\u0084\1\uffff";
     static final String DFA12_eofS =
@@ -1217,32 +1214,32 @@ public class InternalVpspecLexer extends Lexer {
         "\1\141\1\60\1\164\1\162\1\151\1\156\7\uffff\1\167\1\145\1\143\1"+
         "\145\1\162\1\163\1\141\1\147\1\uffff\1\151\1\166\1\154\1\146\1\160"+
         "\1\72\1\162\1\156\1\145\1\40\1\60\1\162\1\166\1\151\1\144\1\151"+
-        "\1\157\1\uffff\1\151\1\144\1\147\1\144\1\uffff\1\141\1\151\1\143"+
-        "\1\60\1\147\1\151\1\160\1\163\1\141\5\uffff\1\155\1\164\1\145\1"+
-        "\uffff\1\165\1\156\1\164\1\60\1\164\1\163\1\171\1\163\1\162\1\164"+
-        "\1\151\1\uffff\1\145\1\60\1\40\1\60\1\141\1\60\1\157\1\163\3\uffff"+
-        "\1\164\1\uffff\1\156\1\60\1\151\1\72\1\uffff\1\157\1\uffff\1\156"+
-        "\1\60\1\uffff";
+        "\1\157\1\uffff\1\151\1\144\1\147\1\uffff\1\144\1\uffff\1\141\1\151"+
+        "\1\143\1\60\1\147\1\151\1\160\1\163\1\141\4\uffff\1\155\1\164\1"+
+        "\145\1\uffff\1\165\1\156\1\164\1\60\1\164\1\163\1\171\1\163\1\162"+
+        "\1\164\1\151\1\uffff\1\145\1\60\1\55\1\60\1\141\1\60\1\157\1\163"+
+        "\3\uffff\1\164\1\uffff\1\156\1\60\1\151\1\72\1\uffff\1\157\1\uffff"+
+        "\1\156\1\60\1\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\151\1\uffff\1\141\1\145\1\170\1\uffff\1\147\1\163\1"+
         "\151\1\111\1\143\1\145\1\165\1\157\2\uffff\1\172\2\uffff\2\uffff"+
         "\1\57\2\uffff\1\145\2\uffff\1\155\1\163\1\164\1\uffff\1\147\1\145"+
         "\1\164\1\141\1\172\1\164\1\162\1\151\1\156\7\uffff\1\167\1\145\1"+
         "\143\1\145\1\162\1\163\1\141\1\147\1\uffff\1\151\1\166\1\154\1\146"+
-        "\1\160\1\72\1\162\1\156\1\145\1\40\1\172\1\162\1\166\1\151\1\144"+
-        "\1\151\1\157\1\uffff\1\151\1\144\1\147\1\167\1\uffff\1\141\1\151"+
-        "\1\143\1\172\1\147\1\151\1\160\1\163\1\141\5\uffff\1\155\1\164\1"+
-        "\145\1\uffff\1\165\1\156\1\164\1\172\1\164\1\163\1\171\1\163\1\162"+
-        "\1\164\1\151\1\uffff\1\145\1\172\1\40\1\172\1\141\1\172\1\157\1"+
-        "\163\3\uffff\1\164\1\uffff\1\156\1\172\1\151\1\72\1\uffff\1\157"+
-        "\1\uffff\1\156\1\172\1\uffff";
+        "\1\160\1\72\1\162\1\156\1\145\1\55\1\172\1\162\1\166\1\151\1\144"+
+        "\1\151\1\157\1\uffff\1\151\1\144\1\147\1\uffff\1\167\1\uffff\1\141"+
+        "\1\151\1\143\1\172\1\147\1\151\1\160\1\163\1\141\4\uffff\1\155\1"+
+        "\164\1\145\1\uffff\1\165\1\156\1\164\1\172\1\164\1\163\1\171\1\163"+
+        "\1\162\1\164\1\151\1\uffff\1\145\1\172\1\55\1\172\1\141\1\172\1"+
+        "\157\1\163\3\uffff\1\164\1\uffff\1\156\1\172\1\151\1\72\1\uffff"+
+        "\1\157\1\uffff\1\156\1\172\1\uffff";
     static final String DFA12_acceptS =
         "\2\uffff\1\2\3\uffff\1\6\10\uffff\1\24\1\25\1\uffff\1\26\1\27\3"+
         "\uffff\1\33\1\34\1\uffff\1\26\1\2\3\uffff\1\6\11\uffff\1\24\1\25"+
-        "\1\27\1\30\1\31\1\32\1\33\10\uffff\1\16\21\uffff\1\3\4\uffff\1\15"+
-        "\11\uffff\1\10\1\11\1\12\1\13\1\14\3\uffff\1\22\13\uffff\1\5\10"+
-        "\uffff\1\17\1\20\1\21\1\uffff\1\1\4\uffff\1\7\1\uffff\1\4\2\uffff"+
-        "\1\23";
+        "\1\27\1\30\1\31\1\32\1\33\10\uffff\1\16\21\uffff\1\3\3\uffff\1\10"+
+        "\1\uffff\1\15\11\uffff\1\11\1\12\1\13\1\14\3\uffff\1\22\13\uffff"+
+        "\1\5\10\uffff\1\17\1\20\1\21\1\uffff\1\1\4\uffff\1\7\1\uffff\1\4"+
+        "\2\uffff\1\23";
     static final String DFA12_specialS =
         "\1\2\23\uffff\1\0\1\1\157\uffff}>";
     static final String[] DFA12_transitionS = {
@@ -1315,19 +1312,20 @@ public class InternalVpspecLexer extends Lexer {
             "\1\113",
             "\1\114",
             "\1\115",
-            "\1\116",
+            "\1\116\14\uffff\1\117",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "\1\120",
             "\1\121",
             "\1\122",
             "\1\123",
             "\1\124",
             "\1\125",
-            "",
             "\1\126",
+            "",
             "\1\127",
             "\1\130",
-            "\1\133\1\uffff\1\135\6\uffff\1\132\10\uffff\1\131\1\134",
+            "\1\131",
+            "",
+            "\1\133\1\uffff\1\135\6\uffff\1\132\11\uffff\1\134",
             "",
             "\1\136",
             "\1\137",
@@ -1338,7 +1336,6 @@ public class InternalVpspecLexer extends Lexer {
             "\1\144",
             "\1\145",
             "\1\146",
-            "",
             "",
             "",
             "",

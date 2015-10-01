@@ -331,7 +331,7 @@ public class WizardsUtil {
 			" *	@date: " +  getCurrentDate()+"\n" +
 			" *\n" +
 			" */\n" +
-			"activity explorer " + shortName + ".activityexplorer" + " {\n\n" +
+			"activity-explorer " + shortName + ".activityexplorer" + " {\n\n" +
 			"}";
 		return fileContent;
 	}
@@ -346,7 +346,7 @@ public class WizardsUtil {
 				" *	@date: " +  getCurrentDate()+"\n" +
 				" *\n" +
 				" */\n" +
-				"activity explorer " + fileName + " {\n\n" +
+				"activity-explorer " + fileName + " {\n\n" +
 				"}";
 		return fileContent;
 	}

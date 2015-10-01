@@ -21,7 +21,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 ViewpointActivityExplorer returns activityExplorer::ViewpointActivityExplorer:
 	{activityExplorer::ViewpointActivityExplorer}
-	'activity' 'explorer'
+	'activity-explorer'
 	name=FQN
 	'{'
 		('pages' '{'
@@ -43,7 +43,7 @@ Page returns activityExplorer::Page:
 	'page' name=ID
 	'{'
 		('description' description=STRING)?
-		('file' 'extension' fileExtensions = STRING)?
+		('file-extension' fileExtensions = STRING)?
 		('id' activityExplorerItemID=FQN)?
 		('label' label=STRING)?
 		'index' index=EInt
@@ -51,13 +51,13 @@ Page returns activityExplorer::Page:
 		(ownedOverview=Overview)?
 		
 		('header' '{'
-			('image' 'on' ':' imagePathOn=STRING)?
-			('image' 'off' ':' imagePathOff=STRING)?
+			('image-on' ':' imagePathOn=STRING)?
+			('image-off' ':' imagePathOff=STRING)?
 		'}')?
 		
-		('tab' 'name' tabName=STRING)?
+		('tab-name' tabName=STRING)?
 		('predicated' ':' hasPredicate=EBoolean)?
-		('show' 'viewer' ':' showViewer=EBoolean)?
+		('show-viewer' ':' showViewer=EBoolean)?
 		
 		('sections' '{'
 			(ownedSections += Section)*
@@ -100,17 +100,17 @@ Activity returns activityExplorer::Activity:
 
 PageExtension returns activityExplorer::PageExtension:
 	{activityExplorer::PageExtension}
-	'page' 'extensions' 
+	'page-extensions' 
 	'{'
-		'extended' 'page' extendedPageID=FQN
+		'extended-page' extendedPageID=FQN
 		(ownedSections+=Section)*
 	'}'
 ;
 
 SectionExtension returns activityExplorer::SectionExtension:
 	{activityExplorer::SectionExtension}
-	'section' 'extensions' '{'
-		'extended' 'section' extendedSectionID=FQN
+	'section-extensions' '{'
+		'extended-section' extendedSectionID=FQN
 		(ownedActivities+=Activity)*
 	'}'
 ;
@@ -120,7 +120,7 @@ Overview returns activityExplorer::Overview:
 	'Overview'
 	'{'
 		('description' description=STRING)?
-		('image' 'on'  ':' imagePathOn=STRING)?
-		('image' 'off' ':' imagePathOff=STRING)?
+		('image-on'  ':' imagePathOn=STRING)?
+		('image-off' ':' imagePathOff=STRING)?
 	'}'
 ;

@@ -102,8 +102,8 @@ public class ActivityexplorerFormatter extends AbstractDeclarativeFormatter {
         
         
         c.setLinewrap().before(f.getPageAccess().getHeaderKeyword_11_0());
-        c.setLinewrap().before(f.getPageAccess().getTabKeyword_12_0());
-        c.setLinewrap().before(f.getPageAccess().getShowKeyword_14_0());
+        c.setLinewrap().before(f.getPageAccess().getTabNameKeyword_12_0());
+        c.setLinewrap().before(f.getPageAccess().getShowViewerKeyword_14_0());
         
         c.setLinewrap().before(f.getPageAccess().getSectionsKeyword_15_0());
         

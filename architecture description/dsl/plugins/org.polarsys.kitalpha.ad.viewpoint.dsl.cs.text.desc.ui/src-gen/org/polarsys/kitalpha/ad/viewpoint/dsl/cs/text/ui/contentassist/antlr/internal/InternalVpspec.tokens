@@ -1,6 +1,6 @@
 ','=17
 '.'=25
-'Activity Explorer'=28
+'Activity-Explorer'=28
 'Build'=30
 'Configuration'=31
 'Data'=24
@@ -12,11 +12,11 @@
 'description:'=15
 'extends'=16
 'name:'=14
-'uses diagram'=21
-'uses filesystem'=23
-'uses model'=20
 'uses viewpoint'=19
-'uses workspace'=22
+'uses-diagram'=21
+'uses-filesystem'=23
+'uses-model'=20
+'uses-workspace'=22
 '{'=12
 '}'=13
 RULE_ANY_OTHER=10

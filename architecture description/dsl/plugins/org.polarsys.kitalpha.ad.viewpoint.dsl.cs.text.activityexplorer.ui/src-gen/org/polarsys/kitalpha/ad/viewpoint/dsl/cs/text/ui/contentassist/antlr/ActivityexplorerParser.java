@@ -4,17 +4,18 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess;
 
 import com.google.inject.Inject;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess;
 
 public class ActivityexplorerParser extends AbstractContentAssistParser {
 	
@@ -40,7 +41,7 @@ public class ActivityexplorerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 					put(grammarAccess.getViewpointActivityExplorerAccess().getGroup(), "rule__ViewpointActivityExplorer__Group__0");
-					put(grammarAccess.getViewpointActivityExplorerAccess().getGroup_5(), "rule__ViewpointActivityExplorer__Group_5__0");
+					put(grammarAccess.getViewpointActivityExplorerAccess().getGroup_4(), "rule__ViewpointActivityExplorer__Group_4__0");
 					put(grammarAccess.getPageAccess().getGroup(), "rule__Page__Group__0");
 					put(grammarAccess.getPageAccess().getGroup_4(), "rule__Page__Group_4__0");
 					put(grammarAccess.getPageAccess().getGroup_5(), "rule__Page__Group_5__0");
@@ -74,22 +75,22 @@ public class ActivityexplorerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getOverviewAccess().getGroup_5(), "rule__Overview__Group_5__0");
 					put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 					put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
-					put(grammarAccess.getViewpointActivityExplorerAccess().getNameAssignment_3(), "rule__ViewpointActivityExplorer__NameAssignment_3");
-					put(grammarAccess.getViewpointActivityExplorerAccess().getOwnedPagesAssignment_5_2(), "rule__ViewpointActivityExplorer__OwnedPagesAssignment_5_2");
-					put(grammarAccess.getViewpointActivityExplorerAccess().getOwnedPagesAssignment_6(), "rule__ViewpointActivityExplorer__OwnedPagesAssignment_6");
-					put(grammarAccess.getViewpointActivityExplorerAccess().getOwnedSectionExtensionsAssignment_7(), "rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_7");
+					put(grammarAccess.getViewpointActivityExplorerAccess().getNameAssignment_2(), "rule__ViewpointActivityExplorer__NameAssignment_2");
+					put(grammarAccess.getViewpointActivityExplorerAccess().getOwnedPagesAssignment_4_2(), "rule__ViewpointActivityExplorer__OwnedPagesAssignment_4_2");
+					put(grammarAccess.getViewpointActivityExplorerAccess().getOwnedPagesAssignment_5(), "rule__ViewpointActivityExplorer__OwnedPagesAssignment_5");
+					put(grammarAccess.getViewpointActivityExplorerAccess().getOwnedSectionExtensionsAssignment_6(), "rule__ViewpointActivityExplorer__OwnedSectionExtensionsAssignment_6");
 					put(grammarAccess.getPageAccess().getNameAssignment_2(), "rule__Page__NameAssignment_2");
 					put(grammarAccess.getPageAccess().getDescriptionAssignment_4_1(), "rule__Page__DescriptionAssignment_4_1");
-					put(grammarAccess.getPageAccess().getFileExtensionsAssignment_5_2(), "rule__Page__FileExtensionsAssignment_5_2");
+					put(grammarAccess.getPageAccess().getFileExtensionsAssignment_5_1(), "rule__Page__FileExtensionsAssignment_5_1");
 					put(grammarAccess.getPageAccess().getActivityExplorerItemIDAssignment_6_1(), "rule__Page__ActivityExplorerItemIDAssignment_6_1");
 					put(grammarAccess.getPageAccess().getLabelAssignment_7_1(), "rule__Page__LabelAssignment_7_1");
 					put(grammarAccess.getPageAccess().getIndexAssignment_9(), "rule__Page__IndexAssignment_9");
 					put(grammarAccess.getPageAccess().getOwnedOverviewAssignment_10(), "rule__Page__OwnedOverviewAssignment_10");
-					put(grammarAccess.getPageAccess().getImagePathOnAssignment_11_2_3(), "rule__Page__ImagePathOnAssignment_11_2_3");
-					put(grammarAccess.getPageAccess().getImagePathOffAssignment_11_3_3(), "rule__Page__ImagePathOffAssignment_11_3_3");
-					put(grammarAccess.getPageAccess().getTabNameAssignment_12_2(), "rule__Page__TabNameAssignment_12_2");
+					put(grammarAccess.getPageAccess().getImagePathOnAssignment_11_2_2(), "rule__Page__ImagePathOnAssignment_11_2_2");
+					put(grammarAccess.getPageAccess().getImagePathOffAssignment_11_3_2(), "rule__Page__ImagePathOffAssignment_11_3_2");
+					put(grammarAccess.getPageAccess().getTabNameAssignment_12_1(), "rule__Page__TabNameAssignment_12_1");
 					put(grammarAccess.getPageAccess().getHasPredicateAssignment_13_2(), "rule__Page__HasPredicateAssignment_13_2");
-					put(grammarAccess.getPageAccess().getShowViewerAssignment_14_3(), "rule__Page__ShowViewerAssignment_14_3");
+					put(grammarAccess.getPageAccess().getShowViewerAssignment_14_2(), "rule__Page__ShowViewerAssignment_14_2");
 					put(grammarAccess.getPageAccess().getOwnedSectionsAssignment_15_2(), "rule__Page__OwnedSectionsAssignment_15_2");
 					put(grammarAccess.getSectionAccess().getNameAssignment_2(), "rule__Section__NameAssignment_2");
 					put(grammarAccess.getSectionAccess().getDescriptionAssignment_4_1(), "rule__Section__DescriptionAssignment_4_1");
@@ -106,13 +107,13 @@ public class ActivityexplorerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActivityAccess().getIndexAssignment_8(), "rule__Activity__IndexAssignment_8");
 					put(grammarAccess.getActivityAccess().getHasPredicateAssignment_9_2(), "rule__Activity__HasPredicateAssignment_9_2");
 					put(grammarAccess.getActivityAccess().getImagePathOffAssignment_10_2(), "rule__Activity__ImagePathOffAssignment_10_2");
-					put(grammarAccess.getPageExtensionAccess().getExtendedPageIDAssignment_6(), "rule__PageExtension__ExtendedPageIDAssignment_6");
-					put(grammarAccess.getPageExtensionAccess().getOwnedSectionsAssignment_7(), "rule__PageExtension__OwnedSectionsAssignment_7");
-					put(grammarAccess.getSectionExtensionAccess().getExtendedSectionIDAssignment_6(), "rule__SectionExtension__ExtendedSectionIDAssignment_6");
-					put(grammarAccess.getSectionExtensionAccess().getOwnedActivitiesAssignment_7(), "rule__SectionExtension__OwnedActivitiesAssignment_7");
+					put(grammarAccess.getPageExtensionAccess().getExtendedPageIDAssignment_4(), "rule__PageExtension__ExtendedPageIDAssignment_4");
+					put(grammarAccess.getPageExtensionAccess().getOwnedSectionsAssignment_5(), "rule__PageExtension__OwnedSectionsAssignment_5");
+					put(grammarAccess.getSectionExtensionAccess().getExtendedSectionIDAssignment_4(), "rule__SectionExtension__ExtendedSectionIDAssignment_4");
+					put(grammarAccess.getSectionExtensionAccess().getOwnedActivitiesAssignment_5(), "rule__SectionExtension__OwnedActivitiesAssignment_5");
 					put(grammarAccess.getOverviewAccess().getDescriptionAssignment_3_1(), "rule__Overview__DescriptionAssignment_3_1");
-					put(grammarAccess.getOverviewAccess().getImagePathOnAssignment_4_3(), "rule__Overview__ImagePathOnAssignment_4_3");
-					put(grammarAccess.getOverviewAccess().getImagePathOffAssignment_5_3(), "rule__Overview__ImagePathOffAssignment_5_3");
+					put(grammarAccess.getOverviewAccess().getImagePathOnAssignment_4_2(), "rule__Overview__ImagePathOnAssignment_4_2");
+					put(grammarAccess.getOverviewAccess().getImagePathOffAssignment_5_2(), "rule__Overview__ImagePathOffAssignment_5_2");
 				}
 			};
 		}

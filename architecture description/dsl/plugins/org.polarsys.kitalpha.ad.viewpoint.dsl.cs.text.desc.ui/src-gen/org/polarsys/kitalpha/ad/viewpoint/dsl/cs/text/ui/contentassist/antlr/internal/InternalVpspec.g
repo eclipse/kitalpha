@@ -1453,7 +1453,7 @@ rule__Viewpoint__Group_9__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); }
 
-	'uses model' 
+	'uses-model' 
 
 { after(grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0()); }
 )
@@ -1610,7 +1610,7 @@ rule__Viewpoint__Group_10__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); }
 
-	'uses diagram' 
+	'uses-diagram' 
 
 { after(grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0()); }
 )
@@ -1767,7 +1767,7 @@ rule__Viewpoint__Group_11__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); }
 
-	'uses workspace' 
+	'uses-workspace' 
 
 { after(grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0()); }
 )
@@ -1924,7 +1924,7 @@ rule__Viewpoint__Group_12__0__Impl
 (
 { before(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); }
 
-	'uses filesystem' 
+	'uses-filesystem' 
 
 { after(grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0()); }
 )
@@ -3007,7 +3007,7 @@ rule__Viewpoint__TypeAssignment_16_0
 (
 { before(grammarAccess.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0()); }
 
-	'Activity Explorer' 
+	'Activity-Explorer' 
 
 { after(grammarAccess.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0()); }
 )
