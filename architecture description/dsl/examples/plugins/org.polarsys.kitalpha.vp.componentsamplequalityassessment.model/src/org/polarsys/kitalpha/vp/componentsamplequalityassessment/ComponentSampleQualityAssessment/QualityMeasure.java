@@ -19,11 +19,11 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure#getCriterion <em>Criterion</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure#getMeasureValue <em>Measure Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage#getQualityMeasure()
  * @model
@@ -34,7 +34,7 @@ public interface QualityMeasure extends ComponentElement {
 
 	/**
 	 * Returns the value of the '<em><b>Criterion</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Criterion</em>' attribute isn't clear,
@@ -52,7 +52,7 @@ public interface QualityMeasure extends ComponentElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure#getCriterion <em>Criterion</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Criterion</em>' attribute.
@@ -64,7 +64,7 @@ public interface QualityMeasure extends ComponentElement {
 
 	/**
 	 * Returns the value of the '<em><b>Measure Value</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Measure Value</em>' attribute isn't clear,
@@ -82,7 +82,7 @@ public interface QualityMeasure extends ComponentElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure#getMeasureValue <em>Measure Value</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Measure Value</em>' attribute.

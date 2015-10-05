@@ -11,7 +11,6 @@
 package org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance;
 
 import org.polarsys.kitalpha.emde.model.ElementExtension;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 
 /**
@@ -21,12 +20,12 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance#getStatus <em>Status</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance#getComplexity <em>Complexity</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance#getCost <em>Cost</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage#getPerformance()
  * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent'"
@@ -38,7 +37,7 @@ public interface Performance extends ComponentElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' containment reference.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Status</em>' containment reference isn't clear,
@@ -56,7 +55,7 @@ public interface Performance extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance#getStatus <em>Status</em>}' containment reference.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Status</em>' containment reference.
@@ -68,7 +67,7 @@ public interface Performance extends ComponentElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Complexity</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Complexity</em>' attribute isn't clear,
@@ -86,7 +85,7 @@ public interface Performance extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance#getComplexity <em>Complexity</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Complexity</em>' attribute.
@@ -98,7 +97,7 @@ public interface Performance extends ComponentElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Cost</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost</em>' attribute isn't clear,
@@ -116,7 +115,7 @@ public interface Performance extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance#getCost <em>Cost</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Cost</em>' attribute.

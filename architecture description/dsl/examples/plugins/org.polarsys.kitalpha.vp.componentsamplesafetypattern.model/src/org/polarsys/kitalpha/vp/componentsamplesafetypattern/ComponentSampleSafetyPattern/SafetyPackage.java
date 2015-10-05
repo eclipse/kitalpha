@@ -20,23 +20,22 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage#getModes <em>Modes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage#getSafetyPackage()
  * @model
  * @generated
  */
 
-public interface SafetyPackage extends
-		org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package {
+public interface SafetyPackage extends org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package {
 
 	/**
 	 * Returns the value of the '<em><b>Modes</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Modes</em>' containment reference list isn't clear,

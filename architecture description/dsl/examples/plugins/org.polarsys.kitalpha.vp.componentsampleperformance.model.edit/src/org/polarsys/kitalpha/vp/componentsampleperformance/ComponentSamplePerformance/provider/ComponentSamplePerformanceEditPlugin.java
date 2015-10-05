@@ -11,11 +11,8 @@
 package org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentSampleEditPlugin;
 
 /**
@@ -48,8 +45,7 @@ public final class ComponentSamplePerformanceEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public ComponentSamplePerformanceEditPlugin() {
-		super(new ResourceLocator[] { EmdeEditPlugin.INSTANCE,
-				ComponentSampleEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { EmdeEditPlugin.INSTANCE, ComponentSampleEditPlugin.INSTANCE, });
 	}
 
 	/**

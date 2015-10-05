@@ -13,15 +13,11 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponent;
@@ -39,8 +35,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponen
  *
  * @generated
  */
-public class HardwareComponentImpl extends AbstractComponentImpl implements
-		HardwareComponent {
+public class HardwareComponentImpl extends AbstractComponentImpl implements HardwareComponent {
 
 	/**
 	 * The cached value of the '{@link #getAbstractComponent() <em>Abstract Component</em>}' containment reference list.
@@ -82,9 +77,7 @@ public class HardwareComponentImpl extends AbstractComponentImpl implements
 	public EList<AbstractComponent> getAbstractComponent() {
 
 		if (abstractComponent == null) {
-			abstractComponent = new EObjectContainmentEList<AbstractComponent>(
-					AbstractComponent.class,
-					this,
+			abstractComponent = new EObjectContainmentEList<AbstractComponent>(AbstractComponent.class, this,
 					ComponentSamplePackage.HARDWARE_COMPONENT__ABSTRACT_COMPONENT);
 		}
 		return abstractComponent;
@@ -96,12 +89,10 @@ public class HardwareComponentImpl extends AbstractComponentImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ComponentSamplePackage.HARDWARE_COMPONENT__ABSTRACT_COMPONENT:
-			return ((InternalEList<?>) getAbstractComponent()).basicRemove(
-					otherEnd, msgs);
+			return ((InternalEList<?>) getAbstractComponent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -131,8 +122,7 @@ public class HardwareComponentImpl extends AbstractComponentImpl implements
 		switch (featureID) {
 		case ComponentSamplePackage.HARDWARE_COMPONENT__ABSTRACT_COMPONENT:
 			getAbstractComponent().clear();
-			getAbstractComponent().addAll(
-					(Collection<? extends AbstractComponent>) newValue);
+			getAbstractComponent().addAll((Collection<? extends AbstractComponent>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

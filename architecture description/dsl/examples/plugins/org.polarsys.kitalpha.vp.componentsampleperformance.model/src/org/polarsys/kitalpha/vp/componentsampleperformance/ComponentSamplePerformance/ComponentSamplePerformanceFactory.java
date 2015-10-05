@@ -28,8 +28,7 @@ public interface ComponentSamplePerformanceFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSamplePerformanceFactory eINSTANCE = org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.ComponentSamplePerformanceFactoryImpl
-			.init();
+	ComponentSamplePerformanceFactory eINSTANCE = org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.ComponentSamplePerformanceFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Performance</em>'.

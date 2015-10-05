@@ -14,19 +14,12 @@ package org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSaf
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl;
-
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
-
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
@@ -107,10 +100,7 @@ public class SafetyModeImpl extends ComponentElementImpl implements SafetyMode {
 	public EList<Safety> getInvolvedComponents() {
 
 		if (involvedComponents == null) {
-			involvedComponents = new EObjectResolvingEList<Safety>(
-					Safety.class,
-					this,
-					ComponentSampleSafetyPatternPackage.SAFETY_MODE__INVOLVED_COMPONENTS);
+			involvedComponents = new EObjectResolvingEList<Safety>(Safety.class, this, ComponentSampleSafetyPatternPackage.SAFETY_MODE__INVOLVED_COMPONENTS);
 		}
 		return involvedComponents;
 	}
@@ -137,9 +127,7 @@ public class SafetyModeImpl extends ComponentElementImpl implements SafetyMode {
 		SAFETY_PATTERN oldPattern = pattern;
 		pattern = newPattern == null ? PATTERN_EDEFAULT : newPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSampleSafetyPatternPackage.SAFETY_MODE__PATTERN,
-					oldPattern, pattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPatternPackage.SAFETY_MODE__PATTERN, oldPattern, pattern));
 
 	}
 
@@ -170,8 +158,7 @@ public class SafetyModeImpl extends ComponentElementImpl implements SafetyMode {
 		switch (featureID) {
 		case ComponentSampleSafetyPatternPackage.SAFETY_MODE__INVOLVED_COMPONENTS:
 			getInvolvedComponents().clear();
-			getInvolvedComponents().addAll(
-					(Collection<? extends Safety>) newValue);
+			getInvolvedComponents().addAll((Collection<? extends Safety>) newValue);
 			return;
 		case ComponentSampleSafetyPatternPackage.SAFETY_MODE__PATTERN:
 			setPattern((SAFETY_PATTERN) newValue);

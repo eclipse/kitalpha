@@ -2,12 +2,12 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComponentSampleSafety" nsURI="http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0"
     nsPrefix="ComponentSampleSafety">
-  <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+  <eClassifiers xsi:type="ecore:EClass" name="Safety" eSuperTypes="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
       <details key="ExtendedElement" value=" http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent"/>
     </eAnnotations>
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
-      <details key="Mapping" value=" platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+      <details key="Mapping" value=" platform:/resource/\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//AbstractComponent"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="criticality" eType="#//CRITICALITY"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dal" eType="#//DAL_LEVEL"/>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsamplesafety.contextual.explorer.queries.Safety.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplesafety.contextual.explorer.queries.safety.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>

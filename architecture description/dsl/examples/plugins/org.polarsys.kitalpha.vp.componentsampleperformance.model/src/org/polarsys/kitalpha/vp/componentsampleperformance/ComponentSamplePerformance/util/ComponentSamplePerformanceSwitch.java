@@ -12,16 +12,14 @@ package org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfo
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
-
-import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.*;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +59,7 @@ public class ComponentSamplePerformanceSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */

@@ -12,12 +12,9 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
@@ -64,7 +61,7 @@ public class ComponentSampleSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -224,8 +221,7 @@ public class ComponentSampleSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackage(
-			org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package object) {
+	public T casePackage(org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package object) {
 		return null;
 	}
 

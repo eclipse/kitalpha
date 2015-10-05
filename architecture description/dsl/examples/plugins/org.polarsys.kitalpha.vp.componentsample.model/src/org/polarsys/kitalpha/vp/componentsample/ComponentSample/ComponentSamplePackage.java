@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 /**
@@ -675,8 +674,7 @@ public interface ComponentSamplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT_ELEMENT__NAME = eINSTANCE
-				.getComponentElement_Name();
+		EAttribute COMPONENT_ELEMENT__NAME = eINSTANCE.getComponentElement_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -684,8 +682,7 @@ public interface ComponentSamplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT_ELEMENT__DESCRIPTION = eINSTANCE
-				.getComponentElement_Description();
+		EAttribute COMPONENT_ELEMENT__DESCRIPTION = eINSTANCE.getComponentElement_Description();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentModelImpl <em>Component Model</em>}' class.
@@ -703,8 +700,7 @@ public interface ComponentSamplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_MODEL__PACKAGES = eINSTANCE
-				.getComponentModel_Packages();
+		EReference COMPONENT_MODEL__PACKAGES = eINSTANCE.getComponentModel_Packages();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.PackageImpl <em>Package</em>}' class.
@@ -732,8 +728,7 @@ public interface ComponentSamplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_PACKAGE__COMPONENTS = eINSTANCE
-				.getComponentPackage_Components();
+		EReference COMPONENT_PACKAGE__COMPONENTS = eINSTANCE.getComponentPackage_Components();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.AbstractComponentImpl <em>Abstract Component</em>}' class.
@@ -751,8 +746,7 @@ public interface ComponentSamplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSTRACT_COMPONENT__USE = eINSTANCE
-				.getAbstractComponent_Use();
+		EReference ABSTRACT_COMPONENT__USE = eINSTANCE.getAbstractComponent_Use();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -760,8 +754,7 @@ public interface ComponentSamplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_COMPONENT__TYPE = eINSTANCE
-				.getAbstractComponent_Type();
+		EAttribute ABSTRACT_COMPONENT__TYPE = eINSTANCE.getAbstractComponent_Type();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.SoftwareComponentImpl <em>Software Component</em>}' class.
@@ -789,8 +782,7 @@ public interface ComponentSamplePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HARDWARE_COMPONENT__ABSTRACT_COMPONENT = eINSTANCE
-				.getHardwareComponent_AbstractComponent();
+		EReference HARDWARE_COMPONENT__ABSTRACT_COMPONENT = eINSTANCE.getHardwareComponent_AbstractComponent();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentType <em>Component Type</em>}' enum.

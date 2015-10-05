@@ -15,12 +15,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.*;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternFactory;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,8 +29,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
-		implements ComponentSampleSafetyPatternFactory {
+public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl implements ComponentSampleSafetyPatternFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -38,8 +38,7 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
 	 */
 	public static ComponentSampleSafetyPatternFactory init() {
 		try {
-			ComponentSampleSafetyPatternFactory theComponentSampleSafetyPatternFactory = (ComponentSampleSafetyPatternFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0"); //$NON-NLS-1$ 
+			ComponentSampleSafetyPatternFactory theComponentSampleSafetyPatternFactory = (ComponentSampleSafetyPatternFactory) EPackage.Registry.INSTANCE.getEFactory(ComponentSampleSafetyPatternPackage.eNS_URI);
 			if (theComponentSampleSafetyPatternFactory != null) {
 				return theComponentSampleSafetyPatternFactory;
 			}
@@ -72,8 +71,7 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
 		case ComponentSampleSafetyPatternPackage.SAFETY_MODE:
 			return createSafetyMode();
 		default:
-			throw new IllegalArgumentException(
-					"The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -88,8 +86,7 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
 		case ComponentSampleSafetyPatternPackage.SAFETY_PATTERN:
 			return createSAFETY_PATTERNFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -104,8 +101,7 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
 		case ComponentSampleSafetyPatternPackage.SAFETY_PATTERN:
 			return convertSAFETY_PATTERNToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -134,12 +130,10 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SAFETY_PATTERN createSAFETY_PATTERNFromString(EDataType eDataType,
-			String initialValue) {
+	public SAFETY_PATTERN createSAFETY_PATTERNFromString(EDataType eDataType, String initialValue) {
 		SAFETY_PATTERN result = SAFETY_PATTERN.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -148,8 +142,7 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertSAFETY_PATTERNToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertSAFETY_PATTERNToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

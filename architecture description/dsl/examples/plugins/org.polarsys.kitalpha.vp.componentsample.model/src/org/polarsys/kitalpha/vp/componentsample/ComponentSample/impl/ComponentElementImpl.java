@@ -11,13 +11,9 @@
 package org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.kitalpha.emde.model.impl.ExtensibleElementImpl;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
@@ -35,8 +31,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  *
  * @generated
  */
-public abstract class ComponentElementImpl extends ExtensibleElementImpl
-		implements ComponentElement {
+public abstract class ComponentElementImpl extends ExtensibleElementImpl implements ComponentElement {
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -121,9 +116,8 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSamplePackage.COMPONENT_ELEMENT__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePackage.COMPONENT_ELEMENT__NAME,
+					oldName, name));
 
 	}
 
@@ -149,8 +143,7 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSamplePackage.COMPONENT_ELEMENT__DESCRIPTION,
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePackage.COMPONENT_ELEMENT__DESCRIPTION,
 					oldDescription, description));
 
 	}
@@ -216,11 +209,9 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case ComponentSamplePackage.COMPONENT_ELEMENT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
-					.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case ComponentSamplePackage.COMPONENT_ELEMENT__DESCRIPTION:
-			return DESCRIPTION_EDEFAULT == null ? description != null
-					: !DESCRIPTION_EDEFAULT.equals(description);
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}

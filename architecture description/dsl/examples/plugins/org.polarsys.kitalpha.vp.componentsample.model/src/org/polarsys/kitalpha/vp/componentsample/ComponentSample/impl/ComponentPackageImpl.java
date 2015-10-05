@@ -13,15 +13,11 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentPackage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
@@ -39,8 +35,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  *
  * @generated
  */
-public class ComponentPackageImpl extends PackageImpl implements
-		ComponentPackage {
+public class ComponentPackageImpl extends PackageImpl implements ComponentPackage {
 
 	/**
 	 * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
@@ -82,8 +77,7 @@ public class ComponentPackageImpl extends PackageImpl implements
 	public EList<AbstractComponent> getComponents() {
 
 		if (components == null) {
-			components = new EObjectContainmentEList<AbstractComponent>(
-					AbstractComponent.class, this,
+			components = new EObjectContainmentEList<AbstractComponent>(AbstractComponent.class, this,
 					ComponentSamplePackage.COMPONENT_PACKAGE__COMPONENTS);
 		}
 		return components;
@@ -95,12 +89,10 @@ public class ComponentPackageImpl extends PackageImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ComponentSamplePackage.COMPONENT_PACKAGE__COMPONENTS:
-			return ((InternalEList<?>) getComponents()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getComponents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -130,8 +122,7 @@ public class ComponentPackageImpl extends PackageImpl implements
 		switch (featureID) {
 		case ComponentSamplePackage.COMPONENT_PACKAGE__COMPONENTS:
 			getComponents().clear();
-			getComponents().addAll(
-					(Collection<? extends AbstractComponent>) newValue);
+			getComponents().addAll((Collection<? extends AbstractComponent>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

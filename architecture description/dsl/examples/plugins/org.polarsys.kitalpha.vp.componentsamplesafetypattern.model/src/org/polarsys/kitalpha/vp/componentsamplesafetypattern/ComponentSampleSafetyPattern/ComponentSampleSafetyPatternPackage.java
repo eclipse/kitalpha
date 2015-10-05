@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
 /**
@@ -65,8 +64,7 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSampleSafetyPatternPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.impl.ComponentSampleSafetyPatternPackageImpl
-			.init();
+	ComponentSampleSafetyPatternPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.impl.ComponentSampleSafetyPatternPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.impl.SafetyPackageImpl <em>Safety Package</em>}' class.
@@ -316,8 +314,7 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SAFETY_MODE__INVOLVED_COMPONENTS = eINSTANCE
-				.getSafetyMode_InvolvedComponents();
+		EReference SAFETY_MODE__INVOLVED_COMPONENTS = eINSTANCE.getSafetyMode_InvolvedComponents();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.

@@ -19,10 +19,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel#getPackages <em>Packages</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage#getComponentModel()
  * @model
@@ -34,7 +34,7 @@ public interface ComponentModel extends ComponentElement {
 	/**
 	 * Returns the value of the '<em><b>Packages</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Packages</em>' containment reference list isn't clear,

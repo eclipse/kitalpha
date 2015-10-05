@@ -24,6 +24,6 @@ JOB CONFIGURAITON:
 3. In "Gestion de code source" section, select the type of repository where the viewpoints plugins are located
 4. In "URL du repository" section, enter svn+ssh://ComponentSampleFramework/ComponentSampleFramework.git
 5. In "Repertoire local du module" section, enter "svn/svn_viewpoint"
-6. In "Build" section, click on "avancé" button
-7. In "Fichier du build", enter D:/Eclipse/Platform/Kitalpha-0.5/Work/ComponentSample/org.polarsys.kitalpha.vp.componentsampleframework.releng/releng-scripts/build_ComponentSampleFramework/releng/build.xml
+6. In "Build" section, click on "avanc�" button
+7. In "Fichier du build", enter E:/git/kitalpha/kitalpha/architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.releng/releng-scripts/build_ComponentSampleFramework/releng/build.xml
 8. Save the job and you are done.

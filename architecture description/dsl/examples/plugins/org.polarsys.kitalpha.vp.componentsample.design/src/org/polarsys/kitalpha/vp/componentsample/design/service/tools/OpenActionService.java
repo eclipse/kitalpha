@@ -12,13 +12,10 @@
 
 package org.polarsys.kitalpha.vp.componentsample.design.service.tools;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.diagram.DDiagramElement;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Display;
+import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,15 +29,17 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 
 public class OpenActionService {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param element : the element
-	 * @param newSemanticContainer : the element view
-	 * @generated
-	 */
-	public boolean GoAction(EObject element, EObject newSemanticContainer) {
-		// TODO Auto-generated method stub
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @param element : the element
+	* @param newSemanticContainer : the element view
+	* @generated NOT
+	*/
+	public boolean MyAction(EObject element, EObject newSemanticContainer) {
+		ComponentElement componentElement = (ComponentElement) element;
+
+		MessageDialog.openConfirm(Display.getDefault().getActiveShell(), "My Componentsample Action",
+				"Action on the element: " + componentElement.getName());
+		return true;
 	}
 }

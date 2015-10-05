@@ -12,18 +12,15 @@ package org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampl
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
-
-import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.*;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +30,7 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * @see org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage
  * @generated
  */
-public class ComponentSampleQualityAssessmentAdapterFactory extends
-		AdapterFactoryImpl {
+public class ComponentSampleQualityAssessmentAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->

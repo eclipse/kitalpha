@@ -34,4 +34,18 @@ Contributors:
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer"
+         download-size="0"
+         install-size="0"
+         version="0.1.0.qualifier"
+         unpack="false"/>
+
 </feature>

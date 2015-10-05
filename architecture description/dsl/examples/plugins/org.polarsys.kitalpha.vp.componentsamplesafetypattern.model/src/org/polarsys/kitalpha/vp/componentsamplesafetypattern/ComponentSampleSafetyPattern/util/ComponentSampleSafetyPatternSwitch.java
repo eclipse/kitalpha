@@ -13,15 +13,13 @@ package org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSaf
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
-
-import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.*;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +59,7 @@ public class ComponentSampleSafetyPatternSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -199,8 +197,7 @@ public class ComponentSampleSafetyPatternSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackage(
-			org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package object) {
+	public T casePackage(org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package object) {
 		return null;
 	}
 

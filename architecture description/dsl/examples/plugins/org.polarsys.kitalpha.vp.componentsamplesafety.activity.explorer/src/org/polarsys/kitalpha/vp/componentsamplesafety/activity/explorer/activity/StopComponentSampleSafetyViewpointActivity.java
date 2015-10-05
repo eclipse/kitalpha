@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activity;
 

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
 /**
@@ -63,8 +62,7 @@ public interface ComponentSamplePerformancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSamplePerformancePackage eINSTANCE = org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.ComponentSamplePerformancePackageImpl
-			.init();
+	ComponentSamplePerformancePackage eINSTANCE = org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.ComponentSamplePerformancePackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.PerformanceImpl <em>Performance</em>}' class.
@@ -304,8 +302,7 @@ public interface ComponentSamplePerformancePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERFORMANCE__COMPLEXITY = eINSTANCE
-				.getPerformance_Complexity();
+		EAttribute PERFORMANCE__COMPLEXITY = eINSTANCE.getPerformance_Complexity();
 
 		/**
 		 * The meta object literal for the '<em><b>Cost</b></em>' attribute feature.
@@ -331,8 +328,7 @@ public interface ComponentSamplePerformancePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERFORMANCE_STATUS__OVERHEAD = eINSTANCE
-				.getPerformanceStatus_Overhead();
+		EAttribute PERFORMANCE_STATUS__OVERHEAD = eINSTANCE.getPerformanceStatus_Overhead();
 
 	}
 

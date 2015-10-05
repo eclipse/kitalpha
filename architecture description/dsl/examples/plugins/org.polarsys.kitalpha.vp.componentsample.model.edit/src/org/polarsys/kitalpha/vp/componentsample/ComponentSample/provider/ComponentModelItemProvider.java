@@ -15,11 +15,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -27,9 +24,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleFactory;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
@@ -40,9 +35,8 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentModelItemProvider extends ComponentElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentModelItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,12 +74,10 @@ public class ComponentModelItemProvider extends ComponentElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ComponentSamplePackage.Literals.COMPONENT_MODEL__PACKAGES);
+			childrenFeatures.add(ComponentSamplePackage.Literals.COMPONENT_MODEL__PACKAGES);
 		}
 		return childrenFeatures;
 	}
@@ -111,8 +103,7 @@ public class ComponentModelItemProvider extends ComponentElementItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/ComponentModel")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentModel")); //$NON-NLS-1$
 	}
 
 	/**
@@ -143,8 +134,7 @@ public class ComponentModelItemProvider extends ComponentElementItemProvider
 
 		switch (notification.getFeatureID(ComponentModel.class)) {
 		case ComponentSamplePackage.COMPONENT_MODEL__PACKAGES:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -158,16 +148,14 @@ public class ComponentModelItemProvider extends ComponentElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
 			CommandParameter commandParameter = createChildParameter(
 					ComponentSamplePackage.Literals.COMPONENT_MODEL__PACKAGES,
 					ComponentSampleFactory.eINSTANCE.createComponentPackage());
-			if (NewChildDescriptorHelper.isValidCommand(object,
-					commandParameter)) {
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
 		}

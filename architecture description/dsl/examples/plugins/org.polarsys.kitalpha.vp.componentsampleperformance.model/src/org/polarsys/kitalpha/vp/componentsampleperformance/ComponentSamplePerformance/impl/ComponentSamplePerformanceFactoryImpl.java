@@ -13,12 +13,12 @@ package org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfo
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.*;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformanceFactory;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,8 +26,7 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSamplePerformanceFactoryImpl extends EFactoryImpl
-		implements ComponentSamplePerformanceFactory {
+public class ComponentSamplePerformanceFactoryImpl extends EFactoryImpl implements ComponentSamplePerformanceFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -36,8 +35,7 @@ public class ComponentSamplePerformanceFactoryImpl extends EFactoryImpl
 	 */
 	public static ComponentSamplePerformanceFactory init() {
 		try {
-			ComponentSamplePerformanceFactory theComponentSamplePerformanceFactory = (ComponentSamplePerformanceFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0"); //$NON-NLS-1$ 
+			ComponentSamplePerformanceFactory theComponentSamplePerformanceFactory = (ComponentSamplePerformanceFactory) EPackage.Registry.INSTANCE.getEFactory(ComponentSamplePerformancePackage.eNS_URI);
 			if (theComponentSamplePerformanceFactory != null) {
 				return theComponentSamplePerformanceFactory;
 			}
@@ -70,8 +68,7 @@ public class ComponentSamplePerformanceFactoryImpl extends EFactoryImpl
 		case ComponentSamplePerformancePackage.PERFORMANCE_STATUS:
 			return createPerformanceStatus();
 		default:
-			throw new IllegalArgumentException(
-					"The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 

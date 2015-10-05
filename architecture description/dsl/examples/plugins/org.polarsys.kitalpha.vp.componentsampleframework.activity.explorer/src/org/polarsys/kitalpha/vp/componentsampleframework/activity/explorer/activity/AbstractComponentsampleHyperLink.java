@@ -85,5 +85,5 @@ public abstract class AbstractComponentsampleHyperLink implements IHyperlinkList
 			((ComponentSampleViewpointManagementPagePage)page).processNotification(vpid);
 		}
 	}
-
+	
 }

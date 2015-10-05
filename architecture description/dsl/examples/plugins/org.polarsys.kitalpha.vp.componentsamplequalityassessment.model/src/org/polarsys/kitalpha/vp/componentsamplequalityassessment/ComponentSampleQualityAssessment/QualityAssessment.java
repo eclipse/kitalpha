@@ -11,9 +11,7 @@
 package org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.polarsys.kitalpha.emde.model.ElementExtension;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 
 /**
@@ -23,6 +21,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment#getBasedOn <em>Based On</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment#getContext <em>Context</em>}</li>
@@ -31,7 +30,6 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment#getConfidenceLevel <em>Confidence Level</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment#isAssessed <em>Assessed</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage#getQualityAssessment()
  * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent'"
@@ -44,7 +42,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 	/**
 	 * Returns the value of the '<em><b>Based On</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Based On</em>' reference list isn't clear,
@@ -62,7 +60,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 	/**
 	 * Returns the value of the '<em><b>Context</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Context</em>' reference list isn't clear,
@@ -80,7 +78,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 	/**
 	 * Returns the value of the '<em><b>Measures</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Measures</em>' containment reference list isn't clear,
@@ -97,7 +95,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Maturity Level</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Maturity Level</em>' attribute isn't clear,
@@ -115,7 +113,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment#getMaturityLevel <em>Maturity Level</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Maturity Level</em>' attribute.
@@ -128,7 +126,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 	/**
 	 * Returns the value of the '<em><b>Confidence Level</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.confidenceLevel_Type}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Confidence Level</em>' attribute isn't clear,
@@ -147,7 +145,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment#getConfidenceLevel <em>Confidence Level</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Confidence Level</em>' attribute.
@@ -160,7 +158,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Assessed</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Assessed</em>' attribute isn't clear,
@@ -178,7 +176,7 @@ public interface QualityAssessment extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment#isAssessed <em>Assessed</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Assessed</em>' attribute.

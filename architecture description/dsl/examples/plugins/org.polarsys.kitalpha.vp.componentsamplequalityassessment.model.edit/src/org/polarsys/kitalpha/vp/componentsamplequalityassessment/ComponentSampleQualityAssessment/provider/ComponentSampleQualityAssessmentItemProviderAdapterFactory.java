@@ -17,17 +17,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -40,21 +34,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
-
 import org.polarsys.kitalpha.emde.extension.edit.ChildCreationExtenderManager;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
-
 import org.polarsys.kitalpha.emde.model.util.EmdeSwitch;
-
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentFactory;
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage;
-
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.util.ComponentSampleQualityAssessmentAdapterFactory;
 
 /**
@@ -66,10 +53,7 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
-		ComponentSampleQualityAssessmentAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable,
-		IChildCreationExtender {
+public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends ComponentSampleQualityAssessmentAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -92,9 +76,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
-			ComponentSampleQualityAssessmentEditPlugin.INSTANCE,
-			ComponentSampleQualityAssessmentPackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ComponentSampleQualityAssessmentEditPlugin.INSTANCE, ComponentSampleQualityAssessmentPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -135,8 +117,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 	@Override
 	public Adapter createQualityAssessmentAdapter() {
 		if (qualityAssessmentItemProvider == null) {
-			qualityAssessmentItemProvider = new QualityAssessmentItemProvider(
-					this);
+			qualityAssessmentItemProvider = new QualityAssessmentItemProvider(this);
 		}
 
 		return qualityAssessmentItemProvider;
@@ -172,8 +153,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
 	/**
@@ -182,8 +162,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -217,8 +196,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -240,10 +218,8 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Collection<?> getNewChildDescriptors(Object object,
-			EditingDomain editingDomain) {
-		return childCreationExtenderManager.getNewChildDescriptors(object,
-				editingDomain);
+	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
 
 	/**
@@ -308,8 +284,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class EmdeChildCreationExtender implements
-			IChildCreationExtender {
+	public static class EmdeChildCreationExtender implements IChildCreationExtender {
 		/**
 		 * The switch for creating child descriptors specific to each extended class.
 		 * <!-- begin-user-doc -->
@@ -339,8 +314,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			CreationSwitch(List<Object> newChildDescriptors,
-					EditingDomain editingDomain) {
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
@@ -353,23 +327,14 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 			@Override
 			public Object caseExtensibleElement(ExtensibleElement object) {
 				// begin-extension-code
-				if (ModelExtensionHelper
-						.getInstance()
-						.isExtensionModelDisabled(
-								EcoreUtil.getRootContainer(object).eClass()
-										.getEPackage().getNsURI(),
-								"http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0")) { //$NON-NLS-1$
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0")) { //$NON-NLS-1$
 					return null;
 				}
 				// end-extension-code
 				// begin-extension-code
 				{
-					CommandParameter commandParameter = createChildParameter(
-							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-							ComponentSampleQualityAssessmentFactory.eINSTANCE
-									.createQualityAssessment());
-					if (NewChildDescriptorHelper.isValidCommand(object,
-							commandParameter)) {
+					CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSampleQualityAssessmentFactory.eINSTANCE.createQualityAssessment());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}
 				}
@@ -383,8 +348,7 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			protected CommandParameter createChildParameter(Object feature,
-					Object child) {
+			protected CommandParameter createChildParameter(Object feature, Object child) {
 				return new CommandParameter(null, feature, child);
 			}
 
@@ -395,11 +359,9 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Collection<Object> getNewChildDescriptors(Object object,
-				EditingDomain editingDomain) {
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain)
-					.doSwitch((EObject) object);
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
 			return result;
 		}
 

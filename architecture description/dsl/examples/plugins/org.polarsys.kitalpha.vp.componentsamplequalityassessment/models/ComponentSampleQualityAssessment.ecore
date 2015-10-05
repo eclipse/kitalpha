@@ -2,24 +2,24 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComponentSampleQualityAssessment" nsURI="http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0"
     nsPrefix="ComponentSampleQualityAssessment">
-  <eClassifiers xsi:type="ecore:EClass" name="QualityAssessment" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
+  <eClassifiers xsi:type="ecore:EClass" name="QualityAssessment" eSuperTypes="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension">
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint">
       <details key="ExtendedElement" value=" http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent"/>
     </eAnnotations>
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
-      <details key="Mapping" value=" platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
+      <details key="Mapping" value=" platform:/resource/\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//AbstractComponent"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="basedOn" upperBound="-1"
         eType="#//QualityAssessment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" upperBound="-1"
-        eType="ecore:EClass ../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+        eType="ecore:EClass ../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1"
         eType="#//QualityMeasure" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maturityLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confidenceLevel" eType="#//confidenceLevel_Type"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assessed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QualityMeasure" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement">
+  <eClassifiers xsi:type="ecore:EClass" name="QualityMeasure" eSuperTypes="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="criterion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="measureValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>

@@ -27,8 +27,7 @@ public interface ComponentSampleSafetyFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSampleSafetyFactory eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.ComponentSampleSafetyFactoryImpl
-			.init();
+	ComponentSampleSafetyFactory eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.ComponentSampleSafetyFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Safety</em>'.

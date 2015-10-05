@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity;
 
@@ -37,26 +37,29 @@ import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activ
  */
 public class SetModelNameActivity extends AbstractComponentsampleHyperLink {
 
+
 	@Override
 	public void linkActivated(HyperlinkEvent e) {
 		Shell activeShell = Display.getCurrent().getActiveShell();
-		
-		final InputDialog input = new InputDialog(activeShell, 
-				"Name of Component Sample Model", "Enter a Name for the Component Sample Model", "Model name", null);
-		
+
+		final InputDialog input = new InputDialog(activeShell, "Name of Component Sample Model",
+				"Enter a Name for the Component Sample Model", "Model name", null);
+
 		input.create();
-		if (input.open() == Window.OK){
+		if (input.open() == Window.OK) {
 			final EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();
-			
-			if (rootSemanticModel instanceof ComponentElement){
+
+			if (rootSemanticModel instanceof ComponentElement) {
 				String value = input.getValue();
-				
-				TransactionalEditingDomain transactionalEditingDomain = ActivityExplorerManager.INSTANCE.getSession().getTransactionalEditingDomain();
-				TransactionalCommandStack tstack = (TransactionalCommandStack)transactionalEditingDomain.getCommandStack();
-				
-				Command setName = transactionalEditingDomain.createCommand(SetCommand.class, 
-						new CommandParameter(rootSemanticModel, ComponentSamplePackage.Literals.COMPONENT_ELEMENT__NAME, value));
-				
+
+				TransactionalEditingDomain transactionalEditingDomain = ActivityExplorerManager.INSTANCE.getSession()
+						.getTransactionalEditingDomain();
+				TransactionalCommandStack tstack = (TransactionalCommandStack) transactionalEditingDomain
+						.getCommandStack();
+
+				Command setName = transactionalEditingDomain.createCommand(SetCommand.class, new CommandParameter(
+						rootSemanticModel, ComponentSamplePackage.Literals.COMPONENT_ELEMENT__NAME, value));
+
 				try {
 					tstack.execute(setName, Collections.EMPTY_MAP);
 					ActivityExplorerManager.INSTANCE.getEditor().updateEditorPages(0);
@@ -67,7 +70,7 @@ public class SetModelNameActivity extends AbstractComponentsampleHyperLink {
 				}
 			}
 		}
-		
+
 	}
 
 }

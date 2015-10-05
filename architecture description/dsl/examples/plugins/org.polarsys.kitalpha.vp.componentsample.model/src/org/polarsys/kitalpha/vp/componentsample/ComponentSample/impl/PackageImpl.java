@@ -11,7 +11,6 @@
 package org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
 /**
@@ -23,8 +22,8 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  *
  * @generated
  */
-public abstract class PackageImpl extends ComponentElementImpl implements
-		org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package {
+public abstract class PackageImpl extends ComponentElementImpl
+		implements org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

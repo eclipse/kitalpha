@@ -13,17 +13,14 @@ package org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSaf
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
-
-import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.*;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +30,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * @see org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage
  * @generated
  */
-public class ComponentSampleSafetyPatternAdapterFactory extends
-		AdapterFactoryImpl {
+public class ComponentSampleSafetyPatternAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -107,8 +103,7 @@ public class ComponentSampleSafetyPatternAdapterFactory extends
 		}
 
 		@Override
-		public Adapter casePackage(
-				org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package object) {
+		public Adapter casePackage(org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package object) {
 			return createPackageAdapter();
 		}
 

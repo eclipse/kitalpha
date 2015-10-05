@@ -15,13 +15,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
-
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentFactory;
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage;
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment;
@@ -34,8 +30,7 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
-		implements ComponentSampleQualityAssessmentPackage {
+public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl implements ComponentSampleQualityAssessmentPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,14 +92,10 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 */
 	public static ComponentSampleQualityAssessmentPackage init() {
 		if (isInited)
-			return (ComponentSampleQualityAssessmentPackage) EPackage.Registry.INSTANCE
-					.getEPackage(ComponentSampleQualityAssessmentPackage.eNS_URI);
+			return (ComponentSampleQualityAssessmentPackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSampleQualityAssessmentPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentSampleQualityAssessmentPackageImpl theComponentSampleQualityAssessmentPackage = (ComponentSampleQualityAssessmentPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof ComponentSampleQualityAssessmentPackageImpl ? EPackage.Registry.INSTANCE
-				.get(eNS_URI)
-				: new ComponentSampleQualityAssessmentPackageImpl());
+		ComponentSampleQualityAssessmentPackageImpl theComponentSampleQualityAssessmentPackage = (ComponentSampleQualityAssessmentPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentSampleQualityAssessmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSampleQualityAssessmentPackageImpl());
 
 		isInited = true;
 
@@ -121,9 +112,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 		theComponentSampleQualityAssessmentPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(
-				ComponentSampleQualityAssessmentPackage.eNS_URI,
-				theComponentSampleQualityAssessmentPackage);
+		EPackage.Registry.INSTANCE.put(ComponentSampleQualityAssessmentPackage.eNS_URI, theComponentSampleQualityAssessmentPackage);
 		return theComponentSampleQualityAssessmentPackage;
 	}
 
@@ -142,8 +131,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EReference getQualityAssessment_BasedOn() {
-		return (EReference) qualityAssessmentEClass.getEStructuralFeatures()
-				.get(0);
+		return (EReference) qualityAssessmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -152,8 +140,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EReference getQualityAssessment_Context() {
-		return (EReference) qualityAssessmentEClass.getEStructuralFeatures()
-				.get(1);
+		return (EReference) qualityAssessmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -162,8 +149,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EReference getQualityAssessment_Measures() {
-		return (EReference) qualityAssessmentEClass.getEStructuralFeatures()
-				.get(2);
+		return (EReference) qualityAssessmentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -172,8 +158,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EAttribute getQualityAssessment_MaturityLevel() {
-		return (EAttribute) qualityAssessmentEClass.getEStructuralFeatures()
-				.get(3);
+		return (EAttribute) qualityAssessmentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -182,8 +167,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EAttribute getQualityAssessment_ConfidenceLevel() {
-		return (EAttribute) qualityAssessmentEClass.getEStructuralFeatures()
-				.get(4);
+		return (EAttribute) qualityAssessmentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -192,8 +176,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EAttribute getQualityAssessment_Assessed() {
-		return (EAttribute) qualityAssessmentEClass.getEStructuralFeatures()
-				.get(5);
+		return (EAttribute) qualityAssessmentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -211,8 +194,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EAttribute getQualityMeasure_Criterion() {
-		return (EAttribute) qualityMeasureEClass.getEStructuralFeatures()
-				.get(0);
+		return (EAttribute) qualityMeasureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -221,8 +203,7 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	public EAttribute getQualityMeasure_MeasureValue() {
-		return (EAttribute) qualityMeasureEClass.getEStructuralFeatures()
-				.get(1);
+		return (EAttribute) qualityMeasureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -267,10 +248,8 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 		createEReference(qualityAssessmentEClass, QUALITY_ASSESSMENT__BASED_ON);
 		createEReference(qualityAssessmentEClass, QUALITY_ASSESSMENT__CONTEXT);
 		createEReference(qualityAssessmentEClass, QUALITY_ASSESSMENT__MEASURES);
-		createEAttribute(qualityAssessmentEClass,
-				QUALITY_ASSESSMENT__MATURITY_LEVEL);
-		createEAttribute(qualityAssessmentEClass,
-				QUALITY_ASSESSMENT__CONFIDENCE_LEVEL);
+		createEAttribute(qualityAssessmentEClass, QUALITY_ASSESSMENT__MATURITY_LEVEL);
+		createEAttribute(qualityAssessmentEClass, QUALITY_ASSESSMENT__CONFIDENCE_LEVEL);
 		createEAttribute(qualityAssessmentEClass, QUALITY_ASSESSMENT__ASSESSED);
 
 		qualityMeasureEClass = createEClass(QUALITY_MEASURE);
@@ -306,74 +285,34 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE
-				.getEPackage(ComponentSamplePackage.eNS_URI);
-		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE
-				.getEPackage(EmdePackage.eNS_URI);
+		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSamplePackage.eNS_URI);
+		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		qualityAssessmentEClass.getESuperTypes().add(
-				theComponentSamplePackage.getComponentElement());
-		qualityAssessmentEClass.getESuperTypes().add(
-				theEmdePackage.getElementExtension());
-		qualityMeasureEClass.getESuperTypes().add(
-				theComponentSamplePackage.getComponentElement());
+		qualityAssessmentEClass.getESuperTypes().add(theComponentSamplePackage.getComponentElement());
+		qualityAssessmentEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
+		qualityMeasureEClass.getESuperTypes().add(theComponentSamplePackage.getComponentElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(
-				qualityAssessmentEClass,
-				QualityAssessment.class,
-				"QualityAssessment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getQualityAssessment_BasedOn(),
-				this.getQualityAssessment(),
-				null,
-				"basedOn", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getQualityAssessment_Context(),
-				theComponentSamplePackage.getComponentElement(),
-				null,
-				"context", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getQualityAssessment_Measures(),
-				this.getQualityMeasure(),
-				null,
-				"measures", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getQualityAssessment_MaturityLevel(),
-				ecorePackage.getEString(),
-				"maturityLevel", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getQualityAssessment_ConfidenceLevel(),
-				this.getconfidenceLevel_Type(),
-				"confidenceLevel", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getQualityAssessment_Assessed(),
-				ecorePackage.getEBoolean(),
-				"assessed", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(qualityAssessmentEClass, QualityAssessment.class, "QualityAssessment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getQualityAssessment_BasedOn(), this.getQualityAssessment(), null, "basedOn", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getQualityAssessment_Context(), theComponentSamplePackage.getComponentElement(), null, "context", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getQualityAssessment_Measures(), this.getQualityMeasure(), null, "measures", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getQualityAssessment_MaturityLevel(), ecorePackage.getEString(), "maturityLevel", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getQualityAssessment_ConfidenceLevel(), this.getconfidenceLevel_Type(), "confidenceLevel", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getQualityAssessment_Assessed(), ecorePackage.getEBoolean(), "assessed", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(
-				qualityMeasureEClass,
-				QualityMeasure.class,
-				"QualityMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getQualityMeasure_Criterion(),
-				ecorePackage.getEString(),
-				"criterion", null, 0, 1, QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getQualityMeasure_MeasureValue(),
-				ecorePackage.getEInt(),
-				"measureValue", null, 0, 1, QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(qualityMeasureEClass, QualityMeasure.class, "QualityMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getQualityMeasure_Criterion(), ecorePackage.getEString(), "criterion", null, 0, 1, QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getQualityMeasure_MeasureValue(), ecorePackage.getEInt(), "measureValue", null, 0, 1, QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
-		initEEnum(confidenceLevel_TypeEEnum, confidenceLevel_Type.class,
-				"confidenceLevel_Type"); //$NON-NLS-1$
-		addEEnumLiteral(confidenceLevel_TypeEEnum,
-				confidenceLevel_Type.NOT_ASSESSED);
+		initEEnum(confidenceLevel_TypeEEnum, confidenceLevel_Type.class, "confidenceLevel_Type"); //$NON-NLS-1$
+		addEEnumLiteral(confidenceLevel_TypeEEnum, confidenceLevel_Type.NOT_ASSESSED);
 		addEEnumLiteral(confidenceLevel_TypeEEnum, confidenceLevel_Type.LOW);
 		addEEnumLiteral(confidenceLevel_TypeEEnum, confidenceLevel_Type.MEDIUM);
 		addEEnumLiteral(confidenceLevel_TypeEEnum, confidenceLevel_Type.HIGH);
@@ -395,13 +334,9 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	protected void createConstraintAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$		
-		addAnnotation(
-				qualityAssessmentEClass,
-				source,
-				new String[] {
-						"ExtendedElement", " http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
-				});
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$	
+		addAnnotation(qualityAssessmentEClass, source, new String[] { "ExtendedElement", " http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		});
 	}
 
 	/**
@@ -411,13 +346,9 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 	 * @generated
 	 */
 	protected void createConstraintMappingAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$			
-		addAnnotation(
-				qualityAssessmentEClass,
-				source,
-				new String[] {
-						"Mapping", " platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
-				});
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$	
+		addAnnotation(qualityAssessmentEClass, source, new String[] { "Mapping", " platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		});
 	}
 
 } //ComponentSampleQualityAssessmentPackageImpl

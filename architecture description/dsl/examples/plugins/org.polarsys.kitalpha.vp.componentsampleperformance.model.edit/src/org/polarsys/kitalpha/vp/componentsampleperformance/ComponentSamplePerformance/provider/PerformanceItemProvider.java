@@ -15,11 +15,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.command.CommandParameter;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,13 +26,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
-
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentElementItemProvider;
-
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformanceFactory;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance;
@@ -46,9 +39,7 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * @generated
  */
-public class PerformanceItemProvider extends ComponentElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PerformanceItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -88,18 +79,11 @@ public class PerformanceItemProvider extends ComponentElementItemProvider
 	protected void addComplexityPropertyDescriptor(Object object) {
 
 		// begin-extension-code
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
 				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Performance_complexity_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Performance_complexity_feature", "_UI_Performance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePerformancePackage.Literals.PERFORMANCE__COMPLEXITY,
-						true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Performance_complexity_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Performance_complexity_feature", "_UI_Performance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ComponentSamplePerformancePackage.Literals.PERFORMANCE__COMPLEXITY, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
 						// begin-extension-code
 						null));
 		// end-extension-code
@@ -114,18 +98,11 @@ public class PerformanceItemProvider extends ComponentElementItemProvider
 	protected void addCostPropertyDescriptor(Object object) {
 
 		// begin-extension-code
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
 				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Performance_cost_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Performance_cost_feature", "_UI_Performance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePerformancePackage.Literals.PERFORMANCE__COST,
-						true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Performance_cost_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_Performance_cost_feature", "_UI_Performance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ComponentSamplePerformancePackage.Literals.PERFORMANCE__COST, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
 						// begin-extension-code
 						null));
 		// end-extension-code
@@ -140,12 +117,10 @@ public class PerformanceItemProvider extends ComponentElementItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ComponentSamplePerformancePackage.Literals.PERFORMANCE__STATUS);
+			childrenFeatures.add(ComponentSamplePerformancePackage.Literals.PERFORMANCE__STATUS);
 		}
 		return childrenFeatures;
 	}
@@ -171,8 +146,7 @@ public class PerformanceItemProvider extends ComponentElementItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Performance")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Performance")); //$NON-NLS-1$
 	}
 
 	/**
@@ -204,12 +178,10 @@ public class PerformanceItemProvider extends ComponentElementItemProvider
 		switch (notification.getFeatureID(Performance.class)) {
 		case ComponentSamplePerformancePackage.PERFORMANCE__COMPLEXITY:
 		case ComponentSamplePerformancePackage.PERFORMANCE__COST:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case ComponentSamplePerformancePackage.PERFORMANCE__STATUS:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -223,17 +195,12 @@ public class PerformanceItemProvider extends ComponentElementItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(
-					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-					ComponentSamplePerformanceFactory.eINSTANCE
-							.createPerformance());
-			if (NewChildDescriptorHelper.isValidCommand(object,
-					commandParameter)) {
+			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
 		}
@@ -241,12 +208,8 @@ public class PerformanceItemProvider extends ComponentElementItemProvider
 
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(
-					ComponentSamplePerformancePackage.Literals.PERFORMANCE__STATUS,
-					ComponentSamplePerformanceFactory.eINSTANCE
-							.createPerformanceStatus());
-			if (NewChildDescriptorHelper.isValidCommand(object,
-					commandParameter)) {
+			CommandParameter commandParameter = createChildParameter(ComponentSamplePerformancePackage.Literals.PERFORMANCE__STATUS, ComponentSamplePerformanceFactory.eINSTANCE.createPerformanceStatus());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
 		}

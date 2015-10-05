@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsample.activity.explorer.predicate;
 
@@ -48,8 +48,7 @@ public class PComponentSampleArchitecturePredicate implements IPredicate {
 	 * @generated
 	 */
 	protected boolean fileExtensionPredicate() {
-		final EObject rootSemanticModel = ActivityExplorerManager.INSTANCE
-				.getRootSemanticModel();
+		final EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();
 		final Resource eResource = rootSemanticModel.eResource();
 		if (null == eResource)
 			return false;
@@ -58,8 +57,7 @@ public class PComponentSampleArchitecturePredicate implements IPredicate {
 		if (null == resourceURI)
 			return false;
 
-		final List<String> allowedFileExtensions = Arrays
-				.asList("componentsample");
+		final List<String> allowedFileExtensions = Arrays.asList("componentsample");
 		final String fileExtension = resourceURI.fileExtension().toLowerCase();
 
 		return allowedFileExtensions.contains(fileExtension);

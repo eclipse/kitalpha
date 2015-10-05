@@ -11,7 +11,6 @@
 package org.polarsys.kitalpha.vp.componentsampleframework.ComponentSampleFramework.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**

@@ -12,14 +12,10 @@ package org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfo
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl;
-
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus;
@@ -39,8 +35,7 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  *
  * @generated
  */
-public class PerformanceImpl extends ComponentElementImpl implements
-		Performance {
+public class PerformanceImpl extends ComponentElementImpl implements Performance {
 
 	/**
 	 * The cached value of the '{@link #getStatus() <em>Status</em>}' containment reference.
@@ -130,16 +125,12 @@ public class PerformanceImpl extends ComponentElementImpl implements
 	 * @generated
 	 */
 
-	public NotificationChain basicSetStatus(PerformanceStatus newStatus,
-			NotificationChain msgs) {
+	public NotificationChain basicSetStatus(PerformanceStatus newStatus, NotificationChain msgs) {
 
 		PerformanceStatus oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					ComponentSamplePerformancePackage.PERFORMANCE__STATUS,
-					oldStatus, newStatus);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__STATUS, oldStatus, newStatus);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -160,26 +151,14 @@ public class PerformanceImpl extends ComponentElementImpl implements
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
-				msgs = ((InternalEObject) status)
-						.eInverseRemove(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ComponentSamplePerformancePackage.PERFORMANCE__STATUS,
-								null, msgs);
+				msgs = ((InternalEObject) status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentSamplePerformancePackage.PERFORMANCE__STATUS, null, msgs);
 			if (newStatus != null)
-				msgs = ((InternalEObject) newStatus)
-						.eInverseAdd(
-								this,
-								EOPPOSITE_FEATURE_BASE
-										- ComponentSamplePerformancePackage.PERFORMANCE__STATUS,
-								null, msgs);
+				msgs = ((InternalEObject) newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentSamplePerformancePackage.PERFORMANCE__STATUS, null, msgs);
 			msgs = basicSetStatus(newStatus, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSamplePerformancePackage.PERFORMANCE__STATUS,
-					newStatus, newStatus));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__STATUS, newStatus, newStatus));
 
 	}
 
@@ -205,9 +184,7 @@ public class PerformanceImpl extends ComponentElementImpl implements
 		int oldComplexity = complexity;
 		complexity = newComplexity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSamplePerformancePackage.PERFORMANCE__COMPLEXITY,
-					oldComplexity, complexity));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__COMPLEXITY, oldComplexity, complexity));
 
 	}
 
@@ -233,9 +210,7 @@ public class PerformanceImpl extends ComponentElementImpl implements
 		int oldCost = cost;
 		cost = newCost;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSamplePerformancePackage.PERFORMANCE__COST,
-					oldCost, cost));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__COST, oldCost, cost));
 
 	}
 
@@ -245,8 +220,7 @@ public class PerformanceImpl extends ComponentElementImpl implements
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ComponentSamplePerformancePackage.PERFORMANCE__STATUS:
 			return basicSetStatus(null, msgs);

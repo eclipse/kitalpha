@@ -7,7 +7,7 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/ 
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.vp.componentsample.activity.explorer.page;
 
@@ -18,7 +18,6 @@ import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.BasicSessionAct
  * @author Faycal Abka
  *
  */
-public class ComponentSampleArchitecturePage extends
-		BasicSessionActivityExplorerPage {
+public class ComponentSampleArchitecturePage extends BasicSessionActivityExplorerPage {
 
 }

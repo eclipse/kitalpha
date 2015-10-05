@@ -19,11 +19,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent#getUse <em>Use</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage#getAbstractComponent()
  * @model abstract="true"
@@ -35,7 +35,7 @@ public interface AbstractComponent extends ComponentElement {
 	/**
 	 * Returns the value of the '<em><b>Use</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Use</em>' reference list isn't clear,
@@ -53,7 +53,7 @@ public interface AbstractComponent extends ComponentElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentType}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -72,7 +72,7 @@ public interface AbstractComponent extends ComponentElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent#getType <em>Type</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.

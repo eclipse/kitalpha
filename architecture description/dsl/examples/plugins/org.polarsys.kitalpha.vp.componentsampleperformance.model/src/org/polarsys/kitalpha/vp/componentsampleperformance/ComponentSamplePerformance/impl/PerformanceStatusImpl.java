@@ -11,13 +11,9 @@
 package org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl;
-
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.PerformanceStatus;
 
@@ -34,8 +30,7 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  *
  * @generated
  */
-public class PerformanceStatusImpl extends ComponentElementImpl implements
-		PerformanceStatus {
+public class PerformanceStatusImpl extends ComponentElementImpl implements PerformanceStatus {
 
 	/**
 	 * The default value of the '{@link #isOverhead() <em>Overhead</em>}' attribute.
@@ -100,11 +95,7 @@ public class PerformanceStatusImpl extends ComponentElementImpl implements
 		boolean oldOverhead = overhead;
 		overhead = newOverhead;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					ComponentSamplePerformancePackage.PERFORMANCE_STATUS__OVERHEAD,
-					oldOverhead, overhead));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE_STATUS__OVERHEAD, oldOverhead, overhead));
 
 	}
 

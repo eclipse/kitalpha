@@ -12,16 +12,13 @@ package org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.uti
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
-
-import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.*;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +58,7 @@ public class ComponentSampleSafetySwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */

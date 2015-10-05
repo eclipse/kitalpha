@@ -19,8 +19,7 @@ import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerMana
  * @author Faycal Abka
  *
  */
-public class CreateNewDiagramActivity extends
-		AbstractNewDiagramHyperlinkAdapter {
+public class CreateNewDiagramActivity extends AbstractNewDiagramHyperlinkAdapter {
 
 	public CreateNewDiagramActivity() {
 		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());

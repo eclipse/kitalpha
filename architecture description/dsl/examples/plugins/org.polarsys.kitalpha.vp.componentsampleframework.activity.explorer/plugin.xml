@@ -79,7 +79,7 @@
 				class="org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activity.StopComponentSampleFrameworkActivity"
 				id="org.polarsys.kitalpha.vp.componentsample.activity.explorer.csf.stop.section"
 				index="2" 
-				image="icons/Stop.png"
+				image="icons/stop.png"
 				name="Stop">
 			<Description>
 				Stop Component sample framework viewpoint

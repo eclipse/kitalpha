@@ -4,26 +4,26 @@
     <VP_Classes name="SafetyPackage" icon="SafetyPackage.png">
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="modes" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.1"/>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//Package"/>
+        <superClass href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//Package"/>
       </Inheritences>
     </VP_Classes>
     <VP_Classes name="SafetyMode" icon="SafetyMode.png">
       <VP_Classes_Associations xsi:type="vpdesc:ExternalClassAssociation" name="involvedComponents" cardinality="0..*" type="reference">
-        <ExternalTarget href="../../org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
+        <ExternalTarget href="../../\org.polarsys.kitalpha.vp.componentsamplesafety\models\ComponentSampleSafety.ecore#//Safety"/>
       </VP_Classes_Associations>
       <VP_Class_Attributes name="pattern">
         <owned_type xsi:type="vpdesc:LocalAttributeType" type="//@VP_Data/@VP_Enumerations.0"/>
       </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
+        <superClass href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement"/>
       </Inheritences>
     </VP_Classes>
     <VP_Enumerations name="SAFETY_PATTERN">
       <ownedValues name="INTEGRITY" literal="INTEGRITY"/>
       <ownedValues name="AVAILABILITY" literal="AVAILABILITY"/>
     </VP_Enumerations>
-    <additionalExternalData href="../../org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#/"/>
-    <additionalExternalData href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
+    <additionalExternalData href="../../\org.polarsys.kitalpha.vp.componentsamplesafety\models\ComponentSampleSafety.ecore#/"/>
+    <additionalExternalData href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#/"/>
   </VP_Data>
   <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="ComponentSampleSafetyPattern.diagram">
     <additionalExternalGroup href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#/"/>

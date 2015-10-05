@@ -4,4 +4,4 @@ Bundle-Name: ComponentSampleFramework Releng
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsampleframework.releng;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bundle-Vendor: THALESGROUP
+Bundle-Vendor: Polarsys

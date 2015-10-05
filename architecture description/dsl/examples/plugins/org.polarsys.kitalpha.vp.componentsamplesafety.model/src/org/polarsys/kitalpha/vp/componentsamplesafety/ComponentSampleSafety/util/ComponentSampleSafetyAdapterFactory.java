@@ -12,18 +12,14 @@ package org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.uti
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
-
-import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.*;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
 
 /**
  * <!-- begin-user-doc -->

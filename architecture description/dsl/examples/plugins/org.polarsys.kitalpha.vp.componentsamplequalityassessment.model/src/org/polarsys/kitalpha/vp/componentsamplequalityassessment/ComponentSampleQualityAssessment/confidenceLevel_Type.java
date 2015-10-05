@@ -132,8 +132,7 @@ public enum confidenceLevel_Type implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final confidenceLevel_Type[] VALUES_ARRAY = new confidenceLevel_Type[] {
-			NOT_ASSESSED, LOW, MEDIUM, HIGH, };
+	private static final confidenceLevel_Type[] VALUES_ARRAY = new confidenceLevel_Type[] { NOT_ASSESSED, LOW, MEDIUM, HIGH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>confidence Level Type</b></em>' enumerators.
@@ -141,13 +140,14 @@ public enum confidenceLevel_Type implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<confidenceLevel_Type> VALUES = Collections
-			.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<confidenceLevel_Type> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>confidence Level Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static confidenceLevel_Type get(String literal) {
@@ -164,6 +164,8 @@ public enum confidenceLevel_Type implements Enumerator {
 	 * Returns the '<em><b>confidence Level Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static confidenceLevel_Type getByName(String name) {
@@ -180,6 +182,8 @@ public enum confidenceLevel_Type implements Enumerator {
 	 * Returns the '<em><b>confidence Level Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static confidenceLevel_Type get(int value) {

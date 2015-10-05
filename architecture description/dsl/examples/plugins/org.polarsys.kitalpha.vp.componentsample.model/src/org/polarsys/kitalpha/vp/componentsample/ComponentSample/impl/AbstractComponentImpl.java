@@ -13,15 +13,10 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentType;
@@ -40,8 +35,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentType;
  *
  * @generated
  */
-public abstract class AbstractComponentImpl extends ComponentElementImpl
-		implements AbstractComponent {
+public abstract class AbstractComponentImpl extends ComponentElementImpl implements AbstractComponent {
 
 	/**
 	 * The cached value of the '{@link #getUse() <em>Use</em>}' reference list.
@@ -103,8 +97,7 @@ public abstract class AbstractComponentImpl extends ComponentElementImpl
 	public EList<AbstractComponent> getUse() {
 
 		if (use == null) {
-			use = new EObjectResolvingEList<AbstractComponent>(
-					AbstractComponent.class, this,
+			use = new EObjectResolvingEList<AbstractComponent>(AbstractComponent.class, this,
 					ComponentSamplePackage.ABSTRACT_COMPONENT__USE);
 		}
 		return use;
@@ -132,9 +125,8 @@ public abstract class AbstractComponentImpl extends ComponentElementImpl
 		ComponentType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ComponentSamplePackage.ABSTRACT_COMPONENT__TYPE, oldType,
-					type));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePackage.ABSTRACT_COMPONENT__TYPE,
+					oldType, type));
 
 	}
 

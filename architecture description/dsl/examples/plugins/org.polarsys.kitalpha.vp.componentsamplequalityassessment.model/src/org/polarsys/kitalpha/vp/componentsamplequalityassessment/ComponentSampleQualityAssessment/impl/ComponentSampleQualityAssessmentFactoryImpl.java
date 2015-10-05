@@ -14,12 +14,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.*;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentFactory;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.ComponentSampleQualityAssessmentPackage;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityMeasure;
+import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.confidenceLevel_Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,8 +28,7 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
-		implements ComponentSampleQualityAssessmentFactory {
+public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl implements ComponentSampleQualityAssessmentFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -37,8 +37,7 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
 	 */
 	public static ComponentSampleQualityAssessmentFactory init() {
 		try {
-			ComponentSampleQualityAssessmentFactory theComponentSampleQualityAssessmentFactory = (ComponentSampleQualityAssessmentFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0"); //$NON-NLS-1$ 
+			ComponentSampleQualityAssessmentFactory theComponentSampleQualityAssessmentFactory = (ComponentSampleQualityAssessmentFactory) EPackage.Registry.INSTANCE.getEFactory(ComponentSampleQualityAssessmentPackage.eNS_URI);
 			if (theComponentSampleQualityAssessmentFactory != null) {
 				return theComponentSampleQualityAssessmentFactory;
 			}
@@ -71,8 +70,7 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
 		case ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE:
 			return createQualityMeasure();
 		default:
-			throw new IllegalArgumentException(
-					"The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -87,8 +85,7 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
 		case ComponentSampleQualityAssessmentPackage.CONFIDENCE_LEVEL_TYPE:
 			return createconfidenceLevel_TypeFromString(eDataType, initialValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -103,8 +100,7 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
 		case ComponentSampleQualityAssessmentPackage.CONFIDENCE_LEVEL_TYPE:
 			return convertconfidenceLevel_TypeToString(eDataType, instanceValue);
 		default:
-			throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
 
@@ -133,12 +129,10 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public confidenceLevel_Type createconfidenceLevel_TypeFromString(
-			EDataType eDataType, String initialValue) {
+	public confidenceLevel_Type createconfidenceLevel_TypeFromString(EDataType eDataType, String initialValue) {
 		confidenceLevel_Type result = confidenceLevel_Type.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -147,8 +141,7 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertconfidenceLevel_TypeToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertconfidenceLevel_TypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

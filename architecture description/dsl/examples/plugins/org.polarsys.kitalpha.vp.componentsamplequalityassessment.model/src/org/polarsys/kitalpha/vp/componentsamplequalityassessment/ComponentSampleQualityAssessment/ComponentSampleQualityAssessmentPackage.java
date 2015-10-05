@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
 /**
@@ -64,8 +63,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSampleQualityAssessmentPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.ComponentSampleQualityAssessmentPackageImpl
-			.init();
+	ComponentSampleQualityAssessmentPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.ComponentSampleQualityAssessmentPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityAssessmentImpl <em>Quality Assessment</em>}' class.
@@ -397,8 +395,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALITY_ASSESSMENT__BASED_ON = eINSTANCE
-				.getQualityAssessment_BasedOn();
+		EReference QUALITY_ASSESSMENT__BASED_ON = eINSTANCE.getQualityAssessment_BasedOn();
 
 		/**
 		 * The meta object literal for the '<em><b>Context</b></em>' reference list feature.
@@ -406,8 +403,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALITY_ASSESSMENT__CONTEXT = eINSTANCE
-				.getQualityAssessment_Context();
+		EReference QUALITY_ASSESSMENT__CONTEXT = eINSTANCE.getQualityAssessment_Context();
 
 		/**
 		 * The meta object literal for the '<em><b>Measures</b></em>' containment reference list feature.
@@ -415,8 +411,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALITY_ASSESSMENT__MEASURES = eINSTANCE
-				.getQualityAssessment_Measures();
+		EReference QUALITY_ASSESSMENT__MEASURES = eINSTANCE.getQualityAssessment_Measures();
 
 		/**
 		 * The meta object literal for the '<em><b>Maturity Level</b></em>' attribute feature.
@@ -424,8 +419,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUALITY_ASSESSMENT__MATURITY_LEVEL = eINSTANCE
-				.getQualityAssessment_MaturityLevel();
+		EAttribute QUALITY_ASSESSMENT__MATURITY_LEVEL = eINSTANCE.getQualityAssessment_MaturityLevel();
 
 		/**
 		 * The meta object literal for the '<em><b>Confidence Level</b></em>' attribute feature.
@@ -433,8 +427,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUALITY_ASSESSMENT__CONFIDENCE_LEVEL = eINSTANCE
-				.getQualityAssessment_ConfidenceLevel();
+		EAttribute QUALITY_ASSESSMENT__CONFIDENCE_LEVEL = eINSTANCE.getQualityAssessment_ConfidenceLevel();
 
 		/**
 		 * The meta object literal for the '<em><b>Assessed</b></em>' attribute feature.
@@ -442,8 +435,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUALITY_ASSESSMENT__ASSESSED = eINSTANCE
-				.getQualityAssessment_Assessed();
+		EAttribute QUALITY_ASSESSMENT__ASSESSED = eINSTANCE.getQualityAssessment_Assessed();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityMeasureImpl <em>Quality Measure</em>}' class.
@@ -461,8 +453,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUALITY_MEASURE__CRITERION = eINSTANCE
-				.getQualityMeasure_Criterion();
+		EAttribute QUALITY_MEASURE__CRITERION = eINSTANCE.getQualityMeasure_Criterion();
 
 		/**
 		 * The meta object literal for the '<em><b>Measure Value</b></em>' attribute feature.
@@ -470,8 +461,7 @@ public interface ComponentSampleQualityAssessmentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUALITY_MEASURE__MEASURE_VALUE = eINSTANCE
-				.getQualityMeasure_MeasureValue();
+		EAttribute QUALITY_MEASURE__MEASURE_VALUE = eINSTANCE.getQualityMeasure_MeasureValue();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.confidenceLevel_Type <em>confidence Level Type</em>}' enum.

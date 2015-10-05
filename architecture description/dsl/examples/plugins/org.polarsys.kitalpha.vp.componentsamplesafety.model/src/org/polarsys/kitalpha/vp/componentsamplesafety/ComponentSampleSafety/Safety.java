@@ -11,7 +11,6 @@
 package org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety;
 
 import org.polarsys.kitalpha.emde.model.ElementExtension;
-
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 
 /**
@@ -21,12 +20,12 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety#getCriticality <em>Criticality</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety#getDal <em>Dal</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety#getState <em>State</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage#getSafety()
  * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement=' http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent'"
@@ -39,7 +38,7 @@ public interface Safety extends ComponentElement, ElementExtension {
 	/**
 	 * Returns the value of the '<em><b>Criticality</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Criticality</em>' attribute isn't clear,
@@ -58,7 +57,7 @@ public interface Safety extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety#getCriticality <em>Criticality</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Criticality</em>' attribute.
@@ -72,7 +71,7 @@ public interface Safety extends ComponentElement, ElementExtension {
 	/**
 	 * Returns the value of the '<em><b>Dal</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Dal</em>' attribute isn't clear,
@@ -91,7 +90,7 @@ public interface Safety extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety#getDal <em>Dal</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dal</em>' attribute.
@@ -105,7 +104,7 @@ public interface Safety extends ComponentElement, ElementExtension {
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>State</em>' attribute isn't clear,
@@ -124,7 +123,7 @@ public interface Safety extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety#getState <em>State</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>State</em>' attribute.
