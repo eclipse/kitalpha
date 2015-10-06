@@ -28,7 +28,6 @@ import org.eclipse.sirius.diagram.description.style.EndLabelStyleDescription;
 import org.eclipse.sirius.diagram.description.style.NodeStyleDescription;
 import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
-import org.eclipse.sirius.viewpoint.description.style.StyleDescription;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
@@ -37,6 +36,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.helper.ColorsUseCasesHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
@@ -332,11 +333,15 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	}
 	
 	IScope scope_ColorCustomization_appliedOn(EObject context, EReference reference){
+		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d){
-						EObject candidate = d.getEObjectOrProxy();
-						return candidate instanceof StyleDescription;
+						if (context2 instanceof ColorCustomization){
+							EObject candidate = d.getEObjectOrProxy();
+							return ColorsUseCasesHelper.acceptColor((ColorCustomization)context2, candidate);
+						}
+						return false;
 					}
 		});
 	}
@@ -358,6 +363,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 		});
 	}
+	
 	
 	IScope scope_ColorCustomization_color(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 

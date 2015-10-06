@@ -428,11 +428,9 @@ EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
 
 ColorCustomization returns styleCusto::ColorCustomization:
 	{styleCusto::ColorCustomization}
-	'color' '(' (appliedOn+=[ecore::EObject | STRING] (',' appliedOn+=[ecore::EObject | STRING])*) ')' '['
-		('over-all-colors' '->' applyonAll=EBoolean)?
-		('color' '->' color = [siriusDescription::ColorDescription | STRING])
-		('color-use-case' '->' colorUseCase=ColorUseCase)?
-	']'
+	'paint' (colorUseCase=ColorUseCase) '(' (appliedOn+=[ecore::EObject | STRING] (',' appliedOn+=[ecore::EObject | STRING])*) ')' 
+		(applyonAll?='over-all-colors')?
+		('with' color = [siriusDescription::ColorDescription | STRING])
 ;
 
 LabelCustomization returns styleCusto::LabelCustomization:

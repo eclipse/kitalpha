@@ -4975,13 +4975,31 @@ ruleColorCustomization returns [EObject current=null]
             grammarAccess.getColorCustomizationAccess().getColorCustomizationAction_0(),
             $current);
     }
-)	otherlv_1='color' 
+)	otherlv_1='paint' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getColorCustomizationAccess().getColorKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getColorCustomizationAccess().getPaintKeyword_1());
     }
-	otherlv_2='(' 
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getColorCustomizationAccess().getColorUseCaseColorUseCaseEnumRuleCall_2_0()); 
+	    }
+		lv_colorUseCase_2_0=ruleColorUseCase		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getColorCustomizationRule());
+	        }
+       		set(
+       			$current, 
+       			"colorUseCase",
+        		lv_colorUseCase_2_0, 
+        		"ColorUseCase");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='(' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_3());
     }
 ((
 (
@@ -4990,15 +5008,15 @@ ruleColorCustomization returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getColorCustomizationRule());
 	        }
         }
-	otherlv_3=RULE_STRING
+	otherlv_4=RULE_STRING
 	{
-		newLeafNode(otherlv_3, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_0_0()); 
+		newLeafNode(otherlv_4, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_0_0()); 
 	}
 
 )
-)(	otherlv_4=',' 
+)(	otherlv_5=',' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getColorCustomizationAccess().getCommaKeyword_3_1_0());
+    	newLeafNode(otherlv_5, grammarAccess.getColorCustomizationAccess().getCommaKeyword_4_1_0());
     }
 (
 (
@@ -5007,53 +5025,34 @@ ruleColorCustomization returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getColorCustomizationRule());
 	        }
         }
-	otherlv_5=RULE_STRING
+	otherlv_6=RULE_STRING
 	{
-		newLeafNode(otherlv_5, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_1_1_0()); 
+		newLeafNode(otherlv_6, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_1_1_0()); 
 	}
 
 )
-))*)	otherlv_6=')' 
+))*)	otherlv_7=')' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_4());
-    }
-	otherlv_7='[' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getColorCustomizationAccess().getLeftSquareBracketKeyword_5());
-    }
-(	otherlv_8='over-all-colors' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getColorCustomizationAccess().getOverAllColorsKeyword_6_0());
-    }
-	otherlv_9='->' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_6_1());
+    	newLeafNode(otherlv_7, grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_5());
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getColorCustomizationAccess().getApplyonAllEBooleanParserRuleCall_6_2_0()); 
-	    }
-		lv_applyonAll_10_0=ruleEBoolean		{
+		lv_applyonAll_8_0=	'over-all-colors' 
+    {
+        newLeafNode(lv_applyonAll_8_0, grammarAccess.getColorCustomizationAccess().getApplyonAllOverAllColorsKeyword_6_0());
+    }
+ 
+	    {
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getColorCustomizationRule());
+	            $current = createModelElement(grammarAccess.getColorCustomizationRule());
 	        }
-       		set(
-       			$current, 
-       			"applyonAll",
-        		lv_applyonAll_10_0, 
-        		"EBoolean");
-	        afterParserOrEnumRuleCall();
+       		setWithLastConsumed($current, "applyonAll", true, "over-all-colors");
 	    }
 
 )
-))?(	otherlv_11='color' 
+)?(	otherlv_9='with' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getColorCustomizationAccess().getColorKeyword_7_0());
-    }
-	otherlv_12='->' 
-    {
-    	newLeafNode(otherlv_12, grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_7_1());
+    	newLeafNode(otherlv_9, grammarAccess.getColorCustomizationAccess().getWithKeyword_7_0());
     }
 (
 (
@@ -5062,43 +5061,13 @@ ruleColorCustomization returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getColorCustomizationRule());
 	        }
         }
-	otherlv_13=RULE_STRING
+	otherlv_10=RULE_STRING
 	{
-		newLeafNode(otherlv_13, grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_2_0()); 
+		newLeafNode(otherlv_10, grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_1_0()); 
 	}
 
 )
-))(	otherlv_14='color-use-case' 
-    {
-    	newLeafNode(otherlv_14, grammarAccess.getColorCustomizationAccess().getColorUseCaseKeyword_8_0());
-    }
-	otherlv_15='->' 
-    {
-    	newLeafNode(otherlv_15, grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8_1());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getColorCustomizationAccess().getColorUseCaseColorUseCaseEnumRuleCall_8_2_0()); 
-	    }
-		lv_colorUseCase_16_0=ruleColorUseCase		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getColorCustomizationRule());
-	        }
-       		set(
-       			$current, 
-       			"colorUseCase",
-        		lv_colorUseCase_16_0, 
-        		"ColorUseCase");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))?	otherlv_17=']' 
-    {
-    	newLeafNode(otherlv_17, grammarAccess.getColorCustomizationAccess().getRightSquareBracketKeyword_9());
-    }
-)
+)))
 ;
 
 

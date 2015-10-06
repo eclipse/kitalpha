@@ -349,7 +349,13 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (appliedOn+=[EObject|STRING] appliedOn+=[EObject|STRING]* applyonAll=EBoolean? color=[ColorDescription|STRING] colorUseCase=ColorUseCase?)
+	 *     (
+	 *         colorUseCase=ColorUseCase 
+	 *         appliedOn+=[EObject|STRING] 
+	 *         appliedOn+=[EObject|STRING]* 
+	 *         applyonAll?='over-all-colors'? 
+	 *         color=[ColorDescription|STRING]
+	 *     )
 	 */
 	protected void sequence_ColorCustomization(EObject context, ColorCustomization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

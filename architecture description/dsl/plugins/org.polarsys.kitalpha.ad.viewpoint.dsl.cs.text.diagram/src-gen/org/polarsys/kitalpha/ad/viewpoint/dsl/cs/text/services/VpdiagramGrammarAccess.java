@@ -3545,140 +3545,104 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ColorCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cColorCustomizationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cColorKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cAppliedOnAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final CrossReference cAppliedOnEObjectCrossReference_3_0_0 = (CrossReference)cAppliedOnAssignment_3_0.eContents().get(0);
-		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_3_0_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_3_0_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cAppliedOnAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final CrossReference cAppliedOnEObjectCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
-		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_3_1_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOverAllColorsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
+		private final Keyword cPaintKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cColorUseCaseAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cColorUseCaseColorUseCaseEnumRuleCall_2_0 = (RuleCall)cColorUseCaseAssignment_2.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cAppliedOnAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final CrossReference cAppliedOnEObjectCrossReference_4_0_0 = (CrossReference)cAppliedOnAssignment_4_0.eContents().get(0);
+		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_4_0_0.eContents().get(1);
+		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
+		private final Keyword cCommaKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
+		private final Assignment cAppliedOnAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
+		private final CrossReference cAppliedOnEObjectCrossReference_4_1_1_0 = (CrossReference)cAppliedOnAssignment_4_1_1.eContents().get(0);
+		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_4_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cApplyonAllAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final Keyword cApplyonAllOverAllColorsKeyword_6_0 = (Keyword)cApplyonAllAssignment_6.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cColorKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cColorAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final CrossReference cColorColorDescriptionCrossReference_7_2_0 = (CrossReference)cColorAssignment_7_2.eContents().get(0);
-		private final RuleCall cColorColorDescriptionSTRINGTerminalRuleCall_7_2_0_1 = (RuleCall)cColorColorDescriptionCrossReference_7_2_0.eContents().get(1);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cColorUseCaseKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cColorUseCaseAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cColorUseCaseColorUseCaseEnumRuleCall_8_2_0 = (RuleCall)cColorUseCaseAssignment_8_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cWithKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cColorAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cColorColorDescriptionCrossReference_7_1_0 = (CrossReference)cColorAssignment_7_1.eContents().get(0);
+		private final RuleCall cColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1 = (RuleCall)cColorColorDescriptionCrossReference_7_1_0.eContents().get(1);
 		
 		//ColorCustomization returns styleCusto::ColorCustomization:
-		//	{styleCusto::ColorCustomization} "color" "(" (appliedOn+=[ecore::EObject|STRING] (","
-		//	appliedOn+=[ecore::EObject|STRING])*) ")" "[" ("over-all-colors" "->" applyonAll=EBoolean)? ("color" "->"
-		//	color=[siriusDescription::ColorDescription|STRING]) ("color-use-case" "->" colorUseCase=ColorUseCase)? "]";
+		//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
+		//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with"
+		//	color=[siriusDescription::ColorDescription|STRING]);
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ColorCustomization} "color" "(" (appliedOn+=[ecore::EObject|STRING] (","
-		//appliedOn+=[ecore::EObject|STRING])*) ")" "[" ("over-all-colors" "->" applyonAll=EBoolean)? ("color" "->"
-		//color=[siriusDescription::ColorDescription|STRING]) ("color-use-case" "->" colorUseCase=ColorUseCase)? "]"
+		//{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
+		//appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with"
+		//color=[siriusDescription::ColorDescription|STRING])
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ColorCustomization}
 		public Action getColorCustomizationAction_0() { return cColorCustomizationAction_0; }
 
-		//"color"
-		public Keyword getColorKeyword_1() { return cColorKeyword_1; }
-
-		//"("
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
-
-		//appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*
-		public Group getGroup_3() { return cGroup_3; }
-
-		//appliedOn+=[ecore::EObject|STRING]
-		public Assignment getAppliedOnAssignment_3_0() { return cAppliedOnAssignment_3_0; }
-
-		//[ecore::EObject|STRING]
-		public CrossReference getAppliedOnEObjectCrossReference_3_0_0() { return cAppliedOnEObjectCrossReference_3_0_0; }
-
-		//STRING
-		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_3_0_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_3_0_0_1; }
-
-		//("," appliedOn+=[ecore::EObject|STRING])*
-		public Group getGroup_3_1() { return cGroup_3_1; }
-
-		//","
-		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
-
-		//appliedOn+=[ecore::EObject|STRING]
-		public Assignment getAppliedOnAssignment_3_1_1() { return cAppliedOnAssignment_3_1_1; }
-
-		//[ecore::EObject|STRING]
-		public CrossReference getAppliedOnEObjectCrossReference_3_1_1_0() { return cAppliedOnEObjectCrossReference_3_1_1_0; }
-
-		//STRING
-		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_0_1; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
-
-		//"["
-		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
-
-		//("over-all-colors" "->" applyonAll=EBoolean)?
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"over-all-colors"
-		public Keyword getOverAllColorsKeyword_6_0() { return cOverAllColorsKeyword_6_0; }
-
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_6_1() { return cHyphenMinusGreaterThanSignKeyword_6_1; }
-
-		//applyonAll=EBoolean
-		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
-
-		//EBoolean
-		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
-
-		//"color" "->" color=[siriusDescription::ColorDescription|STRING]
-		public Group getGroup_7() { return cGroup_7; }
-
-		//"color"
-		public Keyword getColorKeyword_7_0() { return cColorKeyword_7_0; }
-
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7_1() { return cHyphenMinusGreaterThanSignKeyword_7_1; }
-
-		//color=[siriusDescription::ColorDescription|STRING]
-		public Assignment getColorAssignment_7_2() { return cColorAssignment_7_2; }
-
-		//[siriusDescription::ColorDescription|STRING]
-		public CrossReference getColorColorDescriptionCrossReference_7_2_0() { return cColorColorDescriptionCrossReference_7_2_0; }
-
-		//STRING
-		public RuleCall getColorColorDescriptionSTRINGTerminalRuleCall_7_2_0_1() { return cColorColorDescriptionSTRINGTerminalRuleCall_7_2_0_1; }
-
-		//("color-use-case" "->" colorUseCase=ColorUseCase)?
-		public Group getGroup_8() { return cGroup_8; }
-
-		//"color-use-case"
-		public Keyword getColorUseCaseKeyword_8_0() { return cColorUseCaseKeyword_8_0; }
-
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8_1() { return cHyphenMinusGreaterThanSignKeyword_8_1; }
+		//"paint"
+		public Keyword getPaintKeyword_1() { return cPaintKeyword_1; }
 
 		//colorUseCase=ColorUseCase
-		public Assignment getColorUseCaseAssignment_8_2() { return cColorUseCaseAssignment_8_2; }
+		public Assignment getColorUseCaseAssignment_2() { return cColorUseCaseAssignment_2; }
 
 		//ColorUseCase
-		public RuleCall getColorUseCaseColorUseCaseEnumRuleCall_8_2_0() { return cColorUseCaseColorUseCaseEnumRuleCall_8_2_0; }
+		public RuleCall getColorUseCaseColorUseCaseEnumRuleCall_2_0() { return cColorUseCaseColorUseCaseEnumRuleCall_2_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_9() { return cRightSquareBracketKeyword_9; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+
+		//appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//appliedOn+=[ecore::EObject|STRING]
+		public Assignment getAppliedOnAssignment_4_0() { return cAppliedOnAssignment_4_0; }
+
+		//[ecore::EObject|STRING]
+		public CrossReference getAppliedOnEObjectCrossReference_4_0_0() { return cAppliedOnEObjectCrossReference_4_0_0; }
+
+		//STRING
+		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1; }
+
+		//("," appliedOn+=[ecore::EObject|STRING])*
+		public Group getGroup_4_1() { return cGroup_4_1; }
+
+		//","
+		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
+
+		//appliedOn+=[ecore::EObject|STRING]
+		public Assignment getAppliedOnAssignment_4_1_1() { return cAppliedOnAssignment_4_1_1; }
+
+		//[ecore::EObject|STRING]
+		public CrossReference getAppliedOnEObjectCrossReference_4_1_1_0() { return cAppliedOnEObjectCrossReference_4_1_1_0; }
+
+		//STRING
+		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+
+		//applyonAll?="over-all-colors"?
+		public Assignment getApplyonAllAssignment_6() { return cApplyonAllAssignment_6; }
+
+		//"over-all-colors"
+		public Keyword getApplyonAllOverAllColorsKeyword_6_0() { return cApplyonAllOverAllColorsKeyword_6_0; }
+
+		//"with" color=[siriusDescription::ColorDescription|STRING]
+		public Group getGroup_7() { return cGroup_7; }
+
+		//"with"
+		public Keyword getWithKeyword_7_0() { return cWithKeyword_7_0; }
+
+		//color=[siriusDescription::ColorDescription|STRING]
+		public Assignment getColorAssignment_7_1() { return cColorAssignment_7_1; }
+
+		//[siriusDescription::ColorDescription|STRING]
+		public CrossReference getColorColorDescriptionCrossReference_7_1_0() { return cColorColorDescriptionCrossReference_7_1_0; }
+
+		//STRING
+		public RuleCall getColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1() { return cColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1; }
 	}
 
 	public class LabelCustomizationElements extends AbstractParserRuleElementFinder {
@@ -7206,9 +7170,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ColorCustomization returns styleCusto::ColorCustomization:
-	//	{styleCusto::ColorCustomization} "color" "(" (appliedOn+=[ecore::EObject|STRING] (","
-	//	appliedOn+=[ecore::EObject|STRING])*) ")" "[" ("over-all-colors" "->" applyonAll=EBoolean)? ("color" "->"
-	//	color=[siriusDescription::ColorDescription|STRING]) ("color-use-case" "->" colorUseCase=ColorUseCase)? "]";
+	//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
+	//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with"
+	//	color=[siriusDescription::ColorDescription|STRING]);
 	public ColorCustomizationElements getColorCustomizationAccess() {
 		return pColorCustomization;
 	}

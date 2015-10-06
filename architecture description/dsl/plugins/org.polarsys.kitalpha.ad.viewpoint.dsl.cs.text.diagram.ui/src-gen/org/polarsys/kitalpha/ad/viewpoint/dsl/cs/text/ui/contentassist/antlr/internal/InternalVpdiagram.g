@@ -19802,11 +19802,11 @@ rule__ColorCustomization__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getColorKeyword_1()); }
+{ before(grammarAccess.getColorCustomizationAccess().getPaintKeyword_1()); }
 
-	'color' 
+	'paint' 
 
-{ after(grammarAccess.getColorCustomizationAccess().getColorKeyword_1()); }
+{ after(grammarAccess.getColorCustomizationAccess().getPaintKeyword_1()); }
 )
 
 ;
@@ -19833,11 +19833,9 @@ rule__ColorCustomization__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_2()); }
-
-	'(' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_2()); }
+{ before(grammarAccess.getColorCustomizationAccess().getColorUseCaseAssignment_2()); }
+(rule__ColorCustomization__ColorUseCaseAssignment_2)
+{ after(grammarAccess.getColorCustomizationAccess().getColorUseCaseAssignment_2()); }
 )
 
 ;
@@ -19864,9 +19862,11 @@ rule__ColorCustomization__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getGroup_3()); }
-(rule__ColorCustomization__Group_3__0)
-{ after(grammarAccess.getColorCustomizationAccess().getGroup_3()); }
+{ before(grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_3()); }
+
+	'(' 
+
+{ after(grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_3()); }
 )
 
 ;
@@ -19893,11 +19893,9 @@ rule__ColorCustomization__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_4()); }
-
-	')' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_4()); }
+{ before(grammarAccess.getColorCustomizationAccess().getGroup_4()); }
+(rule__ColorCustomization__Group_4__0)
+{ after(grammarAccess.getColorCustomizationAccess().getGroup_4()); }
 )
 
 ;
@@ -19924,11 +19922,11 @@ rule__ColorCustomization__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getLeftSquareBracketKeyword_5()); }
+{ before(grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_5()); }
 
-	'[' 
+	')' 
 
-{ after(grammarAccess.getColorCustomizationAccess().getLeftSquareBracketKeyword_5()); }
+{ after(grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_5()); }
 )
 
 ;
@@ -19955,9 +19953,9 @@ rule__ColorCustomization__Group__6__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getGroup_6()); }
-(rule__ColorCustomization__Group_6__0)?
-{ after(grammarAccess.getColorCustomizationAccess().getGroup_6()); }
+{ before(grammarAccess.getColorCustomizationAccess().getApplyonAllAssignment_6()); }
+(rule__ColorCustomization__ApplyonAllAssignment_6)?
+{ after(grammarAccess.getColorCustomizationAccess().getApplyonAllAssignment_6()); }
 )
 
 ;
@@ -19972,7 +19970,6 @@ rule__ColorCustomization__Group__7
     }
 :
 	rule__ColorCustomization__Group__7__Impl
-	rule__ColorCustomization__Group__8
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -19995,27 +19992,43 @@ finally {
 }
 
 
-rule__ColorCustomization__Group__8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rule__ColorCustomization__Group_4__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ColorCustomization__Group__8__Impl
-	rule__ColorCustomization__Group__9
+	rule__ColorCustomization__Group_4__0__Impl
+	rule__ColorCustomization__Group_4__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__Group__8__Impl
+rule__ColorCustomization__Group_4__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getGroup_8()); }
-(rule__ColorCustomization__Group_8__0)?
-{ after(grammarAccess.getColorCustomizationAccess().getGroup_8()); }
+{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_4_0()); }
+(rule__ColorCustomization__AppliedOnAssignment_4_0)
+{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_4_0()); }
 )
 
 ;
@@ -20024,105 +20037,26 @@ finally {
 }
 
 
-rule__ColorCustomization__Group__9
+rule__ColorCustomization__Group_4__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ColorCustomization__Group__9__Impl
+	rule__ColorCustomization__Group_4__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__Group__9__Impl
+rule__ColorCustomization__Group_4__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getRightSquareBracketKeyword_9()); }
-
-	']' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getRightSquareBracketKeyword_9()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-rule__ColorCustomization__Group_3__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_3__0__Impl
-	rule__ColorCustomization__Group_3__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_3__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_3_0()); }
-(rule__ColorCustomization__AppliedOnAssignment_3_0)
-{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_3_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ColorCustomization__Group_3__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_3__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_3__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getGroup_3_1()); }
-(rule__ColorCustomization__Group_3_1__0)*
-{ after(grammarAccess.getColorCustomizationAccess().getGroup_3_1()); }
+{ before(grammarAccess.getColorCustomizationAccess().getGroup_4_1()); }
+(rule__ColorCustomization__Group_4_1__0)*
+{ after(grammarAccess.getColorCustomizationAccess().getGroup_4_1()); }
 )
 
 ;
@@ -20135,29 +20069,29 @@ finally {
 
 
 
-rule__ColorCustomization__Group_3_1__0
+rule__ColorCustomization__Group_4_1__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ColorCustomization__Group_3_1__0__Impl
-	rule__ColorCustomization__Group_3_1__1
+	rule__ColorCustomization__Group_4_1__0__Impl
+	rule__ColorCustomization__Group_4_1__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__Group_3_1__0__Impl
+rule__ColorCustomization__Group_4_1__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getCommaKeyword_3_1_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getCommaKeyword_4_1_0()); }
 
 	',' 
 
-{ after(grammarAccess.getColorCustomizationAccess().getCommaKeyword_3_1_0()); }
+{ after(grammarAccess.getColorCustomizationAccess().getCommaKeyword_4_1_0()); }
 )
 
 ;
@@ -20166,128 +20100,32 @@ finally {
 }
 
 
-rule__ColorCustomization__Group_3_1__1
+rule__ColorCustomization__Group_4_1__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__ColorCustomization__Group_3_1__1__Impl
+	rule__ColorCustomization__Group_4_1__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__Group_3_1__1__Impl
+rule__ColorCustomization__Group_4_1__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_3_1_1()); }
-(rule__ColorCustomization__AppliedOnAssignment_3_1_1)
-{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_3_1_1()); }
+{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_4_1_1()); }
+(rule__ColorCustomization__AppliedOnAssignment_4_1_1)
+{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnAssignment_4_1_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-
-
-
-
-rule__ColorCustomization__Group_6__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_6__0__Impl
-	rule__ColorCustomization__Group_6__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_6__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getOverAllColorsKeyword_6_0()); }
-
-	'over-all-colors' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getOverAllColorsKeyword_6_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ColorCustomization__Group_6__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_6__1__Impl
-	rule__ColorCustomization__Group_6__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_6__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_6_1()); }
-
-	'->' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_6_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ColorCustomization__Group_6__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_6__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_6__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getApplyonAllAssignment_6_2()); }
-(rule__ColorCustomization__ApplyonAllAssignment_6_2)
-{ after(grammarAccess.getColorCustomizationAccess().getApplyonAllAssignment_6_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
 
 
 
@@ -20312,11 +20150,11 @@ rule__ColorCustomization__Group_7__0__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getColorKeyword_7_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getWithKeyword_7_0()); }
 
-	'color' 
+	'with' 
 
-{ after(grammarAccess.getColorCustomizationAccess().getColorKeyword_7_0()); }
+{ after(grammarAccess.getColorCustomizationAccess().getWithKeyword_7_0()); }
 )
 
 ;
@@ -20331,7 +20169,6 @@ rule__ColorCustomization__Group_7__1
     }
 :
 	rule__ColorCustomization__Group_7__1__Impl
-	rule__ColorCustomization__Group_7__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -20343,143 +20180,15 @@ rule__ColorCustomization__Group_7__1__Impl
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_7_1()); }
-
-	'->' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_7_1()); }
+{ before(grammarAccess.getColorCustomizationAccess().getColorAssignment_7_1()); }
+(rule__ColorCustomization__ColorAssignment_7_1)
+{ after(grammarAccess.getColorCustomizationAccess().getColorAssignment_7_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-rule__ColorCustomization__Group_7__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_7__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_7__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getColorAssignment_7_2()); }
-(rule__ColorCustomization__ColorAssignment_7_2)
-{ after(grammarAccess.getColorCustomizationAccess().getColorAssignment_7_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-
-
-rule__ColorCustomization__Group_8__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_8__0__Impl
-	rule__ColorCustomization__Group_8__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_8__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getColorUseCaseKeyword_8_0()); }
-
-	'color-use-case' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getColorUseCaseKeyword_8_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ColorCustomization__Group_8__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_8__1__Impl
-	rule__ColorCustomization__Group_8__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_8__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8_1()); }
-
-	'->' 
-
-{ after(grammarAccess.getColorCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ColorCustomization__Group_8__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ColorCustomization__Group_8__2__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColorCustomization__Group_8__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getColorCustomizationAccess().getColorUseCaseAssignment_8_2()); }
-(rule__ColorCustomization__ColorUseCaseAssignment_8_2)
-{ after(grammarAccess.getColorCustomizationAccess().getColorUseCaseAssignment_8_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
 
 
 
@@ -30157,18 +29866,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__AppliedOnAssignment_3_0
+rule__ColorCustomization__ColorUseCaseAssignment_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_0_0()); }
-(
-{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_3_0_0_1()); }
-	RULE_STRING{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_3_0_0_1()); }
-)
-{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_0_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getColorUseCaseColorUseCaseEnumRuleCall_2_0()); }
+	ruleColorUseCase{ after(grammarAccess.getColorCustomizationAccess().getColorUseCaseColorUseCaseEnumRuleCall_2_0()); }
 )
 
 ;
@@ -30176,18 +29881,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__AppliedOnAssignment_3_1_1
+rule__ColorCustomization__AppliedOnAssignment_4_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_1_1_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_0_0()); }
 (
-{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_0_1()); }
-	RULE_STRING{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_0_1()); }
+{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1()); }
+	RULE_STRING{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1()); }
 )
-{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_1_1_0()); }
+{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_0_0()); }
 )
 
 ;
@@ -30195,14 +29900,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__ApplyonAllAssignment_6_2
+rule__ColorCustomization__AppliedOnAssignment_4_1_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getApplyonAllEBooleanParserRuleCall_6_2_0()); }
-	ruleEBoolean{ after(grammarAccess.getColorCustomizationAccess().getApplyonAllEBooleanParserRuleCall_6_2_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_1_1_0()); }
+(
+{ before(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1()); }
+	RULE_STRING{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1()); }
+)
+{ after(grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_1_1_0()); }
 )
 
 ;
@@ -30210,18 +29919,22 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__ColorAssignment_7_2
+rule__ColorCustomization__ApplyonAllAssignment_6
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_2_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getApplyonAllOverAllColorsKeyword_6_0()); }
 (
-{ before(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_7_2_0_1()); }
-	RULE_STRING{ after(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_7_2_0_1()); }
+{ before(grammarAccess.getColorCustomizationAccess().getApplyonAllOverAllColorsKeyword_6_0()); }
+
+	'over-all-colors' 
+
+{ after(grammarAccess.getColorCustomizationAccess().getApplyonAllOverAllColorsKeyword_6_0()); }
 )
-{ after(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_2_0()); }
+
+{ after(grammarAccess.getColorCustomizationAccess().getApplyonAllOverAllColorsKeyword_6_0()); }
 )
 
 ;
@@ -30229,14 +29942,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ColorCustomization__ColorUseCaseAssignment_8_2
+rule__ColorCustomization__ColorAssignment_7_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getColorUseCaseColorUseCaseEnumRuleCall_8_2_0()); }
-	ruleColorUseCase{ after(grammarAccess.getColorCustomizationAccess().getColorUseCaseColorUseCaseEnumRuleCall_8_2_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_1_0()); }
+(
+{ before(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1()); }
+	RULE_STRING{ after(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1()); }
+)
+{ after(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_1_0()); }
 )
 
 ;

@@ -187,11 +187,7 @@ BorderedNode borderedNodeName {&#13;
 	end-centering -> Both&#13;
 ]&#13;
 </template>
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ColorCustomization" deleted="false" description="New Color Customization" enabled="true" id="18" name="Color Customization">color ("${colorStyle:CrossReference('vpstylecustomization.ColorDescription.appliedOn')}")[&#13;
-	over-all-colors -> false&#13;
-	color -> "blue"&#13;
-	color-use-case -> Background&#13;
-]&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ColorCustomization" deleted="false" description="New Color Customization" enabled="true" id="18" name="Color Customization">paint Color ("${colorStyle:CrossReference('vpstylecustomization.ColorDescription.appliedOn')}") with "${color:CrossReference('vpstylecustomization.ColorDescription.color')}"&#13;
 </template>
 
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelCustomization" deleted="false" description="New Label Style Customization" enabled="true" id="19" name="Label Style Customization">label ("${labelStyle:CrossReference('vpstylecustomization.LabelCustomization.appliedOn')}")[&#13;

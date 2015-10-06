@@ -142,9 +142,7 @@ public class VpdiagramFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getSizeKeyword_17_0());
 		
 		
-		c.setLinewrap().before(f.getColorCustomizationAccess().getOverAllColorsKeyword_6_0());
-		c.setLinewrap().before(f.getColorCustomizationAccess().getColorKeyword_7_0());
-		c.setLinewrap().before(f.getColorCustomizationAccess().getColorUseCaseKeyword_8_0());
+		c.setLinewrap().before(f.getColorCustomizationAccess().getPaintKeyword_1());
 		
 		c.setLinewrap().before(f.getLabelCustomizationAccess().getOverAllLabelsKeyword_6_0());
 		c.setLinewrap().before(f.getLabelAlignementCustomizationAccess().getAlignmentKeyword_1());

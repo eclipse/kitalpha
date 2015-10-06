@@ -96,8 +96,7 @@
 'center-target-mappings'=100
 'chocolate'=212
 'class-association-context:'=76
-'color'=108
-'color-use-case'=110
+'color'=113
 'color:'=30
 'condition:'=25
 'container'=119
@@ -131,7 +130,7 @@
 'foreground'=175
 'foreground:'=48
 'form:'=45
-'format'=113
+'format'=112
 'gauge-alignment'=136
 'gray'=213
 'green'=208
@@ -143,7 +142,7 @@
 'import'=11
 'import:'=32
 'italic'=59
-'label'=111
+'label'=110
 'label-position'=131
 'label:'=67
 'left'=189
@@ -167,8 +166,9 @@
 'over-all-colors'=109
 'over-all-containers'=120
 'over-all-edges'=93
-'over-all-labels'=112
+'over-all-labels'=111
 'over-all-nodes'=130
+'paint'=108
 'parallelogram'=160
 'path'=116
 'path:'=54
