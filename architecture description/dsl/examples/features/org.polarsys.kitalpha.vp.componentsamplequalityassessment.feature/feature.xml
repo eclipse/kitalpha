@@ -11,20 +11,19 @@ Contributors:
 -->
 <feature
       id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.feature"
-      label="%featureName"
-      version="1.0.0.qualifier"
-      provider-name="%providerName">
+      label="ComponentSampleQualityAssessment Feature"
+      version="1.0.0.qualifier">
 
-   <description>
-      %description
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
    </description>
 
-   <copyright>
-      %copyright
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
    </copyright>
 
-   <license url="%licenseURL">
-      %license
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
    </license>
 
    <includes
@@ -62,19 +61,6 @@ Contributors:
 
    <plugin
          id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.model.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.doc"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer"
          download-size="0"
          install-size="0"
          version="0.0.0"

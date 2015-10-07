@@ -22,7 +22,7 @@
    </requires>
 
    <plugin
-         id="org.polarsys.kitalpha.vp.componentsample.explorer.contextual"
+         id="org.polarsys.kitalpha.vp.componentsample.contextual.explorer"
          download-size="0"
          install-size="0"
          version="0.0.0"

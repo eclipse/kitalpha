@@ -10,6 +10,9 @@
       <fcore
             id="egf/customPlatform.fcore">
       </fcore>
+      <fcore
+            id="egf/PublishExamples.fcore">
+      </fcore>
    </extension>
 
 </plugin> 

@@ -10,6 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.egf.pattern,
  org.eclipse.egf.portfolio.eclipse.build,
  org.eclipse.egf.pattern.ftask;visibility:=reexport,
+ org.eclipse.ui.ide,
  org.apache.ant
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

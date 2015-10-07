@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.SafetyPackage.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.safetypackage.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.SafetyPackage.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned Viewpoint elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.safetypackage.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.SafetyMode.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.safetymode.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.SafetyMode.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Referenced Melody Advance elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.queries.safetymode.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>

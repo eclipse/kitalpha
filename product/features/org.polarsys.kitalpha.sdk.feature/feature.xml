@@ -29,6 +29,7 @@
 
       <import feature="org.polarsys.kitalpha.ad.dsl.feature" version="1.0.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.ad.dsl.source.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.vp.componentsample.example.installer.feature" version="1.0.0.qualifier"/>
 
       <import feature="org.polarsys.kitalpha.representation.feature" version="1.0.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.representation.source.feature" version="1.0.0.qualifier"/>
