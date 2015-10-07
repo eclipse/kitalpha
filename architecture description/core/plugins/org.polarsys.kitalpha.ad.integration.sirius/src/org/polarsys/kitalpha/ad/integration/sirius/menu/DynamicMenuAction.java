@@ -43,6 +43,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartSite;
+import org.polarsys.kitalpha.ad.common.utils.URIFix;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -179,7 +180,7 @@ public class DynamicMenuAction implements IMenuCreator, IObjectActionDelegate {
 			if ((path2 == null) || "".equals(path2)) {
 				continue;
 			}
-			URI uri = URI.createPlatformPluginURI(path2, false);
+			URI uri = URIFix.createPlatformPluginURI(path2, false);
 			Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 			vps.add(vp);
 		}
