@@ -4593,17 +4593,17 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_6, grammarAccess.getEdgeStyleCustomizationAccess().getRightParenthesisKeyword_4());
     }
-	otherlv_7='[' 
+	otherlv_7='{' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getEdgeStyleCustomizationAccess().getLeftSquareBracketKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getEdgeStyleCustomizationAccess().getLeftCurlyBracketKeyword_5());
     }
 (	otherlv_8='over-all-edges' 
     {
     	newLeafNode(otherlv_8, grammarAccess.getEdgeStyleCustomizationAccess().getOverAllEdgesKeyword_6_0());
     }
-	otherlv_9='->' 
+	otherlv_9=':' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_6_1());
+    	newLeafNode(otherlv_9, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_6_1());
     }
 (
 (
@@ -4627,9 +4627,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_11, grammarAccess.getEdgeStyleCustomizationAccess().getSourceKeyword_7_0());
     }
-	otherlv_12='->' 
+	otherlv_12=':' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_7_1());
+    	newLeafNode(otherlv_12, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_7_1());
     }
 (
 (
@@ -4653,9 +4653,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getEdgeStyleCustomizationAccess().getTargetKeyword_8_0());
     }
-	otherlv_15='->' 
+	otherlv_15=':' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8_1());
+    	newLeafNode(otherlv_15, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_8_1());
     }
 (
 (
@@ -4679,9 +4679,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_17, grammarAccess.getEdgeStyleCustomizationAccess().getRoutingKeyword_9_0());
     }
-	otherlv_18='->' 
+	otherlv_18=':' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_9_1());
+    	newLeafNode(otherlv_18, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_9_1());
     }
 (
 (
@@ -4705,9 +4705,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_20, grammarAccess.getEdgeStyleCustomizationAccess().getFoldingKeyword_10_0());
     }
-	otherlv_21='->' 
+	otherlv_21=':' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_10_1());
+    	newLeafNode(otherlv_21, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_10_1());
     }
 (
 (
@@ -4731,9 +4731,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_23, grammarAccess.getEdgeStyleCustomizationAccess().getCenterSourceMappingsKeyword_11_0());
     }
-	otherlv_24='->' 
+	otherlv_24=':' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_11_1());
+    	newLeafNode(otherlv_24, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_11_1());
     }
 ((
 (
@@ -4769,9 +4769,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_28, grammarAccess.getEdgeStyleCustomizationAccess().getCenterTargetMappingsKeyword_12_0());
     }
-	otherlv_29='->' 
+	otherlv_29=':' 
     {
-    	newLeafNode(otherlv_29, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_12_1());
+    	newLeafNode(otherlv_29, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_12_1());
     }
 ((
 (
@@ -4807,9 +4807,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_33, grammarAccess.getEdgeStyleCustomizationAccess().getBeginLabelStyleDescriptionKeyword_13_0());
     }
-	otherlv_34='->' 
+	otherlv_34=':' 
     {
-    	newLeafNode(otherlv_34, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_13_1());
+    	newLeafNode(otherlv_34, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_13_1());
     }
 (
 (
@@ -4828,9 +4828,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_36, grammarAccess.getEdgeStyleCustomizationAccess().getCenterLabelStyleDescriptionKeyword_14_0());
     }
-	otherlv_37='->' 
+	otherlv_37=':' 
     {
-    	newLeafNode(otherlv_37, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_14_1());
+    	newLeafNode(otherlv_37, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_14_1());
     }
 (
 (
@@ -4849,9 +4849,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_39, grammarAccess.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionKeyword_15_0());
     }
-	otherlv_40='->' 
+	otherlv_40=':' 
     {
-    	newLeafNode(otherlv_40, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_15_1());
+    	newLeafNode(otherlv_40, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_15_1());
     }
 (
 (
@@ -4870,9 +4870,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_42, grammarAccess.getEdgeStyleCustomizationAccess().getLineStyleKeyword_16_0());
     }
-	otherlv_43='->' 
+	otherlv_43=':' 
     {
-    	newLeafNode(otherlv_43, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_16_1());
+    	newLeafNode(otherlv_43, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_16_1());
     }
 (
 (
@@ -4896,9 +4896,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_45, grammarAccess.getEdgeStyleCustomizationAccess().getSizeKeyword_17_0());
     }
-	otherlv_46='->' 
+	otherlv_46=':' 
     {
-    	newLeafNode(otherlv_46, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_17_1());
+    	newLeafNode(otherlv_46, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_17_1());
     }
 (
 (
@@ -4922,9 +4922,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_48, grammarAccess.getEdgeStyleCustomizationAccess().getEndCenteringKeyword_18_0());
     }
-	otherlv_49='->' 
+	otherlv_49=':' 
     {
-    	newLeafNode(otherlv_49, grammarAccess.getEdgeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_18_1());
+    	newLeafNode(otherlv_49, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_18_1());
     }
 (
 (
@@ -4944,9 +4944,9 @@ ruleEdgeStyleCustomization returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_51=']' 
+))?	otherlv_51='}' 
     {
-    	newLeafNode(otherlv_51, grammarAccess.getEdgeStyleCustomizationAccess().getRightSquareBracketKeyword_19());
+    	newLeafNode(otherlv_51, grammarAccess.getEdgeStyleCustomizationAccess().getRightCurlyBracketKeyword_19());
     }
 )
 ;
@@ -5136,17 +5136,17 @@ ruleLabelCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_6, grammarAccess.getLabelCustomizationAccess().getRightParenthesisKeyword_4());
     }
-	otherlv_7='[' 
+	otherlv_7='{' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getLabelCustomizationAccess().getLeftSquareBracketKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getLabelCustomizationAccess().getLeftCurlyBracketKeyword_5());
     }
 (	otherlv_8='over-all-labels' 
     {
     	newLeafNode(otherlv_8, grammarAccess.getLabelCustomizationAccess().getOverAllLabelsKeyword_6_0());
     }
-	otherlv_9='->' 
+	otherlv_9=':' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getLabelCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_6_1());
+    	newLeafNode(otherlv_9, grammarAccess.getLabelCustomizationAccess().getColonKeyword_6_1());
     }
 (
 (
@@ -5188,9 +5188,9 @@ ruleLabelCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_12, grammarAccess.getLabelCustomizationAccess().getSizeKeyword_8_0());
     }
-	otherlv_13='->' 
+	otherlv_13=':' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getLabelCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8_1());
+    	newLeafNode(otherlv_13, grammarAccess.getLabelCustomizationAccess().getColonKeyword_8_1());
     }
 (
 (
@@ -5214,9 +5214,9 @@ ruleLabelCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_15, grammarAccess.getLabelCustomizationAccess().getFormatKeyword_9_0());
     }
-	otherlv_16='->' 
+	otherlv_16=':' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getLabelCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_9_1());
+    	newLeafNode(otherlv_16, grammarAccess.getLabelCustomizationAccess().getColonKeyword_9_1());
     }
 (
 (
@@ -5240,9 +5240,9 @@ ruleLabelCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_18, grammarAccess.getLabelCustomizationAccess().getColorKeyword_10_0());
     }
-	otherlv_19='->' 
+	otherlv_19=':' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getLabelCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_10_1());
+    	newLeafNode(otherlv_19, grammarAccess.getLabelCustomizationAccess().getColonKeyword_10_1());
     }
 (
 (
@@ -5261,17 +5261,17 @@ ruleLabelCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_21, grammarAccess.getLabelCustomizationAccess().getIconKeyword_11_0());
     }
-	otherlv_22='[' 
+	otherlv_22='{' 
     {
-    	newLeafNode(otherlv_22, grammarAccess.getLabelCustomizationAccess().getLeftSquareBracketKeyword_11_1());
+    	newLeafNode(otherlv_22, grammarAccess.getLabelCustomizationAccess().getLeftCurlyBracketKeyword_11_1());
     }
 	otherlv_23='show' 
     {
     	newLeafNode(otherlv_23, grammarAccess.getLabelCustomizationAccess().getShowKeyword_11_2());
     }
-	otherlv_24='->' 
+	otherlv_24=':' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getLabelCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_11_3());
+    	newLeafNode(otherlv_24, grammarAccess.getLabelCustomizationAccess().getColonKeyword_11_3());
     }
 (
 (
@@ -5295,9 +5295,9 @@ ruleLabelCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_26, grammarAccess.getLabelCustomizationAccess().getPathKeyword_11_5());
     }
-	otherlv_27='->' 
+	otherlv_27=':' 
     {
-    	newLeafNode(otherlv_27, grammarAccess.getLabelCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_11_6());
+    	newLeafNode(otherlv_27, grammarAccess.getLabelCustomizationAccess().getColonKeyword_11_6());
     }
 (
 (
@@ -5317,17 +5317,17 @@ ruleLabelCustomization returns [EObject current=null]
 	    }
 
 )
-)	otherlv_29=']' 
+)	otherlv_29='}' 
     {
-    	newLeafNode(otherlv_29, grammarAccess.getLabelCustomizationAccess().getRightSquareBracketKeyword_11_8());
+    	newLeafNode(otherlv_29, grammarAccess.getLabelCustomizationAccess().getRightCurlyBracketKeyword_11_8());
     }
 )?(	otherlv_30='expression' 
     {
     	newLeafNode(otherlv_30, grammarAccess.getLabelCustomizationAccess().getExpressionKeyword_12_0());
     }
-	otherlv_31='->' 
+	otherlv_31=':' 
     {
-    	newLeafNode(otherlv_31, grammarAccess.getLabelCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_12_1());
+    	newLeafNode(otherlv_31, grammarAccess.getLabelCustomizationAccess().getColonKeyword_12_1());
     }
 (
 (
@@ -5347,9 +5347,9 @@ ruleLabelCustomization returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_33=']' 
+))?	otherlv_33='}' 
     {
-    	newLeafNode(otherlv_33, grammarAccess.getLabelCustomizationAccess().getRightSquareBracketKeyword_13());
+    	newLeafNode(otherlv_33, grammarAccess.getLabelCustomizationAccess().getRightCurlyBracketKeyword_13());
     }
 )
 ;
@@ -5382,9 +5382,9 @@ ruleLabelAlignementCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getLabelAlignementCustomizationAccess().getAlignmentKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getLabelAlignementCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getLabelAlignementCustomizationAccess().getColonKeyword_2());
     }
 (
 (
@@ -5513,17 +5513,17 @@ ruleContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_6, grammarAccess.getContainerStyleCustomizationAccess().getRightParenthesisKeyword_4());
     }
-	otherlv_7='[' 
+	otherlv_7='{' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getContainerStyleCustomizationAccess().getLeftSquareBracketKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getContainerStyleCustomizationAccess().getLeftCurlyBracketKeyword_5());
     }
 (	otherlv_8='over-all-containers' 
     {
     	newLeafNode(otherlv_8, grammarAccess.getContainerStyleCustomizationAccess().getOverAllContainersKeyword_6_0());
     }
-	otherlv_9='->' 
+	otherlv_9=':' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_6_1());
+    	newLeafNode(otherlv_9, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_6_1());
     }
 (
 (
@@ -5547,9 +5547,9 @@ ruleContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_11, grammarAccess.getContainerStyleCustomizationAccess().getWidthKeyword_7_0());
     }
-	otherlv_12='->' 
+	otherlv_12=':' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_7_1());
+    	newLeafNode(otherlv_12, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_7_1());
     }
 (
 (
@@ -5573,9 +5573,9 @@ ruleContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getContainerStyleCustomizationAccess().getHeightKeyword_8_0());
     }
-	otherlv_15='->' 
+	otherlv_15=':' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8_1());
+    	newLeafNode(otherlv_15, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_8_1());
     }
 (
 (
@@ -5599,9 +5599,9 @@ ruleContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_17, grammarAccess.getContainerStyleCustomizationAccess().getRoundCornerKeyword_9_0());
     }
-	otherlv_18='->' 
+	otherlv_18=':' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_9_1());
+    	newLeafNode(otherlv_18, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_9_1());
     }
 (
 (
@@ -5625,9 +5625,9 @@ ruleContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_20, grammarAccess.getContainerStyleCustomizationAccess().getTooltipExpressionKeyword_10_0());
     }
-	otherlv_21='->' 
+	otherlv_21=':' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_10_1());
+    	newLeafNode(otherlv_21, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_10_1());
     }
 (
 (
@@ -5651,9 +5651,9 @@ ruleContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_23, grammarAccess.getContainerStyleCustomizationAccess().getBorderDimensionKeyword_11_0());
     }
-	otherlv_24='->' 
+	otherlv_24=':' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_11_1());
+    	newLeafNode(otherlv_24, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_11_1());
     }
 (
 (
@@ -5691,9 +5691,9 @@ ruleContainerStyleCustomization returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_27=']' 
+)*	otherlv_27='}' 
     {
-    	newLeafNode(otherlv_27, grammarAccess.getContainerStyleCustomizationAccess().getRightSquareBracketKeyword_13());
+    	newLeafNode(otherlv_27, grammarAccess.getContainerStyleCustomizationAccess().getRightCurlyBracketKeyword_13());
     }
 )
 ;
@@ -5776,9 +5776,9 @@ ruleContainerWorkspaceImageCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getContainerWorkspaceImageCustomizationAccess().getWorkspaceKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getContainerWorkspaceImageCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getContainerWorkspaceImageCustomizationAccess().getColonKeyword_2());
     }
 (
 (
@@ -5829,9 +5829,9 @@ ruleFlatContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getFlatContainerStyleCustomizationAccess().getBackgroundKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getFlatContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getFlatContainerStyleCustomizationAccess().getColonKeyword_2());
     }
 (
 (
@@ -5882,9 +5882,9 @@ ruleShapeContainerStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getShapeContainerStyleCustomizationAccess().getShapeKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getShapeContainerStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getShapeContainerStyleCustomizationAccess().getColonKeyword_2());
     }
 (
 (
@@ -5973,17 +5973,17 @@ ruleNodeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_6, grammarAccess.getNodeStyleCustomizationAccess().getRightParenthesisKeyword_4());
     }
-	otherlv_7='[' 
+	otherlv_7='{' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getNodeStyleCustomizationAccess().getLeftSquareBracketKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getNodeStyleCustomizationAccess().getLeftCurlyBracketKeyword_5());
     }
 (	otherlv_8='over-all-nodes' 
     {
     	newLeafNode(otherlv_8, grammarAccess.getNodeStyleCustomizationAccess().getOverAllNodesKeyword_6_0());
     }
-	otherlv_9='->' 
+	otherlv_9=':' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getNodeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_6_1());
+    	newLeafNode(otherlv_9, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_6_1());
     }
 (
 (
@@ -6007,9 +6007,9 @@ ruleNodeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_11, grammarAccess.getNodeStyleCustomizationAccess().getLabelPositionKeyword_7_0());
     }
-	otherlv_12='->' 
+	otherlv_12=':' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getNodeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_7_1());
+    	newLeafNode(otherlv_12, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_7_1());
     }
 (
 (
@@ -6033,9 +6033,9 @@ ruleNodeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getNodeStyleCustomizationAccess().getHideLabelKeyword_8_0());
     }
-	otherlv_15='->' 
+	otherlv_15=':' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getNodeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8_1());
+    	newLeafNode(otherlv_15, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_8_1());
     }
 (
 (
@@ -6059,9 +6059,9 @@ ruleNodeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_17, grammarAccess.getNodeStyleCustomizationAccess().getResizeKindKeyword_9_0());
     }
-	otherlv_18='->' 
+	otherlv_18=':' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getNodeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_9_1());
+    	newLeafNode(otherlv_18, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_9_1());
     }
 (
 (
@@ -6085,9 +6085,9 @@ ruleNodeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_20, grammarAccess.getNodeStyleCustomizationAccess().getTooltipExpressionKeyword_10_0());
     }
-	otherlv_21='->' 
+	otherlv_21=':' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getNodeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_10_1());
+    	newLeafNode(otherlv_21, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_10_1());
     }
 (
 (
@@ -6111,9 +6111,9 @@ ruleNodeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_23, grammarAccess.getNodeStyleCustomizationAccess().getBorderDimensionKeyword_11_0());
     }
-	otherlv_24='->' 
+	otherlv_24=':' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getNodeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_11_1());
+    	newLeafNode(otherlv_24, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_11_1());
     }
 (
 (
@@ -6137,9 +6137,9 @@ ruleNodeStyleCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_26, grammarAccess.getNodeStyleCustomizationAccess().getSizeDimensionKeyword_12_0());
     }
-	otherlv_27='->' 
+	otherlv_27=':' 
     {
-    	newLeafNode(otherlv_27, grammarAccess.getNodeStyleCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_12_1());
+    	newLeafNode(otherlv_27, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_12_1());
     }
 (
 (
@@ -6177,9 +6177,9 @@ ruleNodeStyleCustomization returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_30=']' 
+)*	otherlv_30='}' 
     {
-    	newLeafNode(otherlv_30, grammarAccess.getNodeStyleCustomizationAccess().getRightSquareBracketKeyword_14());
+    	newLeafNode(otherlv_30, grammarAccess.getNodeStyleCustomizationAccess().getRightCurlyBracketKeyword_14());
     }
 )
 ;
@@ -6302,9 +6302,9 @@ ruleBundledImageCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getBundledImageCustomizationAccess().getShapeKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBundledImageCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getBundledImageCustomizationAccess().getColonKeyword_2());
     }
 (
 (
@@ -6355,21 +6355,21 @@ ruleLozengeCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getLozengeCustomizationAccess().getLozengeDimensionKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getLozengeCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getLozengeCustomizationAccess().getColonKeyword_2());
     }
-	otherlv_3='[' 
+	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getLozengeCustomizationAccess().getLeftSquareBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getLozengeCustomizationAccess().getLeftCurlyBracketKeyword_3());
     }
 	otherlv_4='width' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getLozengeCustomizationAccess().getWidthKeyword_4());
     }
-	otherlv_5='->' 
+	otherlv_5=':' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getLozengeCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getLozengeCustomizationAccess().getColonKeyword_5());
     }
 (
 (
@@ -6393,9 +6393,9 @@ ruleLozengeCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getLozengeCustomizationAccess().getHeightKeyword_7());
     }
-	otherlv_8='->' 
+	otherlv_8=':' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getLozengeCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8());
+    	newLeafNode(otherlv_8, grammarAccess.getLozengeCustomizationAccess().getColonKeyword_8());
     }
 (
 (
@@ -6415,9 +6415,9 @@ ruleLozengeCustomization returns [EObject current=null]
 	    }
 
 )
-)	otherlv_10=']' 
+)	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getLozengeCustomizationAccess().getRightSquareBracketKeyword_10());
+    	newLeafNode(otherlv_10, grammarAccess.getLozengeCustomizationAccess().getRightCurlyBracketKeyword_10());
     }
 )
 ;
@@ -6450,9 +6450,9 @@ ruleGaugeCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getGaugeCustomizationAccess().getGaugeAlignmentKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getGaugeCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getGaugeCustomizationAccess().getColonKeyword_2());
     }
 (
 (
@@ -6503,21 +6503,21 @@ ruleEllipseCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getEllipseCustomizationAccess().getEllipseDimensionKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getEllipseCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getEllipseCustomizationAccess().getColonKeyword_2());
     }
-	otherlv_3='[' 
+	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getEllipseCustomizationAccess().getLeftSquareBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getEllipseCustomizationAccess().getLeftCurlyBracketKeyword_3());
     }
 	otherlv_4='horizontal' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getEllipseCustomizationAccess().getHorizontalKeyword_4());
     }
-	otherlv_5='->' 
+	otherlv_5=':' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getEllipseCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getEllipseCustomizationAccess().getColonKeyword_5());
     }
 (
 (
@@ -6541,9 +6541,9 @@ ruleEllipseCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getEllipseCustomizationAccess().getVerticalKeyword_7());
     }
-	otherlv_8='->' 
+	otherlv_8=':' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getEllipseCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8());
+    	newLeafNode(otherlv_8, grammarAccess.getEllipseCustomizationAccess().getColonKeyword_8());
     }
 (
 (
@@ -6563,9 +6563,9 @@ ruleEllipseCustomization returns [EObject current=null]
 	    }
 
 )
-)	otherlv_10=']' 
+)	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getEllipseCustomizationAccess().getRightSquareBracketKeyword_10());
+    	newLeafNode(otherlv_10, grammarAccess.getEllipseCustomizationAccess().getRightCurlyBracketKeyword_10());
     }
 )
 ;
@@ -6598,9 +6598,9 @@ ruleNodeWorkspaceImageCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getNodeWorkspaceImageCustomizationAccess().getWorkspaceKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getNodeWorkspaceImageCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getNodeWorkspaceImageCustomizationAccess().getColonKeyword_2());
     }
 (
 (
@@ -6651,21 +6651,21 @@ ruleSquareCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getSquareCustomizationAccess().getSquareDimensionKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getSquareCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getSquareCustomizationAccess().getColonKeyword_2());
     }
-	otherlv_3='[' 
+	otherlv_3='{' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getSquareCustomizationAccess().getLeftSquareBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getSquareCustomizationAccess().getLeftCurlyBracketKeyword_3());
     }
 	otherlv_4='width' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getSquareCustomizationAccess().getWidthKeyword_4());
     }
-	otherlv_5='->' 
+	otherlv_5=':' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSquareCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getSquareCustomizationAccess().getColonKeyword_5());
     }
 (
 (
@@ -6689,9 +6689,9 @@ ruleSquareCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getSquareCustomizationAccess().getHeightKeyword_7());
     }
-	otherlv_8='->' 
+	otherlv_8=':' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getSquareCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_8());
+    	newLeafNode(otherlv_8, grammarAccess.getSquareCustomizationAccess().getColonKeyword_8());
     }
 (
 (
@@ -6711,9 +6711,9 @@ ruleSquareCustomization returns [EObject current=null]
 	    }
 
 )
-)	otherlv_10=']' 
+)	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getSquareCustomizationAccess().getRightSquareBracketKeyword_10());
+    	newLeafNode(otherlv_10, grammarAccess.getSquareCustomizationAccess().getRightCurlyBracketKeyword_10());
     }
 )
 ;
@@ -6746,9 +6746,9 @@ ruleDotCustomization returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getDotCustomizationAccess().getStrokeDimensionKeyword_1());
     }
-	otherlv_2='->' 
+	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getDotCustomizationAccess().getHyphenMinusGreaterThanSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getDotCustomizationAccess().getColonKeyword_2());
     }
 (
 (

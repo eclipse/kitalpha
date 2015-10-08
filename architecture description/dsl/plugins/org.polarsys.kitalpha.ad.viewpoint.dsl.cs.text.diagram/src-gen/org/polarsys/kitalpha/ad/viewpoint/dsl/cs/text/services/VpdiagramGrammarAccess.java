@@ -3128,35 +3128,35 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAppliedOnEdgeStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
 		private final RuleCall cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnEdgeStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cOverAllEdgesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
 		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cSourceKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cSourceArrowAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cSourceArrowEdgeArrowsEnumRuleCall_7_2_0 = (RuleCall)cSourceArrowAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cTargetKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Assignment cTargetArrowAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cTargetArrowEdgeArrowsEnumRuleCall_8_2_0 = (RuleCall)cTargetArrowAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
 		private final Keyword cRoutingKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Assignment cRoutingStyleAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cRoutingStyleEdgeRoutingEnumRuleCall_9_2_0 = (RuleCall)cRoutingStyleAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cFoldingKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
 		private final Assignment cFoldingStyleAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
 		private final RuleCall cFoldingStyleFoldingStyleEnumRuleCall_10_2_0 = (RuleCall)cFoldingStyleAssignment_10_2.eContents().get(0);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
 		private final Keyword cCenterSourceMappingsKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		private final Group cGroup_11_2 = (Group)cGroup_11.eContents().get(2);
 		private final Assignment cCenteredSourceMappingsAssignment_11_2_0 = (Assignment)cGroup_11_2.eContents().get(0);
 		private final CrossReference cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_0_0 = (CrossReference)cCenteredSourceMappingsAssignment_11_2_0.eContents().get(0);
@@ -3168,7 +3168,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_1_1_0_1 = (RuleCall)cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_1_1_0.eContents().get(1);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
 		private final Keyword cCenterTargetMappingsKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
 		private final Group cGroup_12_2 = (Group)cGroup_12.eContents().get(2);
 		private final Assignment cCenteredTargetMappingsAssignment_12_2_0 = (Assignment)cGroup_12_2.eContents().get(0);
 		private final CrossReference cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_0_0 = (CrossReference)cCenteredTargetMappingsAssignment_12_2_0.eContents().get(0);
@@ -3180,69 +3180,68 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_1_1_0_1 = (RuleCall)cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_1_1_0.eContents().get(1);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
 		private final Keyword cBeginLabelStyleDescriptionKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
+		private final Keyword cColonKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
 		private final Assignment cBeginLabelStyleDescriptionAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
 		private final CrossReference cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_13_2_0 = (CrossReference)cBeginLabelStyleDescriptionAssignment_13_2.eContents().get(0);
 		private final RuleCall cBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1 = (RuleCall)cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_13_2_0.eContents().get(1);
 		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
 		private final Keyword cCenterLabelStyleDescriptionKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
+		private final Keyword cColonKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
 		private final Assignment cCenterLabelStyleDescriptionAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
 		private final CrossReference cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_14_2_0 = (CrossReference)cCenterLabelStyleDescriptionAssignment_14_2.eContents().get(0);
 		private final RuleCall cCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_14_2_0_1 = (RuleCall)cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_14_2_0.eContents().get(1);
 		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
 		private final Keyword cEndLabelStyleDescriptionKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
+		private final Keyword cColonKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
 		private final Assignment cEndLabelStyleDescriptionAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
 		private final CrossReference cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_15_2_0 = (CrossReference)cEndLabelStyleDescriptionAssignment_15_2.eContents().get(0);
 		private final RuleCall cEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_15_2_0_1 = (RuleCall)cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_15_2_0.eContents().get(1);
 		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
 		private final Keyword cLineStyleKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
+		private final Keyword cColonKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
 		private final Assignment cLineStyleAssignment_16_2 = (Assignment)cGroup_16.eContents().get(2);
 		private final RuleCall cLineStyleLineStyleEnumRuleCall_16_2_0 = (RuleCall)cLineStyleAssignment_16_2.eContents().get(0);
 		private final Group cGroup_17 = (Group)cGroup.eContents().get(17);
 		private final Keyword cSizeKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
+		private final Keyword cColonKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
 		private final Assignment cSizeComputationExpressionAssignment_17_2 = (Assignment)cGroup_17.eContents().get(2);
 		private final RuleCall cSizeComputationExpressionCustomizationExpressionParserRuleCall_17_2_0 = (RuleCall)cSizeComputationExpressionAssignment_17_2.eContents().get(0);
 		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
 		private final Keyword cEndCenteringKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
+		private final Keyword cColonKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
 		private final Assignment cEndCenteringAssignment_18_2 = (Assignment)cGroup_18.eContents().get(2);
 		private final RuleCall cEndCenteringCenterStyleEnumRuleCall_18_2_0 = (RuleCall)cEndCenteringAssignment_18_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
 		//	{styleCusto::EdgeStyleCustomization} "edge" "(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "[" ("over-all-edges" "->" applyonAll=EBoolean)?
-		//	("source" "->" sourceArrow=EdgeArrows)? ("target" "->" targetArrow=EdgeArrows)? ("routing" "->"
-		//	routingStyle=EdgeRouting)? ("folding" "->" foldingStyle=FoldingStyle)? ("center-source-mappings" "->"
+		//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "{" ("over-all-edges" ":" applyonAll=EBoolean)?
+		//	("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
+		//	routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
 		//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" "->"
+		//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" ":"
 		//	(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
 		//	centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
-		//	("begin-label-style-description" "->" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
-		//	("center-label-style-description" "->"
-		//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description" "->"
-		//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" "->" lineStyle=LineStyle)?
-		//	("size" "->" sizeComputationExpression=CustomizationExpression)? ("end-centering" "->" endCentering=CenterStyle)?
-		//	"]";
+		//	("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
+		//	("center-label-style-description" ":"
+		//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description" ":"
+		//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" ":" lineStyle=LineStyle)?
+		//	("size" ":" sizeComputationExpression=CustomizationExpression)? ("end-centering" ":" endCentering=CenterStyle)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//{styleCusto::EdgeStyleCustomization} "edge" "(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "[" ("over-all-edges" "->" applyonAll=EBoolean)?
-		//("source" "->" sourceArrow=EdgeArrows)? ("target" "->" targetArrow=EdgeArrows)? ("routing" "->"
-		//routingStyle=EdgeRouting)? ("folding" "->" foldingStyle=FoldingStyle)? ("center-source-mappings" "->"
+		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "{" ("over-all-edges" ":" applyonAll=EBoolean)?
+		//("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
+		//routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
 		//(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" "->"
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" ":"
 		//(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
 		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("begin-label-style-description"
-		//"->" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])? ("center-label-style-description"
-		//"->" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description"
-		//"->" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" "->"
-		//lineStyle=LineStyle)? ("size" "->" sizeComputationExpression=CustomizationExpression)? ("end-centering" "->"
-		//endCentering=CenterStyle)? "]"
+		//":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])? ("center-label-style-description"
+		//":" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description"
+		//":" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" ":"
+		//lineStyle=LineStyle)? ("size" ":" sizeComputationExpression=CustomizationExpression)? ("end-centering" ":"
+		//endCentering=CenterStyle)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::EdgeStyleCustomization}
@@ -3284,17 +3283,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
-		//("over-all-edges" "->" applyonAll=EBoolean)?
+		//("over-all-edges" ":" applyonAll=EBoolean)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"over-all-edges"
 		public Keyword getOverAllEdgesKeyword_6_0() { return cOverAllEdgesKeyword_6_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_6_1() { return cHyphenMinusGreaterThanSignKeyword_6_1; }
+		//":"
+		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//applyonAll=EBoolean
 		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
@@ -3302,14 +3301,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
 
-		//("source" "->" sourceArrow=EdgeArrows)?
+		//("source" ":" sourceArrow=EdgeArrows)?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"source"
 		public Keyword getSourceKeyword_7_0() { return cSourceKeyword_7_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7_1() { return cHyphenMinusGreaterThanSignKeyword_7_1; }
+		//":"
+		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
 		//sourceArrow=EdgeArrows
 		public Assignment getSourceArrowAssignment_7_2() { return cSourceArrowAssignment_7_2; }
@@ -3317,14 +3316,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeArrows
 		public RuleCall getSourceArrowEdgeArrowsEnumRuleCall_7_2_0() { return cSourceArrowEdgeArrowsEnumRuleCall_7_2_0; }
 
-		//("target" "->" targetArrow=EdgeArrows)?
+		//("target" ":" targetArrow=EdgeArrows)?
 		public Group getGroup_8() { return cGroup_8; }
 
 		//"target"
 		public Keyword getTargetKeyword_8_0() { return cTargetKeyword_8_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8_1() { return cHyphenMinusGreaterThanSignKeyword_8_1; }
+		//":"
+		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//targetArrow=EdgeArrows
 		public Assignment getTargetArrowAssignment_8_2() { return cTargetArrowAssignment_8_2; }
@@ -3332,14 +3331,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeArrows
 		public RuleCall getTargetArrowEdgeArrowsEnumRuleCall_8_2_0() { return cTargetArrowEdgeArrowsEnumRuleCall_8_2_0; }
 
-		//("routing" "->" routingStyle=EdgeRouting)?
+		//("routing" ":" routingStyle=EdgeRouting)?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//"routing"
 		public Keyword getRoutingKeyword_9_0() { return cRoutingKeyword_9_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_9_1() { return cHyphenMinusGreaterThanSignKeyword_9_1; }
+		//":"
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
 		//routingStyle=EdgeRouting
 		public Assignment getRoutingStyleAssignment_9_2() { return cRoutingStyleAssignment_9_2; }
@@ -3347,14 +3346,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeRouting
 		public RuleCall getRoutingStyleEdgeRoutingEnumRuleCall_9_2_0() { return cRoutingStyleEdgeRoutingEnumRuleCall_9_2_0; }
 
-		//("folding" "->" foldingStyle=FoldingStyle)?
+		//("folding" ":" foldingStyle=FoldingStyle)?
 		public Group getGroup_10() { return cGroup_10; }
 
 		//"folding"
 		public Keyword getFoldingKeyword_10_0() { return cFoldingKeyword_10_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_10_1() { return cHyphenMinusGreaterThanSignKeyword_10_1; }
+		//":"
+		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
 		//foldingStyle=FoldingStyle
 		public Assignment getFoldingStyleAssignment_10_2() { return cFoldingStyleAssignment_10_2; }
@@ -3362,15 +3361,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FoldingStyle
 		public RuleCall getFoldingStyleFoldingStyleEnumRuleCall_10_2_0() { return cFoldingStyleFoldingStyleEnumRuleCall_10_2_0; }
 
-		//("center-source-mappings" "->" (centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//("center-source-mappings" ":" (centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
 		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
 		public Group getGroup_11() { return cGroup_11; }
 
 		//"center-source-mappings"
 		public Keyword getCenterSourceMappingsKeyword_11_0() { return cCenterSourceMappingsKeyword_11_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_11_1() { return cHyphenMinusGreaterThanSignKeyword_11_1; }
+		//":"
+		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
 
 		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
 		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
@@ -3400,15 +3399,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_1_1_0_1() { return cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_1_1_0_1; }
 
-		//("center-target-mappings" "->" (centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//("center-target-mappings" ":" (centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
 		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
 		public Group getGroup_12() { return cGroup_12; }
 
 		//"center-target-mappings"
 		public Keyword getCenterTargetMappingsKeyword_12_0() { return cCenterTargetMappingsKeyword_12_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_12_1() { return cHyphenMinusGreaterThanSignKeyword_12_1; }
+		//":"
+		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
 
 		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
 		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
@@ -3438,14 +3437,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_1_1_0_1() { return cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_1_1_0_1; }
 
-		//("begin-label-style-description" "->" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
+		//("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
 		public Group getGroup_13() { return cGroup_13; }
 
 		//"begin-label-style-description"
 		public Keyword getBeginLabelStyleDescriptionKeyword_13_0() { return cBeginLabelStyleDescriptionKeyword_13_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_13_1() { return cHyphenMinusGreaterThanSignKeyword_13_1; }
+		//":"
+		public Keyword getColonKeyword_13_1() { return cColonKeyword_13_1; }
 
 		//beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING]
 		public Assignment getBeginLabelStyleDescriptionAssignment_13_2() { return cBeginLabelStyleDescriptionAssignment_13_2; }
@@ -3456,14 +3455,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1() { return cBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1; }
 
-		//("center-label-style-description" "->" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])?
+		//("center-label-style-description" ":" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])?
 		public Group getGroup_14() { return cGroup_14; }
 
 		//"center-label-style-description"
 		public Keyword getCenterLabelStyleDescriptionKeyword_14_0() { return cCenterLabelStyleDescriptionKeyword_14_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_14_1() { return cHyphenMinusGreaterThanSignKeyword_14_1; }
+		//":"
+		public Keyword getColonKeyword_14_1() { return cColonKeyword_14_1; }
 
 		//centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING]
 		public Assignment getCenterLabelStyleDescriptionAssignment_14_2() { return cCenterLabelStyleDescriptionAssignment_14_2; }
@@ -3474,14 +3473,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_14_2_0_1() { return cCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_14_2_0_1; }
 
-		//("end-label-style-description" "->" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])?
+		//("end-label-style-description" ":" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])?
 		public Group getGroup_15() { return cGroup_15; }
 
 		//"end-label-style-description"
 		public Keyword getEndLabelStyleDescriptionKeyword_15_0() { return cEndLabelStyleDescriptionKeyword_15_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_15_1() { return cHyphenMinusGreaterThanSignKeyword_15_1; }
+		//":"
+		public Keyword getColonKeyword_15_1() { return cColonKeyword_15_1; }
 
 		//endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING]
 		public Assignment getEndLabelStyleDescriptionAssignment_15_2() { return cEndLabelStyleDescriptionAssignment_15_2; }
@@ -3492,14 +3491,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_15_2_0_1() { return cEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_15_2_0_1; }
 
-		//("line-style" "->" lineStyle=LineStyle)?
+		//("line-style" ":" lineStyle=LineStyle)?
 		public Group getGroup_16() { return cGroup_16; }
 
 		//"line-style"
 		public Keyword getLineStyleKeyword_16_0() { return cLineStyleKeyword_16_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_16_1() { return cHyphenMinusGreaterThanSignKeyword_16_1; }
+		//":"
+		public Keyword getColonKeyword_16_1() { return cColonKeyword_16_1; }
 
 		//lineStyle=LineStyle
 		public Assignment getLineStyleAssignment_16_2() { return cLineStyleAssignment_16_2; }
@@ -3507,14 +3506,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LineStyle
 		public RuleCall getLineStyleLineStyleEnumRuleCall_16_2_0() { return cLineStyleLineStyleEnumRuleCall_16_2_0; }
 
-		//("size" "->" sizeComputationExpression=CustomizationExpression)?
+		//("size" ":" sizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_17() { return cGroup_17; }
 
 		//"size"
 		public Keyword getSizeKeyword_17_0() { return cSizeKeyword_17_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_17_1() { return cHyphenMinusGreaterThanSignKeyword_17_1; }
+		//":"
+		public Keyword getColonKeyword_17_1() { return cColonKeyword_17_1; }
 
 		//sizeComputationExpression=CustomizationExpression
 		public Assignment getSizeComputationExpressionAssignment_17_2() { return cSizeComputationExpressionAssignment_17_2; }
@@ -3522,14 +3521,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getSizeComputationExpressionCustomizationExpressionParserRuleCall_17_2_0() { return cSizeComputationExpressionCustomizationExpressionParserRuleCall_17_2_0; }
 
-		//("end-centering" "->" endCentering=CenterStyle)?
+		//("end-centering" ":" endCentering=CenterStyle)?
 		public Group getGroup_18() { return cGroup_18; }
 
 		//"end-centering"
 		public Keyword getEndCenteringKeyword_18_0() { return cEndCenteringKeyword_18_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_18_1() { return cHyphenMinusGreaterThanSignKeyword_18_1; }
+		//":"
+		public Keyword getColonKeyword_18_1() { return cColonKeyword_18_1; }
 
 		//endCentering=CenterStyle
 		public Assignment getEndCenteringAssignment_18_2() { return cEndCenteringAssignment_18_2; }
@@ -3537,8 +3536,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CenterStyle
 		public RuleCall getEndCenteringCenterStyleEnumRuleCall_18_2_0() { return cEndCenteringCenterStyleEnumRuleCall_18_2_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_19() { return cRightSquareBracketKeyword_19; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_19() { return cRightCurlyBracketKeyword_19; }
 	}
 
 	public class ColorCustomizationElements extends AbstractParserRuleElementFinder {
@@ -3661,62 +3660,62 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAppliedOnBasicLabelStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
 		private final RuleCall cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnBasicLabelStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cOverAllLabelsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
 		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
 		private final Assignment cOwnedLabelAlignmentAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_7_0 = (RuleCall)cOwnedLabelAlignmentAssignment_7.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cSizeKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Assignment cSizeAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cSizeEIntParserRuleCall_8_2_0 = (RuleCall)cSizeAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
 		private final Keyword cFormatKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Assignment cFormatAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cFormatFontFormatEnumRuleCall_9_2_0 = (RuleCall)cFormatAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cColorKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
 		private final Assignment cColorAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
 		private final CrossReference cColorColorDescriptionCrossReference_10_2_0 = (CrossReference)cColorAssignment_10_2.eContents().get(0);
 		private final RuleCall cColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1 = (RuleCall)cColorColorDescriptionCrossReference_10_2_0.eContents().get(1);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
 		private final Keyword cIconKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		private final Keyword cShowKeyword_11_2 = (Keyword)cGroup_11.eContents().get(2);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_11_3 = (Keyword)cGroup_11.eContents().get(3);
+		private final Keyword cColonKeyword_11_3 = (Keyword)cGroup_11.eContents().get(3);
 		private final Assignment cShowIconAssignment_11_4 = (Assignment)cGroup_11.eContents().get(4);
 		private final RuleCall cShowIconEBooleanParserRuleCall_11_4_0 = (RuleCall)cShowIconAssignment_11_4.eContents().get(0);
 		private final Keyword cPathKeyword_11_5 = (Keyword)cGroup_11.eContents().get(5);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_11_6 = (Keyword)cGroup_11.eContents().get(6);
+		private final Keyword cColonKeyword_11_6 = (Keyword)cGroup_11.eContents().get(6);
 		private final Assignment cIconPathAssignment_11_7 = (Assignment)cGroup_11.eContents().get(7);
 		private final RuleCall cIconPathEStringParserRuleCall_11_7_0 = (RuleCall)cIconPathAssignment_11_7.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_11_8 = (Keyword)cGroup_11.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_11_8 = (Keyword)cGroup_11.eContents().get(8);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
 		private final Keyword cExpressionKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
 		private final Assignment cExpressionAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
 		private final RuleCall cExpressionCustomizationExpressionParserRuleCall_12_2_0 = (RuleCall)cExpressionAssignment_12_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//LabelCustomization returns styleCusto::LabelCustomization:
 		//	{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "[" ("over-all-labels" "->" applyonAll=EBoolean)?
-		//	ownedLabelAlignment=LabelAlignementCustomization? ("size" "->" size=EInt)? ("format" "->" format=FontFormat)?
-		//	("color" "->" color=[siriusDescription::ColorDescription|STRING]) ("icon" "[" "show" "->" showIcon=EBoolean "path"
-		//	"->" iconPath=EString "]")? ("expression" "->" expression=CustomizationExpression)? "]";
+		//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
+		//	ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
+		//	":" color=[siriusDescription::ColorDescription|STRING]) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
+		//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "[" ("over-all-labels" "->" applyonAll=EBoolean)?
-		//ownedLabelAlignment=LabelAlignementCustomization? ("size" "->" size=EInt)? ("format" "->" format=FontFormat)? ("color"
-		//"->" color=[siriusDescription::ColorDescription|STRING]) ("icon" "[" "show" "->" showIcon=EBoolean "path" "->"
-		//iconPath=EString "]")? ("expression" "->" expression=CustomizationExpression)? "]"
+		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
+		//ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
+		//":" color=[siriusDescription::ColorDescription|STRING]) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
+		//iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::LabelCustomization}
@@ -3759,17 +3758,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
-		//("over-all-labels" "->" applyonAll=EBoolean)?
+		//("over-all-labels" ":" applyonAll=EBoolean)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"over-all-labels"
 		public Keyword getOverAllLabelsKeyword_6_0() { return cOverAllLabelsKeyword_6_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_6_1() { return cHyphenMinusGreaterThanSignKeyword_6_1; }
+		//":"
+		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//applyonAll=EBoolean
 		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
@@ -3783,14 +3782,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LabelAlignementCustomization
 		public RuleCall getOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_7_0() { return cOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_7_0; }
 
-		//("size" "->" size=EInt)?
+		//("size" ":" size=EInt)?
 		public Group getGroup_8() { return cGroup_8; }
 
 		//"size"
 		public Keyword getSizeKeyword_8_0() { return cSizeKeyword_8_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8_1() { return cHyphenMinusGreaterThanSignKeyword_8_1; }
+		//":"
+		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//size=EInt
 		public Assignment getSizeAssignment_8_2() { return cSizeAssignment_8_2; }
@@ -3798,14 +3797,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getSizeEIntParserRuleCall_8_2_0() { return cSizeEIntParserRuleCall_8_2_0; }
 
-		//("format" "->" format=FontFormat)?
+		//("format" ":" format=FontFormat)?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//"format"
 		public Keyword getFormatKeyword_9_0() { return cFormatKeyword_9_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_9_1() { return cHyphenMinusGreaterThanSignKeyword_9_1; }
+		//":"
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
 		//format=FontFormat
 		public Assignment getFormatAssignment_9_2() { return cFormatAssignment_9_2; }
@@ -3813,14 +3812,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FontFormat
 		public RuleCall getFormatFontFormatEnumRuleCall_9_2_0() { return cFormatFontFormatEnumRuleCall_9_2_0; }
 
-		//"color" "->" color=[siriusDescription::ColorDescription|STRING]
+		//"color" ":" color=[siriusDescription::ColorDescription|STRING]
 		public Group getGroup_10() { return cGroup_10; }
 
 		//"color"
 		public Keyword getColorKeyword_10_0() { return cColorKeyword_10_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_10_1() { return cHyphenMinusGreaterThanSignKeyword_10_1; }
+		//":"
+		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
 		//color=[siriusDescription::ColorDescription|STRING]
 		public Assignment getColorAssignment_10_2() { return cColorAssignment_10_2; }
@@ -3831,20 +3830,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1() { return cColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1; }
 
-		//("icon" "[" "show" "->" showIcon=EBoolean "path" "->" iconPath=EString "]")?
+		//("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")?
 		public Group getGroup_11() { return cGroup_11; }
 
 		//"icon"
 		public Keyword getIconKeyword_11_0() { return cIconKeyword_11_0; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_11_1() { return cLeftSquareBracketKeyword_11_1; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_11_1() { return cLeftCurlyBracketKeyword_11_1; }
 
 		//"show"
 		public Keyword getShowKeyword_11_2() { return cShowKeyword_11_2; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_11_3() { return cHyphenMinusGreaterThanSignKeyword_11_3; }
+		//":"
+		public Keyword getColonKeyword_11_3() { return cColonKeyword_11_3; }
 
 		//showIcon=EBoolean
 		public Assignment getShowIconAssignment_11_4() { return cShowIconAssignment_11_4; }
@@ -3855,8 +3854,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"path"
 		public Keyword getPathKeyword_11_5() { return cPathKeyword_11_5; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_11_6() { return cHyphenMinusGreaterThanSignKeyword_11_6; }
+		//":"
+		public Keyword getColonKeyword_11_6() { return cColonKeyword_11_6; }
 
 		//iconPath=EString
 		public Assignment getIconPathAssignment_11_7() { return cIconPathAssignment_11_7; }
@@ -3864,17 +3863,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getIconPathEStringParserRuleCall_11_7_0() { return cIconPathEStringParserRuleCall_11_7_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_11_8() { return cRightSquareBracketKeyword_11_8; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_11_8() { return cRightCurlyBracketKeyword_11_8; }
 
-		//("expression" "->" expression=CustomizationExpression)?
+		//("expression" ":" expression=CustomizationExpression)?
 		public Group getGroup_12() { return cGroup_12; }
 
 		//"expression"
 		public Keyword getExpressionKeyword_12_0() { return cExpressionKeyword_12_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_12_1() { return cHyphenMinusGreaterThanSignKeyword_12_1; }
+		//":"
+		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
 
 		//expression=CustomizationExpression
 		public Assignment getExpressionAssignment_12_2() { return cExpressionAssignment_12_2; }
@@ -3882,8 +3881,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getExpressionCustomizationExpressionParserRuleCall_12_2_0() { return cExpressionCustomizationExpressionParserRuleCall_12_2_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_13() { return cRightSquareBracketKeyword_13; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 
 	public class LabelAlignementCustomizationElements extends AbstractParserRuleElementFinder {
@@ -3891,15 +3890,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLabelAlignmentCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cAlignmentKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAlignmentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAlignmentLabelAlignmentEnumRuleCall_3_0 = (RuleCall)cAlignmentAssignment_3.eContents().get(0);
 		
 		//LabelAlignementCustomization returns styleCusto::LabelAlignmentCustomization:
-		//	{styleCusto::LabelAlignmentCustomization} "alignment" "->" alignment=LabelAlignment;
+		//	{styleCusto::LabelAlignmentCustomization} "alignment" ":" alignment=LabelAlignment;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::LabelAlignmentCustomization} "alignment" "->" alignment=LabelAlignment
+		//{styleCusto::LabelAlignmentCustomization} "alignment" ":" alignment=LabelAlignment
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::LabelAlignmentCustomization}
@@ -3908,8 +3907,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"alignment"
 		public Keyword getAlignmentKeyword_1() { return cAlignmentKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//alignment=LabelAlignment
 		public Assignment getAlignmentAssignment_3() { return cAlignmentAssignment_3; }
@@ -3954,57 +3953,57 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAppliedOnContainerStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
 		private final RuleCall cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnContainerStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cOverAllContainersKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
 		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cWidthKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cArcWithAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cArcWithEIntParserRuleCall_7_2_0 = (RuleCall)cArcWithAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cHeightKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Assignment cArcHeightAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cArcHeightEIntParserRuleCall_8_2_0 = (RuleCall)cArcHeightAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
 		private final Keyword cRoundCornerKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Assignment cRoundedCornerAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cRoundedCornerEBooleanParserRuleCall_9_2_0 = (RuleCall)cRoundedCornerAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cTooltipExpressionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
 		private final Assignment cTooltipExpressionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
 		private final RuleCall cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0 = (RuleCall)cTooltipExpressionAssignment_10_2.eContents().get(0);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
 		private final Keyword cBorderDimensionKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		private final Assignment cBorderSizeComputationExpressionAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
 		private final RuleCall cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0 = (RuleCall)cBorderSizeComputationExpressionAssignment_11_2.eContents().get(0);
 		private final Assignment cOwnedSpecificContainerStyleCustomizationAssignment_12 = (Assignment)cGroup.eContents().get(12);
 		private final RuleCall cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_12_0 = (RuleCall)cOwnedSpecificContainerStyleCustomizationAssignment_12.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
 		//	{styleCusto::ContainerStyleCustomization} "container" "("
 		//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "[" ("over-all-containers" "->"
-		//	applyonAll=EBoolean)? ("width" "->" arcWith=EInt)? ("height" "->" arcHeight=EInt)? ("round-corner" "->"
-		//	roundedCorner=EBoolean)? ("tooltip-expression" "->" tooltipExpression=CustomizationExpression)? ("border-dimension"
-		//	"->" borderSizeComputationExpression=CustomizationExpression)?
-		//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "]";
+		//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "{" ("over-all-containers" ":"
+		//	applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
+		//	roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
+		//	":" borderSizeComputationExpression=CustomizationExpression)?
+		//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//{styleCusto::ContainerStyleCustomization} "container" "(" (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
-		//("," appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "[" ("over-all-containers" "->"
-		//applyonAll=EBoolean)? ("width" "->" arcWith=EInt)? ("height" "->" arcHeight=EInt)? ("round-corner" "->"
-		//roundedCorner=EBoolean)? ("tooltip-expression" "->" tooltipExpression=CustomizationExpression)? ("border-dimension"
-		//"->" borderSizeComputationExpression=CustomizationExpression)?
-		//ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "]"
+		//("," appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "{" ("over-all-containers" ":"
+		//applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
+		//roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension" ":"
+		//borderSizeComputationExpression=CustomizationExpression)?
+		//ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ContainerStyleCustomization}
@@ -4047,17 +4046,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
-		//("over-all-containers" "->" applyonAll=EBoolean)?
+		//("over-all-containers" ":" applyonAll=EBoolean)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"over-all-containers"
 		public Keyword getOverAllContainersKeyword_6_0() { return cOverAllContainersKeyword_6_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_6_1() { return cHyphenMinusGreaterThanSignKeyword_6_1; }
+		//":"
+		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//applyonAll=EBoolean
 		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
@@ -4065,14 +4064,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
 
-		//("width" "->" arcWith=EInt)?
+		//("width" ":" arcWith=EInt)?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"width"
 		public Keyword getWidthKeyword_7_0() { return cWidthKeyword_7_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7_1() { return cHyphenMinusGreaterThanSignKeyword_7_1; }
+		//":"
+		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
 		//arcWith=EInt
 		public Assignment getArcWithAssignment_7_2() { return cArcWithAssignment_7_2; }
@@ -4080,14 +4079,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getArcWithEIntParserRuleCall_7_2_0() { return cArcWithEIntParserRuleCall_7_2_0; }
 
-		//("height" "->" arcHeight=EInt)?
+		//("height" ":" arcHeight=EInt)?
 		public Group getGroup_8() { return cGroup_8; }
 
 		//"height"
 		public Keyword getHeightKeyword_8_0() { return cHeightKeyword_8_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8_1() { return cHyphenMinusGreaterThanSignKeyword_8_1; }
+		//":"
+		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//arcHeight=EInt
 		public Assignment getArcHeightAssignment_8_2() { return cArcHeightAssignment_8_2; }
@@ -4095,14 +4094,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getArcHeightEIntParserRuleCall_8_2_0() { return cArcHeightEIntParserRuleCall_8_2_0; }
 
-		//("round-corner" "->" roundedCorner=EBoolean)?
+		//("round-corner" ":" roundedCorner=EBoolean)?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//"round-corner"
 		public Keyword getRoundCornerKeyword_9_0() { return cRoundCornerKeyword_9_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_9_1() { return cHyphenMinusGreaterThanSignKeyword_9_1; }
+		//":"
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
 		//roundedCorner=EBoolean
 		public Assignment getRoundedCornerAssignment_9_2() { return cRoundedCornerAssignment_9_2; }
@@ -4110,14 +4109,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getRoundedCornerEBooleanParserRuleCall_9_2_0() { return cRoundedCornerEBooleanParserRuleCall_9_2_0; }
 
-		//("tooltip-expression" "->" tooltipExpression=CustomizationExpression)?
+		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
 		public Group getGroup_10() { return cGroup_10; }
 
 		//"tooltip-expression"
 		public Keyword getTooltipExpressionKeyword_10_0() { return cTooltipExpressionKeyword_10_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_10_1() { return cHyphenMinusGreaterThanSignKeyword_10_1; }
+		//":"
+		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
 		//tooltipExpression=CustomizationExpression
 		public Assignment getTooltipExpressionAssignment_10_2() { return cTooltipExpressionAssignment_10_2; }
@@ -4125,14 +4124,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0; }
 
-		//("border-dimension" "->" borderSizeComputationExpression=CustomizationExpression)?
+		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_11() { return cGroup_11; }
 
 		//"border-dimension"
 		public Keyword getBorderDimensionKeyword_11_0() { return cBorderDimensionKeyword_11_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_11_1() { return cHyphenMinusGreaterThanSignKeyword_11_1; }
+		//":"
+		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
 
 		//borderSizeComputationExpression=CustomizationExpression
 		public Assignment getBorderSizeComputationExpressionAssignment_11_2() { return cBorderSizeComputationExpressionAssignment_11_2; }
@@ -4146,8 +4145,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SpecificContainerStyleCustomization
 		public RuleCall getOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_12_0() { return cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_12_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_13() { return cRightSquareBracketKeyword_13; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 
 	public class SpecificContainerStyleCustomizationElements extends AbstractParserRuleElementFinder {
@@ -4179,15 +4178,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cContainerWorkspaceImageCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cWorkspaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cWorkspacePathAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cWorkspacePathEStringParserRuleCall_3_0 = (RuleCall)cWorkspacePathAssignment_3.eContents().get(0);
 		
 		//ContainerWorkspaceImageCustomization returns styleCusto::ContainerWorkspaceImageCustomization:
-		//	{styleCusto::ContainerWorkspaceImageCustomization} "workspace" "->" workspacePath=EString;
+		//	{styleCusto::ContainerWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ContainerWorkspaceImageCustomization} "workspace" "->" workspacePath=EString
+		//{styleCusto::ContainerWorkspaceImageCustomization} "workspace" ":" workspacePath=EString
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ContainerWorkspaceImageCustomization}
@@ -4196,8 +4195,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"workspace"
 		public Keyword getWorkspaceKeyword_1() { return cWorkspaceKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//workspacePath=EString
 		public Assignment getWorkspacePathAssignment_3() { return cWorkspacePathAssignment_3; }
@@ -4211,15 +4210,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFlatContainerStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBackgroundKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cBackgroundStyleAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cBackgroundStyleBackgroundStyleEnumRuleCall_3_0 = (RuleCall)cBackgroundStyleAssignment_3.eContents().get(0);
 		
 		//FlatContainerStyleCustomization returns styleCusto::FlatContainerStyleCustomization:
-		//	{styleCusto::FlatContainerStyleCustomization} "background" "->" backgroundStyle=BackgroundStyle;
+		//	{styleCusto::FlatContainerStyleCustomization} "background" ":" backgroundStyle=BackgroundStyle;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::FlatContainerStyleCustomization} "background" "->" backgroundStyle=BackgroundStyle
+		//{styleCusto::FlatContainerStyleCustomization} "background" ":" backgroundStyle=BackgroundStyle
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::FlatContainerStyleCustomization}
@@ -4228,8 +4227,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"background"
 		public Keyword getBackgroundKeyword_1() { return cBackgroundKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//backgroundStyle=BackgroundStyle
 		public Assignment getBackgroundStyleAssignment_3() { return cBackgroundStyleAssignment_3; }
@@ -4243,15 +4242,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cShapeContainerStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cShapeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cShapeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cShapeContainerShapeEnumRuleCall_3_0 = (RuleCall)cShapeAssignment_3.eContents().get(0);
 		
 		//ShapeContainerStyleCustomization returns styleCusto::ShapeContainerStyleCustomization:
-		//	{styleCusto::ShapeContainerStyleCustomization} "shape" "->" shape=ContainerShape;
+		//	{styleCusto::ShapeContainerStyleCustomization} "shape" ":" shape=ContainerShape;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ShapeContainerStyleCustomization} "shape" "->" shape=ContainerShape
+		//{styleCusto::ShapeContainerStyleCustomization} "shape" ":" shape=ContainerShape
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ShapeContainerStyleCustomization}
@@ -4260,8 +4259,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"shape"
 		public Keyword getShapeKeyword_1() { return cShapeKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//shape=ContainerShape
 		public Assignment getShapeAssignment_3() { return cShapeAssignment_3; }
@@ -4286,63 +4285,63 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAppliedOnNodeStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
 		private final RuleCall cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnNodeStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cOverAllNodesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
 		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cLabelPositionKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cLabelPositionAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cLabelPositionLabelPositionEnumRuleCall_7_2_0 = (RuleCall)cLabelPositionAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cHideLabelKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Assignment cHideLabelByDefaultAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cHideLabelByDefaultEBooleanParserRuleCall_8_2_0 = (RuleCall)cHideLabelByDefaultAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
 		private final Keyword cResizeKindKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Assignment cResizeKindAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cResizeKindResizeKindEnumRuleCall_9_2_0 = (RuleCall)cResizeKindAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cTooltipExpressionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
 		private final Assignment cTooltipExpressionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
 		private final RuleCall cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0 = (RuleCall)cTooltipExpressionAssignment_10_2.eContents().get(0);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
 		private final Keyword cBorderDimensionKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
 		private final Assignment cBorderSizeComputationExpressionAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
 		private final RuleCall cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0 = (RuleCall)cBorderSizeComputationExpressionAssignment_11_2.eContents().get(0);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
 		private final Keyword cSizeDimensionKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
 		private final Assignment cSizeComputationExpressionAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
 		private final RuleCall cSizeComputationExpressionCustomizationExpressionParserRuleCall_12_2_0 = (RuleCall)cSizeComputationExpressionAssignment_12_2.eContents().get(0);
 		private final Assignment cOwnedSpecificNodeStyleCustomizationAssignment_13 = (Assignment)cGroup.eContents().get(13);
 		private final RuleCall cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_13_0 = (RuleCall)cOwnedSpecificNodeStyleCustomizationAssignment_13.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
 		//	{styleCusto::NodeStyleCustomization} "node" "(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "[" ("over-all-nodes" "->" applyonAll=EBoolean)?
-		//	("label-position" "->" labelPosition=LabelPosition)? ("hide-label" "->" hideLabelByDefault=EBoolean)? ("resize-kind"
-		//	"->" resizeKind=ResizeKind)? ("tooltip-expression" "->" tooltipExpression=CustomizationExpression)?
-		//	("border-dimension" "->" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" "->"
+		//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
+		//	("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind"
+		//	":" resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
+		//	":" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
 		//	sizeComputationExpression=CustomizationExpression)?
-		//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "]";
+		//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//{styleCusto::NodeStyleCustomization} "node" "(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "[" ("over-all-nodes" "->" applyonAll=EBoolean)?
-		//("label-position" "->" labelPosition=LabelPosition)? ("hide-label" "->" hideLabelByDefault=EBoolean)? ("resize-kind"
-		//"->" resizeKind=ResizeKind)? ("tooltip-expression" "->" tooltipExpression=CustomizationExpression)?
-		//("border-dimension" "->" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" "->"
+		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
+		//("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind" ":"
+		//resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension" ":"
+		//borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
 		//sizeComputationExpression=CustomizationExpression)?
-		//ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "]"
+		//ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::NodeStyleCustomization}
@@ -4384,17 +4383,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
-		//("over-all-nodes" "->" applyonAll=EBoolean)?
+		//("over-all-nodes" ":" applyonAll=EBoolean)?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"over-all-nodes"
 		public Keyword getOverAllNodesKeyword_6_0() { return cOverAllNodesKeyword_6_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_6_1() { return cHyphenMinusGreaterThanSignKeyword_6_1; }
+		//":"
+		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//applyonAll=EBoolean
 		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
@@ -4402,14 +4401,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
 
-		//("label-position" "->" labelPosition=LabelPosition)?
+		//("label-position" ":" labelPosition=LabelPosition)?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"label-position"
 		public Keyword getLabelPositionKeyword_7_0() { return cLabelPositionKeyword_7_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7_1() { return cHyphenMinusGreaterThanSignKeyword_7_1; }
+		//":"
+		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
 		//labelPosition=LabelPosition
 		public Assignment getLabelPositionAssignment_7_2() { return cLabelPositionAssignment_7_2; }
@@ -4417,14 +4416,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LabelPosition
 		public RuleCall getLabelPositionLabelPositionEnumRuleCall_7_2_0() { return cLabelPositionLabelPositionEnumRuleCall_7_2_0; }
 
-		//("hide-label" "->" hideLabelByDefault=EBoolean)?
+		//("hide-label" ":" hideLabelByDefault=EBoolean)?
 		public Group getGroup_8() { return cGroup_8; }
 
 		//"hide-label"
 		public Keyword getHideLabelKeyword_8_0() { return cHideLabelKeyword_8_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8_1() { return cHyphenMinusGreaterThanSignKeyword_8_1; }
+		//":"
+		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//hideLabelByDefault=EBoolean
 		public Assignment getHideLabelByDefaultAssignment_8_2() { return cHideLabelByDefaultAssignment_8_2; }
@@ -4432,14 +4431,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getHideLabelByDefaultEBooleanParserRuleCall_8_2_0() { return cHideLabelByDefaultEBooleanParserRuleCall_8_2_0; }
 
-		//("resize-kind" "->" resizeKind=ResizeKind)?
+		//("resize-kind" ":" resizeKind=ResizeKind)?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//"resize-kind"
 		public Keyword getResizeKindKeyword_9_0() { return cResizeKindKeyword_9_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_9_1() { return cHyphenMinusGreaterThanSignKeyword_9_1; }
+		//":"
+		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
 		//resizeKind=ResizeKind
 		public Assignment getResizeKindAssignment_9_2() { return cResizeKindAssignment_9_2; }
@@ -4447,14 +4446,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ResizeKind
 		public RuleCall getResizeKindResizeKindEnumRuleCall_9_2_0() { return cResizeKindResizeKindEnumRuleCall_9_2_0; }
 
-		//("tooltip-expression" "->" tooltipExpression=CustomizationExpression)?
+		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
 		public Group getGroup_10() { return cGroup_10; }
 
 		//"tooltip-expression"
 		public Keyword getTooltipExpressionKeyword_10_0() { return cTooltipExpressionKeyword_10_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_10_1() { return cHyphenMinusGreaterThanSignKeyword_10_1; }
+		//":"
+		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
 		//tooltipExpression=CustomizationExpression
 		public Assignment getTooltipExpressionAssignment_10_2() { return cTooltipExpressionAssignment_10_2; }
@@ -4462,14 +4461,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0; }
 
-		//("border-dimension" "->" borderSizeComputationExpression=CustomizationExpression)?
+		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_11() { return cGroup_11; }
 
 		//"border-dimension"
 		public Keyword getBorderDimensionKeyword_11_0() { return cBorderDimensionKeyword_11_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_11_1() { return cHyphenMinusGreaterThanSignKeyword_11_1; }
+		//":"
+		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
 
 		//borderSizeComputationExpression=CustomizationExpression
 		public Assignment getBorderSizeComputationExpressionAssignment_11_2() { return cBorderSizeComputationExpressionAssignment_11_2; }
@@ -4477,14 +4476,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0() { return cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0; }
 
-		//("size-dimension" "->" sizeComputationExpression=CustomizationExpression)?
+		//("size-dimension" ":" sizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_12() { return cGroup_12; }
 
 		//"size-dimension"
 		public Keyword getSizeDimensionKeyword_12_0() { return cSizeDimensionKeyword_12_0; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_12_1() { return cHyphenMinusGreaterThanSignKeyword_12_1; }
+		//":"
+		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
 
 		//sizeComputationExpression=CustomizationExpression
 		public Assignment getSizeComputationExpressionAssignment_12_2() { return cSizeComputationExpressionAssignment_12_2; }
@@ -4498,8 +4497,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SpecificNodeStyleCustomization
 		public RuleCall getOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_13_0() { return cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_13_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_14() { return cRightSquareBracketKeyword_14; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 	}
 
 	public class SpecificNodeStyleCustomizationElements extends AbstractParserRuleElementFinder {
@@ -4549,15 +4548,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cBundledImageCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cShapeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cShapeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cShapeBundledImageShapeEnumRuleCall_3_0 = (RuleCall)cShapeAssignment_3.eContents().get(0);
 		
 		//BundledImageCustomization returns styleCusto::BundledImageCustomization:
-		//	{styleCusto::BundledImageCustomization} "shape" "->" shape=BundledImageShape;
+		//	{styleCusto::BundledImageCustomization} "shape" ":" shape=BundledImageShape;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::BundledImageCustomization} "shape" "->" shape=BundledImageShape
+		//{styleCusto::BundledImageCustomization} "shape" ":" shape=BundledImageShape
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::BundledImageCustomization}
@@ -4566,8 +4565,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"shape"
 		public Keyword getShapeKeyword_1() { return cShapeKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//shape=BundledImageShape
 		public Assignment getShapeAssignment_3() { return cShapeAssignment_3; }
@@ -4581,27 +4580,27 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLozengeCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLozengeDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cWidthKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cWidthComputationExpressionAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cWidthComputationExpressionCustomizationExpressionParserRuleCall_6_0 = (RuleCall)cWidthComputationExpressionAssignment_6.eContents().get(0);
 		private final Keyword cHeightKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cHeightComputationExpressionAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cHeightComputationExpressionCustomizationExpressionParserRuleCall_9_0 = (RuleCall)cHeightComputationExpressionAssignment_9.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//LozengeCustomization returns styleCusto::LozengeCustomization:
-		//	{styleCusto::LozengeCustomization} "lozenge-dimension" "->" "[" "width" "->"
-		//	widthComputationExpression=CustomizationExpression "height" "->" heightComputationExpression=CustomizationExpression
-		//	"]";
+		//	{styleCusto::LozengeCustomization} "lozenge-dimension" ":" "{" "width" ":"
+		//	widthComputationExpression=CustomizationExpression "height" ":" heightComputationExpression=CustomizationExpression
+		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::LozengeCustomization} "lozenge-dimension" "->" "[" "width" "->"
-		//widthComputationExpression=CustomizationExpression "height" "->" heightComputationExpression=CustomizationExpression
-		//"]"
+		//{styleCusto::LozengeCustomization} "lozenge-dimension" ":" "{" "width" ":"
+		//widthComputationExpression=CustomizationExpression "height" ":" heightComputationExpression=CustomizationExpression
+		//"}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::LozengeCustomization}
@@ -4610,17 +4609,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"lozenge-dimension"
 		public Keyword getLozengeDimensionKeyword_1() { return cLozengeDimensionKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//"width"
 		public Keyword getWidthKeyword_4() { return cWidthKeyword_4; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_5() { return cHyphenMinusGreaterThanSignKeyword_5; }
+		//":"
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//widthComputationExpression=CustomizationExpression
 		public Assignment getWidthComputationExpressionAssignment_6() { return cWidthComputationExpressionAssignment_6; }
@@ -4631,8 +4630,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"height"
 		public Keyword getHeightKeyword_7() { return cHeightKeyword_7; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8() { return cHyphenMinusGreaterThanSignKeyword_8; }
+		//":"
+		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
 
 		//heightComputationExpression=CustomizationExpression
 		public Assignment getHeightComputationExpressionAssignment_9() { return cHeightComputationExpressionAssignment_9; }
@@ -4640,8 +4639,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getHeightComputationExpressionCustomizationExpressionParserRuleCall_9_0() { return cHeightComputationExpressionCustomizationExpressionParserRuleCall_9_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class GaugeCustomizationElements extends AbstractParserRuleElementFinder {
@@ -4649,15 +4648,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGaugeCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cGaugeAlignmentKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAlignementAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAlignementAlignmentKindEnumRuleCall_3_0 = (RuleCall)cAlignementAssignment_3.eContents().get(0);
 		
 		//GaugeCustomization returns styleCusto::GaugeCustomization:
-		//	{styleCusto::GaugeCustomization} "gauge-alignment" "->" alignement=AlignmentKind;
+		//	{styleCusto::GaugeCustomization} "gauge-alignment" ":" alignement=AlignmentKind;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::GaugeCustomization} "gauge-alignment" "->" alignement=AlignmentKind
+		//{styleCusto::GaugeCustomization} "gauge-alignment" ":" alignement=AlignmentKind
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::GaugeCustomization}
@@ -4666,8 +4665,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"gauge-alignment"
 		public Keyword getGaugeAlignmentKeyword_1() { return cGaugeAlignmentKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//alignement=AlignmentKind
 		public Assignment getAlignementAssignment_3() { return cAlignementAssignment_3; }
@@ -4681,27 +4680,27 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEllipseCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEllipseDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cHorizontalKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cHorizontalDiameterComputationExpressionAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cHorizontalDiameterComputationExpressionCustomizationExpressionParserRuleCall_6_0 = (RuleCall)cHorizontalDiameterComputationExpressionAssignment_6.eContents().get(0);
 		private final Keyword cVerticalKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cVerticalDiameterComputationExpressionAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cVerticalDiameterComputationExpressionCustomizationExpressionParserRuleCall_9_0 = (RuleCall)cVerticalDiameterComputationExpressionAssignment_9.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//EllipseCustomization returns styleCusto::EllipseCustomization:
-		//	{styleCusto::EllipseCustomization} "ellipse-dimension" "->" "[" "horizontal" "->"
-		//	horizontalDiameterComputationExpression=CustomizationExpression "vertical" "->"
-		//	verticalDiameterComputationExpression=CustomizationExpression "]";
+		//	{styleCusto::EllipseCustomization} "ellipse-dimension" ":" "{" "horizontal" ":"
+		//	horizontalDiameterComputationExpression=CustomizationExpression "vertical" ":"
+		//	verticalDiameterComputationExpression=CustomizationExpression "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::EllipseCustomization} "ellipse-dimension" "->" "[" "horizontal" "->"
-		//horizontalDiameterComputationExpression=CustomizationExpression "vertical" "->"
-		//verticalDiameterComputationExpression=CustomizationExpression "]"
+		//{styleCusto::EllipseCustomization} "ellipse-dimension" ":" "{" "horizontal" ":"
+		//horizontalDiameterComputationExpression=CustomizationExpression "vertical" ":"
+		//verticalDiameterComputationExpression=CustomizationExpression "}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::EllipseCustomization}
@@ -4710,17 +4709,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"ellipse-dimension"
 		public Keyword getEllipseDimensionKeyword_1() { return cEllipseDimensionKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//"horizontal"
 		public Keyword getHorizontalKeyword_4() { return cHorizontalKeyword_4; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_5() { return cHyphenMinusGreaterThanSignKeyword_5; }
+		//":"
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//horizontalDiameterComputationExpression=CustomizationExpression
 		public Assignment getHorizontalDiameterComputationExpressionAssignment_6() { return cHorizontalDiameterComputationExpressionAssignment_6; }
@@ -4731,8 +4730,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"vertical"
 		public Keyword getVerticalKeyword_7() { return cVerticalKeyword_7; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8() { return cHyphenMinusGreaterThanSignKeyword_8; }
+		//":"
+		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
 
 		//verticalDiameterComputationExpression=CustomizationExpression
 		public Assignment getVerticalDiameterComputationExpressionAssignment_9() { return cVerticalDiameterComputationExpressionAssignment_9; }
@@ -4740,8 +4739,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getVerticalDiameterComputationExpressionCustomizationExpressionParserRuleCall_9_0() { return cVerticalDiameterComputationExpressionCustomizationExpressionParserRuleCall_9_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class NodeWorkspaceImageCustomizationElements extends AbstractParserRuleElementFinder {
@@ -4749,15 +4748,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeWorkspaceImageCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cWorkspaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cWorkspacePathAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cWorkspacePathEStringParserRuleCall_3_0 = (RuleCall)cWorkspacePathAssignment_3.eContents().get(0);
 		
 		//NodeWorkspaceImageCustomization returns styleCusto::NodeWorkspaceImageCustomization:
-		//	{styleCusto::NodeWorkspaceImageCustomization} "workspace" "->" workspacePath=EString;
+		//	{styleCusto::NodeWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::NodeWorkspaceImageCustomization} "workspace" "->" workspacePath=EString
+		//{styleCusto::NodeWorkspaceImageCustomization} "workspace" ":" workspacePath=EString
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::NodeWorkspaceImageCustomization}
@@ -4766,8 +4765,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"workspace"
 		public Keyword getWorkspaceKeyword_1() { return cWorkspaceKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//workspacePath=EString
 		public Assignment getWorkspacePathAssignment_3() { return cWorkspacePathAssignment_3; }
@@ -4781,23 +4780,23 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSquareCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSquareDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cWidthKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cWidthAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cWidthEIntParserRuleCall_6_0 = (RuleCall)cWidthAssignment_6.eContents().get(0);
 		private final Keyword cHeightKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cHeightAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cHeightEIntParserRuleCall_9_0 = (RuleCall)cHeightAssignment_9.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//SquareCustomization returns styleCusto::SquareCustomization:
-		//	{styleCusto::SquareCustomization} "square-dimension" "->" "[" "width" "->" width=EInt "height" "->" height=EInt "]";
+		//	{styleCusto::SquareCustomization} "square-dimension" ":" "{" "width" ":" width=EInt "height" ":" height=EInt "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::SquareCustomization} "square-dimension" "->" "[" "width" "->" width=EInt "height" "->" height=EInt "]"
+		//{styleCusto::SquareCustomization} "square-dimension" ":" "{" "width" ":" width=EInt "height" ":" height=EInt "}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::SquareCustomization}
@@ -4806,17 +4805,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"square-dimension"
 		public Keyword getSquareDimensionKeyword_1() { return cSquareDimensionKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//"width"
 		public Keyword getWidthKeyword_4() { return cWidthKeyword_4; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_5() { return cHyphenMinusGreaterThanSignKeyword_5; }
+		//":"
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//width=EInt
 		public Assignment getWidthAssignment_6() { return cWidthAssignment_6; }
@@ -4827,8 +4826,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"height"
 		public Keyword getHeightKeyword_7() { return cHeightKeyword_7; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_8() { return cHyphenMinusGreaterThanSignKeyword_8; }
+		//":"
+		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
 
 		//height=EInt
 		public Assignment getHeightAssignment_9() { return cHeightAssignment_9; }
@@ -4836,8 +4835,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getHeightEIntParserRuleCall_9_0() { return cHeightEIntParserRuleCall_9_0; }
 
-		//"]"
-		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class DotCustomizationElements extends AbstractParserRuleElementFinder {
@@ -4845,15 +4844,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDotCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cStrokeDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cStrokeSizeComputationExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cStrokeSizeComputationExpressionCustomizationExpressionParserRuleCall_3_0 = (RuleCall)cStrokeSizeComputationExpressionAssignment_3.eContents().get(0);
 		
 		//DotCustomization returns styleCusto::DotCustomization:
-		//	{styleCusto::DotCustomization} "stroke-dimension" "->" strokeSizeComputationExpression=CustomizationExpression;
+		//	{styleCusto::DotCustomization} "stroke-dimension" ":" strokeSizeComputationExpression=CustomizationExpression;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::DotCustomization} "stroke-dimension" "->" strokeSizeComputationExpression=CustomizationExpression
+		//{styleCusto::DotCustomization} "stroke-dimension" ":" strokeSizeComputationExpression=CustomizationExpression
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::DotCustomization}
@@ -4862,8 +4861,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"stroke-dimension"
 		public Keyword getStrokeDimensionKeyword_1() { return cStrokeDimensionKeyword_1; }
 
-		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//strokeSizeComputationExpression=CustomizationExpression
 		public Assignment getStrokeSizeComputationExpressionAssignment_3() { return cStrokeSizeComputationExpressionAssignment_3; }
@@ -7148,19 +7147,18 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 	//EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
 	//	{styleCusto::EdgeStyleCustomization} "edge" "(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "[" ("over-all-edges" "->" applyonAll=EBoolean)?
-	//	("source" "->" sourceArrow=EdgeArrows)? ("target" "->" targetArrow=EdgeArrows)? ("routing" "->"
-	//	routingStyle=EdgeRouting)? ("folding" "->" foldingStyle=FoldingStyle)? ("center-source-mappings" "->"
+	//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "{" ("over-all-edges" ":" applyonAll=EBoolean)?
+	//	("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
+	//	routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
 	//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-	//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" "->"
+	//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" ":"
 	//	(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
 	//	centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
-	//	("begin-label-style-description" "->" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
-	//	("center-label-style-description" "->"
-	//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description" "->"
-	//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" "->" lineStyle=LineStyle)?
-	//	("size" "->" sizeComputationExpression=CustomizationExpression)? ("end-centering" "->" endCentering=CenterStyle)?
-	//	"]";
+	//	("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
+	//	("center-label-style-description" ":"
+	//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description" ":"
+	//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" ":" lineStyle=LineStyle)?
+	//	("size" ":" sizeComputationExpression=CustomizationExpression)? ("end-centering" ":" endCentering=CenterStyle)? "}";
 	public EdgeStyleCustomizationElements getEdgeStyleCustomizationAccess() {
 		return pEdgeStyleCustomization;
 	}
@@ -7183,10 +7181,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 	//LabelCustomization returns styleCusto::LabelCustomization:
 	//	{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "[" ("over-all-labels" "->" applyonAll=EBoolean)?
-	//	ownedLabelAlignment=LabelAlignementCustomization? ("size" "->" size=EInt)? ("format" "->" format=FontFormat)?
-	//	("color" "->" color=[siriusDescription::ColorDescription|STRING]) ("icon" "[" "show" "->" showIcon=EBoolean "path"
-	//	"->" iconPath=EString "]")? ("expression" "->" expression=CustomizationExpression)? "]";
+	//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
+	//	ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
+	//	":" color=[siriusDescription::ColorDescription|STRING]) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
+	//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
 	public LabelCustomizationElements getLabelCustomizationAccess() {
 		return pLabelCustomization;
 	}
@@ -7196,7 +7194,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LabelAlignementCustomization returns styleCusto::LabelAlignmentCustomization:
-	//	{styleCusto::LabelAlignmentCustomization} "alignment" "->" alignment=LabelAlignment;
+	//	{styleCusto::LabelAlignmentCustomization} "alignment" ":" alignment=LabelAlignment;
 	public LabelAlignementCustomizationElements getLabelAlignementCustomizationAccess() {
 		return pLabelAlignementCustomization;
 	}
@@ -7218,11 +7216,11 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
 	//	{styleCusto::ContainerStyleCustomization} "container" "("
 	//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "[" ("over-all-containers" "->"
-	//	applyonAll=EBoolean)? ("width" "->" arcWith=EInt)? ("height" "->" arcHeight=EInt)? ("round-corner" "->"
-	//	roundedCorner=EBoolean)? ("tooltip-expression" "->" tooltipExpression=CustomizationExpression)? ("border-dimension"
-	//	"->" borderSizeComputationExpression=CustomizationExpression)?
-	//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "]";
+	//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "{" ("over-all-containers" ":"
+	//	applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
+	//	roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
+	//	":" borderSizeComputationExpression=CustomizationExpression)?
+	//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "}";
 	public ContainerStyleCustomizationElements getContainerStyleCustomizationAccess() {
 		return pContainerStyleCustomization;
 	}
@@ -7242,7 +7240,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ContainerWorkspaceImageCustomization returns styleCusto::ContainerWorkspaceImageCustomization:
-	//	{styleCusto::ContainerWorkspaceImageCustomization} "workspace" "->" workspacePath=EString;
+	//	{styleCusto::ContainerWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
 	public ContainerWorkspaceImageCustomizationElements getContainerWorkspaceImageCustomizationAccess() {
 		return pContainerWorkspaceImageCustomization;
 	}
@@ -7252,7 +7250,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FlatContainerStyleCustomization returns styleCusto::FlatContainerStyleCustomization:
-	//	{styleCusto::FlatContainerStyleCustomization} "background" "->" backgroundStyle=BackgroundStyle;
+	//	{styleCusto::FlatContainerStyleCustomization} "background" ":" backgroundStyle=BackgroundStyle;
 	public FlatContainerStyleCustomizationElements getFlatContainerStyleCustomizationAccess() {
 		return pFlatContainerStyleCustomization;
 	}
@@ -7262,7 +7260,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ShapeContainerStyleCustomization returns styleCusto::ShapeContainerStyleCustomization:
-	//	{styleCusto::ShapeContainerStyleCustomization} "shape" "->" shape=ContainerShape;
+	//	{styleCusto::ShapeContainerStyleCustomization} "shape" ":" shape=ContainerShape;
 	public ShapeContainerStyleCustomizationElements getShapeContainerStyleCustomizationAccess() {
 		return pShapeContainerStyleCustomization;
 	}
@@ -7273,12 +7271,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 	//NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
 	//	{styleCusto::NodeStyleCustomization} "node" "(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "[" ("over-all-nodes" "->" applyonAll=EBoolean)?
-	//	("label-position" "->" labelPosition=LabelPosition)? ("hide-label" "->" hideLabelByDefault=EBoolean)? ("resize-kind"
-	//	"->" resizeKind=ResizeKind)? ("tooltip-expression" "->" tooltipExpression=CustomizationExpression)?
-	//	("border-dimension" "->" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" "->"
+	//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
+	//	("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind"
+	//	":" resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
+	//	":" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
 	//	sizeComputationExpression=CustomizationExpression)?
-	//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "]";
+	//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "}";
 	public NodeStyleCustomizationElements getNodeStyleCustomizationAccess() {
 		return pNodeStyleCustomization;
 	}
@@ -7299,7 +7297,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BundledImageCustomization returns styleCusto::BundledImageCustomization:
-	//	{styleCusto::BundledImageCustomization} "shape" "->" shape=BundledImageShape;
+	//	{styleCusto::BundledImageCustomization} "shape" ":" shape=BundledImageShape;
 	public BundledImageCustomizationElements getBundledImageCustomizationAccess() {
 		return pBundledImageCustomization;
 	}
@@ -7309,9 +7307,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LozengeCustomization returns styleCusto::LozengeCustomization:
-	//	{styleCusto::LozengeCustomization} "lozenge-dimension" "->" "[" "width" "->"
-	//	widthComputationExpression=CustomizationExpression "height" "->" heightComputationExpression=CustomizationExpression
-	//	"]";
+	//	{styleCusto::LozengeCustomization} "lozenge-dimension" ":" "{" "width" ":"
+	//	widthComputationExpression=CustomizationExpression "height" ":" heightComputationExpression=CustomizationExpression
+	//	"}";
 	public LozengeCustomizationElements getLozengeCustomizationAccess() {
 		return pLozengeCustomization;
 	}
@@ -7321,7 +7319,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//GaugeCustomization returns styleCusto::GaugeCustomization:
-	//	{styleCusto::GaugeCustomization} "gauge-alignment" "->" alignement=AlignmentKind;
+	//	{styleCusto::GaugeCustomization} "gauge-alignment" ":" alignement=AlignmentKind;
 	public GaugeCustomizationElements getGaugeCustomizationAccess() {
 		return pGaugeCustomization;
 	}
@@ -7331,9 +7329,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EllipseCustomization returns styleCusto::EllipseCustomization:
-	//	{styleCusto::EllipseCustomization} "ellipse-dimension" "->" "[" "horizontal" "->"
-	//	horizontalDiameterComputationExpression=CustomizationExpression "vertical" "->"
-	//	verticalDiameterComputationExpression=CustomizationExpression "]";
+	//	{styleCusto::EllipseCustomization} "ellipse-dimension" ":" "{" "horizontal" ":"
+	//	horizontalDiameterComputationExpression=CustomizationExpression "vertical" ":"
+	//	verticalDiameterComputationExpression=CustomizationExpression "}";
 	public EllipseCustomizationElements getEllipseCustomizationAccess() {
 		return pEllipseCustomization;
 	}
@@ -7343,7 +7341,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NodeWorkspaceImageCustomization returns styleCusto::NodeWorkspaceImageCustomization:
-	//	{styleCusto::NodeWorkspaceImageCustomization} "workspace" "->" workspacePath=EString;
+	//	{styleCusto::NodeWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
 	public NodeWorkspaceImageCustomizationElements getNodeWorkspaceImageCustomizationAccess() {
 		return pNodeWorkspaceImageCustomization;
 	}
@@ -7353,7 +7351,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SquareCustomization returns styleCusto::SquareCustomization:
-	//	{styleCusto::SquareCustomization} "square-dimension" "->" "[" "width" "->" width=EInt "height" "->" height=EInt "]";
+	//	{styleCusto::SquareCustomization} "square-dimension" ":" "{" "width" ":" width=EInt "height" ":" height=EInt "}";
 	public SquareCustomizationElements getSquareCustomizationAccess() {
 		return pSquareCustomization;
 	}
@@ -7363,7 +7361,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DotCustomization returns styleCusto::DotCustomization:
-	//	{styleCusto::DotCustomization} "stroke-dimension" "->" strokeSizeComputationExpression=CustomizationExpression;
+	//	{styleCusto::DotCustomization} "stroke-dimension" ":" strokeSizeComputationExpression=CustomizationExpression;
 	public DotCustomizationElements getDotCustomizationAccess() {
 		return pDotCustomization;
 	}

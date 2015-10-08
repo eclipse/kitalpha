@@ -139,7 +139,7 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			buf.append(" ").append(suffix);
 		}
 		
-		return createCompletionProposal(buf.toString() + " -> ", getKeywordDisplayString(buf.toString()),
+		return createCompletionProposal(buf.toString() + " : ", getKeywordDisplayString(buf.toString()),
 				getImage(keyword), contentAssistContext);
 	}
 
