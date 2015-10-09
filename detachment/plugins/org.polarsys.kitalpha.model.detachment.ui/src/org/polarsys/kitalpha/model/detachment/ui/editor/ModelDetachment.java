@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.model.detachment.ui.editor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 

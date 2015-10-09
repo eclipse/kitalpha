@@ -10,9 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.detachment.ui.editor;
 
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collections;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;

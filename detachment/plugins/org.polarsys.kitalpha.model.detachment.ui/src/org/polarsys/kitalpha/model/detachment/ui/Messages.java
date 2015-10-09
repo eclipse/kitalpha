@@ -10,7 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.detachment.ui;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.osgi.util.NLS;
 
 /**

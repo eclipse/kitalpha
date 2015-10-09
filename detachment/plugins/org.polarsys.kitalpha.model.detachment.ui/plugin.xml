@@ -26,36 +26,123 @@ Contributors:
       </editor>
    </extension>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.core.resources.IResource"
-            nameFilter="*.aird"
-            objectClass="org.eclipse.core.resources.IResource">
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.polarsys.kitalpha.model.detachment.ui.action.DetachmentActionHandler"
+            commandId="org.polarsys.kitalpha.model.detachment.ui.command.a">
+         <enabledWhen>
+            <and>
+               <count
+                     value="1">
+               </count>
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.core.resources.IResource">
+                     <test
+                           property="org.eclipse.core.resources.extension"
+                           value="aird">
+                     </test>
+                  </adapt>
+               </iterate>
+            </and>
+         </enabledWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Launch Model Detachment "
+            id="org.polarsys.kitalpha.model.detachment.ui.command.a"
+            name="New Detachment Command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription?after=additions">
+         <command
+               commandId="org.polarsys.kitalpha.model.detachment.ui.command.a"
+               icon="icons/detach_icon.png"
+               label="%MODEL_MODEL_DETACHMENT_NAME"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="aird">
+                        </test>
+                     </adapt>
+                     <test
+                           property="org.polarsys.kitalpha.model.detachment.ui.action.checkClosedSession">
+                     </test>
+                  </iterate>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:popup:org.eclipse.ui.popup.any">
          <menu
                icon="icons/Kitalpha_Logo_alpha.png"
                id="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription"
-               label="%MODEL_POPUPMENU_NAME"
-               path="additions">
-            <groupMarker
-                  name="%AD_MODEL_DETACHMENT_NAME">
-            </groupMarker>
+               label="%MODEL_POPUPMENU_NAME">
          </menu>
-         <action
-               class="org.polarsys.kitalpha.model.detachment.ui.action.ModelDetachmentAction"
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.polarsys.kitalpha.model.detachment.ui.command.a"
                icon="icons/detach_icon.png"
-               id="org.polarsys.kitalpha.model.detachment.ui.detachment"
                label="%MODEL_MODEL_DETACHMENT_NAME"
-               menubarPath="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription/detachment">
-         </action>
-         <action
-               class="org.polarsys.kitalpha.model.detachment.ui.action.ModelDetachmentAction"
-               icon="icons/detach_icon.png"
-               id="org.polarsys.kitalpha.model.detachment.ui.menu.contextual.action.detachment"
-               label="%MODEL_MODEL_DETACHMENT_NAME"
-               menubarPath="additions">
-         </action>
-      </objectContribution>
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="aird">
+                        </test>
+                     </adapt>
+                     <test
+                           property="org.polarsys.kitalpha.model.detachment.ui.action.checkClosedSession">
+                     </test>
+                  </iterate>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.polarsys.kitalpha.model.detachment.ui.action.DetachmentActionPropertyTester"
+            id="org.polarsys.kitalpha.model.detachment.ui.action.check.closed.session"
+            namespace="org.polarsys.kitalpha.model.detachment.ui.action"
+            properties="checkClosedSession"
+            type="org.eclipse.core.resources.IResource">
+      </propertyTester>
    </extension>
 
 </plugin>

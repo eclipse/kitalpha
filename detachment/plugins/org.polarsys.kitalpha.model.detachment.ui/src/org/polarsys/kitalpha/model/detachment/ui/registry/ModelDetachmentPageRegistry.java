@@ -17,7 +17,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.forms.editor.IFormPage;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
 import org.polarsys.kitalpha.model.detachment.ui.page.AbstractDetachmentFormPage;
 
