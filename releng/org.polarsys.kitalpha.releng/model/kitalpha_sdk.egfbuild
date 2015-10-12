@@ -13,8 +13,8 @@
     <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="${eclipse.download.prefix}/modeling/emft/eef/updates/milestones/1.5/S201501090502/"/>
     <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="${eclipse.download.prefix}/modeling/m2t/acceleo/updates/releases/3.4"/>
     <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.0.x/luna"/>
-    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.4.0/emf-diffmerge-site"/>
-    <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.4.0/edm-patterns-site"/>
+    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.5.1/emf-diffmerge-site/"/>
+    <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.5.1/edm-patterns-site/"/>
     <properties xmi:id="_tAs5kCO3EeWTOe3dES9kkg" key="amalgam.repo.url" value="http://download.eclipse.org/modeling/amalgam/updates/nightly/1.7.x/mars/"/>
     <properties xmi:id="_p_oyYDIHEeW5Te4c0tZ9OQ" key="kitalphaCTK.repo.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_CTK/lastSuccessfulBuild/artifact/result/publish/kitalpha_ctk/site.p2"/>
   </propertyPackages>
