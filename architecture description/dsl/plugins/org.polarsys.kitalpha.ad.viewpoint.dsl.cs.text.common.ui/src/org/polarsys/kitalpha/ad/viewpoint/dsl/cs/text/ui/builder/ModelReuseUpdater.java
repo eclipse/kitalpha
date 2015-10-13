@@ -14,6 +14,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -51,10 +52,13 @@ public class ModelReuseUpdater implements IXtextBuilderParticipant {
 			final int numberOfDeltas = deltas.size();
 			for (int i = 0 ; i < numberOfDeltas ; i++) {
 				DefaultResourceDescriptionDelta dd = (DefaultResourceDescriptionDelta) deltas.get(i);
-				if (dd.getOld()!=null && dd.getNew()==null && ResourceHelper.hasPeriodicFileExtension(dd.getUri())) {
-					handleDeletion(builtProject, dd);
+				if (ResourceHelper.hasPeriodicFileExtension(dd.getUri())){
+					if (dd.getOld()!=null && dd.getNew()== null && ResourceHelper.hasPeriodicFileExtension(dd.getUri())) {
+						handleDeletion(builtProject, dd);
+					}
 				}
 			}
+			builtProject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		}
 	}
 

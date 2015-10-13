@@ -36,7 +36,11 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 		
 		IFile resource = getResource(element);
 		
-		if (resource == null || !(resource.getType() == IResource.FILE) || !(resource.getFullPath().getFileExtension().endsWith("vptext"))) return;
+		if (resource == null || 
+				!(resource.exists()) ||
+				!(resource.isAccessible()) ||
+				!(resource.getType() == IResource.FILE) ||
+				!(resource.getFullPath().getFileExtension().endsWith("vptext"))) return;
 		
 		try {
 			

@@ -257,7 +257,7 @@ Contributors:
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpbuildExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-            fileExtensions="vptext,common.vptext,build.vptext,conf.vptext,data.vptext,spec.vptext,diagram.vptext,services.vptext,ui.vptext">
+            fileExtensions="build.vptext">
       </participant>
    </extension>
    <extension

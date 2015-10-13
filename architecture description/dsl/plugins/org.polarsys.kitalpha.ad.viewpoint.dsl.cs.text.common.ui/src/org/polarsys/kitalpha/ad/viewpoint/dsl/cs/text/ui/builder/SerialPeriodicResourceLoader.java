@@ -46,6 +46,7 @@ public class SerialPeriodicResourceLoader extends AbstractResourceLoader {
 		try {
 			if (project != null && 
 					project.exists() &&
+					project.isAccessible() && 
 					project.hasNature(NatureID.VPDSL_PROJECT_NATURE))
 			{
 
@@ -91,12 +92,6 @@ public class SerialPeriodicResourceLoader extends AbstractResourceLoader {
 					Resource resource = parent.getResource(uri, true);
 					return new LoadResult(resource, uri);
 				} catch(WrappedException e) {
-					/**
-					 * FIXME This commented due to migration to mars. Ensure that the
-					 * modification work finely at the end of migration on LoadOperationException(uri, e.getCause()) 
-					 * for it second arg
-					 */
-//					throw new LoadOperationException(uri, e.getCause());
 					throw new LoadOperationException(uri, e);
 				}
 			}

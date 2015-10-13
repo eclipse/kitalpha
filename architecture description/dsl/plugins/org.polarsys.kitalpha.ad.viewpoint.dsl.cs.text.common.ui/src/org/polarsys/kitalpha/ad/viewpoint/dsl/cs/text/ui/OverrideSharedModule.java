@@ -13,12 +13,14 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui;
 import org.eclipse.xtext.builder.builderState.IBuilderState;
 import org.eclipse.xtext.builder.builderState.IMarkerUpdater;
 import org.eclipse.xtext.builder.clustering.ClusteringBuilderState;
+import org.eclipse.xtext.builder.impl.XtextBuilder;
 import org.eclipse.xtext.builder.resourceloader.IResourceLoader;
 import org.eclipse.xtext.ui.resource.UriValidator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder.PeriodicClusteringBuilderState;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder.PeriodicMarkerUpdater;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder.PeriodicResourceLoaderProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder.PeriodicURIValidator;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.builder.VpdslXtextBuilder;
 
 import com.google.inject.Binder;
 import com.google.inject.Module;
@@ -46,5 +48,6 @@ public class OverrideSharedModule implements Module {
 		   binder.bind(IResourceLoader.class).annotatedWith(Names.named(ClusteringBuilderState.RESOURCELOADER_GLOBAL_INDEX)).toProvider(PeriodicResourceLoaderProvider.getSerialLoader());
 		   binder.bind(IResourceLoader.class).annotatedWith(Names.named(ClusteringBuilderState.RESOURCELOADER_CROSS_LINKING)).toProvider(PeriodicResourceLoaderProvider.getSerialLoader());
 		   binder.bind(IMarkerUpdater.class).to(PeriodicMarkerUpdater.class);
+		   binder.bind(XtextBuilder.class).to(VpdslXtextBuilder.class);
 	}
 }

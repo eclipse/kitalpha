@@ -264,7 +264,7 @@ Contributors:
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-            fileExtensions="vptext,common.vptext,build.vptext,conf.vptext,data.vptext,spec.vptext,diagram.vptext,services.vptext,ui.vptext">
+            fileExtensions="conf.vptext,vptext">
       </participant>
    </extension>
    <extension
@@ -433,11 +433,14 @@ Contributors:
            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
            default="true"
-           extensions="conf.vptext, vptext"
+           extensions="conf.vptext,vptext"
            icon="icons/vpdsl_file_16.png"
            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf"
            matchingStrategy="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpconfMatchingStrategy"
            name="Vptext Configuration Editor">
+        <contentTypeBinding
+              contentTypeId="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf.ui.conf.content.type">
+        </contentTypeBinding>
      </editor>
   </extension>
   <extension
@@ -476,5 +479,14 @@ Contributors:
              name="%wizard.vpconf.file.name">
        </wizard>
     </extension>
+      <extension
+            point="org.eclipse.core.contenttype.contentTypes">
+         <content-type
+               file-extensions="conf.vptext,vptext"
+               id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf.ui.conf.content.type"
+               name="Viewpoint Configuration Content Type"
+               priority="high">
+         </content-type>
+      </extension>
     
 </plugin>
