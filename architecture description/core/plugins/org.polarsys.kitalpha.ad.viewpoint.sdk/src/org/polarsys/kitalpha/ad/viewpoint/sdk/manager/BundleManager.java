@@ -105,11 +105,11 @@ public class BundleManager {
 		BundleRegistryListener listener = new BundleRegistryListener(symbolicName);
 		RegistryFactory.getRegistry().addListener(listener);
 		Set<Bundle> collector = new HashSet<Bundle>();
-		IPluginModelBase model = PluginRegistry.findModel(symbolicName);
-		load(model.getBundleDescription(), collector);
-
-		Bundle installBundle = findBundle(symbolicName);
 		try {
+			IPluginModelBase model = PluginRegistry.findModel(symbolicName);
+			load(model.getBundleDescription(), collector);
+
+			Bundle installBundle = findBundle(symbolicName);
 			// refresh loaded bundle
 			BundleContext context = Activator.getContext();
 			Bundle systemBundle = context.getBundle(0);
@@ -135,8 +135,8 @@ public class BundleManager {
 			String requiredSymbolicName = supplier.getSupplier().getSymbolicName();
 			// is the bundle loaded ?
 			Bundle bundle = Platform.getBundle(requiredSymbolicName);
-			if (bundle == null || allManagedBundles.contains(requiredSymbolicName)) {
-				// need to install the bundle
+			if (bundle == null || (allManagedBundles.contains(requiredSymbolicName) && bundle.getState() != Bundle.ACTIVE)) {
+				// need to install or update the bundle
 				bundle = findBundle(requiredSymbolicName);
 				collector.add(bundle);
 				load((BundleDescription) supplier, collector);
