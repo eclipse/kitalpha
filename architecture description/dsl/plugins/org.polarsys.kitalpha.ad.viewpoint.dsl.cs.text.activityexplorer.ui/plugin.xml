@@ -20,9 +20,10 @@ Contributors:
               class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
               contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
               default="true"
-              extensions="activityexplorer.vptext"
+              extensions="activityexplorer.vptext,vptext"
               icon="icons/vpdsl_file_16.png"
               id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer"
+              matchingStrategy="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpActivityExplorerMatchingStrategy"
               name="Activityexplorer Editor">
         </editor>
     </extension>
@@ -338,7 +339,8 @@ Contributors:
     <extension
           point="org.eclipse.xtext.builder.participant">
        <participant
-             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+             fileExtensions="activityexplorer.vptext,vptext">
        </participant>
     </extension>
     <extension

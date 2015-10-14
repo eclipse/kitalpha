@@ -251,7 +251,7 @@ Contributors:
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpservicesExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-            fileExtensions="vptext,common.vptext,build.vptext,conf.vptext,data.vptext,spec.vptext,diagram.vptext,services.vptext,ui.vptext">
+            fileExtensions="services.vptext,vptext">
       </participant>
    </extension>
    <extension
@@ -428,7 +428,7 @@ Contributors:
            class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpservicesExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
            default="true"
-           extensions="services.vptext, vptext"
+           extensions="services.vptext,vptext"
            icon="icons/vpdsl_file_16.png"
            id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpservices"
            matchingStrategy="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.VpservicesMatchingStrategy"
