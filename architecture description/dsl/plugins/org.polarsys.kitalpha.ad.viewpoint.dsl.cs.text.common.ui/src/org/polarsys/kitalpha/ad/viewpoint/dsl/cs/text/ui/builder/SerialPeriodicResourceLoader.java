@@ -15,14 +15,12 @@ import java.util.Collection;
 import java.util.Queue;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.builder.resourceloader.AbstractResourceLoader;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.NatureID;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 
 import com.google.common.collect.Lists;
@@ -43,71 +41,35 @@ public class SerialPeriodicResourceLoader extends AbstractResourceLoader {
 		
 		final Queue<URI> queue = Lists.newLinkedList();
 		
-		try {
-			if (project != null && 
-					project.exists() &&
-					project.isAccessible() && 
-					project.hasNature(NatureID.VPDSL_PROJECT_NATURE))
-			{
+			return new CheckedLoadOperation(new LoadOperation() {
 
-				return new CheckedLoadOperation(new LoadOperation() {
-
-					public LoadResult next() {
-						URI uri = queue.poll();
-						try {
-							Resource resource = null;
-							if (ResourceHelper.hasPeriodicFileExtension(uri)) {
-								resource = ResourceHelper.loadResource(uri, parent);
-							} else {
-								resource = parent.getResource(uri, true);
-							}			
-							return new LoadResult(resource, uri);
-						} catch(WrappedException e) {
-							throw new LoadOperationException(uri, e);
-						}
+				public LoadResult next() {
+					URI uri = queue.poll();
+					try {
+						Resource resource = null;
+						if (ResourceHelper.hasPeriodicFileExtension(uri)) {
+							resource = ResourceHelper.loadResource(uri, parent);
+						} else {
+							resource = parent.getResource(uri, true);
+						}			
+						return new LoadResult(resource, uri);
+					} catch(WrappedException e) {
+						throw new LoadOperationException(uri, e);
 					}
-
-					public boolean hasNext() {
-						return !queue.isEmpty();
-					}
-
-					public Collection<URI> cancel() {
-						return queue;
-					}
-
-					public void load(Collection<URI> uris) {
-						queue.addAll(getSorter().sort(uris));
-					}
-				});
-			}
-		} catch (CoreException e) {
-			//die
-		}
-		
-		return new CheckedLoadOperation(new LoadOperation() {
-
-			public LoadResult next() {
-				URI uri = queue.poll();
-				try {
-					Resource resource = parent.getResource(uri, true);
-					return new LoadResult(resource, uri);
-				} catch(WrappedException e) {
-					throw new LoadOperationException(uri, e);
 				}
-			}
 
-			public boolean hasNext() {
-				return !queue.isEmpty();
-			}
+				public boolean hasNext() {
+					return !queue.isEmpty();
+				}
 
-			public Collection<URI> cancel() {
-				return queue;
-			}
+				public Collection<URI> cancel() {
+					return queue;
+				}
 
-			public void load(Collection<URI> uris) {
-				queue.addAll(getSorter().sort(uris));
-			}
-		});
+				public void load(Collection<URI> uris) {
+					queue.addAll(getSorter().sort(uris));
+				}
+			});
 	}
 
 	@Override

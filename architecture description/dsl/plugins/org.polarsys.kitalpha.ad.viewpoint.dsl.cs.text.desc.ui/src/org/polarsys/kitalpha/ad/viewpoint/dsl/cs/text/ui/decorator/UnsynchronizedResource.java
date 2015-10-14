@@ -12,7 +12,6 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IDecoration;
@@ -39,7 +38,6 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 		if (resource == null || 
 				!(resource.exists()) ||
 				!(resource.isAccessible()) ||
-				!(resource.getType() == IResource.FILE) ||
 				!(resource.getFullPath().getFileExtension().endsWith("vptext"))) return;
 		
 		try {
@@ -73,6 +71,11 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 	
 	private IFile getResource(Object object) 
 	{
+		if (object == null)
+		{
+			return null;
+		}
+		
 		if (object instanceof IFile) 
 		{
 			return (IFile) object;
@@ -81,6 +84,7 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 		{
 			return (IFile) ((IAdaptable) object).getAdapter(IFile.class);
 		}
+		
 		return null;
 	}
 	
