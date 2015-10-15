@@ -12,11 +12,11 @@
 'description:'=14
 'extends'=15
 'name:'=13
+'uses diagram'=20
+'uses filesystem'=22
+'uses model'=19
 'uses viewpoint'=18
-'uses-diagram'=20
-'uses-filesystem'=22
-'uses-model'=19
-'uses-workspace'=21
+'uses workspace'=21
 '{'=12
 '}'=30
 RULE_ANY_OTHER=10

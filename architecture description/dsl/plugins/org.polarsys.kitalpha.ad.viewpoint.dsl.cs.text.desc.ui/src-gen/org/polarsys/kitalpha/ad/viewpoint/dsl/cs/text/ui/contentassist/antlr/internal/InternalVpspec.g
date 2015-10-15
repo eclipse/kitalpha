@@ -3007,7 +3007,7 @@ rule__Viewpoint__TypeAssignment_16_0
 (
 { before(grammarAccess.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0()); }
 
-	'ActivityExplorer' 
+	'Activity-Explorer' 
 
 { after(grammarAccess.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0()); }
 )
