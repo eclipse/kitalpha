@@ -19,4 +19,25 @@ Configuration ComponentSample.conf {
 	target EMF
 	project org.polarsys.kitalpha.vp.componentsample
 	nsuri "http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"
+	
+	generation {
+		data (
+			Model: true
+			Edit: true 
+			Editor: true
+			Test: false
+			Javadoc: false
+			OverwriteEcore: true
+		 )
+		 diagram (
+		 	OverwriteOdesign: true
+		 )
+		 documentation (
+		 	EcoreToHtml: false
+		 )
+		 ecore (
+			aird: false		
+		 )
+	}
+	
 }

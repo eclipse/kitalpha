@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="ComponentSample" factoryComponentName="org.polarsys.kitalpha.vp.componentsample">
   <elements xsi:type="generationChain:GenerationChain" name="ComponentSample">
-    <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for ComponentSample" modelPath="/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.vp.componentsample.model" basePackage="org.polarsys.kitalpha.vp.componentsample"/>
-    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for ComponentSample">
+    <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for ComponentSample" modelPath="/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.vp.componentsample.model" basePackage="org.polarsys.kitalpha.vp.componentsample"/>
+    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for null">
       <additions>org.polarsys.kitalpha.vp.componentsample.vpdsl</additions>
-    </elements>
-    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for ComponentSample">
-      <additions>org.polarsys.kitalpha.vp.componentsample.representation.feature</additions>
-      <additions>org.polarsys.kitalpha.vp.componentsample.af.feature</additions>
-      <additions>org.polarsys.kitalpha.vp.componentsample.rules.feature</additions>
     </elements>
   </elements>
 </generationChain:GenerationChain>
