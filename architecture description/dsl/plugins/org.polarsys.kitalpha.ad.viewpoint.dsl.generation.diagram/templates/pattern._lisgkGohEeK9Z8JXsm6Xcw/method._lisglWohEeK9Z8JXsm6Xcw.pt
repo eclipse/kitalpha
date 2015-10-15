@@ -1,83 +1,17 @@
-		String package_name = (String) ctx.getValue("design.project.name")+".service";
-		
-		String class_kind = JavaElementHelper.getJavaElementContainerKind(parameter);
-		if (class_kind != null && class_kind.trim().length() > 0)
-		{
-			package_name = package_name+"."+class_kind;
-		}
-		
-		//String package_name = (String) ctx.getValue("design.project.name")+".service.nodes";
-		String class_name = JavaElementHelper.getJavaElementContainerName(parameter);
-		String service_name = package_name +"."+class_name+"_Service";
-		
-		JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(service_name);
-		
-		if (javaServiceData != null){
-		
-			javaServiceData.setContext(JavaElementHelper.getJavaElementContainer(parameter));
-		
-			String method_name = parameter.getMethod();
-			String twoLastChars = method_name.substring(method_name.length()-2, method_name.length());
-			if (twoLastChars.equals("()")){
-				method_name = method_name.substring(0, method_name.length()-2);
-			}
+String package_name = (String) ctx.getValue("design.project.name") + ".service";
+String class_kind = JavaElementHelper.getJavaElementContainerKind(parameter);
+if (class_kind != null && class_kind.trim().length() > 0) 
+	package_name = package_name + "." + class_kind;
 
-			/*** Compute the JavaMethod return type
-			 * JavaMethod return type depends on the context wherein the JavaElement is created
-			 * If in a condition      --> return type = JavaMethodReturnType.Boolean
-			 * if in Label Expression --> return type = JavaMethodReturnType.String
-			 * if in an Histogram     --> return type = JavaMethodReturnType.Integer
-			 */
-			JavaMethodReturnType returnType = JavaMethodReturnType.Unknown;
-			EObject eObject = parameter.eContainer();
+String class_name = JavaElementHelper.getJavaElementContainerName(parameter);
+String service_name = package_name + "." + class_name + "_Service";
 
-			switch (eObject.eClass().getClassifierID()) {
-			case VpdiagramPackage.HISTOGRAM_SECTION:
-				returnType = JavaMethodReturnType.Integer;
-				break;
+JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(service_name);
 
-			case VpdiagramPackage.CONDITION:
-				returnType = JavaMethodReturnType.Boolean;
-				break;
-				
-			case ExpressionPackage.EXPRESSION:
-				if (eObject.eContainer().eClass().getClassifierID() == VpdiagramPackage.LABEL)
-					returnType = JavaMethodReturnType.String;
-				break;
-			}
+if (javaServiceData != null) {
 
-			if (returnType != JavaMethodReturnType.Unknown){
-			
-				/*** Creation of the JavaMethod **/
-				JavaMethodData javaMethodData = new JavaMethodData(method_name, returnType);
-
-				/*** Adding Parameters to the JavaMethod
-				 * JavaMethod parameters depend on the context wherein the JavaElement is created
-				 * If in a condition      --> - eObject   : EObject 				  (the current semantic object)
-				 * 							  - view      : EObject 				  (the current view)
-				 * 							  - container : EObject 				  (the semantic container of the current object)
-				 * if in Label Expression --> - eObject   : EObject 				  (the current semantic object)
-				 * 							  - diagram   : Viewpoint.DDiagram 		  (the current DSemanticdiagram)
-				 * 							  - view      : Viewpoint.DDiagramElement (the current View for witch the label is calculated)
-				 * if in an Histogram     --> - eObject   : EObject 				  (the current semantic object)
-				 */
-				
-				javaMethodData.addMethodParameter("eObject", "EObject", "the current semantic object");
-				
-				switch (eObject.eClass().getClassifierID()){
-				case VpdiagramPackage.CONDITION:
-					javaMethodData.addMethodParameter("view", "EObject", "the current view");
-					javaMethodData.addMethodParameter("container", "EObject", "the semantic container of the current object");
-					break;
-					
-				case ExpressionPackage.EXPRESSION:
-					if (eObject.eContainer().eClass().getClassifierID() == VpdiagramPackage.LABEL)
-					{
-						javaMethodData.addMethodParameter("diagram", "DDiagram", "the current DSemanticdiagram");
-						javaMethodData.addMethodParameter("view", "DDiagramElement", "the current View for witch the label is calculated");
-					}
-					break;
-				}
-				javaServiceData.addMethod(javaMethodData);
-			}
-		}
+	javaServiceData.setContext(JavaElementHelper.getJavaElementContainer(parameter));
+	JavaMethodData javaMethodData = JavaElementHelper.createJavaMethod(parameter);
+	if (javaMethodData != null)
+		javaServiceData.addMethod(javaMethodData);
+}

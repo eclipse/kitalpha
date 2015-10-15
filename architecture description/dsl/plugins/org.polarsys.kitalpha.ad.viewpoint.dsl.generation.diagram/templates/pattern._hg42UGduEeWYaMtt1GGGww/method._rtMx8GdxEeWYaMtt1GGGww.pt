@@ -1,0 +1,22 @@
+final EObject eContainer = dslvpElement.eContainer();
+final EObject doremiElement2 = GenerationUtil.getDoremiElement(eContainer);
+if (doremiElement2 instanceof VSMElementCustomization)
+	parent = (VSMElementCustomization) doremiElement2;
+
+AbstractCustomization abstractCustomization = (AbstractCustomization) dslvpElement;
+/** Set the Apply on all variable **/
+set_applyOnAll(abstractCustomization.isApplyonAll());
+
+/** Set the Applied on  variable **/
+final EStructuralFeature appliedOnEReference = abstractCustomization.eClass().getEStructuralFeature("appliedOn");
+final Object appliedOnValue = abstractCustomization.eGet(appliedOnEReference);
+if (appliedOnValue instanceof EList<?>)
+{
+	set_appliedOn((List<?>) appliedOnValue);
+}
+else
+{
+	List<Object> newList = new BasicEList<Object>();
+	newList.add(appliedOnValue);
+	set_appliedOn(newList);
+}

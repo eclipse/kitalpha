@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 15:01:08 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.reuse;
 
 import java.util.*;
@@ -25,12 +14,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 
 public class NodeReusePattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public NodeReusePattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -52,8 +41,7 @@ public class NodeReusePattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -68,21 +56,16 @@ public class NodeReusePattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_doReuse(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		NodeMapping currentNode = (NodeMapping) GenerationUtil
-				.getDoremiElement(parameter);
-		final EList<BorderedNode> reused_boderednodes = parameter.getChildren()
-				.getReused_boderednodes();
+	protected void method_doReuse(final StringBuffer out, final PatternContext ctx) throws Exception {
+		NodeMapping currentNode = (NodeMapping) GenerationUtil.getDoremiElement(parameter);
+		final EList<BorderedNode> reused_boderednodes = parameter.getChildren().getReused_boderednodes();
 		for (BorderedNode borderedNode : reused_boderednodes) {
-			NodeMapping currentBNode = (NodeMapping) GenerationUtil
-					.getDoremiElement(borderedNode);
+			NodeMapping currentBNode = (NodeMapping) GenerationUtil.getDoremiElement(borderedNode);
 			currentNode.getReusedBorderedNodeMappings().add(currentBNode);
 		}
 
@@ -91,16 +74,14 @@ public class NodeReusePattern
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return DiagramGenerationConfigurationHelper.generateVSM(parameter)
-				&& parameter.getChildren() != null
+		return DiagramGenerationConfigurationHelper.generateVSM(parameter) && parameter.getChildren() != null
 				&& parameter.getChildren().getReused_boderednodes() != null
 				&& !parameter.getChildren().getReused_boderednodes().isEmpty();
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node parameter) {
 		this.parameter = parameter;
 	}
 

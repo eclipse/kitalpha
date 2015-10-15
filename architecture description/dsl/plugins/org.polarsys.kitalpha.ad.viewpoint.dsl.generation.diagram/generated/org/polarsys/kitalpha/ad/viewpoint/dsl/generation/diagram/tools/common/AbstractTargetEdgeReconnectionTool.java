@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -20,12 +9,12 @@ import org.eclipse.egf.pattern.query.*;
 import org.eclipse.egf.common.helper.*;
 
 public class AbstractTargetEdgeReconnectionTool
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeReconnectionTool {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeReconnectionTool {
 
 	public AbstractTargetEdgeReconnectionTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -47,8 +36,7 @@ public class AbstractTargetEdgeReconnectionTool
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -62,19 +50,16 @@ public class AbstractTargetEdgeReconnectionTool
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_setEdgeReconnectionType(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setEdgeReconnectionType(final StringBuffer out, final PatternContext ctx) throws Exception {
 		source_reconnection = false;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"setEdgeReconnectionType", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setEdgeReconnectionType", out.toString());
 	}
 
 	public Map<String, Object> getParameters() {

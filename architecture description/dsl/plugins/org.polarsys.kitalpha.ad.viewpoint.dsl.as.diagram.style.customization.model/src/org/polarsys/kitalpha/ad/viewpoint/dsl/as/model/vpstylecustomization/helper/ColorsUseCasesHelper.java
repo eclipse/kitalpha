@@ -16,6 +16,7 @@ import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
 import org.eclipse.sirius.diagram.description.style.FlatContainerStyleDescription;
 import org.eclipse.sirius.diagram.description.style.GaugeCompositeStyleDescription;
 import org.eclipse.sirius.diagram.description.style.GaugeSectionDescription;
+import org.eclipse.sirius.diagram.description.style.WorkspaceImageDescription;
 import org.eclipse.sirius.viewpoint.description.style.StyleDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorUseCase;
@@ -41,6 +42,7 @@ public class ColorsUseCasesHelper {
 						&& false == candidate_value instanceof FlatContainerStyleDescription
 						&& false == candidate_value instanceof GaugeSectionDescription
 						&& false == candidate_value instanceof GaugeCompositeStyleDescription
+						&& false == candidate_value instanceof WorkspaceImageDescription
 						&& false == candidate_value instanceof DotDescription;
 	
 			case FOREGROUND:

@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:20:05 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -29,13 +18,13 @@ import org.eclipse.sirius.viewpoint.description.tool.Unset;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class ReconnectEdgeTarget_ElementBasedTool
-		extends
+public class ReconnectEdgeTarget_ElementBasedTool extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTargetEdgeReconnectionTool {
 
 	public ReconnectEdgeTarget_ElementBasedTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -57,8 +46,7 @@ public class ReconnectEdgeTarget_ElementBasedTool
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -72,20 +60,17 @@ public class ReconnectEdgeTarget_ElementBasedTool
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createToolOperations(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createToolOperations(final StringBuffer out, final PatternContext ctx) throws Exception {
 		AbstractAssociation reference = (AbstractAssociation) t_association;
 		if (reference != null) {
 			String ref_name = reference.getName();
 
-			ChangeContext gotoElement = ToolFactory.eINSTANCE
-					.createChangeContext();
+			ChangeContext gotoElement = ToolFactory.eINSTANCE.createChangeContext();
 			initial_operation.setFirstModelOperations(gotoElement);
 			String pElement = VSMVariable.element.getExpressionVariable();
 			gotoElement.setBrowseExpression(pElement);
@@ -105,15 +90,13 @@ public class ReconnectEdgeTarget_ElementBasedTool
 			generate_service = true;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createToolOperations",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createToolOperations", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
 		return super.preCondition(ctx)
-				&& ((parameter.getTool_For() != null)
-						&& (parameter.getTool_For() instanceof Edge) && (((Edge) parameter
-							.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
+				&& ((parameter.getTool_For() != null) && (parameter.getTool_For() instanceof Edge)
+						&& (((Edge) parameter.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
 	}
 
 	public Map<String, Object> getParameters() {

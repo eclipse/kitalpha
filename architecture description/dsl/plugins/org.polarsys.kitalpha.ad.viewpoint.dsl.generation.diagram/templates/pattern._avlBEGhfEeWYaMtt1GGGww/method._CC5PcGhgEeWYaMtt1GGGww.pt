@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelCustomization_Size()))
+{
+	set_labelSize(new StylePropertyNameValueCouple("labelSize", parameter.getSize()));
+}

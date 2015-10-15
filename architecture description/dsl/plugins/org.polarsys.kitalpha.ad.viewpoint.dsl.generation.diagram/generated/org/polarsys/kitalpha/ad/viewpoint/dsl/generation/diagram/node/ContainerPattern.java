@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -50,8 +39,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
 public class ContainerPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
 
 	public ContainerPattern() {
 		//Here is the constructor
@@ -78,8 +66,7 @@ public class ContainerPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -93,14 +80,12 @@ public class ContainerPattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_setSemanticData(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setSemanticData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// Gather semantic data from the vpspec model
 		String className = "";
 		String semanticCandidateExpression = "";
@@ -115,19 +100,15 @@ public class ContainerPattern
 			// Semantic candidate expression
 			AbstractAssociation association = domain.getChlidren_list();
 			if (association != null) {
-				semanticCandidateExpression = SiriusExpressionHelper
-						.getExpressoin(association.getName(),
-								ExpressionInterpreter.Feature);
+				semanticCandidateExpression = SiriusExpressionHelper.getExpressoin(association.getName(),
+						ExpressionInterpreter.Feature);
 			} else {
-				if (domain.getQuery() != null
-						&& domain.getQuery().trim().length() > 0) {
+				if (domain.getQuery() != null && domain.getQuery().trim().length() > 0) {
 					semanticCandidateExpression = domain.getQuery();
 				} else {
-					if (genDefaultSemanticCandidatesExpression == null
-							|| genDefaultSemanticCandidatesExpression) {
-						semanticCandidateExpression = SiriusExpressionHelper
-								.getExpressoin("eAllContents",
-										ExpressionInterpreter.Feature);
+					if (genDefaultSemanticCandidatesExpression == null || genDefaultSemanticCandidatesExpression) {
+						semanticCandidateExpression = SiriusExpressionHelper.getExpressoin("eAllContents",
+								ExpressionInterpreter.Feature);
 					}
 				}
 			}
@@ -143,12 +124,10 @@ public class ContainerPattern
 			cm.setSemanticCandidatesExpression(semanticCandidateExpression);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setSemanticData",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setSemanticData", out.toString());
 	}
 
-	protected void method_addElementToODesign(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_addElementToODesign(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EObject vpParent = parameter.eContainer().eContainer();
 		EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
 
@@ -167,26 +146,21 @@ public class ContainerPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "addElementToODesign",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "addElementToODesign", out.toString());
 	}
 
-	protected void method_createDoremiElement(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		ContainerMapping cm = DescriptionFactory.eINSTANCE
-				.createContainerMapping();
+	protected void method_createDoremiElement(final StringBuffer out, final PatternContext ctx) throws Exception {
+		ContainerMapping cm = DescriptionFactory.eINSTANCE.createContainerMapping();
 		cm.setName(parameter.getName() + "_CM");
 		cm.setLabel(parameter.getName());
 		cm.setChildrenPresentation(parameter.getContentLayout());
 		dContainerMapping = cm;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createDoremiElement",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createDoremiElement", out.toString());
 	}
 
-	protected void method_setStyle(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
 		ContainerMapping cm = (ContainerMapping) dContainerMapping;
 
 		for (ContainerDescription iContainerDescription : parameter.getStyle()) {
@@ -201,22 +175,18 @@ public class ContainerPattern
 				if (fEE instanceof JavaElement) {
 					// 
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable()
-							+ "," + VSMVariable.container.getInnerVariable();
-					javaMethodName = JavaElementHelper
-							.addDefaultParameterToJavaMethod(javaMethodName,
-									mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(
-							javaMethodName, ExpressionInterpreter.Service);
+					String mParameters = VSMVariable.view.getInnerVariable() + ","
+							+ VSMVariable.container.getInnerVariable();
+					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName,
+							ExpressionInterpreter.Service);
 				}
 				if (fEE instanceof DomainElement) {
 					acceleoExpression = SiriusExpressionHelper.getExpressoin(
-							((DomainElement) fEE).getAttribute().getName(),
-							ExpressionInterpreter.Feature);
+							((DomainElement) fEE).getAttribute().getName(), ExpressionInterpreter.Feature);
 				}
 
-				ccStyleDesc = DescriptionFactory.eINSTANCE
-						.createConditionalContainerStyleDescription();
+				ccStyleDesc = DescriptionFactory.eINSTANCE.createConditionalContainerStyleDescription();
 				ccStyleDesc.setPredicateExpression(acceleoExpression);
 
 				cm.getConditionnalStyles().add(ccStyleDesc);
@@ -231,39 +201,29 @@ public class ContainerPattern
 				if (vpStyle instanceof FlatStyle) {
 					FlatStyle vpFlatStyle = (FlatStyle) vpStyle;
 					// Creation of Doremi FlatStyle for Container Mapping 
-					cStyleDesc = StyleFactory.eINSTANCE
-							.createFlatContainerStyleDescription();
+					cStyleDesc = StyleFactory.eINSTANCE.createFlatContainerStyleDescription();
 					FlatContainerStyleDescription doremiFlatStyle = (FlatContainerStyleDescription) cStyleDesc;
-					doremiFlatStyle.setBackgroundStyle(vpFlatStyle
-							.getBackgroundStyle());
+					doremiFlatStyle.setBackgroundStyle(vpFlatStyle.getBackgroundStyle());
 
-					doremiFlatStyle.setBackgroundColor(GenerationUtil
-							.getSystemColor(vpFlatStyle.getBackgroundColor()));
-					doremiFlatStyle.setBorderColor(GenerationUtil
-							.getSystemColor(vpFlatStyle.getBorderColor()));
-					doremiFlatStyle.setForegroundColor(GenerationUtil
-							.getSystemColor(vpFlatStyle.getForgroundColor()));
+					doremiFlatStyle.setBackgroundColor(GenerationUtil.getSystemColor(vpFlatStyle.getBackgroundColor()));
+					doremiFlatStyle.setBorderColor(GenerationUtil.getSystemColor(vpFlatStyle.getBorderColor()));
+					doremiFlatStyle.setForegroundColor(GenerationUtil.getSystemColor(vpFlatStyle.getForgroundColor()));
 				}
 
 				/******************** Case of Workspace Image Style **********************/
 				if (vpStyle instanceof ImageStyle) {
 					ImageStyle vpImageStyle = (ImageStyle) vpStyle;
 					// Creation of Doremi WorkspaceImageStyle for Container Mapping
-					cStyleDesc = StyleFactory.eINSTANCE
-							.createWorkspaceImageDescription();
+					cStyleDesc = StyleFactory.eINSTANCE.createWorkspaceImageDescription();
 					WorkspaceImageDescription doremiImageStyle = (WorkspaceImageDescription) cStyleDesc;
 
-					doremiImageStyle.setBorderColor(GenerationUtil
-							.getSystemColor(vpImageStyle.getBorderColor()));
+					doremiImageStyle.setBorderColor(GenerationUtil.getSystemColor(vpImageStyle.getBorderColor()));
 
-					if (vpImageStyle.getImagePath() != null
-							&& vpImageStyle.getImagePath().trim().length() > 0) {
-						String icon_path = IconPathHelper.computeDslIconPath(
-								vpImageStyle.getImagePath(), parameter);
+					if (vpImageStyle.getImagePath() != null && vpImageStyle.getImagePath().trim().length() > 0) {
+						String icon_path = IconPathHelper.computeDslIconPath(vpImageStyle.getImagePath(), parameter);
 						if (icon_path != null && icon_path.trim().length() > 0) {
 							doremiImageStyle.setWorkspacePath(icon_path);
-							IconPathHelper.copyIconFile(
-									vpImageStyle.getImagePath(), parameter);
+							IconPathHelper.copyIconFile(vpImageStyle.getImagePath(), parameter);
 						}
 					}
 					//doremiImageStyle.setWorkspacePath(vpImageStyle.getImagePath());
@@ -271,30 +231,24 @@ public class ContainerPattern
 
 				/********************** Setting Label properties ************************/
 				Label label = iContainerDescription.getNode_Label();
-				String labelExpression = SiriusExpressionHelper.getExpressoin(
-						"name", ExpressionInterpreter.Feature);
+				String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
 
 				if (label != null) {
-					String mParameters = VSMVariable.diagram.getInnerVariable()
-							+ "," + VSMVariable.view.getInnerVariable();
-					((ExpressionImpl) label.getValue()).adaptValue(mParameters,
-							true);
+					String mParameters = VSMVariable.diagram.getInnerVariable() + ","
+							+ VSMVariable.view.getInnerVariable();
+					((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
 
 					if (label.getValue() != null)
 						labelExpression = label.getValue().getValue();
 
 					cStyleDesc.setLabelExpression(labelExpression);
 					cStyleDesc.setLabelSize(label.getSize());
-					cStyleDesc.setLabelColor(GenerationUtil
-							.getSystemColor(label.getColor()));
-
+					cStyleDesc.setLabelColor(GenerationUtil.getSystemColor(label.getColor()));
 					if (label.isBold())
-						cStyleDesc.getLabelFormat()
-								.add(FontFormat.BOLD_LITERAL);
+						cStyleDesc.getLabelFormat().add(FontFormat.BOLD_LITERAL);
 
 					if (label.isItalic())
-						cStyleDesc.getLabelFormat().add(
-								FontFormat.ITALIC_LITERAL);
+						cStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 
 				}
 
@@ -307,18 +261,15 @@ public class ContainerPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setStyle",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setStyle", out.toString());
 	}
 
-	protected void method_setParentMapping(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParentMapping(final StringBuffer out, final PatternContext ctx) throws Exception {
 		dslvpElement = parameter;
 		doremiElement = dContainerMapping;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
@@ -327,22 +278,19 @@ public class ContainerPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.eclipse.emf.ecore.EObject dContainerMapping;
 
-	public void set_dContainerMapping(
-			org.eclipse.emf.ecore.EObject dContainerMapping) {
+	public void set_dContainerMapping(org.eclipse.emf.ecore.EObject dContainerMapping) {
 		this.dContainerMapping = dContainerMapping;
 	}
 
 	protected java.lang.Boolean genDefaultSemanticCandidatesExpression;
 
-	public void set_genDefaultSemanticCandidatesExpression(
-			java.lang.Boolean genDefaultSemanticCandidatesExpression) {
+	public void set_genDefaultSemanticCandidatesExpression(java.lang.Boolean genDefaultSemanticCandidatesExpression) {
 		this.genDefaultSemanticCandidatesExpression = genDefaultSemanticCandidatesExpression;
 	}
 

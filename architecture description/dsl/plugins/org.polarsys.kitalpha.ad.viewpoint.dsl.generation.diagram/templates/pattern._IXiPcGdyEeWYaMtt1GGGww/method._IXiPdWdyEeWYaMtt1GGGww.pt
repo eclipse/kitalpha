@@ -1,0 +1,10 @@
+EAttributeCustomization attributeCustomization = DescriptionFactory.eINSTANCE.createEAttributeCustomization();
+attributeCustomization.setAttributeName(stylePropertyData.getName());
+attributeCustomization.setValue(stylePropertyData.getValue().toString());
+attributeCustomization.setApplyOnAll(applyOnAll);
+if (applyOnAll == false)
+{
+	attributeCustomization.getAppliedOn().addAll(appliedOn);
+}
+
+parent.getFeatureCustomizations().add(attributeCustomization);

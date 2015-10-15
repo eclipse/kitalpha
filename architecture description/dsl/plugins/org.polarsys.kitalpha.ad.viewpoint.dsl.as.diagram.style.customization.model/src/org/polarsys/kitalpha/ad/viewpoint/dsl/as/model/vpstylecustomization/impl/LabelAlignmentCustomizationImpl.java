@@ -51,10 +51,10 @@ public class LabelAlignmentCustomizationImpl extends MinimalEObjectImpl.Containe
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAlignment()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final LabelAlignment ALIGNMENT_EDEFAULT = LabelAlignment.CENTER;
+	protected static final LabelAlignment ALIGNMENT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getAlignment() <em>Alignment</em>}' attribute.

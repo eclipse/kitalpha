@@ -1,0 +1,3 @@
+EObject customizations = dslvpElement.eContainer().eContainer().eContainer();
+if (customizations != null && customizations instanceof Customizations)
+	enumHelperJavaServiceData = GenerationUtil.getJavaServiceDataFor(customizations);

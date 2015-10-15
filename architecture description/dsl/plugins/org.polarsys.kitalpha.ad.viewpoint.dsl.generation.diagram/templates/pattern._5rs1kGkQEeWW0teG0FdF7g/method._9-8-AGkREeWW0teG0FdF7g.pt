@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getContainerStyleCustomization_ArcWith()))
+{
+	set_arcWidth(new StylePropertyNameValueCouple("arcWidth", parameter.getArcWith()));
+}

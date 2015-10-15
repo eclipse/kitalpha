@@ -152,10 +152,10 @@ public class EdgeStyleCustomizationImpl extends AbstractCustomizationImpl implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLineStyle()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final LineStyle LINE_STYLE_EDEFAULT = LineStyle.SOLID_LITERAL;
+	protected static final LineStyle LINE_STYLE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getLineStyle() <em>Line Style</em>}' attribute.
@@ -175,10 +175,10 @@ public class EdgeStyleCustomizationImpl extends AbstractCustomizationImpl implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSourceArrow()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final EdgeArrows SOURCE_ARROW_EDEFAULT = EdgeArrows.NO_DECORATION_LITERAL;
+	protected static final EdgeArrows SOURCE_ARROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getSourceArrow() <em>Source Arrow</em>}' attribute.
@@ -198,10 +198,10 @@ public class EdgeStyleCustomizationImpl extends AbstractCustomizationImpl implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTargetArrow()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final EdgeArrows TARGET_ARROW_EDEFAULT = EdgeArrows.NO_DECORATION_LITERAL;
+	protected static final EdgeArrows TARGET_ARROW_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getTargetArrow() <em>Target Arrow</em>}' attribute.
@@ -234,10 +234,10 @@ public class EdgeStyleCustomizationImpl extends AbstractCustomizationImpl implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoutingStyle()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final EdgeRouting ROUTING_STYLE_EDEFAULT = EdgeRouting.STRAIGHT_LITERAL;
+	protected static final EdgeRouting ROUTING_STYLE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRoutingStyle() <em>Routing Style</em>}' attribute.
@@ -257,10 +257,10 @@ public class EdgeStyleCustomizationImpl extends AbstractCustomizationImpl implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFoldingStyle()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final FoldingStyle FOLDING_STYLE_EDEFAULT = FoldingStyle.NONE_LITERAL;
+	protected static final FoldingStyle FOLDING_STYLE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getFoldingStyle() <em>Folding Style</em>}' attribute.
@@ -280,10 +280,10 @@ public class EdgeStyleCustomizationImpl extends AbstractCustomizationImpl implem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEndCentering()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final CenteringStyle END_CENTERING_EDEFAULT = CenteringStyle.NONE;
+	protected static final CenteringStyle END_CENTERING_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getEndCentering() <em>End Centering</em>}' attribute.

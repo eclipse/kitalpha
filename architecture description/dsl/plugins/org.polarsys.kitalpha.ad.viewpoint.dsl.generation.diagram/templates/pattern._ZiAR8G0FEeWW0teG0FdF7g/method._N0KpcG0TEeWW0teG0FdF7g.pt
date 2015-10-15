@@ -1,0 +1,9 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getDotCustomization_StrokeSizeComputationExpression())) {
+	final CustomizationExpression expression = parameter.getStrokeSizeComputationExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_strokeSizeComputationExpression(new StylePropertyNameValueCouple("strokeSizeComputationExpression", newLabelExpression));
+	}
+}

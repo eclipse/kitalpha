@@ -1,0 +1,9 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenteredSourceMappings()))
+{
+	set_centeredSourceMappings(new StylePropertyNameValueCouple("centeredSourceMappings", parameter.getCenteredSourceMappings()));
+}
+
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenteredTargetMappings()))
+{
+	set_centeredTargetMappings(new StylePropertyNameValueCouple("centeredTargetMappings", parameter.getCenteredTargetMappings()));
+}

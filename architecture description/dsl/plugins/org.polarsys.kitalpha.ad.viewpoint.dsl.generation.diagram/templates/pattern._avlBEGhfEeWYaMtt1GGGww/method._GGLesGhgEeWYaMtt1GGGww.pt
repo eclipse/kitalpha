@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelCustomization_Size()))
+{
+	set_iconPath(new StylePropertyNameValueCouple("iconPath", parameter.getIconPath()));
+}

@@ -19,6 +19,9 @@
 <%	case String:%>
 <%		return_type = "String";%>
 <%		break;%>
+<%	case EEnumLiteral:%>
+<%		return_type = "EEnumLiteral";%>
+<%		break;%>
 <%	case ConstructorType:%>
 <%		return_type = "";%>
 <%		break;%>
@@ -41,11 +44,16 @@ public <%=return_type%> <%=iJavaMethodData.getName()%>(
 						<%=iMethodParameterData.getType()%> <%=iMethodParameterData.getName()%><%
 		if (current_index < iJavaMethodData.getMethodParameter().size()){%>,<%}%>
 <%	}%>){
-	// TODO Auto-generated method stub
+<% String methodCode = iJavaMethodData.getMethodCode();
+if (methodCode != null && methodCode.isEmpty() == false){%>
+	<%=methodCode%>
+<%}else{%>
+// TODO Auto-generated method stub
 <% if (return_type.trim().length() > 0 && ! return_type.equals("void")){%>
 	// Ensure that you remove @generated or mark it @generated NOT
 	throw new UnsupportedOperationException();
-<% }%>
+<% }
+}%>
 }
 <%}%>
 <%}%>

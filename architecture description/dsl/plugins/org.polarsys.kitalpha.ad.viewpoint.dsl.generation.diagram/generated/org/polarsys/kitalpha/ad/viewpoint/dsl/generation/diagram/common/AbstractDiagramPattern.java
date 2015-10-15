@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common;
 
 import java.util.*;
@@ -26,6 +15,7 @@ public class AbstractDiagramPattern {
 	public AbstractDiagramPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -38,8 +28,7 @@ public class AbstractDiagramPattern {
 			orchestration((PatternContext) argument);
 
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -51,12 +40,10 @@ public class AbstractDiagramPattern {
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		EDataTypeUniqueEList<EObject> domain = (EDataTypeUniqueEList<EObject>) ctx
-				.getValue("domain");
+		EDataTypeUniqueEList<EObject> domain = (EDataTypeUniqueEList<EObject>) ctx.getValue("domain");
 		EObject modelElement = domain.get(0);
 		if (modelElement != null)
-			return DiagramGenerationConfigurationHelper
-					.generateVSM(modelElement);
+			return DiagramGenerationConfigurationHelper.generateVSM(modelElement);
 		else
 			return false;
 	}

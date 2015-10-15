@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -48,12 +37,12 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 
 public class DropToolPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
 
 	public DropToolPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -75,8 +64,7 @@ public class DropToolPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -90,23 +78,19 @@ public class DropToolPattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createConcretTool(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		String s_package_name = (String) ctx.getValue("design.project.name")
-				+ ".service.tools";
+	protected void method_createConcretTool(final StringBuffer out, final PatternContext ctx) throws Exception {
+		String s_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
 		String s_class_name = "DropToolService";
 		String s_service_name = s_package_name + "." + s_class_name;
 
 		DiagramElement mapping = parameter.getTool_For();
 
-		EObject d_mapping_container = GenerationUtil.getDoremiElement(mapping
-				.eContainer().eContainer());
+		EObject d_mapping_container = GenerationUtil.getDoremiElement(mapping.eContainer().eContainer());
 
 		if (!(d_mapping_container instanceof DragAndDropTargetDescription)) {
 			return;
@@ -115,38 +99,26 @@ public class DropToolPattern
 		ContainerDropDescription drop = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE
 				.createContainerDropDescription();
 		drop.setName("Drop_" + mapping.getName());
-		((DragAndDropTargetDescription) d_mapping_container)
-				.getDropDescriptions().add(drop);
-		drop.getMappings().add(
-				(DiagramElementMapping) GenerationUtil
-						.getDoremiElement(mapping));
+		((DragAndDropTargetDescription) d_mapping_container).getDropDescriptions().add(drop);
+		drop.getMappings().add((DiagramElementMapping) GenerationUtil.getDoremiElement(mapping));
 
 		// Handle reusing nodes
 		final ECrossReferenceAdapter eCrossReferenceAdapter = new ECrossReferenceAdapter();
 		mapping.eAdapters().add(eCrossReferenceAdapter);
-		final Collection<Setting> inverseReferences = eCrossReferenceAdapter
-				.getInverseReferences(mapping);
+		final Collection<Setting> inverseReferences = eCrossReferenceAdapter.getInverseReferences(mapping);
 		for (Setting setting : inverseReferences) {
 			setting.getEStructuralFeature();
-			final EObject doremiElement = GenerationUtil
-					.getDoremiElement(setting.getEObject().eContainer());
-			if (d_mapping_container != doremiElement
-					&& doremiElement instanceof DragAndDropTargetDescription) {
-				((DragAndDropTargetDescription) doremiElement)
-						.getDropDescriptions().add(drop);
+			final EObject doremiElement = GenerationUtil.getDoremiElement(setting.getEObject().eContainer());
+			if (d_mapping_container != doremiElement && doremiElement instanceof DragAndDropTargetDescription) {
+				((DragAndDropTargetDescription) doremiElement).getDropDescriptions().add(drop);
 			}
 		}
 
-		DropContainerVariable _old = ToolFactory.eINSTANCE
-				.createDropContainerVariable();
-		DropContainerVariable _new = ToolFactory.eINSTANCE
-				.createDropContainerVariable();
-		ElementDropVariable element = ToolFactory.eINSTANCE
-				.createElementDropVariable();
-		ContainerViewVariable c_view = ToolFactory.eINSTANCE
-				.createContainerViewVariable();
-		InitialContainerDropOperation init = ToolFactory.eINSTANCE
-				.createInitialContainerDropOperation();
+		DropContainerVariable _old = ToolFactory.eINSTANCE.createDropContainerVariable();
+		DropContainerVariable _new = ToolFactory.eINSTANCE.createDropContainerVariable();
+		ElementDropVariable element = ToolFactory.eINSTANCE.createElementDropVariable();
+		ContainerViewVariable c_view = ToolFactory.eINSTANCE.createContainerViewVariable();
+		InitialContainerDropOperation init = ToolFactory.eINSTANCE.createInitialContainerDropOperation();
 
 		_old.setName("oldSemanticContainer");
 		_new.setName("newSemanticContainer");
@@ -159,90 +131,63 @@ public class DropToolPattern
 		drop.setNewViewContainer(c_view);
 		drop.setInitialOperation(init);
 
-		ChangeContext gotoNewContainer = ToolFactory.eINSTANCE
-				.createChangeContext();
+		ChangeContext gotoNewContainer = ToolFactory.eINSTANCE.createChangeContext();
 
-		String pNewSemanticContainer = VSMVariable
-				.getGenericExpressionVariable("newSemanticContainer");
+		String pNewSemanticContainer = VSMVariable.getGenericExpressionVariable("newSemanticContainer");
 		gotoNewContainer.setBrowseExpression(pNewSemanticContainer);
 		init.setFirstModelOperations(gotoNewContainer);
 
 		if (!(mapping.eContainer() instanceof MappingSet)) {
 			if (mapping instanceof AbstractNode) {
-				NodeDomainElement domain = ((AbstractNode) mapping)
-						.getThe_domain();
+				NodeDomainElement domain = ((AbstractNode) mapping).getThe_domain();
 				if (domain != null) {
 					if (domain.getChlidren_list() != null) {
 						String ref_name = domain.getChlidren_list().getName();
-						SetValue setNewContainer = ToolFactory.eINSTANCE
-								.createSetValue();
+						SetValue setNewContainer = ToolFactory.eINSTANCE.createSetValue();
 						setNewContainer.setFeatureName(ref_name);
 
-						String pElement = VSMVariable.element
-								.getExpressionVariable();
+						String pElement = VSMVariable.element.getExpressionVariable();
 
 						setNewContainer.setValueExpression(pElement);
 
-						ChangeContext gotoOldContainer = ToolFactory.eINSTANCE
-								.createChangeContext();
-						String pOldSemanticContainer = VSMVariable
-								.getGenericExpressionVariable("oldSemanticContainer");
-						gotoOldContainer
-								.setBrowseExpression(pOldSemanticContainer);
+						ChangeContext gotoOldContainer = ToolFactory.eINSTANCE.createChangeContext();
+						String pOldSemanticContainer = VSMVariable.getGenericExpressionVariable("oldSemanticContainer");
+						gotoOldContainer.setBrowseExpression(pOldSemanticContainer);
 
-						Unset unsetOldContainer = ToolFactory.eINSTANCE
-								.createUnset();
+						Unset unsetOldContainer = ToolFactory.eINSTANCE.createUnset();
 						unsetOldContainer.setFeatureName(ref_name);
 						unsetOldContainer.setElementExpression(pElement);
-						gotoOldContainer.getSubModelOperations().add(
-								unsetOldContainer);
+						gotoOldContainer.getSubModelOperations().add(unsetOldContainer);
 
-						gotoNewContainer.getSubModelOperations().add(
-								setNewContainer);
-						gotoNewContainer.getSubModelOperations().add(
-								gotoOldContainer);
+						gotoNewContainer.getSubModelOperations().add(setNewContainer);
+						gotoNewContainer.getSubModelOperations().add(gotoOldContainer);
 					} else {
-						JavaServiceData javaServiceData = GenerationUtil
-								.getJavaServiceData(s_service_name);
+						JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(s_service_name);
 
 						if (javaServiceData != null) {
-							String mappingParentName = ((DiagramElement) mapping
-									.eContainer().eContainer()).getName();
+							String mappingParentName = ((DiagramElement) mapping.eContainer().eContainer()).getName();
 							javaServiceData.setContext(parameter);
-							String n_method_name = mappingParentName + "Drop"
-									+ mapping.getName();
+							String n_method_name = mappingParentName + "Drop" + mapping.getName();
 							JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
-							JavaMethodData javaMethodData = new JavaMethodData(
-									n_method_name, n_returnType);
-							javaMethodData.addMethodParameter(
-									"oldSemanticContainer", "EObject",
+							JavaMethodData javaMethodData = new JavaMethodData(n_method_name, n_returnType);
+							javaMethodData.addMethodParameter("oldSemanticContainer", "EObject",
 									"the old semantic container");
-							javaMethodData.addMethodParameter(
-									"newSemanticContainer", "EObject",
+							javaMethodData.addMethodParameter("newSemanticContainer", "EObject",
 									"the new semantic container");
-							javaMethodData.addMethodParameter(
-									VSMVariable.element.toString(), "EObject",
+							javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject",
 									"the semantic container of the mapping");
-							javaMethodData.addMethodParameter(
-									"newContainerView", "EObject",
+							javaMethodData.addMethodParameter("newContainerView", "EObject",
 									"the view of the new container");
 
 							javaServiceData.addMethod(javaMethodData);
 
 							If d_if = ToolFactory.eINSTANCE.createIf();
-							String mParameters = "("
-									+ VSMVariable
-											.getGenericInnerVariable("newSemanticContainer")
-									+ ","
-									+ VSMVariable.element.getInnerVariable()
-									+ ","
-									+ VSMVariable
-											.getGenericInnerVariable("newContainerView")
-									+ ")";
+							String mParameters = "(" + VSMVariable.getGenericInnerVariable("newSemanticContainer") + ","
+									+ VSMVariable.element.getInnerVariable() + ","
+									+ VSMVariable.getGenericInnerVariable("newContainerView") + ")";
 
 							d_if.setConditionExpression(SiriusExpressionHelper
-									.getExpressoin(n_method_name + mParameters,
-											ExpressionInterpreter.Service));
+									.getExpressoin(n_method_name + mParameters, ExpressionInterpreter.Service));
 							gotoNewContainer.getSubModelOperations().add(d_if);
 						}
 					}
@@ -259,14 +204,12 @@ public class DropToolPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Drop parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Drop parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Drop parameter) {
 		this.parameter = parameter;
 	}
 

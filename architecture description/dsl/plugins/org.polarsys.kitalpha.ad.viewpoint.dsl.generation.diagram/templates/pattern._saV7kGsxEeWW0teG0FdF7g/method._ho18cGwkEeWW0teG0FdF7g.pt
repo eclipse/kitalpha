@@ -1,0 +1,10 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeStyleCustomization_SizeComputationExpression())) 
+{
+	final CustomizationExpression expression = parameter.getSizeComputationExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_sizeComputationExpression(new StylePropertyNameValueCouple("sizeComputationExpression", newLabelExpression));
+	}
+}

@@ -1,0 +1,9 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLozengeCustomization_WidthComputationExpression())) {
+	final CustomizationExpression expression = parameter.getWidthComputationExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_widthComputationExpression(new StylePropertyNameValueCouple("widthComputationExpression", newLabelExpression));
+	}
+}

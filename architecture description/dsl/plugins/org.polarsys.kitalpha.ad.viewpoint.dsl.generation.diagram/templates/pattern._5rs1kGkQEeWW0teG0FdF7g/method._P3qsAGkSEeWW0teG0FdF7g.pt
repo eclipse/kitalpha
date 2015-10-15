@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getContainerStyleCustomization_RoundedCorner())) 
+{
+	set_roundedCorner(new StylePropertyNameValueCouple("roundedCorner", parameter.isRoundedCorner()));
+}

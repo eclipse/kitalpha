@@ -64,10 +64,10 @@ public class GaugeCustomizationImpl extends SpecificNodeStyleCustomizationImpl i
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAlignement()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final AlignmentKind ALIGNEMENT_EDEFAULT = AlignmentKind.VERTICAL_LITERAL;
+	protected static final AlignmentKind ALIGNEMENT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getAlignement() <em>Alignement</em>}' attribute.

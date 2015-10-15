@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -36,12 +25,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
 public class OpenActionPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
 
 	public OpenActionPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -63,8 +52,7 @@ public class OpenActionPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -78,21 +66,16 @@ public class OpenActionPattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createConcretTool(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		ToolDescription openTool = ToolFactory.eINSTANCE
-				.createToolDescription();
+	protected void method_createConcretTool(final StringBuffer out, final PatternContext ctx) throws Exception {
+		ToolDescription openTool = ToolFactory.eINSTANCE.createToolDescription();
 
-		if (parameter.getIcon() != null
-				&& parameter.getIcon().trim().length() > 0) {
-			String icon_path = IconPathHelper.computeDslIconPath(
-					parameter.getIcon(), parameter);
+		if (parameter.getIcon() != null && parameter.getIcon().trim().length() > 0) {
+			String icon_path = IconPathHelper.computeDslIconPath(parameter.getIcon(), parameter);
 			if (icon_path != null && icon_path.trim().length() > 0) {
 				openTool.setIconPath(icon_path);
 				IconPathHelper.copyIconFile(parameter.getIcon(), parameter);
@@ -100,15 +83,13 @@ public class OpenActionPattern
 		}
 
 		openTool.setName(parameter.getName());
-		openTool.setLabel(parameter.getLabel() != null ? parameter.getLabel()
-				: parameter.getName());
+		openTool.setLabel(parameter.getLabel() != null ? parameter.getLabel() : parameter.getName());
 
 		ElementVariable element = ToolFactory.eINSTANCE.createElementVariable();
 		element.setName("element");
 		openTool.setElement(element);
 
-		ElementViewVariable elementView = ToolFactory.eINSTANCE
-				.createElementViewVariable();
+		ElementViewVariable elementView = ToolFactory.eINSTANCE.createElementViewVariable();
 		elementView.setName("elementView");
 		openTool.setElementView(elementView);
 
@@ -119,33 +100,26 @@ public class OpenActionPattern
 		gotoElement.setBrowseExpression(pElement);
 		init.setFirstModelOperations(gotoElement);
 
-		String s_package_name = (String) ctx.getValue("design.project.name")
-				+ ".service.tools";
+		String s_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
 		String s_class_name = "OpenActionService";
 		String s_service_name = s_package_name + "." + s_class_name;
 
-		JavaServiceData javaServiceData = GenerationUtil
-				.getJavaServiceData(s_service_name);
+		JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(s_service_name);
 
 		if (javaServiceData != null) {
 			javaServiceData.setContext(parameter);
 			String n_method_name = parameter.getName();
 			JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
-			JavaMethodData javaMethodData = new JavaMethodData(n_method_name,
-					n_returnType);
+			JavaMethodData javaMethodData = new JavaMethodData(n_method_name, n_returnType);
 
-			javaMethodData.addMethodParameter(VSMVariable.element.toString(),
-					"EObject", "the element");
-			javaMethodData.addMethodParameter("newSemanticContainer",
-					"EObject", "the element view");
+			javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject", "the element");
+			javaMethodData.addMethodParameter("newSemanticContainer", "EObject", "the element view");
 			javaServiceData.addMethod(javaMethodData);
 
 			If d_if = ToolFactory.eINSTANCE.createIf();
-			String pElementView = "(" + VSMVariable.element.getInnerVariable()
-					+ ")";
-			d_if.setConditionExpression(SiriusExpressionHelper
-					.getExpressoin(n_method_name + pElementView,
-							ExpressionInterpreter.Service));
+			String pElementView = "(" + VSMVariable.element.getInnerVariable() + ")";
+			d_if.setConditionExpression(
+					SiriusExpressionHelper.getExpressoin(n_method_name + pElementView, ExpressionInterpreter.Service));
 			gotoElement.getSubModelOperations().add(d_if);
 		}
 
@@ -153,14 +127,12 @@ public class OpenActionPattern
 		abstractToolDescription = openTool;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction parameter) {
 		this.parameter = parameter;
 	}
 

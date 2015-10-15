@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:11:48 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.utils;
 
 import java.util.*;
@@ -25,6 +14,7 @@ public class ImportManagerRegistration {
 	public ImportManagerRegistration() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -51,8 +41,7 @@ public class ImportManagerRegistration {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -68,31 +57,25 @@ public class ImportManagerRegistration {
 			parameterValues.put("imported_m", this.imported_m);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_RegisterMapping(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_RegisterMapping(final StringBuffer out, final PatternContext ctx) throws Exception {
 
-		MappingImportManager.getMappingImportAgentFor(imported_m)
-				.registerSpecifiedImport(original_m, imported_m);
+		MappingImportManager.getMappingImportAgentFor(imported_m).registerSpecifiedImport(original_m, imported_m);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "RegisterMapping",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "RegisterMapping", out.toString());
 	}
 
-	protected void method_ReuseTools(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_ReuseTools(final StringBuffer out, final PatternContext ctx) throws Exception {
 
 		MappingImportAgent.reuseTools(original_m, imported_m);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "ReuseTools",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "ReuseTools", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
@@ -101,15 +84,13 @@ public class ImportManagerRegistration {
 
 	protected org.eclipse.sirius.diagram.description.AbstractNodeMapping original_m;
 
-	public void set_original_m(
-			org.eclipse.sirius.diagram.description.AbstractNodeMapping original_m) {
+	public void set_original_m(org.eclipse.sirius.diagram.description.AbstractNodeMapping original_m) {
 		this.original_m = original_m;
 	}
 
 	protected org.eclipse.sirius.diagram.description.AbstractNodeMapping imported_m;
 
-	public void set_imported_m(
-			org.eclipse.sirius.diagram.description.AbstractNodeMapping imported_m) {
+	public void set_imported_m(org.eclipse.sirius.diagram.description.AbstractNodeMapping imported_m) {
 		this.imported_m = imported_m;
 	}
 

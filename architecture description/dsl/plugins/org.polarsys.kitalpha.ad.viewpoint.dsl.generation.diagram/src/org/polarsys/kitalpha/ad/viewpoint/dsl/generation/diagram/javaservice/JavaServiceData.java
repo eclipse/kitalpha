@@ -12,6 +12,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -46,6 +47,24 @@ public class JavaServiceData {
 		
 		for (int i = 1; i < nameElement.length-1; i++) 
 			PackageName = PackageName+ "." + nameElement[i];
+	}
+	
+	/**
+	 * Collects all classes FQN required by all Java service methods.
+	 * @return a {@link List} of java classes fully qualified names 
+	 */
+	public List<String> getAllRequiredClassesFQN(){
+		List<String> result = new ArrayList<String>(); 
+		for (JavaMethodData javaMethodData : Methods) 
+		{
+			final List<String> requiredClassesFQN = javaMethodData.getRequiredClassesFQN();
+			for (String classFQN : requiredClassesFQN) 
+			{
+				if (result.contains(classFQN) == false)
+					result.add(classFQN);
+			}
+		}
+		return result;
 	}
 	
 	public void addMethod(JavaMethodData methodData){

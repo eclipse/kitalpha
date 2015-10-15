@@ -1,0 +1,7 @@
+/*return parent != null && appliedOn != null && appliedOn.isEmpty() == false && 
+				(applyOnAll || (stylePropertyData != null && (stylePropertyData.getName() != null
+				&& stylePropertyData.getName().isEmpty() == false && stylePropertyData.getValue() != null )));*/
+				
+return parent != null && 
+      (applyOnAll || (appliedOn != null && appliedOn.isEmpty() == false)) && 
+      stylePropertyData != null && stylePropertyData.getName() != null && stylePropertyData.getName().isEmpty() == false && stylePropertyData.getValue() != null;

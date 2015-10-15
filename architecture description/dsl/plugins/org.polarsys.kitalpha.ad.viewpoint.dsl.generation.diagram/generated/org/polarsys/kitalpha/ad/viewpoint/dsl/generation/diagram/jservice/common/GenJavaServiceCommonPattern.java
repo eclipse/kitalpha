@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 15:02:19 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common;
 
 import org.eclipse.egf.common.helper.*;
@@ -30,68 +19,40 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGene
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 public class GenJavaServiceCommonPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns.JavaAbstractPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns.JavaAbstractPattern {
 	protected static String nl;
 
-	public static synchronized GenJavaServiceCommonPattern create(
-			String lineSeparator) {
+	public static synchronized GenJavaServiceCommonPattern create(String lineSeparator) {
 		nl = lineSeparator;
 		GenJavaServiceCommonPattern result = new GenJavaServiceCommonPattern();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "package ";
-	protected final String TEXT_2 = ";"
-			+ NL
-			+ ""
-			+ NL
-			+ "import java.util.ArrayList;"
-			+ NL
-			+ "import java.util.List;"
-			+ NL
-			+ ""
-			+ NL
-			+ "import org.eclipse.emf.ecore.EObject;"
-			+ NL
-			+ ""
-			+ NL
-			+ "import org.eclipse.sirius.diagram.DDiagram;"
-			+ NL
-			+ "import org.eclipse.sirius.diagram.DDiagramElement;"
-			+ NL
-			+ ""
-			+ NL
-			+ "/**"
-			+ NL
-			+ " * <!-- begin-user-doc -->"
-			+ NL
+	protected final String TEXT_2 = ";" + NL + "" + NL + "import java.util.ArrayList;" + NL + "import java.util.List;"
+			+ NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
+			+ "import org.eclipse.sirius.diagram.DDiagram;" + NL + "import org.eclipse.sirius.diagram.DDiagramElement;"
+			+ NL + "" + NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL
 			+ " * This class is an implementation of the DoReMi JavaExtension '<em><b>[";
-	protected final String TEXT_3 = "]</b></em>'." + NL
-			+ " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>" + NL
-			+ " *" + NL + " * @generated" + NL + " */ " + NL + "" + NL
-			+ "public class ";
+	protected final String TEXT_3 = "]</b></em>'." + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>"
+			+ NL + " *" + NL + " * @generated" + NL + " */ " + NL + "" + NL + "public class ";
 	protected final String TEXT_4 = "{";
 	protected final String TEXT_5 = "\t";
-	protected final String TEXT_6 = NL + "\t/**" + NL
-			+ "\t* <!-- begin-user-doc -->" + NL + "\t* <!-- end-user-doc -->";
+	protected final String TEXT_6 = NL + "\t/**" + NL + "\t* <!-- begin-user-doc -->" + NL
+			+ "\t* <!-- end-user-doc -->";
 	protected final String TEXT_7 = NL + "\t* @param ";
 	protected final String TEXT_8 = " : ";
-	protected final String TEXT_9 = NL + "\t* @generated" + NL + "\t*/" + NL
-			+ "public ";
+	protected final String TEXT_9 = NL + "\t* @generated" + NL + "\t*/" + NL + "public ";
 	protected final String TEXT_10 = " ";
 	protected final String TEXT_11 = "(";
 	protected final String TEXT_12 = NL + "\t\t\t\t\t\t";
 	protected final String TEXT_13 = " ";
 	protected final String TEXT_14 = ",";
-	protected final String TEXT_15 = "){" + NL
-			+ "\t// TODO Auto-generated method stub";
-	protected final String TEXT_16 = NL
-			+ "\t// Ensure that you remove @generated or mark it @generated NOT"
-			+ NL + "\tthrow new UnsupportedOperationException();";
+	protected final String TEXT_15 = "){" + NL + "\t// TODO Auto-generated method stub";
+	protected final String TEXT_16 = NL + "\t// Ensure that you remove @generated or mark it @generated NOT" + NL
+			+ "\tthrow new UnsupportedOperationException();";
 	protected final String TEXT_17 = NL + "}";
 	protected final String TEXT_18 = NL;
 	protected final String TEXT_19 = "}";
@@ -121,8 +82,7 @@ public class GenJavaServiceCommonPattern
 
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_20);
@@ -164,8 +124,7 @@ public class GenJavaServiceCommonPattern
 		return parameters;
 	}
 
-	protected void method_setParameters(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		java_service_data = GenerationUtil.getJavaServiceDataFor(parameter);
 		if (java_service_data != null) {
@@ -175,29 +134,25 @@ public class GenJavaServiceCommonPattern
 			savetime = JavaClassReporter.whenLoopFinished;
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
 
-	protected void method_addServiceToODesignModel(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_addServiceToODesignModel(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		if (java_service_data != null) {
 			String JS_Name = packagename + "." + classname;
 			Viewpoint vp = DoremiResourceManager.generate_viewpoint;
-			JavaExtension java_extension = DescriptionFactory.eINSTANCE
-					.createJavaExtension();
+			JavaExtension java_extension = DescriptionFactory.eINSTANCE.createJavaExtension();
 			java_extension.setQualifiedClassName(JS_Name);
 			vp.getOwnedJavaExtensions().add(java_extension);
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"addServiceToODesignModel", stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "addServiceToODesignModel", stringBuffer.toString());
 	}
 
-	protected void method_generateJSCHeader(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_generateJSCHeader(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		if (java_service_data != null) {
 			stringBuffer.append(TEXT_1);
@@ -209,17 +164,15 @@ public class GenJavaServiceCommonPattern
 			stringBuffer.append(TEXT_4);
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCHeader",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCHeader", stringBuffer.toString());
 	}
 
-	protected void method_generateJSCMethods(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_generateJSCMethods(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		if (java_service_data != null) {
 			stringBuffer.append(TEXT_5);
-			for (JavaMethodData iJavaMethodData : java_service_data
-					.getMethods()) {
+			for (JavaMethodData iJavaMethodData : java_service_data.getMethods()) {
 				String return_type = "void";
 				switch (iJavaMethodData.getReturnType()) {
 				case Boolean:
@@ -243,13 +196,11 @@ public class GenJavaServiceCommonPattern
 				}
 				stringBuffer.append(TEXT_6);
 
-				for (MethodParameterData iMethodParameterData : iJavaMethodData
-						.getMethodParameter()) {
+				for (MethodParameterData iMethodParameterData : iJavaMethodData.getMethodParameter()) {
 					stringBuffer.append(TEXT_7);
 					stringBuffer.append(iMethodParameterData.getName());
 					stringBuffer.append(TEXT_8);
-					stringBuffer
-							.append(iMethodParameterData.getDocumentation());
+					stringBuffer.append(iMethodParameterData.getDocumentation());
 				}
 				stringBuffer.append(TEXT_9);
 				stringBuffer.append(return_type);
@@ -258,22 +209,19 @@ public class GenJavaServiceCommonPattern
 				stringBuffer.append(TEXT_11);
 				int length = iJavaMethodData.getMethodParameter().size();
 				int current_index = 0;
-				for (MethodParameterData iMethodParameterData : iJavaMethodData
-						.getMethodParameter()) {
+				for (MethodParameterData iMethodParameterData : iJavaMethodData.getMethodParameter()) {
 					current_index += 1;
 					stringBuffer.append(TEXT_12);
 					stringBuffer.append(iMethodParameterData.getType());
 					stringBuffer.append(TEXT_13);
 					stringBuffer.append(iMethodParameterData.getName());
 
-					if (current_index < iJavaMethodData.getMethodParameter()
-							.size()) {
+					if (current_index < iJavaMethodData.getMethodParameter().size()) {
 						stringBuffer.append(TEXT_14);
 					}
 				}
 				stringBuffer.append(TEXT_15);
-				if (return_type.trim().length() > 0
-						&& !return_type.equals("void")) {
+				if (return_type.trim().length() > 0 && !return_type.equals("void")) {
 					stringBuffer.append(TEXT_16);
 				}
 				stringBuffer.append(TEXT_17);
@@ -281,28 +229,23 @@ public class GenJavaServiceCommonPattern
 		}
 		stringBuffer.append(TEXT_18);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCMethods",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCMethods", stringBuffer.toString());
 	}
 
-	protected void method_generateJSCEnd(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_generateJSCEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		if (java_service_data != null) {
 			stringBuffer.append(TEXT_19);
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCEnd",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCEnd", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		EDataTypeUniqueEList<EObject> domain = (EDataTypeUniqueEList<EObject>) ctx
-				.getValue("domain");
+		EDataTypeUniqueEList<EObject> domain = (EDataTypeUniqueEList<EObject>) ctx.getValue("domain");
 		EObject modelElement = domain.get(0);
 		if (modelElement != null)
-			return DiagramGenerationConfigurationHelper
-					.generateVSM(modelElement);
+			return DiagramGenerationConfigurationHelper.generateVSM(modelElement);
 		else
 			return false;
 	}

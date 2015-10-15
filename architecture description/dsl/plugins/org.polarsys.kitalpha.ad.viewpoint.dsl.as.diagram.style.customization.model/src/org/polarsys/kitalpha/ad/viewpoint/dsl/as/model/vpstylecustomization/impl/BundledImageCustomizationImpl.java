@@ -42,10 +42,10 @@ public class BundledImageCustomizationImpl extends SpecificNodeStyleCustomizatio
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getShape()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final BundledImageShape SHAPE_EDEFAULT = BundledImageShape.SQUARE_LITERAL;
+	protected static final BundledImageShape SHAPE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getShape() <em>Shape</em>}' attribute.

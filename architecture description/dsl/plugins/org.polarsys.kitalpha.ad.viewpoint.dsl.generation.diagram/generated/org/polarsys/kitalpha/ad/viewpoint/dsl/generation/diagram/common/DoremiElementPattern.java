@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:14:16 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common;
 
 import java.util.*;
@@ -22,12 +11,12 @@ import org.eclipse.egf.common.helper.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
 public class DoremiElementPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public DoremiElementPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -40,8 +29,7 @@ public class DoremiElementPattern
 			orchestration((PatternContext) argument);
 
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -57,39 +45,32 @@ public class DoremiElementPattern
 		return null;
 	}
 
-	protected void method_setParentMapping(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParentMapping(final StringBuffer out, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping", out.toString());
 	}
 
-	protected void method_registerElementsInGenerationMap(
-			final StringBuffer out, final PatternContext ctx) throws Exception {
+	protected void method_registerElementsInGenerationMap(final StringBuffer out, final PatternContext ctx)
+			throws Exception {
 		if (dslvpElement != null && doremiElement != null) {
 			GenerationUtil.addObjectMapping(dslvpElement, doremiElement);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"registerElementsInGenerationMap", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "registerElementsInGenerationMap", out.toString());
 	}
 
-	protected void method_addElementToODesign(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_addElementToODesign(final StringBuffer out, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "addElementToODesign",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "addElementToODesign", out.toString());
 	}
 
-	protected void method_createDoremiElement(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createDoremiElement(final StringBuffer out, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createDoremiElement",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createDoremiElement", out.toString());
 	}
 
 	protected org.eclipse.emf.ecore.EObject dslvpElement;

@@ -1,0 +1,13 @@
+sStyleCustomization = DescriptionFactory.eINSTANCE.createVSMElementCustomization();
+VSMElementCustomization vsmElementCustomization = (VSMElementCustomization) sStyleCustomization;
+
+final CustomizationExpression precondtionExpression = parameter.getPrecondtionExpression();
+if (precondtionExpression != null)
+{
+	final AbstractComputableElement expressionElement = precondtionExpression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		String expression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		vsmElementCustomization.setPredicateExpression(expression);
+	}
+}

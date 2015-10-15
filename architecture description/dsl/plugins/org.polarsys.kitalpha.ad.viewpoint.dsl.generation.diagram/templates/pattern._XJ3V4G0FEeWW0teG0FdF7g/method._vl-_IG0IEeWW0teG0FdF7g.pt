@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getSquareCustomization_Width())) 
+{
+	set_width(new StylePropertyNameValueCouple("width", parameter.getWidth()));
+}

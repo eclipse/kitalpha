@@ -1,0 +1,8 @@
+String package_name = (String) ctx.getValue("design.project.name") + ".service.customizations";
+String class_name = "StyleEnumerationsHelper";
+String service_name = package_name + "." + class_name;
+
+javaServiceData = GenerationUtil.getJavaServiceData(service_name);
+
+if (javaServiceData != null)
+	javaServiceData.setContext(parameter);

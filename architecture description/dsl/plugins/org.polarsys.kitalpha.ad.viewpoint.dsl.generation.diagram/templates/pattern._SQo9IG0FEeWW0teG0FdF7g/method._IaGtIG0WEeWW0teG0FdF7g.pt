@@ -1,0 +1,9 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEllipseCustomization_VerticalDiameterComputationExpression())) {
+	final CustomizationExpression expression = parameter.getVerticalDiameterComputationExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_verticalDiameterComputationExpression(new StylePropertyNameValueCouple("verticalDiameterComputationExpression", newLabelExpression));
+	}
+}

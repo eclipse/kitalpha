@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelCustomization_Size()))
+{
+	set_showIcon(new StylePropertyNameValueCouple("showIcon", parameter.isShowIcon()));
+}

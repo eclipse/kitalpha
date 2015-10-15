@@ -1,0 +1,9 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLozengeCustomization_HeightComputationExpression())) {
+	final CustomizationExpression expression = parameter.getHeightComputationExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_heightComputationExpression(new StylePropertyNameValueCouple("heightComputationExpression", newLabelExpression));
+	}
+}

@@ -23,6 +23,8 @@ public class JavaMethodData{
 	private JavaMethodReturnType returnType;
 	// a map container a set of <parameter name, parameter type>
 	private List<MethodParameterData> methodParameter = new ArrayList<MethodParameterData>();
+	private String methodCode;
+	private List<String> requiredClassesFQN = new ArrayList<String>();
 	
 	public enum JavaMethodReturnType {
 		Unknown,
@@ -31,12 +33,19 @@ public class JavaMethodData{
 		String, 
 		Boolean, 
 		EObject, 
-		EObjectList; 
+		EObjectList,
+		EEnumLiteral; 
 	}
 	
 	public JavaMethodData(String methodName, JavaMethodReturnType methodReturnType) {
 		this.name = methodName;
 		this.returnType = methodReturnType;
+	}
+	
+	public JavaMethodData(String methodName, JavaMethodReturnType methodReturnType, String methodCode) {
+		this.name = methodName;
+		this.returnType = methodReturnType;
+		this.methodCode = methodCode;
 	}
 	
 	public List<MethodParameterData> getMethodParameter(){
@@ -66,10 +75,19 @@ public class JavaMethodData{
 	public String getName() {
 		return name;
 	}
+	
 	public JavaMethodReturnType getReturnType() {
 		return returnType;
 	}
 	
+	public String getMethodCode() {
+		return methodCode;
+	}
+
+	public List<String> getRequiredClassesFQN() {
+		return requiredClassesFQN;
+	}
+
 	public boolean equals(String name, JavaMethodReturnType returnType) {
 		return this.name.toLowerCase().equals(name)
 					&& this.returnType.equals(returnType);

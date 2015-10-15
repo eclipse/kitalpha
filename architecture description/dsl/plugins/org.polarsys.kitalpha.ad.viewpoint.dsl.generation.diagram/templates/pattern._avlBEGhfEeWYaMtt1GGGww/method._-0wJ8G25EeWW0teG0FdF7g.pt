@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelCustomization_Color()))
+{
+	set_color(new StylePropertyNameValueCouple("labelColor", SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
+}

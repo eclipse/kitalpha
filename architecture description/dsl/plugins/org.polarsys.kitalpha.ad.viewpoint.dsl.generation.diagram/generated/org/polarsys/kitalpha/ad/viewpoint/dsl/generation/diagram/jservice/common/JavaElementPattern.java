@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common;
 
 import java.util.*;
@@ -28,12 +17,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.JavaElementHelper;
 
 public class JavaElementPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public JavaElementPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -55,8 +44,7 @@ public class JavaElementPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -71,42 +59,33 @@ public class JavaElementPattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_RegisterJavaMethod(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		String package_name = (String) ctx.getValue("design.project.name")
-				+ ".service";
+	protected void method_RegisterJavaMethod(final StringBuffer out, final PatternContext ctx) throws Exception {
+		String package_name = (String) ctx.getValue("design.project.name") + ".service";
 
-		String class_kind = JavaElementHelper
-				.getJavaElementContainerKind(parameter);
+		String class_kind = JavaElementHelper.getJavaElementContainerKind(parameter);
 		if (class_kind != null && class_kind.trim().length() > 0) {
 			package_name = package_name + "." + class_kind;
 		}
 
 		//String package_name = (String) ctx.getValue("design.project.name")+".service.nodes";
-		String class_name = JavaElementHelper
-				.getJavaElementContainerName(parameter);
+		String class_name = JavaElementHelper.getJavaElementContainerName(parameter);
 		String service_name = package_name + "." + class_name + "_Service";
 
-		JavaServiceData javaServiceData = GenerationUtil
-				.getJavaServiceData(service_name);
+		JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(service_name);
 
 		if (javaServiceData != null) {
 
-			javaServiceData.setContext(JavaElementHelper
-					.getJavaElementContainer(parameter));
+			javaServiceData.setContext(JavaElementHelper.getJavaElementContainer(parameter));
 
 			String method_name = parameter.getMethod();
-			String twoLastChars = method_name.substring(
-					method_name.length() - 2, method_name.length());
+			String twoLastChars = method_name.substring(method_name.length() - 2, method_name.length());
 			if (twoLastChars.equals("()")) {
-				method_name = method_name
-						.substring(0, method_name.length() - 2);
+				method_name = method_name.substring(0, method_name.length() - 2);
 			}
 
 			/*** Compute the JavaMethod return type
@@ -136,8 +115,7 @@ public class JavaElementPattern
 			if (returnType != JavaMethodReturnType.Unknown) {
 
 				/*** Creation of the JavaMethod **/
-				JavaMethodData javaMethodData = new JavaMethodData(method_name,
-						returnType);
+				JavaMethodData javaMethodData = new JavaMethodData(method_name, returnType);
 
 				/*** Adding Parameters to the JavaMethod
 				 * JavaMethod parameters depend on the context wherein the JavaElement is created
@@ -150,24 +128,20 @@ public class JavaElementPattern
 				 * if in an Histogram     --> - eObject   : EObject 				  (the current semantic object)
 				 */
 
-				javaMethodData.addMethodParameter("eObject", "EObject",
-						"the current semantic object");
+				javaMethodData.addMethodParameter("eObject", "EObject", "the current semantic object");
 
 				switch (eObject.eClass().getClassifierID()) {
 				case VpdiagramPackage.CONDITION:
-					javaMethodData.addMethodParameter("view", "EObject",
-							"the current view");
+					javaMethodData.addMethodParameter("view", "EObject", "the current view");
 					javaMethodData.addMethodParameter("container", "EObject",
 							"the semantic container of the current object");
 					break;
 
 				case ExpressionPackage.EXPRESSION:
 					if (eObject.eContainer().eClass().getClassifierID() == VpdiagramPackage.LABEL) {
-						javaMethodData.addMethodParameter("diagram",
-								"DDiagram", "the current DSemanticdiagram");
-						javaMethodData
-								.addMethodParameter("view", "DDiagramElement",
-										"the current View for witch the label is calculated");
+						javaMethodData.addMethodParameter("diagram", "DDiagram", "the current DSemanticdiagram");
+						javaMethodData.addMethodParameter("view", "DDiagramElement",
+								"the current View for witch the label is calculated");
 					}
 					break;
 				}
@@ -176,8 +150,7 @@ public class JavaElementPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "RegisterJavaMethod",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "RegisterJavaMethod", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement parameter;

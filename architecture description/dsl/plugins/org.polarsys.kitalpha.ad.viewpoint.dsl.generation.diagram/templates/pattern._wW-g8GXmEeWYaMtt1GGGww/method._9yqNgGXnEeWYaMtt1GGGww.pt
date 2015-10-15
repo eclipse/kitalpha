@@ -1,0 +1,3 @@
+// Create the Style Customizations element
+
+sStyleCustomization = DescriptionFactory.eINSTANCE.createCustomization();

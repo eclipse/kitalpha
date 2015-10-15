@@ -1,0 +1,10 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_SizeComputationExpression())) 
+{
+	final CustomizationExpression expression = parameter.getSizeComputationExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String sceExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_sizeComputationExpression(new StylePropertyNameValueCouple("sizeComputationExpression", sceExpression));
+	}
+}

@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getContainerStyleCustomization_ArcHeight())) 
+{
+	set_arcHeight(new StylePropertyNameValueCouple("arcHeight", parameter.getArcHeight()));
+}

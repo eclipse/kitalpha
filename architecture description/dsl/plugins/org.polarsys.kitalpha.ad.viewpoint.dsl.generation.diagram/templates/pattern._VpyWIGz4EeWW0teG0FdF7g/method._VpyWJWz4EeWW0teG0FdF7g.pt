@@ -1,0 +1,10 @@
+EReferenceCustomization referenceCustomization = DescriptionFactory.eINSTANCE.createEReferenceCustomization();
+referenceCustomization.setReferenceName(stylePropertyData.getName());
+referenceCustomization.setValue((EObject) stylePropertyData.getValue());
+referenceCustomization.setApplyOnAll(applyOnAll);
+if (applyOnAll == false) 
+{
+	referenceCustomization.getAppliedOn().addAll(appliedOn);
+}
+
+parent.getFeatureCustomizations().add(referenceCustomization);

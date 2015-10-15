@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getSquareCustomization_Height())) 
+{
+	set_height(new StylePropertyNameValueCouple("height", parameter.getHeight()));
+}

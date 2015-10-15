@@ -42,10 +42,10 @@ public class FlatContainerStyleCustomizationImpl extends SpecificContainerStyleC
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBackgroundStyle()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final BackgroundStyle BACKGROUND_STYLE_EDEFAULT = BackgroundStyle.GRADIENT_LEFT_TO_RIGHT_LITERAL;
+	protected static final BackgroundStyle BACKGROUND_STYLE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getBackgroundStyle() <em>Background Style</em>}' attribute.

@@ -1,0 +1,8 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_ColorUseCase())) 
+{
+	final ColorUseCase colorUseCase = parameter.getColorUseCase();
+	if (colorUseCase.equals(ColorUseCase.BORDER)) 
+	{
+		set_borderColor(new StylePropertyNameValueCouple("borderColor", SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
+	}
+}

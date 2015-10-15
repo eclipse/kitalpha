@@ -1,0 +1,29 @@
+LabelAlignmentCustomization labelAlignmentCustomization = parameter.getOwnedLabelAlignment();
+
+if (labelAlignmentCustomization != null)
+{
+	if (labelAlignmentCustomization.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelAlignmentCustomization_Alignment()))
+	{
+		set_labelAlignmentAppliedOn(labelAlignmentCustomization.getAppliedOn());
+		String enumLiteralName = labelAlignmentCustomization.getAlignment().toString();
+		String methodCode = "return ViewpointPackage.eINSTANCE.getLabelAlignment().getEEnumLiteral(\"" + enumLiteralName +"\");";
+		char first = Character.toUpperCase(enumLiteralName.charAt(0));
+		enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
+		String methodName = "getLabelAlignment"+enumLiteralName;
+		
+		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+		
+		// Set method parameters data
+		javaMethodData.addMethodParameter("any", "EObject", "any model element");
+		
+		// Set method Required classes FQN
+		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.viewpoint.ViewpointPackage");
+		
+		// Add the method to the Java Service.
+		if (javaMethodData != null)
+			enumHelperJavaServiceData.addMethod(javaMethodData);
+		
+		set_labelAlignment(new StylePropertyNameValueCouple("labelAlignment", "service:"+methodName));
+	}
+}

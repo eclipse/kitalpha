@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:13:48 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.diagrams;
 
 import java.util.*;
@@ -26,12 +15,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.Jav
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StringUtils;
 
 public class DiagramSetOpenJSPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public DiagramSetOpenJSPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -53,8 +42,7 @@ public class DiagramSetOpenJSPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -69,39 +57,31 @@ public class DiagramSetOpenJSPattern
 			parameterValues.put("diagramSet", this.diagramSet);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_genOpenJavaService(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		String s_package_name = (String) ctx.getValue("design.project.name")
-				+ ".service";
+	protected void method_genOpenJavaService(final StringBuffer out, final PatternContext ctx) throws Exception {
+		String s_package_name = (String) ctx.getValue("design.project.name") + ".service";
 		String short_name = CoreModelHelper.getViewpointShortName(diagramSet);
-		String s_class_name = StringUtils.transformeFirstToUperCase(short_name)
-				+ "OpenJavaService";
+		String s_class_name = StringUtils.transformeFirstToUperCase(short_name) + "OpenJavaService";
 		String s_service_name = s_package_name + "." + s_class_name;
 
 		// This allows to create an EMPTY java service for the generated Viewpoint.
-		JavaServiceData java_service_data = GenerationUtil
-				.getJavaServiceData(s_service_name);
+		JavaServiceData java_service_data = GenerationUtil.getJavaServiceData(s_service_name);
 		java_service_data.setContext(diagramSet);
 
-		JavaMethodData javaMethodData = new JavaMethodData(s_class_name,
-				JavaMethodReturnType.ConstructorType);
+		JavaMethodData javaMethodData = new JavaMethodData(s_class_name, JavaMethodReturnType.ConstructorType);
 		java_service_data.getMethods().add(javaMethodData);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genOpenJavaService",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genOpenJavaService", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet diagramSet;
 
-	public void set_diagramSet(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet diagramSet) {
+	public void set_diagramSet(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet diagramSet) {
 		this.diagramSet = diagramSet;
 	}
 

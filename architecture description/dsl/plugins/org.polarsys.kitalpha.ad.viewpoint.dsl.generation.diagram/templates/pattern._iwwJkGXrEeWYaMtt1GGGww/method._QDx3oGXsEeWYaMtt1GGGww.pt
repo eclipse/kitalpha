@@ -1,0 +1,10 @@
+EObject vpParent = parameter.eContainer();
+EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
+
+VSMElementCustomization customization = (VSMElementCustomization) sStyleCustomization;
+
+if (currentParent instanceof Customization) 
+{
+	Customization owner = (Customization) currentParent;
+	owner.getVsmElementCustomizations().add(customization);
+}

@@ -58,7 +58,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGene
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.BorderedNodePattern {
+public class BorderedNodeImportPattern
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.BorderedNodePattern {
 
 	public BorderedNodeImportPattern() {
 		//Here is the constructor
@@ -102,7 +103,9 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 			parameters.put("original_m", this.mapping);
 			parameters.put("imported_m", this.inm);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ", ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ",
+					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -213,13 +216,16 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 				String acceleoExpression = "";
 				if (fEE instanceof JavaElement) {
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
+					String mParameters = VSMVariable.view.getInnerVariable() + ","
+							+ VSMVariable.container.getInnerVariable();
 					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName,
+							ExpressionInterpreter.Service);
 					//acceleoExpression = SiriusExpressionHelper.getExpressoin(((JavaElement) fEE).getMethod());
 				}
 				if (fEE instanceof DomainElement) {
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName());
+					acceleoExpression = SiriusExpressionHelper
+							.getExpressoin(((DomainElement) fEE).getAttribute().getName());
 				}
 
 				cnStyleDesc = DescriptionFactory.eINSTANCE.createConditionalNodeStyleDescription();
@@ -318,11 +324,16 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 					doremiGaugeStyle.setBorderColor(GenerationUtil.getSystemColor(vpHistogramStyle.getBorderColor()));
 					for (HistogramSection iHistogramSection : vpHistogramStyle.getSections()) {
 						GaugeSectionDescription one_section = StyleFactory.eINSTANCE.createGaugeSectionDescription();
-						one_section.setBackgroundColor(GenerationUtil.getSystemColor(iHistogramSection.getBackgroundColor()));
-						one_section.setForegroundColor(GenerationUtil.getSystemColor(iHistogramSection.getForgroundColor()));
-						one_section.setMaxValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getMaxValue().toString()));
-						one_section.setMinValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getMinValue().toString()));
-						one_section.setValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getValue().toString()));
+						one_section.setBackgroundColor(
+								GenerationUtil.getSystemColor(iHistogramSection.getBackgroundColor()));
+						one_section.setForegroundColor(
+								GenerationUtil.getSystemColor(iHistogramSection.getForgroundColor()));
+						one_section.setMaxValueExpression(
+								SiriusExpressionHelper.getExpressoin(iHistogramSection.getMaxValue().toString()));
+						one_section.setMinValueExpression(
+								SiriusExpressionHelper.getExpressoin(iHistogramSection.getMinValue().toString()));
+						one_section.setValueExpression(
+								SiriusExpressionHelper.getExpressoin(iHistogramSection.getValue().toString()));
 						doremiGaugeStyle.getSections().add(one_section);
 					}
 				}
@@ -341,7 +352,8 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 
 				if (label != null) {
 					//((ExpressionImpl) label.getValue()).adaptValue();
-					String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
+					String mParameters = VSMVariable.diagram.getInnerVariable() + ","
+							+ VSMVariable.view.getInnerVariable();
 					((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
 
 					if (label.getValue() != null)
@@ -365,7 +377,8 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 				/************************************************************************************************/
 				NodeStyleDescription nStyleDesc_marged = null;
 				try {
-					nStyleDesc_marged = NodeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), nStyleDesc, iNodeDescription);
+					nStyleDesc_marged = NodeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), nStyleDesc,
+							iNodeDescription);
 				} catch (Exception e) {
 				}
 				if (nStyleDesc_marged != null)

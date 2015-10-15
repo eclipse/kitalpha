@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:15:19 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.reuse;
 
 import java.util.HashMap;
@@ -32,8 +21,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
 public class ContainerReusePattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public ContainerReusePattern() {
 		//Here is the constructor
@@ -60,8 +48,7 @@ public class ContainerReusePattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -76,39 +63,30 @@ public class ContainerReusePattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_doReuse(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		ContainerMapping currentContainerNode = (ContainerMapping) GenerationUtil
-				.getDoremiElement(parameter);
-		final EList<AbstractNode> reused_nodes = parameter.getChildren()
-				.getReused_nodes();
+	protected void method_doReuse(final StringBuffer out, final PatternContext ctx) throws Exception {
+		ContainerMapping currentContainerNode = (ContainerMapping) GenerationUtil.getDoremiElement(parameter);
+		final EList<AbstractNode> reused_nodes = parameter.getChildren().getReused_nodes();
 		for (AbstractNode abstractNode : reused_nodes) {
 			if (abstractNode instanceof Container) {
-				ContainerMapping currentContainer = (ContainerMapping) GenerationUtil
-						.getDoremiElement(abstractNode);
-				currentContainerNode.getReusedContainerMappings().add(
-						currentContainer);
+				ContainerMapping currentContainer = (ContainerMapping) GenerationUtil.getDoremiElement(abstractNode);
+				currentContainerNode.getReusedContainerMappings().add(currentContainer);
 				continue;
 			}
 
 			if (abstractNode instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node) {
-				NodeMapping currentNode = (NodeMapping) GenerationUtil
-						.getDoremiElement(abstractNode);
+				NodeMapping currentNode = (NodeMapping) GenerationUtil.getDoremiElement(abstractNode);
 				currentContainerNode.getReusedNodeMappings().add(currentNode);
 				continue;
 			}
 
 			if (abstractNode instanceof BorderedNode) {
-				NodeMapping currentBNode = (NodeMapping) GenerationUtil
-						.getDoremiElement(abstractNode);
-				currentContainerNode.getReusedBorderedNodeMappings().add(
-						currentBNode);
+				NodeMapping currentBNode = (NodeMapping) GenerationUtil.getDoremiElement(abstractNode);
+				currentContainerNode.getReusedBorderedNodeMappings().add(currentBNode);
 				continue;
 			}
 		}
@@ -118,16 +96,14 @@ public class ContainerReusePattern
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return DiagramGenerationConfigurationHelper.generateVSM(parameter)
-				&& parameter.getChildren() != null
+		return DiagramGenerationConfigurationHelper.generateVSM(parameter) && parameter.getChildren() != null
 				&& parameter.getChildren().getReused_nodes() != null
 				&& !parameter.getChildren().getReused_nodes().isEmpty();
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container parameter) {
 		this.parameter = parameter;
 	}
 

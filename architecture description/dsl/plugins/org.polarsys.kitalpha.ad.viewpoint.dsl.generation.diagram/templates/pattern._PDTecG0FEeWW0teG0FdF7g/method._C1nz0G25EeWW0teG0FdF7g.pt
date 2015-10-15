@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getGaugeCustomization_Sections())) 
+{
+	set_sections(new StylePropertyNameValueCouple("sections", parameter.getSections()));
+}

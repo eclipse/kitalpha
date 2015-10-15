@@ -1,0 +1,10 @@
+EObject vpParent = parameter.eContainer();
+EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
+
+Customization customization = (Customization) sStyleCustomization;
+
+if (currentParent instanceof Layer) 
+{
+	Layer owner = (Layer) currentParent;
+	owner.setCustomization(customization);
+} 

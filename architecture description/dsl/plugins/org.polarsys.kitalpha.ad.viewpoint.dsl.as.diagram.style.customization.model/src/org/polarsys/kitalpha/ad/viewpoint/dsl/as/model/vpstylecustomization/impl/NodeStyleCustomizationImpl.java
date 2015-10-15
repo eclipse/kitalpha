@@ -101,10 +101,10 @@ public class NodeStyleCustomizationImpl extends AbstractNodeStyleCustomizationIm
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLabelPosition()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final LabelPosition LABEL_POSITION_EDEFAULT = LabelPosition.BORDER_LITERAL;
+	protected static final LabelPosition LABEL_POSITION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getLabelPosition() <em>Label Position</em>}' attribute.
@@ -124,20 +124,20 @@ public class NodeStyleCustomizationImpl extends AbstractNodeStyleCustomizationIm
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isHideLabelByDefault()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final boolean HIDE_LABEL_BY_DEFAULT_EDEFAULT = false;
+	protected static final Boolean HIDE_LABEL_BY_DEFAULT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #isHideLabelByDefault() <em>Hide Label By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isHideLabelByDefault()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected boolean hideLabelByDefault = HIDE_LABEL_BY_DEFAULT_EDEFAULT;
+	protected Boolean hideLabelByDefault = HIDE_LABEL_BY_DEFAULT_EDEFAULT;
 
 
 
@@ -147,10 +147,10 @@ public class NodeStyleCustomizationImpl extends AbstractNodeStyleCustomizationIm
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getResizeKind()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final ResizeKind RESIZE_KIND_EDEFAULT = ResizeKind.NONE_LITERAL;
+	protected static final ResizeKind RESIZE_KIND_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getResizeKind() <em>Resize Kind</em>}' attribute.
@@ -327,12 +327,12 @@ public class NodeStyleCustomizationImpl extends AbstractNodeStyleCustomizationIm
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public void setHideLabelByDefault(boolean newHideLabelByDefault) {
 
-		boolean oldHideLabelByDefault = hideLabelByDefault;
+		Boolean oldHideLabelByDefault = hideLabelByDefault;
 		hideLabelByDefault = newHideLabelByDefault;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpstylecustomizationPackage.NODE_STYLE_CUSTOMIZATION__HIDE_LABEL_BY_DEFAULT, oldHideLabelByDefault, hideLabelByDefault));

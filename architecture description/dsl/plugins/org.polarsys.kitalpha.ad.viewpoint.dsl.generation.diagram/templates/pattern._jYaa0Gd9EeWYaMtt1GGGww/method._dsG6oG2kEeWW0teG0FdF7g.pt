@@ -1,0 +1,14 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_BeginLabelStyleDescription()))
+{
+	set_beginLabelStyleDescription(new StylePropertyNameValueCouple("beginLabelStyleDescription", parameter.getBeginLabelStyleDescription()));
+}
+
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_EndLabelStyleDescription()))
+{
+	set_endLabelStyleDescription(new StylePropertyNameValueCouple("endLabelStyleDescription", parameter.getEndLabelStyleDescription()));
+}
+
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenterLabelStyleDescription()))
+{
+	set_centerLabelStyleDescription(new StylePropertyNameValueCouple("centerLabelStyleDescription", parameter.getCenterLabelStyleDescription()));
+}

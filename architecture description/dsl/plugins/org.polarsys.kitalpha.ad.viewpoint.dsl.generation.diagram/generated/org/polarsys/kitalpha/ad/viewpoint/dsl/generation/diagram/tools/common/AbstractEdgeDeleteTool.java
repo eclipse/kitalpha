@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -34,12 +23,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
 public class AbstractEdgeDeleteTool
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractDeleteTool {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractDeleteTool {
 
 	public AbstractEdgeDeleteTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -61,8 +50,7 @@ public class AbstractEdgeDeleteTool
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -79,14 +67,12 @@ public class AbstractEdgeDeleteTool
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_setAssociationsValues(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setAssociationsValues(final StringBuffer out, final PatternContext ctx) throws Exception {
 		Edge edge = (Edge) associated_mapping;
 		EObject eO_Domain = edge.getThe_domain();
 
@@ -99,54 +85,42 @@ public class AbstractEdgeDeleteTool
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setAssociationsValues",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAssociationsValues", out.toString());
 	}
 
-	protected void method_createToolOperations(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createToolOperations(final StringBuffer out, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createToolOperations",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createToolOperations", out.toString());
 	}
 
-	protected void method_createJavaService(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createJavaService(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (generateJavaService != null && generateJavaService) {
-			String r_package_name = (String) ctx
-					.getValue("design.project.name") + ".service.tools";
+			String r_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
 			String r_class_name = "DeleteToolService";
 			String java_service_name = r_package_name + "." + r_class_name;
 
-			JavaServiceData javaServiceData = GenerationUtil
-					.getJavaServiceData(java_service_name);
+			JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(java_service_name);
 			if (javaServiceData != null) {
 				javaServiceData.setContext(parameter);
 				JavaMethodReturnType returnType = JavaMethodReturnType.Boolean;
-				JavaMethodData javaMethodData = new JavaMethodData(tool_name,
-						returnType);
-				javaMethodData.addMethodParameter("element", "EObject",
-						"the semantic source element");
-				javaMethodData.addMethodParameter("elementView", "EObject",
-						"the semantic element view");
-				javaMethodData.addMethodParameter("containerView", "EObject",
-						"the container view");
+				JavaMethodData javaMethodData = new JavaMethodData(tool_name, returnType);
+				javaMethodData.addMethodParameter("element", "EObject", "the semantic source element");
+				javaMethodData.addMethodParameter("elementView", "EObject", "the semantic element view");
+				javaMethodData.addMethodParameter("containerView", "EObject", "the container view");
 				javaServiceData.addMethod(javaMethodData);
 
 				If iv = ToolFactory.eINSTANCE.createIf();
-				String mParameters = "("
-						+ VSMVariable.elementView.getInnerVariable() + ","
+				String mParameters = "(" + VSMVariable.elementView.getInnerVariable() + ","
 						+ VSMVariable.containerView.getInnerVariable() + ")";
-				iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(
-						tool_name + mParameters, ExpressionInterpreter.Service));
+				iv.setConditionExpression(
+						SiriusExpressionHelper.getExpressoin(tool_name + mParameters, ExpressionInterpreter.Service));
 				initial_operation.setFirstModelOperations(iv);
 			}
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createJavaService",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createJavaService", out.toString());
 	}
 
 	protected org.eclipse.emf.ecore.EObject t_association;

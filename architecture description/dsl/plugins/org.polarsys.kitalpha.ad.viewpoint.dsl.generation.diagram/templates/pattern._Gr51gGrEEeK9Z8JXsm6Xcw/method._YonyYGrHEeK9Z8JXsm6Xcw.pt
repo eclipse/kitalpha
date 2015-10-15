@@ -9,9 +9,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 
+<%
+List<String> requiredClasses = java_service_data.getAllRequiredClassesFQN();
+for (String importToAdd : requiredClasses)
+{%>
+import <%=importToAdd%>;
+<%}%>
+
 /**
  * <!-- begin-user-doc -->
- * This class is an implementation of the DoReMi JavaExtension '<em><b>[<%=packagename+"."+classname%>]</b></em>'.
+ * This class is an implementation of the Sirius JavaExtension '<em><b>[<%=packagename+"."+classname%>]</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>

@@ -1,0 +1,23 @@
+if (dslvpElement.eIsSet(VpstylecustomizationPackage.eINSTANCE.getAbstractNodeStyleCustomization_BorderSizeComputationExpression())) 
+{
+	AbstractNodeStyleCustomization customization = (AbstractNodeStyleCustomization) dslvpElement;
+	final CustomizationExpression expression = customization.getBorderSizeComputationExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String bscExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_borderSizeComputationExpression(new StylePropertyNameValueCouple("borderSizeComputationExpression", bscExpression));
+	}
+}
+
+if (dslvpElement.eIsSet(VpstylecustomizationPackage.eINSTANCE.getAbstractNodeStyleCustomization_TooltipExpression())) 
+{
+	AbstractNodeStyleCustomization customization = (AbstractNodeStyleCustomization) dslvpElement;
+	final CustomizationExpression expression = customization.getTooltipExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null) 
+	{
+		final String ttExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_tooltipExpression(new StylePropertyNameValueCouple("tooltipExpression", ttExpression));
+	}
+}

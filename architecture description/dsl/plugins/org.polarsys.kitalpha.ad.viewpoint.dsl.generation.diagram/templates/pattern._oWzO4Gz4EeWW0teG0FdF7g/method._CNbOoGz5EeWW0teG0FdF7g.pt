@@ -1,0 +1,23 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getBundledImageCustomization_Shape())) 
+{
+	String enumLiteralName = parameter.getShape().toString();
+	String methodCode = "return DiagramPackage.eINSTANCE.getBundledImageShape().getEEnumLiteral(\""+ enumLiteralName + "\");";
+	char first = Character.toUpperCase(enumLiteralName.charAt(0));
+	enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
+	String methodName = "getBundledImageShape" + enumLiteralName;
+
+	JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+
+	// Set method parameters data
+	javaMethodData.addMethodParameter("any", "EObject", "any model element");
+
+	// Set method Required classes FQN
+	javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+	javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+
+	// Add the method to the Java Service.
+	if (javaMethodData != null)
+		enumHelperJavaServiceData.addMethod(javaMethodData);
+
+	set_shape(new StylePropertyNameValueCouple("shape", "service:" + methodName));
+}

@@ -83,10 +83,10 @@ public class ContainerStyleCustomizationImpl extends AbstractNodeStyleCustomizat
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getArcWith()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final int ARC_WITH_EDEFAULT = 0;
+	protected static final int ARC_WITH_EDEFAULT = -1;
 
 	/**
 	 * The cached value of the '{@link #getArcWith() <em>Arc With</em>}' attribute.
@@ -106,10 +106,10 @@ public class ContainerStyleCustomizationImpl extends AbstractNodeStyleCustomizat
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getArcHeight()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final int ARC_HEIGHT_EDEFAULT = 0;
+	protected static final int ARC_HEIGHT_EDEFAULT = -1;
 
 	/**
 	 * The cached value of the '{@link #getArcHeight() <em>Arc Height</em>}' attribute.
@@ -139,10 +139,10 @@ public class ContainerStyleCustomizationImpl extends AbstractNodeStyleCustomizat
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isRoundedCorner()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected boolean roundedCorner = ROUNDED_CORNER_EDEFAULT;
+	protected Boolean roundedCorner = ROUNDED_CORNER_EDEFAULT;
 
 
 
@@ -289,12 +289,12 @@ public class ContainerStyleCustomizationImpl extends AbstractNodeStyleCustomizat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public void setRoundedCorner(boolean newRoundedCorner) {
 
-		boolean oldRoundedCorner = roundedCorner;
+		Boolean oldRoundedCorner = roundedCorner;
 		roundedCorner = newRoundedCorner;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpstylecustomizationPackage.CONTAINER_STYLE_CUSTOMIZATION__ROUNDED_CORNER, oldRoundedCorner, roundedCorner));

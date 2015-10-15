@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeWorkspaceImageCustomization_WorkspacePath())) 
+{
+	set_workspacePath(new StylePropertyNameValueCouple("workspacePath", parameter.getWorkspacePath()));
+}

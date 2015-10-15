@@ -533,7 +533,7 @@ public interface VpstylecustomizationPackage extends EPackage {
 	int LABEL_CUSTOMIZATION__APPLYON_ALL = ABSTRACT_CUSTOMIZATION__APPLYON_ALL;
 
 	/**
-	 * The feature id for the '<em><b>Color</b></em>' reference.
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -668,7 +668,7 @@ public interface VpstylecustomizationPackage extends EPackage {
 	int COLOR_CUSTOMIZATION__APPLYON_ALL = ABSTRACT_CUSTOMIZATION__APPLYON_ALL;
 
 	/**
-	 * The feature id for the '<em><b>Color</b></em>' reference.
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1647,15 +1647,15 @@ public interface VpstylecustomizationPackage extends EPackage {
 	EClass getLabelCustomization();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization#getColor <em>Color</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization#getColor <em>Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Color</em>'.
+	 * @return the meta object for the attribute '<em>Color</em>'.
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization#getColor()
 	 * @see #getLabelCustomization()
 	 * @generated
 	 */
-	EReference getLabelCustomization_Color();
+	EAttribute getLabelCustomization_Color();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization#getOwnedLabelAlignment <em>Owned Label Alignment</em>}'.
@@ -1777,15 +1777,15 @@ public interface VpstylecustomizationPackage extends EPackage {
 	EClass getColorCustomization();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization#getColor <em>Color</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization#getColor <em>Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Color</em>'.
+	 * @return the meta object for the attribute '<em>Color</em>'.
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization#getColor()
 	 * @see #getColorCustomization()
 	 * @generated
 	 */
-	EReference getColorCustomization_Color();
+	EAttribute getColorCustomization_Color();
 
 	/**
 	 * Returns the meta object for the reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization#getAppliedOn <em>Applied On</em>}'.
@@ -2598,12 +2598,12 @@ public interface VpstylecustomizationPackage extends EPackage {
 		EClass LABEL_CUSTOMIZATION = eINSTANCE.getLabelCustomization();
 
 		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LABEL_CUSTOMIZATION__COLOR = eINSTANCE.getLabelCustomization_Color();
+		EAttribute LABEL_CUSTOMIZATION__COLOR = eINSTANCE.getLabelCustomization_Color();
 
 		/**
 		 * The meta object literal for the '<em><b>Owned Label Alignment</b></em>' containment reference feature.
@@ -2698,12 +2698,12 @@ public interface VpstylecustomizationPackage extends EPackage {
 		EClass COLOR_CUSTOMIZATION = eINSTANCE.getColorCustomization();
 
 		/**
-		 * The meta object literal for the '<em><b>Color</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLOR_CUSTOMIZATION__COLOR = eINSTANCE.getColorCustomization_Color();
+		EAttribute COLOR_CUSTOMIZATION__COLOR = eINSTANCE.getColorCustomization_Color();
 
 		/**
 		 * The meta object literal for the '<em><b>Applied On</b></em>' reference list feature.

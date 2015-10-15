@@ -1,0 +1,37 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) 
+{
+	final ColorUseCase colorUseCase = parameter.getColorUseCase();
+	if (colorUseCase.equals(ColorUseCase.COLOR)) 
+	{
+		final EList<EObject> targetElements = parameter.getAppliedOn();
+		final EList<EObject> targetForStokeColor = new BasicEList<EObject>();
+		final EList<EObject> targetForOther = new BasicEList<EObject>();
+
+		/** First: Extract edge element from the applied on **/
+		for (EObject iTarget : targetElements) 
+		{
+			if (iTarget instanceof EdgeStyleDescription) 
+			{
+				targetForStokeColor.add(iTarget);
+			} 
+			else 
+			{
+				targetForOther.add(iTarget);
+			}
+		}
+
+		/** Second: Create two StylePropertyNameValueCouple. 
+		 *  One for the color customization and 
+		 *  the other one for the stokeColor customization **/
+		SystemColors colorEnum = parameter.getColor();
+		SystemColor color = SiriusSystemColorHelper.getSystemColorDescription(colorEnum.getName());
+		if (color != null)
+		{
+			set_strokeColor(new StylePropertyNameValueCouple("strokeColor", color));
+			set_strokeColorAppliedOn(targetForStokeColor);
+			
+			set_color(new StylePropertyNameValueCouple("color", color));
+			set_colorAppliedOn(targetForOther);
+		}
+	}
+}

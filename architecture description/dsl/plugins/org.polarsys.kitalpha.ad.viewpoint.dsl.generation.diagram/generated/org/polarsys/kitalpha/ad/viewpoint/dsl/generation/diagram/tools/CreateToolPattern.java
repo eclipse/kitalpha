@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -60,12 +49,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
 public class CreateToolPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractCreationTool {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractCreationTool {
 
 	public CreateToolPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -87,8 +76,7 @@ public class CreateToolPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -102,36 +90,31 @@ public class CreateToolPattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createConcretTool(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createConcretTool(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String clazzName = "";
 		String referenceName = "";
 		boolean useJavaService = false;
 
 		/***
-		 String s_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
-		 String s_class_name = "CreateToolService";
-		 String s_service_name = s_package_name.toLowerCase()+ "." + s_class_name;
-		 **/
+		String s_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
+		String s_class_name = "CreateToolService";
+		String s_service_name = s_package_name.toLowerCase()+ "." + s_class_name;
+		**/
 
 		String vSource = VSMVariable.source.getExpressionVariable();
 		String vTarget = VSMVariable.target.getExpressionVariable();
 
-		String mParameters = "(" + VSMVariable.sourceView.getInnerVariable()
-				+ "," + VSMVariable.target.getInnerVariable() + ","
-				+ VSMVariable.targetView.getInnerVariable() + ")";
+		String mParameters = "(" + VSMVariable.sourceView.getInnerVariable() + ","
+				+ VSMVariable.target.getInnerVariable() + "," + VSMVariable.targetView.getInnerVariable() + ")";
 
 		String icon_path = null;
-		if (parameter.getIcon() != null
-				&& parameter.getIcon().trim().length() > 0) {
-			icon_path = IconPathHelper.computeDslIconPath(parameter.getIcon(),
-					parameter);
+		if (parameter.getIcon() != null && parameter.getIcon().trim().length() > 0) {
+			icon_path = IconPathHelper.computeDslIconPath(parameter.getIcon(), parameter);
 			IconPathHelper.copyIconFile(parameter.getIcon(), parameter);
 		}
 
@@ -139,16 +122,14 @@ public class CreateToolPattern
 		case VpdiagramPackage.NODE:
 		case VpdiagramPackage.BORDERED_NODE:
 		case VpdiagramPackage.CONTAINER:
-			DiagramElement diagram_element = (DiagramElement) parameter
-					.getTool_For();
+			DiagramElement diagram_element = (DiagramElement) parameter.getTool_For();
 			String mappingName = diagram_element.getName();
 
 			AbstractNode node_mapping = (AbstractNode) parameter.getTool_For();
 
 			InitialNodeCreationOperation init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
 					.createInitialNodeCreationOperation();
-			NodeCreationVariable v_container = ToolFactory.eINSTANCE
-					.createNodeCreationVariable();
+			NodeCreationVariable v_container = ToolFactory.eINSTANCE.createNodeCreationVariable();
 			v_container.setName("container");
 			ContainerViewVariable v_container_view = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
 					.createContainerViewVariable();
@@ -174,39 +155,28 @@ public class CreateToolPattern
 			}
 
 			if (useJavaService) {
-				String n_package_name = (String) ctx
-						.getValue("design.project.name") + ".service.tools";
+				String n_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
 				String n_class_name = "CreateToolService";
 				String n_service_name = n_package_name + "." + n_class_name;
 
-				JavaServiceData javaServiceData = GenerationUtil
-						.getJavaServiceData(n_service_name);
+				JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(n_service_name);
 
 				if (javaServiceData != null) {
 					javaServiceData.setContext(parameter);
-					String n_method_name = "CreateInstance"
-							+ node_mapping.getThe_domain().getDomain_Class()
-									.getName();
+					String n_method_name = "CreateInstance" + node_mapping.getThe_domain().getDomain_Class().getName();
 					JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
-					JavaMethodData javaMethodData = new JavaMethodData(
-							n_method_name, n_returnType);
-					javaMethodData.addMethodParameter(
-							VSMVariable.container.toString(), "EObject",
+					JavaMethodData javaMethodData = new JavaMethodData(n_method_name, n_returnType);
+					javaMethodData.addMethodParameter(VSMVariable.container.toString(), "EObject",
 							"the semantic container of the new model element");
-					javaMethodData.addMethodParameter(
-							VSMVariable.containerView.toString(), "EObject",
+					javaMethodData.addMethodParameter(VSMVariable.containerView.toString(), "EObject",
 							"the view of the semantic container");
 
 					javaServiceData.addMethod(javaMethodData);
 
-					If n_if = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-							.createIf();
-					String pContainerView = "("
-							+ VSMVariable.containerView.getInnerVariable()
-							+ ")";
-					n_if.setConditionExpression(SiriusExpressionHelper
-							.getExpressoin(n_method_name + pContainerView,
-									ExpressionInterpreter.Service));
+					If n_if = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
+					String pContainerView = "(" + VSMVariable.containerView.getInnerVariable() + ")";
+					n_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name + pContainerView,
+							ExpressionInterpreter.Service));
 					gotoContainer.getSubModelOperations().add(n_if);
 				}
 			} else {
@@ -224,18 +194,15 @@ public class CreateToolPattern
 
 			if (node_mapping instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node
 					|| node_mapping instanceof BorderedNode) {
-				creationTool = ToolFactory.eINSTANCE
-						.createNodeCreationDescription();
+				creationTool = ToolFactory.eINSTANCE.createNodeCreationDescription();
 				NodeCreationDescription nodeCreationTool = (NodeCreationDescription) creationTool;
 				if (icon_path != null && icon_path.trim().length() > 0) {
 					nodeCreationTool.setIconPath(icon_path);
 				}
-				NodeMapping nm = (NodeMapping) GenerationUtil
-						.getDoremiElement(node_mapping);
+				NodeMapping nm = (NodeMapping) GenerationUtil.getDoremiElement(node_mapping);
 				nodeCreationTool.getNodeMappings().add(nm);
 				nodeCreationTool.setName(mappingName + "CreationTool");
-				if (parameter.getLabel() != null
-						&& parameter.getLabel().trim().length() > 0)
+				if (parameter.getLabel() != null && parameter.getLabel().trim().length() > 0)
 					nodeCreationTool.setLabel(parameter.getLabel());
 				else
 					nodeCreationTool.setLabel(mappingName);
@@ -244,18 +211,15 @@ public class CreateToolPattern
 				nodeCreationTool.setViewVariable(v_container_view);
 				nodeCreationTool.setInitialOperation(init);
 			} else {
-				creationTool = ToolFactory.eINSTANCE
-						.createContainerCreationDescription();
+				creationTool = ToolFactory.eINSTANCE.createContainerCreationDescription();
 				ContainerCreationDescription containerCreationTool = (ContainerCreationDescription) creationTool;
 				if (icon_path != null && icon_path.trim().length() > 0) {
 					containerCreationTool.setIconPath(icon_path);
 				}
-				ContainerMapping cm = (ContainerMapping) GenerationUtil
-						.getDoremiElement(node_mapping);
+				ContainerMapping cm = (ContainerMapping) GenerationUtil.getDoremiElement(node_mapping);
 				containerCreationTool.getContainerMappings().add(cm);
 				containerCreationTool.setName(mappingName + "CreationTool");
-				if (parameter.getLabel() != null
-						&& parameter.getLabel().trim().length() > 0)
+				if (parameter.getLabel() != null && parameter.getLabel().trim().length() > 0)
 					containerCreationTool.setLabel(parameter.getLabel());
 				else
 					containerCreationTool.setLabel(mappingName);
@@ -265,8 +229,7 @@ public class CreateToolPattern
 				containerCreationTool.setInitialOperation(init);
 			}
 
-			if (creationTool != null && parameter.getIcon() != null
-					&& parameter.getIcon().trim().length() > 0) {
+			if (creationTool != null && parameter.getIcon() != null && parameter.getIcon().trim().length() > 0) {
 				// FIXME : To finish
 			}
 
@@ -279,8 +242,7 @@ public class CreateToolPattern
 			String e_mappingName = edge_mapping.getName();
 
 			// creation of the edge creation tool 
-			EdgeCreationDescription edge_creation_tool = ToolFactory.eINSTANCE
-					.createEdgeCreationDescription();
+			EdgeCreationDescription edge_creation_tool = ToolFactory.eINSTANCE.createEdgeCreationDescription();
 			if (icon_path != null && icon_path.trim().length() > 0) {
 				edge_creation_tool.setIconPath(icon_path);
 			}
@@ -288,29 +250,23 @@ public class CreateToolPattern
 			// Default variable creation
 			InitEdgeCreationOperation e_init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
 					.createInitEdgeCreationOperation();
-			SourceEdgeCreationVariable source = ToolFactory.eINSTANCE
-					.createSourceEdgeCreationVariable();
+			SourceEdgeCreationVariable source = ToolFactory.eINSTANCE.createSourceEdgeCreationVariable();
 			source.setName("source");
-			TargetEdgeCreationVariable target = ToolFactory.eINSTANCE
-					.createTargetEdgeCreationVariable();
+			TargetEdgeCreationVariable target = ToolFactory.eINSTANCE.createTargetEdgeCreationVariable();
 			target.setName("target");
-			SourceEdgeViewCreationVariable source_view = ToolFactory.eINSTANCE
-					.createSourceEdgeViewCreationVariable();
+			SourceEdgeViewCreationVariable source_view = ToolFactory.eINSTANCE.createSourceEdgeViewCreationVariable();
 			source_view.setName("sourceView");
-			TargetEdgeViewCreationVariable target_view = ToolFactory.eINSTANCE
-					.createTargetEdgeViewCreationVariable();
+			TargetEdgeViewCreationVariable target_view = ToolFactory.eINSTANCE.createTargetEdgeViewCreationVariable();
 			target_view.setName("targetView");
 
 			// Setting the edge creation tool parameters 
 
 			// Mapping
-			EdgeMapping em = (EdgeMapping) GenerationUtil
-					.getDoremiElement(edge_mapping);
+			EdgeMapping em = (EdgeMapping) GenerationUtil.getDoremiElement(edge_mapping);
 			edge_creation_tool.getEdgeMappings().add(em);
 			// ID and Label
 			edge_creation_tool.setName(e_mappingName);
-			if (parameter.getLabel() != null
-					&& parameter.getLabel().trim().length() > 0)
+			if (parameter.getLabel() != null && parameter.getLabel().trim().length() > 0)
 				edge_creation_tool.setLabel(parameter.getLabel());
 			else
 				edge_creation_tool.setLabel(e_mappingName);
@@ -328,43 +284,31 @@ public class CreateToolPattern
 
 			if (edge_mapping.getThe_domain() != null) {
 				// Gather informations
-				target_asso = ((EdgeDomainAssociation) edge_mapping
-						.getThe_domain()).getTarget_Locator();
+				target_asso = ((EdgeDomainAssociation) edge_mapping.getThe_domain()).getTarget_Locator();
 
 				if (edge_mapping.getThe_domain() instanceof EdgeDomainElement) {
-					source_asso = ((EdgeDomainElement) edge_mapping
-							.getThe_domain()).getSource_Locator();
-					clazz = ((EdgeDomainElement) edge_mapping.getThe_domain())
-							.getThe_Domain();
+					source_asso = ((EdgeDomainElement) edge_mapping.getThe_domain()).getSource_Locator();
+					clazz = ((EdgeDomainElement) edge_mapping.getThe_domain()).getThe_Domain();
 					//element_container = ((EdgeDomainElement) edge_mapping.getThe_domain()).getElement_container();
 
-					String e_package_name = (String) ctx
-							.getValue("design.project.name") + ".service.tools";
+					String e_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
 					String e_class_name = "CreateToolService";
-					String e_service_name = e_package_name.toLowerCase() + "."
-							+ e_class_name;
-					JavaServiceData javaServiceData = GenerationUtil
-							.getJavaServiceData(e_service_name);
+					String e_service_name = e_package_name.toLowerCase() + "." + e_class_name;
+					JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(e_service_name);
 
 					if (javaServiceData != null) {
 						javaServiceData.setContext(parameter);
 						// Java method creation
-						String e_method_name = "create" + clazz.getName()
-								+ "Instance";
+						String e_method_name = "create" + clazz.getName() + "Instance";
 						JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
-						JavaMethodData javaMethodData = new JavaMethodData(
-								e_method_name, n_returnType);
-						javaMethodData.addMethodParameter(
-								VSMVariable.source.toString(), "EObject",
+						JavaMethodData javaMethodData = new JavaMethodData(e_method_name, n_returnType);
+						javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject",
 								"the semantic source element");
-						javaMethodData.addMethodParameter(
-								VSMVariable.sourceView.toString(), "EObject",
+						javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject",
 								"the semantic source view");
-						javaMethodData.addMethodParameter(
-								VSMVariable.target.toString(), "EObject",
+						javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject",
 								"the semantic target element");
-						javaMethodData.addMethodParameter(
-								VSMVariable.targetView.toString(), "EObject",
+						javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject",
 								"the semantic target view");
 
 						javaServiceData.addMethod(javaMethodData);
@@ -373,11 +317,9 @@ public class CreateToolPattern
 								.createChangeContext();
 						gotoElementContainer.setBrowseExpression(vSource);
 
-						If iv = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-								.createIf();
-						iv.setConditionExpression(SiriusExpressionHelper
-								.getExpressoin(e_method_name + mParameters,
-										ExpressionInterpreter.Service));
+						If iv = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
+						iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(e_method_name + mParameters,
+								ExpressionInterpreter.Service));
 
 						gotoElementContainer.getSubModelOperations().add(iv);
 						e_init.setFirstModelOperations(gotoElementContainer);
@@ -390,11 +332,11 @@ public class CreateToolPattern
 							//createElement.setReferenceName(element_container.getName());
 							createElement.setTypeName(clazz.getName());
 							createElement.setVariableName("element");
-
+						
 							ChangeContext gotoElement = ToolFactory.eINSTANCE.createChangeContext();
 							String vElement = VSMVariable.element.getExpressionVariable();
 							gotoElement.setBrowseExpression(vElement);
-
+						
 							if (source_asso != null) 
 							{
 								SetValue setSource = ToolFactory.eINSTANCE.createSetValue();
@@ -411,14 +353,14 @@ public class CreateToolPattern
 								getSemanticSourceElementMethodData.addMethodParameter(VSMVariable.sourceView.toString(),"EObject", "the semantic source view");
 								getSemanticSourceElementMethodData.addMethodParameter(VSMVariable.target.toString(),"EObject", "the semantic target element");
 								getSemanticSourceElementMethodData.addMethodParameter(VSMVariable.targetView.toString(),"EObject", "the semantic target view");
-
+						
 								javaServiceData.addMethod(getSemanticSourceElementMethodData);
 								
 								If source_if = (If) ToolFactory.eINSTANCE.createIf();
 								source_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(sourceMethodName+ mParameters, ExpressionInterpreter.Service));
 								gotoElement.getSubModelOperations().add(source_if);
 							}
-
+						
 							if (target_asso != null )
 							{
 								SetValue setTarget = ToolFactory.eINSTANCE.createSetValue();
@@ -435,14 +377,14 @@ public class CreateToolPattern
 								getSemanticTargetElementMethodData.addMethodParameter(VSMVariable.sourceView.toString(),"EObject", "the semantic source view");
 								getSemanticTargetElementMethodData.addMethodParameter(VSMVariable.target.toString(),"EObject", "the semantic target element");
 								getSemanticTargetElementMethodData.addMethodParameter(VSMVariable.targetView.toString(),"EObject", "the semantic target view");
-
+						
 								javaServiceData.addMethod(getSemanticTargetElementMethodData);
 								
 								If target_if = (If) ToolFactory.eINSTANCE.createIf();
 								target_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(targetMethodName+ mParameters, ExpressionInterpreter.Service));
 								gotoElement.getSubModelOperations().add(target_if);
 							}
-
+						
 							createElement.getSubModelOperations().add(gotoElement);
 							gotoElementContainer.getSubModelOperations().add(createElement);
 							e_init.setFirstModelOperations(gotoElementContainer);
@@ -461,45 +403,33 @@ public class CreateToolPattern
 						setValue.setFeatureName(target_asso.getName());
 						setValue.setValueExpression(vTarget);
 					} else {
-						String e_package_name = (String) ctx
-								.getValue("design.project.name")
-								+ ".service.tools";
+						String e_package_name = (String) ctx.getValue("design.project.name") + ".service.tools";
 						String e_class_name = "CreateToolService";
-						String e_service_name = e_package_name.toLowerCase()
-								+ "." + e_class_name;
+						String e_service_name = e_package_name.toLowerCase() + "." + e_class_name;
 
-						JavaServiceData javaServiceData = GenerationUtil
-								.getJavaServiceData(e_service_name);
+						JavaServiceData javaServiceData = GenerationUtil.getJavaServiceData(e_service_name);
 
 						if (javaServiceData != null) {
 							javaServiceData.setContext(parameter);
-							String e_method_name = parameter.getName()
-									+ "CreationHelper";
+							String e_method_name = parameter.getName() + "CreationHelper";
 							JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
-							JavaMethodData javaMethodData = new JavaMethodData(
-									e_method_name, n_returnType);
+							JavaMethodData javaMethodData = new JavaMethodData(e_method_name, n_returnType);
 
-							javaMethodData.addMethodParameter(
-									VSMVariable.source.toString(), "EObject",
+							javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject",
 									"the semantic source element");
-							javaMethodData.addMethodParameter(
-									VSMVariable.sourceView.toString(),
-									"EObject", "the semantic source view");
-							javaMethodData.addMethodParameter(
-									VSMVariable.target.toString(), "EObject",
+							javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject",
+									"the semantic source view");
+							javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject",
 									"the semantic target element");
-							javaMethodData.addMethodParameter(
-									VSMVariable.targetView.toString(),
-									"EObject", "the semantic target view");
+							javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject",
+									"the semantic target view");
 
 							javaServiceData.addMethod(javaMethodData);
 
-							operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-									.createIf();
+							operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
 							If n_if = (If) operation;
 							n_if.setConditionExpression(SiriusExpressionHelper
-									.getExpressoin(e_method_name + mParameters,
-											ExpressionInterpreter.Service));
+									.getExpressoin(e_method_name + mParameters, ExpressionInterpreter.Service));
 						}
 					}
 
@@ -514,8 +444,7 @@ public class CreateToolPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool", out.toString());
 	}
 
 	public Map<String, Object> getParameters() {

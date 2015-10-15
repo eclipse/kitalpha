@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014-2015 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated with EGF 1.3.0.v20150603-1508
-
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -66,6 +55,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.m
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.NodePattern {
 
 	public NodeImportPattern() {
@@ -110,8 +101,8 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 			parameters.put("imported_m", this.inm);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ",
-							ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ",
+					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -346,6 +337,13 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 
 				nStyleDesc.setResizeKind(ResizeKind.NSEW_LITERAL);
 
+			} else {
+				EcoreUtil.Copier copier = new EcoreUtil.Copier();
+				nStyleDesc = (NodeStyleDescription) copier.copy(parameter.getImports().getStyle());
+				copier.copyReferences();
+			}
+
+			if (nStyleDesc != null) {
 				/********************** Setting Label properties ************************/
 				Label label = iNodeDescription.getNode_Label();
 				String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);

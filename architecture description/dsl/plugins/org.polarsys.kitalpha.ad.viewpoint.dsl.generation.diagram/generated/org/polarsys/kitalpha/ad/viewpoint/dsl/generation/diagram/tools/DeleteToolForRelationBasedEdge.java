@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -28,8 +18,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
 public class DeleteToolForRelationBasedEdge
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeDeleteTool {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeDeleteTool {
 
 	public DeleteToolForRelationBasedEdge() {
 		//Here is the constructor
@@ -56,8 +45,7 @@ public class DeleteToolForRelationBasedEdge
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -71,31 +59,27 @@ public class DeleteToolForRelationBasedEdge
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createToolOperations(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createToolOperations(final StringBuffer out, final PatternContext ctx) throws Exception {
 		AbstractAssociation reference = (AbstractAssociation) t_association;
 		if (reference != null) {
-			ChangeContext gotoElement = ToolFactory.eINSTANCE
-					.createChangeContext();
+			ChangeContext gotoElement = ToolFactory.eINSTANCE.createChangeContext();
 			String pElement = VSMVariable.element.getExpressionVariable();
 			gotoElement.setBrowseExpression(pElement);
 
 			initial_operation.setFirstModelOperations(gotoElement);
 
 			//String pElementView = VSMVariable.elementView.getInnerVariable()+".targetNode.target" ;
-			String pElementView = VSMVariable.elementView.getInnerVariable()
-					+ "." + SiriusExpressionHelper.getEdgeSemanticTarget(false);
+			String pElementView = VSMVariable.elementView.getInnerVariable() + "."
+					+ SiriusExpressionHelper.getEdgeSemanticTarget(false);
 
 			String ref_name = reference.getName();
 			Unset unset = ToolFactory.eINSTANCE.createUnset();
-			unset.setElementExpression(SiriusExpressionHelper
-					.getExpressoin(pElementView));
+			unset.setElementExpression(SiriusExpressionHelper.getExpressoin(pElementView));
 			unset.setFeatureName(ref_name);
 
 			gotoElement.getSubModelOperations().add(unset);
@@ -104,15 +88,12 @@ public class DeleteToolForRelationBasedEdge
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createToolOperations",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createToolOperations", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx)
-				&& (parameter.getTool_For() != null
-						&& parameter.getTool_For() instanceof Edge && !(((Edge) parameter
-							.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
+		return super.preCondition(ctx) && (parameter.getTool_For() != null && parameter.getTool_For() instanceof Edge
+				&& !(((Edge) parameter.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
 	}
 
 	public Map<String, Object> getParameters() {

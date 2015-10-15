@@ -27,8 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.sirius.viewpoint.FontFormat;
 
-import org.eclipse.sirius.viewpoint.description.ColorDescription;
-
+import org.eclipse.sirius.viewpoint.description.SystemColors;
 import org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.CustomizationExpression;
@@ -59,14 +58,27 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Vpst
 public class LabelCustomizationImpl extends AbstractCustomizationImpl implements LabelCustomization {
 
 	/**
-	 * The cached value of the '{@link #getColor() <em>Color</em>}' reference.
+	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColor()
+	 * @generated NOT
+	 * @ordered
+	 */
+	protected static final SystemColors COLOR_EDEFAULT = null;
+
+
+
+
+	/**
+	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
 	 */
-	protected ColorDescription color;
+	protected SystemColors color = COLOR_EDEFAULT;
 
 
 
@@ -102,10 +114,10 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSize()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final int SIZE_EDEFAULT = 0;
+	protected static final int SIZE_EDEFAULT = -1;
 
 	/**
 	 * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
@@ -125,10 +137,10 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFormat()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final FontFormat FORMAT_EDEFAULT = FontFormat.ITALIC_LITERAL;
+	protected static final FontFormat FORMAT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
@@ -158,10 +170,10 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isShowIcon()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected boolean showIcon = SHOW_ICON_EDEFAULT;
+	protected Boolean showIcon = SHOW_ICON_EDEFAULT;
 
 
 
@@ -230,28 +242,7 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	 * @generated
 	 */
 
-	public ColorDescription getColor() {
-
-		if (color != null && color.eIsProxy()) {
-			InternalEObject oldColor = (InternalEObject)color;
-			color = (ColorDescription)eResolveProxy(oldColor);
-			if (color != oldColor) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VpstylecustomizationPackage.LABEL_CUSTOMIZATION__COLOR, oldColor, color));
-			}
-		}
-		return color;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public ColorDescription basicGetColor() {
+	public SystemColors getColor() {
 
 		return color;
 	}
@@ -264,19 +255,14 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	 * @generated
 	 */
 
-	public void setColor(ColorDescription newColor) {
+	public void setColor(SystemColors newColor) {
 
-		ColorDescription oldColor = color;
-		color = newColor;
+		SystemColors oldColor = color;
+		color = newColor == null ? COLOR_EDEFAULT : newColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpstylecustomizationPackage.LABEL_CUSTOMIZATION__COLOR, oldColor, color));
 
 	}
-
-
-
-
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -439,16 +425,14 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public void setShowIcon(boolean newShowIcon) {
-
-		boolean oldShowIcon = showIcon;
+		Boolean oldShowIcon = showIcon;
 		showIcon = newShowIcon;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpstylecustomizationPackage.LABEL_CUSTOMIZATION__SHOW_ICON, oldShowIcon, showIcon));
-
 	}
 
 
@@ -565,8 +549,7 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__COLOR:
-				if (resolve) return getColor();
-				return basicGetColor();
+				return getColor();
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__OWNED_LABEL_ALIGNMENT:
 				return getOwnedLabelAlignment();
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__APPLIED_ON:
@@ -595,7 +578,7 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__COLOR:
-				setColor((ColorDescription)newValue);
+				setColor((SystemColors)newValue);
 				return;
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__OWNED_LABEL_ALIGNMENT:
 				setOwnedLabelAlignment((LabelAlignmentCustomization)newValue);
@@ -633,7 +616,7 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__COLOR:
-				setColor((ColorDescription)null);
+				setColor(COLOR_EDEFAULT);
 				return;
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__OWNED_LABEL_ALIGNMENT:
 				setOwnedLabelAlignment((LabelAlignmentCustomization)null);
@@ -671,7 +654,7 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__COLOR:
-				return color != null;
+				return color != COLOR_EDEFAULT;
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__OWNED_LABEL_ALIGNMENT:
 				return ownedLabelAlignment != null;
 			case VpstylecustomizationPackage.LABEL_CUSTOMIZATION__APPLIED_ON:
@@ -701,7 +684,9 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (size: ");
+		result.append(" (color: ");
+		result.append(color);
+		result.append(", size: ");
 		result.append(size);
 		result.append(", format: ");
 		result.append(format);

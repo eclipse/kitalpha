@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:22:06 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.tools;
 
 import java.util.*;
@@ -19,20 +8,17 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
 public class genJavaServiceForDropTool
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
 	protected static String nl;
 
-	public static synchronized genJavaServiceForDropTool create(
-			String lineSeparator) {
+	public static synchronized genJavaServiceForDropTool create(String lineSeparator) {
 		nl = lineSeparator;
 		genJavaServiceForDropTool result = new genJavaServiceForDropTool();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL;
 
@@ -67,8 +53,7 @@ public class genJavaServiceForDropTool
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_1);
@@ -86,16 +71,14 @@ public class genJavaServiceForDropTool
 			parameterValues.put("dropTool", this.dropTool);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Drop dropTool = null;
 
-	public void set_dropTool(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Drop object) {
+	public void set_dropTool(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Drop object) {
 		this.dropTool = object;
 	}
 
@@ -105,18 +88,15 @@ public class genJavaServiceForDropTool
 		return parameters;
 	}
 
-	protected void method_setParameters(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		super.parameter = dropTool;
 		super.method_setParameters(stringBuffer, ctx);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx)
-				&& GenerationUtil.getJavaServiceDataFor(dropTool) != null;
+		return super.preCondition(ctx) && GenerationUtil.getJavaServiceDataFor(dropTool) != null;
 	}
 }

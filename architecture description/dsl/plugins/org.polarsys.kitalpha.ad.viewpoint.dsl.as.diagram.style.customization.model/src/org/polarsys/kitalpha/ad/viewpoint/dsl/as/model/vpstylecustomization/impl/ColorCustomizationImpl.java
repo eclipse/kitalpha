@@ -19,14 +19,10 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import org.eclipse.sirius.viewpoint.description.ColorDescription;
-
+import org.eclipse.sirius.viewpoint.description.SystemColors;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorUseCase;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.VpstylecustomizationPackage;
@@ -49,14 +45,27 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Vpst
 public class ColorCustomizationImpl extends AbstractCustomizationImpl implements ColorCustomization {
 
 	/**
-	 * The cached value of the '{@link #getColor() <em>Color</em>}' reference.
+	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColor()
+	 * @generated NOT
+	 * @ordered
+	 */
+	protected static final SystemColors COLOR_EDEFAULT = null;
+
+
+
+
+	/**
+	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
 	 */
-	protected ColorDescription color;
+	protected SystemColors color = COLOR_EDEFAULT;
 
 
 
@@ -125,28 +134,7 @@ public class ColorCustomizationImpl extends AbstractCustomizationImpl implements
 	 * @generated
 	 */
 
-	public ColorDescription getColor() {
-
-		if (color != null && color.eIsProxy()) {
-			InternalEObject oldColor = (InternalEObject)color;
-			color = (ColorDescription)eResolveProxy(oldColor);
-			if (color != oldColor) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR, oldColor, color));
-			}
-		}
-		return color;
-	}
-
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-
-	public ColorDescription basicGetColor() {
+	public SystemColors getColor() {
 
 		return color;
 	}
@@ -159,19 +147,14 @@ public class ColorCustomizationImpl extends AbstractCustomizationImpl implements
 	 * @generated
 	 */
 
-	public void setColor(ColorDescription newColor) {
+	public void setColor(SystemColors newColor) {
 
-		ColorDescription oldColor = color;
-		color = newColor;
+		SystemColors oldColor = color;
+		color = newColor == null ? COLOR_EDEFAULT : newColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR, oldColor, color));
 
 	}
-
-
-
-
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,8 +215,7 @@ public class ColorCustomizationImpl extends AbstractCustomizationImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR:
-				if (resolve) return getColor();
-				return basicGetColor();
+				return getColor();
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__APPLIED_ON:
 				return getAppliedOn();
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR_USE_CASE:
@@ -252,7 +234,7 @@ public class ColorCustomizationImpl extends AbstractCustomizationImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR:
-				setColor((ColorDescription)newValue);
+				setColor((SystemColors)newValue);
 				return;
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__APPLIED_ON:
 				getAppliedOn().clear();
@@ -275,7 +257,7 @@ public class ColorCustomizationImpl extends AbstractCustomizationImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR:
-				setColor((ColorDescription)null);
+				setColor(COLOR_EDEFAULT);
 				return;
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__APPLIED_ON:
 				getAppliedOn().clear();
@@ -298,7 +280,7 @@ public class ColorCustomizationImpl extends AbstractCustomizationImpl implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR:
-				return color != null;
+				return color != COLOR_EDEFAULT;
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__APPLIED_ON:
 				return appliedOn != null && !appliedOn.isEmpty();
 			case VpstylecustomizationPackage.COLOR_CUSTOMIZATION__COLOR_USE_CASE:
@@ -318,7 +300,9 @@ public class ColorCustomizationImpl extends AbstractCustomizationImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (colorUseCase: ");
+		result.append(" (color: ");
+		result.append(color);
+		result.append(", colorUseCase: ");
 		result.append(colorUseCase);
 		result.append(')');
 		return result.toString();

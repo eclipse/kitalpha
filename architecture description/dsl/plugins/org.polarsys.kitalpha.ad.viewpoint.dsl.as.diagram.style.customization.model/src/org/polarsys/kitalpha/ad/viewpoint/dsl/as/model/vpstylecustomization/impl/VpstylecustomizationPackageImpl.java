@@ -392,8 +392,8 @@ public class VpstylecustomizationPackageImpl extends EPackageImpl implements Vps
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLabelCustomization_Color() {
-		return (EReference)labelCustomizationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getLabelCustomization_Color() {
+		return (EAttribute)labelCustomizationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -500,8 +500,8 @@ public class VpstylecustomizationPackageImpl extends EPackageImpl implements Vps
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getColorCustomization_Color() {
-		return (EReference)colorCustomizationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getColorCustomization_Color() {
+		return (EAttribute)colorCustomizationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1145,7 +1145,7 @@ public class VpstylecustomizationPackageImpl extends EPackageImpl implements Vps
 		createEReference(customizationExpressionEClass, CUSTOMIZATION_EXPRESSION__OWNED_EXPRESSION_ELEMENT);
 
 		labelCustomizationEClass = createEClass(LABEL_CUSTOMIZATION);
-		createEReference(labelCustomizationEClass, LABEL_CUSTOMIZATION__COLOR);
+		createEAttribute(labelCustomizationEClass, LABEL_CUSTOMIZATION__COLOR);
 		createEReference(labelCustomizationEClass, LABEL_CUSTOMIZATION__OWNED_LABEL_ALIGNMENT);
 		createEReference(labelCustomizationEClass, LABEL_CUSTOMIZATION__APPLIED_ON);
 		createEAttribute(labelCustomizationEClass, LABEL_CUSTOMIZATION__SIZE);
@@ -1159,7 +1159,7 @@ public class VpstylecustomizationPackageImpl extends EPackageImpl implements Vps
 		createEAttribute(labelAlignmentCustomizationEClass, LABEL_ALIGNMENT_CUSTOMIZATION__ALIGNMENT);
 
 		colorCustomizationEClass = createEClass(COLOR_CUSTOMIZATION);
-		createEReference(colorCustomizationEClass, COLOR_CUSTOMIZATION__COLOR);
+		createEAttribute(colorCustomizationEClass, COLOR_CUSTOMIZATION__COLOR);
 		createEReference(colorCustomizationEClass, COLOR_CUSTOMIZATION__APPLIED_ON);
 		createEAttribute(colorCustomizationEClass, COLOR_CUSTOMIZATION__COLOR_USE_CASE);
 
@@ -1319,7 +1319,7 @@ public class VpstylecustomizationPackageImpl extends EPackageImpl implements Vps
 		initEReference(getCustomizationExpression_OwnedExpressionElement(), theExpressionPackage.getAbstractComputableElement(), null, "ownedExpressionElement", null, 0, 1, CustomizationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(labelCustomizationEClass, LabelCustomization.class, "LabelCustomization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLabelCustomization_Color(), theDescriptionPackage.getColorDescription(), null, "color", null, 1, 1, LabelCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLabelCustomization_Color(), theDescriptionPackage.getSystemColors(), "color", null, 0, 1, LabelCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLabelCustomization_OwnedLabelAlignment(), this.getLabelAlignmentCustomization(), null, "ownedLabelAlignment", null, 0, 1, LabelCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLabelCustomization_AppliedOn(), theStylePackage.getBasicLabelStyleDescription(), null, "appliedOn", null, 0, -1, LabelCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLabelCustomization_Size(), ecorePackage.getEInt(), "size", null, 0, 1, LabelCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1333,7 +1333,7 @@ public class VpstylecustomizationPackageImpl extends EPackageImpl implements Vps
 		initEAttribute(getLabelAlignmentCustomization_Alignment(), theViewpointPackage.getLabelAlignment(), "alignment", null, 0, 1, LabelAlignmentCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colorCustomizationEClass, ColorCustomization.class, "ColorCustomization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getColorCustomization_Color(), theDescriptionPackage.getColorDescription(), null, "color", null, 1, 1, ColorCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColorCustomization_Color(), theDescriptionPackage.getSystemColors(), "color", null, 0, 1, ColorCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getColorCustomization_AppliedOn(), theEcorePackage.getEObject(), null, "appliedOn", null, 0, -1, ColorCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColorCustomization_ColorUseCase(), this.getColorUseCase(), "colorUseCase", null, 0, 1, ColorCustomization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

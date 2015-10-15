@@ -1,0 +1,70 @@
+final EList<SpecificContainerStyleCustomization> specificCustomizations = parameter.getOwnedSpecificContainerStyleCustomization();
+for (SpecificContainerStyleCustomization specificCustomization : specificCustomizations) 
+{
+	if (specificCustomization instanceof ContainerWorkspaceImageCustomization)
+	{
+		ContainerWorkspaceImageCustomization cwic = (ContainerWorkspaceImageCustomization) specificCustomization;
+		set_workspacePathAppliedOn(cwic.getAppliedOn());
+		if (cwic.eIsSet(VpstylecustomizationPackage.eINSTANCE.getContainerWorkspaceImageCustomization_WorkspacePath())) {
+			set_workspacePath(new StylePropertyNameValueCouple("workspacePath", cwic.getWorkspacePath()));
+		}
+	}
+	
+	if (specificCustomization instanceof FlatContainerStyleCustomization)
+	{
+		FlatContainerStyleCustomization fcsc = (FlatContainerStyleCustomization) specificCustomization;
+		set_backgroundStyleAppliedOn(fcsc.getAppliedOn());
+		if (fcsc.eIsSet(VpstylecustomizationPackage.eINSTANCE.getFlatContainerStyleCustomization_BackgroundStyle())) 
+		{
+			String enumLiteralName = fcsc.getBackgroundStyle().toString();
+			String methodCode = "return DiagramPackage.eINSTANCE.getBackgroundStyle().getEEnumLiteral(\"" + enumLiteralName + "\");";
+			char first = Character.toUpperCase(enumLiteralName.charAt(0));
+			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
+			String methodName = "getBackgroundStyle" + enumLiteralName;
+
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+
+			// Set method parameters data
+			javaMethodData.addMethodParameter("any", "EObject", "any model element");
+
+			// Set method Required classes FQN
+			javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+			javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+
+			// Add the method to the Java Service.
+			if (javaMethodData != null)
+				enumHelperJavaServiceData.addMethod(javaMethodData);
+
+			set_backgroundStyle(new StylePropertyNameValueCouple("backgroundStyle", "service:" + methodName));
+		}
+	}
+	
+	if (specificCustomization instanceof ShapeContainerStyleCustomization)
+	{
+		ShapeContainerStyleCustomization scsc = (ShapeContainerStyleCustomization) specificCustomization;
+		set_shapeAppliedOn(scsc.getAppliedOn());
+		if (scsc.eIsSet(VpstylecustomizationPackage.eINSTANCE.getShapeContainerStyleCustomization_Shape())) 
+		{
+			String enumLiteralName = scsc.getShape().toString();
+			String methodCode = "return DiagramPackage.eINSTANCE.getContainerShape().getEEnumLiteral(\"" + enumLiteralName + "\");";
+			char first = Character.toUpperCase(enumLiteralName.charAt(0));
+			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
+			String methodName = "getContainerShape" + enumLiteralName;
+
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+
+			// Set method parameters data
+			javaMethodData.addMethodParameter("any", "EObject", "any model element");
+
+			// Set method Required classes FQN
+			javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+			javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+
+			// Add the method to the Java Service.
+			if (javaMethodData != null)
+				enumHelperJavaServiceData.addMethod(javaMethodData);
+
+			set_shape(new StylePropertyNameValueCouple("shape", "service:" + methodName));
+		}
+	}
+}

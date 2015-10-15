@@ -29,7 +29,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LabelCustomization" eSuperTypes="#//AbstractCustomization">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="color" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/ColorDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedLabelAlignment" eType="#//LabelAlignmentCustomization"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
@@ -48,7 +48,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//LabelAlignment"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColorCustomization" eSuperTypes="#//AbstractCustomization">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="color" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/ColorDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="appliedOn" upperBound="-1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorUseCase" eType="#//ColorUseCase"/>

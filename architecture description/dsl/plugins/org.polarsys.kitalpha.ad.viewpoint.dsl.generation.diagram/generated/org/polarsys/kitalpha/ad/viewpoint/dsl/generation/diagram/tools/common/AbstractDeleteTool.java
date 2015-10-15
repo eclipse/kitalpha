@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Tue Jul 15 11:05:01 CEST 2014 with EGF 1.2.0.v20140710-0659
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -24,12 +13,12 @@ import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 
 public class AbstractDeleteTool
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
 
 	public AbstractDeleteTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -51,8 +40,7 @@ public class AbstractDeleteTool
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -69,36 +57,29 @@ public class AbstractDeleteTool
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_setToolName(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		if (parameter.getName() != null
-				&& parameter.getName().trim().length() > 0)
+	protected void method_setToolName(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.getName() != null && parameter.getName().trim().length() > 0)
 			tool_name = parameter.getName();
 		else
 			tool_name = "Delete_" + associated_mapping.getName();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setToolName",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setToolName", out.toString());
 	}
 
-	protected void method_setAssociatedMapping(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setAssociatedMapping(final StringBuffer out, final PatternContext ctx) throws Exception {
 		associated_mapping = parameter.getTool_For();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setAssociatedMapping",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAssociatedMapping", out.toString());
 	}
 
-	protected void method_createConcretTool(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createConcretTool(final StringBuffer out, final PatternContext ctx) throws Exception {
 		delete_tool = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE
 				.createDeleteElementDescription();
 		delete_tool.setName(tool_name + "_ID");
@@ -107,17 +88,13 @@ public class AbstractDeleteTool
 		element_del_var = ToolFactory.eINSTANCE.createElementDeleteVariable();
 		element_del_var.setName("element");
 
-		EObject doEdgeMapping = GenerationUtil
-				.getDoremiElement(associated_mapping);
-		((DiagramElementMapping) doEdgeMapping)
-				.setDeletionDescription(delete_tool);
+		EObject doEdgeMapping = GenerationUtil.getDoremiElement(associated_mapping);
+		((DiagramElementMapping) doEdgeMapping).setDeletionDescription(delete_tool);
 
-		elementView_del_var = ToolFactory.eINSTANCE
-				.createElementDeleteVariable();
+		elementView_del_var = ToolFactory.eINSTANCE.createElementDeleteVariable();
 		elementView_del_var.setName("elementView");
 
-		containerView_del_var = ToolFactory.eINSTANCE
-				.createContainerViewVariable();
+		containerView_del_var = ToolFactory.eINSTANCE.createContainerViewVariable();
 		containerView_del_var.setName("containerView");
 
 		initial_operation = ToolFactory.eINSTANCE.createInitialOperation();
@@ -131,22 +108,18 @@ public class AbstractDeleteTool
 		abstractToolDescription = delete_tool;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool", out.toString());
 	}
 
-	protected void method_createSubVariables(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createSubVariables(final StringBuffer out, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createSubVariables",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createSubVariables", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete parameter) {
 		this.parameter = parameter;
 	}
 
@@ -193,8 +166,7 @@ public class AbstractDeleteTool
 
 	protected org.eclipse.sirius.diagram.description.tool.DeleteElementDescription delete_tool;
 
-	public void set_delete_tool(
-			org.eclipse.sirius.diagram.description.tool.DeleteElementDescription delete_tool) {
+	public void set_delete_tool(org.eclipse.sirius.diagram.description.tool.DeleteElementDescription delete_tool) {
 		this.delete_tool = delete_tool;
 	}
 

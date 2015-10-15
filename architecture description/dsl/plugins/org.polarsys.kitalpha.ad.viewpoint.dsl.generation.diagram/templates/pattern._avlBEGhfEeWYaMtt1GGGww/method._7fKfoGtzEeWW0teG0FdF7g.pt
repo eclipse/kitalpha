@@ -1,0 +1,10 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelCustomization_Expression()))
+{
+	final CustomizationExpression expression = parameter.getExpression();
+	final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
+	if (expressionElement != null)
+	{
+		final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+		set_labelExpression(new StylePropertyNameValueCouple("labelExpression", newLabelExpression));
+	}
+}

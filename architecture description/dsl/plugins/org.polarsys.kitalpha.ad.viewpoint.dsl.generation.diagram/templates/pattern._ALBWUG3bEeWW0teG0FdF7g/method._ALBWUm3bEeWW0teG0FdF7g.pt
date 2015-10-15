@@ -1,0 +1,30 @@
+package PACKAGE;
+
+import java.util.*;
+
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorUseCase;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.VpstylecustomizationPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.SiriusSystemColorHelper;
+
+import org.eclipse.sirius.viewpoint.description.SystemColor;
+import org.eclipse.sirius.viewpoint.description.SystemColors;
+
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

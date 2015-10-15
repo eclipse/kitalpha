@@ -1,0 +1,4 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeStyleCustomization_HideLabelByDefault()))
+{
+	set_hideLabelByDefault(new StylePropertyNameValueCouple("hideLabelByDefault", parameter.isHideLabelByDefault()));
+}

@@ -15,8 +15,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.sirius.viewpoint.FontFormat;
 
-import org.eclipse.sirius.viewpoint.description.ColorDescription;
-
+import org.eclipse.sirius.viewpoint.description.SystemColors;
 import org.eclipse.sirius.viewpoint.description.style.BasicLabelStyleDescription;
 
 
@@ -51,7 +50,8 @@ public interface LabelCustomization extends AbstractCustomization {
 
 
 	/**
-	 * Returns the value of the '<em><b>Color</b></em>' reference.
+	 * Returns the value of the '<em><b>Color</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.sirius.viewpoint.description.SystemColors}.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -59,32 +59,31 @@ public interface LabelCustomization extends AbstractCustomization {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Color</em>' reference.
-	 * @see #setColor(ColorDescription)
+	 * @return the value of the '<em>Color</em>' attribute.
+	 * @see org.eclipse.sirius.viewpoint.description.SystemColors
+	 * @see #setColor(SystemColors)
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.VpstylecustomizationPackage#getLabelCustomization_Color()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 
-	ColorDescription getColor();
+	SystemColors getColor();
 
 
 
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization#getColor <em>Color</em>}' reference.
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization#getColor <em>Color</em>}' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Color</em>' reference.
+	 * @param value the new value of the '<em>Color</em>' attribute.
+	 * @see org.eclipse.sirius.viewpoint.description.SystemColors
 	 * @see #getColor()
 	 * @generated
 	 */
 
-	void setColor(ColorDescription value);
-
-
-
+	void setColor(SystemColors value);
 
 
 

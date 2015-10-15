@@ -1,0 +1,23 @@
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_FoldingStyle()))
+{
+	String enumLiteralName = parameter.getFoldingStyle().toString();
+	String methodCode = "return DescriptionPackage.eINSTANCE.getFoldingStyle().getEEnumLiteral(\"" + enumLiteralName +"\");";
+	char first = Character.toUpperCase(enumLiteralName.charAt(0));
+	enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
+	String methodName = "getFoldingStyle"+enumLiteralName;
+	
+	JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+	
+	// Set method parameters data
+	javaMethodData.addMethodParameter("any", "EObject", "any model element");
+	
+	// Set method Required classes FQN
+	javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+	javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.description.DescriptionPackage");
+	
+	// Add the method to the Java Service.
+	if (javaMethodData != null)
+		enumHelperJavaServiceData.addMethod(javaMethodData);
+	
+	set_foldingStyle(new StylePropertyNameValueCouple("foldingStyle", "service:"+methodName));
+}
