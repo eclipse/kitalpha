@@ -274,7 +274,7 @@ ruleViewpoint returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_20='uses-model' 
+))*)?(	otherlv_20='uses model' 
     {
     	newLeafNode(otherlv_20, grammarAccess.getViewpointAccess().getUsesModelKeyword_9_0());
     }
@@ -318,7 +318,7 @@ ruleViewpoint returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_24='uses-diagram' 
+))*)?(	otherlv_24='uses diagram' 
     {
     	newLeafNode(otherlv_24, grammarAccess.getViewpointAccess().getUsesDiagramKeyword_10_0());
     }
@@ -362,7 +362,7 @@ ruleViewpoint returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_28='uses-workspace' 
+))*)?(	otherlv_28='uses workspace' 
     {
     	newLeafNode(otherlv_28, grammarAccess.getViewpointAccess().getUsesWorkspaceKeyword_11_0());
     }
@@ -406,7 +406,7 @@ ruleViewpoint returns [EObject current=null]
 	    }
 
 )
-))*)?(	otherlv_32='uses-filesystem' 
+))*)?(	otherlv_32='uses filesystem' 
     {
     	newLeafNode(otherlv_32, grammarAccess.getViewpointAccess().getUsesFilesystemKeyword_12_0());
     }

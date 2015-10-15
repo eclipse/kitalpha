@@ -62,7 +62,7 @@ Viewpoint returns Viewpoint:
 		('Data' VP_Data=[vpdesc::Data | FQN])?
 		(type+='UI' VP_Aspects+=[vpui::UIDescription | FQN] )?
 		(type+='Diagrams' VP_Aspects+=[vpdiagram::DiagramSet | FQN])?
-		(type+='ActivityExplorer' VP_Aspects += [activtyExplorer::ViewpointActivityExplorer | FQN])?
+		(type+='Activity-Explorer' VP_Aspects += [activtyExplorer::ViewpointActivityExplorer | FQN])?
 		(type+='Services' VP_Aspects+= [vpservices::ServiceSet | FQN])? //[services::Services | FQN])?
 		(type+='Build' VP_Aspects+=[vpbuild::Build| FQN])?
 		(type+='Configuration' VP_Aspects+=[vpconf::Configuration | FQN])?
