@@ -3563,18 +3563,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cWithKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Assignment cColorAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final CrossReference cColorColorDescriptionCrossReference_7_1_0 = (CrossReference)cColorAssignment_7_1.eContents().get(0);
-		private final RuleCall cColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1 = (RuleCall)cColorColorDescriptionCrossReference_7_1_0.eContents().get(1);
+		private final RuleCall cColorSystemColorsEnumRuleCall_7_1_0 = (RuleCall)cColorAssignment_7_1.eContents().get(0);
 		
 		//ColorCustomization returns styleCusto::ColorCustomization:
 		//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
-		//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with"
-		//	color=[siriusDescription::ColorDescription|STRING]);
+		//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with" color=SystemColors);
 		@Override public ParserRule getRule() { return rule; }
 
 		//{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
-		//appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with"
-		//color=[siriusDescription::ColorDescription|STRING])
+		//appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with" color=SystemColors)
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ColorCustomization}
@@ -3628,20 +3625,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"over-all-colors"
 		public Keyword getApplyonAllOverAllColorsKeyword_6_0() { return cApplyonAllOverAllColorsKeyword_6_0; }
 
-		//"with" color=[siriusDescription::ColorDescription|STRING]
+		//"with" color=SystemColors
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"with"
 		public Keyword getWithKeyword_7_0() { return cWithKeyword_7_0; }
 
-		//color=[siriusDescription::ColorDescription|STRING]
+		//color=SystemColors
 		public Assignment getColorAssignment_7_1() { return cColorAssignment_7_1; }
 
-		//[siriusDescription::ColorDescription|STRING]
-		public CrossReference getColorColorDescriptionCrossReference_7_1_0() { return cColorColorDescriptionCrossReference_7_1_0; }
-
-		//STRING
-		public RuleCall getColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1() { return cColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1; }
+		//SystemColors
+		public RuleCall getColorSystemColorsEnumRuleCall_7_1_0() { return cColorSystemColorsEnumRuleCall_7_1_0; }
 	}
 
 	public class LabelCustomizationElements extends AbstractParserRuleElementFinder {
@@ -3682,8 +3676,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColorKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
 		private final Assignment cColorAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final CrossReference cColorColorDescriptionCrossReference_10_2_0 = (CrossReference)cColorAssignment_10_2.eContents().get(0);
-		private final RuleCall cColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1 = (RuleCall)cColorColorDescriptionCrossReference_10_2_0.eContents().get(1);
+		private final RuleCall cColorSystemColorsEnumRuleCall_10_2_0 = (RuleCall)cColorAssignment_10_2.eContents().get(0);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
 		private final Keyword cIconKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
@@ -3707,15 +3700,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//	{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
 		//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
 		//	ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
-		//	":" color=[siriusDescription::ColorDescription|STRING]) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
-		//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
+		//	":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")? ("expression" ":"
+		//	expression=CustomizationExpression)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
 		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
 		//ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
-		//":" color=[siriusDescription::ColorDescription|STRING]) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
-		//iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}"
+		//":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")? ("expression" ":"
+		//expression=CustomizationExpression)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::LabelCustomization}
@@ -3812,7 +3805,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FontFormat
 		public RuleCall getFormatFontFormatEnumRuleCall_9_2_0() { return cFormatFontFormatEnumRuleCall_9_2_0; }
 
-		//"color" ":" color=[siriusDescription::ColorDescription|STRING]
+		//"color" ":" color=SystemColors
 		public Group getGroup_10() { return cGroup_10; }
 
 		//"color"
@@ -3821,14 +3814,11 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
-		//color=[siriusDescription::ColorDescription|STRING]
+		//color=SystemColors
 		public Assignment getColorAssignment_10_2() { return cColorAssignment_10_2; }
 
-		//[siriusDescription::ColorDescription|STRING]
-		public CrossReference getColorColorDescriptionCrossReference_10_2_0() { return cColorColorDescriptionCrossReference_10_2_0; }
-
-		//STRING
-		public RuleCall getColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1() { return cColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1; }
+		//SystemColors
+		public RuleCall getColorSystemColorsEnumRuleCall_10_2_0() { return cColorSystemColorsEnumRuleCall_10_2_0; }
 
 		//("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")?
 		public Group getGroup_11() { return cGroup_11; }
@@ -7169,8 +7159,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ColorCustomization returns styleCusto::ColorCustomization:
 	//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
-	//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with"
-	//	color=[siriusDescription::ColorDescription|STRING]);
+	//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with" color=SystemColors);
 	public ColorCustomizationElements getColorCustomizationAccess() {
 		return pColorCustomization;
 	}
@@ -7183,8 +7172,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//	{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
 	//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
 	//	ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
-	//	":" color=[siriusDescription::ColorDescription|STRING]) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
-	//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
+	//	":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")? ("expression" ":"
+	//	expression=CustomizationExpression)? "}";
 	public LabelCustomizationElements getLabelCustomizationAccess() {
 		return pLabelCustomization;
 	}

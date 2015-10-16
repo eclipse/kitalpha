@@ -430,7 +430,7 @@ ColorCustomization returns styleCusto::ColorCustomization:
 	{styleCusto::ColorCustomization}
 	'paint' (colorUseCase=ColorUseCase) '(' (appliedOn+=[ecore::EObject | STRING] (',' appliedOn+=[ecore::EObject | STRING])*) ')' 
 		(applyonAll?='over-all-colors')?
-		('with' color = [siriusDescription::ColorDescription | STRING])
+		('with' color = SystemColors)
 ;
 
 LabelCustomization returns styleCusto::LabelCustomization:
@@ -440,7 +440,7 @@ LabelCustomization returns styleCusto::LabelCustomization:
 		(ownedLabelAlignment=LabelAlignementCustomization)?
 		('size' ':' size = EInt)?
 		('format' ':' format = FontFormat)?
-		('color' ':' color = [siriusDescription::ColorDescription | STRING])
+		('color' ':' color = SystemColors)
 		(
 		'icon' '{'
 			'show' ':' showIcon=EBoolean

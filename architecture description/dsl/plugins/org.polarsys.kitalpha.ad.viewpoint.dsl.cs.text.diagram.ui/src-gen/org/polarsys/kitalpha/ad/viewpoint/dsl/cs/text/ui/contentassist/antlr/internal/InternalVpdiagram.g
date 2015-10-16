@@ -29948,12 +29948,8 @@ rule__ColorCustomization__ColorAssignment_7_1
     }
 :
 (
-{ before(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_1_0()); }
-(
-{ before(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1()); }
-	RULE_STRING{ after(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_7_1_0_1()); }
-)
-{ after(grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_1_0()); }
+{ before(grammarAccess.getColorCustomizationAccess().getColorSystemColorsEnumRuleCall_7_1_0()); }
+	ruleSystemColors{ after(grammarAccess.getColorCustomizationAccess().getColorSystemColorsEnumRuleCall_7_1_0()); }
 )
 
 ;
@@ -30065,12 +30061,8 @@ rule__LabelCustomization__ColorAssignment_10_2
     }
 :
 (
-{ before(grammarAccess.getLabelCustomizationAccess().getColorColorDescriptionCrossReference_10_2_0()); }
-(
-{ before(grammarAccess.getLabelCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1()); }
-	RULE_STRING{ after(grammarAccess.getLabelCustomizationAccess().getColorColorDescriptionSTRINGTerminalRuleCall_10_2_0_1()); }
-)
-{ after(grammarAccess.getLabelCustomizationAccess().getColorColorDescriptionCrossReference_10_2_0()); }
+{ before(grammarAccess.getLabelCustomizationAccess().getColorSystemColorsEnumRuleCall_10_2_0()); }
+	ruleSystemColors{ after(grammarAccess.getLabelCustomizationAccess().getColorSystemColorsEnumRuleCall_10_2_0()); }
 )
 
 ;
