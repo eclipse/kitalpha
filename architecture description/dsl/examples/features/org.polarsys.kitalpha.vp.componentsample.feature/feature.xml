@@ -39,6 +39,13 @@ Contributors:
          version="0.0.0"/>
 
    <plugin
+         id="org.polarsys.kitalpha.vp.componentsample.model.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.polarsys.kitalpha.vp.componentsample.model.edit"
          download-size="0"
          install-size="0"
