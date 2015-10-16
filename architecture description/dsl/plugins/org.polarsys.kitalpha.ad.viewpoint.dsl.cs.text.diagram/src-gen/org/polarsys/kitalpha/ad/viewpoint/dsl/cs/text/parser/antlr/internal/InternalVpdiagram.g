@@ -5056,15 +5056,20 @@ ruleColorCustomization returns [EObject current=null]
     }
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getColorCustomizationRule());
+		{ 
+	        newCompositeNode(grammarAccess.getColorCustomizationAccess().getColorSystemColorsEnumRuleCall_7_1_0()); 
+	    }
+		lv_color_10_0=ruleSystemColors		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getColorCustomizationRule());
 	        }
-        }
-	otherlv_10=RULE_STRING
-	{
-		newLeafNode(otherlv_10, grammarAccess.getColorCustomizationAccess().getColorColorDescriptionCrossReference_7_1_0()); 
-	}
+       		set(
+       			$current, 
+       			"color",
+        		lv_color_10_0, 
+        		"SystemColors");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 )))
@@ -5246,15 +5251,20 @@ ruleLabelCustomization returns [EObject current=null]
     }
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getLabelCustomizationRule());
+		{ 
+	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getColorSystemColorsEnumRuleCall_10_2_0()); 
+	    }
+		lv_color_20_0=ruleSystemColors		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLabelCustomizationRule());
 	        }
-        }
-	otherlv_20=RULE_STRING
-	{
-		newLeafNode(otherlv_20, grammarAccess.getLabelCustomizationAccess().getColorColorDescriptionCrossReference_10_2_0()); 
-	}
+       		set(
+       			$current, 
+       			"color",
+        		lv_color_20_0, 
+        		"SystemColors");
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))(	otherlv_21='icon' 
