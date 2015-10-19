@@ -174,7 +174,9 @@ public class ViewpointManager {
 	}
 
 	protected void activateBundle(String id) throws ViewpointActivationException {
-		throw new ViewpointActivationException(Messages.Viewpoint_Manager_error_5);
+		// This implementation does not intend to add or update any bundle
+		if (Platform.getBundle(id) == null)
+			throw new ViewpointActivationException(Messages.Viewpoint_Manager_error_5);
 	}
 
 	protected void desactivateBundle(String id) throws ViewpointActivationException {
