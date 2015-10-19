@@ -122,51 +122,11 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		
 		exportedObjects = Iterables.concat(exportedObjects,	getTaIEObjectDescription(eResource, exportedObjects, type));
 		
-//		exportedObjects = Iterables.concat(exportedObjects, getExternalObjectDescriptions(eResource, type));
-//		exportedObjects = Iterables.concat(exportedObjects, getDoremiDiagramDescriptions(eResource, type));
-//		exportedObjects = Iterables.concat(exportedObjects,	getDoremiEdgeMappings(eResource, type));
-//		exportedObjects = Iterables.concat(exportedObjects,	getDoremiNodeMappings(eResource, type));
-//		exportedObjects = Iterables.concat(exportedObjects,	getDoremiContainerMappings(eResource, type));
-		
-		/**
-		 * FIXME: 
-		 * [BZE]- The next line never add element to exportedObjects because the method 
-		 * DoremiDiagramElementHelper.getImportedDoremiDiagramFor(..) contains no code.
-		 * 
-		 * Check if it necessary to keep it, otherwise, to remove it.
-		 */
-		//exportedObjects = Iterables.concat(exportedObjects, getImportedDiagrams(eResource));
 		exportedObjects = Iterables.concat(exportedObjects, getExternalImportDiagramObjectDescription(eResource, exportedObjects, type));
 
 		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
 	}
 
-
-	private Iterable<IEObjectDescription> getImportedDiagrams(Resource resource){
-		Collection<IEObjectDescription> doremiExportedObjects = new ArrayList<IEObjectDescription>();
-		List<DiagramDescription> importDiagrams = Collections.emptyList();
-		
-		List<URI> diagramResources = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.DIAGRAM_EXTENSION, resource.getURI().segment(1));
-		ResourceSet resourceSet = resource.getResourceSet();
-		
-		for (URI uri: diagramResources) {
-			Resource diagramResource = ResourceHelper.loadResource(uri, resourceSet);
-			if (diagramResources != null) {
-				EObject root = diagramResource.getContents().get(0);
-				if (root != null) {	
-					importDiagrams = DoremiDiagramElementHelper.getImportedDoremiDiagramFor(root);
-					for (DiagramDescription description : importDiagrams) {
-						EcoreUtil2.resolveAll(description);
-						
-						String simpleName = VpdiagramNamingHelper.normalizeIdentifier(description.getName());
-						IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
-						doremiExportedObjects.add(desc);
-					}
-				}
-			}
-		}
-		return doremiExportedObjects;
-	}
 	
 	private Iterable<IEObjectDescription> getDoremiDiagramDescriptions(Resource eResource, EClass type) {
 		Collection<IEObjectDescription> doremiExportedObjects = new ArrayList<IEObjectDescription>();

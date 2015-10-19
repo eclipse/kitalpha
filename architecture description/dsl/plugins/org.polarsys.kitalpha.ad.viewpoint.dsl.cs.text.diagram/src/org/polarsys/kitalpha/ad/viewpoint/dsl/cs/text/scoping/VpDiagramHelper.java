@@ -141,7 +141,6 @@ public class VpDiagramHelper {
 				return ((NodeDomainElement)eContainer);
 			}
 		}
-		//FIXME: Throw an exception instead return null???
 		return null;
 	}
 	
@@ -193,29 +192,10 @@ public class VpDiagramHelper {
 								filtredReferences.add(eReference);
 							}
 						}
-						//					if (superTypesOfType.contains(eClass) || type == eClass)
-						//						filtredReferences.add(eReference);
 					}
 				} catch (ExecutionException e) {
 					return filtredReferences;
 				}
-
-				//It was before
-				//			EList<EClass> superTypesOfRefType = CollectAllSuperTypes(eRefType);
-				//
-				//			if (superTypesOfType.contains(eRefType))
-				//				filtredReferences.add(eReference);
-				//
-				//			for (EClass eClass : superTypesOfRefType) {
-				//
-				//				for (EClass eClass2 : superTypesOfType) {
-				//					if (eClass.getName().equals(eClass2.getName())){
-				//						filtredReferences.add(eReference);
-				//					}
-				//				}
-				//				//					if (superTypesOfType.contains(eClass) || type == eClass)
-				//				//						filtredReferences.add(eReference);
-				//			}
 
 			}
 		} catch (ExecutionException e1) {
@@ -502,8 +482,6 @@ public class VpDiagramHelper {
 	
 
 	public static AbstractClass getDomainContainerOfContainerOfElement(NodeDomainElement nde){
-		
-		long t1 = Calendar.getInstance().getTimeInMillis();
 		
 		if (nde == null)
 			return null;
