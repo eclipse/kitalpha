@@ -197,10 +197,10 @@ public interface ContainerStyleCustomization extends AbstractNodeStyleCustomizat
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Rounded Corner</em>' attribute.
 	 * @see #isRoundedCorner()
-	 * @generated
+	 * @generated NOT
 	 */
 
-	void setRoundedCorner(boolean value);
+	void setRoundedCorner(Boolean value);
 
 
 

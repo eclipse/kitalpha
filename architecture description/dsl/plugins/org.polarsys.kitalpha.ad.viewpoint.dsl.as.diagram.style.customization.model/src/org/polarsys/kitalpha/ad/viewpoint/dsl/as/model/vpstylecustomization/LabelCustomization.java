@@ -260,16 +260,10 @@ public interface LabelCustomization extends AbstractCustomization {
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Show Icon</em>' attribute.
 	 * @see #isShowIcon()
-	 * @generated
+	 * @generated NOT
 	 */
 
-	void setShowIcon(boolean value);
-
-
-
-
-
-
+	void setShowIcon(Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.

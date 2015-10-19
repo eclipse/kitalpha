@@ -135,7 +135,7 @@ public class ColorCustomizationPattern extends
 	}
 
 	protected void method_initBorderColorData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_ColorUseCase())) {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) {
 			final ColorUseCase colorUseCase = parameter.getColorUseCase();
 			if (colorUseCase.equals(ColorUseCase.BORDER)) {
 				set_borderColor(new StylePropertyNameValueCouple("borderColor",
@@ -148,7 +148,7 @@ public class ColorCustomizationPattern extends
 	}
 
 	protected void method_initBackgroundColorData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_ColorUseCase())) {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) {
 			final ColorUseCase colorUseCase = parameter.getColorUseCase();
 			if (colorUseCase.equals(ColorUseCase.BACKGROUND)) {
 				set_backgroundColor(new StylePropertyNameValueCouple("backgroundColor",
@@ -161,7 +161,7 @@ public class ColorCustomizationPattern extends
 	}
 
 	protected void method_initForegroundColorData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_ColorUseCase())) {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) {
 			final ColorUseCase colorUseCase = parameter.getColorUseCase();
 			if (colorUseCase.equals(ColorUseCase.FOREGROUND)) {
 				set_foregroundColor(new StylePropertyNameValueCouple("foregroundColor",
