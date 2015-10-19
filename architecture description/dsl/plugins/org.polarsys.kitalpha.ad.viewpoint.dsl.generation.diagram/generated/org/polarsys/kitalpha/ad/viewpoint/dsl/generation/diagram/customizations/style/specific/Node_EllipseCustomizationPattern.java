@@ -19,6 +19,7 @@ public class Node_EllipseCustomizationPattern extends
 	public Node_EllipseCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

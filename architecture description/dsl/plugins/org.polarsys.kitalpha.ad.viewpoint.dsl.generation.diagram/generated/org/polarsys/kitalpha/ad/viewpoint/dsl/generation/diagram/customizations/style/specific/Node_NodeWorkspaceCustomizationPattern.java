@@ -15,6 +15,7 @@ public class Node_NodeWorkspaceCustomizationPattern extends
 	public Node_NodeWorkspaceCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

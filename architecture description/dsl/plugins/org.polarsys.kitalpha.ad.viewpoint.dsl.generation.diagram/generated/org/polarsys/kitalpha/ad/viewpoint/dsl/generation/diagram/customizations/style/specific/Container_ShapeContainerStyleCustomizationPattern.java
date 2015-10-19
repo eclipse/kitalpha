@@ -18,6 +18,7 @@ public class Container_ShapeContainerStyleCustomizationPattern extends
 	public Container_ShapeContainerStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2015 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+   Thales Global Services S.A.S - initial API and implementation
+-->
+
+<?eclipse version="3.0"?>
+<plugin>
+	<extension
+         point="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.coreConstraintContribution">
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.name.CustomizationUniqueName"
+            constraint="vpElement.UniqueValue"
+            name="Customization name Unique constraint">
+      </contribution>
+      <contribution
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.name.CustomizationNotEmptyName"
+            constraint="vpNamedElement.NameNotEmpty"
+            name="Customization Not Empty Name">
+      </contribution>
+   </extension>
+ <extension
+       point="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.additionalConstraint">
+    <addition
+          class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.appliedon.SpecificCustomizationAppliedOnNotEmpty"
+          constraint="vpElement.FreeErrorConstraint"
+          name="Check of Specific Style AppliedOn is Empty ">
+    </addition>
+    <addition
+          class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.appliedon.AbstractCustomizationAppliedOnNotEmpty"
+          constraint="vpElement.FreeErrorConstraint"
+          name="Abstract Style Customization AppliedOn is Empty ">
+    </addition>
+ </extension>
+</plugin>

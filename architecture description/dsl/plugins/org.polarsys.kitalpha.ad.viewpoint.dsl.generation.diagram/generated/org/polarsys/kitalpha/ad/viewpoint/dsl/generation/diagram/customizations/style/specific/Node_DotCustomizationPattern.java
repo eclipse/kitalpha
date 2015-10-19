@@ -19,6 +19,7 @@ public class Node_DotCustomizationPattern extends
 	public Node_DotCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
