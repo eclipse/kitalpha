@@ -25,7 +25,6 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -45,8 +44,6 @@ import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess.EBooleanElements;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess.EBooleanElements;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
@@ -831,17 +828,19 @@ public class ResourceHelper {
 		Map<String, URI> fPackagesInScope = ExternalDataHelper.getPackagesInScopeURIs();
 		for (Map.Entry<String, URI> entry : fPackagesInScope.entrySet()) {
 			QualifiedName packageNsURI = QualifiedName.create(entry.getKey());
-			URI nsURI = URI.createURI(packageNsURI.toString());
-			EPackage ecoreModel = resourceSet.getPackageRegistry().getEPackage(nsURI.toString());
-			if (ecoreModel !=null){
-				EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), resourceSet);
-				Resource packageResource = loadedEPackage != null? loadedEPackage.eResource(): null;
-				// [BZE] : modification of the condition, this avoid an exception raise
-				if (packageResource != null && ! resourceSet.getResources().contains(packageResource))
-				{
-					resourceSet.getResources().add(packageResource);
+//			if (!packageNsURI.toString().contains("capella")){
+				URI nsURI = URI.createURI(packageNsURI.toString());
+				EPackage ecoreModel = resourceSet.getPackageRegistry().getEPackage(nsURI.toString());
+				if (ecoreModel !=null){
+					EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), resourceSet);
+					Resource packageResource = loadedEPackage != null? loadedEPackage.eResource(): null;
+					// [BZE] : modification of the condition, this avoid an exception raise
+					if (packageResource != null && ! resourceSet.getResources().contains(packageResource))
+					{
+						resourceSet.getResources().add(packageResource);
+					}
 				}
-			}
+//			}
 		}
 	}
 	

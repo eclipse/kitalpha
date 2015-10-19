@@ -16,6 +16,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
+import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
@@ -24,7 +27,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.EcoreUtil2;
-import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.IContainer;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IResourceDescription;
@@ -40,9 +42,11 @@ import com.google.inject.Inject;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
+	
 	
 	@Inject
 	IResourceDescription.Manager descriptionManager;
@@ -65,7 +69,8 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 	private static Iterable<IEObjectDescription> taObjects = null;
 	
 	private Iterable<IEObjectDescription> getTAObject(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects){
-		if (taObjects == null)
+		if (taObjects == null || 
+				(taObjects.iterator() != null) && !taObjects.iterator().hasNext())
 		{
 			taObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
 		}
@@ -77,8 +82,6 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		Iterable<IEObjectDescription> exportedObjects = Collections.emptyList();		
 		ResourceSet resourceSet = eResource.getResourceSet();
 		exportedObjects = getTAObject(resourceSet, exportedObjects);
-		
-//		exportedObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
 		exportedObjects = getExternalImportObjectDescription(eResource, exportedObjects);
 		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
 	}
@@ -86,24 +89,31 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 	private Iterable<IEObjectDescription> getExternalObjectDescriptions(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects) {
 		Map<String, URI> fPackagesInScope = ExternalDataHelper.getPackagesInScopeURIs();
 		
-		//addImportedPackageToPackageInScope(eResource, fPackagesInScope);
-		for (Map.Entry<String, URI> entry : fPackagesInScope.entrySet()) {
-			QualifiedName packageNsURI = QualifiedName.create(entry.getKey());
-			URI nsURI = URI.createURI(packageNsURI.toString());
-			EPackage ecoreModel = resourceSet.getPackageRegistry().getEPackage(nsURI.toString());
-			if (ecoreModel !=null){
-				EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), resourceSet);
-				if (descriptionManager!=null && loadedEPackage!=null &&	loadedEPackage.eResource()!=null) {
-					Resource packageResource = loadedEPackage.eResource();
-					EcoreUtil2.resolveAll(packageResource);
-					IResourceDescription resourceDescription =	descriptionManager.getResourceDescription(packageResource);
-					exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());
+		for(Map.Entry<String, URI> entry : fPackagesInScope.entrySet()){
+			URI genModelURI = entry.getValue();
+			Resource resource = resourceSet.getResource(genModelURI, true);
+			
+			EList<EObject> contents = resource.getContents();
+			
+			for (EObject eObject : contents) {
+				if (eObject instanceof GenModel){
+					GenModel genModel = (GenModel) eObject;
+					EList<GenPackage> genPackages = genModel.getGenPackages();
+					
+					for (GenPackage genPackage : genPackages) {
+						EPackage ecorePackage = genPackage.getEcorePackage();
+						Resource eResource = ecorePackage.eResource();
+						
+						if (descriptionManager != null && resource != null) {
+							IResourceDescription resourceDescription =	descriptionManager.getResourceDescription(eResource);
+							exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());
+						}
+					}
 				}
 			}
 		}
 		return exportedObjects;
 	}
-	
 	
 	private Iterable<IEObjectDescription> getExternalImportObjectDescription(
 			Resource eResource, Iterable<IEObjectDescription> exportedObjects) {
@@ -117,11 +127,7 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					
 					if (importNsURI != null && !importNsURI.equals("")) {
 						URI nsURI = URI.createURI(importNsURI);
-//						EPackage ecoreModel = eResource.getResourceSet().getPackageRegistry().getEPackage(nsURI.toString());
-//						EPackage ecoreModel = (EPackage) DataWorkspaceEPackage.INSTANCE.getEPackage(nsURI.toString());
-//						if (ecoreModel != null) {
 							EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(),	eResource.getResourceSet());
-
 							if (descriptionManager != null
 									&& loadedEPackage != null
 									&& loadedEPackage.eResource() != null) {
@@ -131,29 +137,9 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 							}
 						}
 					}
-//				}
 			}
 		}
 		return exportedObjects;
 
 	}
-	
-//	private void addImportedPackageToPackageInScope(Resource eResource, Map<String, URI> packagesInScope) {
-//		TreeIterator<EObject> ResourceObjects = eResource.getAllContents();
-//
-//		if (ResourceObjects.hasNext()) {
-//			EObject object = ResourceObjects.next();
-//			for (EObject content : object.eContents()) {
-//				if (content instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.impl.ImportURIImpl) {
-//					String nsUri = ((org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.impl.ImportURIImpl) content)
-//							.getImportURI();
-//					if (eResource != null && nsUri != null && !nsUri.equals("")) {
-//						EPackage epackage = ExternalDataHelper.loadEPackage(
-//								nsUri, eResource.getResourceSet());
-//						packagesInScope.put(nsUri, URI.createURI(nsUri));
-//					}
-//				}
-//			}
-//		}
-//	}
 }
