@@ -356,4 +356,11 @@ Contributors:
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

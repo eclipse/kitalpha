@@ -15,6 +15,7 @@ public class Node_SquareCustomizationPattern extends
 	public Node_SquareCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

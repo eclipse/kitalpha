@@ -34,30 +34,35 @@ public class GenJavaServiceCommonPattern
 	protected final String TEXT_2 = ";" + NL + "" + NL + "import java.util.ArrayList;" + NL + "import java.util.List;"
 			+ NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
 			+ "import org.eclipse.sirius.diagram.DDiagram;" + NL + "import org.eclipse.sirius.diagram.DDiagramElement;"
-			+ NL + "" + NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL
-			+ " * This class is an implementation of the DoReMi JavaExtension '<em><b>[";
-	protected final String TEXT_3 = "]</b></em>'." + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>"
+			+ NL;
+	protected final String TEXT_3 = NL + "import ";
+	protected final String TEXT_4 = ";";
+	protected final String TEXT_5 = NL + NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL
+			+ " * This class is an implementation of the Sirius JavaExtension '<em><b>[";
+	protected final String TEXT_6 = "]</b></em>'." + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>"
 			+ NL + " *" + NL + " * @generated" + NL + " */ " + NL + "" + NL + "public class ";
-	protected final String TEXT_4 = "{";
-	protected final String TEXT_5 = "\t";
-	protected final String TEXT_6 = NL + "\t/**" + NL + "\t* <!-- begin-user-doc -->" + NL
+	protected final String TEXT_7 = "{";
+	protected final String TEXT_8 = "\t";
+	protected final String TEXT_9 = NL + "\t/**" + NL + "\t* <!-- begin-user-doc -->" + NL
 			+ "\t* <!-- end-user-doc -->";
-	protected final String TEXT_7 = NL + "\t* @param ";
-	protected final String TEXT_8 = " : ";
-	protected final String TEXT_9 = NL + "\t* @generated" + NL + "\t*/" + NL + "public ";
-	protected final String TEXT_10 = " ";
-	protected final String TEXT_11 = "(";
-	protected final String TEXT_12 = NL + "\t\t\t\t\t\t";
+	protected final String TEXT_10 = NL + "\t* @param ";
+	protected final String TEXT_11 = " : ";
+	protected final String TEXT_12 = NL + "\t* @generated" + NL + "\t*/" + NL + "public ";
 	protected final String TEXT_13 = " ";
-	protected final String TEXT_14 = ",";
-	protected final String TEXT_15 = "){" + NL + "\t// TODO Auto-generated method stub";
-	protected final String TEXT_16 = NL + "\t// Ensure that you remove @generated or mark it @generated NOT" + NL
+	protected final String TEXT_14 = "(";
+	protected final String TEXT_15 = NL + "\t\t\t\t\t\t";
+	protected final String TEXT_16 = " ";
+	protected final String TEXT_17 = ",";
+	protected final String TEXT_18 = "){";
+	protected final String TEXT_19 = NL + "\t";
+	protected final String TEXT_20 = NL + "// TODO Auto-generated method stub";
+	protected final String TEXT_21 = NL + "\t// Ensure that you remove @generated or mark it @generated NOT" + NL
 			+ "\tthrow new UnsupportedOperationException();";
-	protected final String TEXT_17 = NL + "}";
-	protected final String TEXT_18 = NL;
-	protected final String TEXT_19 = "}";
-	protected final String TEXT_20 = NL;
-	protected final String TEXT_21 = NL;
+	protected final String TEXT_22 = NL + "}";
+	protected final String TEXT_23 = NL;
+	protected final String TEXT_24 = "}";
+	protected final String TEXT_25 = NL;
+	protected final String TEXT_26 = NL;
 
 	public GenJavaServiceCommonPattern() {
 		//Here is the constructor
@@ -85,8 +90,8 @@ public class GenJavaServiceCommonPattern
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_20);
-		stringBuffer.append(TEXT_21);
+		stringBuffer.append(TEXT_25);
+		stringBuffer.append(TEXT_26);
 		return stringBuffer.toString();
 	}
 
@@ -158,10 +163,18 @@ public class GenJavaServiceCommonPattern
 			stringBuffer.append(TEXT_1);
 			stringBuffer.append(packagename);
 			stringBuffer.append(TEXT_2);
+
+			List<String> requiredClasses = java_service_data.getAllRequiredClassesFQN();
+			for (String importToAdd : requiredClasses) {
+				stringBuffer.append(TEXT_3);
+				stringBuffer.append(importToAdd);
+				stringBuffer.append(TEXT_4);
+			}
+			stringBuffer.append(TEXT_5);
 			stringBuffer.append(packagename + "." + classname);
-			stringBuffer.append(TEXT_3);
+			stringBuffer.append(TEXT_6);
 			stringBuffer.append(classname);
-			stringBuffer.append(TEXT_4);
+			stringBuffer.append(TEXT_7);
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCHeader", stringBuffer.toString());
@@ -171,7 +184,7 @@ public class GenJavaServiceCommonPattern
 			throws Exception {
 
 		if (java_service_data != null) {
-			stringBuffer.append(TEXT_5);
+			stringBuffer.append(TEXT_8);
 			for (JavaMethodData iJavaMethodData : java_service_data.getMethods()) {
 				String return_type = "void";
 				switch (iJavaMethodData.getReturnType()) {
@@ -190,44 +203,54 @@ public class GenJavaServiceCommonPattern
 				case String:
 					return_type = "String";
 					break;
+				case EEnumLiteral:
+					return_type = "EEnumLiteral";
+					break;
 				case ConstructorType:
 					return_type = "";
 					break;
 				}
-				stringBuffer.append(TEXT_6);
+				stringBuffer.append(TEXT_9);
 
 				for (MethodParameterData iMethodParameterData : iJavaMethodData.getMethodParameter()) {
-					stringBuffer.append(TEXT_7);
+					stringBuffer.append(TEXT_10);
 					stringBuffer.append(iMethodParameterData.getName());
-					stringBuffer.append(TEXT_8);
+					stringBuffer.append(TEXT_11);
 					stringBuffer.append(iMethodParameterData.getDocumentation());
 				}
-				stringBuffer.append(TEXT_9);
+				stringBuffer.append(TEXT_12);
 				stringBuffer.append(return_type);
-				stringBuffer.append(TEXT_10);
+				stringBuffer.append(TEXT_13);
 				stringBuffer.append(iJavaMethodData.getName());
-				stringBuffer.append(TEXT_11);
+				stringBuffer.append(TEXT_14);
 				int length = iJavaMethodData.getMethodParameter().size();
 				int current_index = 0;
 				for (MethodParameterData iMethodParameterData : iJavaMethodData.getMethodParameter()) {
 					current_index += 1;
-					stringBuffer.append(TEXT_12);
+					stringBuffer.append(TEXT_15);
 					stringBuffer.append(iMethodParameterData.getType());
-					stringBuffer.append(TEXT_13);
+					stringBuffer.append(TEXT_16);
 					stringBuffer.append(iMethodParameterData.getName());
 
 					if (current_index < iJavaMethodData.getMethodParameter().size()) {
-						stringBuffer.append(TEXT_14);
+						stringBuffer.append(TEXT_17);
 					}
 				}
-				stringBuffer.append(TEXT_15);
-				if (return_type.trim().length() > 0 && !return_type.equals("void")) {
-					stringBuffer.append(TEXT_16);
+				stringBuffer.append(TEXT_18);
+				String methodCode = iJavaMethodData.getMethodCode();
+				if (methodCode != null && methodCode.isEmpty() == false) {
+					stringBuffer.append(TEXT_19);
+					stringBuffer.append(methodCode);
+				} else {
+					stringBuffer.append(TEXT_20);
+					if (return_type.trim().length() > 0 && !return_type.equals("void")) {
+						stringBuffer.append(TEXT_21);
+					}
 				}
-				stringBuffer.append(TEXT_17);
+				stringBuffer.append(TEXT_22);
 			}
 		}
-		stringBuffer.append(TEXT_18);
+		stringBuffer.append(TEXT_23);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCMethods", stringBuffer.toString());
 	}
@@ -235,7 +258,7 @@ public class GenJavaServiceCommonPattern
 	protected void method_generateJSCEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		if (java_service_data != null) {
-			stringBuffer.append(TEXT_19);
+			stringBuffer.append(TEXT_24);
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCEnd", stringBuffer.toString());
