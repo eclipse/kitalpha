@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.polarsys.kitalpha.Examples"
+            name="Kitalpha Examples"
+            parentCategory="org.eclipse.ui.Examples">
+      </category>
+      <wizard
+            canFinishEarly="true"
+            category="org.eclipse.ui.Examples/org.polarsys.kitalpha.Examples"
+            class="org.polarsys.kitalpha.composer.componentsample.importer.ComposerComponentSampleExampleInstallerWizard"
+            hasPages="false"
+            icon="icons/Kitalpha16x16.png"
+            id="org.polarsys.kitalpha.composer.componentsample.installer.Wizard"
+            name="Kitalpha Composer ComponentSample Example"
+            project="true">
+      </wizard>
+   </extension>
+
+
+</plugin>

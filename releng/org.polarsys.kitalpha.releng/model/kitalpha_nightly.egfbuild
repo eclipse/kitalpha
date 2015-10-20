@@ -401,6 +401,31 @@
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_tuBEEGd6EeWI8-L4a5vCdA" component="_J0_dxWzJEeWQLIDk8nN8SA"/>
   </jobs>
+  <jobs xmi:id="_8Eh0kHb6EeWINeLhqhgHKw" name="Composer Component sample">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_8Eh0kXb6EeWINeLhqhgHKw">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8Eh0knb6EeWINeLhqhgHKw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_8Eh0k3b6EeWINeLhqhgHKw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/plugins"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_8Eh0lHb6EeWINeLhqhgHKw" path="${publish}/TP_build"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_8Eh0lXb6EeWINeLhqhgHKw" path="${publish}/TP_mars"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_8Eh0lnb6EeWINeLhqhgHKw" id="org.polarsys.kitalpha.composer.componentsample.feature"/>
+      <components xsi:type="buildstep:Plugin" xmi:id="_8Eh0l3b6EeWINeLhqhgHKw" id="org.polarsys.kitalpha.composer.componentsample.importer"/>
+    </steps>
+    <steps xsi:type="buildstep:EgfStep" xmi:id="_8Eh0mHb6EeWINeLhqhgHKw">
+      <properties xmi:id="_8Eh0mXb6EeWINeLhqhgHKw" key="egf.target.bundle.priority" value="true"/>
+      <properties xmi:id="_8Eh0mnb6EeWINeLhqhgHKw" key="featureName" value="org.polarsys.kitalpha.composer.componentsample.feature"/>
+      <properties xmi:id="_8Eh0m3b6EeWINeLhqhgHKw" key="outputFolder" value="${publish}/examples"/>
+      <properties xmi:id="_8Eh0nHb6EeWINeLhqhgHKw" key="importerName" value="org.polarsys.kitalpha.composer.componentsample.importer"/>
+      <egfActivities xmi:id="_8Eh0nXb6EeWINeLhqhgHKw" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/PublishExamples.fcore#_P2rGsKboEd-ZgeUI-BonwQ"/>
+    </steps>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_8Eh0nnb6EeWINeLhqhgHKw">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_RRFR4Hb7EeWINeLhqhgHKw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_RRFR4Xb7EeWINeLhqhgHKw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/plugins"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_8Eh0oXb6EeWINeLhqhgHKw" path="${publish}/TP_build"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_8Eh0onb6EeWINeLhqhgHKw" path="${publish}/TP_mars"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_8Eh0o3b6EeWINeLhqhgHKw" id="org.polarsys.kitalpha.composer.componentsample.installer.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_8Eh0pHb6EeWINeLhqhgHKw" component="_8Eh0o3b6EeWINeLhqhgHKw"/>
+  </jobs>
   <jobs xmi:id="_m9Jf4fxHEeOQxJjwrfaNsA" name="product">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_qsm0MPxHEeOQxJjwrfaNsA">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XkY4UBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/features"/>
