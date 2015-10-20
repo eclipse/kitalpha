@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.IContainer;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.IResourceDescription;
@@ -37,6 +38,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelp
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
 import com.google.inject.Inject;
 
 /**
@@ -78,12 +81,60 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		return taObjects;
 	}
 	
+	private Multimap<QualifiedName, IEObjectDescription> multiMapDesc = null;
+	
 	protected IScope createDataContainerScope(Resource eResource, IScope parent, IContainer container, Predicate<IEObjectDescription> filter, EClass type, boolean ignoreCase) {
 		Iterable<IEObjectDescription> exportedObjects = Collections.emptyList();		
 		ResourceSet resourceSet = eResource.getResourceSet();
-		exportedObjects = getTAObject(resourceSet, exportedObjects);
-		exportedObjects = getExternalImportObjectDescription(eResource, exportedObjects);
-		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
+//		exportedObjects = getTAObject(resourceSet, exportedObjects);
+//		exportedObjects = getExternalImportObjectDescription(eResource, exportedObjects);
+		
+		calculateTAScope(parent, resourceSet, exportedObjects, ignoreCase);
+		return computeScope(parent, eResource, exportedObjects, ignoreCase);
+		//return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
+	}
+
+	//To be reworked
+	private void calculateTAScope(IScope parent, ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
+		if (multiMapDesc == null || multiMapDesc.isEmpty()){
+			
+			for(IEObjectDescription description: getExternalObjectDescriptions(resourceSet, exportedObjects)) {
+				if (multiMapDesc == null)
+					multiMapDesc = LinkedHashMultimap.create(5,2);
+				if (ignoreCase)
+					multiMapDesc.put(description.getName().toLowerCase(), description);
+				else
+					multiMapDesc.put(description.getName(), description);
+			}
+		}
+	}
+	
+	private IScope computeScope(IScope parent, Resource r, Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
+		Multimap<QualifiedName, IEObjectDescription> map = LinkedHashMultimap.create(5,2);
+		Iterable<IEObjectDescription> __exportedObjects = Collections.emptyList();
+		for(IEObjectDescription description: getExternalImportObjectDescription(r, __exportedObjects)) {
+			if (map == null)
+				map = LinkedHashMultimap.create(5,2);
+			if (ignoreCase)
+				map.put(description.getName().toLowerCase(), description);
+			else
+				map.put(description.getName(), description);
+		}
+		
+		if (multiMapDesc != null && !multiMapDesc.isEmpty()){
+			map.putAll(multiMapDesc);
+		}
+		
+		return new DataDSLMultiBasedScope(parent, map, ignoreCase);
+	}
+	
+	public class DataDSLMultiBasedScope extends MultimapBasedScope {
+
+		protected DataDSLMultiBasedScope(IScope parent, Multimap<QualifiedName, IEObjectDescription> elements,
+				boolean ignoreCase) {
+			super(parent, elements, ignoreCase);
+		}
+		
 	}
 	
 	private Iterable<IEObjectDescription> getExternalObjectDescriptions(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects) {
