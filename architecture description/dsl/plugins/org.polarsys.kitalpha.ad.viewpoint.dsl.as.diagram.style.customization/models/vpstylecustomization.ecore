@@ -136,8 +136,10 @@
         eType="#//CustomizationExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SquareCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BundledImageCustomization" eSuperTypes="#//SpecificNodeStyleCustomization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="shape" eType="ecore:EEnum platform:/plugin/org.eclipse.sirius.diagram/model/diagram.ecore#//BundledImageShape"/>

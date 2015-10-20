@@ -1,4 +1,4 @@
-if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_ColorUseCase())) 
+if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) 
 {
 	final ColorUseCase colorUseCase = parameter.getColorUseCase();
 	if (colorUseCase.equals(ColorUseCase.FOREGROUND)) 

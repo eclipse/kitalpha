@@ -129,10 +129,10 @@ public class ContainerStyleCustomizationImpl extends AbstractNodeStyleCustomizat
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isRoundedCorner()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final boolean ROUNDED_CORNER_EDEFAULT = false;
+	protected static final Boolean ROUNDED_CORNER_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #isRoundedCorner() <em>Rounded Corner</em>}' attribute.
@@ -292,7 +292,7 @@ public class ContainerStyleCustomizationImpl extends AbstractNodeStyleCustomizat
 	 * @generated NOT
 	 */
 
-	public void setRoundedCorner(boolean newRoundedCorner) {
+	public void setRoundedCorner(Boolean newRoundedCorner) {
 
 		Boolean oldRoundedCorner = roundedCorner;
 		roundedCorner = newRoundedCorner;

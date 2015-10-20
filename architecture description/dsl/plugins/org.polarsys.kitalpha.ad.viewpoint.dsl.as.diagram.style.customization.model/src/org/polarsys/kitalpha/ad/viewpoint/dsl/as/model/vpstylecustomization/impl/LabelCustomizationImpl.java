@@ -160,10 +160,10 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isShowIcon()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final boolean SHOW_ICON_EDEFAULT = false;
+	protected static final Boolean SHOW_ICON_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #isShowIcon() <em>Show Icon</em>}' attribute.
@@ -428,7 +428,7 @@ public class LabelCustomizationImpl extends AbstractCustomizationImpl implements
 	 * @generated NOT
 	 */
 
-	public void setShowIcon(boolean newShowIcon) {
+	public void setShowIcon(Boolean newShowIcon) {
 		Boolean oldShowIcon = showIcon;
 		showIcon = newShowIcon;
 		if (eNotificationRequired())
