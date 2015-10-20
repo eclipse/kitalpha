@@ -37,5 +37,10 @@
           constraint="vpElement.FreeErrorConstraint"
           name="Abstract Style Customization AppliedOn is Empty ">
     </addition>
+    <addition
+          class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.appliedon.ColorCustomizationAppliedOnCompliancy"
+          constraint="vpElement.FreeErrorConstraint"
+          name="Model element free validator">
+    </addition>
  </extension>
 </plugin>
