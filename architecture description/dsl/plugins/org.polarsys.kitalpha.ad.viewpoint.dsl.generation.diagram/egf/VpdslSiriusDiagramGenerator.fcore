@@ -1502,6 +1502,24 @@
                   key="#_So_dYG2iEeWW0teG0FdF7g"/>
             </orchestration>
           </elements>
+          <elements xmi:id="_54adEHfQEeWZdcJu13p-Ig" name="StylecustomizationReusePattern"
+              superPattern="#_ytbmoF5nEeKooNX-rGQuxA" headerMethod="#_54adEnfQEeWZdcJu13p-Ig"
+              conditionMethod="#_54adFHfQEeWZdcJu13p-Ig" initMethod="#_54adE3fQEeWZdcJu13p-Ig"
+              footerMethod="#_54adFnfQEeWZdcJu13p-Ig">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_54adEXfQEeWZdcJu13p-Ig"
+                name="Java"/>
+            <methods xmi:id="_54adEnfQEeWZdcJu13p-Ig" name="header" patternFilePath="templates/pattern._54adEHfQEeWZdcJu13p-Ig/method._54adEnfQEeWZdcJu13p-Ig.pt"/>
+            <methods xmi:id="_54adE3fQEeWZdcJu13p-Ig" name="init" patternFilePath="templates/pattern._54adEHfQEeWZdcJu13p-Ig/method._54adE3fQEeWZdcJu13p-Ig.pt"/>
+            <methods xmi:id="_54adFHfQEeWZdcJu13p-Ig" name="preCondition" patternFilePath="templates/pattern._54adEHfQEeWZdcJu13p-Ig/method._54adFHfQEeWZdcJu13p-Ig.pt"/>
+            <methods xmi:id="_54adFXfQEeWZdcJu13p-Ig" name="setParentMapping" patternFilePath="templates/pattern._54adEHfQEeWZdcJu13p-Ig/method._54adFXfQEeWZdcJu13p-Ig.pt"/>
+            <methods xmi:id="_54adFnfQEeWZdcJu13p-Ig" name="footer" patternFilePath="templates/pattern._54adEHfQEeWZdcJu13p-Ig/method._54adFnfQEeWZdcJu13p-Ig.pt"/>
+            <methods xmi:id="_w-p8MHfSEeWZdcJu13p-Ig" name="createDoremiElement" patternFilePath="templates/pattern._54adEHfQEeWZdcJu13p-Ig/method._w-p8MHfSEeWZdcJu13p-Ig.pt"/>
+            <methods xmi:id="_zWf9UHfSEeWZdcJu13p-Ig" name="addElementToODesign" patternFilePath="templates/pattern._54adEHfQEeWZdcJu13p-Ig/method._zWf9UHfSEeWZdcJu13p-Ig.pt"/>
+            <parameters xmi:id="_WmekAHfREeWZdcJu13p-Ig" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/vpstylecustomization/1.0.0#//StyleCustomizationReuse"/>
+            <variables xmi:id="_bToPoHfREeWZdcJu13p-Ig" name="sStyleCustomizationReuse"
+                type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_54adF3fQEeWZdcJu13p-Ig"/>
+          </elements>
         </libraries>
         <libraries xmi:id="_ggoDAGzbEeWW0teG0FdF7g" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style.specific">
           <elements xmi:id="_oWzO4Gz4EeWW0teG0FdF7g" name="Node_BundleImageCustomization"
