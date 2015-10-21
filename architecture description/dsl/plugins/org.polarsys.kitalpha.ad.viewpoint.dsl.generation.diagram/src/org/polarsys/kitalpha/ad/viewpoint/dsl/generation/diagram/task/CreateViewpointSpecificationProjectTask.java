@@ -128,6 +128,7 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 		switch (currentExpressionKind) {
 		case QueryLegacy:
 			dependenciesToRemove.add("org.eclipse.sirius.common.acceleo.mtl");
+			dependenciesToRemove.add("org.eclipse.sirius.common.acceleo.aql");
 			requiredBundlesToAdd.add("org.eclipse.sirius.query.legacy");
 			break;
 		default:
