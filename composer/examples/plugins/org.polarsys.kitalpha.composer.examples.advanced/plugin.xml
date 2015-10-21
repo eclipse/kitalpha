@@ -15,7 +15,7 @@ Contributors:
          point="org.eclipse.ui.newWizards">
       <wizard
             canFinishEarly="true"
-            category="org.eclipse.ui.Examples"
+            category="org.eclipse.ui.Examples/org.polarsys.kitalpha.Examples"
             class="org.polarsys.kitalpha.composer.examples.advanced.AdvancedUseCaseWizard"
             hasPages="false"
             icon="icon/icon-example.jpg"
