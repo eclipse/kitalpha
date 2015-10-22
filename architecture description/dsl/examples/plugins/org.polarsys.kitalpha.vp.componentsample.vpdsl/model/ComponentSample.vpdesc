@@ -4,16 +4,16 @@
     <VP_Classes name="ComponentElement" abstract="true">
       <VP_Class_Attributes name="name">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
         </owned_type>
       </VP_Class_Attributes>
       <VP_Class_Attributes name="description">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
         </owned_type>
       </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement"/>
+        <superClass href="../../../plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement"/>
       </Inheritences>
     </VP_Classes>
     <VP_Classes name="ComponentModel">
@@ -71,10 +71,11 @@
           <style>
             <node_Label>
               <value>
+                <expressionElements xsi:type="expression:StringElement" value="Package "/>
                 <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
               </value>
             </node_Label>
-            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_gray" forgroundColor="light_gray" borderColor="blue"/>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_yellow" forgroundColor="light_gray" borderColor="blue"/>
           </style>
           <children>
             <owned_nodes xsi:type="vpdiagram:Container" name="HardwareComponentContainer">
@@ -85,10 +86,11 @@
               <style>
                 <node_Label>
                   <value>
+                    <expressionElements xsi:type="expression:StringElement" value="HW"/>
                     <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
                   </value>
                 </node_Label>
-                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="light_chocolate" borderColor="blue"/>
+                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="orange" forgroundColor="light_red" borderColor="red"/>
               </style>
               <children>
                 <owned_nodes xsi:type="vpdiagram:Container" name="InnerHardwareComponentContainer">
@@ -99,11 +101,13 @@
                   <style>
                     <node_Label>
                       <value>
+                        <expressionElements xsi:type="expression:StringElement" value="HW"/>
                         <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
                       </value>
                     </node_Label>
-                    <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="light_chocolate" borderColor="blue"/>
+                    <style xsi:type="vpdiagram:FlatStyle" backgroundColor="white" forgroundColor="light_yellow"/>
                   </style>
+                  <children reused_nodes="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0 //@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1"/>
                 </owned_nodes>
                 <owned_nodes xsi:type="vpdiagram:Node" name="SoftwareComponentNode">
                   <the_domain>
@@ -113,10 +117,11 @@
                   <style>
                     <node_Label>
                       <value>
+                        <expressionElements xsi:type="expression:StringElement" value="SW"/>
                         <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
                       </value>
                     </node_Label>
-                    <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_gray"/>
+                    <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_blue"/>
                   </style>
                 </owned_nodes>
               </children>
@@ -147,7 +152,7 @@
         <actions xsi:type="vpdiagram:Create" name="UseComponentToComponentEdgeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.1" label="Use Link" icon="arrow-right-16-ns.png"/>
         <actions xsi:type="vpdiagram:Delete" name="UseComponentToComponentEdgeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.1" label="Delete"/>
         <actions xsi:type="vpdiagram:ReconnectEdge" name="UseComponentToComponentReconnectEdge" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.1" label="Reconnect Use Link"/>
-        <openActions name="MyAction" label="My Action!" icon="goAction.gif"/>
+        <openActions name="GoAction" label="Go!" icon="goAction.gif"/>
       </the_ActionSet>
       <the_domain>
         <the_domain xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>

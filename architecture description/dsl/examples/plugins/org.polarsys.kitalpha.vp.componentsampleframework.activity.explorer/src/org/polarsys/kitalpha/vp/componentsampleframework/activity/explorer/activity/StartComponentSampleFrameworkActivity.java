@@ -11,10 +11,20 @@
 
 package org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activity;
 
+import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.constants.IComponentSampleConstants;
 
 public class StartComponentSampleFrameworkActivity extends AbstractComponentsampleHyperLink {
+
+	public StartComponentSampleFrameworkActivity(EObject root) {
+		super(root);
+	}
+	
+	public StartComponentSampleFrameworkActivity() {
+		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
+	}
 
 	@Override
 	public void linkActivated(HyperlinkEvent e) {

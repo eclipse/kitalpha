@@ -11,6 +11,8 @@
 
 package org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activity;
 
+import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.constants.IComponentSampleConstants;
 
@@ -20,6 +22,15 @@ import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.const
  *
  */
 public class StopComponentSampleFrameworkActivity extends AbstractComponentsampleHyperLink {
+	public StopComponentSampleFrameworkActivity(EObject root) {
+		super(root);
+	}
+	
+	public StopComponentSampleFrameworkActivity() {
+		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
+	}
+	
+	
 	@Override
 	public void linkActivated(HyperlinkEvent e) {
 		_linkActivated(e, IComponentSampleConstants.COMPONENTSAMPLE_FRAMEWORK);

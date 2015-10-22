@@ -23,6 +23,7 @@ import org.eclipse.emf.transaction.TransactionalCommandStack;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.window.Window;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
@@ -37,6 +38,35 @@ import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activ
  */
 public class SetModelNameActivity extends AbstractComponentsampleHyperLink {
 
+	/**
+	* Default constructor
+	*/
+	public SetModelNameActivity() {
+		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
+	}
+
+	/**
+	* Constructor with parameters
+	* @param root the root model element ({@link EObject})
+	* @param session the associated {@link Session} with the activity explorer
+	*/
+	public SetModelNameActivity(EObject root, Session session) {
+		super(root);
+	}
+
+	/**
+	 * Constructor with parameters
+	 * @param root the root model element ({@link EObject})
+	 * @param session the associated {@link Session} with the activity explorer
+	 */
+	public SetModelNameActivity(EObject root) {
+		super(root);
+	}
+
+	@Override
+	protected void linkPressed(HyperlinkEvent event, EObject project_p, Session session) {
+		super.linkPressed(event, project_p, session);
+	}
 
 	@Override
 	public void linkActivated(HyperlinkEvent e) {

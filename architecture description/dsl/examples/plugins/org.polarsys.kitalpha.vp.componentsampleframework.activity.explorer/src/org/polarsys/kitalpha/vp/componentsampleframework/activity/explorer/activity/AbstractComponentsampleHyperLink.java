@@ -15,9 +15,12 @@ import java.util.Vector;
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.ActivityExplorerPage;
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.BasicSessionActivityExplorerPage;
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.CommonActivityExplorerPage;
+import org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter;
 import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.statushandlers.StatusManager;
@@ -33,8 +36,16 @@ import org.polarsys.kitalpha.vp.componentsampleframework.internal.activity.explo
  * @author Faycal Abka
  *
  */
-public abstract class AbstractComponentsampleHyperLink implements IHyperlinkListener, INotifer {
+public abstract class AbstractComponentsampleHyperLink extends AbstractHyperlinkAdapter implements IHyperlinkListener, INotifer {
 	
+	public AbstractComponentsampleHyperLink(EObject root) {
+		super(root);
+	}
+	
+	public AbstractComponentsampleHyperLink() {
+		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
+	}
+
 	@Override
 	public void linkEntered(HyperlinkEvent e) {
 	}
@@ -84,6 +95,10 @@ public abstract class AbstractComponentsampleHyperLink implements IHyperlinkList
 		{
 			((ComponentSampleViewpointManagementPagePage)page).processNotification(vpid);
 		}
+	}
+	
+	@Override
+	protected void linkPressed(HyperlinkEvent arg0, EObject arg1, Session arg2) {
 	}
 	
 }

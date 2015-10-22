@@ -11,6 +11,9 @@
 
 package org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity;
 
+import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activity.AbstractComponentsampleHyperLink;
 import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.constants.IComponentSampleConstants;
@@ -22,6 +25,38 @@ import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.const
  */
 public class StartComponentSampleViewpointActivity extends AbstractComponentsampleHyperLink {
 
+	/**
+	* Default constructor
+	*/
+	public StartComponentSampleViewpointActivity() {
+		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
+	}
+
+	/**
+	* Constructor with parameters
+	* @param root the root model element ({@link EObject})
+	* @param session the associated {@link Session} with the activity explorer
+	*/
+	public StartComponentSampleViewpointActivity(EObject root, Session session) {
+		super(root);
+	}
+
+	/**
+	 * Constructor with parameters
+	 * @param root the root model element ({@link EObject})
+	 * @param session the associated {@link Session} with the activity explorer
+	 */
+	public StartComponentSampleViewpointActivity(EObject root) {
+		super(root);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	protected void linkPressed(HyperlinkEvent event, EObject project_p, Session session) {
+		super.linkPressed(event, project_p, session);
+	}
 
 	@Override
 	public void linkActivated(HyperlinkEvent e) {

@@ -5,5 +5,8 @@
     <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for null">
       <additions>org.polarsys.kitalpha.vp.componentsample.vpdsl</additions>
     </elements>
+    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for null">
+      <additions>org.polarsys.kitalpha.vp.componentsample.representation.feature</additions>
+    </elements>
   </elements>
 </generationChain:GenerationChain>
