@@ -5,7 +5,7 @@ public class <%=classname%> extends AbstractHyperlinkAdapter {
 	 * Default constructor
 	 */
 	public <%=classname%>() {
-		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel(), ActivityExplorerManager.INSTANCE.getSession());
+		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
 	}
 	
 	/**
@@ -13,8 +13,8 @@ public class <%=classname%> extends AbstractHyperlinkAdapter {
 	 * @param root the root model element ({@link EObject})
 	 * @param session the associated {@link Session} with the activity explorer
 	 */
-	public <%=classname%>(EObject root, Session session) {
-		super(root, session);
+	public <%=classname%>(EObject root) {
+		super(root);
 	}
 
 		/*
