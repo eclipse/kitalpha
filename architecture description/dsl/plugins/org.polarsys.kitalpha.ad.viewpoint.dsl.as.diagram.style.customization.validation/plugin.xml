@@ -40,7 +40,17 @@
     <addition
           class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.appliedon.ColorCustomizationAppliedOnCompliancy"
           constraint="vpElement.FreeErrorConstraint"
-          name="Model element free validator">
+          name="ColorCustomization and styles compliancy">
+    </addition>
+    <addition
+          class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.appliedon.StyleCustomizationReuseAppliedOnNotEmpty"
+          constraint="vpElement.FreeErrorConstraint"
+          name="Style customization reuse - Applied on not empty">
+    </addition>
+    <addition
+          class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation.appliedon.StyleCustomizationReuseReusedCustoNotEmpty"
+          constraint="vpElement.FreeErrorConstraint"
+          name="Style customization reuse Reused customization not empty">
     </addition>
  </extension>
 </plugin>

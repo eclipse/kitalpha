@@ -1,0 +1,4 @@
+sStyleCustomizationReuse = DescriptionFactory.eINSTANCE.createVSMElementCustomizationReuse();
+VSMElementCustomizationReuse customization = (VSMElementCustomizationReuse) sStyleCustomizationReuse;
+customization.getAppliedOn().addAll(parameter.getAppliedOn());
+customization.getReuse().addAll(parameter.getReusedCustomization());
