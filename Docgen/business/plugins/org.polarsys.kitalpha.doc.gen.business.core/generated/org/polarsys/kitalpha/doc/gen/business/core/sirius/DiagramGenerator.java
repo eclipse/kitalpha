@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20150608-0917
 package org.polarsys.kitalpha.doc.gen.business.core.sirius;
 
 import org.eclipse.egf.common.helper.*;
@@ -41,19 +31,16 @@ public class DiagramGenerator {
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t<div>" + NL
-			+ "\t<p class=\"diagram-name\" id=\"";
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "\t<div>" + NL + "\t<p class=\"diagram-name\" id=\"";
 	protected final String TEXT_2 = "\">";
-	protected final String TEXT_3 = "</p>" + NL + "\t<p class=\"diagram\">"
-			+ NL + "\t\t<img id=\"";
+	protected final String TEXT_3 = "</p>" + NL + "\t<p class=\"diagram\">" + NL + "\t\t<img id=\"";
 	protected final String TEXT_4 = "\" src=\"";
 	protected final String TEXT_5 = "/";
 	protected final String TEXT_6 = "\" alt=\"";
 	protected final String TEXT_7 = "\" usemap=\"#";
-	protected final String TEXT_8 = "\" />" + NL + "\t\t" + NL + "\t\t<br/>"
-			+ NL + "\t\t<br/>" + NL + "\t\t<map name=\"";
+	protected final String TEXT_8 = "\" />" + NL + "\t\t" + NL + "\t\t<br/>" + NL + "\t\t<br/>" + NL
+			+ "\t\t<map name=\"";
 	protected final String TEXT_9 = "\">";
 	protected final String TEXT_10 = NL + "\t\t\t<area shape=\"rect\" group=\"";
 	protected final String TEXT_11 = "\" coords=\"";
@@ -65,13 +52,12 @@ public class DiagramGenerator {
 	protected final String TEXT_17 = ".html#";
 	protected final String TEXT_18 = "\" alt=\"";
 	protected final String TEXT_19 = "\" />";
-	protected final String TEXT_20 = "\t\t\t" + NL + "\t\t</map>" + NL
-			+ "\t</p>" + NL + "\t<p class=\"diagram-description\">";
+	protected final String TEXT_20 = "\t\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
+			+ "\t<p class=\"diagram-description\">";
 	protected final String TEXT_21 = "</p>" + NL + "\t</div>";
 	protected final String TEXT_22 = NL + "<p class=\"diagram-name\" id=\"";
 	protected final String TEXT_23 = "\">";
-	protected final String TEXT_24 = "</p>" + NL + "<p>image is missing</p>"
-			+ NL + "<p class=\"diagram-description\">";
+	protected final String TEXT_24 = "</p>" + NL + "<p>image is missing</p>" + NL + "<p class=\"diagram-description\">";
 	protected final String TEXT_25 = "</p>";
 	protected final String TEXT_26 = NL;
 	protected final String TEXT_27 = NL;
@@ -118,8 +104,7 @@ public class DiagramGenerator {
 								this.helper = (org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper) helperParameter;
 
 								if (preCondition(ctx)) {
-									ctx.setNode(new Node.Container(currentNode,
-											getClass()));
+									ctx.setNode(new Node.Container(currentNode, getClass()));
 									orchestration(ctx);
 								}
 
@@ -131,8 +116,7 @@ public class DiagramGenerator {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_26);
@@ -155,8 +139,7 @@ public class DiagramGenerator {
 			parameterValues.put("helper", this.helper);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -187,15 +170,13 @@ public class DiagramGenerator {
 
 	protected org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService fileNameService = null;
 
-	public void set_fileNameService(
-			org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService object) {
+	public void set_fileNameService(org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService object) {
 		this.fileNameService = object;
 	}
 
 	protected org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper helper = null;
 
-	public void set_helper(
-			org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper object) {
+	public void set_helper(org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper object) {
 		this.helper = object;
 	}
 
@@ -210,16 +191,13 @@ public class DiagramGenerator {
 		return parameters;
 	}
 
-	protected void method_body(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_body(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog().log(new Status(IStatus.INFO,
 		//			org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Starting generate diagram :" + diagram.getName()));
 		Session session = DiagramSessionHelper.getCurrentSession();
-		IPath outputPath = new Path(projectName).append(outputFolder).append(
-				generatedFolder);
-		DiagramExport diagramExport = new DiagramExport(projectName,
-				outputPath, diagram, session);
+		IPath outputPath = new Path(projectName).append(outputFolder).append(generatedFolder);
+		DiagramExport diagramExport = new DiagramExport(projectName, outputPath, diagram, session);
 		IFile imageFile = diagramExport.exportAsImage();
 		Resource sessionResource = session.getSessionResource();
 		if (imageFile != null && imageFile.exists()) {
@@ -232,15 +210,14 @@ public class DiagramGenerator {
 			}
 			String mapName = diagram.getName() + "_" + id + "_PositionMap";
 			mapName = DocGenHtmlUtil.getValidFileName(mapName);
-			CoordinatesCalculator calculator = new CoordinatesCalculator(
-					imageFile, diagram, helper);
+			CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
 			//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
 			Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 
 			stringBuffer.append(TEXT_1);
 			stringBuffer.append(id);
 			stringBuffer.append(TEXT_2);
-			stringBuffer.append(diagram.getName());
+			stringBuffer.append(EscapeChars.forHTML(diagram.getName()));
 			stringBuffer.append(TEXT_3);
 			stringBuffer.append(diagram.hashCode());
 			stringBuffer.append(TEXT_4);
@@ -248,7 +225,7 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_5);
 			stringBuffer.append(imageFile.getName());
 			stringBuffer.append(TEXT_6);
-			stringBuffer.append(diagram.getName());
+			stringBuffer.append(EscapeChars.forHTML(diagram.getName()));
 			stringBuffer.append(TEXT_7);
 			stringBuffer.append(mapName);
 			stringBuffer.append(TEXT_8);
@@ -285,33 +262,29 @@ public class DiagramGenerator {
 			}
 
 			stringBuffer.append(TEXT_20);
-			stringBuffer.append(helper.diagramDocumentationPostTraitement(
-					((DSemanticDiagram) diagram).getTarget(),
+			stringBuffer.append(helper.diagramDocumentationPostTraitement(((DSemanticDiagram) diagram).getTarget(),
 					diagram.getDocumentation(), projectName, outputFolder));
 			stringBuffer.append(TEXT_21);
 		} else {
+			String diagramName = diagram.getName();
+			if (diagramName != null && diagramName.isEmpty() == false)
+				diagramName = EscapeChars.forHTML(diagramName);
 
 			stringBuffer.append(TEXT_22);
 			stringBuffer.append(sessionResource.getURIFragment(diagram));
 			stringBuffer.append(TEXT_23);
-			stringBuffer.append(diagram.getName());
+			stringBuffer.append(diagramName);
 			stringBuffer.append(TEXT_24);
 			stringBuffer.append(diagram.getDocumentation());
 			stringBuffer.append(TEXT_25);
 
-			org.polarsys.kitalpha.doc.gen.business.core.Activator
-					.getDefault()
-					.getLog()
-					.log(new Status(
-							IStatus.ERROR,
-							org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID,
-							"Error during diagram export action:"
-									+ diagram.getName()));
+			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog()
+					.log(new Status(IStatus.ERROR, org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID,
+							"Error during diagram export action:" + diagram.getName()));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "body",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "body", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

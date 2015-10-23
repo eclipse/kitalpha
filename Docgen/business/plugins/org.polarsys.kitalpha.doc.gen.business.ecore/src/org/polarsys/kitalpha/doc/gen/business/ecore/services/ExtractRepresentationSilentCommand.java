@@ -36,6 +36,7 @@ import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.ViewpointFactory;
 import org.eclipse.sirius.business.api.dialect.command.MoveRepresentationCommand;
+import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
 import org.eclipse.sirius.business.api.session.resource.AirdResource;
@@ -245,7 +246,7 @@ public class ExtractRepresentationSilentCommand {
 					((DAnalysisSession) session).addReferencedAnalysis(slaveAnalysis);
 					for (final Resource semResource : session.getSemanticResources()) {
 						if (!semResource.getContents().isEmpty()) {
-							slaveAnalysis.getModels().add(semResource.getContents().iterator().next());
+							slaveAnalysis.getSemanticResources().add(new ResourceDescriptor(semResource.getURI()));
 						}
 					}
 				}
