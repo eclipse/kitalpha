@@ -24,9 +24,9 @@
 		Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 		%>
 	<div>
-	<p class="diagram-name" id="<%=id%>"><%= diagram.getName()%></p>
+	<p class="diagram-name" id="<%=id%>"><%= EscapeChars.forHTML(diagram.getName())%></p>
 	<p class="diagram">
-		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= diagram.getName()%>" usemap="#<%=mapName%>" />
+		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= EscapeChars.forHTML(diagram.getName())%>" usemap="#<%=mapName%>" />
 		
 		<br/>
 		<br/>
@@ -50,8 +50,11 @@ for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()){
 	</div>
 <%}
 else {
+String diagramName = diagram.getName();
+if (diagramName != null && diagramName.isEmpty() == false)
+	diagramName = EscapeChars.forHTML(diagramName);
 %>
-<p class="diagram-name" id="<%=sessionResource.getURIFragment(diagram)%>"><%= diagram.getName()%></p>
+<p class="diagram-name" id="<%=sessionResource.getURIFragment(diagram)%>"><%= diagramName%></p>
 <p>image is missing</p>
 <p class="diagram-description"><%= diagram.getDocumentation()%></p>
 <%
