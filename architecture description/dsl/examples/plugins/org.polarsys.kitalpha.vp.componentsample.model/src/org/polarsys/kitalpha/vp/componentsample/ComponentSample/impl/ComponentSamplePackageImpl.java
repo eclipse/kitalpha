@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
@@ -140,6 +141,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		EmdePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -371,6 +373,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 
 		// Obtain other dependent packages
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -385,13 +388,13 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 		softwareComponentEClass.getESuperTypes().add(this.getAbstractComponent());
 		hardwareComponentEClass.getESuperTypes().add(this.getAbstractComponent());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(componentElementEClass, ComponentElement.class, "ComponentElement", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getComponentElement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, //$NON-NLS-1$
 				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getComponentElement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, //$NON-NLS-1$
 				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

@@ -14,6 +14,7 @@ package org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.acti
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.ActivityExplorerPage;
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.BasicSessionActivityExplorerPage;
 import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -25,6 +26,15 @@ import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.const
  *
  */
 public class StopAllActivity extends AbstractComponentsampleHyperLink {
+
+	public StopAllActivity(EObject root) {
+		super(root);
+	}
+	
+	public StopAllActivity() {
+		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
+	}
+	
 
 	private static final String END_LABEL = "Stop All";
 

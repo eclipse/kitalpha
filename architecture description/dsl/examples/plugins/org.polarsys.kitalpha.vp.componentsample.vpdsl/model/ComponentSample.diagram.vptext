@@ -25,12 +25,12 @@ Diagrams ComponentSample.diagram {
 				provided-by association ComponentSample.data.ComponentModel.packages
 				Representation {
 					Label {
-						content: ComponentSample.data.ComponentElement.name
+						content: "Package " + ComponentSample.data.ComponentElement.name
 						police: black
 					}
 					Style {
 						FlatStyle {
-							border: blue background: light_gray foreground: light_gray
+							border: blue background: light_yellow foreground: light_gray
 						}
 					}
 				}
@@ -39,9 +39,9 @@ Diagrams ComponentSample.diagram {
 					Container HardwareComponentContainer {
 						domain-context: ComponentSample.data.HardwareComponent provided-by association ComponentSample.data.ComponentPackage.components
 						Representation {
-							Label { content: ComponentSample.data.ComponentElement.name police: black }
+							Label { content: "HW" + ComponentSample.data.ComponentElement.name police: black }
 							Style {
-								FlatStyle {	border: blue background: light_chocolate foreground: light_chocolate }
+								FlatStyle {	border: red background: orange foreground: light_red }
 							}
 						}
 						Contains {
@@ -49,28 +49,31 @@ Diagrams ComponentSample.diagram {
 							Container InnerHardwareComponentContainer {
 								domain-context: ComponentSample.data.HardwareComponent provided-by association ComponentSample.data.HardwareComponent.abstractComponent
 								Representation {
-									Label { content: ComponentSample.data.ComponentElement.name police: black }
+									Label { content: "HW" + ComponentSample.data.ComponentElement.name police: black }
 									Style {
-										FlatStyle {	border: blue background: light_chocolate foreground: light_chocolate }
+										FlatStyle {	border: black background: white foreground: light_yellow }
 									}
+								}
+								Contains {
+									reuse InnerHardwareComponentContainer, SoftwareComponentNode
 								}
 							}
 							
 							Node SoftwareComponentNode {
 								domain-context: ComponentSample.data.SoftwareComponent provided-by association ComponentSample.data.HardwareComponent.abstractComponent
 								Representation {
-									Label { content: ComponentSample.data.ComponentElement.name police: black  }
+									Label { content: "SW" + ComponentSample.data.ComponentElement.name police: black }
 									Style {
-										BasicStyle {border-color: black background: light_gray form: Square}
+										BasicStyle {border-color: black background: light_blue form: Square}
 									}
 								}
 							}
 							
-						} 
+						}
 					}
 				}
 			}
-			 
+			
 			Edge UseComponentToComponentEdge {
 				association-context: ComponentSample.data.AbstractComponent.use
 				source: ComponentPackageContainer.HardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.InnerHardwareComponentContainer, ComponentPackageContainer.HardwareComponentContainer.SoftwareComponentNode
@@ -81,6 +84,7 @@ Diagrams ComponentSample.diagram {
 			}
 			
 		}
+		
 		Actions {
 			// ComponentPackageContainer actions
 			Create ComponentPackageContainerCreate { label: "Component Package" action-for: ComponentPackageContainer}
@@ -107,7 +111,7 @@ Diagrams ComponentSample.diagram {
 			ReconnectEdge UseComponentToComponentReconnectEdge { label: "Reconnect Use Link" action-for:  UseComponentToComponentEdge}
 
 			// Open actions			
-			OpenAction MyAction { label: "My Action!" icon: "goAction.gif"  }
+			OpenAction GoAction { label: "Go!" icon: "goAction.gif"  }
 		}
 	}
 }

@@ -113,6 +113,15 @@ public interface ComponentSamplePackage extends EPackage {
 	int COMPONENT_ELEMENT_FEATURE_COUNT = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Component Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ELEMENT_OPERATION_COUNT = EmdePackage.EXTENSIBLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentModelImpl <em>Component Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,6 +177,15 @@ public interface ComponentSamplePackage extends EPackage {
 	int COMPONENT_MODEL_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The number of operations of the '<em>Component Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_MODEL_OPERATION_COUNT = COMPONENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.PackageImpl <em>Package</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,6 +230,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int PACKAGE_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE_OPERATION_COUNT = COMPONENT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentPackageImpl <em>Component Package</em>}' class.
@@ -267,6 +294,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_PACKAGE_FEATURE_COUNT = PACKAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Component Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PACKAGE_OPERATION_COUNT = PACKAGE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.AbstractComponentImpl <em>Abstract Component</em>}' class.
@@ -333,6 +369,15 @@ public interface ComponentSamplePackage extends EPackage {
 	int ABSTRACT_COMPONENT_FEATURE_COUNT = COMPONENT_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Abstract Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMPONENT_OPERATION_COUNT = COMPONENT_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.SoftwareComponentImpl <em>Software Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,6 +440,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int SOFTWARE_COMPONENT_FEATURE_COUNT = ABSTRACT_COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Software Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_COMPONENT_OPERATION_COUNT = ABSTRACT_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.HardwareComponentImpl <em>Hardware Component</em>}' class.
@@ -468,6 +522,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_COMPONENT_FEATURE_COUNT = ABSTRACT_COMPONENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Hardware Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMPONENT_OPERATION_COUNT = ABSTRACT_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentType <em>Component Type</em>}' enum.

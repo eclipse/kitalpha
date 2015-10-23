@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin;
 
 /**
@@ -45,7 +46,7 @@ public final class ComponentSampleEditorPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public ComponentSampleEditorPlugin() {
-		super(new ResourceLocator[] { EmdeEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, EmdeEditPlugin.INSTANCE, });
 	}
 
 	/**
