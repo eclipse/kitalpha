@@ -12915,7 +12915,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEdgeStyleCustomization"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4544:1: ruleEdgeStyleCustomization returns [EObject current=null] : ( () otherlv_1= 'edge' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4544:1: ruleEdgeStyleCustomization returns [EObject current=null] : ( () otherlv_1= 'edge' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' ) ;
     public final EObject ruleEdgeStyleCustomization() throws RecognitionException {
         EObject current = null;
 
@@ -12982,11 +12982,11 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4547:28: ( ( () otherlv_1= 'edge' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4548:1: ( () otherlv_1= 'edge' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4547:28: ( ( () otherlv_1= 'edge' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4548:1: ( () otherlv_1= 'edge' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4548:1: ( () otherlv_1= 'edge' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4548:2: () otherlv_1= 'edge' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4548:1: ( () otherlv_1= 'edge' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4548:2: () otherlv_1= 'edge' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )? (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )? (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )? (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )? (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )? (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )? (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )? (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )? (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )? (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )? (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )? (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )? otherlv_51= '}'
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4548:2: ()
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4549:5: 
@@ -13007,131 +13007,148 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                   	newLeafNode(otherlv_1, grammarAccess.getEdgeStyleCustomizationAccess().getEdgeKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleEdgeStyleCustomization9695); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_2, grammarAccess.getEdgeStyleCustomizationAccess().getLeftParenthesisKeyword_2());
-                  
-            }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4562:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4562:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4562:2: ( (otherlv_3= RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4563:1: (otherlv_3= RULE_STRING )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4563:1: (otherlv_3= RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4564:3: otherlv_3= RULE_STRING
-            {
-            if ( state.backtracking==0 ) {
-
-              			if (current==null) {
-              	            current = createModelElement(grammarAccess.getEdgeStyleCustomizationRule());
-              	        }
-                      
-            }
-            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9716); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              		newLeafNode(otherlv_3, grammarAccess.getEdgeStyleCustomizationAccess().getAppliedOnEdgeStyleDescriptionCrossReference_3_0_0()); 
-              	
-            }
-
-            }
-
-
-            }
-
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4575:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            loop106:
-            do {
-                int alt106=2;
-                int LA106_0 = input.LA(1);
-
-                if ( (LA106_0==37) ) {
-                    alt106=1;
-                }
-
-
-                switch (alt106) {
-            	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4575:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
-            	    {
-            	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleEdgeStyleCustomization9729); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	          	newLeafNode(otherlv_4, grammarAccess.getEdgeStyleCustomizationAccess().getCommaKeyword_3_1_0());
-            	          
-            	    }
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4579:1: ( (otherlv_5= RULE_STRING ) )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4580:1: (otherlv_5= RULE_STRING )
-            	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4580:1: (otherlv_5= RULE_STRING )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4581:3: otherlv_5= RULE_STRING
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      			if (current==null) {
-            	      	            current = createModelElement(grammarAccess.getEdgeStyleCustomizationRule());
-            	      	        }
-            	              
-            	    }
-            	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9749); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      		newLeafNode(otherlv_5, grammarAccess.getEdgeStyleCustomizationAccess().getAppliedOnEdgeStyleDescriptionCrossReference_3_1_1_0()); 
-            	      	
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop106;
-                }
-            } while (true);
-
-
-            }
-
-            otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleEdgeStyleCustomization9764); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_6, grammarAccess.getEdgeStyleCustomizationAccess().getRightParenthesisKeyword_4());
-                  
-            }
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleEdgeStyleCustomization9776); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_7, grammarAccess.getEdgeStyleCustomizationAccess().getLeftCurlyBracketKeyword_5());
-                  
-            }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4600:1: (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )?
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4558:1: (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )?
             int alt107=2;
             int LA107_0 = input.LA(1);
 
-            if ( (LA107_0==92) ) {
+            if ( (LA107_0==88) ) {
                 alt107=1;
             }
             switch (alt107) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4600:3: otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4558:3: otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')'
                     {
-                    otherlv_8=(Token)match(input,92,FOLLOW_92_in_ruleEdgeStyleCustomization9789); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleEdgeStyleCustomization9696); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_8, grammarAccess.getEdgeStyleCustomizationAccess().getOverAllEdgesKeyword_6_0());
+                          	newLeafNode(otherlv_2, grammarAccess.getEdgeStyleCustomizationAccess().getLeftParenthesisKeyword_2_0());
                           
                     }
-                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9801); if (state.failed) return current;
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4562:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4562:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4562:2: ( (otherlv_3= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4563:1: (otherlv_3= RULE_STRING )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4563:1: (otherlv_3= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4564:3: otherlv_3= RULE_STRING
+                    {
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_9, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_6_1());
+                      			if (current==null) {
+                      	            current = createModelElement(grammarAccess.getEdgeStyleCustomizationRule());
+                      	        }
+                              
+                    }
+                    otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9717); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		newLeafNode(otherlv_3, grammarAccess.getEdgeStyleCustomizationAccess().getAppliedOnEdgeStyleDescriptionCrossReference_2_1_0_0()); 
+                      	
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4575:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    loop106:
+                    do {
+                        int alt106=2;
+                        int LA106_0 = input.LA(1);
+
+                        if ( (LA106_0==37) ) {
+                            alt106=1;
+                        }
+
+
+                        switch (alt106) {
+                    	case 1 :
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4575:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
+                    	    {
+                    	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleEdgeStyleCustomization9730); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_4, grammarAccess.getEdgeStyleCustomizationAccess().getCommaKeyword_2_1_1_0());
+                    	          
+                    	    }
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4579:1: ( (otherlv_5= RULE_STRING ) )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4580:1: (otherlv_5= RULE_STRING )
+                    	    {
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4580:1: (otherlv_5= RULE_STRING )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4581:3: otherlv_5= RULE_STRING
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getEdgeStyleCustomizationRule());
+                    	      	        }
+                    	              
+                    	    }
+                    	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9750); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      		newLeafNode(otherlv_5, grammarAccess.getEdgeStyleCustomizationAccess().getAppliedOnEdgeStyleDescriptionCrossReference_2_1_1_1_0()); 
+                    	      	
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop106;
+                        }
+                    } while (true);
+
+
+                    }
+
+                    otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleEdgeStyleCustomization9765); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_6, grammarAccess.getEdgeStyleCustomizationAccess().getRightParenthesisKeyword_2_2());
+                          
+                    }
+
+                    }
+                    break;
+
+            }
+
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleEdgeStyleCustomization9779); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_7, grammarAccess.getEdgeStyleCustomizationAccess().getLeftCurlyBracketKeyword_3());
+                  
+            }
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4600:1: (otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )?
+            int alt108=2;
+            int LA108_0 = input.LA(1);
+
+            if ( (LA108_0==92) ) {
+                alt108=1;
+            }
+            switch (alt108) {
+                case 1 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4600:3: otherlv_8= 'over-all-edges' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) )
+                    {
+                    otherlv_8=(Token)match(input,92,FOLLOW_92_in_ruleEdgeStyleCustomization9792); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_8, grammarAccess.getEdgeStyleCustomizationAccess().getOverAllEdgesKeyword_4_0());
+                          
+                    }
+                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9804); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_9, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_4_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4608:1: ( (lv_applyonAll_10_0= ruleEBoolean ) )
@@ -13142,10 +13159,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getApplyonAllEBooleanParserRuleCall_6_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getApplyonAllEBooleanParserRuleCall_4_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleEdgeStyleCustomization9822);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleEdgeStyleCustomization9825);
                     lv_applyonAll_10_0=ruleEBoolean();
 
                     state._fsp--;
@@ -13176,26 +13193,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4626:4: (otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) ) )?
-            int alt108=2;
-            int LA108_0 = input.LA(1);
+            int alt109=2;
+            int LA109_0 = input.LA(1);
 
-            if ( (LA108_0==94) ) {
-                alt108=1;
+            if ( (LA109_0==94) ) {
+                alt109=1;
             }
-            switch (alt108) {
+            switch (alt109) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4626:6: otherlv_11= 'source' otherlv_12= ':' ( (lv_sourceArrow_13_0= ruleEdgeArrows ) )
                     {
-                    otherlv_11=(Token)match(input,94,FOLLOW_94_in_ruleEdgeStyleCustomization9837); if (state.failed) return current;
+                    otherlv_11=(Token)match(input,94,FOLLOW_94_in_ruleEdgeStyleCustomization9840); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_11, grammarAccess.getEdgeStyleCustomizationAccess().getSourceKeyword_7_0());
+                          	newLeafNode(otherlv_11, grammarAccess.getEdgeStyleCustomizationAccess().getSourceKeyword_5_0());
                           
                     }
-                    otherlv_12=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9849); if (state.failed) return current;
+                    otherlv_12=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9852); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_12, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_7_1());
+                          	newLeafNode(otherlv_12, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_5_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4634:1: ( (lv_sourceArrow_13_0= ruleEdgeArrows ) )
@@ -13206,10 +13223,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getSourceArrowEdgeArrowsEnumRuleCall_7_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getSourceArrowEdgeArrowsEnumRuleCall_5_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9870);
+                    pushFollow(FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9873);
                     lv_sourceArrow_13_0=ruleEdgeArrows();
 
                     state._fsp--;
@@ -13240,26 +13257,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4652:4: (otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) ) )?
-            int alt109=2;
-            int LA109_0 = input.LA(1);
+            int alt110=2;
+            int LA110_0 = input.LA(1);
 
-            if ( (LA109_0==95) ) {
-                alt109=1;
+            if ( (LA110_0==95) ) {
+                alt110=1;
             }
-            switch (alt109) {
+            switch (alt110) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4652:6: otherlv_14= 'target' otherlv_15= ':' ( (lv_targetArrow_16_0= ruleEdgeArrows ) )
                     {
-                    otherlv_14=(Token)match(input,95,FOLLOW_95_in_ruleEdgeStyleCustomization9885); if (state.failed) return current;
+                    otherlv_14=(Token)match(input,95,FOLLOW_95_in_ruleEdgeStyleCustomization9888); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_14, grammarAccess.getEdgeStyleCustomizationAccess().getTargetKeyword_8_0());
+                          	newLeafNode(otherlv_14, grammarAccess.getEdgeStyleCustomizationAccess().getTargetKeyword_6_0());
                           
                     }
-                    otherlv_15=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9897); if (state.failed) return current;
+                    otherlv_15=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9900); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_15, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_8_1());
+                          	newLeafNode(otherlv_15, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_6_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4660:1: ( (lv_targetArrow_16_0= ruleEdgeArrows ) )
@@ -13270,10 +13287,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getTargetArrowEdgeArrowsEnumRuleCall_8_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getTargetArrowEdgeArrowsEnumRuleCall_6_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9918);
+                    pushFollow(FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9921);
                     lv_targetArrow_16_0=ruleEdgeArrows();
 
                     state._fsp--;
@@ -13304,26 +13321,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4678:4: (otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) ) )?
-            int alt110=2;
-            int LA110_0 = input.LA(1);
+            int alt111=2;
+            int LA111_0 = input.LA(1);
 
-            if ( (LA110_0==96) ) {
-                alt110=1;
+            if ( (LA111_0==96) ) {
+                alt111=1;
             }
-            switch (alt110) {
+            switch (alt111) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4678:6: otherlv_17= 'routing' otherlv_18= ':' ( (lv_routingStyle_19_0= ruleEdgeRouting ) )
                     {
-                    otherlv_17=(Token)match(input,96,FOLLOW_96_in_ruleEdgeStyleCustomization9933); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,96,FOLLOW_96_in_ruleEdgeStyleCustomization9936); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_17, grammarAccess.getEdgeStyleCustomizationAccess().getRoutingKeyword_9_0());
+                          	newLeafNode(otherlv_17, grammarAccess.getEdgeStyleCustomizationAccess().getRoutingKeyword_7_0());
                           
                     }
-                    otherlv_18=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9945); if (state.failed) return current;
+                    otherlv_18=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9948); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_18, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_9_1());
+                          	newLeafNode(otherlv_18, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_7_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4686:1: ( (lv_routingStyle_19_0= ruleEdgeRouting ) )
@@ -13334,10 +13351,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getRoutingStyleEdgeRoutingEnumRuleCall_9_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getRoutingStyleEdgeRoutingEnumRuleCall_7_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEdgeRouting_in_ruleEdgeStyleCustomization9966);
+                    pushFollow(FOLLOW_ruleEdgeRouting_in_ruleEdgeStyleCustomization9969);
                     lv_routingStyle_19_0=ruleEdgeRouting();
 
                     state._fsp--;
@@ -13368,26 +13385,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4704:4: (otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) ) )?
-            int alt111=2;
-            int LA111_0 = input.LA(1);
+            int alt112=2;
+            int LA112_0 = input.LA(1);
 
-            if ( (LA111_0==97) ) {
-                alt111=1;
+            if ( (LA112_0==97) ) {
+                alt112=1;
             }
-            switch (alt111) {
+            switch (alt112) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4704:6: otherlv_20= 'folding' otherlv_21= ':' ( (lv_foldingStyle_22_0= ruleFoldingStyle ) )
                     {
-                    otherlv_20=(Token)match(input,97,FOLLOW_97_in_ruleEdgeStyleCustomization9981); if (state.failed) return current;
+                    otherlv_20=(Token)match(input,97,FOLLOW_97_in_ruleEdgeStyleCustomization9984); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_20, grammarAccess.getEdgeStyleCustomizationAccess().getFoldingKeyword_10_0());
+                          	newLeafNode(otherlv_20, grammarAccess.getEdgeStyleCustomizationAccess().getFoldingKeyword_8_0());
                           
                     }
-                    otherlv_21=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9993); if (state.failed) return current;
+                    otherlv_21=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization9996); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_21, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_10_1());
+                          	newLeafNode(otherlv_21, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_8_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4712:1: ( (lv_foldingStyle_22_0= ruleFoldingStyle ) )
@@ -13398,10 +13415,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getFoldingStyleFoldingStyleEnumRuleCall_10_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getFoldingStyleFoldingStyleEnumRuleCall_8_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleFoldingStyle_in_ruleEdgeStyleCustomization10014);
+                    pushFollow(FOLLOW_ruleFoldingStyle_in_ruleEdgeStyleCustomization10017);
                     lv_foldingStyle_22_0=ruleFoldingStyle();
 
                     state._fsp--;
@@ -13432,26 +13449,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4730:4: (otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* ) )?
-            int alt113=2;
-            int LA113_0 = input.LA(1);
+            int alt114=2;
+            int LA114_0 = input.LA(1);
 
-            if ( (LA113_0==98) ) {
-                alt113=1;
+            if ( (LA114_0==98) ) {
+                alt114=1;
             }
-            switch (alt113) {
+            switch (alt114) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4730:6: otherlv_23= 'center-source-mappings' otherlv_24= ':' ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* )
                     {
-                    otherlv_23=(Token)match(input,98,FOLLOW_98_in_ruleEdgeStyleCustomization10029); if (state.failed) return current;
+                    otherlv_23=(Token)match(input,98,FOLLOW_98_in_ruleEdgeStyleCustomization10032); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_23, grammarAccess.getEdgeStyleCustomizationAccess().getCenterSourceMappingsKeyword_11_0());
+                          	newLeafNode(otherlv_23, grammarAccess.getEdgeStyleCustomizationAccess().getCenterSourceMappingsKeyword_9_0());
                           
                     }
-                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10041); if (state.failed) return current;
+                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10044); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_24, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_11_1());
+                          	newLeafNode(otherlv_24, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_9_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4738:1: ( ( (otherlv_25= RULE_STRING ) ) (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )* )
@@ -13470,10 +13487,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_25=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10062); if (state.failed) return current;
+                    otherlv_25=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10065); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		newLeafNode(otherlv_25, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_0_0()); 
+                      		newLeafNode(otherlv_25, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_0_0()); 
                       	
                     }
 
@@ -13483,24 +13500,24 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4751:2: (otherlv_26= ',' ( (otherlv_27= RULE_STRING ) ) )*
-                    loop112:
+                    loop113:
                     do {
-                        int alt112=2;
-                        int LA112_0 = input.LA(1);
+                        int alt113=2;
+                        int LA113_0 = input.LA(1);
 
-                        if ( (LA112_0==37) ) {
-                            alt112=1;
+                        if ( (LA113_0==37) ) {
+                            alt113=1;
                         }
 
 
-                        switch (alt112) {
+                        switch (alt113) {
                     	case 1 :
                     	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4751:4: otherlv_26= ',' ( (otherlv_27= RULE_STRING ) )
                     	    {
-                    	    otherlv_26=(Token)match(input,37,FOLLOW_37_in_ruleEdgeStyleCustomization10075); if (state.failed) return current;
+                    	    otherlv_26=(Token)match(input,37,FOLLOW_37_in_ruleEdgeStyleCustomization10078); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	          	newLeafNode(otherlv_26, grammarAccess.getEdgeStyleCustomizationAccess().getCommaKeyword_11_2_1_0());
+                    	          	newLeafNode(otherlv_26, grammarAccess.getEdgeStyleCustomizationAccess().getCommaKeyword_9_2_1_0());
                     	          
                     	    }
                     	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4755:1: ( (otherlv_27= RULE_STRING ) )
@@ -13516,10 +13533,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     	      	        }
                     	              
                     	    }
-                    	    otherlv_27=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10095); if (state.failed) return current;
+                    	    otherlv_27=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10098); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      		newLeafNode(otherlv_27, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_1_1_0()); 
+                    	      		newLeafNode(otherlv_27, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_1_1_0()); 
                     	      	
                     	    }
 
@@ -13533,7 +13550,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop112;
+                    	    break loop113;
                         }
                     } while (true);
 
@@ -13547,26 +13564,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4768:7: (otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* ) )?
-            int alt115=2;
-            int LA115_0 = input.LA(1);
+            int alt116=2;
+            int LA116_0 = input.LA(1);
 
-            if ( (LA115_0==99) ) {
-                alt115=1;
+            if ( (LA116_0==99) ) {
+                alt116=1;
             }
-            switch (alt115) {
+            switch (alt116) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4768:9: otherlv_28= 'center-target-mappings' otherlv_29= ':' ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* )
                     {
-                    otherlv_28=(Token)match(input,99,FOLLOW_99_in_ruleEdgeStyleCustomization10113); if (state.failed) return current;
+                    otherlv_28=(Token)match(input,99,FOLLOW_99_in_ruleEdgeStyleCustomization10116); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_28, grammarAccess.getEdgeStyleCustomizationAccess().getCenterTargetMappingsKeyword_12_0());
+                          	newLeafNode(otherlv_28, grammarAccess.getEdgeStyleCustomizationAccess().getCenterTargetMappingsKeyword_10_0());
                           
                     }
-                    otherlv_29=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10125); if (state.failed) return current;
+                    otherlv_29=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10128); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_29, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_12_1());
+                          	newLeafNode(otherlv_29, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_10_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4776:1: ( ( (otherlv_30= RULE_STRING ) ) (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )* )
@@ -13585,10 +13602,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_30=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10146); if (state.failed) return current;
+                    otherlv_30=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10149); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		newLeafNode(otherlv_30, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_0_0()); 
+                      		newLeafNode(otherlv_30, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_0_0()); 
                       	
                     }
 
@@ -13598,24 +13615,24 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4789:2: (otherlv_31= ',' ( (otherlv_32= RULE_STRING ) ) )*
-                    loop114:
+                    loop115:
                     do {
-                        int alt114=2;
-                        int LA114_0 = input.LA(1);
+                        int alt115=2;
+                        int LA115_0 = input.LA(1);
 
-                        if ( (LA114_0==37) ) {
-                            alt114=1;
+                        if ( (LA115_0==37) ) {
+                            alt115=1;
                         }
 
 
-                        switch (alt114) {
+                        switch (alt115) {
                     	case 1 :
                     	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4789:4: otherlv_31= ',' ( (otherlv_32= RULE_STRING ) )
                     	    {
-                    	    otherlv_31=(Token)match(input,37,FOLLOW_37_in_ruleEdgeStyleCustomization10159); if (state.failed) return current;
+                    	    otherlv_31=(Token)match(input,37,FOLLOW_37_in_ruleEdgeStyleCustomization10162); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	          	newLeafNode(otherlv_31, grammarAccess.getEdgeStyleCustomizationAccess().getCommaKeyword_12_2_1_0());
+                    	          	newLeafNode(otherlv_31, grammarAccess.getEdgeStyleCustomizationAccess().getCommaKeyword_10_2_1_0());
                     	          
                     	    }
                     	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4793:1: ( (otherlv_32= RULE_STRING ) )
@@ -13631,10 +13648,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     	      	        }
                     	              
                     	    }
-                    	    otherlv_32=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10179); if (state.failed) return current;
+                    	    otherlv_32=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10182); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      		newLeafNode(otherlv_32, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_1_1_0()); 
+                    	      		newLeafNode(otherlv_32, grammarAccess.getEdgeStyleCustomizationAccess().getCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_1_1_0()); 
                     	      	
                     	    }
 
@@ -13648,7 +13665,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop114;
+                    	    break loop115;
                         }
                     } while (true);
 
@@ -13662,26 +13679,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4806:7: (otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) ) )?
-            int alt116=2;
-            int LA116_0 = input.LA(1);
+            int alt117=2;
+            int LA117_0 = input.LA(1);
 
-            if ( (LA116_0==100) ) {
-                alt116=1;
+            if ( (LA117_0==100) ) {
+                alt117=1;
             }
-            switch (alt116) {
+            switch (alt117) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4806:9: otherlv_33= 'begin-label-style-description' otherlv_34= ':' ( (otherlv_35= RULE_STRING ) )
                     {
-                    otherlv_33=(Token)match(input,100,FOLLOW_100_in_ruleEdgeStyleCustomization10197); if (state.failed) return current;
+                    otherlv_33=(Token)match(input,100,FOLLOW_100_in_ruleEdgeStyleCustomization10200); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_33, grammarAccess.getEdgeStyleCustomizationAccess().getBeginLabelStyleDescriptionKeyword_13_0());
+                          	newLeafNode(otherlv_33, grammarAccess.getEdgeStyleCustomizationAccess().getBeginLabelStyleDescriptionKeyword_11_0());
                           
                     }
-                    otherlv_34=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10209); if (state.failed) return current;
+                    otherlv_34=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10212); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_34, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_13_1());
+                          	newLeafNode(otherlv_34, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_11_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4814:1: ( (otherlv_35= RULE_STRING ) )
@@ -13697,10 +13714,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_35=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10229); if (state.failed) return current;
+                    otherlv_35=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10232); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		newLeafNode(otherlv_35, grammarAccess.getEdgeStyleCustomizationAccess().getBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_13_2_0()); 
+                      		newLeafNode(otherlv_35, grammarAccess.getEdgeStyleCustomizationAccess().getBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_11_2_0()); 
                       	
                     }
 
@@ -13716,26 +13733,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4827:4: (otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) ) )?
-            int alt117=2;
-            int LA117_0 = input.LA(1);
+            int alt118=2;
+            int LA118_0 = input.LA(1);
 
-            if ( (LA117_0==101) ) {
-                alt117=1;
+            if ( (LA118_0==101) ) {
+                alt118=1;
             }
-            switch (alt117) {
+            switch (alt118) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4827:6: otherlv_36= 'center-label-style-description' otherlv_37= ':' ( (otherlv_38= RULE_STRING ) )
                     {
-                    otherlv_36=(Token)match(input,101,FOLLOW_101_in_ruleEdgeStyleCustomization10244); if (state.failed) return current;
+                    otherlv_36=(Token)match(input,101,FOLLOW_101_in_ruleEdgeStyleCustomization10247); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_36, grammarAccess.getEdgeStyleCustomizationAccess().getCenterLabelStyleDescriptionKeyword_14_0());
+                          	newLeafNode(otherlv_36, grammarAccess.getEdgeStyleCustomizationAccess().getCenterLabelStyleDescriptionKeyword_12_0());
                           
                     }
-                    otherlv_37=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10256); if (state.failed) return current;
+                    otherlv_37=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10259); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_37, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_14_1());
+                          	newLeafNode(otherlv_37, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_12_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4835:1: ( (otherlv_38= RULE_STRING ) )
@@ -13751,10 +13768,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_38=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10276); if (state.failed) return current;
+                    otherlv_38=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10279); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		newLeafNode(otherlv_38, grammarAccess.getEdgeStyleCustomizationAccess().getCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_14_2_0()); 
+                      		newLeafNode(otherlv_38, grammarAccess.getEdgeStyleCustomizationAccess().getCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_12_2_0()); 
                       	
                     }
 
@@ -13770,26 +13787,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4848:4: (otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) ) )?
-            int alt118=2;
-            int LA118_0 = input.LA(1);
+            int alt119=2;
+            int LA119_0 = input.LA(1);
 
-            if ( (LA118_0==102) ) {
-                alt118=1;
+            if ( (LA119_0==102) ) {
+                alt119=1;
             }
-            switch (alt118) {
+            switch (alt119) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4848:6: otherlv_39= 'end-label-style-description' otherlv_40= ':' ( (otherlv_41= RULE_STRING ) )
                     {
-                    otherlv_39=(Token)match(input,102,FOLLOW_102_in_ruleEdgeStyleCustomization10291); if (state.failed) return current;
+                    otherlv_39=(Token)match(input,102,FOLLOW_102_in_ruleEdgeStyleCustomization10294); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_39, grammarAccess.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionKeyword_15_0());
+                          	newLeafNode(otherlv_39, grammarAccess.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionKeyword_13_0());
                           
                     }
-                    otherlv_40=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10303); if (state.failed) return current;
+                    otherlv_40=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10306); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_40, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_15_1());
+                          	newLeafNode(otherlv_40, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_13_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4856:1: ( (otherlv_41= RULE_STRING ) )
@@ -13805,10 +13822,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                       	        }
                               
                     }
-                    otherlv_41=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10323); if (state.failed) return current;
+                    otherlv_41=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10326); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		newLeafNode(otherlv_41, grammarAccess.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_15_2_0()); 
+                      		newLeafNode(otherlv_41, grammarAccess.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_13_2_0()); 
                       	
                     }
 
@@ -13824,26 +13841,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4869:4: (otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) ) )?
-            int alt119=2;
-            int LA119_0 = input.LA(1);
+            int alt120=2;
+            int LA120_0 = input.LA(1);
 
-            if ( (LA119_0==103) ) {
-                alt119=1;
+            if ( (LA120_0==103) ) {
+                alt120=1;
             }
-            switch (alt119) {
+            switch (alt120) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4869:6: otherlv_42= 'line-style' otherlv_43= ':' ( (lv_lineStyle_44_0= ruleLineStyle ) )
                     {
-                    otherlv_42=(Token)match(input,103,FOLLOW_103_in_ruleEdgeStyleCustomization10338); if (state.failed) return current;
+                    otherlv_42=(Token)match(input,103,FOLLOW_103_in_ruleEdgeStyleCustomization10341); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_42, grammarAccess.getEdgeStyleCustomizationAccess().getLineStyleKeyword_16_0());
+                          	newLeafNode(otherlv_42, grammarAccess.getEdgeStyleCustomizationAccess().getLineStyleKeyword_14_0());
                           
                     }
-                    otherlv_43=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10350); if (state.failed) return current;
+                    otherlv_43=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10353); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_43, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_16_1());
+                          	newLeafNode(otherlv_43, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_14_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4877:1: ( (lv_lineStyle_44_0= ruleLineStyle ) )
@@ -13854,10 +13871,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getLineStyleLineStyleEnumRuleCall_16_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getLineStyleLineStyleEnumRuleCall_14_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleLineStyle_in_ruleEdgeStyleCustomization10371);
+                    pushFollow(FOLLOW_ruleLineStyle_in_ruleEdgeStyleCustomization10374);
                     lv_lineStyle_44_0=ruleLineStyle();
 
                     state._fsp--;
@@ -13888,26 +13905,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4895:4: (otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) ) )?
-            int alt120=2;
-            int LA120_0 = input.LA(1);
+            int alt121=2;
+            int LA121_0 = input.LA(1);
 
-            if ( (LA120_0==104) ) {
-                alt120=1;
+            if ( (LA121_0==104) ) {
+                alt121=1;
             }
-            switch (alt120) {
+            switch (alt121) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4895:6: otherlv_45= 'size' otherlv_46= ':' ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) )
                     {
-                    otherlv_45=(Token)match(input,104,FOLLOW_104_in_ruleEdgeStyleCustomization10386); if (state.failed) return current;
+                    otherlv_45=(Token)match(input,104,FOLLOW_104_in_ruleEdgeStyleCustomization10389); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_45, grammarAccess.getEdgeStyleCustomizationAccess().getSizeKeyword_17_0());
+                          	newLeafNode(otherlv_45, grammarAccess.getEdgeStyleCustomizationAccess().getSizeKeyword_15_0());
                           
                     }
-                    otherlv_46=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10398); if (state.failed) return current;
+                    otherlv_46=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10401); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_46, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_17_1());
+                          	newLeafNode(otherlv_46, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_15_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4903:1: ( (lv_sizeComputationExpression_47_0= ruleCustomizationExpression ) )
@@ -13918,10 +13935,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getSizeComputationExpressionCustomizationExpressionParserRuleCall_17_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getSizeComputationExpressionCustomizationExpressionParserRuleCall_15_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleEdgeStyleCustomization10419);
+                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleEdgeStyleCustomization10422);
                     lv_sizeComputationExpression_47_0=ruleCustomizationExpression();
 
                     state._fsp--;
@@ -13952,26 +13969,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4921:4: (otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) ) )?
-            int alt121=2;
-            int LA121_0 = input.LA(1);
+            int alt122=2;
+            int LA122_0 = input.LA(1);
 
-            if ( (LA121_0==105) ) {
-                alt121=1;
+            if ( (LA122_0==105) ) {
+                alt122=1;
             }
-            switch (alt121) {
+            switch (alt122) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4921:6: otherlv_48= 'end-centering' otherlv_49= ':' ( (lv_endCentering_50_0= ruleCenterStyle ) )
                     {
-                    otherlv_48=(Token)match(input,105,FOLLOW_105_in_ruleEdgeStyleCustomization10434); if (state.failed) return current;
+                    otherlv_48=(Token)match(input,105,FOLLOW_105_in_ruleEdgeStyleCustomization10437); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_48, grammarAccess.getEdgeStyleCustomizationAccess().getEndCenteringKeyword_18_0());
+                          	newLeafNode(otherlv_48, grammarAccess.getEdgeStyleCustomizationAccess().getEndCenteringKeyword_16_0());
                           
                     }
-                    otherlv_49=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10446); if (state.failed) return current;
+                    otherlv_49=(Token)match(input,93,FOLLOW_93_in_ruleEdgeStyleCustomization10449); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_49, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_18_1());
+                          	newLeafNode(otherlv_49, grammarAccess.getEdgeStyleCustomizationAccess().getColonKeyword_16_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4929:1: ( (lv_endCentering_50_0= ruleCenterStyle ) )
@@ -13982,10 +13999,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getEndCenteringCenterStyleEnumRuleCall_18_2_0()); 
+                      	        newCompositeNode(grammarAccess.getEdgeStyleCustomizationAccess().getEndCenteringCenterStyleEnumRuleCall_16_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCenterStyle_in_ruleEdgeStyleCustomization10467);
+                    pushFollow(FOLLOW_ruleCenterStyle_in_ruleEdgeStyleCustomization10470);
                     lv_endCentering_50_0=ruleCenterStyle();
 
                     state._fsp--;
@@ -14015,10 +14032,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_51=(Token)match(input,15,FOLLOW_15_in_ruleEdgeStyleCustomization10481); if (state.failed) return current;
+            otherlv_51=(Token)match(input,15,FOLLOW_15_in_ruleEdgeStyleCustomization10484); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_51, grammarAccess.getEdgeStyleCustomizationAccess().getRightCurlyBracketKeyword_19());
+                  	newLeafNode(otherlv_51, grammarAccess.getEdgeStyleCustomizationAccess().getRightCurlyBracketKeyword_17());
                   
             }
 
@@ -14058,7 +14075,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getColorCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleColorCustomization_in_entryRuleColorCustomization10517);
+            pushFollow(FOLLOW_ruleColorCustomization_in_entryRuleColorCustomization10520);
             iv_ruleColorCustomization=ruleColorCustomization();
 
             state._fsp--;
@@ -14066,7 +14083,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleColorCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleColorCustomization10527); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleColorCustomization10530); if (state.failed) return current;
 
             }
 
@@ -14084,7 +14101,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColorCustomization"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4968:1: ruleColorCustomization returns [EObject current=null] : ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4968:1: ruleColorCustomization returns [EObject current=null] : ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) (otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' )? ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) ) ;
     public final EObject ruleColorCustomization() throws RecognitionException {
         EObject current = null;
 
@@ -14104,11 +14121,11 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4971:28: ( ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4972:1: ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4971:28: ( ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) (otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' )? ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4972:1: ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) (otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' )? ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4972:1: ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4972:2: () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4972:1: ( () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) (otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' )? ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4972:2: () otherlv_1= 'paint' ( (lv_colorUseCase_2_0= ruleColorUseCase ) ) (otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' )? ( (lv_applyonAll_8_0= 'over-all-colors' ) )? (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4972:2: ()
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:4973:5: 
@@ -14123,7 +14140,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,106,FOLLOW_106_in_ruleColorCustomization10573); if (state.failed) return current;
+            otherlv_1=(Token)match(input,106,FOLLOW_106_in_ruleColorCustomization10576); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getColorCustomizationAccess().getPaintKeyword_1());
@@ -14140,7 +14157,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getColorCustomizationAccess().getColorUseCaseColorUseCaseEnumRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleColorUseCase_in_ruleColorCustomization10594);
+            pushFollow(FOLLOW_ruleColorUseCase_in_ruleColorCustomization10597);
             lv_colorUseCase_2_0=ruleColorUseCase();
 
             state._fsp--;
@@ -14164,122 +14181,139 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,88,FOLLOW_88_in_ruleColorCustomization10606); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5000:2: (otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')' )?
+            int alt124=2;
+            int LA124_0 = input.LA(1);
 
-                  	newLeafNode(otherlv_3, grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_3());
-                  
+            if ( (LA124_0==88) ) {
+                alt124=1;
             }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5004:1: ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5004:2: ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )*
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5004:2: ( (otherlv_4= RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5005:1: (otherlv_4= RULE_STRING )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5005:1: (otherlv_4= RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5006:3: otherlv_4= RULE_STRING
-            {
-            if ( state.backtracking==0 ) {
+            switch (alt124) {
+                case 1 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5000:4: otherlv_3= '(' ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* ) otherlv_7= ')'
+                    {
+                    otherlv_3=(Token)match(input,88,FOLLOW_88_in_ruleColorCustomization10610); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
 
-              			if (current==null) {
-              	            current = createModelElement(grammarAccess.getColorCustomizationRule());
-              	        }
-                      
+                          	newLeafNode(otherlv_3, grammarAccess.getColorCustomizationAccess().getLeftParenthesisKeyword_3_0());
+                          
+                    }
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5004:1: ( ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )* )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5004:2: ( (otherlv_4= RULE_STRING ) ) (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )*
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5004:2: ( (otherlv_4= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5005:1: (otherlv_4= RULE_STRING )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5005:1: (otherlv_4= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5006:3: otherlv_4= RULE_STRING
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			if (current==null) {
+                      	            current = createModelElement(grammarAccess.getColorCustomizationRule());
+                      	        }
+                              
+                    }
+                    otherlv_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleColorCustomization10631); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		newLeafNode(otherlv_4, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_1_0_0()); 
+                      	
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5017:2: (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )*
+                    loop123:
+                    do {
+                        int alt123=2;
+                        int LA123_0 = input.LA(1);
+
+                        if ( (LA123_0==37) ) {
+                            alt123=1;
+                        }
+
+
+                        switch (alt123) {
+                    	case 1 :
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5017:4: otherlv_5= ',' ( (otherlv_6= RULE_STRING ) )
+                    	    {
+                    	    otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleColorCustomization10644); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_5, grammarAccess.getColorCustomizationAccess().getCommaKeyword_3_1_1_0());
+                    	          
+                    	    }
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5021:1: ( (otherlv_6= RULE_STRING ) )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5022:1: (otherlv_6= RULE_STRING )
+                    	    {
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5022:1: (otherlv_6= RULE_STRING )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5023:3: otherlv_6= RULE_STRING
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getColorCustomizationRule());
+                    	      	        }
+                    	              
+                    	    }
+                    	    otherlv_6=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleColorCustomization10664); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      		newLeafNode(otherlv_6, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_3_1_1_1_0()); 
+                    	      	
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop123;
+                        }
+                    } while (true);
+
+
+                    }
+
+                    otherlv_7=(Token)match(input,89,FOLLOW_89_in_ruleColorCustomization10679); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_7, grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_3_2());
+                          
+                    }
+
+                    }
+                    break;
+
             }
-            otherlv_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleColorCustomization10627); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
 
-              		newLeafNode(otherlv_4, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_0_0()); 
-              	
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5038:3: ( (lv_applyonAll_8_0= 'over-all-colors' ) )?
+            int alt125=2;
+            int LA125_0 = input.LA(1);
+
+            if ( (LA125_0==107) ) {
+                alt125=1;
             }
-
-            }
-
-
-            }
-
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5017:2: (otherlv_5= ',' ( (otherlv_6= RULE_STRING ) ) )*
-            loop122:
-            do {
-                int alt122=2;
-                int LA122_0 = input.LA(1);
-
-                if ( (LA122_0==37) ) {
-                    alt122=1;
-                }
-
-
-                switch (alt122) {
-            	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5017:4: otherlv_5= ',' ( (otherlv_6= RULE_STRING ) )
-            	    {
-            	    otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleColorCustomization10640); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	          	newLeafNode(otherlv_5, grammarAccess.getColorCustomizationAccess().getCommaKeyword_4_1_0());
-            	          
-            	    }
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5021:1: ( (otherlv_6= RULE_STRING ) )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5022:1: (otherlv_6= RULE_STRING )
-            	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5022:1: (otherlv_6= RULE_STRING )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5023:3: otherlv_6= RULE_STRING
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      			if (current==null) {
-            	      	            current = createModelElement(grammarAccess.getColorCustomizationRule());
-            	      	        }
-            	              
-            	    }
-            	    otherlv_6=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleColorCustomization10660); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      		newLeafNode(otherlv_6, grammarAccess.getColorCustomizationAccess().getAppliedOnEObjectCrossReference_4_1_1_0()); 
-            	      	
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop122;
-                }
-            } while (true);
-
-
-            }
-
-            otherlv_7=(Token)match(input,89,FOLLOW_89_in_ruleColorCustomization10675); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_7, grammarAccess.getColorCustomizationAccess().getRightParenthesisKeyword_5());
-                  
-            }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5038:1: ( (lv_applyonAll_8_0= 'over-all-colors' ) )?
-            int alt123=2;
-            int LA123_0 = input.LA(1);
-
-            if ( (LA123_0==107) ) {
-                alt123=1;
-            }
-            switch (alt123) {
+            switch (alt125) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5039:1: (lv_applyonAll_8_0= 'over-all-colors' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5039:1: (lv_applyonAll_8_0= 'over-all-colors' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5040:3: lv_applyonAll_8_0= 'over-all-colors'
                     {
-                    lv_applyonAll_8_0=(Token)match(input,107,FOLLOW_107_in_ruleColorCustomization10693); if (state.failed) return current;
+                    lv_applyonAll_8_0=(Token)match(input,107,FOLLOW_107_in_ruleColorCustomization10699); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              newLeafNode(lv_applyonAll_8_0, grammarAccess.getColorCustomizationAccess().getApplyonAllOverAllColorsKeyword_6_0());
+                              newLeafNode(lv_applyonAll_8_0, grammarAccess.getColorCustomizationAccess().getApplyonAllOverAllColorsKeyword_4_0());
                           
                     }
                     if ( state.backtracking==0 ) {
@@ -14302,10 +14336,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5053:3: (otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) ) )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5053:5: otherlv_9= 'with' ( (lv_color_10_0= ruleSystemColors ) )
             {
-            otherlv_9=(Token)match(input,90,FOLLOW_90_in_ruleColorCustomization10720); if (state.failed) return current;
+            otherlv_9=(Token)match(input,90,FOLLOW_90_in_ruleColorCustomization10726); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_9, grammarAccess.getColorCustomizationAccess().getWithKeyword_7_0());
+                  	newLeafNode(otherlv_9, grammarAccess.getColorCustomizationAccess().getWithKeyword_5_0());
                   
             }
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5057:1: ( (lv_color_10_0= ruleSystemColors ) )
@@ -14316,10 +14350,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getColorCustomizationAccess().getColorSystemColorsEnumRuleCall_7_1_0()); 
+              	        newCompositeNode(grammarAccess.getColorCustomizationAccess().getColorSystemColorsEnumRuleCall_5_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleSystemColors_in_ruleColorCustomization10741);
+            pushFollow(FOLLOW_ruleSystemColors_in_ruleColorCustomization10747);
             lv_color_10_0=ruleSystemColors();
 
             state._fsp--;
@@ -14383,7 +14417,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLabelCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleLabelCustomization_in_entryRuleLabelCustomization10778);
+            pushFollow(FOLLOW_ruleLabelCustomization_in_entryRuleLabelCustomization10784);
             iv_ruleLabelCustomization=ruleLabelCustomization();
 
             state._fsp--;
@@ -14391,7 +14425,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLabelCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLabelCustomization10788); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLabelCustomization10794); if (state.failed) return current;
 
             }
 
@@ -14409,7 +14443,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLabelCustomization"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5092:1: ruleLabelCustomization returns [EObject current=null] : ( () otherlv_1= 'label' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5092:1: ruleLabelCustomization returns [EObject current=null] : ( () otherlv_1= 'label' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' ) ;
     public final EObject ruleLabelCustomization() throws RecognitionException {
         EObject current = null;
 
@@ -14458,11 +14492,11 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5095:28: ( ( () otherlv_1= 'label' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5096:1: ( () otherlv_1= 'label' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5095:28: ( ( () otherlv_1= 'label' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5096:1: ( () otherlv_1= 'label' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5096:1: ( () otherlv_1= 'label' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5096:2: () otherlv_1= 'label' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5096:1: ( () otherlv_1= 'label' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5096:2: () otherlv_1= 'label' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )? (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )? (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )? (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) ) (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )? (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )? otherlv_33= '}'
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5096:2: ()
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5097:5: 
@@ -14477,137 +14511,154 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,108,FOLLOW_108_in_ruleLabelCustomization10834); if (state.failed) return current;
+            otherlv_1=(Token)match(input,108,FOLLOW_108_in_ruleLabelCustomization10840); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getLabelCustomizationAccess().getLabelKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleLabelCustomization10846); if (state.failed) return current;
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5106:1: (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )?
+            int alt127=2;
+            int LA127_0 = input.LA(1);
+
+            if ( (LA127_0==88) ) {
+                alt127=1;
+            }
+            switch (alt127) {
+                case 1 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5106:3: otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')'
+                    {
+                    otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleLabelCustomization10853); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_2, grammarAccess.getLabelCustomizationAccess().getLeftParenthesisKeyword_2_0());
+                          
+                    }
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5110:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5110:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5110:2: ( (otherlv_3= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5111:1: (otherlv_3= RULE_STRING )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5111:1: (otherlv_3= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5112:3: otherlv_3= RULE_STRING
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			if (current==null) {
+                      	            current = createModelElement(grammarAccess.getLabelCustomizationRule());
+                      	        }
+                              
+                    }
+                    otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLabelCustomization10874); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		newLeafNode(otherlv_3, grammarAccess.getLabelCustomizationAccess().getAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_0_0()); 
+                      	
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5123:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    loop126:
+                    do {
+                        int alt126=2;
+                        int LA126_0 = input.LA(1);
+
+                        if ( (LA126_0==37) ) {
+                            alt126=1;
+                        }
+
+
+                        switch (alt126) {
+                    	case 1 :
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5123:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
+                    	    {
+                    	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleLabelCustomization10887); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_4, grammarAccess.getLabelCustomizationAccess().getCommaKeyword_2_1_1_0());
+                    	          
+                    	    }
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5127:1: ( (otherlv_5= RULE_STRING ) )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5128:1: (otherlv_5= RULE_STRING )
+                    	    {
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5128:1: (otherlv_5= RULE_STRING )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5129:3: otherlv_5= RULE_STRING
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getLabelCustomizationRule());
+                    	      	        }
+                    	              
+                    	    }
+                    	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLabelCustomization10907); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      		newLeafNode(otherlv_5, grammarAccess.getLabelCustomizationAccess().getAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_1_1_0()); 
+                    	      	
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop126;
+                        }
+                    } while (true);
+
+
+                    }
+
+                    otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleLabelCustomization10922); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_6, grammarAccess.getLabelCustomizationAccess().getRightParenthesisKeyword_2_2());
+                          
+                    }
+
+                    }
+                    break;
+
+            }
+
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleLabelCustomization10936); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_2, grammarAccess.getLabelCustomizationAccess().getLeftParenthesisKeyword_2());
-                  
-            }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5110:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5110:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5110:2: ( (otherlv_3= RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5111:1: (otherlv_3= RULE_STRING )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5111:1: (otherlv_3= RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5112:3: otherlv_3= RULE_STRING
-            {
-            if ( state.backtracking==0 ) {
-
-              			if (current==null) {
-              	            current = createModelElement(grammarAccess.getLabelCustomizationRule());
-              	        }
-                      
-            }
-            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLabelCustomization10867); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              		newLeafNode(otherlv_3, grammarAccess.getLabelCustomizationAccess().getAppliedOnBasicLabelStyleDescriptionCrossReference_3_0_0()); 
-              	
-            }
-
-            }
-
-
-            }
-
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5123:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            loop124:
-            do {
-                int alt124=2;
-                int LA124_0 = input.LA(1);
-
-                if ( (LA124_0==37) ) {
-                    alt124=1;
-                }
-
-
-                switch (alt124) {
-            	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5123:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
-            	    {
-            	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleLabelCustomization10880); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	          	newLeafNode(otherlv_4, grammarAccess.getLabelCustomizationAccess().getCommaKeyword_3_1_0());
-            	          
-            	    }
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5127:1: ( (otherlv_5= RULE_STRING ) )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5128:1: (otherlv_5= RULE_STRING )
-            	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5128:1: (otherlv_5= RULE_STRING )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5129:3: otherlv_5= RULE_STRING
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      			if (current==null) {
-            	      	            current = createModelElement(grammarAccess.getLabelCustomizationRule());
-            	      	        }
-            	              
-            	    }
-            	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLabelCustomization10900); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      		newLeafNode(otherlv_5, grammarAccess.getLabelCustomizationAccess().getAppliedOnBasicLabelStyleDescriptionCrossReference_3_1_1_0()); 
-            	      	
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop124;
-                }
-            } while (true);
-
-
-            }
-
-            otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleLabelCustomization10915); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_6, grammarAccess.getLabelCustomizationAccess().getRightParenthesisKeyword_4());
-                  
-            }
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleLabelCustomization10927); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_7, grammarAccess.getLabelCustomizationAccess().getLeftCurlyBracketKeyword_5());
+                  	newLeafNode(otherlv_7, grammarAccess.getLabelCustomizationAccess().getLeftCurlyBracketKeyword_3());
                   
             }
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5148:1: (otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )?
-            int alt125=2;
-            int LA125_0 = input.LA(1);
+            int alt128=2;
+            int LA128_0 = input.LA(1);
 
-            if ( (LA125_0==109) ) {
-                alt125=1;
+            if ( (LA128_0==109) ) {
+                alt128=1;
             }
-            switch (alt125) {
+            switch (alt128) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5148:3: otherlv_8= 'over-all-labels' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) )
                     {
-                    otherlv_8=(Token)match(input,109,FOLLOW_109_in_ruleLabelCustomization10940); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,109,FOLLOW_109_in_ruleLabelCustomization10949); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_8, grammarAccess.getLabelCustomizationAccess().getOverAllLabelsKeyword_6_0());
+                          	newLeafNode(otherlv_8, grammarAccess.getLabelCustomizationAccess().getOverAllLabelsKeyword_4_0());
                           
                     }
-                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization10952); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization10961); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_9, grammarAccess.getLabelCustomizationAccess().getColonKeyword_6_1());
+                          	newLeafNode(otherlv_9, grammarAccess.getLabelCustomizationAccess().getColonKeyword_4_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5156:1: ( (lv_applyonAll_10_0= ruleEBoolean ) )
@@ -14618,10 +14669,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getApplyonAllEBooleanParserRuleCall_6_2_0()); 
+                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getApplyonAllEBooleanParserRuleCall_4_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleLabelCustomization10973);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleLabelCustomization10982);
                     lv_applyonAll_10_0=ruleEBoolean();
 
                     state._fsp--;
@@ -14652,13 +14703,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5174:4: ( (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization ) )?
-            int alt126=2;
-            int LA126_0 = input.LA(1);
+            int alt129=2;
+            int LA129_0 = input.LA(1);
 
-            if ( (LA126_0==116) ) {
-                alt126=1;
+            if ( (LA129_0==116) ) {
+                alt129=1;
             }
-            switch (alt126) {
+            switch (alt129) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5175:1: (lv_ownedLabelAlignment_11_0= ruleLabelAlignementCustomization )
                     {
@@ -14667,10 +14718,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_7_0()); 
+                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_5_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleLabelAlignementCustomization_in_ruleLabelCustomization10996);
+                    pushFollow(FOLLOW_ruleLabelAlignementCustomization_in_ruleLabelCustomization11005);
                     lv_ownedLabelAlignment_11_0=ruleLabelAlignementCustomization();
 
                     state._fsp--;
@@ -14698,26 +14749,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5192:3: (otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) ) )?
-            int alt127=2;
-            int LA127_0 = input.LA(1);
+            int alt130=2;
+            int LA130_0 = input.LA(1);
 
-            if ( (LA127_0==104) ) {
-                alt127=1;
+            if ( (LA130_0==104) ) {
+                alt130=1;
             }
-            switch (alt127) {
+            switch (alt130) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5192:5: otherlv_12= 'size' otherlv_13= ':' ( (lv_size_14_0= ruleEInt ) )
                     {
-                    otherlv_12=(Token)match(input,104,FOLLOW_104_in_ruleLabelCustomization11010); if (state.failed) return current;
+                    otherlv_12=(Token)match(input,104,FOLLOW_104_in_ruleLabelCustomization11019); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_12, grammarAccess.getLabelCustomizationAccess().getSizeKeyword_8_0());
+                          	newLeafNode(otherlv_12, grammarAccess.getLabelCustomizationAccess().getSizeKeyword_6_0());
                           
                     }
-                    otherlv_13=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11022); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11031); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_13, grammarAccess.getLabelCustomizationAccess().getColonKeyword_8_1());
+                          	newLeafNode(otherlv_13, grammarAccess.getLabelCustomizationAccess().getColonKeyword_6_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5200:1: ( (lv_size_14_0= ruleEInt ) )
@@ -14728,10 +14779,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getSizeEIntParserRuleCall_8_2_0()); 
+                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getSizeEIntParserRuleCall_6_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEInt_in_ruleLabelCustomization11043);
+                    pushFollow(FOLLOW_ruleEInt_in_ruleLabelCustomization11052);
                     lv_size_14_0=ruleEInt();
 
                     state._fsp--;
@@ -14762,26 +14813,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5218:4: (otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) ) )?
-            int alt128=2;
-            int LA128_0 = input.LA(1);
+            int alt131=2;
+            int LA131_0 = input.LA(1);
 
-            if ( (LA128_0==110) ) {
-                alt128=1;
+            if ( (LA131_0==110) ) {
+                alt131=1;
             }
-            switch (alt128) {
+            switch (alt131) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5218:6: otherlv_15= 'format' otherlv_16= ':' ( (lv_format_17_0= ruleFontFormat ) )
                     {
-                    otherlv_15=(Token)match(input,110,FOLLOW_110_in_ruleLabelCustomization11058); if (state.failed) return current;
+                    otherlv_15=(Token)match(input,110,FOLLOW_110_in_ruleLabelCustomization11067); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_15, grammarAccess.getLabelCustomizationAccess().getFormatKeyword_9_0());
+                          	newLeafNode(otherlv_15, grammarAccess.getLabelCustomizationAccess().getFormatKeyword_7_0());
                           
                     }
-                    otherlv_16=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11070); if (state.failed) return current;
+                    otherlv_16=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11079); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_16, grammarAccess.getLabelCustomizationAccess().getColonKeyword_9_1());
+                          	newLeafNode(otherlv_16, grammarAccess.getLabelCustomizationAccess().getColonKeyword_7_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5226:1: ( (lv_format_17_0= ruleFontFormat ) )
@@ -14792,10 +14843,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getFormatFontFormatEnumRuleCall_9_2_0()); 
+                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getFormatFontFormatEnumRuleCall_7_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleFontFormat_in_ruleLabelCustomization11091);
+                    pushFollow(FOLLOW_ruleFontFormat_in_ruleLabelCustomization11100);
                     lv_format_17_0=ruleFontFormat();
 
                     state._fsp--;
@@ -14828,16 +14879,16 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5244:4: (otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) ) )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5244:6: otherlv_18= 'color' otherlv_19= ':' ( (lv_color_20_0= ruleSystemColors ) )
             {
-            otherlv_18=(Token)match(input,111,FOLLOW_111_in_ruleLabelCustomization11106); if (state.failed) return current;
+            otherlv_18=(Token)match(input,111,FOLLOW_111_in_ruleLabelCustomization11115); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_18, grammarAccess.getLabelCustomizationAccess().getColorKeyword_10_0());
+                  	newLeafNode(otherlv_18, grammarAccess.getLabelCustomizationAccess().getColorKeyword_8_0());
                   
             }
-            otherlv_19=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11118); if (state.failed) return current;
+            otherlv_19=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11127); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_19, grammarAccess.getLabelCustomizationAccess().getColonKeyword_10_1());
+                  	newLeafNode(otherlv_19, grammarAccess.getLabelCustomizationAccess().getColonKeyword_8_1());
                   
             }
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5252:1: ( (lv_color_20_0= ruleSystemColors ) )
@@ -14848,10 +14899,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             {
             if ( state.backtracking==0 ) {
                
-              	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getColorSystemColorsEnumRuleCall_10_2_0()); 
+              	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getColorSystemColorsEnumRuleCall_8_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleSystemColors_in_ruleLabelCustomization11139);
+            pushFollow(FOLLOW_ruleSystemColors_in_ruleLabelCustomization11148);
             lv_color_20_0=ruleSystemColors();
 
             state._fsp--;
@@ -14879,38 +14930,38 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5270:3: (otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}' )?
-            int alt129=2;
-            int LA129_0 = input.LA(1);
+            int alt132=2;
+            int LA132_0 = input.LA(1);
 
-            if ( (LA129_0==112) ) {
-                alt129=1;
+            if ( (LA132_0==112) ) {
+                alt132=1;
             }
-            switch (alt129) {
+            switch (alt132) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5270:5: otherlv_21= 'icon' otherlv_22= '{' otherlv_23= 'show' otherlv_24= ':' ( (lv_showIcon_25_0= ruleEBoolean ) ) otherlv_26= 'path' otherlv_27= ':' ( (lv_iconPath_28_0= ruleEString ) ) otherlv_29= '}'
                     {
-                    otherlv_21=(Token)match(input,112,FOLLOW_112_in_ruleLabelCustomization11153); if (state.failed) return current;
+                    otherlv_21=(Token)match(input,112,FOLLOW_112_in_ruleLabelCustomization11162); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_21, grammarAccess.getLabelCustomizationAccess().getIconKeyword_11_0());
+                          	newLeafNode(otherlv_21, grammarAccess.getLabelCustomizationAccess().getIconKeyword_9_0());
                           
                     }
-                    otherlv_22=(Token)match(input,14,FOLLOW_14_in_ruleLabelCustomization11165); if (state.failed) return current;
+                    otherlv_22=(Token)match(input,14,FOLLOW_14_in_ruleLabelCustomization11174); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_22, grammarAccess.getLabelCustomizationAccess().getLeftCurlyBracketKeyword_11_1());
+                          	newLeafNode(otherlv_22, grammarAccess.getLabelCustomizationAccess().getLeftCurlyBracketKeyword_9_1());
                           
                     }
-                    otherlv_23=(Token)match(input,113,FOLLOW_113_in_ruleLabelCustomization11177); if (state.failed) return current;
+                    otherlv_23=(Token)match(input,113,FOLLOW_113_in_ruleLabelCustomization11186); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_23, grammarAccess.getLabelCustomizationAccess().getShowKeyword_11_2());
+                          	newLeafNode(otherlv_23, grammarAccess.getLabelCustomizationAccess().getShowKeyword_9_2());
                           
                     }
-                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11189); if (state.failed) return current;
+                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11198); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_24, grammarAccess.getLabelCustomizationAccess().getColonKeyword_11_3());
+                          	newLeafNode(otherlv_24, grammarAccess.getLabelCustomizationAccess().getColonKeyword_9_3());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5286:1: ( (lv_showIcon_25_0= ruleEBoolean ) )
@@ -14921,10 +14972,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getShowIconEBooleanParserRuleCall_11_4_0()); 
+                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getShowIconEBooleanParserRuleCall_9_4_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleLabelCustomization11210);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleLabelCustomization11219);
                     lv_showIcon_25_0=ruleEBoolean();
 
                     state._fsp--;
@@ -14948,16 +14999,16 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_26=(Token)match(input,114,FOLLOW_114_in_ruleLabelCustomization11222); if (state.failed) return current;
+                    otherlv_26=(Token)match(input,114,FOLLOW_114_in_ruleLabelCustomization11231); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_26, grammarAccess.getLabelCustomizationAccess().getPathKeyword_11_5());
+                          	newLeafNode(otherlv_26, grammarAccess.getLabelCustomizationAccess().getPathKeyword_9_5());
                           
                     }
-                    otherlv_27=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11234); if (state.failed) return current;
+                    otherlv_27=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11243); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_27, grammarAccess.getLabelCustomizationAccess().getColonKeyword_11_6());
+                          	newLeafNode(otherlv_27, grammarAccess.getLabelCustomizationAccess().getColonKeyword_9_6());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5312:1: ( (lv_iconPath_28_0= ruleEString ) )
@@ -14968,10 +15019,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getIconPathEStringParserRuleCall_11_7_0()); 
+                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getIconPathEStringParserRuleCall_9_7_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEString_in_ruleLabelCustomization11255);
+                    pushFollow(FOLLOW_ruleEString_in_ruleLabelCustomization11264);
                     lv_iconPath_28_0=ruleEString();
 
                     state._fsp--;
@@ -14995,10 +15046,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_29=(Token)match(input,15,FOLLOW_15_in_ruleLabelCustomization11267); if (state.failed) return current;
+                    otherlv_29=(Token)match(input,15,FOLLOW_15_in_ruleLabelCustomization11276); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_29, grammarAccess.getLabelCustomizationAccess().getRightCurlyBracketKeyword_11_8());
+                          	newLeafNode(otherlv_29, grammarAccess.getLabelCustomizationAccess().getRightCurlyBracketKeyword_9_8());
                           
                     }
 
@@ -15008,26 +15059,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5334:3: (otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) ) )?
-            int alt130=2;
-            int LA130_0 = input.LA(1);
+            int alt133=2;
+            int LA133_0 = input.LA(1);
 
-            if ( (LA130_0==115) ) {
-                alt130=1;
+            if ( (LA133_0==115) ) {
+                alt133=1;
             }
-            switch (alt130) {
+            switch (alt133) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5334:5: otherlv_30= 'expression' otherlv_31= ':' ( (lv_expression_32_0= ruleCustomizationExpression ) )
                     {
-                    otherlv_30=(Token)match(input,115,FOLLOW_115_in_ruleLabelCustomization11282); if (state.failed) return current;
+                    otherlv_30=(Token)match(input,115,FOLLOW_115_in_ruleLabelCustomization11291); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_30, grammarAccess.getLabelCustomizationAccess().getExpressionKeyword_12_0());
+                          	newLeafNode(otherlv_30, grammarAccess.getLabelCustomizationAccess().getExpressionKeyword_10_0());
                           
                     }
-                    otherlv_31=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11294); if (state.failed) return current;
+                    otherlv_31=(Token)match(input,93,FOLLOW_93_in_ruleLabelCustomization11303); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_31, grammarAccess.getLabelCustomizationAccess().getColonKeyword_12_1());
+                          	newLeafNode(otherlv_31, grammarAccess.getLabelCustomizationAccess().getColonKeyword_10_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5342:1: ( (lv_expression_32_0= ruleCustomizationExpression ) )
@@ -15038,10 +15089,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getExpressionCustomizationExpressionParserRuleCall_12_2_0()); 
+                      	        newCompositeNode(grammarAccess.getLabelCustomizationAccess().getExpressionCustomizationExpressionParserRuleCall_10_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleLabelCustomization11315);
+                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleLabelCustomization11324);
                     lv_expression_32_0=ruleCustomizationExpression();
 
                     state._fsp--;
@@ -15071,10 +15122,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_33=(Token)match(input,15,FOLLOW_15_in_ruleLabelCustomization11329); if (state.failed) return current;
+            otherlv_33=(Token)match(input,15,FOLLOW_15_in_ruleLabelCustomization11338); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_33, grammarAccess.getLabelCustomizationAccess().getRightCurlyBracketKeyword_13());
+                  	newLeafNode(otherlv_33, grammarAccess.getLabelCustomizationAccess().getRightCurlyBracketKeyword_11());
                   
             }
 
@@ -15114,7 +15165,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLabelAlignementCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleLabelAlignementCustomization_in_entryRuleLabelAlignementCustomization11365);
+            pushFollow(FOLLOW_ruleLabelAlignementCustomization_in_entryRuleLabelAlignementCustomization11374);
             iv_ruleLabelAlignementCustomization=ruleLabelAlignementCustomization();
 
             state._fsp--;
@@ -15122,7 +15173,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLabelAlignementCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLabelAlignementCustomization11375); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLabelAlignementCustomization11384); if (state.failed) return current;
 
             }
 
@@ -15171,13 +15222,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,116,FOLLOW_116_in_ruleLabelAlignementCustomization11421); if (state.failed) return current;
+            otherlv_1=(Token)match(input,116,FOLLOW_116_in_ruleLabelAlignementCustomization11430); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getLabelAlignementCustomizationAccess().getAlignmentKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleLabelAlignementCustomization11433); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleLabelAlignementCustomization11442); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getLabelAlignementCustomizationAccess().getColonKeyword_2());
@@ -15194,7 +15245,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getLabelAlignementCustomizationAccess().getAlignmentLabelAlignmentEnumRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleLabelAlignment_in_ruleLabelAlignementCustomization11454);
+            pushFollow(FOLLOW_ruleLabelAlignment_in_ruleLabelAlignementCustomization11463);
             lv_alignment_3_0=ruleLabelAlignment();
 
             state._fsp--;
@@ -15255,7 +15306,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAbstractNodeStyleCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleAbstractNodeStyleCustomization_in_entryRuleAbstractNodeStyleCustomization11490);
+            pushFollow(FOLLOW_ruleAbstractNodeStyleCustomization_in_entryRuleAbstractNodeStyleCustomization11499);
             iv_ruleAbstractNodeStyleCustomization=ruleAbstractNodeStyleCustomization();
 
             state._fsp--;
@@ -15263,7 +15314,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleAbstractNodeStyleCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractNodeStyleCustomization11500); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractNodeStyleCustomization11509); if (state.failed) return current;
 
             }
 
@@ -15297,23 +15348,23 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5438:1: (this_ContainerStyleCustomization_0= ruleContainerStyleCustomization | this_NodeStyleCustomization_1= ruleNodeStyleCustomization )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5438:1: (this_ContainerStyleCustomization_0= ruleContainerStyleCustomization | this_NodeStyleCustomization_1= ruleNodeStyleCustomization )
-            int alt131=2;
-            int LA131_0 = input.LA(1);
+            int alt134=2;
+            int LA134_0 = input.LA(1);
 
-            if ( (LA131_0==117) ) {
-                alt131=1;
+            if ( (LA134_0==117) ) {
+                alt134=1;
             }
-            else if ( (LA131_0==127) ) {
-                alt131=2;
+            else if ( (LA134_0==127) ) {
+                alt134=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 131, 0, input);
+                    new NoViableAltException("", 134, 0, input);
 
                 throw nvae;
             }
-            switch (alt131) {
+            switch (alt134) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5439:5: this_ContainerStyleCustomization_0= ruleContainerStyleCustomization
                     {
@@ -15322,7 +15373,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractNodeStyleCustomizationAccess().getContainerStyleCustomizationParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleContainerStyleCustomization_in_ruleAbstractNodeStyleCustomization11547);
+                    pushFollow(FOLLOW_ruleContainerStyleCustomization_in_ruleAbstractNodeStyleCustomization11556);
                     this_ContainerStyleCustomization_0=ruleContainerStyleCustomization();
 
                     state._fsp--;
@@ -15344,7 +15395,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractNodeStyleCustomizationAccess().getNodeStyleCustomizationParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleNodeStyleCustomization_in_ruleAbstractNodeStyleCustomization11574);
+                    pushFollow(FOLLOW_ruleNodeStyleCustomization_in_ruleAbstractNodeStyleCustomization11583);
                     this_NodeStyleCustomization_1=ruleNodeStyleCustomization();
 
                     state._fsp--;
@@ -15395,7 +15446,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getContainerStyleCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleContainerStyleCustomization_in_entryRuleContainerStyleCustomization11609);
+            pushFollow(FOLLOW_ruleContainerStyleCustomization_in_entryRuleContainerStyleCustomization11618);
             iv_ruleContainerStyleCustomization=ruleContainerStyleCustomization();
 
             state._fsp--;
@@ -15403,7 +15454,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleContainerStyleCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleContainerStyleCustomization11619); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleContainerStyleCustomization11628); if (state.failed) return current;
 
             }
 
@@ -15421,7 +15472,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContainerStyleCustomization"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5474:1: ruleContainerStyleCustomization returns [EObject current=null] : ( () otherlv_1= 'container' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5474:1: ruleContainerStyleCustomization returns [EObject current=null] : ( () otherlv_1= 'container' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' ) ;
     public final EObject ruleContainerStyleCustomization() throws RecognitionException {
         EObject current = null;
 
@@ -15463,11 +15514,11 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5477:28: ( ( () otherlv_1= 'container' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5478:1: ( () otherlv_1= 'container' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5477:28: ( ( () otherlv_1= 'container' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5478:1: ( () otherlv_1= 'container' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5478:1: ( () otherlv_1= 'container' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5478:2: () otherlv_1= 'container' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5478:1: ( () otherlv_1= 'container' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5478:2: () otherlv_1= 'container' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )? (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )? (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )* otherlv_27= '}'
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5478:2: ()
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5479:5: 
@@ -15482,137 +15533,154 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,117,FOLLOW_117_in_ruleContainerStyleCustomization11665); if (state.failed) return current;
+            otherlv_1=(Token)match(input,117,FOLLOW_117_in_ruleContainerStyleCustomization11674); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getContainerStyleCustomizationAccess().getContainerKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleContainerStyleCustomization11677); if (state.failed) return current;
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5488:1: (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )?
+            int alt136=2;
+            int LA136_0 = input.LA(1);
+
+            if ( (LA136_0==88) ) {
+                alt136=1;
+            }
+            switch (alt136) {
+                case 1 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5488:3: otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')'
+                    {
+                    otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleContainerStyleCustomization11687); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_2, grammarAccess.getContainerStyleCustomizationAccess().getLeftParenthesisKeyword_2_0());
+                          
+                    }
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5492:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5492:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5492:2: ( (otherlv_3= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5493:1: (otherlv_3= RULE_STRING )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5493:1: (otherlv_3= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5494:3: otherlv_3= RULE_STRING
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			if (current==null) {
+                      	            current = createModelElement(grammarAccess.getContainerStyleCustomizationRule());
+                      	        }
+                              
+                    }
+                    otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11708); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		newLeafNode(otherlv_3, grammarAccess.getContainerStyleCustomizationAccess().getAppliedOnContainerStyleDescriptionCrossReference_2_1_0_0()); 
+                      	
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5505:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    loop135:
+                    do {
+                        int alt135=2;
+                        int LA135_0 = input.LA(1);
+
+                        if ( (LA135_0==37) ) {
+                            alt135=1;
+                        }
+
+
+                        switch (alt135) {
+                    	case 1 :
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5505:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
+                    	    {
+                    	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleContainerStyleCustomization11721); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_4, grammarAccess.getContainerStyleCustomizationAccess().getCommaKeyword_2_1_1_0());
+                    	          
+                    	    }
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5509:1: ( (otherlv_5= RULE_STRING ) )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5510:1: (otherlv_5= RULE_STRING )
+                    	    {
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5510:1: (otherlv_5= RULE_STRING )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5511:3: otherlv_5= RULE_STRING
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getContainerStyleCustomizationRule());
+                    	      	        }
+                    	              
+                    	    }
+                    	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11741); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      		newLeafNode(otherlv_5, grammarAccess.getContainerStyleCustomizationAccess().getAppliedOnContainerStyleDescriptionCrossReference_2_1_1_1_0()); 
+                    	      	
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop135;
+                        }
+                    } while (true);
+
+
+                    }
+
+                    otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleContainerStyleCustomization11756); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_6, grammarAccess.getContainerStyleCustomizationAccess().getRightParenthesisKeyword_2_2());
+                          
+                    }
+
+                    }
+                    break;
+
+            }
+
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleContainerStyleCustomization11770); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_2, grammarAccess.getContainerStyleCustomizationAccess().getLeftParenthesisKeyword_2());
-                  
-            }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5492:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5492:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5492:2: ( (otherlv_3= RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5493:1: (otherlv_3= RULE_STRING )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5493:1: (otherlv_3= RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5494:3: otherlv_3= RULE_STRING
-            {
-            if ( state.backtracking==0 ) {
-
-              			if (current==null) {
-              	            current = createModelElement(grammarAccess.getContainerStyleCustomizationRule());
-              	        }
-                      
-            }
-            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11698); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              		newLeafNode(otherlv_3, grammarAccess.getContainerStyleCustomizationAccess().getAppliedOnContainerStyleDescriptionCrossReference_3_0_0()); 
-              	
-            }
-
-            }
-
-
-            }
-
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5505:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            loop132:
-            do {
-                int alt132=2;
-                int LA132_0 = input.LA(1);
-
-                if ( (LA132_0==37) ) {
-                    alt132=1;
-                }
-
-
-                switch (alt132) {
-            	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5505:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
-            	    {
-            	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleContainerStyleCustomization11711); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	          	newLeafNode(otherlv_4, grammarAccess.getContainerStyleCustomizationAccess().getCommaKeyword_3_1_0());
-            	          
-            	    }
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5509:1: ( (otherlv_5= RULE_STRING ) )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5510:1: (otherlv_5= RULE_STRING )
-            	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5510:1: (otherlv_5= RULE_STRING )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5511:3: otherlv_5= RULE_STRING
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      			if (current==null) {
-            	      	            current = createModelElement(grammarAccess.getContainerStyleCustomizationRule());
-            	      	        }
-            	              
-            	    }
-            	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11731); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      		newLeafNode(otherlv_5, grammarAccess.getContainerStyleCustomizationAccess().getAppliedOnContainerStyleDescriptionCrossReference_3_1_1_0()); 
-            	      	
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop132;
-                }
-            } while (true);
-
-
-            }
-
-            otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleContainerStyleCustomization11746); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_6, grammarAccess.getContainerStyleCustomizationAccess().getRightParenthesisKeyword_4());
-                  
-            }
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleContainerStyleCustomization11758); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_7, grammarAccess.getContainerStyleCustomizationAccess().getLeftCurlyBracketKeyword_5());
+                  	newLeafNode(otherlv_7, grammarAccess.getContainerStyleCustomizationAccess().getLeftCurlyBracketKeyword_3());
                   
             }
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5530:1: (otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )?
-            int alt133=2;
-            int LA133_0 = input.LA(1);
+            int alt137=2;
+            int LA137_0 = input.LA(1);
 
-            if ( (LA133_0==118) ) {
-                alt133=1;
+            if ( (LA137_0==118) ) {
+                alt137=1;
             }
-            switch (alt133) {
+            switch (alt137) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5530:3: otherlv_8= 'over-all-containers' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) )
                     {
-                    otherlv_8=(Token)match(input,118,FOLLOW_118_in_ruleContainerStyleCustomization11771); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,118,FOLLOW_118_in_ruleContainerStyleCustomization11783); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_8, grammarAccess.getContainerStyleCustomizationAccess().getOverAllContainersKeyword_6_0());
+                          	newLeafNode(otherlv_8, grammarAccess.getContainerStyleCustomizationAccess().getOverAllContainersKeyword_4_0());
                           
                     }
-                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11783); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11795); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_9, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_6_1());
+                          	newLeafNode(otherlv_9, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_4_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5538:1: ( (lv_applyonAll_10_0= ruleEBoolean ) )
@@ -15623,10 +15691,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getApplyonAllEBooleanParserRuleCall_6_2_0()); 
+                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getApplyonAllEBooleanParserRuleCall_4_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11804);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11816);
                     lv_applyonAll_10_0=ruleEBoolean();
 
                     state._fsp--;
@@ -15657,26 +15725,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5556:4: (otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) ) )?
-            int alt134=2;
-            int LA134_0 = input.LA(1);
+            int alt138=2;
+            int LA138_0 = input.LA(1);
 
-            if ( (LA134_0==119) ) {
-                alt134=1;
+            if ( (LA138_0==119) ) {
+                alt138=1;
             }
-            switch (alt134) {
+            switch (alt138) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5556:6: otherlv_11= 'width' otherlv_12= ':' ( (lv_arcWith_13_0= ruleEInt ) )
                     {
-                    otherlv_11=(Token)match(input,119,FOLLOW_119_in_ruleContainerStyleCustomization11819); if (state.failed) return current;
+                    otherlv_11=(Token)match(input,119,FOLLOW_119_in_ruleContainerStyleCustomization11831); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_11, grammarAccess.getContainerStyleCustomizationAccess().getWidthKeyword_7_0());
+                          	newLeafNode(otherlv_11, grammarAccess.getContainerStyleCustomizationAccess().getWidthKeyword_5_0());
                           
                     }
-                    otherlv_12=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11831); if (state.failed) return current;
+                    otherlv_12=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11843); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_12, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_7_1());
+                          	newLeafNode(otherlv_12, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_5_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5564:1: ( (lv_arcWith_13_0= ruleEInt ) )
@@ -15687,10 +15755,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getArcWithEIntParserRuleCall_7_2_0()); 
+                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getArcWithEIntParserRuleCall_5_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11852);
+                    pushFollow(FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11864);
                     lv_arcWith_13_0=ruleEInt();
 
                     state._fsp--;
@@ -15721,26 +15789,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5582:4: (otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) ) )?
-            int alt135=2;
-            int LA135_0 = input.LA(1);
+            int alt139=2;
+            int LA139_0 = input.LA(1);
 
-            if ( (LA135_0==120) ) {
-                alt135=1;
+            if ( (LA139_0==120) ) {
+                alt139=1;
             }
-            switch (alt135) {
+            switch (alt139) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5582:6: otherlv_14= 'height' otherlv_15= ':' ( (lv_arcHeight_16_0= ruleEInt ) )
                     {
-                    otherlv_14=(Token)match(input,120,FOLLOW_120_in_ruleContainerStyleCustomization11867); if (state.failed) return current;
+                    otherlv_14=(Token)match(input,120,FOLLOW_120_in_ruleContainerStyleCustomization11879); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_14, grammarAccess.getContainerStyleCustomizationAccess().getHeightKeyword_8_0());
+                          	newLeafNode(otherlv_14, grammarAccess.getContainerStyleCustomizationAccess().getHeightKeyword_6_0());
                           
                     }
-                    otherlv_15=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11879); if (state.failed) return current;
+                    otherlv_15=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11891); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_15, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_8_1());
+                          	newLeafNode(otherlv_15, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_6_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5590:1: ( (lv_arcHeight_16_0= ruleEInt ) )
@@ -15751,10 +15819,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getArcHeightEIntParserRuleCall_8_2_0()); 
+                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getArcHeightEIntParserRuleCall_6_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11900);
+                    pushFollow(FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11912);
                     lv_arcHeight_16_0=ruleEInt();
 
                     state._fsp--;
@@ -15785,26 +15853,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5608:4: (otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) ) )?
-            int alt136=2;
-            int LA136_0 = input.LA(1);
+            int alt140=2;
+            int LA140_0 = input.LA(1);
 
-            if ( (LA136_0==121) ) {
-                alt136=1;
+            if ( (LA140_0==121) ) {
+                alt140=1;
             }
-            switch (alt136) {
+            switch (alt140) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5608:6: otherlv_17= 'round-corner' otherlv_18= ':' ( (lv_roundedCorner_19_0= ruleEBoolean ) )
                     {
-                    otherlv_17=(Token)match(input,121,FOLLOW_121_in_ruleContainerStyleCustomization11915); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,121,FOLLOW_121_in_ruleContainerStyleCustomization11927); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_17, grammarAccess.getContainerStyleCustomizationAccess().getRoundCornerKeyword_9_0());
+                          	newLeafNode(otherlv_17, grammarAccess.getContainerStyleCustomizationAccess().getRoundCornerKeyword_7_0());
                           
                     }
-                    otherlv_18=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11927); if (state.failed) return current;
+                    otherlv_18=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11939); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_18, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_9_1());
+                          	newLeafNode(otherlv_18, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_7_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5616:1: ( (lv_roundedCorner_19_0= ruleEBoolean ) )
@@ -15815,10 +15883,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getRoundedCornerEBooleanParserRuleCall_9_2_0()); 
+                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getRoundedCornerEBooleanParserRuleCall_7_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11948);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11960);
                     lv_roundedCorner_19_0=ruleEBoolean();
 
                     state._fsp--;
@@ -15849,26 +15917,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5634:4: (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )?
-            int alt137=2;
-            int LA137_0 = input.LA(1);
+            int alt141=2;
+            int LA141_0 = input.LA(1);
 
-            if ( (LA137_0==122) ) {
-                alt137=1;
+            if ( (LA141_0==122) ) {
+                alt141=1;
             }
-            switch (alt137) {
+            switch (alt141) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5634:6: otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) )
                     {
-                    otherlv_20=(Token)match(input,122,FOLLOW_122_in_ruleContainerStyleCustomization11963); if (state.failed) return current;
+                    otherlv_20=(Token)match(input,122,FOLLOW_122_in_ruleContainerStyleCustomization11975); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_20, grammarAccess.getContainerStyleCustomizationAccess().getTooltipExpressionKeyword_10_0());
+                          	newLeafNode(otherlv_20, grammarAccess.getContainerStyleCustomizationAccess().getTooltipExpressionKeyword_8_0());
                           
                     }
-                    otherlv_21=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11975); if (state.failed) return current;
+                    otherlv_21=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization11987); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_21, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_10_1());
+                          	newLeafNode(otherlv_21, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_8_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5642:1: ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) )
@@ -15879,10 +15947,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0()); 
+                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization11996);
+                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization12008);
                     lv_tooltipExpression_22_0=ruleCustomizationExpression();
 
                     state._fsp--;
@@ -15913,26 +15981,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5660:4: (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )?
-            int alt138=2;
-            int LA138_0 = input.LA(1);
+            int alt142=2;
+            int LA142_0 = input.LA(1);
 
-            if ( (LA138_0==123) ) {
-                alt138=1;
+            if ( (LA142_0==123) ) {
+                alt142=1;
             }
-            switch (alt138) {
+            switch (alt142) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5660:6: otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) )
                     {
-                    otherlv_23=(Token)match(input,123,FOLLOW_123_in_ruleContainerStyleCustomization12011); if (state.failed) return current;
+                    otherlv_23=(Token)match(input,123,FOLLOW_123_in_ruleContainerStyleCustomization12023); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_23, grammarAccess.getContainerStyleCustomizationAccess().getBorderDimensionKeyword_11_0());
+                          	newLeafNode(otherlv_23, grammarAccess.getContainerStyleCustomizationAccess().getBorderDimensionKeyword_9_0());
                           
                     }
-                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization12023); if (state.failed) return current;
+                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleContainerStyleCustomization12035); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_24, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_11_1());
+                          	newLeafNode(otherlv_24, grammarAccess.getContainerStyleCustomizationAccess().getColonKeyword_9_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5668:1: ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) )
@@ -15943,10 +16011,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0()); 
+                      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization12044);
+                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization12056);
                     lv_borderSizeComputationExpression_25_0=ruleCustomizationExpression();
 
                     state._fsp--;
@@ -15977,17 +16045,17 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5686:4: ( (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization ) )*
-            loop139:
+            loop143:
             do {
-                int alt139=2;
-                int LA139_0 = input.LA(1);
+                int alt143=2;
+                int LA143_0 = input.LA(1);
 
-                if ( ((LA139_0>=124 && LA139_0<=126)) ) {
-                    alt139=1;
+                if ( ((LA143_0>=124 && LA143_0<=126)) ) {
+                    alt143=1;
                 }
 
 
-                switch (alt139) {
+                switch (alt143) {
             	case 1 :
             	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5687:1: (lv_ownedSpecificContainerStyleCustomization_26_0= ruleSpecificContainerStyleCustomization )
             	    {
@@ -15996,10 +16064,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_12_0()); 
+            	      	        newCompositeNode(grammarAccess.getContainerStyleCustomizationAccess().getOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_10_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleSpecificContainerStyleCustomization_in_ruleContainerStyleCustomization12067);
+            	    pushFollow(FOLLOW_ruleSpecificContainerStyleCustomization_in_ruleContainerStyleCustomization12079);
             	    lv_ownedSpecificContainerStyleCustomization_26_0=ruleSpecificContainerStyleCustomization();
 
             	    state._fsp--;
@@ -16025,14 +16093,14 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop139;
+            	    break loop143;
                 }
             } while (true);
 
-            otherlv_27=(Token)match(input,15,FOLLOW_15_in_ruleContainerStyleCustomization12080); if (state.failed) return current;
+            otherlv_27=(Token)match(input,15,FOLLOW_15_in_ruleContainerStyleCustomization12092); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_27, grammarAccess.getContainerStyleCustomizationAccess().getRightCurlyBracketKeyword_13());
+                  	newLeafNode(otherlv_27, grammarAccess.getContainerStyleCustomizationAccess().getRightCurlyBracketKeyword_11());
                   
             }
 
@@ -16072,7 +16140,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSpecificContainerStyleCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleSpecificContainerStyleCustomization_in_entryRuleSpecificContainerStyleCustomization12116);
+            pushFollow(FOLLOW_ruleSpecificContainerStyleCustomization_in_entryRuleSpecificContainerStyleCustomization12128);
             iv_ruleSpecificContainerStyleCustomization=ruleSpecificContainerStyleCustomization();
 
             state._fsp--;
@@ -16080,7 +16148,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSpecificContainerStyleCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpecificContainerStyleCustomization12126); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpecificContainerStyleCustomization12138); if (state.failed) return current;
 
             }
 
@@ -16116,32 +16184,32 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5729:1: (this_ContainerWorkspaceImageCustomization_0= ruleContainerWorkspaceImageCustomization | this_FlatContainerStyleCustomization_1= ruleFlatContainerStyleCustomization | this_ShapeContainerStyleCustomization_2= ruleShapeContainerStyleCustomization )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5729:1: (this_ContainerWorkspaceImageCustomization_0= ruleContainerWorkspaceImageCustomization | this_FlatContainerStyleCustomization_1= ruleFlatContainerStyleCustomization | this_ShapeContainerStyleCustomization_2= ruleShapeContainerStyleCustomization )
-            int alt140=3;
+            int alt144=3;
             switch ( input.LA(1) ) {
             case 124:
                 {
-                alt140=1;
+                alt144=1;
                 }
                 break;
             case 125:
                 {
-                alt140=2;
+                alt144=2;
                 }
                 break;
             case 126:
                 {
-                alt140=3;
+                alt144=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 140, 0, input);
+                    new NoViableAltException("", 144, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt140) {
+            switch (alt144) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5730:5: this_ContainerWorkspaceImageCustomization_0= ruleContainerWorkspaceImageCustomization
                     {
@@ -16150,7 +16218,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificContainerStyleCustomizationAccess().getContainerWorkspaceImageCustomizationParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleContainerWorkspaceImageCustomization_in_ruleSpecificContainerStyleCustomization12173);
+                    pushFollow(FOLLOW_ruleContainerWorkspaceImageCustomization_in_ruleSpecificContainerStyleCustomization12185);
                     this_ContainerWorkspaceImageCustomization_0=ruleContainerWorkspaceImageCustomization();
 
                     state._fsp--;
@@ -16172,7 +16240,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificContainerStyleCustomizationAccess().getFlatContainerStyleCustomizationParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleFlatContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12200);
+                    pushFollow(FOLLOW_ruleFlatContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12212);
                     this_FlatContainerStyleCustomization_1=ruleFlatContainerStyleCustomization();
 
                     state._fsp--;
@@ -16194,7 +16262,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificContainerStyleCustomizationAccess().getShapeContainerStyleCustomizationParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleShapeContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12227);
+                    pushFollow(FOLLOW_ruleShapeContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12239);
                     this_ShapeContainerStyleCustomization_2=ruleShapeContainerStyleCustomization();
 
                     state._fsp--;
@@ -16245,7 +16313,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getContainerWorkspaceImageCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleContainerWorkspaceImageCustomization_in_entryRuleContainerWorkspaceImageCustomization12262);
+            pushFollow(FOLLOW_ruleContainerWorkspaceImageCustomization_in_entryRuleContainerWorkspaceImageCustomization12274);
             iv_ruleContainerWorkspaceImageCustomization=ruleContainerWorkspaceImageCustomization();
 
             state._fsp--;
@@ -16253,7 +16321,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleContainerWorkspaceImageCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleContainerWorkspaceImageCustomization12272); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleContainerWorkspaceImageCustomization12284); if (state.failed) return current;
 
             }
 
@@ -16302,13 +16370,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,124,FOLLOW_124_in_ruleContainerWorkspaceImageCustomization12318); if (state.failed) return current;
+            otherlv_1=(Token)match(input,124,FOLLOW_124_in_ruleContainerWorkspaceImageCustomization12330); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getContainerWorkspaceImageCustomizationAccess().getWorkspaceKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleContainerWorkspaceImageCustomization12330); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleContainerWorkspaceImageCustomization12342); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getContainerWorkspaceImageCustomizationAccess().getColonKeyword_2());
@@ -16325,7 +16393,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getContainerWorkspaceImageCustomizationAccess().getWorkspacePathEStringParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleEString_in_ruleContainerWorkspaceImageCustomization12351);
+            pushFollow(FOLLOW_ruleEString_in_ruleContainerWorkspaceImageCustomization12363);
             lv_workspacePath_3_0=ruleEString();
 
             state._fsp--;
@@ -16386,7 +16454,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFlatContainerStyleCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleFlatContainerStyleCustomization_in_entryRuleFlatContainerStyleCustomization12387);
+            pushFollow(FOLLOW_ruleFlatContainerStyleCustomization_in_entryRuleFlatContainerStyleCustomization12399);
             iv_ruleFlatContainerStyleCustomization=ruleFlatContainerStyleCustomization();
 
             state._fsp--;
@@ -16394,7 +16462,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFlatContainerStyleCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFlatContainerStyleCustomization12397); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFlatContainerStyleCustomization12409); if (state.failed) return current;
 
             }
 
@@ -16443,13 +16511,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,125,FOLLOW_125_in_ruleFlatContainerStyleCustomization12443); if (state.failed) return current;
+            otherlv_1=(Token)match(input,125,FOLLOW_125_in_ruleFlatContainerStyleCustomization12455); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getFlatContainerStyleCustomizationAccess().getBackgroundKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleFlatContainerStyleCustomization12455); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleFlatContainerStyleCustomization12467); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getFlatContainerStyleCustomizationAccess().getColonKeyword_2());
@@ -16466,7 +16534,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getFlatContainerStyleCustomizationAccess().getBackgroundStyleBackgroundStyleEnumRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleBackgroundStyle_in_ruleFlatContainerStyleCustomization12476);
+            pushFollow(FOLLOW_ruleBackgroundStyle_in_ruleFlatContainerStyleCustomization12488);
             lv_backgroundStyle_3_0=ruleBackgroundStyle();
 
             state._fsp--;
@@ -16527,7 +16595,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getShapeContainerStyleCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleShapeContainerStyleCustomization_in_entryRuleShapeContainerStyleCustomization12512);
+            pushFollow(FOLLOW_ruleShapeContainerStyleCustomization_in_entryRuleShapeContainerStyleCustomization12524);
             iv_ruleShapeContainerStyleCustomization=ruleShapeContainerStyleCustomization();
 
             state._fsp--;
@@ -16535,7 +16603,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleShapeContainerStyleCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleShapeContainerStyleCustomization12522); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleShapeContainerStyleCustomization12534); if (state.failed) return current;
 
             }
 
@@ -16584,13 +16652,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,126,FOLLOW_126_in_ruleShapeContainerStyleCustomization12568); if (state.failed) return current;
+            otherlv_1=(Token)match(input,126,FOLLOW_126_in_ruleShapeContainerStyleCustomization12580); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getShapeContainerStyleCustomizationAccess().getShapeKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleShapeContainerStyleCustomization12580); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleShapeContainerStyleCustomization12592); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getShapeContainerStyleCustomizationAccess().getColonKeyword_2());
@@ -16607,7 +16675,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getShapeContainerStyleCustomizationAccess().getShapeContainerShapeEnumRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleContainerShape_in_ruleShapeContainerStyleCustomization12601);
+            pushFollow(FOLLOW_ruleContainerShape_in_ruleShapeContainerStyleCustomization12613);
             lv_shape_3_0=ruleContainerShape();
 
             state._fsp--;
@@ -16668,7 +16736,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNodeStyleCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleNodeStyleCustomization_in_entryRuleNodeStyleCustomization12637);
+            pushFollow(FOLLOW_ruleNodeStyleCustomization_in_entryRuleNodeStyleCustomization12649);
             iv_ruleNodeStyleCustomization=ruleNodeStyleCustomization();
 
             state._fsp--;
@@ -16676,7 +16744,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleNodeStyleCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeStyleCustomization12647); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeStyleCustomization12659); if (state.failed) return current;
 
             }
 
@@ -16694,7 +16762,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNodeStyleCustomization"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5934:1: ruleNodeStyleCustomization returns [EObject current=null] : ( () otherlv_1= 'node' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5934:1: ruleNodeStyleCustomization returns [EObject current=null] : ( () otherlv_1= 'node' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' ) ;
     public final EObject ruleNodeStyleCustomization() throws RecognitionException {
         EObject current = null;
 
@@ -16740,11 +16808,11 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5937:28: ( ( () otherlv_1= 'node' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5938:1: ( () otherlv_1= 'node' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5937:28: ( ( () otherlv_1= 'node' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5938:1: ( () otherlv_1= 'node' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5938:1: ( () otherlv_1= 'node' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5938:2: () otherlv_1= 'node' otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}'
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5938:1: ( () otherlv_1= 'node' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}' )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5938:2: () otherlv_1= 'node' (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )? otherlv_7= '{' (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )? (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )? (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )? (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )? (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )? (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )? (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )? ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )* otherlv_30= '}'
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5938:2: ()
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5939:5: 
@@ -16759,137 +16827,154 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,127,FOLLOW_127_in_ruleNodeStyleCustomization12693); if (state.failed) return current;
+            otherlv_1=(Token)match(input,127,FOLLOW_127_in_ruleNodeStyleCustomization12705); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getNodeStyleCustomizationAccess().getNodeKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleNodeStyleCustomization12705); if (state.failed) return current;
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5948:1: (otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')' )?
+            int alt146=2;
+            int LA146_0 = input.LA(1);
+
+            if ( (LA146_0==88) ) {
+                alt146=1;
+            }
+            switch (alt146) {
+                case 1 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5948:3: otherlv_2= '(' ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* ) otherlv_6= ')'
+                    {
+                    otherlv_2=(Token)match(input,88,FOLLOW_88_in_ruleNodeStyleCustomization12718); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_2, grammarAccess.getNodeStyleCustomizationAccess().getLeftParenthesisKeyword_2_0());
+                          
+                    }
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5952:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5952:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5952:2: ( (otherlv_3= RULE_STRING ) )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5953:1: (otherlv_3= RULE_STRING )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5953:1: (otherlv_3= RULE_STRING )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5954:3: otherlv_3= RULE_STRING
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			if (current==null) {
+                      	            current = createModelElement(grammarAccess.getNodeStyleCustomizationRule());
+                      	        }
+                              
+                    }
+                    otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12739); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      		newLeafNode(otherlv_3, grammarAccess.getNodeStyleCustomizationAccess().getAppliedOnNodeStyleDescriptionCrossReference_2_1_0_0()); 
+                      	
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5965:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
+                    loop145:
+                    do {
+                        int alt145=2;
+                        int LA145_0 = input.LA(1);
+
+                        if ( (LA145_0==37) ) {
+                            alt145=1;
+                        }
+
+
+                        switch (alt145) {
+                    	case 1 :
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5965:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
+                    	    {
+                    	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleNodeStyleCustomization12752); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_4, grammarAccess.getNodeStyleCustomizationAccess().getCommaKeyword_2_1_1_0());
+                    	          
+                    	    }
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5969:1: ( (otherlv_5= RULE_STRING ) )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5970:1: (otherlv_5= RULE_STRING )
+                    	    {
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5970:1: (otherlv_5= RULE_STRING )
+                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5971:3: otherlv_5= RULE_STRING
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getNodeStyleCustomizationRule());
+                    	      	        }
+                    	              
+                    	    }
+                    	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12772); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      		newLeafNode(otherlv_5, grammarAccess.getNodeStyleCustomizationAccess().getAppliedOnNodeStyleDescriptionCrossReference_2_1_1_1_0()); 
+                    	      	
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop145;
+                        }
+                    } while (true);
+
+
+                    }
+
+                    otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleNodeStyleCustomization12787); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_6, grammarAccess.getNodeStyleCustomizationAccess().getRightParenthesisKeyword_2_2());
+                          
+                    }
+
+                    }
+                    break;
+
+            }
+
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleNodeStyleCustomization12801); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_2, grammarAccess.getNodeStyleCustomizationAccess().getLeftParenthesisKeyword_2());
-                  
-            }
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5952:1: ( ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5952:2: ( (otherlv_3= RULE_STRING ) ) (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5952:2: ( (otherlv_3= RULE_STRING ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5953:1: (otherlv_3= RULE_STRING )
-            {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5953:1: (otherlv_3= RULE_STRING )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5954:3: otherlv_3= RULE_STRING
-            {
-            if ( state.backtracking==0 ) {
-
-              			if (current==null) {
-              	            current = createModelElement(grammarAccess.getNodeStyleCustomizationRule());
-              	        }
-                      
-            }
-            otherlv_3=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12726); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              		newLeafNode(otherlv_3, grammarAccess.getNodeStyleCustomizationAccess().getAppliedOnNodeStyleDescriptionCrossReference_3_0_0()); 
-              	
-            }
-
-            }
-
-
-            }
-
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5965:2: (otherlv_4= ',' ( (otherlv_5= RULE_STRING ) ) )*
-            loop141:
-            do {
-                int alt141=2;
-                int LA141_0 = input.LA(1);
-
-                if ( (LA141_0==37) ) {
-                    alt141=1;
-                }
-
-
-                switch (alt141) {
-            	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5965:4: otherlv_4= ',' ( (otherlv_5= RULE_STRING ) )
-            	    {
-            	    otherlv_4=(Token)match(input,37,FOLLOW_37_in_ruleNodeStyleCustomization12739); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	          	newLeafNode(otherlv_4, grammarAccess.getNodeStyleCustomizationAccess().getCommaKeyword_3_1_0());
-            	          
-            	    }
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5969:1: ( (otherlv_5= RULE_STRING ) )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5970:1: (otherlv_5= RULE_STRING )
-            	    {
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5970:1: (otherlv_5= RULE_STRING )
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5971:3: otherlv_5= RULE_STRING
-            	    {
-            	    if ( state.backtracking==0 ) {
-
-            	      			if (current==null) {
-            	      	            current = createModelElement(grammarAccess.getNodeStyleCustomizationRule());
-            	      	        }
-            	              
-            	    }
-            	    otherlv_5=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12759); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      		newLeafNode(otherlv_5, grammarAccess.getNodeStyleCustomizationAccess().getAppliedOnNodeStyleDescriptionCrossReference_3_1_1_0()); 
-            	      	
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop141;
-                }
-            } while (true);
-
-
-            }
-
-            otherlv_6=(Token)match(input,89,FOLLOW_89_in_ruleNodeStyleCustomization12774); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_6, grammarAccess.getNodeStyleCustomizationAccess().getRightParenthesisKeyword_4());
-                  
-            }
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleNodeStyleCustomization12786); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_7, grammarAccess.getNodeStyleCustomizationAccess().getLeftCurlyBracketKeyword_5());
+                  	newLeafNode(otherlv_7, grammarAccess.getNodeStyleCustomizationAccess().getLeftCurlyBracketKeyword_3());
                   
             }
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5990:1: (otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) ) )?
-            int alt142=2;
-            int LA142_0 = input.LA(1);
+            int alt147=2;
+            int LA147_0 = input.LA(1);
 
-            if ( (LA142_0==128) ) {
-                alt142=1;
+            if ( (LA147_0==128) ) {
+                alt147=1;
             }
-            switch (alt142) {
+            switch (alt147) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5990:3: otherlv_8= 'over-all-nodes' otherlv_9= ':' ( (lv_applyonAll_10_0= ruleEBoolean ) )
                     {
-                    otherlv_8=(Token)match(input,128,FOLLOW_128_in_ruleNodeStyleCustomization12799); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,128,FOLLOW_128_in_ruleNodeStyleCustomization12814); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_8, grammarAccess.getNodeStyleCustomizationAccess().getOverAllNodesKeyword_6_0());
+                          	newLeafNode(otherlv_8, grammarAccess.getNodeStyleCustomizationAccess().getOverAllNodesKeyword_4_0());
                           
                     }
-                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12811); if (state.failed) return current;
+                    otherlv_9=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12826); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_9, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_6_1());
+                          	newLeafNode(otherlv_9, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_4_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:5998:1: ( (lv_applyonAll_10_0= ruleEBoolean ) )
@@ -16900,10 +16985,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getApplyonAllEBooleanParserRuleCall_6_2_0()); 
+                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getApplyonAllEBooleanParserRuleCall_4_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12832);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12847);
                     lv_applyonAll_10_0=ruleEBoolean();
 
                     state._fsp--;
@@ -16934,26 +17019,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6016:4: (otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) ) )?
-            int alt143=2;
-            int LA143_0 = input.LA(1);
+            int alt148=2;
+            int LA148_0 = input.LA(1);
 
-            if ( (LA143_0==129) ) {
-                alt143=1;
+            if ( (LA148_0==129) ) {
+                alt148=1;
             }
-            switch (alt143) {
+            switch (alt148) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6016:6: otherlv_11= 'label-position' otherlv_12= ':' ( (lv_labelPosition_13_0= ruleLabelPosition ) )
                     {
-                    otherlv_11=(Token)match(input,129,FOLLOW_129_in_ruleNodeStyleCustomization12847); if (state.failed) return current;
+                    otherlv_11=(Token)match(input,129,FOLLOW_129_in_ruleNodeStyleCustomization12862); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_11, grammarAccess.getNodeStyleCustomizationAccess().getLabelPositionKeyword_7_0());
+                          	newLeafNode(otherlv_11, grammarAccess.getNodeStyleCustomizationAccess().getLabelPositionKeyword_5_0());
                           
                     }
-                    otherlv_12=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12859); if (state.failed) return current;
+                    otherlv_12=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12874); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_12, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_7_1());
+                          	newLeafNode(otherlv_12, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_5_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6024:1: ( (lv_labelPosition_13_0= ruleLabelPosition ) )
@@ -16964,10 +17049,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getLabelPositionLabelPositionEnumRuleCall_7_2_0()); 
+                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getLabelPositionLabelPositionEnumRuleCall_5_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleLabelPosition_in_ruleNodeStyleCustomization12880);
+                    pushFollow(FOLLOW_ruleLabelPosition_in_ruleNodeStyleCustomization12895);
                     lv_labelPosition_13_0=ruleLabelPosition();
 
                     state._fsp--;
@@ -16998,26 +17083,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6042:4: (otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) ) )?
-            int alt144=2;
-            int LA144_0 = input.LA(1);
+            int alt149=2;
+            int LA149_0 = input.LA(1);
 
-            if ( (LA144_0==130) ) {
-                alt144=1;
+            if ( (LA149_0==130) ) {
+                alt149=1;
             }
-            switch (alt144) {
+            switch (alt149) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6042:6: otherlv_14= 'hide-label' otherlv_15= ':' ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) )
                     {
-                    otherlv_14=(Token)match(input,130,FOLLOW_130_in_ruleNodeStyleCustomization12895); if (state.failed) return current;
+                    otherlv_14=(Token)match(input,130,FOLLOW_130_in_ruleNodeStyleCustomization12910); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_14, grammarAccess.getNodeStyleCustomizationAccess().getHideLabelKeyword_8_0());
+                          	newLeafNode(otherlv_14, grammarAccess.getNodeStyleCustomizationAccess().getHideLabelKeyword_6_0());
                           
                     }
-                    otherlv_15=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12907); if (state.failed) return current;
+                    otherlv_15=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12922); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_15, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_8_1());
+                          	newLeafNode(otherlv_15, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_6_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6050:1: ( (lv_hideLabelByDefault_16_0= ruleEBoolean ) )
@@ -17028,10 +17113,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getHideLabelByDefaultEBooleanParserRuleCall_8_2_0()); 
+                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getHideLabelByDefaultEBooleanParserRuleCall_6_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12928);
+                    pushFollow(FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12943);
                     lv_hideLabelByDefault_16_0=ruleEBoolean();
 
                     state._fsp--;
@@ -17062,26 +17147,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6068:4: (otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) ) )?
-            int alt145=2;
-            int LA145_0 = input.LA(1);
+            int alt150=2;
+            int LA150_0 = input.LA(1);
 
-            if ( (LA145_0==131) ) {
-                alt145=1;
+            if ( (LA150_0==131) ) {
+                alt150=1;
             }
-            switch (alt145) {
+            switch (alt150) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6068:6: otherlv_17= 'resize-kind' otherlv_18= ':' ( (lv_resizeKind_19_0= ruleResizeKind ) )
                     {
-                    otherlv_17=(Token)match(input,131,FOLLOW_131_in_ruleNodeStyleCustomization12943); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,131,FOLLOW_131_in_ruleNodeStyleCustomization12958); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_17, grammarAccess.getNodeStyleCustomizationAccess().getResizeKindKeyword_9_0());
+                          	newLeafNode(otherlv_17, grammarAccess.getNodeStyleCustomizationAccess().getResizeKindKeyword_7_0());
                           
                     }
-                    otherlv_18=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12955); if (state.failed) return current;
+                    otherlv_18=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization12970); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_18, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_9_1());
+                          	newLeafNode(otherlv_18, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_7_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6076:1: ( (lv_resizeKind_19_0= ruleResizeKind ) )
@@ -17092,10 +17177,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getResizeKindResizeKindEnumRuleCall_9_2_0()); 
+                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getResizeKindResizeKindEnumRuleCall_7_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleResizeKind_in_ruleNodeStyleCustomization12976);
+                    pushFollow(FOLLOW_ruleResizeKind_in_ruleNodeStyleCustomization12991);
                     lv_resizeKind_19_0=ruleResizeKind();
 
                     state._fsp--;
@@ -17126,26 +17211,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6094:4: (otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) ) )?
-            int alt146=2;
-            int LA146_0 = input.LA(1);
+            int alt151=2;
+            int LA151_0 = input.LA(1);
 
-            if ( (LA146_0==122) ) {
-                alt146=1;
+            if ( (LA151_0==122) ) {
+                alt151=1;
             }
-            switch (alt146) {
+            switch (alt151) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6094:6: otherlv_20= 'tooltip-expression' otherlv_21= ':' ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) )
                     {
-                    otherlv_20=(Token)match(input,122,FOLLOW_122_in_ruleNodeStyleCustomization12991); if (state.failed) return current;
+                    otherlv_20=(Token)match(input,122,FOLLOW_122_in_ruleNodeStyleCustomization13006); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_20, grammarAccess.getNodeStyleCustomizationAccess().getTooltipExpressionKeyword_10_0());
+                          	newLeafNode(otherlv_20, grammarAccess.getNodeStyleCustomizationAccess().getTooltipExpressionKeyword_8_0());
                           
                     }
-                    otherlv_21=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization13003); if (state.failed) return current;
+                    otherlv_21=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization13018); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_21, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_10_1());
+                          	newLeafNode(otherlv_21, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_8_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6102:1: ( (lv_tooltipExpression_22_0= ruleCustomizationExpression ) )
@@ -17156,10 +17241,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0()); 
+                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13024);
+                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13039);
                     lv_tooltipExpression_22_0=ruleCustomizationExpression();
 
                     state._fsp--;
@@ -17190,26 +17275,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6120:4: (otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) ) )?
-            int alt147=2;
-            int LA147_0 = input.LA(1);
+            int alt152=2;
+            int LA152_0 = input.LA(1);
 
-            if ( (LA147_0==123) ) {
-                alt147=1;
+            if ( (LA152_0==123) ) {
+                alt152=1;
             }
-            switch (alt147) {
+            switch (alt152) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6120:6: otherlv_23= 'border-dimension' otherlv_24= ':' ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) )
                     {
-                    otherlv_23=(Token)match(input,123,FOLLOW_123_in_ruleNodeStyleCustomization13039); if (state.failed) return current;
+                    otherlv_23=(Token)match(input,123,FOLLOW_123_in_ruleNodeStyleCustomization13054); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_23, grammarAccess.getNodeStyleCustomizationAccess().getBorderDimensionKeyword_11_0());
+                          	newLeafNode(otherlv_23, grammarAccess.getNodeStyleCustomizationAccess().getBorderDimensionKeyword_9_0());
                           
                     }
-                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization13051); if (state.failed) return current;
+                    otherlv_24=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization13066); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_24, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_11_1());
+                          	newLeafNode(otherlv_24, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_9_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6128:1: ( (lv_borderSizeComputationExpression_25_0= ruleCustomizationExpression ) )
@@ -17220,10 +17305,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0()); 
+                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13072);
+                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13087);
                     lv_borderSizeComputationExpression_25_0=ruleCustomizationExpression();
 
                     state._fsp--;
@@ -17254,26 +17339,26 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6146:4: (otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) ) )?
-            int alt148=2;
-            int LA148_0 = input.LA(1);
+            int alt153=2;
+            int LA153_0 = input.LA(1);
 
-            if ( (LA148_0==132) ) {
-                alt148=1;
+            if ( (LA153_0==132) ) {
+                alt153=1;
             }
-            switch (alt148) {
+            switch (alt153) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6146:6: otherlv_26= 'size-dimension' otherlv_27= ':' ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) )
                     {
-                    otherlv_26=(Token)match(input,132,FOLLOW_132_in_ruleNodeStyleCustomization13087); if (state.failed) return current;
+                    otherlv_26=(Token)match(input,132,FOLLOW_132_in_ruleNodeStyleCustomization13102); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_26, grammarAccess.getNodeStyleCustomizationAccess().getSizeDimensionKeyword_12_0());
+                          	newLeafNode(otherlv_26, grammarAccess.getNodeStyleCustomizationAccess().getSizeDimensionKeyword_10_0());
                           
                     }
-                    otherlv_27=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization13099); if (state.failed) return current;
+                    otherlv_27=(Token)match(input,93,FOLLOW_93_in_ruleNodeStyleCustomization13114); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_27, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_12_1());
+                          	newLeafNode(otherlv_27, grammarAccess.getNodeStyleCustomizationAccess().getColonKeyword_10_1());
                           
                     }
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6154:1: ( (lv_sizeComputationExpression_28_0= ruleCustomizationExpression ) )
@@ -17284,10 +17369,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getSizeComputationExpressionCustomizationExpressionParserRuleCall_12_2_0()); 
+                      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getSizeComputationExpressionCustomizationExpressionParserRuleCall_10_2_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13120);
+                    pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13135);
                     lv_sizeComputationExpression_28_0=ruleCustomizationExpression();
 
                     state._fsp--;
@@ -17318,17 +17403,17 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6172:4: ( (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization ) )*
-            loop149:
+            loop154:
             do {
-                int alt149=2;
-                int LA149_0 = input.LA(1);
+                int alt154=2;
+                int LA154_0 = input.LA(1);
 
-                if ( (LA149_0==124||LA149_0==126||(LA149_0>=133 && LA149_0<=135)||(LA149_0>=138 && LA149_0<=139)) ) {
-                    alt149=1;
+                if ( (LA154_0==124||LA154_0==126||(LA154_0>=133 && LA154_0<=135)||(LA154_0>=138 && LA154_0<=139)) ) {
+                    alt154=1;
                 }
 
 
-                switch (alt149) {
+                switch (alt154) {
             	case 1 :
             	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6173:1: (lv_ownedSpecificNodeStyleCustomization_29_0= ruleSpecificNodeStyleCustomization )
             	    {
@@ -17337,10 +17422,10 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    {
             	    if ( state.backtracking==0 ) {
             	       
-            	      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_13_0()); 
+            	      	        newCompositeNode(grammarAccess.getNodeStyleCustomizationAccess().getOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_11_0()); 
             	      	    
             	    }
-            	    pushFollow(FOLLOW_ruleSpecificNodeStyleCustomization_in_ruleNodeStyleCustomization13143);
+            	    pushFollow(FOLLOW_ruleSpecificNodeStyleCustomization_in_ruleNodeStyleCustomization13158);
             	    lv_ownedSpecificNodeStyleCustomization_29_0=ruleSpecificNodeStyleCustomization();
 
             	    state._fsp--;
@@ -17366,14 +17451,14 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop149;
+            	    break loop154;
                 }
             } while (true);
 
-            otherlv_30=(Token)match(input,15,FOLLOW_15_in_ruleNodeStyleCustomization13156); if (state.failed) return current;
+            otherlv_30=(Token)match(input,15,FOLLOW_15_in_ruleNodeStyleCustomization13171); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_30, grammarAccess.getNodeStyleCustomizationAccess().getRightCurlyBracketKeyword_14());
+                  	newLeafNode(otherlv_30, grammarAccess.getNodeStyleCustomizationAccess().getRightCurlyBracketKeyword_12());
                   
             }
 
@@ -17413,7 +17498,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleSpecificNodeStyleCustomization_in_entryRuleSpecificNodeStyleCustomization13192);
+            pushFollow(FOLLOW_ruleSpecificNodeStyleCustomization_in_entryRuleSpecificNodeStyleCustomization13207);
             iv_ruleSpecificNodeStyleCustomization=ruleSpecificNodeStyleCustomization();
 
             state._fsp--;
@@ -17421,7 +17506,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSpecificNodeStyleCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpecificNodeStyleCustomization13202); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpecificNodeStyleCustomization13217); if (state.failed) return current;
 
             }
 
@@ -17465,52 +17550,52 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6215:1: (this_BundledImageCustomization_0= ruleBundledImageCustomization | this_LozengeCustomization_1= ruleLozengeCustomization | this_GaugeCustomization_2= ruleGaugeCustomization | this_EllipseCustomization_3= ruleEllipseCustomization | this_NodeWorkspaceImageCustomization_4= ruleNodeWorkspaceImageCustomization | this_SquareCustomization_5= ruleSquareCustomization | this_DotCustomization_6= ruleDotCustomization )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6215:1: (this_BundledImageCustomization_0= ruleBundledImageCustomization | this_LozengeCustomization_1= ruleLozengeCustomization | this_GaugeCustomization_2= ruleGaugeCustomization | this_EllipseCustomization_3= ruleEllipseCustomization | this_NodeWorkspaceImageCustomization_4= ruleNodeWorkspaceImageCustomization | this_SquareCustomization_5= ruleSquareCustomization | this_DotCustomization_6= ruleDotCustomization )
-            int alt150=7;
+            int alt155=7;
             switch ( input.LA(1) ) {
             case 126:
                 {
-                alt150=1;
+                alt155=1;
                 }
                 break;
             case 133:
                 {
-                alt150=2;
+                alt155=2;
                 }
                 break;
             case 134:
                 {
-                alt150=3;
+                alt155=3;
                 }
                 break;
             case 135:
                 {
-                alt150=4;
+                alt155=4;
                 }
                 break;
             case 124:
                 {
-                alt150=5;
+                alt155=5;
                 }
                 break;
             case 138:
                 {
-                alt150=6;
+                alt155=6;
                 }
                 break;
             case 139:
                 {
-                alt150=7;
+                alt155=7;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 150, 0, input);
+                    new NoViableAltException("", 155, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt150) {
+            switch (alt155) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6216:5: this_BundledImageCustomization_0= ruleBundledImageCustomization
                     {
@@ -17519,7 +17604,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationAccess().getBundledImageCustomizationParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleBundledImageCustomization_in_ruleSpecificNodeStyleCustomization13249);
+                    pushFollow(FOLLOW_ruleBundledImageCustomization_in_ruleSpecificNodeStyleCustomization13264);
                     this_BundledImageCustomization_0=ruleBundledImageCustomization();
 
                     state._fsp--;
@@ -17541,7 +17626,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationAccess().getLozengeCustomizationParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleLozengeCustomization_in_ruleSpecificNodeStyleCustomization13276);
+                    pushFollow(FOLLOW_ruleLozengeCustomization_in_ruleSpecificNodeStyleCustomization13291);
                     this_LozengeCustomization_1=ruleLozengeCustomization();
 
                     state._fsp--;
@@ -17563,7 +17648,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationAccess().getGaugeCustomizationParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleGaugeCustomization_in_ruleSpecificNodeStyleCustomization13303);
+                    pushFollow(FOLLOW_ruleGaugeCustomization_in_ruleSpecificNodeStyleCustomization13318);
                     this_GaugeCustomization_2=ruleGaugeCustomization();
 
                     state._fsp--;
@@ -17585,7 +17670,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationAccess().getEllipseCustomizationParserRuleCall_3()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleEllipseCustomization_in_ruleSpecificNodeStyleCustomization13330);
+                    pushFollow(FOLLOW_ruleEllipseCustomization_in_ruleSpecificNodeStyleCustomization13345);
                     this_EllipseCustomization_3=ruleEllipseCustomization();
 
                     state._fsp--;
@@ -17607,7 +17692,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationAccess().getNodeWorkspaceImageCustomizationParserRuleCall_4()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleNodeWorkspaceImageCustomization_in_ruleSpecificNodeStyleCustomization13357);
+                    pushFollow(FOLLOW_ruleNodeWorkspaceImageCustomization_in_ruleSpecificNodeStyleCustomization13372);
                     this_NodeWorkspaceImageCustomization_4=ruleNodeWorkspaceImageCustomization();
 
                     state._fsp--;
@@ -17629,7 +17714,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationAccess().getSquareCustomizationParserRuleCall_5()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleSquareCustomization_in_ruleSpecificNodeStyleCustomization13384);
+                    pushFollow(FOLLOW_ruleSquareCustomization_in_ruleSpecificNodeStyleCustomization13399);
                     this_SquareCustomization_5=ruleSquareCustomization();
 
                     state._fsp--;
@@ -17651,7 +17736,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getSpecificNodeStyleCustomizationAccess().getDotCustomizationParserRuleCall_6()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleDotCustomization_in_ruleSpecificNodeStyleCustomization13411);
+                    pushFollow(FOLLOW_ruleDotCustomization_in_ruleSpecificNodeStyleCustomization13426);
                     this_DotCustomization_6=ruleDotCustomization();
 
                     state._fsp--;
@@ -17702,7 +17787,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBundledImageCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleBundledImageCustomization_in_entryRuleBundledImageCustomization13446);
+            pushFollow(FOLLOW_ruleBundledImageCustomization_in_entryRuleBundledImageCustomization13461);
             iv_ruleBundledImageCustomization=ruleBundledImageCustomization();
 
             state._fsp--;
@@ -17710,7 +17795,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleBundledImageCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBundledImageCustomization13456); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBundledImageCustomization13471); if (state.failed) return current;
 
             }
 
@@ -17759,13 +17844,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,126,FOLLOW_126_in_ruleBundledImageCustomization13502); if (state.failed) return current;
+            otherlv_1=(Token)match(input,126,FOLLOW_126_in_ruleBundledImageCustomization13517); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getBundledImageCustomizationAccess().getShapeKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleBundledImageCustomization13514); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleBundledImageCustomization13529); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getBundledImageCustomizationAccess().getColonKeyword_2());
@@ -17782,7 +17867,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getBundledImageCustomizationAccess().getShapeBundledImageShapeEnumRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleBundledImageShape_in_ruleBundledImageCustomization13535);
+            pushFollow(FOLLOW_ruleBundledImageShape_in_ruleBundledImageCustomization13550);
             lv_shape_3_0=ruleBundledImageShape();
 
             state._fsp--;
@@ -17843,7 +17928,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLozengeCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleLozengeCustomization_in_entryRuleLozengeCustomization13571);
+            pushFollow(FOLLOW_ruleLozengeCustomization_in_entryRuleLozengeCustomization13586);
             iv_ruleLozengeCustomization=ruleLozengeCustomization();
 
             state._fsp--;
@@ -17851,7 +17936,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLozengeCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLozengeCustomization13581); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLozengeCustomization13596); if (state.failed) return current;
 
             }
 
@@ -17908,31 +17993,31 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,133,FOLLOW_133_in_ruleLozengeCustomization13627); if (state.failed) return current;
+            otherlv_1=(Token)match(input,133,FOLLOW_133_in_ruleLozengeCustomization13642); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getLozengeCustomizationAccess().getLozengeDimensionKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleLozengeCustomization13639); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleLozengeCustomization13654); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getLozengeCustomizationAccess().getColonKeyword_2());
                   
             }
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleLozengeCustomization13651); if (state.failed) return current;
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleLozengeCustomization13666); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getLozengeCustomizationAccess().getLeftCurlyBracketKeyword_3());
                   
             }
-            otherlv_4=(Token)match(input,119,FOLLOW_119_in_ruleLozengeCustomization13663); if (state.failed) return current;
+            otherlv_4=(Token)match(input,119,FOLLOW_119_in_ruleLozengeCustomization13678); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getLozengeCustomizationAccess().getWidthKeyword_4());
                   
             }
-            otherlv_5=(Token)match(input,93,FOLLOW_93_in_ruleLozengeCustomization13675); if (state.failed) return current;
+            otherlv_5=(Token)match(input,93,FOLLOW_93_in_ruleLozengeCustomization13690); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getLozengeCustomizationAccess().getColonKeyword_5());
@@ -17949,7 +18034,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getLozengeCustomizationAccess().getWidthComputationExpressionCustomizationExpressionParserRuleCall_6_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13696);
+            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13711);
             lv_widthComputationExpression_6_0=ruleCustomizationExpression();
 
             state._fsp--;
@@ -17973,13 +18058,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,120,FOLLOW_120_in_ruleLozengeCustomization13708); if (state.failed) return current;
+            otherlv_7=(Token)match(input,120,FOLLOW_120_in_ruleLozengeCustomization13723); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_7, grammarAccess.getLozengeCustomizationAccess().getHeightKeyword_7());
                   
             }
-            otherlv_8=(Token)match(input,93,FOLLOW_93_in_ruleLozengeCustomization13720); if (state.failed) return current;
+            otherlv_8=(Token)match(input,93,FOLLOW_93_in_ruleLozengeCustomization13735); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_8, grammarAccess.getLozengeCustomizationAccess().getColonKeyword_8());
@@ -17996,7 +18081,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getLozengeCustomizationAccess().getHeightComputationExpressionCustomizationExpressionParserRuleCall_9_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13741);
+            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13756);
             lv_heightComputationExpression_9_0=ruleCustomizationExpression();
 
             state._fsp--;
@@ -18020,7 +18105,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleLozengeCustomization13753); if (state.failed) return current;
+            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleLozengeCustomization13768); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_10, grammarAccess.getLozengeCustomizationAccess().getRightCurlyBracketKeyword_10());
@@ -18063,7 +18148,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGaugeCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleGaugeCustomization_in_entryRuleGaugeCustomization13789);
+            pushFollow(FOLLOW_ruleGaugeCustomization_in_entryRuleGaugeCustomization13804);
             iv_ruleGaugeCustomization=ruleGaugeCustomization();
 
             state._fsp--;
@@ -18071,7 +18156,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleGaugeCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGaugeCustomization13799); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGaugeCustomization13814); if (state.failed) return current;
 
             }
 
@@ -18120,13 +18205,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,134,FOLLOW_134_in_ruleGaugeCustomization13845); if (state.failed) return current;
+            otherlv_1=(Token)match(input,134,FOLLOW_134_in_ruleGaugeCustomization13860); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getGaugeCustomizationAccess().getGaugeAlignmentKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleGaugeCustomization13857); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleGaugeCustomization13872); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getGaugeCustomizationAccess().getColonKeyword_2());
@@ -18143,7 +18228,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getGaugeCustomizationAccess().getAlignementAlignmentKindEnumRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleAlignmentKind_in_ruleGaugeCustomization13878);
+            pushFollow(FOLLOW_ruleAlignmentKind_in_ruleGaugeCustomization13893);
             lv_alignement_3_0=ruleAlignmentKind();
 
             state._fsp--;
@@ -18204,7 +18289,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEllipseCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleEllipseCustomization_in_entryRuleEllipseCustomization13914);
+            pushFollow(FOLLOW_ruleEllipseCustomization_in_entryRuleEllipseCustomization13929);
             iv_ruleEllipseCustomization=ruleEllipseCustomization();
 
             state._fsp--;
@@ -18212,7 +18297,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleEllipseCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEllipseCustomization13924); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEllipseCustomization13939); if (state.failed) return current;
 
             }
 
@@ -18269,31 +18354,31 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,135,FOLLOW_135_in_ruleEllipseCustomization13970); if (state.failed) return current;
+            otherlv_1=(Token)match(input,135,FOLLOW_135_in_ruleEllipseCustomization13985); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getEllipseCustomizationAccess().getEllipseDimensionKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleEllipseCustomization13982); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleEllipseCustomization13997); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getEllipseCustomizationAccess().getColonKeyword_2());
                   
             }
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleEllipseCustomization13994); if (state.failed) return current;
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleEllipseCustomization14009); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getEllipseCustomizationAccess().getLeftCurlyBracketKeyword_3());
                   
             }
-            otherlv_4=(Token)match(input,136,FOLLOW_136_in_ruleEllipseCustomization14006); if (state.failed) return current;
+            otherlv_4=(Token)match(input,136,FOLLOW_136_in_ruleEllipseCustomization14021); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getEllipseCustomizationAccess().getHorizontalKeyword_4());
                   
             }
-            otherlv_5=(Token)match(input,93,FOLLOW_93_in_ruleEllipseCustomization14018); if (state.failed) return current;
+            otherlv_5=(Token)match(input,93,FOLLOW_93_in_ruleEllipseCustomization14033); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getEllipseCustomizationAccess().getColonKeyword_5());
@@ -18310,7 +18395,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getEllipseCustomizationAccess().getHorizontalDiameterComputationExpressionCustomizationExpressionParserRuleCall_6_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14039);
+            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14054);
             lv_horizontalDiameterComputationExpression_6_0=ruleCustomizationExpression();
 
             state._fsp--;
@@ -18334,13 +18419,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,137,FOLLOW_137_in_ruleEllipseCustomization14051); if (state.failed) return current;
+            otherlv_7=(Token)match(input,137,FOLLOW_137_in_ruleEllipseCustomization14066); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_7, grammarAccess.getEllipseCustomizationAccess().getVerticalKeyword_7());
                   
             }
-            otherlv_8=(Token)match(input,93,FOLLOW_93_in_ruleEllipseCustomization14063); if (state.failed) return current;
+            otherlv_8=(Token)match(input,93,FOLLOW_93_in_ruleEllipseCustomization14078); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_8, grammarAccess.getEllipseCustomizationAccess().getColonKeyword_8());
@@ -18357,7 +18442,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getEllipseCustomizationAccess().getVerticalDiameterComputationExpressionCustomizationExpressionParserRuleCall_9_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14084);
+            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14099);
             lv_verticalDiameterComputationExpression_9_0=ruleCustomizationExpression();
 
             state._fsp--;
@@ -18381,7 +18466,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleEllipseCustomization14096); if (state.failed) return current;
+            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleEllipseCustomization14111); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_10, grammarAccess.getEllipseCustomizationAccess().getRightCurlyBracketKeyword_10());
@@ -18424,7 +18509,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNodeWorkspaceImageCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleNodeWorkspaceImageCustomization_in_entryRuleNodeWorkspaceImageCustomization14132);
+            pushFollow(FOLLOW_ruleNodeWorkspaceImageCustomization_in_entryRuleNodeWorkspaceImageCustomization14147);
             iv_ruleNodeWorkspaceImageCustomization=ruleNodeWorkspaceImageCustomization();
 
             state._fsp--;
@@ -18432,7 +18517,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleNodeWorkspaceImageCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeWorkspaceImageCustomization14142); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNodeWorkspaceImageCustomization14157); if (state.failed) return current;
 
             }
 
@@ -18481,13 +18566,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,124,FOLLOW_124_in_ruleNodeWorkspaceImageCustomization14188); if (state.failed) return current;
+            otherlv_1=(Token)match(input,124,FOLLOW_124_in_ruleNodeWorkspaceImageCustomization14203); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getNodeWorkspaceImageCustomizationAccess().getWorkspaceKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleNodeWorkspaceImageCustomization14200); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleNodeWorkspaceImageCustomization14215); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getNodeWorkspaceImageCustomizationAccess().getColonKeyword_2());
@@ -18504,7 +18589,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getNodeWorkspaceImageCustomizationAccess().getWorkspacePathEStringParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleEString_in_ruleNodeWorkspaceImageCustomization14221);
+            pushFollow(FOLLOW_ruleEString_in_ruleNodeWorkspaceImageCustomization14236);
             lv_workspacePath_3_0=ruleEString();
 
             state._fsp--;
@@ -18565,7 +18650,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSquareCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleSquareCustomization_in_entryRuleSquareCustomization14257);
+            pushFollow(FOLLOW_ruleSquareCustomization_in_entryRuleSquareCustomization14272);
             iv_ruleSquareCustomization=ruleSquareCustomization();
 
             state._fsp--;
@@ -18573,7 +18658,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSquareCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSquareCustomization14267); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSquareCustomization14282); if (state.failed) return current;
 
             }
 
@@ -18630,31 +18715,31 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,138,FOLLOW_138_in_ruleSquareCustomization14313); if (state.failed) return current;
+            otherlv_1=(Token)match(input,138,FOLLOW_138_in_ruleSquareCustomization14328); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getSquareCustomizationAccess().getSquareDimensionKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleSquareCustomization14325); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleSquareCustomization14340); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getSquareCustomizationAccess().getColonKeyword_2());
                   
             }
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleSquareCustomization14337); if (state.failed) return current;
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleSquareCustomization14352); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getSquareCustomizationAccess().getLeftCurlyBracketKeyword_3());
                   
             }
-            otherlv_4=(Token)match(input,119,FOLLOW_119_in_ruleSquareCustomization14349); if (state.failed) return current;
+            otherlv_4=(Token)match(input,119,FOLLOW_119_in_ruleSquareCustomization14364); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getSquareCustomizationAccess().getWidthKeyword_4());
                   
             }
-            otherlv_5=(Token)match(input,93,FOLLOW_93_in_ruleSquareCustomization14361); if (state.failed) return current;
+            otherlv_5=(Token)match(input,93,FOLLOW_93_in_ruleSquareCustomization14376); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getSquareCustomizationAccess().getColonKeyword_5());
@@ -18671,7 +18756,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getSquareCustomizationAccess().getWidthEIntParserRuleCall_6_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleEInt_in_ruleSquareCustomization14382);
+            pushFollow(FOLLOW_ruleEInt_in_ruleSquareCustomization14397);
             lv_width_6_0=ruleEInt();
 
             state._fsp--;
@@ -18695,13 +18780,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,120,FOLLOW_120_in_ruleSquareCustomization14394); if (state.failed) return current;
+            otherlv_7=(Token)match(input,120,FOLLOW_120_in_ruleSquareCustomization14409); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_7, grammarAccess.getSquareCustomizationAccess().getHeightKeyword_7());
                   
             }
-            otherlv_8=(Token)match(input,93,FOLLOW_93_in_ruleSquareCustomization14406); if (state.failed) return current;
+            otherlv_8=(Token)match(input,93,FOLLOW_93_in_ruleSquareCustomization14421); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_8, grammarAccess.getSquareCustomizationAccess().getColonKeyword_8());
@@ -18718,7 +18803,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getSquareCustomizationAccess().getHeightEIntParserRuleCall_9_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleEInt_in_ruleSquareCustomization14427);
+            pushFollow(FOLLOW_ruleEInt_in_ruleSquareCustomization14442);
             lv_height_9_0=ruleEInt();
 
             state._fsp--;
@@ -18742,7 +18827,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleSquareCustomization14439); if (state.failed) return current;
+            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleSquareCustomization14454); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_10, grammarAccess.getSquareCustomizationAccess().getRightCurlyBracketKeyword_10());
@@ -18785,7 +18870,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDotCustomizationRule()); 
             }
-            pushFollow(FOLLOW_ruleDotCustomization_in_entryRuleDotCustomization14475);
+            pushFollow(FOLLOW_ruleDotCustomization_in_entryRuleDotCustomization14490);
             iv_ruleDotCustomization=ruleDotCustomization();
 
             state._fsp--;
@@ -18793,7 +18878,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleDotCustomization; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDotCustomization14485); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDotCustomization14500); if (state.failed) return current;
 
             }
 
@@ -18842,13 +18927,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,139,FOLLOW_139_in_ruleDotCustomization14531); if (state.failed) return current;
+            otherlv_1=(Token)match(input,139,FOLLOW_139_in_ruleDotCustomization14546); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getDotCustomizationAccess().getStrokeDimensionKeyword_1());
                   
             }
-            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleDotCustomization14543); if (state.failed) return current;
+            otherlv_2=(Token)match(input,93,FOLLOW_93_in_ruleDotCustomization14558); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getDotCustomizationAccess().getColonKeyword_2());
@@ -18865,7 +18950,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getDotCustomizationAccess().getStrokeSizeComputationExpressionCustomizationExpressionParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleDotCustomization14564);
+            pushFollow(FOLLOW_ruleCustomizationExpression_in_ruleDotCustomization14579);
             lv_strokeSizeComputationExpression_3_0=ruleCustomizationExpression();
 
             state._fsp--;
@@ -18926,7 +19011,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStyleCustomizationReuseRule()); 
             }
-            pushFollow(FOLLOW_ruleStyleCustomizationReuse_in_entryRuleStyleCustomizationReuse14600);
+            pushFollow(FOLLOW_ruleStyleCustomizationReuse_in_entryRuleStyleCustomizationReuse14615);
             iv_ruleStyleCustomizationReuse=ruleStyleCustomizationReuse();
 
             state._fsp--;
@@ -18934,7 +19019,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleStyleCustomizationReuse; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStyleCustomizationReuse14610); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStyleCustomizationReuse14625); if (state.failed) return current;
 
             }
 
@@ -18987,7 +19072,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleStyleCustomizationReuse14656); if (state.failed) return current;
+            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleStyleCustomizationReuse14671); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getStyleCustomizationReuseAccess().getReuseKeyword_1());
@@ -19009,7 +19094,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14677); if (state.failed) return current;
+            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14692); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_2, grammarAccess.getStyleCustomizationReuseAccess().getReusedCustomizationEStructuralFeatureCustomizationCrossReference_2_0_0()); 
@@ -19022,21 +19107,21 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6825:2: (otherlv_3= ',' ( (otherlv_4= RULE_STRING ) ) )*
-            loop151:
+            loop156:
             do {
-                int alt151=2;
-                int LA151_0 = input.LA(1);
+                int alt156=2;
+                int LA156_0 = input.LA(1);
 
-                if ( (LA151_0==37) ) {
-                    alt151=1;
+                if ( (LA156_0==37) ) {
+                    alt156=1;
                 }
 
 
-                switch (alt151) {
+                switch (alt156) {
             	case 1 :
             	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6825:4: otherlv_3= ',' ( (otherlv_4= RULE_STRING ) )
             	    {
-            	    otherlv_3=(Token)match(input,37,FOLLOW_37_in_ruleStyleCustomizationReuse14690); if (state.failed) return current;
+            	    otherlv_3=(Token)match(input,37,FOLLOW_37_in_ruleStyleCustomizationReuse14705); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_3, grammarAccess.getStyleCustomizationReuseAccess().getCommaKeyword_2_1_0());
@@ -19055,7 +19140,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	      	        }
             	              
             	    }
-            	    otherlv_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14710); if (state.failed) return current;
+            	    otherlv_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14725); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		newLeafNode(otherlv_4, grammarAccess.getStyleCustomizationReuseAccess().getReusedCustomizationEStructuralFeatureCustomizationCrossReference_2_1_1_0()); 
@@ -19072,14 +19157,14 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop151;
+            	    break loop156;
                 }
             } while (true);
 
 
             }
 
-            otherlv_5=(Token)match(input,140,FOLLOW_140_in_ruleStyleCustomizationReuse14725); if (state.failed) return current;
+            otherlv_5=(Token)match(input,140,FOLLOW_140_in_ruleStyleCustomizationReuse14740); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getStyleCustomizationReuseAccess().getOnKeyword_3());
@@ -19101,7 +19186,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        }
                       
             }
-            otherlv_6=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14746); if (state.failed) return current;
+            otherlv_6=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14761); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_6, grammarAccess.getStyleCustomizationReuseAccess().getAppliedOnEObjectCrossReference_4_0_0()); 
@@ -19114,21 +19199,21 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6859:2: (otherlv_7= ',' ( (otherlv_8= RULE_STRING ) ) )*
-            loop152:
+            loop157:
             do {
-                int alt152=2;
-                int LA152_0 = input.LA(1);
+                int alt157=2;
+                int LA157_0 = input.LA(1);
 
-                if ( (LA152_0==37) ) {
-                    alt152=1;
+                if ( (LA157_0==37) ) {
+                    alt157=1;
                 }
 
 
-                switch (alt152) {
+                switch (alt157) {
             	case 1 :
             	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6859:4: otherlv_7= ',' ( (otherlv_8= RULE_STRING ) )
             	    {
-            	    otherlv_7=(Token)match(input,37,FOLLOW_37_in_ruleStyleCustomizationReuse14759); if (state.failed) return current;
+            	    otherlv_7=(Token)match(input,37,FOLLOW_37_in_ruleStyleCustomizationReuse14774); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_7, grammarAccess.getStyleCustomizationReuseAccess().getCommaKeyword_4_1_0());
@@ -19147,7 +19232,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	      	        }
             	              
             	    }
-            	    otherlv_8=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14779); if (state.failed) return current;
+            	    otherlv_8=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14794); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		newLeafNode(otherlv_8, grammarAccess.getStyleCustomizationReuseAccess().getAppliedOnEObjectCrossReference_4_1_1_0()); 
@@ -19164,7 +19249,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop152;
+            	    break loop157;
                 }
             } while (true);
 
@@ -19208,7 +19293,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getCustomizationExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleCustomizationExpression_in_entryRuleCustomizationExpression14818);
+            pushFollow(FOLLOW_ruleCustomizationExpression_in_entryRuleCustomizationExpression14833);
             iv_ruleCustomizationExpression=ruleCustomizationExpression();
 
             state._fsp--;
@@ -19216,7 +19301,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleCustomizationExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCustomizationExpression14828); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCustomizationExpression14843); if (state.failed) return current;
 
             }
 
@@ -19274,7 +19359,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getCustomizationExpressionAccess().getOwnedExpressionElementAbstractComputableElementParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleAbstractComputableElement_in_ruleCustomizationExpression14883);
+            pushFollow(FOLLOW_ruleAbstractComputableElement_in_ruleCustomizationExpression14898);
             lv_ownedExpressionElement_1_0=ruleAbstractComputableElement();
 
             state._fsp--;
@@ -19335,7 +19420,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAbstractClassRule()); 
             }
-            pushFollow(FOLLOW_ruleAbstractClass_in_entryRuleAbstractClass14919);
+            pushFollow(FOLLOW_ruleAbstractClass_in_entryRuleAbstractClass14934);
             iv_ruleAbstractClass=ruleAbstractClass();
 
             state._fsp--;
@@ -19343,7 +19428,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleAbstractClass; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractClass14929); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractClass14944); if (state.failed) return current;
 
             }
 
@@ -19377,23 +19462,23 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6942:1: (this_LocalClass2_0= ruleLocalClass2 | this_ExternalClass_1= ruleExternalClass )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6942:1: (this_LocalClass2_0= ruleLocalClass2 | this_ExternalClass_1= ruleExternalClass )
-            int alt153=2;
-            int LA153_0 = input.LA(1);
+            int alt158=2;
+            int LA158_0 = input.LA(1);
 
-            if ( (LA153_0==RULE_ID) ) {
-                alt153=1;
+            if ( (LA158_0==RULE_ID) ) {
+                alt158=1;
             }
-            else if ( (LA153_0==12) ) {
-                alt153=2;
+            else if ( (LA158_0==12) ) {
+                alt158=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 153, 0, input);
+                    new NoViableAltException("", 158, 0, input);
 
                 throw nvae;
             }
-            switch (alt153) {
+            switch (alt158) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:6943:5: this_LocalClass2_0= ruleLocalClass2
                     {
@@ -19402,7 +19487,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractClassAccess().getLocalClass2ParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleLocalClass2_in_ruleAbstractClass14976);
+                    pushFollow(FOLLOW_ruleLocalClass2_in_ruleAbstractClass14991);
                     this_LocalClass2_0=ruleLocalClass2();
 
                     state._fsp--;
@@ -19424,7 +19509,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractClassAccess().getExternalClassParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleExternalClass_in_ruleAbstractClass15003);
+                    pushFollow(FOLLOW_ruleExternalClass_in_ruleAbstractClass15018);
                     this_ExternalClass_1=ruleExternalClass();
 
                     state._fsp--;
@@ -19475,7 +19560,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLocalClass2Rule()); 
             }
-            pushFollow(FOLLOW_ruleLocalClass2_in_entryRuleLocalClass215038);
+            pushFollow(FOLLOW_ruleLocalClass2_in_entryRuleLocalClass215053);
             iv_ruleLocalClass2=ruleLocalClass2();
 
             state._fsp--;
@@ -19483,7 +19568,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLocalClass2; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLocalClass215048); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLocalClass215063); if (state.failed) return current;
 
             }
 
@@ -19545,7 +19630,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getLocalClass2Access().getClassClassCrossReference_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleLocalClass215105);
+            pushFollow(FOLLOW_ruleFQN_in_ruleLocalClass215120);
             ruleFQN();
 
             state._fsp--;
@@ -19598,7 +19683,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExternalClassRule()); 
             }
-            pushFollow(FOLLOW_ruleExternalClass_in_entryRuleExternalClass15141);
+            pushFollow(FOLLOW_ruleExternalClass_in_entryRuleExternalClass15156);
             iv_ruleExternalClass=ruleExternalClass();
 
             state._fsp--;
@@ -19606,7 +19691,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExternalClass; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalClass15151); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalClass15166); if (state.failed) return current;
 
             }
 
@@ -19652,7 +19737,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleExternalClass15197); if (state.failed) return current;
+            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleExternalClass15212); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getExternalClassAccess().getExternalKeyword_1());
@@ -19676,7 +19761,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getExternalClassAccess().getClassEClassCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleExternalClass15220);
+            pushFollow(FOLLOW_ruleFQN_in_ruleExternalClass15235);
             ruleFQN();
 
             state._fsp--;
@@ -19729,7 +19814,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAbstractAssociation2Rule()); 
             }
-            pushFollow(FOLLOW_ruleAbstractAssociation2_in_entryRuleAbstractAssociation215256);
+            pushFollow(FOLLOW_ruleAbstractAssociation2_in_entryRuleAbstractAssociation215271);
             iv_ruleAbstractAssociation2=ruleAbstractAssociation2();
 
             state._fsp--;
@@ -19737,7 +19822,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleAbstractAssociation2; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractAssociation215266); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractAssociation215281); if (state.failed) return current;
 
             }
 
@@ -19771,23 +19856,23 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7070:1: (this_ExternalAssociation_0= ruleExternalAssociation | this_LocalAssociation_1= ruleLocalAssociation )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7070:1: (this_ExternalAssociation_0= ruleExternalAssociation | this_LocalAssociation_1= ruleLocalAssociation )
-            int alt154=2;
-            int LA154_0 = input.LA(1);
+            int alt159=2;
+            int LA159_0 = input.LA(1);
 
-            if ( (LA154_0==12) ) {
-                alt154=1;
+            if ( (LA159_0==12) ) {
+                alt159=1;
             }
-            else if ( (LA154_0==RULE_ID) ) {
-                alt154=2;
+            else if ( (LA159_0==RULE_ID) ) {
+                alt159=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 154, 0, input);
+                    new NoViableAltException("", 159, 0, input);
 
                 throw nvae;
             }
-            switch (alt154) {
+            switch (alt159) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7071:5: this_ExternalAssociation_0= ruleExternalAssociation
                     {
@@ -19796,7 +19881,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractAssociation2Access().getExternalAssociationParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleExternalAssociation_in_ruleAbstractAssociation215313);
+                    pushFollow(FOLLOW_ruleExternalAssociation_in_ruleAbstractAssociation215328);
                     this_ExternalAssociation_0=ruleExternalAssociation();
 
                     state._fsp--;
@@ -19818,7 +19903,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractAssociation2Access().getLocalAssociationParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleLocalAssociation_in_ruleAbstractAssociation215340);
+                    pushFollow(FOLLOW_ruleLocalAssociation_in_ruleAbstractAssociation215355);
                     this_LocalAssociation_1=ruleLocalAssociation();
 
                     state._fsp--;
@@ -19869,7 +19954,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLocalAssociationRule()); 
             }
-            pushFollow(FOLLOW_ruleLocalAssociation_in_entryRuleLocalAssociation15375);
+            pushFollow(FOLLOW_ruleLocalAssociation_in_entryRuleLocalAssociation15390);
             iv_ruleLocalAssociation=ruleLocalAssociation();
 
             state._fsp--;
@@ -19877,7 +19962,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLocalAssociation; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLocalAssociation15385); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLocalAssociation15400); if (state.failed) return current;
 
             }
 
@@ -19939,7 +20024,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getLocalAssociationAccess().getReferenceAbstractAssociationCrossReference_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleLocalAssociation15442);
+            pushFollow(FOLLOW_ruleFQN_in_ruleLocalAssociation15457);
             ruleFQN();
 
             state._fsp--;
@@ -19992,7 +20077,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExternalAssociationRule()); 
             }
-            pushFollow(FOLLOW_ruleExternalAssociation_in_entryRuleExternalAssociation15478);
+            pushFollow(FOLLOW_ruleExternalAssociation_in_entryRuleExternalAssociation15493);
             iv_ruleExternalAssociation=ruleExternalAssociation();
 
             state._fsp--;
@@ -20000,7 +20085,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExternalAssociation; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalAssociation15488); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalAssociation15503); if (state.failed) return current;
 
             }
 
@@ -20046,7 +20131,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleExternalAssociation15534); if (state.failed) return current;
+            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleExternalAssociation15549); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getExternalAssociationAccess().getExternalKeyword_1());
@@ -20070,7 +20155,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getExternalAssociationAccess().getReferenceEReferenceCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleExternalAssociation15557);
+            pushFollow(FOLLOW_ruleFQN_in_ruleExternalAssociation15572);
             ruleFQN();
 
             state._fsp--;
@@ -20123,7 +20208,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLocalAttributeRule()); 
             }
-            pushFollow(FOLLOW_ruleLocalAttribute_in_entryRuleLocalAttribute15595);
+            pushFollow(FOLLOW_ruleLocalAttribute_in_entryRuleLocalAttribute15610);
             iv_ruleLocalAttribute=ruleLocalAttribute();
 
             state._fsp--;
@@ -20131,7 +20216,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLocalAttribute; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLocalAttribute15605); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLocalAttribute15620); if (state.failed) return current;
 
             }
 
@@ -20193,7 +20278,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getLocalAttributeAccess().getAttributeAttributeCrossReference_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleLocalAttribute15662);
+            pushFollow(FOLLOW_ruleFQN_in_ruleLocalAttribute15677);
             ruleFQN();
 
             state._fsp--;
@@ -20246,7 +20331,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExternalAttributeRule()); 
             }
-            pushFollow(FOLLOW_ruleExternalAttribute_in_entryRuleExternalAttribute15698);
+            pushFollow(FOLLOW_ruleExternalAttribute_in_entryRuleExternalAttribute15713);
             iv_ruleExternalAttribute=ruleExternalAttribute();
 
             state._fsp--;
@@ -20254,7 +20339,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExternalAttribute; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalAttribute15708); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalAttribute15723); if (state.failed) return current;
 
             }
 
@@ -20300,7 +20385,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleExternalAttribute15754); if (state.failed) return current;
+            otherlv_1=(Token)match(input,12,FOLLOW_12_in_ruleExternalAttribute15769); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getExternalAttributeAccess().getExternalKeyword_1());
@@ -20324,7 +20409,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getExternalAttributeAccess().getAttributeEAttributeCrossReference_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleExternalAttribute15777);
+            pushFollow(FOLLOW_ruleFQN_in_ruleExternalAttribute15792);
             ruleFQN();
 
             state._fsp--;
@@ -20377,7 +20462,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExpressionRule()); 
             }
-            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression15813);
+            pushFollow(FOLLOW_ruleExpression_in_entryRuleExpression15828);
             iv_ruleExpression=ruleExpression();
 
             state._fsp--;
@@ -20385,7 +20470,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExpression; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression15823); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpression15838); if (state.failed) return current;
 
             }
 
@@ -20436,13 +20521,13 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             }
 
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7294:2: ( ( (lv_expressionElements_1_0= ruleExpressionElement ) ) (otherlv_2= '+' ( (lv_expressionElements_3_0= ruleExpressionElement ) ) )* )?
-            int alt156=2;
-            int LA156_0 = input.LA(1);
+            int alt161=2;
+            int LA161_0 = input.LA(1);
 
-            if ( ((LA156_0>=RULE_STRING && LA156_0<=RULE_ID)||LA156_0==142) ) {
-                alt156=1;
+            if ( ((LA161_0>=RULE_STRING && LA161_0<=RULE_ID)||LA161_0==142) ) {
+                alt161=1;
             }
-            switch (alt156) {
+            switch (alt161) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7294:3: ( (lv_expressionElements_1_0= ruleExpressionElement ) ) (otherlv_2= '+' ( (lv_expressionElements_3_0= ruleExpressionElement ) ) )*
                     {
@@ -20457,7 +20542,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                       	        newCompositeNode(grammarAccess.getExpressionAccess().getExpressionElementsExpressionElementParserRuleCall_1_0_0()); 
                       	    
                     }
-                    pushFollow(FOLLOW_ruleExpressionElement_in_ruleExpression15879);
+                    pushFollow(FOLLOW_ruleExpressionElement_in_ruleExpression15894);
                     lv_expressionElements_1_0=ruleExpressionElement();
 
                     state._fsp--;
@@ -20482,21 +20567,21 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7312:2: (otherlv_2= '+' ( (lv_expressionElements_3_0= ruleExpressionElement ) ) )*
-                    loop155:
+                    loop160:
                     do {
-                        int alt155=2;
-                        int LA155_0 = input.LA(1);
+                        int alt160=2;
+                        int LA160_0 = input.LA(1);
 
-                        if ( (LA155_0==141) ) {
-                            alt155=1;
+                        if ( (LA160_0==141) ) {
+                            alt160=1;
                         }
 
 
-                        switch (alt155) {
+                        switch (alt160) {
                     	case 1 :
                     	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7312:4: otherlv_2= '+' ( (lv_expressionElements_3_0= ruleExpressionElement ) )
                     	    {
-                    	    otherlv_2=(Token)match(input,141,FOLLOW_141_in_ruleExpression15892); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,141,FOLLOW_141_in_ruleExpression15907); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getPlusSignKeyword_1_1_0());
@@ -20513,7 +20598,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     	      	        newCompositeNode(grammarAccess.getExpressionAccess().getExpressionElementsExpressionElementParserRuleCall_1_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FOLLOW_ruleExpressionElement_in_ruleExpression15913);
+                    	    pushFollow(FOLLOW_ruleExpressionElement_in_ruleExpression15928);
                     	    lv_expressionElements_3_0=ruleExpressionElement();
 
                     	    state._fsp--;
@@ -20542,7 +20627,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop155;
+                    	    break loop160;
                         }
                     } while (true);
 
@@ -20589,7 +20674,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAbstractComputableElementRule()); 
             }
-            pushFollow(FOLLOW_ruleAbstractComputableElement_in_entryRuleAbstractComputableElement15953);
+            pushFollow(FOLLOW_ruleAbstractComputableElement_in_entryRuleAbstractComputableElement15968);
             iv_ruleAbstractComputableElement=ruleAbstractComputableElement();
 
             state._fsp--;
@@ -20597,7 +20682,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleAbstractComputableElement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractComputableElement15963); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractComputableElement15978); if (state.failed) return current;
 
             }
 
@@ -20631,23 +20716,23 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7355:1: (this_JavaElement_0= ruleJavaElement | this_StringElement_1= ruleStringElement )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7355:1: (this_JavaElement_0= ruleJavaElement | this_StringElement_1= ruleStringElement )
-            int alt157=2;
-            int LA157_0 = input.LA(1);
+            int alt162=2;
+            int LA162_0 = input.LA(1);
 
-            if ( (LA157_0==142) ) {
-                alt157=1;
+            if ( (LA162_0==142) ) {
+                alt162=1;
             }
-            else if ( (LA157_0==RULE_STRING) ) {
-                alt157=2;
+            else if ( (LA162_0==RULE_STRING) ) {
+                alt162=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 157, 0, input);
+                    new NoViableAltException("", 162, 0, input);
 
                 throw nvae;
             }
-            switch (alt157) {
+            switch (alt162) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7356:5: this_JavaElement_0= ruleJavaElement
                     {
@@ -20656,7 +20741,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractComputableElementAccess().getJavaElementParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJavaElement_in_ruleAbstractComputableElement16010);
+                    pushFollow(FOLLOW_ruleJavaElement_in_ruleAbstractComputableElement16025);
                     this_JavaElement_0=ruleJavaElement();
 
                     state._fsp--;
@@ -20678,7 +20763,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getAbstractComputableElementAccess().getStringElementParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleStringElement_in_ruleAbstractComputableElement16037);
+                    pushFollow(FOLLOW_ruleStringElement_in_ruleAbstractComputableElement16052);
                     this_StringElement_1=ruleStringElement();
 
                     state._fsp--;
@@ -20729,7 +20814,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExpressionElementRule()); 
             }
-            pushFollow(FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement16072);
+            pushFollow(FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement16087);
             iv_ruleExpressionElement=ruleExpressionElement();
 
             state._fsp--;
@@ -20737,7 +20822,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleExpressionElement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionElement16082); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionElement16097); if (state.failed) return current;
 
             }
 
@@ -20771,23 +20856,23 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7395:1: (this_ForeignExpressionElement_0= ruleForeignExpressionElement | this_StringElement_1= ruleStringElement )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7395:1: (this_ForeignExpressionElement_0= ruleForeignExpressionElement | this_StringElement_1= ruleStringElement )
-            int alt158=2;
-            int LA158_0 = input.LA(1);
+            int alt163=2;
+            int LA163_0 = input.LA(1);
 
-            if ( (LA158_0==RULE_ID||LA158_0==142) ) {
-                alt158=1;
+            if ( (LA163_0==RULE_ID||LA163_0==142) ) {
+                alt163=1;
             }
-            else if ( (LA158_0==RULE_STRING) ) {
-                alt158=2;
+            else if ( (LA163_0==RULE_STRING) ) {
+                alt163=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 158, 0, input);
+                    new NoViableAltException("", 163, 0, input);
 
                 throw nvae;
             }
-            switch (alt158) {
+            switch (alt163) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7396:5: this_ForeignExpressionElement_0= ruleForeignExpressionElement
                     {
@@ -20796,7 +20881,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getExpressionElementAccess().getForeignExpressionElementParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleForeignExpressionElement_in_ruleExpressionElement16129);
+                    pushFollow(FOLLOW_ruleForeignExpressionElement_in_ruleExpressionElement16144);
                     this_ForeignExpressionElement_0=ruleForeignExpressionElement();
 
                     state._fsp--;
@@ -20818,7 +20903,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getExpressionElementAccess().getStringElementParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleStringElement_in_ruleExpressionElement16156);
+                    pushFollow(FOLLOW_ruleStringElement_in_ruleExpressionElement16171);
                     this_StringElement_1=ruleStringElement();
 
                     state._fsp--;
@@ -20869,7 +20954,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getForeignExpressionElementRule()); 
             }
-            pushFollow(FOLLOW_ruleForeignExpressionElement_in_entryRuleForeignExpressionElement16191);
+            pushFollow(FOLLOW_ruleForeignExpressionElement_in_entryRuleForeignExpressionElement16206);
             iv_ruleForeignExpressionElement=ruleForeignExpressionElement();
 
             state._fsp--;
@@ -20877,7 +20962,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleForeignExpressionElement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleForeignExpressionElement16201); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleForeignExpressionElement16216); if (state.failed) return current;
 
             }
 
@@ -20911,23 +20996,23 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7435:1: (this_JavaElement_0= ruleJavaElement | this_DomainElement_1= ruleDomainElement )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7435:1: (this_JavaElement_0= ruleJavaElement | this_DomainElement_1= ruleDomainElement )
-            int alt159=2;
-            int LA159_0 = input.LA(1);
+            int alt164=2;
+            int LA164_0 = input.LA(1);
 
-            if ( (LA159_0==142) ) {
-                alt159=1;
+            if ( (LA164_0==142) ) {
+                alt164=1;
             }
-            else if ( (LA159_0==RULE_ID) ) {
-                alt159=2;
+            else if ( (LA164_0==RULE_ID) ) {
+                alt164=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 159, 0, input);
+                    new NoViableAltException("", 164, 0, input);
 
                 throw nvae;
             }
-            switch (alt159) {
+            switch (alt164) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7436:5: this_JavaElement_0= ruleJavaElement
                     {
@@ -20936,7 +21021,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getForeignExpressionElementAccess().getJavaElementParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleJavaElement_in_ruleForeignExpressionElement16248);
+                    pushFollow(FOLLOW_ruleJavaElement_in_ruleForeignExpressionElement16263);
                     this_JavaElement_0=ruleJavaElement();
 
                     state._fsp--;
@@ -20958,7 +21043,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getForeignExpressionElementAccess().getDomainElementParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FOLLOW_ruleDomainElement_in_ruleForeignExpressionElement16275);
+                    pushFollow(FOLLOW_ruleDomainElement_in_ruleForeignExpressionElement16290);
                     this_DomainElement_1=ruleDomainElement();
 
                     state._fsp--;
@@ -21009,7 +21094,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getJavaElementRule()); 
             }
-            pushFollow(FOLLOW_ruleJavaElement_in_entryRuleJavaElement16310);
+            pushFollow(FOLLOW_ruleJavaElement_in_entryRuleJavaElement16325);
             iv_ruleJavaElement=ruleJavaElement();
 
             state._fsp--;
@@ -21017,7 +21102,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleJavaElement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJavaElement16320); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJavaElement16335); if (state.failed) return current;
 
             }
 
@@ -21065,7 +21150,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,142,FOLLOW_142_in_ruleJavaElement16366); if (state.failed) return current;
+            otherlv_1=(Token)match(input,142,FOLLOW_142_in_ruleJavaElement16381); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getJavaElementAccess().getJavaKeyword_1());
@@ -21082,7 +21167,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getJavaElementAccess().getMethodFQNParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleJavaElement16387);
+            pushFollow(FOLLOW_ruleFQN_in_ruleJavaElement16402);
             lv_method_2_0=ruleFQN();
 
             state._fsp--;
@@ -21143,7 +21228,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDomainElementRule()); 
             }
-            pushFollow(FOLLOW_ruleDomainElement_in_entryRuleDomainElement16423);
+            pushFollow(FOLLOW_ruleDomainElement_in_entryRuleDomainElement16438);
             iv_ruleDomainElement=ruleDomainElement();
 
             state._fsp--;
@@ -21151,7 +21236,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleDomainElement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainElement16433); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDomainElement16448); if (state.failed) return current;
 
             }
 
@@ -21213,7 +21298,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getDomainElementAccess().getAttributeAttributeCrossReference_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleFQN_in_ruleDomainElement16490);
+            pushFollow(FOLLOW_ruleFQN_in_ruleDomainElement16505);
             ruleFQN();
 
             state._fsp--;
@@ -21266,7 +21351,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getStringElementRule()); 
             }
-            pushFollow(FOLLOW_ruleStringElement_in_entryRuleStringElement16526);
+            pushFollow(FOLLOW_ruleStringElement_in_entryRuleStringElement16541);
             iv_ruleStringElement=ruleStringElement();
 
             state._fsp--;
@@ -21274,7 +21359,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleStringElement; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringElement16536); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringElement16551); if (state.failed) return current;
 
             }
 
@@ -21326,7 +21411,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7573:1: (lv_value_1_0= RULE_STRING )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7574:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringElement16587); if (state.failed) return current;
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringElement16602); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_value_1_0, grammarAccess.getStringElementAccess().getValueSTRINGTerminalRuleCall_1_0()); 
@@ -21387,7 +21472,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEStringRule()); 
             }
-            pushFollow(FOLLOW_ruleEString_in_entryRuleEString16629);
+            pushFollow(FOLLOW_ruleEString_in_entryRuleEString16644);
             iv_ruleEString=ruleEString();
 
             state._fsp--;
@@ -21395,7 +21480,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleEString.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEString16640); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEString16655); if (state.failed) return current;
 
             }
 
@@ -21427,27 +21512,27 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7611:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7611:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt160=2;
-            int LA160_0 = input.LA(1);
+            int alt165=2;
+            int LA165_0 = input.LA(1);
 
-            if ( (LA160_0==RULE_STRING) ) {
-                alt160=1;
+            if ( (LA165_0==RULE_STRING) ) {
+                alt165=1;
             }
-            else if ( (LA160_0==RULE_ID) ) {
-                alt160=2;
+            else if ( (LA165_0==RULE_ID) ) {
+                alt165=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 160, 0, input);
+                    new NoViableAltException("", 165, 0, input);
 
                 throw nvae;
             }
-            switch (alt160) {
+            switch (alt165) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7611:6: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEString16680); if (state.failed) return current;
+                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEString16695); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_STRING_0);
@@ -21464,7 +21549,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7619:10: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEString16706); if (state.failed) return current;
+                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEString16721); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_ID_1);
@@ -21515,7 +21600,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFQNRule()); 
             }
-            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN16752);
+            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN16767);
             iv_ruleFQN=ruleFQN();
 
             state._fsp--;
@@ -21523,7 +21608,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFQN.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN16763); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN16778); if (state.failed) return current;
 
             }
 
@@ -21558,7 +21643,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7647:1: (this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )* )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7647:6: this_ID_0= RULE_ID (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN16803); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN16818); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -21570,21 +21655,21 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                   
             }
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7654:1: (kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID ) )*
-            loop161:
+            loop166:
             do {
-                int alt161=2;
-                int LA161_0 = input.LA(1);
+                int alt166=2;
+                int LA166_0 = input.LA(1);
 
-                if ( (LA161_0==143) ) {
-                    alt161=1;
+                if ( (LA166_0==143) ) {
+                    alt166=1;
                 }
 
 
-                switch (alt161) {
+                switch (alt166) {
             	case 1 :
             	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7655:2: kw= '.' ( ( RULE_ID )=>this_ID_2= RULE_ID )
             	    {
-            	    kw=(Token)match(input,143,FOLLOW_143_in_ruleFQN16822); if (state.failed) return current;
+            	    kw=(Token)match(input,143,FOLLOW_143_in_ruleFQN16837); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -21594,7 +21679,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7660:1: ( ( RULE_ID )=>this_ID_2= RULE_ID )
             	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7660:2: ( RULE_ID )=>this_ID_2= RULE_ID
             	    {
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN16843); if (state.failed) return current;
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN16858); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_ID_2);
@@ -21613,7 +21698,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop161;
+            	    break loop166;
                 }
             } while (true);
 
@@ -21654,7 +21739,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEBooleanRule()); 
             }
-            pushFollow(FOLLOW_ruleEBoolean_in_entryRuleEBoolean16892);
+            pushFollow(FOLLOW_ruleEBoolean_in_entryRuleEBoolean16907);
             iv_ruleEBoolean=ruleEBoolean();
 
             state._fsp--;
@@ -21662,7 +21747,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleEBoolean.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEBoolean16903); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEBoolean16918); if (state.failed) return current;
 
             }
 
@@ -21693,27 +21778,27 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7688:1: (kw= 'true' | kw= 'false' )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7688:1: (kw= 'true' | kw= 'false' )
-            int alt162=2;
-            int LA162_0 = input.LA(1);
+            int alt167=2;
+            int LA167_0 = input.LA(1);
 
-            if ( (LA162_0==144) ) {
-                alt162=1;
+            if ( (LA167_0==144) ) {
+                alt167=1;
             }
-            else if ( (LA162_0==145) ) {
-                alt162=2;
+            else if ( (LA167_0==145) ) {
+                alt167=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 162, 0, input);
+                    new NoViableAltException("", 167, 0, input);
 
                 throw nvae;
             }
-            switch (alt162) {
+            switch (alt167) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7689:2: kw= 'true'
                     {
-                    kw=(Token)match(input,144,FOLLOW_144_in_ruleEBoolean16941); if (state.failed) return current;
+                    kw=(Token)match(input,144,FOLLOW_144_in_ruleEBoolean16956); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21726,7 +21811,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7696:2: kw= 'false'
                     {
-                    kw=(Token)match(input,145,FOLLOW_145_in_ruleEBoolean16960); if (state.failed) return current;
+                    kw=(Token)match(input,145,FOLLOW_145_in_ruleEBoolean16975); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21773,7 +21858,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEIntRule()); 
             }
-            pushFollow(FOLLOW_ruleEInt_in_entryRuleEInt17001);
+            pushFollow(FOLLOW_ruleEInt_in_entryRuleEInt17016);
             iv_ruleEInt=ruleEInt();
 
             state._fsp--;
@@ -21781,7 +21866,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleEInt.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEInt17012); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEInt17027); if (state.failed) return current;
 
             }
 
@@ -21811,7 +21896,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7721:28: (this_INT_0= RULE_INT )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7722:5: this_INT_0= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEInt17051); if (state.failed) return current;
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleEInt17066); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_INT_0);
@@ -21856,39 +21941,39 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7740:1: ( (enumLiteral_0= 'HORIZONTAL' ) | (enumLiteral_1= 'SQUARE' ) | (enumLiteral_2= 'VERTICAL' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7740:1: ( (enumLiteral_0= 'HORIZONTAL' ) | (enumLiteral_1= 'SQUARE' ) | (enumLiteral_2= 'VERTICAL' ) )
-            int alt163=3;
+            int alt168=3;
             switch ( input.LA(1) ) {
             case 146:
                 {
-                alt163=1;
+                alt168=1;
                 }
                 break;
             case 147:
                 {
-                alt163=2;
+                alt168=2;
                 }
                 break;
             case 148:
                 {
-                alt163=3;
+                alt168=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 163, 0, input);
+                    new NoViableAltException("", 168, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt163) {
+            switch (alt168) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7740:2: (enumLiteral_0= 'HORIZONTAL' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7740:2: (enumLiteral_0= 'HORIZONTAL' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7740:4: enumLiteral_0= 'HORIZONTAL'
                     {
-                    enumLiteral_0=(Token)match(input,146,FOLLOW_146_in_ruleAlignmentKind17109); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,146,FOLLOW_146_in_ruleAlignmentKind17124); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAlignmentKindAccess().getHORIZONTALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -21907,7 +21992,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7746:6: (enumLiteral_1= 'SQUARE' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7746:8: enumLiteral_1= 'SQUARE'
                     {
-                    enumLiteral_1=(Token)match(input,147,FOLLOW_147_in_ruleAlignmentKind17126); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,147,FOLLOW_147_in_ruleAlignmentKind17141); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAlignmentKindAccess().getSQUAREEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -21926,7 +22011,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7752:6: (enumLiteral_2= 'VERTICAL' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7752:8: enumLiteral_2= 'VERTICAL'
                     {
-                    enumLiteral_2=(Token)match(input,148,FOLLOW_148_in_ruleAlignmentKind17143); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,148,FOLLOW_148_in_ruleAlignmentKind17158); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAlignmentKindAccess().getVERTICALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -21978,49 +22063,49 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7765:1: ( (enumLiteral_0= 'dot' ) | (enumLiteral_1= 'ring' ) | (enumLiteral_2= 'square' ) | (enumLiteral_3= 'stroke' ) | (enumLiteral_4= 'triangle' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7765:1: ( (enumLiteral_0= 'dot' ) | (enumLiteral_1= 'ring' ) | (enumLiteral_2= 'square' ) | (enumLiteral_3= 'stroke' ) | (enumLiteral_4= 'triangle' ) )
-            int alt164=5;
+            int alt169=5;
             switch ( input.LA(1) ) {
             case 149:
                 {
-                alt164=1;
+                alt169=1;
                 }
                 break;
             case 150:
                 {
-                alt164=2;
+                alt169=2;
                 }
                 break;
             case 151:
                 {
-                alt164=3;
+                alt169=3;
                 }
                 break;
             case 152:
                 {
-                alt164=4;
+                alt169=4;
                 }
                 break;
             case 153:
                 {
-                alt164=5;
+                alt169=5;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 164, 0, input);
+                    new NoViableAltException("", 169, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt164) {
+            switch (alt169) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7765:2: (enumLiteral_0= 'dot' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7765:2: (enumLiteral_0= 'dot' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7765:4: enumLiteral_0= 'dot'
                     {
-                    enumLiteral_0=(Token)match(input,149,FOLLOW_149_in_ruleBundledImageShape17188); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,149,FOLLOW_149_in_ruleBundledImageShape17203); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBundledImageShapeAccess().getDotEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -22039,7 +22124,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7771:6: (enumLiteral_1= 'ring' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7771:8: enumLiteral_1= 'ring'
                     {
-                    enumLiteral_1=(Token)match(input,150,FOLLOW_150_in_ruleBundledImageShape17205); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,150,FOLLOW_150_in_ruleBundledImageShape17220); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBundledImageShapeAccess().getRingEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -22058,7 +22143,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7777:6: (enumLiteral_2= 'square' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7777:8: enumLiteral_2= 'square'
                     {
-                    enumLiteral_2=(Token)match(input,151,FOLLOW_151_in_ruleBundledImageShape17222); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,151,FOLLOW_151_in_ruleBundledImageShape17237); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBundledImageShapeAccess().getSquareEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -22077,7 +22162,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7783:6: (enumLiteral_3= 'stroke' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7783:8: enumLiteral_3= 'stroke'
                     {
-                    enumLiteral_3=(Token)match(input,152,FOLLOW_152_in_ruleBundledImageShape17239); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,152,FOLLOW_152_in_ruleBundledImageShape17254); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBundledImageShapeAccess().getStrokeEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -22096,7 +22181,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7789:6: (enumLiteral_4= 'triangle' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7789:8: enumLiteral_4= 'triangle'
                     {
-                    enumLiteral_4=(Token)match(input,153,FOLLOW_153_in_ruleBundledImageShape17256); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,153,FOLLOW_153_in_ruleBundledImageShape17271); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBundledImageShapeAccess().getTriangleEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -22147,44 +22232,44 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7802:1: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'NSEW' ) | (enumLiteral_2= 'EAST_WEST' ) | (enumLiteral_3= 'NORTH_SOUTH' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7802:1: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'NSEW' ) | (enumLiteral_2= 'EAST_WEST' ) | (enumLiteral_3= 'NORTH_SOUTH' ) )
-            int alt165=4;
+            int alt170=4;
             switch ( input.LA(1) ) {
             case 154:
                 {
-                alt165=1;
+                alt170=1;
                 }
                 break;
             case 155:
                 {
-                alt165=2;
+                alt170=2;
                 }
                 break;
             case 156:
                 {
-                alt165=3;
+                alt170=3;
                 }
                 break;
             case 157:
                 {
-                alt165=4;
+                alt170=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 165, 0, input);
+                    new NoViableAltException("", 170, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt165) {
+            switch (alt170) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7802:2: (enumLiteral_0= 'NONE' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7802:2: (enumLiteral_0= 'NONE' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7802:4: enumLiteral_0= 'NONE'
                     {
-                    enumLiteral_0=(Token)match(input,154,FOLLOW_154_in_ruleResizeKind17301); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,154,FOLLOW_154_in_ruleResizeKind17316); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getResizeKindAccess().getNONEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -22203,7 +22288,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7808:6: (enumLiteral_1= 'NSEW' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7808:8: enumLiteral_1= 'NSEW'
                     {
-                    enumLiteral_1=(Token)match(input,155,FOLLOW_155_in_ruleResizeKind17318); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,155,FOLLOW_155_in_ruleResizeKind17333); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getResizeKindAccess().getNSEWEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -22222,7 +22307,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7814:6: (enumLiteral_2= 'EAST_WEST' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7814:8: enumLiteral_2= 'EAST_WEST'
                     {
-                    enumLiteral_2=(Token)match(input,156,FOLLOW_156_in_ruleResizeKind17335); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,156,FOLLOW_156_in_ruleResizeKind17350); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getResizeKindAccess().getEAST_WESTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -22241,7 +22326,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7820:6: (enumLiteral_3= 'NORTH_SOUTH' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7820:8: enumLiteral_3= 'NORTH_SOUTH'
                     {
-                    enumLiteral_3=(Token)match(input,157,FOLLOW_157_in_ruleResizeKind17352); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,157,FOLLOW_157_in_ruleResizeKind17367); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getResizeKindAccess().getNORTH_SOUTHEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -22291,7 +22376,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7833:1: (enumLiteral_0= 'parallelogram' )
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7833:3: enumLiteral_0= 'parallelogram'
             {
-            enumLiteral_0=(Token)match(input,158,FOLLOW_158_in_ruleContainerShape17396); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,158,FOLLOW_158_in_ruleContainerShape17411); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getContainerShapeAccess().getParallelogramEnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -22336,44 +22421,44 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7846:1: ( (enumLiteral_0= 'italic' ) | (enumLiteral_1= 'bold' ) | (enumLiteral_2= 'underline' ) | (enumLiteral_3= 'strike_through' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7846:1: ( (enumLiteral_0= 'italic' ) | (enumLiteral_1= 'bold' ) | (enumLiteral_2= 'underline' ) | (enumLiteral_3= 'strike_through' ) )
-            int alt166=4;
+            int alt171=4;
             switch ( input.LA(1) ) {
             case 59:
                 {
-                alt166=1;
+                alt171=1;
                 }
                 break;
             case 58:
                 {
-                alt166=2;
+                alt171=2;
                 }
                 break;
             case 159:
                 {
-                alt166=3;
+                alt171=3;
                 }
                 break;
             case 160:
                 {
-                alt166=4;
+                alt171=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 166, 0, input);
+                    new NoViableAltException("", 171, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt166) {
+            switch (alt171) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7846:2: (enumLiteral_0= 'italic' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7846:2: (enumLiteral_0= 'italic' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7846:4: enumLiteral_0= 'italic'
                     {
-                    enumLiteral_0=(Token)match(input,59,FOLLOW_59_in_ruleFontFormat17440); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,59,FOLLOW_59_in_ruleFontFormat17455); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getFontFormatAccess().getItalicEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -22392,7 +22477,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7852:6: (enumLiteral_1= 'bold' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7852:8: enumLiteral_1= 'bold'
                     {
-                    enumLiteral_1=(Token)match(input,58,FOLLOW_58_in_ruleFontFormat17457); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,58,FOLLOW_58_in_ruleFontFormat17472); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getFontFormatAccess().getBoldEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -22411,7 +22496,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7858:6: (enumLiteral_2= 'underline' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7858:8: enumLiteral_2= 'underline'
                     {
-                    enumLiteral_2=(Token)match(input,159,FOLLOW_159_in_ruleFontFormat17474); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,159,FOLLOW_159_in_ruleFontFormat17489); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getFontFormatAccess().getUnderlineEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -22430,7 +22515,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7864:6: (enumLiteral_3= 'strike_through' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7864:8: enumLiteral_3= 'strike_through'
                     {
-                    enumLiteral_3=(Token)match(input,160,FOLLOW_160_in_ruleFontFormat17491); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,160,FOLLOW_160_in_ruleFontFormat17506); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getFontFormatAccess().getStrike_throughEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -22481,44 +22566,44 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7877:1: ( (enumLiteral_0= 'Both' ) | (enumLiteral_1= 'None' ) | (enumLiteral_2= 'Source' ) | (enumLiteral_3= 'Target' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7877:1: ( (enumLiteral_0= 'Both' ) | (enumLiteral_1= 'None' ) | (enumLiteral_2= 'Source' ) | (enumLiteral_3= 'Target' ) )
-            int alt167=4;
+            int alt172=4;
             switch ( input.LA(1) ) {
             case 161:
                 {
-                alt167=1;
+                alt172=1;
                 }
                 break;
             case 162:
                 {
-                alt167=2;
+                alt172=2;
                 }
                 break;
             case 163:
                 {
-                alt167=3;
+                alt172=3;
                 }
                 break;
             case 164:
                 {
-                alt167=4;
+                alt172=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 167, 0, input);
+                    new NoViableAltException("", 172, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt167) {
+            switch (alt172) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7877:2: (enumLiteral_0= 'Both' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7877:2: (enumLiteral_0= 'Both' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7877:4: enumLiteral_0= 'Both'
                     {
-                    enumLiteral_0=(Token)match(input,161,FOLLOW_161_in_ruleCenterStyle17536); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,161,FOLLOW_161_in_ruleCenterStyle17551); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCenterStyleAccess().getBothEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -22537,7 +22622,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7883:6: (enumLiteral_1= 'None' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7883:8: enumLiteral_1= 'None'
                     {
-                    enumLiteral_1=(Token)match(input,162,FOLLOW_162_in_ruleCenterStyle17553); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,162,FOLLOW_162_in_ruleCenterStyle17568); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCenterStyleAccess().getNoneEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -22556,7 +22641,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7889:6: (enumLiteral_2= 'Source' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7889:8: enumLiteral_2= 'Source'
                     {
-                    enumLiteral_2=(Token)match(input,163,FOLLOW_163_in_ruleCenterStyle17570); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,163,FOLLOW_163_in_ruleCenterStyle17585); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCenterStyleAccess().getSourceEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -22575,7 +22660,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7895:6: (enumLiteral_3= 'Target' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7895:8: enumLiteral_3= 'Target'
                     {
-                    enumLiteral_3=(Token)match(input,164,FOLLOW_164_in_ruleCenterStyle17587); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,164,FOLLOW_164_in_ruleCenterStyle17602); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCenterStyleAccess().getTargetEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -22625,39 +22710,39 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7908:1: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'SOURCE' ) | (enumLiteral_2= 'TARGET' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7908:1: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'SOURCE' ) | (enumLiteral_2= 'TARGET' ) )
-            int alt168=3;
+            int alt173=3;
             switch ( input.LA(1) ) {
             case 154:
                 {
-                alt168=1;
+                alt173=1;
                 }
                 break;
             case 165:
                 {
-                alt168=2;
+                alt173=2;
                 }
                 break;
             case 166:
                 {
-                alt168=3;
+                alt173=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 168, 0, input);
+                    new NoViableAltException("", 173, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt168) {
+            switch (alt173) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7908:2: (enumLiteral_0= 'NONE' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7908:2: (enumLiteral_0= 'NONE' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7908:4: enumLiteral_0= 'NONE'
                     {
-                    enumLiteral_0=(Token)match(input,154,FOLLOW_154_in_ruleFoldingStyle17632); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,154,FOLLOW_154_in_ruleFoldingStyle17647); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getFoldingStyleAccess().getNONEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -22676,7 +22761,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7914:6: (enumLiteral_1= 'SOURCE' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7914:8: enumLiteral_1= 'SOURCE'
                     {
-                    enumLiteral_1=(Token)match(input,165,FOLLOW_165_in_ruleFoldingStyle17649); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,165,FOLLOW_165_in_ruleFoldingStyle17664); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getFoldingStyleAccess().getSOURCEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -22695,7 +22780,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7920:6: (enumLiteral_2= 'TARGET' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7920:8: enumLiteral_2= 'TARGET'
                     {
-                    enumLiteral_2=(Token)match(input,166,FOLLOW_166_in_ruleFoldingStyle17666); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,166,FOLLOW_166_in_ruleFoldingStyle17681); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getFoldingStyleAccess().getTARGETEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -22745,39 +22830,39 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7933:1: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7933:1: ( (enumLiteral_0= 'straight' ) | (enumLiteral_1= 'manhattan' ) | (enumLiteral_2= 'tree' ) )
-            int alt169=3;
+            int alt174=3;
             switch ( input.LA(1) ) {
             case 167:
                 {
-                alt169=1;
+                alt174=1;
                 }
                 break;
             case 168:
                 {
-                alt169=2;
+                alt174=2;
                 }
                 break;
             case 169:
                 {
-                alt169=3;
+                alt174=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 169, 0, input);
+                    new NoViableAltException("", 174, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt169) {
+            switch (alt174) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7933:2: (enumLiteral_0= 'straight' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7933:2: (enumLiteral_0= 'straight' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7933:4: enumLiteral_0= 'straight'
                     {
-                    enumLiteral_0=(Token)match(input,167,FOLLOW_167_in_ruleEdgeRouting17711); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,167,FOLLOW_167_in_ruleEdgeRouting17726); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeRoutingAccess().getStraightEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -22796,7 +22881,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7939:6: (enumLiteral_1= 'manhattan' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7939:8: enumLiteral_1= 'manhattan'
                     {
-                    enumLiteral_1=(Token)match(input,168,FOLLOW_168_in_ruleEdgeRouting17728); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,168,FOLLOW_168_in_ruleEdgeRouting17743); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeRoutingAccess().getManhattanEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -22815,7 +22900,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7945:6: (enumLiteral_2= 'tree' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7945:8: enumLiteral_2= 'tree'
                     {
-                    enumLiteral_2=(Token)match(input,169,FOLLOW_169_in_ruleEdgeRouting17745); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,169,FOLLOW_169_in_ruleEdgeRouting17760); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeRoutingAccess().getTreeEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -22866,44 +22951,44 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7958:1: ( (enumLiteral_0= 'Border' ) | (enumLiteral_1= 'Color' ) | (enumLiteral_2= 'Background' ) | (enumLiteral_3= 'foreground' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7958:1: ( (enumLiteral_0= 'Border' ) | (enumLiteral_1= 'Color' ) | (enumLiteral_2= 'Background' ) | (enumLiteral_3= 'foreground' ) )
-            int alt170=4;
+            int alt175=4;
             switch ( input.LA(1) ) {
             case 170:
                 {
-                alt170=1;
+                alt175=1;
                 }
                 break;
             case 171:
                 {
-                alt170=2;
+                alt175=2;
                 }
                 break;
             case 172:
                 {
-                alt170=3;
+                alt175=3;
                 }
                 break;
             case 173:
                 {
-                alt170=4;
+                alt175=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 170, 0, input);
+                    new NoViableAltException("", 175, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt170) {
+            switch (alt175) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7958:2: (enumLiteral_0= 'Border' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7958:2: (enumLiteral_0= 'Border' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7958:4: enumLiteral_0= 'Border'
                     {
-                    enumLiteral_0=(Token)match(input,170,FOLLOW_170_in_ruleColorUseCase17790); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,170,FOLLOW_170_in_ruleColorUseCase17805); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getColorUseCaseAccess().getBorderEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -22922,7 +23007,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7964:6: (enumLiteral_1= 'Color' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7964:8: enumLiteral_1= 'Color'
                     {
-                    enumLiteral_1=(Token)match(input,171,FOLLOW_171_in_ruleColorUseCase17807); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,171,FOLLOW_171_in_ruleColorUseCase17822); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getColorUseCaseAccess().getColorEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -22941,7 +23026,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7970:6: (enumLiteral_2= 'Background' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7970:8: enumLiteral_2= 'Background'
                     {
-                    enumLiteral_2=(Token)match(input,172,FOLLOW_172_in_ruleColorUseCase17824); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,172,FOLLOW_172_in_ruleColorUseCase17839); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getColorUseCaseAccess().getBackgroundEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -22960,7 +23045,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7976:6: (enumLiteral_3= 'foreground' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7976:8: enumLiteral_3= 'foreground'
                     {
-                    enumLiteral_3=(Token)match(input,173,FOLLOW_173_in_ruleColorUseCase17841); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,173,FOLLOW_173_in_ruleColorUseCase17856); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getColorUseCaseAccess().getForegroundEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -23015,64 +23100,64 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7989:1: ( (enumLiteral_0= 'Square' ) | (enumLiteral_1= 'Lozenge' ) | (enumLiteral_2= 'Eclipse' ) | (enumLiteral_3= 'Note' ) | (enumLiteral_4= 'Dot' ) | (enumLiteral_5= 'Triangle' ) | (enumLiteral_6= 'Stroke' ) | (enumLiteral_7= 'Ring' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7989:1: ( (enumLiteral_0= 'Square' ) | (enumLiteral_1= 'Lozenge' ) | (enumLiteral_2= 'Eclipse' ) | (enumLiteral_3= 'Note' ) | (enumLiteral_4= 'Dot' ) | (enumLiteral_5= 'Triangle' ) | (enumLiteral_6= 'Stroke' ) | (enumLiteral_7= 'Ring' ) )
-            int alt171=8;
+            int alt176=8;
             switch ( input.LA(1) ) {
             case 174:
                 {
-                alt171=1;
+                alt176=1;
                 }
                 break;
             case 175:
                 {
-                alt171=2;
+                alt176=2;
                 }
                 break;
             case 176:
                 {
-                alt171=3;
+                alt176=3;
                 }
                 break;
             case 177:
                 {
-                alt171=4;
+                alt176=4;
                 }
                 break;
             case 178:
                 {
-                alt171=5;
+                alt176=5;
                 }
                 break;
             case 179:
                 {
-                alt171=6;
+                alt176=6;
                 }
                 break;
             case 180:
                 {
-                alt171=7;
+                alt176=7;
                 }
                 break;
             case 181:
                 {
-                alt171=8;
+                alt176=8;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 171, 0, input);
+                    new NoViableAltException("", 176, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt171) {
+            switch (alt176) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7989:2: (enumLiteral_0= 'Square' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7989:2: (enumLiteral_0= 'Square' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7989:4: enumLiteral_0= 'Square'
                     {
-                    enumLiteral_0=(Token)match(input,174,FOLLOW_174_in_ruleNode_Form17886); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,174,FOLLOW_174_in_ruleNode_Form17901); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getSquareEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -23091,7 +23176,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7995:6: (enumLiteral_1= 'Lozenge' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:7995:8: enumLiteral_1= 'Lozenge'
                     {
-                    enumLiteral_1=(Token)match(input,175,FOLLOW_175_in_ruleNode_Form17903); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,175,FOLLOW_175_in_ruleNode_Form17918); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getLozengeEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -23110,7 +23195,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8001:6: (enumLiteral_2= 'Eclipse' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8001:8: enumLiteral_2= 'Eclipse'
                     {
-                    enumLiteral_2=(Token)match(input,176,FOLLOW_176_in_ruleNode_Form17920); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,176,FOLLOW_176_in_ruleNode_Form17935); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getEclipseEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -23129,7 +23214,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8007:6: (enumLiteral_3= 'Note' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8007:8: enumLiteral_3= 'Note'
                     {
-                    enumLiteral_3=(Token)match(input,177,FOLLOW_177_in_ruleNode_Form17937); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,177,FOLLOW_177_in_ruleNode_Form17952); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getNoteEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -23148,7 +23233,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8013:6: (enumLiteral_4= 'Dot' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8013:8: enumLiteral_4= 'Dot'
                     {
-                    enumLiteral_4=(Token)match(input,178,FOLLOW_178_in_ruleNode_Form17954); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,178,FOLLOW_178_in_ruleNode_Form17969); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getDotEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -23167,7 +23252,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8019:6: (enumLiteral_5= 'Triangle' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8019:8: enumLiteral_5= 'Triangle'
                     {
-                    enumLiteral_5=(Token)match(input,179,FOLLOW_179_in_ruleNode_Form17971); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,179,FOLLOW_179_in_ruleNode_Form17986); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getTriangleEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -23186,7 +23271,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8025:6: (enumLiteral_6= 'Stroke' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8025:8: enumLiteral_6= 'Stroke'
                     {
-                    enumLiteral_6=(Token)match(input,180,FOLLOW_180_in_ruleNode_Form17988); if (state.failed) return current;
+                    enumLiteral_6=(Token)match(input,180,FOLLOW_180_in_ruleNode_Form18003); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getStrokeEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
@@ -23205,7 +23290,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8031:6: (enumLiteral_7= 'Ring' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8031:8: enumLiteral_7= 'Ring'
                     {
-                    enumLiteral_7=(Token)match(input,181,FOLLOW_181_in_ruleNode_Form18005); if (state.failed) return current;
+                    enumLiteral_7=(Token)match(input,181,FOLLOW_181_in_ruleNode_Form18020); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNode_FormAccess().getRingEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
@@ -23255,39 +23340,39 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8044:1: ( (enumLiteral_0= 'GradientLeftToRight' ) | (enumLiteral_1= 'Liquid' ) | (enumLiteral_2= 'GradientTopToBottom' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8044:1: ( (enumLiteral_0= 'GradientLeftToRight' ) | (enumLiteral_1= 'Liquid' ) | (enumLiteral_2= 'GradientTopToBottom' ) )
-            int alt172=3;
+            int alt177=3;
             switch ( input.LA(1) ) {
             case 182:
                 {
-                alt172=1;
+                alt177=1;
                 }
                 break;
             case 183:
                 {
-                alt172=2;
+                alt177=2;
                 }
                 break;
             case 184:
                 {
-                alt172=3;
+                alt177=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 172, 0, input);
+                    new NoViableAltException("", 177, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt172) {
+            switch (alt177) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8044:2: (enumLiteral_0= 'GradientLeftToRight' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8044:2: (enumLiteral_0= 'GradientLeftToRight' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8044:4: enumLiteral_0= 'GradientLeftToRight'
                     {
-                    enumLiteral_0=(Token)match(input,182,FOLLOW_182_in_ruleBackgroundStyle18050); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,182,FOLLOW_182_in_ruleBackgroundStyle18065); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBackgroundStyleAccess().getGradientLeftToRightEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -23306,7 +23391,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8050:6: (enumLiteral_1= 'Liquid' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8050:8: enumLiteral_1= 'Liquid'
                     {
-                    enumLiteral_1=(Token)match(input,183,FOLLOW_183_in_ruleBackgroundStyle18067); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,183,FOLLOW_183_in_ruleBackgroundStyle18082); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBackgroundStyleAccess().getLiquidEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -23325,7 +23410,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8056:6: (enumLiteral_2= 'GradientTopToBottom' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8056:8: enumLiteral_2= 'GradientTopToBottom'
                     {
-                    enumLiteral_2=(Token)match(input,184,FOLLOW_184_in_ruleBackgroundStyle18084); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,184,FOLLOW_184_in_ruleBackgroundStyle18099); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBackgroundStyleAccess().getGradientTopToBottomEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -23374,30 +23459,30 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8069:1: ( (enumLiteral_0= 'border' ) | (enumLiteral_1= 'node' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8069:1: ( (enumLiteral_0= 'border' ) | (enumLiteral_1= 'node' ) )
-            int alt173=2;
-            int LA173_0 = input.LA(1);
+            int alt178=2;
+            int LA178_0 = input.LA(1);
 
-            if ( (LA173_0==185) ) {
-                alt173=1;
+            if ( (LA178_0==185) ) {
+                alt178=1;
             }
-            else if ( (LA173_0==127) ) {
-                alt173=2;
+            else if ( (LA178_0==127) ) {
+                alt178=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 173, 0, input);
+                    new NoViableAltException("", 178, 0, input);
 
                 throw nvae;
             }
-            switch (alt173) {
+            switch (alt178) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8069:2: (enumLiteral_0= 'border' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8069:2: (enumLiteral_0= 'border' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8069:4: enumLiteral_0= 'border'
                     {
-                    enumLiteral_0=(Token)match(input,185,FOLLOW_185_in_ruleLabelPosition18129); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,185,FOLLOW_185_in_ruleLabelPosition18144); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLabelPositionAccess().getBorderEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -23416,7 +23501,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8075:6: (enumLiteral_1= 'node' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8075:8: enumLiteral_1= 'node'
                     {
-                    enumLiteral_1=(Token)match(input,127,FOLLOW_127_in_ruleLabelPosition18146); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,127,FOLLOW_127_in_ruleLabelPosition18161); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLabelPositionAccess().getNodeEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -23466,39 +23551,39 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8088:1: ( (enumLiteral_0= 'center' ) | (enumLiteral_1= 'left' ) | (enumLiteral_2= 'right' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8088:1: ( (enumLiteral_0= 'center' ) | (enumLiteral_1= 'left' ) | (enumLiteral_2= 'right' ) )
-            int alt174=3;
+            int alt179=3;
             switch ( input.LA(1) ) {
             case 186:
                 {
-                alt174=1;
+                alt179=1;
                 }
                 break;
             case 187:
                 {
-                alt174=2;
+                alt179=2;
                 }
                 break;
             case 188:
                 {
-                alt174=3;
+                alt179=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 174, 0, input);
+                    new NoViableAltException("", 179, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt174) {
+            switch (alt179) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8088:2: (enumLiteral_0= 'center' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8088:2: (enumLiteral_0= 'center' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8088:4: enumLiteral_0= 'center'
                     {
-                    enumLiteral_0=(Token)match(input,186,FOLLOW_186_in_ruleLabelAlignment18191); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,186,FOLLOW_186_in_ruleLabelAlignment18206); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLabelAlignmentAccess().getCENTEREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -23517,7 +23602,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8094:6: (enumLiteral_1= 'left' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8094:8: enumLiteral_1= 'left'
                     {
-                    enumLiteral_1=(Token)match(input,187,FOLLOW_187_in_ruleLabelAlignment18208); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,187,FOLLOW_187_in_ruleLabelAlignment18223); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLabelAlignmentAccess().getLEFTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -23536,7 +23621,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8100:6: (enumLiteral_2= 'right' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8100:8: enumLiteral_2= 'right'
                     {
-                    enumLiteral_2=(Token)match(input,188,FOLLOW_188_in_ruleLabelAlignment18225); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,188,FOLLOW_188_in_ruleLabelAlignment18240); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLabelAlignmentAccess().getRIGHTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -23587,44 +23672,44 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8113:1: ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8113:1: ( (enumLiteral_0= 'solid' ) | (enumLiteral_1= 'dash' ) | (enumLiteral_2= 'dot' ) | (enumLiteral_3= 'dash_dot' ) )
-            int alt175=4;
+            int alt180=4;
             switch ( input.LA(1) ) {
             case 189:
                 {
-                alt175=1;
+                alt180=1;
                 }
                 break;
             case 190:
                 {
-                alt175=2;
+                alt180=2;
                 }
                 break;
             case 149:
                 {
-                alt175=3;
+                alt180=3;
                 }
                 break;
             case 191:
                 {
-                alt175=4;
+                alt180=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 175, 0, input);
+                    new NoViableAltException("", 180, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt175) {
+            switch (alt180) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8113:2: (enumLiteral_0= 'solid' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8113:2: (enumLiteral_0= 'solid' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8113:4: enumLiteral_0= 'solid'
                     {
-                    enumLiteral_0=(Token)match(input,189,FOLLOW_189_in_ruleLineStyle18270); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,189,FOLLOW_189_in_ruleLineStyle18285); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLineStyleAccess().getSolidEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -23643,7 +23728,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8119:6: (enumLiteral_1= 'dash' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8119:8: enumLiteral_1= 'dash'
                     {
-                    enumLiteral_1=(Token)match(input,190,FOLLOW_190_in_ruleLineStyle18287); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,190,FOLLOW_190_in_ruleLineStyle18302); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLineStyleAccess().getDashEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -23662,7 +23747,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8125:6: (enumLiteral_2= 'dot' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8125:8: enumLiteral_2= 'dot'
                     {
-                    enumLiteral_2=(Token)match(input,149,FOLLOW_149_in_ruleLineStyle18304); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,149,FOLLOW_149_in_ruleLineStyle18319); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLineStyleAccess().getDotEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -23681,7 +23766,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8131:6: (enumLiteral_3= 'dash_dot' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8131:8: enumLiteral_3= 'dash_dot'
                     {
-                    enumLiteral_3=(Token)match(input,191,FOLLOW_191_in_ruleLineStyle18321); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,191,FOLLOW_191_in_ruleLineStyle18336); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLineStyleAccess().getDash_dotEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -23739,79 +23824,79 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8144:1: ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWothFillDiamond' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8144:1: ( (enumLiteral_0= 'NoDecoration' ) | (enumLiteral_1= 'OutputArrow' ) | (enumLiteral_2= 'InputArrow' ) | (enumLiteral_3= 'OutputClosedArrow' ) | (enumLiteral_4= 'InputClosedArrow' ) | (enumLiteral_5= 'OutputFillClosedArrow' ) | (enumLiteral_6= 'InputFillClosedArrow' ) | (enumLiteral_7= 'Diamond' ) | (enumLiteral_8= 'FillDiamond' ) | (enumLiteral_9= 'InputArrowWithDiamond' ) | (enumLiteral_10= 'InputArrowWothFillDiamond' ) )
-            int alt176=11;
+            int alt181=11;
             switch ( input.LA(1) ) {
             case 192:
                 {
-                alt176=1;
+                alt181=1;
                 }
                 break;
             case 193:
                 {
-                alt176=2;
+                alt181=2;
                 }
                 break;
             case 194:
                 {
-                alt176=3;
+                alt181=3;
                 }
                 break;
             case 195:
                 {
-                alt176=4;
+                alt181=4;
                 }
                 break;
             case 196:
                 {
-                alt176=5;
+                alt181=5;
                 }
                 break;
             case 197:
                 {
-                alt176=6;
+                alt181=6;
                 }
                 break;
             case 198:
                 {
-                alt176=7;
+                alt181=7;
                 }
                 break;
             case 199:
                 {
-                alt176=8;
+                alt181=8;
                 }
                 break;
             case 200:
                 {
-                alt176=9;
+                alt181=9;
                 }
                 break;
             case 201:
                 {
-                alt176=10;
+                alt181=10;
                 }
                 break;
             case 202:
                 {
-                alt176=11;
+                alt181=11;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 176, 0, input);
+                    new NoViableAltException("", 181, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt176) {
+            switch (alt181) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8144:2: (enumLiteral_0= 'NoDecoration' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8144:2: (enumLiteral_0= 'NoDecoration' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8144:4: enumLiteral_0= 'NoDecoration'
                     {
-                    enumLiteral_0=(Token)match(input,192,FOLLOW_192_in_ruleEdgeArrows18366); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,192,FOLLOW_192_in_ruleEdgeArrows18381); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getNoDecorationEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -23830,7 +23915,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8150:6: (enumLiteral_1= 'OutputArrow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8150:8: enumLiteral_1= 'OutputArrow'
                     {
-                    enumLiteral_1=(Token)match(input,193,FOLLOW_193_in_ruleEdgeArrows18383); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,193,FOLLOW_193_in_ruleEdgeArrows18398); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getOutputArrowEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -23849,7 +23934,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8156:6: (enumLiteral_2= 'InputArrow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8156:8: enumLiteral_2= 'InputArrow'
                     {
-                    enumLiteral_2=(Token)match(input,194,FOLLOW_194_in_ruleEdgeArrows18400); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,194,FOLLOW_194_in_ruleEdgeArrows18415); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getInputArrowEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -23868,7 +23953,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8162:6: (enumLiteral_3= 'OutputClosedArrow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8162:8: enumLiteral_3= 'OutputClosedArrow'
                     {
-                    enumLiteral_3=(Token)match(input,195,FOLLOW_195_in_ruleEdgeArrows18417); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,195,FOLLOW_195_in_ruleEdgeArrows18432); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getOutputClosedArrowEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -23887,7 +23972,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8168:6: (enumLiteral_4= 'InputClosedArrow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8168:8: enumLiteral_4= 'InputClosedArrow'
                     {
-                    enumLiteral_4=(Token)match(input,196,FOLLOW_196_in_ruleEdgeArrows18434); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,196,FOLLOW_196_in_ruleEdgeArrows18449); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getInputClosedArrowEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -23906,7 +23991,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8174:6: (enumLiteral_5= 'OutputFillClosedArrow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8174:8: enumLiteral_5= 'OutputFillClosedArrow'
                     {
-                    enumLiteral_5=(Token)match(input,197,FOLLOW_197_in_ruleEdgeArrows18451); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,197,FOLLOW_197_in_ruleEdgeArrows18466); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getOutputFillClosedArrowEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -23925,7 +24010,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8180:6: (enumLiteral_6= 'InputFillClosedArrow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8180:8: enumLiteral_6= 'InputFillClosedArrow'
                     {
-                    enumLiteral_6=(Token)match(input,198,FOLLOW_198_in_ruleEdgeArrows18468); if (state.failed) return current;
+                    enumLiteral_6=(Token)match(input,198,FOLLOW_198_in_ruleEdgeArrows18483); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getInputFillClosedArrowEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
@@ -23944,7 +24029,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8186:6: (enumLiteral_7= 'Diamond' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8186:8: enumLiteral_7= 'Diamond'
                     {
-                    enumLiteral_7=(Token)match(input,199,FOLLOW_199_in_ruleEdgeArrows18485); if (state.failed) return current;
+                    enumLiteral_7=(Token)match(input,199,FOLLOW_199_in_ruleEdgeArrows18500); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getDiamondEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
@@ -23963,7 +24048,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8192:6: (enumLiteral_8= 'FillDiamond' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8192:8: enumLiteral_8= 'FillDiamond'
                     {
-                    enumLiteral_8=(Token)match(input,200,FOLLOW_200_in_ruleEdgeArrows18502); if (state.failed) return current;
+                    enumLiteral_8=(Token)match(input,200,FOLLOW_200_in_ruleEdgeArrows18517); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getFillDiamondEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
@@ -23982,7 +24067,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8198:6: (enumLiteral_9= 'InputArrowWithDiamond' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8198:8: enumLiteral_9= 'InputArrowWithDiamond'
                     {
-                    enumLiteral_9=(Token)match(input,201,FOLLOW_201_in_ruleEdgeArrows18519); if (state.failed) return current;
+                    enumLiteral_9=(Token)match(input,201,FOLLOW_201_in_ruleEdgeArrows18534); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getInputArrowWithDiamondEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
@@ -24001,7 +24086,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8204:6: (enumLiteral_10= 'InputArrowWothFillDiamond' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8204:8: enumLiteral_10= 'InputArrowWothFillDiamond'
                     {
-                    enumLiteral_10=(Token)match(input,202,FOLLOW_202_in_ruleEdgeArrows18536); if (state.failed) return current;
+                    enumLiteral_10=(Token)match(input,202,FOLLOW_202_in_ruleEdgeArrows18551); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getEdgeArrowsAccess().getInputArrowWithFillDiamondEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
@@ -24074,154 +24159,154 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8217:1: ( (enumLiteral_0= 'black' ) | (enumLiteral_1= 'blue' ) | (enumLiteral_2= 'red' ) | (enumLiteral_3= 'green' ) | (enumLiteral_4= 'yellow' ) | (enumLiteral_5= 'purple' ) | (enumLiteral_6= 'orange' ) | (enumLiteral_7= 'chocolate' ) | (enumLiteral_8= 'gray' ) | (enumLiteral_9= 'white' ) | (enumLiteral_10= 'dark_blue' ) | (enumLiteral_11= 'dark_red' ) | (enumLiteral_12= 'dark_green' ) | (enumLiteral_13= 'dark_yellow' ) | (enumLiteral_14= 'dark_purple' ) | (enumLiteral_15= 'dark_orange' ) | (enumLiteral_16= 'dark_chocolate' ) | (enumLiteral_17= 'dark_gray' ) | (enumLiteral_18= 'light_blue' ) | (enumLiteral_19= 'light_red' ) | (enumLiteral_20= 'light_green' ) | (enumLiteral_21= 'light_yellow' ) | (enumLiteral_22= 'light_purple' ) | (enumLiteral_23= 'light_orange' ) | (enumLiteral_24= 'light_chocolate' ) | (enumLiteral_25= 'light_gray' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8217:1: ( (enumLiteral_0= 'black' ) | (enumLiteral_1= 'blue' ) | (enumLiteral_2= 'red' ) | (enumLiteral_3= 'green' ) | (enumLiteral_4= 'yellow' ) | (enumLiteral_5= 'purple' ) | (enumLiteral_6= 'orange' ) | (enumLiteral_7= 'chocolate' ) | (enumLiteral_8= 'gray' ) | (enumLiteral_9= 'white' ) | (enumLiteral_10= 'dark_blue' ) | (enumLiteral_11= 'dark_red' ) | (enumLiteral_12= 'dark_green' ) | (enumLiteral_13= 'dark_yellow' ) | (enumLiteral_14= 'dark_purple' ) | (enumLiteral_15= 'dark_orange' ) | (enumLiteral_16= 'dark_chocolate' ) | (enumLiteral_17= 'dark_gray' ) | (enumLiteral_18= 'light_blue' ) | (enumLiteral_19= 'light_red' ) | (enumLiteral_20= 'light_green' ) | (enumLiteral_21= 'light_yellow' ) | (enumLiteral_22= 'light_purple' ) | (enumLiteral_23= 'light_orange' ) | (enumLiteral_24= 'light_chocolate' ) | (enumLiteral_25= 'light_gray' ) )
-            int alt177=26;
+            int alt182=26;
             switch ( input.LA(1) ) {
             case 203:
                 {
-                alt177=1;
+                alt182=1;
                 }
                 break;
             case 204:
                 {
-                alt177=2;
+                alt182=2;
                 }
                 break;
             case 205:
                 {
-                alt177=3;
+                alt182=3;
                 }
                 break;
             case 206:
                 {
-                alt177=4;
+                alt182=4;
                 }
                 break;
             case 207:
                 {
-                alt177=5;
+                alt182=5;
                 }
                 break;
             case 208:
                 {
-                alt177=6;
+                alt182=6;
                 }
                 break;
             case 209:
                 {
-                alt177=7;
+                alt182=7;
                 }
                 break;
             case 210:
                 {
-                alt177=8;
+                alt182=8;
                 }
                 break;
             case 211:
                 {
-                alt177=9;
+                alt182=9;
                 }
                 break;
             case 212:
                 {
-                alt177=10;
+                alt182=10;
                 }
                 break;
             case 213:
                 {
-                alt177=11;
+                alt182=11;
                 }
                 break;
             case 214:
                 {
-                alt177=12;
+                alt182=12;
                 }
                 break;
             case 215:
                 {
-                alt177=13;
+                alt182=13;
                 }
                 break;
             case 216:
                 {
-                alt177=14;
+                alt182=14;
                 }
                 break;
             case 217:
                 {
-                alt177=15;
+                alt182=15;
                 }
                 break;
             case 218:
                 {
-                alt177=16;
+                alt182=16;
                 }
                 break;
             case 219:
                 {
-                alt177=17;
+                alt182=17;
                 }
                 break;
             case 220:
                 {
-                alt177=18;
+                alt182=18;
                 }
                 break;
             case 221:
                 {
-                alt177=19;
+                alt182=19;
                 }
                 break;
             case 222:
                 {
-                alt177=20;
+                alt182=20;
                 }
                 break;
             case 223:
                 {
-                alt177=21;
+                alt182=21;
                 }
                 break;
             case 224:
                 {
-                alt177=22;
+                alt182=22;
                 }
                 break;
             case 225:
                 {
-                alt177=23;
+                alt182=23;
                 }
                 break;
             case 226:
                 {
-                alt177=24;
+                alt182=24;
                 }
                 break;
             case 227:
                 {
-                alt177=25;
+                alt182=25;
                 }
                 break;
             case 228:
                 {
-                alt177=26;
+                alt182=26;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 177, 0, input);
+                    new NoViableAltException("", 182, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt177) {
+            switch (alt182) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8217:2: (enumLiteral_0= 'black' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8217:2: (enumLiteral_0= 'black' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8217:4: enumLiteral_0= 'black'
                     {
-                    enumLiteral_0=(Token)match(input,203,FOLLOW_203_in_ruleSystemColors18581); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,203,FOLLOW_203_in_ruleSystemColors18596); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getBlackEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -24240,7 +24325,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8223:6: (enumLiteral_1= 'blue' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8223:8: enumLiteral_1= 'blue'
                     {
-                    enumLiteral_1=(Token)match(input,204,FOLLOW_204_in_ruleSystemColors18598); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,204,FOLLOW_204_in_ruleSystemColors18613); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getBlueEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -24259,7 +24344,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8229:6: (enumLiteral_2= 'red' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8229:8: enumLiteral_2= 'red'
                     {
-                    enumLiteral_2=(Token)match(input,205,FOLLOW_205_in_ruleSystemColors18615); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,205,FOLLOW_205_in_ruleSystemColors18630); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getRedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -24278,7 +24363,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8235:6: (enumLiteral_3= 'green' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8235:8: enumLiteral_3= 'green'
                     {
-                    enumLiteral_3=(Token)match(input,206,FOLLOW_206_in_ruleSystemColors18632); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,206,FOLLOW_206_in_ruleSystemColors18647); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getGreenEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -24297,7 +24382,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8241:6: (enumLiteral_4= 'yellow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8241:8: enumLiteral_4= 'yellow'
                     {
-                    enumLiteral_4=(Token)match(input,207,FOLLOW_207_in_ruleSystemColors18649); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,207,FOLLOW_207_in_ruleSystemColors18664); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getYellowEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -24316,7 +24401,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8247:6: (enumLiteral_5= 'purple' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8247:8: enumLiteral_5= 'purple'
                     {
-                    enumLiteral_5=(Token)match(input,208,FOLLOW_208_in_ruleSystemColors18666); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,208,FOLLOW_208_in_ruleSystemColors18681); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getPurpleEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -24335,7 +24420,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8253:6: (enumLiteral_6= 'orange' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8253:8: enumLiteral_6= 'orange'
                     {
-                    enumLiteral_6=(Token)match(input,209,FOLLOW_209_in_ruleSystemColors18683); if (state.failed) return current;
+                    enumLiteral_6=(Token)match(input,209,FOLLOW_209_in_ruleSystemColors18698); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getOrangeEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
@@ -24354,7 +24439,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8259:6: (enumLiteral_7= 'chocolate' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8259:8: enumLiteral_7= 'chocolate'
                     {
-                    enumLiteral_7=(Token)match(input,210,FOLLOW_210_in_ruleSystemColors18700); if (state.failed) return current;
+                    enumLiteral_7=(Token)match(input,210,FOLLOW_210_in_ruleSystemColors18715); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getChocolateEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
@@ -24373,7 +24458,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8265:6: (enumLiteral_8= 'gray' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8265:8: enumLiteral_8= 'gray'
                     {
-                    enumLiteral_8=(Token)match(input,211,FOLLOW_211_in_ruleSystemColors18717); if (state.failed) return current;
+                    enumLiteral_8=(Token)match(input,211,FOLLOW_211_in_ruleSystemColors18732); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getGrayEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
@@ -24392,7 +24477,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8271:6: (enumLiteral_9= 'white' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8271:8: enumLiteral_9= 'white'
                     {
-                    enumLiteral_9=(Token)match(input,212,FOLLOW_212_in_ruleSystemColors18734); if (state.failed) return current;
+                    enumLiteral_9=(Token)match(input,212,FOLLOW_212_in_ruleSystemColors18749); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getWhiteEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
@@ -24411,7 +24496,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8277:6: (enumLiteral_10= 'dark_blue' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8277:8: enumLiteral_10= 'dark_blue'
                     {
-                    enumLiteral_10=(Token)match(input,213,FOLLOW_213_in_ruleSystemColors18751); if (state.failed) return current;
+                    enumLiteral_10=(Token)match(input,213,FOLLOW_213_in_ruleSystemColors18766); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_blueEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
@@ -24430,7 +24515,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8283:6: (enumLiteral_11= 'dark_red' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8283:8: enumLiteral_11= 'dark_red'
                     {
-                    enumLiteral_11=(Token)match(input,214,FOLLOW_214_in_ruleSystemColors18768); if (state.failed) return current;
+                    enumLiteral_11=(Token)match(input,214,FOLLOW_214_in_ruleSystemColors18783); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_redEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
@@ -24449,7 +24534,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8289:6: (enumLiteral_12= 'dark_green' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8289:8: enumLiteral_12= 'dark_green'
                     {
-                    enumLiteral_12=(Token)match(input,215,FOLLOW_215_in_ruleSystemColors18785); if (state.failed) return current;
+                    enumLiteral_12=(Token)match(input,215,FOLLOW_215_in_ruleSystemColors18800); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_greenEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
@@ -24468,7 +24553,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8295:6: (enumLiteral_13= 'dark_yellow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8295:8: enumLiteral_13= 'dark_yellow'
                     {
-                    enumLiteral_13=(Token)match(input,216,FOLLOW_216_in_ruleSystemColors18802); if (state.failed) return current;
+                    enumLiteral_13=(Token)match(input,216,FOLLOW_216_in_ruleSystemColors18817); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_yellowEnumLiteralDeclaration_13().getEnumLiteral().getInstance();
@@ -24487,7 +24572,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8301:6: (enumLiteral_14= 'dark_purple' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8301:8: enumLiteral_14= 'dark_purple'
                     {
-                    enumLiteral_14=(Token)match(input,217,FOLLOW_217_in_ruleSystemColors18819); if (state.failed) return current;
+                    enumLiteral_14=(Token)match(input,217,FOLLOW_217_in_ruleSystemColors18834); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_purpleEnumLiteralDeclaration_14().getEnumLiteral().getInstance();
@@ -24506,7 +24591,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8307:6: (enumLiteral_15= 'dark_orange' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8307:8: enumLiteral_15= 'dark_orange'
                     {
-                    enumLiteral_15=(Token)match(input,218,FOLLOW_218_in_ruleSystemColors18836); if (state.failed) return current;
+                    enumLiteral_15=(Token)match(input,218,FOLLOW_218_in_ruleSystemColors18851); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_orangeEnumLiteralDeclaration_15().getEnumLiteral().getInstance();
@@ -24525,7 +24610,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8313:6: (enumLiteral_16= 'dark_chocolate' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8313:8: enumLiteral_16= 'dark_chocolate'
                     {
-                    enumLiteral_16=(Token)match(input,219,FOLLOW_219_in_ruleSystemColors18853); if (state.failed) return current;
+                    enumLiteral_16=(Token)match(input,219,FOLLOW_219_in_ruleSystemColors18868); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_chocolateEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
@@ -24544,7 +24629,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8319:6: (enumLiteral_17= 'dark_gray' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8319:8: enumLiteral_17= 'dark_gray'
                     {
-                    enumLiteral_17=(Token)match(input,220,FOLLOW_220_in_ruleSystemColors18870); if (state.failed) return current;
+                    enumLiteral_17=(Token)match(input,220,FOLLOW_220_in_ruleSystemColors18885); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getDark_grayEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
@@ -24563,7 +24648,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8325:6: (enumLiteral_18= 'light_blue' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8325:8: enumLiteral_18= 'light_blue'
                     {
-                    enumLiteral_18=(Token)match(input,221,FOLLOW_221_in_ruleSystemColors18887); if (state.failed) return current;
+                    enumLiteral_18=(Token)match(input,221,FOLLOW_221_in_ruleSystemColors18902); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_blueEnumLiteralDeclaration_18().getEnumLiteral().getInstance();
@@ -24582,7 +24667,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8331:6: (enumLiteral_19= 'light_red' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8331:8: enumLiteral_19= 'light_red'
                     {
-                    enumLiteral_19=(Token)match(input,222,FOLLOW_222_in_ruleSystemColors18904); if (state.failed) return current;
+                    enumLiteral_19=(Token)match(input,222,FOLLOW_222_in_ruleSystemColors18919); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_redEnumLiteralDeclaration_19().getEnumLiteral().getInstance();
@@ -24601,7 +24686,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8337:6: (enumLiteral_20= 'light_green' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8337:8: enumLiteral_20= 'light_green'
                     {
-                    enumLiteral_20=(Token)match(input,223,FOLLOW_223_in_ruleSystemColors18921); if (state.failed) return current;
+                    enumLiteral_20=(Token)match(input,223,FOLLOW_223_in_ruleSystemColors18936); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_greenEnumLiteralDeclaration_20().getEnumLiteral().getInstance();
@@ -24620,7 +24705,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8343:6: (enumLiteral_21= 'light_yellow' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8343:8: enumLiteral_21= 'light_yellow'
                     {
-                    enumLiteral_21=(Token)match(input,224,FOLLOW_224_in_ruleSystemColors18938); if (state.failed) return current;
+                    enumLiteral_21=(Token)match(input,224,FOLLOW_224_in_ruleSystemColors18953); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_yellowEnumLiteralDeclaration_21().getEnumLiteral().getInstance();
@@ -24639,7 +24724,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8349:6: (enumLiteral_22= 'light_purple' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8349:8: enumLiteral_22= 'light_purple'
                     {
-                    enumLiteral_22=(Token)match(input,225,FOLLOW_225_in_ruleSystemColors18955); if (state.failed) return current;
+                    enumLiteral_22=(Token)match(input,225,FOLLOW_225_in_ruleSystemColors18970); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_purpleEnumLiteralDeclaration_22().getEnumLiteral().getInstance();
@@ -24658,7 +24743,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8355:6: (enumLiteral_23= 'light_orange' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8355:8: enumLiteral_23= 'light_orange'
                     {
-                    enumLiteral_23=(Token)match(input,226,FOLLOW_226_in_ruleSystemColors18972); if (state.failed) return current;
+                    enumLiteral_23=(Token)match(input,226,FOLLOW_226_in_ruleSystemColors18987); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_orangeEnumLiteralDeclaration_23().getEnumLiteral().getInstance();
@@ -24677,7 +24762,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8361:6: (enumLiteral_24= 'light_chocolate' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8361:8: enumLiteral_24= 'light_chocolate'
                     {
-                    enumLiteral_24=(Token)match(input,227,FOLLOW_227_in_ruleSystemColors18989); if (state.failed) return current;
+                    enumLiteral_24=(Token)match(input,227,FOLLOW_227_in_ruleSystemColors19004); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_chocolateEnumLiteralDeclaration_24().getEnumLiteral().getInstance();
@@ -24696,7 +24781,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8367:6: (enumLiteral_25= 'light_gray' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8367:8: enumLiteral_25= 'light_gray'
                     {
-                    enumLiteral_25=(Token)match(input,228,FOLLOW_228_in_ruleSystemColors19006); if (state.failed) return current;
+                    enumLiteral_25=(Token)match(input,228,FOLLOW_228_in_ruleSystemColors19021); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSystemColorsAccess().getLight_grayEnumLiteralDeclaration_25().getEnumLiteral().getInstance();
@@ -24745,30 +24830,30 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:1: ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) )
             {
             // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:1: ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) )
-            int alt178=2;
-            int LA178_0 = input.LA(1);
+            int alt183=2;
+            int LA183_0 = input.LA(1);
 
-            if ( (LA178_0==229) ) {
-                alt178=1;
+            if ( (LA183_0==229) ) {
+                alt183=1;
             }
-            else if ( (LA178_0==230) ) {
-                alt178=2;
+            else if ( (LA183_0==230) ) {
+                alt183=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 178, 0, input);
+                    new NoViableAltException("", 183, 0, input);
 
                 throw nvae;
             }
-            switch (alt178) {
+            switch (alt183) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:2: (enumLiteral_0= 'FreeForm' )
                     {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:2: (enumLiteral_0= 'FreeForm' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:4: enumLiteral_0= 'FreeForm'
                     {
-                    enumLiteral_0=(Token)match(input,229,FOLLOW_229_in_ruleContainerLayout19051); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,229,FOLLOW_229_in_ruleContainerLayout19066); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getContainerLayoutAccess().getFreeFormEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -24787,7 +24872,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8386:6: (enumLiteral_1= 'List' )
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8386:8: enumLiteral_1= 'List'
                     {
-                    enumLiteral_1=(Token)match(input,230,FOLLOW_230_in_ruleContainerLayout19068); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,230,FOLLOW_230_in_ruleContainerLayout19083); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getContainerLayoutAccess().getListEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -25258,433 +25343,433 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleAbstractNodeStyleCustomization_in_ruleAbstractCustomization9592 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEdgeStyleCustomization_in_entryRuleEdgeStyleCustomization9627 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEdgeStyleCustomization9637 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleEdgeStyleCustomization9683 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleEdgeStyleCustomization9695 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9716 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_37_in_ruleEdgeStyleCustomization9729 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9749 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleEdgeStyleCustomization9764 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEdgeStyleCustomization9776 = new BitSet(new long[]{0x0000000000008000L,0x000003FFD0000000L});
-    public static final BitSet FOLLOW_92_in_ruleEdgeStyleCustomization9789 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9801 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleEdgeStyleCustomization9822 = new BitSet(new long[]{0x0000000000008000L,0x000003FFC0000000L});
-    public static final BitSet FOLLOW_94_in_ruleEdgeStyleCustomization9837 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9849 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000007FFL});
-    public static final BitSet FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9870 = new BitSet(new long[]{0x0000000000008000L,0x000003FF80000000L});
-    public static final BitSet FOLLOW_95_in_ruleEdgeStyleCustomization9885 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9897 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000007FFL});
-    public static final BitSet FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9918 = new BitSet(new long[]{0x0000000000008000L,0x000003FF00000000L});
-    public static final BitSet FOLLOW_96_in_ruleEdgeStyleCustomization9933 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9945 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000038000000000L});
-    public static final BitSet FOLLOW_ruleEdgeRouting_in_ruleEdgeStyleCustomization9966 = new BitSet(new long[]{0x0000000000008000L,0x000003FE00000000L});
-    public static final BitSet FOLLOW_97_in_ruleEdgeStyleCustomization9981 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9993 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000006004000000L});
-    public static final BitSet FOLLOW_ruleFoldingStyle_in_ruleEdgeStyleCustomization10014 = new BitSet(new long[]{0x0000000000008000L,0x000003FC00000000L});
-    public static final BitSet FOLLOW_98_in_ruleEdgeStyleCustomization10029 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10041 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10062 = new BitSet(new long[]{0x0000002000008000L,0x000003F800000000L});
-    public static final BitSet FOLLOW_37_in_ruleEdgeStyleCustomization10075 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10095 = new BitSet(new long[]{0x0000002000008000L,0x000003F800000000L});
-    public static final BitSet FOLLOW_99_in_ruleEdgeStyleCustomization10113 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10125 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10146 = new BitSet(new long[]{0x0000002000008000L,0x000003F000000000L});
-    public static final BitSet FOLLOW_37_in_ruleEdgeStyleCustomization10159 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10179 = new BitSet(new long[]{0x0000002000008000L,0x000003F000000000L});
-    public static final BitSet FOLLOW_100_in_ruleEdgeStyleCustomization10197 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10209 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10229 = new BitSet(new long[]{0x0000000000008000L,0x000003E000000000L});
-    public static final BitSet FOLLOW_101_in_ruleEdgeStyleCustomization10244 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10256 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10276 = new BitSet(new long[]{0x0000000000008000L,0x000003C000000000L});
-    public static final BitSet FOLLOW_102_in_ruleEdgeStyleCustomization10291 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10303 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10323 = new BitSet(new long[]{0x0000000000008000L,0x0000038000000000L});
-    public static final BitSet FOLLOW_103_in_ruleEdgeStyleCustomization10338 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10350 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0xE000000000200000L});
-    public static final BitSet FOLLOW_ruleLineStyle_in_ruleEdgeStyleCustomization10371 = new BitSet(new long[]{0x0000000000008000L,0x0000030000000000L});
-    public static final BitSet FOLLOW_104_in_ruleEdgeStyleCustomization10386 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10398 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleEdgeStyleCustomization10419 = new BitSet(new long[]{0x0000000000008000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_105_in_ruleEdgeStyleCustomization10434 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10446 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001E00000000L});
-    public static final BitSet FOLLOW_ruleCenterStyle_in_ruleEdgeStyleCustomization10467 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleEdgeStyleCustomization10481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColorCustomization_in_entryRuleColorCustomization10517 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleColorCustomization10527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_ruleColorCustomization10573 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00003C0000000000L});
-    public static final BitSet FOLLOW_ruleColorUseCase_in_ruleColorCustomization10594 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleColorCustomization10606 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleColorCustomization10627 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_37_in_ruleColorCustomization10640 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleColorCustomization10660 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleColorCustomization10675 = new BitSet(new long[]{0x0000000000000000L,0x0000080004000000L});
-    public static final BitSet FOLLOW_107_in_ruleColorCustomization10693 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_90_in_ruleColorCustomization10720 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001FFFFFF800L});
-    public static final BitSet FOLLOW_ruleSystemColors_in_ruleColorCustomization10741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabelCustomization_in_entryRuleLabelCustomization10778 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLabelCustomization10788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_ruleLabelCustomization10834 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleLabelCustomization10846 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleLabelCustomization10867 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_37_in_ruleLabelCustomization10880 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleLabelCustomization10900 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleLabelCustomization10915 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleLabelCustomization10927 = new BitSet(new long[]{0x0000000000000000L,0x0010E10000000000L});
-    public static final BitSet FOLLOW_109_in_ruleLabelCustomization10940 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelCustomization10952 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleLabelCustomization10973 = new BitSet(new long[]{0x0000000000000000L,0x0010C10000000000L});
-    public static final BitSet FOLLOW_ruleLabelAlignementCustomization_in_ruleLabelCustomization10996 = new BitSet(new long[]{0x0000000000000000L,0x0000C10000000000L});
-    public static final BitSet FOLLOW_104_in_ruleLabelCustomization11010 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11022 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleEInt_in_ruleLabelCustomization11043 = new BitSet(new long[]{0x0000000000000000L,0x0000C00000000000L});
-    public static final BitSet FOLLOW_110_in_ruleLabelCustomization11058 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11070 = new BitSet(new long[]{0x0C00000000000000L,0x0000000000000000L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleFontFormat_in_ruleLabelCustomization11091 = new BitSet(new long[]{0x0000000000000000L,0x0000800000000000L});
-    public static final BitSet FOLLOW_111_in_ruleLabelCustomization11106 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11118 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001FFFFFF800L});
-    public static final BitSet FOLLOW_ruleSystemColors_in_ruleLabelCustomization11139 = new BitSet(new long[]{0x0000000000008000L,0x0009000000000000L});
-    public static final BitSet FOLLOW_112_in_ruleLabelCustomization11153 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleLabelCustomization11165 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
-    public static final BitSet FOLLOW_113_in_ruleLabelCustomization11177 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11189 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleLabelCustomization11210 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
-    public static final BitSet FOLLOW_114_in_ruleLabelCustomization11222 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11234 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleEString_in_ruleLabelCustomization11255 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleLabelCustomization11267 = new BitSet(new long[]{0x0000000000008000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_115_in_ruleLabelCustomization11282 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11294 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleLabelCustomization11315 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleLabelCustomization11329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLabelAlignementCustomization_in_entryRuleLabelAlignementCustomization11365 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLabelAlignementCustomization11375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_ruleLabelAlignementCustomization11421 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLabelAlignementCustomization11433 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x1C00000000000000L});
-    public static final BitSet FOLLOW_ruleLabelAlignment_in_ruleLabelAlignementCustomization11454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractNodeStyleCustomization_in_entryRuleAbstractNodeStyleCustomization11490 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractNodeStyleCustomization11500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContainerStyleCustomization_in_ruleAbstractNodeStyleCustomization11547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeStyleCustomization_in_ruleAbstractNodeStyleCustomization11574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContainerStyleCustomization_in_entryRuleContainerStyleCustomization11609 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleContainerStyleCustomization11619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_ruleContainerStyleCustomization11665 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleContainerStyleCustomization11677 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11698 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_37_in_ruleContainerStyleCustomization11711 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11731 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleContainerStyleCustomization11746 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleContainerStyleCustomization11758 = new BitSet(new long[]{0x0000000000008000L,0x7FC0000000000000L});
-    public static final BitSet FOLLOW_118_in_ruleContainerStyleCustomization11771 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11783 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11804 = new BitSet(new long[]{0x0000000000008000L,0x7F80000000000000L});
-    public static final BitSet FOLLOW_119_in_ruleContainerStyleCustomization11819 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11831 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11852 = new BitSet(new long[]{0x0000000000008000L,0x7F00000000000000L});
-    public static final BitSet FOLLOW_120_in_ruleContainerStyleCustomization11867 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11879 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11900 = new BitSet(new long[]{0x0000000000008000L,0x7E00000000000000L});
-    public static final BitSet FOLLOW_121_in_ruleContainerStyleCustomization11915 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11927 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11948 = new BitSet(new long[]{0x0000000000008000L,0x7C00000000000000L});
-    public static final BitSet FOLLOW_122_in_ruleContainerStyleCustomization11963 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11975 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization11996 = new BitSet(new long[]{0x0000000000008000L,0x7800000000000000L});
-    public static final BitSet FOLLOW_123_in_ruleContainerStyleCustomization12011 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization12023 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization12044 = new BitSet(new long[]{0x0000000000008000L,0x7000000000000000L});
-    public static final BitSet FOLLOW_ruleSpecificContainerStyleCustomization_in_ruleContainerStyleCustomization12067 = new BitSet(new long[]{0x0000000000008000L,0x7000000000000000L});
-    public static final BitSet FOLLOW_15_in_ruleContainerStyleCustomization12080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpecificContainerStyleCustomization_in_entryRuleSpecificContainerStyleCustomization12116 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpecificContainerStyleCustomization12126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContainerWorkspaceImageCustomization_in_ruleSpecificContainerStyleCustomization12173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFlatContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleShapeContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContainerWorkspaceImageCustomization_in_entryRuleContainerWorkspaceImageCustomization12262 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleContainerWorkspaceImageCustomization12272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_ruleContainerWorkspaceImageCustomization12318 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleContainerWorkspaceImageCustomization12330 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleEString_in_ruleContainerWorkspaceImageCustomization12351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFlatContainerStyleCustomization_in_entryRuleFlatContainerStyleCustomization12387 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFlatContainerStyleCustomization12397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_ruleFlatContainerStyleCustomization12443 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleFlatContainerStyleCustomization12455 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x01C0000000000000L});
-    public static final BitSet FOLLOW_ruleBackgroundStyle_in_ruleFlatContainerStyleCustomization12476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleShapeContainerStyleCustomization_in_entryRuleShapeContainerStyleCustomization12512 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleShapeContainerStyleCustomization12522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_ruleShapeContainerStyleCustomization12568 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleShapeContainerStyleCustomization12580 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_ruleContainerShape_in_ruleShapeContainerStyleCustomization12601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeStyleCustomization_in_entryRuleNodeStyleCustomization12637 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNodeStyleCustomization12647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_ruleNodeStyleCustomization12693 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleNodeStyleCustomization12705 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12726 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_37_in_ruleNodeStyleCustomization12739 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12759 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleNodeStyleCustomization12774 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleNodeStyleCustomization12786 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CFFL});
-    public static final BitSet FOLLOW_128_in_ruleNodeStyleCustomization12799 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12811 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12832 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CFEL});
-    public static final BitSet FOLLOW_129_in_ruleNodeStyleCustomization12847 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12859 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L,0x0200000000000000L});
-    public static final BitSet FOLLOW_ruleLabelPosition_in_ruleNodeStyleCustomization12880 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CFCL});
-    public static final BitSet FOLLOW_130_in_ruleNodeStyleCustomization12895 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12907 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12928 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CF8L});
-    public static final BitSet FOLLOW_131_in_ruleNodeStyleCustomization12943 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12955 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000003C000000L});
-    public static final BitSet FOLLOW_ruleResizeKind_in_ruleNodeStyleCustomization12976 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CF0L});
-    public static final BitSet FOLLOW_122_in_ruleNodeStyleCustomization12991 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization13003 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13024 = new BitSet(new long[]{0x0000000000008000L,0x5800000000000000L,0x0000000000000CF0L});
-    public static final BitSet FOLLOW_123_in_ruleNodeStyleCustomization13039 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization13051 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13072 = new BitSet(new long[]{0x0000000000008000L,0x5000000000000000L,0x0000000000000CF0L});
-    public static final BitSet FOLLOW_132_in_ruleNodeStyleCustomization13087 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization13099 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13120 = new BitSet(new long[]{0x0000000000008000L,0x5000000000000000L,0x0000000000000CE0L});
-    public static final BitSet FOLLOW_ruleSpecificNodeStyleCustomization_in_ruleNodeStyleCustomization13143 = new BitSet(new long[]{0x0000000000008000L,0x5000000000000000L,0x0000000000000CE0L});
-    public static final BitSet FOLLOW_15_in_ruleNodeStyleCustomization13156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpecificNodeStyleCustomization_in_entryRuleSpecificNodeStyleCustomization13192 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpecificNodeStyleCustomization13202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBundledImageCustomization_in_ruleSpecificNodeStyleCustomization13249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLozengeCustomization_in_ruleSpecificNodeStyleCustomization13276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGaugeCustomization_in_ruleSpecificNodeStyleCustomization13303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEllipseCustomization_in_ruleSpecificNodeStyleCustomization13330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeWorkspaceImageCustomization_in_ruleSpecificNodeStyleCustomization13357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSquareCustomization_in_ruleSpecificNodeStyleCustomization13384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDotCustomization_in_ruleSpecificNodeStyleCustomization13411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBundledImageCustomization_in_entryRuleBundledImageCustomization13446 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBundledImageCustomization13456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_ruleBundledImageCustomization13502 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleBundledImageCustomization13514 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000003E00000L});
-    public static final BitSet FOLLOW_ruleBundledImageShape_in_ruleBundledImageCustomization13535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLozengeCustomization_in_entryRuleLozengeCustomization13571 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLozengeCustomization13581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_133_in_ruleLozengeCustomization13627 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLozengeCustomization13639 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleLozengeCustomization13651 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
-    public static final BitSet FOLLOW_119_in_ruleLozengeCustomization13663 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLozengeCustomization13675 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13696 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_120_in_ruleLozengeCustomization13708 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleLozengeCustomization13720 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13741 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleLozengeCustomization13753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGaugeCustomization_in_entryRuleGaugeCustomization13789 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGaugeCustomization13799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_134_in_ruleGaugeCustomization13845 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleGaugeCustomization13857 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000001C0000L});
-    public static final BitSet FOLLOW_ruleAlignmentKind_in_ruleGaugeCustomization13878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEllipseCustomization_in_entryRuleEllipseCustomization13914 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEllipseCustomization13924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_135_in_ruleEllipseCustomization13970 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEllipseCustomization13982 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEllipseCustomization13994 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_136_in_ruleEllipseCustomization14006 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEllipseCustomization14018 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14039 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_137_in_ruleEllipseCustomization14051 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleEllipseCustomization14063 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14084 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleEllipseCustomization14096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNodeWorkspaceImageCustomization_in_entryRuleNodeWorkspaceImageCustomization14132 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNodeWorkspaceImageCustomization14142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_ruleNodeWorkspaceImageCustomization14188 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleNodeWorkspaceImageCustomization14200 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleEString_in_ruleNodeWorkspaceImageCustomization14221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSquareCustomization_in_entryRuleSquareCustomization14257 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSquareCustomization14267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_138_in_ruleSquareCustomization14313 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleSquareCustomization14325 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleSquareCustomization14337 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
-    public static final BitSet FOLLOW_119_in_ruleSquareCustomization14349 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleSquareCustomization14361 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleEInt_in_ruleSquareCustomization14382 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_120_in_ruleSquareCustomization14394 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleSquareCustomization14406 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleEInt_in_ruleSquareCustomization14427 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleSquareCustomization14439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDotCustomization_in_entryRuleDotCustomization14475 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDotCustomization14485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_139_in_ruleDotCustomization14531 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleDotCustomization14543 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleDotCustomization14564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStyleCustomizationReuse_in_entryRuleStyleCustomizationReuse14600 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStyleCustomizationReuse14610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleStyleCustomizationReuse14656 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14677 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_37_in_ruleStyleCustomizationReuse14690 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14710 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_140_in_ruleStyleCustomizationReuse14725 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14746 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_37_in_ruleStyleCustomizationReuse14759 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14779 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_ruleCustomizationExpression_in_entryRuleCustomizationExpression14818 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCustomizationExpression14828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractComputableElement_in_ruleCustomizationExpression14883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractClass_in_entryRuleAbstractClass14919 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractClass14929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLocalClass2_in_ruleAbstractClass14976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalClass_in_ruleAbstractClass15003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLocalClass2_in_entryRuleLocalClass215038 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLocalClass215048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleLocalClass215105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalClass_in_entryRuleExternalClass15141 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExternalClass15151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleExternalClass15197 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleExternalClass15220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractAssociation2_in_entryRuleAbstractAssociation215256 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractAssociation215266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalAssociation_in_ruleAbstractAssociation215313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLocalAssociation_in_ruleAbstractAssociation215340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLocalAssociation_in_entryRuleLocalAssociation15375 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLocalAssociation15385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleLocalAssociation15442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalAssociation_in_entryRuleExternalAssociation15478 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExternalAssociation15488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleExternalAssociation15534 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleExternalAssociation15557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLocalAttribute_in_entryRuleLocalAttribute15595 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLocalAttribute15605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleLocalAttribute15662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalAttribute_in_entryRuleExternalAttribute15698 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExternalAttribute15708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleExternalAttribute15754 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleExternalAttribute15777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression15813 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpression15823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression15879 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_141_in_ruleExpression15892 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression15913 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ruleAbstractComputableElement_in_entryRuleAbstractComputableElement15953 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractComputableElement15963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJavaElement_in_ruleAbstractComputableElement16010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringElement_in_ruleAbstractComputableElement16037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement16072 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionElement16082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForeignExpressionElement_in_ruleExpressionElement16129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringElement_in_ruleExpressionElement16156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleForeignExpressionElement_in_entryRuleForeignExpressionElement16191 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleForeignExpressionElement16201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJavaElement_in_ruleForeignExpressionElement16248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDomainElement_in_ruleForeignExpressionElement16275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJavaElement_in_entryRuleJavaElement16310 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJavaElement16320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_142_in_ruleJavaElement16366 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleJavaElement16387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDomainElement_in_entryRuleDomainElement16423 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDomainElement16433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleDomainElement16490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringElement_in_entryRuleStringElement16526 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringElement16536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringElement16587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEString_in_entryRuleEString16629 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEString16640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEString16680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEString16706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN16752 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFQN16763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN16803 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_143_in_ruleFQN16822 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN16843 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_ruleEBoolean_in_entryRuleEBoolean16892 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEBoolean16903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_144_in_ruleEBoolean16941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_145_in_ruleEBoolean16960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt17001 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEInt17012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleEInt17051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_146_in_ruleAlignmentKind17109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_147_in_ruleAlignmentKind17126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_148_in_ruleAlignmentKind17143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_149_in_ruleBundledImageShape17188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_150_in_ruleBundledImageShape17205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_151_in_ruleBundledImageShape17222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_152_in_ruleBundledImageShape17239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_153_in_ruleBundledImageShape17256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_154_in_ruleResizeKind17301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_155_in_ruleResizeKind17318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_156_in_ruleResizeKind17335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_157_in_ruleResizeKind17352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_158_in_ruleContainerShape17396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleFontFormat17440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleFontFormat17457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_159_in_ruleFontFormat17474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_160_in_ruleFontFormat17491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_161_in_ruleCenterStyle17536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_162_in_ruleCenterStyle17553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_163_in_ruleCenterStyle17570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_164_in_ruleCenterStyle17587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_154_in_ruleFoldingStyle17632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_165_in_ruleFoldingStyle17649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_166_in_ruleFoldingStyle17666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_167_in_ruleEdgeRouting17711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_168_in_ruleEdgeRouting17728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_169_in_ruleEdgeRouting17745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_170_in_ruleColorUseCase17790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_171_in_ruleColorUseCase17807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_172_in_ruleColorUseCase17824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_173_in_ruleColorUseCase17841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_174_in_ruleNode_Form17886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_175_in_ruleNode_Form17903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_176_in_ruleNode_Form17920 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_177_in_ruleNode_Form17937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_178_in_ruleNode_Form17954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_179_in_ruleNode_Form17971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_180_in_ruleNode_Form17988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_181_in_ruleNode_Form18005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_182_in_ruleBackgroundStyle18050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_183_in_ruleBackgroundStyle18067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_184_in_ruleBackgroundStyle18084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_185_in_ruleLabelPosition18129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_ruleLabelPosition18146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_186_in_ruleLabelAlignment18191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_187_in_ruleLabelAlignment18208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_188_in_ruleLabelAlignment18225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_189_in_ruleLineStyle18270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_190_in_ruleLineStyle18287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_149_in_ruleLineStyle18304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_191_in_ruleLineStyle18321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_192_in_ruleEdgeArrows18366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_193_in_ruleEdgeArrows18383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_194_in_ruleEdgeArrows18400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_195_in_ruleEdgeArrows18417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_196_in_ruleEdgeArrows18434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_197_in_ruleEdgeArrows18451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_198_in_ruleEdgeArrows18468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_199_in_ruleEdgeArrows18485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_200_in_ruleEdgeArrows18502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_201_in_ruleEdgeArrows18519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_202_in_ruleEdgeArrows18536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_203_in_ruleSystemColors18581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_204_in_ruleSystemColors18598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_205_in_ruleSystemColors18615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_206_in_ruleSystemColors18632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_207_in_ruleSystemColors18649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_208_in_ruleSystemColors18666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_209_in_ruleSystemColors18683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_210_in_ruleSystemColors18700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_211_in_ruleSystemColors18717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_212_in_ruleSystemColors18734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_213_in_ruleSystemColors18751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_214_in_ruleSystemColors18768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_215_in_ruleSystemColors18785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_216_in_ruleSystemColors18802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_217_in_ruleSystemColors18819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_218_in_ruleSystemColors18836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_219_in_ruleSystemColors18853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_220_in_ruleSystemColors18870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_221_in_ruleSystemColors18887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_222_in_ruleSystemColors18904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_223_in_ruleSystemColors18921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_224_in_ruleSystemColors18938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_225_in_ruleSystemColors18955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_226_in_ruleSystemColors18972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_227_in_ruleSystemColors18989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_228_in_ruleSystemColors19006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_229_in_ruleContainerLayout19051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_230_in_ruleContainerLayout19068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleEdgeStyleCustomization9683 = new BitSet(new long[]{0x0000000000004000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleEdgeStyleCustomization9696 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9717 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_37_in_ruleEdgeStyleCustomization9730 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization9750 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleEdgeStyleCustomization9765 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleEdgeStyleCustomization9779 = new BitSet(new long[]{0x0000000000008000L,0x000003FFD0000000L});
+    public static final BitSet FOLLOW_92_in_ruleEdgeStyleCustomization9792 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9804 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleEdgeStyleCustomization9825 = new BitSet(new long[]{0x0000000000008000L,0x000003FFC0000000L});
+    public static final BitSet FOLLOW_94_in_ruleEdgeStyleCustomization9840 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9852 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000007FFL});
+    public static final BitSet FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9873 = new BitSet(new long[]{0x0000000000008000L,0x000003FF80000000L});
+    public static final BitSet FOLLOW_95_in_ruleEdgeStyleCustomization9888 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9900 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000007FFL});
+    public static final BitSet FOLLOW_ruleEdgeArrows_in_ruleEdgeStyleCustomization9921 = new BitSet(new long[]{0x0000000000008000L,0x000003FF00000000L});
+    public static final BitSet FOLLOW_96_in_ruleEdgeStyleCustomization9936 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9948 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000038000000000L});
+    public static final BitSet FOLLOW_ruleEdgeRouting_in_ruleEdgeStyleCustomization9969 = new BitSet(new long[]{0x0000000000008000L,0x000003FE00000000L});
+    public static final BitSet FOLLOW_97_in_ruleEdgeStyleCustomization9984 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization9996 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000006004000000L});
+    public static final BitSet FOLLOW_ruleFoldingStyle_in_ruleEdgeStyleCustomization10017 = new BitSet(new long[]{0x0000000000008000L,0x000003FC00000000L});
+    public static final BitSet FOLLOW_98_in_ruleEdgeStyleCustomization10032 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10044 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10065 = new BitSet(new long[]{0x0000002000008000L,0x000003F800000000L});
+    public static final BitSet FOLLOW_37_in_ruleEdgeStyleCustomization10078 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10098 = new BitSet(new long[]{0x0000002000008000L,0x000003F800000000L});
+    public static final BitSet FOLLOW_99_in_ruleEdgeStyleCustomization10116 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10128 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10149 = new BitSet(new long[]{0x0000002000008000L,0x000003F000000000L});
+    public static final BitSet FOLLOW_37_in_ruleEdgeStyleCustomization10162 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10182 = new BitSet(new long[]{0x0000002000008000L,0x000003F000000000L});
+    public static final BitSet FOLLOW_100_in_ruleEdgeStyleCustomization10200 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10212 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10232 = new BitSet(new long[]{0x0000000000008000L,0x000003E000000000L});
+    public static final BitSet FOLLOW_101_in_ruleEdgeStyleCustomization10247 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10259 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10279 = new BitSet(new long[]{0x0000000000008000L,0x000003C000000000L});
+    public static final BitSet FOLLOW_102_in_ruleEdgeStyleCustomization10294 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10306 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEdgeStyleCustomization10326 = new BitSet(new long[]{0x0000000000008000L,0x0000038000000000L});
+    public static final BitSet FOLLOW_103_in_ruleEdgeStyleCustomization10341 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10353 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0xE000000000200000L});
+    public static final BitSet FOLLOW_ruleLineStyle_in_ruleEdgeStyleCustomization10374 = new BitSet(new long[]{0x0000000000008000L,0x0000030000000000L});
+    public static final BitSet FOLLOW_104_in_ruleEdgeStyleCustomization10389 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10401 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleEdgeStyleCustomization10422 = new BitSet(new long[]{0x0000000000008000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_105_in_ruleEdgeStyleCustomization10437 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEdgeStyleCustomization10449 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000001E00000000L});
+    public static final BitSet FOLLOW_ruleCenterStyle_in_ruleEdgeStyleCustomization10470 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEdgeStyleCustomization10484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColorCustomization_in_entryRuleColorCustomization10520 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleColorCustomization10530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_106_in_ruleColorCustomization10576 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00003C0000000000L});
+    public static final BitSet FOLLOW_ruleColorUseCase_in_ruleColorCustomization10597 = new BitSet(new long[]{0x0000000000000000L,0x0000080005000000L});
+    public static final BitSet FOLLOW_88_in_ruleColorCustomization10610 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleColorCustomization10631 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_37_in_ruleColorCustomization10644 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleColorCustomization10664 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleColorCustomization10679 = new BitSet(new long[]{0x0000000000000000L,0x0000080004000000L});
+    public static final BitSet FOLLOW_107_in_ruleColorCustomization10699 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_90_in_ruleColorCustomization10726 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001FFFFFF800L});
+    public static final BitSet FOLLOW_ruleSystemColors_in_ruleColorCustomization10747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabelCustomization_in_entryRuleLabelCustomization10784 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLabelCustomization10794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_ruleLabelCustomization10840 = new BitSet(new long[]{0x0000000000004000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleLabelCustomization10853 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleLabelCustomization10874 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_37_in_ruleLabelCustomization10887 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleLabelCustomization10907 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleLabelCustomization10922 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleLabelCustomization10936 = new BitSet(new long[]{0x0000000000000000L,0x0010E10000000000L});
+    public static final BitSet FOLLOW_109_in_ruleLabelCustomization10949 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelCustomization10961 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleLabelCustomization10982 = new BitSet(new long[]{0x0000000000000000L,0x0010C10000000000L});
+    public static final BitSet FOLLOW_ruleLabelAlignementCustomization_in_ruleLabelCustomization11005 = new BitSet(new long[]{0x0000000000000000L,0x0000C10000000000L});
+    public static final BitSet FOLLOW_104_in_ruleLabelCustomization11019 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11031 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleEInt_in_ruleLabelCustomization11052 = new BitSet(new long[]{0x0000000000000000L,0x0000C00000000000L});
+    public static final BitSet FOLLOW_110_in_ruleLabelCustomization11067 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11079 = new BitSet(new long[]{0x0C00000000000000L,0x0000000000000000L,0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleFontFormat_in_ruleLabelCustomization11100 = new BitSet(new long[]{0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_111_in_ruleLabelCustomization11115 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11127 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001FFFFFF800L});
+    public static final BitSet FOLLOW_ruleSystemColors_in_ruleLabelCustomization11148 = new BitSet(new long[]{0x0000000000008000L,0x0009000000000000L});
+    public static final BitSet FOLLOW_112_in_ruleLabelCustomization11162 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleLabelCustomization11174 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_113_in_ruleLabelCustomization11186 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11198 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleLabelCustomization11219 = new BitSet(new long[]{0x0000000000000000L,0x0004000000000000L});
+    public static final BitSet FOLLOW_114_in_ruleLabelCustomization11231 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11243 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleEString_in_ruleLabelCustomization11264 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleLabelCustomization11276 = new BitSet(new long[]{0x0000000000008000L,0x0008000000000000L});
+    public static final BitSet FOLLOW_115_in_ruleLabelCustomization11291 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelCustomization11303 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleLabelCustomization11324 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleLabelCustomization11338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLabelAlignementCustomization_in_entryRuleLabelAlignementCustomization11374 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLabelAlignementCustomization11384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_ruleLabelAlignementCustomization11430 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLabelAlignementCustomization11442 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x1C00000000000000L});
+    public static final BitSet FOLLOW_ruleLabelAlignment_in_ruleLabelAlignementCustomization11463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractNodeStyleCustomization_in_entryRuleAbstractNodeStyleCustomization11499 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractNodeStyleCustomization11509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContainerStyleCustomization_in_ruleAbstractNodeStyleCustomization11556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeStyleCustomization_in_ruleAbstractNodeStyleCustomization11583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContainerStyleCustomization_in_entryRuleContainerStyleCustomization11618 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleContainerStyleCustomization11628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_ruleContainerStyleCustomization11674 = new BitSet(new long[]{0x0000000000004000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleContainerStyleCustomization11687 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11708 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_37_in_ruleContainerStyleCustomization11721 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleContainerStyleCustomization11741 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleContainerStyleCustomization11756 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleContainerStyleCustomization11770 = new BitSet(new long[]{0x0000000000008000L,0x7FC0000000000000L});
+    public static final BitSet FOLLOW_118_in_ruleContainerStyleCustomization11783 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11795 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11816 = new BitSet(new long[]{0x0000000000008000L,0x7F80000000000000L});
+    public static final BitSet FOLLOW_119_in_ruleContainerStyleCustomization11831 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11843 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11864 = new BitSet(new long[]{0x0000000000008000L,0x7F00000000000000L});
+    public static final BitSet FOLLOW_120_in_ruleContainerStyleCustomization11879 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11891 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleEInt_in_ruleContainerStyleCustomization11912 = new BitSet(new long[]{0x0000000000008000L,0x7E00000000000000L});
+    public static final BitSet FOLLOW_121_in_ruleContainerStyleCustomization11927 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11939 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleContainerStyleCustomization11960 = new BitSet(new long[]{0x0000000000008000L,0x7C00000000000000L});
+    public static final BitSet FOLLOW_122_in_ruleContainerStyleCustomization11975 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization11987 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization12008 = new BitSet(new long[]{0x0000000000008000L,0x7800000000000000L});
+    public static final BitSet FOLLOW_123_in_ruleContainerStyleCustomization12023 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleContainerStyleCustomization12035 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleContainerStyleCustomization12056 = new BitSet(new long[]{0x0000000000008000L,0x7000000000000000L});
+    public static final BitSet FOLLOW_ruleSpecificContainerStyleCustomization_in_ruleContainerStyleCustomization12079 = new BitSet(new long[]{0x0000000000008000L,0x7000000000000000L});
+    public static final BitSet FOLLOW_15_in_ruleContainerStyleCustomization12092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpecificContainerStyleCustomization_in_entryRuleSpecificContainerStyleCustomization12128 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpecificContainerStyleCustomization12138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContainerWorkspaceImageCustomization_in_ruleSpecificContainerStyleCustomization12185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFlatContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleShapeContainerStyleCustomization_in_ruleSpecificContainerStyleCustomization12239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContainerWorkspaceImageCustomization_in_entryRuleContainerWorkspaceImageCustomization12274 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleContainerWorkspaceImageCustomization12284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_ruleContainerWorkspaceImageCustomization12330 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleContainerWorkspaceImageCustomization12342 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleEString_in_ruleContainerWorkspaceImageCustomization12363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFlatContainerStyleCustomization_in_entryRuleFlatContainerStyleCustomization12399 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFlatContainerStyleCustomization12409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_ruleFlatContainerStyleCustomization12455 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleFlatContainerStyleCustomization12467 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x01C0000000000000L});
+    public static final BitSet FOLLOW_ruleBackgroundStyle_in_ruleFlatContainerStyleCustomization12488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleShapeContainerStyleCustomization_in_entryRuleShapeContainerStyleCustomization12524 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleShapeContainerStyleCustomization12534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_ruleShapeContainerStyleCustomization12580 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleShapeContainerStyleCustomization12592 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_ruleContainerShape_in_ruleShapeContainerStyleCustomization12613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeStyleCustomization_in_entryRuleNodeStyleCustomization12649 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNodeStyleCustomization12659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_ruleNodeStyleCustomization12705 = new BitSet(new long[]{0x0000000000004000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleNodeStyleCustomization12718 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12739 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_37_in_ruleNodeStyleCustomization12752 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleNodeStyleCustomization12772 = new BitSet(new long[]{0x0000002000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleNodeStyleCustomization12787 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleNodeStyleCustomization12801 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CFFL});
+    public static final BitSet FOLLOW_128_in_ruleNodeStyleCustomization12814 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12826 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12847 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CFEL});
+    public static final BitSet FOLLOW_129_in_ruleNodeStyleCustomization12862 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12874 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L,0x0200000000000000L});
+    public static final BitSet FOLLOW_ruleLabelPosition_in_ruleNodeStyleCustomization12895 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CFCL});
+    public static final BitSet FOLLOW_130_in_ruleNodeStyleCustomization12910 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12922 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_ruleNodeStyleCustomization12943 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CF8L});
+    public static final BitSet FOLLOW_131_in_ruleNodeStyleCustomization12958 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization12970 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000003C000000L});
+    public static final BitSet FOLLOW_ruleResizeKind_in_ruleNodeStyleCustomization12991 = new BitSet(new long[]{0x0000000000008000L,0x5C00000000000000L,0x0000000000000CF0L});
+    public static final BitSet FOLLOW_122_in_ruleNodeStyleCustomization13006 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization13018 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13039 = new BitSet(new long[]{0x0000000000008000L,0x5800000000000000L,0x0000000000000CF0L});
+    public static final BitSet FOLLOW_123_in_ruleNodeStyleCustomization13054 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization13066 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13087 = new BitSet(new long[]{0x0000000000008000L,0x5000000000000000L,0x0000000000000CF0L});
+    public static final BitSet FOLLOW_132_in_ruleNodeStyleCustomization13102 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeStyleCustomization13114 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleNodeStyleCustomization13135 = new BitSet(new long[]{0x0000000000008000L,0x5000000000000000L,0x0000000000000CE0L});
+    public static final BitSet FOLLOW_ruleSpecificNodeStyleCustomization_in_ruleNodeStyleCustomization13158 = new BitSet(new long[]{0x0000000000008000L,0x5000000000000000L,0x0000000000000CE0L});
+    public static final BitSet FOLLOW_15_in_ruleNodeStyleCustomization13171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpecificNodeStyleCustomization_in_entryRuleSpecificNodeStyleCustomization13207 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpecificNodeStyleCustomization13217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBundledImageCustomization_in_ruleSpecificNodeStyleCustomization13264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLozengeCustomization_in_ruleSpecificNodeStyleCustomization13291 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGaugeCustomization_in_ruleSpecificNodeStyleCustomization13318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEllipseCustomization_in_ruleSpecificNodeStyleCustomization13345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeWorkspaceImageCustomization_in_ruleSpecificNodeStyleCustomization13372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSquareCustomization_in_ruleSpecificNodeStyleCustomization13399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDotCustomization_in_ruleSpecificNodeStyleCustomization13426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBundledImageCustomization_in_entryRuleBundledImageCustomization13461 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBundledImageCustomization13471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_ruleBundledImageCustomization13517 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleBundledImageCustomization13529 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000003E00000L});
+    public static final BitSet FOLLOW_ruleBundledImageShape_in_ruleBundledImageCustomization13550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLozengeCustomization_in_entryRuleLozengeCustomization13586 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLozengeCustomization13596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_133_in_ruleLozengeCustomization13642 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLozengeCustomization13654 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleLozengeCustomization13666 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_119_in_ruleLozengeCustomization13678 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLozengeCustomization13690 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13711 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_120_in_ruleLozengeCustomization13723 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleLozengeCustomization13735 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleLozengeCustomization13756 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleLozengeCustomization13768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGaugeCustomization_in_entryRuleGaugeCustomization13804 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGaugeCustomization13814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_134_in_ruleGaugeCustomization13860 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleGaugeCustomization13872 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000001C0000L});
+    public static final BitSet FOLLOW_ruleAlignmentKind_in_ruleGaugeCustomization13893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEllipseCustomization_in_entryRuleEllipseCustomization13929 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEllipseCustomization13939 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_135_in_ruleEllipseCustomization13985 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEllipseCustomization13997 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleEllipseCustomization14009 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_136_in_ruleEllipseCustomization14021 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEllipseCustomization14033 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14054 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_137_in_ruleEllipseCustomization14066 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleEllipseCustomization14078 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleEllipseCustomization14099 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEllipseCustomization14111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNodeWorkspaceImageCustomization_in_entryRuleNodeWorkspaceImageCustomization14147 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNodeWorkspaceImageCustomization14157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_ruleNodeWorkspaceImageCustomization14203 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleNodeWorkspaceImageCustomization14215 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleEString_in_ruleNodeWorkspaceImageCustomization14236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSquareCustomization_in_entryRuleSquareCustomization14272 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSquareCustomization14282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_138_in_ruleSquareCustomization14328 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleSquareCustomization14340 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleSquareCustomization14352 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_119_in_ruleSquareCustomization14364 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleSquareCustomization14376 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleEInt_in_ruleSquareCustomization14397 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_120_in_ruleSquareCustomization14409 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleSquareCustomization14421 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleEInt_in_ruleSquareCustomization14442 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleSquareCustomization14454 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDotCustomization_in_entryRuleDotCustomization14490 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDotCustomization14500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_139_in_ruleDotCustomization14546 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleDotCustomization14558 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_ruleDotCustomization14579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStyleCustomizationReuse_in_entryRuleStyleCustomizationReuse14615 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStyleCustomizationReuse14625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleStyleCustomizationReuse14671 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14692 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_37_in_ruleStyleCustomizationReuse14705 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14725 = new BitSet(new long[]{0x0000002000000000L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_140_in_ruleStyleCustomizationReuse14740 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14761 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_37_in_ruleStyleCustomizationReuse14774 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStyleCustomizationReuse14794 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_ruleCustomizationExpression_in_entryRuleCustomizationExpression14833 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCustomizationExpression14843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractComputableElement_in_ruleCustomizationExpression14898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractClass_in_entryRuleAbstractClass14934 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractClass14944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLocalClass2_in_ruleAbstractClass14991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalClass_in_ruleAbstractClass15018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLocalClass2_in_entryRuleLocalClass215053 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLocalClass215063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleLocalClass215120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalClass_in_entryRuleExternalClass15156 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExternalClass15166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleExternalClass15212 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleExternalClass15235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractAssociation2_in_entryRuleAbstractAssociation215271 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractAssociation215281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalAssociation_in_ruleAbstractAssociation215328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLocalAssociation_in_ruleAbstractAssociation215355 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLocalAssociation_in_entryRuleLocalAssociation15390 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLocalAssociation15400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleLocalAssociation15457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalAssociation_in_entryRuleExternalAssociation15493 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExternalAssociation15503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleExternalAssociation15549 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleExternalAssociation15572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLocalAttribute_in_entryRuleLocalAttribute15610 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLocalAttribute15620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleLocalAttribute15677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalAttribute_in_entryRuleExternalAttribute15713 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExternalAttribute15723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleExternalAttribute15769 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleExternalAttribute15792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression15828 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpression15838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression15894 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_141_in_ruleExpression15907 = new BitSet(new long[]{0x0000000000000030L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleExpressionElement_in_ruleExpression15928 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_ruleAbstractComputableElement_in_entryRuleAbstractComputableElement15968 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractComputableElement15978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJavaElement_in_ruleAbstractComputableElement16025 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringElement_in_ruleAbstractComputableElement16052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement16087 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionElement16097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForeignExpressionElement_in_ruleExpressionElement16144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringElement_in_ruleExpressionElement16171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleForeignExpressionElement_in_entryRuleForeignExpressionElement16206 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleForeignExpressionElement16216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJavaElement_in_ruleForeignExpressionElement16263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDomainElement_in_ruleForeignExpressionElement16290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJavaElement_in_entryRuleJavaElement16325 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJavaElement16335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_142_in_ruleJavaElement16381 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleJavaElement16402 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDomainElement_in_entryRuleDomainElement16438 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDomainElement16448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleDomainElement16505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringElement_in_entryRuleStringElement16541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringElement16551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringElement16602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEString_in_entryRuleEString16644 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEString16655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEString16695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEString16721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN16767 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFQN16778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN16818 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_143_in_ruleFQN16837 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN16858 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_ruleEBoolean_in_entryRuleEBoolean16907 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEBoolean16918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_144_in_ruleEBoolean16956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_145_in_ruleEBoolean16975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt17016 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEInt17027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleEInt17066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_146_in_ruleAlignmentKind17124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_147_in_ruleAlignmentKind17141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_148_in_ruleAlignmentKind17158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_ruleBundledImageShape17203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_150_in_ruleBundledImageShape17220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_151_in_ruleBundledImageShape17237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_152_in_ruleBundledImageShape17254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_153_in_ruleBundledImageShape17271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_ruleResizeKind17316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_155_in_ruleResizeKind17333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_156_in_ruleResizeKind17350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_157_in_ruleResizeKind17367 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_158_in_ruleContainerShape17411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleFontFormat17455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleFontFormat17472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_159_in_ruleFontFormat17489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_160_in_ruleFontFormat17506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_161_in_ruleCenterStyle17551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_162_in_ruleCenterStyle17568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_163_in_ruleCenterStyle17585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_164_in_ruleCenterStyle17602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_154_in_ruleFoldingStyle17647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_165_in_ruleFoldingStyle17664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_166_in_ruleFoldingStyle17681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_167_in_ruleEdgeRouting17726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_168_in_ruleEdgeRouting17743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_169_in_ruleEdgeRouting17760 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_170_in_ruleColorUseCase17805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_171_in_ruleColorUseCase17822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_172_in_ruleColorUseCase17839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_173_in_ruleColorUseCase17856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_174_in_ruleNode_Form17901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_175_in_ruleNode_Form17918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_176_in_ruleNode_Form17935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_177_in_ruleNode_Form17952 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_178_in_ruleNode_Form17969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_179_in_ruleNode_Form17986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_180_in_ruleNode_Form18003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_181_in_ruleNode_Form18020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_182_in_ruleBackgroundStyle18065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_183_in_ruleBackgroundStyle18082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_184_in_ruleBackgroundStyle18099 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_185_in_ruleLabelPosition18144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_ruleLabelPosition18161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_186_in_ruleLabelAlignment18206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_187_in_ruleLabelAlignment18223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_188_in_ruleLabelAlignment18240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_189_in_ruleLineStyle18285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_190_in_ruleLineStyle18302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_149_in_ruleLineStyle18319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_191_in_ruleLineStyle18336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_192_in_ruleEdgeArrows18381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_193_in_ruleEdgeArrows18398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_194_in_ruleEdgeArrows18415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_195_in_ruleEdgeArrows18432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_196_in_ruleEdgeArrows18449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_197_in_ruleEdgeArrows18466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_198_in_ruleEdgeArrows18483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_199_in_ruleEdgeArrows18500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_200_in_ruleEdgeArrows18517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_201_in_ruleEdgeArrows18534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_202_in_ruleEdgeArrows18551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_203_in_ruleSystemColors18596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_204_in_ruleSystemColors18613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_205_in_ruleSystemColors18630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_206_in_ruleSystemColors18647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_207_in_ruleSystemColors18664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_208_in_ruleSystemColors18681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_209_in_ruleSystemColors18698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_210_in_ruleSystemColors18715 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_211_in_ruleSystemColors18732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_212_in_ruleSystemColors18749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_213_in_ruleSystemColors18766 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_214_in_ruleSystemColors18783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_215_in_ruleSystemColors18800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_216_in_ruleSystemColors18817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_217_in_ruleSystemColors18834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_218_in_ruleSystemColors18851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_219_in_ruleSystemColors18868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_220_in_ruleSystemColors18885 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_221_in_ruleSystemColors18902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_222_in_ruleSystemColors18919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_223_in_ruleSystemColors18936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_224_in_ruleSystemColors18953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_225_in_ruleSystemColors18970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_226_in_ruleSystemColors18987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_227_in_ruleSystemColors19004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_228_in_ruleSystemColors19021 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_229_in_ruleContainerLayout19066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_230_in_ruleContainerLayout19083 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -18,10 +18,12 @@ import org.eclipse.xtext.conversion.ValueConverterException;
 import org.eclipse.xtext.conversion.impl.AbstractNullSafeConverter;
 import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal Abka
  *
  */
 public class CommonValueConverter extends Ecore2XtextTerminalConverters{
@@ -93,6 +95,32 @@ public class CommonValueConverter extends Ecore2XtextTerminalConverters{
 			public String toString(String value) throws ValueConverterException {
 				
 				if (value != null && !value.startsWith("\"") && !value.endsWith("\""))
+					value = "\"" + value + "\"";
+				
+				return value;
+			}
+			
+		};
+	}
+	
+	@ValueConverter(rule = "EString")
+	public IValueConverter<String> getEStringConverter(){
+		return new IValueConverter<String>(){
+
+			@Override
+			public String toValue(String string, INode node)
+					throws ValueConverterException {
+				
+				if (string != null && string.startsWith("\"") && string.endsWith("\""))
+					string = string.substring(1, string.length() - 1);
+				
+				return string;
+			}
+
+			@Override
+			public String toString(String value) throws ValueConverterException {
+				
+				if (value != null && value.contains(" "))
 					value = "\"" + value + "\"";
 				
 				return value;
