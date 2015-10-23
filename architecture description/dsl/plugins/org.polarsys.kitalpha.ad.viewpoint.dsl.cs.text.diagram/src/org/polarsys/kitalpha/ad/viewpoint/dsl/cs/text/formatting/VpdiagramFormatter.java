@@ -127,49 +127,49 @@ public class VpdiagramFormatter extends AbstractDeclarativeFormatter {
 		}
 
 		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getEdgeKeyword_1());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getOverAllEdgesKeyword_6_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getSourceKeyword_7_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getTargetKeyword_8_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getRoutingKeyword_9_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getFoldingKeyword_10_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getBeginLabelStyleDescriptionKeyword_13_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getCenterSourceMappingsKeyword_11_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getCenterTargetMappingsKeyword_12_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getCenterLabelStyleDescriptionKeyword_14_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionKeyword_15_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getLineStyleKeyword_16_0());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionAssignment_15_2());
-		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getSizeKeyword_17_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getOverAllEdgesKeyword_4_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getSourceKeyword_5_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getTargetKeyword_6_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getRoutingKeyword_7_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getFoldingKeyword_8_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getBeginLabelStyleDescriptionKeyword_11_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getCenterSourceMappingsKeyword_9_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getCenterTargetMappingsKeyword_10_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getCenterLabelStyleDescriptionKeyword_12_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionKeyword_13_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getLineStyleKeyword_14_0());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getEndLabelStyleDescriptionAssignment_13_2());
+		c.setLinewrap().before(f.getEdgeStyleCustomizationAccess().getSizeKeyword_15_0());
 		
 		
 		c.setLinewrap().before(f.getColorCustomizationAccess().getPaintKeyword_1());
 		
-		c.setLinewrap().before(f.getLabelCustomizationAccess().getOverAllLabelsKeyword_6_0());
+		c.setLinewrap().before(f.getLabelCustomizationAccess().getOverAllLabelsKeyword_4_0());
 		c.setLinewrap().before(f.getLabelAlignementCustomizationAccess().getAlignmentKeyword_1());
-		c.setLinewrap().before(f.getLabelCustomizationAccess().getSizeKeyword_8_0());
-		c.setLinewrap().before(f.getLabelCustomizationAccess().getFormatKeyword_9_0());
-		c.setLinewrap().before(f.getLabelCustomizationAccess().getColorKeyword_10_0());
-		c.setLinewrap().before(f.getLabelCustomizationAccess().getIconKeyword_11_0());
-		c.setLinewrap().before(f.getLabelCustomizationAccess().getPathKeyword_11_5());
+		c.setLinewrap().before(f.getLabelCustomizationAccess().getSizeKeyword_6_0());
+		c.setLinewrap().before(f.getLabelCustomizationAccess().getFormatKeyword_7_0());
+		c.setLinewrap().before(f.getLabelCustomizationAccess().getColorKeyword_8_0());
+		c.setLinewrap().before(f.getLabelCustomizationAccess().getIconKeyword_9_0());
+		c.setLinewrap().before(f.getLabelCustomizationAccess().getPathKeyword_9_5());
 		
-		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getOverAllContainersKeyword_6_0());
-		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getWidthKeyword_7_0());
-		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getHeightKeyword_8_0());
-		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getRoundCornerKeyword_9_0());
-		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getTooltipExpressionKeyword_10_0());
-		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getBorderDimensionKeyword_11_0());
+		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getOverAllContainersKeyword_4_0());
+		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getWidthKeyword_5_0());
+		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getHeightKeyword_6_0());
+		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getRoundCornerKeyword_7_0());
+		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getTooltipExpressionKeyword_8_0());
+		c.setLinewrap().before(f.getContainerStyleCustomizationAccess().getBorderDimensionKeyword_9_0());
 		c.setLinewrap().before(f.getContainerWorkspaceImageCustomizationAccess().getWorkspaceKeyword_1());
 		c.setLinewrap().before(f.getFlatContainerStyleCustomizationAccess().getBackgroundKeyword_1());
 		c.setLinewrap().before(f.getShapeContainerStyleCustomizationAccess().getShapeKeyword_1());
 
 		
-		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getOverAllNodesKeyword_6_0());
-		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getLabelPositionKeyword_7_0());
-		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getHideLabelKeyword_8_0());
-		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getResizeKindKeyword_9_0());
-		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getTooltipExpressionKeyword_10_0());
-		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getBorderDimensionKeyword_11_0());
-		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getSizeDimensionKeyword_12_0());
+		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getOverAllNodesKeyword_4_0());
+		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getLabelPositionKeyword_5_0());
+		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getHideLabelKeyword_6_0());
+		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getResizeKindKeyword_7_0());
+		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getTooltipExpressionKeyword_8_0());
+		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getBorderDimensionKeyword_9_0());
+		c.setLinewrap().before(f.getNodeStyleCustomizationAccess().getSizeDimensionKeyword_10_0());
 		c.setLinewrap().before(f.getBundledImageCustomizationAccess().getShapeKeyword_1());
 		c.setLinewrap().before(f.getLozengeCustomizationAccess().getLozengeDimensionKeyword_1());
 		c.setLinewrap().before(f.getLozengeCustomizationAccess().getWidthKeyword_4());

@@ -3117,105 +3117,106 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cAppliedOnAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final CrossReference cAppliedOnEdgeStyleDescriptionCrossReference_3_0_0 = (CrossReference)cAppliedOnAssignment_3_0.eContents().get(0);
-		private final RuleCall cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1 = (RuleCall)cAppliedOnEdgeStyleDescriptionCrossReference_3_0_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cAppliedOnAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final CrossReference cAppliedOnEdgeStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
-		private final RuleCall cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnEdgeStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Assignment cAppliedOnAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final CrossReference cAppliedOnEdgeStyleDescriptionCrossReference_2_1_0_0 = (CrossReference)cAppliedOnAssignment_2_1_0.eContents().get(0);
+		private final RuleCall cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1 = (RuleCall)cAppliedOnEdgeStyleDescriptionCrossReference_2_1_0_0.eContents().get(1);
+		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_1_0 = (Keyword)cGroup_2_1_1.eContents().get(0);
+		private final Assignment cAppliedOnAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
+		private final CrossReference cAppliedOnEdgeStyleDescriptionCrossReference_2_1_1_1_0 = (CrossReference)cAppliedOnAssignment_2_1_1_1.eContents().get(0);
+		private final RuleCall cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1 = (RuleCall)cAppliedOnEdgeStyleDescriptionCrossReference_2_1_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOverAllEdgesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cApplyonAllAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cApplyonAllEBooleanParserRuleCall_4_2_0 = (RuleCall)cApplyonAllAssignment_4_2.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cSourceKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cSourceArrowAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cSourceArrowEdgeArrowsEnumRuleCall_5_2_0 = (RuleCall)cSourceArrowAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOverAllEdgesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cTargetKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
+		private final Assignment cTargetArrowAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cTargetArrowEdgeArrowsEnumRuleCall_6_2_0 = (RuleCall)cTargetArrowAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cSourceKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cRoutingKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cSourceArrowAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cSourceArrowEdgeArrowsEnumRuleCall_7_2_0 = (RuleCall)cSourceArrowAssignment_7_2.eContents().get(0);
+		private final Assignment cRoutingStyleAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cRoutingStyleEdgeRoutingEnumRuleCall_7_2_0 = (RuleCall)cRoutingStyleAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cTargetKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cFoldingKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cTargetArrowAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cTargetArrowEdgeArrowsEnumRuleCall_8_2_0 = (RuleCall)cTargetArrowAssignment_8_2.eContents().get(0);
+		private final Assignment cFoldingStyleAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cFoldingStyleFoldingStyleEnumRuleCall_8_2_0 = (RuleCall)cFoldingStyleAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cRoutingKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cCenterSourceMappingsKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cRoutingStyleAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cRoutingStyleEdgeRoutingEnumRuleCall_9_2_0 = (RuleCall)cRoutingStyleAssignment_9_2.eContents().get(0);
+		private final Group cGroup_9_2 = (Group)cGroup_9.eContents().get(2);
+		private final Assignment cCenteredSourceMappingsAssignment_9_2_0 = (Assignment)cGroup_9_2.eContents().get(0);
+		private final CrossReference cCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_0_0 = (CrossReference)cCenteredSourceMappingsAssignment_9_2_0.eContents().get(0);
+		private final RuleCall cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_0_0_1 = (RuleCall)cCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_0_0.eContents().get(1);
+		private final Group cGroup_9_2_1 = (Group)cGroup_9_2.eContents().get(1);
+		private final Keyword cCommaKeyword_9_2_1_0 = (Keyword)cGroup_9_2_1.eContents().get(0);
+		private final Assignment cCenteredSourceMappingsAssignment_9_2_1_1 = (Assignment)cGroup_9_2_1.eContents().get(1);
+		private final CrossReference cCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_1_1_0 = (CrossReference)cCenteredSourceMappingsAssignment_9_2_1_1.eContents().get(0);
+		private final RuleCall cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_1_1_0_1 = (RuleCall)cCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_1_1_0.eContents().get(1);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cFoldingKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cCenterTargetMappingsKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cFoldingStyleAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final RuleCall cFoldingStyleFoldingStyleEnumRuleCall_10_2_0 = (RuleCall)cFoldingStyleAssignment_10_2.eContents().get(0);
+		private final Group cGroup_10_2 = (Group)cGroup_10.eContents().get(2);
+		private final Assignment cCenteredTargetMappingsAssignment_10_2_0 = (Assignment)cGroup_10_2.eContents().get(0);
+		private final CrossReference cCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_0_0 = (CrossReference)cCenteredTargetMappingsAssignment_10_2_0.eContents().get(0);
+		private final RuleCall cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_0_0_1 = (RuleCall)cCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_0_0.eContents().get(1);
+		private final Group cGroup_10_2_1 = (Group)cGroup_10_2.eContents().get(1);
+		private final Keyword cCommaKeyword_10_2_1_0 = (Keyword)cGroup_10_2_1.eContents().get(0);
+		private final Assignment cCenteredTargetMappingsAssignment_10_2_1_1 = (Assignment)cGroup_10_2_1.eContents().get(1);
+		private final CrossReference cCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_1_1_0 = (CrossReference)cCenteredTargetMappingsAssignment_10_2_1_1.eContents().get(0);
+		private final RuleCall cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_1_1_0_1 = (RuleCall)cCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_1_1_0.eContents().get(1);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cCenterSourceMappingsKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Keyword cBeginLabelStyleDescriptionKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
 		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Group cGroup_11_2 = (Group)cGroup_11.eContents().get(2);
-		private final Assignment cCenteredSourceMappingsAssignment_11_2_0 = (Assignment)cGroup_11_2.eContents().get(0);
-		private final CrossReference cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_0_0 = (CrossReference)cCenteredSourceMappingsAssignment_11_2_0.eContents().get(0);
-		private final RuleCall cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_0_0_1 = (RuleCall)cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_0_0.eContents().get(1);
-		private final Group cGroup_11_2_1 = (Group)cGroup_11_2.eContents().get(1);
-		private final Keyword cCommaKeyword_11_2_1_0 = (Keyword)cGroup_11_2_1.eContents().get(0);
-		private final Assignment cCenteredSourceMappingsAssignment_11_2_1_1 = (Assignment)cGroup_11_2_1.eContents().get(1);
-		private final CrossReference cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_1_1_0 = (CrossReference)cCenteredSourceMappingsAssignment_11_2_1_1.eContents().get(0);
-		private final RuleCall cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_1_1_0_1 = (RuleCall)cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_1_1_0.eContents().get(1);
+		private final Assignment cBeginLabelStyleDescriptionAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
+		private final CrossReference cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_11_2_0 = (CrossReference)cBeginLabelStyleDescriptionAssignment_11_2.eContents().get(0);
+		private final RuleCall cBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_11_2_0_1 = (RuleCall)cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_11_2_0.eContents().get(1);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cCenterTargetMappingsKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Keyword cCenterLabelStyleDescriptionKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
 		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Group cGroup_12_2 = (Group)cGroup_12.eContents().get(2);
-		private final Assignment cCenteredTargetMappingsAssignment_12_2_0 = (Assignment)cGroup_12_2.eContents().get(0);
-		private final CrossReference cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_0_0 = (CrossReference)cCenteredTargetMappingsAssignment_12_2_0.eContents().get(0);
-		private final RuleCall cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_0_0_1 = (RuleCall)cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_0_0.eContents().get(1);
-		private final Group cGroup_12_2_1 = (Group)cGroup_12_2.eContents().get(1);
-		private final Keyword cCommaKeyword_12_2_1_0 = (Keyword)cGroup_12_2_1.eContents().get(0);
-		private final Assignment cCenteredTargetMappingsAssignment_12_2_1_1 = (Assignment)cGroup_12_2_1.eContents().get(1);
-		private final CrossReference cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_1_1_0 = (CrossReference)cCenteredTargetMappingsAssignment_12_2_1_1.eContents().get(0);
-		private final RuleCall cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_1_1_0_1 = (RuleCall)cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_1_1_0.eContents().get(1);
+		private final Assignment cCenterLabelStyleDescriptionAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
+		private final CrossReference cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_12_2_0 = (CrossReference)cCenterLabelStyleDescriptionAssignment_12_2.eContents().get(0);
+		private final RuleCall cCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_12_2_0_1 = (RuleCall)cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_12_2_0.eContents().get(1);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cBeginLabelStyleDescriptionKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Keyword cEndLabelStyleDescriptionKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
 		private final Keyword cColonKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Assignment cBeginLabelStyleDescriptionAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
-		private final CrossReference cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_13_2_0 = (CrossReference)cBeginLabelStyleDescriptionAssignment_13_2.eContents().get(0);
-		private final RuleCall cBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1 = (RuleCall)cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_13_2_0.eContents().get(1);
+		private final Assignment cEndLabelStyleDescriptionAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
+		private final CrossReference cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_13_2_0 = (CrossReference)cEndLabelStyleDescriptionAssignment_13_2.eContents().get(0);
+		private final RuleCall cEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1 = (RuleCall)cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_13_2_0.eContents().get(1);
 		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-		private final Keyword cCenterLabelStyleDescriptionKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
+		private final Keyword cLineStyleKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
 		private final Keyword cColonKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Assignment cCenterLabelStyleDescriptionAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
-		private final CrossReference cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_14_2_0 = (CrossReference)cCenterLabelStyleDescriptionAssignment_14_2.eContents().get(0);
-		private final RuleCall cCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_14_2_0_1 = (RuleCall)cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_14_2_0.eContents().get(1);
+		private final Assignment cLineStyleAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
+		private final RuleCall cLineStyleLineStyleEnumRuleCall_14_2_0 = (RuleCall)cLineStyleAssignment_14_2.eContents().get(0);
 		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
-		private final Keyword cEndLabelStyleDescriptionKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Keyword cSizeKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
 		private final Keyword cColonKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Assignment cEndLabelStyleDescriptionAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
-		private final CrossReference cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_15_2_0 = (CrossReference)cEndLabelStyleDescriptionAssignment_15_2.eContents().get(0);
-		private final RuleCall cEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_15_2_0_1 = (RuleCall)cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_15_2_0.eContents().get(1);
+		private final Assignment cSizeComputationExpressionAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
+		private final RuleCall cSizeComputationExpressionCustomizationExpressionParserRuleCall_15_2_0 = (RuleCall)cSizeComputationExpressionAssignment_15_2.eContents().get(0);
 		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
-		private final Keyword cLineStyleKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
+		private final Keyword cEndCenteringKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
 		private final Keyword cColonKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
-		private final Assignment cLineStyleAssignment_16_2 = (Assignment)cGroup_16.eContents().get(2);
-		private final RuleCall cLineStyleLineStyleEnumRuleCall_16_2_0 = (RuleCall)cLineStyleAssignment_16_2.eContents().get(0);
-		private final Group cGroup_17 = (Group)cGroup.eContents().get(17);
-		private final Keyword cSizeKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
-		private final Keyword cColonKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
-		private final Assignment cSizeComputationExpressionAssignment_17_2 = (Assignment)cGroup_17.eContents().get(2);
-		private final RuleCall cSizeComputationExpressionCustomizationExpressionParserRuleCall_17_2_0 = (RuleCall)cSizeComputationExpressionAssignment_17_2.eContents().get(0);
-		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
-		private final Keyword cEndCenteringKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
-		private final Keyword cColonKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
-		private final Assignment cEndCenteringAssignment_18_2 = (Assignment)cGroup_18.eContents().get(2);
-		private final RuleCall cEndCenteringCenterStyleEnumRuleCall_18_2_0 = (RuleCall)cEndCenteringAssignment_18_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Assignment cEndCenteringAssignment_16_2 = (Assignment)cGroup_16.eContents().get(2);
+		private final RuleCall cEndCenteringCenterStyleEnumRuleCall_16_2_0 = (RuleCall)cEndCenteringAssignment_16_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
-		//	{styleCusto::EdgeStyleCustomization} "edge" "(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "{" ("over-all-edges" ":" applyonAll=EBoolean)?
+		//	{styleCusto::EdgeStyleCustomization} "edge" ("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
+		//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")? "{" ("over-all-edges" ":" applyonAll=EBoolean)?
 		//	("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
 		//	routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
 		//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
@@ -3229,8 +3230,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//	("size" ":" sizeComputationExpression=CustomizationExpression)? ("end-centering" ":" endCentering=CenterStyle)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::EdgeStyleCustomization} "edge" "(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "{" ("over-all-edges" ":" applyonAll=EBoolean)?
+		//{styleCusto::EdgeStyleCustomization} "edge" ("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
+		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")? "{" ("over-all-edges" ":" applyonAll=EBoolean)?
 		//("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
 		//routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
 		//(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
@@ -3250,294 +3251,298 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"edge"
 		public Keyword getEdgeKeyword_1() { return cEdgeKeyword_1; }
 
+		//("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
+		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
 		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] ("," appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_0() { return cAppliedOnAssignment_3_0; }
+		public Assignment getAppliedOnAssignment_2_1_0() { return cAppliedOnAssignment_2_1_0; }
 
 		//[siriusDDStyle::EdgeStyleDescription|STRING]
-		public CrossReference getAppliedOnEdgeStyleDescriptionCrossReference_3_0_0() { return cAppliedOnEdgeStyleDescriptionCrossReference_3_0_0; }
+		public CrossReference getAppliedOnEdgeStyleDescriptionCrossReference_2_1_0_0() { return cAppliedOnEdgeStyleDescriptionCrossReference_2_1_0_0; }
 
 		//STRING
-		public RuleCall getAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1() { return cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1; }
+		public RuleCall getAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
 		//("," appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_1_1() { return cAppliedOnAssignment_3_1_1; }
+		public Assignment getAppliedOnAssignment_2_1_1_1() { return cAppliedOnAssignment_2_1_1_1; }
 
 		//[siriusDDStyle::EdgeStyleDescription|STRING]
-		public CrossReference getAppliedOnEdgeStyleDescriptionCrossReference_3_1_1_0() { return cAppliedOnEdgeStyleDescriptionCrossReference_3_1_1_0; }
+		public CrossReference getAppliedOnEdgeStyleDescriptionCrossReference_2_1_1_1_0() { return cAppliedOnEdgeStyleDescriptionCrossReference_2_1_1_1_0; }
 
 		//STRING
-		public RuleCall getAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1() { return cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1; }
+		public RuleCall getAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//("over-all-edges" ":" applyonAll=EBoolean)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"over-all-edges"
-		public Keyword getOverAllEdgesKeyword_6_0() { return cOverAllEdgesKeyword_6_0; }
+		public Keyword getOverAllEdgesKeyword_4_0() { return cOverAllEdgesKeyword_4_0; }
+
+		//":"
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+
+		//applyonAll=EBoolean
+		public Assignment getApplyonAllAssignment_4_2() { return cApplyonAllAssignment_4_2; }
+
+		//EBoolean
+		public RuleCall getApplyonAllEBooleanParserRuleCall_4_2_0() { return cApplyonAllEBooleanParserRuleCall_4_2_0; }
+
+		//("source" ":" sourceArrow=EdgeArrows)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"source"
+		public Keyword getSourceKeyword_5_0() { return cSourceKeyword_5_0; }
+
+		//":"
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+
+		//sourceArrow=EdgeArrows
+		public Assignment getSourceArrowAssignment_5_2() { return cSourceArrowAssignment_5_2; }
+
+		//EdgeArrows
+		public RuleCall getSourceArrowEdgeArrowsEnumRuleCall_5_2_0() { return cSourceArrowEdgeArrowsEnumRuleCall_5_2_0; }
+
+		//("target" ":" targetArrow=EdgeArrows)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"target"
+		public Keyword getTargetKeyword_6_0() { return cTargetKeyword_6_0; }
 
 		//":"
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
-		//applyonAll=EBoolean
-		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
+		//targetArrow=EdgeArrows
+		public Assignment getTargetArrowAssignment_6_2() { return cTargetArrowAssignment_6_2; }
 
-		//EBoolean
-		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
+		//EdgeArrows
+		public RuleCall getTargetArrowEdgeArrowsEnumRuleCall_6_2_0() { return cTargetArrowEdgeArrowsEnumRuleCall_6_2_0; }
 
-		//("source" ":" sourceArrow=EdgeArrows)?
+		//("routing" ":" routingStyle=EdgeRouting)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"source"
-		public Keyword getSourceKeyword_7_0() { return cSourceKeyword_7_0; }
+		//"routing"
+		public Keyword getRoutingKeyword_7_0() { return cRoutingKeyword_7_0; }
 
 		//":"
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
-		//sourceArrow=EdgeArrows
-		public Assignment getSourceArrowAssignment_7_2() { return cSourceArrowAssignment_7_2; }
+		//routingStyle=EdgeRouting
+		public Assignment getRoutingStyleAssignment_7_2() { return cRoutingStyleAssignment_7_2; }
 
-		//EdgeArrows
-		public RuleCall getSourceArrowEdgeArrowsEnumRuleCall_7_2_0() { return cSourceArrowEdgeArrowsEnumRuleCall_7_2_0; }
+		//EdgeRouting
+		public RuleCall getRoutingStyleEdgeRoutingEnumRuleCall_7_2_0() { return cRoutingStyleEdgeRoutingEnumRuleCall_7_2_0; }
 
-		//("target" ":" targetArrow=EdgeArrows)?
+		//("folding" ":" foldingStyle=FoldingStyle)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"target"
-		public Keyword getTargetKeyword_8_0() { return cTargetKeyword_8_0; }
+		//"folding"
+		public Keyword getFoldingKeyword_8_0() { return cFoldingKeyword_8_0; }
 
 		//":"
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
-		//targetArrow=EdgeArrows
-		public Assignment getTargetArrowAssignment_8_2() { return cTargetArrowAssignment_8_2; }
+		//foldingStyle=FoldingStyle
+		public Assignment getFoldingStyleAssignment_8_2() { return cFoldingStyleAssignment_8_2; }
 
-		//EdgeArrows
-		public RuleCall getTargetArrowEdgeArrowsEnumRuleCall_8_2_0() { return cTargetArrowEdgeArrowsEnumRuleCall_8_2_0; }
+		//FoldingStyle
+		public RuleCall getFoldingStyleFoldingStyleEnumRuleCall_8_2_0() { return cFoldingStyleFoldingStyleEnumRuleCall_8_2_0; }
 
-		//("routing" ":" routingStyle=EdgeRouting)?
+		//("center-source-mappings" ":" (centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"routing"
-		public Keyword getRoutingKeyword_9_0() { return cRoutingKeyword_9_0; }
+		//"center-source-mappings"
+		public Keyword getCenterSourceMappingsKeyword_9_0() { return cCenterSourceMappingsKeyword_9_0; }
 
 		//":"
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
-		//routingStyle=EdgeRouting
-		public Assignment getRoutingStyleAssignment_9_2() { return cRoutingStyleAssignment_9_2; }
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		public Group getGroup_9_2() { return cGroup_9_2; }
 
-		//EdgeRouting
-		public RuleCall getRoutingStyleEdgeRoutingEnumRuleCall_9_2_0() { return cRoutingStyleEdgeRoutingEnumRuleCall_9_2_0; }
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public Assignment getCenteredSourceMappingsAssignment_9_2_0() { return cCenteredSourceMappingsAssignment_9_2_0; }
 
-		//("folding" ":" foldingStyle=FoldingStyle)?
+		//[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public CrossReference getCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_0_0() { return cCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_0_0; }
+
+		//STRING
+		public RuleCall getCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_0_0_1() { return cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_0_0_1; }
+
+		//("," centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		public Group getGroup_9_2_1() { return cGroup_9_2_1; }
+
+		//","
+		public Keyword getCommaKeyword_9_2_1_0() { return cCommaKeyword_9_2_1_0; }
+
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public Assignment getCenteredSourceMappingsAssignment_9_2_1_1() { return cCenteredSourceMappingsAssignment_9_2_1_1; }
+
+		//[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public CrossReference getCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_1_1_0() { return cCenteredSourceMappingsDiagramElementMappingCrossReference_9_2_1_1_0; }
+
+		//STRING
+		public RuleCall getCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_1_1_0_1() { return cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_1_1_0_1; }
+
+		//("center-target-mappings" ":" (centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"folding"
-		public Keyword getFoldingKeyword_10_0() { return cFoldingKeyword_10_0; }
+		//"center-target-mappings"
+		public Keyword getCenterTargetMappingsKeyword_10_0() { return cCenterTargetMappingsKeyword_10_0; }
 
 		//":"
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
-		//foldingStyle=FoldingStyle
-		public Assignment getFoldingStyleAssignment_10_2() { return cFoldingStyleAssignment_10_2; }
+		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		public Group getGroup_10_2() { return cGroup_10_2; }
 
-		//FoldingStyle
-		public RuleCall getFoldingStyleFoldingStyleEnumRuleCall_10_2_0() { return cFoldingStyleFoldingStyleEnumRuleCall_10_2_0; }
+		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public Assignment getCenteredTargetMappingsAssignment_10_2_0() { return cCenteredTargetMappingsAssignment_10_2_0; }
 
-		//("center-source-mappings" ":" (centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
+		//[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public CrossReference getCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_0_0() { return cCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_0_0; }
+
+		//STRING
+		public RuleCall getCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_0_0_1() { return cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_0_0_1; }
+
+		//("," centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		public Group getGroup_10_2_1() { return cGroup_10_2_1; }
+
+		//","
+		public Keyword getCommaKeyword_10_2_1_0() { return cCommaKeyword_10_2_1_0; }
+
+		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public Assignment getCenteredTargetMappingsAssignment_10_2_1_1() { return cCenteredTargetMappingsAssignment_10_2_1_1; }
+
+		//[siriusDiagramDescription::DiagramElementMapping|STRING]
+		public CrossReference getCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_1_1_0() { return cCenteredTargetMappingsDiagramElementMappingCrossReference_10_2_1_1_0; }
+
+		//STRING
+		public RuleCall getCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_1_1_0_1() { return cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_1_1_0_1; }
+
+		//("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"center-source-mappings"
-		public Keyword getCenterSourceMappingsKeyword_11_0() { return cCenterSourceMappingsKeyword_11_0; }
+		//"begin-label-style-description"
+		public Keyword getBeginLabelStyleDescriptionKeyword_11_0() { return cBeginLabelStyleDescriptionKeyword_11_0; }
 
 		//":"
 		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
 
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
-		public Group getGroup_11_2() { return cGroup_11_2; }
+		//beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING]
+		public Assignment getBeginLabelStyleDescriptionAssignment_11_2() { return cBeginLabelStyleDescriptionAssignment_11_2; }
 
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public Assignment getCenteredSourceMappingsAssignment_11_2_0() { return cCenteredSourceMappingsAssignment_11_2_0; }
-
-		//[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public CrossReference getCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_0_0() { return cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_0_0; }
+		//[siriusDDStyle::BeginLabelStyleDescription|STRING]
+		public CrossReference getBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_11_2_0() { return cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_11_2_0; }
 
 		//STRING
-		public RuleCall getCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_0_0_1() { return cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_0_0_1; }
+		public RuleCall getBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_11_2_0_1() { return cBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_11_2_0_1; }
 
-		//("," centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
-		public Group getGroup_11_2_1() { return cGroup_11_2_1; }
-
-		//","
-		public Keyword getCommaKeyword_11_2_1_0() { return cCommaKeyword_11_2_1_0; }
-
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public Assignment getCenteredSourceMappingsAssignment_11_2_1_1() { return cCenteredSourceMappingsAssignment_11_2_1_1; }
-
-		//[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public CrossReference getCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_1_1_0() { return cCenteredSourceMappingsDiagramElementMappingCrossReference_11_2_1_1_0; }
-
-		//STRING
-		public RuleCall getCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_1_1_0_1() { return cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_11_2_1_1_0_1; }
-
-		//("center-target-mappings" ":" (centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
+		//("center-label-style-description" ":" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//"center-target-mappings"
-		public Keyword getCenterTargetMappingsKeyword_12_0() { return cCenterTargetMappingsKeyword_12_0; }
+		//"center-label-style-description"
+		public Keyword getCenterLabelStyleDescriptionKeyword_12_0() { return cCenterLabelStyleDescriptionKeyword_12_0; }
 
 		//":"
 		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
 
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
-		public Group getGroup_12_2() { return cGroup_12_2; }
+		//centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING]
+		public Assignment getCenterLabelStyleDescriptionAssignment_12_2() { return cCenterLabelStyleDescriptionAssignment_12_2; }
 
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public Assignment getCenteredTargetMappingsAssignment_12_2_0() { return cCenteredTargetMappingsAssignment_12_2_0; }
-
-		//[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public CrossReference getCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_0_0() { return cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_0_0; }
+		//[siriusDDStyle::CenterLabelStyleDescription|STRING]
+		public CrossReference getCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_12_2_0() { return cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_12_2_0; }
 
 		//STRING
-		public RuleCall getCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_0_0_1() { return cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_0_0_1; }
+		public RuleCall getCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_12_2_0_1() { return cCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_12_2_0_1; }
 
-		//("," centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
-		public Group getGroup_12_2_1() { return cGroup_12_2_1; }
-
-		//","
-		public Keyword getCommaKeyword_12_2_1_0() { return cCommaKeyword_12_2_1_0; }
-
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public Assignment getCenteredTargetMappingsAssignment_12_2_1_1() { return cCenteredTargetMappingsAssignment_12_2_1_1; }
-
-		//[siriusDiagramDescription::DiagramElementMapping|STRING]
-		public CrossReference getCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_1_1_0() { return cCenteredTargetMappingsDiagramElementMappingCrossReference_12_2_1_1_0; }
-
-		//STRING
-		public RuleCall getCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_1_1_0_1() { return cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_12_2_1_1_0_1; }
-
-		//("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
+		//("end-label-style-description" ":" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])?
 		public Group getGroup_13() { return cGroup_13; }
 
-		//"begin-label-style-description"
-		public Keyword getBeginLabelStyleDescriptionKeyword_13_0() { return cBeginLabelStyleDescriptionKeyword_13_0; }
+		//"end-label-style-description"
+		public Keyword getEndLabelStyleDescriptionKeyword_13_0() { return cEndLabelStyleDescriptionKeyword_13_0; }
 
 		//":"
 		public Keyword getColonKeyword_13_1() { return cColonKeyword_13_1; }
 
-		//beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING]
-		public Assignment getBeginLabelStyleDescriptionAssignment_13_2() { return cBeginLabelStyleDescriptionAssignment_13_2; }
+		//endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING]
+		public Assignment getEndLabelStyleDescriptionAssignment_13_2() { return cEndLabelStyleDescriptionAssignment_13_2; }
 
-		//[siriusDDStyle::BeginLabelStyleDescription|STRING]
-		public CrossReference getBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_13_2_0() { return cBeginLabelStyleDescriptionBeginLabelStyleDescriptionCrossReference_13_2_0; }
+		//[siriusDDStyle::EndLabelStyleDescription|STRING]
+		public CrossReference getEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_13_2_0() { return cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_13_2_0; }
 
 		//STRING
-		public RuleCall getBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1() { return cBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1; }
+		public RuleCall getEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1() { return cEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1; }
 
-		//("center-label-style-description" ":" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])?
+		//("line-style" ":" lineStyle=LineStyle)?
 		public Group getGroup_14() { return cGroup_14; }
 
-		//"center-label-style-description"
-		public Keyword getCenterLabelStyleDescriptionKeyword_14_0() { return cCenterLabelStyleDescriptionKeyword_14_0; }
+		//"line-style"
+		public Keyword getLineStyleKeyword_14_0() { return cLineStyleKeyword_14_0; }
 
 		//":"
 		public Keyword getColonKeyword_14_1() { return cColonKeyword_14_1; }
 
-		//centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING]
-		public Assignment getCenterLabelStyleDescriptionAssignment_14_2() { return cCenterLabelStyleDescriptionAssignment_14_2; }
+		//lineStyle=LineStyle
+		public Assignment getLineStyleAssignment_14_2() { return cLineStyleAssignment_14_2; }
 
-		//[siriusDDStyle::CenterLabelStyleDescription|STRING]
-		public CrossReference getCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_14_2_0() { return cCenterLabelStyleDescriptionCenterLabelStyleDescriptionCrossReference_14_2_0; }
+		//LineStyle
+		public RuleCall getLineStyleLineStyleEnumRuleCall_14_2_0() { return cLineStyleLineStyleEnumRuleCall_14_2_0; }
 
-		//STRING
-		public RuleCall getCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_14_2_0_1() { return cCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_14_2_0_1; }
-
-		//("end-label-style-description" ":" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])?
+		//("size" ":" sizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_15() { return cGroup_15; }
 
-		//"end-label-style-description"
-		public Keyword getEndLabelStyleDescriptionKeyword_15_0() { return cEndLabelStyleDescriptionKeyword_15_0; }
+		//"size"
+		public Keyword getSizeKeyword_15_0() { return cSizeKeyword_15_0; }
 
 		//":"
 		public Keyword getColonKeyword_15_1() { return cColonKeyword_15_1; }
 
-		//endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING]
-		public Assignment getEndLabelStyleDescriptionAssignment_15_2() { return cEndLabelStyleDescriptionAssignment_15_2; }
+		//sizeComputationExpression=CustomizationExpression
+		public Assignment getSizeComputationExpressionAssignment_15_2() { return cSizeComputationExpressionAssignment_15_2; }
 
-		//[siriusDDStyle::EndLabelStyleDescription|STRING]
-		public CrossReference getEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_15_2_0() { return cEndLabelStyleDescriptionEndLabelStyleDescriptionCrossReference_15_2_0; }
+		//CustomizationExpression
+		public RuleCall getSizeComputationExpressionCustomizationExpressionParserRuleCall_15_2_0() { return cSizeComputationExpressionCustomizationExpressionParserRuleCall_15_2_0; }
 
-		//STRING
-		public RuleCall getEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_15_2_0_1() { return cEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_15_2_0_1; }
-
-		//("line-style" ":" lineStyle=LineStyle)?
+		//("end-centering" ":" endCentering=CenterStyle)?
 		public Group getGroup_16() { return cGroup_16; }
 
-		//"line-style"
-		public Keyword getLineStyleKeyword_16_0() { return cLineStyleKeyword_16_0; }
+		//"end-centering"
+		public Keyword getEndCenteringKeyword_16_0() { return cEndCenteringKeyword_16_0; }
 
 		//":"
 		public Keyword getColonKeyword_16_1() { return cColonKeyword_16_1; }
 
-		//lineStyle=LineStyle
-		public Assignment getLineStyleAssignment_16_2() { return cLineStyleAssignment_16_2; }
-
-		//LineStyle
-		public RuleCall getLineStyleLineStyleEnumRuleCall_16_2_0() { return cLineStyleLineStyleEnumRuleCall_16_2_0; }
-
-		//("size" ":" sizeComputationExpression=CustomizationExpression)?
-		public Group getGroup_17() { return cGroup_17; }
-
-		//"size"
-		public Keyword getSizeKeyword_17_0() { return cSizeKeyword_17_0; }
-
-		//":"
-		public Keyword getColonKeyword_17_1() { return cColonKeyword_17_1; }
-
-		//sizeComputationExpression=CustomizationExpression
-		public Assignment getSizeComputationExpressionAssignment_17_2() { return cSizeComputationExpressionAssignment_17_2; }
-
-		//CustomizationExpression
-		public RuleCall getSizeComputationExpressionCustomizationExpressionParserRuleCall_17_2_0() { return cSizeComputationExpressionCustomizationExpressionParserRuleCall_17_2_0; }
-
-		//("end-centering" ":" endCentering=CenterStyle)?
-		public Group getGroup_18() { return cGroup_18; }
-
-		//"end-centering"
-		public Keyword getEndCenteringKeyword_18_0() { return cEndCenteringKeyword_18_0; }
-
-		//":"
-		public Keyword getColonKeyword_18_1() { return cColonKeyword_18_1; }
-
 		//endCentering=CenterStyle
-		public Assignment getEndCenteringAssignment_18_2() { return cEndCenteringAssignment_18_2; }
+		public Assignment getEndCenteringAssignment_16_2() { return cEndCenteringAssignment_16_2; }
 
 		//CenterStyle
-		public RuleCall getEndCenteringCenterStyleEnumRuleCall_18_2_0() { return cEndCenteringCenterStyleEnumRuleCall_18_2_0; }
+		public RuleCall getEndCenteringCenterStyleEnumRuleCall_16_2_0() { return cEndCenteringCenterStyleEnumRuleCall_16_2_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_19() { return cRightCurlyBracketKeyword_19; }
+		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
 	}
 
 	public class ColorCustomizationElements extends AbstractParserRuleElementFinder {
@@ -3547,31 +3552,32 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPaintKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cColorUseCaseAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cColorUseCaseColorUseCaseEnumRuleCall_2_0 = (RuleCall)cColorUseCaseAssignment_2.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cAppliedOnAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final CrossReference cAppliedOnEObjectCrossReference_4_0_0 = (CrossReference)cAppliedOnAssignment_4_0.eContents().get(0);
-		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_4_0_0.eContents().get(1);
-		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
-		private final Keyword cCommaKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
-		private final Assignment cAppliedOnAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
-		private final CrossReference cAppliedOnEObjectCrossReference_4_1_1_0 = (CrossReference)cAppliedOnAssignment_4_1_1.eContents().get(0);
-		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_4_1_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cApplyonAllAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final Keyword cApplyonAllOverAllColorsKeyword_6_0 = (Keyword)cApplyonAllAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cWithKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cColorAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cColorSystemColorsEnumRuleCall_7_1_0 = (RuleCall)cColorAssignment_7_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Assignment cAppliedOnAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
+		private final CrossReference cAppliedOnEObjectCrossReference_3_1_0_0 = (CrossReference)cAppliedOnAssignment_3_1_0.eContents().get(0);
+		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_0_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_3_1_0_0.eContents().get(1);
+		private final Group cGroup_3_1_1 = (Group)cGroup_3_1.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_1_0 = (Keyword)cGroup_3_1_1.eContents().get(0);
+		private final Assignment cAppliedOnAssignment_3_1_1_1 = (Assignment)cGroup_3_1_1.eContents().get(1);
+		private final CrossReference cAppliedOnEObjectCrossReference_3_1_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1_1.eContents().get(0);
+		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_1_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_3_1_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cApplyonAllAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cApplyonAllOverAllColorsKeyword_4_0 = (Keyword)cApplyonAllAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cWithKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cColorAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cColorSystemColorsEnumRuleCall_5_1_0 = (RuleCall)cColorAssignment_5_1.eContents().get(0);
 		
 		//ColorCustomization returns styleCusto::ColorCustomization:
-		//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
-		//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with" color=SystemColors);
+		//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase ("(" (appliedOn+=[ecore::EObject|STRING] (","
+		//	appliedOn+=[ecore::EObject|STRING])*) ")")? applyonAll?="over-all-colors"? ("with" color=SystemColors);
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
-		//appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with" color=SystemColors)
+		//{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase ("(" (appliedOn+=[ecore::EObject|STRING] (","
+		//appliedOn+=[ecore::EObject|STRING])*) ")")? applyonAll?="over-all-colors"? ("with" color=SystemColors)
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ColorCustomization}
@@ -3586,56 +3592,59 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ColorUseCase
 		public RuleCall getColorUseCaseColorUseCaseEnumRuleCall_2_0() { return cColorUseCaseColorUseCaseEnumRuleCall_2_0; }
 
+		//("(" (appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*) ")")?
+		public Group getGroup_3() { return cGroup_3; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 
 		//appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3_1() { return cGroup_3_1; }
 
 		//appliedOn+=[ecore::EObject|STRING]
-		public Assignment getAppliedOnAssignment_4_0() { return cAppliedOnAssignment_4_0; }
+		public Assignment getAppliedOnAssignment_3_1_0() { return cAppliedOnAssignment_3_1_0; }
 
 		//[ecore::EObject|STRING]
-		public CrossReference getAppliedOnEObjectCrossReference_4_0_0() { return cAppliedOnEObjectCrossReference_4_0_0; }
+		public CrossReference getAppliedOnEObjectCrossReference_3_1_0_0() { return cAppliedOnEObjectCrossReference_3_1_0_0; }
 
 		//STRING
-		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1; }
+		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_3_1_0_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_0_0_1; }
 
 		//("," appliedOn+=[ecore::EObject|STRING])*
-		public Group getGroup_4_1() { return cGroup_4_1; }
+		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
 
 		//","
-		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
+		public Keyword getCommaKeyword_3_1_1_0() { return cCommaKeyword_3_1_1_0; }
 
 		//appliedOn+=[ecore::EObject|STRING]
-		public Assignment getAppliedOnAssignment_4_1_1() { return cAppliedOnAssignment_4_1_1; }
+		public Assignment getAppliedOnAssignment_3_1_1_1() { return cAppliedOnAssignment_3_1_1_1; }
 
 		//[ecore::EObject|STRING]
-		public CrossReference getAppliedOnEObjectCrossReference_4_1_1_0() { return cAppliedOnEObjectCrossReference_4_1_1_0; }
+		public CrossReference getAppliedOnEObjectCrossReference_3_1_1_1_0() { return cAppliedOnEObjectCrossReference_3_1_1_1_0; }
 
 		//STRING
-		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1; }
+		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_1_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_1_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
 
 		//applyonAll?="over-all-colors"?
-		public Assignment getApplyonAllAssignment_6() { return cApplyonAllAssignment_6; }
+		public Assignment getApplyonAllAssignment_4() { return cApplyonAllAssignment_4; }
 
 		//"over-all-colors"
-		public Keyword getApplyonAllOverAllColorsKeyword_6_0() { return cApplyonAllOverAllColorsKeyword_6_0; }
+		public Keyword getApplyonAllOverAllColorsKeyword_4_0() { return cApplyonAllOverAllColorsKeyword_4_0; }
 
 		//"with" color=SystemColors
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_5() { return cGroup_5; }
 
 		//"with"
-		public Keyword getWithKeyword_7_0() { return cWithKeyword_7_0; }
+		public Keyword getWithKeyword_5_0() { return cWithKeyword_5_0; }
 
 		//color=SystemColors
-		public Assignment getColorAssignment_7_1() { return cColorAssignment_7_1; }
+		public Assignment getColorAssignment_5_1() { return cColorAssignment_5_1; }
 
 		//SystemColors
-		public RuleCall getColorSystemColorsEnumRuleCall_7_1_0() { return cColorSystemColorsEnumRuleCall_7_1_0; }
+		public RuleCall getColorSystemColorsEnumRuleCall_5_1_0() { return cColorSystemColorsEnumRuleCall_5_1_0; }
 	}
 
 	public class LabelCustomizationElements extends AbstractParserRuleElementFinder {
@@ -3643,69 +3652,70 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLabelCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLabelKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cAppliedOnAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final CrossReference cAppliedOnBasicLabelStyleDescriptionCrossReference_3_0_0 = (CrossReference)cAppliedOnAssignment_3_0.eContents().get(0);
-		private final RuleCall cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1 = (RuleCall)cAppliedOnBasicLabelStyleDescriptionCrossReference_3_0_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cAppliedOnAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final CrossReference cAppliedOnBasicLabelStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
-		private final RuleCall cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnBasicLabelStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Assignment cAppliedOnAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final CrossReference cAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_0_0 = (CrossReference)cAppliedOnAssignment_2_1_0.eContents().get(0);
+		private final RuleCall cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1 = (RuleCall)cAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_0_0.eContents().get(1);
+		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_1_0 = (Keyword)cGroup_2_1_1.eContents().get(0);
+		private final Assignment cAppliedOnAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
+		private final CrossReference cAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_1_1_0 = (CrossReference)cAppliedOnAssignment_2_1_1_1.eContents().get(0);
+		private final RuleCall cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1 = (RuleCall)cAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOverAllLabelsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cApplyonAllAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cApplyonAllEBooleanParserRuleCall_4_2_0 = (RuleCall)cApplyonAllAssignment_4_2.eContents().get(0);
+		private final Assignment cOwnedLabelAlignmentAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_5_0 = (RuleCall)cOwnedLabelAlignmentAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOverAllLabelsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cSizeKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
-		private final Assignment cOwnedLabelAlignmentAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_7_0 = (RuleCall)cOwnedLabelAlignmentAssignment_7.eContents().get(0);
+		private final Assignment cSizeAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cSizeEIntParserRuleCall_6_2_0 = (RuleCall)cSizeAssignment_6_2.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cFormatKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cFormatAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cFormatFontFormatEnumRuleCall_7_2_0 = (RuleCall)cFormatAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cSizeKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cColorKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cSizeAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cSizeEIntParserRuleCall_8_2_0 = (RuleCall)cSizeAssignment_8_2.eContents().get(0);
+		private final Assignment cColorAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cColorSystemColorsEnumRuleCall_8_2_0 = (RuleCall)cColorAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cFormatKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cFormatAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cFormatFontFormatEnumRuleCall_9_2_0 = (RuleCall)cFormatAssignment_9_2.eContents().get(0);
+		private final Keyword cIconKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cShowKeyword_9_2 = (Keyword)cGroup_9.eContents().get(2);
+		private final Keyword cColonKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
+		private final Assignment cShowIconAssignment_9_4 = (Assignment)cGroup_9.eContents().get(4);
+		private final RuleCall cShowIconEBooleanParserRuleCall_9_4_0 = (RuleCall)cShowIconAssignment_9_4.eContents().get(0);
+		private final Keyword cPathKeyword_9_5 = (Keyword)cGroup_9.eContents().get(5);
+		private final Keyword cColonKeyword_9_6 = (Keyword)cGroup_9.eContents().get(6);
+		private final Assignment cIconPathAssignment_9_7 = (Assignment)cGroup_9.eContents().get(7);
+		private final RuleCall cIconPathEStringParserRuleCall_9_7_0 = (RuleCall)cIconPathAssignment_9_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9_8 = (Keyword)cGroup_9.eContents().get(8);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cColorKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cExpressionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cColorAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final RuleCall cColorSystemColorsEnumRuleCall_10_2_0 = (RuleCall)cColorAssignment_10_2.eContents().get(0);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cIconKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Keyword cShowKeyword_11_2 = (Keyword)cGroup_11.eContents().get(2);
-		private final Keyword cColonKeyword_11_3 = (Keyword)cGroup_11.eContents().get(3);
-		private final Assignment cShowIconAssignment_11_4 = (Assignment)cGroup_11.eContents().get(4);
-		private final RuleCall cShowIconEBooleanParserRuleCall_11_4_0 = (RuleCall)cShowIconAssignment_11_4.eContents().get(0);
-		private final Keyword cPathKeyword_11_5 = (Keyword)cGroup_11.eContents().get(5);
-		private final Keyword cColonKeyword_11_6 = (Keyword)cGroup_11.eContents().get(6);
-		private final Assignment cIconPathAssignment_11_7 = (Assignment)cGroup_11.eContents().get(7);
-		private final RuleCall cIconPathEStringParserRuleCall_11_7_0 = (RuleCall)cIconPathAssignment_11_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11_8 = (Keyword)cGroup_11.eContents().get(8);
-		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cExpressionKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Assignment cExpressionAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
-		private final RuleCall cExpressionCustomizationExpressionParserRuleCall_12_2_0 = (RuleCall)cExpressionAssignment_12_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cExpressionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final RuleCall cExpressionCustomizationExpressionParserRuleCall_10_2_0 = (RuleCall)cExpressionAssignment_10_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//LabelCustomization returns styleCusto::LabelCustomization:
-		//	{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
-		//	ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
-		//	":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")? ("expression" ":"
-		//	expression=CustomizationExpression)? "}";
+		//	{styleCusto::LabelCustomization} "label" ("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
+		//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")? "{" ("over-all-labels" ":"
+		//	applyonAll=EBoolean)? ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":"
+		//	format=FontFormat)? ("color" ":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
+		//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
+		//{styleCusto::LabelCustomization} "label" ("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
+		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")? "{" ("over-all-labels" ":" applyonAll=EBoolean)?
 		//ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
 		//":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")? ("expression" ":"
 		//expression=CustomizationExpression)? "}"
@@ -3717,162 +3727,166 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"label"
 		public Keyword getLabelKeyword_1() { return cLabelKeyword_1; }
 
+		//("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
+		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
 		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
 		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_0() { return cAppliedOnAssignment_3_0; }
+		public Assignment getAppliedOnAssignment_2_1_0() { return cAppliedOnAssignment_2_1_0; }
 
 		//[siriusDStyle::BasicLabelStyleDescription|STRING]
-		public CrossReference getAppliedOnBasicLabelStyleDescriptionCrossReference_3_0_0() { return cAppliedOnBasicLabelStyleDescriptionCrossReference_3_0_0; }
+		public CrossReference getAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_0_0() { return cAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_0_0; }
 
 		//STRING
-		public RuleCall getAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1() { return cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1; }
+		public RuleCall getAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
 		//("," appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_1_1() { return cAppliedOnAssignment_3_1_1; }
+		public Assignment getAppliedOnAssignment_2_1_1_1() { return cAppliedOnAssignment_2_1_1_1; }
 
 		//[siriusDStyle::BasicLabelStyleDescription|STRING]
-		public CrossReference getAppliedOnBasicLabelStyleDescriptionCrossReference_3_1_1_0() { return cAppliedOnBasicLabelStyleDescriptionCrossReference_3_1_1_0; }
+		public CrossReference getAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_1_1_0() { return cAppliedOnBasicLabelStyleDescriptionCrossReference_2_1_1_1_0; }
 
 		//STRING
-		public RuleCall getAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1() { return cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1; }
+		public RuleCall getAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//("over-all-labels" ":" applyonAll=EBoolean)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"over-all-labels"
-		public Keyword getOverAllLabelsKeyword_6_0() { return cOverAllLabelsKeyword_6_0; }
+		public Keyword getOverAllLabelsKeyword_4_0() { return cOverAllLabelsKeyword_4_0; }
+
+		//":"
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+
+		//applyonAll=EBoolean
+		public Assignment getApplyonAllAssignment_4_2() { return cApplyonAllAssignment_4_2; }
+
+		//EBoolean
+		public RuleCall getApplyonAllEBooleanParserRuleCall_4_2_0() { return cApplyonAllEBooleanParserRuleCall_4_2_0; }
+
+		//ownedLabelAlignment=LabelAlignementCustomization?
+		public Assignment getOwnedLabelAlignmentAssignment_5() { return cOwnedLabelAlignmentAssignment_5; }
+
+		//LabelAlignementCustomization
+		public RuleCall getOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_5_0() { return cOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_5_0; }
+
+		//("size" ":" size=EInt)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"size"
+		public Keyword getSizeKeyword_6_0() { return cSizeKeyword_6_0; }
 
 		//":"
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
-		//applyonAll=EBoolean
-		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
+		//size=EInt
+		public Assignment getSizeAssignment_6_2() { return cSizeAssignment_6_2; }
 
-		//EBoolean
-		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
+		//EInt
+		public RuleCall getSizeEIntParserRuleCall_6_2_0() { return cSizeEIntParserRuleCall_6_2_0; }
 
-		//ownedLabelAlignment=LabelAlignementCustomization?
-		public Assignment getOwnedLabelAlignmentAssignment_7() { return cOwnedLabelAlignmentAssignment_7; }
+		//("format" ":" format=FontFormat)?
+		public Group getGroup_7() { return cGroup_7; }
 
-		//LabelAlignementCustomization
-		public RuleCall getOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_7_0() { return cOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_7_0; }
+		//"format"
+		public Keyword getFormatKeyword_7_0() { return cFormatKeyword_7_0; }
 
-		//("size" ":" size=EInt)?
+		//":"
+		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
+
+		//format=FontFormat
+		public Assignment getFormatAssignment_7_2() { return cFormatAssignment_7_2; }
+
+		//FontFormat
+		public RuleCall getFormatFontFormatEnumRuleCall_7_2_0() { return cFormatFontFormatEnumRuleCall_7_2_0; }
+
+		//"color" ":" color=SystemColors
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"size"
-		public Keyword getSizeKeyword_8_0() { return cSizeKeyword_8_0; }
+		//"color"
+		public Keyword getColorKeyword_8_0() { return cColorKeyword_8_0; }
 
 		//":"
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
-		//size=EInt
-		public Assignment getSizeAssignment_8_2() { return cSizeAssignment_8_2; }
+		//color=SystemColors
+		public Assignment getColorAssignment_8_2() { return cColorAssignment_8_2; }
 
-		//EInt
-		public RuleCall getSizeEIntParserRuleCall_8_2_0() { return cSizeEIntParserRuleCall_8_2_0; }
+		//SystemColors
+		public RuleCall getColorSystemColorsEnumRuleCall_8_2_0() { return cColorSystemColorsEnumRuleCall_8_2_0; }
 
-		//("format" ":" format=FontFormat)?
+		//("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"format"
-		public Keyword getFormatKeyword_9_0() { return cFormatKeyword_9_0; }
+		//"icon"
+		public Keyword getIconKeyword_9_0() { return cIconKeyword_9_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_9_1() { return cLeftCurlyBracketKeyword_9_1; }
+
+		//"show"
+		public Keyword getShowKeyword_9_2() { return cShowKeyword_9_2; }
 
 		//":"
-		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
+		public Keyword getColonKeyword_9_3() { return cColonKeyword_9_3; }
 
-		//format=FontFormat
-		public Assignment getFormatAssignment_9_2() { return cFormatAssignment_9_2; }
+		//showIcon=EBoolean
+		public Assignment getShowIconAssignment_9_4() { return cShowIconAssignment_9_4; }
 
-		//FontFormat
-		public RuleCall getFormatFontFormatEnumRuleCall_9_2_0() { return cFormatFontFormatEnumRuleCall_9_2_0; }
+		//EBoolean
+		public RuleCall getShowIconEBooleanParserRuleCall_9_4_0() { return cShowIconEBooleanParserRuleCall_9_4_0; }
 
-		//"color" ":" color=SystemColors
+		//"path"
+		public Keyword getPathKeyword_9_5() { return cPathKeyword_9_5; }
+
+		//":"
+		public Keyword getColonKeyword_9_6() { return cColonKeyword_9_6; }
+
+		//iconPath=EString
+		public Assignment getIconPathAssignment_9_7() { return cIconPathAssignment_9_7; }
+
+		//EString
+		public RuleCall getIconPathEStringParserRuleCall_9_7_0() { return cIconPathEStringParserRuleCall_9_7_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_9_8() { return cRightCurlyBracketKeyword_9_8; }
+
+		//("expression" ":" expression=CustomizationExpression)?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"color"
-		public Keyword getColorKeyword_10_0() { return cColorKeyword_10_0; }
+		//"expression"
+		public Keyword getExpressionKeyword_10_0() { return cExpressionKeyword_10_0; }
 
 		//":"
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
-		//color=SystemColors
-		public Assignment getColorAssignment_10_2() { return cColorAssignment_10_2; }
-
-		//SystemColors
-		public RuleCall getColorSystemColorsEnumRuleCall_10_2_0() { return cColorSystemColorsEnumRuleCall_10_2_0; }
-
-		//("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")?
-		public Group getGroup_11() { return cGroup_11; }
-
-		//"icon"
-		public Keyword getIconKeyword_11_0() { return cIconKeyword_11_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_11_1() { return cLeftCurlyBracketKeyword_11_1; }
-
-		//"show"
-		public Keyword getShowKeyword_11_2() { return cShowKeyword_11_2; }
-
-		//":"
-		public Keyword getColonKeyword_11_3() { return cColonKeyword_11_3; }
-
-		//showIcon=EBoolean
-		public Assignment getShowIconAssignment_11_4() { return cShowIconAssignment_11_4; }
-
-		//EBoolean
-		public RuleCall getShowIconEBooleanParserRuleCall_11_4_0() { return cShowIconEBooleanParserRuleCall_11_4_0; }
-
-		//"path"
-		public Keyword getPathKeyword_11_5() { return cPathKeyword_11_5; }
-
-		//":"
-		public Keyword getColonKeyword_11_6() { return cColonKeyword_11_6; }
-
-		//iconPath=EString
-		public Assignment getIconPathAssignment_11_7() { return cIconPathAssignment_11_7; }
-
-		//EString
-		public RuleCall getIconPathEStringParserRuleCall_11_7_0() { return cIconPathEStringParserRuleCall_11_7_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_11_8() { return cRightCurlyBracketKeyword_11_8; }
-
-		//("expression" ":" expression=CustomizationExpression)?
-		public Group getGroup_12() { return cGroup_12; }
-
-		//"expression"
-		public Keyword getExpressionKeyword_12_0() { return cExpressionKeyword_12_0; }
-
-		//":"
-		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
-
 		//expression=CustomizationExpression
-		public Assignment getExpressionAssignment_12_2() { return cExpressionAssignment_12_2; }
+		public Assignment getExpressionAssignment_10_2() { return cExpressionAssignment_10_2; }
 
 		//CustomizationExpression
-		public RuleCall getExpressionCustomizationExpressionParserRuleCall_12_2_0() { return cExpressionCustomizationExpressionParserRuleCall_12_2_0; }
+		public RuleCall getExpressionCustomizationExpressionParserRuleCall_10_2_0() { return cExpressionCustomizationExpressionParserRuleCall_10_2_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class LabelAlignementCustomizationElements extends AbstractParserRuleElementFinder {
@@ -3932,64 +3946,65 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cContainerStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cContainerKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cAppliedOnAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final CrossReference cAppliedOnContainerStyleDescriptionCrossReference_3_0_0 = (CrossReference)cAppliedOnAssignment_3_0.eContents().get(0);
-		private final RuleCall cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1 = (RuleCall)cAppliedOnContainerStyleDescriptionCrossReference_3_0_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cAppliedOnAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final CrossReference cAppliedOnContainerStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
-		private final RuleCall cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnContainerStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Assignment cAppliedOnAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final CrossReference cAppliedOnContainerStyleDescriptionCrossReference_2_1_0_0 = (CrossReference)cAppliedOnAssignment_2_1_0.eContents().get(0);
+		private final RuleCall cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1 = (RuleCall)cAppliedOnContainerStyleDescriptionCrossReference_2_1_0_0.eContents().get(1);
+		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_1_0 = (Keyword)cGroup_2_1_1.eContents().get(0);
+		private final Assignment cAppliedOnAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
+		private final CrossReference cAppliedOnContainerStyleDescriptionCrossReference_2_1_1_1_0 = (CrossReference)cAppliedOnAssignment_2_1_1_1.eContents().get(0);
+		private final RuleCall cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1 = (RuleCall)cAppliedOnContainerStyleDescriptionCrossReference_2_1_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOverAllContainersKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cApplyonAllAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cApplyonAllEBooleanParserRuleCall_4_2_0 = (RuleCall)cApplyonAllAssignment_4_2.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cWidthKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cArcWithAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cArcWithEIntParserRuleCall_5_2_0 = (RuleCall)cArcWithAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOverAllContainersKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cHeightKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
+		private final Assignment cArcHeightAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cArcHeightEIntParserRuleCall_6_2_0 = (RuleCall)cArcHeightAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cWidthKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cRoundCornerKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cArcWithAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cArcWithEIntParserRuleCall_7_2_0 = (RuleCall)cArcWithAssignment_7_2.eContents().get(0);
+		private final Assignment cRoundedCornerAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cRoundedCornerEBooleanParserRuleCall_7_2_0 = (RuleCall)cRoundedCornerAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cHeightKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cTooltipExpressionKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cArcHeightAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cArcHeightEIntParserRuleCall_8_2_0 = (RuleCall)cArcHeightAssignment_8_2.eContents().get(0);
+		private final Assignment cTooltipExpressionAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0 = (RuleCall)cTooltipExpressionAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cRoundCornerKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cBorderDimensionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cRoundedCornerAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cRoundedCornerEBooleanParserRuleCall_9_2_0 = (RuleCall)cRoundedCornerAssignment_9_2.eContents().get(0);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cTooltipExpressionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cTooltipExpressionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final RuleCall cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0 = (RuleCall)cTooltipExpressionAssignment_10_2.eContents().get(0);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cBorderDimensionKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Assignment cBorderSizeComputationExpressionAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
-		private final RuleCall cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0 = (RuleCall)cBorderSizeComputationExpressionAssignment_11_2.eContents().get(0);
-		private final Assignment cOwnedSpecificContainerStyleCustomizationAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_12_0 = (RuleCall)cOwnedSpecificContainerStyleCustomizationAssignment_12.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cBorderSizeComputationExpressionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0 = (RuleCall)cBorderSizeComputationExpressionAssignment_9_2.eContents().get(0);
+		private final Assignment cOwnedSpecificContainerStyleCustomizationAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_10_0 = (RuleCall)cOwnedSpecificContainerStyleCustomizationAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
-		//	{styleCusto::ContainerStyleCustomization} "container" "("
+		//	{styleCusto::ContainerStyleCustomization} "container" ("("
 		//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "{" ("over-all-containers" ":"
+		//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")? "{" ("over-all-containers" ":"
 		//	applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
 		//	roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
 		//	":" borderSizeComputationExpression=CustomizationExpression)?
 		//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ContainerStyleCustomization} "container" "(" (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
-		//("," appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "{" ("over-all-containers" ":"
+		//{styleCusto::ContainerStyleCustomization} "container" ("(" (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
+		//("," appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")? "{" ("over-all-containers" ":"
 		//applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
 		//roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension" ":"
 		//borderSizeComputationExpression=CustomizationExpression)?
@@ -4002,141 +4017,145 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"container"
 		public Keyword getContainerKeyword_1() { return cContainerKeyword_1; }
 
+		//("(" (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
+		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
 		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
 		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_0() { return cAppliedOnAssignment_3_0; }
+		public Assignment getAppliedOnAssignment_2_1_0() { return cAppliedOnAssignment_2_1_0; }
 
 		//[siriusDDStyle::ContainerStyleDescription|STRING]
-		public CrossReference getAppliedOnContainerStyleDescriptionCrossReference_3_0_0() { return cAppliedOnContainerStyleDescriptionCrossReference_3_0_0; }
+		public CrossReference getAppliedOnContainerStyleDescriptionCrossReference_2_1_0_0() { return cAppliedOnContainerStyleDescriptionCrossReference_2_1_0_0; }
 
 		//STRING
-		public RuleCall getAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1() { return cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1; }
+		public RuleCall getAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
 		//("," appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_1_1() { return cAppliedOnAssignment_3_1_1; }
+		public Assignment getAppliedOnAssignment_2_1_1_1() { return cAppliedOnAssignment_2_1_1_1; }
 
 		//[siriusDDStyle::ContainerStyleDescription|STRING]
-		public CrossReference getAppliedOnContainerStyleDescriptionCrossReference_3_1_1_0() { return cAppliedOnContainerStyleDescriptionCrossReference_3_1_1_0; }
+		public CrossReference getAppliedOnContainerStyleDescriptionCrossReference_2_1_1_1_0() { return cAppliedOnContainerStyleDescriptionCrossReference_2_1_1_1_0; }
 
 		//STRING
-		public RuleCall getAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1() { return cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1; }
+		public RuleCall getAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//("over-all-containers" ":" applyonAll=EBoolean)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"over-all-containers"
-		public Keyword getOverAllContainersKeyword_6_0() { return cOverAllContainersKeyword_6_0; }
+		public Keyword getOverAllContainersKeyword_4_0() { return cOverAllContainersKeyword_4_0; }
+
+		//":"
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+
+		//applyonAll=EBoolean
+		public Assignment getApplyonAllAssignment_4_2() { return cApplyonAllAssignment_4_2; }
+
+		//EBoolean
+		public RuleCall getApplyonAllEBooleanParserRuleCall_4_2_0() { return cApplyonAllEBooleanParserRuleCall_4_2_0; }
+
+		//("width" ":" arcWith=EInt)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"width"
+		public Keyword getWidthKeyword_5_0() { return cWidthKeyword_5_0; }
+
+		//":"
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+
+		//arcWith=EInt
+		public Assignment getArcWithAssignment_5_2() { return cArcWithAssignment_5_2; }
+
+		//EInt
+		public RuleCall getArcWithEIntParserRuleCall_5_2_0() { return cArcWithEIntParserRuleCall_5_2_0; }
+
+		//("height" ":" arcHeight=EInt)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"height"
+		public Keyword getHeightKeyword_6_0() { return cHeightKeyword_6_0; }
 
 		//":"
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
-		//applyonAll=EBoolean
-		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
+		//arcHeight=EInt
+		public Assignment getArcHeightAssignment_6_2() { return cArcHeightAssignment_6_2; }
 
-		//EBoolean
-		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
+		//EInt
+		public RuleCall getArcHeightEIntParserRuleCall_6_2_0() { return cArcHeightEIntParserRuleCall_6_2_0; }
 
-		//("width" ":" arcWith=EInt)?
+		//("round-corner" ":" roundedCorner=EBoolean)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"width"
-		public Keyword getWidthKeyword_7_0() { return cWidthKeyword_7_0; }
+		//"round-corner"
+		public Keyword getRoundCornerKeyword_7_0() { return cRoundCornerKeyword_7_0; }
 
 		//":"
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
-		//arcWith=EInt
-		public Assignment getArcWithAssignment_7_2() { return cArcWithAssignment_7_2; }
+		//roundedCorner=EBoolean
+		public Assignment getRoundedCornerAssignment_7_2() { return cRoundedCornerAssignment_7_2; }
 
-		//EInt
-		public RuleCall getArcWithEIntParserRuleCall_7_2_0() { return cArcWithEIntParserRuleCall_7_2_0; }
+		//EBoolean
+		public RuleCall getRoundedCornerEBooleanParserRuleCall_7_2_0() { return cRoundedCornerEBooleanParserRuleCall_7_2_0; }
 
-		//("height" ":" arcHeight=EInt)?
+		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"height"
-		public Keyword getHeightKeyword_8_0() { return cHeightKeyword_8_0; }
+		//"tooltip-expression"
+		public Keyword getTooltipExpressionKeyword_8_0() { return cTooltipExpressionKeyword_8_0; }
 
 		//":"
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
-		//arcHeight=EInt
-		public Assignment getArcHeightAssignment_8_2() { return cArcHeightAssignment_8_2; }
+		//tooltipExpression=CustomizationExpression
+		public Assignment getTooltipExpressionAssignment_8_2() { return cTooltipExpressionAssignment_8_2; }
 
-		//EInt
-		public RuleCall getArcHeightEIntParserRuleCall_8_2_0() { return cArcHeightEIntParserRuleCall_8_2_0; }
+		//CustomizationExpression
+		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0; }
 
-		//("round-corner" ":" roundedCorner=EBoolean)?
+		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"round-corner"
-		public Keyword getRoundCornerKeyword_9_0() { return cRoundCornerKeyword_9_0; }
+		//"border-dimension"
+		public Keyword getBorderDimensionKeyword_9_0() { return cBorderDimensionKeyword_9_0; }
 
 		//":"
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
-		//roundedCorner=EBoolean
-		public Assignment getRoundedCornerAssignment_9_2() { return cRoundedCornerAssignment_9_2; }
-
-		//EBoolean
-		public RuleCall getRoundedCornerEBooleanParserRuleCall_9_2_0() { return cRoundedCornerEBooleanParserRuleCall_9_2_0; }
-
-		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
-		public Group getGroup_10() { return cGroup_10; }
-
-		//"tooltip-expression"
-		public Keyword getTooltipExpressionKeyword_10_0() { return cTooltipExpressionKeyword_10_0; }
-
-		//":"
-		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
-
-		//tooltipExpression=CustomizationExpression
-		public Assignment getTooltipExpressionAssignment_10_2() { return cTooltipExpressionAssignment_10_2; }
-
-		//CustomizationExpression
-		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0; }
-
-		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
-		public Group getGroup_11() { return cGroup_11; }
-
-		//"border-dimension"
-		public Keyword getBorderDimensionKeyword_11_0() { return cBorderDimensionKeyword_11_0; }
-
-		//":"
-		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
-
 		//borderSizeComputationExpression=CustomizationExpression
-		public Assignment getBorderSizeComputationExpressionAssignment_11_2() { return cBorderSizeComputationExpressionAssignment_11_2; }
+		public Assignment getBorderSizeComputationExpressionAssignment_9_2() { return cBorderSizeComputationExpressionAssignment_9_2; }
 
 		//CustomizationExpression
-		public RuleCall getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0() { return cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0; }
+		public RuleCall getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0() { return cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0; }
 
 		//ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization*
-		public Assignment getOwnedSpecificContainerStyleCustomizationAssignment_12() { return cOwnedSpecificContainerStyleCustomizationAssignment_12; }
+		public Assignment getOwnedSpecificContainerStyleCustomizationAssignment_10() { return cOwnedSpecificContainerStyleCustomizationAssignment_10; }
 
 		//SpecificContainerStyleCustomization
-		public RuleCall getOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_12_0() { return cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_12_0; }
+		public RuleCall getOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_10_0() { return cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_10_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class SpecificContainerStyleCustomizationElements extends AbstractParserRuleElementFinder {
@@ -4264,60 +4283,61 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cNodeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cAppliedOnAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final CrossReference cAppliedOnNodeStyleDescriptionCrossReference_3_0_0 = (CrossReference)cAppliedOnAssignment_3_0.eContents().get(0);
-		private final RuleCall cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1 = (RuleCall)cAppliedOnNodeStyleDescriptionCrossReference_3_0_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cAppliedOnAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final CrossReference cAppliedOnNodeStyleDescriptionCrossReference_3_1_1_0 = (CrossReference)cAppliedOnAssignment_3_1_1.eContents().get(0);
-		private final RuleCall cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1 = (RuleCall)cAppliedOnNodeStyleDescriptionCrossReference_3_1_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Assignment cAppliedOnAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final CrossReference cAppliedOnNodeStyleDescriptionCrossReference_2_1_0_0 = (CrossReference)cAppliedOnAssignment_2_1_0.eContents().get(0);
+		private final RuleCall cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1 = (RuleCall)cAppliedOnNodeStyleDescriptionCrossReference_2_1_0_0.eContents().get(1);
+		private final Group cGroup_2_1_1 = (Group)cGroup_2_1.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_1_0 = (Keyword)cGroup_2_1_1.eContents().get(0);
+		private final Assignment cAppliedOnAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
+		private final CrossReference cAppliedOnNodeStyleDescriptionCrossReference_2_1_1_1_0 = (CrossReference)cAppliedOnAssignment_2_1_1_1.eContents().get(0);
+		private final RuleCall cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1 = (RuleCall)cAppliedOnNodeStyleDescriptionCrossReference_2_1_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOverAllNodesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cApplyonAllAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cApplyonAllEBooleanParserRuleCall_4_2_0 = (RuleCall)cApplyonAllAssignment_4_2.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLabelPositionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cLabelPositionAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cLabelPositionLabelPositionEnumRuleCall_5_2_0 = (RuleCall)cLabelPositionAssignment_5_2.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOverAllNodesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cHideLabelKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cApplyonAllAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cApplyonAllEBooleanParserRuleCall_6_2_0 = (RuleCall)cApplyonAllAssignment_6_2.eContents().get(0);
+		private final Assignment cHideLabelByDefaultAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cHideLabelByDefaultEBooleanParserRuleCall_6_2_0 = (RuleCall)cHideLabelByDefaultAssignment_6_2.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cLabelPositionKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cResizeKindKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cLabelPositionAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cLabelPositionLabelPositionEnumRuleCall_7_2_0 = (RuleCall)cLabelPositionAssignment_7_2.eContents().get(0);
+		private final Assignment cResizeKindAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cResizeKindResizeKindEnumRuleCall_7_2_0 = (RuleCall)cResizeKindAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cHideLabelKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cTooltipExpressionKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cHideLabelByDefaultAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cHideLabelByDefaultEBooleanParserRuleCall_8_2_0 = (RuleCall)cHideLabelByDefaultAssignment_8_2.eContents().get(0);
+		private final Assignment cTooltipExpressionAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0 = (RuleCall)cTooltipExpressionAssignment_8_2.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cResizeKindKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cBorderDimensionKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cResizeKindAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cResizeKindResizeKindEnumRuleCall_9_2_0 = (RuleCall)cResizeKindAssignment_9_2.eContents().get(0);
+		private final Assignment cBorderSizeComputationExpressionAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0 = (RuleCall)cBorderSizeComputationExpressionAssignment_9_2.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cTooltipExpressionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Keyword cSizeDimensionKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cTooltipExpressionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final RuleCall cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0 = (RuleCall)cTooltipExpressionAssignment_10_2.eContents().get(0);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cBorderDimensionKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Assignment cBorderSizeComputationExpressionAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
-		private final RuleCall cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0 = (RuleCall)cBorderSizeComputationExpressionAssignment_11_2.eContents().get(0);
-		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cSizeDimensionKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Keyword cColonKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Assignment cSizeComputationExpressionAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
-		private final RuleCall cSizeComputationExpressionCustomizationExpressionParserRuleCall_12_2_0 = (RuleCall)cSizeComputationExpressionAssignment_12_2.eContents().get(0);
-		private final Assignment cOwnedSpecificNodeStyleCustomizationAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_13_0 = (RuleCall)cOwnedSpecificNodeStyleCustomizationAssignment_13.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cSizeComputationExpressionAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final RuleCall cSizeComputationExpressionCustomizationExpressionParserRuleCall_10_2_0 = (RuleCall)cSizeComputationExpressionAssignment_10_2.eContents().get(0);
+		private final Assignment cOwnedSpecificNodeStyleCustomizationAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_11_0 = (RuleCall)cOwnedSpecificNodeStyleCustomizationAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
-		//	{styleCusto::NodeStyleCustomization} "node" "(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
+		//	{styleCusto::NodeStyleCustomization} "node" ("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
+		//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")? "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
 		//	("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind"
 		//	":" resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
 		//	":" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
@@ -4325,8 +4345,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::NodeStyleCustomization} "node" "(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
+		//{styleCusto::NodeStyleCustomization} "node" ("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
+		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")? "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
 		//("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind" ":"
 		//resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension" ":"
 		//borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
@@ -4340,155 +4360,159 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//"node"
 		public Keyword getNodeKeyword_1() { return cNodeKeyword_1; }
 
+		//("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
+		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
 		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] ("," appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_0() { return cAppliedOnAssignment_3_0; }
+		public Assignment getAppliedOnAssignment_2_1_0() { return cAppliedOnAssignment_2_1_0; }
 
 		//[siriusDDStyle::NodeStyleDescription|STRING]
-		public CrossReference getAppliedOnNodeStyleDescriptionCrossReference_3_0_0() { return cAppliedOnNodeStyleDescriptionCrossReference_3_0_0; }
+		public CrossReference getAppliedOnNodeStyleDescriptionCrossReference_2_1_0_0() { return cAppliedOnNodeStyleDescriptionCrossReference_2_1_0_0; }
 
 		//STRING
-		public RuleCall getAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1() { return cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_3_0_0_1; }
+		public RuleCall getAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
 		//("," appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING]
-		public Assignment getAppliedOnAssignment_3_1_1() { return cAppliedOnAssignment_3_1_1; }
+		public Assignment getAppliedOnAssignment_2_1_1_1() { return cAppliedOnAssignment_2_1_1_1; }
 
 		//[siriusDDStyle::NodeStyleDescription|STRING]
-		public CrossReference getAppliedOnNodeStyleDescriptionCrossReference_3_1_1_0() { return cAppliedOnNodeStyleDescriptionCrossReference_3_1_1_0; }
+		public CrossReference getAppliedOnNodeStyleDescriptionCrossReference_2_1_1_1_0() { return cAppliedOnNodeStyleDescriptionCrossReference_2_1_1_1_0; }
 
 		//STRING
-		public RuleCall getAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1() { return cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_3_1_1_0_1; }
+		public RuleCall getAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//("over-all-nodes" ":" applyonAll=EBoolean)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"over-all-nodes"
-		public Keyword getOverAllNodesKeyword_6_0() { return cOverAllNodesKeyword_6_0; }
+		public Keyword getOverAllNodesKeyword_4_0() { return cOverAllNodesKeyword_4_0; }
+
+		//":"
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+
+		//applyonAll=EBoolean
+		public Assignment getApplyonAllAssignment_4_2() { return cApplyonAllAssignment_4_2; }
+
+		//EBoolean
+		public RuleCall getApplyonAllEBooleanParserRuleCall_4_2_0() { return cApplyonAllEBooleanParserRuleCall_4_2_0; }
+
+		//("label-position" ":" labelPosition=LabelPosition)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"label-position"
+		public Keyword getLabelPositionKeyword_5_0() { return cLabelPositionKeyword_5_0; }
+
+		//":"
+		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
+
+		//labelPosition=LabelPosition
+		public Assignment getLabelPositionAssignment_5_2() { return cLabelPositionAssignment_5_2; }
+
+		//LabelPosition
+		public RuleCall getLabelPositionLabelPositionEnumRuleCall_5_2_0() { return cLabelPositionLabelPositionEnumRuleCall_5_2_0; }
+
+		//("hide-label" ":" hideLabelByDefault=EBoolean)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"hide-label"
+		public Keyword getHideLabelKeyword_6_0() { return cHideLabelKeyword_6_0; }
 
 		//":"
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
-		//applyonAll=EBoolean
-		public Assignment getApplyonAllAssignment_6_2() { return cApplyonAllAssignment_6_2; }
+		//hideLabelByDefault=EBoolean
+		public Assignment getHideLabelByDefaultAssignment_6_2() { return cHideLabelByDefaultAssignment_6_2; }
 
 		//EBoolean
-		public RuleCall getApplyonAllEBooleanParserRuleCall_6_2_0() { return cApplyonAllEBooleanParserRuleCall_6_2_0; }
+		public RuleCall getHideLabelByDefaultEBooleanParserRuleCall_6_2_0() { return cHideLabelByDefaultEBooleanParserRuleCall_6_2_0; }
 
-		//("label-position" ":" labelPosition=LabelPosition)?
+		//("resize-kind" ":" resizeKind=ResizeKind)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"label-position"
-		public Keyword getLabelPositionKeyword_7_0() { return cLabelPositionKeyword_7_0; }
+		//"resize-kind"
+		public Keyword getResizeKindKeyword_7_0() { return cResizeKindKeyword_7_0; }
 
 		//":"
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
-		//labelPosition=LabelPosition
-		public Assignment getLabelPositionAssignment_7_2() { return cLabelPositionAssignment_7_2; }
+		//resizeKind=ResizeKind
+		public Assignment getResizeKindAssignment_7_2() { return cResizeKindAssignment_7_2; }
 
-		//LabelPosition
-		public RuleCall getLabelPositionLabelPositionEnumRuleCall_7_2_0() { return cLabelPositionLabelPositionEnumRuleCall_7_2_0; }
+		//ResizeKind
+		public RuleCall getResizeKindResizeKindEnumRuleCall_7_2_0() { return cResizeKindResizeKindEnumRuleCall_7_2_0; }
 
-		//("hide-label" ":" hideLabelByDefault=EBoolean)?
+		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"hide-label"
-		public Keyword getHideLabelKeyword_8_0() { return cHideLabelKeyword_8_0; }
+		//"tooltip-expression"
+		public Keyword getTooltipExpressionKeyword_8_0() { return cTooltipExpressionKeyword_8_0; }
 
 		//":"
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
-		//hideLabelByDefault=EBoolean
-		public Assignment getHideLabelByDefaultAssignment_8_2() { return cHideLabelByDefaultAssignment_8_2; }
+		//tooltipExpression=CustomizationExpression
+		public Assignment getTooltipExpressionAssignment_8_2() { return cTooltipExpressionAssignment_8_2; }
 
-		//EBoolean
-		public RuleCall getHideLabelByDefaultEBooleanParserRuleCall_8_2_0() { return cHideLabelByDefaultEBooleanParserRuleCall_8_2_0; }
+		//CustomizationExpression
+		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0; }
 
-		//("resize-kind" ":" resizeKind=ResizeKind)?
+		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"resize-kind"
-		public Keyword getResizeKindKeyword_9_0() { return cResizeKindKeyword_9_0; }
+		//"border-dimension"
+		public Keyword getBorderDimensionKeyword_9_0() { return cBorderDimensionKeyword_9_0; }
 
 		//":"
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
-		//resizeKind=ResizeKind
-		public Assignment getResizeKindAssignment_9_2() { return cResizeKindAssignment_9_2; }
+		//borderSizeComputationExpression=CustomizationExpression
+		public Assignment getBorderSizeComputationExpressionAssignment_9_2() { return cBorderSizeComputationExpressionAssignment_9_2; }
 
-		//ResizeKind
-		public RuleCall getResizeKindResizeKindEnumRuleCall_9_2_0() { return cResizeKindResizeKindEnumRuleCall_9_2_0; }
+		//CustomizationExpression
+		public RuleCall getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0() { return cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0; }
 
-		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
+		//("size-dimension" ":" sizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"tooltip-expression"
-		public Keyword getTooltipExpressionKeyword_10_0() { return cTooltipExpressionKeyword_10_0; }
+		//"size-dimension"
+		public Keyword getSizeDimensionKeyword_10_0() { return cSizeDimensionKeyword_10_0; }
 
 		//":"
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
-		//tooltipExpression=CustomizationExpression
-		public Assignment getTooltipExpressionAssignment_10_2() { return cTooltipExpressionAssignment_10_2; }
-
-		//CustomizationExpression
-		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_10_2_0; }
-
-		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
-		public Group getGroup_11() { return cGroup_11; }
-
-		//"border-dimension"
-		public Keyword getBorderDimensionKeyword_11_0() { return cBorderDimensionKeyword_11_0; }
-
-		//":"
-		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
-
-		//borderSizeComputationExpression=CustomizationExpression
-		public Assignment getBorderSizeComputationExpressionAssignment_11_2() { return cBorderSizeComputationExpressionAssignment_11_2; }
-
-		//CustomizationExpression
-		public RuleCall getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0() { return cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_11_2_0; }
-
-		//("size-dimension" ":" sizeComputationExpression=CustomizationExpression)?
-		public Group getGroup_12() { return cGroup_12; }
-
-		//"size-dimension"
-		public Keyword getSizeDimensionKeyword_12_0() { return cSizeDimensionKeyword_12_0; }
-
-		//":"
-		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
-
 		//sizeComputationExpression=CustomizationExpression
-		public Assignment getSizeComputationExpressionAssignment_12_2() { return cSizeComputationExpressionAssignment_12_2; }
+		public Assignment getSizeComputationExpressionAssignment_10_2() { return cSizeComputationExpressionAssignment_10_2; }
 
 		//CustomizationExpression
-		public RuleCall getSizeComputationExpressionCustomizationExpressionParserRuleCall_12_2_0() { return cSizeComputationExpressionCustomizationExpressionParserRuleCall_12_2_0; }
+		public RuleCall getSizeComputationExpressionCustomizationExpressionParserRuleCall_10_2_0() { return cSizeComputationExpressionCustomizationExpressionParserRuleCall_10_2_0; }
 
 		//ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization*
-		public Assignment getOwnedSpecificNodeStyleCustomizationAssignment_13() { return cOwnedSpecificNodeStyleCustomizationAssignment_13; }
+		public Assignment getOwnedSpecificNodeStyleCustomizationAssignment_11() { return cOwnedSpecificNodeStyleCustomizationAssignment_11; }
 
 		//SpecificNodeStyleCustomization
-		public RuleCall getOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_13_0() { return cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_13_0; }
+		public RuleCall getOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_11_0() { return cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_11_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
 	public class SpecificNodeStyleCustomizationElements extends AbstractParserRuleElementFinder {
@@ -7136,8 +7160,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
-	//	{styleCusto::EdgeStyleCustomization} "edge" "(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")" "{" ("over-all-edges" ":" applyonAll=EBoolean)?
+	//	{styleCusto::EdgeStyleCustomization} "edge" ("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
+	//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")? "{" ("over-all-edges" ":" applyonAll=EBoolean)?
 	//	("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
 	//	routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
 	//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
@@ -7158,8 +7182,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ColorCustomization returns styleCusto::ColorCustomization:
-	//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase "(" (appliedOn+=[ecore::EObject|STRING] (","
-	//	appliedOn+=[ecore::EObject|STRING])*) ")" applyonAll?="over-all-colors"? ("with" color=SystemColors);
+	//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase ("(" (appliedOn+=[ecore::EObject|STRING] (","
+	//	appliedOn+=[ecore::EObject|STRING])*) ")")? applyonAll?="over-all-colors"? ("with" color=SystemColors);
 	public ColorCustomizationElements getColorCustomizationAccess() {
 		return pColorCustomization;
 	}
@@ -7169,11 +7193,11 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LabelCustomization returns styleCusto::LabelCustomization:
-	//	{styleCusto::LabelCustomization} "label" "(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")" "{" ("over-all-labels" ":" applyonAll=EBoolean)?
-	//	ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
-	//	":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")? ("expression" ":"
-	//	expression=CustomizationExpression)? "}";
+	//	{styleCusto::LabelCustomization} "label" ("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
+	//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")? "{" ("over-all-labels" ":"
+	//	applyonAll=EBoolean)? ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":"
+	//	format=FontFormat)? ("color" ":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
+	//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
 	public LabelCustomizationElements getLabelCustomizationAccess() {
 		return pLabelCustomization;
 	}
@@ -7203,9 +7227,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
-	//	{styleCusto::ContainerStyleCustomization} "container" "("
+	//	{styleCusto::ContainerStyleCustomization} "container" ("("
 	//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")" "{" ("over-all-containers" ":"
+	//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")? "{" ("over-all-containers" ":"
 	//	applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
 	//	roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
 	//	":" borderSizeComputationExpression=CustomizationExpression)?
@@ -7259,8 +7283,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
-	//	{styleCusto::NodeStyleCustomization} "node" "(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")" "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
+	//	{styleCusto::NodeStyleCustomization} "node" ("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
+	//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")? "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
 	//	("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind"
 	//	":" resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
 	//	":" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"

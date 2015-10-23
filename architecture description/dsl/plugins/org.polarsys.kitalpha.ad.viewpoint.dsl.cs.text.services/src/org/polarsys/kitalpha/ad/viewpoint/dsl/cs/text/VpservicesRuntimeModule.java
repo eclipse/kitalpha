@@ -19,6 +19,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.VpservicesGenera
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.naming.ServicesQualifiedNameConverter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.naming.ServicesQualifiedNameProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resource.VpservicesResourceServiceProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonValueConverter;
 
 
 /**
@@ -40,6 +41,11 @@ public class VpservicesRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.
 	
 	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
 		return ServicesQualifiedNameProvider.class;
+	}
+	
+	@Override
+	public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
+		return CommonValueConverter.class;
 	}
 	
 }

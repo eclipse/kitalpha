@@ -407,7 +407,7 @@ AbstractCustomization returns styleCusto::AbstractCustomization:
 
 EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
 	{styleCusto::EdgeStyleCustomization}
-	'edge' '(' (appliedOn+=[siriusDDStyle::EdgeStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::EdgeStyleDescription | STRING])*)')' '{'
+	'edge' ('(' (appliedOn+=[siriusDDStyle::EdgeStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::EdgeStyleDescription | STRING])*)')')? '{'
 		('over-all-edges' ':' applyonAll=EBoolean)?
 		('source' ':' sourceArrow=EdgeArrows)?
 		('target' ':' targetArrow=EdgeArrows)?
@@ -428,14 +428,14 @@ EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
 
 ColorCustomization returns styleCusto::ColorCustomization:
 	{styleCusto::ColorCustomization}
-	'paint' (colorUseCase=ColorUseCase) '(' (appliedOn+=[ecore::EObject | STRING] (',' appliedOn+=[ecore::EObject | STRING])*) ')' 
+	'paint' (colorUseCase=ColorUseCase) ('(' (appliedOn+=[ecore::EObject | STRING] (',' appliedOn+=[ecore::EObject | STRING])*) ')')?
 		(applyonAll?='over-all-colors')?
 		('with' color = SystemColors)
 ;
 
 LabelCustomization returns styleCusto::LabelCustomization:
 	{styleCusto::LabelCustomization}
-	'label' '('(appliedOn+=[siriusDStyle::BasicLabelStyleDescription | STRING] (',' appliedOn+=[siriusDStyle::BasicLabelStyleDescription | STRING])*)')' '{'
+	'label' ('('(appliedOn+=[siriusDStyle::BasicLabelStyleDescription | STRING] (',' appliedOn+=[siriusDStyle::BasicLabelStyleDescription | STRING])*)')')? '{'
 		('over-all-labels' ':' applyonAll=EBoolean)?
 		(ownedLabelAlignment=LabelAlignementCustomization)?
 		('size' ':' size = EInt)?
@@ -464,7 +464,7 @@ AbstractNodeStyleCustomization returns styleCusto::AbstractNodeStyleCustomizatio
 
 ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
 	{styleCusto::ContainerStyleCustomization}
-	'container' '(' (appliedOn+=[siriusDDStyle::ContainerStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::ContainerStyleDescription | STRING])*) ')' '{'
+	'container' ('(' (appliedOn+=[siriusDDStyle::ContainerStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::ContainerStyleDescription | STRING])*) ')')? '{'
 		('over-all-containers' ':' applyonAll=EBoolean)?
 		('width' ':' arcWith = EInt)?
 		('height' ':' arcHeight = EInt)?
@@ -498,7 +498,7 @@ ShapeContainerStyleCustomization returns styleCusto::ShapeContainerStyleCustomiz
 
 NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
 	{styleCusto::NodeStyleCustomization}
-	'node' '('(appliedOn+=[siriusDDStyle::NodeStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::NodeStyleDescription | STRING])*)')' '{'
+	'node' ('('(appliedOn+=[siriusDDStyle::NodeStyleDescription | STRING] (',' appliedOn+=[siriusDDStyle::NodeStyleDescription | STRING])*)')')? '{'
 		('over-all-nodes' ':' applyonAll=EBoolean)?
 		('label-position' ':' labelPosition=LabelPosition)?
 		('hide-label' ':' hideLabelByDefault=EBoolean)?

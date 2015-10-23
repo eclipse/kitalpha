@@ -349,7 +349,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (colorUseCase=ColorUseCase appliedOn+=[EObject|STRING] appliedOn+=[EObject|STRING]* applyonAll?='over-all-colors'? color=SystemColors)
+	 *     (colorUseCase=ColorUseCase (appliedOn+=[EObject|STRING] appliedOn+=[EObject|STRING]*)? applyonAll?='over-all-colors'? color=SystemColors)
 	 */
 	protected void sequence_ColorCustomization(EObject context, ColorCustomization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -393,8 +393,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Constraint:
 	 *     (
-	 *         appliedOn+=[ContainerStyleDescription|STRING] 
-	 *         appliedOn+=[ContainerStyleDescription|STRING]* 
+	 *         (appliedOn+=[ContainerStyleDescription|STRING] appliedOn+=[ContainerStyleDescription|STRING]*)? 
 	 *         applyonAll=EBoolean? 
 	 *         arcWith=EInt? 
 	 *         arcHeight=EInt? 
@@ -609,8 +608,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Constraint:
 	 *     (
-	 *         appliedOn+=[EdgeStyleDescription|STRING] 
-	 *         appliedOn+=[EdgeStyleDescription|STRING]* 
+	 *         (appliedOn+=[EdgeStyleDescription|STRING] appliedOn+=[EdgeStyleDescription|STRING]*)? 
 	 *         applyonAll=EBoolean? 
 	 *         sourceArrow=EdgeArrows? 
 	 *         targetArrow=EdgeArrows? 
@@ -843,8 +841,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Constraint:
 	 *     (
-	 *         appliedOn+=[BasicLabelStyleDescription|STRING] 
-	 *         appliedOn+=[BasicLabelStyleDescription|STRING]* 
+	 *         (appliedOn+=[BasicLabelStyleDescription|STRING] appliedOn+=[BasicLabelStyleDescription|STRING]*)? 
 	 *         applyonAll=EBoolean? 
 	 *         ownedLabelAlignment=LabelAlignementCustomization? 
 	 *         size=EInt? 
@@ -964,8 +961,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * Constraint:
 	 *     (
-	 *         appliedOn+=[NodeStyleDescription|STRING] 
-	 *         appliedOn+=[NodeStyleDescription|STRING]* 
+	 *         (appliedOn+=[NodeStyleDescription|STRING] appliedOn+=[NodeStyleDescription|STRING]*)? 
 	 *         applyonAll=EBoolean? 
 	 *         labelPosition=LabelPosition? 
 	 *         hideLabelByDefault=EBoolean? 
