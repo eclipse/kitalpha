@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSample" version="10.1.0.201507271600">
-  <ownedViewpoints name="ComponentSample_ID" label="ComponentSample" modelFileExtension="componentsample">
+  <ownedViewpoints name="ComponentSample_ID" label="ComponentSample" modelFileExtension=" componentsample ">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ComponentSampleDiagram" label="ComponentSampleDiagram" domainClass="ComponentSample.ComponentModel">
       <metamodel href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
       <defaultLayer name="Component Sample">
@@ -12,7 +12,7 @@
         <containerMappings name="ComponentPackageContainer_CM" label="ComponentPackageContainer" semanticCandidatesExpression="feature:packages" domainClass="ComponentSample.ComponentPackage" dropDescriptions="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_HardwareComponentContainer']">
           <subContainerMappings name="HardwareComponentContainer_CM" label="HardwareComponentContainer" semanticCandidatesExpression="feature:components" domainClass="ComponentSample.HardwareComponent" dropDescriptions="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_InnerHardwareComponentContainer'] //@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_SoftwareComponentNode']">
             <subNodeMappings name="SoftwareComponentNode_NM" label="SoftwareComponentNode" semanticCandidatesExpression="feature:abstractComponent" domainClass="ComponentSample.SoftwareComponent">
-              <style xsi:type="style:SquareDescription" labelExpression="['SW'+name/]" resizeKind="NSEW">
+              <style xsi:type="style:BundledImageDescription" labelExpression="['SW'+name/]" resizeKind="NSEW" shape="ring">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
@@ -23,25 +23,25 @@
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subContainerMappings>
             <style xsi:type="style:FlatContainerStyleDescription" labelExpression="['HW'+name/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
             </style>
           </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" labelExpression="['Package '+name/]">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
           </style>
         </containerMappings>
         <toolSections name="ComponentSample" label="ComponentSample">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentPackageContainerCreationTool" label="Component Package" containerMappings="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentPackageContainerCreationTool" label="Component Package" containerMappings="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']" iconPath="/org.polarsys.kitalpha.vp.componentsample.design/icons/package-icon.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -182,7 +182,69 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="ComponentSampleExtension" viewpointURI="viewpoint:/org.polarsys.kitalpha.vp.componentsample.design/ComponentSample_ID" representationName="ComponentSampleDiagram">
+      <layers name="Component Sample">
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="borderSizeComputationExpression" value="0">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="labelPosition" value="service:getLabelPositionNode">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="hideLabelByDefault" value="false">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="borderSizeComputationExpression" value="1">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="arcWidth" value="18">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="arcHeight" value="18">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="roundedCorner" value="true">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="lineStyle" value="service:getLineStyleSolid">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="endsCentering" value="service:getEndCenteringBoth">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" attributeName="sizeComputationExpression" value="1">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="service:switchInnerHardwareStyle(view, container)">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" referenceName="backgroundColor">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" referenceName="foregroundColor">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" referenceName="borderColor">
+              <appliedOn href="#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </layers>
+    </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsample.design.service.ComponentSampleOpenJavaService"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsample.design.service.tools.OpenActionService"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsample.design.service.customizations.StyleEnumerationsHelper"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsample.design.service.customizations.InnerHardwareStyleStyleCustomization_Service"/>
   </ownedViewpoints>
 </description:Group>

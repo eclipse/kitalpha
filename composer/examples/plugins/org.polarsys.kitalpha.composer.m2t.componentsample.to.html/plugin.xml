@@ -83,5 +83,11 @@ Contributors:
             NsUri="http://www.polarsys.org/kitalpha/componentsampleallocation/1.0.0">
       </generator>
    </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.polarsys.kitalpha.composer.m2t.componentsample.to.html.setup.configuration.SetupLaunchConfiguration">
+      </startup>
+   </extension>
 
 </plugin>

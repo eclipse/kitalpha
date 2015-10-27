@@ -5,12 +5,12 @@
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="status" LocalTarget="//@VP_Data/@VP_Classes.1"/>
       <VP_Class_Attributes name="complexity">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
         </owned_type>
       </VP_Class_Attributes>
       <VP_Class_Attributes name="cost">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
         </owned_type>
       </VP_Class_Attributes>
       <extends href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//AbstractComponent"/>
@@ -21,7 +21,7 @@
     <VP_Classes name="PerformanceStatus" icon="PerformanceStatus.png">
       <VP_Class_Attributes name="overhead">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
         </owned_type>
       </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
@@ -40,7 +40,7 @@
         <diagram_Elements xsi:type="vpdiagram:Container" name="ComponentSamplePerformance">
           <imports href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
           <children>
-            <owned_nodes xsi:type="vpdiagram:Node" name="PerformanceNode">
+            <owned_nodes xsi:type="vpdiagram:Container" name="PerformanceNode">
               <the_domain>
                 <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.0"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
@@ -56,10 +56,24 @@
                     <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
                   </value>
                 </node_Label>
-                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="chocolate"/>
+                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_chocolate" forgroundColor="light_yellow"/>
+              </style>
+              <style>
+                <node_Label>
+                  <value>
+                    <expressionElements xsi:type="expression:StringElement" value="Cost: "/>
+                    <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
+                    <expressionElements xsi:type="expression:StringElement" value="/Complexity: "/>
+                    <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                  </value>
+                </node_Label>
+                <condition>
+                  <expression xsi:type="expression:JavaElement" method="WhenTooComplex"/>
+                </condition>
+                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_red" forgroundColor="light_yellow"/>
               </style>
               <children>
-                <owned_boderednodes name="PerformanceStatusNode">
+                <owned_nodes xsi:type="vpdiagram:Node" name="PerformanceStatusNode">
                   <the_domain>
                     <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>
                     <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.0"/>
@@ -73,7 +87,7 @@
                     </node_Label>
                     <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_chocolate"/>
                   </style>
-                </owned_boderednodes>
+                </owned_nodes>
               </children>
             </owned_nodes>
           </children>
@@ -83,9 +97,9 @@
         <actions xsi:type="vpdiagram:Create" name="PerformanceNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Performance"/>
         <actions xsi:type="vpdiagram:Drop" name="PerformanceNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Drop Performance"/>
         <actions xsi:type="vpdiagram:Delete" name="PerformanceNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Delete Performance"/>
-        <actions xsi:type="vpdiagram:Create" name="PerformanceStatusNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Status"/>
-        <actions xsi:type="vpdiagram:Delete" name="QPerformanceStatusNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Delete Status"/>
-        <actions xsi:type="vpdiagram:Drop" name="PerformanceStatusNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Drop Status"/>
+        <actions xsi:type="vpdiagram:Create" name="PerformanceStatusNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Status"/>
+        <actions xsi:type="vpdiagram:Delete" name="QPerformanceStatusNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Delete Status"/>
+        <actions xsi:type="vpdiagram:Drop" name="PerformanceStatusNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Drop Status"/>
       </the_ActionSet>
       <extented_diagram href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']"/>
     </diagrams>

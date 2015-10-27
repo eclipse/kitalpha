@@ -96,5 +96,11 @@ Contributors:
          </Description>
       </ActivityDeclaration>
    </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.startup.SetupLanchConfiguration">
+      </startup>
+   </extension>
 
 </plugin>

@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.uml2.uml,
  org.eclipse.emf,
  org.polarsys.kitalpha.transposer.transformation.emf,
- org.polarsys.kitalpha.vp.componentsample.model
+ org.polarsys.kitalpha.vp.componentsample.model,
+ org.eclipse.debug.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

@@ -27,6 +27,7 @@ Data ComponentSample.data {
 	}
 	// Common Organization
 	Class ComponentModel {
+		icon: "model-icon.png"
 		superClass ComponentElement
 		Associations:
 			packages contains [0,*] Package
@@ -38,6 +39,7 @@ Data ComponentSample.data {
 	
 	// Component elements
 	Class ComponentPackage {
+		icon: "package-icon.png"
 		superClass Package
 		Associations:
 			components contains[0,*] AbstractComponent

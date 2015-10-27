@@ -6,6 +6,7 @@ package org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance;
 
@@ -20,11 +21,11 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
 public class OwnedViewpointElementQuery implements IQuery {
 
 	/**
-	   * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	   * <!-- end-user-doc -->
-	   * Default constructor
-	   * @generated
-	   */
+	* Default constructor
+	* @generated
+	*/
 	public OwnedViewpointElementQuery() {
 		// TODO Auto-generated constructor stub
 	}

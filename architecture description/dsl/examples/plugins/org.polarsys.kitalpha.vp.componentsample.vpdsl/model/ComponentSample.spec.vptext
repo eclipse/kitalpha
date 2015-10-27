@@ -18,7 +18,7 @@
 Viewpoint ComponentSample {
 	name: "ComponentSample"
 	extends ComponentSampleFramework
-	
+	uses diagram "platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"
 	Data ComponentSample.data
 	Diagrams ComponentSample.diagram
 	Activity-Explorer ComponentSample.activityexplorer

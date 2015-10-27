@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSamplePerformance" version="10.1.0.201507101000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSamplePerformance" version="10.1.0.201507271600">
   <ownedViewpoints name="ComponentSamplePerformance_ID" label="ComponentSamplePerformance" modelFileExtension=" componentsample componentsampleperformance ">
     <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="ComponentSamplePerformanceDiagram" viewpointURI="viewpoint:/org.polarsys.kitalpha.vp.componentsample.design/ComponentSample_ID" representationName="ComponentSampleDiagram">
       <layers name="Component Sample Performance">
@@ -7,21 +7,30 @@
           <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_InnerHardwareComponentContainer']"/>
           <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_SoftwareComponentNode']"/>
           <dropDescriptions href="#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@toolSections.0/@ownedTools[name='Drop_PerformanceNode']"/>
-          <subNodeMappings name="PerformanceNode_NM" label="PerformanceNode" semanticCandidatesExpression="feature:ownedExtensions" domainClass="ComponentSamplePerformance.Performance" dropDescriptions="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@toolSections.0/@ownedTools[name='Drop_PerformanceStatusNode']">
-            <borderedNodeMappings name="PerformanceStatusNode_BNM" label="PerformanceStatusNode" semanticCandidatesExpression="feature:status" domainClass="ComponentSamplePerformance.PerformanceStatus">
-              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="['Overhead: '+overhead/]" labelPosition="node" resizeKind="NSEW">
+          <reusedNodeMappings href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
+          <subContainerMappings name="PerformanceNode_CM" label="PerformanceNode" semanticCandidatesExpression="feature:ownedExtensions" domainClass="ComponentSamplePerformance.Performance" dropDescriptions="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@toolSections.0/@ownedTools[name='Drop_PerformanceStatusNode']">
+            <subNodeMappings name="PerformanceStatusNode_NM" label="PerformanceStatusNode" semanticCandidatesExpression="feature:status" domainClass="ComponentSamplePerformance.PerformanceStatus">
+              <style xsi:type="style:SquareDescription" labelExpression="['Overhead: '+overhead/]" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
               </style>
-            </borderedNodeMappings>
-            <style xsi:type="style:SquareDescription" labelExpression="['Cost: '+cost+'/Complexity: '+complexity/]" resizeKind="NSEW">
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="['Cost: '+cost+'/Complexity: '+complexity/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
-          </subNodeMappings>
-          <reusedNodeMappings href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
+            <conditionnalStyles predicateExpression="service:WhenTooComplex(view,container)">
+              <style xsi:type="style:FlatContainerStyleDescription" labelExpression="['Cost: '+cost+'/Complexity: '+complexity/]">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              </style>
+            </conditionnalStyles>
+          </subContainerMappings>
           <reusedContainerMappings href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']"/>
           <importedMapping href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
         </containerMappings>
@@ -30,7 +39,7 @@
           <importedMapping href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']"/>
         </containerMappings>
         <toolSections name="ComponentSamplePerformance" label="ComponentSamplePerformance">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="PerformanceNodeCreationTool" label="Performance" nodeMappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="PerformanceNodeCreationTool" label="Performance" containerMappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subContainerMappings[name='PerformanceNode_CM']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -39,7 +48,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerDropDescription" name="Drop_PerformanceNode" mappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']">
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="Drop_PerformanceNode" mappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subContainerMappings[name='PerformanceNode_CM']">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>
@@ -53,7 +62,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="PerformanceStatusNodeCreationTool" label="Status" nodeMappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@borderedNodeMappings[name='PerformanceStatusNode_BNM']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="PerformanceStatusNodeCreationTool" label="Status" nodeMappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subContainerMappings[name='PerformanceNode_CM']/@subNodeMappings[name='PerformanceStatusNode_NM']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -62,7 +71,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerDropDescription" name="Drop_PerformanceStatusNode" mappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@borderedNodeMappings[name='PerformanceStatusNode_BNM']">
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="Drop_PerformanceStatusNode" mappings="//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subContainerMappings[name='PerformanceNode_CM']/@subNodeMappings[name='PerformanceStatusNode_NM']">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>
@@ -80,5 +89,6 @@
       </layers>
     </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsampleperformance.design.service.ComponentSamplePerformanceOpenJavaService"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsampleperformance.design.service.nodes.PerformanceNode_Service"/>
   </ownedViewpoints>
 </description:Group>

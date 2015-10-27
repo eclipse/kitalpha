@@ -1,0 +1,7 @@
+The provided launch configuration suppose that:
+	1. The generated files will be in sub-folder in current project name html-gen
+	2. Cadence activity that clean the html-gen folder suppose that the project
+	name is example.
+	
+If this default configuation not answer to your needs, please see the documentation
+about creating Composer launch configuration. 

@@ -1,5 +1,11 @@
 package org.polarsys.kitalpha.vp.componentsampleperformance.design.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
+
 /*******************************************************************************
  * Copyright (c) 2014 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
