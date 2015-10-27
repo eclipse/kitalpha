@@ -25,16 +25,33 @@ Diagrams ComponentSamplePerformance.diagram {
 			Container ComponentSamplePerformance {
 				import: HardwareComponentContainer_CM Contains {
 
-					Node PerformanceNode {
+					Container PerformanceNode {
 						domain-context: ComponentSamplePerformance.data.Performance provided-by association external emde.ExtensibleElement.ownedExtensions
 						Representation {
-							Label { content: "Cost: " + ComponentSamplePerformance.data.Performance.cost + "/Complexity: " + ComponentSamplePerformance.data.Performance.complexity police: black alignment: center}
+							Label {
+								content: "Cost: " + ComponentSamplePerformance.data.Performance.cost + "/Complexity: " + ComponentSamplePerformance.data.Performance.complexity 
+								police: black
+							}
 							Style {
-								BasicStyle { border-color: black background: chocolate form: Square }
+								FlatStyle {
+									border: black background: light_chocolate foreground: light_yellow
+								}
+							}
+						}
+						Representation {
+							condition: Java WhenTooComplex
+							Label {
+								content: "Cost: " + ComponentSamplePerformance.data.Performance.cost + "/Complexity: " + ComponentSamplePerformance.data.Performance.complexity 
+								police: black
+							}
+							Style {
+								FlatStyle {
+									border: black background: light_red foreground: light_yellow
+								}
 							}
 						}
 						Contains {
-							BorderedNode PerformanceStatusNode {
+							Node PerformanceStatusNode {
 								domain-context: ComponentSamplePerformance.data.PerformanceStatus provided-by association ComponentSamplePerformance.data.Performance.status
 								Representation {
 									Label {

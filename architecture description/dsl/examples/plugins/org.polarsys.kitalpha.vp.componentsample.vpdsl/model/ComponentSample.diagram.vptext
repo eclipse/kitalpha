@@ -16,6 +16,9 @@
  *	@date: 26/08/14
  *
  */
+
+import external "platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"
+
 Diagrams ComponentSample.diagram {
 	Diagram "ComponentSampleDiagram" {
 		domain-context: ComponentSample.data.ComponentModel
@@ -30,7 +33,7 @@ Diagrams ComponentSample.diagram {
 					}
 					Style {
 						FlatStyle {
-							border: blue background: light_yellow foreground: light_gray
+							border: blue background: light_yellow foreground: light_yellow
 						}
 					}
 				}
@@ -41,7 +44,7 @@ Diagrams ComponentSample.diagram {
 						Representation {
 							Label { content: "HW" + ComponentSample.data.ComponentElement.name police: black }
 							Style {
-								FlatStyle {	border: red background: orange foreground: light_red }
+								FlatStyle {	border: red background: light_orange foreground: dark_orange }
 							}
 						}
 						Contains {
@@ -51,7 +54,7 @@ Diagrams ComponentSample.diagram {
 								Representation {
 									Label { content: "HW" + ComponentSample.data.ComponentElement.name police: black }
 									Style {
-										FlatStyle {	border: black background: white foreground: light_yellow }
+										FlatStyle {	border: black background: white foreground: white }
 									}
 								}
 								Contains {
@@ -64,7 +67,7 @@ Diagrams ComponentSample.diagram {
 								Representation {
 									Label { content: "SW" + ComponentSample.data.ComponentElement.name police: black }
 									Style {
-										BasicStyle {border-color: black background: light_blue form: Square}
+										BasicStyle {border-color: black background: light_blue form: Ring}
 									}
 								}
 							}
@@ -87,7 +90,7 @@ Diagrams ComponentSample.diagram {
 		
 		Actions {
 			// ComponentPackageContainer actions
-			Create ComponentPackageContainerCreate { label: "Component Package" action-for: ComponentPackageContainer}
+			Create ComponentPackageContainerCreate { label: "Component Package" action-for: ComponentPackageContainer icon: "package-icon.png" }
 			Delete ComponentPackageContainerDelete { label: "Delete" action-for:  ComponentPackageContainer}
 
 			// ComponentHardwareComponentContainer actions
@@ -112,6 +115,55 @@ Diagrams ComponentSample.diagram {
 
 			// Open actions			
 			OpenAction GoAction { label: "Go!" icon: "goAction.gif"  }
+		}
+	}
+	
+	
+	DiagramExtension "ComponentSampleExtension" {
+		extended-diagram: ComponentSampleDiagram
+		Mapping {
+		//[Container, Node or Edge] 
+
+		}
+		
+		Actions {
+		//[Actions]
+		}
+		
+		customizations {
+			customization componentSampleCustomization with {
+				
+				node ("[Component Sample] [ComponentPackageContainer] [HardwareComponentContainer] [SoftwareComponentNode] Basic Shape light_blue ring"){
+					over-all-nodes : false
+					label-position : node
+					hide-label : false
+					border-dimension :  "0"
+				}
+				
+				container ("[Component Sample] [ComponentPackageContainer] Gradient light_yellow to light_yellow",
+					"[Component Sample] [ComponentPackageContainer] [HardwareComponentContainer] Gradient light_orange to dark_orange",
+					"[Component Sample] [ComponentPackageContainer] [HardwareComponentContainer] [InnerHardwareComponentContainer] Gradient white to white"
+				){
+					over-all-containers : false
+					width : 18
+					height : 18
+					round-corner : true
+					border-dimension : "1"
+				}
+				
+				edge ("[Component Sample] [UseComponentToComponentEdge] Edge Style solid") {
+					over-all-edges : false
+					line-style : solid
+					size : "1"
+					end-centering : Both
+				}
+			}
+			
+			customization innerHardwareStyle when (Java switchInnerHardwareStyle) with {
+				paint Background ("[Component Sample] [ComponentPackageContainer] [HardwareComponentContainer] [InnerHardwareComponentContainer] Gradient white to white") with light_orange
+				paint foreground ("[Component Sample] [ComponentPackageContainer] [HardwareComponentContainer] [InnerHardwareComponentContainer] Gradient white to white") with dark_orange
+				paint Border ("[Component Sample] [ComponentPackageContainer] [HardwareComponentContainer] [InnerHardwareComponentContainer] Gradient white to white") with white
+			}
 		}
 	}
 }

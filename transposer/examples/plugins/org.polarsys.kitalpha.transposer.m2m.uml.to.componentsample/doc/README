@@ -1,0 +1,6 @@
+If you want generate the trace model, please add Cadence activities which allows
+to generate it.
+
+1. Add  EMF based Trace Loader to Pre Analysis workflow element and set the folder 
+where the trace model will be generated and the name of the model suffixed by .traces
+2. Add EMF Based Soft Trace Cleaner and EMF Based Trace Saver to Post Execution workflow element 

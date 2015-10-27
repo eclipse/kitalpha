@@ -37,12 +37,10 @@ public class OpenActionService {
 	* <!-- end-user-doc -->
 	* @param element : the element
 	* @param newSemanticContainer : the element view
-	* @generated
+	* @generated NOT
 	*/
 	public boolean GoAction(EObject element, EObject newSemanticContainer) {
-		// TODO Auto-generated method stub
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return MyAction(element, newSemanticContainer);
 	}
 
 	/**

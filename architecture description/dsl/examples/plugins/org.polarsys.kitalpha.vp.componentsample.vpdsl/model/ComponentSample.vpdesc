@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DescAirdGenConf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0" xmlns:DocGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpbuild="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" xmlns:vpservices="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" name="ComponentSample" shortName="ComponentSample">
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DescAirdGenConf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0" xmlns:DocGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpbuild="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" xmlns:vpservices="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" xmlns:vpstylecustomization="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/vpstylecustomization/1.0.0" name="ComponentSample" shortName="ComponentSample">
   <VP_Data name="ComponentSample.data">
     <VP_Classes name="ComponentElement" abstract="true">
       <VP_Class_Attributes name="name">
@@ -16,14 +16,14 @@
         <superClass href="../../../plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement"/>
       </Inheritences>
     </VP_Classes>
-    <VP_Classes name="ComponentModel">
+    <VP_Classes name="ComponentModel" icon="model-icon.png">
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="packages" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.2"/>
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
     <VP_Classes name="Package" abstract="true">
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
     </VP_Classes>
-    <VP_Classes name="ComponentPackage">
+    <VP_Classes name="ComponentPackage" icon="package-icon.png">
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="components" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.4"/>
       <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.2"/>
     </VP_Classes>
@@ -75,7 +75,7 @@
                 <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
               </value>
             </node_Label>
-            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_yellow" forgroundColor="light_gray" borderColor="blue"/>
+            <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_yellow" forgroundColor="light_yellow" borderColor="blue"/>
           </style>
           <children>
             <owned_nodes xsi:type="vpdiagram:Container" name="HardwareComponentContainer">
@@ -90,7 +90,7 @@
                     <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
                   </value>
                 </node_Label>
-                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="orange" forgroundColor="light_red" borderColor="red"/>
+                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_orange" forgroundColor="dark_orange" borderColor="red"/>
               </style>
               <children>
                 <owned_nodes xsi:type="vpdiagram:Container" name="InnerHardwareComponentContainer">
@@ -105,7 +105,7 @@
                         <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
                       </value>
                     </node_Label>
-                    <style xsi:type="vpdiagram:FlatStyle" backgroundColor="white" forgroundColor="light_yellow"/>
+                    <style xsi:type="vpdiagram:FlatStyle" backgroundColor="white" forgroundColor="white"/>
                   </style>
                   <children reused_nodes="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0 //@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.1"/>
                 </owned_nodes>
@@ -121,7 +121,7 @@
                         <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
                       </value>
                     </node_Label>
-                    <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_blue"/>
+                    <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_blue" form="Ring"/>
                   </style>
                 </owned_nodes>
               </children>
@@ -138,7 +138,7 @@
         </diagram_Elements>
       </the_MappingSet>
       <the_ActionSet>
-        <actions xsi:type="vpdiagram:Create" name="ComponentPackageContainerCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0" label="Component Package"/>
+        <actions xsi:type="vpdiagram:Create" name="ComponentPackageContainerCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0" label="Component Package" icon="package-icon.png"/>
         <actions xsi:type="vpdiagram:Delete" name="ComponentPackageContainerDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0" label="Delete"/>
         <actions xsi:type="vpdiagram:Create" name="HardwareComponentContainerCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Hardware" icon="Hardware.png"/>
         <actions xsi:type="vpdiagram:Delete" name="HardwareComponentContainerDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Delete"/>
@@ -158,6 +158,50 @@
         <the_domain xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>
       </the_domain>
     </diagrams>
+    <diagrams xsi:type="vpdiagram:DiagramExtension" name="ComponentSampleExtension">
+      <the_MappingSet/>
+      <the_ActionSet/>
+      <extented_diagram href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']"/>
+      <ownedCustomizations>
+        <ownedCustomizationDescriptions name="componentSampleCustomization">
+          <ownedCustomizations xsi:type="vpstylecustomization:NodeStyleCustomization" labelPosition="node" hideLabelByDefault="false">
+            <borderSizeComputationExpression>
+              <ownedExpressionElement xsi:type="expression:StringElement" value="0"/>
+            </borderSizeComputationExpression>
+            <appliedOn xsi:type="style:BundledImageDescription" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
+          </ownedCustomizations>
+          <ownedCustomizations xsi:type="vpstylecustomization:ContainerStyleCustomization" arcWith="18" arcHeight="18" roundedCorner="true">
+            <borderSizeComputationExpression>
+              <ownedExpressionElement xsi:type="expression:StringElement" value="1"/>
+            </borderSizeComputationExpression>
+            <appliedOn xsi:type="style:FlatContainerStyleDescription" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@style"/>
+            <appliedOn xsi:type="style:FlatContainerStyleDescription" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
+            <appliedOn xsi:type="style:FlatContainerStyleDescription" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+          </ownedCustomizations>
+          <ownedCustomizations xsi:type="vpstylecustomization:EdgeStyleCustomization" lineStyle="solid" endCentering="Both">
+            <appliedOn href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
+            <sizeComputationExpression>
+              <ownedExpressionElement xsi:type="expression:StringElement" value="1"/>
+            </sizeComputationExpression>
+          </ownedCustomizations>
+        </ownedCustomizationDescriptions>
+        <ownedCustomizationDescriptions name="innerHardwareStyle">
+          <ownedCustomizations xsi:type="vpstylecustomization:ColorCustomization" color="light_orange" colorUseCase="Background">
+            <appliedOn href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+          </ownedCustomizations>
+          <ownedCustomizations xsi:type="vpstylecustomization:ColorCustomization" color="dark_orange" colorUseCase="Foreground">
+            <appliedOn href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+          </ownedCustomizations>
+          <ownedCustomizations xsi:type="vpstylecustomization:ColorCustomization" color="white">
+            <appliedOn href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
+          </ownedCustomizations>
+          <precondtionExpression>
+            <ownedExpressionElement xsi:type="expression:JavaElement" method="switchInnerHardwareStyle"/>
+          </precondtionExpression>
+        </ownedCustomizationDescriptions>
+      </ownedCustomizations>
+    </diagrams>
+    <additionalExternalGroup href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#/"/>
   </VP_Aspects>
   <VP_Aspects xsi:type="vpservices:ServiceSet" name="ComponentSample.services">
     <vpServices name="MyService" relatedRules="//@VP_Aspects.3/@vpRules.0 //@VP_Aspects.3/@vpRules.2"/>
@@ -188,4 +232,7 @@
     </ownedPages>
   </VP_Aspects>
   <parents href="../../org.polarsys.kitalpha.vp.componentsampleframework.vpdsl/model/ComponentSampleFramework.vpdesc#/"/>
+  <viewpointResources>
+    <useResource xsi:type="vpdesc:EMFResource" uri="platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"/>
+  </viewpointResources>
 </vpdesc:Viewpoint>

@@ -7,3 +7,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.kitalpha.vp.componentsampleperformance.model.edit
+Export-Package: org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.performance,
+ org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.queries.performancestatus
