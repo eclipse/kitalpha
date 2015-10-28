@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.releng;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,7 +19,10 @@ public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.bui
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "    <hudson.tasks.ArtifactArchiver>" + NL + "      <artifacts>result/publish/**</artifacts>" + NL + "      " + NL + "      <excludes>result/publish/TP_*/**/*</excludes>" + NL + "      <latestOnly>false</latestOnly>" + NL + "    </hudson.tasks.ArtifactArchiver>" + NL;
+	protected final String TEXT_1 = "    <hudson.tasks.ArtifactArchiver>" + NL
+			+ "      <artifacts>result/publish/**</artifacts>" + NL + "      " + NL
+			+ "      <excludes>result/publish/TP_*/**/*</excludes>" + NL + "      <latestOnly>false</latestOnly>" + NL
+			+ "    </hudson.tasks.ArtifactArchiver>" + NL;
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -41,7 +44,8 @@ public class ExcludepublishPattern extends org.eclipse.egf.portfolio.eclipse.bui
 
 		paramDesc = new IQuery.ParameterDescription("job", "http://www.eclipse.org/egf/1.0.1/buildcore#//Job");
 		queryCtx = new HashMap<String, String>();
-		List<Object> jobList = QueryHelper.load(ctx, "org.eclipse.egf.pattern.query.EObjectInjectedContextQuery").execute(paramDesc, queryCtx, ctx);
+		List<Object> jobList = QueryHelper.load(ctx, "org.eclipse.egf.pattern.query.EObjectInjectedContextQuery")
+				.execute(paramDesc, queryCtx, ctx);
 
 		for (Object jobParameter : jobList) {
 

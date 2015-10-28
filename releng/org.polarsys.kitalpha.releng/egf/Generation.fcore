@@ -19,7 +19,7 @@
         <domains xmi:type="domain:EMFDomain" xmi:id="_vRmzYDHoEeW5Te4c0tZ9OQ" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
             uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_sdk.egfbuild"/>
         <domains xmi:type="domain:EMFDomain" xmi:id="_DFR7oTXuEeWshbyNnVCAaQ" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
-            uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_ctk.egfbuild"/>
+            uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_runtime.egfbuild"/>
       </viewpoints>
     </viewpointContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_vUTcMI3DEd-jLJFvCqxXvA">

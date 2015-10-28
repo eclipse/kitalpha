@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.releng;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class invokepatternbuilder extends org.eclipse.egf.portfolio.eclipse.build.buckminster.additions.buildxmlbuildStep {
+public class invokepatternbuilder
+		extends org.eclipse.egf.portfolio.eclipse.build.buckminster.additions.buildxmlbuildStep {
 	protected static String nl;
 
 	public static synchronized invokepatternbuilder create(String lineSeparator) {
@@ -22,13 +23,24 @@ public class invokepatternbuilder extends org.eclipse.egf.portfolio.eclipse.buil
 	protected final String TEXT_1 = "        <echo message=\"No builders invocation specified\" />";
 	protected final String TEXT_2 = NL + "        <available file=\"${tools}/egf/eclipse.ini\" property=\"egf.exists_";
 	protected final String TEXT_3 = "\" />" + NL + "\t\t<antcall target=\"recompile_egf_patterns_";
-	protected final String TEXT_4 = "\" />" + NL + "\t\t" + NL + "        <echo message=\"Invoking all eclipse builders on workspace ${workspace}\" />" + NL + "        <buckminster command=\"build\" >" + NL + "            <cmdargs>" + NL + "                <arg value=\"--clean\" />" + NL + "                <arg value=\"--thorough\" />" + NL + "            </cmdargs>" + NL + "\t\t</buckminster>";
+	protected final String TEXT_4 = "\" />" + NL + "\t\t" + NL
+			+ "        <echo message=\"Invoking all eclipse builders on workspace ${workspace}\" />" + NL
+			+ "        <buckminster command=\"build\" >" + NL + "            <cmdargs>" + NL
+			+ "                <arg value=\"--clean\" />" + NL + "                <arg value=\"--thorough\" />" + NL
+			+ "            </cmdargs>" + NL + "\t\t</buckminster>";
 	protected final String TEXT_5 = NL;
 	protected final String TEXT_6 = "\t<target name=\"recompile_egf_patterns_";
 	protected final String TEXT_7 = "\" if=\"egf.exists_";
 	protected final String TEXT_8 = "\" >" + NL + "\t\t<anteclipse target=\"do_recompile_egf_patterns_";
-	protected final String TEXT_9 = "\" />" + NL + "\t</target>" + NL + "" + NL + "\t<target name=\"do_recompile_egf_patterns_";
-	protected final String TEXT_10 = "\" >" + NL + "        <echo message=\"Invoking EGF Pattern Builder on workspace ${workspace}\" />" + NL + "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.jdt.core.javabuilder\" />" + NL + "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.pde.ManifestBuilder\" />" + NL + "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.pde.SchemaBuilder\" />" + NL + "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.egf.pattern.ui.PatternBuilder\" />" + NL + "\t</target>" + NL + NL + NL;
+	protected final String TEXT_9 = "\" />" + NL + "\t</target>" + NL + "" + NL
+			+ "\t<target name=\"do_recompile_egf_patterns_";
+	protected final String TEXT_10 = "\" >" + NL
+			+ "        <echo message=\"Invoking EGF Pattern Builder on workspace ${workspace}\" />" + NL
+			+ "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.jdt.core.javabuilder\" />" + NL
+			+ "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.pde.ManifestBuilder\" />" + NL
+			+ "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.pde.SchemaBuilder\" />" + NL
+			+ "\t\t<eclipse.incrementalBuild kind=\"incremental\" builder=\"org.eclipse.egf.pattern.ui.PatternBuilder\" />"
+			+ NL + "\t</target>" + NL + NL + NL;
 	protected final String TEXT_11 = NL;
 	protected final String TEXT_12 = NL;
 
@@ -48,9 +60,11 @@ public class invokepatternbuilder extends org.eclipse.egf.portfolio.eclipse.buil
 		IQuery.ParameterDescription paramDesc = null;
 		Node.Container currentNode = ctx.getNode();
 
-		paramDesc = new IQuery.ParameterDescription("buildStep", "http://www.eclipse.org/egf/1.0.2/buildstep#//BuildStep");
+		paramDesc = new IQuery.ParameterDescription("buildStep",
+				"http://www.eclipse.org/egf/1.0.2/buildstep#//BuildStep");
 		queryCtx = new HashMap<String, String>();
-		List<Object> buildStepList = QueryHelper.load(ctx, "org.eclipse.egf.pattern.query.EObjectInjectedContextQuery").execute(paramDesc, queryCtx, ctx);
+		List<Object> buildStepList = QueryHelper.load(ctx, "org.eclipse.egf.pattern.query.EObjectInjectedContextQuery")
+				.execute(paramDesc, queryCtx, ctx);
 
 		for (Object buildStepParameter : buildStepList) {
 
