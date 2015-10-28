@@ -71,7 +71,7 @@
     </steps>
   </steps>
   <steps xsi:type="buildstep:InstallStep" xmi:id="_PHo0sFMCEeW1O6N91pz95w" name="install ctk features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
-    <updateSiteUrls>${kitalpha_runtime.repo.url}</updateSiteUrls>
+    <updateSiteUrls>${kitalphaCTK.repo.url}</updateSiteUrls>
     <featureNames>org.polarsys.kitalpha.runtime.feature</featureNames>
     <featureNames>org.polarsys.kitalpha.runtime.source.feature</featureNames>
   </steps>
