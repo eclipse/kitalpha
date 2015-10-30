@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150608-0917
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.emde.genchain.extension;
 
 import java.util.HashMap;
@@ -38,13 +38,13 @@ import org.osgi.framework.Version;
 
 import org.polarsys.kitalpha.emde.genchain.utils.EmdeEcoreImporterHelper;
 import org.polarsys.kitalpha.emde.genchain.utils.GenRuntimeVersionHelper;
+import org.polarsys.kitalpha.emde.genchain.utils.GenmodelLocator;
 
 public class EmdeGenmodelPattern {
 
 	public EmdeGenmodelPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
-
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -89,24 +89,10 @@ public class EmdeGenmodelPattern {
 
 	protected void method_create(final StringBuffer out, final PatternContext ctx) throws Exception {
 		IPath ecorePath = new Path(parameter.getModelPath());
-		URI ecoreURI = URI.createPlatformResourceURI(ecorePath.toString(), false);
 
-		String fileName = ecorePath.removeFileExtension().addFileExtension("genmodel").lastSegment();
+		IFile file = GenmodelLocator.lookup(ecorePath);
 
-		// look up in the workspace
-		TextSearchScope fScope = FileTextSearchScope.newWorkspaceScope(new String[] { fileName }, false);
-		final ObjectHolder<IFile> genModelFile = new ObjectHolder<IFile>();
-		TextSearchRequestor collector = new TextSearchRequestor() {
-			@Override
-			public boolean acceptFile(IFile file) throws CoreException {
-				genModelFile.object = file;
-				return super.acceptFile(file);
-			}
-		};
-		Pattern searchPattern = Pattern.compile("");
-		TextSearchEngine.create().search(fScope, collector, searchPattern, null);
-
-		if (genModelFile.object == null) {
+		if (file == null) {
 			ResourceSet resourceSet = new TargetPlatformResourceSet();
 			Resource resource = null;
 			IPath genmodelPath = ecorePath.removeFileExtension().addFileExtension("genmodel");
@@ -123,14 +109,17 @@ public class EmdeGenmodelPattern {
 					project.create(null);
 				if (!project.isOpen())
 					project.open(null);
-
-				importer = EmdeEcoreImporterHelper.createEcoreImporter(genmodelPath.removeLastSegments(1), ecoreURI, parameter);
+				URI ecoreURI = URI.createPlatformResourceURI(ecorePath.toString(), false);
+				importer = EmdeEcoreImporterHelper.createEcoreImporter(genmodelPath.removeLastSegments(1), ecoreURI,
+						parameter);
 			}
 			genmodelURI = URI.createPlatformResourceURI(genmodelPath.toString(), false);
-			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(), genmodelURI);
+			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(),
+					genmodelURI);
 		} else {
-			URI uri = URI.createPlatformResourceURI(genModelFile.object.getFullPath().toString(), false);
-			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(), uri);
+			URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
+			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(),
+					uri);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
