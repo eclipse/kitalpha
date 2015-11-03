@@ -35,6 +35,7 @@
 'GradientTopToBottom'=184
 'HORIZONTAL'=146
 'HistogramStyle'=46
+'HorizontalStack'=231
 'Image'=52
 'InputArrow'=194
 'InputArrowWithDiamond'=201
@@ -72,6 +73,7 @@
 'Target'=164
 'Triangle'=179
 'VERTICAL'=148
+'VerticalStack'=232
 'action-for:'=70
 'alignment'=116
 'alignment:'=63
@@ -368,6 +370,8 @@ T__228=228
 T__229=229
 T__22=22
 T__230=230
+T__231=231
+T__232=232
 T__23=23
 T__24=24
 T__25=25
