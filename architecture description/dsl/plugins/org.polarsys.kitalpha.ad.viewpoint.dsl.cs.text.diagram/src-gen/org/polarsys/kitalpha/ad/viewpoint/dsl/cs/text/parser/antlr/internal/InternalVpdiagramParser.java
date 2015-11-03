@@ -33,7 +33,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'external'", "'Diagrams'", "'{'", "'}'", "'Diagram'", "'description:'", "'DiagramExtension'", "'extended-diagram:'", "'Mapping'", "'Representation'", "'BeginLabel'", "'CenterLabel'", "'EndLabel'", "'condition:'", "'Style'", "'line-style:'", "'begin-decorator:'", "'end-decorator:'", "'color:'", "'Container'", "'import:'", "'domain-context:'", "'content-layout:'", "'Contains'", "'reuse'", "','", "'provided-by'", "'query'", "'association'", "'Label'", "'BasicStyle'", "'border-color:'", "'background:'", "'form:'", "'HistogramStyle'", "'Section'", "'foreground:'", "'minValue:'", "'value:'", "'maxValue:'", "'Image'", "'border:'", "'path:'", "'FlatStyle'", "'content:'", "'police:'", "'bold'", "'italic'", "'Node'", "'BorderedNode'", "'position:'", "'alignment:'", "'Actions'", "'OpenAction'", "'precondition:'", "'label:'", "'icon:'", "'Create'", "'action-for:'", "'Delete'", "'Drop'", "'ReconnectEdge'", "'Edge'", "'association-context:'", "'class-association-context:'", "'source:'", "'target:'", "'EdgeImport'", "'query:'", "'target-query:'", "'target-association:'", "'source-query:'", "'source-association:'", "'customizations'", "'customization'", "'when'", "'('", "')'", "'with'", "'edge'", "'over-all-edges'", "':'", "'source'", "'target'", "'routing'", "'folding'", "'center-source-mappings'", "'center-target-mappings'", "'begin-label-style-description'", "'center-label-style-description'", "'end-label-style-description'", "'line-style'", "'size'", "'end-centering'", "'paint'", "'over-all-colors'", "'label'", "'over-all-labels'", "'format'", "'color'", "'icon'", "'show'", "'path'", "'expression'", "'alignment'", "'container'", "'over-all-containers'", "'width'", "'height'", "'round-corner'", "'tooltip-expression'", "'border-dimension'", "'workspace'", "'background'", "'shape'", "'node'", "'over-all-nodes'", "'label-position'", "'hide-label'", "'resize-kind'", "'size-dimension'", "'lozenge-dimension'", "'gauge-alignment'", "'ellipse-dimension'", "'horizontal'", "'vertical'", "'square-dimension'", "'stroke-dimension'", "'on'", "'+'", "'Java'", "'.'", "'true'", "'false'", "'HORIZONTAL'", "'SQUARE'", "'VERTICAL'", "'dot'", "'ring'", "'square'", "'stroke'", "'triangle'", "'NONE'", "'NSEW'", "'EAST_WEST'", "'NORTH_SOUTH'", "'parallelogram'", "'underline'", "'strike_through'", "'Both'", "'None'", "'Source'", "'Target'", "'SOURCE'", "'TARGET'", "'straight'", "'manhattan'", "'tree'", "'Border'", "'Color'", "'Background'", "'foreground'", "'Square'", "'Lozenge'", "'Eclipse'", "'Note'", "'Dot'", "'Triangle'", "'Stroke'", "'Ring'", "'GradientLeftToRight'", "'Liquid'", "'GradientTopToBottom'", "'border'", "'center'", "'left'", "'right'", "'solid'", "'dash'", "'dash_dot'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWothFillDiamond'", "'black'", "'blue'", "'red'", "'green'", "'yellow'", "'purple'", "'orange'", "'chocolate'", "'gray'", "'white'", "'dark_blue'", "'dark_red'", "'dark_green'", "'dark_yellow'", "'dark_purple'", "'dark_orange'", "'dark_chocolate'", "'dark_gray'", "'light_blue'", "'light_red'", "'light_green'", "'light_yellow'", "'light_purple'", "'light_orange'", "'light_chocolate'", "'light_gray'", "'FreeForm'", "'List'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'external'", "'Diagrams'", "'{'", "'}'", "'Diagram'", "'description:'", "'DiagramExtension'", "'extended-diagram:'", "'Mapping'", "'Representation'", "'BeginLabel'", "'CenterLabel'", "'EndLabel'", "'condition:'", "'Style'", "'line-style:'", "'begin-decorator:'", "'end-decorator:'", "'color:'", "'Container'", "'import:'", "'domain-context:'", "'content-layout:'", "'Contains'", "'reuse'", "','", "'provided-by'", "'query'", "'association'", "'Label'", "'BasicStyle'", "'border-color:'", "'background:'", "'form:'", "'HistogramStyle'", "'Section'", "'foreground:'", "'minValue:'", "'value:'", "'maxValue:'", "'Image'", "'border:'", "'path:'", "'FlatStyle'", "'content:'", "'police:'", "'bold'", "'italic'", "'Node'", "'BorderedNode'", "'position:'", "'alignment:'", "'Actions'", "'OpenAction'", "'precondition:'", "'label:'", "'icon:'", "'Create'", "'action-for:'", "'Delete'", "'Drop'", "'ReconnectEdge'", "'Edge'", "'association-context:'", "'class-association-context:'", "'source:'", "'target:'", "'EdgeImport'", "'query:'", "'target-query:'", "'target-association:'", "'source-query:'", "'source-association:'", "'customizations'", "'customization'", "'when'", "'('", "')'", "'with'", "'edge'", "'over-all-edges'", "':'", "'source'", "'target'", "'routing'", "'folding'", "'center-source-mappings'", "'center-target-mappings'", "'begin-label-style-description'", "'center-label-style-description'", "'end-label-style-description'", "'line-style'", "'size'", "'end-centering'", "'paint'", "'over-all-colors'", "'label'", "'over-all-labels'", "'format'", "'color'", "'icon'", "'show'", "'path'", "'expression'", "'alignment'", "'container'", "'over-all-containers'", "'width'", "'height'", "'round-corner'", "'tooltip-expression'", "'border-dimension'", "'workspace'", "'background'", "'shape'", "'node'", "'over-all-nodes'", "'label-position'", "'hide-label'", "'resize-kind'", "'size-dimension'", "'lozenge-dimension'", "'gauge-alignment'", "'ellipse-dimension'", "'horizontal'", "'vertical'", "'square-dimension'", "'stroke-dimension'", "'on'", "'+'", "'Java'", "'.'", "'true'", "'false'", "'HORIZONTAL'", "'SQUARE'", "'VERTICAL'", "'dot'", "'ring'", "'square'", "'stroke'", "'triangle'", "'NONE'", "'NSEW'", "'EAST_WEST'", "'NORTH_SOUTH'", "'parallelogram'", "'underline'", "'strike_through'", "'Both'", "'None'", "'Source'", "'Target'", "'SOURCE'", "'TARGET'", "'straight'", "'manhattan'", "'tree'", "'Border'", "'Color'", "'Background'", "'foreground'", "'Square'", "'Lozenge'", "'Eclipse'", "'Note'", "'Dot'", "'Triangle'", "'Stroke'", "'Ring'", "'GradientLeftToRight'", "'Liquid'", "'GradientTopToBottom'", "'border'", "'center'", "'left'", "'right'", "'solid'", "'dash'", "'dash_dot'", "'NoDecoration'", "'OutputArrow'", "'InputArrow'", "'OutputClosedArrow'", "'InputClosedArrow'", "'OutputFillClosedArrow'", "'InputFillClosedArrow'", "'Diamond'", "'FillDiamond'", "'InputArrowWithDiamond'", "'InputArrowWothFillDiamond'", "'black'", "'blue'", "'red'", "'green'", "'yellow'", "'purple'", "'orange'", "'chocolate'", "'gray'", "'white'", "'dark_blue'", "'dark_red'", "'dark_green'", "'dark_yellow'", "'dark_purple'", "'dark_orange'", "'dark_chocolate'", "'dark_gray'", "'light_blue'", "'light_red'", "'light_green'", "'light_yellow'", "'light_purple'", "'light_orange'", "'light_chocolate'", "'light_gray'", "'FreeForm'", "'List'", "'HorizontalStack'", "'VerticalStack'"
     };
     public static final int RULE_ID=5;
     public static final int T__159=159;
@@ -168,6 +168,8 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
     public static final int T__225=225;
     public static final int T__226=226;
     public static final int T__227=227;
+    public static final int T__232=232;
+    public static final int T__231=231;
     public static final int T__230=230;
     public static final int T__29=29;
     public static final int T__28=28;
@@ -24817,35 +24819,51 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContainerLayout"
-    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8377:1: ruleContainerLayout returns [Enumerator current=null] : ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) ) ;
+    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8377:1: ruleContainerLayout returns [Enumerator current=null] : ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) | (enumLiteral_2= 'HorizontalStack' ) | (enumLiteral_3= 'VerticalStack' ) ) ;
     public final Enumerator ruleContainerLayout() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
 
          enterRule(); 
         try {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8379:28: ( ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:1: ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8379:28: ( ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) | (enumLiteral_2= 'HorizontalStack' ) | (enumLiteral_3= 'VerticalStack' ) ) )
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:1: ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) | (enumLiteral_2= 'HorizontalStack' ) | (enumLiteral_3= 'VerticalStack' ) )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:1: ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) )
-            int alt183=2;
-            int LA183_0 = input.LA(1);
-
-            if ( (LA183_0==229) ) {
+            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:1: ( (enumLiteral_0= 'FreeForm' ) | (enumLiteral_1= 'List' ) | (enumLiteral_2= 'HorizontalStack' ) | (enumLiteral_3= 'VerticalStack' ) )
+            int alt183=4;
+            switch ( input.LA(1) ) {
+            case 229:
+                {
                 alt183=1;
-            }
-            else if ( (LA183_0==230) ) {
+                }
+                break;
+            case 230:
+                {
                 alt183=2;
-            }
-            else {
+                }
+                break;
+            case 231:
+                {
+                alt183=3;
+                }
+                break;
+            case 232:
+                {
+                alt183=4;
+                }
+                break;
+            default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 183, 0, input);
 
                 throw nvae;
             }
+
             switch (alt183) {
                 case 1 :
                     // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8380:2: (enumLiteral_0= 'FreeForm' )
@@ -24877,6 +24895,44 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
 
                               current = grammarAccess.getContainerLayoutAccess().getListEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                               newLeafNode(enumLiteral_1, grammarAccess.getContainerLayoutAccess().getListEnumLiteralDeclaration_1()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8392:6: (enumLiteral_2= 'HorizontalStack' )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8392:6: (enumLiteral_2= 'HorizontalStack' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8392:8: enumLiteral_2= 'HorizontalStack'
+                    {
+                    enumLiteral_2=(Token)match(input,231,FOLLOW_231_in_ruleContainerLayout19100); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getContainerLayoutAccess().getHorizontalStackEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_2, grammarAccess.getContainerLayoutAccess().getHorizontalStackEnumLiteralDeclaration_2()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8398:6: (enumLiteral_3= 'VerticalStack' )
+                    {
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8398:6: (enumLiteral_3= 'VerticalStack' )
+                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpdiagram.g:8398:8: enumLiteral_3= 'VerticalStack'
+                    {
+                    enumLiteral_3=(Token)match(input,232,FOLLOW_232_in_ruleContainerLayout19117); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getContainerLayoutAccess().getVerticalStackEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_3, grammarAccess.getContainerLayoutAccess().getVerticalStackEnumLiteralDeclaration_3()); 
                           
                     }
 
@@ -25038,7 +25094,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleFQN_in_ruleContainer3043 = new BitSet(new long[]{0x0000000E00208000L});
     public static final BitSet FOLLOW_33_in_ruleContainer3058 = new BitSet(new long[]{0x0000000000001020L});
     public static final BitSet FOLLOW_ruleNodeDomainElement_in_ruleContainer3079 = new BitSet(new long[]{0x0000000C00208000L});
-    public static final BitSet FOLLOW_34_in_ruleContainer3094 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000006000000000L});
+    public static final BitSet FOLLOW_34_in_ruleContainer3094 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000001E000000000L});
     public static final BitSet FOLLOW_ruleContainerLayout_in_ruleContainer3115 = new BitSet(new long[]{0x0000000800208000L});
     public static final BitSet FOLLOW_ruleContainerDescription_in_ruleContainer3138 = new BitSet(new long[]{0x0000000800208000L});
     public static final BitSet FOLLOW_ruleContainerChildren_in_ruleContainer3160 = new BitSet(new long[]{0x0000000000008000L});
@@ -25771,5 +25827,7 @@ public class InternalVpdiagramParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_228_in_ruleSystemColors19021 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_229_in_ruleContainerLayout19066 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_230_in_ruleContainerLayout19083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_231_in_ruleContainerLayout19100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_232_in_ruleContainerLayout19117 = new BitSet(new long[]{0x0000000000000002L});
 
 }

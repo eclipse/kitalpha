@@ -716,8 +716,10 @@ enum SystemColors returns siriusDescription::SystemColors:
 ;
 
 enum ContainerLayout returns siriusDiagram::ContainerLayout:
-	FreeForm='FreeForm' |
-	List='List'
+	FreeForm='FreeForm' 					|
+	List='List'								|
+	HorizontalStack = 'HorizontalStack'		|
+	VerticalStack = 'VerticalStack'
 ;
 
 
