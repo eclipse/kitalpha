@@ -7,20 +7,15 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.integration.sirius;singleton:=true
 Bundle-Activator: org.polarsys.kitalpha.ad.integration.sirius.Activator
 Require-Bundle: org.eclipse.ui.ide,
- org.eclipse.emf.workspace,
- org.eclipse.ui.forms,
- org.polarsys.kitalpha.ad.viewpoint.ui,
+ org.polarsys.kitalpha.ad.viewpoint.ui;visibility:=reexport,
  org.polarsys.kitalpha.ad.integration.sirius.model.edit,
- org.eclipse.emf.common.ui,
- org.polarsys.kitalpha.emde,
+ org.polarsys.kitalpha.emde;visibility:=reexport,
  org.eclipse.sirius.common,
- org.eclipse.sirius.common.ui,
- org.eclipse.sirius.diagram,
+ org.eclipse.sirius.common.ui;visibility:=reexport,
+ org.eclipse.sirius.diagram;visibility:=reexport,
  com.google.guava,
  org.eclipse.sirius.ext.base,
- org.eclipse.sirius.diagram.ui,
- org.eclipse.gef,
- org.eclipse.gmf.runtime.notation,
+ org.eclipse.sirius.diagram.ui;visibility:=reexport,
  org.eclipse.emf.edit.ui,
  org.eclipse.gmf.runtime.diagram.ui
 Bundle-ActivationPolicy: lazy
