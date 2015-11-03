@@ -6359,12 +6359,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFreeFormFreeFormKeyword_0_0 = (Keyword)cFreeFormEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cListEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cListListKeyword_1_0 = (Keyword)cListEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cHorizontalStackEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cHorizontalStackHorizontalStackKeyword_2_0 = (Keyword)cHorizontalStackEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cVerticalStackEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cVerticalStackVerticalStackKeyword_3_0 = (Keyword)cVerticalStackEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum ContainerLayout returns siriusDiagram::ContainerLayout:
-		//	FreeForm | List;
+		//	FreeForm | List | HorizontalStack | VerticalStack;
 		public EnumRule getRule() { return rule; }
 
-		//FreeForm | List
+		//FreeForm | List | HorizontalStack | VerticalStack
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//FreeForm
@@ -6378,6 +6382,18 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"List"
 		public Keyword getListListKeyword_1_0() { return cListListKeyword_1_0; }
+
+		//HorizontalStack
+		public EnumLiteralDeclaration getHorizontalStackEnumLiteralDeclaration_2() { return cHorizontalStackEnumLiteralDeclaration_2; }
+
+		//"HorizontalStack"
+		public Keyword getHorizontalStackHorizontalStackKeyword_2_0() { return cHorizontalStackHorizontalStackKeyword_2_0; }
+
+		//VerticalStack
+		public EnumLiteralDeclaration getVerticalStackEnumLiteralDeclaration_3() { return cVerticalStackEnumLiteralDeclaration_3; }
+
+		//"VerticalStack"
+		public Keyword getVerticalStackVerticalStackKeyword_3_0() { return cVerticalStackVerticalStackKeyword_3_0; }
 	}
 	
 	private final DiagramsElements pDiagrams;
@@ -7574,7 +7590,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ContainerLayout returns siriusDiagram::ContainerLayout:
-	//	FreeForm | List;
+	//	FreeForm | List | HorizontalStack | VerticalStack;
 	public ContainerLayoutElements getContainerLayoutAccess() {
 		return unknownRuleContainerLayout;
 	}

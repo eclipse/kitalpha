@@ -4222,6 +4222,20 @@ rule__ContainerLayout__Alternatives
 { after(grammarAccess.getContainerLayoutAccess().getListEnumLiteralDeclaration_1()); }
 )
 
+    |(
+{ before(grammarAccess.getContainerLayoutAccess().getHorizontalStackEnumLiteralDeclaration_2()); }
+(	'HorizontalStack' 
+)
+{ after(grammarAccess.getContainerLayoutAccess().getHorizontalStackEnumLiteralDeclaration_2()); }
+)
+
+    |(
+{ before(grammarAccess.getContainerLayoutAccess().getVerticalStackEnumLiteralDeclaration_3()); }
+(	'VerticalStack' 
+)
+{ after(grammarAccess.getContainerLayoutAccess().getVerticalStackEnumLiteralDeclaration_3()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
