@@ -8388,6 +8388,18 @@ ruleContainerLayout returns [Enumerator current=null]
         $current = grammarAccess.getContainerLayoutAccess().getListEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_1, grammarAccess.getContainerLayoutAccess().getListEnumLiteralDeclaration_1()); 
     }
+)
+    |(	enumLiteral_2='HorizontalStack' 
+	{
+        $current = grammarAccess.getContainerLayoutAccess().getHorizontalStackEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getContainerLayoutAccess().getHorizontalStackEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='VerticalStack' 
+	{
+        $current = grammarAccess.getContainerLayoutAccess().getVerticalStackEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getContainerLayoutAccess().getVerticalStackEnumLiteralDeclaration_3()); 
+    }
 ));
 
 
