@@ -164,6 +164,8 @@ for (NodeDescription iNodeDescription : parameter.getStyle()) {
 				nStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 			
 		}
+		
+		nStyleDesc.setBorderSizeComputationExpression("1");
 				
 		// Add the created container style to it parent
 		if (conditionalStyle)

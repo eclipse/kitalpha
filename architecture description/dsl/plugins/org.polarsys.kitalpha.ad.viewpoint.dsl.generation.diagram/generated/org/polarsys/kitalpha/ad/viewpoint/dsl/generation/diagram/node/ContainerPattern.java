@@ -252,6 +252,8 @@ public class ContainerPattern
 
 				}
 
+				cStyleDesc.setBorderSizeComputationExpression("1");
+
 				// Add the created container style to it parent
 				if (conditionalStyle)
 					ccStyleDesc.setStyle(cStyleDesc);

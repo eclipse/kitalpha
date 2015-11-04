@@ -294,6 +294,7 @@ public class ContainerImportPattern
 						cStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 				}
 
+				cStyleDesc.setBorderSizeComputationExpression("1");
 				/************************************************************************************************/
 				ContainerStyleDescription cStyleDesc_merged = null;
 				try {

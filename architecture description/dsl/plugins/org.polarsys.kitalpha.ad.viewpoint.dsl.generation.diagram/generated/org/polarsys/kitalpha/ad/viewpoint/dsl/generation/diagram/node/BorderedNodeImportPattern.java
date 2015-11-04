@@ -374,6 +374,8 @@ public class BorderedNodeImportPattern
 						nStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 				}
 
+				nStyleDesc.setBorderSizeComputationExpression("1");
+
 				/************************************************************************************************/
 				NodeStyleDescription nStyleDesc_marged = null;
 				try {

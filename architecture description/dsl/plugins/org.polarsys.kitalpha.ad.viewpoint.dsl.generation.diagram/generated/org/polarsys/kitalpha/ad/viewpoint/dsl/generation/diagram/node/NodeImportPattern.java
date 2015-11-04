@@ -372,6 +372,8 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 						nStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 				}
 
+				nStyleDesc.setBorderSizeComputationExpression("1");
+
 				/************************************************************************************************/
 				NodeStyleDescription nStyleDesc_marged = null;
 				try {
