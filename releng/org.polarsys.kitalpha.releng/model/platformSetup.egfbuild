@@ -4,6 +4,7 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="__eSfoJKCEeSPapwxSH2ZqQ" name="${TP_name}" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
       <featureNames>org.eclipse.sdk</featureNames>
+      <featureNames>org.eclipse.egit</featureNames>
       <productNames>org.eclipse.sdk.ide</productNames>
     </steps>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0ZKKEeSPapwxSH2ZqQ" name="install cots features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
