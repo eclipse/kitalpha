@@ -348,6 +348,8 @@ public class BorderedNodePattern
 						nStyleDesc.getLabelFormat().add(FontFormat.ITALIC_LITERAL);
 				}
 
+				nStyleDesc.setBorderSizeComputationExpression("1");
+
 				// Add the created container style to it parent
 				if (conditionalStyle)
 					cnStyleDesc.setStyle(nStyleDesc);
