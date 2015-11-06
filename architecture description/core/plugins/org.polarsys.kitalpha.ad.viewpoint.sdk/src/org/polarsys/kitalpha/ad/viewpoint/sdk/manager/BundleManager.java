@@ -151,8 +151,12 @@ public class BundleManager {
 	}
 
 	protected Bundle findBundle(String symbolicName) throws UnsupportedEncodingException, MalformedURLException, BundleException, CoreException, IOException {
-		IPluginModelBase model = PluginRegistry.findModel(symbolicName);
+		IPluginModelBase model = PluginRegistry.findModel(symbolicName); 
+		//System.out.println();
 		if (model instanceof ExternalPluginModel) {
+			Bundle bundle = Platform.getBundle(symbolicName);
+			if (bundle != null)
+				return bundle;
 			ExternalPluginModel extModel = (ExternalPluginModel) model;
 			return installBundle(new File(extModel.getInstallLocation()).toURI());
 		}

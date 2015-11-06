@@ -40,6 +40,7 @@ import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
+import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 
@@ -130,7 +131,8 @@ public class ViewpointManager {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
 		activated.add(vpResource.getId());
-		managed.add(vpResource.getProviderSymbolicName());
+		if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
+			managed.add(vpResource.getProviderSymbolicName());
 		fireEvent(vpResource, ACTIVATED);
 	}
 
@@ -155,7 +157,7 @@ public class ViewpointManager {
 	}
 
 	protected void startBundle(Resource vpResource) throws ViewpointActivationException {
-		String providerSymbolicName = vpResource.getProviderSymbolicName();
+		String providerSymbolicName = vpResource.getProviderSymbolicName();  //System.out.println();  
 		Bundle bundle = Platform.getBundle(providerSymbolicName);
 		if (bundle == null || managed.contains(providerSymbolicName)) {
 			activateBundle(providerSymbolicName);
