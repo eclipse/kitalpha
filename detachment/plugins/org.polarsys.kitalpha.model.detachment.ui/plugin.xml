@@ -94,7 +94,7 @@ Contributors:
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="popup:popup:org.eclipse.ui.popup.any">
+            locationURI="popup:org.eclipse.ui.popup.any">
          <menu
                icon="icons/Kitalpha_Logo_alpha.png"
                id="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription"
@@ -103,7 +103,7 @@ Contributors:
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="popup:popup:org.eclipse.ui.popup.any?after=additions">
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="org.polarsys.kitalpha.model.detachment.ui.command.a"
                icon="icons/detach_icon.png"
