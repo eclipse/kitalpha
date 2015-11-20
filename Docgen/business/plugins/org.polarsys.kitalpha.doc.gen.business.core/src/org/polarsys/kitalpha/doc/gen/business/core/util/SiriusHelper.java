@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.core.util;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
@@ -20,13 +21,18 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 
 public class SiriusHelper {
-	public static Collection<DRepresentation> getDiagramForObject(
-			EObject element) {
-		Collection<DRepresentation> representations = DialectManager.INSTANCE
-				.getRepresentations(element,
-						DiagramSessionHelper.getCurrentSession());
-
-		return representations;
-
+	public static Collection<DRepresentation> getDiagramForObject(EObject element) {
+		Collection<DRepresentation> representations = 
+				DialectManager.INSTANCE.getRepresentations(element, DiagramSessionHelper.getCurrentSession());
+		
+		// This issue must be resolved in Sirius.
+		Collection<DRepresentation> result = new ArrayList<DRepresentation>();
+		for (DRepresentation dRepresentation : representations) 
+		{
+			if (result.contains(dRepresentation) == false)
+				result.add(dRepresentation);
+		}
+		
+		return result;
 	}
 }

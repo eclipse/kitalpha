@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="EcoreToolsExtra" version="8.1.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="EcoreToolsExtra" version="10.1.0.201507101000">
   <ownedViewpoints name="EcoreToolsExtra_ModelView" label="Ecore Tools Extra - Model View" modelFileExtension="ecore xcore">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@toolSections.4/@ownedTools[name='Drop%20EClass%20from%20treeview'] //@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@toolSections.4/@ownedTools[name='Drop%20EEnum%20from%20treeview']" name="Focus" titleExpression="['Focus on EPackage ' + name/]" domainClass="ecore.EPackage">
       <filters xsi:type="filter:CompositeFilterDescription" name="Hide class content">
@@ -19,14 +19,14 @@
       </filters>
       <defaultLayer name="Default">
         <edgeMappings name="Focus EReference" semanticCandidatesExpression="[focusedEReferences(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" semanticElements="" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetFinderExpression="[eType.oclAsType(ecore::EClass).mostAbstractObject(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" sourceFinderExpression="[mostAbstractObject(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" targetExpression="" domainClass="EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="[computeEReferenceLabel(view.eContainer(DDiagram).eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="[containment/]">
-            <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription labelExpression="[computeEReferenceLabel(view.eContainer(DDiagram).eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -34,15 +34,16 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[derived/]">
-            <style strokeColor="//@userColorsPalettes[name='Migration%20Palette']/@entries[name='DerivedEReferencesColor']" sizeComputationExpression="1">
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + computeEReferenceLabel(view.eContainer(DDiagram).eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]">
+            <style strokeColor="//@userColorsPalettes[name='Migration%20Palette']/@entries[name='DerivedEReferencesColor']">
+              <centerLabelStyleDescription labelExpression="['/' + computeEReferenceLabel(view.eContainer(DDiagram).eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="Focus ESupertypes" semanticCandidatesExpression="[viewpoint.eAllContents()->select(oclIsKindOf(DNodeList)).eGet('target')->select(oclIsKindOf(EClass))/]" semanticElements="" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ModelView']/@ownedRepresentations[name='Focus']/@defaultLayer/@containerMappings[name='Focus%20EClass']" targetFinderExpression="[nearestSuperTypes(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" sourceFinderExpression="[mostAbstractObject(diagram.eContents()->select(oclIsKindOf(DNodeList)).eGet('target'))/]" targetExpression="" domainClass="EClass" useDomainElement="true">
-          <style targetArrow="InputClosedArrow" sizeComputationExpression="1" routingStyle="manhattan">
+          <style targetArrow="InputClosedArrow" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false" labelExpression="[superTypesLabel(view.eGet('targetNode').eGet('target').oclAsType(ecore::EClass))->select(oclIsKindOf(EClass)).eGet('name')/]">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -72,14 +73,14 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -95,7 +96,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
@@ -291,9 +292,10 @@
   <ownedViewpoints name="EcoreToolsExtra_ClassView" label="Ecore Tools Extra - Class View" modelFileExtension="ecore xcore">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Inheritance" titleExpression="[name +' - Inheritance'/]" domainClass="ecore.EClass">
       <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      <layout xsi:type="description_1:CompositeLayout" padding="20" direction="bottomToTop"/>
       <defaultLayer name="Default">
         <edgeMappings name="Inheritance SuperType Link" semanticCandidatesExpression="&lt;%current.eAllContents%>" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass'] //@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass'] //@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass']" targetFinderExpression="feature:eSuperTypes">
-          <style targetArrow="InputClosedArrow" sizeComputationExpression="1" routingStyle="manhattan">
+          <style targetArrow="InputClosedArrow">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -301,14 +303,14 @@
           </style>
         </edgeMappings>
         <containerMappings name="Inheritance Root EClass" semanticCandidatesExpression="var:self" domainClass="ecore.EClass" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -317,14 +319,14 @@
           </conditionnalStyles>
         </containerMappings>
         <containerMappings name="Inheritance Neighbor EClass" semanticCandidatesExpression="service:getNeighbourgClasses()" domainClass="ecore.EClass" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -336,9 +338,10 @@
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Containment" titleExpression="[name +' - Containment'/]" domainClass="ecore.EClass" rootExpression="">
       <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      <layout xsi:type="description_1:CompositeLayout" padding="40" direction="bottomToTop"/>
       <defaultLayer name="Default">
         <edgeMappings name="Containment Containment Link" preconditionExpression="[linksPrecondition(true, false)/]" semanticCandidatesExpression="[self.eGet('eAllReferences')/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Neighbor%20EClass']" targetFinderExpression="feature:eType" sourceFinderExpression="[diagram.eGet('target')/]" domainClass="ecore.EReference" useDomainElement="true">
-          <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+          <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -346,7 +349,7 @@
           </style>
         </edgeMappings>
         <edgeMappings name="Containment Container Link" semanticCandidatesExpression="[diagram.eGet('target').eInverse(EReference)->select(containment)/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Neighbor%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Root%20EClass']" targetFinderExpression="[diagram.eGet('target')/]" sourceFinderExpression="feature:eContainer" targetExpression="" domainClass="ecore.EReference" useDomainElement="true">
-          <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+          <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -354,7 +357,7 @@
           </style>
         </edgeMappings>
         <edgeMappings name="Containment Auto Link" preconditionExpression="[linksPrecondition(true, true)/]" semanticCandidatesExpression="[eGet('eAllReferences')/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Containment']/@defaultLayer/@containerMappings[name='Containment%20Root%20EClass']" targetFinderExpression="[diagram.eGet('target')/]" sourceFinderExpression="[diagram.eGet('target')/]" domainClass="ecore.EReference" useDomainElement="true">
-          <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+          <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -366,50 +369,54 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Reference" titleExpression="[name+' - Reference'/]" domainClass="ecore.EClass" rootExpression="">
+      <layout xsi:type="description_1:CompositeLayout" padding="40" direction="bottomToTop"/>
       <defaultLayer name="Default">
         <edgeMappings name="Reference Outgoing Link" preconditionExpression="[linksPrecondition(false, false)/]" semanticCandidatesExpression="feature:eAllReferences" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer/@containerMappings[name='Reference%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer/@containerMappings[name='Reference%20Neighbor%20EClass']" targetFinderExpression="feature:eType" sourceFinderExpression="[diagram.eGet('target')/]" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/ ' + name/]">
+              <centerLabelStyleDescription labelExpression="['/ ' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="Reference Incoming Link" preconditionExpression="[linksPrecondition(false, false)/]" semanticCandidatesExpression="[diagram.eGet('target').eInverse(EReference)/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer/@containerMappings[name='Reference%20Neighbor%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer/@containerMappings[name='Reference%20Root%20EClass']" targetFinderExpression="[diagram.eGet('target')/]" sourceFinderExpression="feature:eContainer" targetExpression="" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/ ' + name/]">
+              <centerLabelStyleDescription labelExpression="['/ ' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="Reference Auto Link" preconditionExpression="[linksPrecondition(false, true)/]" semanticCandidatesExpression="feature:eAllReferences" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer/@containerMappings[name='Reference%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Reference']/@defaultLayer/@containerMappings[name='Reference%20Root%20EClass']" targetFinderExpression="[diagram.eGet('target')/]" sourceFinderExpression="[diagram.eGet('target')/]" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/ ' + name/]">
+              <centerLabelStyleDescription labelExpression="['/ ' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
@@ -420,9 +427,10 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Class Focus" titleExpression="[name +' - Class Focus'/]" domainClass="ecore.EClass" rootExpression="">
+      <layout xsi:type="description_1:CompositeLayout" padding="40" direction="bottomToTop"/>
       <defaultLayer name="Default">
         <edgeMappings name="EF Direct SuperType Link" semanticCandidatesExpression="&lt;%current.eAllContents%>" semanticElements="[null/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Neighbor%20EClass']" targetFinderExpression="feature:eSuperTypes">
-          <style targetArrow="InputClosedArrow" sizeComputationExpression="1" routingStyle="manhattan">
+          <style targetArrow="InputClosedArrow" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -438,7 +446,7 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="EF Indirect SuperType Link" semanticCandidatesExpression="&lt;%current.eAllContents%>" semanticElements="[null/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Import%20EClass']" targetFinderExpression="feature:eAllSuperTypes">
-          <style targetArrow="InputClosedArrow" sizeComputationExpression="1" routingStyle="manhattan">
+          <style targetArrow="InputClosedArrow" routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription showIcon="false">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -454,22 +462,23 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="EF Direct Outgoing Link" semanticCandidatesExpression="[self.eGet('eReferences')/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Neighbor%20EClass']" targetFinderExpression="feature:eType" sourceFinderExpression="[diagram.eGet('target')/]" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
+              <centerLabelStyleDescription labelExpression="['/' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="feature:containment">
-            <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription labelExpression="feature:name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -478,22 +487,23 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="EF Indirect Outgoing Link" semanticCandidatesExpression="[self.eGet('eAllReferences')/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Import%20EClass']" targetFinderExpression="feature:eType" sourceFinderExpression="[diagram.eGet('target')/]" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
+              <centerLabelStyleDescription labelExpression="['/' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="feature:containment">
-            <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription labelExpression="feature:name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -502,22 +512,23 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="EF Direct Incoming Link" semanticCandidatesExpression="[self.eInverse(EReference)/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Neighbor%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetFinderExpression="[diagram.eGet('target')/]" sourceFinderExpression="[eContainer()/]" targetExpression="" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
+              <centerLabelStyleDescription labelExpression="['/' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="feature:containment">
-            <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription labelExpression="feature:name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -526,22 +537,23 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="EF Indirect Incoming Link" semanticCandidatesExpression="[self.eGet('eAllSuperTypes').eInverse(EReference)/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Import%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetFinderExpression="[diagram.eGet('target')/]" sourceFinderExpression="[eContainer()/]" targetExpression="" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
+              <centerLabelStyleDescription labelExpression="['/' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="feature:containment">
-            <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription labelExpression="feature:name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -550,22 +562,23 @@
           </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="EF Auto Link" semanticCandidatesExpression="[self.eGet('eReferences')/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@containerMappings[name='EF%20Root%20EClass']" targetFinderExpression="feature:eType" sourceFinderExpression="[eContainer()/]" domainClass="ecore.EReference" useDomainElement="true">
-          <style sizeComputationExpression="1">
+          <style>
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="feature:derived">
-            <style sizeComputationExpression="1">
+            <style>
               <strokeColor xsi:type="description:UserFixedColor" href="#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='color1']"/>
-              <centerLabelStyleDescription labelFormat="italic" labelExpression="['/' + name/]">
+              <centerLabelStyleDescription labelExpression="['/' + name/]">
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="feature:containment">
-            <style sourceArrow="FillDiamond" targetArrow="NoDecoration" sizeComputationExpression="1">
+            <style sourceArrow="FillDiamond" targetArrow="NoDecoration">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <centerLabelStyleDescription labelExpression="feature:name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -591,14 +604,14 @@
         </containerMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="EF Neighbor EClass" preconditionExpression="[self &lt;> diagram.eGet('target')/]" deletionDescription="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Class%20Focus']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Class']" semanticCandidatesExpression="[self.getFocusNeighbourgClassesSemanticCandidate(eInverse(EReference))/]" domainClass="ecore.EClass" childrenPresentation="List" importedMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Neighbor%20EClass']"/>
         <containerMappings name="EF Import EClass" preconditionExpression="[self &lt;> diagram.eGet('target')/]" semanticCandidatesExpression="[focusEFImportEClassSCE(self.eInverse(EReference), self.eGet('eAllSuperTypes').eInverse(EReference)->asOrderedSet())/]" createElements="false" domainClass="ecore.EClass" childrenPresentation="List">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="feature:abstract">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="[name  + '\n( '+ eContainer(EPackage).name + ')' /]" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -637,14 +650,15 @@
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Extensibility" titleExpression="[name+' - Extensibility'/]" domainClass="ecore.EClass" rootExpression="">
+      <layout xsi:type="description_1:CompositeLayout" padding="40" direction="bottomToTop"/>
       <defaultLayer name="Default">
         <edgeMappings name="Extensibility Link" semanticCandidatesExpression="[eAllContents()/]" sourceMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer/@containerMappings[name='Extensibility%20Root%20EClass']" targetMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Extensibility']/@defaultLayer/@containerMappings[name='Extensibility%20Neighbor%20EClass']" targetFinderExpression="service:getExtendedModel()" sourceFinderExpression="[eContainer().eContainer(EClass)/]" domainClass="ecore.EStringToStringMapEntry" useDomainElement="true">
-          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="1">
+          <style targetArrow="InputFillClosedArrow">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </edgeMappings>
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="Extensibility Root EClass" semanticCandidatesExpression="var:self" domainClass="ecore.EClass" childrenPresentation="List" importedMapping="//@ownedViewpoints[name='EcoreToolsExtra_ClassView']/@ownedRepresentations[name='Inheritance']/@defaultLayer/@containerMappings[name='Inheritance%20Root%20EClass']">
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" roundedCorner="true" widthComputationExpression="10" heightComputationExpression="10" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>

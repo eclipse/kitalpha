@@ -174,6 +174,7 @@ public class GenDocCommand {
 	private void generateDiagrams(IProgressMonitor progressMonitor) {
 		generateDiagramService = new GenerateDiagramsService(resource, path);
 		airdUri = generateDiagramService.generateAIRD(progressMonitor);
+		generateDiagramService.dispose();
 	}
 
 	private void setDomain(FactoryComponent factoryComponent, URI uri) {

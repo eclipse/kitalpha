@@ -40,11 +40,15 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditDomain;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.editparts.AbstractEditPart;
 import org.eclipse.gmf.runtime.common.core.util.ObjectAdapter;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditDomain;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.services.layout.LayoutService;
 import org.eclipse.gmf.runtime.diagram.ui.services.layout.LayoutType;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -77,12 +81,11 @@ import org.polarsys.kitalpha.doc.gen.business.ecore.Activator;
 import org.polarsys.kitalpha.doc.gen.business.ecore.helpers.AIRDDiagramGeneratorHelper;
 
 @SuppressWarnings("restriction")
-public class GenerateDiagramsService {
+public class GenerateDiagramsService{
 
 	// Ecore resource
 	private Resource resource;
 	private IPath path;
-	// Transactional editing domain and resource set
 //	private TransactionalEditingDomain editing_domain ;
 	private TransactionalEditingDomain editing_domain ;/*= EditingDomainService.getInstance().getEditingDomainProvider().getEditingDomain();*/
 	private Collection<Viewpoint> viewpoints = null;
@@ -93,10 +96,32 @@ public class GenerateDiagramsService {
 	private static final PreferencesHint preferencesHint = new PreferencesHint("org.eclipse.sirius.diagram.diagram");
 	
 	private static IProgressMonitor _monitor = new NullProgressMonitor();
+	
+	private Shell shell;
+	private DiagramEditPart diagramEP;
 
 	public GenerateDiagramsService(Resource resource, IPath path) {
 		this.resource = resource;
 		this.path = path;
+		Display.getDefault().syncExec(new Runnable() 
+		{
+			public void run() {
+				shell = new Shell(Display.getDefault());
+			}
+		});
+	}
+	
+	public void dispose() {
+		Display.getDefault().syncExec(new Runnable() 
+		{
+			public void run() {
+				diagramEP.getViewer().getControl().dispose();
+				diagramEP.deactivate();
+				shell.dispose();
+			}
+		});
+		diagramEP = null;
+		shell = null;
 	}
 	
 	public URI generateAIRD(IProgressMonitor monitor) {
@@ -211,6 +236,7 @@ public class GenerateDiagramsService {
 				}
 			}
 		});
+		_monitor.worked(1);
 	}
 	
 	private Collection<Viewpoint> getViewpoints(Session session) {
@@ -254,12 +280,24 @@ public class GenerateDiagramsService {
 	 * @return all representation targets.
 	 */
 	private Collection<DSemanticDiagram> getRepresentation(Resource airdResource) {
-		Collection<DSemanticDiagram> result = new UniqueEList<DSemanticDiagram>();
+//		Collection<DSemanticDiagram> result = new UniqueEList<DSemanticDiagram>();
 
 		EObject airdResourceRoot = airdResource.getContents().get(0);
 		if (airdResourceRoot instanceof DAnalysis) 
 		{
 			DAnalysis analysis = (DAnalysis) airdResourceRoot;
+			final Collection<DSemanticDiagram> representation = getRepresentation(analysis);
+			return representation;
+		}
+		return new UniqueEList<DSemanticDiagram>();
+	}
+	
+	protected Collection<DSemanticDiagram> getRepresentation(DAnalysis analysis){
+		Collection<DSemanticDiagram> result = new UniqueEList<DSemanticDiagram>();
+		
+		if (analysis != null)
+		{
+			// Handling the current DAnalysis views
 			for (DView view : analysis.getOwnedViews()) 
 			{
 				for (DRepresentation representation : view.getOwnedRepresentations()) 
@@ -268,8 +306,18 @@ public class GenerateDiagramsService {
 						result.add((DSemanticDiagram) representation);
 				}
 			}
+			
+			// Handling the referenced DAnalysis by the current one.
+			final EList<DAnalysis> referencedDAnalysis = analysis.getReferencedAnalysis();
+			for (DAnalysis dAnalysis : referencedDAnalysis) 
+			{
+				final Collection<DSemanticDiagram> representation = getRepresentation(dAnalysis);
+				if (representation.isEmpty() == false)
+				{
+					result.addAll(representation);
+				}
+			}
 		}
-
 		return result;
 	}
 
@@ -378,37 +426,66 @@ public class GenerateDiagramsService {
 	 * @param gmfDiag
 	 *            the GMF Diagram to layout.
 	 */
+	@SuppressWarnings("rawtypes")
 	private void layoutGmfDiag(Diagram gmfDiag) {
-		Shell shell = new Shell(Display.getDefault());
 		try {
-
-			DiagramEditPart diagramEP = OffscreenEditPartFactory.getInstance().createDiagramEditPart(gmfDiag, shell, getPreferencesHint());
+			/** Initialization of the Diagram Edit Part **/
 			
-			List<Object> hints = new ArrayList<Object>(2);
-			hints.add(LayoutType.DEFAULT);
-			hints.add(diagramEP);
-			IAdaptable layoutHint = new ObjectAdapter(hints);
-			
+			if (diagramEP == null)
+			{/** Create it if not done yet **/
+				diagramEP = OffscreenEditPartFactory.getInstance().createDiagramEditPart(gmfDiag, shell, getPreferencesHint());
+			}
+			else
+			{/** Put the current GMF diagram if the Diagram Edit Part was created**/
+				diagramEP.setModel(gmfDiag);
+				diagramEP.activate();
+				diagramEP.refresh();
+			}
+			/** Preparing the diagram to apply layout **/
 			diagramEP.getRoot().refresh();
 			diagramEP.getFigure().validate();
 			diagramEP.getRoot().refresh();
 			diagramEP.getRoot().getViewer().flush();
 			
-			final Runnable layoutRun = LayoutService.getInstance().layoutLayoutNodes(
-						LayoutService.getInstance().getLayoutNodes(diagramEP, gmfDiag.getChildren()), 
-						false,
-						layoutHint);
+			/** Applying an Auto-size command on all diagram elements**/
+			List children = diagramEP.getChildren();
+			for (Object object : children) 
+			{
+				if (object instanceof AbstractEditPart)
+				{
+					AbstractEditPart editPart = (AbstractEditPart) object;
+					org.eclipse.gef.commands.Command command = editPart.getCommand(new Request(RequestConstants.REQ_AUTOSIZE));
+					if (command != null && command.canExecute())
+					{
+						command.execute();
+						command.dispose();
+					}
+				}
+			}
 			
+			/** Invoking the layout on the current diagram **/
+			List<Object> hints = new ArrayList<Object>(2);
+			hints.add(LayoutType.DEFAULT);
+			hints.add(diagramEP);
+			IAdaptable layoutHint = new ObjectAdapter(hints);
+			
+			List layoutNodes = LayoutService.getInstance().getLayoutNodes(diagramEP, gmfDiag.getChildren());
+			final Runnable layoutRun = LayoutService.getInstance().layoutLayoutNodes(layoutNodes, false, layoutHint);
 			layoutRun.run();
+			
+			/** Cleaning data created to apply the layout on the current diagram **/
 			diagramEP.deactivate();
 			diagramEP.getViewer().flush();
-			diagramEP.getViewer().getEditDomain().getCommandStack().flush();
-			diagramEP.getViewer().getControl().dispose();
-			((DiagramEditDomain) diagramEP.getViewer().getEditDomain()).removeViewer(diagramEP.getViewer());
+			EditDomain editDomain = diagramEP.getViewer().getEditDomain();
+			editDomain.getCommandStack().flush();
+			((DiagramEditDomain) editDomain).removeViewer(diagramEP.getViewer());
 			editing_domain.getCommandStack().flush();
+			diagramEP.setModel(null);
+		}
+		catch (Exception e){
+			e.printStackTrace();
 		}
 		finally {
-//			shell.dispose();
 		}
 	}
 
