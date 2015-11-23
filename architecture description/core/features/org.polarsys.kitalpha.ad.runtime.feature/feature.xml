@@ -29,4 +29,8 @@
          id="org.polarsys.kitalpha.ad.integration.sirius.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.polarsys.kitalpha.ad.integration.amalgam.feature"
+         version="0.0.0"/>
+
 </feature>
