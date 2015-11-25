@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<buildcore:StepContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_3DxKYJKCEeSPapwxSH2ZqQ" name="setup ctk platform">
+<buildcore:StepContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_3DxKYJKCEeSPapwxSH2ZqQ" name="setup kitalpha runtime platform">
   <steps xsi:type="buildcore:StepContainer" xmi:id="_9Q1LMFMBEeW1O6N91pz95w" name="setup platform">
     <steps xsi:type="buildstep:InstallStep" xmi:id="__eSfoJKCEeSPapwxSH2ZqQ" name="${TP_name}" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
@@ -74,8 +74,8 @@
       <featureNames>org.eclipse.amalgam.explorer.contextual.sirius.source</featureNames>
     </steps>
   </steps>
-  <steps xsi:type="buildstep:InstallStep" xmi:id="_PHo0sFMCEeW1O6N91pz95w" name="install ctk features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
-    <updateSiteUrls>${kitalphaCTK.repo.url}</updateSiteUrls>
+  <steps xsi:type="buildstep:InstallStep" xmi:id="_PHo0sFMCEeW1O6N91pz95w" name="install runtime features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
+    <updateSiteUrls>${kitalpha_runtime.repo.url}</updateSiteUrls>
     <featureNames>org.polarsys.kitalpha.runtime.feature</featureNames>
     <featureNames>org.polarsys.kitalpha.runtime.source.feature</featureNames>
   </steps>
