@@ -1,29 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-	<extension point="org.eclipse.ui.popupMenus">
-		<objectContribution
-			id="org.polarsys.kitalpha.emde.ecore.editor.validate.extension1"
-			objectClass="org.eclipse.emf.ecore.EPackage">
-			<action
-				id="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction1"
-				label="%UI_Validate_Action_Label"
-				menubarPath="additions"
-				class="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction"
-				enablesFor="1"/>
-		</objectContribution>
-  		<objectContribution
-        	id="org.polarsys.kitalpha.emde.ecore.editor.validate.extension2"
-        	objectClass="org.eclipse.emf.ecore.EClass">
-	     	<action
-	           class="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction"
-	           enablesFor="1"
-	           id="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionAction2"
-	           label="%UI_Validate_Action_Label"
-	           menubarPath="additions">
-	     	</action>
-  		</objectContribution>
-	</extension>
-
+<extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+         locationURI=
+         "popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.polarsys.kitalpha.emde.ui.validate"
+               label="Run eMDE validation"
+               tooltip="Run eMDE validation">
+            <visibleWhen
+                  checkEnabled="false">
+                  <test
+                        forcePluginActivation="true"
+                        property="org.polarsys.kitalpha.emde.ui.actions.validation.isEmde">
+                  </test>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Launch eMDE validation"
+            id="org.polarsys.kitalpha.emde.ui.validate"
+            name="eMDE validation Command">
+      </command>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.polarsys.kitalpha.emde.ui.actions.ValidateExtensionHandler"
+            commandId="org.polarsys.kitalpha.emde.ui.validate">
+      </handler>
+   </extension>
+   
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.polarsys.kitalpha.emde.ui.actions.ValidationPropertyTester"
+            id="org.polarsys.kitalpha.emde.ui.actions.validation.tester"
+            namespace="org.polarsys.kitalpha.emde.ui.actions.validation"
+            properties="isEmde"
+            type="java.lang.Object">
+      </propertyTester>
+   </extension>
 
 </plugin>
