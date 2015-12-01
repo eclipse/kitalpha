@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated on Tue Aug 12 15:01:03 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.3.0.v20150507-0831
 package org.polarsys.kitalpha.doc.gen.business.core.sirius;
 
 import org.eclipse.egf.common.helper.*;
@@ -238,13 +228,13 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_1);
 			stringBuffer.append(id);
 			stringBuffer.append(TEXT_2);
-			stringBuffer.append(diagram.getName());
+			stringBuffer.append(EscapeChars.forHTML(diagram.getName()));
 			stringBuffer.append(TEXT_3);
 			stringBuffer.append(generatedFolder);
 			stringBuffer.append(TEXT_4);
 			stringBuffer.append(imageFile.getName());
 			stringBuffer.append(TEXT_5);
-			stringBuffer.append(diagram.getName());
+			stringBuffer.append(EscapeChars.forHTML(diagram.getName()));
 			stringBuffer.append(TEXT_6);
 			stringBuffer.append(mapName);
 			stringBuffer.append(TEXT_7);
@@ -284,11 +274,14 @@ public class DiagramGenerator {
 					diagram.getDocumentation(), projectName, outputFolder));
 			stringBuffer.append(TEXT_19);
 		} else {
+			String diagramName = diagram.getName();
+			if (diagramName != null && diagramName.isEmpty() == false)
+				diagramName = EscapeChars.forHTML(diagramName);
 
 			stringBuffer.append(TEXT_20);
 			stringBuffer.append(sessionResource.getURIFragment(diagram));
 			stringBuffer.append(TEXT_21);
-			stringBuffer.append(diagram.getName());
+			stringBuffer.append(diagramName);
 			stringBuffer.append(TEXT_22);
 			stringBuffer.append(diagram.getDocumentation());
 			stringBuffer.append(TEXT_23);
