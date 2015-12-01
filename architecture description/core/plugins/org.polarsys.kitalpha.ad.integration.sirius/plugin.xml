@@ -61,7 +61,6 @@
           <action
                 class="org.polarsys.kitalpha.ad.integration.sirius.menu.DynamicMenuAction"
                 enablesFor="+"
-                icon="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.ui/icons/Kitalpha16x16.png"
                 id="context.menu.submenu"
                 label="Viewpoint services"
                 menubarPath="additions"
