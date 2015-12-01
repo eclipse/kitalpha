@@ -17,7 +17,7 @@
     <vpRules name="RuleTwo"/>
   </VP_Aspects>
   <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSampleFramework.build" target_platform="C:/eclipse.exe">
-    <mapped_repositories protocol="svnssh" location="ComponentSampleFramework/ComponentSampleFramework.git">
+    <mapped_repositories location="ComponentSampleFramework/ComponentSampleFramework.git">
       <features name="org.polarsys.kitalpha.vp.ComponentSampleFramework.feature"/>
     </mapped_repositories>
   </VP_Aspects>

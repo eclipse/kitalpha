@@ -211,8 +211,8 @@
     <vpRules name="RuleTwo"/>
     <vpRules name="RuleThree"/>
   </VP_Aspects>
-  <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSample2.build" target_platform="D:/Eclipse/Platform/Kitalpha-0.5/kitalpha_juno_0.5.0-20140921_00-01-01/eclipse.exe">
-    <mapped_repositories protocol="svnssh" location="ComponentSample/ComponentSample.git">
+  <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSample.build" target_platform="C:/eclipse.exe">
+    <mapped_repositories location="ComponentSample/ComponentSample.git">
       <features name="org.polarsys.kitalpha.vp.ComponentSample.feature"/>
     </mapped_repositories>
   </VP_Aspects>
@@ -232,7 +232,4 @@
     </ownedPages>
   </VP_Aspects>
   <parents href="../../org.polarsys.kitalpha.vp.componentsampleframework.vpdsl/model/ComponentSampleFramework.vpdesc#/"/>
-  <viewpointResources>
-    <useResource xsi:type="vpdesc:EMFResource" uri="platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"/>
-  </viewpointResources>
 </vpdesc:Viewpoint>

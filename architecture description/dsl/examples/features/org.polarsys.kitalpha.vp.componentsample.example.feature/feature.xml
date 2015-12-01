@@ -45,6 +45,10 @@
          id="org.polarsys.kitalpha.vp.componentsample.explorer.contextual.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsample.releng.feature"
+         version="0.0.0"/>
+
    <plugin
          id="org.polarsys.kitalpha.vp.componentsample.runtime.model"
          download-size="0"

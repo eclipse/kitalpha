@@ -17,6 +17,6 @@
  */
 Build ComponentSample.build {
 	target-platform: "C:/eclipse.exe"
-	repository: svn+ssh:// "ComponentSample/ComponentSample.git"
+	repository: git "ComponentSample/ComponentSample.git"
 	features: org.polarsys.kitalpha.vp.ComponentSample.feature
 }

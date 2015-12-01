@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_y5x10GkQEeWGsuz71d277w" name="ComponentSampleFramework">
-  <jobs xmi:id="_y5x10WkQEeWGsuz71d277w" name="main">
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_y57m0GkQEeWGsuz71d277w" type="Result"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_y57m0WkQEeWGsuz71d277w" name="viewpoint_ComponentSampleFramework" id="viewpoint_ComponentSampleFramework" profile="SDKProfil"/>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_tozf4Jd9EeWxfbMF-87VUg" name="ComponentSampleFramework">
+  <jobs xmi:id="_tozf4Zd9EeWxfbMF-87VUg" name="main">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_tozf4pd9EeWxfbMF-87VUg" type="Result"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_tozf45d9EeWxfbMF-87VUg" name="viewpoint_ComponentSampleFramework" id="viewpoint_ComponentSampleFramework" profile="SDKProfil"/>
   </jobs>
-  <jobs xmi:id="_y57m0mkQEeWGsuz71d277w" name="build_ComponentSampleFramework">
-    <properties xmi:id="_y57m02kQEeWGsuz71d277w" key="target.location" value="C:/eclipse.exe" type="INLINED"/>
-    <properties xmi:id="_y57m1GkQEeWGsuz71d277w" key="repository.location" value="ComponentSampleFramework/ComponentSampleFramework.git"/>
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_y57m1WkQEeWGsuz71d277w" type="Result"/>
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_y57m1mkQEeWGsuz71d277w" name="ComponentSampleFramework">
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_y57m12kQEeWGsuz71d277w" path="${target.location}"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_y57m2GkQEeWGsuz71d277w" id="org.polarsys.kitalpha.vp"/>
+  <jobs xmi:id="_tozf5Jd9EeWxfbMF-87VUg" name="build_ComponentSampleFramework">
+    <properties xmi:id="_tozf5Zd9EeWxfbMF-87VUg" key="target.location" value="C:/eclipse.exe" type="INLINED"/>
+    <properties xmi:id="_tozf5pd9EeWxfbMF-87VUg" key="repository.location" value="ComponentSampleFramework/ComponentSampleFramework.git"/>
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_tozf55d9EeWxfbMF-87VUg" type="Result"/>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_tozf6Jd9EeWxfbMF-87VUg" name="ComponentSampleFramework">
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_tozf6Zd9EeWxfbMF-87VUg" path="${target.location}"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_tozf6pd9EeWxfbMF-87VUg" id="org.polarsys.kitalpha.vp"/>
     </steps>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_y57m2WkQEeWGsuz71d277w" component="_y57m2GkQEeWGsuz71d277w" generateSources="false" generateDropins="true"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_y57m2mkQEeWGsuz71d277w" name="ComponentSampleFramework feature" id="viewpoint_ComponentSampleFramework" profile="SDKProfil"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_y57m22kQEeWGsuz71d277w">
-      <locations xmi:id="_y57m3GkQEeWGsuz71d277w" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_tozf65d9EeWxfbMF-87VUg" component="_tozf6pd9EeWxfbMF-87VUg" generateSources="false" generateDropins="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_tozf7Jd9EeWxfbMF-87VUg" name="ComponentSampleFramework feature" id="viewpoint_ComponentSampleFramework" profile="SDKProfil"/>
+    <scms xsi:type="buildscm:GIT" xmi:id="_tozf7Zd9EeWxfbMF-87VUg">
+      <locations xmi:id="_tozf7pd9EeWxfbMF-87VUg" url="${repository.location}" localPath="git_viewpoint"/>
     </scms>
   </jobs>
 </buildcore:Chain>
