@@ -20,6 +20,6 @@ Viewpoint ComponentSampleFramework {
 	Data ComponentSampleFramework.data
 	Activity-Explorer ComponentSampleFramework.activityexplorer
 	Services ComponentSampleFramework.services
-//	Build ComponentSampleFramework.build
+	Build ComponentSampleFramework.build
 	Configuration ComponentSampleFramework.conf
 }

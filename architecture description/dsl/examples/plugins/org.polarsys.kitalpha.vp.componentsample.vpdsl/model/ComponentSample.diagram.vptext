@@ -15,7 +15,7 @@
  *	@author: Benoît Langlois
  *	@date: 26/08/14
  *
- */
+ */ 
 
 import external "platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"
 
