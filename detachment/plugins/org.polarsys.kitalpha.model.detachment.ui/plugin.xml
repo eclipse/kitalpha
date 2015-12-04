@@ -85,6 +85,7 @@ Contributors:
                         </test>
                      </adapt>
                      <test
+                           forcePluginActivation="true"
                            property="org.polarsys.kitalpha.model.detachment.ui.action.checkClosedSession">
                      </test>
                   </iterate>
@@ -126,6 +127,7 @@ Contributors:
                         </test>
                      </adapt>
                      <test
+                           forcePluginActivation="true"
                            property="org.polarsys.kitalpha.model.detachment.ui.action.checkClosedSession">
                      </test>
                   </iterate>
