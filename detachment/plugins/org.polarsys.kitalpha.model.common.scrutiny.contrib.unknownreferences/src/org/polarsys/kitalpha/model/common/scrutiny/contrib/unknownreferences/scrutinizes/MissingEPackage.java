@@ -25,9 +25,9 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.Messages;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.feedback.Feedback;
-import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.FeedbackLevel;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.IFeedbackMessage;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
 
 /**
  * @author Matthieu Helleboid

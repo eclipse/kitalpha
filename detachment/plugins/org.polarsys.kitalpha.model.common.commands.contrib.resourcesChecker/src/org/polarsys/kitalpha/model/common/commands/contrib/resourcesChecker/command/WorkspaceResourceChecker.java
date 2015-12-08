@@ -17,6 +17,7 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.resourcesChecker.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
@@ -34,12 +35,16 @@ public class WorkspaceResourceChecker extends ModelCommand {
 		
 		subMonitor.beginTask(Messages.CHECK_ATTRIBUTE_FILES, 1);
 		
-		EList<Resource> resources = resource.getResourceSet().getResources();
+		ResourceSet resourceSet = resource.getResourceSet();
 		
-		for (Resource resource2 : resources) {
-			checkAttributes(resource2, subMonitor.newChild(1));
+		if (resourceSet != null){
+			EList<Resource> resources = resourceSet.getResources();
+
+			for (Resource resource2 : resources) {
+				checkAttributes(resource2, subMonitor.newChild(1));
+			}
 		}
-		
+		//throw new ModelCommandException(Messages.bind(Messages.NO_RESOURCESET_ASSOCiATED_TO_RESOURCE, resource.getURI()));
 	}
 
 	private void checkAttributes(Resource resource2, IProgressMonitor monitor) 
