@@ -27,8 +27,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProtocolType">
-    <eLiterals name="svnssh" value="1"/>
-    <eLiterals name="svn" literal="svn"/>
+    <eLiterals name="git" literal="git"/>
+    <eLiterals name="svn" value="1" literal="svn"/>
+    <eLiterals name="svnssh" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SourceFolder">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>

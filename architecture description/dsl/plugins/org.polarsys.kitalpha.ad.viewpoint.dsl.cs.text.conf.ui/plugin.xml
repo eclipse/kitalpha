@@ -479,14 +479,5 @@ Contributors:
              name="%wizard.vpconf.file.name">
        </wizard>
     </extension>
-      <extension
-            point="org.eclipse.core.contenttype.contentTypes">
-         <content-type
-               file-extensions="conf.vptext,vptext"
-               id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf.ui.conf.content.type"
-               name="Viewpoint Configuration Content Type"
-               priority="high">
-         </content-type>
-      </extension>
     
 </plugin>

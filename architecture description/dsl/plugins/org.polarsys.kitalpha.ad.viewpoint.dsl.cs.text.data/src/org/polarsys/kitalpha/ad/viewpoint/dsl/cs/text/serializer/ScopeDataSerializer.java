@@ -10,9 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.resource.IEObjectDescription;
@@ -21,7 +19,6 @@ import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.tokens.CrossReferenceSerializer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
 
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
@@ -51,17 +48,18 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 		Resource resource = target.eResource();
 		
 		if (resource != null){
-			URI importURI = resource.getURI();
-			EPackage loadedEPackage = ExternalDataHelper.loadEPackage(importURI.toString(), semanticObject.eResource().getResourceSet());
-			
-			if (descriptionManager != null && loadedEPackage != null) {
+//			URI importURI = resource.getURI();
+			//EPackage loadedEPackage = ExternalDataHelper.loadEPackage(importURI.toString(), semanticObject.eResource().getResourceSet());
+
+			if (descriptionManager != null){// && loadedEPackage != null) {
 				IResourceDescription resourceDescription = descriptionManager
 						.getResourceDescription(resource);
-				exportedObjects = Iterables.concat(exportedObjects,
-						resourceDescription.getExportedObjects());
+				if (resourceDescription != null)
+					exportedObjects = Iterables.concat(exportedObjects,
+							resourceDescription.getExportedObjects());
 			}
 		}
-		
+
 		IScope newLocalScope = MultimapBasedScope.createScope(scope, exportedObjects, false);
 		
 		return super.getCrossReferenceNameFromScope(semanticObject, crossref, target, newLocalScope, errors);

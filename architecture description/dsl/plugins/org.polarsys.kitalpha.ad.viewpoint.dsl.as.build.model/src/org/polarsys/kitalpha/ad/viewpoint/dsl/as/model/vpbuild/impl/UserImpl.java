@@ -90,7 +90,9 @@ public class UserImpl extends EObjectImpl implements User {
 	 * @generated
 	 */
 	protected UserImpl() {
+
 		super();
+
 	}
 
 	/**

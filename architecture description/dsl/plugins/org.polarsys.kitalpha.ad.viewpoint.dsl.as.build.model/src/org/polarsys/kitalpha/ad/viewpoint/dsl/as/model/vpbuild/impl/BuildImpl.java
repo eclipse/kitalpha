@@ -96,7 +96,9 @@ public class BuildImpl extends AspectImpl implements Build {
 	 * @generated
 	 */
 	protected BuildImpl() {
+
 		super();
+
 	}
 
 	/**

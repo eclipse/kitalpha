@@ -36,6 +36,7 @@ import com.google.common.collect.Lists;
 /**
  * 
  * @author Amine Lajmi
+ *         Faycal ABKA
  *
  */
 public class ExternalDataHelper {
@@ -45,13 +46,18 @@ public class ExternalDataHelper {
 	private static final String MetamodelLoader_id = "id";
 	private static final String NamespacePattern_configElement = "NamespacePattern";
 	private static final String NamespacePattern_value = "value";
+	private static final String TargetApplication = "target";
 	
 	
-	public static final String IMPORTED_EPACKAGE = "ImportedEPackages";
+	public static final String EMF_TARGET = "EMF";
 		
 	private static Map<String, List<Pattern>> metamodelLoaders;
+	private static Map<String, List<Pattern>> metamodelLoadersTarget; //<Target, List of nsuri patterns
 	
 	private static Map<String, URI> packagesInScopeURIs;
+	
+	//<target, scope>
+	private static Map<String, Map<String, URI>> packagesInScopeURIsTarget;
 	
 	private ExternalDataHelper() {}
 	
@@ -61,6 +67,19 @@ public class ExternalDataHelper {
 		}
 		try{
 			return lookupPackagesInScopeURis();
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static Map<String, URI> getPackagesInScopeURIs(String target) {
+		if (packagesInScopeURIsTarget != null && packagesInScopeURIsTarget.get(target) != null && !packagesInScopeURIsTarget.get(target).isEmpty()) {
+			return packagesInScopeURIsTarget.get(target);
+		}
+		try{
+			lookupPackagesInScopeURis(); //Initialize the target
+			return packagesInScopeURIsTarget.get(target);
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
@@ -81,6 +100,7 @@ public class ExternalDataHelper {
 	
 	private static Map<String, URI> lookupPackagesInScopeURis()  throws CoreException {
 		packagesInScopeURIs= Collections.synchronizedMap(new LinkedHashMap<String, URI>());
+		packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
 		metamodelLoaders = getAvailableMetamodelLoaders();
 		for (String loader: metamodelLoaders.keySet()) {
 			List<Pattern> patternList = metamodelLoaders.get(loader);
@@ -92,18 +112,44 @@ public class ExternalDataHelper {
 				}
 			}
 		}
+		
+		//Merge EMF target with others, because EMF is available every time
+		for (String target: metamodelLoadersTarget.keySet()) {
+			if (!target.equals("EMF")){
+				merge(EMF_TARGET, target);
+			}
+		}
+		
+		for(String target: metamodelLoadersTarget.keySet()){
+			List<Pattern> patternList = metamodelLoadersTarget.get(target);
+			Map<String, URI> packagesFound = findPackagesInScopeURIs(patternList);
+			
+			for(Map.Entry<String, URI> candidate: packagesFound.entrySet()){
+				Map<String, URI> targetPatterns = packagesInScopeURIsTarget.get(target);
+				if (!targetPatterns.containsKey(candidate)){
+					targetPatterns.put(candidate.getKey(), candidate.getValue());
+				}
+			}
+		}
+		
 		return packagesInScopeURIs;
 	}
 	
 	public static Map<String, List<Pattern>> lookupMetamodelLoaders() throws CoreException {
 		metamodelLoaders = new HashMap<String, List<Pattern>>();
+		metamodelLoadersTarget = new HashMap<String, List<Pattern>>();
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(MetamodelLoader_ExtensionPoint);
 		if (config.length != 0) {
 			for (IConfigurationElement iConfigElement : config){
 				if (iConfigElement.getName().toLowerCase().equals(MetamodelLoader_configElement.toLowerCase())) {
 					//Get the loader
 					String loaderId = iConfigElement.getAttribute(MetamodelLoader_id);
+					String target = iConfigElement.getAttribute(TargetApplication);
+					
 					List<Pattern> availablePatterns = Lists.newArrayList();
+					
+					packagesInScopeURIsTarget.put(target, Collections.synchronizedMap(new LinkedHashMap<String, URI>()));
+					
 					IConfigurationElement[] patterns = iConfigElement.getChildren();
 					//Get the patterns
 					for (IConfigurationElement candidate : patterns){
@@ -114,26 +160,12 @@ public class ExternalDataHelper {
 						}
 					}
 					metamodelLoaders.put(loaderId, availablePatterns);
+					metamodelLoadersTarget.put(target, availablePatterns);
 				}
 			}
 		}
 		return metamodelLoaders;
 	}
-	
-//	public static void addNsUriToMetampdelLoaders(String importId, String nsUri){
-//		if (metamodelLoaders != null){
-//			if (metamodelLoaders.get(importId) != null){
-//				metamodelLoaders.get(importId).add(Pattern.compile(nsUri));
-//			} else {
-//				List<Pattern> importedMetamodels = Lists.newArrayList();
-//				importedMetamodels.add(Pattern.compile(nsUri));
-//				metamodelLoaders.put(IMPORTED_EPACKAGE, importedMetamodels);				
-//			}
-//		} else {
-//			metamodelLoaders = getAvailableMetamodelLoaders();
-//			addNsUriToMetampdelLoaders(importId, nsUri);
-//		}
-//	}
 	
 	public static boolean isPackageInScopeURIs(EPackage ePackage) {
 		metamodelLoaders = getAvailableMetamodelLoaders();
@@ -166,7 +198,7 @@ public class ExternalDataHelper {
 	}
 	
 	public static Map<String, URI> getPackagesFromRegistry() {
-		Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap();
+		Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap(false);
 		return ePackageNsURItoGenModelLocationMap;
 	}
 	
@@ -180,8 +212,8 @@ public class ExternalDataHelper {
 				EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE.getEPackage(uri.toString());
 
 				if (ecoreModel != null){
-					EcoreUtil.resolveAll(ecoreModel);
-					//resourceSet.getResources().add(ecoreModel.eResource());
+//					EcoreUtil.resolveAll(ecoreModel);
+					resourceSet.getResources().add(ecoreModel.eResource());
 					return ecoreModel;
 				}
 			}
@@ -202,5 +234,15 @@ public class ExternalDataHelper {
 			}
 			return null;
 		}
+	}
+	
+	/**
+	 * Merge the values of target1 in the values of target2
+	 * @param target1
+	 * @param target2
+	 */
+	private static void merge(String target1, String target2){
+		List<Pattern> patternListTarget1 = metamodelLoadersTarget.get(target1);
+		metamodelLoadersTarget.get(target2).addAll(patternListTarget1);
 	}
 }

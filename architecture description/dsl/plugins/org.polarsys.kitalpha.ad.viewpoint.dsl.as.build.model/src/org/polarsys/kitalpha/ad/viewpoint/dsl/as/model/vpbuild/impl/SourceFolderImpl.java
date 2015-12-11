@@ -61,7 +61,9 @@ public class SourceFolderImpl extends EObjectImpl implements SourceFolder {
 	 * @generated
 	 */
 	protected SourceFolderImpl() {
+
 		super();
+
 	}
 
 	/**

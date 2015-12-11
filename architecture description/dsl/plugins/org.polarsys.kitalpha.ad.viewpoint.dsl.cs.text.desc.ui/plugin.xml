@@ -421,7 +421,7 @@ Contributors:
           </action>
        </viewerContribution>
     </extension>
-      <extension
+    <extension
             point="org.eclipse.ui.decorators">
          <decorator
                class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator.SpecFileDecorator"
@@ -438,6 +438,7 @@ Contributors:
                </objectClass>
             </enablement>
          </decorator>
+         <!--
          <decorator
                adaptable="true"
                class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator.UnsynchronizedResource"
@@ -453,6 +454,6 @@ Contributors:
                </objectClass>
             </enablement>
          </decorator>
+         -->
       </extension>
-    
 </plugin>

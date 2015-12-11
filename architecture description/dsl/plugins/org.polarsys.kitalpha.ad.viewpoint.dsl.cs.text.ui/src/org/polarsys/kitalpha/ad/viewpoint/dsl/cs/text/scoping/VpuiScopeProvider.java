@@ -42,21 +42,21 @@ import com.google.common.base.Predicate;
  */
 public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 
-	@Override
-	public IScope getScope(EObject context, EReference reference) {
-		if (reference.equals(VpuiPackage.eINSTANCE
-				.getFieldMapping_UI_Field_Mapped_To())) {
-			
-			final EObject context2 = context;
-			return new FilteringScope(super.getScope(context, reference),
-					new Predicate<IEObjectDescription>() {
-						public boolean apply(IEObjectDescription d) {
-							return (d.getEObjectOrProxy() instanceof AbstractFeature && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
-						}
-					});
-		}
-		return super.getScope(context, reference);
-	}
+//	@Override
+//	public IScope getScope(EObject context, EReference reference) {
+//		if (reference.equals(VpuiPackage.eINSTANCE
+//				.getFieldMapping_UI_Field_Mapped_To())) {
+//			
+//			final EObject context2 = context;
+//			return new FilteringScope(super.getScope(context, reference),
+//					new Predicate<IEObjectDescription>() {
+//						public boolean apply(IEObjectDescription d) {
+//							return (d.getEObjectOrProxy() instanceof AbstractFeature && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
+//						}
+//					});
+//		}
+//		return super.getScope(context, reference);
+//	}
 
 	IScope scope_LocalClass_UI_For_LocalClass(EObject context,
 			EReference reference) {

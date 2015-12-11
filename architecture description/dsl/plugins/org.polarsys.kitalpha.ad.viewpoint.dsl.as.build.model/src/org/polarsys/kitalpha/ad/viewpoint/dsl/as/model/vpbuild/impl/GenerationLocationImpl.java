@@ -82,7 +82,9 @@ public class GenerationLocationImpl extends EObjectImpl implements GenerationLoc
 	 * @generated
 	 */
 	protected GenerationLocationImpl() {
+
 		super();
+
 	}
 
 	/**
