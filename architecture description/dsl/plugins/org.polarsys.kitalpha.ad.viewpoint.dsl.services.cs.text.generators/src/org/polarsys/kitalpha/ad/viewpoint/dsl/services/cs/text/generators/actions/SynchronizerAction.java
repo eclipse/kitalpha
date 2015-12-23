@@ -19,7 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -42,6 +44,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchr
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.Messages;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.internal.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.setup.BackwardSynchronizerSetup;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.ReferenceUtil;
 
@@ -87,32 +90,38 @@ public class SynchronizerAction extends BaseSelectionListenerAction implements I
 	protected boolean doSynchronize(IFile file) {
 		boolean result = false;
 		XtextResourceSet resourceSet = getInjector().getInstance(XtextResourceSet.class);
-		EObject textRoot = ResourceHelper.loadResource(file, new ResourceSetImpl()).get(0);
-		if (textRoot!=null) {
-			XtextResource resource = (XtextResource)textRoot.eResource();
-			IResourceServiceProvider resourceServiceProvider = resource.getResourceServiceProvider();
-			IViewpointSynchronizer generator = resourceServiceProvider.get(IViewpointSynchronizer.class);
-			String projectName = file.getProject().getName();
-			Resource targetResource = loadTargetModel(resourceSet, projectName);
-			Viewpoint viewpoint = (Viewpoint) targetResource.getContents().get(0);
-			List<EObject> inputObjects = loadInputModels(file, resourceSet);
-			if (validate(inputObjects)) {
-				EObject synchronizedObject = generator.synchronize(inputObjects, viewpoint);
-				if (synchronizedObject !=null) {
-					try {
-						final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
-						saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-						synchronizedObject.eResource().save(saveOptions);
-						result = true;
-					} catch (IOException e) {
-						e.printStackTrace();
-					}		
+		List<EObject> loadedResources = ResourceHelper.validateAndloadResource(file, new ResourceSetImpl());
+		if (loadedResources != null && !loadedResources.isEmpty()){
+			EObject textRoot = loadedResources.get(0);
+			if (textRoot!=null) {
+				XtextResource resource = (XtextResource)textRoot.eResource();
+				IResourceServiceProvider resourceServiceProvider = resource.getResourceServiceProvider();
+				IViewpointSynchronizer generator = resourceServiceProvider.get(IViewpointSynchronizer.class);
+				String projectName = file.getProject().getName();
+				Resource targetResource = loadTargetModel(resourceSet, projectName);
+				Viewpoint viewpoint = (Viewpoint) targetResource.getContents().get(0);
+				List<EObject> inputObjects = loadInputModels(file, resourceSet);
+				if (validate(inputObjects)) {
+					EObject synchronizedObject = generator.synchronize(inputObjects, viewpoint);
+					if (synchronizedObject !=null) {
+						try {
+							final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
+							saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+							synchronizedObject.eResource().save(saveOptions);
+							result = true;
+						} catch (IOException e) {
+							e.printStackTrace();
+						}		
+					}
 				}
 			}
+			resourceSet.eSetDeliver(false);
+			resourceSet.getResources().clear();
+			resourceSet.eAdapters().clear();
+		} else {
+			String message = "Cannot generate Viewpoint dsl standalone resource from: " + file.getName() + ". One or more resources are invalidate";
+			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, message));
 		}
-		resourceSet.eSetDeliver(false);
-		resourceSet.getResources().clear();
-		resourceSet.eAdapters().clear();
 		return result;
 	}
 
@@ -159,13 +168,13 @@ public class SynchronizerAction extends BaseSelectionListenerAction implements I
 	
 	protected List<EObject> loadInputModels(IFile file, ResourceSet resourceSet) {
 		Iterable<EObject> inputModels = Collections.emptyList();
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadDataResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadConfigurationResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadUIResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadDiagramResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadBuildResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadServicesResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.loadActivityexplorerResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadDataResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadConfigurationResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadUIResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadDiagramResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadBuildResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadServicesResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadActivityexplorerResource(file, resourceSet));
 		return Lists.newArrayList( inputModels );
 	}
 	

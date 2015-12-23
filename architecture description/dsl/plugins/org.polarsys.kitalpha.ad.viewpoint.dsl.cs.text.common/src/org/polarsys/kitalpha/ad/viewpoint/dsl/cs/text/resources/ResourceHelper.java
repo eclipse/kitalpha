@@ -524,6 +524,36 @@ public class ResourceHelper {
 	}
 	
 	/**
+	 * Loads a model from the given file in the given resource set and validate 
+	 * a loaded model
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndloadResource(IFile file, ResourceSet resourceSet) {
+		String fileExtension = getFileExtension(file);
+		if (fileExtension.equals(FileExtension.SPECIFICATION_EXTENSION))
+			return validateAndLoadPrimaryResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.BUILD_EXTENSION))
+			return validateAndLoadBuildResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.CONFIGURATION_EXTENSION))
+			return validateAndLoadConfigurationResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.DATA_EXTENSION))
+			return validateAndLoadDataResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.UI_EXTENSION))
+			return validateAndLoadUIResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.SERVICES_EXTENSION))
+			return validateAndLoadServicesResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.DIAGRAM_EXTENSION))
+			return validateAndLoadDiagramResource(file, resourceSet);
+		if (fileExtension.equals(FileExtension.ACTIVITYEXPLORER_EXTENSION))
+			return validateAndLoadActivityexplorerResource(file, resourceSet);
+		return loadModel(file, resourceSet);		
+	}
+	
+	
+	/**
 	 * Loads a model from the given file in the given resource set 
 	 * 
 	 * @param file
@@ -638,6 +668,42 @@ public class ResourceHelper {
 			primaryResourceRoot = specResource.getContents().get(0);
 		return Lists.newArrayList(primaryResourceRoot);
 	}
+	
+	
+	/**
+	 * Loads the primary resource from the given file in the given resource set
+	 * 
+	 * @param file
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadPrimaryResource(IFile file, ResourceSet resourceSet) {
+		URI specResourceURI = computeURI(file, FileExtension.SPECIFICATION_EXTENSION);
+		if (specResourceURI==null)
+			throw new RuntimeException (Messages.ResourceHelper_SpecificationModelNotFound);
+		return validateAndLoadPrimaryResource(specResourceURI, resourceSet);
+	}
+
+	/**
+	 * Loads the primary resource with the given URI in the given resource set
+	 * 
+	 * @param specResourceURI
+	 * @param resourceSet
+	 * @return
+	 */
+	public static List<EObject> validateAndLoadPrimaryResource(URI specResourceURI, ResourceSet resourceSet) {
+		Resource specResource = loadResource(specResourceURI, resourceSet);
+		if (!specResource.getContents().isEmpty()){
+			EObject primaryResourceRoot = specResource.getContents().get(0);
+			IFile file = getFileFromURI(specResourceURI);
+		if (isValid(primaryResourceRoot)){
+			setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
+			return Lists.newArrayList(primaryResourceRoot);
+		}
+		setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "false");
+	}
+	return Collections.emptyList();
+	}
 
 	/**
 	 * Loads the Build resource from the given file in the given resource set
@@ -676,7 +742,7 @@ public class ResourceHelper {
 	 * @param resourceSet
 	 * @return
 	 */
-	public static List<EObject> validateAndloadBuildResource(IFile file, ResourceSet resourceSet) {
+	public static List<EObject> validateAndLoadBuildResource(IFile file, ResourceSet resourceSet) {
 		URI buildResourceURI = computeURI(file, FileExtension.BUILD_EXTENSION);
 		if (buildResourceURI==null)
 			return Collections.emptyList();
@@ -785,21 +851,27 @@ public class ResourceHelper {
 	}
 	
 	private static boolean isValid(EObject eObject) {
-		Resource eResource = eObject.eResource();
-		EList<Diagnostic> errors = eResource.getErrors();
-		
-		boolean empty = errors.isEmpty();
-		
-		
-		EObject rootContainer = EcoreUtil.getRootContainer(eObject);
-		
-		if (rootContainer != null){
-			org.eclipse.emf.common.util.Diagnostic result = 
-					Diagnostician.INSTANCE.validate(rootContainer);
-			empty &= (result.getSeverity() != IStatus.ERROR);
+		//Trigger the emf validation first
+		if (eObject != null){
+			boolean empty = true;
+			EObject rootContainer = EcoreUtil.getRootContainer(eObject);
+
+			if (rootContainer != null){
+				org.eclipse.emf.common.util.Diagnostic result = 
+						Diagnostician.INSTANCE.validate(rootContainer);
+				empty &= (result.getSeverity() != IStatus.ERROR);
+			}
+
+			//Check if there diagnostics in the resource
+			Resource eResource = eObject.eResource();
+			if (eResource != null){
+				EList<Diagnostic> errors = eResource.getErrors();
+				empty &= errors.isEmpty();
+			}
+
+			return empty;
 		}
-				
-		return empty;
+		return true; //always true if there are nothing to validate
 
 	}
 
@@ -1239,7 +1311,21 @@ public class ResourceHelper {
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
-
+	}
+	
+	public static boolean getProperty(org.eclipse.core.runtime.QualifiedName propertyId, IResource resource){
+		try {
+			String prop = resource.getPersistentProperty(propertyId);
+			if (prop != null)
+				return Boolean.valueOf(prop);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	public static boolean getSyncProperty(IResource resource){
+		return getProperty(ResourcesPropertysConstants.syncQualifiedName, resource);
 	}
 	
 
@@ -1248,6 +1334,65 @@ public class ResourceHelper {
 	}
 	
 	
+	/**
+	 * Get primary and secondary resources of the project which contains file
+	 * @param file
+	 * @return primary and secondary resources of project
+	 */
+	public static List<IResource> getAllResources(IFile file){
+		List<IResource> resources = new ArrayList<IResource>();
+		
+		List<IPath> secondaryResourcePaths = ResourceHelper.getAllResourcePaths(file);
+		
+		for (IPath p : secondaryResourcePaths) {
+			IResource resource = ResourcesPlugin.getWorkspace().getRoot().getFile(p);
+			if (resource != null && resource.exists()){
+				resources.add(resource);
+			}
+		}
+		
+		return resources;
+	}
+	
+	
+	private static List<IPath> getAllResourcePaths(IFile file) {
+		
+		List<IPath> result = new ArrayList<IPath>();
+		
+		IPath trimmed = file.getFullPath().removeFileExtension().removeFileExtension();
+		//Primary
+		IPath tmp = trimmed.addFileExtension(FileExtension.SPECIFICATION_EXTENSION);
+		result.add(tmp);
+		
+		//Secondary resources
+		tmp = trimmed.addFileExtension(FileExtension.DATA_EXTENSION);
+		result.add(tmp);
+		
+		tmp = trimmed.addFileExtension(FileExtension.UI_EXTENSION);
+		result.add(tmp);
+		
+		tmp = trimmed.addFileExtension(FileExtension.DIAGRAM_EXTENSION);
+		result.add(tmp);
+		
+		tmp = trimmed.addFileExtension(FileExtension.ACTIVITYEXPLORER_EXTENSION);
+		result.add(tmp);
+		
+		tmp = trimmed.addFileExtension(FileExtension.BUILD_EXTENSION);
+		result.add(tmp);
+
+		tmp = trimmed.addFileExtension(FileExtension.CONFIGURATION_EXTENSION);
+		result.add(tmp);
+		
+		tmp = trimmed.addFileExtension(FileExtension.SERVICES_EXTENSION);
+		result.add(tmp);
+		
+		tmp = trimmed.addFileExtension(FileExtension.RULES_EXTENSION);
+		result.add(tmp);
+		
+		return result;
+	}
+
+
 	/**
 	 * Copied from {@link org.polarsys.kitalpha.ad.common.utils.URIFix}
 	 */

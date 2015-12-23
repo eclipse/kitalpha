@@ -22,6 +22,7 @@ import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ILightweightLabelDecorator;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 
 /**
  * 
@@ -30,8 +31,8 @@ import org.osgi.framework.Bundle;
  */
 public class SpecFileDecorator implements ILightweightLabelDecorator {
 	
-	Bundle bundle = Platform.getBundle("org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui"); //$NON-NLS-1$
-	URL url = FileLocator.find(bundle, new Path("icons/spec_overlay.gif"), null); //$NON-NLS-1$
+	private static final Bundle bundle = Platform.getBundle("org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui"); //$NON-NLS-1$
+	private static final URL url = FileLocator.find(bundle, new Path("icons/spec_overlay.gif"), null); //$NON-NLS-1$
 
 	private final ImageDescriptor IMG_OVERLAY = ImageDescriptor.createFromURL(url);
 
@@ -58,7 +59,7 @@ public class SpecFileDecorator implements ILightweightLabelDecorator {
 		
 		if (element instanceof IResource){
 			IResource resource = (IResource)element;
-			if (resource.getFullPath().toString().endsWith(".spec.vptext")){ //$NON-NLS-1$
+			if (resource.getFullPath().toString().endsWith(FileExtension.SPECIFICATION_EXTENSION)){ //$NON-NLS-1$
 				decoration.addOverlay(IMG_OVERLAY);
 			}
 		}

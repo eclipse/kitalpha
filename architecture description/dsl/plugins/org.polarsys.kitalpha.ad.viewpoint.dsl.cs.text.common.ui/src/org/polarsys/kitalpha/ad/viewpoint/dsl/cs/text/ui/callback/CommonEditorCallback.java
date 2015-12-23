@@ -163,7 +163,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 			update(runnable);
 	}
 
-	protected boolean doSynchronize(IFile file) {
+	protected boolean doSynchronize(IFile file){
 		boolean result = false;
 		XtextResourceSet resourceSet = getInjector().getInstance(XtextResourceSet.class);
 		IViewpointSynchronizer generator = getInjector().getInstance(IViewpointSynchronizer.class);
@@ -173,9 +173,10 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 
 			List<EObject> inputObjects = loadInputModels(file, resourceSet);
 			
-			isResourceClean = true; //reset
+			//FIXME remove this if is not used
+			isResourceClean = true; //reset 
 			
-			if (validate(inputObjects)){
+			if (validate(inputObjects) && canSynchronize(file)){
 				EObject synchronizedObject = generator.synchronize(inputObjects, targetObject);
 
 				if (synchronizedObject!=null) {
@@ -205,6 +206,17 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		return result;
 	}
 	
+	private boolean canSynchronize(IFile file){
+		boolean result = true;
+		List<IResource> resources = ResourceHelper.getAllResources(file);
+		
+		for (IResource r : resources) {
+			result &= ResourceHelper.getSyncProperty(r);
+			if (!result) 
+				return result;
+		}
+		return result;
+	}
 	
 	protected boolean validate(List<EObject> inputObjects) {
 		for (EObject current: inputObjects) {
@@ -230,7 +242,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadConfigurationResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadUIResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadDiagramResource(file, resourceSet));
-		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndloadBuildResource(file, resourceSet));
+		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadBuildResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadServicesResource(file, resourceSet));
 		inputModels = Iterables.concat(inputModels, ResourceHelper.validateAndLoadActivityexplorerResource(file, resourceSet));
 		return Lists.newArrayList( inputModels );
@@ -240,7 +252,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		//load primary resource in a separate resourceSet
 		ResourceSet fakeResourceSet = new ResourceSetImpl();
 		List<URI> uris = new ArrayList<URI>();
-		EObject viewpoint = ResourceHelper.loadPrimaryResource(file, fakeResourceSet).get(0);
+		EObject viewpoint = ResourceHelper.validateAndLoadPrimaryResource(file, fakeResourceSet).get(0);
 		List<EObject> eCrossReferences = viewpoint.eCrossReferences();
 		for (EObject object:eCrossReferences) {
 			URI uri = EcoreUtil.getURI(object);

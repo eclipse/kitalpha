@@ -34,7 +34,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 
 /**
  * 
- * Hold misc utility of management of project or object created
+ * Hold misc utilities of management of project or object creation
  * in the project
  * @author Faycal Abka
  *
