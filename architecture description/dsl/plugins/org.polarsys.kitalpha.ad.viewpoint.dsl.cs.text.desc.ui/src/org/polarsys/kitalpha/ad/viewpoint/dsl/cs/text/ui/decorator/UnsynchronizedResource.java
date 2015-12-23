@@ -12,18 +12,17 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.decorator;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.jface.viewers.ILightweightLabelDecorator;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.jface.viewers.LabelProviderChangedEvent;
-import org.eclipse.swt.widgets.Display;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourcesPropertysConstants;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 
 public class UnsynchronizedResource extends LabelProvider implements ILightweightLabelDecorator {
 	
 	public static final String DECORATOR_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui.vpdesc.decorator";
+	private static final String UNSYNCRONIZED_RESOURCE_LABEL = "[ Unsyncronized ] ";
 	
 	
 	public UnsynchronizedResource() {
@@ -32,40 +31,26 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 	
 	@Override
 	public void decorate(Object element, IDecoration decoration) {
-		
+
 		IFile resource = getResource(element);
-		
+
 		if (resource == null || 
 				!(resource.exists()) ||
 				!(resource.isAccessible()) ||
-				!(resource.getFullPath().getFileExtension().endsWith("vptext"))) return;
-		
-		try {
-			
-			String value = resource.getPersistentProperty(ResourcesPropertysConstants.syncQualifiedName);
-			
-			if (value != null && value.equals("false"))
-			{
-				decoration.addPrefix("[ Unsyncronized ] ");
-			}
-			else
-			{
-				decoration.addPrefix("");
-			}
-			
-			final LabelProviderChangedEvent event = new LabelProviderChangedEvent(this);
-			Display.getDefault().syncExec(new Runnable() {
-				
-				@Override
-				public void run() {
-					fireLabelProviderChanged(event);
-				}
-			});
-			
-		} catch (CoreException e) {
-			e.printStackTrace();
+				!(resource.getFullPath().getFileExtension().endsWith(FileExtension.PRIMARY_EXTENSION))) return;
+
+		boolean value = ResourceHelper.getSyncProperty(resource);
+
+		if (!value)
+		{
+			decoration.addPrefix(UNSYNCRONIZED_RESOURCE_LABEL);
 		}
-		
+		else
+		{
+			decoration.addPrefix("");
+		}
+
+
 	}
 	
 	

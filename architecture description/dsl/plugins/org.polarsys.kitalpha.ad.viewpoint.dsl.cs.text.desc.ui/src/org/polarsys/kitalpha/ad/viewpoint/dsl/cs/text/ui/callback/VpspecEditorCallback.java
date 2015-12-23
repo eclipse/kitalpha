@@ -191,31 +191,34 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 		EObject targetObject = ResourceHelper.loadStandaloneResource(resourceSet, projectName);
 		if (targetObject!=null) {
 			Viewpoint targetVp = (Viewpoint) targetObject;		
-			EObject primaryResourceRoot = ResourceHelper.loadResource(file, resourceSet).get(0);
-			if (primaryResourceRoot instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint) {
-				org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint sourceVp = (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint)primaryResourceRoot;
-				initTargetViewpoint(sourceVp, targetVp);
-				ReferenceUtil.setTargetReferences(sourceVp, targetVp, resourceSet);
-			}
-			
-			List<EObject> inputObjects = loadInputModels(file, resourceSet);
-			
-			if (validate(inputObjects)){
-				EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
-				
-				if (synchronizedObject!=null) {
-					try {
-						final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
-						saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-						synchronizedObject.eResource().save(saveOptions);
-						result = true;
-					} catch (IOException e) {
-						e.printStackTrace();
-					}	
+			List<EObject> resourceEObjects = ResourceHelper.validateAndloadResource(file, resourceSet);
+			if (!resourceEObjects.isEmpty()){
+				EObject primaryResourceRoot = resourceEObjects.get(0);
+				if (primaryResourceRoot instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint) {
+					org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint sourceVp = (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint)primaryResourceRoot;
+					initTargetViewpoint(sourceVp, targetVp);
+					ReferenceUtil.setTargetReferences(sourceVp, targetVp, resourceSet);
+				}
+
+				List<EObject> inputObjects = loadInputModels(file, resourceSet);
+
+				if (validate(inputObjects)){
+					EObject synchronizedObject = generator.synchronize(inputObjects, targetVp);
+
+					if (synchronizedObject!=null) {
+						try {
+							final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
+							saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+							synchronizedObject.eResource().save(saveOptions);
+							result = true;
+						} catch (IOException e) {
+							e.printStackTrace();
+						}	
+					}
 				}
 			}
 		} else {
-			System.err.println("Error");
+			System.err.println("Error Loading standalone resource");
 		}
 		resourceSet.eSetDeliver(false);
 		resourceSet.getResources().clear();
