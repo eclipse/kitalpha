@@ -65,6 +65,15 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
 		originalViewpointsMap.putAll(viewpointsMap);
 	}
 
+	private boolean isRegularExpression(String viewpointURI){
+		return viewpointURI.contains("*") 
+				|| viewpointURI.contains("(")
+				|| viewpointURI.contains("[")
+				|| viewpointURI.contains("?")
+				|| viewpointURI.contains("|")
+				|| viewpointURI.contains("+");
+	}
+
 	private boolean validate() {
 		Set<String> selectedURIs = new HashSet<String>();
 		Map<String, Viewpoint> missings = new HashMap<String, Viewpoint>();
@@ -78,12 +87,11 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
 					missings.remove(uri.get().toString().trim());
 					for (RepresentationExtensionDescription extension : new ViewpointQuery(vp).getAllRepresentationExtensionDescriptions()) {
 						String extended = extension.getViewpointURI();
-						if (!extended.contains("*") && !selectedURIs.contains(extended.trim())) {
+						if (!isRegularExpression(extended) && !selectedURIs.contains(extended.trim())) {
 							missings.put(extended.trim(), null);
 						}
 					}
 				}
-
 			}
 		}
 		if (missings.isEmpty()) {
