@@ -53,20 +53,14 @@
 	   </objectContribution>
 	</extension>
 
-      <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-      		objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart"
-            id="com.thalesgroup.vpd.menu.contribution">
-          <action
-                class="org.polarsys.kitalpha.ad.integration.sirius.menu.DynamicMenuAction"
-                enablesFor="+"
-                id="context.menu.submenu"
-                label="Viewpoint services"
-                menubarPath="additions"
-                style="pulldown">
-         </action>
-      </objectContribution>
+	<extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            class="org.polarsys.kitalpha.ad.integration.sirius.actions.ServiceActionFactory"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      </menuContribution>
    </extension>
+   
+
 
 </plugin>
