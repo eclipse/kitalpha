@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.polarsys.kitalpha.vp.componentsample.explorer.contextual.feature"
-      label="Contextual Explorer - Component Sample Example (Incubation)"
+      label="Contextual Explorer - Component Sample Example"
       version="1.0.0.qualifier"
       provider-name="%providerName">
 

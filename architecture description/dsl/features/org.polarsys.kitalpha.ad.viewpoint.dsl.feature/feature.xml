@@ -11,7 +11,7 @@ Contributors:
 -->
 <feature
       id="org.polarsys.kitalpha.ad.viewpoint.dsl.feature"
-      label="Viewpoint dsl feature (Incubation)"
+      label="Viewpoint dsl feature"
       version="1.0.0.qualifier"
       provider-name="%providerName">
 

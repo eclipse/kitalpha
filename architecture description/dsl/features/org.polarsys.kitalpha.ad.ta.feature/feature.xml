@@ -11,7 +11,7 @@ Contributors:
 -->
 <feature
       id="org.polarsys.kitalpha.ad.ta.feature"
-      label="Target application feature (Incubation)"
+      label="Target application feature"
       version="1.0.0.qualifier"
       provider-name="%providerName">
 
