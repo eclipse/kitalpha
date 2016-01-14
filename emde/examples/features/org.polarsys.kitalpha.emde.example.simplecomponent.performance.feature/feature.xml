@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.polarsys.kitalpha.emde.example.simplecomponent.performance.feature"
-      label="Performance for Simplecomponent Feature (eMDE example) (Incubation)"
+      label="Performance for Simplecomponent Feature (eMDE example)"
       version="1.0.0.qualifier"
       provider-name="%providerName">
 

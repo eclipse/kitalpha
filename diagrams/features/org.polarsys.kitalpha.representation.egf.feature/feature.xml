@@ -11,7 +11,7 @@ Contributors:
 -->
 <feature
       id="org.polarsys.kitalpha.representation.egf.feature"
-      label="EGF diagrams generation EGF (Incubation)"
+      label="EGF diagrams generation EGF"
       version="1.0.0.qualifier"
       provider-name="%providerName">
 
