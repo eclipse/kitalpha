@@ -1,0 +1,34 @@
+		IJavaProject proj = JavaCore.create(project);
+		StringBuilder prop = (StringBuilder) ctx.getValue("properties");
+		List<String> modules = (List<String>) ctx.getValue("modules");
+
+		IPath readOutputLocation = proj.readOutputLocation().removeFirstSegments(1);
+		String name = project.getName();
+		IPath location = project.getLocation();
+		
+
+		while (!location.segment(0).equals("git")) {
+			location = location.removeFirstSegments(1);
+			if (location.segmentCount() == 0)
+				return;
+		}
+		// remove segment after 'git'
+		location = new Path("git").append(location.removeFirstSegments(2));
+
+		String sources = "";
+		for (IPackageFragmentRoot root : proj.getAllPackageFragmentRoots()) {
+			if (root.getKind() == IPackageFragmentRoot.K_SOURCE && root.getParent().equals(proj)) {
+				if (!sources.isEmpty())
+					sources += ",";
+				sources += root.getElementName();
+			}
+		}
+
+		if (!sources.isEmpty()) {
+			prop.append(name + ".sonar.projectName=" + name).append("\n");
+			prop.append(name + ".sonar.projectBaseDir=" + location).append("\n");
+			prop.append(name + ".sonar.binaries=" + readOutputLocation).append("\n");
+			prop.append(name + ".sonar.sources=" + sources).append("\n");
+	
+			modules.add(name);
+		}

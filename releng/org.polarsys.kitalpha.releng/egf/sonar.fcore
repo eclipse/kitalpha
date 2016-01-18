@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:javapattern="http://www.eclipse.org/egf/1.0.0/javapattern"
+    xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <fcore:FactoryComponent xmi:id="_obWT8LqlEeW-2J_J7xlKaw" name="sonar generation (jenkins workspace)">
+    <viewpointContainer xmi:id="_BCgP4LqmEeW-2J_J7xlKaw">
+      <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_BmmbcLqmEeW-2J_J7xlKaw">
+        <domains xmi:type="domain:WorkspaceDomain" xmi:id="_CArIULqmEeW-2J_J7xlKaw"
+            helperImplementation="org.eclipse.egf.domain.file.WorkspaceDomainHelper"
+            path="."/>
+      </viewpoints>
+      <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_TtRF4LqmEeW-2J_J7xlKaw">
+        <libraries xmi:id="_UFuCILqmEeW-2J_J7xlKaw" description="" name="org.polarsys.kitalpha.releng.sonar">
+          <elements xmi:id="_-_4JcLqoEeW-2J_J7xlKaw" name="ProjectPattern" headerMethod="#_-_4JcrqoEeW-2J_J7xlKaw"
+              conditionMethod="#_-_4JdLqoEeW-2J_J7xlKaw" initMethod="#_-_4Jc7qoEeW-2J_J7xlKaw"
+              footerMethod="#_-_4JdrqoEeW-2J_J7xlKaw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_-_4JcbqoEeW-2J_J7xlKaw"
+                name="Java"/>
+            <methods xmi:id="_-_4JcrqoEeW-2J_J7xlKaw" name="header" patternFilePath="templates/pattern._-_4JcLqoEeW-2J_J7xlKaw/method._-_4JcrqoEeW-2J_J7xlKaw.pt"/>
+            <methods xmi:id="_-_4Jc7qoEeW-2J_J7xlKaw" name="init" patternFilePath="templates/pattern._-_4JcLqoEeW-2J_J7xlKaw/method._-_4Jc7qoEeW-2J_J7xlKaw.pt"/>
+            <methods xmi:id="_-_4JdLqoEeW-2J_J7xlKaw" name="preCondition" patternFilePath="templates/pattern._-_4JcLqoEeW-2J_J7xlKaw/method._-_4JdLqoEeW-2J_J7xlKaw.pt"/>
+            <methods xmi:id="_-_4JdbqoEeW-2J_J7xlKaw" name="body" patternFilePath="templates/pattern._-_4JcLqoEeW-2J_J7xlKaw/method._-_4JdbqoEeW-2J_J7xlKaw.pt"/>
+            <methods xmi:id="_-_4JdrqoEeW-2J_J7xlKaw" name="footer" patternFilePath="templates/pattern._-_4JcLqoEeW-2J_J7xlKaw/method._-_4JdrqoEeW-2J_J7xlKaw.pt"/>
+            <parameters xmi:id="_CCIZgLqpEeW-2J_J7xlKaw" name="project" type="org.eclipse.core.resources.IProject"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_E5scgLqpEeW-2J_J7xlKaw"
+                called="#_-_4JdbqoEeW-2J_J7xlKaw"/>
+          </elements>
+        </libraries>
+      </viewpoints>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_MYJScLqmEeW-2J_J7xlKaw">
+      <invocations xmi:id="_Odkt4LqmEeW-2J_J7xlKaw" invokedActivity="#_E1u60LqvEeW-2J_J7xlKaw">
+        <invocationContractContainer xmi:id="_Odkt4bqmEeW-2J_J7xlKaw">
+          <invocationContracts xmi:id="_Odkt4rqmEeW-2J_J7xlKaw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg">
+            <type xmi:type="domain:TypeDomain" xmi:id="_SdPBYLqmEeW-2J_J7xlKaw" domain="#_CArIULqmEeW-2J_J7xlKaw"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_Odkt5rqmEeW-2J_J7xlKaw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="__hYl8LqmEeW-2J_J7xlKaw"
+                elements="#_UFuCILqmEeW-2J_J7xlKaw"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_oRH3ULtdEeWiuN7RZwJ6LQ" invokedContract="#_g90BwLtdEeWiuN7RZwJ6LQ">
+            <type xmi:type="types:TypeBoolean" xmi:id="_s32K0LtdEeWiuN7RZwJ6LQ" value="true"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_hAsrwLtfEeWiuN7RZwJ6LQ" name="sonar generation (local workspace)">
+    <viewpointContainer xmi:id="_pO1K0LtfEeWiuN7RZwJ6LQ">
+      <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_pl2jsLtfEeWiuN7RZwJ6LQ">
+        <domains xmi:type="domain:WorkspaceDomain" xmi:id="_qRNN0LtfEeWiuN7RZwJ6LQ"
+            helperImplementation="org.eclipse.egf.domain.file.WorkspaceDomainHelper"
+            path="."/>
+      </viewpoints>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_rEBK0LtfEeWiuN7RZwJ6LQ">
+      <invocations xmi:id="_t_lkELtfEeWiuN7RZwJ6LQ" invokedActivity="#_E1u60LqvEeW-2J_J7xlKaw">
+        <invocationContractContainer xmi:id="_t_lkEbtfEeWiuN7RZwJ6LQ">
+          <invocationContracts xmi:id="_t_lkErtfEeWiuN7RZwJ6LQ" invokedContract="#_g90BwLtdEeWiuN7RZwJ6LQ">
+            <type xmi:type="types:TypeBoolean" xmi:id="_u4CPALtfEeWiuN7RZwJ6LQ" value="false"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_t_lkE7tfEeWiuN7RZwJ6LQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg">
+            <type xmi:type="domain:TypeDomain" xmi:id="_v36-sLtfEeWiuN7RZwJ6LQ" domain="#_qRNN0LtfEeWiuN7RZwJ6LQ"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_t_lkFLtfEeWiuN7RZwJ6LQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_xGnmcLtfEeWiuN7RZwJ6LQ"
+                elements="#_UFuCILqmEeW-2J_J7xlKaw"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_E1u60LqvEeW-2J_J7xlKaw" name="Sonar Domain Driven Pattern Strategy Task"
+      kind="java" superTask="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_8FZ3aof6eEd64XYPo3s6sPg"
+      implementation="org.polarsys.kitalpha.releng.sonar.SonarDomainDrivenStrategyTask">
+    <contractContainer xmi:id="_gUFIQLtdEeWiuN7RZwJ6LQ">
+      <contracts xmi:id="_g90BwLtdEeWiuN7RZwJ6LQ" name="workspace.from.jenkins" mandatory="true">
+        <type xmi:type="types:TypeBoolean" xmi:id="_k-DkELtdEeWiuN7RZwJ6LQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

@@ -1,0 +1,1 @@
+return project.isOpen() && project.hasNature(JavaCore.NATURE_ID);

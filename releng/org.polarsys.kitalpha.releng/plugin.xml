@@ -13,6 +13,9 @@
       <fcore
             id="egf/PublishExamples.fcore">
       </fcore>
+      <fcore
+            id="egf/sonar.fcore">
+      </fcore>
    </extension>
 
 </plugin> 
