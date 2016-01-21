@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.integration.sirius.providers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.editparts.AbstractEditPart;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
@@ -35,7 +36,8 @@ public class SiriusSelectionProvider extends DefaultSelectionProvider {
 					}
 				}
 			}
-			result.add(obj);
+			if (obj instanceof EObject)
+				result.add(obj);
 		}
 		return result;
 

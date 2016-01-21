@@ -55,12 +55,13 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.edit.provid
 import org.polarsys.kitalpha.ad.viewpoint.handlers.ModelListener;
 import org.polarsys.kitalpha.ad.viewpoint.handlers.ProjectUtils;
 import org.polarsys.kitalpha.ad.viewpoint.integration.services.Implementations;
-import org.polarsys.kitalpha.ad.viewpoint.integration.services.ServiceImplementation;
+import org.polarsys.kitalpha.ad.viewpoint.integration.services.ServiceRunner;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.NewElementCreationWizard;
 import org.polarsys.kitalpha.ad.viewpoint.ui.integration.services.NewServiceCreationWizard;
+import org.polarsys.kitalpha.ad.viewpoint.ui.integration.services.UIServiceRunner;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.ComboStringEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.ServiceTypeEditingSupport;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.editing.StringEditingSupport;
@@ -68,7 +69,7 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.AbstractTab;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.GenericHandlerContentProvider;
 import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.ResourceTableSorter;
 import org.polarsys.kitalpha.ad.viewpoint.utils.ElementHelper;
-import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;
+
 
 /**
  * @author Thomas Guiu
@@ -148,13 +149,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 					button.addSelectionListener(new SelectionListener2() {
 						public void doWidgetSelected(SelectionEvent e) {
 							Service service = (Service) item.getData();
-							try {
-								ServiceImplementation impl = Implementations.getInstance(service);
-								impl.run(service, new ModelAccessor(modelManager), selectionProvider == null ? new Object[0] : selectionProvider.getSelection().toArray());
-							} catch (CoreException e1) {
-								MessageDialog.openError(composite.getShell(), "Error", e1.getMessage());
-								Activator.getDefault().logError(e1);
-							}
+							new UIServiceRunner().run(service, modelManager, selectionProvider == null ? null : selectionProvider.getSelection());
 						}
 					});
 					button.pack();
@@ -174,16 +169,9 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 				button = (Button) editor.getEditor();
 				Service service = (Service) item.getData();
 				boolean enabled = service != null && service.getType() != null && !"".equals(service.getType());
-				if (enabled) {
-					try {
-						ServiceImplementation impl = Implementations.getInstance(service);
-						boolean canRun = impl != null && impl.canRun(service, new ModelAccessor(modelManager), selectionProvider.getSelection().toArray());
-						enabled = canRun;
-					} catch (Exception e1) {
-						Activator.getDefault().logError(e1);
-						enabled = false;
-					}
-				}
+				if (enabled) 
+					enabled = new ServiceRunner().canRun(service, modelManager, selectionProvider.getSelection());
+				
 				button.setEnabled(enabled);
 			};
 		};

@@ -10,31 +10,33 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint;
 
-import org.osgi.framework.BundleActivator;
+import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
-public class Activator implements BundleActivator {
+/**
+ * @author Thomas Guiu
+ * 
+ */
+public class Activator extends Plugin {
 
-	private static BundleContext context;
+	private static Activator plugin;
 
-	static BundleContext getContext() {
-		return context;
+	public void start(BundleContext context) throws Exception {
+		plugin = this;
+		super.start(context);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
-	 */
-	public void start(BundleContext bundleContext) throws Exception {
-		Activator.context = bundleContext;
+	public void stop(BundleContext context) throws Exception {
+		super.stop(context);
+		plugin = null;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-	 */
-	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
+	public static Activator getDefault() {
+		return plugin;
+	}
+	
+	public static String getSymbolicName() {
+		return plugin.getBundle().getSymbolicName();
 	}
 
 }

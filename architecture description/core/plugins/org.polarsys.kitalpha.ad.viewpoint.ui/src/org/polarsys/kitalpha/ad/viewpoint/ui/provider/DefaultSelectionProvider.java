@@ -16,6 +16,7 @@ package org.polarsys.kitalpha.ad.viewpoint.ui.provider;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.ISelectionListener;
@@ -52,12 +53,20 @@ public class DefaultSelectionProvider implements AFSelectionProvider {
 					listener.selectionChanged(part, selection);
 			}
 		});
+
+		// update object state accordingly to the platform state
+		IWorkbenchPart activePart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getPartService().getActivePart();
+		listener.selectionChanged(activePart, selectionService.getSelection());
 	}
 
+	/**
+	 * Returns only EMF objects
+	 */
 	public List<Object> getSelection() {
 		List<Object> result = new ArrayList<Object>();
 		for (Object obj : selectedObjects) {
-			result.add(obj);
+			if (obj instanceof EObject)
+				result.add(obj);
 		}
 		return result;
 	}
