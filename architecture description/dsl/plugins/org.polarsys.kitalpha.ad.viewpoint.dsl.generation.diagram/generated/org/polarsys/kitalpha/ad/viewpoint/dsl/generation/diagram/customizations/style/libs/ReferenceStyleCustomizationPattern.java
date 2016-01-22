@@ -77,12 +77,15 @@ public class ReferenceStyleCustomizationPattern {
 	protected void method_createCustomization(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EReferenceCustomization referenceCustomization = DescriptionFactory.eINSTANCE.createEReferenceCustomization();
 		referenceCustomization.setReferenceName(stylePropertyData.getName());
-		referenceCustomization.setValue((EObject) stylePropertyData.getValue());
+		Object value = stylePropertyData.getValue();
+		if (value instanceof List<?>) {
+			value = ((List<?>) value).get(0);
+		}
+		referenceCustomization.setValue((EObject) value);
 		referenceCustomization.setApplyOnAll(applyOnAll);
 		if (applyOnAll == false) {
 			referenceCustomization.getAppliedOn().addAll(appliedOn);
 		}
-
 		parent.getFeatureCustomizations().add(referenceCustomization);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
