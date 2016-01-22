@@ -17,7 +17,7 @@ package org.polarsys.kitalpha.report.ui;
  * @author Thomas Guiu
  * 
  */
-public interface ReportImages {
+public interface ReportImages { // NOSONAR
 	String IMG_LOAD = "icons/load.png";
 	String IMG_SAVE = "icons/save.png";
 	String IMG_LOAD_DISABLED = "icons/load_disabled.png";

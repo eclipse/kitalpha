@@ -27,11 +27,11 @@ public abstract class ColumnDescription {
 		this.width = size;
 	}
 
-	public String getText(LogEntry entry) {
+	public String getText(LogEntry entry) { // NOSONAR
 		return "";
 	}
 
-	protected Image getImage(LogEntry entry) {
+	protected Image getImage(LogEntry entry) { // NOSONAR
 		return null;
 	}
 

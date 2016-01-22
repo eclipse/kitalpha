@@ -24,6 +24,12 @@ import org.polarsys.kitalpha.report.utils.SeverityFactory;
  */
 public class ExampleReportFactory extends AbstractReportFactory {
 
+	public static final ExampleReportFactory INSTANCE = new ExampleReportFactory("custom.report.example.list");
+
+	public ExampleReportFactory(String listId) {
+		super(listId);
+	}
+	
 	public LogEntry logFatalError(String message, String comment, EObject reference) {
 		CustomEntry entry = CustomizationFactory.eINSTANCE.createCustomEntry();
 		entry.setComment(comment);
@@ -35,10 +41,6 @@ public class ExampleReportFactory extends AbstractReportFactory {
 		return log(entry, SeverityFactory.INSTANCE.createWarning(), message, reference);
 	}
 
-	public ExampleReportFactory(String listId) {
-		super(listId);
-	}
 
-	public static final ExampleReportFactory INSTANCE = new ExampleReportFactory("custom.report.example.list");
 
 }

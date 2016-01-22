@@ -32,9 +32,16 @@ import org.polarsys.kitalpha.report.model.Severity;
  */
 public class ReportRegistry {
 
+	protected static final Map<String, ReportList> id2list = new HashMap<String, ReportList>();
+	public static final ReportRegistry INSTANCE = new ReportRegistry();
+
 	private final List<Listener> listeners = new ArrayList<Listener>();
 	private final SortedSet<Severity> severities = new TreeSet<Severity>(new SeverityComparator());
 	private final ListListener listListener = new ListListener();
+
+	protected ReportRegistry() {
+		super();
+	}
 
 	public void disposeList(String id) {
 		ReportList removed = id2list.remove(id);
@@ -74,21 +81,6 @@ public class ReportRegistry {
 		listeners.remove(listener);
 	}
 
-	protected ReportRegistry() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public static abstract class Listener {
-		public void reportListAdded(ReportList list) {
-		}
-
-		public void reportListRemoved(ReportList list) {
-		}
-
-		public void reportListUpdated(ReportList list) {
-		}
-	}
 
 	private void fireAdded(ReportList list) {
 		for (Listener l : listeners)
@@ -105,8 +97,6 @@ public class ReportRegistry {
 			l.reportListRemoved(list);
 	}
 
-	protected static final Map<String, ReportList> id2list = new HashMap<String, ReportList>();
-	public static final ReportRegistry INSTANCE = new ReportRegistry();
 
 	private final class ListListener extends AdapterImpl {
 
@@ -119,11 +109,24 @@ public class ReportRegistry {
 	}
 
 	private static class SeverityComparator implements Comparator<Severity> {
-
+		@Override
 		public int compare(Severity o1, Severity o2) {
 
 			return o2.getCode() - o1.getCode();
 		}
 
 	}
+	
+	public static abstract class Listener {
+		public void reportListAdded(ReportList list) {
+		}
+
+		public void reportListRemoved(ReportList list) {
+		}
+
+		public void reportListUpdated(ReportList list) {
+		}
+	}
+
+	
 }

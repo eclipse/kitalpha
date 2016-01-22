@@ -43,14 +43,17 @@ public abstract class MenuCreatorAction extends Action implements IMenuCreator {
 		setMenuCreator(this);
 	}
 
+	@Override
 	public void dispose() {
 		disposeMenu();
 	}
 
+	@Override
 	public Menu getMenu(Menu parent) {
 		return null;
 	}
 
+	@Override
 	public Menu getMenu(Control parent) {
 		disposeMenu();
 		menu = new Menu(parent);
@@ -60,6 +63,7 @@ public abstract class MenuCreatorAction extends Action implements IMenuCreator {
 		return menu;
 	}
 
+	@Override
 	public void runWithEvent(Event event) {
 		ToolItem ti = (ToolItem) event.widget;
 		Menu menu2 = getMenu(ti.getParent());

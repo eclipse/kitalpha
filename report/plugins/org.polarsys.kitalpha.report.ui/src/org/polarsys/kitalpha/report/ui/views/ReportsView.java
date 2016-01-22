@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.viewers.CellLabelProvider;
@@ -65,6 +64,7 @@ public class ReportsView extends ViewPart implements Observer {
 		public void reportListUpdated(ReportList list) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					if (viewer != null && !viewer.getControl().isDisposed()) {
 						refreshView();
@@ -159,6 +159,7 @@ public class ReportsView extends ViewPart implements Observer {
 
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				IStructuredSelection ss = (IStructuredSelection) event.getSelection();
 				if (ss.size() == 1) {
@@ -179,8 +180,6 @@ public class ReportsView extends ViewPart implements Observer {
 
 	private void contributeToActionBars() {
 		IActionBars bars = getViewSite().getActionBars();
-		// fill Local PullDown Menu
-		IMenuManager menuManager = bars.getMenuManager();
 		// fill Local ToolBar
 		IToolBarManager toolBarManager = bars.getToolBarManager();
 		toolBarManager.add(new ManageColumnsAction(this));
@@ -192,7 +191,7 @@ public class ReportsView extends ViewPart implements Observer {
 		toolBarManager.add(deleteReportAction);
 		toolBarManager.add(deleteAllReportAction);
 		toolBarManager.add(new Separator("grp3"));
-		toolBarManager.add(new SelectReportDropDownAction(this));
+		toolBarManager.add(new SelectReportDropDownAction());
 
 	}
 
@@ -246,6 +245,7 @@ public class ReportsView extends ViewPart implements Observer {
 		});
 		treeColumn.getColumn().addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				TreeColumn selectedColumn = (TreeColumn) e.widget;
 				int sortDirection = viewer.getTree().getSortDirection();
@@ -256,7 +256,8 @@ public class ReportsView extends ViewPart implements Observer {
 				viewer.refresh();
 			}
 
-			public void widgetDefaultSelected(SelectionEvent e) {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) { // NOSONAR
 			}
 		});
 
@@ -274,7 +275,7 @@ public class ReportsView extends ViewPart implements Observer {
 		return result;
 	}
 
-	static class MyTreeViewer extends TreeViewer {
+	static class MyTreeViewer extends TreeViewer { // NOSONAR
 
 		public MyTreeViewer(Composite parent, int style) {
 			super(parent, style);
@@ -287,6 +288,8 @@ public class ReportsView extends ViewPart implements Observer {
 
 	}
 
+
+	@Override
 	public void update(Observable o, Object arg) {
 		if (arg instanceof String) {
 			String id = (String) arg;

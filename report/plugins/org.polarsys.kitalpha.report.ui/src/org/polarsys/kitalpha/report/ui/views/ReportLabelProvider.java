@@ -31,11 +31,12 @@ public class ReportLabelProvider extends LabelProvider implements ITableLabelPro
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object,
 	 *      int)
 	 */
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		String result = "";
 		if (element instanceof LogEntry) {
 			LogEntry logEntry = (LogEntry) element;
-			switch (columnIndex) {
+			switch (columnIndex) { // NOSONAR
 			case 0:
 				result = logEntry.getMessage();
 				break;
@@ -49,6 +50,7 @@ public class ReportLabelProvider extends LabelProvider implements ITableLabelPro
 		return result;
 	}
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		Image image = ReportsUI.getImage(((LogEntry) element).getSeverity());
 		return columnIndex == 0 ? image : null;

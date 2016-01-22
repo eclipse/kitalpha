@@ -29,6 +29,11 @@ import org.polarsys.kitalpha.report.registry.ReportRegistry;
 public abstract class AbstractReportFactory {
 	private final String listId;
 
+	public AbstractReportFactory(String listId) {
+		super();
+		this.listId = listId;
+	}
+
 	protected LogEntry log(Severity severity, String message, EObject reference) {
 		LogEntry entry = ReportElementFactory.eINSTANCE.createLogEntry();
 		return log(entry, severity, message, reference);
@@ -49,7 +54,7 @@ public abstract class AbstractReportFactory {
 		if (msg != null)
 			sw.append(msg).append("\n");
 		if (th != null)
-			th.printStackTrace(new PrintWriter(sw));
+			th.printStackTrace(new PrintWriter(sw)); // NOSONAR
 		return sw.toString();
 	}
 
@@ -57,9 +62,5 @@ public abstract class AbstractReportFactory {
 		return listId;
 	}
 
-	public AbstractReportFactory(String listId) {
-		super();
-		this.listId = listId;
-	}
 
 }

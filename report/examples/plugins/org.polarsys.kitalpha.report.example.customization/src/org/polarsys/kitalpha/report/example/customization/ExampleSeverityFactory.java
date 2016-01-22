@@ -20,6 +20,8 @@ import org.polarsys.kitalpha.report.utils.AbstractSeverityFactory;
  */
 public class ExampleSeverityFactory extends AbstractSeverityFactory {
 
+	public static final ExampleSeverityFactory INSTANCE = new ExampleSeverityFactory();
+	
 	private ExampleSeverityFactory() {
 		super();
 		contributed.add(createFatalError());
@@ -29,6 +31,5 @@ public class ExampleSeverityFactory extends AbstractSeverityFactory {
 		return createSeverity(400, "Fatal Error");
 	}
 
-	public static final ExampleSeverityFactory INSTANCE = new ExampleSeverityFactory();
 
 }

@@ -86,6 +86,7 @@ public class ModelBasedRegistry extends ResourceRegistry {
 		concerns.add(concernName);
 	}
 
+	@Override
 	public void dispose() {
 		super.dispose();
 		if (reader != null && reader instanceof Disposable)

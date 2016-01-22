@@ -75,6 +75,7 @@ public class ResourceSearchView extends ViewPart {
 		criteria.setId(".*");
 	}
 
+	@Override
 	public void createPartControl(Composite parent) {
 		viewer = new TableViewer(parent, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION);
 		final Table table = viewer.getTable();
@@ -85,6 +86,7 @@ public class ResourceSearchView extends ViewPart {
 
 		SelectionListener headerListener = new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
@@ -98,7 +100,8 @@ public class ResourceSearchView extends ViewPart {
 				viewer.refresh();
 			}
 
-			public void widgetDefaultSelected(SelectionEvent e) {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) { // NOSONAR
 			}
 		};
 
@@ -184,6 +187,7 @@ public class ResourceSearchView extends ViewPart {
 		MenuManager menuMgr = new MenuManager("#PopupMenu");
 		menuMgr.setRemoveAllWhenShown(true);
 		menuMgr.addMenuListener(new IMenuListener() {
+			@Override
 			public void menuAboutToShow(IMenuManager manager) {
 				ResourceSearchView.this.fillContextMenu(manager);
 			}
@@ -207,8 +211,6 @@ public class ResourceSearchView extends ViewPart {
 
 	private void fillContextMenu(IMenuManager manager) {
 		manager.add(newSearchAction);
-		// manager.add(refreshSearchAction);
-		// Other plug-ins can contribute there actions here
 		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
 	}
 
@@ -219,6 +221,7 @@ public class ResourceSearchView extends ViewPart {
 
 	private void makeActions() {
 		newSearchAction = new Action() {
+			@Override
 			public void run() {
 				ResourceSearchDialog dialog = new ResourceSearchDialog(getViewSite().getShell(), criteria);
 				if (dialog.open() == Window.OK) {
@@ -234,6 +237,7 @@ public class ResourceSearchView extends ViewPart {
 		newSearchAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(ResourceReuseImages.IMG_SEARCH_OBJ));
 
 		refreshSearchAction = new Action() {
+			@Override
 			public void run() {
 				ResourceHelper helper = ResourceReuse.createHelper();
 				Resource[] resources = helper.getResources(criteria);
@@ -245,6 +249,7 @@ public class ResourceSearchView extends ViewPart {
 		refreshSearchAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(ResourceReuseImages.IMG_REFRESH_OBJ));
 
 		openResourceAction = new Action() {
+			@Override
 			public void run() {
 				ISelection selection = viewer.getSelection();
 				Object obj = ((IStructuredSelection) selection).getFirstElement();
@@ -255,6 +260,7 @@ public class ResourceSearchView extends ViewPart {
 
 	private void hookDoubleClickAction() {
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
+			@Override
 			public void doubleClick(DoubleClickEvent event) {
 				openResourceAction.run();
 			}
@@ -268,6 +274,7 @@ public class ResourceSearchView extends ViewPart {
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
+	@Override
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}

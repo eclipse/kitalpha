@@ -19,6 +19,8 @@ import org.polarsys.kitalpha.report.model.Severity;
  */
 public class SeverityFactory extends AbstractSeverityFactory {
 
+	public static final SeverityFactory INSTANCE = new SeverityFactory();
+	
 	private SeverityFactory() {
 		super();
 		contributed.add(createDebug());
@@ -43,5 +45,4 @@ public class SeverityFactory extends AbstractSeverityFactory {
 		return createSeverity(1000, "Error");
 	}
 
-	public static final SeverityFactory INSTANCE = new SeverityFactory();
 }

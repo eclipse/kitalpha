@@ -19,6 +19,7 @@ public class MessageColumnDescription extends ColumnDescription {
 		super(label, id, alignment, size);
 	}
 
+	@Override
 	public String getText(LogEntry entry) {
 		String fullMessage = entry.getMessage().trim();
 		String summary = ReportHelper.getSummary(entry);
@@ -27,6 +28,7 @@ public class MessageColumnDescription extends ColumnDescription {
 		return summary + " [...]";
 	}
 
+	@Override
 	public Image getImage(LogEntry entry) {
 		return ReportsUI.getImage(entry.getSeverity());
 	}

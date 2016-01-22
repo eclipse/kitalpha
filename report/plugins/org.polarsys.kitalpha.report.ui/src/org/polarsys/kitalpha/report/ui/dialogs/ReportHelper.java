@@ -21,6 +21,10 @@ import org.polarsys.kitalpha.report.utils.ReportFactory;
  */
 public class ReportHelper {
 
+	private ReportHelper() {
+		super();
+	}
+
 	public static void logAndDisplayError(Shell parent, ReportFactory factory, String message) {
 		ReportDialog.openError(parent, factory.logError(message));
 	}

@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  * 
  */
 class SearchViewLabelProvider extends LabelProvider implements ITableLabelProvider {
+	@Override
 	public String getColumnText(Object obj, int index) {
 		Resource res = (Resource) obj;
 		switch (index) {
@@ -49,10 +50,12 @@ class SearchViewLabelProvider extends LabelProvider implements ITableLabelProvid
 		return value == null ? "" : value;
 	}
 
+	@Override
 	public Image getColumnImage(Object obj, int index) {
 		return getImage(obj);
 	}
 
+	@Override
 	public Image getImage(Object obj) {
 		return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
 	}

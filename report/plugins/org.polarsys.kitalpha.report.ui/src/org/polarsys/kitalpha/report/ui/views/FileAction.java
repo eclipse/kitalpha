@@ -25,6 +25,7 @@ public abstract class FileAction extends Action {
 		this.view = view;
 	}
 
+	@Override
 	public void run() {
 		FileDialog fd = new FileDialog(view.getViewSite().getShell(), getDialogStyle());
 		final String filename = fd.open();
@@ -40,7 +41,7 @@ public abstract class FileAction extends Action {
 	}
 
 	protected abstract int getDialogStyle();
-
-	protected abstract void doRun(String filename) throws Exception;
+ 
+	protected abstract void doRun(String filename) throws Exception; // NOSONAR
 
 }

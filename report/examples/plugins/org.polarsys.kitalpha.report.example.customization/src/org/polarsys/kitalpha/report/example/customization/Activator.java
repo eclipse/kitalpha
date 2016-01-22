@@ -33,12 +33,6 @@ public class Activator extends AbstractUIPlugin implements IStartup {
 	// The shared instance
 	private static Activator plugin;
 
-	/**
-	 * The constructor
-	 */
-	public Activator() {
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -46,9 +40,10 @@ public class Activator extends AbstractUIPlugin implements IStartup {
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
 	 * )
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		plugin = this;
+		plugin = this; // NOSONAR
 		ExampleSeverityFactory.INSTANCE.registerSeverities();
 		ReportsUI.registerImage(ExampleSeverityFactory.INSTANCE.createFatalError(), getImage(IMG_SEVERITY_FATAL));
 		ReportsUI.registerColumnDescription(new CommentColumnDescription("Comment", COMMENT_COLUMN_ID, SWT.LEFT, 80));
@@ -61,8 +56,9 @@ public class Activator extends AbstractUIPlugin implements IStartup {
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
 	 * )
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
-		plugin = null;
+		plugin = null; // NOSONAR
 		ReportsUI.unRegisterImage(ExampleSeverityFactory.INSTANCE.createFatalError());
 		ReportsUI.unRegisterColumnDescription(COMMENT_COLUMN_ID);
 		ExampleSeverityFactory.INSTANCE.unRegisterSeverities();
@@ -95,9 +91,9 @@ public class Activator extends AbstractUIPlugin implements IStartup {
 		return image;
 	}
 
+	@Override
 	public void earlyStartup() {
-		// TODO Auto-generated method stub
-
+		//	not needed
 	}
 
 }

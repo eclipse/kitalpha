@@ -30,23 +30,22 @@ class SelectReportDropDownAction extends MenuCreatorAction implements IMenuCreat
 
 	private final Action selectAction = new SelectReportAction();
 	private final Action deselectAction = new DeselectReportAction();
-	private final ReportsView view;
 
-	public SelectReportDropDownAction(ReportsView view) {
+	public SelectReportDropDownAction() {
 		super();
-		this.view = view;
 		setToolTipText("Manage reports providers");
 		setImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_CHOOSE_LIST));
 		setMenuCreator(this);
 	}
 
+	@Override
 	protected void fillMenu(Control parent) {
 		for (ReportList list : ReportRegistry.INSTANCE.getLists()) {
 			ManageReportAction action = new ManageReportAction(list);
 			action.setChecked(ReportsUI.getDisplayedLists().contains(list));
 			addActionToMenu(menu, action);
-		}
-		new MenuItem(menu, SWT.SEPARATOR);
+		} 
+		new MenuItem(menu, SWT.SEPARATOR);// NOSONAR
 		addActionToMenu(menu, selectAction);
 		addActionToMenu(menu, deselectAction);
 	}
@@ -58,6 +57,7 @@ class SelectReportDropDownAction extends MenuCreatorAction implements IMenuCreat
 			setImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_DESELECT_ALL));
 		}
 
+		@Override
 		public void run() {
 			ReportsUI.hideAllLists();
 		}
@@ -71,6 +71,7 @@ class SelectReportDropDownAction extends MenuCreatorAction implements IMenuCreat
 			setImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_SELECT_ALL));
 		}
 
+		@Override
 		public void run() {
 			ReportsUI.showAllLists();
 		}

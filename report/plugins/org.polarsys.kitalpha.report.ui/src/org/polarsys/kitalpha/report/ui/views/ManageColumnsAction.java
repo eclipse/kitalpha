@@ -34,6 +34,7 @@ public class ManageColumnsAction extends MenuCreatorAction {
 		setImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_MANAGR_COLUMNS));
 	}
 
+	@Override
 	protected void fillMenu(Control parent) {
 		Set<String> displayedColumns = ReportsUI.getDisplayedColumns();
 		for (ColumnDescription desc : ReportsUI.getAvailableColumns()) {

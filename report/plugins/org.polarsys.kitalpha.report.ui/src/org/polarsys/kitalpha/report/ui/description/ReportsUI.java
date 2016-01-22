@@ -34,13 +34,16 @@ import org.polarsys.kitalpha.report.registry.ReportRegistry;
  */
 public class ReportsUI {
 
-	private static final class MyObserver extends Observable {
-		public synchronized void setChanged() {
-			super.setChanged();
-		}
-	}
+	private static final Map<Integer, Image> severityImages = new HashMap<Integer, Image>();
+	private static final Set<ReportList> displayedLists = new HashSet<ReportList>();
+	private static final LinkedHashMap<String, ColumnDescription> id2column = new LinkedHashMap<String, ColumnDescription>();
+	private static final Set<String> displayedColumns = new HashSet<String>();
 
 	public static final MyObserver observable = new MyObserver();
+
+	private ReportsUI() {
+		super();
+	}
 
 	public static void addObserver(Observer o) {
 		observable.addObserver(o);
@@ -123,15 +126,18 @@ public class ReportsUI {
 
 	protected static void notifyObservers(final Object object) {
 		Display.getDefault().asyncExec(new Runnable() {
+			@Override
 			public void run() {
 				observable.notifyObservers(object);
 
 			}
 		});
 	}
+	private static final class MyObserver extends Observable {
+		@Override
+		public synchronized void setChanged() {
+			super.setChanged();
+		}
+	}
 
-	private static final Map<Integer, Image> severityImages = new HashMap<Integer, Image>();
-	private static final Set<ReportList> displayedLists = new HashSet<ReportList>();
-	private static final LinkedHashMap<String, ColumnDescription> id2column = new LinkedHashMap<String, ColumnDescription>();
-	private static final Set<String> displayedColumns = new HashSet<String>();
 }

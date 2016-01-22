@@ -50,6 +50,14 @@ import org.polarsys.kitalpha.resourcereuse.ui.ResourceReuseImages;
 public class ResourceSearchDialog extends Dialog {
 
 	private final SearchCriteria criteria;
+	private Text idText;
+	private Text nameText;
+	private Text versionText;
+	private Text domainText;
+	private final List<StringValue> tags = new ArrayList<StringValue>();
+	private final List<StringValue> userConcerns = new ArrayList<StringValue>();
+	private final List<StringValue> usedConcerns = new ArrayList<StringValue>();
+	private final List<StringValue> involvedInConcerns = new ArrayList<StringValue>();
 
 	public ResourceSearchDialog(Shell parentShell, SearchCriteria criteria) {
 		super(parentShell);
@@ -59,6 +67,7 @@ public class ResourceSearchDialog extends Dialog {
 		setShellStyle(getShellStyle() | SWT.MAX | SWT.RESIZE);
 	}
 
+	@Override
 	protected Control createDialogArea(Composite parent) {
 		// create a composite with standard margins and spacing
 		Composite composite = new Composite(parent, SWT.NONE);
@@ -175,17 +184,20 @@ public class ResourceSearchDialog extends Dialog {
 		viewer.setCellEditors(new CellEditor[] { new TextCellEditor(viewer.getTable()) });
 		viewer.setCellModifier(new ICellModifier() {
 
+			@Override
 			public void modify(Object element, String property, Object value) {
 				StringValue tag = (StringValue) ((TableItem) element).getData();
 				tag.value = value.toString();
 				viewer.refresh();
 			}
 
+			@Override
 			public Object getValue(Object element, String property) {
 				StringValue tag = (StringValue) element;
 				return tag.value;
 			}
 
+			@Override
 			public boolean canModify(Object element, String property) {
 				return true;
 			}
@@ -206,12 +218,14 @@ public class ResourceSearchDialog extends Dialog {
 		addButton.setToolTipText(addLabel);
 		addButton.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				data.add(new StringValue(defaultValue));
 				viewer.refresh();
-			}
+			} 
 
-			public void widgetDefaultSelected(SelectionEvent e) {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) {// NOSONAR
 			}
 
 		});
@@ -223,6 +237,7 @@ public class ResourceSearchDialog extends Dialog {
 		deleteButton.setEnabled(false);
 		deleteButton.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
 				for (Object obj : selection.toArray())
@@ -231,13 +246,15 @@ public class ResourceSearchDialog extends Dialog {
 				deleteButton.setEnabled(false);
 			}
 
-			public void widgetDefaultSelected(SelectionEvent e) {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent e) { // NOSONAR
 			}
 
 		});
 
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				deleteButton.setEnabled(!event.getSelection().isEmpty());
 			}
@@ -245,6 +262,7 @@ public class ResourceSearchDialog extends Dialog {
 
 	}
 
+	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
 		// create OK and Cancel buttons by default
 		createButton(parent, IDialogConstants.OK_ID, Messages.Search_Button_Label, true);
@@ -289,21 +307,12 @@ public class ResourceSearchDialog extends Dialog {
 		return result;
 	}
 
-	private Text idText;
-	private Text nameText;
-	private Text versionText;
-	private Text domainText;
-	private final List<StringValue> tags = new ArrayList<StringValue>();
-	private final List<StringValue> userConcerns = new ArrayList<StringValue>();
-	private final List<StringValue> usedConcerns = new ArrayList<StringValue>();
-	private final List<StringValue> involvedInConcerns = new ArrayList<StringValue>();
-
 	private static class StringValue {
+		private String value;
+		
 		public StringValue(String string) {
 			value = string;
 		}
-
-		public String value;
 
 		@Override
 		public String toString() {
