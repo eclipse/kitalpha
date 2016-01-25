@@ -327,7 +327,7 @@ public class PerformanceItemProviderAdapterFactory extends PerformanceAdapterFac
 			@Override
 			public Object caseExtensibleElement(ExtensibleElement object) {
 				// begin-extension-code
-				if (ModelExtensionHelper.getInstance().isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/emde/example/simplecomponent/performance")) { //$NON-NLS-1$
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/emde/example/simplecomponent/performance")) { //$NON-NLS-1$
 					return null;
 				}
 				// end-extension-code

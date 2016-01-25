@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2013 THALES GLOBAL SERVICES.
+ * Copyright (c) 2016 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,10 @@ import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.Integration;
+import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedViewpoint;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.viewpoints.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
@@ -57,7 +60,8 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 			if (usedVpFinder != null){
 				ViewpointTreeContainer container = usedVpFinder.getAnalysisResult();
 				Collection<String> unSelectedUri = container.getUriToRemove();
-				cleanUnselectedUris(resource, unSelectedUri, subMonitor);
+				Collection<String> unSelectedViewpoint = container.getViewpointToRemove();
+				cleanUnselectedUris(resource.getResourceSet(), unSelectedUri, unSelectedViewpoint, subMonitor);
 				container.dispose();
 			}
 			subMonitor.worked(1);
@@ -70,18 +74,26 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 		
 	}
 
-	private void cleanUnselectedUris(Resource resource,
-			Collection<String> unSelectedUri, IProgressMonitor monitor) {
+	private void cleanUnselectedUris(ResourceSet set,
+			Collection<String> unSelectedUri, Collection<String> unSelectedViewpoint, IProgressMonitor monitor) {
 
 		if (!unSelectedUri.isEmpty()){
-			Collection<Resource> allResources = resource.getResourceSet().getResources();
 
-			for (Resource resource2 : allResources) 
+		for (Resource resource : set.getResources()) 
+		{
+			Collection<EObject> eObjectToRemove = new HashSet<EObject>();
+			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Integration)
 			{
+				Integration root = (Integration)resource.getContents().get(0);
+				for (UsedViewpoint uv : root.getUsedViewpoints())
+			{
+					if (unSelectedViewpoint.contains(uv.getVpId()))
+						eObjectToRemove.add(uv);
+				}
+			}
 
-				TreeIterator<EObject> it = resource2.getAllContents();
+			TreeIterator<EObject> it = resource.getAllContents();
 
-				Collection<EObject> eObjectToRemove = new HashSet<EObject>();
 
 				while (it.hasNext())
 				{

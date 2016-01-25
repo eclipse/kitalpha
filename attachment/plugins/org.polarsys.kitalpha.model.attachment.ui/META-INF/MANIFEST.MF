@@ -15,7 +15,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.emf.diffmerge.ui,
  org.eclipse.emf.transaction,
- org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints,
  org.polarsys.kitalpha.model.common.commands,
  org.polarsys.kitalpha.model.common.share,
  org.polarsys.kitalpha.report

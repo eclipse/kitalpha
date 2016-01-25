@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.emde.egf.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -968,7 +968,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					}
 
 					//Class/genFeature.override.javajetinc
-				}//for
+				} //for
 			}
 		}.run();
 		for (GenOperation genOperation : (isImplementation ? genClass.getImplementedGenOperations() : genClass.getDeclaredGenOperations())) {
@@ -1000,7 +1000,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			}
 
 			//Class/implementedGenOperation.override.javajetinc
-		}//for
+		} //for
 		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getEInverseAddGenFeatures())) {
 			stringBuffer.append(TEXT_97);
 			if (genModel.useGenerics()) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,6 @@ import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
-import org.polarsys.kitalpha.emde.extension.DefaultModelExtensionManager;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
@@ -37,13 +36,14 @@ import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtension
  */
 public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
-	static {
-	}
-
 	public AFModelExtensionManager() {
 		super();
-		// TODO Auto-generated constructor stub
-		ViewpointManager mgr = ViewpointManager.getInstance((EObject)null);
+	}
+
+	@Override
+	public void setTarget(ResourceSet target) {
+		super.setTarget(target);
+		ViewpointManager mgr = ViewpointManager.getInstance(getTarget());
 		mgr.addListener(new Listener() {
 
 			private final ResourceSet set = new ResourceSetImpl();
@@ -108,14 +108,16 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 		});
 	}
 
-	private static final Map<String, Boolean> extension2state = new HashMap<String, Boolean>();
-	private static final Map<String, Boolean> managedByAF2state = new HashMap<String, Boolean>();
+	private final Map<String, Boolean> extension2state = new HashMap<String, Boolean>();
+	private final Map<String, Boolean> managedByAF2state = new HashMap<String, Boolean>();
 
 	@Override
 	public boolean canDisableExtensionModel(ExtendedModel extended) {
+		if (getTarget() == null)
+			throw new UnsupportedOperationException();
 		String nsURI = extended.getName();
-		if (managedByAF2state.containsKey(nsURI))
-			return !managedByAF2state.get(nsURI);
+		// if (managedByAF2state.containsKey(nsURI))
+		// return !managedByAF2state.get(nsURI);
 		ResourceSet set = new ResourceSetImpl();
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
@@ -154,11 +156,16 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	 * of computations
 	 */
 	public boolean isExtensionModelDisabled(ExtendedModel extended) {
+		if (getTarget() == null)
+			throw new UnsupportedOperationException();
 
 		String nsURI = extended.getName();
-		if (extension2state.containsKey(nsURI)) {
-			return !extension2state.get(nsURI);
-		}
+
+		// TODO
+
+		// if (extension2state.containsKey(nsURI)) {
+		// return !extension2state.get(nsURI);
+		// }
 		ResourceSet set = new ResourceSetImpl();
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
@@ -171,9 +178,12 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 							// no.
 							// In other case let the super implementation answer
 							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
-								boolean vpActive = ViewpointManager.getInstance((EObject)null).isActive(res.getId());
-								extension2state.put(nsURI, vpActive);
-								return !vpActive;
+								ViewpointManager instance = ViewpointManager.getInstance(getTarget());
+								boolean used = instance.isUsed(res.getId());
+								boolean filtered = instance.isFiltered(res.getId());
+								boolean active = used && !filtered;
+								extension2state.put(nsURI, active);
+								return !active;
 							}
 						}
 					}

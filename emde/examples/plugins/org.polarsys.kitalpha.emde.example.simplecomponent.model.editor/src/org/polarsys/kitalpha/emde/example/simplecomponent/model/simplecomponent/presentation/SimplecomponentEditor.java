@@ -143,6 +143,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionListener;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionManager;
@@ -626,7 +627,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 
 		adapterFactory.addAdapterFactory(new SimplecomponentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EmdeItemProviderAdapterFactory());
-		for (AdapterFactory extendedAdapterFactory : ModelExtensionHelper.getInstance().getExtendedModelAdapterFactories(SimplecomponentItemProviderAdapterFactory.class.getName())) {
+		for (AdapterFactory extendedAdapterFactory : ModelExtensionDescriptor.INSTANCE.getExtendedModelAdapterFactories(SimplecomponentItemProviderAdapterFactory.class.getName())) {
 			adapterFactory.addAdapterFactory(extendedAdapterFactory);
 		}
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
@@ -664,7 +665,6 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 		// Register this editor for ExtendedModel state
 		//
-		ModelExtensionHelper.addListener(this);
 	}
 
 	/**
@@ -864,15 +864,15 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		if (resource_p == null || resource_p.getContents().isEmpty()) {
 			return null;
 		}
-		// Cached extension actions		
+		// Cached extension actions
 		if (viewerFilterActions.get(resource_p) != null) {
 			return viewerFilterActions.get(resource_p);
 		}
 		// Create new extension actions
 		Collection<EmdeViewerFilterAction> extensionActions = new ArrayList<EmdeViewerFilterAction>();
 		String extensibleModelURI = resource_p.getContents().get(0).eClass().getEPackage().getNsURI();
-		ModelExtensionManager helper = ModelExtensionHelper.getInstance();
-		ExtensibleModel extensibleModel = helper.getExtensibleModel(extensibleModelURI);
+		ModelExtensionManager helper = ModelExtensionHelper.getInstance(resource_p.getContents().get(0));
+		ExtensibleModel extensibleModel = ModelExtensionDescriptor.INSTANCE.getExtensibleModel(extensibleModelURI);
 		if (extensibleModel != null) {
 			for (ExtendedModel extendedModel : extensibleModel.getAllExtendedModels()) {
 				EmdeViewerFilterAction filterAction = new EmdeViewerFilterAction(resource_p, extensibleModel, extendedModel) {
@@ -989,6 +989,9 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		// Only creates the other pages if there is something that can be edited
 		//
 		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+			// Create a page for the selection tree view.
+			ModelExtensionHelper.getInstance((EObject) getEditingDomain().getResourceSet().getResources().get(0).getContents().get(0)).addListener(this);
+
 			// Create a page for the selection tree view.
 			//
 			Tree tree = new Tree(getContainer(), SWT.MULTI);
@@ -1582,7 +1585,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		}
 		// Unregister this editor for ExtendedModel state
 		//
-		ModelExtensionHelper.removeListener(this);
+		ModelExtensionHelper.getInstance((EObject) getEditingDomain().getResourceSet().getResources().get(0).getContents().get(0)).removeListener(this);
 
 		if (getActionBarContributor().getActiveEditor() == this) {
 			getActionBarContributor().setActiveEditor(null);

@@ -64,19 +64,21 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 
 	@Override
 	public void createContributionItems(IServiceLocator serviceLocator, IContributionRoot additions) {
-		if (selectionProvider.getSelection().isEmpty())
+		List<Object> selection = selectionProvider.getSelection();
+		if (selection.isEmpty() || !(selection.get(0) instanceof EObject))
 			return;
+		EObject selectedObj = (EObject)selection.get(0);
 		MenuManager menu = new MenuManager("Viewpoint Services");
-		fillMenu(menu);
+		fillMenu(menu, selectedObj);
 		additions.addContributionItem(menu, null);
 	}
 
-	private void fillMenu(IMenuManager dynamicMenu) {
+	private void fillMenu(IMenuManager dynamicMenu, EObject selectedObj) {
 
 		Map<Viewpoint, ModelManager> vp2mgr = new LinkedHashMap<Viewpoint, ModelManager>();
 		Map<Viewpoint, List<ViewpointElement>> vp2elt = new HashMap<Viewpoint, List<ViewpointElement>>();
 
-		computeActiveServices(vp2mgr, vp2elt);
+		computeActiveServices(vp2mgr, vp2elt, selectedObj);
 
 		ViewpointItemProviderAdapterFactory adapterFactory = new ViewpointItemProviderAdapterFactory();
 		ViewpointItemProvider provider = (ViewpointItemProvider) adapterFactory.createViewpointAdapter();
@@ -105,9 +107,9 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 
 	}
 
-	private void computeActiveServices(Map<Viewpoint, ModelManager> vp2mgr, Map<Viewpoint, List<ViewpointElement>> vp2elt) {
+	private void computeActiveServices(Map<Viewpoint, ModelManager> vp2mgr, Map<Viewpoint, List<ViewpointElement>> vp2elt, EObject selectedObj) {
 		for (Viewpoint vp : sort(getAvailableViewpoints())) {
-			if (vp.isAbstract() || !ViewpointManager.getInstance((EObject) null).isActive(vp.getId())) {
+			if (vp.isAbstract() || !ViewpointManager.getInstance(selectedObj).isActive(vp.getId())) {
 				continue;
 			}
 			ModelManager vpMgr = ModelManager.createWorkspaceManager(vp);

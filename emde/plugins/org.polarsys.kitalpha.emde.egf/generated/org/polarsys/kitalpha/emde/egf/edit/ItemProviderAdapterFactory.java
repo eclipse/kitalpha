@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -243,8 +243,8 @@ public class ItemProviderAdapterFactory extends org.eclipse.egf.emf.pattern.edit
 		 */
 
 		GenPackage genPackage = (GenPackage) argument;
-		GenModel genModel = genPackage.getGenModel(); /* Trick to import java.util.* without warnings */
-		Iterator.class.getName();
+		GenModel genModel = genPackage.getGenModel();
+		/* Trick to import java.util.* without warnings */Iterator.class.getName();
 		stringBuffer.append(TEXT_1);
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#LogicalName=org.eclipse.egf.emf.pattern.base.HeaderJava" args="parameter:argument"%>

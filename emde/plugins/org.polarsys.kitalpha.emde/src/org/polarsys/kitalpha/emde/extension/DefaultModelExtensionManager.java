@@ -23,13 +23,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.edit.EMFEditPlugin;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IChildCreationExtender.Descriptor;
-import org.eclipse.osgi.util.NLS;
 import org.polarsys.kitalpha.emde.extension.i18n.Messages;
-import org.polarsys.kitalpha.emde.extension.registry.ItemProviderAdapterFactoriesRegistryProvider;
-import org.polarsys.kitalpha.emde.extension.registry.URIFactory;
 import org.polarsys.kitalpha.emde.extension.utils.Log;
 
 /**
@@ -40,7 +34,7 @@ import org.polarsys.kitalpha.emde.extension.utils.Log;
 public abstract class DefaultModelExtensionManager implements ModelExtensionManager {
 
 	private ResourceSet target;
-	
+
 	private List<ExtensionManagerDelegate> delegates = new ArrayList<ExtensionManagerDelegate>();
 
 	private final List<ModelExtensionListener> listeners = new ArrayList<ModelExtensionListener>();
@@ -78,9 +72,9 @@ public abstract class DefaultModelExtensionManager implements ModelExtensionMana
 		for (ModelExtensionOverallListener l : overallListeners) {
 			try {
 				if (enable)
-					l.modelEnabled(null, nsURI);
+					l.modelEnabled(target, nsURI);
 				else
-					l.modelDisabled(null, nsURI);
+					l.modelDisabled(target, nsURI);
 			} catch (Exception e) {
 				Log.RUNTIME.logError(Messages.Listener_Error, e);
 			}
@@ -118,9 +112,16 @@ public abstract class DefaultModelExtensionManager implements ModelExtensionMana
 		return ((extended != null) && isExtensionModelDisabled(extended));
 	}
 
-
 	public List<ExtensionManagerDelegate> getDelegates() {
 		return delegates;
+	}
+
+	public ResourceSet getTarget() {
+		return target;
+	}
+
+	public void setTarget(ResourceSet target) {
+		this.target = target;
 	}
 
 }

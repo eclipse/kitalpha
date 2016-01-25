@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -17,11 +17,11 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.Integration;
+import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedViewpoint;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
-import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeBuilder;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.FinderAFViewpointHelper;
-import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointRelationshipHelper;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointsSearcherHelper;
 
 /**
@@ -29,12 +29,12 @@ import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.Vie
  */
 public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Object> {
 	
-	private Set<String> usedNsURI;
+	private Set<String> usedNsURI = new HashSet<String>();
+	private Set<String> usedViewpoints = new HashSet<String>();
 	private ViewpointTreeContainer container;
 	
 
 	public UsedAFViewpoints() {
-		this.usedNsURI = new HashSet<String>();
 	}
 
 	@Override
@@ -48,7 +48,12 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 
 	@Override
 	public void findIn(Resource resource) {
-		//Do nothing
+		if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Integration) {
+			Integration root = (Integration) resource.getContents().get(0);
+			for (UsedViewpoint uv : root.getUsedViewpoints()) {
+				usedViewpoints.add(uv.getVpId());
+			}
+		}
 	}
 
 	@Override
@@ -63,11 +68,9 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 	
 	private void computeUsedViewpointsHierarchy(){
 		
-		org.polarsys.kitalpha.resourcereuse.model.Resource [] allVpResources = 
-				ViewpointsSearcherHelper.getAllViewpoints();
+		org.polarsys.kitalpha.resourcereuse.model.Resource[] allVpResources = ViewpointsSearcherHelper.getAllViewpoints();
 		
-		Map<String, Collection<String>> viewpointsURIDependencies = 
-				ViewpointRelationshipHelper.getUsedRelationship(allVpResources);
+		Map<String, Collection<String>> viewpointsURIDependencies = ViewpointRelationshipHelper.getUsedRelationship(allVpResources);
 		
 		usedNsURI = FinderAFViewpointHelper.filterURISet(usedNsURI, viewpointsURIDependencies);
 		Map<String, Collection<String>> filtredVpDependencies = FinderAFViewpointHelper.filterURIMap(viewpointsURIDependencies, usedNsURI);
@@ -75,7 +78,7 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 		ViewpointTreeBuilder vpTreeBuilder = new ViewpointTreeBuilder();
 		
 		//Initialize container
-		container = vpTreeBuilder.getViewpointTreeContainer(filtredVpDependencies);
+		container = vpTreeBuilder.getViewpointTreeContainer(filtredVpDependencies, usedViewpoints);
 	}
 
 	@Override

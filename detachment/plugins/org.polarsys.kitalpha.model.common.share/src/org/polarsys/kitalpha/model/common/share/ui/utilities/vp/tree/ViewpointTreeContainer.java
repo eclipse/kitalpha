@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -61,6 +61,19 @@ public class ViewpointTreeContainer {
 		}
 	}
 
+	public Collection<String> getViewpointToRemove() {
+		Collection<String> vps = new HashSet<String>();
+
+		for (IViewpointTreeDescription vpd : roots) {
+			if (!vpd.isCandidateToKeep()) {
+				vps.add(vpd.getViewpointId());
+			}
+			collectUriChildrenToRemove(vpd.getChildren(), vps);
+		}
+
+		return vps;
+	}
+
 	public Collection<String> getUriToRemove() {
 		Collection<String> uris = new HashSet<String>();
 
@@ -83,6 +96,18 @@ public class ViewpointTreeContainer {
 				uriToRemove.addAll(child.getViewpointNsUri());
 			}
 			collectUriChildrenToRemove(child.getChildren(), uriToRemove);
+		}
+	}
+
+	protected void collectViewpointChildrenToRemove(Collection<IViewpointTreeDescription> children, Collection<String> viewpointToRemove) {
+		if (children.isEmpty())
+			return;
+
+		for (IViewpointTreeDescription child : children) {
+			if (!child.isCandidateToKeep()) {
+				viewpointToRemove.add(child.getViewpointId());
+			}
+			collectUriChildrenToRemove(child.getChildren(), viewpointToRemove);
 		}
 	}
 

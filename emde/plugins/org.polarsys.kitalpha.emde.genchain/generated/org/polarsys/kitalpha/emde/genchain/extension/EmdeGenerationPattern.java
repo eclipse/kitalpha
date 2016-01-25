@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.emde.genchain.extension;
 
 import java.util.HashMap;
@@ -36,6 +36,7 @@ public class EmdeGenerationPattern {
 		this.editorActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.editor.fcore#_AItvUFjkEd-5FJ833LkcRA";
 		this.testActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/emf.gen.tests.fcore#_79dGwDYdEeGWF-mrFIsVzA";
 		this.javadocActivity = "platform:/plugin/org.polarsys.kitalpha.emde.portfolio.emf.egf/egf/javadoc.fcore#_CycMIDYfEeGWF-mrFIsVzA";
+
 	}
 
 	public void generate(Object argument) throws Exception {

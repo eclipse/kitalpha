@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,7 +53,7 @@ public class ViewpointActivationStateListener extends Stub {
 	// walk through AF VP to list Sirius vp who must be activated and those who
 	// must be desactivated
 	private void collectionSiriusViewpoint(ViewpointManager mgr, Set<String> toActivate, Set<String> toDesactivate) {
-		// TODO que faire des d�pendences entre VP Sirius ?
+		// TODO que faire des dépendences entre VP Sirius ?
 		ResourceSet set = new ResourceSetImpl();
 		// // Add AF Sirius viewpoint, used to filtering in diagrams
 		// toActivate.add("Architecture Framework");

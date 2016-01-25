@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -9,12 +9,13 @@
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
 
-package org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree;
+package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -22,7 +23,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
-import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointRelationshipHelper;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.IViewpointTreeDescription;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeDescription;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointsSearcherHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
@@ -42,14 +45,17 @@ public class ViewpointTreeBuilder {
 		this.viewpointResources = ViewpointsSearcherHelper.getAllViewpoints();
 	}
 	
+	public ViewpointTreeContainer getViewpointTreeContainer(Map<String, Collection<String>> relationships) {
+		return getViewpointTreeContainer(relationships, null);
+	}
 	
 	/**
 	 * @return the container of hierarchies of all installed viewpoints
 	 */
-	public ViewpointTreeContainer getViewpointTreeContainer(Map<String, Collection<String>> relationships){
+	public ViewpointTreeContainer getViewpointTreeContainer(Map<String, Collection<String>> relationships, Set<String> additionalViewpoints){
 		this.treeContainer.dispose();
 		
-		Collection<Resource>  filtredResources = filterViewpointResources(viewpointResources, relationships);
+		Collection<Resource>  filtredResources = filterViewpointResources(viewpointResources, relationships, additionalViewpoints);
 		Collection<IViewpointTreeDescription> vpd_set = buildViewpointTreeDescriptions(filtredResources, relationships);
 		
 		for (IViewpointTreeDescription vpd : vpd_set) {
@@ -63,10 +69,14 @@ public class ViewpointTreeBuilder {
 		return this.treeContainer;
 	}
 	
-	private Collection<Resource> filterViewpointResources(Resource [] resources, Map<String, Collection<String>> relationship){
+	private Collection<Resource> filterViewpointResources(Resource [] resources, Map<String, Collection<String>> relationship, Set<String> additionalViewpoints){
 		Collection<Resource> usedViewpointResources = new HashSet<Resource>();
 		
 		for (Resource resource2 : resources) {
+			if (additionalViewpoints != null && additionalViewpoints.contains(resource2.getId())) {
+				usedViewpointResources.add(resource2);
+				continue;
+			}
 			Viewpoint current = getViewpointRootEObject(resource2.getPath());
 			EList<EPackage> ePackages = current.getMetamodel().getModels();
 			
@@ -218,6 +228,8 @@ public class ViewpointTreeBuilder {
 		
 		for (String nsUri : vpd_nsuri) {
 			Collection<String> uses = relationships.get(nsUri);
+			if (uses == null)
+				continue;
 			
 			for (String used_nsUri : uses) {
 				Collection<IViewpointTreeDescription> used_vpd = searchViewpointTreeDescriptions(used_nsUri, vpd_set);
