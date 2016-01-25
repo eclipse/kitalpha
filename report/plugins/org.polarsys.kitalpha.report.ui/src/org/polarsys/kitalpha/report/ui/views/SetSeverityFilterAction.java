@@ -32,10 +32,10 @@ public class SetSeverityFilterAction extends MenuCreatorAction {
 		setImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_SEVERITY_FILTER));
 	}
 
+	@Override
 	protected void fillMenu(Control parent) {
 		Severity threshold = computeSeverityThreshold();
 		for (Severity elt : ReportRegistry.INSTANCE.getSeverities()) {
-			// ManageReportAction action = new ManageReportAction(list);
 			ChooseSeverityAction action = new ChooseSeverityAction(elt);
 			if (elt == threshold)
 				action.setChecked(true);

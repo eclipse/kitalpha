@@ -29,6 +29,7 @@ public class DeleteAllReportsAction extends Action {
 		setDisabledImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_DELETE_ALL_DISABLED));
 	}
 
+	@Override
 	public void run() {
 		for (ReportList list : ReportsUI.getDisplayedLists()) {
 			list.getReports().clear();

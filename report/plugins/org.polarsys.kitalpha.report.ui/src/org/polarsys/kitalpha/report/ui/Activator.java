@@ -32,12 +32,6 @@ public class Activator extends AbstractUIPlugin {
 	// The shared instance
 	private static Activator plugin;
 
-	/**
-	 * The constructor
-	 */
-	public Activator() {
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -45,9 +39,10 @@ public class Activator extends AbstractUIPlugin {
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
 	 * )
 	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
-		super.start(context);
-		plugin = this;
+		super.start(context); 
+		plugin = this; // NOSONAR
 		// register new severity kinds
 		SeverityFactory.INSTANCE.registerSeverities();
 
@@ -71,12 +66,13 @@ public class Activator extends AbstractUIPlugin {
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
 	 * )
 	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
-		plugin = null;
+		plugin = null;// NOSONAR
 		super.stop(context);
 	}
 
-	/**
+	/** // NOSONAR
 	 * Returns the shared instance
 	 * 
 	 * @return the shared instance

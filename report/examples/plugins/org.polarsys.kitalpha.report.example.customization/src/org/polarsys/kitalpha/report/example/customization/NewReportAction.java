@@ -27,15 +27,12 @@ public class NewReportAction implements IObjectActionDelegate {
 		super();
 	}
 
-	/**
-	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
-	 */
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		// no need
 	}
 
-	/**
-	 * @see IActionDelegate#run(IAction)
-	 */
+	@Override
 	public void run(IAction action) {
 		String listId = ExampleReportFactory.INSTANCE.getListId();
 		ReportsUI.showList(ReportRegistry.INSTANCE.getList(listId));
@@ -45,7 +42,9 @@ public class NewReportAction implements IObjectActionDelegate {
 	/**
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
+		//no need
 	}
 
 }

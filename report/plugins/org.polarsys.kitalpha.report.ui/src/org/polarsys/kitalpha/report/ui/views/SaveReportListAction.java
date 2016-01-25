@@ -35,12 +35,11 @@ public class SaveReportListAction extends FileAction {
 		setDisabledImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_SAVE_DISABLED));
 	}
 
+	@Override
 	protected void doRun(String filename) throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URI uri = URI.createFileURI(filename);
 		Resource resource = resourceSet.createResource(uri);
-		// for (LogEntry entry : view.getDisplayedReports())
-		// resource.getContents().add(EcoreUtil.c);
 		resource.getContents().addAll(EcoreUtil.copyAll(view.getDisplayedReports()));
 		resource.save(Collections.emptyMap());
 		view.refreshView();

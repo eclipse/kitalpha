@@ -68,7 +68,7 @@ public class ReportDialog extends MessageDialog {
 			}
 
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
+			public void widgetDefaultSelected(SelectionEvent e) { // NOSONAR
 			}
 		});
 		bar.setFocus();
@@ -80,8 +80,8 @@ public class ReportDialog extends MessageDialog {
 	 */
 	public static boolean open(int kind, Shell parent, LogEntry entry, int style) {
 		ReportDialog dialog = new ReportDialog(parent, entry, kind, getButtonLabels(kind), 0);
-		style &= SWT.SHEET;
-		dialog.setShellStyle(dialog.getShellStyle() | style);
+		int newStyle = style & SWT.SHEET;
+		dialog.setShellStyle(dialog.getShellStyle() | newStyle);
 		return dialog.open() == 0;
 	}
 
@@ -93,23 +93,23 @@ public class ReportDialog extends MessageDialog {
 		switch (kind) {
 		case ERROR:
 		case INFORMATION:
-		case WARNING: {
+		case WARNING: { // NOSONAR
 			dialogButtonLabels = new String[] { IDialogConstants.OK_LABEL };
 			break;
 		}
-		case CONFIRM: {
+		case CONFIRM: { // NOSONAR
 			dialogButtonLabels = new String[] { IDialogConstants.OK_LABEL, IDialogConstants.CANCEL_LABEL };
 			break;
 		}
-		case QUESTION: {
+		case QUESTION: { // NOSONAR
 			dialogButtonLabels = new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL };
 			break;
 		}
-		case QUESTION_WITH_CANCEL: {
+		case QUESTION_WITH_CANCEL: { // NOSONAR
 			dialogButtonLabels = new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL };
 			break;
 		}
-		default: {
+		default: { // NOSONAR
 			throw new IllegalArgumentException("Illegal value for kind in MessageDialog.open()"); //$NON-NLS-1$
 		}
 		}

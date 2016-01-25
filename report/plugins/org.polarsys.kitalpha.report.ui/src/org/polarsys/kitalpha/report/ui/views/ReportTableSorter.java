@@ -33,17 +33,15 @@ public class ReportTableSorter extends ViewerSorter {
 		this.key = key;
 	}
 
+	@Override
 	public int compare(Viewer viewer, Object e1, Object e2) {
 		TreeViewer treeViewer = (TreeViewer) viewer;
 		TreeColumn sortColumn = treeViewer.getTree().getSortColumn();
 		if (sortColumn == null)
 			return 0;
-		int indexOf = treeViewer.getTree().indexOf(sortColumn);
 		ColumnDescription desc = (ColumnDescription) sortColumn.getData(key);
-		String name1 = desc.getText((LogEntry) e1);// labelProvider.getText(e1,
-													// indexOf);
-		String name2 = desc.getText((LogEntry) e2);// labelProvider.getText(e2,
-													// indexOf);
+		String name1 = desc.getText((LogEntry) e1);
+		String name2 = desc.getText((LogEntry) e2);
 		if (name1 == null)
 			name1 = "";
 		if (name2 == null)

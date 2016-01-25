@@ -32,6 +32,7 @@ public class DeleteReportsAction extends Action {
 		setDisabledImageDescriptor(Activator.getDefault().getImageDescriptor(ReportImages.IMG_DELETE_DISABLED));
 	}
 
+	@Override
 	public void run() {
 		for (Object obj : view.getSelection().toArray()) {
 			EcoreUtil.delete((EObject) obj, true);

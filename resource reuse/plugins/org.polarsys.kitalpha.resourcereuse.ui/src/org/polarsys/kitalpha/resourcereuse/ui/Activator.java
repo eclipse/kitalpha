@@ -20,13 +20,15 @@ public class Activator extends AbstractUIPlugin {
 	private static final String ICONS_PATH = "$nl$/icons/full/"; //$NON-NLS-1$ 
 	private static Activator plugin;
 
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		plugin = this;
+		plugin = this; // NOSONAR
 	}
 
+	@Override
 	public void stop(BundleContext context) throws Exception {
-		plugin = null;
+		plugin = null; // NOSONAR
 		super.stop(context);
 	}
 

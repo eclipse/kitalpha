@@ -32,6 +32,7 @@ public class ReportContentProvider implements ITreeContentProvider {
 	 * 
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
 	 */
+	@Override
 	public void dispose() {
 		// nothing to do here.
 	}
@@ -42,6 +43,7 @@ public class ReportContentProvider implements ITreeContentProvider {
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer,
 	 *      java.lang.Object, java.lang.Object)
 	 */
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		// refresh the viewer.
 		viewer.refresh();
@@ -52,6 +54,7 @@ public class ReportContentProvider implements ITreeContentProvider {
 	 * 
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getElements(java.lang.Object)
 	 */
+	@Override
 	public Object[] getElements(Object inputElement) {
 		if (inputElement == ReportRegistry.INSTANCE) {
 			List<LogEntry> result = new ArrayList<LogEntry>();
@@ -67,6 +70,7 @@ public class ReportContentProvider implements ITreeContentProvider {
 	 * 
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getChildren(java.lang.Object)
 	 */
+	@Override
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof LogEntry)
 			return ((LogEntry) parentElement).getDetails().toArray();
@@ -78,6 +82,7 @@ public class ReportContentProvider implements ITreeContentProvider {
 	 * 
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.Object)
 	 */
+	@Override
 	public Object getParent(Object element) {
 		if (element instanceof EObject) {
 			return ((EObject) element).eContainer();
@@ -90,6 +95,7 @@ public class ReportContentProvider implements ITreeContentProvider {
 	 * 
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#hasChildren(java.lang.Object)
 	 */
+	@Override
 	public boolean hasChildren(Object element) {
 		//
 		// just delegates the operation to getChildren.

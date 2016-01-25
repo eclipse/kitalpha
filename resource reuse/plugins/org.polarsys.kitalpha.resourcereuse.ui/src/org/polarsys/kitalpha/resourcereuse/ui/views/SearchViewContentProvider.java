@@ -22,12 +22,15 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
 class SearchViewContentProvider implements IStructuredContentProvider {
 	private static final Object[] EMPTY_ARRAY = new Object[0];
 
-	public void inputChanged(Viewer v, Object oldInput, Object newInput) {
+	@Override
+	public void inputChanged(Viewer v, Object oldInput, Object newInput) { // NOSONAR
 	}
 
-	public void dispose() {
+	@Override
+	public void dispose() { // NOSONAR
 	}
 
+	@Override
 	public Object[] getElements(Object parent) {
 		if (parent instanceof Resource[])
 			return (Resource[]) parent;

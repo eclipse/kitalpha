@@ -28,6 +28,7 @@ public class DateColumnDescription extends ColumnDescription {
 		this.dateFormat = new SimpleDateFormat(dateFormat);
 	}
 
+	@Override
 	public String getText(LogEntry entry) {
 		Date date = entry.getDate();
 		return dateFormat.format(date);

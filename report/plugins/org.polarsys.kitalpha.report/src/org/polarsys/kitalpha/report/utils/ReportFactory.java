@@ -22,6 +22,14 @@ import org.polarsys.kitalpha.report.model.Severity;
  */
 public class ReportFactory extends AbstractReportFactory {
 
+	public static final String REPORT_LIST_ID = "default.report.list";
+	
+	public static final ReportFactory INSTANCE = new ReportFactory(REPORT_LIST_ID);
+	
+	public ReportFactory(String listId) {
+		super(listId);
+	}
+
 	public LogEntry log(IStatus status) {
 		Severity sev = SeverityFactory.INSTANCE.createInfo();
 		if (status.getSeverity() == IStatus.ERROR)
@@ -111,12 +119,5 @@ public class ReportFactory extends AbstractReportFactory {
 		return log(SeverityFactory.INSTANCE.createInfo(), toString(message, th), reference);
 	}
 
-	public ReportFactory(String listId) {
-		super(listId);
-	}
-
-	public static final String REPORT_LIST_ID = "default.report.list";
-
-	public static final ReportFactory INSTANCE = new ReportFactory(REPORT_LIST_ID);
 
 }
