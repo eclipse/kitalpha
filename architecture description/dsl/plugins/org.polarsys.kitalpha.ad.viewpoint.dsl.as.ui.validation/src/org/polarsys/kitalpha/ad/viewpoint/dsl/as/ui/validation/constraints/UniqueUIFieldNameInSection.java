@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,10 +11,16 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints;
 
+import java.util.List;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.ValidationStatus;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIContainer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.message.Messages;
 
@@ -26,26 +32,55 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 
 	private String duplicatedName = "";
 	
+	/*
+	 * (non-Javadoc)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint#isObjectInScope(java.lang.Object)
+	 */
 	public boolean isObjectInScope(Object object) {
 		return object instanceof UIField;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint#validationRules(java.lang.Object)
+	 */
 	public ValidationStatus validationRules(Object data) {
 		// Init local variables
 		duplicatedName = "";
 		
 		// Get the concerned UIField
 		UIField current = (UIField) data;
+		/* 
+		 * If the name of the UIField is null then Return an OK Status and let the non-null name 
+		 * Validation rule doing it work
+		 */
 		if (current.getName() == null)
 			return ValidationStatus.Ok;
 		
 		// Get the UIContainer used to generate the Section
-		UIContainer section = getSection(current);
+//		UIContainer section = getSection(current);
 		
 		// Check of there is duplicated names and return the result
-		return duplicateFieldsName(section, current) ? ValidationStatus.Error : ValidationStatus.Ok;
+//		return duplicateFieldsName(section, current) ? ValidationStatus.Error : ValidationStatus.Ok;
+		
+		final List<UIContainer> allAvailableSections = getAllAvailableSections(current);
+		for (UIContainer uiContainer : allAvailableSections) 
+		{
+			if (duplicateFieldsName(uiContainer, current))
+			{
+				return ValidationStatus.Error;
+			}
+		}
+		
+		return ValidationStatus.Ok;
 	}
 	
+	/**
+	 * Look for duplicate Name in a given {@link UIContainer}
+	 * @param parent the parent {@link UIContainer} of the {@link UIField} under validation 
+	 * @param referenceObject the {@link UIField} under validation 
+	 * @return <code> True </code> if there is a duplicate name, <code>False</code> otherwise
+	 */
 	private boolean duplicateFieldsName(UIContainer parent, UIField referenceObject){
 		for (UIField uiField : parent.getUI_fields()) 
 		{
@@ -79,16 +114,51 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 		return false;
 	}
 	
-	private UIContainer getSection(UIField uiField){
-		UIContainer result = (UIContainer) uiField.eContainer();
-		while (result instanceof UIContainer && ! (result.eContainer() instanceof UI))
+//	/**
+//	 * Get the UI Container that will be used to generate a Section in the UI Tab
+//	 * @param uiField the concerned {@link UIField}
+//	 * @return the {@link UIContainer} used to generate a Section
+//	 */
+//	private UIContainer getSection(UIField uiField){
+//		UIContainer result = (UIContainer) uiField.eContainer();
+//		while (result instanceof UIContainer && ! (result.eContainer() instanceof UI))
+//		{
+//			result = (UIContainer) result.eContainer();
+//		}
+//		
+//		return result;
+//	}
+	
+	/**
+	 * Get the UI Container that will be used to generate a Section in the UI Tab
+	 * @param uiField the concerned {@link UIField}
+	 * @return the {@link UIContainer} used to generate a Section
+	 */
+	private List<UIContainer> getAllAvailableSections(UIField uiField){
+		EList<UIContainer> result = new BasicEList<UIContainer>();
+		EObject current = uiField.eContainer();
+		while (! (current instanceof UIDescription))
 		{
-			result = (UIContainer) result.eContainer();
+			current = current.eContainer();
+		}
+		
+		UIDescription uiDescription = (UIDescription) current;
+		for (UI ui : uiDescription.getUIs()) 
+		{
+			final EList<UIContainer> ui_Containers = ui.getUI_Containers();
+			if (! ui_Containers.isEmpty())
+			{
+				result.addAll(ui_Containers);
+			}
 		}
 		
 		return result;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint#getMessage(...)
+	 */
 	public String getMessage(ValidationStatus status, Object eObject) {
 		return Messages.bind(Messages.Validation_UIField_Unique_NameInSection, duplicatedName);
 	}
