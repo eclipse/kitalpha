@@ -72,37 +72,39 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 
 	private void cleanUnselectedUris(Resource resource,
 			Collection<String> unSelectedUri, IProgressMonitor monitor) {
-		
-		Collection<Resource> allResources = resource.getResourceSet().getResources();
-		
-		for (Resource resource2 : allResources) 
-		{
-			
-			TreeIterator<EObject> it = resource2.getAllContents();
-			
-			Collection<EObject> eObjectToRemove = new HashSet<EObject>();
-			
-			while (it.hasNext())
+
+		if (!unSelectedUri.isEmpty()){
+			Collection<Resource> allResources = resource.getResourceSet().getResources();
+
+			for (Resource resource2 : allResources) 
 			{
-				EObject eObject = it.next();
-				String current_uri = eObject.eClass().getEPackage().getNsURI();
-				
-				if (unSelectedUri.contains(current_uri))
+
+				TreeIterator<EObject> it = resource2.getAllContents();
+
+				Collection<EObject> eObjectToRemove = new HashSet<EObject>();
+
+				while (it.hasNext())
 				{
-					
-					eObjectToRemove.add(eObject);
+					EObject eObject = it.next();
+					String current_uri = eObject.eClass().getEPackage().getNsURI();
+
+					if (unSelectedUri.contains(current_uri))
+					{
+
+						eObjectToRemove.add(eObject);
+					}
 				}
-			}
-			
-			if (eObjectToRemove != null && !eObjectToRemove.isEmpty())
-			{
-				for (EObject eObject2 : eObjectToRemove) 
+
+				if (eObjectToRemove != null && !eObjectToRemove.isEmpty())
 				{
-					monitor.subTask(Messages.bind(Messages.REMOVE_OBJECT, new Object[] { EcoreUtil.getURI(eObject2), eObject2.eClass().getEPackage().getNsURI() }));
-					
-					EObject rootContainer = EcoreUtil.getRootContainer(eObject2);
-					if (!eObject2.equals(rootContainer))
-						EcoreUtil.delete(eObject2, false);
+					for (EObject eObject2 : eObjectToRemove) 
+					{
+						monitor.subTask(Messages.bind(Messages.REMOVE_OBJECT, new Object[] { EcoreUtil.getURI(eObject2), eObject2.eClass().getEPackage().getNsURI() }));
+
+						EObject rootContainer = EcoreUtil.getRootContainer(eObject2);
+						if (!eObject2.equals(rootContainer))
+							EcoreUtil.delete(eObject2, false);
+					}
 				}
 			}
 		}
