@@ -24,27 +24,13 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.model.IConstraintStatus;
 import org.eclipse.emf.validation.service.IBatchValidator;
+import org.eclipse.emf.validation.service.ITraversalStrategy;
 import org.eclipse.emf.validation.service.ModelValidationService;
 
 /**
  * An adapter that plugs the EMF Model Validation Service API into the {@link org.eclipse.emf.ecore.EValidator} API.
  */
 public class EValidatorAdapter extends EObjectValidator {
-
-  /**
-   * Model Validation Service interface for batch validation of EMF elements.
-   */
-  private final IBatchValidator batchValidator;
-
-  /**
-   * Initializes me.
-   */
-  public EValidatorAdapter() {
-    super();
-    batchValidator = (IBatchValidator) ModelValidationService.getInstance().newValidator(EvaluationMode.BATCH);
-    batchValidator.setIncludeLiveConstraints(true);
-    batchValidator.setReportSuccesses(false);
-  }
 
   /**
    * Converts a status result from the EMF validation service to diagnostics.
@@ -124,6 +110,10 @@ public class EValidatorAdapter extends EObjectValidator {
       // help it
       if (!hasProcessed(eObject, context)) {
         // BH DBG System.out.println("Evalidator: batchValidator.validate");
+        IBatchValidator batchValidator = (IBatchValidator) ModelValidationService.getInstance().newValidator(EvaluationMode.BATCH);
+        batchValidator.setIncludeLiveConstraints(true);
+        batchValidator.setTraversalStrategy(new ITraversalStrategy.Recursive());
+        batchValidator.setReportSuccesses(false);
         status = batchValidator.validate(eObject, new NullProgressMonitor());
 
         processed(eObject, context, status);
