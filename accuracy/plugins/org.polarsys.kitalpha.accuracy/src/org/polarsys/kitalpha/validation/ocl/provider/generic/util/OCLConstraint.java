@@ -30,26 +30,29 @@ import org.polarsys.kitalpha.validation.util.LabelUtil;
 public class OCLConstraint extends
 		AbstractOCLModelConstraint<EClassifier, Constraint, EClass, EObject> {
 	
+	/** the ocl to bind. */
+	private OCL _ocl;
 	
-
-	private final OCL.Query query;
+	/** the constraint descriptor. */
+	private OCLConstraintDescriptor _descriptor;
 
 	public OCLConstraint(OCLConstraintDescriptor desc, OCL ocl) {
 		super(desc);
 
-		this.query = ocl.createQuery(desc.getConstraint());
+		this._ocl = ocl;
+		this._descriptor = desc;
 	}
 
 	// override this method to indicate that we are doing new-style OCL
 	@Override
 	protected EnvironmentFactory<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, Constraint, EClass, EObject> createOCLEnvironmentFactory() {
-		return query.getOCL().getEnvironment().getFactory();
+		return _ocl.getEnvironment().getFactory();
 	}
 
 	@Override
 	public Query<EClassifier, EClass, EObject> getConstraintCondition(
 			EObject target) {
-		return query;
+		return _ocl.createQuery(_descriptor.getConstraint());
 	}
 
 	@SuppressWarnings("nls")
