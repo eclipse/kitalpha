@@ -219,7 +219,7 @@ If a mapping element provides it own default possibility, this parameter is not 
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IRule"/>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -229,7 +229,7 @@ If a mapping element provides it own default possibility, this parameter is not 
                   Rule called when a cycle is detected in the graph build by the analyzer
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IRule"/>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule"/>
                </appinfo>
             </annotation>
          </attribute>
