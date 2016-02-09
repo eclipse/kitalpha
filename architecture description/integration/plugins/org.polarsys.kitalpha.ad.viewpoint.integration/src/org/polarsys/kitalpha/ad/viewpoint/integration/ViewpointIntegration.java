@@ -12,6 +12,7 @@ package org.polarsys.kitalpha.ad.viewpoint.integration;
 
 import java.util.ArrayList;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -25,6 +26,9 @@ import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedView
  * 
  */
 public class ViewpointIntegration {
+
+	private static final String STORAGE_EXTENSION = "integration";
+
 	public void setUsage(ResourceSet context, String id, boolean usage) {
 		Integration integ = getIntegrationStorage(context);
 		if (integ == null)
@@ -88,30 +92,38 @@ public class ViewpointIntegration {
 		return false;
 	}
 
+	public Resource initIntegrationStorage(ResourceSet context) {
+		URI uri = context.getResources().get(0).getURI();
+		String path = uri.toPlatformString(true);
+		if (path.contains(".")) {
+			int index = path.lastIndexOf('.');
+			path = path.substring(0, index) + "." + STORAGE_EXTENSION;
+		}
+		Resource resource = context.createResource(URI.createPlatformResourceURI(path, true));
+		if (resource.getContents().isEmpty()) {
+			Integration integration = IntegrationFactory.eINSTANCE.createIntegration();
+			//TODO init the integration object
+			resource.getContents().add(integration);
+			context.getResources().add(resource);
+			return resource;
+		}
+		return null;
+	}
+
 	protected Integration getIntegrationStorage(ResourceSet context) {
-		// quick & dirty implementation: need a better way to store these
-		// information
-		ResourceSet resourceSet = context;
+		Resource resource = getResource(context, STORAGE_EXTENSION);
+		Integration integ = (Integration) resource.getContents().get(0);
+		if (integ == null)
+			throw new IllegalStateException("can't find integration resource");
+		return integ;
+	}
+
+	private Resource getResource(ResourceSet resourceSet, String extension) {
 		for (Resource res : resourceSet.getResources()) {
-			if (res.getURI().toString().endsWith("integration")) {
-				Integration integ = (Integration) res.getContents().get(0);
-				return integ;
+			if (res.getURI().toString().endsWith(extension)) {
+				return res;
 			}
 		}
-		// URI uri = eResource.getURI();
-		// String path = uri.toPlatformString(true);
-		// if (path.contains(".")) {
-		// int index = path.lastIndexOf('.');
-		// path = path.substring(0, index) + ".integration";
-		// }
-		// Resource resource =
-		// resourceSet.getResource(URI.createPlatformResourceURI(path, true),
-		// true);
-		// if (!resource.getContents().isEmpty()) {
-		// resourceSet.getResources().add(resource);
-		// return (Integration) resource.getContents().get(0);
-		// }
-		// return null;
-		throw new IllegalStateException("can't find integration resource");
+		return null;
 	}
 }

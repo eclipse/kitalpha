@@ -32,6 +32,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManagerListener.Stub;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
+import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 
@@ -136,7 +137,7 @@ public class ViewpointActivationStateListener extends Stub {
 						session.getTransactionalEditingDomain().getCommandStack().execute(command);
 				} catch (Exception e) {
 					// fail silently ...
-					// Activator.getDefault().logWarning(e);
+				 Activator.getDefault().logWarning(e);
 				}
 				return Status.OK_STATUS;
 			}
