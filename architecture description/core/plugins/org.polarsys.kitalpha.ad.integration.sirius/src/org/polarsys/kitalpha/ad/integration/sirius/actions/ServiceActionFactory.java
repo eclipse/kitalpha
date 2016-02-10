@@ -141,8 +141,12 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 				continue;
 			}
 			URI uri = URIFix.createPlatformPluginURI(path2, false);
-			Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-			vps.add(vp);
+			try {
+				Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+				vps.add(vp);
+			} catch (Exception e) {
+				Activator.getDefault().logWarning(e);
+			}
 		}
 
 		Viewpoint[] array = vps.toArray(new Viewpoint[vps.size()]);
