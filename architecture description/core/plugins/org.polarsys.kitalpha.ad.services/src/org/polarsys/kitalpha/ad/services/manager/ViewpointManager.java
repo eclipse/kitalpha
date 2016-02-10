@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *  
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *   Thales - initial API and implementation
  *******************************************************************************/
 
 package org.polarsys.kitalpha.ad.services.manager;
@@ -143,7 +143,7 @@ public class ViewpointManager {
 	protected void doStartUse(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
-		IntegrationHelper.getInstance().setUsage(target, vpResource.getId(), true);
+		IntegrationHelper.getInstance().setUsage(target, vpResource, true);
 		managed.add(vpResource.getProviderSymbolicName());
 		if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
 			managed.add(vpResource.getProviderSymbolicName());
@@ -219,7 +219,7 @@ public class ViewpointManager {
 		// additional events such PRE_DEACTIVATED or POST_DEACTIVATED
 		String providerSymbolicName = vpResource.getProviderSymbolicName();
 		desactivateBundle(providerSymbolicName);
-		IntegrationHelper.getInstance().setUsage(target, id, false);
+		IntegrationHelper.getInstance().setUsage(target, vpResource, false);
 		fireEvent(vpResource, DEACTIVATED);
 	}
 

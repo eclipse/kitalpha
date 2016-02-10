@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *  
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *   Thales - initial API and implementation
  *******************************************************************************/
 
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
@@ -267,6 +267,11 @@ public class ViewpointManagerView extends ViewPart {
 		layout.addColumnData(new ColumnWeightData(2, 50, true));
 		stateColumn.getColumn().setText("State");
 		stateColumn.getColumn().setResizable(true);
+
+		TableViewerColumn versionColumn = new TableViewerColumn(viewer, SWT.NONE);
+		layout.addColumnData(new ColumnWeightData(2, 50, true));
+		versionColumn.getColumn().setText("Version");
+		versionColumn.getColumn().setResizable(true);
 
 		TableViewerColumn locationColumn = new TableViewerColumn(viewer, SWT.NONE);
 		layout.addColumnData(new ColumnWeightData(3, 75, true));

@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *  
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *   Thales - initial API and implementation
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.integration;
 
@@ -17,6 +17,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.Integration;
 import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.IntegrationFactory;
 import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedViewpoint;
+import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
  * @author Thomas Guiu
@@ -25,20 +26,20 @@ import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedView
 public class SetViewpointUsageCommand extends RecordingCommand {
 
 	private Integration integration;
-	private String vpid;
+	private Resource vpResource;
 	private boolean usage;
 
-	public SetViewpointUsageCommand(TransactionalEditingDomain domain, Integration integration, String vpid, boolean usage) {
+	public SetViewpointUsageCommand(TransactionalEditingDomain domain, Integration integration, Resource resource, boolean usage) {
 		super(domain);
 		this.integration = integration;
-		this.vpid = vpid;
+		this.vpResource = resource;
 		this.usage = usage;
 	}
 
 	@Override
 	protected void doExecute() {
 		for (UsedViewpoint uv : new ArrayList<UsedViewpoint>(integration.getUsedViewpoints())) {
-			if (vpid.equals(uv.getVpId())) {
+			if (vpResource.equals(uv.getVpId())) {
 				if (usage)
 					return; // object is already there, nothing to do
 				integration.getUsedViewpoints().remove(uv);
@@ -48,7 +49,8 @@ public class SetViewpointUsageCommand extends RecordingCommand {
 		if (usage) {
 			UsedViewpoint uv = IntegrationFactory.eINSTANCE.createUsedViewpoint();
 			uv.setFiltered(false);
-			uv.setVpId(vpid);
+			uv.setVpId(vpResource.getId());
+			uv.setVersion(vpResource.getVersion());
 			integration.getUsedViewpoints().add(uv);
 		}
 

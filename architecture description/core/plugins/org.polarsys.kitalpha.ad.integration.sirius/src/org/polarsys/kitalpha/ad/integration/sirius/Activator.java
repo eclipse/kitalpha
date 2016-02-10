@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *  
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *   Thales - initial API and implementation
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.integration.sirius;
 
@@ -21,6 +21,7 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.osgi.framework.BundleContext;
 import org.polarsys.kitalpha.ad.common.utils.URIFix;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.DiagramUpdater;
+import org.polarsys.kitalpha.ad.integration.sirius.listeners.IntegrationResourceListener;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.SiriusViewpointActivationManager;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.ViewpointActivationStateListener;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -39,7 +40,9 @@ public class Activator extends AFUIActivator {
 	public static final URI FILTER_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']", false);
 
 	private final OverallListener listener = new SiriusViewpointActivationManager();
-	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener() };
+
+	// register IntegrationResourceListener: a temporary solution. Depending on the target platform, the metadata resource could be created explicitly at the right time instead of of using a session listener.
+	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener(), new IntegrationResourceListener() };
 	private final ModelExtensionOverallListener[] listeners = { new DiagramUpdater() };
 
 	private static Activator plugin;

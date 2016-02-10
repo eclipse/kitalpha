@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *  
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *   Thales - initial API and implementation
  *******************************************************************************/
 
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
@@ -52,10 +52,12 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 			}
 			return "Unused";
 		case 2:
-			return vp.getProviderLocation().toString();
+			return vp.getVersion() == null || vp.getVersion().isEmpty() ? "no version" : vp.getVersion();
 		case 3:
-			return vp.getProviderSymbolicName();
+			return vp.getProviderLocation().toString();
 		case 4:
+			return vp.getProviderSymbolicName();
+		case 5:
 			return "";
 		}
 		return "";
