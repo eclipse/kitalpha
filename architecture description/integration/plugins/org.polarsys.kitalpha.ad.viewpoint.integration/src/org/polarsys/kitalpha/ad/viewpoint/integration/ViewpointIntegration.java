@@ -1,12 +1,12 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *  
  * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
+ *   Thales - initial API and implementation
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.integration;
 
@@ -29,16 +29,16 @@ public class ViewpointIntegration {
 
 	private static final String STORAGE_EXTENSION = "integration";
 
-	public void setUsage(ResourceSet context, String id, boolean usage) {
+	public void setUsage(ResourceSet context, org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, boolean usage) {
 		Integration integ = getIntegrationStorage(context);
 		if (integ == null)
 			throw new UnsupportedOperationException("cannot find integration resource");
 		TransactionalEditingDomain transactionalEditingDomain = TransactionUtil.getEditingDomain(context);
 		if (transactionalEditingDomain != null) {
-			transactionalEditingDomain.getCommandStack().execute(new SetViewpointUsageCommand(transactionalEditingDomain, integ, id, usage));
+			transactionalEditingDomain.getCommandStack().execute(new SetViewpointUsageCommand(transactionalEditingDomain, integ, vpResource, usage));
 		} else {
 			for (UsedViewpoint uv : new ArrayList<UsedViewpoint>(integ.getUsedViewpoints())) {
-				if (id.equals(uv.getVpId())) {
+				if (vpResource.getId().equals(uv.getVpId())) {
 					if (usage)
 						return; // object is already there, nothing to do
 					integ.getUsedViewpoints().remove(uv);
@@ -47,7 +47,8 @@ public class ViewpointIntegration {
 			if (usage) {
 				UsedViewpoint uv = IntegrationFactory.eINSTANCE.createUsedViewpoint();
 				uv.setFiltered(false);
-				uv.setVpId(id);
+				uv.setVpId(vpResource.getId());
+				uv.setVersion(vpResource.getVersion());
 				integ.getUsedViewpoints().add(uv);
 			}
 

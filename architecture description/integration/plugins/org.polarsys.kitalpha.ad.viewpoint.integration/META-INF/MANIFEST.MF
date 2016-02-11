@@ -8,7 +8,8 @@ Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.integration
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.integration.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.viewpoint.integrationdomain.model,
- org.eclipse.emf.transaction
+ org.eclipse.emf.transaction,
+ org.polarsys.kitalpha.resourcereuse
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.integration
