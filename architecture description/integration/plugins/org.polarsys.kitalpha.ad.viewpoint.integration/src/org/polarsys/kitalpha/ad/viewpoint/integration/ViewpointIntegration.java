@@ -11,7 +11,12 @@
 package org.polarsys.kitalpha.ad.viewpoint.integration;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -29,6 +34,13 @@ public class ViewpointIntegration {
 
 	private static final String STORAGE_EXTENSION = "integration";
 
+	public Map<String, String> getViewpointUsages(ResourceSet context) {
+		Map<String, String> id2version = new HashMap<String, String>();
+		for (UsedViewpoint usedViewpoint : getIntegrationStorage(context).getUsedViewpoints()) 
+			id2version.put(usedViewpoint.getVpId(), usedViewpoint.getVersion());
+		return id2version;
+	}
+	
 	public void setUsage(ResourceSet context, org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, boolean usage) {
 		Integration integ = getIntegrationStorage(context);
 		if (integ == null)
@@ -125,6 +137,11 @@ public class ViewpointIntegration {
 				return res;
 			}
 		}
-		return null;
+		// No luck, try to guess
+		Resource mainResource = resourceSet.getResources().get(0);
+		URI uri = mainResource.getURI();
+		uri = uri.trimFileExtension().appendFileExtension(extension);
+		Resource resource = resourceSet.getResource(uri, true);
+		return resource;
 	}
 }

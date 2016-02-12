@@ -21,7 +21,10 @@ import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
@@ -33,6 +36,7 @@ import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
+import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.integration.IntegrationHelper;
@@ -76,6 +80,41 @@ public class ViewpointManager {
 	public static void pinError(Resource vp) {
 		discarded.add(vp.getId());
 
+	}
+
+	/**
+	 * Ensure the vp declared into the model match the vp available into the platform.
+	 * 
+	 * @param context
+	 * @return
+	 */
+	public static IStatus checkViewpointsCompliancy(ResourceSet context)
+	{
+		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
+		Resource[] availableViewpoints = ViewpointManager.getAvailableViewpoints();
+		Map<String, String> viewpointUsages = IntegrationHelper.getInstance().getViewpointUsages(context);
+		for (Entry<String, String> usage : viewpointUsages.entrySet())
+		{
+			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
+			if (!res.isOK())
+				error.add(res);
+		}
+		if (!error.isOK())
+			return error;
+		return Status.OK_STATUS;
+	}
+	
+	private static IStatus useViewpoint(Resource[] availableViewpoints, String id, String version) {
+		for (Resource res : availableViewpoints)
+		{
+			if (res.getId().equals(id))
+			{
+				if (version == null || version.isEmpty() || version.equals(res.getVersion()))
+					return Status.OK_STATUS;
+				return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Expecting version '"+version+ "' for viewpoint '"+id+"' (current version: '"+res.getVersion()+"')");
+			}
+		}
+		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Missing viewpoint '"+id+"'");
 	}
 
 	public static Resource[] getAvailableViewpoints() {
