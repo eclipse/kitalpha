@@ -56,9 +56,6 @@ public class ViewpointManager {
 	private static final int FILTERED = 8;
 	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
 
-	public static ViewpointManager INSTANCE = new ViewpointManager();
-
-	
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
     private final Set<String> managed = new HashSet<String>();
