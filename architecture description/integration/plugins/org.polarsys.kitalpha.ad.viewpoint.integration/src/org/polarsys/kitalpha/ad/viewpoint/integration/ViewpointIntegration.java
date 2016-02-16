@@ -32,7 +32,7 @@ import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedView
  */
 public class ViewpointIntegration {
 
-	private static final String STORAGE_EXTENSION = "integration";
+	public static final String STORAGE_EXTENSION = "integration";
 
 	public Map<String, String> getViewpointUsages(ResourceSet context) {
 		Map<String, String> id2version = new HashMap<String, String>();
@@ -41,6 +41,23 @@ public class ViewpointIntegration {
 		return id2version;
 	}
 	
+	public void updateVersion(ResourceSet context, org.polarsys.kitalpha.resourcereuse.model.Resource vpResource) {
+		Integration integ = getIntegrationStorage(context);
+		if (integ == null)
+			throw new UnsupportedOperationException("cannot find integration resource");
+		TransactionalEditingDomain transactionalEditingDomain = TransactionUtil.getEditingDomain(context);
+		if (transactionalEditingDomain != null) {
+			transactionalEditingDomain.getCommandStack().execute(new UpdateViewpointVersionCommand(transactionalEditingDomain, integ, vpResource));
+		} else {
+			for (UsedViewpoint uv : new ArrayList<UsedViewpoint>(integ.getUsedViewpoints())) {
+				if (vpResource.getId().equals(uv.getVpId())) {
+					uv.setVersion(vpResource.getVersion());
+					return ;
+				}
+			}
+		}
+	}
+
 	public void setUsage(ResourceSet context, org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, boolean usage) {
 		Integration integ = getIntegrationStorage(context);
 		if (integ == null)
