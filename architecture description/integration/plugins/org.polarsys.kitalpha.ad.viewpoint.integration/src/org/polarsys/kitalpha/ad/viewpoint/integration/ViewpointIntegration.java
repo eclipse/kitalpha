@@ -129,8 +129,10 @@ public class ViewpointIntegration {
 			int index = path.lastIndexOf('.');
 			path = path.substring(0, index) + "." + STORAGE_EXTENSION;
 		}
-		Resource resource = context.createResource(URI.createPlatformResourceURI(path, true));
-		if (resource.getContents().isEmpty()) {
+		try {
+		context.getResource(URI.createPlatformResourceURI(path, true), true);
+		}catch ( Exception e) {
+			Resource resource = context.createResource(URI.createPlatformResourceURI(path, true));
 			Integration integration = IntegrationFactory.eINSTANCE.createIntegration();
 			//TODO init the integration object
 			resource.getContents().add(integration);
