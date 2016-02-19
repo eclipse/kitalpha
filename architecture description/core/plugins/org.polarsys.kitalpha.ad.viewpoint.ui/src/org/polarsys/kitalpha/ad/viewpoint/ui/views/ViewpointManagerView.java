@@ -202,12 +202,14 @@ public class ViewpointManagerView extends ViewPart {
 				if (part instanceof IEditingDomainProvider) {
 					IEditingDomainProvider prov = (IEditingDomainProvider) part;
 					EditingDomain editingDomain = prov.getEditingDomain();
-					context = editingDomain.getResourceSet();
-				} else {
+					if (editingDomain != null)
+						context = editingDomain.getResourceSet();
+				} 
+				if (context == null) {
 					EditingDomain obj = part.getAdapter(EditingDomain.class);
 					if (obj != null) {
 						context = obj.getResourceSet();
-	}
+					}
 				}
 				if (context == null)
 					analyseSelection(selection);

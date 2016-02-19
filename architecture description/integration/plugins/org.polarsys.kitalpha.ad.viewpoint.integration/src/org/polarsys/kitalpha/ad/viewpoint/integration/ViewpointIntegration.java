@@ -129,14 +129,20 @@ public class ViewpointIntegration {
 			int index = path.lastIndexOf('.');
 			path = path.substring(0, index) + "." + STORAGE_EXTENSION;
 		}
+		uri = URI.createPlatformResourceURI(path, true);
 		try {
-		context.getResource(URI.createPlatformResourceURI(path, true), true);
+			context.getResource(uri, true);
 		}catch ( Exception e) {
-			Resource resource = context.createResource(URI.createPlatformResourceURI(path, true));
+			// delete proxy resource.
+			Resource resource = context.getResource(uri, false);
+			resource.unload();
+			context.getResources().remove(resource);
+		
+			resource = context.createResource(uri);
 			Integration integration = IntegrationFactory.eINSTANCE.createIntegration();
 			//TODO init the integration object
-			resource.getContents().add(integration);
 			context.getResources().add(resource);
+			resource.getContents().add(integration);
 			return resource;
 		}
 		return null;

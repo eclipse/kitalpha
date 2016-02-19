@@ -33,7 +33,11 @@ public class IntegrationResourceListener extends Stub {
 			protected void doExecute() {
 				Resource resource = IntegrationHelper.getInstance().initIntegrationStorage(session.getTransactionalEditingDomain().getResourceSet());
 				if (resource != null)
+				{
+					resource.setModified(true);
 					session.addSemanticResource(resource.getURI(), new NullProgressMonitor());
+				}
+				
 			}
 		};
 		session.getTransactionalEditingDomain().getCommandStack().execute(command);
