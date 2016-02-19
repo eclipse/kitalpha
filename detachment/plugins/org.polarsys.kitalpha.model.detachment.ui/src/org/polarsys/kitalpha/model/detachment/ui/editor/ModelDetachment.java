@@ -151,6 +151,7 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 			getHeaderForm().getForm().getForm().getToolBarManager().add(perfomDetachment);
 			getHeaderForm().getForm().getForm().getToolBarManager().update(true);
 			getHeaderForm().getForm().getForm().setToolBarVerticalAlignment(SWT.RIGHT);
+			getHeaderForm().reflow(true);
 		}
 		
 	}
