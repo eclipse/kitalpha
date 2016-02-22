@@ -67,6 +67,7 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 		implements INewWizard {
 
 	private HTMLDocumentationGenerationWizardPage page;
+	private HTMLDocumentationBrandingWizardPage brandingPage;
 	private ISelection selection;
 	public static final String DEFAULT_LAUNCHER_LABEL = "Default Launcher";
 
@@ -99,6 +100,9 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 		page.setLauncherUris(getLaunchersURI());
 		page.setScopedGeneration(scopedGeneration);
 		addPage(page);
+		
+		brandingPage = new HTMLDocumentationBrandingWizardPage();
+		addPage(brandingPage);
 	}
 	
 	protected final ISelection handleSelection(ISelection selection_p){
@@ -151,20 +155,31 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 		}
 	}
 
-
 	/**
 	 * This method is called when 'Finish' button is pressed in the wizard. We
 	 * will create an operation and run it using wizard as execution context.
 	 */
 	public boolean performFinish() {
-		initializeScope(page.getReferencesStrategy());
+		brandingPage.askUserForUpdatingBrandingDataPreferences();
+		
+		/** Collect data from wizard pages **/
+		final String modelURI = page.getModelURI();
+		final String containerName = page.getContainerName();
+		final String selectedLauncher = page.getSelectedLauncher();
+		final ScopeReferencesStrategy referencesStrategy = page.getReferencesStrategy();
+		
+		final String copyright = brandingPage.getCopyright();
+		final String logoAlt = brandingPage.getLogoAlt();
+		final String logoPath = brandingPage.getLogoPath();
+		
+		initializeScope(referencesStrategy);
 		
 		LabelProviderHelper.initImageRegistry();
-		String containerName = page.getContainerName();
-		List<URI> modelURIList = getURIList(page.getModelURI());
+		
+		List<URI> modelURIList = getURIList(modelURI);
 		final String projectName = getProjectName(containerName);
 		final String outputFolder = getOutputFolder(containerName);
-		Activity melodyLauncher = InvokeActivityHelper.getActivity(getLaunchersURI().get(page.getSelectedLauncher()));
+		Activity melodyLauncher = InvokeActivityHelper.getActivity(getLaunchersURI().get(selectedLauncher));
 		for (URI uri : modelURIList) 
 		{
 			URI semanticResourceURI = uri;
@@ -180,7 +195,7 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 					semanticResourceURI = semanticResource.getURI();
 				}
 			}
-			execute(melodyLauncher, projectName, outputFolder, semanticResourceURI);
+			execute(melodyLauncher, projectName, outputFolder, semanticResourceURI, copyright, logoAlt, logoPath);
 		}
 
 		return true;
@@ -189,32 +204,47 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 	private List<URI> getURIList(String modelURI) {
 		Set<URI> uriSet = new HashSet<URI>();
 		StringTokenizer tokenizer = new StringTokenizer(modelURI);
-		while (tokenizer.hasMoreElements()) {
+		while (tokenizer.hasMoreElements()) 
+		{
 			String nextURI = tokenizer.nextElement().toString();
 			uriSet.add(URI.createURI(nextURI));
 		}
 		return new ArrayList<URI>(uriSet);
 	}
 
-	private void execute(Activity melodyLauncher, final String projectName,
-			final String outputFolder, final URI uri) {
-			IPath path = new Path(projectName + "/" + outputFolder);
-			path = path.append("output");
-			IFolder folder = ResourcesPlugin.getWorkspace().getRoot().getFolder(path);
-			if(!folder.exists()) {
-				try {
-					folder.create(true, true, null);
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+	private void execute(Activity melodyLauncher, 
+						 final String projectName, 
+						 final String outputFolder, 
+						 final URI uri,
+						 final String copyright,
+						 final String logoAlt,
+						 final String logoPath) {
+		IPath path = new Path(projectName + "/" + outputFolder);
+		path = path.append("output");
+		IFolder folder = ResourcesPlugin.getWorkspace().getRoot().getFolder(path);
+		if(!folder.exists()) 
+		{
+			try {
+				folder.create(true, true, null);
+			} catch (CoreException e) {
+				EGFPatternPlugin.getDefault().logError(e);
 			}
-		if (melodyLauncher instanceof FactoryComponent) {
+		}
+		
+		if (melodyLauncher instanceof FactoryComponent) 
+		{
 			final FactoryComponent factoryComponent = (FactoryComponent) melodyLauncher;
 
-			setContract(factoryComponent, "projectName", projectName);
-			setContract(factoryComponent, "outputFolder", outputFolder + "/output");
+			/** Setting the values of the mandatory contracts **/
+			setContract(factoryComponent, "projectName", projectName, true);
+			setContract(factoryComponent, "outputFolder", outputFolder + "/output", true);
 			setDomain(factoryComponent, uri);
+			
+			/** Setting the values of the optional contracts **/
+			setContract(factoryComponent, "copyright", copyright, false);
+			setContract(factoryComponent, "logo.alt", logoAlt, false);
+			setContract(factoryComponent, "logo.path", logoPath, false);
+			
 			try {
 				InvokeActivityHelper.invoke(factoryComponent);
 			} catch (Exception e) {
@@ -225,43 +255,49 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 	}
 
 	private void setDomain(FactoryComponent factoryComponent, URI uri) {
-		Viewpoint viewpoint = factoryComponent.getViewpointContainer()
-				.getViewpoint(DomainViewpoint.class);
-		if (viewpoint instanceof DomainViewpoint) {
+		Viewpoint viewpoint = factoryComponent.getViewpointContainer().getViewpoint(DomainViewpoint.class);
+		if (viewpoint instanceof DomainViewpoint) 
+		{
 			DomainViewpoint domainViewpoint = (DomainViewpoint) viewpoint;
 			Domain domain = domainViewpoint.getDomains().get(0);
-			if (domain instanceof EMFDomain) {
+			if (domain instanceof EMFDomain) 
+			{
 				EMFDomain domainURI = (EMFDomain) domain;
 				domainURI.setUri(uri);
 			}
 		}
-
 	}
 
-	private void setContract(FactoryComponent factoryComponent,
-			String contractName, String value) {
-
+	private void setContract(FactoryComponent factoryComponent, String contractName, String value, boolean mandatory) {
 		Contract invokedContract = factoryComponent.getContract(contractName);
-
-		Type type = invokedContract.getType();
-		if (type instanceof TypeString) {
-			TypeString typeString = (TypeString) type;
-			typeString.setValue(value);
+		if (invokedContract != null)
+		{
+			Type type = invokedContract.getType();
+			if (type instanceof TypeString) 
+			{
+				TypeString typeString = (TypeString) type;
+				typeString.setValue(value);
+			}
 		}
-
+		else
+		{
+			if (mandatory)
+			{
+				throw new IllegalArgumentException("Can't find the mandatory contract " + contractName + 
+												   " in the factory component " + factoryComponent.getName());
+			}
+		}
 	}
 
 	private String getOutputFolder(String containerName) {
 		String projectName = getProjectName(containerName);
 		IPath outputFolderPath = new Path(containerName);
-		outputFolderPath = outputFolderPath
-				.makeRelativeTo(new Path(projectName));
+		outputFolderPath = outputFolderPath.makeRelativeTo(new Path(projectName));
 		return outputFolderPath.toString();
 	}
 
 	private String getProjectName(String containerName) {
-		IContainer container = ResourcesPlugin.getWorkspace().getRoot()
-				.getFolder(new Path(containerName));
+		IContainer container = ResourcesPlugin.getWorkspace().getRoot().getFolder(new Path(containerName));
 		return container.getProject().getName();
 	}
 

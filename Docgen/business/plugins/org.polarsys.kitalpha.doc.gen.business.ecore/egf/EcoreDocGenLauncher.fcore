@@ -15,6 +15,15 @@
       <contracts xmi:id="_MNbMAB4UEeSYicwoCfn9sQ" name="pattern.substitutions">
         <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_NrwLMB4UEeSYicwoCfn9sQ"/>
       </contracts>
+      <contracts xmi:id="_gsHLkNsLEeWExZizAMSqLg" name="copyright">
+        <type xmi:type="types:TypeString" xmi:id="_hby8ENsLEeWExZizAMSqLg"/>
+      </contracts>
+      <contracts xmi:id="_iT0wQNsLEeWExZizAMSqLg" name="logo.path">
+        <type xmi:type="types:TypeString" xmi:id="_iT0wQdsLEeWExZizAMSqLg"/>
+      </contracts>
+      <contracts xmi:id="_ibHrENsLEeWExZizAMSqLg" name="logo.alt">
+        <type xmi:type="types:TypeString" xmi:id="_ibHrEdsLEeWExZizAMSqLg"/>
+      </contracts>
     </contractContainer>
   </ftask:Task>
   <fcore:FactoryComponent xmi:id="_oW26AYaqEeCqVPyWxeH-sg" name="EcoreDocGenDefaultLauncher">
@@ -30,6 +39,18 @@
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_8QUucVwpEeO7Ja5QXv8etA"
           name="pattern.substitutions" invocationContracts="#_9BWiwFwpEeO7Ja5QXv8etA">
         <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_8QUuclwpEeO7Ja5QXv8etA"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_fi8kFNsLEeWExZizAMSqLg"
+          name="copyright" invocationContracts="#_8nM9cNsLEeWExZizAMSqLg">
+        <type xmi:type="types:TypeString" xmi:id="_fi8kFdsLEeWExZizAMSqLg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_fi8kENsLEeWExZizAMSqLg"
+          name="logo.path" invocationContracts="#_-WOEANsLEeWExZizAMSqLg">
+        <type xmi:type="types:TypeString" xmi:id="_fi8kEdsLEeWExZizAMSqLg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_fi8kEtsLEeWExZizAMSqLg"
+          name="logo.alt" invocationContracts="#_-AnAYNsLEeWExZizAMSqLg">
+        <type xmi:type="types:TypeString" xmi:id="_fi8kE9sLEeWExZizAMSqLg"/>
       </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_tYcjkIa1EeC-OYybHI_OSQ">
@@ -50,6 +71,12 @@
           </invocationContracts>
           <invocationContracts xmi:id="_9BWiwFwpEeO7Ja5QXv8etA" factoryComponentContract="#_8QUucVwpEeO7Ja5QXv8etA"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_7LipwVv_EeONz-cAZOOGtw"/>
+          <invocationContracts xmi:id="_8nM9cNsLEeWExZizAMSqLg" factoryComponentContract="#_fi8kFNsLEeWExZizAMSqLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_qeaMENsLEeWExZizAMSqLg"/>
+          <invocationContracts xmi:id="_-AnAYNsLEeWExZizAMSqLg" factoryComponentContract="#_fi8kEtsLEeWExZizAMSqLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_qeaMFNsLEeWExZizAMSqLg"/>
+          <invocationContracts xmi:id="_-WOEANsLEeWExZizAMSqLg" factoryComponentContract="#_fi8kENsLEeWExZizAMSqLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#_qeaMEtsLEeWExZizAMSqLg"/>
         </invocationContractContainer>
       </invocations>
     </orchestration>

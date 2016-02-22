@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014 - 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,8 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-//Generated on Tue Aug 12 15:01:20 CEST 2014 with EGF 1.2.0.v20140721-0706
+
+// Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.doc.gen.business.ecore.genchain;
 
 import java.util.*;
@@ -37,6 +38,7 @@ public class DocgenExtension {
 	public DocgenExtension() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -58,15 +60,14 @@ public class DocgenExtension {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
 	public String orchestration(PatternContext ctx) throws Exception {
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		Node.Container currentNode = ictx.getNode();
-		method_initializeBrandingData(new StringBuffer(), ictx);
+		method_initializeContractsData(new StringBuffer(), ictx);
 		method_body(new StringBuffer(), ictx);
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -74,70 +75,34 @@ public class DocgenExtension {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_initializeBrandingData(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		DocumentationBrandingData.getInstance().removeAllData();
+	protected void method_initializeContractsData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		/*String name = parameter.getName();*/
+		pluginName = parameter.getPluginName();
+		outputDirectoryPath = parameter.getOutputDirectoryPath();
+		ecorePath = parameter.getModelPath();
 
-		KitalphaDocumentationGenerationBranding brandingData = parameter
-				.getBrandingData();
+		KitalphaDocumentationGenerationBranding brandingData = parameter.getBrandingData();
 		if (brandingData != null) {
-			final String copyright = brandingData.getCopyright();
-			if (copyright != null && copyright.isEmpty() == false)
-				DocumentationBrandingData.getInstance().addData("copyright",
-						copyright);
-
-			final String logoPath = brandingData.getLogoPath();
-			if (logoPath != null && logoPath.isEmpty() == false)
-				DocumentationBrandingData.getInstance().addData("logoPath",
-						logoPath);
-
-			final String logoAlt = brandingData.getLogoAlt();
-			if (logoAlt != null && logoAlt.isEmpty() == false)
-				DocumentationBrandingData.getInstance().addData("logoAlt",
-						logoPath);
-
+			copyright = brandingData.getCopyright();
+			logoPath = brandingData.getLogoPath();
+			logoAlt = brandingData.getLogoAlt();
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "initializeBrandingData",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initializeContractsData", out.toString());
 	}
 
-	protected void method_body(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		@SuppressWarnings("unchecked")
-		Map<GenerationElement, FactoryComponent> fcs = (Map<GenerationElement, FactoryComponent>) ctx
-				.getValue(FcoreBuilderConstants.CURRENT_FCORE);
-
-		FactoryComponent fc = fcs.get((GenerationElement) (parameter
-				.eContainer()));
-
-		URI DOC_GEN_ACTIVITY_MODEL_URI = URI
-				.createPlatformPluginURI(
-						"/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore#",
-						false);
+	protected void method_body(final StringBuffer out, final PatternContext ctx) throws Exception {
+		URI DOC_GEN_ACTIVITY_MODEL_URI = URI.createPlatformPluginURI(
+				"/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore#", false);
 		String DOC_GEN_ACTIVITY_ID = "_B9nwIR4UEeSYicwoCfn9sQ";
 
-		/*String name = parameter.getName();*/
-		String pluginName = parameter.getPluginName();
-		String outputDirectoryPath = parameter.getOutputDirectoryPath();
-		String ecorePath = parameter.getModelPath();
-
-		Resource eResource = fc.eResource();
-		ResourceSet resourceSet = eResource.getResourceSet();
-
-		ProductionPlan pp = (ProductionPlan) fc.getOrchestration();
-
-		Activity activity = (Activity) resourceSet.getResource(
-				DOC_GEN_ACTIVITY_MODEL_URI, true).getEObject(
-				DOC_GEN_ACTIVITY_ID);
-
+		/** Preparing the contract values **/
 		Map<String, Type> contract2type = new HashMap<String, Type>();
 
 		// Set ecoreFilePath contract value
@@ -150,6 +115,29 @@ public class DocgenExtension {
 		typeString.setValue(pluginName + "/" + outputDirectoryPath);
 		contract2type.put("outputDirectoryPath", typeString);
 
+		// Setting the branding contracts values
+		TypeString copyrightTypeString = TypesFactory.eINSTANCE.createTypeString();
+		copyrightTypeString.setValue(copyright);
+		contract2type.put("copyright", copyrightTypeString);
+
+		TypeString logoPathTypeString = TypesFactory.eINSTANCE.createTypeString();
+		logoPathTypeString.setValue(logoPath);
+		contract2type.put("logo.path", logoPathTypeString);
+
+		TypeString logoAltTypeString = TypesFactory.eINSTANCE.createTypeString();
+		logoAltTypeString.setValue(logoAlt);
+		contract2type.put("logo.alt", logoAltTypeString);
+
+		/** Adding the Ecore documentation luncher to the FC.  **/
+		@SuppressWarnings("unchecked")
+		Map<GenerationElement, FactoryComponent> fcs = (Map<GenerationElement, FactoryComponent>) ctx
+				.getValue(FcoreBuilderConstants.CURRENT_FCORE);
+		FactoryComponent fc = fcs.get((GenerationElement) (parameter.eContainer()));
+		Resource eResource = fc.eResource();
+		ResourceSet resourceSet = eResource.getResourceSet();
+		Activity activity = (Activity) resourceSet.getResource(DOC_GEN_ACTIVITY_MODEL_URI, true)
+				.getEObject(DOC_GEN_ACTIVITY_ID);
+		ProductionPlan pp = (ProductionPlan) fc.getOrchestration();
 		ActivityInvocationHelper.addInvocation(pp, activity, contract2type);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -165,6 +153,42 @@ public class DocgenExtension {
 	public void set_parameter(
 			org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.KitalphaDocumentationGeneration parameter) {
 		this.parameter = parameter;
+	}
+
+	protected java.lang.String copyright;
+
+	public void set_copyright(java.lang.String copyright) {
+		this.copyright = copyright;
+	}
+
+	protected java.lang.String logoPath;
+
+	public void set_logoPath(java.lang.String logoPath) {
+		this.logoPath = logoPath;
+	}
+
+	protected java.lang.String logoAlt;
+
+	public void set_logoAlt(java.lang.String logoAlt) {
+		this.logoAlt = logoAlt;
+	}
+
+	protected java.lang.String pluginName;
+
+	public void set_pluginName(java.lang.String pluginName) {
+		this.pluginName = pluginName;
+	}
+
+	protected java.lang.String outputDirectoryPath;
+
+	public void set_outputDirectoryPath(java.lang.String outputDirectoryPath) {
+		this.outputDirectoryPath = outputDirectoryPath;
+	}
+
+	protected java.lang.String ecorePath;
+
+	public void set_ecorePath(java.lang.String ecorePath) {
+		this.ecorePath = ecorePath;
 	}
 
 	public Map<String, Object> getParameters() {

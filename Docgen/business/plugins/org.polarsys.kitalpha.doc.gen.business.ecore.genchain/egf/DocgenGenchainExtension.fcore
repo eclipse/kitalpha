@@ -13,11 +13,17 @@
           <methods xmi:id="_UcpgMh1kEeSL-4aCmHxj2g" name="header" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgMh1kEeSL-4aCmHxj2g.pt"/>
           <methods xmi:id="_UcpgMx1kEeSL-4aCmHxj2g" name="init" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgMx1kEeSL-4aCmHxj2g.pt"/>
           <methods xmi:id="_UcpgNB1kEeSL-4aCmHxj2g" name="preCondition" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgNB1kEeSL-4aCmHxj2g.pt"/>
-          <methods xmi:id="_YDzqoR8FEeSwh70kRwdkOA" name="initializeBrandingData"
+          <methods xmi:id="_YDzqoR8FEeSwh70kRwdkOA" name="initializeContractsData"
               patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._YDzqoR8FEeSwh70kRwdkOA.pt"/>
           <methods xmi:id="_UcpgNR1kEeSL-4aCmHxj2g" name="body" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgNR1kEeSL-4aCmHxj2g.pt"/>
           <methods xmi:id="_UcpgNh1kEeSL-4aCmHxj2g" name="footer" patternFilePath="templates/pattern._UcpgMB1kEeSL-4aCmHxj2g/method._UcpgNh1kEeSL-4aCmHxj2g.pt"/>
           <parameters xmi:id="_WYe6wB1kEeSL-4aCmHxj2g" name="parameter" type="http://www.polarsys.org/kitalpha/docgen/ecore/genchain/1.0.0#//KitalphaDocumentationGeneration"/>
+          <variables xmi:id="_PARxENsNEeWExZizAMSqLg" name="copyright" type="java.lang.String"/>
+          <variables xmi:id="_PuoE0NsNEeWExZizAMSqLg" name="logoPath" type="java.lang.String"/>
+          <variables xmi:id="_QVqPoNsNEeWExZizAMSqLg" name="logoAlt" type="java.lang.String"/>
+          <variables xmi:id="_e6LpANsNEeWExZizAMSqLg" name="pluginName" type="java.lang.String"/>
+          <variables xmi:id="_f_K7INsNEeWExZizAMSqLg" name="outputDirectoryPath" type="java.lang.String"/>
+          <variables xmi:id="_g9KNYNsNEeWExZizAMSqLg" name="ecorePath" type="java.lang.String"/>
           <orchestration xmi:type="pattern:SuperCall" xmi:id="_UcpgNx1kEeSL-4aCmHxj2g"/>
           <orchestration xmi:type="pattern:MethodCall" xmi:id="_YR0RcB8FEeSwh70kRwdkOA"
               called="#_YDzqoR8FEeSwh70kRwdkOA"/>

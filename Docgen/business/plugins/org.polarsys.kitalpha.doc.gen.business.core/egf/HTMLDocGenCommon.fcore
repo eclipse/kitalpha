@@ -39,6 +39,18 @@
           name="echo.mode">
         <type xmi:type="types:TypeBoolean" xmi:id="_6No1sDk5EeKfl43CFVnoFw" value="false"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_WBOnENb2EeWvH7cKIyh8WQ"
+          name="logo.path" invocationContracts="#_ozVlw9b3EeWvH7cKIyh8WQ">
+        <type xmi:type="types:TypeString" xmi:id="_WBOnEdb2EeWvH7cKIyh8WQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_WEqVkNb2EeWvH7cKIyh8WQ"
+          name="logo.alt" invocationContracts="#_ozVlxNb3EeWvH7cKIyh8WQ">
+        <type xmi:type="types:TypeString" xmi:id="_WEqVkdb2EeWvH7cKIyh8WQ"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_WRnzgNb2EeWvH7cKIyh8WQ"
+          name="copyright" invocationContracts="#_ozVlwtb3EeWvH7cKIyh8WQ">
+        <type xmi:type="types:TypeString" xmi:id="_WRnzgdb2EeWvH7cKIyh8WQ"/>
+      </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_aR1dYdzzEd-Vzvs7Wt1vzQ">
       <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_a2fpoNzzEd-Vzvs7Wt1vzQ">
@@ -318,6 +330,17 @@
       </viewpoints>
     </viewpointContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_KiGZ8N33Ed-Qav1YnqlO9A">
+      <invocations xmi:id="_ozVlwNb3EeWvH7cKIyh8WQ" name="Initialize branding data"
+          invokedActivity="#_cdIeENb3EeWvH7cKIyh8WQ">
+        <invocationContractContainer xmi:id="_ozVlwdb3EeWvH7cKIyh8WQ">
+          <invocationContracts xmi:id="_ozVlwtb3EeWvH7cKIyh8WQ" factoryComponentContract="#_WRnzgNb2EeWvH7cKIyh8WQ"
+              invokedContract="#_iodX4db3EeWvH7cKIyh8WQ"/>
+          <invocationContracts xmi:id="_ozVlw9b3EeWvH7cKIyh8WQ" factoryComponentContract="#_WBOnENb2EeWvH7cKIyh8WQ"
+              invokedContract="#_iomh0Nb3EeWvH7cKIyh8WQ"/>
+          <invocationContracts xmi:id="_ozVlxNb3EeWvH7cKIyh8WQ" factoryComponentContract="#_WEqVkNb2EeWvH7cKIyh8WQ"
+              invokedContract="#_iomh0tb3EeWvH7cKIyh8WQ"/>
+        </invocationContractContainer>
+      </invocations>
       <invocations xmi:id="_6yUdEOdnEd-xZojMuIALSA" name="Create HTML output folder path"
           invokedActivity="#_HCYycOdmEd-xZojMuIALSA">
         <invocationContractContainer xmi:id="_6yUdEednEd-xZojMuIALSA">
@@ -797,6 +820,20 @@
       </invocations>
     </orchestration>
   </fcore:FactoryComponent>
+  <ftask:Task xmi:id="_cdIeENb3EeWvH7cKIyh8WQ" name="HTMLDocGen.Initialize.DocGen.Branding.Data"
+      kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.InitializeDocGenBrandingData">
+    <contractContainer xmi:id="_iodX4Nb3EeWvH7cKIyh8WQ">
+      <contracts xmi:id="_iodX4db3EeWvH7cKIyh8WQ" name="copyright">
+        <type xmi:type="types:TypeString" xmi:id="_iodX4tb3EeWvH7cKIyh8WQ"/>
+      </contracts>
+      <contracts xmi:id="_iomh0Nb3EeWvH7cKIyh8WQ" name="logo.path">
+        <type xmi:type="types:TypeString" xmi:id="_iomh0db3EeWvH7cKIyh8WQ"/>
+      </contracts>
+      <contracts xmi:id="_iomh0tb3EeWvH7cKIyh8WQ" name="logo.alt">
+        <type xmi:type="types:TypeString" xmi:id="_iomh09b3EeWvH7cKIyh8WQ"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
   <ftask:Task xmi:id="_DtsPoDk6EeKfl43CFVnoFw" name="HTMLDocGen.Init.Echo.Task" kind="java"
       implementation="org.polarsys.kitalpha.doc.gen.business.core.task.InitEchoTask">
     <contractContainer xmi:id="_Ij5woDk6EeKfl43CFVnoFw">
