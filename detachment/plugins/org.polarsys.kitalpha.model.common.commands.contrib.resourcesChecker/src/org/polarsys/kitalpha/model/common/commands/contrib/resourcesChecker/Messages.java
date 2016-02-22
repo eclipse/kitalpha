@@ -27,6 +27,8 @@ public class Messages extends NLS {
 	public static String RESOURCE_INACCESSIBLE;
 
 	public static String RESOURCE_READONLY;
+
+	public static String NO_RESOURCESET_ASSOCiATED_TO_RESOURCE;
 	
 	static {
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

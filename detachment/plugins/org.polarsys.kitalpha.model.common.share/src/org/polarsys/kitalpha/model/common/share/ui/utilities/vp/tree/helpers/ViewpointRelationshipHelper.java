@@ -36,6 +36,8 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 public class ViewpointRelationshipHelper {
 	
+	private static String PLATFORM_PLUGIN = "platform:/plugin";
+	
 	/**
 	 * Build the relationships between viewpoints given in resources
 	 * @param resources represents the viewpoints (Resource reuse)
@@ -117,9 +119,11 @@ public class ViewpointRelationshipHelper {
 		EList<EClass> superTypes = eClass.getESuperTypes();
 		if(superTypes != null && !superTypes.isEmpty()){
 			for(EClass type: superTypes){
-				String nsUri2 = type.getEPackage().getNsURI();
+				
+				EPackage ePackage = type.getEPackage();
+				String nsUri2 = ePackage != null? ePackage.getNsURI(): null;
 
-				if (!nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages))
+				if (nsUri2 != null && !nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages))
 					dependencies.get(nsUri).add(nsUri2);
 			}						
 		}
@@ -148,9 +152,10 @@ public class ViewpointRelationshipHelper {
 
 				EClassifier type = ref.getEType();
 
-				String nsUri2 = type.getEPackage().getNsURI();
+				EPackage ePackage = type.getEPackage();
+				String nsUri2 = ePackage != null? ePackage.getNsURI():null;
 
-				if (!nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages))
+				if (nsUri2 != null && !nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages))
 					dependencies.get(nsUri).add(nsUri2);
 			}
 		}
@@ -194,7 +199,7 @@ public class ViewpointRelationshipHelper {
 	private static Viewpoint getViewpointRootEObject(String path){
 		
 		if (checkString(path)){
-			URI uri = URI.createPlatformPluginURI(path, false);
+			URI uri = createPlatformPluginURI(path, false);
 			ResourceSet resourceSet = new ResourceSetImpl();
 			
 			return (Viewpoint) resourceSet.getEObject(uri, true);
@@ -233,5 +238,20 @@ public class ViewpointRelationshipHelper {
 			}
 		
 		return isCycleDetected;
+	}
+	
+	//Fix for URI creation with fragment
+	/**
+	 * 
+	 * @param pathName (format: /plugin-id/path)
+	 * @param encode
+	 * @return
+	 */
+	public static URI createPlatformPluginURI(String pathName, boolean encode){
+		if (pathName == null || pathName.isEmpty()){
+			throw new IllegalArgumentException("Could not create URI with null or empty path");
+		}
+		
+		return URI.createURI(PLATFORM_PLUGIN + pathName);
 	}
 }

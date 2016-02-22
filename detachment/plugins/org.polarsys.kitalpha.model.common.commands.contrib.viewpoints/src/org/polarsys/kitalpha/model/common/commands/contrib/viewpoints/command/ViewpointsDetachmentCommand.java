@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.viewpoints.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
-import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes.UsedAFViewpoints;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
@@ -99,7 +99,10 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 				for (EObject eObject2 : eObjectToRemove) 
 				{
 					monitor.subTask(Messages.bind(Messages.REMOVE_OBJECT, new Object[] { EcoreUtil.getURI(eObject2), eObject2.eClass().getEPackage().getNsURI() }));
-					EcoreUtil.delete(eObject2, false);
+					
+					EObject rootContainer = EcoreUtil.getRootContainer(eObject2);
+					if (!eObject2.equals(rootContainer))
+						EcoreUtil.delete(eObject2, false);
 				}
 			}
 		}

@@ -19,12 +19,13 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
+import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
@@ -45,55 +46,31 @@ public class ModelResourceCommand extends ModelCommand {
 	@Override
 	public void exec(Resource resource, IProgressMonitor monitor)
 			throws ModelCommandException {
-		
+
 		try {
 			RegistryElement regElt = Scrutineer.getRegistryElement(getModelAnalysisID());
-			
+
 			Collection<IScrutinize> scrutinzers = regElt.getFinders();
-			
-			final ResourceSet resourceSet = resource.getResourceSet();
-			
+
 			for (IScrutinize iScrutinize : scrutinzers) {
-				
+
 				IModelResources _modelResources = (IModelResources) iScrutinize.getAnalysisResult();
 				List<IModelResource> candidates = _modelResources.getAllDeletionCandidates();
-				
+
 				for (IModelResource iModelResource : candidates) {
-					
+
 					Collection<EObject> resourceEObjects = iModelResource.getModelObjects();
-					
+
 					if (iModelResource.getResourceState().equals(ModelResourceState.KnownResource)){
-						for (EObject eObject : resourceEObjects) {
-							ECrossReferenceAdapter adapter = getECrossReferencerAdapterFor(eObject);
-
-							if (adapter != null){
-								Collection<Setting> settings = adapter.getInverseReferences(eObject);
-
-								for (Setting setting : settings) {
-									handleSetting(setting, eObject);
-								}
-							}
-							EcoreUtil.delete(eObject);
-						}
+						knownResourcesDeletionEObjectAction(resourceEObjects);
 					} else {
-						Map<EObject, Collection<Setting>> settings = EcoreUtil.UnresolvedProxyCrossReferencer.find(resource.getResourceSet());
-						
-						for (EObject eObject : resourceEObjects) {
-							Collection<Setting> eObjectSettings = settings.get(eObject);
-							
-							if (eObjectSettings != null){
-								for (Setting setting : eObjectSettings) {
-									handleSetting(setting, eObject);
-								}
-							}
-							EcoreUtil.delete(eObject);
-						}
+						unknownResourcesDeletionEObjectAction(resource, resourceEObjects);
 					}
-					removeUnloadResourceFromResourceSet(resourceSet, iModelResource.getResourceURI());
+					removeUnloadResourceFromResourceSet(resource, iModelResource.getResourceURI());
 				}
 			}
-			
-			
+
+
 		} catch (ModelScrutinyException e) {
 			e.printStackTrace();
 		} catch (ModelResourceException e1) {
@@ -101,50 +78,149 @@ public class ModelResourceCommand extends ModelCommand {
 		}
 	}
 
-	private void removeUnloadResourceFromResourceSet(ResourceSet resourceSet, URI uri){
+	private void knownResourcesDeletionEObjectAction(Collection<EObject> resourceEObjects) {
+		for (EObject eObject : resourceEObjects) {
+			_knownResourcesDeletionEObjectAction(eObject);
+		}
+	}
+
+	private void unknownResourcesDeletionEObjectAction(Resource resource, Collection<EObject> resourceEObjects) {
+		Map<EObject, Collection<Setting>> settings = EcoreUtil.UnresolvedProxyCrossReferencer.find(resource.getResourceSet());
+
+		for (EObject eObject : resourceEObjects) {
+			Collection<Setting> eObjectSettings = settings.get(eObject);
+
+			if (eObjectSettings != null){
+				for (Setting setting : eObjectSettings) {
+					handleSetting(setting, eObject);
+				}
+			}
+			deleteEObject(eObject);
+		}
+	}
+
+	private void _knownResourcesDeletionEObjectAction(EObject eObject) {
+
+		ECrossReferenceAdapter adapter = getECrossReferencerAdapterFor(eObject);
+
+		if (adapter != null){
+			Collection<Setting> settings = adapter.getInverseReferences(eObject);
+
+			for (Setting setting : settings) {
+				handleSetting(setting, eObject);
+			}
+		}
+		deleteEObject(eObject);
+	}
+
+	private void deleteEObject(EObject eObject) {
+		EObject rootContainer = EcoreUtil.getRootContainer(eObject);
+
+		if (!eObject.equals(rootContainer)){
+			EcoreUtil.delete(eObject);
+		} else {
+			Resource eResource = eObject.eResource();
+			if (eResource != null)
+				eResource.getContents().remove(rootContainer);
+		}
+			
+	}
+
+	/**
+	 * @param resource is aird (primary resource)
+	 * @param uri
+	 */
+	private void removeUnloadResourceFromResourceSet(Resource resource, URI uri){
+
+		unReferenceResourceFromPrimaryResource(resource, uri);
+		
+		final ResourceSet resourceSet = resource.getResourceSet();
+
 		Resource toDelete = resourceSet.getResource(uri, false);
 		if (toDelete != null && toDelete.isLoaded()){
 			resourceSet.getResources().remove(toDelete);
 			toDelete.unload();
 			toDelete = null;
-		} else {
-			
 		}
 	}
+
+	private void unReferenceResourceFromPrimaryResource(Resource resource, URI uri) {
+		//Process only the representation for now
+		DAnalysis dAnalysis = findRootDAnalysis(resource);
+		
+		if (dAnalysis != null){
+			removeSemanticDescriptor(dAnalysis, uri);
+		}
+		
+	}
+
+	private DAnalysis findRootDAnalysis(Resource resource) {
+		EList<EObject> contents = resource.getContents();
+		
+		for (EObject eObject : contents) {
+			if (eObject instanceof DAnalysis)
+				return (DAnalysis)eObject;
+		}
+		
+		return null;
+	}
+
 	
+	private void removeSemanticDescriptor(DAnalysis analysis, URI uri){
+		EList<ResourceDescriptor> semanticResources = analysis.getSemanticResources();
+		ResourceDescriptor target = null;
+		
+		for (ResourceDescriptor resourceDescriptor : semanticResources) {
+			if (resourceDescriptor.getResourceURI().equals(uri)){
+				target = resourceDescriptor;
+				break;
+			}
+		}
+		analysis.getSemanticResources().remove(target);
+		
+		EList<DAnalysis> referencedAnalysis = analysis.getReferencedAnalysis();
+		
+		for (DAnalysis dAnalysis : referencedAnalysis) {
+			removeSemanticDescriptor(dAnalysis, uri);
+		}
+	}
+
 	/**
 	 * remove the feature
 	 * @param setting
 	 */
 	private void handleSetting(Setting setting, EObject eObject){
-		EObject target = setting.getEObject();
-		EStructuralFeature feature = setting.getEStructuralFeature();
-
-		if (feature.isChangeable() || feature.isUnsettable()){
-			EcoreUtil.remove(target, feature, eObject);
+		if (setting.getEStructuralFeature().isChangeable()){
+			if (!eObject.equals(EcoreUtil.getRootContainer(eObject))) {
+				EcoreUtil.remove(setting, eObject);
+			} else {
+				Resource eResource = eObject.eResource();
+				if (eResource != null){
+					eResource.getContents().remove(eObject);
+				}
+			}
 		}
-		
 	}
-	
-	
+
+
 	private ECrossReferenceAdapter getECrossReferencerAdapterFor(EObject eObject){
 		EList<Adapter> adapters = eObject.eAdapters();
-		
+
 		for (Adapter adapter : adapters) {
 			if (adapter instanceof ECrossReferenceAdapter)
 				return (ECrossReferenceAdapter)adapter;
 		}
-		
+
 		return installCrossReferencer(eObject);
 	}
 
-	
+
 	private ECrossReferenceAdapter installCrossReferencer(EObject eObject){
 		ECrossReferenceAdapter crossReferenceAdapter = new ECrossReferenceAdapter();
 
 		eObject.eAdapters().add(crossReferenceAdapter);
 
 		return crossReferenceAdapter;
-		
+
 	}
 }

@@ -15,12 +15,14 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointRelationshipHelper;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointsSearcherHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
@@ -247,7 +249,7 @@ public class ViewpointTreeBuilder {
 	private Viewpoint getViewpointRootEObject(String path){
 		
 		if (checkString(path)){
-			URI uri = URI.createPlatformPluginURI(path, false);
+			URI uri = ViewpointRelationshipHelper.createPlatformPluginURI(path, false);
 			ResourceSet resourceSet = new ResourceSetImpl();
 			
 			return (Viewpoint) resourceSet.getEObject(uri, true);
