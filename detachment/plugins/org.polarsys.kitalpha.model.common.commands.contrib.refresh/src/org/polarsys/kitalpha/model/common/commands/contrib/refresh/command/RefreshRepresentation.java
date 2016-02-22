@@ -10,7 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.commands.contrib.refresh.command;
 
-import java.io.IOException;
 import java.util.Collection;
 
 import org.apache.log4j.Logger;
@@ -45,11 +44,11 @@ public class RefreshRepresentation extends ModelCommand {
 			resource.unload();
 		}
 		
-		try {
-			resource.load(null);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			resource.load(null);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 		
 		Session session = SessionManager.INSTANCE.getSession(resource.getURI(), subMonitor);
 		session.open(subMonitor);

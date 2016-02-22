@@ -11,10 +11,15 @@
 package org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.command;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
@@ -34,6 +39,7 @@ import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyExcepti
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDMapping;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDRepresentationContainer;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidEReferences;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidFilterDescription;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidLayer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.MissingEPackage;
@@ -149,6 +155,22 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					}
 				}
 				
+				//Invalid EReferences
+				if (finder instanceof InvalidEReferences){
+					monitor.subTask("Clean Invalid EReferences");
+
+					InvalidEReferences invalidEReferences = (InvalidEReferences)finder;
+
+					for (Entry<EObject, List<EReference>> entry : invalidEReferences.getAnalysisResult().entrySet()) {
+						EObject key = entry.getKey();
+						List<EReference> eReferences = entry.getValue();
+						
+						for (EReference r : eReferences) {
+							clean(key, r);
+						}
+					}
+				}
+
 				
 			}
 			
@@ -159,6 +181,25 @@ public class UnknownreferencesCleaner extends ModelCommand {
 	
 		monitor.worked(1);
 		monitor.done();
+	}
+	
+	private void clean(EObject key, EReference r) {
+		Object value = key.eGet(r);
+		try {
+			EcoreUtil.remove(key, r, value);
+		} catch (Exception e){
+			//If we can't unset the reference, delete the holding
+			//object.
+			//XXX May be do it recursively until the success of clean operation
+			try {
+				EcoreUtil.delete(key);
+			} catch (Exception e2){
+				EReference eContainmentFeature = key.eContainmentFeature();
+				if (eContainmentFeature != null && key.eContainer() != null && !key.equals(EcoreUtil.getRootContainer(key))){
+					EcoreUtil.remove(key.eContainer(), eContainmentFeature, key);
+				}
+			}
+		}
 	}
 
 }

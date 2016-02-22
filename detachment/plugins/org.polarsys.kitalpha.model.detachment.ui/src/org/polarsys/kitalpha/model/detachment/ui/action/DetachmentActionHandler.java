@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
@@ -82,6 +83,10 @@ public class DetachmentActionHandler extends AbstractHandler {
 						monitor.beginTask("Analyzing of resource: " + airdIResource.getProjectRelativePath(), 2);
 						monitor.subTask("Loading : " + airdIResource.getProjectRelativePath());
 						Resource resource = (new LoadResource(airdIResource)).getResource();
+						
+						ECrossReferenceAdapter adapter = new ECrossReferenceAdapter();
+						resource.eAdapters().add(adapter);
+						
 						monitor.worked(1);
 
 						monitor.subTask("Scrutinizing : " + resource.getURI());
