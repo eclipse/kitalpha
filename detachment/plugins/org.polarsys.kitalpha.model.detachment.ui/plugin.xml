@@ -104,7 +104,7 @@ Contributors:
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="popup:popup:org.eclipse.ui.popup.any?after=additions">
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="org.polarsys.kitalpha.model.detachment.ui.command.a"
                icon="icons/detach_icon.png"

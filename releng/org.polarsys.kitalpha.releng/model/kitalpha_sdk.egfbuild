@@ -12,7 +12,7 @@
     <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="${eclipse.download.prefix}/releases/${eclipse_version}"/>
     <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="${eclipse.download.prefix}/modeling/emft/eef/updates/milestones/1.5/S201501090502/"/>
     <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="${eclipse.download.prefix}/modeling/m2t/acceleo/updates/releases/3.4"/>
-    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.0.x/luna"/>
+    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.0.x/mars"/>
     <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.5.1/emf-diffmerge-site/"/>
     <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.5.1/edm-patterns-site/"/>
     <properties xmi:id="_tAs5kCO3EeWTOe3dES9kkg" key="amalgam.repo.url" value="http://download.eclipse.org/modeling/amalgam/updates/nightly/1.7.x/mars/"/>
@@ -179,7 +179,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_yWFRMDY9EeOP8MSofnrGNA" component="_wH7XkDY9EeOP8MSofnrGNA"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_C9QF4I5xEeORY9jpJq94Og" name="emde feature" id="TP_mars" profile="SDKProfile" resultSteps="_yWFRMDY9EeOP8MSofnrGNA" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_RgjhUQdREeSIYrPrCxORuQ" name="diagrams" description="" enabled="false">
+  <jobs xmi:id="_RgjhUQdREeSIYrPrCxORuQ" name="diagrams" description="">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_ZB5y4AdREeSIYrPrCxORuQ" name="diagrams">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8BGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="diagrams/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_PQQe8RGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="diagrams/features"/>
@@ -190,7 +190,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_ZB5y5QdREeSIYrPrCxORuQ" component="_ZB5y5AdREeSIYrPrCxORuQ"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_ZB5y5gdREeSIYrPrCxORuQ" name="diagrams representation feature" id="TP_mars" profile="SDKProfile" resultSteps="_ZB5y5QdREeSIYrPrCxORuQ" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_VoTqsCL5EeSSoPlV7ILP2g" name="docgen" enabled="false">
+  <jobs xmi:id="_VoTqsCL5EeSSoPlV7ILP2g" name="docgen">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_YByqkCL5EeSSoPlV7ILP2g" name="docgen">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkSL5EeSSoPlV7ILP2g" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="Docgen/business/features"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_YByqkiL5EeSSoPlV7ILP2g" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="Docgen/business/plugins"/>
@@ -201,7 +201,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_n1bicCL5EeSSoPlV7ILP2g" component="_YByqlSL5EeSSoPlV7ILP2g"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_q9jxACL5EeSSoPlV7ILP2g" name="docgen features" id="TP_mars" profile="SDKProfile" resultSteps="_n1bicCL5EeSSoPlV7ILP2g" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad" enabled="false">
+  <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
@@ -212,7 +212,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_UtSA4EVSEeOxuMV9a71i9w" description="" component="_ITgn0EVSEeOxuMV9a71i9w"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" id="TP_mars" profile="SDKProfile" resultSteps="_UtSA4EVSEeOxuMV9a71i9w" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_AtCFgH60EeOkCccPIIQ2Yw" name="ad dsl" enabled="false">
+  <jobs xmi:id="_AtCFgH60EeOkCccPIIQ2Yw" name="ad dsl">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_Ef56MH60EeOkCccPIIQ2Yw" name="ad dsl">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0BGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_TXYh0RGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/features"/>
@@ -225,7 +225,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_9w00UJQCEeODqo9Nw0Mw6Q" component="_5Y3VkJQCEeODqo9Nw0Mw6Q"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_VjH-YI59EeORY9jpJq94Og" name="addsl feature" id="TP_mars" profile="SDKProfile" resultSteps="_oWQScH60EeOkCccPIIQ2Yw _9w00UJQCEeODqo9Nw0Mw6Q" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_iWVjgK3VEeSJ-MyosVUkEw" name="examples" enabled="false">
+  <jobs xmi:id="_iWVjgK3VEeSJ-MyosVUkEw" name="examples">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_iWVjga3VEeSJ-MyosVUkEw" name="examples">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjgq3VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/examples/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_iWVjg63VEeSJ-MyosVUkEw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/examples/features"/>
@@ -246,7 +246,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_MaI8gK3WEeSJ-MyosVUkEw" description="" component="_HmdLEK3WEeSJ-MyosVUkEw"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_NI444K3WEeSJ-MyosVUkEw" component="_KfKdkK3WEeSJ-MyosVUkEw"/>
   </jobs>
-  <jobs xmi:id="_fuqZkGzmEeWQLIDk8nN8SA" name="Component sample" enabled="false">
+  <jobs xmi:id="_fuqZkGzmEeWQLIDk8nN8SA" name="Component sample">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_fuqZkWzmEeWQLIDk8nN8SA">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fuqZkmzmEeWQLIDk8nN8SA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/examples/features"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fuqZk2zmEeWQLIDk8nN8SA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/dsl/examples/plugins"/>
@@ -271,7 +271,7 @@
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_fuqZpGzmEeWQLIDk8nN8SA" component="_fuqZo2zmEeWQLIDk8nN8SA"/>
   </jobs>
-  <jobs xmi:id="_y6h-gHiMEeW0KskE0wzbMw" name="Composer Component sample" enabled="false">
+  <jobs xmi:id="_y6h-gHiMEeW0KskE0wzbMw" name="Composer Component sample">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_y6h-gXiMEeW0KskE0wzbMw">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y6h-gniMEeW0KskE0wzbMw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/features"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y6h-g3iMEeW0KskE0wzbMw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="composer/examples/plugins"/>
@@ -296,7 +296,7 @@
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_y6h-lHiMEeW0KskE0wzbMw" component="_y6h-k3iMEeW0KskE0wzbMw"/>
   </jobs>
-  <jobs xmi:id="_y6h-lXiMEeW0KskE0wzbMw" name="Transposer Component sample" enabled="false">
+  <jobs xmi:id="_y6h-lXiMEeW0KskE0wzbMw" name="Transposer Component sample">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_y6h-lniMEeW0KskE0wzbMw">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y6h-l3iMEeW0KskE0wzbMw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/examples/features"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_y6h-mHiMEeW0KskE0wzbMw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="transposer/examples/plugins"/>
@@ -321,7 +321,7 @@
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_y6h-qXiMEeW0KskE0wzbMw" component="_y6h-qHiMEeW0KskE0wzbMw"/>
   </jobs>
-  <jobs xmi:id="_m9Jf4fxHEeOQxJjwrfaNsA" name="product" enabled="false">
+  <jobs xmi:id="_m9Jf4fxHEeOQxJjwrfaNsA" name="product">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_qsm0MPxHEeOQxJjwrfaNsA">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XkY4UBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/features"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_gRkooD5GEeSicsfEyxBYkg" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/plugins"/>
@@ -333,10 +333,10 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_CYMfwPxIEeOQxJjwrfaNsA" component="_4ioI0PxHEeOQxJjwrfaNsA"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_ScvrcDHpEeW5Te4c0tZ9OQ" component="_Qo_14DHpEeW5Te4c0tZ9OQ"/>
   </jobs>
-  <jobs xmi:id="_32V0wDY9EeOP8MSofnrGNA" name="All in one" enabled="false">
+  <jobs xmi:id="_32V0wDY9EeOP8MSofnrGNA" name="All in one">
     <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha_sdk" id="kitalpha_sdk" publishSteps="_9w00UJQCEeODqo9Nw0Mw6Q _UtSA4EVSEeOxuMV9a71i9w _oWQScH60EeOkCccPIIQ2Yw _yWFRMDY9EeOP8MSofnrGNA _CYMfwPxIEeOQxJjwrfaNsA _n1bicCL5EeSSoPlV7ILP2g _J12CcD5GEeSicsfEyxBYkg _MaI8gK3WEeSJ-MyosVUkEw _NI444K3WEeSJ-MyosVUkEw _iWVjia3VEeSJ-MyosVUkEw _ScvrcDHpEeW5Te4c0tZ9OQ _ZB5y5QdREeSIYrPrCxORuQ _fuqZpGzmEeWQLIDk8nN8SA _y6h-lHiMEeW0KskE0wzbMw _y6h-qXiMEeW0KskE0wzbMw"/>
   </jobs>
-  <jobs xmi:id="_5jxR4JKWEeSPapwxSH2ZqQ" name="platforms" enabled="false">
+  <jobs xmi:id="_5jxR4JKWEeSPapwxSH2ZqQ" name="platforms">
     <steps xsi:type="buildcore:StepContainer" xmi:id="_KLyusJKEEeSPapwxSH2ZqQ" name="TP_win32-win32-x86">
       <properties xmi:id="_KLyusZKEEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86" type="INLINED"/>
       <properties xmi:id="_0awbkJKUEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
