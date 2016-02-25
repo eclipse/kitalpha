@@ -21,6 +21,18 @@
         name="pattern.substitutions" invocationContracts="#_RFGXAlwAEeONz-cAZOOGtw">
       <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_78Q8EFv_EeONz-cAZOOGtw"/>
     </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_qeaMENsLEeWExZizAMSqLg"
+        name="copyright" invocationContracts="#_roUacNsLEeWExZizAMSqLg">
+      <type xmi:type="types:TypeString" xmi:id="_qeaMEdsLEeWExZizAMSqLg"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_qeaMEtsLEeWExZizAMSqLg"
+        name="logo.path" invocationContracts="#_tR940NsLEeWExZizAMSqLg">
+      <type xmi:type="types:TypeString" xmi:id="_qeaME9sLEeWExZizAMSqLg"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_qeaMFNsLEeWExZizAMSqLg"
+        name="logo.alt" invocationContracts="#_todtQNsLEeWExZizAMSqLg">
+      <type xmi:type="types:TypeString" xmi:id="_qeaMFdsLEeWExZizAMSqLg"/>
+    </contracts>
   </contractContainer>
   <viewpointContainer xmi:id="_w3eOMN6kEeC7p7H7gvnXVA">
     <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_K6E0cN6lEeC7p7H7gvnXVA">
@@ -150,6 +162,12 @@
         </invocationContracts>
         <invocationContracts xmi:id="_H6mAgOmmEeCJO-hJMwj6TA" sourceInvocationContract="#_RFGXBFwAEeONz-cAZOOGtw"
             invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_67_owt3rEd-Qav1YnqlO9A"/>
+        <invocationContracts xmi:id="_roUacNsLEeWExZizAMSqLg" factoryComponentContract="#_qeaMENsLEeWExZizAMSqLg"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_WRnzgNb2EeWvH7cKIyh8WQ"/>
+        <invocationContracts xmi:id="_tR940NsLEeWExZizAMSqLg" factoryComponentContract="#_qeaMEtsLEeWExZizAMSqLg"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_WBOnENb2EeWvH7cKIyh8WQ"/>
+        <invocationContracts xmi:id="_todtQNsLEeWExZizAMSqLg" factoryComponentContract="#_qeaMFNsLEeWExZizAMSqLg"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_WEqVkNb2EeWvH7cKIyh8WQ"/>
       </invocationContractContainer>
     </invocations>
   </orchestration>

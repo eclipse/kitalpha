@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014 - 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,10 +40,19 @@ public class EcoreDocGenLauncherTask implements ITaskProduction {
 	private static final URI DEFAULT_ECORE_LAUNCHER_URI = 
 			URI.createURI("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore#_oW26AYaqEeCqVPyWxeH-sg");
 	
+	
+	private String copyright;
+	private String logoPath;
+	private String logoAlt;
+	
 	public void preExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
 		ecoreFilePath = productionContext.getInputValue("ecoreFilePath", String.class);
 		outputDirectoryPath = productionContext.getInputValue("outputDirectoryPath", String.class);
 		patternSub = productionContext.getInputValue("pattern.substitutions", TypePatternSubstitution.class);
+		
+		copyright = productionContext.getInputValue(GenDocCommand.COPYRIGHT_CONTRACT_NAME, String.class);
+		logoPath = productionContext.getInputValue(GenDocCommand.LOGO_PATH_CONTRACT_NAME, String.class);
+		logoAlt = productionContext.getInputValue(GenDocCommand.LOGO_ALT_CONTRACT_NAME, String.class);
 	}
 
 	public void doExecute(ITaskProductionContext productionContext,	IProgressMonitor monitor) throws InvocationException {
@@ -59,6 +68,9 @@ public class EcoreDocGenLauncherTask implements ITaskProduction {
 		Resource semanticResource = resourceSet.getResource(ecoreURI, true);
 		Activity launcher = InvokeActivityHelper.getActivity(DEFAULT_ECORE_LAUNCHER_URI);
 		GenDocCommand command = new GenDocCommand(launcher, outputDirectoryPath, semanticResource, patternSub, monitor);
+		command.setCopyright(copyright);
+		command.setLogoAlt(logoAlt);
+		command.setLogoPath(logoPath);
 		command.execute(monitor);
 	}
 

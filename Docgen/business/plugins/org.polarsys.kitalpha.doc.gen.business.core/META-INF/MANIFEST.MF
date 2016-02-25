@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.doc.gen.business.core;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.doc.gen.business.core.Activator
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui.ide;bundle-version="3.8.2",
@@ -28,6 +28,7 @@ Export-Package: org.polarsys.kitalpha.doc.gen.business.core,
  org.polarsys.kitalpha.doc.gen.business.core.generic,
  org.polarsys.kitalpha.doc.gen.business.core.helper,
  org.polarsys.kitalpha.doc.gen.business.core.index,
+ org.polarsys.kitalpha.doc.gen.business.core.messages,
  org.polarsys.kitalpha.doc.gen.business.core.reporter,
  org.polarsys.kitalpha.doc.gen.business.core.scope,
  org.polarsys.kitalpha.doc.gen.business.core.searchIndex,

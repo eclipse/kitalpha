@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014 - 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,6 +57,17 @@ public class GenDocCommand {
 	private GenerateDiagramsService generateDiagramService;
 	
 	private final IProgressMonitor progressMonitor ;
+	
+	private String copyright;
+	private String logoPath;
+	private String logoAlt;
+	
+	private static final String PROJECT_CONTRACT_NAME = "projectName";
+	private static final String OUTPUT_FOLDER_CONTRACT_NAME = "outputFolder";
+	
+	public static final String COPYRIGHT_CONTRACT_NAME = "copyright";
+	public static final String LOGO_PATH_CONTRACT_NAME = "logo.path";
+	public static final String LOGO_ALT_CONTRACT_NAME = "logo.alt";
 
 	public GenDocCommand(Activity launcher, final String folderPath, final Resource resource, TypePatternSubstitution substitutions, IProgressMonitor monitor) {
 		this.launcher = launcher;
@@ -64,6 +75,30 @@ public class GenDocCommand {
 		this.resource = resource;
 		this.patternSubstitutions = substitutions;
 		this.progressMonitor = monitor;
+	}
+
+	/**
+	 * Copyright setter
+	 * @param copyright the copyright value
+	 */
+	public void setCopyright(String copyright) {
+		this.copyright = copyright;
+	}
+
+	/**
+	 * Logo path setter
+	 * @param copyright the Logo path value
+	 */
+	public void setLogoPath(String logoPath) {
+		this.logoPath = logoPath;
+	}
+
+	/**
+	 * Logo alternative text setter
+	 * @param copyright the Logo alternative text value
+	 */
+	public void setLogoAlt(String logoAlt) {
+		this.logoAlt = logoAlt;
 	}
 
 	public void execute(IProgressMonitor progressMonitor) {
@@ -104,8 +139,13 @@ public class GenDocCommand {
 		if (launcher instanceof FactoryComponent) 
 		{
 			final FactoryComponent factoryComponent = (FactoryComponent) launcher;
-			setContract(factoryComponent, "projectName", getProjectName(folderPath));
-			setContract(factoryComponent, "outputFolder", getOutputFolder(folderPath) + "/output");
+			setContract(factoryComponent, PROJECT_CONTRACT_NAME, getProjectName(folderPath), true);
+			setContract(factoryComponent, OUTPUT_FOLDER_CONTRACT_NAME, getOutputFolder(folderPath) + "/output", true);
+			
+			setContract(factoryComponent, COPYRIGHT_CONTRACT_NAME, copyright, false);
+			setContract(factoryComponent, LOGO_ALT_CONTRACT_NAME, logoAlt, false);
+			setContract(factoryComponent, LOGO_PATH_CONTRACT_NAME, logoPath, false);
+			
 			setDomain(factoryComponent, resource.getURI());
 			if (null != patternSubstitutions)
 				setPatternsubstitutionContract(factoryComponent, "pattern.substitutions", patternSubstitutions);
@@ -207,6 +247,38 @@ public class GenDocCommand {
 		}
 	}
 
+	/**
+	 * This contract value setter will checks if
+	 * <ul>
+	 * 	<li> The contract exists: If it doesn't exists then raise an exception. </li>
+	 * 	<li> The value is not null: If the <code>value == null</code> and if <code>mandatory == true</code> then raise an exception. </li>
+	 * </ul> 
+	 * @param factoryComponent The {@link Activity} to run
+	 * @param contractName the name of the contract
+	 * @param value the value to set to the contract
+	 * @param mandatory <code>True</code> means that the contract is defined as mandatory.
+	 */
+	private void setContract(FactoryComponent factoryComponent, String contractName, String value, boolean mandatory) {
+		if (contractName != null && ! contractName.isEmpty())
+		{
+			Contract invokedContract = factoryComponent.getContract(contractName);
+			if (invokedContract == null)
+				throw new RuntimeException("[GenDocCommand] The contract " +contractName+ " doesn't exists");
+		}
+		
+		if (mandatory)
+		{
+			if (value != null)
+				setContract(factoryComponent, contractName, value);
+			else
+				throw new RuntimeException("[GenDocCommand] The contract " + contractName + " is mandatory but the value is null");
+		}
+		else
+		{
+			setContract(factoryComponent, contractName, value);
+		}
+	}
+	
 	private void setContract(FactoryComponent factoryComponent, String contractName, String value) {
 		Contract invokedContract = factoryComponent.getContract(contractName);
 		Type type = invokedContract.getType();
@@ -215,7 +287,6 @@ public class GenDocCommand {
 			TypeString typeString = (TypeString) type;
 			typeString.setValue(value);
 		}
-
 	}
 
 	private String getOutputFolder(String containerName) {
