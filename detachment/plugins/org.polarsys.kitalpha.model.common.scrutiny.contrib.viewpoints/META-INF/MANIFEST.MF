@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.model.common.scrutiny;visibility:=reexport,
  org.polarsys.kitalpha.resourcereuse;visibility:=reexport,
  org.polarsys.kitalpha.ad.af.coredomain.model;visibility:=reexport,
- org.polarsys.kitalpha.model.common.share,
+ org.polarsys.kitalpha.model.common.share;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.integrationdomain.model;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

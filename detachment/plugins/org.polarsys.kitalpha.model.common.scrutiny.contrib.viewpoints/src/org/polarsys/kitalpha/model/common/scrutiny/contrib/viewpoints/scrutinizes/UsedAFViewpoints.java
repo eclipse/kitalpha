@@ -92,4 +92,8 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 		container = null;
 	}
 
+	public Set<String> getUsedViewpoints() {
+		return new HashSet<String>(usedViewpoints);
+	}
+
 }
