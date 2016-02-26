@@ -665,6 +665,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 		// Register this editor for ExtendedModel state
 		//
+		ModelExtensionHelper.getInstance(getEditingDomain().getResourceSet()).addListener(this);
 	}
 
 	/**
