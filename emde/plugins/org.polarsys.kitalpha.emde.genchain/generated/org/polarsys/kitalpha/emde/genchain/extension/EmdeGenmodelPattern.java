@@ -45,6 +45,7 @@ public class EmdeGenmodelPattern {
 	public EmdeGenmodelPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -110,16 +111,13 @@ public class EmdeGenmodelPattern {
 				if (!project.isOpen())
 					project.open(null);
 				URI ecoreURI = URI.createPlatformResourceURI(ecorePath.toString(), false);
-				importer = EmdeEcoreImporterHelper.createEcoreImporter(genmodelPath.removeLastSegments(1), ecoreURI,
-						parameter);
+				importer = EmdeEcoreImporterHelper.createEcoreImporter(genmodelPath.removeLastSegments(1), ecoreURI, parameter);
 			}
 			genmodelURI = URI.createPlatformResourceURI(genmodelPath.toString(), false);
-			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(),
-					genmodelURI);
+			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(), genmodelURI);
 		} else {
 			URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), false);
-			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(),
-					uri);
+			((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).put(parameter.getModelPath(), uri);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-package org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers;
+package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -37,7 +37,6 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
 public class ViewpointRelationshipHelper {
 	
 	private static String PLATFORM_PLUGIN = "platform:/plugin";
-	
 	/**
 	 * Build the relationships between viewpoints given in resources
 	 * @param resources represents the viewpoints (Resource reuse)
@@ -119,7 +118,6 @@ public class ViewpointRelationshipHelper {
 		EList<EClass> superTypes = eClass.getESuperTypes();
 		if(superTypes != null && !superTypes.isEmpty()){
 			for(EClass type: superTypes){
-				
 				EPackage ePackage = type.getEPackage();
 				String nsUri2 = ePackage != null? ePackage.getNsURI(): null;
 
@@ -239,7 +237,6 @@ public class ViewpointRelationshipHelper {
 		
 		return isCycleDetected;
 	}
-	
 	//Fix for URI creation with fragment
 	/**
 	 * 
@@ -254,4 +251,5 @@ public class ViewpointRelationshipHelper {
 		
 		return URI.createURI(PLATFORM_PLUGIN + pathName);
 	}
+
 }

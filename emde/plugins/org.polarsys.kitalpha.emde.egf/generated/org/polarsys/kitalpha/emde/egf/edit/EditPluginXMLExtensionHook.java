@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import java.util.*;
@@ -13,6 +13,7 @@ public class EditPluginXMLExtensionHook extends org.polarsys.kitalpha.emde.egf.P
 	public EditPluginXMLExtensionHook() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
