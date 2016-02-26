@@ -67,8 +67,12 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 
 /**
  * @author Thomas Guiu
@@ -164,7 +168,8 @@ public class ViewpointManagerView extends ViewPart {
 			IResourceDelta delta = event.getDelta();
 			IResource resource = event.getResource();
 			int type = event.getType();
-			if ((type == IResourceChangeEvent.PRE_DELETE || type == IResourceChangeEvent.PRE_CLOSE) && resource instanceof IProject)
+			if ((type == IResourceChangeEvent.PRE_DELETE || type == IResourceChangeEvent.PRE_CLOSE)
+					&& resource instanceof IProject)
 				performInit();
 			else if (type == IResourceChangeEvent.POST_CHANGE) {
 				for (IResourceDelta childDelta : delta.getAffectedChildren()) {
@@ -194,54 +199,57 @@ public class ViewpointManagerView extends ViewPart {
 		init();
 		ViewpointManager.addOverallListener(vpListener);
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(wsListener);
-		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().addSelectionListener(new ISelectionListener() {
+		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService()
+				.addSelectionListener(new ISelectionListener() {
 
-			@Override
-			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-				context = null;
-				if (part instanceof IEditingDomainProvider) {
-					IEditingDomainProvider prov = (IEditingDomainProvider) part;
-					EditingDomain editingDomain = prov.getEditingDomain();
-					if (editingDomain != null)
-						context = editingDomain.getResourceSet();
-				} 
-				if (context == null) {
-					EditingDomain obj = part.getAdapter(EditingDomain.class);
-					if (obj != null) {
-						context = obj.getResourceSet();
+					@Override
+					public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+						context = null;
+						if (part instanceof IEditingDomainProvider) {
+							IEditingDomainProvider prov = (IEditingDomainProvider) part;
+							EditingDomain editingDomain = prov.getEditingDomain();
+							if (editingDomain != null)
+								context = editingDomain.getResourceSet();
+						}
+						if (context == null) {
+							EditingDomain obj = part.getAdapter(EditingDomain.class);
+							if (obj != null) {
+								context = obj.getResourceSet();
+							}
+						}
+						if (context == null)
+							analyseSelection(selection);
+						
+						if (!label.isDisposed())
+							label.setText(computeLabel());
+						if (!viewer.getControl().isDisposed()) {
+							updateButtons(null);
+							labelProvider.setContext(context);
+							viewer.refresh();
+						}
 					}
-				}
-				if (context == null)
-					analyseSelection(selection);
-					
-					label.setText(computeLabel());
-				updateButtons(null);
-				
-				labelProvider.setContext(context);
-				viewer.refresh();
-			}
 
-			private String computeLabel()
-			{
-				if (context == null)
-					return "";
-				if (context.getResources().isEmpty())
-					return "";
-				String segment = context.getResources().get(0).getURI().segment(1);
-				return "Project "+segment;
-			}
-			private void analyseSelection(ISelection selection) {
+					private String computeLabel() {
+						if (context == null)
+							return "";
+						if (context.getResources().isEmpty())
+							return "";
+						String segment = context.getResources().get(0).getURI().segment(1);
+						return "Project " + segment;
+					}
 
-				if (selection.isEmpty()) 
-					return;
-				if (selection instanceof TreeSelection) {
-					Object[] selected = ((TreeSelection) selection).toArray();
-					if (selected[0] instanceof EObject)
-						context = ((EObject) selected[0]).eResource().getResourceSet();
-				}
-			}
+					private void analyseSelection(ISelection selection) {
 
-		});
+						if (selection.isEmpty())
+							return;
+						if (selection instanceof TreeSelection) {
+							Object[] selected = ((TreeSelection) selection).toArray();
+							if (selected[0] instanceof EObject)
+								context = ((EObject) selected[0]).eResource().getResourceSet();
+						}
+					}
+
+				});
 	}
 
 	public void createViewer(final Composite composite) {
@@ -318,8 +326,21 @@ public class ViewpointManagerView extends ViewPart {
 	}
 
 	private void init() {
-		viewer.setInput(ViewpointManager.getAvailableViewpoints());
-		updateButtons(null);
+
+		new Job("Refresh ViewpointManager view") {
+
+			@Override
+			protected IStatus run(IProgressMonitor monitor) {
+				final Resource[] availableViewpoints = ViewpointManager.getAvailableViewpoints();
+				getSite().getShell().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						viewer.setInput(availableViewpoints);
+						updateButtons(null);
+					}
+				});
+				return Status.OK_STATUS;
+			}
+		}.schedule();
 	}
 
 	private void hookDoubleClickAction() {
@@ -448,11 +469,13 @@ public class ViewpointManagerView extends ViewPart {
 				if (!vpMgr.isUsed(res.getId()))
 					return;
 				try {
-					if (!MessageDialog.openQuestion(getSite().getShell(), "Stop using viewpoint " + res.getName(), "Viewpoint Detachment is required. Close model and Proceed ?"))
+					if (!MessageDialog.openQuestion(getSite().getShell(), "Stop using viewpoint " + res.getName(),
+							"Viewpoint Detachment is required. Close model and Proceed ?"))
 						return;
 					// Launch detach editor
 					org.eclipse.emf.ecore.resource.Resource resource = context.getResources().get(0);
-					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(resource.getURI().toPlatformString(true)));
+					IFile file = ResourcesPlugin.getWorkspace().getRoot()
+							.getFile(new Path(resource.getURI().toPlatformString(true)));
 					DetachmentHelper.openEditor(file, new NullProgressMonitor());
 
 					// check detachement has been done.
