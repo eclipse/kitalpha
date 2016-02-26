@@ -983,6 +983,9 @@ public class <%=genPackage.getEditorClassName()%>
 		// Create the editing domain with a special command stack.
 		//
 		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new <%=_HashMapOfResourceToBoolean%>());
+		// Register this editor for ExtendedModel state
+		//
+		<%=genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper")%>.getInstance(getEditingDomain().getResourceSet()).addListener(this);		
 	}
 
 	/**

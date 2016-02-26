@@ -876,6 +876,9 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		// Create the editing domain with a special command stack.
 		//
 		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
+		// Register this editor for ExtendedModel state
+		//
+		ModelExtensionHelper.getInstance(getEditingDomain().getResourceSet()).addListener(this);
 	}
 
 	/**
