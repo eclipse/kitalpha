@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-
 import org.polarsys.kitalpha.transposer.analyzer.graph.Edge;
 import org.polarsys.kitalpha.transposer.analyzer.graph.Graph;
 import org.polarsys.kitalpha.transposer.analyzer.graph.Vertex;
@@ -194,7 +194,7 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 	}
 
 	/**
-	 * @see org.polarsys.kitalpha.ccm.scheduler.scheduler.AbstractCycleWiseScheduler#getBackTracks()
+	 * @see org.polarsys.kitalpha.transposer.scheduler.scheduler.AbstractCycleWiseScheduler#getBackTracks()
 	 */
 	@Override
 	public Set<Edge<?>> getBackTracks() {
@@ -209,7 +209,7 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 	}
 
 	/**
-	 * @see org.polarsys.kitalpha.ccm.scheduler.scheduler.AbstractCycleWiseScheduler#getNotVisited()
+	 * @see org.polarsys.kitalpha.transposer.scheduler.scheduler.AbstractCycleWiseScheduler#getNotVisited()
 	 */
 	@Override
 	public Set<Vertex<?>> getNotVisited() {
@@ -217,7 +217,7 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 	}
 
 	/**
-	 * @see org.polarsys.kitalpha.ccm.scheduler.scheduler.AbstractCycleWiseScheduler#getScheduleResult()
+	 * @see org.polarsys.kitalpha.transposer.scheduler.scheduler.AbstractCycleWiseScheduler#getScheduleResult()
 	 */
 	@Override
 	public List<ITransposerTask<Vertex<?>>> getScheduleResult() {
@@ -309,7 +309,7 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 	 * initialiseur
 	 */
 	private void init() {
-		_visited = new HashSet<Vertex<?>>();
+		_visited = new LinkedHashSet<Vertex<?>>();
 		_notVisited = new HashSet<Vertex<?>>();
 		_backTracks = new HashSet<Edge<?>>();
 		_foundCycles = new HashSet<LinkedList<Edge<?>>>();
@@ -349,7 +349,7 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 	}
 
 	/**
-	 * @see org.polarsys.kitalpha.ccm.scheduler.scheduler.AbstractCycleWiseScheduler#schedule()
+	 * @see org.polarsys.kitalpha.transposer.scheduler.scheduler.AbstractCycleWiseScheduler#schedule()
 	 */
 	@Override
 	public void schedule(Comparator<Vertex<?>> comparator_p,
