@@ -42,7 +42,7 @@ public class Activator extends AFUIActivator {
 	private final OverallListener listener = new SiriusViewpointActivationManager();
 
 	// register IntegrationResourceListener: a temporary solution. Depending on the target platform, the metadata resource could be created explicitly at the right time instead of of using a session listener.
-	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener() /*, new IntegrationResourceListener() */};
+	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener(), new IntegrationResourceListener() };
 	private final ModelExtensionOverallListener[] listeners = { new DiagramUpdater() };
 
 	private static Activator plugin;
