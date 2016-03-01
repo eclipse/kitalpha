@@ -299,6 +299,19 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_x7ip5Z7uEeOjCb9D2yIVHQ" name="" component="_x7ip5J7uEeOjCb9D2yIVHQ"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_x7ip5p7uEeOjCb9D2yIVHQ" name="transposer feature" id="TP_mars" profile="SDKProfile" resultSteps="_x7ip5Z7uEeOjCb9D2yIVHQ" installResultStepsSourceFeatures="true"/>
   </jobs>
+  <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_BklVAMN0EeWAZKNBvSdOSg" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/integration/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Pq_7AMQBEeW1q_kk0b3YWA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/integration/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_-JSnoI5wEeORY9jpJq94Og" path="${publish}/TP_mars"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_s9Xn0BcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_GvpjgH6ZEeOkCccPIIQ2Yw" id="org.polarsys.kitalpha.ad.runtime.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_T8jukEVSEeOxuMV9a71i9w" component="_GvpjgH6ZEeOkCccPIIQ2Yw"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" id="TP_mars" profile="SDKProfile" resultSteps="_T8jukEVSEeOxuMV9a71i9w" installResultStepsSourceFeatures="true"/>
+  </jobs>
   <jobs xmi:id="_eJXnwQHGEeSWLIhgOb7dcQ" name="detach_attach">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_j6USsAHGEeSWLIhgOb7dcQ" name="detachment">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fBRgoBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/plugins"/>
@@ -322,32 +335,6 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_GiG_4FOGEeS0CZx9NVRo1A" name="detachment feature" id="TP_mars" profile="SDKProfile" resultSteps="_tZFTMAHGEeSWLIhgOb7dcQ" installResultStepsSourceFeatures="true"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_bFHvoF64EeSHbaZAI7j8zw" name="attachment feature" id="TP_mars" profile="SDKProfile" resultSteps="_YGNHcF64EeSHbaZAI7j8zw" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_BklVAMN0EeWAZKNBvSdOSg" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/integration/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Pq_7AMQBEeW1q_kk0b3YWA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/integration/features"/>
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_-JSnoI5wEeORY9jpJq94Og" path="${publish}/TP_mars"/>
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_s9Xn0BcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_GvpjgH6ZEeOkCccPIIQ2Yw" id="org.polarsys.kitalpha.ad.runtime.feature"/>
-    </steps>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_T8jukEVSEeOxuMV9a71i9w" component="_GvpjgH6ZEeOkCccPIIQ2Yw"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" id="TP_mars" profile="SDKProfile" resultSteps="_T8jukEVSEeOxuMV9a71i9w" installResultStepsSourceFeatures="true"/>
-  </jobs>
-  <jobs xmi:id="_SWRBoC_IEeWgzaFRAlpLXA" name="detach_attach_contrib">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_SWRBoS_IEeWgzaFRAlpLXA" name="detachment_contrib">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBoi_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBoy_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBpC_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="attachment/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBpS_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="attachment/features"/>
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_SWRBpi_IEeWgzaFRAlpLXA" path="${publish}/TP_mars"/>
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_SWRBpy_IEeWgzaFRAlpLXA" path="${publish}/TP_build"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_SWRBqC_IEeWgzaFRAlpLXA" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints"/>
-    </steps>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_SWRBrS_IEeWgzaFRAlpLXA" component="_SWRBqC_IEeWgzaFRAlpLXA"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_SWRBsi_IEeWgzaFRAlpLXA" name="contrib feature" id="TP_mars" profile="SDKProfile" resultSteps="_SWRBrS_IEeWgzaFRAlpLXA" installResultStepsSourceFeatures="true"/>
-  </jobs>
   <jobs xmi:id="_m9Jf4fxHEeOQxJjwrfaNsA" name="product">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_qsm0MPxHEeOQxJjwrfaNsA">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XkY4UBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/features"/>
@@ -361,7 +348,7 @@
   </jobs>
   <jobs xmi:id="_32V0wDY9EeOP8MSofnrGNA" name="All in one">
     <steps xsi:type="buildstep:AntStep" xmi:id="_A3txYD5oEeSTuepII-sKzw" targetName="move_egf_to_tools2" xml="&lt;target name=&quot;move_egf_to_tools2&quot;>&#xD;&#xA;&#x9;&lt;delete dir=&quot;${tools}/egf&quot;/>&#xD;&#xA;&#x9;&lt;move file=&quot;${publish}/TP_build&quot; tofile=&quot;${tools}/egf&quot; />&#xD;&#xA;&lt;/target>"/>
-    <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha_runtime" id="kitalpha_runtime" publishSteps="_dAuWAKRCEeOdPJBpl-8efw _T8jukEVSEeOxuMV9a71i9w _peSJsJ7uEeOjCb9D2yIVHQ _GzpY8ECvEeOkCsna5l9rlg _vjsoxZ7uEeOjCb9D2yIVHQ _mZV-8CL5EeSSoPlV7ILP2g _LT5kBzRbEeW5Te4c0tZ9OQ _yWFRMDY9EeOP8MSofnrGNA _3viaIDEFEeWlw8zUy2aPZQ _YGNHcF64EeSHbaZAI7j8zw _7StIMFOFEeS0CZx9NVRo1A _-y7GoFOFEeS0CZx9NVRo1A __SUYYFOFEeS0CZx9NVRo1A _tZFTMAHGEeSWLIhgOb7dcQ _Ky5S2lkcEeSo0vu-C-A3cw _J12CcD5GEeSicsfEyxBYkg _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w _3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w _6xX4UPxHEeOQxJjwrfaNsA _x7ip5Z7uEeOjCb9D2yIVHQ _SWRBrS_IEeWgzaFRAlpLXA"/>
+    <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha_runtime" id="kitalpha_runtime" publishSteps="_dAuWAKRCEeOdPJBpl-8efw _T8jukEVSEeOxuMV9a71i9w _peSJsJ7uEeOjCb9D2yIVHQ _GzpY8ECvEeOkCsna5l9rlg _vjsoxZ7uEeOjCb9D2yIVHQ _mZV-8CL5EeSSoPlV7ILP2g _LT5kBzRbEeW5Te4c0tZ9OQ _yWFRMDY9EeOP8MSofnrGNA _3viaIDEFEeWlw8zUy2aPZQ _YGNHcF64EeSHbaZAI7j8zw _7StIMFOFEeS0CZx9NVRo1A _-y7GoFOFEeS0CZx9NVRo1A __SUYYFOFEeS0CZx9NVRo1A _tZFTMAHGEeSWLIhgOb7dcQ _Ky5S2lkcEeSo0vu-C-A3cw _J12CcD5GEeSicsfEyxBYkg _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w _3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w _6xX4UPxHEeOQxJjwrfaNsA _x7ip5Z7uEeOjCb9D2yIVHQ"/>
   </jobs>
   <jobs xmi:id="_5jxR4JKWEeSPapwxSH2ZqQ" name="platforms" enabled="false">
     <steps xsi:type="buildcore:StepContainer" xmi:id="_KLyusJKEEeSPapwxSH2ZqQ" name="TP_win32-win32-x86">
