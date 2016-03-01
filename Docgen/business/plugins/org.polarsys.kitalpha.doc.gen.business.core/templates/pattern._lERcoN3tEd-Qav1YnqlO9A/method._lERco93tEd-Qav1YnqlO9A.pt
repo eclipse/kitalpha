@@ -1,5 +1,5 @@
 <%
 	title = "";
-	copyright = "Copyright (c) Thales Corporate Services S.A.S, 2010. All Rights Reserved.";
+	copyright = (String) DocumentationBrandingData.getInstance().getData("copyright");
 	fileName = "default";
 %>
