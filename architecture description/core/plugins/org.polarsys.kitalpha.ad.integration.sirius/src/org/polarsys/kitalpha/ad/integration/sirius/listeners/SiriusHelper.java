@@ -44,7 +44,7 @@ public class SiriusHelper {
 			if (session != null)
 				return session;
 		}
-		throw new IllegalStateException("Cannot find session");
+		return null;
 	}
 
 	public static Set<Viewpoint> getViewpoints(org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp) {

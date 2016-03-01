@@ -64,6 +64,8 @@ public final class SiriusViewpointActivationManager implements OverallListener {
 	private void updateActiveViewpoint(Object ctx, URI vpURI, boolean activate) {
 		ViewpointSelectionCallback callback = new ViewpointSelectionCallback();
 		Session session = SiriusHelper.getSession((ResourceSet) ctx);
+		if (session == null)
+			return ;
 		final TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
 		org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) domain.getResourceSet().getEObject(vpURI, true);
 		Viewpoint genericVp = (Viewpoint) domain.getResourceSet().getEObject(Activator.GENERIC_VP_URI, true);

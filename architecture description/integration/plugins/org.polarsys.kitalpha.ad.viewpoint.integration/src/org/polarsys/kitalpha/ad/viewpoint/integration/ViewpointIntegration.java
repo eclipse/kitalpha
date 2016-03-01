@@ -123,6 +123,31 @@ public class ViewpointIntegration {
 	}
 
 	public Resource initIntegrationStorage(ResourceSet context) {
+		URI uri = getIntegrationStorageURI(context);
+		try {
+			context.getResource(uri, true);
+		}catch ( Exception e) {
+			return createIntegrationStorage(context, uri);
+		}
+		return null;
+	}
+
+	private Resource createIntegrationStorage(ResourceSet context, URI uri) {
+		// delete proxy resource.
+		Resource resource = context.getResource(uri, false);
+		if (resource != null) {
+			resource.unload();
+			context.getResources().remove(resource);
+		}
+		resource = context.createResource(uri);
+		Integration integration = IntegrationFactory.eINSTANCE.createIntegration();
+		//TODO init the integration object
+		context.getResources().add(resource);
+		resource.getContents().add(integration);
+		return resource;
+	}
+
+	private URI getIntegrationStorageURI(ResourceSet context) {
 		URI uri = context.getResources().get(0).getURI();
 		String path = uri.toPlatformString(true);
 		if (path.contains(".")) {
@@ -130,22 +155,7 @@ public class ViewpointIntegration {
 			path = path.substring(0, index) + "." + STORAGE_EXTENSION;
 		}
 		uri = URI.createPlatformResourceURI(path, true);
-		try {
-			context.getResource(uri, true);
-		}catch ( Exception e) {
-			// delete proxy resource.
-			Resource resource = context.getResource(uri, false);
-			resource.unload();
-			context.getResources().remove(resource);
-		
-			resource = context.createResource(uri);
-			Integration integration = IntegrationFactory.eINSTANCE.createIntegration();
-			//TODO init the integration object
-			context.getResources().add(resource);
-			resource.getContents().add(integration);
-			return resource;
-		}
-		return null;
+		return uri;
 	}
 
 	protected Integration getIntegrationStorage(ResourceSet context) {
@@ -162,11 +172,13 @@ public class ViewpointIntegration {
 				return res;
 			}
 		}
-		// No luck, try to guess
-		Resource mainResource = resourceSet.getResources().get(0);
-		URI uri = mainResource.getURI();
-		uri = uri.trimFileExtension().appendFileExtension(extension);
-		Resource resource = resourceSet.getResource(uri, true);
-		return resource;
+		// No luck, create one
+		URI uri = getIntegrationStorageURI(resourceSet);
+		try {
+			return resourceSet.getResource(uri, true);
+		} catch (Exception e) {
+			// don't care
+		}
+		return createIntegrationStorage(resourceSet, uri);
 	}
 }
