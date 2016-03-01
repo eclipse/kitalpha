@@ -25,6 +25,7 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_YL8A8P32EeSW086H-yDPeg" name="install sirius features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
       <updateSiteUrls>${orbit.repo.url}</updateSiteUrls>
+      <updateSiteUrls>${gmf.repo.url}</updateSiteUrls>
       <featureNames>org.eclipse.sirius.doc.feature</featureNames>
       <featureNames>org.eclipse.sirius.runtime.ide.eef</featureNames>
       <featureNames>org.eclipse.sirius.runtime.ide.ui.acceleo</featureNames>
