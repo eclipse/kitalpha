@@ -334,6 +334,7 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.polarsys.kitalpha.ad.viewpoint.integration.IntegrationHelper;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
@@ -1174,6 +1175,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 			resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
 		}
 		editingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);
+		IntegrationHelper.getInstance().initIntegrationStorage(editingDomain.getResourceSet());
 	}
 
 	/**

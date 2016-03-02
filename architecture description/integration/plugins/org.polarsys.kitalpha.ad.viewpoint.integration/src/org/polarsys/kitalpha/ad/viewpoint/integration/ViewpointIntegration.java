@@ -135,7 +135,7 @@ public class ViewpointIntegration {
 	private Resource createIntegrationStorage(ResourceSet context, URI uri) {
 		// delete proxy resource.
 		Resource resource = context.getResource(uri, false);
-		if (resource != null) {
+		if (resource != null && resource.getContents().isEmpty()) {
 			resource.unload();
 			context.getResources().remove(resource);
 		}
@@ -160,6 +160,8 @@ public class ViewpointIntegration {
 
 	protected Integration getIntegrationStorage(ResourceSet context) {
 		Resource resource = getResource(context, STORAGE_EXTENSION);
+		if (resource == null )
+			return null;
 		Integration integ = (Integration) resource.getContents().get(0);
 		if (integ == null)
 			throw new IllegalStateException("can't find integration resource");
@@ -177,8 +179,14 @@ public class ViewpointIntegration {
 		try {
 			return resourceSet.getResource(uri, true);
 		} catch (Exception e) {
-			// don't care
+			// clean proxy resource
+			Resource resource = resourceSet.getResource(uri, false);
+			if (resource != null && resource.getContents().isEmpty()) {
+				resource.unload();
+				resourceSet.getResources().remove(resource);
+			}
 		}
-		return createIntegrationStorage(resourceSet, uri);
+		return null;
+//		return createIntegrationStorage(resourceSet, uri);
 	}
 }
