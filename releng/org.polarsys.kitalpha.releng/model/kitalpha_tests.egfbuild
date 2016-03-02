@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
 <buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_tests">
   <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
-    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK"/>
+    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK/lastSuccessfulBuild"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.0.0"/>
   </propertyPackages>
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
     <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
-    <steps xsi:type="buildstep:AntStep" xmi:id="_2JSR0OB8EeWAfLzfCqvfTA" name="download TP" description="" targetName="download_tp" xml="&lt;target name=&quot;download_tp&quot;>&#xD;&#xA;&#x9; &lt;dirname property=&quot;dir&quot; file=&quot;${usedTP}.ts&quot;/>&#xD;&#xA;&#x9; &lt;mkdir dir=&quot;${dir}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/buildTimestamp?format=yyyy-MM-dd_HH-mm-ss&quot; &#xD;&#xA;&#x9;&#x9;dest=&quot;${usedTP}.ts&quot;/>&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&lt;loadfile srcfile=&quot;${usedTP}.ts&quot; property=&quot;ts&quot;/>&#xD;&#xA;&#x9;&lt;echo>${usedTP} timestamp: ${ts}&lt;/echo>&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/artifact/result/publish/kitalpha_${kitalpha_version}-${ts}-linux-gtk-x86_64-mars.tar.gz&quot;&#xD;&#xA;&#x9;&#x9;dest=&quot;${usedTP}.tar.gz&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;gunzip src=&quot;${usedTP}.tar.gz&quot;/>&#xD;&#xA;&lt;untar src=&quot;${usedTP}.tar&quot; dest=&quot;${usedTP}&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;/target> &#xD;&#xA;"/>
-    <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="releng">
+    <steps xsi:type="buildstep:AntStep" xmi:id="_2JSR0OB8EeWAfLzfCqvfTA" name="download TP" description="" targetName="download_tp" xml="&lt;target name=&quot;download_tp&quot;>&#xD;&#xA;&#x9; &lt;dirname property=&quot;dir&quot; file=&quot;${publish}/TP.ts&quot;/>&#xD;&#xA;&#x9; &lt;mkdir dir=&quot;${dir}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/buildTimestamp?format=yyyy-MM-dd_HH-mm-ss&quot; &#xD;&#xA;&#x9;&#x9;dest=&quot;${publish}/TP.ts&quot;/>&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&lt;loadfile srcfile=&quot;${publish}/TP.ts&quot; property=&quot;ts&quot;/>&#xD;&#xA;&#x9;&lt;echo>timestamp: ${ts}&lt;/echo>&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/artifact/result/publish/kitalpha_${kitalpha_version}-${ts}-linux-gtk-x86_64-mars.tar.gz&quot;&#xD;&#xA;&#x9;&#x9;dest=&quot;${publish}/TP.tar.gz&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;gunzip src=&quot;${publish}/TP.tar.gz&quot;/>&#xD;&#xA;&lt;untar src=&quot;${publish}/TP.tar&quot; dest=&quot;${publish}/TP&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;/target> &#xD;&#xA;"/>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="import tests projects">
       <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
-        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="releng"/>
-        <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP_mars"/>
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/tests/plugins"/>
+        <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP"/>
         <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsz5GEeSicsfEyxBYkg" path="${publish}/TP_build"/>
         <components xsi:type="buildstep:Feature" xmi:id="_IH3dtD5GEeSicsfEyxBYkg" id="org.polarsys.kitalpha.releng.feature"/>
       </steps>
