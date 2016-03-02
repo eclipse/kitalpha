@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_tests">
+  <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
+    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK"/>
+  </propertyPackages>
+  <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
+    <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.0.0"/>
+  </propertyPackages>
+  <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
+    <steps xsi:type="buildstep:AntStep" xmi:id="_2JSR0OB8EeWAfLzfCqvfTA" name="download TP" description="" targetName="download_tp" xml="&lt;target name=&quot;download_tp&quot;>&#xD;&#xA;&#x9; &lt;dirname property=&quot;dir&quot; file=&quot;${usedTP}.ts&quot;/>&#xD;&#xA;&#x9; &lt;mkdir dir=&quot;${dir}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/buildTimestamp?format=yyyy-MM-dd_HH-mm-ss&quot; &#xD;&#xA;&#x9;&#x9;dest=&quot;${usedTP}.ts&quot;/>&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&lt;loadfile srcfile=&quot;${usedTP}.ts&quot; property=&quot;ts&quot;/>&#xD;&#xA;&#x9;&lt;echo>${usedTP} timestamp: ${ts}&lt;/echo>&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/artifact/result/publish/kitalpha_${kitalpha_version}-${ts}-linux-gtk-x86_64-mars.tar.gz&quot;&#xD;&#xA;&#x9;&#x9;dest=&quot;${usedTP}.tar.gz&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;gunzip src=&quot;${usedTP}.tar.gz&quot;/>&#xD;&#xA;&lt;untar src=&quot;${usedTP}.tar&quot; dest=&quot;${usedTP}&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;/target> &#xD;&#xA;"/>
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="releng">
+      <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="releng"/>
+        <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP_mars"/>
+        <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsz5GEeSicsfEyxBYkg" path="${publish}/TP_build"/>
+        <components xsi:type="buildstep:Feature" xmi:id="_IH3dtD5GEeSicsfEyxBYkg" id="org.polarsys.kitalpha.releng.feature"/>
+      </steps>
+      <steps xsi:type="buildstep:PublishStep" xmi:id="_J12CcD5GEeSicsfEyxBYkg" component="_IH3dtD5GEeSicsfEyxBYkg"/>
+      <steps xsi:type="buildstep:InstallStep" xmi:id="_J12CcT5GEeSicsfEyxBYkg" name="build feature" id="TP_build" profile="SDKProfile" resultSteps="_J12CcD5GEeSicsfEyxBYkg" installResultStepsSourceFeatures="true"/>
+      <steps xsi:type="buildstep:AntStep" xmi:id="_BmYCoD5yEeSTuepII-sKzw" enabled="false" targetName="move_egf_to_tools2" xml="&lt;target name=&quot;move_egf_to_tools2&quot;>&#xD;&#xA;&#x9;&lt;delete dir=&quot;${tools}/egf&quot;/>&#xD;&#xA;&#x9;&lt;move file=&quot;${publish}/TP_build&quot; tofile=&quot;${tools}/egf&quot; />&#xD;&#xA;&lt;/target>"/>
+      <steps xsi:type="buildstep:EgfStep" xmi:id="_BmYCoT5yEeSTuepII-sKzw" enabled="false">
+        <properties xmi:id="_BmYCoj5yEeSTuepII-sKzw" key="platformPath" value="${publish}/TP_mars"/>
+        <properties xmi:id="_BmYCoz5yEeSTuepII-sKzw" key="version" value="${mdk_version}"/>
+        <properties xmi:id="_BmYCpD5yEeSTuepII-sKzw" key="buildId" value="${timestamp}"/>
+        <properties xmi:id="_BmYCpT5yEeSTuepII-sKzw" key="product" value="org.polarsys.kitalpha.product"/>
+        <properties xmi:id="_BmYCpj5yEeSTuepII-sKzw" key="application" value="org.polarsys.kitalpha.application"/>
+        <egfActivities xmi:id="_BmYCpz5yEeSTuepII-sKzw" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
+      </steps>
+    </steps>
+    <steps xsi:type="buildstep:AntStep" xmi:id="_c8TmsGzmEeWQLIDk8nN8SA" name="copy egf to tools folder" targetName="copy_egf_to_tools" xml="&lt;target name=&quot;copy_egf_to_tools&quot;>&#xD;&#xA;&#x9;&lt;delete dir=&quot;${tools}/egf&quot;/>&#xD;&#xA;&#x9;&lt;copy todir=&quot;${tools}/egf&quot;>&#xD;&#xA;    &#x9;&#x9;&lt;fileset dir=&quot;${publish}/TP_build&quot;/>&#xD;&#xA;  &#x9;&lt;/copy>&#xD;&#xA;&lt;/target>"/>
+    <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
+      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
+    </scms>
+    <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="https://www.polarsys.org/kitalpha/hudson/" userDeployJobName="">
+      <users xmi:id="_8MIb4INCEeO4K7leE9IQQw" login="thomas.guiu@soyatec.com" permission="WRITE"/>
+      <triggers xsi:type="builddeploy:SCMTrigger" xmi:id="_PkkxEAYrEeGvu-Y1KM--ag"/>
+      <triggers xsi:type="builddeploy:CronTrigger" xmi:id="_AmyRsQ8MEeKIuPgeX8UkeA" planning="* * * * 5"/>
+      <generationLocation xsi:type="buildscm:GITGenerationLocation" xmi:id="_UkTtQPx8EeO7zY3f-pIrjg" folderName="releng/org.polarsys.kitalpha.releng/jobs" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg"/>
+    </deployment>
+  </jobs>
+</buildcore:Chain>
