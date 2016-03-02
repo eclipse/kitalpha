@@ -12,7 +12,6 @@
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
@@ -27,13 +26,11 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 public class ViewpointManagerLabelProvider extends LabelProvider implements ITableLabelProvider {
 
-	private ResourceSet context;
-
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (columnIndex != 0)
 			return null;
 		Resource vp = (Resource) element;
-		if (context != null && ViewpointManager.getInstance(context).isUsed(vp.getId()))
+		if (ViewpointManager.getInstance((EObject)null).isUsed(vp.getId()))
 			return Activator.getDefault().getImage(AFImages.RUNNING_VP);
 		return Activator.getDefault().getImage(AFImages.VP);
 	}
@@ -44,29 +41,14 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 		case 0:
 			return vp.getName();
 		case 1:
-			if (context == null)
-				return "N/A";
-			ViewpointManager instance = ViewpointManager.getInstance(context);
-			if (instance.isUsed(vp.getId())) {
-				return "Used" + (instance.isFiltered(vp.getId()) ? " & filtered" : "");
-			}
-			return "Unused";
+			return ViewpointManager.getInstance((EObject)null).isUsed(vp.getId()) ? "Active" : "Unactive";
 		case 2:
-			if (context == null)
-				return "N/A";
-			return vp.getVersion() == null || vp.getVersion().isEmpty() ? "no version" : vp.getVersion();
-		case 3:
 			return vp.getProviderLocation().toString();
-		case 4:
+		case 3:
 			return vp.getProviderSymbolicName();
-		case 5:
+		case 4:
 			return "";
 		}
 		return "";
 	}
-
-	public void setContext(ResourceSet context) {
-		this.context = context;
-	}
-
 }
