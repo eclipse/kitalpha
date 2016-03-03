@@ -10,19 +10,16 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.emde.extension;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.polarsys.kitalpha.emde.extension.i18n.Messages;
 import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtensionManager;
 import org.polarsys.kitalpha.emde.extension.utils.Log;
 
@@ -32,30 +29,20 @@ import org.polarsys.kitalpha.emde.extension.utils.Log;
  */
 public class ModelExtensionHelper {
 
-	private static final Map<Object, ModelExtensionManager> instances = new HashMap<Object, ModelExtensionManager>();
+	private static final ModelExtensionManager instance = createInstance();
 
 	public static ModelExtensionManager getInstance(Resource resource) {
-		return getInstance(resource.getResourceSet());
+		return getInstance();
 	}
 	public static ModelExtensionManager getInstance(final ResourceSet ctx) {
-		ModelExtensionManager instance = instances.get(ctx);
-		if (instance == null) {
-			instances.put(ctx, instance = createInstance());
-			((DefaultModelExtensionManager) instance).setTarget(ctx);
-			ctx.eAdapters().add(new AdapterImpl() {
-				
-				@Override
-				public void notifyChanged(Notification msg) {
-					if (msg.getEventType() == Notification.REMOVE && ctx.getResources().isEmpty())
-						instances.remove(ctx);
-				}
-				
-			});
-		}
-		return instance;
+		return getInstance();
 	}
 	public static ModelExtensionManager getInstance(EObject ctx) {
-		return getInstance(ctx.eResource());
+		return getInstance();
+	}
+
+	private static ModelExtensionManager getInstance() {
+		return instance;
 	}
 
 	private static ModelExtensionManager createInstance() {
@@ -92,4 +79,6 @@ public class ModelExtensionHelper {
 	public static void removeOverallListener(ModelExtensionOverallListener l) {
 		DefaultModelExtensionManager.removeOverallListener(l);
 	}
+
+
 }
