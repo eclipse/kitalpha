@@ -101,6 +101,14 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		try {
 			initResource();
 
+			// activate the VP if the user open its registered view
+			if (!ViewpointManager.getInstance((EObject)null).isActive(resourceId))
+				ViewpointManager.getInstance((EObject)null).activate(resourceId);
+			// if the VP is desactivated we need to close the related view. This
+			// is not automatic if the VP is living into the platform/target
+			// if
+			// (!viewpointResource.getProviderLocation().equals(Location.WORSPACE))
+			// {
 			viewpointListener = new HiddingListener(site);
 			ViewpointManager.addOverallListener(viewpointListener);
 			// }

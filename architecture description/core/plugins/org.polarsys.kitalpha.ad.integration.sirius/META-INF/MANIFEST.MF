@@ -18,8 +18,7 @@ Require-Bundle: org.eclipse.ui.ide,
  org.eclipse.sirius.diagram.ui;visibility:=reexport,
  org.eclipse.emf.edit.ui,
  org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.core.expressions,
- org.polarsys.kitalpha.ad.viewpoint.integration
+ org.eclipse.core.expressions
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.integration.sirius,

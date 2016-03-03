@@ -8,9 +8,7 @@ Bundle-SymbolicName: org.polarsys.kitalpha.ad.services;singleton:=true
 Bundle-Activator: org.polarsys.kitalpha.ad.services.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.common;visibility:=reexport,
- org.polarsys.kitalpha.ad.viewpoint.coredomain.model;visibility:=reexport,
- org.polarsys.kitalpha.ad.viewpoint.integration,
- org.eclipse.emf.transaction
+ org.polarsys.kitalpha.ad.viewpoint.coredomain.model;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.services,

@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
+import org.polarsys.kitalpha.emde.extension.DefaultModelExtensionManager;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
@@ -38,12 +39,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 	public AFModelExtensionManager() {
 		super();
-	}
-
-	@Override
-	public void setTarget(ResourceSet target) {
-		super.setTarget(target);
-		ViewpointManager mgr = ViewpointManager.getInstance(getTarget());
+		// TODO Auto-generated constructor stub
+		ViewpointManager mgr = ViewpointManager.getInstance((EObject)null);
 		mgr.addListener(new Listener() {
 
 			private final ResourceSet set = new ResourceSetImpl();
@@ -108,16 +105,14 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 		});
 	}
 
-	private final Map<String, Boolean> extension2state = new HashMap<String, Boolean>();
-	private final Map<String, Boolean> managedByAF2state = new HashMap<String, Boolean>();
+	private static final Map<String, Boolean> extension2state = new HashMap<String, Boolean>();
+	private static final Map<String, Boolean> managedByAF2state = new HashMap<String, Boolean>();
 
 	@Override
 	public boolean canDisableExtensionModel(ExtendedModel extended) {
-		if (getTarget() == null)
-			throw new UnsupportedOperationException();
 		String nsURI = extended.getName();
-		// if (managedByAF2state.containsKey(nsURI))
-		// return !managedByAF2state.get(nsURI);
+		if (managedByAF2state.containsKey(nsURI))
+			return !managedByAF2state.get(nsURI);
 		ResourceSet set = new ResourceSetImpl();
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
@@ -156,16 +151,11 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	 * of computations
 	 */
 	public boolean isExtensionModelDisabled(ExtendedModel extended) {
-		if (getTarget() == null)
-			throw new UnsupportedOperationException();
 
 		String nsURI = extended.getName();
-
-		// TODO
-
-		// if (extension2state.containsKey(nsURI)) {
-		// return !extension2state.get(nsURI);
-		// }
+		if (extension2state.containsKey(nsURI)) {
+			return !extension2state.get(nsURI);
+		}
 		ResourceSet set = new ResourceSetImpl();
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
@@ -178,12 +168,9 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 							// no.
 							// In other case let the super implementation answer
 							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
-								ViewpointManager instance = ViewpointManager.getInstance(getTarget());
-								boolean used = instance.isUsed(res.getId());
-								boolean filtered = instance.isFiltered(res.getId());
-								boolean active = used && !filtered;
-								extension2state.put(nsURI, active);
-								return !active;
+								boolean vpActive = ViewpointManager.getInstance((EObject)null).isActive(res.getId());
+								extension2state.put(nsURI, vpActive);
+								return !vpActive;
 							}
 						}
 					}

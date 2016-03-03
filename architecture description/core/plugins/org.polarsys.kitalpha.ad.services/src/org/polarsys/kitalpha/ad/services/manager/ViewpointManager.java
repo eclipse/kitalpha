@@ -11,6 +11,11 @@
 
 package org.polarsys.kitalpha.ad.services.manager;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,17 +26,14 @@ import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.common.AD_Log;
@@ -39,7 +41,6 @@ import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
-import org.polarsys.kitalpha.ad.viewpoint.integration.IntegrationHelper;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
@@ -51,6 +52,9 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
  */
 public class ViewpointManager {
 
+	private static final String STATE_FILENAME = "viewpointManager.state";
+	protected static final ViewpointManager INSTANCE;
+	
 	private final static Set<String> discarded = new HashSet<String>();
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
@@ -62,12 +66,10 @@ public class ViewpointManager {
 
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
+	private final Set<String> activated = new HashSet<String>();
     private final Set<String> managed = new HashSet<String>();
 	private ResourceSet target;
-
-	public void setTarget(ResourceSet target) {
-		this.target = target;
-	}
+	private final StateManager stateManager = new StateManager();
 
 	public static Resource getViewpoint(String id) {
 		for (Resource res : getAvailableViewpoints()) {
@@ -90,32 +92,9 @@ public class ViewpointManager {
 	 */
 	public static IStatus checkViewpointsCompliancy(ResourceSet context)
 	{
-		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
-		Resource[] availableViewpoints = ViewpointManager.getAvailableViewpoints();
-		Map<String, String> viewpointUsages = IntegrationHelper.getInstance().getViewpointUsages(context);
-		for (Entry<String, String> usage : viewpointUsages.entrySet())
-		{
-			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
-			if (!res.isOK())
-				error.add(res);
-		}
-		if (!error.isOK())
-			return error;
 		return Status.OK_STATUS;
 	}
 	
-	private static IStatus useViewpoint(Resource[] availableViewpoints, String id, String version) {
-		for (Resource res : availableViewpoints)
-		{
-			if (res.getId().equals(id))
-			{
-				if (version == null || version.isEmpty() || version.equals(res.getVersion()))
-					return Status.OK_STATUS;
-				return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Expecting version '"+version+ "' for viewpoint '"+id+"' (current version: '"+res.getVersion()+"')");
-			}
-		}
-		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Missing viewpoint '"+id+"'");
-	}
 
 	public static Resource[] getAvailableViewpoints() {
 		SearchCriteria searchCriteria = new SearchCriteria();
@@ -133,54 +112,40 @@ public class ViewpointManager {
 	}
 
 	public boolean isActive(String id) {
-		return IntegrationHelper.getInstance().isInUse(target, id);
+		return activated.contains(id);
 	}
 
 	public boolean isUsed(String id) {
-		return IntegrationHelper.getInstance().isInUse(target, id);
+		return isActive(id);
 	}
 
 	public boolean isFiltered(String id) {
-		return IntegrationHelper.getInstance().isFiltered(target, id);
-	}
-
-	public void filter(String id, boolean state) throws ViewpointActivationException {
-		Resource vpResource = getViewpoint(id);
-		if (vpResource == null)
-			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (!isUsed(id))
-			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
-		IntegrationHelper.getInstance().setFilter(target, id, state);
-		fireEvent(vpResource, state ? FILTERED : DISPLAYED);
+		return false;
 	}
 
 	public void activate(String id) throws ViewpointActivationException {
-		startUse(id);
-	}
-
-	public void startUse(String id) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (isUsed(id))
+		if (activated.contains(id))
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
 
 		ResourceSet set = new ResourceSetImpl();
 		try {
-			doStartUse(set, vpResource);
+			doActivate(set, vpResource);
 		} finally {
 			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
 				r.unload();
 			}
 			set.getResources().clear();
+			stateManager.saveState();
 		}
 	}
 
-	protected void doStartUse(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
+	protected void doActivate(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
-		IntegrationHelper.getInstance().setUsage(target, vpResource, true);
-		managed.add(vpResource.getProviderSymbolicName());
+		activated.add(vpResource.getId());
 		if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
 			managed.add(vpResource.getProviderSymbolicName());
 		fireEvent(vpResource, ACTIVATED);
@@ -200,8 +165,8 @@ public class ViewpointManager {
 		for (Viewpoint dep : dependencies) {
 			String id = dep.getId();
 			vpDependencies.add(id);
-			if (!isUsed(id))
-				doStartUse(set, getViewpoint(id));
+			if (!activated.contains(id))
+				doActivate(set, getViewpoint(id));
 		}
 
 	}
@@ -236,14 +201,10 @@ public class ViewpointManager {
 	}
 
 	public void desactivate(String id) throws ViewpointActivationException {
-		stopUse(id);
-	}
-
-	public void stopUse(String id) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (!isUsed(id))
+		if (!activated.contains(id))
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_6, id));
 		for (Entry<String, List<String>> entry : dependencies.entrySet()) {
 			if (entry.getValue().contains(id))
@@ -255,8 +216,9 @@ public class ViewpointManager {
 		// additional events such PRE_DEACTIVATED or POST_DEACTIVATED
 		String providerSymbolicName = vpResource.getProviderSymbolicName();
 		desactivateBundle(providerSymbolicName);
-		IntegrationHelper.getInstance().setUsage(target, vpResource, false);
+		activated.remove(id);
 		fireEvent(vpResource, DEACTIVATED);
+		stateManager.saveState();
 	}
 
 	public static void addOverallListener(OverallListener l) {
@@ -314,6 +276,70 @@ public class ViewpointManager {
 		}
 	}
 
+	public void loadState() {
+		stateManager.loadState();
+	}
+
+	public class StateManager {
+		private boolean loading = false;
+
+		public void loadState() {
+			if (!activated.isEmpty()) {
+				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_1);
+				return;
+			}
+			boolean errorInLoading = false;
+			loading = true;
+			try {
+				IPath stateLocation = Activator.getDefault().getStateLocation();
+				stateLocation = stateLocation.append(STATE_FILENAME);
+				File file = stateLocation.toFile();
+				if (!file.exists())
+					return;
+				ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+				Set<String> data = (Set<String>) in.readObject();
+				in.close();
+				for (String id : data) {
+					try {
+						activate(id);
+					} catch (AlreadyInStateException e) {
+						// don't care
+					} catch (Exception e) {
+						AD_Log.getDefault().logError(e);
+						errorInLoading = true;
+					}
+				}
+
+			} catch (Exception e) {
+				AD_Log.getDefault().logError(e);
+			} finally {
+				loading = false;
+				if (errorInLoading)
+					saveState();
+			}
+
+		}
+
+		public void saveState() {
+			if (loading)
+				return;
+			IPath stateLocation = Activator.getDefault().getStateLocation();
+			stateLocation = stateLocation.append(STATE_FILENAME);
+			File file = stateLocation.toFile();
+			try {
+				if (!file.exists())
+					file.createNewFile();
+				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+				out.writeObject(activated);
+				out.close();
+			} catch (Exception e) {
+				AD_Log.getDefault().logError(e);
+			}
+
+		}
+
+	}
+
 	public static interface OverallListener {
 		void hasBeenActivated(Object ctx, Resource vp);
 
@@ -336,29 +362,14 @@ public class ViewpointManager {
 	}
 
 	public static ViewpointManager getInstance(EObject ctx1) {
-		ResourceSet ctx = ctx1.eResource().getResourceSet();
-		return getInstance(ctx);
+		return INSTANCE;
 	}
 
 	public static ViewpointManager getInstance(final ResourceSet ctx) {
-		ViewpointManager instance = instances.get(ctx);
-		if (instance == null) {
-			instances.put(ctx, instance = createInstance());
-			ctx.eAdapters().add(new AdapterImpl() {
-
-				@Override
-				public void notifyChanged(Notification msg) {
-					if (msg.getEventType() == Notification.REMOVE && ctx.getResources().isEmpty())
-						instances.remove(ctx);
-				}
-
-			});
-			instance.setTarget(ctx);
-		}
-		return instance;
+		return INSTANCE;
 	}
-
-	private static ViewpointManager createInstance() {
+	
+	static {
 		ViewpointManager instance = null;
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.services.viewpoint.manager");
@@ -370,7 +381,7 @@ public class ViewpointManager {
 			AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_2, e);
 			instance = new ViewpointManager();
 		}
-		return instance;
+		INSTANCE = instance;
 	}
 
 
