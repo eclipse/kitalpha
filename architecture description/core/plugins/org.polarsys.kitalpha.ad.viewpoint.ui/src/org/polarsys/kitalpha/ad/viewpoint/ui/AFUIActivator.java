@@ -58,6 +58,14 @@ public abstract class AFUIActivator extends AbstractUIPlugin {
 		return image;
 	}
 
+	public void logInfo(String message) {
+		AD_Log.getDefault().logInfo(message);
+	}
+	
+	public void logInfo(String message, Throwable t) {
+		AD_Log.getDefault().logInfo(message, t);
+	}
+	
 	public void logWarning(String message) {
 		AD_Log.getDefault().logWarning(message);
 	}

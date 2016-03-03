@@ -11,6 +11,8 @@
 
 package org.polarsys.kitalpha.ad.integration.sirius.actions;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -58,6 +60,17 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 public class ServiceActionFactory extends ExtensionContributionFactory {
 	private final AFSelectionProvider selectionProvider = new SiriusSelectionProvider();
+	private static final Method setImageDescriptorMethod;
+	static {
+		// the method is not available in juno
+		Method method = null;
+		try {
+			method = MenuManager.class.getMethod("setImageDescriptor", ImageDescriptor.class);
+		} catch (Exception e) {
+			Activator.getDefault().logInfo("Method 'setImageDescriptor' is not available on MenuManager class", e);
+		}
+		setImageDescriptorMethod = method;
+	}
 
 	public ServiceActionFactory() {
 	}
@@ -94,6 +107,13 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 				continue;
 			}
 			MenuManager mi = new MenuManager(vp.getName());
+			if (setImageDescriptorMethod != null) {
+				try {
+					setImageDescriptorMethod.invoke(mi, vpImage);
+				} catch (Exception e) {
+					Activator.getDefault().logWarning(e);
+				}
+			}
 			mi.setImageDescriptor(vpImage);
 			dynamicMenu.add(mi);
 
