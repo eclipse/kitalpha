@@ -114,7 +114,6 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 					Activator.getDefault().logWarning(e);
 				}
 			}
-			mi.setImageDescriptor(vpImage);
 			dynamicMenu.add(mi);
 
 			for (ViewpointElement elt : vp2elt.get(vp)) {
