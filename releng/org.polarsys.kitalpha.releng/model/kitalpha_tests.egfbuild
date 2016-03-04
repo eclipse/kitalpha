@@ -17,7 +17,7 @@
       </steps>
       <steps xsi:type="buildstep:PublishStep" xmi:id="_J12CcD5GEeSicsfEyxBYkg" enabled="false" component="_bxUGQOCBEeWAfLzfCqvfTA"/>
     </steps>
-    <steps xsi:type="buildstep:TestStep" xmi:id="_hNI1wOCBEeWAfLzfCqvfTA" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.tests/Resource_Reuse_Tests.launch"/>
+    <steps xsi:type="buildstep:TestStep" xmi:id="_hNI1wOCBEeWAfLzfCqvfTA" name="Resource Reuse" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.tests/Resource_Reuse_Tests.launch"/>
     <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
       <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
     </scms>

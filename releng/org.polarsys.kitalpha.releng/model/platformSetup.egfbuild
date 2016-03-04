@@ -57,12 +57,6 @@
       <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature</featureNames>
       <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.source.feature</featureNames>
     </steps>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN05KKEeSPapwxSH2ZqQ" name="install ecoretools2" id="${TP_name}" profile="${TP_profile}">
-      <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
-      <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
-      <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
-      <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
-    </steps>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_esU1ACO3EeWTOe3dES9kkg" name="install amalgam features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${amalgam.repo.url}</updateSiteUrls>
       <featureNames>org.eclipse.amalgam.explorer.activity</featureNames>
@@ -71,6 +65,13 @@
       <featureNames>org.eclipse.amalgam.explorer.contextual.source</featureNames>
       <featureNames>org.eclipse.amalgam.explorer.contextual.sirius</featureNames>
       <featureNames>org.eclipse.amalgam.explorer.contextual.sirius.source</featureNames>
+    </steps>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN05KKEeSPapwxSH2ZqQ" name="install ecoretools2" id="${TP_name}" profile="${TP_profile}">
+      <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
+      <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
+      <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+      <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
+      <featureNames>org.eclipse.emf.ecoretools.explorer.contextual</featureNames>
     </steps>
   </steps>
   <steps xsi:type="buildstep:InstallStep" xmi:id="_PHo0sFMCEeW1O6N91pz95w" name="install runtime features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
