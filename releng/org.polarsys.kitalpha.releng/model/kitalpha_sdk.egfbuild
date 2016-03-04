@@ -256,6 +256,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_fuqZlmzmEeWQLIDk8nN8SA" id="org.polarsys.kitalpha.vp.componentsample.example.feature"/>
       <components xsi:type="buildstep:Plugin" xmi:id="_fuqZl2zmEeWQLIDk8nN8SA" id="org.polarsys.kitalpha.vp.componentsample.importer"/>
     </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_IEb2MOHlEeWJ__XCyXd24w" component="_fuqZlmzmEeWQLIDk8nN8SA"/>
     <steps xsi:type="buildstep:EgfStep" xmi:id="_fuqZmGzmEeWQLIDk8nN8SA">
       <properties xmi:id="_fuqZmWzmEeWQLIDk8nN8SA" key="egf.target.bundle.priority" value="true"/>
       <properties xmi:id="_fuqZmmzmEeWQLIDk8nN8SA" key="featureName" value="org.polarsys.kitalpha.vp.componentsample.example.feature"/>
