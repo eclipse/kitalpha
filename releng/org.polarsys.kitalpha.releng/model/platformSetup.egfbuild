@@ -71,8 +71,13 @@
       <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
       <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
       <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
-      <featureNames>org.eclipse.emf.ecoretools.explorer.contextual</featureNames>
     </steps>
+  </steps>
+  <steps xsi:type="buildstep:InstallStep" xmi:id="_dEjfMOREEeWlaf9xCVdmtw" name="install ecoretools2 for contextual explorer" id="${TP_name}" profile="${TP_profile}">
+    <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
+    <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
+    <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+    <featureNames>org.eclipse.emf.ecoretools.explorer.contextual</featureNames>
   </steps>
   <steps xsi:type="buildstep:InstallStep" xmi:id="_PHo0sFMCEeW1O6N91pz95w" name="install runtime features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
     <updateSiteUrls>${kitalpha_runtime.repo.url}</updateSiteUrls>
