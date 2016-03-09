@@ -11,7 +11,7 @@
 
 package org.polarsys.kitalpha.emde.ui.actions;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.emf.ecore.EClass;
@@ -30,7 +30,7 @@ public class ValidationPropertyTester extends PropertyTester {
 
 	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		for (Object obj : (List<?>)receiver)
+		for (Object obj : (Collection<?>)receiver)
 		{
 			if (!(obj instanceof EPackage))
 				return false;
