@@ -203,9 +203,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	}
 
 	protected void handleBrokenViewpoint(org.polarsys.kitalpha.resourcereuse.model.Resource res, Exception e) {
-		ViewpointManager.pinError(res);
-		String msg = "Resource '" + res.getId() + "' cannot be loaded, The viewpoint is discarded.";
-		AD_Log.getDefault().logError(msg, e);
+		ViewpointManager.pinError(res, e);
 	}
 
 	@Override

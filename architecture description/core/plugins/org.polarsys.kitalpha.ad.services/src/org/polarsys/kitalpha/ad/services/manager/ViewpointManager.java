@@ -31,7 +31,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.common.AD_Log;
@@ -77,8 +76,10 @@ public class ViewpointManager {
 		return null;
 	}
 
-	public static void pinError(Resource vp) {
+	public static void pinError(Resource vp, Exception e) {
 		discarded.add(vp.getId());
+		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.";
+		AD_Log.getDefault().logError(msg, e);
 
 	}
 
@@ -372,6 +373,7 @@ public class ViewpointManager {
 		}
 		return instance;
 	}
+
 
 
 }

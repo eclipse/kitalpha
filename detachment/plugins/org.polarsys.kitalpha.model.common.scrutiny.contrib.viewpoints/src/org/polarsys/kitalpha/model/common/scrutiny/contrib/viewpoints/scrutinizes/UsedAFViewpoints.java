@@ -16,11 +16,26 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.polarsys.kitalpha.ad.common.AD_Log;
+import org.polarsys.kitalpha.ad.common.utils.URIHelper;
+import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusRepresentation;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RepresentationElement;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.Integration;
 import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedViewpoint;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.modelresources.scrutinize.ModelResourcesScrutinizer;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.FinderAFViewpointHelper;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointsSearcherHelper;
@@ -95,6 +110,82 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 
 	public Collection<String> getUsedNsURIs() {
 		return new ArrayList<String>(usedNsURI);
+	}
+	
+	public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Resource resource) {
+		Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result = new HashSet<org.polarsys.kitalpha.resourcereuse.model.Resource>();
+		Scrutineer.startScrutiny(resource);
+
+		Set<String> nsUris = new HashSet<String>();
+		Set<String> odesigns = new HashSet<String>();
+		
+		collectData(nsUris, odesigns);
+		
+		ResourceSet set = new ResourceSetImpl();
+		try {
+			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
+				try {
+					URI uri = URIHelper.createURI(res);
+					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+					if (vp.getMetamodel() != null) {
+						for (EPackage pack : vp.getMetamodel().getModels()) {
+							if (pack.getNsURI() != null && nsUris.contains(pack.getNsURI())) 
+								result.add(res);
+							
+						}
+					}
+					if (vp.getRepresentation() != null) {
+						for (RepresentationElement representation : vp.getRepresentation().getRepresentations()) {
+							if (representation instanceof SiriusRepresentation) {
+								SiriusRepresentation sr = (SiriusRepresentation)representation;
+								URI uri2 = EcoreUtil.getURI(sr.getOdesign());
+								if (odesigns.contains(uri2.lastSegment()))
+									result.add(res);
+							}
+						}
+					}
+				} catch (Exception e) {
+					ViewpointManager.pinError(res, e);
+
+				}
+			}
+		} finally {
+			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+				r.unload();
+			}
+			set.getResources().clear();
+		}
+
+		return result;
+	}
+
+	private static void collectData(Set<String> nsUris, Set<String> odesigns) {
+		try {
+			// look for odesign 
+			RegistryElement element = Scrutineer.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownresources.scrutiny");
+			for (IScrutinize iFinder : element.getFinders()) {
+				if (iFinder instanceof ModelResourcesScrutinizer)
+				{
+					ModelResourcesScrutinizer resources = (ModelResourcesScrutinizer)iFinder;
+					for (URI uri :resources.getAnalysisResult().getAllModelResourceURI()) {
+						if ("odesign".equals(uri.fileExtension()))
+							odesigns.add(uri.lastSegment());
+					}
+				}
+			}
+			RegistryElement vpElement = Scrutineer.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints");
+			for (IScrutinize iFinder : vpElement.getFinders()) {
+				if (iFinder instanceof UsedAFViewpoints)
+				{
+					UsedAFViewpoints afFinder = (UsedAFViewpoints)iFinder;
+					nsUris.addAll(afFinder.getUsedNsURIs());
+				}
+			}
+
+			
+		} catch (ModelScrutinyException e) {
+			AD_Log.getDefault().logWarning(e);
+		}
 	}
 
 }
