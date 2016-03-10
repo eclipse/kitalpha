@@ -77,8 +77,6 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 	private void cleanUnselectedUris(ResourceSet set,
 			Collection<String> unSelectedUri, Collection<String> unSelectedViewpoint, IProgressMonitor monitor) {
 
-		if (!unSelectedUri.isEmpty()){
-
 		for (Resource resource : set.getResources()) 
 		{
 			Collection<EObject> eObjectToRemove = new HashSet<EObject>();
@@ -119,8 +117,6 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 					}
 				}
 			}
-		}
-		
 	}
 
 	@SuppressWarnings("rawtypes")

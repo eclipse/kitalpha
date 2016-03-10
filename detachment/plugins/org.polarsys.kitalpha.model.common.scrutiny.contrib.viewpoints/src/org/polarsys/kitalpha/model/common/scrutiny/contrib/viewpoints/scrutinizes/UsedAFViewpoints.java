@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
@@ -92,8 +93,8 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 		container = null;
 	}
 
-	public Set<String> getUsedViewpoints() {
-		return new HashSet<String>(usedViewpoints);
+	public Collection<String> getUsedNsURIs() {
+		return new ArrayList<String>(usedNsURI);
 	}
 
 }
