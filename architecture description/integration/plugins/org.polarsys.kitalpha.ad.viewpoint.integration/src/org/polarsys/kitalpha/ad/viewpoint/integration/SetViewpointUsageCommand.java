@@ -39,7 +39,7 @@ public class SetViewpointUsageCommand extends RecordingCommand {
 	@Override
 	protected void doExecute() {
 		for (UsedViewpoint uv : new ArrayList<UsedViewpoint>(integration.getUsedViewpoints())) {
-			if (vpResource.equals(uv.getVpId())) {
+			if (vpResource.getId().equals(uv.getVpId())) {
 				if (usage)
 					return; // object is already there, nothing to do
 				integration.getUsedViewpoints().remove(uv);
