@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.Integration;
+import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.IntegrationFactory;
 import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedViewpoint;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
@@ -36,11 +37,17 @@ public class UpdateViewpointVersionCommand extends RecordingCommand {
 	@Override
 	protected void doExecute() {
 		for (UsedViewpoint uv : new ArrayList<UsedViewpoint>(integration.getUsedViewpoints())) {
-			if (vpResource.equals(uv.getVpId())) {
+			if (vpResource.getId().equals(uv.getVpId())) {
 				uv.setVersion(vpResource.getVersion());
 				return ;
 			}
 		}
+		UsedViewpoint uv = IntegrationFactory.eINSTANCE.createUsedViewpoint();
+		uv.setFiltered(false);
+		uv.setVpId(vpResource.getId());
+		uv.setVersion(vpResource.getVersion());
+		integration.getUsedViewpoints().add(uv);
+
 	}
 
 }
