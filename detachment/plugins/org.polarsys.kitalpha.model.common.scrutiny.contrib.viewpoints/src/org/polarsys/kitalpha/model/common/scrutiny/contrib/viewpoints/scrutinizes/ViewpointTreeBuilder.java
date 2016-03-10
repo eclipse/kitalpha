@@ -73,10 +73,8 @@ public class ViewpointTreeBuilder {
 		Collection<Resource> usedViewpointResources = new HashSet<Resource>();
 		
 		for (Resource resource2 : resources) {
-			if (additionalViewpoints != null && additionalViewpoints.contains(resource2.getId())) {
-				usedViewpointResources.add(resource2);
-				continue;
-			}
+			if (additionalViewpoints != null ) 
+				additionalViewpoints.remove(resource2.getId());
 			Viewpoint current = getViewpointRootEObject(resource2.getPath());
 			EList<EPackage> ePackages = current.getMetamodel().getModels();
 			
@@ -87,7 +85,16 @@ public class ViewpointTreeBuilder {
 					break INNER_FOR_LOOP;
 				}
 			}
-			
+		}
+		if (additionalViewpoints != null ) {
+			for (String id : additionalViewpoints) {
+				// create placeholder for missing viewpoint
+				Resource resource = new Resource();
+				resource.setId(id);
+				resource.setName(id);
+				resource.setPath("/"+id);
+				usedViewpointResources.add(resource);
+			}
 		}
 		
 		return usedViewpointResources;
@@ -101,12 +108,14 @@ public class ViewpointTreeBuilder {
 		
 		for (Resource resource : filtredResources) {
 			Viewpoint current = getViewpointRootEObject(resource.getPath());
-			EList<EPackage> ePackages = current.getMetamodel().getModels();
 			
 			IViewpointTreeDescription vpd = createNewViewpointDescription(resource);
-			
-			for (EPackage ePackage : ePackages) {
-				vpd.getViewpointNsUri().add(ePackage.getNsURI());
+
+			if (current != null) {
+				EList<EPackage> ePackages = current.getMetamodel().getModels();
+				for (EPackage ePackage : ePackages) {
+					vpd.getViewpointNsUri().add(ePackage.getNsURI());
+				}
 			}
 			
 			viewpointTreeDescriptions.add(vpd);
@@ -156,7 +165,7 @@ public class ViewpointTreeBuilder {
 	 * @param eVpRoot
 	 */
 	private void computeViewpointTreeDescriptionAggregations(IViewpointTreeDescription vpd, Collection<IViewpointTreeDescription> vpd_set, Viewpoint eVpRoot) {
-		if (vpd_set == null)
+		if (vpd_set == null || eVpRoot == null)
 			return;
 		
 		EList<Viewpoint> dependencies = eVpRoot.getDependencies();
@@ -198,7 +207,7 @@ public class ViewpointTreeBuilder {
 	 * @param eVpRoot
 	 */
 	private void computeViewpointTreeDescriptionParents(IViewpointTreeDescription vpd, Collection<IViewpointTreeDescription> vpd_set, Map<String, Collection<String>> relationships, Viewpoint eVpRoot) {
-		if (vpd_set == null)
+		if (vpd_set == null || eVpRoot == null)
 			return;
 		
 		EList<Viewpoint> parents = eVpRoot.getParents();
@@ -264,7 +273,11 @@ public class ViewpointTreeBuilder {
 			URI uri = ViewpointRelationshipHelper.createPlatformPluginURI(path, false);
 			ResourceSet resourceSet = new ResourceSetImpl();
 			
-			return (Viewpoint) resourceSet.getEObject(uri, true);
+			try {
+				return (Viewpoint) resourceSet.getEObject(uri, true);
+			} catch (Exception e) {
+				
+			}
 			
 		}
 		return null;
@@ -276,3 +289,4 @@ public class ViewpointTreeBuilder {
 	}
 	
 }
+
