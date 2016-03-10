@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-
 import org.polarsys.kitalpha.transposer.analyzer.graph.Edge;
 import org.polarsys.kitalpha.transposer.analyzer.graph.Graph;
 import org.polarsys.kitalpha.transposer.analyzer.graph.Vertex;
