@@ -26,11 +26,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusRepresentation;
+import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RepresentationElement;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
-import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.Integration;
-import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedViewpoint;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.modelresources.scrutinize.ModelResourcesScrutinizer;
@@ -64,9 +64,9 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 
 	@Override
 	public void findIn(Resource resource) {
-		if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Integration) {
-			Integration root = (Integration) resource.getContents().get(0);
-			for (UsedViewpoint uv : root.getUsedViewpoints()) {
+		if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata) {
+			Metadata root = (Metadata) resource.getContents().get(0);
+			for (ViewpointUsage uv : root.getViewpointUsages()) {
 				usedViewpoints.add(uv.getVpId());
 			}
 		}

@@ -329,8 +329,8 @@
     <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_FqiisMQBEeW1q_kk0b3YWA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/integration/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_K18QkMQBEeW1q_kk0b3YWA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/integration/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_FqiisMQBEeW1q_kk0b3YWA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/metadata/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_K18QkMQBEeW1q_kk0b3YWA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/metadata/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_-JSnoI5wEeORY9jpJq94Og" path="${publish}/TP_mars"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_s9Xn0BcgEeSiX7noNBdBeQ" path="${publish}/TP_build"/>
       <components xsi:type="buildstep:Feature" xmi:id="_ITgn0EVSEeOxuMV9a71i9w" id="org.polarsys.kitalpha.ad.sdk.feature"/>

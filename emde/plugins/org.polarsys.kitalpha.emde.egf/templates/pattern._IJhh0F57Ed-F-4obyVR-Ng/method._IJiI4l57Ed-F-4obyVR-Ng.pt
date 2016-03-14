@@ -1354,7 +1354,7 @@ public class <%=genPackage.getEditorClassName()%>
 			resourceToDiagnosticMap.put(resource,  analyzeResourceProblems(resource, exception));
 		}
 		editingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);
-		<%=genModel.getImportedName("org.polarsys.kitalpha.ad.viewpoint.integration.IntegrationHelper")%>.getInstance().initIntegrationStorage(editingDomain.getResourceSet());
+		<%=genModel.getImportedName("org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper")%>.getViewpointMetadata(editingDomain.getResourceSet()).initMetadataStorage();
 	}
 
 	/**

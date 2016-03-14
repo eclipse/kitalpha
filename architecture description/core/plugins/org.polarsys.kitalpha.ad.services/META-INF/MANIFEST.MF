@@ -9,7 +9,7 @@ Bundle-Activator: org.polarsys.kitalpha.ad.services.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.common;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.model;visibility:=reexport,
- org.polarsys.kitalpha.ad.viewpoint.integration,
+ org.polarsys.kitalpha.ad.metadata,
  org.eclipse.emf.transaction
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

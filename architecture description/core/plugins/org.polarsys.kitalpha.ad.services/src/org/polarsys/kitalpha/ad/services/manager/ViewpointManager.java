@@ -35,10 +35,10 @@ import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
+import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
-import org.polarsys.kitalpha.ad.viewpoint.integration.IntegrationHelper;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
@@ -93,7 +93,7 @@ public class ViewpointManager {
 	{
 		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
 		Resource[] availableViewpoints = ViewpointManager.getAvailableViewpoints();
-		Map<String, String> viewpointUsages = IntegrationHelper.getInstance().getViewpointUsages(context);
+		Map<String, String> viewpointUsages = MetadataHelper.getViewpointMetadata(context).getViewpointUsages();
 		for (Entry<String, String> usage : viewpointUsages.entrySet())
 		{
 			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
@@ -134,15 +134,15 @@ public class ViewpointManager {
 	}
 
 	public boolean isActive(String id) {
-		return IntegrationHelper.getInstance().isInUse(target, id);
+		return MetadataHelper.getViewpointMetadata(target).isInUse(id);
 	}
 
 	public boolean isUsed(String id) {
-		return IntegrationHelper.getInstance().isInUse(target, id);
+		return MetadataHelper.getViewpointMetadata(target).isInUse(id);
 	}
 
 	public boolean isFiltered(String id) {
-		return IntegrationHelper.getInstance().isFiltered(target, id);
+		return MetadataHelper.getViewpointMetadata(target).isFiltered(id);
 	}
 
 	public void filter(String id, boolean state) throws ViewpointActivationException {
@@ -151,7 +151,7 @@ public class ViewpointManager {
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
 		if (!isUsed(id))
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
-		IntegrationHelper.getInstance().setFilter(target, id, state);
+		MetadataHelper.getViewpointMetadata(target).setFilter(id, state);
 		fireEvent(vpResource, state ? FILTERED : DISPLAYED);
 	}
 
@@ -180,7 +180,7 @@ public class ViewpointManager {
 	protected void doStartUse(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
-		IntegrationHelper.getInstance().setUsage(target, vpResource, true);
+		MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, true);
 		managed.add(vpResource.getProviderSymbolicName());
 		if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
 			managed.add(vpResource.getProviderSymbolicName());
@@ -256,7 +256,7 @@ public class ViewpointManager {
 		// additional events such PRE_DEACTIVATED or POST_DEACTIVATED
 		String providerSymbolicName = vpResource.getProviderSymbolicName();
 		desactivateBundle(providerSymbolicName);
-		IntegrationHelper.getInstance().setUsage(target, vpResource, false);
+		MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, false);
 		fireEvent(vpResource, DEACTIVATED);
 	}
 

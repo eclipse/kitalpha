@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.Integration;
-import org.polarsys.kitalpha.ad.viewpoint.integrationdomain.integration.UsedViewpoint;
+import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.viewpoints.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
@@ -80,10 +80,10 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 		for (Resource resource : set.getResources()) 
 		{
 			Collection<EObject> eObjectToRemove = new HashSet<EObject>();
-			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Integration)
+			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata)
 			{
-				Integration root = (Integration)resource.getContents().get(0);
-				for (UsedViewpoint uv : root.getUsedViewpoints())
+				Metadata root = (Metadata)resource.getContents().get(0);
+				for (ViewpointUsage uv : root.getViewpointUsages())
 			{
 					if (unSelectedViewpoint.contains(uv.getVpId()))
 						eObjectToRemove.add(uv);

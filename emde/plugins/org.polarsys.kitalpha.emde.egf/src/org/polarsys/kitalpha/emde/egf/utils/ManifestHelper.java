@@ -158,6 +158,7 @@ public abstract class ManifestHelper {
 			additions.add("org.eclipse.emf.ecore.edit"); //$NON-NLS-1$
 			additions.add("org.eclipse.emf.ecore.editor"); //$NON-NLS-1$
 			additions.add("org.polarsys.kitalpha.emde.ui"); //$NON-NLS-1$
+			additions.add("org.polarsys.kitalpha.ad.metadata"); //$NON-NLS-1$
 			return additions;
 		}
 

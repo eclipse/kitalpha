@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Version: 1.1.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.metadata;singleton:=true
+Bundle-Activator: org.polarsys.kitalpha.ad.metadata.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.transaction,
+ org.polarsys.kitalpha.ad.metadata.model,
+ org.polarsys.kitalpha.resourcereuse
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.kitalpha.ad.metadata,
+ org.polarsys.kitalpha.ad.metadata.commands,
+ org.polarsys.kitalpha.ad.metadata.helpers
