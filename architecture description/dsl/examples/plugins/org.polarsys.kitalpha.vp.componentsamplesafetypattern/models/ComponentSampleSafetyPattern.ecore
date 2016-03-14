@@ -2,13 +2,13 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComponentSampleSafetyPattern" nsURI="http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0"
     nsPrefix="ComponentSampleSafetyPattern">
-  <eClassifiers xsi:type="ecore:EClass" name="SafetyPackage" eSuperTypes="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//Package">
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyPackage" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//Package">
     <eStructuralFeatures xsi:type="ecore:EReference" name="modes" upperBound="-1"
         eType="#//SafetyMode" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SafetyMode" eSuperTypes="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement">
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyMode" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="involvedComponents" upperBound="-1"
-        eType="ecore:EClass ../../\org.polarsys.kitalpha.vp.componentsamplesafety\models\ComponentSampleSafety.ecore#//Safety"/>
+        eType="ecore:EClass ../../org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//SAFETY_PATTERN"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SAFETY_PATTERN">
