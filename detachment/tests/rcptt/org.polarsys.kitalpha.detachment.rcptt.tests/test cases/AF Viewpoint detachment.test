@@ -1,0 +1,71 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: AF Viewpoint detachment
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _JCNikOOREeWanemHN2-Kkw
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 5:37 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Test detachment of AF viewpoints
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+proc detachmentScenario_AFViewpointDetachment [val model "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird"]
+	[val vpSafetyPattern "Component Sample/Component Sample Safety Pattern"]
+	[val vpSafetyPatternURI "[http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0]"]
+	[val vpSafety "Component Sample/Component Sample Safety"]
+	[val vpSafetyURI "[http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0]"]
+	[val vpQualityAssessment "Component Sample/Component Sample Quality Assessment"]
+	[val vpQAURI "[http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0]"]
+	[val vpPerformance "Component Sample/Component Sample Performance"]
+	[val vpPerfoURI "[http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0]"]
+	[val vpHierarchySection "Viewpoints Hierarchy"]
+	[val vpDetachmentPage "Viewpoints Tree Page"]
+	[val detachment "Detachment"]
+	[val projectExplorerViewer "Project Explorer"] {
+	
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpSafetyPattern -nsURI vpSafetyPatternURI
+		detachment_performDetachment
+
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpSafety  -nbVpDetected 0 -nsURI vpSafetyURI
+		detachment_performDetachment
+
+
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpQualityAssessment --nsURI vpQAURI
+		detachment_performDetachment
+
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpPerformance -nsURI vpPerfoURI
+		detachment_performDetachment
+
+		detachment_launchModelDetachment -path $model
+		detachment_setVisibleTabItem $vpDetachmentPage
+
+		get-editor $detachment | get-section $vpHierarchySection | get-tree | get-property itemCount | equals 1 
+    		| verify-true
+		get-editor $detachment | close
+
+		detachment_openSession $model 
+		with [get-editor "Video On Demande - Activity Explorer"] {
+    		get-link "" | click
+    		get-section "Diagrams Viewer" | get-tree 
+        		| select "ComponentSample/ComponentSampleDiagram/Video on demand Architecture" | double-click
+		}
+		get-view $projectExplorerViewer | get-tree | select $model | get-menu Close | click
+		get-window Save | get-button Yes | click
+}
+
+detachmentScenario_AFViewpointDetachment
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

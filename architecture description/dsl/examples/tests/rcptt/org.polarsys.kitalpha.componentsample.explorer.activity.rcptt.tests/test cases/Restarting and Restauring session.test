@@ -1,0 +1,62 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Restarting and Restauring session
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _frht8OdkEeWSNpHGyYWwaw
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 2:48 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Check the behavior of the Activity Explorer at restarting the platform
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+//delete this when automatic opening of AEx will be fixed
+//get-preferences-menu | click
+//with [get-window Preferences] {
+//    get-tree | select "Activity Explorer"
+//    get-button "Open Activity Explorer Editor during the session opening." | check
+//    get-button Apply | click
+//    get-button OK | click
+//}
+
+openSession -projectName "org.polarsys.kitalpha.vp.componentsample.runtime.model" -airdName "model/VideoOnDemand.aird"
+get-menu "File/Restart" | click
+wait-until-eclipse-is-ready
+with [get-tab-folder -index 2] {
+    get-property "pages[0]" | equals "Video On Demande - Activity Explorer" | verify-true
+    get-property activePage | equals "Video On Demande - Activity Explorer" | verify-true
+}
+with [get-editor "Video On Demande - Activity Explorer"] {
+    get-tab-folder | get-tab-item "Component Sample Architecture" | click
+    get-section "Diagrams Viewer" | get-tree 
+        | select "ComponentSample/ComponentSampleDiagram/Video on demand Architecture" | double-click
+}
+get-menu "File/Save All" | click
+
+//delete this when automatic opening of AEx will be fixed
+get-preferences-menu | click
+with [get-window Preferences] {
+    get-tree | select "Activity Explorer"
+    get-button "Open Activity Explorer Editor during the session opening." | uncheck
+    get-button Apply | click
+    get-button OK | click
+}
+
+get-menu "File/Restart" | click
+wait-until-eclipse-is-ready
+with [get-tab-folder -index 2] {
+    get-property activePage | equals "Video on demand Architecture" | verify-true
+    get-property tabCount | equals 2 | verify-true 
+}
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Close | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

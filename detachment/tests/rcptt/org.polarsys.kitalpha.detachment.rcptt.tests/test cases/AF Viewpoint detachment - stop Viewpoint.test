@@ -1,0 +1,65 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: AF Viewpoint detachment - stop Viewpoint
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _G0e8QOU9EeW6ie22ZOX9CQ
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 5:42 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Test detachment of AF viewpoints
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+let [val model "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird"]
+	[val vpSafetyPattern "Component Sample/Component Sample Safety Pattern"]
+	[val vpSafety "Component Sample/Component Sample Safety"]
+	[val vpQualityAssessment "Component Sample/Component Sample Quality Assessment"]
+	[val vpPerformance "Component Sample/Component Sample Performance"]
+	[val vpHierarchySection "Viewpoints Hierarchy"]
+	[val vpDetachmentPage "Viewpoints Tree Page"]
+	[val detachment "Detachment"]
+	[val projectExplorerViewer "Project Explorer"] {
+	
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpSafetyPattern
+		detachment_performDetachment
+
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpSafety
+		detachment_performDetachment
+
+
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpQualityAssessment
+		detachment_performDetachment
+
+		detachment_launchModelDetachment -path $model
+		detachment_prepareToDetachViewpoint -vpName $vpPerformance
+		detachment_performDetachment
+
+		detachment_launchModelDetachment -path $model
+		detachment_setVisibleTabItem $vpDetachmentPage
+
+		get-editor $detachment | get-section $vpHierarchySection | get-tree | get-property itemCount | equals 1 
+    		| verify-true
+		get-editor $detachment | close
+
+		detachment_openSession $model 
+		with [get-editor "Video On Demande - Activity Explorer"] {
+    		get-link "" | click
+    		get-section "Diagrams Viewer" | get-tree 
+        		| select "ComponentSample/ComponentSampleDiagram/Video on demand Architecture" | double-click
+		}
+		get-view $projectExplorerViewer | get-tree | select $model | get-menu Close | click
+		get-window Save | get-button Yes | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

@@ -1,0 +1,79 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _21OdoOOkEeWanemHN2-Kkw
+Element-Name: Diagram Creation Many Session
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _OtHUMObkEeWyM-T_36Gzrg
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/10/16 6:30 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Check diagram creation in the right session
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Open | click
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" | get-menu Open | click
+}
+with [get-editor "Video On Demande 2 - Activity Explorer"] {
+    get-tab-folder | get-tab-item "Component Sample Architecture" | click
+    with [get-section "Diagrams of Component Sample Architecture"] {
+        click
+        get-link "Create a new Diagram" | click
+    }
+}
+with [get-window "Type ComponentSampleDiagram name"] {
+    with [get-editbox -after [get-label "Type ComponentSampleDiagram name"]] {
+        set-text "diagram in VideoOnDemande2"
+    }
+    get-button OK | click
+}
+get-tab-folder -index 2 | get-property activePage | equals "*diagram in VideoOnDemande2" | verify-true
+get-tab-folder -index 2 | get-tab-item "*Video On Demande 2 - Activity Explorer" | click
+get-tab-folder -index 2 | get-property activePage | equals "*Video On Demande 2 - Activity Explorer" | verify-true
+get-tab-folder -index 2 | get-tab-item "Video On Demanded - Activity Explorer" | click
+get-tab-folder -index 2 | get-property activePage | equals "Video On Demanded - Activity Explorer" | verify-true
+get-tab-folder -index 2 | get-tab-item "*Video On Demande 2 - Activity Explorer" | click
+get-menu "File/Save All" | click
+with [get-tab-folder -index 2] {
+    get-tab-item "diagram in VideoOnDemande2" | click
+    get-tab-item "Video On Demanded - Activity Explorer" | click
+}
+with [get-editor "Video On Demanded - Activity Explorer"] {
+    get-link "" | click
+    with [get-section "Diagrams of Component Sample Architecture"] {
+        click
+        get-link "Set Name To Component Sample Model" | click
+    }
+}
+get-window "Name of Component Sample Model" | get-button Cancel | click
+get-editor "Video On Demanded - Activity Explorer" | get-section "Diagrams of Component Sample Architecture" 
+    | get-link "Create a new Diagram" | click
+with [get-window "Type ComponentSampleDiagram name"] {
+    with [get-editbox -after [get-label "Type ComponentSampleDiagram name"]] {
+        set-text "diagram in VideoOnDemanded"
+    }
+    get-button OK | click
+}
+get-tab-folder -index 2 | get-property activePage | equals "*diagram in VideoOnDemanded" | verify-true
+get-tab-folder -index 2 | get-tab-item "*Video On Demanded - Activity Explorer" | click
+get-tab-folder -index 2 | get-property activePage | equals "*Video On Demanded - Activity Explorer" | verify-true
+get-tab-folder -index 2 | get-tab-item "Video On Demande 2 - Activity Explorer" | click
+get-tab-folder -index 2 | get-property activePage | equals "Video On Demande 2 - Activity Explorer" | verify-true
+get-tab-folder -index 2 | get-tab-item "diagram in VideoOnDemande2" | click
+get-tab-folder -index 2 | get-property activePage | equals "diagram in VideoOnDemande2" | verify-true
+get-menu "File/Save All" | click
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Close | click
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" | get-menu Close | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

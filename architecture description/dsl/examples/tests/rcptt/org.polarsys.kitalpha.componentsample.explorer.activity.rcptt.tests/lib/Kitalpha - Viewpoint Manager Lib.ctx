@@ -1,0 +1,72 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.ecl
+Element-Name: Kitalpha - Viewpoint Manager Lib
+Element-Type: context
+Element-Version: 2.0
+Id: _L03H4OoJEeWM8Nol5H2vPg
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 6:21 PM
+
+------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
+Content-Type: text/ecl
+Entry-Name: .ecl.context
+
+proc "restartViewpoint" [val vpName] {
+	openViewpointManagerViewIfNotOpened
+	
+	if [get-view "Viewpoint Manager" | get-table | get-item $vpName | get-property "columns[1]" -raw | equals  Active] {
+		stopViewpoint $vpName
+	}
+	startViewpoint $vpName
+}
+
+// Start a Viewpoint in the Viewpoint Manager
+proc "startViewpoint" [val vpName] {
+	openViewpointManagerViewIfNotOpened
+	
+	// Verifying if the Basic Price viewpoint is well loaded by Viewpoint Manager
+	get-view "Viewpoint Manager" | get-table | get-item $vpName | get-property caption | equals $vpName | verify-true
+	
+	// Check the activation status of the Basic Price viewpoint. If it was not activated yet, then start it
+	if [get-view "Viewpoint Manager" | get-table | get-item $vpName | get-property "columns[1]" -raw | equals  Unactive] {
+		get-view "Viewpoint Manager" | get-table | select $vpName | get-menu Start | click
+	}
+	
+	// check if the Basic Price viewpoint is well started
+	get-view "Viewpoint Manager" | get-table | get-item $vpName | get-property "columns[1]" | equals  Active | verify-true
+	
+	saveAll
+}
+
+// Stop a Viewpoint in the Viewpoint Manager
+proc "stopViewpoint" [val vpName] {
+	openViewpointManagerViewIfNotOpened
+	
+	// Verifying if the Basic Price viewpoint is well loaded by Viewpoint Manager
+	get-view "Viewpoint Manager" | get-table | get-item $vpName | get-property caption | equals $vpName | verify-true
+	// Check the activation status of the Basic Price viewpoint. If it was not activated yet, then start it
+
+	if [get-view "Viewpoint Manager" | get-table | get-item $vpName | get-property "columns[1]" -raw | equals  Active] {
+		get-view "Viewpoint Manager" | get-table | select $vpName | get-menu Stop | click
+	}
+	
+	// check if the Basic Price viewpoint is well started
+	get-view "Viewpoint Manager" | get-table | get-item $vpName | get-property "columns[1]" | equals  Unactive | verify-true
+	
+	saveAll
+}
+
+proc "openViewpointManagerViewIfNotOpened" { 
+	try{
+		get-view "Viewpoint Manager"
+	}
+	-catch {
+		get-menu "Window/Show View/Other..." | click
+		with [get-window "Show View"] {
+		    get-tree | select "Kitalpha/Viewpoint Manager"
+		    get-button OK | click
+		}
+	}
+}
+------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998--
