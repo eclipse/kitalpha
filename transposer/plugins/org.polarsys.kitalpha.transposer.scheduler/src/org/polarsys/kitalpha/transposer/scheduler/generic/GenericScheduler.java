@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-
 import org.polarsys.kitalpha.transposer.analyzer.graph.Edge;
 import org.polarsys.kitalpha.transposer.analyzer.graph.Graph;
 import org.polarsys.kitalpha.transposer.analyzer.graph.Vertex;
@@ -309,7 +309,7 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 	 * initialiseur
 	 */
 	private void init() {
-		_visited = new HashSet<Vertex<?>>();
+		_visited = new LinkedHashSet<Vertex<?>>();
 		_notVisited = new HashSet<Vertex<?>>();
 		_backTracks = new HashSet<Edge<?>>();
 		_foundCycles = new HashSet<LinkedList<Edge<?>>>();

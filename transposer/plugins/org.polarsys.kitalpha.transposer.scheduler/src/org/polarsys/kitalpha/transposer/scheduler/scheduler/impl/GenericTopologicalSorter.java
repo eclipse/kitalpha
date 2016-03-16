@@ -29,7 +29,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.polarsys.kitalpha.transposer.analyzer.graph.Edge;
 import org.polarsys.kitalpha.transposer.analyzer.graph.Graph;
 import org.polarsys.kitalpha.transposer.analyzer.graph.GraphFactory;
@@ -72,7 +71,7 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 	 */
 	private Set<Vertex<?>> findIndependantsInTypeSet(Set<Vertex<?>> toSort,
 			Comparator<Vertex<?>> comparator_p, IProgressMonitor monitor_p) {
-		Set<Vertex<?>> independants = new HashSet<Vertex<?>>();
+		Set<Vertex<?>> independants = new LinkedHashSet<Vertex<?>>();
 
 		if (comparator_p != null) {
 			independants = new TreeSet<Vertex<?>>(comparator_p);
@@ -234,7 +233,7 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 			LinkedHashSet<Vertex<?>> sorted, Set<Vertex<?>> toSort,
 			Comparator<Vertex<?>> comparator_p, IProgressMonitor monitor_p)
 			throws CycleException {
-		Set<Vertex<?>> dependants = new HashSet<Vertex<?>>();
+		Set<Vertex<?>> dependants = new LinkedHashSet<Vertex<?>>();
 		Set<Vertex<?>> independants;
 
 		if (toSort.size() == 0)
