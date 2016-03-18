@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_uNPTIOYgEeWi5rIilWZDuQ" name="Model" URI="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml">
+  <packagedElement xmi:type="uml:Package" xmi:id="_uNPTIeYgEeWi5rIilWZDuQ" name="A">
+    <packagedElement xmi:type="uml:Class" xmi:id="_uNZEIeYgEeWi5rIilWZDuQ" name="B">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEJeYgEeWi5rIilWZDuQ" name="C">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEKeYgEeWi5rIilWZDuQ" name="D">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZELeYgEeWi5rIilWZDuQ" name="E">
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEMeYgEeWi5rIilWZDuQ" name="F">
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZENeYgEeWi5rIilWZDuQ" name="G">
+                <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEOeYgEeWi5rIilWZDuQ" name="H">
+                  <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEPeYgEeWi5rIilWZDuQ" name="I">
+                    <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEQeYgEeWi5rIilWZDuQ" name="J">
+                      <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEReYgEeWi5rIilWZDuQ" name="K">
+                        <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZESeYgEeWi5rIilWZDuQ" name="L">
+                          <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZETeYgEeWi5rIilWZDuQ" name="M">
+                            <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEUeYgEeWi5rIilWZDuQ" name="N">
+                              <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEVeYgEeWi5rIilWZDuQ" name="O">
+                                <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEWeYgEeWi5rIilWZDuQ" name="P">
+                                  <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOE-YgEeWi5rIilWZDuQ" name="K">
+                                    <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOF-YgEeWi5rIilWZDuQ" name="R">
+                                      <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOG-YgEeWi5rIilWZDuQ" name="S">
+                                        <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOH-YgEeWi5rIilWZDuQ" name="T">
+                                          <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOI-YgEeWi5rIilWZDuQ" name="W">
+                                            <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOJ-YgEeWi5rIilWZDuQ" name="X">
+                                              <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOK-YgEeWi5rIilWZDuQ" name="Y">
+                                                <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOL-YgEeWi5rIilWZDuQ" name="Z">
+                                                  <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOM-YgEeWi5rIilWZDuQ" name="1"/>
+                                                </nestedClassifier>
+                                                <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOMOYgEeWi5rIilWZDuQ" name="2"/>
+                                              </nestedClassifier>
+                                              <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOLOYgEeWi5rIilWZDuQ" name="3"/>
+                                            </nestedClassifier>
+                                            <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOKOYgEeWi5rIilWZDuQ" name="4"/>
+                                          </nestedClassifier>
+                                          <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOJOYgEeWi5rIilWZDuQ" name="5"/>
+                                        </nestedClassifier>
+                                        <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOIOYgEeWi5rIilWZDuQ" name="6"/>
+                                      </nestedClassifier>
+                                      <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOHOYgEeWi5rIilWZDuQ" name="7"/>
+                                    </nestedClassifier>
+                                    <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOGOYgEeWi5rIilWZDuQ" name="8"/>
+                                  </nestedClassifier>
+                                  <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOFOYgEeWi5rIilWZDuQ" name="9"/>
+                                </nestedClassifier>
+                                <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOEOYgEeWi5rIilWZDuQ" name="10"/>
+                              </nestedClassifier>
+                              <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEVuYgEeWi5rIilWZDuQ" name="11"/>
+                            </nestedClassifier>
+                            <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEUuYgEeWi5rIilWZDuQ" name="12"/>
+                          </nestedClassifier>
+                          <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZETuYgEeWi5rIilWZDuQ" name="13"/>
+                        </nestedClassifier>
+                        <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZESuYgEeWi5rIilWZDuQ" name="14"/>
+                      </nestedClassifier>
+                      <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZERuYgEeWi5rIilWZDuQ" name="15"/>
+                    </nestedClassifier>
+                    <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEQuYgEeWi5rIilWZDuQ" name="16"/>
+                  </nestedClassifier>
+                  <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEPuYgEeWi5rIilWZDuQ" name="17"/>
+                </nestedClassifier>
+                <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEOuYgEeWi5rIilWZDuQ" name="18"/>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZENuYgEeWi5rIilWZDuQ" name="19"/>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEMuYgEeWi5rIilWZDuQ" name="20"/>
+          </nestedClassifier>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZELuYgEeWi5rIilWZDuQ" name="21"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEKuYgEeWi5rIilWZDuQ" name="22"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEJuYgEeWi5rIilWZDuQ" name="23"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_uNZEIuYgEeWi5rIilWZDuQ" name="24"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_uNZEIOYgEeWi5rIilWZDuQ" name="0">
+    <packagedElement xmi:type="uml:Class" xmi:id="_uNZEI-YgEeWi5rIilWZDuQ" name="1">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEJ-YgEeWi5rIilWZDuQ" name="3">
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEK-YgEeWi5rIilWZDuQ" name="5">
+          <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEL-YgEeWi5rIilWZDuQ" name="7">
+            <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEM-YgEeWi5rIilWZDuQ" name="9">
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEN-YgEeWi5rIilWZDuQ" name="11">
+                <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEO-YgEeWi5rIilWZDuQ" name="13">
+                  <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEP-YgEeWi5rIilWZDuQ" name="15">
+                    <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEQ-YgEeWi5rIilWZDuQ" name="17">
+                      <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZER-YgEeWi5rIilWZDuQ" name="19">
+                        <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZES-YgEeWi5rIilWZDuQ" name="21">
+                          <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZET-YgEeWi5rIilWZDuQ" name="13">
+                            <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEU-YgEeWi5rIilWZDuQ" name="25">
+                              <nestedClassifier xmi:type="uml:Class" xmi:id="_uNZEV-YgEeWi5rIilWZDuQ" name="27">
+                                <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOEeYgEeWi5rIilWZDuQ" name="29">
+                                  <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOFeYgEeWi5rIilWZDuQ" name="31">
+                                    <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOGeYgEeWi5rIilWZDuQ" name="33">
+                                      <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOHeYgEeWi5rIilWZDuQ" name="35">
+                                        <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOIeYgEeWi5rIilWZDuQ" name="37">
+                                          <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOJeYgEeWi5rIilWZDuQ" name="39">
+                                            <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOKeYgEeWi5rIilWZDuQ" name="41">
+                                              <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOLeYgEeWi5rIilWZDuQ" name="43">
+                                                <nestedClassifier xmi:type="uml:Class" xmi:id="_uNiOMeYgEeWi5rIilWZDuQ" name="45">
+                                                  <nestedClassifier xmi:type="uml:Component" xmi:id="_uNr_EOYgEeWi5rIilWZDuQ" name="47"/>
+                                                </nestedClassifier>
+                                                <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOMuYgEeWi5rIilWZDuQ" name="46"/>
+                                              </nestedClassifier>
+                                              <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOLuYgEeWi5rIilWZDuQ" name="44"/>
+                                            </nestedClassifier>
+                                            <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOKuYgEeWi5rIilWZDuQ" name="42"/>
+                                          </nestedClassifier>
+                                          <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOJuYgEeWi5rIilWZDuQ" name="40"/>
+                                        </nestedClassifier>
+                                        <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOIuYgEeWi5rIilWZDuQ" name="38"/>
+                                      </nestedClassifier>
+                                      <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOHuYgEeWi5rIilWZDuQ" name="36"/>
+                                    </nestedClassifier>
+                                    <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOGuYgEeWi5rIilWZDuQ" name="34"/>
+                                  </nestedClassifier>
+                                  <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOFuYgEeWi5rIilWZDuQ" name="32"/>
+                                </nestedClassifier>
+                                <nestedClassifier xmi:type="uml:Component" xmi:id="_uNiOEuYgEeWi5rIilWZDuQ" name="30"/>
+                              </nestedClassifier>
+                              <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEWOYgEeWi5rIilWZDuQ" name="28"/>
+                            </nestedClassifier>
+                            <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEVOYgEeWi5rIilWZDuQ" name="26"/>
+                          </nestedClassifier>
+                          <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEUOYgEeWi5rIilWZDuQ" name="24"/>
+                        </nestedClassifier>
+                        <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZETOYgEeWi5rIilWZDuQ" name="22"/>
+                      </nestedClassifier>
+                      <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZESOYgEeWi5rIilWZDuQ" name="20"/>
+                    </nestedClassifier>
+                    <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEROYgEeWi5rIilWZDuQ" name="18"/>
+                  </nestedClassifier>
+                  <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEQOYgEeWi5rIilWZDuQ" name="16"/>
+                </nestedClassifier>
+                <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEPOYgEeWi5rIilWZDuQ" name="14"/>
+              </nestedClassifier>
+              <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEOOYgEeWi5rIilWZDuQ" name="12"/>
+            </nestedClassifier>
+            <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZENOYgEeWi5rIilWZDuQ" name="10"/>
+          </nestedClassifier>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEMOYgEeWi5rIilWZDuQ" name="8"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZELOYgEeWi5rIilWZDuQ" name="6"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_uNZEKOYgEeWi5rIilWZDuQ" name="4"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_uNZEJOYgEeWi5rIilWZDuQ" name="2"/>
+  </packagedElement>
+</uml:Model>
