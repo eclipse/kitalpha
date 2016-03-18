@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.emde.genchain.feature"
       label="Kitalpha eMDE Genchain Integration Feature (Incubation)"
-      version="0.5.2.qualifier"
+      version="0.5.3.qualifier"
       provider-name="%providerName">
 
    <description>

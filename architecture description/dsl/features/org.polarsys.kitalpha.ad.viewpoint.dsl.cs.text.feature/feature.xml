@@ -14,7 +14,7 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.feature"
       label="Kitalpha Viewpoint Textual DSL Feature"
-      version="0.5.2.qualifier"
+      version="0.5.3.qualifier"
       provider-name="www.polarsys.org">
 
    <description>
