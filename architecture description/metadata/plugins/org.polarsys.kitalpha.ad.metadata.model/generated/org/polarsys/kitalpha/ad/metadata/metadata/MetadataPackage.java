@@ -18,6 +18,7 @@ package org.polarsys.kitalpha.ad.metadata.metadata;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -164,6 +165,17 @@ public interface MetadataPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Version</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.osgi.framework.Version
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getVersion()
+	 * @generated
+	 */
+	int VERSION = 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata <em>Metadata</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,6 +238,17 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getViewpointUsage_Filtered();
+
+	/**
+	 * Returns the meta object for data type '{@link org.osgi.framework.Version <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Version</em>'.
+	 * @see org.osgi.framework.Version
+	 * @model instanceClass="org.osgi.framework.Version"
+	 * @generated
+	 */
+	EDataType getVersion();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -301,6 +324,16 @@ public interface MetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIEWPOINT_USAGE__FILTERED = eINSTANCE.getViewpointUsage_Filtered();
+
+		/**
+		 * The meta object literal for the '<em>Version</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.osgi.framework.Version
+		 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getVersion()
+		 * @generated
+		 */
+		EDataType VERSION = eINSTANCE.getVersion();
 
 	}
 

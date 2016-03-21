@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
 import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
 
@@ -74,7 +75,7 @@ public class ViewpointUsageImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VERSION_EDEFAULT = null;
+	protected static final Version VERSION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -84,7 +85,7 @@ public class ViewpointUsageImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected String version = VERSION_EDEFAULT;
+	protected Version version = VERSION_EDEFAULT;
 
 
 
@@ -175,7 +176,7 @@ public class ViewpointUsageImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 
-	public String getVersion() {
+	public Version getVersion() {
 
 		return version;
 	}
@@ -188,19 +189,14 @@ public class ViewpointUsageImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 
-	public void setVersion(String newVersion) {
+	public void setVersion(Version newVersion) {
 
-		String oldVersion = version;
+		Version oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MetadataPackage.VIEWPOINT_USAGE__VERSION, oldVersion, version));
 
 	}
-
-
-
-
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,7 +259,7 @@ public class ViewpointUsageImpl extends MinimalEObjectImpl.Container implements 
 				setVpId((String)newValue);
 				return;
 			case MetadataPackage.VIEWPOINT_USAGE__VERSION:
-				setVersion((String)newValue);
+				setVersion((Version)newValue);
 				return;
 			case MetadataPackage.VIEWPOINT_USAGE__FILTERED:
 				setFiltered((Boolean)newValue);

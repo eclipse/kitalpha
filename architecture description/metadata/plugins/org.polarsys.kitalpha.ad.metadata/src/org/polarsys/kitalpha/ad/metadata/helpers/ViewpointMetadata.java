@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.commands.SetViewpointFilterCommand;
 import org.polarsys.kitalpha.ad.metadata.commands.SetViewpointUsageCommand;
 import org.polarsys.kitalpha.ad.metadata.commands.UpdateViewpointVersionCommand;
@@ -40,8 +41,8 @@ public class ViewpointMetadata {
 		this.context = context;
 	}
 
-	public Map<String, String> getViewpointUsages() {
-		Map<String, String> id2version = new HashMap<String, String>();
+	public Map<String, Version> getViewpointUsages() {
+		Map<String, Version> id2version = new HashMap<String, Version>();
 		Metadata metadataStorage = getMetadataStorage();
 
 		if (metadataStorage == null)
@@ -52,47 +53,30 @@ public class ViewpointMetadata {
 		return id2version;
 	}
 	
-	public void updateVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource) {
+	public void updateVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version) {
 		Metadata metadata = getMetadataStorage();
 		if (metadata == null)
 			throw new UnsupportedOperationException("cannot find integration resource");
 		TransactionalEditingDomain transactionalEditingDomain = TransactionUtil.getEditingDomain(context);
-		if (transactionalEditingDomain != null) {
-			transactionalEditingDomain.getCommandStack().execute(new UpdateViewpointVersionCommand(transactionalEditingDomain, metadata, vpResource));
-		} else {
-			for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
-				if (vpResource.getId().equals(uv.getVpId())) {
-					uv.setVersion(vpResource.getVersion());
-					return ;
-				}
-			}
-		}
+		UpdateViewpointVersionCommand command = new UpdateViewpointVersionCommand(transactionalEditingDomain, metadata, vpResource, version);
+		if (transactionalEditingDomain != null) 
+			transactionalEditingDomain.getCommandStack().execute(command);
+		 else
+			 command.execute();
 	}
 
-	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, boolean usage) {
+	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version, boolean usage) {
 		Metadata metadata = getMetadataStorage();
 		if (metadata == null)
 			throw new UnsupportedOperationException("cannot find integration resource");
 		TransactionalEditingDomain transactionalEditingDomain = TransactionUtil.getEditingDomain(context);
-		if (transactionalEditingDomain != null) {
-			transactionalEditingDomain.getCommandStack().execute(new SetViewpointUsageCommand(transactionalEditingDomain, metadata, vpResource, usage));
-		} else {
-			for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
-				if (vpResource.getId().equals(uv.getVpId())) {
-					if (usage)
-						return; // object is already there, nothing to do
-					metadata.getViewpointUsages().remove(uv);
-				}
-			}
-			if (usage) {
-				ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
-				uv.setFiltered(false);
-				uv.setVpId(vpResource.getId());
-				uv.setVersion(vpResource.getVersion());
-				metadata.getViewpointUsages().add(uv);
-			}
-
-		}
+		SetViewpointUsageCommand command = new SetViewpointUsageCommand(transactionalEditingDomain, metadata, vpResource, version, usage);
+		
+		if (transactionalEditingDomain != null) 
+			transactionalEditingDomain.getCommandStack().execute(command);
+		 else
+			command.execute();
+		
 	}
 
 	public void setFilter(String id, boolean filter) {
@@ -100,15 +84,11 @@ public class ViewpointMetadata {
 		if (metadata == null)
 			throw new UnsupportedOperationException("cannot find integration resource");
 		TransactionalEditingDomain transactionalEditingDomain = TransactionUtil.getEditingDomain(context);
-		if (transactionalEditingDomain != null) {
-			transactionalEditingDomain.getCommandStack().execute(new SetViewpointFilterCommand(transactionalEditingDomain, metadata, id, filter));
-		} else {
-			for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
-				if (id.equals(uv.getVpId())) {
-					uv.setFiltered(filter);
-				}
-			}
-		}
+		SetViewpointFilterCommand command = new SetViewpointFilterCommand(transactionalEditingDomain, metadata, id, filter);
+		if (transactionalEditingDomain != null) 
+			transactionalEditingDomain.getCommandStack().execute(command);
+		 else
+			 command.execute();
 	}
 
 	public boolean isInUse(String id) {
@@ -198,6 +178,5 @@ public class ViewpointMetadata {
 			}
 		}
 		return null;
-//		return createMetadataStorage(resourceSet, uri);
 	}
 }

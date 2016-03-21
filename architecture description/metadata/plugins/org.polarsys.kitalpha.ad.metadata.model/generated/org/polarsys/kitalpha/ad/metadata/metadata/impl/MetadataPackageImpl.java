@@ -18,11 +18,13 @@ package org.polarsys.kitalpha.ad.metadata.metadata.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
@@ -48,6 +50,13 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * @generated
 	 */
 	private EClass viewpointUsageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType versionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -169,6 +178,15 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getVersion() {
+		return versionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MetadataFactory getMetadataFactory() {
 		return (MetadataFactory)getEFactoryInstance();
 	}
@@ -199,6 +217,9 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__VP_ID);
 		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__VERSION);
 		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__FILTERED);
+
+		// Create data types
+		versionEDataType = createEDataType(VERSION);
 	}
 
 	/**
@@ -236,8 +257,11 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 
 		initEClass(viewpointUsageEClass, ViewpointUsage.class, "ViewpointUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getViewpointUsage_VpId(), ecorePackage.getEString(), "vpId", null, 1, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getViewpointUsage_Version(), ecorePackage.getEString(), "version", null, 0, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewpointUsage_Version(), this.getVersion(), "version", null, 0, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getViewpointUsage_Filtered(), ecorePackage.getEBoolean(), "filtered", null, 0, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(versionEDataType, Version.class, "Version", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

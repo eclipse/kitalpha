@@ -17,6 +17,7 @@
 package org.polarsys.kitalpha.ad.metadata.metadata;
 
 import org.eclipse.emf.ecore.EObject;
+import org.osgi.framework.Version;
 
 
 /**
@@ -93,13 +94,13 @@ public interface ViewpointUsage extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Version</em>' attribute.
-	 * @see #setVersion(String)
+	 * @see #setVersion(Version)
 	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointUsage_Version()
-	 * @model
+	 * @model dataType="org.polarsys.kitalpha.ad.metadata.metadata.Version"
 	 * @generated
 	 */
 
-	String getVersion();
+	Version getVersion();
 
 
 
@@ -114,10 +115,7 @@ public interface ViewpointUsage extends EObject {
 	 * @generated
 	 */
 
-	void setVersion(String value);
-
-
-
+	void setVersion(Version value);
 
 
 

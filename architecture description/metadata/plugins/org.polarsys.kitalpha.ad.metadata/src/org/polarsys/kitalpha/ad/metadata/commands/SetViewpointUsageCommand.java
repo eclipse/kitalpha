@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
@@ -28,11 +29,13 @@ public class SetViewpointUsageCommand extends RecordingCommand {
 	private Metadata metadata;
 	private Resource vpResource;
 	private boolean usage;
+	private Version version;
 
-	public SetViewpointUsageCommand(TransactionalEditingDomain domain, Metadata integration, Resource resource, boolean usage) {
+	public SetViewpointUsageCommand(TransactionalEditingDomain domain, Metadata integration, Resource resource, Version version, boolean usage) {
 		super(domain);
 		this.metadata = integration;
 		this.vpResource = resource;
+		this.version = version;
 		this.usage = usage;
 	}
 
@@ -50,7 +53,7 @@ public class SetViewpointUsageCommand extends RecordingCommand {
 			ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
 			uv.setFiltered(false);
 			uv.setVpId(vpResource.getId());
-			uv.setVersion(vpResource.getVersion());
+			uv.setVersion(version);
 			metadata.getViewpointUsages().add(uv);
 		}
 

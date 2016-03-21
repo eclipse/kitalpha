@@ -17,6 +17,7 @@
 package org.polarsys.kitalpha.ad.metadata.metadata.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.*;
 
 /**
@@ -82,6 +84,36 @@ public class MetadataFactoryImpl extends EFactoryImpl implements MetadataFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case MetadataPackage.VERSION:
+				return createVersionFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case MetadataPackage.VERSION:
+				return convertVersionToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Metadata createMetadata() {
 		MetadataImpl metadata = new MetadataImpl();
 		return metadata;
@@ -95,6 +127,24 @@ public class MetadataFactoryImpl extends EFactoryImpl implements MetadataFactory
 	public ViewpointUsage createViewpointUsage() {
 		ViewpointUsageImpl viewpointUsage = new ViewpointUsageImpl();
 		return viewpointUsage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Version createVersionFromString(EDataType eDataType, String initialValue) {
+		return (Version)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVersionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
