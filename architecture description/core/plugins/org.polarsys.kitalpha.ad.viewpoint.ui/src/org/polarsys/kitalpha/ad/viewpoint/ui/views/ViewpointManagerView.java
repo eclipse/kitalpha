@@ -212,7 +212,7 @@ public class ViewpointManagerView extends ViewPart {
 								context = editingDomain.getResourceSet();
 						}
 						if (context == null) {
-							EditingDomain obj = part.getAdapter(EditingDomain.class);
+							EditingDomain obj = (EditingDomain) part.getAdapter(EditingDomain.class);
 							if (obj != null) {
 								context = obj.getResourceSet();
 							}

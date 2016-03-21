@@ -42,7 +42,12 @@ public class ViewpointMetadata {
 
 	public Map<String, String> getViewpointUsages() {
 		Map<String, String> id2version = new HashMap<String, String>();
-		for (ViewpointUsage usedViewpoint : getMetadataStorage().getViewpointUsages()) 
+		Metadata metadataStorage = getMetadataStorage();
+
+		if (metadataStorage == null)
+			return id2version;
+			
+		for (ViewpointUsage usedViewpoint : metadataStorage.getViewpointUsages()) 
 			id2version.put(usedViewpoint.getVpId(), usedViewpoint.getVersion());
 		return id2version;
 	}
