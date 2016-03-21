@@ -22,8 +22,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ViewpointElem
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Configuration Element</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

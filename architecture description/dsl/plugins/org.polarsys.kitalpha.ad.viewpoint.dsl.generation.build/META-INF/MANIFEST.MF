@@ -24,7 +24,8 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
-Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.internal,
+Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.extension,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.internal,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.module,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.setup,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.tasks,

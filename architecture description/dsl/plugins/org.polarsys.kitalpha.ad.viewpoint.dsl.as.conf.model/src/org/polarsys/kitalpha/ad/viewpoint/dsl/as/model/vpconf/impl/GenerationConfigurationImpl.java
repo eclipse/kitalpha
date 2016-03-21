@@ -26,11 +26,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.GenerationConfigurationImpl#getProjectName <em>Project Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.GenerationConfigurationImpl#getNsuri <em>Nsuri</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -103,6 +103,7 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public String getProjectName() {
+
 		return projectName;
 	}
 
@@ -113,10 +114,12 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public void setProjectName(String newProjectName) {
+
 		String oldProjectName = projectName;
 		projectName = newProjectName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GENERATION_CONFIGURATION__PROJECT_NAME, oldProjectName, projectName));
+
 	}
 
 	/**
@@ -126,6 +129,7 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public String getNsuri() {
+
 		return nsuri;
 	}
 
@@ -136,10 +140,12 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public void setNsuri(String newNsuri) {
+
 		String oldNsuri = nsuri;
 		nsuri = newNsuri;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GENERATION_CONFIGURATION__NSURI, oldNsuri, nsuri));
+
 	}
 
 	/**

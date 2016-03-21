@@ -83,6 +83,7 @@ public class GDataItemProvider
 	 * @generated
 	 */
 	protected void addModelPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -96,6 +97,7 @@ public class GDataItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -105,6 +107,7 @@ public class GDataItemProvider
 	 * @generated
 	 */
 	protected void addEditPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -118,6 +121,7 @@ public class GDataItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -127,6 +131,7 @@ public class GDataItemProvider
 	 * @generated
 	 */
 	protected void addEditorPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -140,6 +145,7 @@ public class GDataItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -149,6 +155,7 @@ public class GDataItemProvider
 	 * @generated
 	 */
 	protected void addTestPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -162,6 +169,7 @@ public class GDataItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -171,6 +179,7 @@ public class GDataItemProvider
 	 * @generated
 	 */
 	protected void addJavaDocPropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -184,6 +193,7 @@ public class GDataItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -193,6 +203,7 @@ public class GDataItemProvider
 	 * @generated
 	 */
 	protected void addOverwriteEcorePropertyDescriptor(Object object) {
+
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -206,6 +217,7 @@ public class GDataItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
+
 	}
 
 	/**
@@ -227,8 +239,10 @@ public class GDataItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
+
 		GData gData = (GData)object;
 		return getString("_UI_GData_type") + " " + gData.isModel();
+
 	}
 
 	/**

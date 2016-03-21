@@ -21,6 +21,9 @@ Contributors:
       <fcore
             id="egf/vpdslJavaFactory.fcore">
       </fcore>
+      <fcore
+            id="egf/VpdslCommonFactories.fcore">
+      </fcore>
    </extension>
 
 </plugin>

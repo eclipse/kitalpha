@@ -13,6 +13,14 @@
           name="vpdesc.model" mandatory="true" invocationContracts="#_ElXkozYKEeWqG6wz3Xijng #_JBdnUzbMEeW9-uNJc0wiRg">
         <type xmi:type="domain:TypeDomain" xmi:id="_en4CEDX7EeWqG6wz3Xijng"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_2K9vQOwhEeW0Hf5pn0JwLg"
+          name="required.ee" invocationContracts="#_4n32kOwhEeW0Hf5pn0JwLg">
+        <type xmi:type="types:TypeString" xmi:id="_2K9vQewhEeW0Hf5pn0JwLg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_2R9vIOwhEeW0Hf5pn0JwLg"
+          name="viewpoint.version" invocationContracts="#_4UNTsOwhEeW0Hf5pn0JwLg">
+        <type xmi:type="types:TypeString" xmi:id="_2R9vIewhEeW0Hf5pn0JwLg"/>
+      </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_-gmU4DYAEeWqG6wz3Xijng">
       <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_-60ywDYAEeWqG6wz3Xijng">
@@ -435,6 +443,10 @@
               invokedContract="#_yARkxzU4EeWtD50BimPJow"/>
           <invocationContracts xmi:id="_bhkw0DU9EeWtD50BimPJow" sourceInvocationContract="#__hQgtTU8EeWtD50BimPJow"
               invokedContract="#_Hva08DU9EeWtD50BimPJow"/>
+          <invocationContracts xmi:id="_4UNTsOwhEeW0Hf5pn0JwLg" factoryComponentContract="#_2R9vIOwhEeW0Hf5pn0JwLg"
+              invokedContract="#_35Fd8uwhEeW0Hf5pn0JwLg"/>
+          <invocationContracts xmi:id="_4n32kOwhEeW0Hf5pn0JwLg" factoryComponentContract="#_2K9vQOwhEeW0Hf5pn0JwLg"
+              invokedContract="#_35Fd8OwhEeW0Hf5pn0JwLg"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_ElXkoDYKEeWqG6wz3Xijng" name="Generate Java classes" invokedActivity="#_91rZgDYJEeWqG6wz3Xijng">
@@ -475,12 +487,20 @@
   <fcore:FactoryComponent xmi:id="_vnZB0DU4EeWtD50BimPJow" name="create.activity_explorer.project">
     <contractContainer xmi:id="_yARkwDU4EeWtD50BimPJow">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Hva08DU9EeWtD50BimPJow"
-          name="activity.explorer.project.name" mandatory="true" invocationContracts="#_yARkzDU4EeWtD50BimPJow #_yARk4DU4EeWtD50BimPJow #_fNkjIzaKEeWmPbO2Lnr8sw">
+          name="activity.explorer.project.name" mandatory="true" invocationContracts="#_yARkzDU4EeWtD50BimPJow #_yARk4DU4EeWtD50BimPJow #_fNkjIzaKEeWmPbO2Lnr8sw #_t4M6Eu0tEeWIDN8jHBcB7A">
         <type xmi:type="types:TypeString" xmi:id="_Hva08TU9EeWtD50BimPJow"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_yARkxzU4EeWtD50BimPJow"
           name="root.project.name" mandatory="true" invocationContracts="#_yARk0jU4EeWtD50BimPJow">
         <type xmi:type="types:TypeString" xmi:id="_yARkyDU4EeWtD50BimPJow"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_35Fd8OwhEeW0Hf5pn0JwLg"
+          name="required.ee" invocationContracts="#_t4M6FO0tEeWIDN8jHBcB7A">
+        <type xmi:type="types:TypeString" xmi:id="_35Fd8ewhEeW0Hf5pn0JwLg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_35Fd8uwhEeW0Hf5pn0JwLg"
+          name="viewpoint.version" invocationContracts="#_CyTqQ-wiEeW0Hf5pn0JwLg #_t4M6E-0tEeWIDN8jHBcB7A">
+        <type xmi:type="types:TypeString" xmi:id="_35Fd8-whEeW0Hf5pn0JwLg"/>
       </contracts>
     </contractContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_yARkyTU4EeWtD50BimPJow">
@@ -489,6 +509,16 @@
         <invocationContractContainer xmi:id="_yARkyzU4EeWtD50BimPJow">
           <invocationContracts xmi:id="_yARkzDU4EeWtD50BimPJow" factoryComponentContract="#_Hva08DU9EeWtD50BimPJow"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_l7-2cAyvEeK3gMLbl4z4NA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_t4M6EO0tEeWIDN8jHBcB7A" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_K0EvIO0QEeWIDN8jHBcB7A">
+        <invocationContractContainer xmi:id="_t4M6Ee0tEeWIDN8jHBcB7A">
+          <invocationContracts xmi:id="_t4M6Eu0tEeWIDN8jHBcB7A" factoryComponentContract="#_Hva08DU9EeWtD50BimPJow"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_QMvc8O0QEeWIDN8jHBcB7A"/>
+          <invocationContracts xmi:id="_t4M6E-0tEeWIDN8jHBcB7A" factoryComponentContract="#_35Fd8uwhEeW0Hf5pn0JwLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_SJwjQO0QEeWIDN8jHBcB7A"/>
+          <invocationContracts xmi:id="_t4M6FO0tEeWIDN8jHBcB7A" factoryComponentContract="#_35Fd8OwhEeW0Hf5pn0JwLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_STS5wO0QEeWIDN8jHBcB7A"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_fNkjITaKEeWmPbO2Lnr8sw" name="Generate plugin activator"
@@ -506,7 +536,7 @@
           <invocationContracts xmi:id="_yARk0zU4EeWtD50BimPJow" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJOq5EeGh0fmNAy-1lA">
             <type xmi:type="types:TypeString" xmi:id="_yARk1DU4EeWtD50BimPJow" value="representation.feature"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_yARk1TU4EeWtD50BimPJow" targetInvocationContract="#_yARk3zU4EeWtD50BimPJow #_yARk2DU4EeWtD50BimPJow"
+          <invocationContracts xmi:id="_yARk1TU4EeWtD50BimPJow" targetInvocationContract="#_yARk3zU4EeWtD50BimPJow #_yARk2DU4EeWtD50BimPJow #_CyTqQuwiEeW0Hf5pn0JwLg"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJuq5EeGh0fmNAy-1lA"/>
         </invocationContractContainer>
       </invocations>
@@ -521,6 +551,15 @@
           <invocationContracts xmi:id="_yARk2zU4EeWtD50BimPJow" invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_tx1ZBppNEeO0BorZRiG7mg">
             <type xmi:type="types:TypeString" xmi:id="_yARk3DU4EeWtD50BimPJow" value="Polarsys"/>
           </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_CyTqQOwiEeW0Hf5pn0JwLg" name="Update Feature Version"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQObfEeW2XNOYuXmJgg">
+        <invocationContractContainer xmi:id="_CyTqQewiEeW0Hf5pn0JwLg">
+          <invocationContracts xmi:id="_CyTqQuwiEeW0Hf5pn0JwLg" sourceInvocationContract="#_yARk1TU4EeWtD50BimPJow"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQubfEeW2XNOYuXmJgg"/>
+          <invocationContracts xmi:id="_CyTqQ-wiEeW0Hf5pn0JwLg" factoryComponentContract="#_35Fd8uwhEeW0Hf5pn0JwLg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuRObfEeW2XNOYuXmJgg"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_yARk3TU4EeWtD50BimPJow" name="Add  Activity Explorer plugin to the Representation feature "

@@ -13,7 +13,7 @@
         <type xmi:type="types:TypeString" xmi:id="_PlWe4I68EeGdJv40MVeUZQ" value=""/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Kbun0OhPEeGme5hiz-D4Zg"
-          name="build.viewpoint" invocationContracts="#_yGLF1QlWEeKTrvXiiChdUw">
+          name="build.viewpoint" invocationContracts="#_dGk-Ve9OEeWSA4m5zh7DIw">
         <type xmi:type="types:TypeBoolean" xmi:id="_LGfcEOhPEeGme5hiz-D4Zg"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_FmXz4C9HEeKlecntHtUaFg"
@@ -35,13 +35,17 @@
         <invocationContractContainer xmi:id="_DmQoMYKgEeOrLd1N8v_fcw">
           <invocationContracts xmi:id="_DmQoMoKgEeOrLd1N8v_fcw" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_6m4KsPtNEeK-QL-B45qveg"/>
-          <invocationContracts xmi:id="_DmQoM4KgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0glWEeKTrvXiiChdUw #_Yeg7Yy9DEeKlecntHtUaFg #_kMPz03qwEeKZnLNBJ96SOA"
+          <invocationContracts xmi:id="_DmQoM4KgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0glWEeKTrvXiiChdUw #_Yeg7Yy9DEeKlecntHtUaFg #_kMPz03qwEeKZnLNBJ96SOA #_dGk-Uu9OEeWSA4m5zh7DIw"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8BK-cPtNEeK-QL-B45qveg"/>
           <invocationContracts xmi:id="_DmQoNIKgEeOrLd1N8v_fcw" targetInvocationContract="#_Yeg7ZS9DEeKlecntHtUaFg"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_ONdBUPtREeK-QL-B45qveg"/>
-          <invocationContracts xmi:id="_DmQoNYKgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0wlWEeKTrvXiiChdUw #_kMPz0nqwEeKZnLNBJ96SOA"
+          <invocationContracts xmi:id="_DmQoNYKgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0wlWEeKTrvXiiChdUw #_kMPz0nqwEeKZnLNBJ96SOA #_dGk-U-9OEeWSA4m5zh7DIw #_sfMmwu9REeWSA4m5zh7DIw"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8mR2oPtNEeK-QL-B45qveg"/>
           <invocationContracts xmi:id="_DmQoNoKgEeOrLd1N8v_fcw" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_817cMPtNEeK-QL-B45qveg"/>
+          <invocationContracts xmi:id="_VKW5QOwaEeW0Hf5pn0JwLg" targetInvocationContract="#_kTtokOwbEeW0Hf5pn0JwLg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_jYkpsOuREeW0Hf5pn0JwLg"/>
+          <invocationContracts xmi:id="_WxU3EOwaEeW0Hf5pn0JwLg" targetInvocationContract="#_klSgwOwbEeW0Hf5pn0JwLg #_sfMmw-9REeWSA4m5zh7DIw"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_hG_BkOuREeW0Hf5pn0JwLg"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_dpUloC8-EeKlecntHtUaFg" name="Generator Extensions Collector"
@@ -109,6 +113,10 @@
               invokedContract="#_IdoHIC9CEeKlecntHtUaFg"/>
           <invocationContracts xmi:id="_Yeg7ZS9DEeKlecntHtUaFg" sourceInvocationContract="#_DmQoNIKgEeOrLd1N8v_fcw"
               invokedContract="#_e37xAC9CEeKlecntHtUaFg"/>
+          <invocationContracts xmi:id="_kTtokOwbEeW0Hf5pn0JwLg" sourceInvocationContract="#_VKW5QOwaEeW0Hf5pn0JwLg"
+              invokedContract="#_dA1GQOwaEeW0Hf5pn0JwLg"/>
+          <invocationContracts xmi:id="_klSgwOwbEeW0Hf5pn0JwLg" sourceInvocationContract="#_WxU3EOwaEeW0Hf5pn0JwLg"
+              invokedContract="#_aQ1q4OwaEeW0Hf5pn0JwLg"/>
           <invocationContracts xmi:id="_Yeg7Zi9DEeKlecntHtUaFg" invokedContract="#_g66VYC9CEeKlecntHtUaFg">
             <type xmi:type="types:TypeString" xmi:id="_eTVZsC9DEeKlecntHtUaFg" value="id"/>
           </invocationContracts>
@@ -145,8 +153,6 @@
           <invocationContracts xmi:id="_yGLF1AlWEeKTrvXiiChdUw" invokedContract="#_qeYOBQlWEeKTrvXiiChdUw">
             <type xmi:type="types:TypeString" xmi:id="_73Ls4AlWEeKTrvXiiChdUw" value="models"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_yGLF1QlWEeKTrvXiiChdUw" factoryComponentContract="#_Kbun0OhPEeGme5hiz-D4Zg"
-              invokedContract="#_qeYOBwlWEeKTrvXiiChdUw"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_kMPz0HqwEeKZnLNBJ96SOA" name="Fire AF Integration" invokedActivity="#_INuTcHqwEeKZnLNBJ96SOA">
@@ -159,6 +165,31 @@
       </invocations>
       <invocations xmi:id="_NPMWIO1XEeKWbe7Id_8pyQ" name="Fire End Generation Event"
           invokedActivity="#_qYZHoO1cEeKWbe7Id_8pyQ"/>
+      <invocations xmi:id="_sfMmwO9REeWSA4m5zh7DIw" name="Update main feature version"
+          invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQObfEeW2XNOYuXmJgg">
+        <invocationContractContainer xmi:id="_sfMmwe9REeWSA4m5zh7DIw">
+          <invocationContracts xmi:id="_sfMmwu9REeWSA4m5zh7DIw" sourceInvocationContract="#_DmQoNYKgEeOrLd1N8v_fcw"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQubfEeW2XNOYuXmJgg"/>
+          <invocationContracts xmi:id="_uADVgO9REeWSA4m5zh7DIw" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_3b5woOqKEeWFnpOam_jWpg">
+            <type xmi:type="types:TypeString" xmi:id="_we5WgO9REeWSA4m5zh7DIw" value="feature"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_sfMmw-9REeWSA4m5zh7DIw" sourceInvocationContract="#_WxU3EOwaEeW0Hf5pn0JwLg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuRObfEeW2XNOYuXmJgg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_dGk-UO9OEeWSA4m5zh7DIw" name="Package the Viewpoint" invokedActivity="#_s7-mMO9NEeWSA4m5zh7DIw">
+        <invocationContractContainer xmi:id="_dGk-Ue9OEeWSA4m5zh7DIw">
+          <invocationContracts xmi:id="_dGk-Uu9OEeWSA4m5zh7DIw" sourceInvocationContract="#_DmQoM4KgEeOrLd1N8v_fcw"
+              invokedContract="#_y9Udke9NEeWSA4m5zh7DIw"/>
+          <invocationContracts xmi:id="_dGk-U-9OEeWSA4m5zh7DIw" sourceInvocationContract="#_DmQoNYKgEeOrLd1N8v_fcw"
+              invokedContract="#_y9Udk-9NEeWSA4m5zh7DIw"/>
+          <invocationContracts xmi:id="_dGk-VO9OEeWSA4m5zh7DIw" invokedContract="#_y9Udle9NEeWSA4m5zh7DIw">
+            <type xmi:type="types:TypeString" xmi:id="_jW-lYO9OEeWSA4m5zh7DIw" value="models"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_dGk-Ve9OEeWSA4m5zh7DIw" factoryComponentContract="#_Kbun0OhPEeGme5hiz-D4Zg"
+              invokedContract="#_y9Udl-9NEeWSA4m5zh7DIw"/>
+        </invocationContractContainer>
+      </invocations>
     </orchestration>
   </fcore:FactoryComponent>
   <fcore:FactoryComponent xmi:id="_INuTcHqwEeKZnLNBJ96SOA" name="Fire.AF.Integration">
@@ -241,6 +272,12 @@
       <contracts xmi:id="_g66VYC9CEeKlecntHtUaFg" name="vpID">
         <type xmi:type="types:TypeString" xmi:id="_huK-UC9CEeKlecntHtUaFg"/>
       </contracts>
+      <contracts xmi:id="_aQ1q4OwaEeW0Hf5pn0JwLg" name="viewpoint.version">
+        <type xmi:type="types:TypeString" xmi:id="_cqBv0OwaEeW0Hf5pn0JwLg"/>
+      </contracts>
+      <contracts xmi:id="_dA1GQOwaEeW0Hf5pn0JwLg" name="required.ee">
+        <type xmi:type="types:TypeString" xmi:id="_dA1GQewaEeW0Hf5pn0JwLg"/>
+      </contracts>
       <contracts xmi:id="_ZS_-QC9BEeKlecntHtUaFg" name="constracts.map" mode="Out">
         <type xmi:type="types:TypeMap" xmi:id="_cq3R8C9BEeKlecntHtUaFg"/>
       </contracts>
@@ -257,9 +294,6 @@
       </contracts>
       <contracts xmi:id="_qeYOBQlWEeKTrvXiiChdUw" name="model.folder">
         <type xmi:type="types:TypeString" xmi:id="_qeYOBglWEeKTrvXiiChdUw"/>
-      </contracts>
-      <contracts xmi:id="_qeYOBwlWEeKTrvXiiChdUw" name="build.viewpoint">
-        <type xmi:type="types:TypeBoolean" xmi:id="_qeYOCAlWEeKTrvXiiChdUw"/>
       </contracts>
     </contractContainer>
   </ftask:Task>
@@ -304,4 +338,21 @@
       kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.CreateGenerationBeginEventTask"/>
   <ftask:Task xmi:id="_qYZHoO1cEeKWbe7Id_8pyQ" name="Fire.Generation.End.Event" kind="java"
       implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.CreateGenerationEndEventTask"/>
+  <ftask:Task xmi:id="_s7-mMO9NEeWSA4m5zh7DIw" name="Package.Viewpoint" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.task.PackageViewpointTask">
+    <contractContainer xmi:id="_y9UdkO9NEeWSA4m5zh7DIw">
+      <contracts xmi:id="_y9Udke9NEeWSA4m5zh7DIw" name="short.name">
+        <type xmi:type="types:TypeString" xmi:id="_y9Udku9NEeWSA4m5zh7DIw"/>
+      </contracts>
+      <contracts xmi:id="_y9Udk-9NEeWSA4m5zh7DIw" name="root.project.name">
+        <type xmi:type="types:TypeString" xmi:id="_y9UdlO9NEeWSA4m5zh7DIw"/>
+      </contracts>
+      <contracts xmi:id="_y9Udle9NEeWSA4m5zh7DIw" name="model.folder">
+        <type xmi:type="types:TypeString" xmi:id="_y9Udlu9NEeWSA4m5zh7DIw"/>
+      </contracts>
+      <contracts xmi:id="_y9Udl-9NEeWSA4m5zh7DIw" name="build.viewpoint">
+        <type xmi:type="types:TypeBoolean" xmi:id="_y9UdmO9NEeWSA4m5zh7DIw"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
 </xmi:XMI>

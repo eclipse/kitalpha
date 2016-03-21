@@ -28,12 +28,12 @@
   <fcore:FactoryComponent xmi:id="_gQZzsAyvEeK3gMLbl4z4NA" name="Create.Plugin.Project.factory">
     <contractContainer xmi:id="_1OXggKUYEeOWxfW4xf0FnQ">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_l7-2cAyvEeK3gMLbl4z4NA"
-          name="id" invocationContracts="#_BUT-oqUZEeOWxfW4xf0FnQ #_FeSrwqUZEeOWxfW4xf0FnQ #_fxNAEqUzEeOWxfW4xf0FnQ">
+          name="id" invocationContracts="#_BUT-oqUZEeOWxfW4xf0FnQ #_FeSrwqUZEeOWxfW4xf0FnQ">
         <type xmi:type="types:TypeString" xmi:id="__G6ZUKUgEeOWxfW4xf0FnQ"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_YS8jAAyxEeK3gMLbl4z4NA"
-          name="execution.environment" invocationContracts="#_BUT-o6UZEeOWxfW4xf0FnQ #_fxNAE6UzEeOWxfW4xf0FnQ">
-        <type xmi:type="types:TypeString" xmi:id="_5pCVAKUYEeOWxfW4xf0FnQ" value="JavaSE-1.6"/>
+          name="execution.environment" invocationContracts="#_BUT-o6UZEeOWxfW4xf0FnQ">
+        <type xmi:type="types:TypeString" xmi:id="_tm6_8OuEEeW0Hf5pn0JwLg"/>
       </contracts>
     </contractContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_8TphIKUYEeOWxfW4xf0FnQ">
@@ -53,19 +53,10 @@
               invokedContract="platform:/plugin/org.eclipse.egf.eclipse.resources.mgt/fcs/Resources.fcore#_WbRLgIqhEd-U1srr1078Ww"/>
         </invocationContractContainer>
       </invocations>
-      <invocations xmi:id="_fxNAEKUzEeOWxfW4xf0FnQ" name="Update bundle JRE compliance"
-          invokedActivity="#_MsYWMKUxEeOWxfW4xf0FnQ">
-        <invocationContractContainer xmi:id="_fxNAEaUzEeOWxfW4xf0FnQ">
-          <invocationContracts xmi:id="_fxNAEqUzEeOWxfW4xf0FnQ" factoryComponentContract="#_l7-2cAyvEeK3gMLbl4z4NA"
-              invokedContract="#_bUTo4KUxEeOWxfW4xf0FnQ"/>
-          <invocationContracts xmi:id="_fxNAE6UzEeOWxfW4xf0FnQ" factoryComponentContract="#_YS8jAAyxEeK3gMLbl4z4NA"
-              invokedContract="#_cY2PEKUxEeOWxfW4xf0FnQ"/>
-        </invocationContractContainer>
-      </invocations>
     </orchestration>
   </fcore:FactoryComponent>
-  <ftask:Task xmi:id="_MsYWMKUxEeOWxfW4xf0FnQ" name="Update.JRE.Compliance" kind="java"
-      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.util.task.UpdateBundleJREComplaince">
+  <ftask:Task xmi:id="_MsYWMKUxEeOWxfW4xf0FnQ" description="@deprecated: please use Java Task &quot;Update.Project.ExecutionEnvironment.Task&quot; available in GenerationPdeHelper.fcore. This Java Task will be removed in the next version"
+      name="Update.JRE.Compliance" kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.util.task.UpdateBundleJREComplaince">
     <contractContainer xmi:id="_bDT_gKUxEeOWxfW4xf0FnQ">
       <contracts xmi:id="_bUTo4KUxEeOWxfW4xf0FnQ" name="bundle.id" mandatory="true">
         <type xmi:type="types:TypeString" xmi:id="_cFnxEKUxEeOWxfW4xf0FnQ"/>

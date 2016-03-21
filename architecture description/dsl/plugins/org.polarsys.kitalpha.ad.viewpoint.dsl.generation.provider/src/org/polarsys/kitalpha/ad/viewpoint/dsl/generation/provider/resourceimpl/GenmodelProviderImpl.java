@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.resource.Abstr
  */
 
 public class GenmodelProviderImpl extends AbstractCoreResourceProvider{
+	private enum PluginKind {
+		Model, Edit, Editor, Tests
+	}
 	
 	/**
 	 * @return the generated GenModel
@@ -47,12 +50,39 @@ public class GenmodelProviderImpl extends AbstractCoreResourceProvider{
 		return genPackage;
 	}
 	
+	public String getModelPluginName() throws ViewpointResourceException{
+		return getProjectID(PluginKind.Model);
+	}
+	
 	public String getEditPluginName() throws ViewpointResourceException{
+		return getProjectID(PluginKind.Edit);
+	}
+	
+	public String getEditorPluginName() throws ViewpointResourceException{
+		return getProjectID(PluginKind.Editor);
+	}
+	
+	public String getTestPluginName() throws ViewpointResourceException{
+		return getProjectID(PluginKind.Tests);
+	}
+	
+	private String getProjectID(PluginKind kind) throws ViewpointResourceException {
 		GenModel genModel = getGenModel();
-		String result = null ;
 		if (genModel != null )
-			result = genModel.getEditPluginID();
-		return result;
+		{
+			switch (kind) {
+			case Model:
+				return genModel.getModelPluginID();
+			case Edit: 
+				return genModel.getEditPluginID();
+			case Editor:
+				return genModel.getEditorPluginID();
+			case Tests:
+				return genModel.getTestsPluginID();
+			}
+		}
+		
+		throw new ViewpointResourceException(getResourceFileInformations(), ViewpointResourceException.IS_NULL);
 	}
 	
 	

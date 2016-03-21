@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -215,6 +215,29 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReleaseItemProvider releaseItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReleaseAdapter() {
+		if (releaseItemProvider == null) {
+			releaseItemProvider = new ReleaseItemProvider(this);
+		}
+
+		return releaseItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,6 +369,7 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 		if (generationConfigurationItemProvider != null) generationConfigurationItemProvider.dispose();
 		if (generationItemProvider != null) generationItemProvider.dispose();
 		if (gDataItemProvider != null) gDataItemProvider.dispose();
+		if (releaseItemProvider != null) releaseItemProvider.dispose();
 	}
 
 	/**
@@ -398,10 +422,13 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 			 */
 			@Override
 			public Object caseViewpoint(Viewpoint object) {
+
 				newChildDescriptors.add
 					(createChildParameter
 						(VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
 						 VpconfFactory.eINSTANCE.createConfiguration()));
+
+
 
 				return null;
 			}
@@ -426,8 +453,8 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 		public Collection<Object> getNewChildDescriptors(Object object,
 				EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-		   return result;
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
 		}
 
 		/**
