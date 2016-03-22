@@ -19,6 +19,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.project.AfProjectMan
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.viewpoint.PlatformViewpointHelper;
 
+import org.osgi.framework.Version;
+
 
 public class CLASS { 
 

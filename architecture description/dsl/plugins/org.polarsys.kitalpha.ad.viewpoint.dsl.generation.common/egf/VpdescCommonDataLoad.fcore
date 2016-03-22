@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ftask:Task xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
-    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_1L1eUPtNEeK-QL-B45qveg"
-    name="VpdslCommonDataLoad" kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.task.VpdescCommonDataLoadTask">
+<ftask:Task xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types"
+    xmi:id="_1L1eUPtNEeK-QL-B45qveg" name="VpdslCommonDataLoad" kind="java"
+    implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.task.VpdescCommonDataLoadTask">
   <contractContainer xmi:id="_37qhoPtNEeK-QL-B45qveg">
     <contracts xmi:id="_6m4KsPtNEeK-QL-B45qveg" name="vpdesc.model" mandatory="true">
       <type xmi:type="domain:TypeDomain" xmi:id="_68enQPtNEeK-QL-B45qveg"/>
@@ -24,6 +24,16 @@
     </contracts>
     <contracts xmi:id="_817cMPtNEeK-QL-B45qveg" name="target.application" mode="Out">
       <type xmi:type="types:TypeString" xmi:id="_817cMftNEeK-QL-B45qveg"/>
+    </contracts>
+    <contracts xmi:id="_hG_BkOuREeW0Hf5pn0JwLg" name="viewpoint.version" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_izBFkOuREeW0Hf5pn0JwLg"/>
+    </contracts>
+    <contracts xmi:id="_jYkpsOuREeW0Hf5pn0JwLg" name="required.ee" mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_kybYkOuREeW0Hf5pn0JwLg"/>
+    </contracts>
+    <contracts xmi:id="_xLtRAO-EEeWSA4m5zh7DIw" name="viewpoint.release.description"
+        mode="Out">
+      <type xmi:type="types:TypeString" xmi:id="_xLtRAe-EEeWSA4m5zh7DIw"/>
     </contracts>
   </contractContainer>
 </ftask:Task>

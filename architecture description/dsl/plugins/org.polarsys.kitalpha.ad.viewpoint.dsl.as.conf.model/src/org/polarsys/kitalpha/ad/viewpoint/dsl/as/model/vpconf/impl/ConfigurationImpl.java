@@ -31,10 +31,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AspectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ConfigurationImpl#getVpConfigurationElements <em>Vp Configuration Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

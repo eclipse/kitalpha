@@ -26,10 +26,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.TargetApplicationImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -82,6 +82,7 @@ public class TargetApplicationImpl extends ConfigurationElementImpl implements
 	 */
 
 	public String getType() {
+
 		return type;
 	}
 
@@ -92,10 +93,12 @@ public class TargetApplicationImpl extends ConfigurationElementImpl implements
 	 */
 
 	public void setType(String newType) {
+
 		String oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.TARGET_APPLICATION__TYPE, oldType, type));
+
 	}
 
 	/**

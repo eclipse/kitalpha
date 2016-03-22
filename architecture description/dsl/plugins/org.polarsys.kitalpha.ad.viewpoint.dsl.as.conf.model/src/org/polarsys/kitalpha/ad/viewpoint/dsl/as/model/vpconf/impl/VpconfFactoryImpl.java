@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.*;
 
 /**
@@ -36,7 +38,7 @@ public class VpconfFactoryImpl extends EFactoryImpl implements VpconfFactory {
 	 */
 	public static VpconfFactory init() {
 		try {
-			VpconfFactory theVpconfFactory = (VpconfFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0"); 
+			VpconfFactory theVpconfFactory = (VpconfFactory)EPackage.Registry.INSTANCE.getEFactory(VpconfPackage.eNS_URI);
 			if (theVpconfFactory != null) {
 				return theVpconfFactory;
 			}
@@ -70,8 +72,39 @@ public class VpconfFactoryImpl extends EFactoryImpl implements VpconfFactory {
 			case VpconfPackage.GENERATION_CONFIGURATION: return createGenerationConfiguration();
 			case VpconfPackage.GENERATION: return createGeneration();
 			case VpconfPackage.GDATA: return createGData();
+			case VpconfPackage.RELEASE: return createRelease();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case VpconfPackage.VERSION:
+				return createVersionFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case VpconfPackage.VERSION:
+				return convertVersionToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -123,6 +156,34 @@ public class VpconfFactoryImpl extends EFactoryImpl implements VpconfFactory {
 	public GData createGData() {
 		GDataImpl gData = new GDataImpl();
 		return gData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Release createRelease() {
+		ReleaseImpl release = new ReleaseImpl();
+		return release;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Version createVersionFromString(EDataType eDataType, String initialValue) {
+		return (Version)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVersionToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

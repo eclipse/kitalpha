@@ -26,6 +26,14 @@
           name="vpdesc.model" invocationContracts="#_r7J8QtJnEeGjd_vA2HuNPA #_8xnhEtJ9EeGjd_vA2HuNPA #_EX7QkuVVEeGS8cV3MAEvRA">
         <type xmi:type="domain:TypeDomain" xmi:id="_8USt4NJnEeGjd_vA2HuNPA"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_n_fIAOwhEeW0Hf5pn0JwLg"
+          name="required.ee" invocationContracts="#_jWq1BO0tEeWIDN8jHBcB7A">
+        <type xmi:type="types:TypeString" xmi:id="_n_fIAewhEeW0Hf5pn0JwLg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_n_7z8OwhEeW0Hf5pn0JwLg"
+          name="viewpoint.version" invocationContracts="#_-oJMY-wgEeW0Hf5pn0JwLg #_jWq1A-0tEeWIDN8jHBcB7A">
+        <type xmi:type="types:TypeString" xmi:id="_n_7z8ewhEeW0Hf5pn0JwLg"/>
+      </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_NlYnwNJTEeGjd_vA2HuNPA">
       <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_Se1C8NJTEeGjd_vA2HuNPA">
@@ -45,6 +53,7 @@
                 patternFilePath="templates/pattern._Pv9lUPKGEeGqiev1v2lZ8g/method._G-crsOVSEeKPDsY9CgW4bQ.pt"/>
             <methods xmi:id="_NxxZgO4tEeKs5_h2ShE5zw" name="updateRequiredBundles"
                 patternFilePath="templates/pattern._Pv9lUPKGEeGqiev1v2lZ8g/method._NxxZgO4tEeKs5_h2ShE5zw.pt"/>
+            <methods xmi:id="_sSBgEO0lEeWIDN8jHBcB7A" name="setVersion" patternFilePath="templates/pattern._Pv9lUPKGEeGqiev1v2lZ8g/method._sSBgEO0lEeWIDN8jHBcB7A.pt"/>
             <parameters xmi:id="_UDU38PKGEeGqiev1v2lZ8g" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0#//Viewpoint"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_Pv9lV_KGEeGqiev1v2lZ8g"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_G_5BYPKHEeGqiev1v2lZ8g"
@@ -53,6 +62,8 @@
                 called="#_G-crsOVSEeKPDsY9CgW4bQ"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_Ov51sO4tEeKs5_h2ShE5zw"
                 called="#_NxxZgO4tEeKs5_h2ShE5zw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_ssjf8O0lEeWIDN8jHBcB7A"
+                called="#_sSBgEO0lEeWIDN8jHBcB7A"/>
           </elements>
         </libraries>
         <libraries xmi:id="_TvuDENJTEeGjd_vA2HuNPA" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.rule">
@@ -224,7 +235,7 @@
           invokedActivity="#_XeuXMMUoEeGPgZ0g10YGBw">
         <invocationContractContainer xmi:id="_ziI-ocUoEeGPgZ0g10YGBw">
           <invocationContracts xmi:id="_ziI-osUoEeGPgZ0g10YGBw" factoryComponentContract="#_0e6Q0M9YEeG9465tg1TtPg"
-              targetInvocationContract="#_5w-9EvH3EeGqiev1v2lZ8g #_TWNTgPHnEeGqiev1v2lZ8g #_VCX_MOVWEeGS8cV3MAEvRA #_l8S5oLQ3EeObZYOyGf8WXw"
+              targetInvocationContract="#_5w-9EvH3EeGqiev1v2lZ8g #_TWNTgPHnEeGqiev1v2lZ8g #_VCX_MOVWEeGS8cV3MAEvRA #_l8S5oLQ3EeObZYOyGf8WXw #_jWq1Au0tEeWIDN8jHBcB7A"
               invokedContract="#_gzzQMMUoEeGPgZ0g10YGBw"/>
           <invocationContracts xmi:id="_ziI-o8UoEeGPgZ0g10YGBw" factoryComponentContract="#_0utnYM9YEeG9465tg1TtPg"
               invokedContract="#_lyrlAMUoEeGPgZ0g10YGBw"/>
@@ -234,8 +245,18 @@
               invokedContract="#_pZM_wMUoEeGPgZ0g10YGBw"/>
           <invocationContracts xmi:id="_pdjSYNc-EeG6tJmP3jggbw" targetInvocationContract="#_Mw0BI9c-EeG6tJmP3jggbw"
               invokedContract="#_k7328Nc-EeG6tJmP3jggbw"/>
-          <invocationContracts xmi:id="_NqYuMIpkEeOuG7zgbF3xzA" targetInvocationContract="#_Mw0BItc-EeG6tJmP3jggbw"
+          <invocationContracts xmi:id="_NqYuMIpkEeOuG7zgbF3xzA" targetInvocationContract="#_Mw0BItc-EeG6tJmP3jggbw #_-oJMYuwgEeW0Hf5pn0JwLg"
               invokedContract="#_7q_JYYpjEeOuG7zgbF3xzA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_jWq1AO0tEeWIDN8jHBcB7A" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_K0EvIO0QEeWIDN8jHBcB7A">
+        <invocationContractContainer xmi:id="_jWq1Ae0tEeWIDN8jHBcB7A">
+          <invocationContracts xmi:id="_jWq1Au0tEeWIDN8jHBcB7A" sourceInvocationContract="#_ziI-osUoEeGPgZ0g10YGBw"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_QMvc8O0QEeWIDN8jHBcB7A"/>
+          <invocationContracts xmi:id="_jWq1A-0tEeWIDN8jHBcB7A" factoryComponentContract="#_n_7z8OwhEeW0Hf5pn0JwLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_SJwjQO0QEeWIDN8jHBcB7A"/>
+          <invocationContracts xmi:id="_jWq1BO0tEeWIDN8jHBcB7A" factoryComponentContract="#_n_fIAOwhEeW0Hf5pn0JwLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_STS5wO0QEeWIDN8jHBcB7A"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_r7J8QNJnEeGjd_vA2HuNPA" name="Rules and services creation"
@@ -281,6 +302,14 @@
           </invocationContracts>
           <invocationContracts xmi:id="_M1AlYNpDEeGhfN7Ul4NgZg" factoryComponentContract="#_1AlagM9YEeG9465tg1TtPg"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_NqCTsuq8EeGh0fmNAy-1lA"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_-oJMYOwgEeW0Hf5pn0JwLg" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQObfEeW2XNOYuXmJgg">
+        <invocationContractContainer xmi:id="_-oJMYewgEeW0Hf5pn0JwLg">
+          <invocationContracts xmi:id="_-oJMYuwgEeW0Hf5pn0JwLg" sourceInvocationContract="#_NqYuMIpkEeOuG7zgbF3xzA"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQubfEeW2XNOYuXmJgg"/>
+          <invocationContracts xmi:id="_-oJMY-wgEeW0Hf5pn0JwLg" factoryComponentContract="#_n_7z8OwhEeW0Hf5pn0JwLg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuRObfEeW2XNOYuXmJgg"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_EX7QkOVVEeGS8cV3MAEvRA" name="Rule Java Classes generation"

@@ -72,7 +72,9 @@ public class ExtensionGeneratrionConfigurationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
+
 		return getString("_UI_ExtensionGeneratrionConfiguration_type");
+
 	}
 
 	/**

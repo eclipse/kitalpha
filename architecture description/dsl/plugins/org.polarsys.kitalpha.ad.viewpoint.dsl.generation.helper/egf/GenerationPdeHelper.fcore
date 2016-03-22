@@ -1,19 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ftask:Task xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
-    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_p4AoULWXEeOctqkSHWZC9g" name="Update.build.properties.task" kind="java"
-    implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.task.UpdateBuildPropertiesTask">
-  <contractContainer xmi:id="_wOfCMLWXEeOctqkSHWZC9g">
-    <contracts xmi:id="_wd1FwLWXEeOctqkSHWZC9g" name="plugin.id">
-      <type xmi:type="types:TypeString" xmi:id="_yNIgMLWXEeOctqkSHWZC9g"/>
-    </contracts>
-    <contracts xmi:id="_z6D8ELWXEeOctqkSHWZC9g" name="entry.name">
-      <type xmi:type="types:TypeString" xmi:id="_z6D8EbWXEeOctqkSHWZC9g"/>
-    </contracts>
-    <contracts xmi:id="_wtLJULWXEeOctqkSHWZC9g" name="is.folder">
-      <type xmi:type="types:TypeBoolean" xmi:id="_xKrksLWXEeOctqkSHWZC9g"/>
-    </contracts>
-    <contracts xmi:id="_h_taELW9EeOFXuRjYTUk8g" name="silent">
-      <type xmi:type="types:TypeBoolean" xmi:id="_h_taEbW9EeOFXuRjYTUk8g"/>
-    </contracts>
-  </contractContainer>
-</ftask:Task>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+  <ftask:Task xmi:id="_CmsuQObfEeW2XNOYuXmJgg" name="Update.Project.Version.Task"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.task.UpdateProjectVersionTask">
+    <contractContainer xmi:id="_CmsuQebfEeW2XNOYuXmJgg">
+      <contracts xmi:id="_CmsuQubfEeW2XNOYuXmJgg" name="project.id" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_CmsuQ-bfEeW2XNOYuXmJgg"/>
+      </contracts>
+      <contracts xmi:id="_3b5woOqKEeWFnpOam_jWpg" name="project.id.suffix">
+        <type xmi:type="types:TypeString" xmi:id="_3b5woeqKEeWFnpOam_jWpg"/>
+      </contracts>
+      <contracts xmi:id="_CmsuRObfEeW2XNOYuXmJgg" name="project.version" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_CmsuRebfEeW2XNOYuXmJgg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_fkAxkOtSEeW0Hf5pn0JwLg" name="Update.Project.ExecutionEnvironment.Task"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.task.UpdateProjectExecutionEnvironmentTask">
+    <contractContainer xmi:id="_jTes8OtSEeW0Hf5pn0JwLg">
+      <contracts xmi:id="_jTes8etSEeW0Hf5pn0JwLg" name="project.id" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_jTes8utSEeW0Hf5pn0JwLg"/>
+      </contracts>
+      <contracts xmi:id="_jTes8-tSEeW0Hf5pn0JwLg" name="project.id.suffix">
+        <type xmi:type="types:TypeString" xmi:id="_jTes9OtSEeW0Hf5pn0JwLg"/>
+      </contracts>
+      <contracts xmi:id="_jTes9etSEeW0Hf5pn0JwLg" name="project.ee" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_jTes9utSEeW0Hf5pn0JwLg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_p4AoULWXEeOctqkSHWZC9g" name="Update.build.properties.task"
+      kind="java" implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.task.UpdateBuildPropertiesTask">
+    <contractContainer xmi:id="_wOfCMLWXEeOctqkSHWZC9g">
+      <contracts xmi:id="_wd1FwLWXEeOctqkSHWZC9g" name="plugin.id">
+        <type xmi:type="types:TypeString" xmi:id="_yNIgMLWXEeOctqkSHWZC9g"/>
+      </contracts>
+      <contracts xmi:id="_z6D8ELWXEeOctqkSHWZC9g" name="entry.name">
+        <type xmi:type="types:TypeString" xmi:id="_z6D8EbWXEeOctqkSHWZC9g"/>
+      </contracts>
+      <contracts xmi:id="_wtLJULWXEeOctqkSHWZC9g" name="is.folder">
+        <type xmi:type="types:TypeBoolean" xmi:id="_xKrksLWXEeOctqkSHWZC9g"/>
+      </contracts>
+      <contracts xmi:id="_h_taELW9EeOFXuRjYTUk8g" name="silent">
+        <type xmi:type="types:TypeBoolean" xmi:id="_h_taEbW9EeOFXuRjYTUk8g"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+</xmi:XMI>

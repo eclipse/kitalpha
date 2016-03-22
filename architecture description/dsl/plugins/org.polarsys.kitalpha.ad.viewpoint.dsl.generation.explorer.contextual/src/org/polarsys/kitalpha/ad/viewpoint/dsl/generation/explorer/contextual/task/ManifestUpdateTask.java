@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials are made 
  * available under the terms of the Eclipse Public License v1.0 which accompanies
  * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -22,7 +22,6 @@ import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.ContextualExplorerTaskProductionAdapter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.util.ClassUtils;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.RequiredExecutionEnvironment;
 
 /**
  * @author Boubekeur Zendagui
@@ -44,6 +43,5 @@ public class ManifestUpdateTask extends ContextualExplorerTaskProductionAdapter 
 		requiredBundles.add(ClassUtils.INSTANCE.getEditPluginName());
 		
 		PDEUtility.updateRequiredBundles(project, requiredBundles, monitor);
-		PDEUtility.updateRequiredExecutionEnv(project, RequiredExecutionEnvironment.J1_6, monitor);
 	}
 }

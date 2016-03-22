@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.Viewpoint
  * @generated
  */
 public class ConfigurationElementItemProvider extends
-		ViewpointElementItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+		ViewpointElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,10 +70,12 @@ public class ConfigurationElementItemProvider extends
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((ConfigurationElement)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ConfigurationElement_type") :
 			getString("_UI_ConfigurationElement_type") + " " + label;
+
 	}
 
 	/**

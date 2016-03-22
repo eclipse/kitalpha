@@ -1,0 +1,2 @@
+final String viewpointVersion = VpDslConfigurationHelper.getViewpointVersion(parameter);
+AfProjectManager.INSTANCE.getViewpoint().setVersion(new Version(viewpointVersion));

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,10 @@ public class VpdescCommonDataLoadTask extends TaskProductionAdapter {
 			productionContext.setOutputValue(NSURI, VpDslConfigurationHelper.getNsURI(viewpoint));
 			productionContext.setOutputValue(ROOT_PROJECT_NAME, VpDslConfigurationHelper.getRootProjectName(viewpoint));
 			productionContext.setOutputValue(TARGET_APPLICATION, VpDslConfigurationHelper.getTargetApplication(viewpoint));
+			
+			productionContext.setOutputValue(VIEWPOINT_VERSION, VpDslConfigurationHelper.getViewpointVersion(viewpoint));
+			productionContext.setOutputValue(VIEWPOINT_RELEASE_DESCRIPTION, VpDslConfigurationHelper.getViewpointDescription(viewpoint));
+			productionContext.setOutputValue(REQUIRED_EE, VpDslConfigurationHelper.getViewpointRequiredExecutionEnvironment(viewpoint));
 			
 			/**Initialize Viewpoint in generation **/
 			if (VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement() == null)
