@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.osgi.framework.Version;
+import org.polarsys.kitalpha.ad.metadata.commands.CreateMetadataResourceCommand;
 import org.polarsys.kitalpha.ad.metadata.commands.SetViewpointFilterCommand;
 import org.polarsys.kitalpha.ad.metadata.commands.SetViewpointUsageCommand;
 import org.polarsys.kitalpha.ad.metadata.commands.UpdateViewpointVersionCommand;
@@ -113,6 +114,16 @@ public class ViewpointMetadata {
 		return false;
 	}
 
+	public Resource initMetadataStorage(URI location) {
+		TransactionalEditingDomain transactionalEditingDomain = TransactionUtil.getEditingDomain(context);
+		CreateMetadataResourceCommand command = new CreateMetadataResourceCommand(transactionalEditingDomain, location);
+		if (transactionalEditingDomain != null) 
+			transactionalEditingDomain.getCommandStack().execute(command);
+		 else
+			 command.execute();
+
+		return context.getResource(location, true);
+	}
 	public Resource initMetadataStorage() {
 		URI uri = getMetadataStorageURI();
 		try {
@@ -155,7 +166,7 @@ public class ViewpointMetadata {
 			return null;
 		Metadata integ = (Metadata) resource.getContents().get(0);
 		if (integ == null)
-			throw new IllegalStateException("can't find integration resource");
+			throw new IllegalStateException("can't find metadata resource");
 		return integ;
 	}
 
@@ -165,7 +176,7 @@ public class ViewpointMetadata {
 				return res;
 			}
 		}
-		// No luck, create one
+		// None loaded, try to load an existing one
 		URI uri = getMetadataStorageURI();
 		try {
 			return context.getResource(uri, true);
