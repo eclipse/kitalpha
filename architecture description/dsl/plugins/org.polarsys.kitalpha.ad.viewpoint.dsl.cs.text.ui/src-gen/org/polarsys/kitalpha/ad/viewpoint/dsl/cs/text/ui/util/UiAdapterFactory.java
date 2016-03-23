@@ -4,11 +4,12 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.Import;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UiPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UserInterface;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.*;
 
 /**
  * <!-- begin-user-doc -->

@@ -67,6 +67,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHe
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.EditorIDs;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UserInterface;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.PluginUtil;
@@ -285,6 +286,22 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 				viewpoint.getVP_Aspects().add(((Diagrams) output.get(key)).getDiagrams());
 				viewpoint.getType().add(grammar.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue());
 			}
+			if (output.get(key) instanceof Services){
+				viewpoint.getVP_Aspects().add(((Services) output.get(key)).getServices().get(0));
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue());
+			}
+			if (output.get(key) instanceof Configuration){
+				viewpoint.getVP_Aspects().add(((Configuration) output.get(key)));
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue());
+			}
+			if (output.get(key) instanceof Build){
+				viewpoint.getVP_Aspects().add(((Build) output.get(key)));
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue());
+			}
+			if (output.get(key) instanceof ViewpointActivityExplorer){
+				viewpoint.getVP_Aspects().add(((ViewpointActivityExplorer) output.get(key)));
+				viewpoint.getType().add(grammar.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue());
+			}
 		}
 		return viewpoint;
 	}
@@ -310,7 +327,8 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 		List<URI> uris = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.DATA_EXTENSION, projectName);
 		if (uris.isEmpty()) {
 			Resource resource = ResourceHelper.createResource(GeneratorsUtil.computeURI(inputObject, FileExtension.DATA_EXTENSION, null), resourceSet);
-			ResourceHelper.loadExternalLibrary(resourceSet);
+//			ResourceHelper.loadExternalLibrary(resourceSet);
+			ResourceHelper.loadExternalLibrary(resource);
 			PluginUtil.addModelReuseExtension(projectName, inputObject, resource.getURI());
 			return resource;
 		}

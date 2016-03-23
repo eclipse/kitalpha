@@ -29,7 +29,9 @@ public class SCMImpl extends TriggerImpl implements SCM {
 	 * @generated
 	 */
 	protected SCMImpl() {
+
 		super();
+
 	}
 
 	/**

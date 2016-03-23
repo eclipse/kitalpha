@@ -10,12 +10,12 @@
  */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator;
 
+import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -49,10 +49,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.RuleSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
-
-import com.google.common.base.Objects;
 
 @SuppressWarnings("all")
 public abstract class CommonGenerator implements IViewpointSynchronizer {

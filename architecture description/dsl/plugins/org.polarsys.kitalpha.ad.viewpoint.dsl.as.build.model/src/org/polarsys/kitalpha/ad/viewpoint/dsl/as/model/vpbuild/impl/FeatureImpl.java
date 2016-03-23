@@ -62,7 +62,9 @@ public class FeatureImpl extends EObjectImpl implements Feature {
 	 * @generated
 	 */
 	protected FeatureImpl() {
+
 		super();
+
 	}
 
 	/**

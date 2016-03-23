@@ -4,10 +4,10 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.Import;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UiPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UserInterface;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.*;
 
 /**
  * <!-- begin-user-doc -->

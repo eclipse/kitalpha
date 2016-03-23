@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -43,7 +44,9 @@ import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.linking.lazy.LazyLinkingResource;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpconf.ConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
@@ -532,7 +535,7 @@ public class ResourceHelper {
 		Resource resource = loadResource(uri, resourceSet);
 		EObject modelRoot = resource.getContents().get(0);
 		if (modelRoot!=null) {
-			EcoreUtil.resolveAll(modelRoot);
+//			EcoreUtil.resolveAll(modelRoot);
 			return Lists.newArrayList(modelRoot);
 		}
 		return Collections.emptyList();
@@ -726,8 +729,9 @@ public class ResourceHelper {
 		Resource dataResource = loadResource(dataResourceURI, resourceSet);
 		if (!dataResource.getContents().isEmpty()) {
 			EObject dataRoot = dataResource.getContents().get(0);
-			loadExternalLibrary(resourceSet);
-			EcoreUtil2.resolveAll(dataRoot);
+			ResourceHelper.loadExternalLibrary(dataResource);
+//			loadExternalLibrary(resourceSet);
+//			EcoreUtil2.resolveAll(dataRoot);
 			return dataRoot.eContents();
 		}
 		return Collections.emptyList();
@@ -760,8 +764,9 @@ public class ResourceHelper {
 		
 		if (!dataResource.getContents().isEmpty()) {
 			EObject dataRoot = dataResource.getContents().get(0);
-			loadExternalLibrary(resourceSet);
-			EcoreUtil2.resolveAll(dataRoot);
+			ResourceHelper.loadExternalLibrary(dataResource);
+//			loadExternalLibrary(resourceSet);
+//			EcoreUtil2.resolveAll(dataRoot);
 			IFile file = getFileFromURI(dataResourceURI);
 			if (isValid(dataRoot)){
 				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
@@ -810,7 +815,8 @@ public class ResourceHelper {
 		Resource dataResource = loadResource(dataResourceURI, resourceSet);
 		if (!dataResource.getContents().isEmpty()) {
 			EObject dataRoot = dataResource.getContents().get(0);
-			loadExternalLibrary(resourceSet);
+			ResourceHelper.loadExternalLibrary(dataResource);
+//			loadExternalLibrary(resourceSet);
 			loadExternalLibrary(importUri, resourceSet);
 			EcoreUtil2.resolveAll(dataRoot);
 			return dataRoot.eContents();
@@ -823,12 +829,14 @@ public class ResourceHelper {
 	 * Loads the external library specified in the external library loader extension points
 	 * 
 	 * @param resourceSet
+	 * 
+	 * Deprecated: Use LoadExternalLibrary(Resource)
 	 */
+	@Deprecated
 	public static void loadExternalLibrary(ResourceSet resourceSet) {
 		Map<String, URI> fPackagesInScope = ExternalDataHelper.getPackagesInScopeURIs();
 		for (Map.Entry<String, URI> entry : fPackagesInScope.entrySet()) {
 			QualifiedName packageNsURI = QualifiedName.create(entry.getKey());
-//			if (!packageNsURI.toString().contains("capella")){
 				URI nsURI = URI.createURI(packageNsURI.toString());
 				EPackage ecoreModel = resourceSet.getPackageRegistry().getEPackage(nsURI.toString());
 				if (ecoreModel !=null){
@@ -840,10 +848,38 @@ public class ResourceHelper {
 						resourceSet.getResources().add(packageResource);
 					}
 				}
-//			}
 		}
 	}
 	
+	
+	public static void loadExternalLibrary(Resource resource) {
+		ResourceSet resourceSet = resource.getResourceSet();
+		IProject projectName = ProjectUtil.getEclipseProjectOf(resource);
+		
+		if (projectName != null){
+			List<URI> secondaryResources = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.CONFIGURATION_EXTENSION, projectName.getName());
+			
+			if (!secondaryResources.isEmpty()){
+				URI uri = secondaryResources.get(0); //There is one config resource per project
+				Resource configurationResource = ResourceHelper.loadResource(uri, resourceSet);
+				EObject root = configurationResource.getContents().get(0);
+				if (root != null){
+					String targetApplication = ConfigurationHelper.getTargetApplication(root);
+					Map<String, URI> target = ExternalDataHelper.getPackagesInScopeURIs(targetApplication);
+					for (Map.Entry<String, URI> entry : target.entrySet()) {
+						QualifiedName packageNsURI = QualifiedName.create(entry.getKey());
+						URI nsURI = URI.createURI(packageNsURI.toString());
+						EPackage ePackage = resourceSet.getPackageRegistry().getEPackage(nsURI.toString());
+						if (ePackage != null){
+							EPackage loadedEPackagee = ExternalDataHelper.loadEPackage(nsURI.toString(), resourceSet);
+							Resource eResource = loadedEPackagee.eResource();
+							resourceSet.getResources().add(eResource);
+						}
+					}
+				}
+			}
+		}
+	}
 	
 	/**
 	 * Load the external library specified by import external

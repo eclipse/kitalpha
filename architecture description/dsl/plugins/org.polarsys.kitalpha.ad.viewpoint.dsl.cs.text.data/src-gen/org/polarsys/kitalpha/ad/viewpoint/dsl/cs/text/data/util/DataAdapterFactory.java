@@ -4,14 +4,12 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.AbstractImport;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataSpec;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.Import;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ImportNamespace;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ImportURI;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.*;
 
 /**
  * <!-- begin-user-doc -->

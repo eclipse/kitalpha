@@ -232,7 +232,9 @@ public class HudsonDeploymentImpl extends EObjectImpl implements HudsonDeploymen
 	 * @generated
 	 */
 	protected HudsonDeploymentImpl() {
+
 		super();
+
 	}
 
 	/**

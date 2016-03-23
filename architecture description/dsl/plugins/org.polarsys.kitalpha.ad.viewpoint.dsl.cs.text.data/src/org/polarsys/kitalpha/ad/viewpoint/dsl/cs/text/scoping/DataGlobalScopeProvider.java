@@ -16,6 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.common.util.EList;
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.resource.IContainer;
 import org.eclipse.xtext.resource.IEObjectDescription;
@@ -34,7 +34,11 @@ import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.DefaultGlobalScopeProvider;
 import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpconf.ConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
@@ -71,43 +75,45 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 
 	private static Iterable<IEObjectDescription> taObjects = null;
 	
-	private Iterable<IEObjectDescription> getTAObject(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects){
-		if (taObjects == null || 
-				(taObjects.iterator() != null) && !taObjects.iterator().hasNext())
-		{
-			taObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
-		}
-		
-		return taObjects;
-	}
+//	@Deprecated
+//	private Iterable<IEObjectDescription> getTAObject(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects){
+//		if (taObjects == null || 
+//				(taObjects.iterator() != null) && !taObjects.iterator().hasNext())
+//		{
+//			taObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
+//		}
+//		
+//		return taObjects;
+//	}
 	
 	private Multimap<QualifiedName, IEObjectDescription> multiMapDesc = null;
 	
 	protected IScope createDataContainerScope(Resource eResource, IScope parent, IContainer container, Predicate<IEObjectDescription> filter, EClass type, boolean ignoreCase) {
 		Iterable<IEObjectDescription> exportedObjects = Collections.emptyList();		
-		ResourceSet resourceSet = eResource.getResourceSet();
 //		exportedObjects = getTAObject(resourceSet, exportedObjects);
-//		exportedObjects = getExternalImportObjectDescription(eResource, exportedObjects);
+		exportedObjects = getExternalObjectDescriptions(eResource, exportedObjects);
+		exportedObjects = getExternalImportObjectDescription(eResource, exportedObjects);
 		
-		calculateTAScope(parent, resourceSet, exportedObjects, ignoreCase);
-		return computeScope(parent, eResource, exportedObjects, ignoreCase);
-		//return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
+//		calculateTAScope(parent, resourceSet, exportedObjects, ignoreCase);
+//		return computeScope(parent, eResource, exportedObjects, ignoreCase);
+		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
 	}
 
 	//To be reworked
-	private void calculateTAScope(IScope parent, ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
-		if (multiMapDesc == null || multiMapDesc.isEmpty()){
-			
-			for(IEObjectDescription description: getExternalObjectDescriptions(resourceSet, exportedObjects)) {
-				if (multiMapDesc == null)
-					multiMapDesc = LinkedHashMultimap.create(5,2);
-				if (ignoreCase)
-					multiMapDesc.put(description.getName().toLowerCase(), description);
-				else
-					multiMapDesc.put(description.getName(), description);
-			}
-		}
-	}
+//	@Deprecated
+//	private void calculateTAScope(IScope parent, ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
+//		if (multiMapDesc == null || multiMapDesc.isEmpty()){
+//			
+//			for(IEObjectDescription description: getExternalObjectDescriptions(resourceSet, exportedObjects)) {
+//				if (multiMapDesc == null)
+//					multiMapDesc = LinkedHashMultimap.create(5,2);
+//				if (ignoreCase)
+//					multiMapDesc.put(description.getName().toLowerCase(), description);
+//				else
+//					multiMapDesc.put(description.getName(), description);
+//			}
+//		}
+//	}
 	
 	private IScope computeScope(IScope parent, Resource r, Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
 		Multimap<QualifiedName, IEObjectDescription> map = LinkedHashMultimap.create(5,2);
@@ -137,7 +143,7 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		
 	}
 	
-	private Iterable<IEObjectDescription> getExternalObjectDescriptions(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects) {
+	private Iterable<IEObjectDescription> getExternalObjectDescriptions_old(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects) {
 		Map<String, URI> fPackagesInScope = ExternalDataHelper.getPackagesInScopeURIs();
 		
 		for(Map.Entry<String, URI> entry : fPackagesInScope.entrySet()){
@@ -166,6 +172,40 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		return exportedObjects;
 	}
 	
+	private Iterable<IEObjectDescription> getExternalObjectDescriptions(Resource resource,Iterable<IEObjectDescription> exportedObjects) {
+
+		ResourceSet resourceSet = resource.getResourceSet();
+		IProject projectName = ProjectUtil.getEclipseProjectOf(resource);
+		if (projectName != null){
+			List<URI> secondaryResources = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.CONFIGURATION_EXTENSION, projectName.getName());
+			
+			if (!secondaryResources.isEmpty()){
+				URI uri = secondaryResources.get(0); //There is one config resource per project
+				Resource configurationResource = ResourceHelper.loadResource(uri, resourceSet);
+				EObject root = configurationResource.getContents().get(0);
+				if (root != null){
+					String targetApplication = ConfigurationHelper.getTargetApplication(root);
+					Map<String, URI> target = ExternalDataHelper.getPackagesInScopeURIs(targetApplication);
+					for (Map.Entry<String, URI> entry : target.entrySet()) {
+						QualifiedName packageNsURI = QualifiedName.create(entry.getKey());
+						URI nsURI = URI.createURI(packageNsURI.toString());
+						EPackage ePackage = resourceSet.getPackageRegistry().getEPackage(nsURI.toString());
+						if (ePackage != null){
+							EPackage loadedEPackage = ExternalDataHelper.loadEPackage(nsURI.toString(), resourceSet);
+							if (descriptionManager!=null && loadedEPackage!=null &&	loadedEPackage.eResource()!=null) {
+								Resource packageResource = loadedEPackage.eResource();
+								IResourceDescription resourceDescription =	descriptionManager.getResourceDescription(packageResource);
+								exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());
+							}
+						}
+					}
+				}
+			}
+
+		}
+		return exportedObjects;
+	}
+	
 	private Iterable<IEObjectDescription> getExternalImportObjectDescription(
 			Resource eResource, Iterable<IEObjectDescription> exportedObjects) {
 		TreeIterator<EObject> ResourceObjects = eResource.getAllContents();
@@ -182,7 +222,7 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 							if (descriptionManager != null
 									&& loadedEPackage != null
 									&& loadedEPackage.eResource() != null) {
-								EcoreUtil2.resolveAll(loadedEPackage);
+//								EcoreUtil2.resolveAll(loadedEPackage);
 								IResourceDescription resourceDescription = descriptionManager.getResourceDescription(loadedEPackage.eResource());
 								exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());
 							}

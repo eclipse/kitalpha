@@ -5,11 +5,12 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.Services;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesFactory;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ServicesPackage;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.*;
 
 /**
  * <!-- begin-user-doc -->

@@ -61,7 +61,9 @@ public class TriggerImpl extends EObjectImpl implements Trigger {
 	 * @generated
 	 */
 	protected TriggerImpl() {
+
 		super();
+
 	}
 
 	/**

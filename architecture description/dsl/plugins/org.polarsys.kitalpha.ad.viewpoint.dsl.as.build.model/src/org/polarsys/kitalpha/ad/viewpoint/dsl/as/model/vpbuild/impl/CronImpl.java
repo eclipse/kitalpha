@@ -29,7 +29,9 @@ public class CronImpl extends TriggerImpl implements Cron {
 	 * @generated
 	 */
 	protected CronImpl() {
+
 		super();
+
 	}
 
 	/**
