@@ -12,8 +12,6 @@ package org.polarsys.kitalpha.ad.metadata.commands;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
@@ -24,23 +22,22 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  * @author Thomas Guiu
  * 
  */
-public class SetViewpointUsageCommand extends RecordingCommand {
+public class SetViewpointUsageCommand extends MetadataCommand {
 
 	private Metadata metadata;
 	private Resource vpResource;
 	private boolean usage;
 	private Version version;
 
-	public SetViewpointUsageCommand(TransactionalEditingDomain domain, Metadata integration, Resource resource, Version version, boolean usage) {
-		super(domain);
+	public SetViewpointUsageCommand(Metadata integration, Resource resource, Version version, boolean usage) {
+		super(usage?"use viewpoint":"unuse viewpoint");
 		this.metadata = integration;
 		this.vpResource = resource;
 		this.version = version;
 		this.usage = usage;
 	}
 
-	@Override
-	protected void doExecute() {
+	private void perform(boolean usage) {
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
 				if (usage)
@@ -56,7 +53,19 @@ public class SetViewpointUsageCommand extends RecordingCommand {
 			uv.setVersion(version);
 			metadata.getViewpointUsages().add(uv);
 		}
+	}
+
+	
+	@Override
+	public void execute() {
+		perform(usage);
 
 	}
+
+	@Override
+	public void undo() {
+		perform(!usage);
+	}
+	
 
 }

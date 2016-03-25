@@ -12,8 +12,6 @@ package org.polarsys.kitalpha.ad.metadata.commands;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
@@ -24,23 +22,24 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  * @author Thomas Guiu
  * 
  */
-public class UpdateViewpointVersionCommand extends RecordingCommand {
+public class UpdateViewpointVersionCommand extends MetadataCommand {
 
 	private Metadata metadata;
 	private Resource vpResource;
 	private Version version;
+	private Version oldVersion;
 
-	public UpdateViewpointVersionCommand(TransactionalEditingDomain domain, Metadata metadata, Resource resource, Version version) {
-		super(domain);
+	public UpdateViewpointVersionCommand(Metadata metadata, Resource resource, Version version) {
+		super("set viewpoint version");
 		this.metadata = metadata;
 		this.vpResource = resource;
 		this.version = version;
 	}
 
-	@Override
-	protected void doExecute() {
+		private void perform(Version version) {
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
+				oldVersion = uv.getVersion();
 				uv.setVersion(version);
 				return ;
 			}
@@ -52,5 +51,15 @@ public class UpdateViewpointVersionCommand extends RecordingCommand {
 		metadata.getViewpointUsages().add(uv);
 
 	}
+		@Override
+		public void execute() {
+			perform(version);
+
+		}
+
+		@Override
+		public void undo() {
+			perform(oldVersion);
+		}
 
 }

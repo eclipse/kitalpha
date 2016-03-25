@@ -12,7 +12,7 @@ package org.polarsys.kitalpha.ad.metadata.commands;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
@@ -21,24 +21,30 @@ import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
  * @author Thomas Guiu
  * 
  */
-public class CreateMetadataResourceCommand extends RecordingCommand {
+public class CreateMetadataResourceCommand extends MetadataCommand {
 
 	private URI uri;
-	private TransactionalEditingDomain domain2;
+	private Resource newResource;
+	private ResourceSet resourceSet;
 
-	public CreateMetadataResourceCommand(TransactionalEditingDomain domain, URI uri) {
-		super(domain);
-		domain2 = domain;
+	public CreateMetadataResourceCommand(ResourceSet resourceSet, URI uri) {
+		super("Create metadata resource");
+		this.resourceSet = resourceSet;
 		this.uri = uri;
 	}
 
 	@Override
-	protected void doExecute() {
-		Resource resource = domain2.getResourceSet().createResource(uri);
+	public void execute() {
+		newResource = resourceSet.createResource(uri);
 		Metadata integration = MetadataFactory.eINSTANCE.createMetadata();
-		domain2.getResourceSet().getResources().add(resource);
-		resource.getContents().add(integration);
+		resourceSet.getResources().add(newResource);
+		newResource.getContents().add(integration);
+	}
 
+	@Override
+	public void undo() {
+		resourceSet.getResources().remove(newResource);
+		newResource.unload();
 	}
 
 }
