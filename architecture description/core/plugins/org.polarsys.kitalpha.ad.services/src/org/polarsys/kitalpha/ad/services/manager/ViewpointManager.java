@@ -81,7 +81,13 @@ public class ViewpointManager {
 		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.";
 		AD_Log.getDefault().logError(msg, e);
 	}
-	
+
+	public static void pinError(Resource vp, String details) {
+		discarded.add(vp.getId());
+		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.\n" + details;
+		AD_Log.getDefault().logError(msg);
+	}
+
 	public static Version readVersion(Resource resource) {
 		ResourceSet set = new ResourceSetImpl();
 		try {
@@ -96,9 +102,9 @@ public class ViewpointManager {
 
 	private static Version readVersion(ResourceSet set, Resource resource) {
 		try {
-				URI uri = URIHelper.createURI(resource);
-				Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-				return vp.getVersion();
+			URI uri = URIHelper.createURI(resource);
+			Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+			return vp.getVersion();
 		} catch (Exception e) {
 			pinError(resource, e);
 			return null;
@@ -115,9 +121,9 @@ public class ViewpointManager {
 	public static IStatus checkViewpointsCompliancy(ResourceSet context) {
 		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
 
-		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();;
+		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
 		Map<String, Version> viewpointUsages = MetadataHelper.getViewpointMetadata(context).getViewpointUsages();
-		
+
 		for (Entry<String, Version> usage : viewpointUsages.entrySet()) {
 			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
 			if (!res.isOK())
@@ -134,13 +140,19 @@ public class ViewpointManager {
 		Resource resource = null;
 		try {
 			for (Resource res : getAvailableViewpoints()) {
-				resource = res;
-				URI uri = URIHelper.createURI(res);
-				Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-				availableViewpoints.put(res.getId(), vp.getVersion());
+				try {
+					resource = res;
+					URI uri = URIHelper.createURI(res);
+					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+					if (vp == null) {
+						pinError(resource, "Cannot get object from "+uri.toString());
+						continue ;
+					}
+					availableViewpoints.put(res.getId(), vp.getVersion());
+				} catch (Exception e) {
+					pinError(resource, e);
+				}
 			}
-		} catch (Exception e) {
-			pinError(resource, e);
 		} finally {
 			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
 				r.unload();
