@@ -47,6 +47,9 @@ public class ViewpointMetadata {
 
 	public Map<String, Version> getViewpointUsages() {
 		Map<String, Version> id2version = new HashMap<String, Version>();
+		if (context.getResources().isEmpty())
+			return id2version;
+		
 		Metadata metadataStorage = getMetadataStorage();
 
 		if (metadataStorage == null)
@@ -68,7 +71,7 @@ public class ViewpointMetadata {
 	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version, boolean usage) {
 		Metadata metadata = getMetadataStorage();
 		if (metadata == null)
-			throw new UnsupportedOperationException("cannot find integration resource");
+			throw new UnsupportedOperationException("cannot find metadata resource");
 
 		executeCommand(new SetViewpointUsageCommand(metadata, vpResource, version, usage));
 	}
