@@ -2,6 +2,7 @@
 <buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_tests">
   <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
     <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK/lastSuccessfulBuild"/>
+    <properties xmi:id="_-akrIPc8EeWoDIyv4eU7-A" key="vp-evolution.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_Gerrit-VP_evolution/lastSuccessfulBuild/artifact/result/publish/kitalpha/site.p2"/>
     <properties xmi:id="_SQl0IOX2EeWn8_iL6inCSQ" key="rcptt.url" value="http://download.eclipse.org/rcptt/release/2.0.2/runner/rcptt.runner-2.0.2.zip"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
@@ -22,6 +23,10 @@
     <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
     <steps xsi:type="buildstep:AntStep" xmi:id="_N-25MOX2EeWn8_iL6inCSQ" name="Install RCPTT" targetName="install.rcptt" xml="&lt;target name=&quot;install.rcptt&quot;>&#xD;&#xA;&#x9;&lt;available file=&quot;${tools}/rcptt&quot; property=&quot;rcptt.exists&quot; />&#xD;&#xA;&#x9;&lt;antcall target=&quot;do.install.rcptt&quot; />&#xD;&#xA;&lt;/target>&#xD;&#xA;&#xD;&#xA;&lt;target name=&quot;do.install.rcptt&quot; unless=&quot;rcptt.exists&quot;>&#xD;&#xA;&#x9;&lt;echo message=&quot;Fetching headless rcptt application&quot; />&#xD;&#xA;&#x9;&lt;tempfile destdir=&quot;${java.io.tmpdir}&quot; prefix=&quot;rcptt-&quot; suffix=&quot;.zip&quot; property=&quot;rcptt.zip&quot; deleteonexit=&quot;true&quot; />&#xD;&#xA;&#x9;&lt;get src=&quot;${rcptt.url}&quot; dest=&quot;${rcptt.zip}&quot; />&#xD;&#xA;&#x9;&lt;mkdir dir=&quot;${tools}&quot; />&#xD;&#xA;&#x9;&lt;unzip src=&quot;${rcptt.zip}&quot; dest=&quot;${tools}/rcptt&quot; />&#xD;&#xA;&#x9;&lt;delete file=&quot;${rcptt.zip}&quot; />&#xD;&#xA;&lt;/target>"/>
     <steps xsi:type="buildstep:AntStep" xmi:id="_2JSR0OB8EeWAfLzfCqvfTA" name="download TP" description="" targetName="download_tp" xml="&lt;target name=&quot;download_tp&quot;>&#xD;&#xA;&#x9; &lt;dirname property=&quot;dir&quot; file=&quot;${publish}/TP.ts&quot;/>&#xD;&#xA;&#x9; &lt;mkdir dir=&quot;${dir}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/buildTimestamp?format=yyyy-MM-dd_HH-mm-ss&quot; &#xD;&#xA;&#x9;&#x9;dest=&quot;${publish}/TP.ts&quot;/>&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&lt;loadfile srcfile=&quot;${publish}/TP.ts&quot; property=&quot;ts&quot;/>&#xD;&#xA;&#x9;&lt;echo>timestamp: ${ts}&lt;/echo>&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/artifact/result/publish/kitalpha_${kitalpha_version}-${ts}-linux-gtk-x86_64-mars.tar.gz&quot;&#xD;&#xA;&#x9;&#x9;dest=&quot;${publish}/TP.tar.gz&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;gunzip src=&quot;${publish}/TP.tar.gz&quot;/>&#xD;&#xA;&lt;untar src=&quot;${publish}/TP.tar&quot; dest=&quot;${publish}/TP&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;/target> &#xD;&#xA;"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_1obgEPc8EeWoDIyv4eU7-A" name="update TP" id="TP" profile="SDKProfile">
+      <updateSiteUrls>${vp-evolution.url}</updateSiteUrls>
+      <featureNames>org.polarsys.kitalpha.sdk.feature</featureNames>
+    </steps>
   </jobs>
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="junit">
     <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="import tests projects">
