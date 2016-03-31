@@ -27,7 +27,7 @@
     <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="import tests projects">
       <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
         <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/tests/plugins"/>
-        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_P2ynMPc5EeWoDIyv4eU7-A" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/tests"/>
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_P2ynMPc5EeWoDIyv4eU7-A" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/metadata/tests"/>
         <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP"/>
         <components xsi:type="buildstep:Plugin" xmi:id="_bxUGQOCBEeWAfLzfCqvfTA" id="org.polarsys.kitalpha.resourcereuse.tests"/>
         <components xsi:type="buildstep:Plugin" xmi:id="_awyPkPc5EeWoDIyv4eU7-A" id="org.polarsys.kitalpha.ad.metadata.tests"/>
