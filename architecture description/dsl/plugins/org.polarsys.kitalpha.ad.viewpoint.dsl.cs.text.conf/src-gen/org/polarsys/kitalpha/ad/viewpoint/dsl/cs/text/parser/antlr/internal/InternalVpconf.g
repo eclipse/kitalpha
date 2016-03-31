@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -186,6 +186,16 @@ ruleConfigurationElement returns [EObject current=null]
     this_Generation_2=ruleGeneration
     { 
         $current = $this_Generation_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getConfigurationElementAccess().getReleaseParserRuleCall_3()); 
+    }
+    this_Release_3=ruleRelease
+    { 
+        $current = $this_Release_3.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -821,6 +831,292 @@ ruleModelsAirdGenerationConfiguration returns [EObject current=null]
     }
 )
 ;
+
+
+
+
+
+// Entry rule entryRuleRelease
+entryRuleRelease returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReleaseRule()); }
+	 iv_ruleRelease=ruleRelease 
+	 { $current=$iv_ruleRelease.current; } 
+	 EOF 
+;
+
+// Rule Release
+ruleRelease returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getReleaseAccess().getReleaseAction_0(),
+            $current);
+    }
+)	otherlv_1='release' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getReleaseAccess().getReleaseKeyword_1());
+    }
+	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getReleaseAccess().getLeftCurlyBracketKeyword_2());
+    }
+(	otherlv_3='version' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getReleaseAccess().getVersionKeyword_3_0());
+    }
+	otherlv_4=':' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getReleaseAccess().getColonKeyword_3_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getReleaseAccess().getViewpointVersionVersionParserRuleCall_3_2_0()); 
+	    }
+		lv_viewpointVersion_5_0=ruleVersion		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getReleaseRule());
+	        }
+       		set(
+       			$current, 
+       			"viewpointVersion",
+        		lv_viewpointVersion_5_0, 
+        		"Version");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_6='description' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getReleaseAccess().getDescriptionKeyword_4_0());
+    }
+	otherlv_7=':' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getReleaseAccess().getColonKeyword_4_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getReleaseAccess().getViewpointDescriptionEStringParserRuleCall_4_2_0()); 
+	    }
+		lv_viewpointDescription_8_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getReleaseRule());
+	        }
+       		set(
+       			$current, 
+       			"viewpointDescription",
+        		lv_viewpointDescription_8_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_9='execution' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getReleaseAccess().getExecutionKeyword_5_0());
+    }
+	otherlv_10='environments' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getReleaseAccess().getEnvironmentsKeyword_5_1());
+    }
+	otherlv_11=':' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getReleaseAccess().getColonKeyword_5_2());
+    }
+((
+(
+		lv_requiredExecutionEnvironment_12_0=RULE_STRING
+		{
+			newLeafNode(lv_requiredExecutionEnvironment_12_0, grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getReleaseRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"requiredExecutionEnvironment",
+        		lv_requiredExecutionEnvironment_12_0, 
+        		"STRING");
+	    }
+
+)
+)(	otherlv_13=',' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getReleaseAccess().getCommaKeyword_5_3_1_0());
+    }
+(
+(
+		lv_requiredExecutionEnvironment_14_0=RULE_STRING
+		{
+			newLeafNode(lv_requiredExecutionEnvironment_14_0, grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_1_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getReleaseRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"requiredExecutionEnvironment",
+        		lv_requiredExecutionEnvironment_14_0, 
+        		"STRING");
+	    }
+
+)
+))*))?	otherlv_15='}' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getReleaseAccess().getRightCurlyBracketKeyword_6());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleVersion
+entryRuleVersion returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getVersionRule()); } 
+	 iv_ruleVersion=ruleVersion 
+	 { $current=$iv_ruleVersion.current.getText(); }  
+	 EOF 
+;
+
+// Rule Version
+ruleVersion returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_INT_0=RULE_INT    {
+		$current.merge(this_INT_0);
+    }
+
+    { 
+    newLeafNode(this_INT_0, grammarAccess.getVersionAccess().getINTTerminalRuleCall_0()); 
+    }
+(
+	kw='.' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVersionAccess().getFullStopKeyword_1_0()); 
+    }
+(    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
+    }
+
+    { 
+    newLeafNode(this_INT_2, grammarAccess.getVersionAccess().getINTTerminalRuleCall_1_1_0()); 
+    }
+(
+	kw='.' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVersionAccess().getFullStopKeyword_1_1_1_0()); 
+    }
+    this_INT_4=RULE_INT    {
+		$current.merge(this_INT_4);
+    }
+
+    { 
+    newLeafNode(this_INT_4, grammarAccess.getVersionAccess().getINTTerminalRuleCall_1_1_1_1()); 
+    }
+(
+	kw='.' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVersionAccess().getFullStopKeyword_1_1_1_2_0()); 
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getVersionAccess().getQualifierParserRuleCall_1_1_1_2_1()); 
+    }
+    this_Qualifier_6=ruleQualifier    {
+		$current.merge(this_Qualifier_6);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?)?))?)
+    ;
+
+
+
+
+
+// Entry rule entryRuleQualifier
+entryRuleQualifier returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQualifierRule()); } 
+	 iv_ruleQualifier=ruleQualifier 
+	 { $current=$iv_ruleQualifier.current.getText(); }  
+	 EOF 
+;
+
+// Rule Qualifier
+ruleQualifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((    this_INT_0=RULE_INT    {
+		$current.merge(this_INT_0);
+    }
+
+    { 
+    newLeafNode(this_INT_0, grammarAccess.getQualifierAccess().getINTTerminalRuleCall_0_0()); 
+    }
+
+    |    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
+    }
+
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getQualifierAccess().getIDTerminalRuleCall_0_1()); 
+    }
+
+    |
+	kw='_' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getQualifierAccess().get_Keyword_0_2()); 
+    }
+)(    this_INT_3=RULE_INT    {
+		$current.merge(this_INT_3);
+    }
+
+    { 
+    newLeafNode(this_INT_3, grammarAccess.getQualifierAccess().getINTTerminalRuleCall_1_0()); 
+    }
+
+    |    this_ID_4=RULE_ID    {
+		$current.merge(this_ID_4);
+    }
+
+    { 
+    newLeafNode(this_ID_4, grammarAccess.getQualifierAccess().getIDTerminalRuleCall_1_1()); 
+    }
+
+    |
+	kw='_' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getQualifierAccess().get_Keyword_1_2()); 
+    }
+
+    |
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getQualifierAccess().getHyphenMinusKeyword_1_3()); 
+    }
+)*)
+    ;
 
 
 

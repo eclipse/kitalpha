@@ -46,10 +46,6 @@ public class WizardsUtil {
 	}
 	
 	
-	
-	
-
-	
 	public static String getInitialSpecContent(String shortName) {
 		String fileContent = 
 			"/**\n" + 
@@ -133,6 +129,12 @@ public class WizardsUtil {
 			fileContent = fileContent + 	"	project " + rootProjectName + "\n" +
 			"	nsuri " + "\"" + nsURI+ "\"" + "\n";
 			
+			fileContent = fileContent + "\trelease {\n\t\t" +
+				"version : 1.0.0.qualifier\n\t\t" +
+				"description : \"Viewpoint Description\"\n\t\t" +
+				"execution environments : \"JavaSE-1.6\"\n\t" + 
+			"}\n";
+			
 			fileContent += "\tgeneration {\n" +
 					"\t\tdata (\n" +
 					"\t\t\tModel: true\n" +
@@ -174,6 +176,12 @@ public class WizardsUtil {
 			fileContent = fileContent + 	"	project " + rootProjectName + "\n" +
 				"	project " + rootProjectName + "\n" +
 				"	nsuri " + "\"" + nsURI+ "\"" + "\n";
+			
+			fileContent = fileContent + "\trelease {\n\t\t" +
+					"version : 1.0.0.qualifier\n\t\t" +
+					"description : \"Viewpoint Description\"\n\t\t" +
+					"execution environments : \"JavaSE-1.6\"\n\t" + 
+					"}\n";
 			
 			fileContent += "\tgeneration {\n" +
 					"\t\tdata (\n" +

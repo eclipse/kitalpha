@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,8 +10,9 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text;
 
-import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.ISetup;
+import org.eclipse.emf.ecore.resource.Resource;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;

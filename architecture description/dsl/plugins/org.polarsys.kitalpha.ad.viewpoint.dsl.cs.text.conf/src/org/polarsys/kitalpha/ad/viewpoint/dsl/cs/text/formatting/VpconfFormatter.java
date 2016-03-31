@@ -38,6 +38,11 @@ public class VpconfFormatter extends AbstractDeclarativeFormatter {
 		//line wrap before nsuri
 		c.setLinewrap(1).before(f.getGenerationConfigurationAccess().getNsuriKeyword_3_0());
 		
+		//release section
+		c.setLinewrap(1).before(f.getReleaseAccess().getReleaseKeyword_1());
+		c.setLinewrap(1).before(f.getReleaseAccess().getDescriptionKeyword_4_0());
+		c.setLinewrap(1).before(f.getReleaseAccess().getExecutionKeyword_5_0());
+		
 		//generation section
 		c.setLinewrap(1).before(f.getGenerationAccess().getGenerationKeyword_1());
 		c.setLinewrap(1).after(f.getGenerationAccess().getRightCurlyBracketKeyword_5());
