@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-SymbolicName: org.polarsys.kitalpha.ad.metadata.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.ad.metadata.tests.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.junit,
+ org.polarsys.kitalpha.ad.metadata,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.polarsys.kitalpha.ad.metadata.model
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
