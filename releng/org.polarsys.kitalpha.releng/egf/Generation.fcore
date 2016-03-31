@@ -6,7 +6,7 @@
   <fcore:FactoryComponent xmi:id="_u2NK8I3DEd-jLJFvCqxXvA" name="Generation Launcher">
     <contractContainer xmi:id="_-z7hUKx4EeCY7YPdntiIaQ">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_-z7hUax4EeCY7YPdntiIaQ"
-          name="generationPath" invocationContracts="#_XEawo44-EeOQ8YcnVfa6Wg #_aFuYcxD2EeS3h6_GdwVh4g #_yBh9UzHoEeW5Te4c0tZ9OQ #_J2Wm0zXuEeWshbyNnVCAaQ">
+          name="generationPath" invocationContracts="#_XEawo44-EeOQ8YcnVfa6Wg #_aFuYcxD2EeS3h6_GdwVh4g #_yBh9UzHoEeW5Te4c0tZ9OQ #_J2Wm0zXuEeWshbyNnVCAaQ #_TomaE-B-EeWAfLzfCqvfTA">
         <type xmi:type="types:TypeString" xmi:id="_-z7hUqx4EeCY7YPdntiIaQ" value="platform:/resource/org.polarsys.kitalpha.releng/jobs"/>
       </contracts>
     </contractContainer>
@@ -20,6 +20,8 @@
             uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_sdk.egfbuild"/>
         <domains xmi:type="domain:EMFDomain" xmi:id="_DFR7oTXuEeWshbyNnVCAaQ" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
             uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_runtime.egfbuild"/>
+        <domains xmi:type="domain:EMFDomain" xmi:id="_PFc_AOB-EeWAfLzfCqvfTA" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
+            uri="platform:/resource/org.polarsys.kitalpha.releng/model/kitalpha_tests.egfbuild"/>
       </viewpoints>
     </viewpointContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_vUTcMI3DEd-jLJFvCqxXvA">
@@ -56,6 +58,15 @@
             <type xmi:type="domain:TypeDomain" xmi:id="_MF61sDXuEeWshbyNnVCAaQ" domain="#_DFR7oTXuEeWshbyNnVCAaQ"/>
           </invocationContracts>
           <invocationContracts xmi:id="_J2Wm0zXuEeWshbyNnVCAaQ" factoryComponentContract="#_-z7hUax4EeCY7YPdntiIaQ"
+              invokedContract="#_D9GakKx5EeCY7YPdntiIaQ"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_TomaEOB-EeWAfLzfCqvfTA" invokedActivity="#_-QI6QB2KEeC7y6GV_k_dkg">
+        <invocationContractContainer xmi:id="_TomaEeB-EeWAfLzfCqvfTA">
+          <invocationContracts xmi:id="_TomaEuB-EeWAfLzfCqvfTA" invokedContract="#_IBFP4B2LEeC7y6GV_k_dkg">
+            <type xmi:type="domain:TypeDomain" xmi:id="_VIHFAOB-EeWAfLzfCqvfTA" domain="#_PFc_AOB-EeWAfLzfCqvfTA"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_TomaE-B-EeWAfLzfCqvfTA" factoryComponentContract="#_-z7hUax4EeCY7YPdntiIaQ"
               invokedContract="#_D9GakKx5EeCY7YPdntiIaQ"/>
         </invocationContractContainer>
       </invocations>

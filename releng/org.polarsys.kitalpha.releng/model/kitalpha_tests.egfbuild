@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_tests">
+  <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
+    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK/lastSuccessfulBuild"/>
+    <properties xmi:id="_SQl0IOX2EeWn8_iL6inCSQ" key="rcptt.url" value="http://download.eclipse.org/rcptt/release/2.0.2/runner/rcptt.runner-2.0.2.zip"/>
+  </propertyPackages>
+  <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
+    <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.0.0"/>
+  </propertyPackages>
+  <propertyPackages xmi:id="_bkGKYOX3EeWn8_iL6inCSQ" name="rcptt">
+    <properties xmi:id="_hujFAOX4EeWn8_iL6inCSQ" key="aut-path" value="${publish}/TP"/>
+    <properties xmi:id="azerty1" key="test-results" value="${result}"/>
+    <properties xmi:id="azerty2" key="runner-workspace" value="${test-results}/runner-workspace"/>
+    <properties xmi:id="azerty3" key="aut-workspace" value="${test-results}/aut-workspace-"/>
+    <properties xmi:id="azerty4" key="aut-stdout" value="${test-results}/aut-out-"/>
+    <properties xmi:id="azerty5" key="junit-report" value="${test-results}/testRcpttResults.xml"/>
+    <properties xmi:id="azerty6" key="html-report" value="${test-results}/testRcpttResults.html"/>
+    <properties xmi:id="azerty7" key="jacoco-report" value="${test-results}/testRcptt.exec"/>
+    <properties xmi:id="_LbqRwOX4EeWn8_iL6inCSQ" key="test-locations" value="${build.root}/git"/>
+  </propertyPackages>
+  <jobs xmi:id="_DDpI0OX2EeWn8_iL6inCSQ" name="setup">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
+    <steps xsi:type="buildstep:AntStep" xmi:id="_N-25MOX2EeWn8_iL6inCSQ" name="Install RCPTT" targetName="install.rcptt" xml="&lt;target name=&quot;install.rcptt&quot;>&#xD;&#xA;&#x9;&lt;available file=&quot;${tools}/rcptt&quot; property=&quot;rcptt.exists&quot; />&#xD;&#xA;&#x9;&lt;antcall target=&quot;do.install.rcptt&quot; />&#xD;&#xA;&lt;/target>&#xD;&#xA;&#xD;&#xA;&lt;target name=&quot;do.install.rcptt&quot; unless=&quot;rcptt.exists&quot;>&#xD;&#xA;&#x9;&lt;echo message=&quot;Fetching headless rcptt application&quot; />&#xD;&#xA;&#x9;&lt;tempfile destdir=&quot;${java.io.tmpdir}&quot; prefix=&quot;rcptt-&quot; suffix=&quot;.zip&quot; property=&quot;rcptt.zip&quot; deleteonexit=&quot;true&quot; />&#xD;&#xA;&#x9;&lt;get src=&quot;${rcptt.url}&quot; dest=&quot;${rcptt.zip}&quot; />&#xD;&#xA;&#x9;&lt;mkdir dir=&quot;${tools}&quot; />&#xD;&#xA;&#x9;&lt;unzip src=&quot;${rcptt.zip}&quot; dest=&quot;${tools}/rcptt&quot; />&#xD;&#xA;&#x9;&lt;delete file=&quot;${rcptt.zip}&quot; />&#xD;&#xA;&lt;/target>"/>
+    <steps xsi:type="buildstep:AntStep" xmi:id="_2JSR0OB8EeWAfLzfCqvfTA" name="download TP" description="" targetName="download_tp" xml="&lt;target name=&quot;download_tp&quot;>&#xD;&#xA;&#x9; &lt;dirname property=&quot;dir&quot; file=&quot;${publish}/TP.ts&quot;/>&#xD;&#xA;&#x9; &lt;mkdir dir=&quot;${dir}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/buildTimestamp?format=yyyy-MM-dd_HH-mm-ss&quot; &#xD;&#xA;&#x9;&#x9;dest=&quot;${publish}/TP.ts&quot;/>&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;&lt;loadfile srcfile=&quot;${publish}/TP.ts&quot; property=&quot;ts&quot;/>&#xD;&#xA;&#x9;&lt;echo>timestamp: ${ts}&lt;/echo>&#xD;&#xA;&#xD;&#xA;&#x9;&lt;get &#xD;&#xA;&#xD;&#xA;&#x9;&#x9;src=&quot;${sdk.url}/artifact/result/publish/kitalpha_${kitalpha_version}-${ts}-linux-gtk-x86_64-mars.tar.gz&quot;&#xD;&#xA;&#x9;&#x9;dest=&quot;${publish}/TP.tar.gz&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;gunzip src=&quot;${publish}/TP.tar.gz&quot;/>&#xD;&#xA;&lt;untar src=&quot;${publish}/TP.tar&quot; dest=&quot;${publish}/TP&quot;/>&#xD;&#xA;&#xD;&#xA;&lt;/target> &#xD;&#xA;"/>
+  </jobs>
+  <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="junit">
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_GaWL8D5GEeSicsfEyxBYkg" name="import tests projects">
+      <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/tests/plugins"/>
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_P2ynMPc5EeWoDIyv4eU7-A" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/tests"/>
+        <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP"/>
+        <components xsi:type="buildstep:Plugin" xmi:id="_bxUGQOCBEeWAfLzfCqvfTA" id="org.polarsys.kitalpha.resourcereuse.tests"/>
+        <components xsi:type="buildstep:Plugin" xmi:id="_awyPkPc5EeWoDIyv4eU7-A" id="org.polarsys.kitalpha.ad.metadata.tests"/>
+      </steps>
+      <steps xsi:type="buildstep:PublishStep" xmi:id="_J12CcD5GEeSicsfEyxBYkg" enabled="false" component="_bxUGQOCBEeWAfLzfCqvfTA"/>
+    </steps>
+    <steps xsi:type="buildstep:TestStep" xmi:id="_hNI1wOCBEeWAfLzfCqvfTA" name="Resource Reuse" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.tests/Resource_Reuse_Tests.launch"/>
+    <steps xsi:type="buildstep:TestStep" xmi:id="_dizrQPc5EeWoDIyv4eU7-A" name="Metadata" launchConfigurationPath="org.polarsys.kitalpha.ad.metadata.tests/Metadata_Tests.launch"/>
+    <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
+      <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
+    </scms>
+    <deployment xsi:type="builddeploy:HudsonDeployment" xmi:id="_GaCUIPqoEeKFaurHIkYR0w" assignedNode="master" jdkName="jdk6u18" antName="ant-1.8.2" userDeployServerUrl="https://www.polarsys.org/kitalpha/hudson/" userDeployJobName="">
+      <users xmi:id="_8MIb4INCEeO4K7leE9IQQw" login="thomas.guiu@soyatec.com" permission="WRITE"/>
+      <triggers xsi:type="builddeploy:SCMTrigger" xmi:id="_PkkxEAYrEeGvu-Y1KM--ag"/>
+      <triggers xsi:type="builddeploy:CronTrigger" xmi:id="_AmyRsQ8MEeKIuPgeX8UkeA" planning="* * * * 5"/>
+      <generationLocation xsi:type="buildscm:GITGenerationLocation" xmi:id="_UkTtQPx8EeO7zY3f-pIrjg" folderName="releng/org.polarsys.kitalpha.releng/jobs" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg"/>
+    </deployment>
+  </jobs>
+  <jobs xmi:id="_JF_s0OX2EeWn8_iL6inCSQ" name="rcptt">
+    <steps xsi:type="buildstep:AntStep" xmi:id="_QrGAgOX3EeWn8_iL6inCSQ" name="run" targetName="test" xml="&lt;target name=&quot;test&quot;>&#xD;&#xA;&#x9;&#x9;&lt;java jar=&quot;${runner-path}/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar&quot; fork=&quot;true&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-application&quot; />      &#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;org.eclipse.rcptt.runner.headless&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-data&quot; />&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;${runner-workspace}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-aut&quot; />      &#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;${aut-path}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-autWsPrefix&quot; />      &#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;${aut-workspace}&quot; />&#xD;&#xA;&#x9;   &#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-autConsolePrefix&quot; />&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;${aut-stdout}&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-htmlReport&quot; />&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;${html-report}&quot; />&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-junitReport&quot; />&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;${junit-report}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-import&quot; />&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;${test-location}&quot; />&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-testOptions&quot; />      &#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;testExecTimeout=300;execTimeout=3600&quot; />&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&lt;!--&#x9;&#x9;&#x9;&lt;arg value=&quot;-autVMArgs&quot; />      &#xD;&#xA;&#x9;&#x9;&#x9;&lt;arg value=&quot;-Xmx1024m;-XX:MaxPermSize=256m;-javaagent:${jacoco-path}/lib/jacocoagent.jar=destfile=${jacoco-report}&quot; />&#xD;&#xA;-->&#xD;&#xA;&#x9;&#x9;&lt;/java>&#xD;&#xA;&#x9;&lt;/target>"/>
+  </jobs>
+</buildcore:Chain>
