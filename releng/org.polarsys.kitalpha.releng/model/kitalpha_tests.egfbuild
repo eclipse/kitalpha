@@ -38,14 +38,17 @@
       <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
         <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/tests/plugins"/>
         <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_P2ynMPc5EeWoDIyv4eU7-A" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/metadata/tests"/>
+        <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_HVCqsPgMEeWi5MvOhF7QjA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/tests"/>
         <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP"/>
         <components xsi:type="buildstep:Plugin" xmi:id="_bxUGQOCBEeWAfLzfCqvfTA" id="org.polarsys.kitalpha.resourcereuse.tests"/>
         <components xsi:type="buildstep:Plugin" xmi:id="_awyPkPc5EeWoDIyv4eU7-A" id="org.polarsys.kitalpha.ad.metadata.tests"/>
+        <components xsi:type="buildstep:Plugin" xmi:id="_Jb5CcPgMEeWi5MvOhF7QjA" id="org.polarsys.kitalpha.ad.viewpoint.tests"/>
       </steps>
       <steps xsi:type="buildstep:PublishStep" xmi:id="_J12CcD5GEeSicsfEyxBYkg" enabled="false" component="_bxUGQOCBEeWAfLzfCqvfTA"/>
     </steps>
     <steps xsi:type="buildstep:TestStep" xmi:id="_hNI1wOCBEeWAfLzfCqvfTA" name="Resource Reuse" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.tests/Resource_Reuse_Tests.launch"/>
     <steps xsi:type="buildstep:TestStep" xmi:id="_dizrQPc5EeWoDIyv4eU7-A" name="Metadata" launchConfigurationPath="org.polarsys.kitalpha.ad.metadata.tests/Metadata_Tests.launch"/>
+    <steps xsi:type="buildstep:TestStep" xmi:id="_K3Mi0PgMEeWi5MvOhF7QjA" name="Viewpoint Manager" launchConfigurationPath="org.polarsys.kitalpha.ad.viewpoint.tests/Viewpoint_Tests.launch"/>
     <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
       <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
     </scms>
