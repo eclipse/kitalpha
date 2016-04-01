@@ -4,6 +4,7 @@
     <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK/lastSuccessfulBuild"/>
     <properties xmi:id="_-akrIPc8EeWoDIyv4eU7-A" key="vp-evolution.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_Gerrit-VP_evolution/lastSuccessfulBuild/artifact/result/publish/kitalpha/site.p2"/>
     <properties xmi:id="_SQl0IOX2EeWn8_iL6inCSQ" key="rcptt.url" value="http://download.eclipse.org/rcptt/release/2.0.2/runner/rcptt.runner-2.0.2.zip"/>
+    <properties xmi:id="_IdvIAPfTEeWi5MvOhF7QjA" key="example.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_Gerrit-VP_evolution/lastSuccessfulBuild/artifact/result/publish/org.polarsys.kitalpha.vp.componentsample.example.feature/site.p2"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.0.0"/>
@@ -26,6 +27,10 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_1obgEPc8EeWoDIyv4eU7-A" name="update TP" id="TP" profile="SDKProfile">
       <updateSiteUrls>${vp-evolution.url}</updateSiteUrls>
       <featureNames>org.polarsys.kitalpha.sdk.feature</featureNames>
+    </steps>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_LofMwPfTEeWi5MvOhF7QjA" name="install example" id="TP" profile="SDKProfile">
+      <updateSiteUrls>${example.url}</updateSiteUrls>
+      <featureNames>org.polarsys.kitalpha.vp.componentsample.example.feature</featureNames>
     </steps>
   </jobs>
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="junit">
