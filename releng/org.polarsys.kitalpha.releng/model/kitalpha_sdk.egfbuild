@@ -270,7 +270,6 @@
       <components xsi:type="buildstep:Feature" xmi:id="_fuqZo2zmEeWQLIDk8nN8SA" id="org.polarsys.kitalpha.vp.componentsample.example.installer.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_fuqZpGzmEeWQLIDk8nN8SA" component="_fuqZo2zmEeWQLIDk8nN8SA"/>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_5akDwPfSEeWi5MvOhF7QjA" component="_y6h-hniMEeW0KskE0wzbMw"/>
   </jobs>
   <jobs xmi:id="_y6h-gHiMEeW0KskE0wzbMw" name="Composer Component sample">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_y6h-gXiMEeW0KskE0wzbMw">
