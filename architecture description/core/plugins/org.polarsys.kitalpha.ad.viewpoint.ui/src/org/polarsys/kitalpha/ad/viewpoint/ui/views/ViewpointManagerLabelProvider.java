@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
@@ -52,9 +53,10 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 			}
 			return "Unused";
 		case 2:
-			if (context == null)
+ 			if (context == null)
 				return "N/A";
-			return vp.getVersion() == null || vp.getVersion().isEmpty() ? "no version" : vp.getVersion();
+			Version version = ViewpointManager.readVersion(vp);
+			return version == null || version.equals(Version.emptyVersion) ? "no version" : version.toString();
 		case 3:
 			return vp.getProviderLocation().toString();
 		case 4:
