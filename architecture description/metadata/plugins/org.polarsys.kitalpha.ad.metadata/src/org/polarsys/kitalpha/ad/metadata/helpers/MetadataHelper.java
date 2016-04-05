@@ -15,6 +15,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
 /**
@@ -39,5 +40,10 @@ public class MetadataHelper {
 			});
 		}
 		return result;
+	}
+	
+	public static boolean isMetadataResource(Resource resource) {
+		return ViewpointMetadata.STORAGE_EXTENSION.equals(resource.getURI().fileExtension());
+		
 	}
 }
