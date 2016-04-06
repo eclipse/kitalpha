@@ -412,12 +412,13 @@ public class ViewpointManagerView extends ViewPart {
 			Resource res = (Resource) selection.getFirstElement();
 			if (context != null) {
 				boolean used = ViewpointManager.getInstance(context).isUsed(res.getId());
-				useAction.setEnabled(!used);
-				unUseAction.setEnabled(used);
+				boolean canChangeState = ViewpointManager.canChangeState(res);
+				useAction.setEnabled(!used && canChangeState);
+				unUseAction.setEnabled(used && canChangeState);
 				if (used) {
 					boolean filtered = ViewpointManager.getInstance(context).isFiltered(res.getId());
-					filterAction.setEnabled(filtered);
-					unFilterAction.setEnabled(!filtered);
+					filterAction.setEnabled(filtered && canChangeState);
+					unFilterAction.setEnabled(!filtered && canChangeState);
 				} else {
 					filterAction.setEnabled(false);
 					unFilterAction.setEnabled(false);

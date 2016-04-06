@@ -51,6 +51,7 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
  */
 public class ViewpointManager {
 
+	private static final String VIEWPOINT_STATE_READ_ONLY = "stateReadOnly";
 	private final static Set<String> discarded = new HashSet<String>();
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
@@ -63,6 +64,10 @@ public class ViewpointManager {
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
 	private final Set<String> managed = new HashSet<String>();
 	private ResourceSet target;
+
+	public static boolean canChangeState(Resource res) {
+		return !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
+	}
 
 	public void setTarget(ResourceSet target) {
 		this.target = target;
