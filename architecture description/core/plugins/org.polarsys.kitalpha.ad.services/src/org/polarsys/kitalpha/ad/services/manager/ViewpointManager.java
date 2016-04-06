@@ -52,9 +52,10 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
  */
 public class ViewpointManager {
 
+	private static final String VIEWPOINT_STATE_READ_ONLY = "stateReadOnly";
 	private static final String STATE_FILENAME = "viewpointManager.state";
 	protected static final ViewpointManager INSTANCE;
-	
+
 	private final static Set<String> discarded = new HashSet<String>();
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
@@ -64,12 +65,15 @@ public class ViewpointManager {
 	private static final int FILTERED = 8;
 	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
 
-
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
 	private final Set<String> activated = new HashSet<String>();
-    private final Set<String> managed = new HashSet<String>();
+	private final Set<String> managed = new HashSet<String>();
 	private ResourceSet target;
 	private final StateManager stateManager = new StateManager();
+
+	public static boolean canChangeState(Resource res) {
+		return !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
+	}
 
 	public static Resource getViewpoint(String id) {
 		for (Resource res : getAvailableViewpoints()) {
@@ -90,11 +94,9 @@ public class ViewpointManager {
 	 * @param context
 	 * @return
 	 */
-	public static IStatus checkViewpointsCompliancy(ResourceSet context)
-	{
+	public static IStatus checkViewpointsCompliancy(ResourceSet context) {
 		return Status.OK_STATUS;
 	}
-	
 
 	public static Resource[] getAvailableViewpoints() {
 		SearchCriteria searchCriteria = new SearchCriteria();
@@ -368,7 +370,7 @@ public class ViewpointManager {
 	public static ViewpointManager getInstance(final ResourceSet ctx) {
 		return INSTANCE;
 	}
-	
+
 	static {
 		ViewpointManager instance = null;
 		try {
@@ -383,6 +385,5 @@ public class ViewpointManager {
 		}
 		INSTANCE = instance;
 	}
-
 
 }

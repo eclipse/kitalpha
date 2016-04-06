@@ -320,10 +320,11 @@ public class ViewpointManagerView extends ViewPart {
 		int size = selection == null ? 0 : selection.size();
 		if (size == 1) {
 			Resource res = (Resource) selection.getFirstElement();
-			boolean active = ViewpointManager.getInstance((EObject)null).isUsed(res.getId());
-			startAction.setEnabled(!active);
-			stopAction.setEnabled(active);
-			openViewAction.setEnabled(active);
+			boolean active = ViewpointManager.getInstance((EObject) null).isUsed(res.getId());
+			boolean canChangeState = ViewpointManager.canChangeState(res);
+			startAction.setEnabled(!active && canChangeState);
+			stopAction.setEnabled(active && canChangeState);
+			openViewAction.setEnabled(active && canChangeState);
 			openViewAction.setResource(res);
 		} else {
 			startAction.setEnabled(false);
@@ -341,10 +342,10 @@ public class ViewpointManagerView extends ViewPart {
 				if (size != 1)
 					return;
 				final Resource res = (Resource) ss.getFirstElement();
-				if (ViewpointManager.getInstance((EObject)null).isActive(res.getId()))
+				if (ViewpointManager.getInstance((EObject) null).isActive(res.getId()))
 					return;
 				try {
-					ViewpointManager.getInstance((EObject)null).activate(res.getId());
+					ViewpointManager.getInstance((EObject) null).activate(res.getId());
 
 					// // we need a short delay to wait for new freshly installed
 					// // bundles to be ready
@@ -371,10 +372,10 @@ public class ViewpointManagerView extends ViewPart {
 				if (size != 1)
 					return;
 				Resource res = (Resource) ss.getFirstElement();
-				if (!ViewpointManager.getInstance((EObject)null).isActive(res.getId()))
+				if (!ViewpointManager.getInstance((EObject) null).isActive(res.getId()))
 					return;
 				try {
-					ViewpointManager.getInstance((EObject)null).desactivate(res.getId());
+					ViewpointManager.getInstance((EObject) null).desactivate(res.getId());
 				} catch (ViewpointActivationException e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					Activator.getDefault().logError(e);
