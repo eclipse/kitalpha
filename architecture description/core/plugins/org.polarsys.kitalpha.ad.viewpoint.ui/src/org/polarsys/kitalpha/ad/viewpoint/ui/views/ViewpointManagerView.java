@@ -245,7 +245,11 @@ public class ViewpointManagerView extends ViewPart {
 						if (selection instanceof TreeSelection) {
 							Object[] selected = ((TreeSelection) selection).toArray();
 							if (selected[0] instanceof EObject)
-								context = ((EObject) selected[0]).eResource().getResourceSet();
+							{
+								org.eclipse.emf.ecore.resource.Resource eResource = ((EObject) selected[0]).eResource();
+								if (eResource != null)
+									context = eResource.getResourceSet();
+							}
 						}
 					}
 
