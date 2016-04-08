@@ -87,21 +87,6 @@ public final class SiriusViewpointActivationManager implements OverallListener {
 	}
 	
 	public void execute(final TransactionalEditingDomain domain, final RecordingCommand command) {
-		final IProgressService ps = PlatformUI.getWorkbench().getProgressService();
-		try {
-			ps.run(false, false, new WorkspaceModifyOperation() {
-
-				@Override
-				protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
-					monitor.beginTask("Apply new viewpoints selection...", 1);
-					domain.getCommandStack().execute(command);
-					monitor.done();
-				}
-			});
-		} catch (Exception e) {
-			// MessageDialog.openError(shell, "Error while opening view",
-			// "See details in error log ");
-			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.getSymbolicName(), "Error while starting bundle", e));
-		}
+		domain.getCommandStack().execute(command);
 	}
 }
