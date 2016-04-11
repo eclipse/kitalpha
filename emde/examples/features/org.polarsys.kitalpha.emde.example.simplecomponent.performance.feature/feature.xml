@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.emde.example.simplecomponent.performance.feature"
       label="Performance for Simplecomponent Feature (eMDE example)"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -18,7 +18,7 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.emde.example.simplecomponent.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.example.simplecomponent.feature" version="1.0.1.qualifier"/>
    </requires>
 
    <plugin

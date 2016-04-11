@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.emde.feature"
       label="Kitalpha eMDE Feature"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -18,7 +18,7 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.report.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.report.feature" version="1.0.1.qualifier"/>
    </requires>
 
    <plugin
