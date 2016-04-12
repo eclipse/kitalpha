@@ -53,8 +53,6 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 			}
 			return "Unused";
 		case 2:
- 			if (context == null)
-				return "N/A";
 			Version version = ViewpointManager.readVersion(vp);
 			return version == null || version.equals(Version.emptyVersion) ? "no version" : version.toString();
 		case 3:
