@@ -163,9 +163,9 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 		// TODO
 
-		// if (extension2state.containsKey(nsURI)) {
-		// return !extension2state.get(nsURI);
-		// }
+		if (extension2state.containsKey(nsURI)) {
+			return !extension2state.get(nsURI);
+		}
 		ResourceSet set = new ResourceSetImpl();
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
