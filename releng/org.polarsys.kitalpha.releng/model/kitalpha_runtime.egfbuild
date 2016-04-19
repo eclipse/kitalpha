@@ -179,17 +179,17 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_btE9AI5uEeORY9jpJq94Og" name="common feature" id="TP" profile="SDKProfile" resultSteps="_GzpY8ECvEeOkCsna5l9rlg" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_FDObEaRCEeOdPJBpl-8efw" name="accuracy">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_KBUswKRCEeOdPJBpl-8efw">
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_WTxV0KRCEeOdPJBpl-8efw" path="${publish}/TP"/>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_KBUswKRCEeOdPJBpl-8efw" name="accuracy">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_T4VY8P35EeOAVuD-0y5mBw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_VM4KAP35EeOAVuD-0y5mBw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_WTxV0KRCEeOdPJBpl-8efw" path="${publish}/TP"/>
       <components xsi:type="buildstep:Feature" xmi:id="_XG_igKRCEeOdPJBpl-8efw" id="org.polarsys.kitalpha.accuracy.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_dAuWAKRCEeOdPJBpl-8efw" component="_XG_igKRCEeOdPJBpl-8efw"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_ffSqMKRCEeOdPJBpl-8efw" name="accuracy feature" id="TP" profile="SDKProfile" resultSteps="_dAuWAKRCEeOdPJBpl-8efw" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_WrFHIC9VEeOlq-9ObYy--w" name="resourcereuse">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_e9aJsC9VEeOlq-9ObYy--w" name="resourcereuse">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_e9aJsC9VEeOlq-9ObYy--w" name="resource reuse">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIBGNEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIRGNEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Yk0yoI5uEeORY9jpJq94Og" path="${publish}/TP"/>
@@ -201,7 +201,7 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" id="TP" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_cOYZ4J7uEeOjCb9D2yIVHQ" name="cadence">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_fnRBQJ7uEeOjCb9D2yIVHQ">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_fnRBQJ7uEeOjCb9D2yIVHQ" name="cadence">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIBGQEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_4-cyIRGQEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="cadence/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_JOYE8J70EeOjCb9D2yIVHQ" path="${publish}/TP"/>

@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.releng.sonar;
 
 import java.util.*;
@@ -63,7 +63,6 @@ public class ProjectPattern {
 		StringBuilder prop = (StringBuilder) ctx.getValue("properties");
 		List<String> modules = (List<String>) ctx.getValue("modules");
 
-		IPath readOutputLocation = proj.readOutputLocation().removeFirstSegments(1);
 		String name = project.getName();
 		IPath location = project.getLocation();
 
@@ -72,24 +71,23 @@ public class ProjectPattern {
 			if (location.segmentCount() == 0)
 				return;
 		}
-		Object workspaceFromJenkins = ctx.getValue("workspace.from.jenkins");
 		// remove segment after 'git'
-		location = new Path("git").append(location.removeFirstSegments(Boolean.TRUE.equals(workspaceFromJenkins)? 1: 2));
+		location = new Path("git").append(location.removeFirstSegments(2));
 
 		String sources = "";
 		for (IPackageFragmentRoot root : proj.getAllPackageFragmentRoots()) {
 			if (root.getKind() == IPackageFragmentRoot.K_SOURCE && root.getParent().equals(proj)) {
-				if (!sources.isEmpty())
-					sources += ",";
-				sources += root.getElementName();
+				//				if (!sources.isEmpty())
+				//					sources += ",";
+				//				sources += root.getElementName();
+				if ("src".equals(root.getElementName()))
+					sources = "src";
 			}
 		}
 
 		if (!sources.isEmpty()) {
 			prop.append(name + ".sonar.projectName=" + name).append("\n");
 			prop.append(name + ".sonar.projectBaseDir=" + location).append("\n");
-			prop.append(name + ".sonar.binaries=" + readOutputLocation).append("\n");
-			prop.append(name + ".sonar.sources=" + sources).append("\n");
 
 			modules.add(name);
 		}
