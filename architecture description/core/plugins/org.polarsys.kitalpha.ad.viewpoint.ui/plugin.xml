@@ -34,8 +34,7 @@
       <tab
             class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.metamodels.MetamodelTab"
             id="org.polarsys.kitalpha.ad.viewpoint.ui.metamodel"
-            weight="40"
-            designOnly="true">
+            weight="40">
       </tab>
       <tab
             class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.overview.OverviewTab"

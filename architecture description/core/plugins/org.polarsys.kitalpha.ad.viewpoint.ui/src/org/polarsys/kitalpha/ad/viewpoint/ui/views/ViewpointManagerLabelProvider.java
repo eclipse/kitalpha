@@ -18,6 +18,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
@@ -33,18 +34,18 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (columnIndex != 0)
 			return null;
-		Resource vp = (Resource) element;
+		Description vp = (Description) element;
 		if (context != null && ViewpointManager.getInstance(context).isUsed(vp.getId()))
 			return Activator.getDefault().getImage(AFImages.RUNNING_VP);
 		return Activator.getDefault().getImage(AFImages.VP);
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
-		Resource vp = (Resource) element;
+		Description vp = (Description) element;
 		switch (columnIndex) {
 		case 0:
-			return vp.getName();
-		case 1:
+			return vp.getLabel();
+		case 2:
 			if (context == null)
 				return "N/A";
 			ViewpointManager instance = ViewpointManager.getInstance(context);
@@ -52,15 +53,9 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 				return "Used" + (instance.isFiltered(vp.getId()) ? " & filtered" : "");
 			}
 			return "Unused";
-		case 2:
-			Version version = ViewpointManager.readVersion(vp);
+		case 1:
+			Version version = vp.getVersion();
 			return version == null || version.equals(Version.emptyVersion) ? "no version" : version.toString();
-		case 3:
-			return vp.getProviderLocation().toString();
-		case 4:
-			return vp.getProviderSymbolicName();
-		case 5:
-			return "";
 		}
 		return "";
 	}

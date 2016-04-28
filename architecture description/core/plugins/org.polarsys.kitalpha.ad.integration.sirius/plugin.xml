@@ -6,8 +6,7 @@
       <tab
             class="org.polarsys.kitalpha.ad.integration.sirius.views.tabs.SiriusTab"
             id="org.polarsys.kitalpha.ad.integration.sirius.tab"
-            weight="15"
-            designOnly="true">
+            weight="15">
       </tab>
    </extension>
 

@@ -65,8 +65,9 @@ public class ViewpointManager {
 	private final Set<String> managed = new HashSet<String>();
 	private ResourceSet target;
 
-	public static boolean canChangeState(Resource res) {
-		return !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
+	public static boolean canChangeState(String id) {
+		Resource res = getViewpoint(id);
+		return res != null && !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
 	}
 
 	public void setTarget(ResourceSet target) {
@@ -91,6 +92,28 @@ public class ViewpointManager {
 		discarded.add(vp.getId());
 		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.\n" + details;
 		AD_Log.getDefault().logError(msg);
+	}
+
+	public static Description[] getAvailableViewpointDescriptions() {
+		ResourceSet set = new ResourceSetImpl();
+		List<Description> result = new ArrayList<ViewpointManager.Description>();
+		try {
+			for (Resource resource : getAvailableViewpoints()) {
+				try {
+					URI uri = URIHelper.createURI(resource);
+					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+					result.add(new Description(vp.getId(), vp.getName(), vp.getVersion()));
+				} catch (Exception e) {
+					pinError(resource, e);
+				}
+			}
+		} finally {
+			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+				r.unload();
+			}
+			set.getResources().clear();
+		}
+		return result.toArray(new Description[result.size()]);
 	}
 
 	public static Version readVersion(Resource resource) {
@@ -150,8 +173,8 @@ public class ViewpointManager {
 					URI uri = URIHelper.createURI(res);
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 					if (vp == null) {
-						pinError(resource, "Cannot get object from "+uri.toString());
-						continue ;
+						pinError(resource, "Cannot get object from " + uri.toString());
+						continue;
 					}
 					availableViewpoints.put(res.getId(), vp.getVersion());
 				} catch (Exception e) {
@@ -433,6 +456,32 @@ public class ViewpointManager {
 			instance = new ViewpointManager();
 		}
 		return instance;
+	}
+
+	public static class Description {
+		private final String id;
+		private final String label;
+		private final Version version;
+
+		public Description(String id, String label, Version version) {
+			super();
+			this.id = id;
+			this.label = label;
+			this.version = version;
+		}
+
+		public String getId() {
+			return id;
+		}
+
+		public String getLabel() {
+			return label;
+		}
+
+		public Version getVersion() {
+			return version;
+		}
+
 	}
 
 }

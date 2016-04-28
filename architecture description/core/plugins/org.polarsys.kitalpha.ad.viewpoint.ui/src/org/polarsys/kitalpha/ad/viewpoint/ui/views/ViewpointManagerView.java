@@ -63,6 +63,7 @@ import org.eclipse.ui.part.ViewPart;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentHelper;
@@ -277,25 +278,15 @@ public class ViewpointManagerView extends ViewPart {
 		nameColumn.getColumn().setText("Name");
 		nameColumn.getColumn().setResizable(true);
 
-		TableViewerColumn stateColumn = new TableViewerColumn(viewer, SWT.NONE);
-		layout.addColumnData(new ColumnWeightData(2, 50, true));
-		stateColumn.getColumn().setText("State");
-		stateColumn.getColumn().setResizable(true);
-
 		TableViewerColumn versionColumn = new TableViewerColumn(viewer, SWT.NONE);
 		layout.addColumnData(new ColumnWeightData(2, 50, true));
 		versionColumn.getColumn().setText("Version");
 		versionColumn.getColumn().setResizable(true);
 
-		TableViewerColumn locationColumn = new TableViewerColumn(viewer, SWT.NONE);
-		layout.addColumnData(new ColumnWeightData(3, 75, true));
-		locationColumn.getColumn().setText("Location");
-		locationColumn.getColumn().setResizable(true);
-
-		TableViewerColumn providerColumn = new TableViewerColumn(viewer, SWT.NONE);
-		layout.addColumnData(new ColumnWeightData(5, 150, true));
-		providerColumn.getColumn().setText("Provider");
-		providerColumn.getColumn().setResizable(true);
+		TableViewerColumn stateColumn = new TableViewerColumn(viewer, SWT.NONE);
+		layout.addColumnData(new ColumnWeightData(2, 50, true));
+		stateColumn.getColumn().setText("State");
+		stateColumn.getColumn().setResizable(true);
 
 		for (int i = 0; i < table.getColumnCount(); i++) {
 			TableColumn col = table.getColumn(i);
@@ -335,7 +326,7 @@ public class ViewpointManagerView extends ViewPart {
 
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				final Resource[] availableViewpoints = ViewpointManager.getAvailableViewpoints();
+				final Description[] availableViewpoints = ViewpointManager.getAvailableViewpointDescriptions();
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
 					public void run() {
 						viewer.setInput(availableViewpoints);
@@ -350,7 +341,7 @@ public class ViewpointManagerView extends ViewPart {
 	private void hookDoubleClickAction() {
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
 			public void doubleClick(DoubleClickEvent event) {
-				useAction.run();
+				openViewAction.run();
 			}
 		});
 	}
@@ -413,10 +404,10 @@ public class ViewpointManagerView extends ViewPart {
 	protected void updateButtons(IStructuredSelection selection) {
 		int size = selection == null ? 0 : selection.size();
 		if (size == 1) {
-			Resource res = (Resource) selection.getFirstElement();
+			Description res = (Description) selection.getFirstElement();
 			if (context != null) {
 				boolean used = ViewpointManager.getInstance(context).isUsed(res.getId());
-				boolean canChangeState = ViewpointManager.canChangeState(res);
+				boolean canChangeState = ViewpointManager.canChangeState(res.getId());
 				useAction.setEnabled(!used && canChangeState);
 				unUseAction.setEnabled(used && canChangeState);
 				if (used) {
@@ -428,14 +419,12 @@ public class ViewpointManagerView extends ViewPart {
 					unFilterAction.setEnabled(false);
 				}
 			}
-			openViewAction.setEnabled(true);
-			openViewAction.setResource(res);
+			openViewAction.setResource(ViewpointManager.getViewpoint(res.getId()));
 		} else {
 			useAction.setEnabled(false);
 			unUseAction.setEnabled(false);
 			filterAction.setEnabled(false);
 			unFilterAction.setEnabled(false);
-			openViewAction.setEnabled(false);
 			openViewAction.setResource(null);
 		}
 	}
@@ -447,7 +436,7 @@ public class ViewpointManagerView extends ViewPart {
 				int size = ss.size();
 				if (size != 1 || context == null)
 					return;
-				final Resource res = (Resource) ss.getFirstElement();
+				final Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
 				if (vpMgr.isUsed(res.getId()))
 					return;
@@ -469,12 +458,12 @@ public class ViewpointManagerView extends ViewPart {
 				int size = ss.size();
 				if (size != 1 || context == null)
 					return;
-				Resource res = (Resource) ss.getFirstElement();
+				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
 				if (!vpMgr.isUsed(res.getId()))
 					return;
 				try {
-					if (!MessageDialog.openQuestion(getSite().getShell(), "Stop using viewpoint " + res.getName(),
+					if (!MessageDialog.openQuestion(getSite().getShell(), "Stop using viewpoint " + res.getLabel(),
 							"Viewpoint Detachment is required. Close model and Proceed ?"))
 						return;
 					// Launch detach editor
@@ -502,7 +491,7 @@ public class ViewpointManagerView extends ViewPart {
 				int size = ss.size();
 				if (size != 1 || context == null)
 					return;
-				Resource res = (Resource) ss.getFirstElement();
+				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
 				if (!vpMgr.isUsed(res.getId()))
 					return;
@@ -524,7 +513,7 @@ public class ViewpointManagerView extends ViewPart {
 				int size = ss.size();
 				if (size != 1 || context == null)
 					return;
-				Resource res = (Resource) ss.getFirstElement();
+				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
 				if (!vpMgr.isUsed(res.getId()))
 					return;
