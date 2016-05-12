@@ -54,7 +54,7 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNodeList;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.DRepresentationContainer;
+import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
@@ -562,7 +562,7 @@ public class ExtensibilityService {
 	public static void clean(EObject view, Collection<EObject> objectList) {
 		if (objectList.size() > 0) 
 		{
-			DRepresentationContainer container = getContainer(view);
+			DView container = getContainer(view);
 			if (container != null) 
 			{
 				List<Resource> resourceList = new UniqueEList<Resource>();
@@ -607,12 +607,12 @@ public class ExtensibilityService {
 
 	}
 
-	private static DRepresentationContainer getContainer(EObject view) {
+	private static DView getContainer(EObject view) {
 		EObject container = view.eContainer();
 		if (container != null) 
 		{
-			if (container instanceof DRepresentationContainer) 
-				return (DRepresentationContainer) container;
+			if (container instanceof DView) 
+				return (DView) container;
 			else 
 				return getContainer(container);
 		}

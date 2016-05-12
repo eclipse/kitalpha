@@ -26,10 +26,6 @@ public abstract class AbstractEmdeExternalJavaAction implements IExternalJavaAct
 
 	protected static final TransactionalEditingDomain editingDomain = EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain();
 	
-	@Override
-	public abstract void execute(Collection<? extends EObject> selections, Map<String, Object> parameters);
-
-	@Override
 	public boolean canExecute(Collection<? extends EObject> selections) {
 		return true;
 	}
