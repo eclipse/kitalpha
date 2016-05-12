@@ -30,7 +30,7 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.description.Layer;
 import org.eclipse.sirius.diagram.description.filter.FilterDescription;
-import org.eclipse.sirius.viewpoint.DRepresentationContainer;
+import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.Messages;
@@ -38,7 +38,7 @@ import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandExcepti
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDMapping;
-import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDRepresentationContainer;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDView;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidEReferences;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidFilterDescription;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidLayer;
@@ -99,13 +99,13 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					}
 				}
 				
-				//DRepresentationContainer
-				if (finder instanceof InvalidDRepresentationContainer){
+				//DView
+				if (finder instanceof InvalidDView){
 					monitor.subTask(Messages.CLEAN_INVALID_REPRESENTATION_CONTAINER);
 					
-					InvalidDRepresentationContainer invalidDRepresentationContainer = (InvalidDRepresentationContainer) finder;
+					InvalidDView invalidDRepresentationContainer = (InvalidDView) finder;
 					
-					for (DRepresentationContainer dRepresentationContainer : invalidDRepresentationContainer.getAnalysisResult()) {
+					for (DView dRepresentationContainer : invalidDRepresentationContainer.getAnalysisResult()) {
 						EcoreUtil.remove(dRepresentationContainer);
 					}
 				}

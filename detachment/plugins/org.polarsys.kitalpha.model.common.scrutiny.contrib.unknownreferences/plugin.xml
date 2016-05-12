@@ -23,7 +23,7 @@ Contributors:
                scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDMapping">
          </class>
          <class
-               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDRepresentationContainer">
+               scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDView">
          </class>
          <class
                scrutinize="org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidFilterDescription">

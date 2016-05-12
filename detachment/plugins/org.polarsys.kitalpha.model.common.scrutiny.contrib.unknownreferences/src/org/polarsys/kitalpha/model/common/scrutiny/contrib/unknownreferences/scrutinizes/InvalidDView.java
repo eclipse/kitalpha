@@ -16,7 +16,7 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.sirius.viewpoint.DRepresentationContainer;
+import org.eclipse.sirius.viewpoint.DView;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.Messages;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.feedback.Feedback;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.FeedbackLevel;
@@ -26,19 +26,19 @@ import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
 /**
  * @author Matthieu Helleboid
  */
-public class InvalidDRepresentationContainer implements IScrutinize<Set<DRepresentationContainer>, Collection<IFeedbackMessage>> {
+public class InvalidDView implements IScrutinize<Set<DView>, Collection<IFeedbackMessage>> {
 
 	
-	private Set<DRepresentationContainer> representationContainers;
+	private Set<DView> representationContainers;
 	
-	public InvalidDRepresentationContainer() {
-		this.representationContainers = new HashSet<DRepresentationContainer>();
+	public InvalidDView() {
+		this.representationContainers = new HashSet<DView>();
 	}
 	
 	@Override
 	public void findIn(EObject eObject) {
-		if (eObject instanceof DRepresentationContainer) {
-			DRepresentationContainer dRepresentationContainer = (DRepresentationContainer) eObject;
+		if (eObject instanceof DView) {
+			DView dRepresentationContainer = (DView) eObject;
 			if (dRepresentationContainer.getViewpoint() == null || dRepresentationContainer.getViewpoint().eIsProxy()){
 				representationContainers.add(dRepresentationContainer);
 			}
@@ -50,7 +50,7 @@ public class InvalidDRepresentationContainer implements IScrutinize<Set<DReprese
 	}
 
 	@Override
-	public Set<DRepresentationContainer> getAnalysisResult() {
+	public Set<DView> getAnalysisResult() {
 		return this.representationContainers;
 	}
 
@@ -58,7 +58,7 @@ public class InvalidDRepresentationContainer implements IScrutinize<Set<DReprese
 	public Collection<IFeedbackMessage> getFeedbackAnalysisMessages() {
 		Feedback feedback = new Feedback();
 		
-		for (DRepresentationContainer representationContainer : getAnalysisResult()) {
+		for (DView representationContainer : getAnalysisResult()) {
 			String message = Messages.MISSING_SIRIUS_VIEWPOINT;
 			if (representationContainer.getViewpoint() != null){
 				message = message + Feedback.getProxyURI(representationContainer.getViewpoint());
