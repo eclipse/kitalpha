@@ -52,6 +52,7 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 public class ViewpointManager {
 
 	private static final String VIEWPOINT_STATE_READ_ONLY = "stateReadOnly";
+	private static final String VIEWPOINT_STATE_HIDDEN = "stateHidden";
 	private final static Set<String> discarded = new HashSet<String>();
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
@@ -102,7 +103,7 @@ public class ViewpointManager {
 				try {
 					URI uri = URIHelper.createURI(resource);
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-					result.add(new Description(vp.getId(), vp.getName(), vp.getVersion()));
+					result.add(new Description(vp.getId(), vp.getName(), vp.getVersion(), resource));
 				} catch (Exception e) {
 					pinError(resource, e);
 				}
@@ -462,12 +463,14 @@ public class ViewpointManager {
 		private final String id;
 		private final String label;
 		private final Version version;
+		private Resource resource;
 
-		public Description(String id, String label, Version version) {
+		public Description(String id, String label, Version version, Resource resource) {
 			super();
 			this.id = id;
 			this.label = label;
 			this.version = version;
+			this.resource = resource;
 		}
 
 		public String getId() {
@@ -480,6 +483,10 @@ public class ViewpointManager {
 
 		public Version getVersion() {
 			return version;
+		}
+
+		public boolean shloudBeHidden() {
+			return resource.getTags().contains(VIEWPOINT_STATE_HIDDEN);
 		}
 
 	}

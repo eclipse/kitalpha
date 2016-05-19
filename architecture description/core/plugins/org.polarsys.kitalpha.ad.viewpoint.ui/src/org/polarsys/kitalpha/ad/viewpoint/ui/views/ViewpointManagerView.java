@@ -19,12 +19,11 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
@@ -45,6 +44,7 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -142,6 +142,7 @@ public class ViewpointManagerView extends ViewPart {
 	private Action useAction;
 	private Action unUseAction;
 	private Action refreshAction;
+	private Action showHiddenViewpointAction;
 	private OpenViewAction openViewAction;
 	private ViewpointManager.OverallListener vpListener = new ViewpointManager.OverallListener() {
 
@@ -309,6 +310,16 @@ public class ViewpointManagerView extends ViewPart {
 				updateButtons((IStructuredSelection) event.getSelection());
 			}
 		});
+		
+		viewer.addFilter(new ViewerFilter() {
+			
+			@Override
+			public boolean select(Viewer viewer, Object parentElement, Object element) {
+				if (((Description)element).shloudBeHidden() )
+					return showHiddenViewpointAction.isChecked();
+				return true;
+			}
+		});
 	}
 
 	private void performInit() {
@@ -399,6 +410,8 @@ public class ViewpointManagerView extends ViewPart {
 		manager.add(unFilterAction);
 		manager.add(new Separator());
 		manager.add(openViewAction);
+		manager.add(new Separator());
+		manager.add(showHiddenViewpointAction);
 	}
 
 	protected void updateButtons(IStructuredSelection selection) {
@@ -430,6 +443,15 @@ public class ViewpointManagerView extends ViewPart {
 	}
 
 	private void makeActions() {
+		showHiddenViewpointAction = new Action("", IAction.AS_CHECK_BOX) {
+			public void run() {
+				viewer.refresh();
+			}
+		};
+		showHiddenViewpointAction.setText("Show all viewpoints");
+		showHiddenViewpointAction.setToolTipText("Show all viewpoints");
+		showHiddenViewpointAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.DISPLAY_ALL));
+
 		useAction = new Action() {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
@@ -467,14 +489,12 @@ public class ViewpointManagerView extends ViewPart {
 							"Viewpoint Detachment is required. Close model and Proceed ?"))
 						return;
 					// Launch detach editor
+					// if the detachement is successful then the viewpoint is no more in use
 					org.eclipse.emf.ecore.resource.Resource resource = context.getResources().get(0);
 					IFile file = ResourcesPlugin.getWorkspace().getRoot()
 							.getFile(new Path(resource.getURI().toPlatformString(true)));
 					DetachmentHelper.openEditor(file, new NullProgressMonitor());
 
-					// check detachement has been done.
-					// TODO check detachement has been done.
-					// vpMgr.stopUse(res.getId());
 				} catch (Exception e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					Activator.getDefault().logError(e);

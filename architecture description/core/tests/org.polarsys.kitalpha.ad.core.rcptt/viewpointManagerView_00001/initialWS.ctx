@@ -1,0 +1,118 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.workspace
+Element-Name: initialWS
+Element-Type: context
+Element-Version: 2.0
+Id: _STZ8YB3BEea9EIJxawXROw
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 5/19/16 2:57 PM
+
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/build.properties-8e1372c4-b01c-32a2-bde9-e406ae695a6f
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/build.properties
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAAArzi8tSk7V01OwVSgu
+Stbnyi8tKSgtAfOTMvP0uYCEXmZeck5pSmoxUMzXNcRR19PPTV8nhosTCPSgdG5+SmqOPgBQSwcIMCGu
+LUIAAABNAAAAUEsBAhQAFAAICAgAAAAhADAhri1CAAAATQAAAAgACQAAAAAAAAAAAAAAAAAAAC5jb250
+ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAIEAAAAAAA==
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/build.properties-8e1372c4-b01c-32a2-bde9-e406ae695a6f--
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/icons/view.gif-8b1b4ffe-bf7b-35a7-b675-6408d02a5b5c
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/icons/view.gif
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAABz93SzsEwUYBBgWGrB
+IMicIs6RL8tXoyzcri7er6OjY2JqYmNjwxA6zcvLiyViBnfMrMDAQIGEuYIJc4QT54WGhookzRNLnieW
+Mi8qKlI6faFM+gKVnCWpqanahcu1C1foFi8zKltlUbXWpnaNZ+uGmpqa+vpf0RO3NzX+Tpy6q7Xtd2fn
+7+nTJi1dPH3Tpk3z9l44fHjfqRM7D1+7d+HBmwvPPjx+/Pj9p/8fP///+OX/py//v3z7/+3H/3///v3H
+ART/CToXpSaWpKYolGeWZCi4e/oGMCj+ZGFkYLBn0GEAApBHGdi6D8wv8NAR0l2ypOilI4fuqmklVqGW
+YvYapdl/faTmLZ3x5EeH2szpVWfrcl2en+N2X3/7fvq5O+eO+5tU15TWNTSVF9Q3WmhKCHDyiGh2iFeb
+K3Bq6CjqaLAryAuJVk830rFgnG3IpqAnWM1paqrIwsSgbGLMas/Fv1dbwWwWs6qOqbq2234DHTUdA4UT
+9o4M1gBQSwcI+gtup3oBAACDAQAAUEsBAhQAFAAICAgAAAAhAPoLbqd6AQAAgwEAAAgACQAAAAAAAAAA
+AAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAALkBAAAAAA==
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/icons/view.gif-8b1b4ffe-bf7b-35a7-b675-6408d02a5b5c--
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/META-INF/MANIFEST.MF-cc220710-daf0-347e-a783-8f182fd25fa5
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/META-INF/MANIFEST.MF
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACdj70OgkAQhHueghe4
+i5DYYGxMaEywkMT+hEVX74+9O5S3l0SO0NiYbTb5ZiYzldDYgfPsAuTQ6CLN+CY5BN1KYNUMF5ZHchIK
+itTQjVsjBbnR8Sd6Ie1d8AHhZQ1qz9W4/JbMAxof/fWorkZi82/OzqG+SfBTqb2nADF3vWK6PgiJHQJF
+foY+IEFbvqEJflKWekAyWoH2RXrM65JlfJvMMvZ1/Soo2lXHgEnyAVBLBwigb+t7rQAAAE0BAABQSwEC
+FAAUAAgICAAAACEAoG/re60AAABNAQAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUAAQAAAABQ
+SwUGAAAAAAEAAQA/AAAA7AAAAAAA
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/META-INF/MANIFEST.MF-cc220710-daf0-347e-a783-8f182fd25fa5--
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.classpath-4d1942aa-80a1-37cc-9de8-eb81348b71ab
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.classpath
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACVkMFqAjEQhs8V+g5L
+7s7WQqGH3UopK1Soim69lpgM67RxEieJ6NtXS6WlB6G3+YdvPoa/Gu43rtihRPJcqwHcqALZeEvc1eq1
+HfXv1fDhulcZp2MMOq2P4eonISc5FB/EtlbGsypOy1p56QCNoxAR3m0CpzOb9dEJ43nz9jSdtI/Pk2Ze
+/uWIEwprBxZXuYNM35cosEiarRa7fGkPAcvx7aLpD+BOlf9+KFgE4wVBcJtJ0M5c7ojjJVUUc1adxguk
+zynkdIZXxF9wVf4u8BNQSwcIT8MO5M8AAAB2AQAAUEsBAhQAFAAICAgAAAAhAE/DDuTPAAAAdgEAAAgA
+CQAAAAAAAAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAA4BAAAAAA==
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.classpath-4d1942aa-80a1-37cc-9de8-eb81348b71ab--
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.settings/org.eclipse.jdt.core.prefs-3867b177-4ec7-3ecb-86ca-3a322f58786a
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.settings/org.eclipse.jdt.core.prefs
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACVjrEKAjEQRHvBXwlY
+WKax08pfiJe5YyXZDbM5wb83gtaezTIs84aHqUhzhEbMIHSChwfoYhoP+51xCfhU7rmHyYhxapMCjpCx
+QINoEcXFeXp2vJ8Rmm4FeetAT1zQryX12VjjIRx/k7UVScN3S7vRhk4NyR3s5wztMgsYQRq30tC1/su6
+rfw6vgBQSwcIaFd9oooAAABsAQAAUEsBAhQAFAAICAgAAAAhAGhXfaKKAAAAbAEAAAgACQAAAAAAAAAA
+AAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAMkAAAAAAA==
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.settings/org.eclipse.jdt.core.prefs-3867b177-4ec7-3ecb-86ca-3a322f58786a--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAAClVF9r2zAQfx/sOxi9
+V1q3ly44K+1IIIN0sATa7WUo8sW5VpaEdI7db79zG7ulYNKRN0n8/p3upPyyrWy2h5jQu6k4l59EBs74
+Al05FTVtzy7E5bePH3IfSwnGYkggowlE0lArGx8fUtAGJrf96rt3BC1lbYWTQfdzp8tOLk34fCp2RGGi
+VNM00lelZHF1t1z0kCNeA73HdPQnnGKcGnAic7piNDok1PZ2JTIspuLvav3n4vf1l+sZ6K+zxY9WN3e/
+fjaCq8yy3HTxHT1teBuivwdD6SDVJQve6pgek3xA0jbstNwjNMGjI1k9DusDUxyUWGuLFnohaaxOnJJ2
+fN8tmJr0xvI5xRqEGuH0ku9mbGq0RUcLEAkhvZ8ZbF2ik9yPIxxvC25ynzABEU9Oeqn6je7r1t4X3Fgf
+gQPC9kg2dTAac17O1ldni5v5qPHy6mYxn63Wcjk/zWmDbvwCkMdnvPhuNmSJ29MCVL4AO+rxagLlPpzm
+lKIZ4Lnqn8LzO1EvDyVX//s5MOkfUEsHCCEwV1aKAQAAeQQAAFBLAQIUABQACAgIAAAAIQAhMFdWigEA
+AHkEAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVudFVUBQABAAAAAFBLBQYAAAAAAQABAD8AAADJAQAA
+AAA=
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.project-9d1d84fa-51e6-3454-8907-1d8bbd78bed4
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAAC9UstOwzAQPIPEP1S5
+Y5cbBzeVAPUGqlTgvthL6uKXbCfQv8dOnUIUFXFA3GbGO57RatnyQ6tZhz5IaxbVFZlXMzTcCmmaRfX0
+uLq8rpb1xTlz3u6QxzsM3EsX03RSz5gBjbX1DXFWgQ/7QN5kBOW2QDqJ785KE4neH3H5htHemH/gVms0
+sWZ0QFktc6EndMReWqnExiHPrNDbZAUjeuVbKeRKuoBkJyLh1icAHfQG9F8VkgN80+bsUDgdC4xOUn6V
+6wSSezDyFUO8+d/YDd+ihj8JLcqw8pQXW49l+kBOb/vwngv0c6c8ufJatY00Dz8bpncGguTLsYY8r6dp
+A851j4c0vuJPUEsHCJ/BkGsGAQAABAMAAFBLAQIUABQACAgIAAAAIQCfwZBrBgEAAAQDAAAIAAkAAAAA
+AAAAAAAAAAAAAAAuY29udGVudFVUBQABAAAAAFBLBQYAAAAAAQABAD8AAABFAQAAAAA=
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/.project-9d1d84fa-51e6-3454-8907-1d8bbd78bed4--
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/model/myviewpoint.vp-95eba1e9-e88b-3988-b534-d0322d2a3269
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/model/myviewpoint.vp
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAABVkE+LwjAQxe/Cfocw
+HyBRwUNLs+IuHsriaUHEi2TtUIPNH5OQmm+/6S6tepzH+72ZN9X6rjoS0XlpNIcFnQNBfTaN1C2Hzfdn
+XcP6/W1WRVvuJfbWSB3IXclyYpYDk1O0L7PO4RKCLRnr+54a1VLjWnbY1aMl2heHNZ1wPvk/21UG0dmL
+YKJhcVzG8k3DBi0UctglMp0BRDYcMvhIGRPohFOV4gOIdkBO6VZczx/L0xbFraiPx1Uqfr5ayD0JqRQG
+oUyDHfufHVqHHnUQIfcdxIo9fyMLv1BLBwiQzliv1wAAAEYBAABQSwECFAAUAAgICAAAACEAkM5Yr9cA
+AABGAQAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/AAAAFgEA
+AAAA
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/model/myviewpoint.vp-95eba1e9-e88b-3988-b534-d0322d2a3269--
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/plugin.xml-ed790bd9-1dfc-3fcc-80c8-4e1408d652fd
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/plugin.xml
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACdU8tOwzAQPJOviMwV
+bJ4SlZJUIFFRIU48Dr1UJl5SUyd2bSc0f4+dNk0K4tH6ENnZndnxzjoaLnMRVqANl0WMTvEJCqFIJeNF
+FqPnp9HxFRomQTSEVHBloEs9xxdNRIky40USHESwtFD4YHAQ+qUkL2yMpM7wGo1LjisOHwYlPify+3Wy
+WwXNIUYPdfjifjdg1AV56ov6ryEehjP+1gun1EImdb0qp6Sg2tQGz7mlQs1oUxVTxrh1+qjAbX6fQlBj
+fsJT1lA0qja3wBuhftMXy37TsSLJ625fbcM1GFnqFMa70SDiXSAbG/7w5DtrW1dD6bxqT61Z7bnTyWRO
+uXPlerT/3XtISzPX/0odhcY6e+44Y1Cgf86HonYWI7JDZaXlO6SW5JKBIFt2qMNpvRjM05uz6S3QxWA8
+mVzWg9f7bMcW98beVVOgLQfTzErSKXcEqSgZPK663QX2HaQ+N9km/6o+Iu3zDT4BUEsHCJU7No5pAQAA
+CgQAAFBLAQIUABQACAgIAAAAIQCVOzaOaQEAAAoEAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVudFVU
+BQABAAAAAFBLBQYAAAAAAQABAD8AAACoAQAAAAA=
+------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject/plugin.xml-ed790bd9-1dfc-3fcc-80c8-4e1408d652fd--
