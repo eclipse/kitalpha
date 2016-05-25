@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.metadata.helpers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.resources.IResource;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -30,20 +31,25 @@ public class MetadataHelper {
 		if (result == null) {
 			instances.put(context, result = new ViewpointMetadata(context));
 			context.eAdapters().add(new AdapterImpl() {
-				
+
 				@Override
 				public void notifyChanged(Notification msg) {
 					if (msg.getEventType() == Notification.REMOVE && context.getResources().isEmpty())
 						instances.remove(context);
 				}
-				
+
 			});
 		}
 		return result;
 	}
-	
+
 	public static boolean isMetadataResource(Resource resource) {
 		return ViewpointMetadata.STORAGE_EXTENSION.equals(resource.getURI().fileExtension());
-		
+
+	}
+
+	public static boolean isMetadataResource(IResource resource) {
+		return ViewpointMetadata.STORAGE_EXTENSION.equals(resource.getFileExtension());
+
 	}
 }
