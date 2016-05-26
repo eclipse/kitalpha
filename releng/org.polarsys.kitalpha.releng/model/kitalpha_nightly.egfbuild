@@ -386,7 +386,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_hrRq8Gd6EeWI8-L4a5vCdA" id="org.polarsys.kitalpha.vp.componentsample.example.feature"/>
       <components xsi:type="buildstep:Plugin" xmi:id="_D3NyoGwXEeWmYf5CDk2M5w" id="org.polarsys.kitalpha.vp.componentsample.importer"/>
     </steps>
-    <steps xsi:type="buildstep:EgfStep" xmi:id="_c2lgcGv6EeWmYf5CDk2M5w">
+    <steps xsi:type="buildstep:EgfStep" xmi:id="_c2lgcGv6EeWmYf5CDk2M5w" enabled="false">
       <properties xmi:id="_c2lgcWv6EeWmYf5CDk2M5w" key="egf.target.bundle.priority" value="true"/>
       <properties xmi:id="_c2lgcmv6EeWmYf5CDk2M5w" key="featureName" value="org.polarsys.kitalpha.vp.componentsample.example.feature"/>
       <properties xmi:id="_c2lgc2v6EeWmYf5CDk2M5w" key="outputFolder" value="${publish}/examples"/>
@@ -411,7 +411,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_8Eh0lnb6EeWINeLhqhgHKw" id="org.polarsys.kitalpha.composer.componentsample.feature"/>
       <components xsi:type="buildstep:Plugin" xmi:id="_8Eh0l3b6EeWINeLhqhgHKw" id="org.polarsys.kitalpha.composer.componentsample.importer"/>
     </steps>
-    <steps xsi:type="buildstep:EgfStep" xmi:id="_8Eh0mHb6EeWINeLhqhgHKw">
+    <steps xsi:type="buildstep:EgfStep" xmi:id="_8Eh0mHb6EeWINeLhqhgHKw" enabled="false">
       <properties xmi:id="_8Eh0mXb6EeWINeLhqhgHKw" key="egf.target.bundle.priority" value="true"/>
       <properties xmi:id="_8Eh0mnb6EeWINeLhqhgHKw" key="featureName" value="org.polarsys.kitalpha.composer.componentsample.feature"/>
       <properties xmi:id="_8Eh0m3b6EeWINeLhqhgHKw" key="outputFolder" value="${publish}/examples"/>
@@ -436,7 +436,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_ZwAQFncpEeWINeLhqhgHKw" id="org.polarsys.kitalpha.transposer.componentsample.feature"/>
       <components xsi:type="buildstep:Plugin" xmi:id="_ZwAQF3cpEeWINeLhqhgHKw" id="org.polarsys.kitalpha.transposer.componentsample.importer"/>
     </steps>
-    <steps xsi:type="buildstep:EgfStep" xmi:id="_ZwAQGHcpEeWINeLhqhgHKw">
+    <steps xsi:type="buildstep:EgfStep" xmi:id="_ZwAQGHcpEeWINeLhqhgHKw" enabled="false">
       <properties xmi:id="_ZwAQGXcpEeWINeLhqhgHKw" key="egf.target.bundle.priority" value="true"/>
       <properties xmi:id="_ZwAQGncpEeWINeLhqhgHKw" key="featureName" value="org.polarsys.kitalpha.transposer.componentsample.feature"/>
       <properties xmi:id="_ZwAQG3cpEeWINeLhqhgHKw" key="outputFolder" value="${publish}/examples"/>
@@ -472,7 +472,7 @@
     <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha" id="kitalpha" publishSteps="_dAuWAKRCEeOdPJBpl-8efw _9w00UJQCEeODqo9Nw0Mw6Q _T8jukEVSEeOxuMV9a71i9w _UtSA4EVSEeOxuMV9a71i9w _oWQScH60EeOkCccPIIQ2Yw _peSJsJ7uEeOjCb9D2yIVHQ _GzpY8ECvEeOkCsna5l9rlg _vjsoxZ7uEeOjCb9D2yIVHQ _yWFRMDY9EeOP8MSofnrGNA _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w _3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w _x7ip5Z7uEeOjCb9D2yIVHQ _CYMfwPxIEeOQxJjwrfaNsA _6xX4UPxHEeOQxJjwrfaNsA _tZFTMAHGEeSWLIhgOb7dcQ _ZB5y5QdREeSIYrPrCxORuQ _mZV-8CL5EeSSoPlV7ILP2g _n1bicCL5EeSSoPlV7ILP2g _rcOjMD5GEeSicsfEyxBYkg _J12CcD5GEeSicsfEyxBYkg _7StIMFOFEeS0CZx9NVRo1A _-y7GoFOFEeS0CZx9NVRo1A __SUYYFOFEeS0CZx9NVRo1A _Ky5S2lkcEeSo0vu-C-A3cw _YGNHcF64EeSHbaZAI7j8zw _MaI8gK3WEeSJ-MyosVUkEw _NI444K3WEeSJ-MyosVUkEw _iWVjia3VEeSJ-MyosVUkEw _Rb7utzRaEeW5Te4c0tZ9OQ _SomdwFrIEeW9LJvhZUfugg _517EEGgJEeWPNdK4Ul1YAg _6IEkAGgJEeWPNdK4Ul1YAg _tuBEEGd6EeWI8-L4a5vCdA _8Eh0pHb6EeWINeLhqhgHKw _ZwAQJHcpEeWINeLhqhgHKw"/>
   </jobs>
   <jobs xmi:id="_5jxR4JKWEeSPapwxSH2ZqQ" name="platforms" enabled="false">
-    <steps xsi:type="buildcore:StepContainer" xmi:id="_KLyusJKEEeSPapwxSH2ZqQ" name="TP_win32-win32-x86">
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_KLyusJKEEeSPapwxSH2ZqQ" name="TP_win32-win32-x86" enabled="false">
       <properties xmi:id="_KLyusZKEEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86" type="INLINED"/>
       <properties xmi:id="_0awbkJKUEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
       <properties xmi:id="_0awbkZKUEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
@@ -492,7 +492,7 @@
       </steps>
       <steps xsi:type="buildfile:ZipStep" xmi:id="_YEebIJKXEeSPapwxSH2ZqQ" name="zip mars results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars.zip"/>
     </steps>
-    <steps xsi:type="buildcore:StepContainer" xmi:id="_NAn1cJWzEeSPapwxSH2ZqQ" name="TP_win32-win32-x86_64">
+    <steps xsi:type="buildcore:StepContainer" xmi:id="_NAn1cJWzEeSPapwxSH2ZqQ" name="TP_win32-win32-x86_64" enabled="false">
       <properties xmi:id="_NAn1cZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86_64" type="INLINED"/>
       <properties xmi:id="_NAn1cpWzEeSPapwxSH2ZqQ" key="TP_arch" value="x86_64" type="INLINED"/>
       <properties xmi:id="_NAn1c5WzEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
