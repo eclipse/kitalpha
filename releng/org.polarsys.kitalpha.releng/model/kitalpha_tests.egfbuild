@@ -60,7 +60,7 @@
         <steps xsi:type="buildcore:ReuseStep" xmi:id="__NZG0AhhEea8qJG07M9K-Q" name="build patterns">
           <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_Ky5S0VkcEeSo0vu-C-A3cw"/>
         </steps>
-        <steps xsi:type="buildcore:ReuseStep" xmi:id="_DFnVkAhiEea8qJG07M9K-Q" name="build docgen" enabled="false">
+        <steps xsi:type="buildcore:ReuseStep" xmi:id="_DFnVkAhiEea8qJG07M9K-Q" name="build docgen">
           <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_YByqkCL5EeSSoPlV7ILP2g"/>
         </steps>
         <steps xsi:type="buildcore:ReuseStep" xmi:id="_GbQbsAhiEea8qJG07M9K-Q" name="build composer">
