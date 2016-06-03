@@ -35,6 +35,7 @@ import org.eclipse.ui.menus.ExtensionContributionFactory;
 import org.eclipse.ui.menus.IContributionRoot;
 import org.eclipse.ui.services.IServiceLocator;
 import org.polarsys.kitalpha.ad.common.utils.URIFix;
+import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -142,10 +143,10 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 			if ((path2 == null) || "".equals(path2)) {
 				continue;
 			}
-			URI uri = URIFix.createPlatformPluginURI(path2, false);
+			URI uri = URIHelper.createURI(resource);
 			try {
-			Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-			vps.add(vp);
+				Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+				vps.add(vp);
 			} catch (Exception e) {
 				Activator.getDefault().logWarning(e);
 			}
