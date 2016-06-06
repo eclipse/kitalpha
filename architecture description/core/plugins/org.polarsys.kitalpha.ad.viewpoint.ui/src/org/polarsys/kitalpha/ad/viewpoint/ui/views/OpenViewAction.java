@@ -28,6 +28,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.kitalpha.ad.common.AD_Log;
+import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 final class OpenViewAction extends Action implements IMenuCreator {
@@ -71,6 +72,7 @@ final class OpenViewAction extends Action implements IMenuCreator {
 		if (this.resource == resource)
 			return;
 		this.resource = resource;
+		setEnabled(resource.getProviderLocation() != Location.WORSPACE);
 		viewIds.clear();
 		if (resource == null)
 			return;
