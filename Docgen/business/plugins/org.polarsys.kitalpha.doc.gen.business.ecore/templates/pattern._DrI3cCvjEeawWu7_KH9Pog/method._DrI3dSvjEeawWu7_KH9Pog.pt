@@ -1,0 +1,15 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+%>
+
+<%
+if ((parameter).getEAllOperations().size() > 0) {
+%>
+
+<h2>Operations</h2>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EClassContentHelper.getOperationsTable(parameter)%>
+
+<%
+}
+%>

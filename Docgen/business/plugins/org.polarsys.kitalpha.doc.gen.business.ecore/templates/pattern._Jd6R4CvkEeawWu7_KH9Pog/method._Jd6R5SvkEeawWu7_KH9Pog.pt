@@ -1,0 +1,8 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+String text = (parameter).getName();
+text = EscapeChars.forHTML(text);
+%>
+<p><strong>Package :</strong> <%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink((parameter).getEPackage())%></p>
+<h1><%=text%></h1>

@@ -20,7 +20,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.doc.gen.business.ecore,
  org.polarsys.kitalpha.doc.gen.business.ecore.actions,
- org.polarsys.kitalpha.doc.gen.business.ecore.content,
+ org.polarsys.kitalpha.doc.gen.business.ecore.egf.query,
+ org.polarsys.kitalpha.doc.gen.business.ecore.extension.content,
+ org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl,
  org.polarsys.kitalpha.doc.gen.business.ecore.helpers,
  org.polarsys.kitalpha.doc.gen.business.ecore.index,
  org.polarsys.kitalpha.doc.gen.business.ecore.services,

@@ -1,0 +1,9 @@
+<%
+helper = new DefaultSiriusDiagramHelper();
+element = parameter;
+if (element instanceof ENamedElement){
+	fileName = fileNameService.getFileName(element);
+} else {
+	fileName = "Default.html";
+}
+%>

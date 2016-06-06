@@ -1,0 +1,12 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+String text = (parameter).getName();
+text = EscapeChars.forHTML(text);
+%>
+<div style="position: fixed; top: 0; left: 1%; width: 98%; z-index: 2; background-color: white; ";>
+<p><strong>Package :</strong> <%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink((parameter).getEPackage())%></p>
+<h1><%=text%></h1>
+<img src="<%=iconPath%>" alt="" />
+<hr style="width:98%; align : center; " /> 
+</div>

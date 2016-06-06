@@ -1,0 +1,13 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+%>
+
+<%
+if ((parameter).getEAllReferences().size() > 0) {
+%>
+<h2>References</h2>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EClassContentHelper.getReferencesTable(parameter)%>
+<%
+}
+%>

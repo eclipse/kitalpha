@@ -18,7 +18,7 @@
       <type xmi:type="domain:TypeDomain" xmi:id="_InK9sN6lEeC7p7H7gvnXVA"/>
     </contracts>
     <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_7LipwVv_EeONz-cAZOOGtw"
-        name="pattern.substitutions" invocationContracts="#_RFGXAlwAEeONz-cAZOOGtw">
+        name="pattern.substitutions" invocationContracts="#_RFGXA1wAEeONz-cAZOOGtw">
       <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_78Q8EFv_EeONz-cAZOOGtw"/>
     </contracts>
     <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_qeaMENsLEeWExZizAMSqLg"
@@ -36,56 +36,310 @@
   </contractContainer>
   <viewpointContainer xmi:id="_w3eOMN6kEeC7p7H7gvnXVA">
     <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_K6E0cN6lEeC7p7H7gvnXVA">
-      <libraries xmi:id="_NP9twN6lEeC7p7H7gvnXVA" name="org.polarsys.kitalpha.doc.gen.business.ecore.content">
-        <elements xmi:id="_3Pj4MN7REeC7p7H7gvnXVA" name="ecoreElementContent" superPattern="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_lERcoN3tEd-Qav1YnqlO9A"
-            headerMethod="#_3Pj4Mt7REeC7p7H7gvnXVA" conditionMethod="#_3Pj4NN7REeC7p7H7gvnXVA"
-            initMethod="#_3Pj4M97REeC7p7H7gvnXVA" footerMethod="#_3Pj4Nt7REeC7p7H7gvnXVA">
-          <nature xmi:type="jetpattern:JetNature" xmi:id="_3Pj4Md7REeC7p7H7gvnXVA"
+      <libraries xmi:id="_vH7ZcCvfEeawWu7_KH9Pog" name="org.polarsys.kitalpha.doc.gen.business.ecore.extension.content">
+        <elements xmi:id="_zS1ToCvfEeawWu7_KH9Pog" name="EcoreHTMLPage" superPattern="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_lERcoN3tEd-Qav1YnqlO9A"
+            headerMethod="#_zS1ToivfEeawWu7_KH9Pog" conditionMethod="#_zS1TpCvfEeawWu7_KH9Pog"
+            initMethod="#_zS1ToyvfEeawWu7_KH9Pog" footerMethod="#_zS1TpivfEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_zS1ToSvfEeawWu7_KH9Pog"
               name="JET"/>
-          <methods xmi:id="_3Pj4Mt7REeC7p7H7gvnXVA" name="header" patternFilePath="templates/pattern._3Pj4MN7REeC7p7H7gvnXVA/method._3Pj4Mt7REeC7p7H7gvnXVA.pt"/>
-          <methods xmi:id="_3Pj4M97REeC7p7H7gvnXVA" name="init" patternFilePath="templates/pattern._3Pj4MN7REeC7p7H7gvnXVA/method._3Pj4M97REeC7p7H7gvnXVA.pt"/>
-          <methods xmi:id="_3Pj4NN7REeC7p7H7gvnXVA" name="preCondition" patternFilePath="templates/pattern._3Pj4MN7REeC7p7H7gvnXVA/method._3Pj4NN7REeC7p7H7gvnXVA.pt"/>
-          <methods xmi:id="_3Pj4Nd7REeC7p7H7gvnXVA" name="content" patternFilePath="templates/pattern._3Pj4MN7REeC7p7H7gvnXVA/method._3Pj4Nd7REeC7p7H7gvnXVA.pt"/>
-          <methods xmi:id="_3Pj4Nt7REeC7p7H7gvnXVA" name="footer" patternFilePath="templates/pattern._3Pj4MN7REeC7p7H7gvnXVA/method._3Pj4Nt7REeC7p7H7gvnXVA.pt"/>
-          <methods xmi:id="_o2qDgN7SEeC7p7H7gvnXVA" name="setContext" patternFilePath="templates/pattern._3Pj4MN7REeC7p7H7gvnXVA/method._o2qDgN7SEeC7p7H7gvnXVA.pt"/>
-          <methods xmi:id="_qJchEN7SEeC7p7H7gvnXVA" name="setFileNameService" patternFilePath="templates/pattern._3Pj4MN7REeC7p7H7gvnXVA/method._qJchEN7SEeC7p7H7gvnXVA.pt"/>
-          <parameters xmi:id="_kaT0AN7SEeC7p7H7gvnXVA" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
-          <variables xmi:id="_Ec0U8d7YEeCADb2m9Obqbg" name="element" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-          <variables xmi:id="_q9ILMOLMEeC_mo5u9MdQlw" name="helper" type="org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper"/>
-          <variables xmi:id="_plOHwFwJEeONz-cAZOOGtw" name="iconPath" type="java.lang.String"/>
-          <orchestration xmi:type="pattern:SuperCall" xmi:id="_3Pj4N97REeC7p7H7gvnXVA"/>
+          <methods xmi:id="_zS1ToivfEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._zS1ToCvfEeawWu7_KH9Pog/method._zS1ToivfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zS1ToyvfEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._zS1ToCvfEeawWu7_KH9Pog/method._zS1ToyvfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zS1TpCvfEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._zS1ToCvfEeawWu7_KH9Pog/method._zS1TpCvfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zS1TpSvfEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._zS1ToCvfEeawWu7_KH9Pog/method._zS1TpSvfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zS1TpivfEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._zS1ToCvfEeawWu7_KH9Pog/method._zS1TpivfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_-VBOsCvfEeawWu7_KH9Pog" name="setContext" patternFilePath="templates/pattern._zS1ToCvfEeawWu7_KH9Pog/method._-VBOsCvfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_AMefkCvgEeawWu7_KH9Pog" name="setFileNameService" patternFilePath="templates/pattern._zS1ToCvfEeawWu7_KH9Pog/method._AMefkCvgEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_6lNVECvfEeawWu7_KH9Pog" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          <variables xmi:id="_BWZ8ECvgEeawWu7_KH9Pog" name="element" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          <variables xmi:id="_CiR5UCvgEeawWu7_KH9Pog" name="helper" type="org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper"/>
+          <variables xmi:id="_FLbF0CvgEeawWu7_KH9Pog" name="fileNameService" type="org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_zS1TpyvfEeawWu7_KH9Pog"/>
         </elements>
-        <elements xmi:id="_t_72oOXGEeCq2_ogMkFB7A" name="EPackageElementContent" superPattern="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_lERcoN3tEd-Qav1YnqlO9A"
-            headerMethod="#_t_72ouXGEeCq2_ogMkFB7A" conditionMethod="#_t_72pOXGEeCq2_ogMkFB7A"
-            initMethod="#_t_72o-XGEeCq2_ogMkFB7A" footerMethod="#_t_72puXGEeCq2_ogMkFB7A">
-          <nature xmi:type="jetpattern:JetNature" xmi:id="_t_72oeXGEeCq2_ogMkFB7A"
+        <elements xmi:id="_2kTEYCvfEeawWu7_KH9Pog" name="HTMLSection" headerMethod="#_2kTEYivfEeawWu7_KH9Pog"
+            conditionMethod="#_2kTEZCvfEeawWu7_KH9Pog" initMethod="#_2kTEYyvfEeawWu7_KH9Pog"
+            footerMethod="#_2kTEZivfEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_2kTEYSvfEeawWu7_KH9Pog"
               name="JET"/>
-          <methods xmi:id="_t_72ouXGEeCq2_ogMkFB7A" name="header" patternFilePath="templates/pattern._t_72oOXGEeCq2_ogMkFB7A/method._t_72ouXGEeCq2_ogMkFB7A.pt"/>
-          <methods xmi:id="_t_72o-XGEeCq2_ogMkFB7A" name="init" patternFilePath="templates/pattern._t_72oOXGEeCq2_ogMkFB7A/method._t_72o-XGEeCq2_ogMkFB7A.pt"/>
-          <methods xmi:id="_t_72pOXGEeCq2_ogMkFB7A" name="preCondition" patternFilePath="templates/pattern._t_72oOXGEeCq2_ogMkFB7A/method._t_72pOXGEeCq2_ogMkFB7A.pt"/>
-          <methods xmi:id="_t_72peXGEeCq2_ogMkFB7A" name="content" patternFilePath="templates/pattern._t_72oOXGEeCq2_ogMkFB7A/method._t_72peXGEeCq2_ogMkFB7A.pt"/>
-          <methods xmi:id="_t_72puXGEeCq2_ogMkFB7A" name="footer" patternFilePath="templates/pattern._t_72oOXGEeCq2_ogMkFB7A/method._t_72puXGEeCq2_ogMkFB7A.pt"/>
-          <methods xmi:id="_uAFAkOXGEeCq2_ogMkFB7A" name="setContext" patternFilePath="templates/pattern._t_72oOXGEeCq2_ogMkFB7A/method._uAFAkOXGEeCq2_ogMkFB7A.pt"/>
-          <methods xmi:id="_uAFAkeXGEeCq2_ogMkFB7A" name="setFileNameService" patternFilePath="templates/pattern._t_72oOXGEeCq2_ogMkFB7A/method._uAFAkeXGEeCq2_ogMkFB7A.pt"/>
-          <parameters xmi:id="_uAFAkuXGEeCq2_ogMkFB7A" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
-          <variables xmi:id="_uAFAk-XGEeCq2_ogMkFB7A" name="element" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-          <orchestration xmi:type="pattern:SuperCall" xmi:id="_uAFAleXGEeCq2_ogMkFB7A"/>
+          <methods xmi:id="_2kTEYivfEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._2kTEYCvfEeawWu7_KH9Pog/method._2kTEYivfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_2kTEYyvfEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._2kTEYCvfEeawWu7_KH9Pog/method._2kTEYyvfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_2kTEZCvfEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._2kTEYCvfEeawWu7_KH9Pog/method._2kTEZCvfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_2kTEZSvfEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._2kTEYCvfEeawWu7_KH9Pog/method._2kTEZSvfEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_2kTEZivfEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._2kTEYCvfEeawWu7_KH9Pog/method._2kTEZivfEeawWu7_KH9Pog.pt"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_XN07UCvgEeawWu7_KH9Pog"
+              called="#_2kTEZSvfEeawWu7_KH9Pog"/>
         </elements>
-        <elements xmi:id="_luemYVxtEeGcWZVmjHFRVA" name="EEnumElementContent" superPattern="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_lERcoN3tEd-Qav1YnqlO9A"
-            headerMethod="#_luemY1xtEeGcWZVmjHFRVA" conditionMethod="#_luemZVxtEeGcWZVmjHFRVA"
-            initMethod="#_luemZFxtEeGcWZVmjHFRVA" footerMethod="#_luemZ1xtEeGcWZVmjHFRVA">
-          <nature xmi:type="jetpattern:JetNature" xmi:id="_luemYlxtEeGcWZVmjHFRVA"
+      </libraries>
+      <libraries xmi:id="_oNk2cCvfEeawWu7_KH9Pog" name="org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl">
+        <elements xmi:id="_csKzUCvgEeawWu7_KH9Pog" name="EPackageHTMLSectionHeader"
+            headerMethod="#_csKzUivgEeawWu7_KH9Pog" conditionMethod="#_csKzVCvgEeawWu7_KH9Pog"
+            initMethod="#_csKzUyvgEeawWu7_KH9Pog" footerMethod="#_csKzVivgEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_csKzUSvgEeawWu7_KH9Pog"
               name="JET"/>
-          <methods xmi:id="_luemY1xtEeGcWZVmjHFRVA" name="header" patternFilePath="templates/pattern._luemYVxtEeGcWZVmjHFRVA/method._luemY1xtEeGcWZVmjHFRVA.pt"/>
-          <methods xmi:id="_luemZFxtEeGcWZVmjHFRVA" name="init" patternFilePath="templates/pattern._luemYVxtEeGcWZVmjHFRVA/method._luemZFxtEeGcWZVmjHFRVA.pt"/>
-          <methods xmi:id="_luemZVxtEeGcWZVmjHFRVA" name="preCondition" patternFilePath="templates/pattern._luemYVxtEeGcWZVmjHFRVA/method._luemZVxtEeGcWZVmjHFRVA.pt"/>
-          <methods xmi:id="_luemZlxtEeGcWZVmjHFRVA" name="content" patternFilePath="templates/pattern._luemYVxtEeGcWZVmjHFRVA/method._luemZlxtEeGcWZVmjHFRVA.pt"/>
-          <methods xmi:id="_luemZ1xtEeGcWZVmjHFRVA" name="footer" patternFilePath="templates/pattern._luemYVxtEeGcWZVmjHFRVA/method._luemZ1xtEeGcWZVmjHFRVA.pt"/>
-          <methods xmi:id="_l2Z94FxuEeGcWZVmjHFRVA" name="setContext" patternFilePath="templates/pattern._luemYVxtEeGcWZVmjHFRVA/method._l2Z94FxuEeGcWZVmjHFRVA.pt"/>
-          <methods xmi:id="_nCvOIFxuEeGcWZVmjHFRVA" name="setFileNameService" patternFilePath="templates/pattern._luemYVxtEeGcWZVmjHFRVA/method._nCvOIFxuEeGcWZVmjHFRVA.pt"/>
-          <parameters xmi:id="_XEHOQFxuEeGcWZVmjHFRVA" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
-          <variables xmi:id="_5txw8FxuEeGcWZVmjHFRVA" name="element" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-          <orchestration xmi:type="pattern:SuperCall" xmi:id="_luemaFxtEeGcWZVmjHFRVA"/>
+          <methods xmi:id="_csKzUivgEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._csKzUCvgEeawWu7_KH9Pog/method._csKzUivgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_csKzUyvgEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._csKzUCvgEeawWu7_KH9Pog/method._csKzUyvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_csKzVCvgEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._csKzUCvgEeawWu7_KH9Pog/method._csKzVCvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_csKzVSvgEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._csKzUCvgEeawWu7_KH9Pog/method._csKzVSvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_csKzVivgEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._csKzUCvgEeawWu7_KH9Pog/method._csKzVivgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_83ox4C4oEea9Q4dZ-t81Fw" name="init" patternFilePath="templates/pattern._csKzUCvgEeawWu7_KH9Pog/method._83ox4C4oEea9Q4dZ-t81Fw.pt"/>
+          <parameters xmi:id="_bzGZ8C4oEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EPackage">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_dxZSoC4oEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_hdvr8CvgEeawWu7_KH9Pog"
+              called="#_csKzVSvgEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_o2_xcCvgEeawWu7_KH9Pog" name="EPackageHTMLSubPackagesSection"
+            headerMethod="#_o2_xcivgEeawWu7_KH9Pog" conditionMethod="#_o2_xdCvgEeawWu7_KH9Pog"
+            initMethod="#_o2_xcyvgEeawWu7_KH9Pog" footerMethod="#_o2_xdivgEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_o2_xcSvgEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_o2_xcivgEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._o2_xcCvgEeawWu7_KH9Pog/method._o2_xcivgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_o2_xcyvgEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._o2_xcCvgEeawWu7_KH9Pog/method._o2_xcyvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_o2_xdCvgEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._o2_xcCvgEeawWu7_KH9Pog/method._o2_xdCvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_o2_xdSvgEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._o2_xcCvgEeawWu7_KH9Pog/method._o2_xdSvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_o2_xdivgEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._o2_xcCvgEeawWu7_KH9Pog/method._o2_xdivgEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_r9Lb4C4oEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EPackage">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_yyYjsC4pEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_r6ySkCvgEeawWu7_KH9Pog"
+              called="#_o2_xdSvgEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_zv3YcCvgEeawWu7_KH9Pog" name="EPackageDataTypeHTMLSection"
+            headerMethod="#_zv3YcivgEeawWu7_KH9Pog" conditionMethod="#_zv3YdCvgEeawWu7_KH9Pog"
+            initMethod="#_zv3YcyvgEeawWu7_KH9Pog" footerMethod="#_zv3YdivgEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_zv3YcSvgEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_zv3YcivgEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._zv3YcCvgEeawWu7_KH9Pog/method._zv3YcivgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zv3YcyvgEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._zv3YcCvgEeawWu7_KH9Pog/method._zv3YcyvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zv3YdCvgEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._zv3YcCvgEeawWu7_KH9Pog/method._zv3YdCvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zv3YdSvgEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._zv3YcCvgEeawWu7_KH9Pog/method._zv3YdSvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_zv3YdivgEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._zv3YcCvgEeawWu7_KH9Pog/method._zv3YdivgEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_68JgIC4pEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EPackage">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_8OkxUC4pEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_3GsKUCvgEeawWu7_KH9Pog"
+              called="#_zv3YdSvgEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_9owJICvgEeawWu7_KH9Pog" name="EClassHTMLHeader" headerMethod="#_9owJIivgEeawWu7_KH9Pog"
+            conditionMethod="#_9owJJCvgEeawWu7_KH9Pog" initMethod="#_9owJIyvgEeawWu7_KH9Pog"
+            footerMethod="#_9owJJivgEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_9owJISvgEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_9owJIivgEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._9owJICvgEeawWu7_KH9Pog/method._9owJIivgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_9owJIyvgEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._9owJICvgEeawWu7_KH9Pog/method._9owJIyvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_9owJJCvgEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._9owJICvgEeawWu7_KH9Pog/method._9owJJCvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_9owJJSvgEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._9owJICvgEeawWu7_KH9Pog/method._9owJJSvgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_9owJJivgEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._9owJICvgEeawWu7_KH9Pog/method._9owJJivgEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_DTKuQCvhEeawWu7_KH9Pog" name="setContext" patternFilePath="templates/pattern._9owJICvgEeawWu7_KH9Pog/method._DTKuQCvhEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_R_mNoC4qEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_TMqdsC4qEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <variables xmi:id="_HH5kICvhEeawWu7_KH9Pog" name="iconPath" type="java.lang.String"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_Dld_MCvhEeawWu7_KH9Pog"
+              called="#_DTKuQCvhEeawWu7_KH9Pog"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_A73fsCvhEeawWu7_KH9Pog"
+              called="#_9owJJSvgEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_Q8x-kCvhEeawWu7_KH9Pog" name="EClassHTMLDescription" headerMethod="#_Q8x-kivhEeawWu7_KH9Pog"
+            conditionMethod="#_Q8x-lCvhEeawWu7_KH9Pog" initMethod="#_Q8x-kyvhEeawWu7_KH9Pog"
+            footerMethod="#_Q8x-livhEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_Q8x-kSvhEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_Q8x-kivhEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._Q8x-kCvhEeawWu7_KH9Pog/method._Q8x-kivhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Q8x-kyvhEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._Q8x-kCvhEeawWu7_KH9Pog/method._Q8x-kyvhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Q8x-lCvhEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._Q8x-kCvhEeawWu7_KH9Pog/method._Q8x-lCvhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Q8x-lSvhEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._Q8x-kCvhEeawWu7_KH9Pog/method._Q8x-lSvhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Q8x-livhEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._Q8x-kCvhEeawWu7_KH9Pog/method._Q8x-livhEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_nS0ToC4qEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_ofb3wC4qEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_WMb6UCvhEeawWu7_KH9Pog"
+              called="#_Q8x-lSvhEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_f6VjACvhEeawWu7_KH9Pog" name="EClassFocusDiagram" headerMethod="#_f6VjAivhEeawWu7_KH9Pog"
+            conditionMethod="#_f6VjBCvhEeawWu7_KH9Pog" initMethod="#_f6VjAyvhEeawWu7_KH9Pog"
+            footerMethod="#_f6VjBivhEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_f6VjASvhEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_f6VjAivhEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._f6VjACvhEeawWu7_KH9Pog/method._f6VjAivhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_f6VjAyvhEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._f6VjACvhEeawWu7_KH9Pog/method._f6VjAyvhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_f6VjBCvhEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._f6VjACvhEeawWu7_KH9Pog/method._f6VjBCvhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_f6VjBSvhEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._f6VjACvhEeawWu7_KH9Pog/method._f6VjBSvhEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_f6VjBivhEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._f6VjACvhEeawWu7_KH9Pog/method._f6VjBivhEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_3AfGYC4qEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_3yUzAC4qEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <parameters xmi:id="_lLJDYC5UEea9Q4dZ-t81Fw" name="helper" type="org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_oKBPUC5UEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper"/>
+          </parameters>
+          <parameters xmi:id="_gLEmUC5VEea9Q4dZ-t81Fw" name="fileNameService" type="org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_opVzIC5VEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_91Ii0CvhEeawWu7_KH9Pog"
+              called="#_f6VjBSvhEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_Hbv3wCviEeawWu7_KH9Pog" name="EClassSuperType" headerMethod="#_Hbv3wiviEeawWu7_KH9Pog"
+            conditionMethod="#_Hbv3xCviEeawWu7_KH9Pog" initMethod="#_Hbv3wyviEeawWu7_KH9Pog"
+            footerMethod="#_Hbv3xiviEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_Hbv3wSviEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_Hbv3wiviEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._Hbv3wCviEeawWu7_KH9Pog/method._Hbv3wiviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Hbv3wyviEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._Hbv3wCviEeawWu7_KH9Pog/method._Hbv3wyviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Hbv3xCviEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._Hbv3wCviEeawWu7_KH9Pog/method._Hbv3xCviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Hbv3xSviEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._Hbv3wCviEeawWu7_KH9Pog/method._Hbv3xSviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Hbv3xiviEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._Hbv3wCviEeawWu7_KH9Pog/method._Hbv3xiviEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_WJHyUC4rEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_XWx4QC4rEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <parameters xmi:id="_0GDmsC5YEea9Q4dZ-t81Fw" name="helper" type="org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_2VxmkC5YEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper"/>
+          </parameters>
+          <parameters xmi:id="_440yIC5YEea9Q4dZ-t81Fw" name="fileNameService" type="org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_7e3AQC5YEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_Wek9wCviEeawWu7_KH9Pog"
+              called="#_Hbv3xSviEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_d7rogCviEeawWu7_KH9Pog" name="EClassAttributes" headerMethod="#_d7rogiviEeawWu7_KH9Pog"
+            conditionMethod="#_d7rohCviEeawWu7_KH9Pog" initMethod="#_d7rogyviEeawWu7_KH9Pog"
+            footerMethod="#_d7rohiviEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_d7rogSviEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_d7rogiviEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._d7rogCviEeawWu7_KH9Pog/method._d7rogiviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_d7rogyviEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._d7rogCviEeawWu7_KH9Pog/method._d7rogyviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_d7rohCviEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._d7rogCviEeawWu7_KH9Pog/method._d7rohCviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_d7rohSviEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._d7rogCviEeawWu7_KH9Pog/method._d7rohSviEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_d7rohiviEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._d7rogCviEeawWu7_KH9Pog/method._d7rohiviEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_uWn4IC4rEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_vnjUgC4rEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_p-TF0CviEeawWu7_KH9Pog"
+              called="#_d7rohSviEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_DrI3cCvjEeawWu7_KH9Pog" name="EClassOperations" headerMethod="#_DrI3civjEeawWu7_KH9Pog"
+            conditionMethod="#_DrI3dCvjEeawWu7_KH9Pog" initMethod="#_DrI3cyvjEeawWu7_KH9Pog"
+            footerMethod="#_DrI3divjEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_DrI3cSvjEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_DrI3civjEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._DrI3cCvjEeawWu7_KH9Pog/method._DrI3civjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_DrI3cyvjEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._DrI3cCvjEeawWu7_KH9Pog/method._DrI3cyvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_DrI3dCvjEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._DrI3cCvjEeawWu7_KH9Pog/method._DrI3dCvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_DrI3dSvjEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._DrI3cCvjEeawWu7_KH9Pog/method._DrI3dSvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_DrI3divjEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._DrI3cCvjEeawWu7_KH9Pog/method._DrI3divjEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_5We38C4rEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_pAtF4C43Eea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_5-kVMC43Eea9Q4dZ-t81Fw"
+              called="#_DrI3dSvjEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_ZgKC8CvjEeawWu7_KH9Pog" name="EClassReferences" headerMethod="#_ZgKC8ivjEeawWu7_KH9Pog"
+            conditionMethod="#_ZgKC9CvjEeawWu7_KH9Pog" initMethod="#_ZgKC8yvjEeawWu7_KH9Pog"
+            footerMethod="#_ZgKC9ivjEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_ZgKC8SvjEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_ZgKC8ivjEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._ZgKC8CvjEeawWu7_KH9Pog/method._ZgKC8ivjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_ZgKC8yvjEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._ZgKC8CvjEeawWu7_KH9Pog/method._ZgKC8yvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_ZgKC9CvjEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._ZgKC8CvjEeawWu7_KH9Pog/method._ZgKC9CvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_ZgKC9SvjEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._ZgKC8CvjEeawWu7_KH9Pog/method._ZgKC9SvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_ZgKC9ivjEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._ZgKC8CvjEeawWu7_KH9Pog/method._ZgKC9ivjEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_BjOP4C4sEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_CvGNIC4sEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_jL9Z4CvjEeawWu7_KH9Pog"
+              called="#_ZgKC9SvjEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_yIwJUCvjEeawWu7_KH9Pog" name="EClassRepresentations" headerMethod="#_yIwJUivjEeawWu7_KH9Pog"
+            conditionMethod="#_yIwJVCvjEeawWu7_KH9Pog" initMethod="#_yIwJUyvjEeawWu7_KH9Pog"
+            footerMethod="#_yIwJVivjEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_yIwJUSvjEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_yIwJUivjEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._yIwJUCvjEeawWu7_KH9Pog/method._yIwJUivjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_yIwJUyvjEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._yIwJUCvjEeawWu7_KH9Pog/method._yIwJUyvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_yIwJVCvjEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._yIwJUCvjEeawWu7_KH9Pog/method._yIwJVCvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_yIwJVSvjEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._yIwJUCvjEeawWu7_KH9Pog/method._yIwJVSvjEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_yIwJVivjEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._yIwJUCvjEeawWu7_KH9Pog/method._yIwJVivjEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_Sw6q8C4sEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EClass">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_TyO-AC4sEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <parameters xmi:id="_WhSEwC5ZEea9Q4dZ-t81Fw" name="helper" type="org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_YLp74C5ZEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper"/>
+          </parameters>
+          <parameters xmi:id="_cxL8kC5ZEea9Q4dZ-t81Fw" name="fileNameService" type="org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_ezqxsC5ZEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_6DgZYCvjEeawWu7_KH9Pog"
+              called="#_yIwJVSvjEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_Jd6R4CvkEeawWu7_KH9Pog" name="EEnumHTMLHeader" headerMethod="#_Jd6R4ivkEeawWu7_KH9Pog"
+            conditionMethod="#_Jd6R5CvkEeawWu7_KH9Pog" initMethod="#_Jd6R4yvkEeawWu7_KH9Pog"
+            footerMethod="#_Jd6R5ivkEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_Jd6R4SvkEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_Jd6R4ivkEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._Jd6R4CvkEeawWu7_KH9Pog/method._Jd6R4ivkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Jd6R4yvkEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._Jd6R4CvkEeawWu7_KH9Pog/method._Jd6R4yvkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Jd6R5CvkEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._Jd6R4CvkEeawWu7_KH9Pog/method._Jd6R5CvkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Jd6R5SvkEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._Jd6R4CvkEeawWu7_KH9Pog/method._Jd6R5SvkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_Jd6R5ivkEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._Jd6R4CvkEeawWu7_KH9Pog/method._Jd6R5ivkEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_kXoC8C4sEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EEnum">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_lCeWwC4sEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <parameters xmi:id="_jr8vQC5ZEea9Q4dZ-t81Fw" name="fileNameService" type="org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_l5b6gC5ZEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_P_rVwCvkEeawWu7_KH9Pog"
+              called="#_Jd6R5SvkEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_bkKsoCvkEeawWu7_KH9Pog" name="EEnumHTMLContent" headerMethod="#_bkKsoivkEeawWu7_KH9Pog"
+            conditionMethod="#_bkKspCvkEeawWu7_KH9Pog" initMethod="#_bkKsoyvkEeawWu7_KH9Pog"
+            footerMethod="#_bkKspivkEeawWu7_KH9Pog">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_bkKsoSvkEeawWu7_KH9Pog"
+              name="JET"/>
+          <methods xmi:id="_bkKsoivkEeawWu7_KH9Pog" name="header" patternFilePath="templates/pattern._bkKsoCvkEeawWu7_KH9Pog/method._bkKsoivkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_bkKsoyvkEeawWu7_KH9Pog" name="init" patternFilePath="templates/pattern._bkKsoCvkEeawWu7_KH9Pog/method._bkKsoyvkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_bkKspCvkEeawWu7_KH9Pog" name="preCondition" patternFilePath="templates/pattern._bkKsoCvkEeawWu7_KH9Pog/method._bkKspCvkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_bkKspSvkEeawWu7_KH9Pog" name="content" patternFilePath="templates/pattern._bkKsoCvkEeawWu7_KH9Pog/method._bkKspSvkEeawWu7_KH9Pog.pt"/>
+          <methods xmi:id="_bkKspivkEeawWu7_KH9Pog" name="footer" patternFilePath="templates/pattern._bkKsoCvkEeawWu7_KH9Pog/method._bkKspivkEeawWu7_KH9Pog.pt"/>
+          <parameters xmi:id="_w5F_cC4sEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EEnum">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_xSPfQC4sEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_gP9tYCvkEeawWu7_KH9Pog"
+              called="#_bkKspSvkEeawWu7_KH9Pog"/>
+        </elements>
+        <elements xmi:id="_TyN80C5hEea9Q4dZ-t81Fw" name="EDataTypeHTMLPage" headerMethod="#_TyN80i5hEea9Q4dZ-t81Fw"
+            conditionMethod="#_TyN81C5hEea9Q4dZ-t81Fw" initMethod="#_TyN80y5hEea9Q4dZ-t81Fw"
+            footerMethod="#_TyN81i5hEea9Q4dZ-t81Fw">
+          <nature xmi:type="jetpattern:JetNature" xmi:id="_TyN80S5hEea9Q4dZ-t81Fw"
+              name="JET"/>
+          <methods xmi:id="_TyN80i5hEea9Q4dZ-t81Fw" name="header" patternFilePath="templates/pattern._TyN80C5hEea9Q4dZ-t81Fw/method._TyN80i5hEea9Q4dZ-t81Fw.pt"/>
+          <methods xmi:id="_TyN80y5hEea9Q4dZ-t81Fw" name="init" patternFilePath="templates/pattern._TyN80C5hEea9Q4dZ-t81Fw/method._TyN80y5hEea9Q4dZ-t81Fw.pt"/>
+          <methods xmi:id="_TyN81C5hEea9Q4dZ-t81Fw" name="preCondition" patternFilePath="templates/pattern._TyN80C5hEea9Q4dZ-t81Fw/method._TyN81C5hEea9Q4dZ-t81Fw.pt"/>
+          <methods xmi:id="_TyN81S5hEea9Q4dZ-t81Fw" name="content" patternFilePath="templates/pattern._TyN80C5hEea9Q4dZ-t81Fw/method._TyN81S5hEea9Q4dZ-t81Fw.pt"/>
+          <methods xmi:id="_TyN81i5hEea9Q4dZ-t81Fw" name="footer" patternFilePath="templates/pattern._TyN80C5hEea9Q4dZ-t81Fw/method._TyN81i5hEea9Q4dZ-t81Fw.pt"/>
+          <parameters xmi:id="_fMJCcC5hEea9Q4dZ-t81Fw" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EDataType">
+            <query xmi:type="pattern:BasicQuery" xmi:id="_gZ85YC5hEea9Q4dZ-t81Fw"
+                extensionId="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"/>
+          </parameters>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_jU0vEC5hEea9Q4dZ-t81Fw"
+              called="#_TyN81S5hEea9Q4dZ-t81Fw"/>
         </elements>
       </libraries>
       <libraries xmi:id="_PK5JYN6lEeC7p7H7gvnXVA" name="org.polarsys.kitalpha.doc.gen.business.ecore.sidebar">
@@ -127,14 +381,16 @@
   <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_xNhWsN6kEeC7p7H7gvnXVA">
     <invocations xmi:id="_RFGXAFwAEeONz-cAZOOGtw" name="Subsitition composition" invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_N9g3oElcEd-TSsH7K-_bxQ">
       <invocationContractContainer xmi:id="_RFGXAVwAEeONz-cAZOOGtw">
-        <invocationContracts xmi:id="_RFGXAlwAEeONz-cAZOOGtw" factoryComponentContract="#_7LipwVv_EeONz-cAZOOGtw"
-            invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_UVURwEldEd-TSsH7K-_bxQ"/>
-        <invocationContracts xmi:id="_RFGXA1wAEeONz-cAZOOGtw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_ahgHMEldEd-TSsH7K-_bxQ">
+        <invocationContracts xmi:id="_RFGXAlwAEeONz-cAZOOGtw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_UVURwEldEd-TSsH7K-_bxQ">
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_bW9oYFwAEeONz-cAZOOGtw">
             <substitutions xmi:id="_dYmI8FwAEeONz-cAZOOGtw" replacedElement="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_f7IcIOf_Ed-RW5fqwaBgOQ"
                 replacement="#_067jcOmjEeCJO-hJMwj6TA"/>
+            <substitutions xmi:id="_-LWjECvkEeawWu7_KH9Pog" replacedElement="#_2kTEYCvfEeawWu7_KH9Pog"
+                replacement="#_csKzUCvgEeawWu7_KH9Pog #_o2_xcCvgEeawWu7_KH9Pog #_zv3YcCvgEeawWu7_KH9Pog #_9owJICvgEeawWu7_KH9Pog #_Q8x-kCvhEeawWu7_KH9Pog #_f6VjACvhEeawWu7_KH9Pog #_Hbv3wCviEeawWu7_KH9Pog #_d7rogCviEeawWu7_KH9Pog #_DrI3cCvjEeawWu7_KH9Pog #_ZgKC8CvjEeawWu7_KH9Pog #_yIwJUCvjEeawWu7_KH9Pog #_Jd6R4CvkEeawWu7_KH9Pog #_bkKsoCvkEeawWu7_KH9Pog #_TyN80C5hEea9Q4dZ-t81Fw #_2kTEYCvfEeawWu7_KH9Pog"/>
           </type>
         </invocationContracts>
+        <invocationContracts xmi:id="_RFGXA1wAEeONz-cAZOOGtw" factoryComponentContract="#_7LipwVv_EeONz-cAZOOGtw"
+            invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_ahgHMEldEd-TSsH7K-_bxQ"/>
         <invocationContracts xmi:id="_RFGXBFwAEeONz-cAZOOGtw" targetInvocationContract="#_H6mAgOmmEeCJO-hJMwj6TA"
             invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Substitution_composition.fcore#_gBdIwEldEd-TSsH7K-_bxQ"/>
       </invocationContractContainer>
@@ -154,7 +410,7 @@
         </invocationContracts>
         <invocationContracts xmi:id="_41h0cN6lEeC7p7H7gvnXVA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_fGFi8N4ZEd-Qav1YnqlO9A">
           <type xmi:type="pattern:TypePatternList" xmi:id="_-IgxAN6lEeC7p7H7gvnXVA"
-              elements="#_NP9twN6lEeC7p7H7gvnXVA"/>
+              elements="#_zS1ToCvfEeawWu7_KH9Pog"/>
         </invocationContracts>
         <invocationContracts xmi:id="_7bhmUN6lEeC7p7H7gvnXVA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_jEMzUN6SEd-ZSZ6AN4Dlrg">
           <type xmi:type="pattern:TypePatternList" xmi:id="_-eH0oN6lEeC7p7H7gvnXVA"

@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated on Tue Aug 12 15:01:19 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.3.0.v20150924-1035
 package org.polarsys.kitalpha.doc.gen.business.ecore.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,9 +10,7 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreFileNameService;
 import org.polarsys.kitalpha.doc.gen.business.core.util.*;
 
-public class ecoreElementSideBar
-		extends
-		org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementSideBarContent {
+public class ecoreElementSideBar extends org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementSideBarContent {
 	protected static String nl;
 
 	public static synchronized ecoreElementSideBar create(String lineSeparator) {
@@ -32,8 +20,7 @@ public class ecoreElementSideBar
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL + "<img src=\"../icon/";
 	protected final String TEXT_3 = "\" alt=\"";
@@ -75,8 +62,7 @@ public class ecoreElementSideBar
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_8);
@@ -94,8 +80,7 @@ public class ecoreElementSideBar
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -112,55 +97,46 @@ public class ecoreElementSideBar
 		return parameters;
 	}
 
-	protected void method_setCurrentObject(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setCurrentObject(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		currentObject = parameter;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setCurrentObject",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setCurrentObject", stringBuffer.toString());
 	}
 
-	protected void method_setFileNameService(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setFileNameService(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		fileNameService = EcoreFileNameService.INSTANCE;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setFileNameService",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setFileNameService", stringBuffer.toString());
 	}
 
-	protected void method_startSidebarSubElement(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_startSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
-		if (org.polarsys.kitalpha.doc.gen.business.ecore.helpers.SideBarHelper
-				.hasChildren(parameter)) {
+		if (org.polarsys.kitalpha.doc.gen.business.ecore.helpers.SideBarHelper.hasChildren(parameter)) {
 			super.method_startSidebarSubElement(stringBuffer, ctx);
 
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarSubElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarSubElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_endSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
-		if (org.polarsys.kitalpha.doc.gen.business.ecore.helpers.SideBarHelper
-				.hasChildren(parameter)) {
+		if (org.polarsys.kitalpha.doc.gen.business.ecore.helpers.SideBarHelper.hasChildren(parameter)) {
 			super.method_endSidebarSubElement(stringBuffer, ctx);
 
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarSubElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_contentSidebarElement(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		String projectName = ctx.getValue("projectName").toString();
@@ -169,8 +145,7 @@ public class ecoreElementSideBar
 		text = EscapeChars.forHTML(text);
 
 		stringBuffer.append(TEXT_1);
-		String imageFileName = LabelProviderHelper.getImageFileName(
-				currentObject, projectName, outputFolder);
+		String imageFileName = LabelProviderHelper.getImageFileName(currentObject, projectName, outputFolder);
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(imageFileName);
 		stringBuffer.append(TEXT_3);
@@ -183,12 +158,10 @@ public class ecoreElementSideBar
 		stringBuffer.append(text);
 		stringBuffer.append(TEXT_7);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return org.polarsys.kitalpha.doc.gen.business.ecore.helpers.PreConditionHelper
-				.isTypeGenerated(parameter);
+		return org.polarsys.kitalpha.doc.gen.business.ecore.helpers.PreConditionHelper.isTypeGenerated(parameter);
 	}
 }

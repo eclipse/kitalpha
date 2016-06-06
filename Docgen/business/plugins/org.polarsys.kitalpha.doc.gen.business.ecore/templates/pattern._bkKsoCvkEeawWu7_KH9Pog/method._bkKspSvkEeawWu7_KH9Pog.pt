@@ -1,0 +1,13 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+%>
+
+<p><strong>Default value :</strong> <%=(parameter).getDefaultValue()%></p>
+<%
+String literalList = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EEnumContentHelper.getLiteralsList(parameter, projectName, outputFolder);
+if(literalList != "") {
+%>
+<h2>Literals</h2>
+<%=literalList%>
+<%}%>

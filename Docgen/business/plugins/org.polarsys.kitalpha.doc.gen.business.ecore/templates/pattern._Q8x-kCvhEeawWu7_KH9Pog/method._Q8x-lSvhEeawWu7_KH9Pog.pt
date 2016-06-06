@@ -1,0 +1,8 @@
+<div style="position: absolute; top: 160px; left: 1%; z-index: 1; width: 98%;">
+<p><strong>Description :</strong><br /><%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription( parameter)%></p>
+<p><strong>Abstract: </strong><br /><%=( parameter).isAbstract()%></p>
+
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline( parameter)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels( parameter)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageExamples( parameter)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getConstraints( parameter)%>

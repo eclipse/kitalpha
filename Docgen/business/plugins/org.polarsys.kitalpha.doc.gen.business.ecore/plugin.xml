@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014 Thales Global Services S.A.S.
+Copyright (c) 2014-2016 Thales Global Services S.A.S.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -26,5 +26,23 @@ Contributors:
       <conceptsHelper
             helper="org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreGenConceptsHelper">
       </conceptsHelper>
+   </extension>
+   <extension
+         point="org.eclipse.egf.pattern.query">
+      <query
+            class="org.polarsys.kitalpha.doc.gen.business.ecore.egf.query.EcoreDocGenInjectedContextQuery"
+            id="org.polarsys.kitalpha.doc.gen.business.ecore.injected.context"
+            name="Ecore DocGen Injected Element">
+      </query>
+      <query
+            class="org.polarsys.kitalpha.doc.gen.business.ecore.egf.query.InjectDiagramHelperQuery"
+            id="org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper"
+            name="Inject Diagram Helper">
+      </query>
+      <query
+            class="org.polarsys.kitalpha.doc.gen.business.ecore.egf.query.InjectFileNameService"
+            id="org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service"
+            name="Inject File Name Service">
+      </query>
    </extension>
 </plugin>
