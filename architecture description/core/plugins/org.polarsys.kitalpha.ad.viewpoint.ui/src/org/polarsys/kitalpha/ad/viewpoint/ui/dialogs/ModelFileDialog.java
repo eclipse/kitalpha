@@ -26,6 +26,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
@@ -56,6 +57,8 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.common.AD_Log;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers.ModelHelper;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 
 /**
@@ -66,13 +69,13 @@ public class ModelFileDialog extends TitleAreaDialog {
 
 	private ListViewer viewer;
 	private final List<URI> result = new ArrayList<URI>();
-	private final IProject project;
 
 	private final String filePattern;
+	private Viewpoint viewpoint;
 
-	public ModelFileDialog(Shell parentShell, IProject project, String filePattern) {
-		super(parentShell);
-		this.project = project;
+	public ModelFileDialog(Shell shell, Viewpoint viewpoint, String filePattern) {
+		super(shell);
+		this.viewpoint = viewpoint;
 		this.filePattern = filePattern;
 	}
 
@@ -96,22 +99,7 @@ public class ModelFileDialog extends TitleAreaDialog {
 	}
 
 	public void init() {
-		IPluginModelBase model = PluginRegistry.findModel(project);
-		if (model == null) {
-			setErrorMessage(Messages.LoadModelDialog_error1);
-			return;
-		}
-
-		List<URI> ecoreUris = new ArrayList<URI>();
-		final List<IProject> wsProjects = new ArrayList<IProject>();
-		final List<Bundle> pBundles = new ArrayList<Bundle>();
-
-		collectBundles(model, wsProjects, pBundles, new HashSet<String>(300));
-
-		collectFileInPlatform(pBundles, ecoreUris);
-		collectFileInWorkspace(wsProjects, ecoreUris);
-
-		viewer.setInput(ecoreUris);
+		viewer.setInput(ModelHelper.getCandidateURIs(viewpoint, filePattern));
 	}
 
 	private void collectFileInPlatform(List<Bundle> pBundles, List<URI> fileUris) {

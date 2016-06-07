@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
@@ -45,6 +47,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.polarsys.kitalpha.ad.common.AD_Log;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers.ParentHelper;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
@@ -58,19 +62,12 @@ public class LoadViewpointModelDialog extends TitleAreaDialog {
 
 	private ListViewer viewer;
 	private List<Resource> result = new ArrayList<Resource>();
-	private final IProject project;
-	private final String excludedPath;
-	private final SearchCriteria criteria;
+	private Viewpoint viewpoint;
 
-	public LoadViewpointModelDialog(Shell parentShell, IProject project, String excludedPath) {
-		this(parentShell, project, excludedPath, createDefaultCriteria());
-	}
+	public LoadViewpointModelDialog(Shell shell, Viewpoint viewpoint) {
+		super(shell);
+		this.viewpoint = viewpoint;
 
-	public LoadViewpointModelDialog(Shell parentShell, IProject project, String excludedPath, SearchCriteria criteria) {
-		super(parentShell);
-		this.project = project;
-		this.excludedPath = excludedPath;
-		this.criteria = criteria;
 	}
 
 	protected Control createDialogArea(Composite parent) {
@@ -93,56 +90,8 @@ public class LoadViewpointModelDialog extends TitleAreaDialog {
 	}
 
 	public void init() {
-		Set<String> bundleScope = null;
-		if (project != null) {
-			bundleScope = new HashSet<String>();
-			IPluginModelBase model = PluginRegistry.findModel(project);
-			if (model == null) {
-				setErrorMessage(Messages.LoadModelDialog_error1);
-				return;
-			}
-			fillScope(model, bundleScope);
-		}
-		Resource[] resources = ResourceReuse.createHelper().getResources(criteria);
-
-		viewer.setInput(filter(resources, bundleScope));
-	}
-
-	protected static SearchCriteria createDefaultCriteria() {
-		SearchCriteria searchCriteria = new SearchCriteria();
-		searchCriteria.setDomain("AF");
-		searchCriteria.getTags().add("vp");
-		return searchCriteria;
-	}
-
-	private void fillScope(IPluginModelBase model, Set<String> bundleScope) {
-		BundleDescription description = model.getBundleDescription();
-		String symbolicName = description.getSymbolicName();
-		if (bundleScope.contains(symbolicName))
-			return;
-
-		bundleScope.add(symbolicName);
-		for (BundleSpecification req : description.getRequiredBundles()) {
-			if (req.getSupplier() == null) {
-				AD_Log.getDefault().logWarning(NLS.bind(Messages.LoadModelDialog_error2, req.hashCode()));
-				continue;
-			}
-			IPluginModelBase reqModel = PluginRegistry.findModel(req.getSupplier().getSupplier());
-			symbolicName = reqModel.getBundleDescription().getSymbolicName();
-			fillScope(reqModel, bundleScope);
-		}
-
-	}
-
-	private Collection<Resource> filter(Resource[] resources, Set<String> bundleScope) {
-		if (bundleScope == null)
-			return Arrays.asList(resources);
-		HashMap<String, Resource> res = new HashMap<String, Resource>();
-		for (Resource resource : resources) {
-			if (!res.containsKey(resource.getPath()) && bundleScope.contains(resource.getProviderSymbolicName()) && !resource.getPath().contains(excludedPath))
-				res.put(resource.getPath(), resource);
-		}
-		return res.values();
+		
+		viewer.setInput(ParentHelper.getCandidateResources(viewpoint));
 	}
 
 	private void createWidgets(Composite parent) {

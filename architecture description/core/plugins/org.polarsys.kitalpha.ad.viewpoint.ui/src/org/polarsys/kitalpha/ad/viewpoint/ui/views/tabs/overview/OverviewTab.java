@@ -212,7 +212,7 @@ public class OverviewTab extends AbstractTab {
 				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 				IProject project = root.getProject(segment);
 
-				LoadViewpointModelDialog loadResourceDialog = new LoadViewpointModelDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), project, path.toPortableString());
+				LoadViewpointModelDialog loadResourceDialog = new LoadViewpointModelDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), viewpoint);
 				if (loadResourceDialog.open() == Window.OK) {
 					ResourceSet resourceSet = viewpoint.eResource().getResourceSet();
 					List<Viewpoint> vps = new ArrayList<Viewpoint>();

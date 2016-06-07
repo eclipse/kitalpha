@@ -17,10 +17,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -30,7 +28,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers.ParentHelper;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointFactory;
@@ -83,23 +81,28 @@ public class ViewpointItemProvider
 	 * This adds a property descriptor for the Parents feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated Not
 	 */
 	protected void addParentsPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Viewpoint_parents_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Viewpoint_parents_feature", "_UI_Viewpoint_type"),
-				 ViewpointPackage.Literals.VIEWPOINT__PARENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+			(new ItemPropertyDescriptor(
+			  ((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			  getResourceLocator(),
+			  getString("_UI_Viewpoint_parents_feature"),
+			  getString("_UI_PropertyDescriptor_description", "_UI_Viewpoint_parents_feature", "_UI_Viewpoint_type"),
+			  ViewpointPackage.Literals.VIEWPOINT__PARENTS,
+			  true,
+			  false,
+			  true,
+			  null,
+			  null,
+			  null) {
+				  public Collection<?> getChoiceOfValues(Object object)
+				  {
+					return ParentHelper.getCandidates(((EObject)object));
+				  }
+			});
 
 	}
 

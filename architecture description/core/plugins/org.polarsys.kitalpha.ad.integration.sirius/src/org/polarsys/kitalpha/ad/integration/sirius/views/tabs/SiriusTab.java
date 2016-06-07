@@ -143,7 +143,7 @@ public class SiriusTab extends AbstractTab {
 				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 				IProject project = root.getProject(segment);
 
-				ModelFileDialog dialog = new ModelFileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), project, "*.odesign");
+				ModelFileDialog dialog = new ModelFileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), viewpoint, "*.odesign");
 				if (dialog.open() == Window.OK) {
 					ResourceSet resourceSet = viewpoint.eResource().getResourceSet();
 					List<RepresentationElement> representations = new ArrayList<RepresentationElement>();
