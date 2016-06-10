@@ -1,0 +1,30 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _STZ8YB3BEea9EIJxawXROw,_UM2xUB3BEea9EIJxawXROw
+Element-Name: viewpointManagerView_00002
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _uIxVMC7iEea7AZzApjI2hw
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 6/10/16 10:12 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Viewpoint Manager" | get-label "Select a model element or a file to update the view content." 
+    | get-property caption | equals "Select a model element or a file to update the view content." | verify-true
+get-editor "org.polarsys.kitalpha.viewpoint.myviewpointproject" | get-section "General Information" | get-editbox 
+    -after [get-label "ID:"] | set-focus
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.viewpoint.myviewpointproject/model/myviewpoint.vp" | double-click
+get-editor "myviewpoint.vp" | get-tree 
+    | select "platform:\\/resource\\/org.polarsys.kitalpha.viewpoint.myviewpointproject\\/model\\/myviewpoint.vp/Viewpoint [org.polarsys.kitalpha.viewpoint.myviewpoint] My Viewpoint"
+get-view "Viewpoint Manager" | get-label "Project org.polarsys.kitalpha.viewpoint.myviewpointproject" 
+    | get-property caption | equals "Project org.polarsys.kitalpha.viewpoint.myviewpointproject" | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.viewpoint.myviewpointproject/model"
+get-view "Viewpoint Manager" | get-label "Select a model element or a file to update the view content." 
+    | get-property caption | equals "Select a model element or a file to update the view content." | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
