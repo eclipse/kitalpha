@@ -66,6 +66,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
+import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -194,6 +195,7 @@ public class ViewpointManagerView extends ViewPart {
 		composite.setLayout(clayout);
 
 		final Label label = new Label(composite, SWT.None);
+		label.setText(Messages.ViewpointManagerView_default_label);
 		GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
 		layoutData.horizontalSpan = 3;
 		label.setLayoutData(layoutData);
@@ -233,7 +235,7 @@ public class ViewpointManagerView extends ViewPart {
 
 					private String computeLabel() {
 						if (context == null)
-							return "";
+							return Messages.ViewpointManagerView_default_label;
 						if (context.getResources().isEmpty())
 							return "";
 						String segment = context.getResources().get(0).getURI().segment(1);
