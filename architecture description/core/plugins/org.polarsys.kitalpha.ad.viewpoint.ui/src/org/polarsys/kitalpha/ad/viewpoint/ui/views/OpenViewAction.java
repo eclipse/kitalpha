@@ -72,7 +72,7 @@ final class OpenViewAction extends Action implements IMenuCreator {
 		if (this.resource == resource)
 			return;
 		this.resource = resource;
-		setEnabled(resource.getProviderLocation() != Location.WORSPACE);
+		setEnabled(resource != null && resource.getProviderLocation() != Location.WORSPACE);
 		viewIds.clear();
 		if (resource == null)
 			return;
