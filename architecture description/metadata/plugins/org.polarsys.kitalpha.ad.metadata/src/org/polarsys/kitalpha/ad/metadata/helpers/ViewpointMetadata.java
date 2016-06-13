@@ -80,6 +80,17 @@ public class ViewpointMetadata {
 			command.execute();
 	}
 
+	private void executeCommandInTransaction(MetadataCommand command) {
+		EditingDomain editingDomain = TransactionUtil.getEditingDomain(context);
+		if (editingDomain == null && context instanceof IEditingDomainProvider)
+			editingDomain = ((IEditingDomainProvider)context).getEditingDomain();
+		
+		if (editingDomain == null)
+			command.execute();
+		else
+			editingDomain.getCommandStack().execute(command);
+	}
+
 	public void setFilter(String id, boolean filter) {
 		Metadata metadata = getMetadataStorage();
 		if (metadata == null)
@@ -111,7 +122,7 @@ public class ViewpointMetadata {
 	}
 
 	public Resource initMetadataStorage(URI location) {
-		executeCommand(new CreateMetadataResourceCommand(context, location));
+		executeCommandInTransaction(new CreateMetadataResourceCommand(context, location));
 
 		return context.getResource(location, true);
 	}
