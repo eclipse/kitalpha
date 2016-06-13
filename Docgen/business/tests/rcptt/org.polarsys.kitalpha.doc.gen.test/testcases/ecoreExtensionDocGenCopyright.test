@@ -1,0 +1,57 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _dNztIDCIEeaFuoOf0aDQ6Q,_GDJ5gDCKEeaFuoOf0aDQ6Q
+Element-Name: ecoreExtensionDocGenCopyright
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _7REP8DCJEeaFuoOf0aDQ6Q
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 6/13/16 11:47 AM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Add Copyright at the buttom of all pages
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu "File/Restart" | click
+wait-until-eclipse-is-ready
+get-view "Project Explorer" | get-tree | get-item "docgen/doc" | get-property childCount | equals 0 | verify-true
+get-menu "Search/File..." | click
+with [get-window Search] {
+    with [get-combo -after [get-label "Containing text:"]] {
+        set-text "Copyright (c) 2014 - 2016 Thales Global Services S.A.S."
+    }
+    get-combo -after [get-label "File name patterns (separated by comma):"] | set-text "*.html"
+    get-button Search | click
+}
+get-view Search 
+    | get-link "'Copyright (c) 2014 - 2016 Thales Global Services S.A.S.' - 0 matches in workspace (*.html)" 
+    | get-property caption 
+    | equals "'Copyright (c) 2014 - 2016 Thales Global Services S.A.S.' - 0 matches in workspace (*.html)" 
+    | verify-true
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.doc.gen.ecore.extensions/egf/DocGenExtensions.fcore" | double-click
+with [get-editor "DocGenExtensions.fcore" | get-tree] {
+    get-item "DocGenExtensions \\[Factory Component\\]" | click
+    select "DocGenExtensions [Factory Component]" | get-menu "Run EGF Activity..." | click
+}
+wait -ms 20000
+get-view "Project Explorer" | get-tree | get-item "docgen/doc" | get-property childCount | equals 4 | verify-true
+get-menu "Search/File..." | click
+with [get-window Search] {
+    with [get-combo -after [get-label "Containing text:"]] {
+        set-text ""
+        select "Copyright (c) 2014 - 2016 Thales Global Services S.A.S."
+    }
+    get-combo -after [get-label "File name patterns (separated by comma):"] | set-text "*.html"
+    get-button Search | click
+}
+get-view Search | get-tree | get-item "docgen/doc/output/ecore" | get-property childCount | equals 54 | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

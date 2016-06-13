@@ -1,0 +1,40 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _GJAM0C2rEea53PSN5pNRIg,_dNztIDCIEeaFuoOf0aDQ6Q
+Element-Name: ecoreBasicDocGenBasic
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _jqMrwC2pEea53PSN5pNRIg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 6/13/16 11:46 AM
+Testcase-Type: ecl
+Verifications: _fHG7oDCJEeaFuoOf0aDQ6Q
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Generate with basic contributions to Ecore GenDoc
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu "File/Restart" | click
+wait-until-eclipse-is-ready
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.doc.gen.ecore.extensions/egf/DocGenExtensions.fcore" | double-click
+with [get-editor "DocGenExtensions.fcore" | get-tree] {
+    get-item "DocGenExtensions \\[Factory Component\\]" | click
+    select "DocGenExtensions [Factory Component]" | get-menu "Run EGF Activity..." | click
+}
+wait -ms 20000
+with [get-view "Project Explorer" | get-tree] {
+    get-item "docgen/doc" | get-property childCount | equals 4 | verify-true
+    get-item "docgen/doc" | get-property "getItems().TreeItem[0].getText()" | equals css | verify-true
+    get-item "docgen/doc" | get-property "getItems().TreeItem[1].getText()" | equals img | verify-true
+    get-item "docgen/doc" | get-property "getItems().TreeItem[2].getText()" | equals output | verify-true
+    get-item "docgen/doc" | get-property "getItems().TreeItem[3].getText()" | equals scripts | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
