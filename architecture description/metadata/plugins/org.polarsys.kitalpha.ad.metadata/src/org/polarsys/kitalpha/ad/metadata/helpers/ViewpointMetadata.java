@@ -77,14 +77,7 @@ public class ViewpointMetadata {
 	}
 
 	private void executeCommand(MetadataCommand command) {
-		EditingDomain editingDomain = TransactionUtil.getEditingDomain(context);
-		if (editingDomain == null && context instanceof IEditingDomainProvider)
-			editingDomain = ((IEditingDomainProvider)context).getEditingDomain();
-		
-		if (editingDomain == null)
 			command.execute();
-		else
-			editingDomain.getCommandStack().execute(command);
 	}
 
 	public void setFilter(String id, boolean filter) {

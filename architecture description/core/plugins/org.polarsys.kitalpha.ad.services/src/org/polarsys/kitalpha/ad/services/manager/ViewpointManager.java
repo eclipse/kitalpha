@@ -25,12 +25,17 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.command.AbstractCommand;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.Version;
@@ -264,12 +269,12 @@ public class ViewpointManager {
 	protected void doStartUse(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
-		Version readVersion = readVersion(set, vpResource);
-		MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, readVersion, true);
-		managed.add(vpResource.getProviderSymbolicName());
-		if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
-			managed.add(vpResource.getProviderSymbolicName());
-		fireEvent(vpResource, ACTIVATED);
+		TransactionalEditingDomain editingDomain = (TransactionalEditingDomain)TransactionUtil.getEditingDomain(target);
+		if (editingDomain == null && set instanceof IEditingDomainProvider)
+			editingDomain = (TransactionalEditingDomain)((IEditingDomainProvider)target).getEditingDomain();
+
+		Command command = new UseViewpointCommand(vpResource, set);
+		editingDomain.getCommandStack().execute(command);
 	}
 
 	protected void manageDependencies(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
@@ -321,10 +326,22 @@ public class ViewpointManager {
 
 	}
 
+	/**
+	 * There is really no for this method since to stop usage of a viewpoint a detachment is performed
+	 * 
+	 * @param id
+	 * @throws ViewpointActivationException
+	 */
 	public void desactivate(String id) throws ViewpointActivationException {
 		stopUse(id);
 	}
 
+	/**
+	 * There is really no for this method since to stop usage of a viewpoint a detachment is performed
+	 * 
+	 * @param id
+	 * @throws ViewpointActivationException
+	 */
 	public void stopUse(String id) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
@@ -397,6 +414,43 @@ public class ViewpointManager {
 				l.hasBeenDisplayed(target, vpResource);
 				break;
 			}
+		}
+	}
+
+	protected final class UseViewpointCommand extends AbstractCommand {
+		private final Resource vpResource;
+		private final ResourceSet set;
+
+		public UseViewpointCommand(Resource vpResource, ResourceSet set) {
+			super("Use viewpoint");
+			this.vpResource = vpResource;
+			this.set = set;
+		}
+
+		@Override
+		public void execute() {
+			Version readVersion = readVersion(set, vpResource);
+			MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, readVersion, true);
+			if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
+				managed.add(vpResource.getProviderSymbolicName());
+			fireEvent(vpResource, ACTIVATED);
+			
+		}
+
+		@Override
+		public void undo() {
+			MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, null, false);
+			fireEvent(vpResource, DEACTIVATED);
+		}
+
+		@Override
+		public void redo() {
+			execute();
+		}
+
+		protected boolean prepare()
+		{
+		    return true;
 		}
 	}
 
