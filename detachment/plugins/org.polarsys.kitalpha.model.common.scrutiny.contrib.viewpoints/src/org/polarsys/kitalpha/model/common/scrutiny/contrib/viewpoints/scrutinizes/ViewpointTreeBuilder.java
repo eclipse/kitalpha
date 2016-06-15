@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.IViewpointTreeDescription;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
@@ -73,8 +74,12 @@ public class ViewpointTreeBuilder {
 		Collection<Resource> usedViewpointResources = new HashSet<Resource>();
 		
 		for (Resource resource2 : resources) {
-			if (additionalViewpoints != null ) 
+			if (additionalViewpoints != null && additionalViewpoints.contains(resource2.getId())) {
+				usedViewpointResources.add(resource2);
 				additionalViewpoints.remove(resource2.getId());
+				continue;
+			}
+
 			Viewpoint current = getViewpointRootEObject(resource2.getPath());
 			EList<EPackage> ePackages = current.getMetamodel().getModels();
 			
@@ -95,6 +100,13 @@ public class ViewpointTreeBuilder {
 				resource.setPath("/"+id);
 				usedViewpointResources.add(resource);
 			}
+		}
+		
+		// remove resource with readonly state
+		for (Resource r : usedViewpointResources.toArray(new Resource[usedViewpointResources.size()]))
+		{
+			if (!ViewpointManager.canChangeState(r))
+				usedViewpointResources.remove(r);
 		}
 		
 		return usedViewpointResources;

@@ -73,6 +73,10 @@ public class ViewpointManager {
 
 	public static boolean canChangeState(String id) {
 		Resource res = getViewpoint(id);
+		return canChangeState(res);
+	}
+
+	public static boolean canChangeState(Resource res) {
 		return res != null && !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
 	}
 
