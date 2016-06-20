@@ -10,6 +10,11 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.model.common.share.ui.utilities;
 
+import java.util.Arrays;
+
+import org.eclipse.jface.viewers.CheckStateChangedEvent;
+import org.eclipse.jface.viewers.ICheckStateListener;
+import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TreeItem;
@@ -20,24 +25,49 @@ public class ExtensionTreeViewer extends ContainerCheckedTreeViewer {
 
 	public ExtensionTreeViewer(Composite parent, int style) {
 		super(parent, style);
+		addCheckStateListener(new ICheckStateListener() {
+			
+			@Override
+			public void checkStateChanged(CheckStateChangedEvent event) {
+				
+				
+			}
+		});
 	}
 
-	// handle user click event
-	protected void handleSelect(SelectionEvent event) {
-		// call super class to notify change of check state
-		IViewpointTreeDescription selected_vpd = (IViewpointTreeDescription) event.item.getData();
+
+	@Override
+	protected void doCheckStateChanged(Object element) {
+		super.doCheckStateChanged(element);
+		IViewpointTreeDescription selected_vpd = (IViewpointTreeDescription) element;
 		
 		if (selected_vpd != null){
-			TreeItem item = (TreeItem)event.item;
-			item.setGrayed(false);
-			selected_vpd.setAsCandidateToKeep(item.getChecked());
+			boolean checked = Arrays.asList(getCheckedElements()).contains(element);
+			setGrayChecked(selected_vpd, false);
+			
+			selected_vpd.setAsCandidateToKeep(checked);
 			selected_vpd.updateCandidates(selected_vpd.isCandidateToKeep());
 			TreeItem [] allItems = getTree().getItems();
 			
 			updateCheckItems(allItems);
 		}
-		super.handleSelect(event);
 
+	}
+
+	private void allChecked(boolean state, Object[] items) {
+		IStructuredContentProvider cp = (IStructuredContentProvider)getContentProvider();
+		for (int i = 0; i < items.length; i++) {
+			setChecked(items [i], state);
+			Object[] children = cp.getElements(items[i]);
+			allChecked(state, children);
+		}
+		
+	}
+	public void allChecked(boolean state) {
+		IStructuredContentProvider cp = (IStructuredContentProvider)getContentProvider();
+		Object[] elements = cp.getElements(getInput());
+		
+		allChecked(state, elements);
 	}
 
 	private void updateCheckItems(TreeItem[] allItems) {
