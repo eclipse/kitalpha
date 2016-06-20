@@ -11,9 +11,13 @@
 package org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints.pages;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ITreeSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -44,7 +48,7 @@ import org.polarsys.kitalpha.model.detachment.ui.page.AbstractDetachmentFormPage
  */
 public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 
-	private ContainerCheckedTreeViewer treeViewer;
+	private ExtensionTreeViewer treeViewer;
 	
 	private Button selectAllButton;
 	private Button deSelectAllButton;
@@ -127,7 +131,7 @@ public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				selectAll(true);
+				treeViewer.allChecked(true);
 			}
 		});
 
@@ -136,13 +140,10 @@ public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 		deSelectAllButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				selectAll(false);
+				treeViewer.allChecked(false);
 			}
+			
 		});
 	}
 	
-	@SuppressWarnings("deprecation") //$NON-NLS-1$
-	private void selectAll(boolean checked) {
-		treeViewer.setAllChecked(checked);
-	}
 }
