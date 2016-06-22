@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,7 +30,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.LocalClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI_Field_Type;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
@@ -38,6 +37,7 @@ import com.google.common.base.Predicate;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal ABKA
  * 
  */
 public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {

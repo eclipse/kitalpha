@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import com.google.inject.Inject;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal ABKA
  *
  */
 public class CommonEObjectHover extends DispatchingEObjectTextHover {
@@ -42,13 +43,14 @@ public class CommonEObjectHover extends DispatchingEObjectTextHover {
 	@Override
 	public Object getHoverInfo(EObject first, ITextViewer textViewer, IRegion hoverRegion) {
 			if (ExternalDataHelper.isPackageInScopeURIs(first.eClass().getEPackage())){			
-				if (vpdslHoverProvider==null) 
+				if (vpdslHoverProvider==null) {
 					vpdslHoverProvider= new CommonEObjectHoverProvider();
+				}
 				IInformationControlCreatorProvider creatorProvider = vpdslHoverProvider.getHoverInfo(first, textViewer, hoverRegion);
-				if (creatorProvider==null)
-					return null;
-				this.lastCreatorProvider = creatorProvider;
-				return lastCreatorProvider.getInfo();
+				if (creatorProvider != null){
+					this.lastCreatorProvider = creatorProvider;
+					return lastCreatorProvider.getInfo();
+				}
 			}
 			return null;	
 	}
@@ -60,22 +62,24 @@ public class CommonEObjectHover extends DispatchingEObjectTextHover {
 	
 	public Object getDispatchedHoverInfo(EObject first, ITextViewer textViewer, IRegion hoverRegion) {
 		IEObjectHoverProvider hoverProvider = serviceProvider.findService(first, IEObjectHoverProvider.class);
-		if (hoverProvider==null) {
+		if (hoverProvider == null) {
 			if (ExternalDataHelper.isPackageInScopeURIs(first.eClass().getEPackage())){			
-				if (vpdslHoverProvider==null) 
+				if (vpdslHoverProvider==null) {
 					vpdslHoverProvider= new CommonEObjectHoverProvider();
+				}
 				IInformationControlCreatorProvider creatorProvider = vpdslHoverProvider.getHoverInfo(first, textViewer, hoverRegion);
-				if (creatorProvider==null)
-					return null;
-				this.lastCreatorProvider = creatorProvider;
-				return lastCreatorProvider.getInfo();
+				if (creatorProvider != null){
+					this.lastCreatorProvider = creatorProvider;
+					return lastCreatorProvider.getInfo();
+				}
 			}
 			return null;
 		}
 		IInformationControlCreatorProvider creatorProvider = hoverProvider.getHoverInfo(first, textViewer, hoverRegion);
-		if (creatorProvider==null)
-			return null;
-		this.lastCreatorProvider = creatorProvider;
-		return lastCreatorProvider.getInfo();	
+		if (creatorProvider != null){
+			this.lastCreatorProvider = creatorProvider;
+			return lastCreatorProvider.getInfo();
+		}
+		return null;
 	}
 }
