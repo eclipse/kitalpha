@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.String
  */
 
 public class DiagramExpressionUtil {
+	
+	// Hidden constructor
+	protected DiagramExpressionUtil() {
+	}
 
 	public final static String getAbstractComputableElementExpression(AbstractComputableElement element){
 		VSMVariable[] emptyParameters = {};
@@ -39,24 +43,28 @@ public class DiagramExpressionUtil {
 		{
 			StringElement stringElement = (StringElement) element;
 			final String value = stringElement.getValue();
-			if (value != null && value.isEmpty() == false)
+			if (value != null && ! value.isEmpty())
+			{
 				expression = value;
+			}
 		}
 		
 		if (element instanceof JavaElement)
 		{
 			JavaElement javaElement = (JavaElement) element;
 			String method = javaElement.getMethod();
-			if (method != null && method.isEmpty() == false)
+			if (method != null && ! method.isEmpty())
 			{
 				// Compute parameters
 				String mParameters = "";
 				if (parameters != null && parameters.length > 0)
 				{
-					mParameters = parameters[0].getInnerVariable();
+					StringBuilder builder = new StringBuilder();
+					builder.append(parameters[0].getInnerVariable());
 					for (int i = 1; i < parameters.length; i++) 
 					{
-						mParameters += ", " + parameters[i].getInnerVariable();
+						builder.append(", ").append(parameters[i].getInnerVariable());
+//						mParameters += ", " + parameters[i].getInnerVariable();
 					}
 				}
 				

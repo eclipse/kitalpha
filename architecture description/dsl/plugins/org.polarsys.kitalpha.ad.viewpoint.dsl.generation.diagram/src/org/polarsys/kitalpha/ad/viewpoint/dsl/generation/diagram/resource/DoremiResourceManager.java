@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,39 +45,48 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.resourceimpl.V
 
 public class DoremiResourceManager {
 	
-	public static Group group;
+	private static Group group;
 	
-	public static Viewpoint generate_viewpoint;
-	private static EObject root_model_object;
+	private static Viewpoint generateViewpoint;
+	private static EObject rootModelObject;
 	
 	private static ResourceSet rSet;
 	private static Resource doremiResource;
 	
+	
+	public static Group getGroup(){
+		return group;
+	}
+	
+	public static Viewpoint getGenerateViewpoint(){
+		return generateViewpoint;
+	}
+	
 	public static void clear(){
-		generate_viewpoint = null;
-		root_model_object = null;
+		generateViewpoint = null;
+		rootModelObject = null;
 		doremiResource = null;
 		rSet = null;
 	}
 	
-	public static void loadAndInitODesignModel(String projectName, String modelFolder, String modelName){
+	public static void loadAndInitODesignModel(String projectName, String modelFolderName, String modelName){
 		IProject vProject = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		boolean loaded = false;
 		if (vProject.exists())
 		{
-			IFolder model_folder = vProject.getFolder(modelFolder);
-			if (model_folder.exists())
+			IFolder modelFolder = vProject.getFolder(modelFolderName);
+			if (modelFolder.exists())
 			{
-				IFile model_file = model_folder.getFile(modelName+"."+ViewpointSpecificationProject.VIEWPOINT_MODEL_EXTENSION);
-				if (model_file.exists())
+				IFile modelFile = modelFolder.getFile(modelName + "." + ViewpointSpecificationProject.VIEWPOINT_MODEL_EXTENSION);
+				if (modelFile.exists())
 				{
 					rSet = new ResourceSetImpl();
-					URI doremiURI = URI.createPlatformResourceURI(model_file.getFullPath().toString(), true);
+					URI doremiURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 					doremiResource = rSet.getResource(doremiURI, true);
-					root_model_object = doremiResource.getContents().get(0);
-					if (root_model_object instanceof Group)
+					rootModelObject = doremiResource.getContents().get(0);
+					if (rootModelObject instanceof Group)
 					{
-						group = (Group)root_model_object;
+						group = (Group)rootModelObject;
 						Viewpoint vp = DescriptionFactory.eINSTANCE.createViewpoint();
 						String newModelName = modelName.substring(0, 1).toUpperCase()+modelName.substring(1, modelName.length());
 						vp.setLabel(newModelName);
@@ -85,7 +94,7 @@ public class DoremiResourceManager {
 						vp.setModelFileExtension(diagramExtensions(modelName.toLowerCase()));
 						group.getOwnedViewpoints().add(vp);
 						
-						generate_viewpoint = vp;
+						generateViewpoint = vp;
 					}
 					loaded = true;
 				}
@@ -97,23 +106,23 @@ public class DoremiResourceManager {
 		}
 	}
 	
-	public static void loadODesignModel(String projectName, String modelFolder, String modelName){
+	public static void loadODesignModel(String projectName, String modelFolderName, String modelName){
 		IProject vProject = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		if (vProject.exists())
 		{
-			IFolder model_folder = vProject.getFolder(modelFolder);
-			if (model_folder.exists())
+			IFolder modelFolder = vProject.getFolder(modelFolderName);
+			if (modelFolder.exists())
 			{
-				IFile model_file = model_folder.getFile(modelName+"."+ViewpointSpecificationProject.VIEWPOINT_MODEL_EXTENSION);
-				if (model_file.exists())
+				IFile modelFile = modelFolder.getFile(modelName+"."+ViewpointSpecificationProject.VIEWPOINT_MODEL_EXTENSION);
+				if (modelFile.exists())
 				{
 					rSet = new ResourceSetImpl();
-					URI doremiURI = URI.createPlatformResourceURI(model_file.getFullPath().toString(), true);
+					URI doremiURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 					doremiResource = rSet.getResource(doremiURI, true);
-					root_model_object = doremiResource.getContents().get(0);
-					if (root_model_object instanceof Group)
+					rootModelObject = doremiResource.getContents().get(0);
+					if (rootModelObject instanceof Group)
 					{
-						group = (Group)root_model_object;
+						group = (Group)rootModelObject;
 					}
 				}
 			}
@@ -129,8 +138,13 @@ public class DoremiResourceManager {
 		
 		if (! taExtensions.isEmpty())
 		{
+			StringBuilder builder = new StringBuilder();
 			for (String extension : taExtensions) 
-				result += " " + extension;
+			{
+				builder.append(" ").append(extension);
+//				result += " " + extension;
+			}
+			result = result + builder.toString();
 		}
 		else
 		{
@@ -153,10 +167,11 @@ public class DoremiResourceManager {
 	 * @return a {@link String} value containing additional model files extensions
 	 */
 	private static String computeOtherFileExtensions(){
-		String result = "";
+//		String result = "";
+		StringBuilder builder = new StringBuilder();
 		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
-		final EList<Aspect> vp_Aspects = viewpoint.getVP_Aspects();
-		for (Aspect aspect : vp_Aspects) 
+		final EList<Aspect> vpAspects = viewpoint.getVP_Aspects();
+		for (Aspect aspect : vpAspects) 
 		{
 			if (aspect instanceof DiagramSet)
 			{
@@ -166,18 +181,19 @@ public class DoremiResourceManager {
 				{
 					if (diagramRepresentation instanceof DiagramExtension)
 					{
-						final DiagramDescription extented_diagram = ((DiagramExtension) diagramRepresentation).getExtented_diagram();
-						final EObject eContainer = extented_diagram.eContainer();
+						final DiagramDescription extentedDiagram = ((DiagramExtension) diagramRepresentation).getExtented_diagram();
+						final EObject eContainer = extentedDiagram.eContainer();
 						if (eContainer instanceof Viewpoint)
 						{
-							result += " " + ((Viewpoint) eContainer).getModelFileExtension();
+//							result += " " + ((Viewpoint) eContainer).getModelFileExtension();
+							builder.append(" ").append(((Viewpoint) eContainer).getModelFileExtension());
 						}
 					}
 				}
 			}
 		}
 		
-		return result;
+		return builder.toString();
 	}
 	
 	private static String removeDuplicateExtensions(String exts){
@@ -191,9 +207,11 @@ public class DoremiResourceManager {
 		}
 		
 		String uniqExt = "";
+		StringBuilder builder = new StringBuilder();
 		for (String string : uniqExtensions) 
 		{
-			uniqExt+= string + " ";
+			builder.append(string).append(" ");
+//			uniqExt+= string + " ";
 		}
 		
 		return uniqExt;

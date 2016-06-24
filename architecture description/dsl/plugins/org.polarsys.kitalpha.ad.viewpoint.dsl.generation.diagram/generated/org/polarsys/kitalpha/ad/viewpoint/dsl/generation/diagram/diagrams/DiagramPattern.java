@@ -113,7 +113,7 @@ public class DiagramPattern
 		doremiParent = dLayer;
 
 		// Adding the diagram to the generated viewpoint
-		DoremiResourceManager.generate_viewpoint.getOwnedRepresentations().add(dDiagram);
+		DoremiResourceManager.getGenerateViewpoint().getOwnedRepresentations().add(dDiagram);
 
 		// Get the reference SystemColorPalette.
 		Group grp = (Group) dDiagram.eContainer().eContainer();

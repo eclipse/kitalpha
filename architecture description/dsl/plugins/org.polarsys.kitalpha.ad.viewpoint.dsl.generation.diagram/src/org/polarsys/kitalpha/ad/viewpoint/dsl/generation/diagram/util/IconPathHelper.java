@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,14 +31,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement;
 
 public class IconPathHelper {
 	
-	private static final String no_icon_name = "Icon name must have a value";
-	private static final String vpElement_is_null = "Viewpoint element must be not null";
-	private static final String vpElement_name_is_null = "Viewpoint element name must be not null";
+	private static final String NO_ICON_NAME = "Icon name must have a value";
+	private static final String VPELEMENT_IS_NULL = "Viewpoint element must be not null";
+	private static final String VPELEMENT_NAME_IS_NULL = "Viewpoint element name must be not null";
 	
-	private static final String default_icon_folder = "icons";
-	private static final String default_design_project = "design";
+	private static final String DEFAULT_ICON_FOLDER = "icons";
+	private static final String DEFAULT_DESIGN_PROJECT = "design";
 	
-	private static final NullProgressMonitor null_progress_monitor = new NullProgressMonitor();
+	private static final NullProgressMonitor NPM = new NullProgressMonitor();
 	
 	/**
 	 * This method computes the icon path to put in the odesign model. 
@@ -47,23 +47,20 @@ public class IconPathHelper {
 	 * @param vpElement: the viewpoint element for which the icon is processed
 	 * @return The icon path to put in the odesign model
 	 */
-	public static String computeDslIconPath(String icon_name, NamedElement vpElement){
+	public static String computeDslIconPath(String iconName, NamedElement vpElement){
 		// Checking the icon name value
-		if (icon_name == null || (icon_name != null && icon_name.trim().length() == 0))
+		if (iconName == null || (iconName != null && iconName.trim().length() == 0))
 		{
-			throw new IllegalArgumentException(no_icon_name);
+			throw new IllegalArgumentException(NO_ICON_NAME);
 		}
 		
 		if (vpElement == null)
 		{
-			throw new IllegalArgumentException(vpElement_is_null);
+			throw new IllegalArgumentException(VPELEMENT_IS_NULL);
 		}
 		
-		String plugin_ID = VpDslConfigurationHelper.getRootProjectName(vpElement);
-//		String target_icon_name = computeTargetIconFileName(icon_name, vpElement);
-//		String icon_path = "/"+plugin_ID+"."+default_design_project+"/"+default_icon_folder+"/"+target_icon_name;
-		String icon_path = "/"+plugin_ID+"."+default_design_project+"/"+default_icon_folder+"/"+icon_name;
-		return icon_path;
+		final String pluginID = VpDslConfigurationHelper.getRootProjectName(vpElement);
+		return "/"+pluginID+"."+DEFAULT_DESIGN_PROJECT+"/"+DEFAULT_ICON_FOLDER+"/"+iconName;
 	}
 	
 	/**
@@ -76,58 +73,61 @@ public class IconPathHelper {
 	 * @throws InterruptedException 
 	 * @throws InvocationTargetException 
 	 */
-	public static boolean copyIconFile(String icon_name, NamedElement vpElement) 
+	public static boolean copyIconFile(String iconName, NamedElement vpElement) 
 							throws CoreException, InvocationTargetException, InterruptedException{
 		boolean result = true;
-		IFolder source_folder = VpDslProjectHelper.getVpDslIconFolder(vpElement, false);
-		if (source_folder == null || !source_folder.exists())
+		IFolder sourceFolder = VpDslProjectHelper.getVpDslIconFolder(vpElement, false);
+		if (sourceFolder == null || !sourceFolder.exists())
+		{
 			return false;
+		}
 		
-		final IFile source_icon = source_folder.getFile(icon_name);
-		if (source_icon == null || ! source_icon.exists())
+		final IFile sourceIcon = sourceFolder.getFile(iconName);
+		if (sourceIcon == null || ! sourceIcon.exists())
+		{
 			return false;
+		}
 		
 //		String target_icon_name = computeTargetIconFileName(icon_name, vpElement);
-		IFolder target_folder = getTargetFolder(vpElement);
+		IFolder targetFolder = getTargetFolder(vpElement);
 		
-		final IFile target_icon = target_folder.getFile(icon_name);
+		final IFile targetIcon = targetFolder.getFile(iconName);
 		
 		WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
 			@Override
 			protected void execute(IProgressMonitor monitor) throws CoreException,
 					InvocationTargetException, InterruptedException {
-				if (target_icon.exists())
+				if (targetIcon.exists())
 				{
-					target_icon.delete(false, null_progress_monitor);
+					targetIcon.delete(false, NPM);
 				}
-				source_icon.copy(target_icon.getFullPath(), true, null_progress_monitor);
+				sourceIcon.copy(targetIcon.getFullPath(), true, NPM);
 			}
 		};
-		operation.run(null_progress_monitor);
-		
+		operation.run(NPM);
 		return result;
 	}
 	
 	private static IFolder getTargetFolder(NamedElement vpElement) 
 							throws CoreException, InvocationTargetException, InterruptedException{
-		String plugin_ID = VpDslConfigurationHelper.getRootProjectName(vpElement);
-		String Design_Project_path = "/"+plugin_ID+"."+default_design_project;
+		String pluginID = VpDslConfigurationHelper.getRootProjectName(vpElement);
+		String designProjectPath = "/"+pluginID+"."+DEFAULT_DESIGN_PROJECT;
 		
-		IProject design_project = ResourcesPlugin.getWorkspace().getRoot().getProject(Design_Project_path);
-		final IFolder design_icon_folder = design_project.getFolder(default_icon_folder);
-		if (! design_icon_folder.exists())
+		IProject designProject = ResourcesPlugin.getWorkspace().getRoot().getProject(designProjectPath);
+		final IFolder designIconFolder = designProject.getFolder(DEFAULT_ICON_FOLDER);
+		if (! designIconFolder.exists())
 		{
 			WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
 				@Override
 				protected void execute(IProgressMonitor monitor) throws CoreException,
 						InvocationTargetException, InterruptedException {
-					design_icon_folder.create(true, true, null_progress_monitor);
+					designIconFolder.create(true, true, NPM);
 				}
 			};
-			operation.run(null_progress_monitor);
+			operation.run(NPM);
 		}
 		
-		return design_icon_folder;
+		return designIconFolder;
 	}
 	
 	/**
@@ -138,14 +138,14 @@ public class IconPathHelper {
 	 * @return
 	 */
 	@Deprecated
-	private static String computeTargetIconFileName(String icon_name, NamedElement vpElement){
-		String vpElement_name = vpElement.getName();
-		String icon_ext = getIconFileExtension(icon_name);
-		if (vpElement_name.trim().length() == 0)
+	private static String computeTargetIconFileName(String iconName, NamedElement vpElement){
+		String vpElementName = vpElement.getName();
+		String iconExt = getIconFileExtension(iconName);
+		if (vpElementName.trim().length() == 0)
 		{
-			throw new IllegalArgumentException(vpElement_name_is_null);
+			throw new IllegalArgumentException(VPELEMENT_NAME_IS_NULL);
 		}
-		return (icon_ext.trim().length() > 0 ? vpElement_name + "." + icon_ext : vpElement_name);
+		return (iconExt.trim().length() > 0 ? vpElementName + "." + iconExt : vpElementName);
 	}
 	
 	/**
@@ -153,12 +153,12 @@ public class IconPathHelper {
 	 * @param icon_name: the value of the attribute icon
 	 * @return icon file extension or empty string
 	 */
-	private static String getIconFileExtension(String icon_name){
-		int point_index = icon_name.lastIndexOf(".");
-		String icon_ext = "";
-		if (point_index != -1)
-			icon_ext = icon_name.substring(point_index + 1);
+	private static String getIconFileExtension(String iconName){
+		int pointIndex = iconName.lastIndexOf(".");
+		String iconExt = "";
+		if (pointIndex != -1)
+			iconExt = iconName.substring(pointIndex + 1);
 		
-		return icon_ext;
+		return iconExt;
 	}
 }

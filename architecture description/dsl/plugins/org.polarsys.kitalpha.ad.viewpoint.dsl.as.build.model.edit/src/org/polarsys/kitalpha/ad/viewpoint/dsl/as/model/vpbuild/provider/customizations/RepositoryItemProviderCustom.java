@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpbuild.provider.Reposito
 
 /**
  * 
- * @author Faycal Abka
+ * @author Faycal Abka, Boubekeur Zendagui
  *
  */
 public class RepositoryItemProviderCustom extends RepositoryItemProvider {
@@ -38,16 +38,23 @@ public class RepositoryItemProviderCustom extends RepositoryItemProvider {
 		
 		buf.append("Repository: ");
 		if (label == null)
+		{
 			buf.append("[Unknown Protocol] ");
-		if (label.equals("svnssh"))
-			buf.append("[svn+ssh] ");
-		if (label.equals("svn"))
-			buf.append("[svn] ");
+		}
+		else
+		{
+			if (label.equals("svnssh"))
+				buf.append("[svn+ssh] ");
+			if (label.equals("svn"))
+				buf.append("[svn] ");
+		}
+		
 		
 		if (url == null)
 			buf.append("Unknown repository");
+		else
+			buf.append(url);
 		
-		buf.append(url);
 		return buf.toString();
 	}
 
