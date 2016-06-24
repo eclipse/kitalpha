@@ -18,6 +18,12 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -69,18 +75,30 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.jobs.Job;
 
 /**
  * @author Thomas Guiu
  * 
  */
 public class ViewpointManagerView extends ViewPart {
+
+	private final class RefreshJob extends Job {
+		private RefreshJob() {
+			super("Refresh ViewpointManager view");
+		}
+
+		@Override
+		protected IStatus run(IProgressMonitor monitor) {
+			final Description[] availableViewpoints = ViewpointManager.getAvailableViewpointDescriptions();
+			getSite().getShell().getDisplay().asyncExec(new Runnable() {
+				public void run() {
+					viewer.setInput(availableViewpoints);
+					updateButtons(null);
+				}
+			});
+			return Status.OK_STATUS;
+		}
+	}
 
 	private final class HeaderSelectionListener extends SelectionListener2 {
 		private final TableViewerSorter comparator;
@@ -148,21 +166,21 @@ public class ViewpointManagerView extends ViewPart {
 	private ViewpointManager.OverallListener vpListener = new ViewpointManager.OverallListener() {
 
 		public void hasBeenDeactivated(Object ctx, Resource vp) {
-			performInit();
+			init();
 		}
 
 		public void hasBeenActivated(Object ctx, Resource vp) {
-			performInit();
+			init();
 		}
 
 		@Override
 		public void hasBeenFiltered(Object ctx, Resource vp) {
-			performInit();
+			init();
 		}
 
 		@Override
 		public void hasBeenDisplayed(Object ctx, Resource vp) {
-			performInit();
+			init();
 		}
 	};
 	private final IResourceChangeListener wsListener = new IResourceChangeListener() {
@@ -171,14 +189,13 @@ public class ViewpointManagerView extends ViewPart {
 			IResourceDelta delta = event.getDelta();
 			IResource resource = event.getResource();
 			int type = event.getType();
-			if ((type == IResourceChangeEvent.PRE_DELETE || type == IResourceChangeEvent.PRE_CLOSE)
-					&& resource instanceof IProject)
-				performInit();
+			if ((type == IResourceChangeEvent.PRE_DELETE || type == IResourceChangeEvent.PRE_CLOSE) && resource instanceof IProject)
+				delayedInit();
 			else if (type == IResourceChangeEvent.POST_CHANGE) {
 				for (IResourceDelta childDelta : delta.getAffectedChildren()) {
 					resource = childDelta.getResource();
 					if (resource instanceof IProject) {
-						performInit();
+						delayedInit();
 						break;
 					}
 				}
@@ -203,61 +220,59 @@ public class ViewpointManagerView extends ViewPart {
 		init();
 		ViewpointManager.addOverallListener(vpListener);
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(wsListener);
-		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService()
-				.addSelectionListener(new ISelectionListener() {
+		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().addSelectionListener(new ISelectionListener() {
 
-					@Override
-					public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-						context = null;
-						if (part instanceof IEditingDomainProvider) {
-							IEditingDomainProvider prov = (IEditingDomainProvider) part;
-							EditingDomain editingDomain = prov.getEditingDomain();
-							if (editingDomain != null)
-								context = editingDomain.getResourceSet();
-						}
-						if (context == null) {
-							EditingDomain obj = (EditingDomain) part.getAdapter(EditingDomain.class);
-							if (obj != null) {
-								context = obj.getResourceSet();
-							}
-						}
-						if (context == null)
-							analyseSelection(selection);
-						
-						if (!label.isDisposed())
-							label.setText(computeLabel());
-						if (!viewer.getControl().isDisposed()) {
-							updateButtons(null);
-							labelProvider.setContext(context);
-							viewer.refresh();
-						}
+			@Override
+			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+				context = null;
+				if (part instanceof IEditingDomainProvider) {
+					IEditingDomainProvider prov = (IEditingDomainProvider) part;
+					EditingDomain editingDomain = prov.getEditingDomain();
+					if (editingDomain != null)
+						context = editingDomain.getResourceSet();
+				}
+				if (context == null) {
+					EditingDomain obj = (EditingDomain) part.getAdapter(EditingDomain.class);
+					if (obj != null) {
+						context = obj.getResourceSet();
 					}
+				}
+				if (context == null)
+					analyseSelection(selection);
 
-					private String computeLabel() {
-						if (context == null)
-							return Messages.ViewpointManagerView_default_label;
-						if (context.getResources().isEmpty())
-							return "";
-						String segment = context.getResources().get(0).getURI().segment(1);
-						return "Project " + segment;
+				if (!label.isDisposed())
+					label.setText(computeLabel());
+				if (!viewer.getControl().isDisposed()) {
+					updateButtons(null);
+					labelProvider.setContext(context);
+					viewer.refresh();
+				}
+			}
+
+			private String computeLabel() {
+				if (context == null)
+					return Messages.ViewpointManagerView_default_label;
+				if (context.getResources().isEmpty())
+					return "";
+				String segment = context.getResources().get(0).getURI().segment(1);
+				return "Project " + segment;
+			}
+
+			private void analyseSelection(ISelection selection) {
+
+				if (selection.isEmpty())
+					return;
+				if (selection instanceof TreeSelection) {
+					Object[] selected = ((TreeSelection) selection).toArray();
+					if (selected[0] instanceof EObject) {
+						org.eclipse.emf.ecore.resource.Resource eResource = ((EObject) selected[0]).eResource();
+						if (eResource != null)
+							context = eResource.getResourceSet();
 					}
+				}
+			}
 
-					private void analyseSelection(ISelection selection) {
-
-						if (selection.isEmpty())
-							return;
-						if (selection instanceof TreeSelection) {
-							Object[] selected = ((TreeSelection) selection).toArray();
-							if (selected[0] instanceof EObject)
-							{
-								org.eclipse.emf.ecore.resource.Resource eResource = ((EObject) selected[0]).eResource();
-								if (eResource != null)
-									context = eResource.getResourceSet();
-							}
-						}
-					}
-
-				});
+		});
 	}
 
 	public void createViewer(final Composite composite) {
@@ -312,43 +327,25 @@ public class ViewpointManagerView extends ViewPart {
 				updateButtons((IStructuredSelection) event.getSelection());
 			}
 		});
-		
+
 		viewer.addFilter(new ViewerFilter() {
-			
+
 			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				if (((Description)element).shloudBeHidden() )
+				if (((Description) element).shloudBeHidden())
 					return showHiddenViewpointAction.isChecked();
 				return true;
 			}
 		});
 	}
 
-	private void performInit() {
-		getSite().getShell().getDisplay().asyncExec(new Runnable() {
-
-			public void run() {
-				init();
-			}
-		});
+	private void delayedInit() {
+		new RefreshJob().schedule(1000);
 	}
 
 	private void init() {
 
-		new Job("Refresh ViewpointManager view") {
-
-			@Override
-			protected IStatus run(IProgressMonitor monitor) {
-				final Description[] availableViewpoints = ViewpointManager.getAvailableViewpointDescriptions();
-				getSite().getShell().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						viewer.setInput(availableViewpoints);
-						updateButtons(null);
-					}
-				});
-				return Status.OK_STATUS;
-			}
-		}.schedule();
+		new RefreshJob().schedule();
 	}
 
 	private void hookDoubleClickAction() {
@@ -487,14 +484,12 @@ public class ViewpointManagerView extends ViewPart {
 				if (!vpMgr.isUsed(res.getId()))
 					return;
 				try {
-					if (!MessageDialog.openQuestion(getSite().getShell(), "Stop using viewpoint " + res.getLabel(),
-							"Viewpoint Detachment is required. Close model and Proceed ?"))
+					if (!MessageDialog.openQuestion(getSite().getShell(), "Stop using viewpoint " + res.getLabel(), "Viewpoint Detachment is required. Close model and Proceed ?"))
 						return;
 					// Launch detach editor
 					// if the detachement is successful then the viewpoint is no more in use
 					org.eclipse.emf.ecore.resource.Resource resource = context.getResources().get(0);
-					IFile file = ResourcesPlugin.getWorkspace().getRoot()
-							.getFile(new Path(resource.getURI().toPlatformString(true)));
+					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(resource.getURI().toPlatformString(true)));
 					DetachmentHelper.openEditor(file, new NullProgressMonitor());
 
 				} catch (Exception e) {
