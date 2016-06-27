@@ -110,7 +110,7 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 
 	private void computeActiveServices(Map<Viewpoint, ModelManager> vp2mgr, Map<Viewpoint, List<ViewpointElement>> vp2elt, EObject selectedObj) {
 		for (Viewpoint vp : sort(getAvailableViewpoints())) {
-			if (vp.isAbstract() || !ViewpointManager.getInstance(selectedObj).isActive(vp.getId())) {
+			if (selectedObj == null || vp.isAbstract() || !ViewpointManager.getInstance(selectedObj).isActive(vp.getId())) {
 				continue;
 			}
 			ModelManager vpMgr = ModelManager.createWorkspaceManager(vp);
