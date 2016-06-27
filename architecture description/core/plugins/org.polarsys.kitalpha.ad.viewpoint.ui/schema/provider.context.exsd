@@ -3,7 +3,7 @@
 <schema targetNamespace="org.polarsys.kitalpha.ad.viewpoint.ui" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.polarsys.kitalpha.ad.viewpoint.ui" id="org.polarsys.kitalpha.ad.viewpoint.ui.provider.selection" name="Selection provider"/>
+         <meta.schema plugin="org.polarsys.kitalpha.ad.viewpoint.ui" id="org.polarsys.kitalpha.ad.viewpoint.ui.provider.context" name="ViewpointMangerView context provider"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -17,8 +17,8 @@
          </appinfo>
       </annotation>
       <complexType>
-         <sequence>
-            <element ref="SelectionProvider"/>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="ContextProvider"/>
          </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -47,7 +47,7 @@
       </complexType>
    </element>
 
-   <element name="SelectionProvider">
+   <element name="ContextProvider">
       <complexType>
          <attribute name="class" type="string" use="required">
             <annotation>
@@ -55,24 +55,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFSelectionProvider"/>
-               </appinfo>
-            </annotation>
-         </attribute>
-         <attribute name="label" type="string">
-            <annotation>
-               <documentation>
-                  
-               </documentation>
-            </annotation>
-         </attribute>
-         <attribute name="id" type="string" use="required">
-            <annotation>
-               <documentation>
-                  
-               </documentation>
-               <appinfo>
-                  <meta.attribute kind="identifier"/>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider"/>
                </appinfo>
             </annotation>
          </attribute>

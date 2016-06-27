@@ -73,6 +73,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
+import org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
@@ -224,21 +225,7 @@ public class ViewpointManagerView extends ViewPart {
 
 			@Override
 			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-				context = null;
-				if (part instanceof IEditingDomainProvider) {
-					IEditingDomainProvider prov = (IEditingDomainProvider) part;
-					EditingDomain editingDomain = prov.getEditingDomain();
-					if (editingDomain != null)
-						context = editingDomain.getResourceSet();
-				}
-				if (context == null) {
-					EditingDomain obj = (EditingDomain) part.getAdapter(EditingDomain.class);
-					if (obj != null) {
-						context = obj.getResourceSet();
-					}
-				}
-				if (context == null)
-					analyseSelection(selection);
+				context = analyseChange(part, selection);
 
 				if (!label.isDisposed())
 					label.setText(computeLabel());
@@ -258,18 +245,15 @@ public class ViewpointManagerView extends ViewPart {
 				return "Project " + segment;
 			}
 
-			private void analyseSelection(ISelection selection) {
+			private ResourceSet analyseChange(IWorkbenchPart part, ISelection selection) {
 
-				if (selection.isEmpty())
-					return;
-				if (selection instanceof TreeSelection) {
-					Object[] selected = ((TreeSelection) selection).toArray();
-					if (selected[0] instanceof EObject) {
-						org.eclipse.emf.ecore.resource.Resource eResource = ((EObject) selected[0]).eResource();
-						if (eResource != null)
-							context = eResource.getResourceSet();
-					}
+				for (AFContextProvider prov : AFContextProvider.INSTANCE.getProviders())
+				{
+					ResourceSet computeContext = prov.computeContext(part, selection);
+					if (computeContext != null)
+						return computeContext;
 				}
+				return null;
 			}
 
 		});
