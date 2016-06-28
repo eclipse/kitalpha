@@ -7,5 +7,11 @@
             class="org.polarsys.kitalpha.ad.integration.amalgam.Activator">
       </tool>
    </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.ui.provider.context">
+      <ContextProvider
+            class="org.polarsys.kitalpha.ad.integration.amalgam.providers.AmalgamContextProvider">
+      </ContextProvider>
+   </extension>
 
 </plugin>

@@ -10,8 +10,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.integration.sirius,
  org.eclipse.amalgam.explorer.activity.ui,
- org.eclipse.ui.views.properties.tabbed
+ org.eclipse.ui.views.properties.tabbed,
+ org.eclipse.emf.transaction
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.integration.amalgam.listeners,
- org.polarsys.kitalpha.ad.integration.amalgam.pages
+ org.polarsys.kitalpha.ad.integration.amalgam.pages,
+ org.polarsys.kitalpha.ad.integration.amalgam.providers
