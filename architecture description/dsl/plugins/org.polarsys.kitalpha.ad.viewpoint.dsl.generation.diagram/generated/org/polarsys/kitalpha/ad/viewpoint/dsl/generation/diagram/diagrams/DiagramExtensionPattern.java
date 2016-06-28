@@ -103,7 +103,7 @@ public class DiagramExtensionPattern
 		doremiParent = dLayer;
 
 		// Adding the diagram extension to the generated viewpoint
-		DoremiResourceManager.generate_viewpoint.getOwnedRepresentationExtensions().add(ddiagramED);
+		DoremiResourceManager.getGenerateViewpoint().getOwnedRepresentationExtensions().add(ddiagramED);
 
 		// Get the reference SystemColorPalette.
 		Group grp = (Group) ddiagramED.eContainer().eContainer();

@@ -147,7 +147,7 @@ public class GenJavaServiceCommonPattern
 
 		if (java_service_data != null) {
 			String JS_Name = packagename + "." + classname;
-			Viewpoint vp = DoremiResourceManager.generate_viewpoint;
+			Viewpoint vp = DoremiResourceManager.getGenerateViewpoint();
 			JavaExtension java_extension = DescriptionFactory.eINSTANCE.createJavaExtension();
 			java_extension.setQualifiedClassName(JS_Name);
 			vp.getOwnedJavaExtensions().add(java_extension);

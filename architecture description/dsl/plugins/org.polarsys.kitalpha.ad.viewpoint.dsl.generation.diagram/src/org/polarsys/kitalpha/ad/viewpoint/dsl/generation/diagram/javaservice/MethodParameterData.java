@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,38 +17,38 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice;
 
 public class MethodParameterData {
 
-	private String _name;
-	private String _type;
-	private String _documentation;
+	private String name;
+	private String type;
+	private String documentation;
 	
 	public MethodParameterData(String name, String type, String documentation) {
-		_name = name;
-		_type = type;
-		_documentation = documentation;
+		this.name = name;
+		this.type = type;
+		this.documentation = documentation;
 	}
 
 	public String getName() {
-		return _name;
+		return name;
 	}
 
 	public void setName(String name) {
-		this._name = name;
+		this.name = name;
 	}
 
 	public String getType() {
-		return _type;
+		return this.type;
 	}
 
 	public void setType(String type) {
-		this._type = type;
+		this.type = type;
 	}
 
 	public String getDocumentation() {
-		return _documentation;
+		return this.documentation;
 	}
 
 	public void setDocumentation(String documentation) {
-		this._documentation = documentation;
+		this.documentation = documentation;
 	}
 	
 	@Override
@@ -56,12 +56,14 @@ public class MethodParameterData {
 		if (arg0 instanceof MethodParameterData)
 		{
 			MethodParameterData foreignParameterData = (MethodParameterData) arg0;
-			if (this._type == foreignParameterData.getType())
-				return true;
-			else
-				return false;
+			return this.type.equals(foreignParameterData.getType());
 		}
 		
 		return super.equals(arg0);
+	}
+	
+	@Override
+	public int hashCode() {
+		return super.hashCode();
 	}
 }
