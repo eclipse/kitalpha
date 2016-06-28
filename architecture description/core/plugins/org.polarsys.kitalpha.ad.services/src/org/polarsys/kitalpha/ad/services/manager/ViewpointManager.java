@@ -42,6 +42,7 @@ import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
+import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
 import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
@@ -159,8 +160,14 @@ public class ViewpointManager {
 	public static IStatus checkViewpointsCompliancy(ResourceSet context) {
 		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
 
+		
+		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
+		if (!viewpointMetadata.hasMetadata()) {
+			error.add(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Cannot find metadate resource"));
+			return error;
+		}
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
-		Map<String, Version> viewpointUsages = MetadataHelper.getViewpointMetadata(context).getViewpointUsages();
+		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointUsages();
 
 		for (Entry<String, Version> usage : viewpointUsages.entrySet()) {
 			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());

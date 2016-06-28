@@ -166,13 +166,17 @@ public class ViewpointMetadata {
 		return uri;
 	}
 
+	public boolean hasMetadata() {
+		return getMetadataStorage() != null;
+	}
+	
 	protected Metadata getMetadataStorage() {
 		Resource resource = getResource(STORAGE_EXTENSION);
 		if (resource == null )
 			return null;
+		if (resource.getContents().isEmpty())
+			return null;
 		Metadata integ = (Metadata) resource.getContents().get(0);
-		if (integ == null)
-			throw new IllegalStateException("can't find metadata resource");
 		return integ;
 	}
 
