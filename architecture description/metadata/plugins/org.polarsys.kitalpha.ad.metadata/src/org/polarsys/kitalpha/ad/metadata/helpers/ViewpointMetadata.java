@@ -19,14 +19,10 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.commands.CreateMetadataResourceCommand;
 import org.polarsys.kitalpha.ad.metadata.commands.MetadataCommand;
-import org.polarsys.kitalpha.ad.metadata.commands.SetViewpointFilterCommand;
-import org.polarsys.kitalpha.ad.metadata.commands.SetViewpointUsageCommand;
-import org.polarsys.kitalpha.ad.metadata.commands.UpdateViewpointVersionCommand;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
@@ -40,7 +36,7 @@ public class ViewpointMetadata {
 	public static final String STORAGE_EXTENSION = "afm";
 
 	private final ResourceSet context;
-	
+
 	public ViewpointMetadata(ResourceSet context) {
 		this.context = context;
 	}
@@ -49,23 +45,48 @@ public class ViewpointMetadata {
 		Map<String, Version> id2version = new HashMap<String, Version>();
 		if (context.getResources().isEmpty())
 			return id2version;
-		
+
 		Metadata metadataStorage = getMetadataStorage();
 
 		if (metadataStorage == null)
 			return id2version;
-			
-		for (ViewpointUsage usedViewpoint : metadataStorage.getViewpointUsages()) 
+
+		for (ViewpointUsage usedViewpoint : metadataStorage.getViewpointUsages())
 			id2version.put(usedViewpoint.getVpId(), usedViewpoint.getVersion());
 		return id2version;
+	}
+
+	public Version getVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource) {
+		Metadata metadata = getMetadataStorage();
+		if (metadata == null)
+			throw new IllegalStateException("cannot find integration resource");
+
+		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+			if (vpResource.getId().equals(uv.getVpId())) {
+				return uv.getVersion();
+			}
+		}
+		return null;
 	}
 	
 	public void updateVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version) {
 		Metadata metadata = getMetadataStorage();
 		if (metadata == null)
-			throw new UnsupportedOperationException("cannot find integration resource");
+			throw new IllegalStateException("cannot find integration resource");
 
-		executeCommand(new UpdateViewpointVersionCommand(metadata, vpResource, version));
+		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+			if (vpResource.getId().equals(uv.getVpId())) {
+				uv.setVersion(version);
+				return ;
+			}
+		}
+		throw new IllegalStateException("Cannot set version since Viewpoint '"+vpResource.getName()+"' is not in use.");
+//		ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
+//		uv.setFiltered(false);
+//		uv.setVpId(vpResource.getId());
+//		uv.setVersion(version);
+//		metadata.getViewpointUsages().add(uv);
+
 	}
 
 	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version, boolean usage) {
@@ -73,18 +94,28 @@ public class ViewpointMetadata {
 		if (metadata == null)
 			throw new UnsupportedOperationException("cannot find metadata resource");
 
-		executeCommand(new SetViewpointUsageCommand(metadata, vpResource, version, usage));
-	}
+		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+			if (vpResource.getId().equals(uv.getVpId())) {
+				if (usage)
+					return; // object is already there, nothing to do
+				metadata.getViewpointUsages().remove(uv);
+			}
 
-	private void executeCommand(MetadataCommand command) {
-			command.execute();
+		}
+		if (usage) {
+			ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
+			uv.setFiltered(false);
+			uv.setVpId(vpResource.getId());
+			uv.setVersion(version);
+			metadata.getViewpointUsages().add(uv);
+		}
 	}
 
 	private void executeCommandInTransaction(MetadataCommand command) {
 		EditingDomain editingDomain = TransactionUtil.getEditingDomain(context);
 		if (editingDomain == null && context instanceof IEditingDomainProvider)
-			editingDomain = ((IEditingDomainProvider)context).getEditingDomain();
-		
+			editingDomain = ((IEditingDomainProvider) context).getEditingDomain();
+
 		if (editingDomain == null)
 			command.execute();
 		else
@@ -96,7 +127,11 @@ public class ViewpointMetadata {
 		if (metadata == null)
 			throw new UnsupportedOperationException("cannot find integration resource");
 
-		executeCommand(new SetViewpointFilterCommand(metadata, id, filter));
+		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+			if (id.equals(uv.getVpId())) {
+				uv.setFiltered(filter);
+			}
+		}
 	}
 
 	public boolean isInUse(String id) {
@@ -126,15 +161,17 @@ public class ViewpointMetadata {
 
 		return context.getResource(location, true);
 	}
+
 	/**
 	 * Used by generated editors
+	 * 
 	 * @return
 	 */
 	public Resource initMetadataStorage() {
 		URI uri = getMetadataStorageURI();
 		try {
 			context.getResource(uri, true);
-		}catch ( Exception e) {
+		} catch (Exception e) {
 			return createMetadataStorage(uri);
 		}
 		return null;
@@ -149,7 +186,7 @@ public class ViewpointMetadata {
 		}
 		resource = context.createResource(uri);
 		Metadata integration = MetadataFactory.eINSTANCE.createMetadata();
-		//TODO init the integration object
+		// TODO init the integration object
 		context.getResources().add(resource);
 		resource.getContents().add(integration);
 		return resource;
@@ -169,10 +206,10 @@ public class ViewpointMetadata {
 	public boolean hasMetadata() {
 		return getMetadataStorage() != null;
 	}
-	
+
 	protected Metadata getMetadataStorage() {
 		Resource resource = getResource(STORAGE_EXTENSION);
-		if (resource == null )
+		if (resource == null)
 			return null;
 		if (resource.getContents().isEmpty())
 			return null;

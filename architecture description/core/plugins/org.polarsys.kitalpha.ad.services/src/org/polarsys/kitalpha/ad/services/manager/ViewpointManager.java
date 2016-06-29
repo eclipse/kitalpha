@@ -33,6 +33,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -160,7 +161,6 @@ public class ViewpointManager {
 	public static IStatus checkViewpointsCompliancy(ResourceSet context) {
 		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
 
-		
 		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
 		if (!viewpointMetadata.hasMetadata()) {
 			error.add(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Cannot find metadate resource"));
@@ -251,8 +251,10 @@ public class ViewpointManager {
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
 		if (!isUsed(id))
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
-		MetadataHelper.getViewpointMetadata(target).setFilter(id, state);
-		fireEvent(vpResource, state ? FILTERED : DISPLAYED);
+
+		ChangeViewpointVisibilityCommand command = new ChangeViewpointVisibilityCommand(vpResource, !state);
+		executeCommand(command);
+
 	}
 
 	public void activate(String id) throws ViewpointActivationException {
@@ -280,11 +282,16 @@ public class ViewpointManager {
 	protected void doStartUse(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
-		TransactionalEditingDomain editingDomain = (TransactionalEditingDomain)TransactionUtil.getEditingDomain(target);
-		if (editingDomain == null && set instanceof IEditingDomainProvider)
-			editingDomain = (TransactionalEditingDomain)((IEditingDomainProvider)target).getEditingDomain();
 
 		Command command = new UseViewpointCommand(vpResource, set);
+		executeCommand(command);
+	}
+
+	private void executeCommand(Command command) {
+		EditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
+		if (editingDomain == null && target instanceof IEditingDomainProvider)
+			editingDomain = ((IEditingDomainProvider) target).getEditingDomain();
+
 		editingDomain.getCommandStack().execute(command);
 	}
 
@@ -428,6 +435,39 @@ public class ViewpointManager {
 		}
 	}
 
+	protected final class ChangeViewpointVisibilityCommand extends AbstractCommand {
+
+		private boolean visible;
+		private Resource vpResource;
+
+		public ChangeViewpointVisibilityCommand(Resource vpResource, boolean visible) {
+			super(visible ? "Show viewpoint" : "Hide viewpoint");
+			this.vpResource = vpResource;
+			this.visible = visible;
+		}
+
+		@Override
+		public void execute() {
+			MetadataHelper.getViewpointMetadata(target).setFilter(vpResource.getId(), !visible);
+			fireEvent(vpResource, visible ? DISPLAYED : FILTERED);
+		}
+
+		public void undo() {
+			MetadataHelper.getViewpointMetadata(target).setFilter(vpResource.getId(), visible);
+			fireEvent(vpResource, !visible ? DISPLAYED : FILTERED);
+		}
+
+		@Override
+		public void redo() {
+			execute();
+		}
+
+		protected boolean prepare() {
+			return true;
+		}
+
+	}
+
 	protected final class UseViewpointCommand extends AbstractCommand {
 		private final Resource vpResource;
 		private final ResourceSet set;
@@ -445,7 +485,7 @@ public class ViewpointManager {
 			if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
 				managed.add(vpResource.getProviderSymbolicName());
 			fireEvent(vpResource, ACTIVATED);
-			
+
 		}
 
 		@Override
@@ -459,9 +499,8 @@ public class ViewpointManager {
 			execute();
 		}
 
-		protected boolean prepare()
-		{
-		    return true;
+		protected boolean prepare() {
+			return true;
 		}
 	}
 

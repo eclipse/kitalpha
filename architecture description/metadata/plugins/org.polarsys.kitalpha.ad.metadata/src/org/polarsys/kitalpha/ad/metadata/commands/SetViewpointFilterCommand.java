@@ -10,11 +10,8 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.metadata.commands;
 
-import java.util.ArrayList;
-
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 
 /**
  * @author Thomas Guiu
@@ -22,25 +19,21 @@ import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
  */
 public class SetViewpointFilterCommand extends MetadataCommand {
 
-	private Metadata metadata;
 	private String vpid;
 	private boolean filter;
+	private ResourceSet ctx;
 
-	public SetViewpointFilterCommand(Metadata metadata, String vpid, boolean filter) {
-		super(filter?"Hide viewpoint":"Display viewpoin");
-		this.metadata = metadata;
+	public SetViewpointFilterCommand(ResourceSet ctx, String vpid, boolean filter) {
+		super(filter ? "Hide viewpoint" : "Display viewpoin");
+		this.ctx = ctx;
 		this.vpid = vpid;
 		this.filter = filter;
 	}
 
 	private void perform(boolean filter) {
-		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
-			if (vpid.equals(uv.getVpId())) {
-				uv.setFiltered(filter);
-			}
-
-		}
+		MetadataHelper.getViewpointMetadata(ctx).setFilter(vpid, filter);
 	}
+
 	@Override
 	public void execute() {
 		perform(filter);

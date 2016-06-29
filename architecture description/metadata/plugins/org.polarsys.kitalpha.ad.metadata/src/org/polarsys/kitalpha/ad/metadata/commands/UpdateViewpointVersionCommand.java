@@ -10,12 +10,10 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.metadata.commands;
 
-import java.util.ArrayList;
-
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.osgi.framework.Version;
-import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
-import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
+import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
@@ -24,42 +22,34 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 public class UpdateViewpointVersionCommand extends MetadataCommand {
 
-	private Metadata metadata;
 	private Resource vpResource;
 	private Version version;
 	private Version oldVersion;
+	private ResourceSet ctx;
 
-	public UpdateViewpointVersionCommand(Metadata metadata, Resource resource, Version version) {
+	public UpdateViewpointVersionCommand(ResourceSet ctx, Resource resource, Version version) {
 		super("set viewpoint version");
-		this.metadata = metadata;
+		this.ctx = ctx;
 		this.vpResource = resource;
 		this.version = version;
 	}
 
-		private void perform(Version version) {
-		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
-			if (vpResource.getId().equals(uv.getVpId())) {
-				oldVersion = uv.getVersion();
-				uv.setVersion(version);
-				return ;
-			}
-		}
-		ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
-		uv.setFiltered(false);
-		uv.setVpId(vpResource.getId());
-		uv.setVersion(version);
-		metadata.getViewpointUsages().add(uv);
+	private void perform(Version version) {
+		ViewpointMetadata helper = MetadataHelper.getViewpointMetadata(ctx);
+		oldVersion = helper.getVersion(vpResource);
+		helper.updateVersion(vpResource, version);
 
 	}
-		@Override
-		public void execute() {
-			perform(version);
 
-		}
+	@Override
+	public void execute() {
+		perform(version);
 
-		@Override
-		public void undo() {
-			perform(oldVersion);
-		}
+	}
+
+	@Override
+	public void undo() {
+		perform(oldVersion);
+	}
 
 }
