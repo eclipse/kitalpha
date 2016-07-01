@@ -135,7 +135,9 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 * @generated
 	 */
 	protected BorderedNodeImpl() {
+
 		super();
+
 	}
 
 	/**

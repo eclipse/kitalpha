@@ -85,7 +85,9 @@ public class DiagramSetImpl extends AspectImpl implements DiagramSet {
 	 * @generated
 	 */
 	protected DiagramSetImpl() {
+
 		super();
+
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -102,6 +102,11 @@ public class VpdiagramFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1).before(f.getEdgeDescriptionAccess().getEndLabelKeyword_6_0());
 
 		c.setNoSpace().before(f.getContainerChildrenAccess().getCommaKeyword_3_2_0());
+		
+		c.setLinewrap(1).before(f.getContainerAccess().getSynchronizationModeAssignment_7());
+		c.setLinewrap(1).before(f.getEdgeAccess().getSynchronizationModeAssignment_5());
+		c.setLinewrap(1).before(f.getEdgeImportAccess().getSynchronizationModeAssignment_5());
+		c.setLinewrap(1).before(f.getNodeAccess().getSynchronizationModeAssignment_6());
 
 		for (Keyword comma : f.findKeywords(",")) {
 			c.setNoSpace().before(comma);

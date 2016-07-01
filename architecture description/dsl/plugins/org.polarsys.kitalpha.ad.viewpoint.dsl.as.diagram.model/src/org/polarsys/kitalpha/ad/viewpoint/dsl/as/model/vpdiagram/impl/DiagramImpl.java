@@ -54,7 +54,9 @@ public class DiagramImpl extends DiagramRepresentationImpl implements Diagram {
 	 * @generated
 	 */
 	protected DiagramImpl() {
+
 		super();
+
 	}
 
 	/**

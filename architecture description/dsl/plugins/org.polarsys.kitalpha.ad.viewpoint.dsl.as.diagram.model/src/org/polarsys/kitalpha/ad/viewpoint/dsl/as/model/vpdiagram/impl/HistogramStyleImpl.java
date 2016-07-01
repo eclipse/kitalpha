@@ -59,7 +59,9 @@ public class HistogramStyleImpl extends AbstractNodeStyleImpl implements
 	 * @generated
 	 */
 	protected HistogramStyleImpl() {
+
 		super();
+
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,6 +65,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainEleme
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node_Form;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ReconnectEdge;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.ConfigurationPackage;
@@ -376,6 +377,13 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	private EEnum node_FormEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum synchronizationModeEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -678,6 +686,15 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 */
 	public EClass getDiagramChildren() {
 		return diagramChildrenEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDiagramChildren_SynchronizationMode() {
+		return (EAttribute)diagramChildrenEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1558,6 +1575,15 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getSynchronizationMode() {
+		return synchronizationModeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public VpdiagramFactory getVpdiagramFactory() {
 		return (VpdiagramFactory)getEFactoryInstance();
 	}
@@ -1615,6 +1641,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		createEReference(edgeEClass, EDGE__THE_DOMAIN);
 
 		diagramChildrenEClass = createEClass(DIAGRAM_CHILDREN);
+		createEAttribute(diagramChildrenEClass, DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE);
 
 		createEClass = createEClass(CREATE);
 		createEAttribute(createEClass, CREATE__ICON);
@@ -1746,6 +1773,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		// Create enums
 		node_FormEEnum = createEEnum(NODE_FORM);
+		synchronizationModeEEnum = createEEnum(SYNCHRONIZATION_MODE);
 	}
 
 	/**
@@ -1856,6 +1884,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		initEReference(getEdge_The_domain(), this.getEdgeDomainAssociation(), null, "the_domain", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(diagramChildrenEClass, DiagramChildren.class, "DiagramChildren", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDiagramChildren_SynchronizationMode(), this.getSynchronizationMode(), "synchronizationMode", "", 0, 1, DiagramChildren.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(createEClass, Create.class, "Create", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreate_Icon(), theEcorePackage.getEString(), "icon", null, 0, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1995,6 +2024,11 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		addEEnumLiteral(node_FormEEnum, Node_Form.TRIANGLE);
 		addEEnumLiteral(node_FormEEnum, Node_Form.STROKE);
 		addEEnumLiteral(node_FormEEnum, Node_Form.RING);
+
+		initEEnum(synchronizationModeEEnum, SynchronizationMode.class, "SynchronizationMode");
+		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.UNSYNCHRONIZABLE);
+		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.NOT_SYNCHRONIZED);
+		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.SYNCHRONIZED);
 
 		// Create resource
 		createResource(eNS_URI);

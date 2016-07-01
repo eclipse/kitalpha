@@ -30,7 +30,9 @@ public class ReconnectEdgeImpl extends ActionImpl implements ReconnectEdge {
 	 * @generated
 	 */
 	protected ReconnectEdgeImpl() {
+
 		super();
+
 	}
 
 	/**

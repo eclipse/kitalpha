@@ -55,7 +55,9 @@ public class ContainerDescriptionImpl extends AbstractDescriptionImpl implements
 	 * @generated
 	 */
 	protected ContainerDescriptionImpl() {
+
 		super();
+
 	}
 
 	/**

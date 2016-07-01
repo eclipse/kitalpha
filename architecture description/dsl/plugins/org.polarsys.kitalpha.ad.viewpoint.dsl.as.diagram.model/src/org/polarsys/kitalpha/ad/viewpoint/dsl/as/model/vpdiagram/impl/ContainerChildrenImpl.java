@@ -73,7 +73,9 @@ public class ContainerChildrenImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected ContainerChildrenImpl() {
+
 		super();
+
 	}
 
 	/**

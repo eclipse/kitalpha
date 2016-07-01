@@ -81,7 +81,9 @@ public class BasicStyleImpl extends AbstractNodeStyleImpl implements BasicStyle 
 	 * @generated
 	 */
 	protected BasicStyleImpl() {
+
 		super();
+
 	}
 
 	/**

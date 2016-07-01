@@ -125,7 +125,9 @@ public class EdgeStyleImpl extends EObjectImpl implements EdgeStyle {
 	 * @generated
 	 */
 	protected EdgeStyleImpl() {
+
 		super();
+
 	}
 
 	/**

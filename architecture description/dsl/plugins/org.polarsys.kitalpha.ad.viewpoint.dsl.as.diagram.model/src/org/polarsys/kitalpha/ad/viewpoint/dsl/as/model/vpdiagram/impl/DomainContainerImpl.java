@@ -56,7 +56,9 @@ public class DomainContainerImpl extends EObjectImpl implements DomainContainer 
 	 * @generated
 	 */
 	protected DomainContainerImpl() {
+
 		super();
+
 	}
 
 	/**

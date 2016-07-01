@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,10 +10,18 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
+import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
+import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
+import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
+import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.CommondataPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.ExternalAssociation;
@@ -86,8 +94,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Diagrams;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpdiagramGrammarAccess;
-
-import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -418,6 +424,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *         imports=[ContainerMapping|FQN]? 
 	 *         the_domain=NodeDomainElement? 
 	 *         contentLayout=ContainerLayout? 
+	 *         synchronizationMode=SynchronizationMode? 
 	 *         style+=ContainerDescription* 
 	 *         children=ContainerChildren?
 	 *     )
@@ -592,7 +599,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=EString imports=[EdgeMapping|FQN] e_description+=EdgeDescription*)
+	 *     (name=EString imports=[EdgeMapping|FQN] synchronizationMode=SynchronizationMode? e_description+=EdgeDescription*)
 	 */
 	protected void sequence_EdgeImport(EObject context, EdgeImport semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -637,6 +644,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (
 	 *         name=EString 
 	 *         (the_domain=EdgeDomainAssociation | the_domain=EdgeDomainElement) 
+	 *         synchronizationMode=SynchronizationMode? 
 	 *         source+=[DiagramElement|FQN] 
 	 *         source+=[DiagramElement|FQN]* 
 	 *         target+=[DiagramElement|FQN] 
@@ -982,7 +990,14 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=EString imports=[NodeMapping|FQN]? the_domain=NodeDomainElement? style+=NodeDescription* children=NodeChildren?)
+	 *     (
+	 *         name=EString 
+	 *         imports=[NodeMapping|FQN]? 
+	 *         the_domain=NodeDomainElement? 
+	 *         synchronizationMode=SynchronizationMode? 
+	 *         style+=NodeDescription* 
+	 *         children=NodeChildren?
+	 *     )
 	 */
 	protected void sequence_Node(EObject context, Node semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

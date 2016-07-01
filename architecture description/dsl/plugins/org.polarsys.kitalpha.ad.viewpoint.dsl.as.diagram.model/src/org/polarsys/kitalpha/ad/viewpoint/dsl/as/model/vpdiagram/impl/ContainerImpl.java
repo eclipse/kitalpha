@@ -115,7 +115,9 @@ public class ContainerImpl extends DiagramChildrenImpl implements Container {
 	 * @generated
 	 */
 	protected ContainerImpl() {
+
 		super();
+
 	}
 
 	/**

@@ -53,7 +53,9 @@ public class DiagramGenerationConfigurationImpl extends ExtensionGeneratrionConf
 	 * @generated
 	 */
 	protected DiagramGenerationConfigurationImpl() {
+
 		super();
+
 	}
 
 	/**

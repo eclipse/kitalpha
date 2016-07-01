@@ -69,7 +69,9 @@ public class DiagramExtensionImpl extends DiagramRepresentationImpl implements
 	 * @generated
 	 */
 	protected DiagramExtensionImpl() {
+
 		super();
+
 	}
 
 	/**

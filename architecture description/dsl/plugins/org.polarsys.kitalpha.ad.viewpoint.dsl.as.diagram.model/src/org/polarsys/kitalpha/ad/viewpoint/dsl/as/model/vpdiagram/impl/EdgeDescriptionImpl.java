@@ -101,7 +101,9 @@ public class EdgeDescriptionImpl extends EObjectImpl implements EdgeDescription 
 	 * @generated
 	 */
 	protected EdgeDescriptionImpl() {
+
 		super();
+
 	}
 
 	/**

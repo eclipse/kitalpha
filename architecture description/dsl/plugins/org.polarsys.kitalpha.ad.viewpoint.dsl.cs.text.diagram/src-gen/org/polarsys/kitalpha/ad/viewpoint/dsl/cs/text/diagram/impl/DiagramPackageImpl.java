@@ -7,8 +7,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
+
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.DiagramPackage;

@@ -61,7 +61,9 @@ public class ImageStyleImpl extends AbstractNodeStyleImpl implements ImageStyle 
 	 * @generated
 	 */
 	protected ImageStyleImpl() {
+
 		super();
+
 	}
 
 	/**

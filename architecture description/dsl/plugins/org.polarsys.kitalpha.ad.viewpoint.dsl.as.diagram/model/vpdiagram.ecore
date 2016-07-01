@@ -50,7 +50,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="the_domain" lowerBound="1"
         eType="#//EdgeDomainAssociation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiagramChildren" abstract="true" eSuperTypes="#//DiagramElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramChildren" abstract="true" eSuperTypes="#//DiagramElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationMode" eType="#//SynchronizationMode"
+        defaultValueLiteral=""/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
@@ -223,6 +226,11 @@
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.sirius/model/viewpoint.ecore#//description/Group"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="additionalExternalData"
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationMode">
+    <eLiterals name="Unsynchronizable"/>
+    <eLiterals name="Not_Synchronized" value="1"/>
+    <eLiterals name="Synchronized" value="2"/>
   </eClassifiers>
   <eSubpackages name="configuration" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0"
       nsPrefix="configuration">
