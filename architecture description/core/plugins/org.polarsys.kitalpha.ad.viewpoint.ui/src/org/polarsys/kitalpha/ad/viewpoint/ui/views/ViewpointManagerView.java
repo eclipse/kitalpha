@@ -94,7 +94,7 @@ public class ViewpointManagerView extends ViewPart {
 			getSite().getShell().getDisplay().asyncExec(new Runnable() {
 				public void run() {
 					viewer.setInput(availableViewpoints);
-					updateButtons(null);
+					updateActions(null);
 				}
 			});
 			return Status.OK_STATUS;
@@ -230,7 +230,7 @@ public class ViewpointManagerView extends ViewPart {
 				if (!label.isDisposed())
 					label.setText(computeLabel());
 				if (!viewer.getControl().isDisposed()) {
-					updateButtons(null);
+					updateActions(null);
 					labelProvider.setContext(context);
 					viewer.refresh();
 				}
@@ -308,7 +308,7 @@ public class ViewpointManagerView extends ViewPart {
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			public void selectionChanged(SelectionChangedEvent event) {
-				updateButtons((IStructuredSelection) event.getSelection());
+				updateActions((IStructuredSelection) event.getSelection());
 			}
 		});
 
@@ -397,9 +397,9 @@ public class ViewpointManagerView extends ViewPart {
 		manager.add(showHiddenViewpointAction);
 	}
 
-	protected void updateButtons(IStructuredSelection selection) {
+	protected void updateActions(IStructuredSelection selection) {
 		int size = selection == null ? 0 : selection.size();
-		if (size == 1) {
+		if (size == 1 && !isTeamContext()) {
 			Description res = (Description) selection.getFirstElement();
 			if (context != null) {
 				boolean used = ViewpointManager.getInstance(context).isUsed(res.getId());
@@ -423,6 +423,17 @@ public class ViewpointManagerView extends ViewPart {
 			unFilterAction.setEnabled(false);
 			openViewAction.setResource(null);
 		}
+	}
+
+	private boolean isTeamContext() {
+		if (context != null) 
+		{
+			for (org.eclipse.emf.ecore.resource.Resource re : context.getResources()) {
+				if ("cdo".equals(re.getURI().scheme()))
+					return true;
+			}
+		}
+		return false;
 	}
 
 	private void makeActions() {
