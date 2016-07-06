@@ -28,7 +28,7 @@ public class VpdiagramUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs
 	
 	@Override
 	public Class<? extends IEObjectHover> bindIEObjectHover() {
-		return org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.VpDiagramHover.class;
+		return org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover.class;
 	}
 	
 	
