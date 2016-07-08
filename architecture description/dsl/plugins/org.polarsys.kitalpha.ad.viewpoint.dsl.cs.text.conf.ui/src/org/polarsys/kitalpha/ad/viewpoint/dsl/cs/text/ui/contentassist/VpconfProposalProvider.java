@@ -11,12 +11,21 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
+import java.net.URL;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.Keyword;
@@ -25,10 +34,13 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.RequiredExecutionEnvironmentHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ConfigurationElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratrionConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration;
@@ -46,6 +58,18 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 	
 	private final static String SPACE = " ";
 	private final static String QUOTES = "\""; 
+	
+	private final static Image image;
+	
+	static {
+		final String JDT_PLUGIN_ID = "org.eclipse.jdt.ui";
+		final String LIB_ICON_PATH = "icons/full/obj16/library_obj.png";
+	
+		final Bundle JDT_BUNDLE = Platform.getBundle(JDT_PLUGIN_ID);
+		final URL url = FileLocator.find(JDT_BUNDLE, new Path(LIB_ICON_PATH), Collections.<String, String> emptyMap());
+		
+		image = ImageDescriptor.createFromURL(url).createImage();
+	}
 	
 	@Inject
 	private IGrammarAccess grammar;
@@ -116,12 +140,27 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 								nextNode = nextNode.getNextSibling();
 							}
 						}
+						
+						if (ce instanceof Release){
+							if (proposal.getDisplayString().matches(access.getReleaseAccess().getReleaseKeyword_1().getValue()))
+								return;
+						}
 					}
 				}
 				
 				getPriorityHelper().adjustKeywordPriority(proposal, contentAssistContext.getPrefix());
 				acceptor.accept(proposal);
-				
+			}
+		}
+	}
+	
+	@Override
+	public void completeRelease_RequiredExecutionEnvironment(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		Collection<String> availableExecutionEnvironements = RequiredExecutionEnvironmentHelper.getAvailableExecutionEnvironement();
+		for (String jre : availableExecutionEnvironements) {
+			if (context.getMatcher().isCandidateMatchingPrefix(jre, context.getPrefix())){
+				String jre2 = QUOTES + jre + QUOTES;
+				acceptor.accept(createCompletionProposal(jre2, new StyledString(jre), image, context));
 			}
 		}
 	}

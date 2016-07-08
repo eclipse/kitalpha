@@ -1,3 +1,0 @@
-<%
-fileNameService = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreFileNameService.INSTANCE;
-%>

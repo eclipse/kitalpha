@@ -1,0 +1,177 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _21OdoOOkEeWanemHN2-Kkw
+Element-Name: Switching Sessions
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _t2KGUOOjEeWanemHN2-Kkw
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 3:04 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Open | click
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" | get-menu Open | click
+}
+get-tab-folder -index 2 | get-property activePage | equals "Video On Demande 2 - Activity Explorer" | verify-true
+with [get-editor "Video On Demande 2 - Activity Explorer"] {
+    get-link | click
+    get-canvas -index 3 | get-menu "Video On Demanded" | click
+    with [get-tab-folder] {
+        get-tab-item "Component Sample Architecture" | click
+        get-tab-item "Component Sample Viewpoints" | click
+    }
+}
+get-tab-folder -index 2 | get-property activePage | equals "Video On Demanded - Activity Explorer" | verify-true
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Close | click
+with [get-tab-folder -index 2] {
+    get-property enablement | equals false | verify-true
+    get-property tabCount | equals 0 | verify-true
+}
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" 
+        | get-menu "Open Activity Explorer" | click
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Open | click
+}
+with [get-editor "Video On Demanded - Activity Explorer"] {
+    get-link | click
+    get-canvas -index 3 | get-menu "Video On Demande 2" | click
+    with [get-tab-folder] {
+        get-tab-item "Component Sample Architecture" | click
+        get-tab-item "Component Sample Viewpoints" | click
+    }
+}
+get-tab-folder -index 2 | get-property activePage | equals "Video On Demande 2 - Activity Explorer" | verify-true
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" | get-menu Close | click
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" 
+        | get-menu "Open Activity Explorer" | click
+}
+get-tab-folder -index 2 | get-property activePage | equals "Video On Demanded - Activity Explorer" | verify-true
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" | get-menu Open | click
+get-tab-folder -index 2 | get-property activePage | equals "Video On Demande 2 - Activity Explorer" | verify-true
+get-menu "Window/New Window" | click
+get-eclipse-window -index 1 | get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" 
+    | get-menu "Open Activity Explorer" | click
+get-eclipse-window -index 1 | get-tab-folder -index 2 | get-property activePage 
+    | equals "Video On Demanded - Activity Explorer" | verify-true
+get-eclipse-window -index 1 | get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" 
+    | get-menu "Open Activity Explorer" | click
+get-eclipse-window -index 1 | get-tab-folder -index 2 | get-property activePage 
+    | equals "Video On Demande 2 - Activity Explorer" | verify-true
+with [get-eclipse-window -index 1 | get-editor "Video On Demande 2 - Activity Explorer"] {
+    get-link | click
+    get-canvas -index 3 | get-menu "Video On Demanded" | click
+    with [get-tab-folder] {
+        get-tab-item "Component Sample Architecture" | click
+        get-tab-item "Component Sample Viewpoints" | click
+    }
+}
+get-eclipse-window -index 1 | get-tab-folder -index 2 | get-property activePage 
+    | equals "Video On Demanded - Activity Explorer" | verify-true
+get-eclipse-window -index 1 | get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Close | click
+with [get-tab-folder -index 2] {
+    get-property "pages[0]" | equals "Video On Demande 2 - Activity Explorer" | verify-true
+    get-property activePage | equals "Video On Demande 2 - Activity Explorer" | verify-true
+}
+with [get-eclipse-window -index 1 | get-tab-folder -index 2] {
+    get-property enablement | equals false | verify-true
+    get-property tabCount | equals 0 | verify-true
+}
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Open | click
+get-menu "Window/New Window" | click
+with [get-eclipse-window -index 1] {
+    with [get-view "Project Explorer" | get-tree] {
+        select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" 
+            | get-menu "Open Activity Explorer" | click
+        select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" 
+            | get-menu "Open Activity Explorer" | click
+    }
+    with [get-editor "Video On Demande 2 - Activity Explorer"] {
+        with [get-canvas -index 3] {
+            mouse-press 399 15 button1
+            mouse-release 399 15 button1 524288
+            mouse-move 398 15
+        }
+        get-link | click
+        get-canvas -index 3 | get-menu "Video On Demanded" | click
+        with [get-tab-folder] {
+            get-tab-item "Component Sample Architecture" | click
+            get-tab-item "Component Sample Viewpoints" | click
+        }
+    }
+    get-menu "Window/New Window" | click
+}
+with [get-eclipse-window -index 2] {
+    with [get-view "Project Explorer" | get-tree] {
+        select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" 
+            | get-menu "Open Activity Explorer" | click
+        select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" 
+            | get-menu "Open Activity Explorer" | click
+    }
+    with [get-editor "Video On Demande 2 - Activity Explorer"] {
+        get-link | click
+        get-canvas -index 3 | get-menu "Video On Demanded" | click
+        with [get-tab-folder] {
+            get-tab-item "Component Sample Architecture" | click
+            get-tab-item "Component Sample Viewpoints" | click
+        }
+    }
+    get-menu "Window/New Window" | click
+}
+with [get-eclipse-window -index 3] {
+    with [get-view "Project Explorer" | get-tree] {
+        select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" 
+            | get-menu "Open Activity Explorer" | click
+        select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" 
+            | get-menu "Open Activity Explorer" | click
+    }
+    with [get-editor "Video On Demande 2 - Activity Explorer"] {
+        get-link | click
+        get-canvas -index 3 | get-menu "Video On Demanded" | click
+        with [get-tab-folder] {
+            get-tab-item "Component Sample Architecture" | click
+            get-tab-item "Component Sample Viewpoints" | click
+        }
+    }
+    get-view "Project Explorer" | get-tree 
+        | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Close 
+        | click
+}
+with [get-eclipse-window -index 3 | get-tab-folder -index 2] {
+    get-property enablement | equals false | verify-true
+    get-property tabCount | equals 0 | verify-true
+}
+get-eclipse-window -index 3 | close
+with [get-eclipse-window -index 2 | get-tab-folder -index 2] {
+    get-property enablement | equals false | verify-true
+    get-property tabCount | equals 0 | verify-true
+}
+get-eclipse-window -index 2 | close
+with [get-eclipse-window -index 1 | get-tab-folder -index 2] {
+    get-property enablement | equals false | verify-true
+    get-property tabCount | equals 0 | verify-true
+}
+get-eclipse-window -index 1 | close
+with [get-tab-folder -index 2] {
+    get-property "pages[0]" | equals "Video On Demande 2 - Activity Explorer" | verify-true
+    get-property activePage | equals "Video On Demande 2 - Activity Explorer" | verify-true
+}
+
+
+get-eclipse-window -index 1 | close
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.componentsample.runtime.model2/model/VideoOnDemand2.aird" | get-menu Close 
+    | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

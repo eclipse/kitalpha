@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isModel <em>Model</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isEdit <em>Edit</em>}</li>
@@ -24,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isJavaDoc <em>Java Doc</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isOverwriteEcore <em>Overwrite Ecore</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage#getGData()
  * @model
@@ -39,6 +39,7 @@ public interface GData extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Model</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Model</em>' attribute isn't clear,
@@ -59,6 +60,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isModel <em>Model</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Model</em>' attribute.
@@ -77,6 +79,7 @@ public interface GData extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Edit</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Edit</em>' attribute isn't clear,
@@ -97,6 +100,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isEdit <em>Edit</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Edit</em>' attribute.
@@ -114,6 +118,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Editor</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Editor</em>' attribute isn't clear,
@@ -134,6 +139,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isEditor <em>Editor</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Editor</em>' attribute.
@@ -151,6 +157,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Test</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Test</em>' attribute isn't clear,
@@ -171,6 +178,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isTest <em>Test</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Test</em>' attribute.
@@ -188,6 +196,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Java Doc</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Java Doc</em>' attribute isn't clear,
@@ -208,6 +217,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isJavaDoc <em>Java Doc</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Java Doc</em>' attribute.
@@ -226,6 +236,7 @@ public interface GData extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Overwrite Ecore</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Overwrite Ecore</em>' attribute isn't clear,
@@ -246,6 +257,7 @@ public interface GData extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData#isOverwriteEcore <em>Overwrite Ecore</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Overwrite Ecore</em>' attribute.

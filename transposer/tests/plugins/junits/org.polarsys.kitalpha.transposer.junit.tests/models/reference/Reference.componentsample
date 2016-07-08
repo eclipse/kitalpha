@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentSample:ComponentModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ComponentSample="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"
+    name="Model">
+  <packages xmi:type="ComponentSample:ComponentPackage" name="A">
+    <components xmi:type="ComponentSample:HardwareComponent" name="B">
+      <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="C">
+        <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="D">
+          <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="E">
+            <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="F">
+              <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="G">
+                <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="H">
+                  <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                      name="I">
+                    <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                        name="J">
+                      <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                          name="K">
+                        <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                            name="L">
+                          <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                              name="M">
+                            <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                name="N">
+                              <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                  name="O">
+                                <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                    name="P">
+                                  <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                      name="K">
+                                    <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                        name="R">
+                                      <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                          name="S">
+                                        <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                            name="T">
+                                          <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                              name="W">
+                                            <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                                name="X">
+                                              <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                                  name="Y">
+                                                <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                                    name="Z">
+                                                  <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                      name="1"/>
+                                                </abstractComponent>
+                                                <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                    name="2"/>
+                                              </abstractComponent>
+                                              <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                  name="3"/>
+                                            </abstractComponent>
+                                            <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                name="4"/>
+                                          </abstractComponent>
+                                          <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                              name="5"/>
+                                        </abstractComponent>
+                                        <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                            name="6"/>
+                                      </abstractComponent>
+                                      <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                          name="7"/>
+                                    </abstractComponent>
+                                    <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                        name="8"/>
+                                  </abstractComponent>
+                                  <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                      name="9"/>
+                                </abstractComponent>
+                                <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                    name="10"/>
+                              </abstractComponent>
+                              <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                  name="11"/>
+                            </abstractComponent>
+                            <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                name="12"/>
+                          </abstractComponent>
+                          <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                              name="13"/>
+                        </abstractComponent>
+                        <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                            name="14"/>
+                      </abstractComponent>
+                      <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                          name="15"/>
+                    </abstractComponent>
+                    <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                        name="16"/>
+                  </abstractComponent>
+                  <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                      name="17"/>
+                </abstractComponent>
+                <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="18"/>
+              </abstractComponent>
+              <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="19"/>
+            </abstractComponent>
+            <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="20"/>
+          </abstractComponent>
+          <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="21"/>
+        </abstractComponent>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="22"/>
+      </abstractComponent>
+      <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="23"/>
+    </components>
+    <components xmi:type="ComponentSample:SoftwareComponent" name="24"/>
+  </packages>
+  <packages xmi:type="ComponentSample:ComponentPackage" name="0">
+    <components xmi:type="ComponentSample:HardwareComponent" name="1">
+      <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="3">
+        <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="5">
+          <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="7">
+            <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="9">
+              <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="11">
+                <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="13">
+                  <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                      name="15">
+                    <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                        name="17">
+                      <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                          name="19">
+                        <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                            name="21">
+                          <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                              name="13">
+                            <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                name="25">
+                              <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                  name="27">
+                                <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                    name="29">
+                                  <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                      name="31">
+                                    <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                        name="33">
+                                      <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                          name="35">
+                                        <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                            name="37">
+                                          <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                              name="39">
+                                            <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                                name="41">
+                                              <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                                  name="43">
+                                                <abstractComponent xmi:type="ComponentSample:HardwareComponent"
+                                                    name="45">
+                                                  <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                      name="47"/>
+                                                </abstractComponent>
+                                                <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                    name="46"/>
+                                              </abstractComponent>
+                                              <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                  name="44"/>
+                                            </abstractComponent>
+                                            <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                                name="42"/>
+                                          </abstractComponent>
+                                          <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                              name="40"/>
+                                        </abstractComponent>
+                                        <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                            name="38"/>
+                                      </abstractComponent>
+                                      <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                          name="36"/>
+                                    </abstractComponent>
+                                    <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                        name="34"/>
+                                  </abstractComponent>
+                                  <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                      name="32"/>
+                                </abstractComponent>
+                                <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                    name="30"/>
+                              </abstractComponent>
+                              <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                  name="28"/>
+                            </abstractComponent>
+                            <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                                name="26"/>
+                          </abstractComponent>
+                          <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                              name="24"/>
+                        </abstractComponent>
+                        <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                            name="22"/>
+                      </abstractComponent>
+                      <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                          name="20"/>
+                    </abstractComponent>
+                    <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                        name="18"/>
+                  </abstractComponent>
+                  <abstractComponent xmi:type="ComponentSample:SoftwareComponent"
+                      name="16"/>
+                </abstractComponent>
+                <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="14"/>
+              </abstractComponent>
+              <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="12"/>
+            </abstractComponent>
+            <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="10"/>
+          </abstractComponent>
+          <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="8"/>
+        </abstractComponent>
+        <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="6"/>
+      </abstractComponent>
+      <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="4"/>
+    </components>
+    <components xmi:type="ComponentSample:SoftwareComponent" name="2"/>
+  </packages>
+</ComponentSample:ComponentModel>

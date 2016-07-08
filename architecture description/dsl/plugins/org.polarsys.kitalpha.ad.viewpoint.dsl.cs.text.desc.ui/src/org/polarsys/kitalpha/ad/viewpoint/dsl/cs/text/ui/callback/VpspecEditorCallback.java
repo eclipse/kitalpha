@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -57,6 +57,7 @@ import com.google.inject.Inject;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal ABKA
  *
  */
 public class VpspecEditorCallback extends CommonEditorCallback {
@@ -84,8 +85,8 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 	}
 	
 	private void installCompletionListener() {
-		if (currentEditor != null) {
-			XtextSourceViewer viewer = (XtextSourceViewer) currentEditor.getInternalSourceViewer();
+		if (getCurrentEditor() != null) {
+			XtextSourceViewer viewer = (XtextSourceViewer) getCurrentEditor().getInternalSourceViewer();
 			autoCompletionListener = new ICompletionListener() {
 				public void selectionChanged(ICompletionProposal proposal, boolean smartToggle) {
 					selectedProposal = proposal.getDisplayString();
@@ -158,7 +159,7 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 				if (wizard instanceof AbstractWizard) {
 					AbstractWizard wiz = (AbstractWizard) wizard;
 					Object[] segments = new Object[1];
-					segments[0] = (IFile) currentEditor.getEditorInput().getAdapter(IFile.class);
+					segments[0] = (IFile) getCurrentEditor().getEditorInput().getAdapter(IFile.class);
 					TreeSelection selection = new TreeSelection(new TreePath(segments));				
 					wiz.init(PlatformUI.getWorkbench(), selection);
 					final Display display = PlatformUI.getWorkbench().getDisplay();
@@ -234,8 +235,8 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 	}
 	
 	private void uninstallCompletionListener() {
-		if (currentEditor!=null) {
-			XtextSourceViewer viewer = (XtextSourceViewer) currentEditor.getInternalSourceViewer();
+		if (getCurrentEditor()!=null) {
+			XtextSourceViewer viewer = (XtextSourceViewer) getCurrentEditor().getInternalSourceViewer();
 			viewer.getContentAssistantFacade().removeCompletionListener((ICompletionListener) autoCompletionListener);	
 			viewer.getControl().getDisplay().removeFilter(SWT.Selection, autoCompletionSelectionListener);
 		}

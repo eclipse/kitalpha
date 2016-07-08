@@ -18,11 +18,11 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration#getProjectName <em>Project Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration#getNsuri <em>Nsuri</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage#getGenerationConfiguration()
  * @model
@@ -32,6 +32,7 @@ public interface GenerationConfiguration extends ConfigurationElement {
 
 	/**
 	 * Returns the value of the '<em><b>Project Name</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Project Name</em>' attribute isn't clear,
@@ -49,6 +50,7 @@ public interface GenerationConfiguration extends ConfigurationElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration#getProjectName <em>Project Name</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Project Name</em>' attribute.
@@ -60,6 +62,7 @@ public interface GenerationConfiguration extends ConfigurationElement {
 
 	/**
 	 * Returns the value of the '<em><b>Nsuri</b></em>' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Nsuri</em>' attribute isn't clear,
@@ -77,6 +80,7 @@ public interface GenerationConfiguration extends ConfigurationElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration#getNsuri <em>Nsuri</em>}' attribute.
+
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Nsuri</em>' attribute.

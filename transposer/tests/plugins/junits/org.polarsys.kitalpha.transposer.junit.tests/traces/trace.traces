@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="ASCII"?>
+<traces:TraceRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:traces="http://www.polarsys.org/transposer/transformation/emf/traces">
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4cOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#/"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4ceX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4cuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4c-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4dOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4deX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4duX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4d-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4eOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4eeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4euX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4e-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4fOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4feX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4fuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAK4f-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCYOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCYeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCYuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCY-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCZOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCZeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCZuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCZ-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCaOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCaeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCauX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCa-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCbOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCbeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCbuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCb-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCcOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCceX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCcuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCc-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCdOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCdeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCduX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCd-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCeOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCeeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCeuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCe-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCfOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCfeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCfuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCf-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCgOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCgeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCguX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCg-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUChOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCheX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUChuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCh-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCiOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCieX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCiuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCi-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCjOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCjeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCjuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCj-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCkOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCkeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCkuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAUCk-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzYOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzYeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzYuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzY-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzZOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzZeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzZuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzZ-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzaOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzaeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzauX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdza-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzbOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzbeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAdzbuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9UOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9UeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9UuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9U-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9VOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9VeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9VuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9V-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9WOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9WeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9WuX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9W-X5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.1"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9XOX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.0/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+  <Traces Role="transposer.transformation.role.main">
+    <source href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.uml#_VAm9XeX5EeWqa7kJkfkqWA"/>
+    <target href="platform:/resource/org.polarsys.kitalpha.transposer.junit.tests/models/Input.componentsample#//@packages.1/@components.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0/@abstractComponent.0"/>
+  </Traces>
+</traces:TraceRepository>

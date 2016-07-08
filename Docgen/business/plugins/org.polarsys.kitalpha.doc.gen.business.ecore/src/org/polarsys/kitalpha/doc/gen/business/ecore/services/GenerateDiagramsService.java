@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -115,8 +115,10 @@ public class GenerateDiagramsService{
 		Display.getDefault().syncExec(new Runnable() 
 		{
 			public void run() {
-				diagramEP.getViewer().getControl().dispose();
-				diagramEP.deactivate();
+				if (diagramEP != null){
+					diagramEP.getViewer().getControl().dispose();
+					diagramEP.deactivate();
+				}
 				shell.dispose();
 			}
 		});
@@ -561,7 +563,11 @@ public class GenerateDiagramsService{
 		public void dispose() {
 			_session = null;
 			_semanticResources.clear();
-			_createdRepresentations.clear();
+			/*
+			 * FIXME manage clear of this list properly. 
+			 * Commented to avoid ConccurrentModificationException
+			 */
+//			_createdRepresentations.clear();
 			_monitor = null;
 			super.dispose();
 		}

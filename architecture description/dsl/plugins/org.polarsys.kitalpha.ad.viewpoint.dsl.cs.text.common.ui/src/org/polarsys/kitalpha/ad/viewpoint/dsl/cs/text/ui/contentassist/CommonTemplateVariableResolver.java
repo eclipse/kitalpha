@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.xtext.ui.editor.templates.XtextTemplateContext;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal ABKA
  *
  */
 public class CommonTemplateVariableResolver extends AbstractTemplateVariableResolver {	
@@ -47,13 +48,17 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 		public FileName() {
 			super(FILE_NAME, FILE_NAME_DESCRIPTION);
 		}
-		
+
 		protected String resolve(TemplateContext context) {
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			XtextDocument document =(XtextDocument)  castedContext.getDocument();
 			URI resourceURI = document.getResourceURI();
-			String lastSegment = resourceURI.trimFileExtension().lastSegment();
-			return (lastSegment!=null) ? lastSegment : FILE_NAME;
+			if (resourceURI != null){
+				String lastSegment = resourceURI.trimFileExtension().lastSegment();
+				return lastSegment;
+			} else {
+				return FILE_NAME;
+			}
 		}
 	}
 	
@@ -67,12 +72,16 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			XtextDocument document =(XtextDocument)  castedContext.getDocument();
 			URI uri = document.getResourceURI();
-			String lastSegment = uri != null? uri.trimFileExtension().lastSegment(): null;
-			String shortName = lastSegment != null? lastSegment.substring(0, lastSegment.indexOf(".")): null;
-			return (lastSegment!= null) ? shortName : SHORT_NAME;
+			if (uri != null){
+				String lastSegment = uri != null? uri.trimFileExtension().lastSegment(): null;
+				String shortName = lastSegment != null? lastSegment.substring(0, lastSegment.indexOf('.')): null;
+				return shortName;
+			} else {
+				return SHORT_NAME;
+			}
 		}
 	}
-	
+
 	public static class ViewpointName extends SimpleTemplateVariableResolver {
 
 		protected ViewpointName() {
@@ -83,12 +92,15 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			XtextDocument document =(XtextDocument)  castedContext.getDocument();
 			URI resourceURI = document.getResourceURI();
-			String _projectName = resourceURI.segment(1);
-			String projectName = _projectName.substring(0, _projectName.lastIndexOf(".")); //trim vpdsl
-			
-			return projectName != null? projectName: VIEWPOINT_NAME;
+			String fullyProjectName = resourceURI.segment(1);
+
+			if (fullyProjectName != null && !fullyProjectName.isEmpty()){
+				String projectName = fullyProjectName.substring(0, fullyProjectName.lastIndexOf('.')); //trim vpdsl
+				return projectName;
+			} else {
+				return VIEWPOINT_NAME;
+			}
 		}
-		
 	}
 	
 	@Override

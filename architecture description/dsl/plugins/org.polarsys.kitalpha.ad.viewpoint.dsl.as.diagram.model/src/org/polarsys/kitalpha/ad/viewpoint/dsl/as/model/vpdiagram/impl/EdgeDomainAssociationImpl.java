@@ -78,7 +78,9 @@ public class EdgeDomainAssociationImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected EdgeDomainAssociationImpl() {
+
 		super();
+
 	}
 
 	/**

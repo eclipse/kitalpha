@@ -44,25 +44,10 @@
 }&#13;
 </template>
 
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_generation" deleted="false" description="Generation configuration" enabled="true" id="3" name="Generation Options">
-generation {&#13;
-	data (&#13;
-		Model: true&#13;
-		Edit: true &#13;
-		Editor: false&#13;
-		Test: false&#13;
-		Javadoc: false&#13;
-		OverwriteEcore: true&#13;
-	 )&#13;
-	 diagram (&#13;
-	 	OverwriteOdesign: true&#13;
-	 )&#13;
-	 documentation (&#13;
-	 	EcoreToHtml: false&#13;
-	 )&#13;
-	 ecore (&#13;
-		aird: false&#13;	
-	 )&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_release" deleted="false" description="Viewpoint Release" enabled="true" id="4" name="Viewpoint Release">release {&#13;
+	version : 0.0.0.qualifier&#13;
+	description : "Viewpoint Description"&#13;
+	execution environments : "JavaSE-1.6"&#13;
 }&#13;
 </template>
 </templates>

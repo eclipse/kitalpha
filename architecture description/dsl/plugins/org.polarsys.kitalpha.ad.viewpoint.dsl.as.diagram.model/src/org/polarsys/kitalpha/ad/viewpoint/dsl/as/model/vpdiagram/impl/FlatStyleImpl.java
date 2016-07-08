@@ -124,7 +124,9 @@ public class FlatStyleImpl extends AbstractContainerStyleImpl implements
 	 * @generated
 	 */
 	protected FlatStyleImpl() {
+
 		super();
+
 	}
 
 	/**

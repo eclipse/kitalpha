@@ -1,0 +1,21 @@
+<%
+String outputFolder = ctx.getValue("outputFolder").toString();
+String projectName = ctx.getValue("projectName").toString();
+%>
+
+<%Collection<DRepresentation> diagramList = SiriusHelper.getDiagramForObject(parameter);%>
+
+<%
+if (diagramList.size() >= 1){
+%>
+<h2>Representations</h2>
+
+<%for (DRepresentation diagram : diagramList){
+if((diagram instanceof DSemanticDiagram) && (!((DSemanticDiagram) diagram).getDescription().getName().equals("Inheritance") && !((DSemanticDiagram) diagram).getDescription().getName().equals("Class Focus") && ((DSemanticDiagram)diagram).getTarget() == parameter)) {
+String generatedFolder = fileNameService.getFileName(((DSemanticDiagram)diagram).getTarget());%>
+<p><strong><%=((DSemanticDiagram) diagram).getDescription().getName()%></strong></p>
+<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
+
+<%
+}}}
+%>

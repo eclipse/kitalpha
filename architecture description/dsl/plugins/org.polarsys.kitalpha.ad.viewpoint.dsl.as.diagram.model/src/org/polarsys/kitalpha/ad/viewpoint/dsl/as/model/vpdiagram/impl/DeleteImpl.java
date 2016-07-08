@@ -30,7 +30,9 @@ public class DeleteImpl extends ActionImpl implements Delete {
 	 * @generated
 	 */
 	protected DeleteImpl() {
+
 		super();
+
 	}
 
 	/**

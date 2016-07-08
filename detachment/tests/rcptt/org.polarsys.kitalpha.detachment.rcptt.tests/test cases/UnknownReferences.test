@@ -1,0 +1,57 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _Pk3g0OOdEeWanemHN2-Kkw
+Element-Name: UnknownReferences
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _cVLAAOOcEeWanemHN2-Kkw
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 5:59 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Unknown References detachment.
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+let [val model "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird"]
+	[val detachment "Detachment"]
+	[val unknownReferencesPage "Unknown references"]
+	[val projectExplorerViewer "Project Explorer"] 
+	[val diagramViewer "Diagrams Viewer"]
+	[val saveActionName "Save All (M1+M2+S)" ]{	
+	
+		detachment_launchModelDetachment -path $model
+		detachment_setVisibleTabItem $unknownReferencesPage
+		get-editor $detachment | get-table | get-property "getItems().length" | is-empty | verify-false
+		detachment_performDetachment
+		detachment_launchModelDetachment -path $model
+		detachment_setVisibleTabItem $unknownReferencesPage
+
+		get-editor $detachment | get-table | get-property "getItems().length" | equals 0 | verify-true
+		get-editor $detachment | close
+		detachment_openSession -path $model
+		with [get-editor "[Component Model] - Activity Explorer"] {
+    		get-link "" | click
+    		get-section "Diagrams Viewer" | get-tree 
+        		| select "ComponentSample/ComponentSampleDiagram/Video on demand Architecture" | double-click
+		}
+		with [get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part -name "Video on demand Architecture"] {
+    	with [get-edit-part -name "Package Video System" | get-edit-part  -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        with [get-edit-part -name "HWVideo Display (VD)" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "HWVD Processor" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+        }
+        get-edit-part -name "HWSeat Distribution" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 74 36 -height 68 -width 148
+    	}
+	}
+	get-button $saveActionName | click
+	detachment_closeSession -path $model
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

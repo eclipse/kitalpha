@@ -12,11 +12,12 @@
     <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="${eclipse.download.prefix}/releases/${eclipse_version}"/>
     <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="${eclipse.download.prefix}/modeling/emft/eef/updates/milestones/1.5/S201501090502/"/>
     <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="${eclipse.download.prefix}/modeling/m2t/acceleo/updates/releases/3.4"/>
-    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.0.x/mars"/>
+    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.1.x/neon/"/>
     <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.5.1/emf-diffmerge-site/"/>
     <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.5.1/edm-patterns-site/"/>
     <properties xmi:id="_tAs5kCO3EeWTOe3dES9kkg" key="amalgam.repo.url" value="http://download.eclipse.org/modeling/amalgam/updates/nightly/1.7.x/mars/"/>
     <properties xmi:id="_p_oyYDIHEeW5Te4c0tZ9OQ" key="kitalpha_runtime.repo.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_runtime/lastSuccessfulBuild/artifact/result/publish/kitalpha_runtime/site.p2"/>
+    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="gmf.repo.url" value="${sirius.repo.url}"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="mars"/>
@@ -248,6 +249,7 @@
       <components xsi:type="buildstep:Feature" xmi:id="_fuqZlmzmEeWQLIDk8nN8SA" id="org.polarsys.kitalpha.vp.componentsample.example.feature"/>
       <components xsi:type="buildstep:Plugin" xmi:id="_fuqZl2zmEeWQLIDk8nN8SA" id="org.polarsys.kitalpha.vp.componentsample.importer"/>
     </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_IEb2MOHlEeWJ__XCyXd24w" component="_fuqZlmzmEeWQLIDk8nN8SA"/>
     <steps xsi:type="buildstep:EgfStep" xmi:id="_fuqZmGzmEeWQLIDk8nN8SA">
       <properties xmi:id="_fuqZmWzmEeWQLIDk8nN8SA" key="egf.target.bundle.priority" value="true"/>
       <properties xmi:id="_fuqZmmzmEeWQLIDk8nN8SA" key="featureName" value="org.polarsys.kitalpha.vp.componentsample.example.feature"/>

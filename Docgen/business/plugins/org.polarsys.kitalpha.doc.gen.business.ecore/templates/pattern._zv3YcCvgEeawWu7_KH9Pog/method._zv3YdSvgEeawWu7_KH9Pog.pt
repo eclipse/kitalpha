@@ -1,0 +1,14 @@
+<%
+String text = LabelProviderHelper.getText( parameter);
+text = EscapeChars.forHTML(text);
+String projectName = ctx.getValue("projectName").toString();
+String outputFolder = ctx.getValue("outputFolder").toString();
+%>
+
+<%
+String dataTypes = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EPackageContentHelper.getDataTypesList( parameter, projectName, outputFolder);
+if(dataTypes != "") {
+%>
+<h2>Data Types</h2>
+<%=dataTypes%>
+<%}%>

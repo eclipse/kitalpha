@@ -69,7 +69,9 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 	 * @generated
 	 */
 	protected DiagramRepresentationImpl() {
+
 		super();
+
 	}
 
 	/**

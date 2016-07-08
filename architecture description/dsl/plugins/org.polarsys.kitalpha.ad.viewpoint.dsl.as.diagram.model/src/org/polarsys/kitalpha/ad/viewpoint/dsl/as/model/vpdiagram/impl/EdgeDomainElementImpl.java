@@ -89,7 +89,9 @@ public class EdgeDomainElementImpl extends EdgeDomainAssociationImpl implements
 	 * @generated
 	 */
 	protected EdgeDomainElementImpl() {
+
 		super();
+
 	}
 
 	/**

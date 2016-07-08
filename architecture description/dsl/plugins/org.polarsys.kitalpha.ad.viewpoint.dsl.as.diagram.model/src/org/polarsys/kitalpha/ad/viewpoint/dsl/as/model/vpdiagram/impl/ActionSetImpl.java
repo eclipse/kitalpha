@@ -72,7 +72,9 @@ public class ActionSetImpl extends EObjectImpl implements ActionSet {
 	 * @generated
 	 */
 	protected ActionSetImpl() {
+
 		super();
+
 	}
 
 	/**

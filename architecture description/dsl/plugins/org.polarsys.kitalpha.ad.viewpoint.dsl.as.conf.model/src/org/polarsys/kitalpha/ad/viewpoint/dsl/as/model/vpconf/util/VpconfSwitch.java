@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,7 +62,7 @@ public class VpconfSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -130,6 +130,14 @@ public class VpconfSwitch<T> extends Switch<T> {
 			case VpconfPackage.EXTENSION_GENERATRION_CONFIGURATION: {
 				ExtensionGeneratrionConfiguration extensionGeneratrionConfiguration = (ExtensionGeneratrionConfiguration)theEObject;
 				T result = caseExtensionGeneratrionConfiguration(extensionGeneratrionConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VpconfPackage.RELEASE: {
+				Release release = (Release)theEObject;
+				T result = caseRelease(release);
+				if (result == null) result = caseConfigurationElement(release);
+				if (result == null) result = caseViewpointElement(release);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -239,6 +247,21 @@ public class VpconfSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExtensionGeneratrionConfiguration(ExtensionGeneratrionConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Release</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Release</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRelease(Release object) {
 		return null;
 	}
 

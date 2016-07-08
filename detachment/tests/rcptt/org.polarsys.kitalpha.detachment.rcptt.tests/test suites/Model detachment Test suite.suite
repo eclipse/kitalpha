@@ -1,0 +1,21 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: Model detachment Test suite
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _6-oVQOOfEeWanemHN2-Kkw
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/8/16 3:53 PM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_JCNikOOREeWanemHN2-Kkw	// kind: 'test' name: 'AF Viewpoint detachment' path: '../test cases/AF Viewpoint detachment.test'
+_cVLAAOOcEeWanemHN2-Kkw	// kind: 'test' name: 'UnknownReferences' path: '../test cases/UnknownReferences.test'
+_Iep2oOOeEeWanemHN2-Kkw	// kind: 'test' name: 'Resource Detachment' path: '../test cases/Resource Detachment.test'
+_DFClIOU0EeW6ie22ZOX9CQ	// kind: 'test' name: 'AF Viewpoint Detachment hierarchy' path: '../test cases/AF Viewpoint Detachment hierarchy.test'
+_G0e8QOU9EeW6ie22ZOX9CQ	// kind: 'test' name: 'AF Viewpoint detachment - stop Viewpoint' path: '../test cases/AF Viewpoint detachment - stop Viewpoint.test'
+_G2a18OU9EeW6ie22ZOX9CQ	// kind: 'test' name: 'AF Viewpoint Detachment hierarchy - Stop Viewpoints' path: '../test cases/AF Viewpoint Detachment hierarchy - Stop Viewpoints.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

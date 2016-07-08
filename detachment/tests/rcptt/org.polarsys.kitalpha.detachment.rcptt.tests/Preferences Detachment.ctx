@@ -1,0 +1,27 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.preferences
+Element-Name: Preferences Detachment
+Element-Type: context
+Element-Version: 2.0
+Id: _4nW1UOXjEeWPpNiK6U7Fkw
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/9/16 11:45 AM
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Preferences contains mainly variables definition used in the test
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSFj7sKAjEQRXvBfwjTm6iIymLcwgeI
++GhEO5E4u0bNg+zo7ucbBR+d3TCce+7MIK3Mld0xFNpZCS3eBIZWuaO2uYQbZY0+pMN6beBCzlFdtS+Q
+B+WJuKKK+4AZhhjAIll/55GzhBWxyujk424/3bHNFkncSzgR+USIsiy5MzmPBWK3mL2Rv30fwZt6Cl6k
+iKT4IYHZg0EJPweyMdJBnQxaAqaPEvYdu21tVrvzBLdrv9Tz7qY3vZQg4u8PUEsHCIKb8Eu7AAAAJAEA
+AFBLAQIUABQACAgIAAAAIQCCm/BLuwAAACQBAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYA
+AAAAAQABADYAAADxAAAAAAA=
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--

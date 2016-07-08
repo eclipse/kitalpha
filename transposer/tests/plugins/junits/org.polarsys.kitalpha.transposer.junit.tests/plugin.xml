@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.kitalpha.transposer.junit.tests.acitivity.FinalizeTransformationTest"
+            Identifier="org.polarsys.kitalpha.transposer.junit.tests.FinalizationActivity"
+            Multiple="false"
+            Name="Finalize Transformation"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            Description body text
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+
+</plugin>

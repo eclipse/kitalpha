@@ -93,7 +93,9 @@ public class NodeImpl extends DiagramChildrenImpl implements Node {
 	 * @generated
 	 */
 	protected NodeImpl() {
+
 		super();
+
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -11,17 +11,18 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpdiagramGrammarAccess;
 
 import com.google.inject.Inject;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpdiagramGrammarAccess;
 
 public class VpdiagramParser extends AbstractContentAssistParser {
 	
@@ -86,6 +87,7 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEdgeArrowsAccess().getAlternatives(), "rule__EdgeArrows__Alternatives");
 					put(grammarAccess.getSystemColorsAccess().getAlternatives(), "rule__SystemColors__Alternatives");
 					put(grammarAccess.getContainerLayoutAccess().getAlternatives(), "rule__ContainerLayout__Alternatives");
+					put(grammarAccess.getSynchronizationModeAccess().getAlternatives(), "rule__SynchronizationMode__Alternatives");
 					put(grammarAccess.getDiagramsAccess().getGroup(), "rule__Diagrams__Group__0");
 					put(grammarAccess.getImportNameSpaceAccess().getGroup(), "rule__ImportNameSpace__Group__0");
 					put(grammarAccess.getImportGroupAccess().getGroup(), "rule__ImportGroup__Group__0");
@@ -182,10 +184,10 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEdgeAccess().getGroup(), "rule__Edge__Group__0");
 					put(grammarAccess.getEdgeAccess().getGroup_4_0(), "rule__Edge__Group_4_0__0");
 					put(grammarAccess.getEdgeAccess().getGroup_4_1(), "rule__Edge__Group_4_1__0");
-					put(grammarAccess.getEdgeAccess().getGroup_5(), "rule__Edge__Group_5__0");
-					put(grammarAccess.getEdgeAccess().getGroup_5_2(), "rule__Edge__Group_5_2__0");
 					put(grammarAccess.getEdgeAccess().getGroup_6(), "rule__Edge__Group_6__0");
 					put(grammarAccess.getEdgeAccess().getGroup_6_2(), "rule__Edge__Group_6_2__0");
+					put(grammarAccess.getEdgeAccess().getGroup_7(), "rule__Edge__Group_7__0");
+					put(grammarAccess.getEdgeAccess().getGroup_7_2(), "rule__Edge__Group_7_2__0");
 					put(grammarAccess.getEdgeImportAccess().getGroup(), "rule__EdgeImport__Group__0");
 					put(grammarAccess.getEdgeImportAccess().getGroup_4(), "rule__EdgeImport__Group_4__0");
 					put(grammarAccess.getEdgeDomainAssociationAccess().getGroup(), "rule__EdgeDomainAssociation__Group__0");
@@ -320,8 +322,9 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getContainerAccess().getImportsAssignment_4_1(), "rule__Container__ImportsAssignment_4_1");
 					put(grammarAccess.getContainerAccess().getThe_domainAssignment_5_1(), "rule__Container__The_domainAssignment_5_1");
 					put(grammarAccess.getContainerAccess().getContentLayoutAssignment_6_1(), "rule__Container__ContentLayoutAssignment_6_1");
-					put(grammarAccess.getContainerAccess().getStyleAssignment_7(), "rule__Container__StyleAssignment_7");
-					put(grammarAccess.getContainerAccess().getChildrenAssignment_8(), "rule__Container__ChildrenAssignment_8");
+					put(grammarAccess.getContainerAccess().getSynchronizationModeAssignment_7(), "rule__Container__SynchronizationModeAssignment_7");
+					put(grammarAccess.getContainerAccess().getStyleAssignment_8(), "rule__Container__StyleAssignment_8");
+					put(grammarAccess.getContainerAccess().getChildrenAssignment_9(), "rule__Container__ChildrenAssignment_9");
 					put(grammarAccess.getContainerChildrenAccess().getReused_nodesAssignment_3_1(), "rule__ContainerChildren__Reused_nodesAssignment_3_1");
 					put(grammarAccess.getContainerChildrenAccess().getReused_nodesAssignment_3_2_1(), "rule__ContainerChildren__Reused_nodesAssignment_3_2_1");
 					put(grammarAccess.getContainerChildrenAccess().getOwned_nodesAssignment_4(), "rule__ContainerChildren__Owned_nodesAssignment_4");
@@ -355,8 +358,9 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNodeAccess().getNameAssignment_2(), "rule__Node__NameAssignment_2");
 					put(grammarAccess.getNodeAccess().getImportsAssignment_4_1(), "rule__Node__ImportsAssignment_4_1");
 					put(grammarAccess.getNodeAccess().getThe_domainAssignment_5_1(), "rule__Node__The_domainAssignment_5_1");
-					put(grammarAccess.getNodeAccess().getStyleAssignment_6(), "rule__Node__StyleAssignment_6");
-					put(grammarAccess.getNodeAccess().getChildrenAssignment_7(), "rule__Node__ChildrenAssignment_7");
+					put(grammarAccess.getNodeAccess().getSynchronizationModeAssignment_6(), "rule__Node__SynchronizationModeAssignment_6");
+					put(grammarAccess.getNodeAccess().getStyleAssignment_7(), "rule__Node__StyleAssignment_7");
+					put(grammarAccess.getNodeAccess().getChildrenAssignment_8(), "rule__Node__ChildrenAssignment_8");
 					put(grammarAccess.getNodeChildrenAccess().getReused_boderednodesAssignment_3_1(), "rule__NodeChildren__Reused_boderednodesAssignment_3_1");
 					put(grammarAccess.getNodeChildrenAccess().getReused_boderednodesAssignment_3_2_1(), "rule__NodeChildren__Reused_boderednodesAssignment_3_2_1");
 					put(grammarAccess.getNodeChildrenAccess().getOwned_boderednodesAssignment_4(), "rule__NodeChildren__Owned_boderednodesAssignment_4");
@@ -396,14 +400,16 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEdgeAccess().getNameAssignment_2(), "rule__Edge__NameAssignment_2");
 					put(grammarAccess.getEdgeAccess().getThe_domainAssignment_4_0_1(), "rule__Edge__The_domainAssignment_4_0_1");
 					put(grammarAccess.getEdgeAccess().getThe_domainAssignment_4_1_1(), "rule__Edge__The_domainAssignment_4_1_1");
-					put(grammarAccess.getEdgeAccess().getSourceAssignment_5_1(), "rule__Edge__SourceAssignment_5_1");
-					put(grammarAccess.getEdgeAccess().getSourceAssignment_5_2_1(), "rule__Edge__SourceAssignment_5_2_1");
-					put(grammarAccess.getEdgeAccess().getTargetAssignment_6_1(), "rule__Edge__TargetAssignment_6_1");
-					put(grammarAccess.getEdgeAccess().getTargetAssignment_6_2_1(), "rule__Edge__TargetAssignment_6_2_1");
-					put(grammarAccess.getEdgeAccess().getE_descriptionAssignment_7(), "rule__Edge__E_descriptionAssignment_7");
+					put(grammarAccess.getEdgeAccess().getSynchronizationModeAssignment_5(), "rule__Edge__SynchronizationModeAssignment_5");
+					put(grammarAccess.getEdgeAccess().getSourceAssignment_6_1(), "rule__Edge__SourceAssignment_6_1");
+					put(grammarAccess.getEdgeAccess().getSourceAssignment_6_2_1(), "rule__Edge__SourceAssignment_6_2_1");
+					put(grammarAccess.getEdgeAccess().getTargetAssignment_7_1(), "rule__Edge__TargetAssignment_7_1");
+					put(grammarAccess.getEdgeAccess().getTargetAssignment_7_2_1(), "rule__Edge__TargetAssignment_7_2_1");
+					put(grammarAccess.getEdgeAccess().getE_descriptionAssignment_8(), "rule__Edge__E_descriptionAssignment_8");
 					put(grammarAccess.getEdgeImportAccess().getNameAssignment_2(), "rule__EdgeImport__NameAssignment_2");
 					put(grammarAccess.getEdgeImportAccess().getImportsAssignment_4_1(), "rule__EdgeImport__ImportsAssignment_4_1");
-					put(grammarAccess.getEdgeImportAccess().getE_descriptionAssignment_5(), "rule__EdgeImport__E_descriptionAssignment_5");
+					put(grammarAccess.getEdgeImportAccess().getSynchronizationModeAssignment_5(), "rule__EdgeImport__SynchronizationModeAssignment_5");
+					put(grammarAccess.getEdgeImportAccess().getE_descriptionAssignment_6(), "rule__EdgeImport__E_descriptionAssignment_6");
 					put(grammarAccess.getEdgeDomainAssociationAccess().getTarget_queryAssignment_1_0_1(), "rule__EdgeDomainAssociation__Target_queryAssignment_1_0_1");
 					put(grammarAccess.getEdgeDomainAssociationAccess().getTarget_LocatorAssignment_1_1(), "rule__EdgeDomainAssociation__Target_LocatorAssignment_1_1");
 					put(grammarAccess.getEdgeDomainElementAccess().getThe_DomainAssignment_1(), "rule__EdgeDomainElement__The_DomainAssignment_1");

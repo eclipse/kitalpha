@@ -1,0 +1,70 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.ecl
+Element-Name: Kitalpha - Acitivty Explorer Lib
+Element-Type: context
+Element-Version: 2.0
+Id: _Hi1SAOoJEeWM8Nol5H2vPg
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 6:20 PM
+
+------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
+Content-Type: text/ecl
+Entry-Name: .ecl.context
+
+/* */
+proc clickOnLink [val sectionName] [val linkName ""] [val linkIndex 0]{
+	try {
+		get-section $sectionName | get-property "expanded" | equals false | verify-true
+    	click
+    }
+    -catch {
+    	get-section $sectionName | get-property "isExpanded()" | echo | log
+	with [get-section $sectionName] {
+        if [ $linkName | not-eq ""] 
+        {
+        	get-link $linkName | click
+        }
+        -else
+        {
+	        if [$linkName | not-eq 0] 
+	        {
+	        	get-link -index $linkIndex | click
+	        }
+        }
+    }
+    }
+}
+
+proc activityExplorer_switchSession [val editor] [val toSession]{
+	with [get-editor $editor] {
+    	get-link | click
+    	get-canvas -index 3 | get-menu $toSession | click
+	}
+}
+
+proc activityExplorer_closeSession [val path] {
+	get-view "Project Explorer" | get-tree 
+    | select $path
+    | get-menu "Close"
+    | click
+}
+
+//Activate tab name in form editor
+//The editor must be opened before
+proc activityExplorer_setVisibleTabItemInEditor [val editor] [val tabName]{
+	get-editor $editor | get-tab-folder | get-tab-item $tabName | click
+}
+
+proc goToActivityExplorer [val path]{
+	with [get-view "Project Explorer" | get-tree]{
+		select $path | get-menu "Go To Activity Explorer" | click
+	}
+}
+
+proc openActivityExplorer [val path] {
+	with [get-view "Project Explorer" | get-tree]{
+			select $path | get-menu "Open Activity Explorer" | click
+	}
+}
+------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998--

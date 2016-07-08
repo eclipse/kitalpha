@@ -1,0 +1,13 @@
+
+<%
+String text = LabelProviderHelper.getText(parameter);
+text = EscapeChars.forHTML(text);
+String projectName = ctx.getValue("projectName").toString();
+String outputFolder = ctx.getValue("outputFolder").toString();
+%>
+<h1><%=text%></h1>
+<p><%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription(parameter)%></p>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline(parameter)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels(parameter)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageExamples(parameter)%>
+<%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getConstraints(parameter)%>

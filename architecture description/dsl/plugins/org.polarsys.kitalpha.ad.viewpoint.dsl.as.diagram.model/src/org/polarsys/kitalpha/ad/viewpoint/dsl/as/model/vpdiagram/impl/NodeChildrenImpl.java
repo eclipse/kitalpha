@@ -72,7 +72,9 @@ public class NodeChildrenImpl extends EObjectImpl implements NodeChildren {
 	 * @generated
 	 */
 	protected NodeChildrenImpl() {
+
 		super();
+
 	}
 
 	/**

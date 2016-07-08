@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore"
+    xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_K0EvIO0QEeWIDN8jHBcB7A" name="Update.Plugin.Properties">
+  <contractContainer xmi:id="_P9ijUO0QEeWIDN8jHBcB7A">
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_QMvc8O0QEeWIDN8jHBcB7A"
+        name="plugin.id" invocationContracts="#_X5E2gu0QEeWIDN8jHBcB7A #_dCPIsu0QEeWIDN8jHBcB7A">
+      <type xmi:type="types:TypeString" xmi:id="_R4LEAO0QEeWIDN8jHBcB7A"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_SJwjQO0QEeWIDN8jHBcB7A"
+        name="plugin.version" invocationContracts="#_dCPIs-0QEeWIDN8jHBcB7A">
+      <type xmi:type="types:TypeString" xmi:id="_SJwjQe0QEeWIDN8jHBcB7A"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_STS5wO0QEeWIDN8jHBcB7A"
+        name="plugin.ee" invocationContracts="#_X5E2g-0QEeWIDN8jHBcB7A">
+      <type xmi:type="types:TypeString" xmi:id="_STS5we0QEeWIDN8jHBcB7A"/>
+    </contracts>
+  </contractContainer>
+  <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_WxjNwO0QEeWIDN8jHBcB7A">
+    <invocations xmi:id="_X5E2gO0QEeWIDN8jHBcB7A" name="Update Plugin Required Execution Environment"
+        invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_fkAxkOtSEeW0Hf5pn0JwLg">
+      <invocationContractContainer xmi:id="_X5E2ge0QEeWIDN8jHBcB7A">
+        <invocationContracts xmi:id="_X5E2gu0QEeWIDN8jHBcB7A" factoryComponentContract="#_QMvc8O0QEeWIDN8jHBcB7A"
+            invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_jTes8etSEeW0Hf5pn0JwLg"/>
+        <invocationContracts xmi:id="_X5E2g-0QEeWIDN8jHBcB7A" factoryComponentContract="#_STS5wO0QEeWIDN8jHBcB7A"
+            invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_jTes9etSEeW0Hf5pn0JwLg"/>
+      </invocationContractContainer>
+    </invocations>
+    <invocations xmi:id="_dCPIsO0QEeWIDN8jHBcB7A" name="Update Plugin Version" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQObfEeW2XNOYuXmJgg">
+      <invocationContractContainer xmi:id="_dCPIse0QEeWIDN8jHBcB7A">
+        <invocationContracts xmi:id="_dCPIsu0QEeWIDN8jHBcB7A" factoryComponentContract="#_QMvc8O0QEeWIDN8jHBcB7A"
+            invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuQubfEeW2XNOYuXmJgg"/>
+        <invocationContracts xmi:id="_dCPIs-0QEeWIDN8jHBcB7A" factoryComponentContract="#_SJwjQO0QEeWIDN8jHBcB7A"
+            invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper/egf/GenerationPdeHelper.fcore#_CmsuRObfEeW2XNOYuXmJgg"/>
+      </invocationContractContainer>
+    </invocations>
+  </orchestration>
+</fcore:FactoryComponent>

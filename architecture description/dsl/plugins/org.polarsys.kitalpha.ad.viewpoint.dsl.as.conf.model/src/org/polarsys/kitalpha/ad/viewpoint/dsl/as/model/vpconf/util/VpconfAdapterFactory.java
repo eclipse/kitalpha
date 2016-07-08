@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -106,6 +106,10 @@ public class VpconfAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExtensionGeneratrionConfiguration(ExtensionGeneratrionConfiguration object) {
 				return createExtensionGeneratrionConfigurationAdapter();
+			}
+			@Override
+			public Adapter caseRelease(Release object) {
+				return createReleaseAdapter();
 			}
 			@Override
 			public Adapter caseViewpointElement(ViewpointElement object) {
@@ -233,6 +237,20 @@ public class VpconfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExtensionGeneratrionConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release
+	 * @generated
+	 */
+	public Adapter createReleaseAdapter() {
 		return null;
 	}
 

@@ -23,6 +23,7 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.egf,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.message,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.operation,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.task,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.viewpoint
 Import-Package: org.eclipse.pde.internal.ui.util,

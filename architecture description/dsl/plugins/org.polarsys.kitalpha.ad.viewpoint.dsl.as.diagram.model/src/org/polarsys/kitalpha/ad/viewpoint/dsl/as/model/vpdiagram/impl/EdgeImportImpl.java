@@ -50,7 +50,9 @@ public class EdgeImportImpl extends AbstractEdgeImpl implements EdgeImport {
 	 * @generated
 	 */
 	protected EdgeImportImpl() {
+
 		super();
+
 	}
 
 	/**

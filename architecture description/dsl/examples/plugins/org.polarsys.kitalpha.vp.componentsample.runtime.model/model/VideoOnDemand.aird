@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ComponentSample="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0" xmlns:ComponentSamplePerformance="http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0" xmlns:ComponentSampleQualityAssessment="http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0" xmlns:ComponentSampleSafety="http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_mSO2gC7PEeSrH6PfyKBTxw" selectedViews="_md1CgC7PEeSrH6PfyKBTxw _md-zgC7PEeSrH6PfyKBTxw _md-zgS7PEeSrH6PfyKBTxw _meIkgC7PEeSrH6PfyKBTxw _meIkgS7PEeSrH6PfyKBTxw _md1CgS7PEeSrH6PfyKBTxw _IOEV8EJwEeSVV45sXpXcWg" version="8.1.1">
-  <models xmi:type="ComponentSample:ComponentModel" href="VideoOnDemand.componentsample#/"/>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_md1CgC7PEeSrH6PfyKBTxw" initialized="true">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ComponentSample="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0" xmlns:ComponentSampleQualityAssessment="http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0" xmlns:ComponentSampleSafety="http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_mSO2gC7PEeSrH6PfyKBTxw" selectedViews="_IOEV8EJwEeSVV45sXpXcWg _meIkgC7PEeSrH6PfyKBTxw _meIkgS7PEeSrH6PfyKBTxw _md-zgS7PEeSrH6PfyKBTxw _md1CgC7PEeSrH6PfyKBTxw _md-zgC7PEeSrH6PfyKBTxw" version="10.1.0.201509162000">
+  <semanticResources>VideoOnDemand.componentsample</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_md1CgC7PEeSrH6PfyKBTxw">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_uGcZsC7PEeSrH6PfyKBTxw" name="Video on demand Architecture">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_uGljoC7PEeSrH6PfyKBTxw" source="GMF_DIAGRAMS">
         <data xmi:type="notation:Diagram" xmi:id="_uGljoS7PEeSrH6PfyKBTxw" type="Sirius" element="_uGcZsC7PEeSrH6PfyKBTxw" measurementUnit="Pixel">
@@ -45,9 +45,9 @@
                         <children xmi:type="notation:Node" xmi:id="_uGvUzC7PEeSrH6PfyKBTxw" type="5003">
                           <layoutConstraint xmi:type="notation:Location" xmi:id="_uGvUzS7PEeSrH6PfyKBTxw" x="-82" y="31"/>
                         </children>
-                        <children xmi:type="notation:Node" xmi:id="_uG4ekC7PEeSrH6PfyKBTxw" type="3003" element="_uGcZ8i7PEeSrH6PfyKBTxw">
-                          <styles xmi:type="notation:ShapeStyle" xmi:id="_uG4ekS7PEeSrH6PfyKBTxw"/>
-                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uG4eki7PEeSrH6PfyKBTxw"/>
+                        <children xmi:type="notation:Node" xmi:id="_ctPG8OnMEeWmiKu29cZZLw" type="3004" element="_PQ1zQOnMEeWmiKu29cZZLw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_ctPG8enMEeWmiKu29cZZLw"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ctPG8unMEeWmiKu29cZZLw"/>
                         </children>
                         <styles xmi:type="notation:ShapeStyle" xmi:id="_uGvUyi7PEeSrH6PfyKBTxw" fontHeight="8"/>
                         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uGvUyy7PEeSrH6PfyKBTxw" x="86" y="49" width="30" height="30"/>
@@ -56,9 +56,9 @@
                         <children xmi:type="notation:Node" xmi:id="_uGvU0S7PEeSrH6PfyKBTxw" type="5003">
                           <layoutConstraint xmi:type="notation:Location" xmi:id="_uGvU0i7PEeSrH6PfyKBTxw" x="-54" y="31"/>
                         </children>
-                        <children xmi:type="notation:Node" xmi:id="_uG4eky7PEeSrH6PfyKBTxw" type="3003" element="_uGcZ9y7PEeSrH6PfyKBTxw">
-                          <styles xmi:type="notation:ShapeStyle" xmi:id="_uG4elC7PEeSrH6PfyKBTxw"/>
-                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uG4elS7PEeSrH6PfyKBTxw"/>
+                        <children xmi:type="notation:Node" xmi:id="_ctPG8-nMEeWmiKu29cZZLw" type="3004" element="_PQ1zQenMEeWmiKu29cZZLw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_ctPG9OnMEeWmiKu29cZZLw"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ctPG9enMEeWmiKu29cZZLw"/>
                         </children>
                         <styles xmi:type="notation:ShapeStyle" xmi:id="_uGvUzy7PEeSrH6PfyKBTxw" fontHeight="8"/>
                         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uGvU0C7PEeSrH6PfyKBTxw" x="86" y="104" width="30" height="30"/>
@@ -67,9 +67,9 @@
                         <children xmi:type="notation:Node" xmi:id="_uGvU1i7PEeSrH6PfyKBTxw" type="5003">
                           <layoutConstraint xmi:type="notation:Location" xmi:id="_uGvU1y7PEeSrH6PfyKBTxw" x="-70" y="31"/>
                         </children>
-                        <children xmi:type="notation:Node" xmi:id="_uG4eli7PEeSrH6PfyKBTxw" type="3003" element="_uGcZ_C7PEeSrH6PfyKBTxw">
-                          <styles xmi:type="notation:ShapeStyle" xmi:id="_uG4ely7PEeSrH6PfyKBTxw"/>
-                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uG4emC7PEeSrH6PfyKBTxw"/>
+                        <children xmi:type="notation:Node" xmi:id="_ctPG9unMEeWmiKu29cZZLw" type="3004" element="_PQ1zQunMEeWmiKu29cZZLw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_ctPG9-nMEeWmiKu29cZZLw"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ctPG-OnMEeWmiKu29cZZLw"/>
                         </children>
                         <styles xmi:type="notation:ShapeStyle" xmi:id="_uGvU1C7PEeSrH6PfyKBTxw" fontHeight="8"/>
                         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uGvU1S7PEeSrH6PfyKBTxw" x="86" y="154" width="30" height="30"/>
@@ -87,9 +87,9 @@
                         <children xmi:type="notation:Node" xmi:id="_uG4enC7PEeSrH6PfyKBTxw" type="5003">
                           <layoutConstraint xmi:type="notation:Location" xmi:id="_uG4enS7PEeSrH6PfyKBTxw" x="-79" y="31"/>
                         </children>
-                        <children xmi:type="notation:Node" xmi:id="_uG4eni7PEeSrH6PfyKBTxw" type="3003" element="_uGcaBy7PEeSrH6PfyKBTxw">
-                          <styles xmi:type="notation:ShapeStyle" xmi:id="_uG4eny7PEeSrH6PfyKBTxw"/>
-                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uG4eoC7PEeSrH6PfyKBTxw"/>
+                        <children xmi:type="notation:Node" xmi:id="_ctYQ4OnMEeWmiKu29cZZLw" type="3004" element="_PQ1zQ-nMEeWmiKu29cZZLw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_ctYQ4enMEeWmiKu29cZZLw"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ctYQ4unMEeWmiKu29cZZLw"/>
                         </children>
                         <styles xmi:type="notation:ShapeStyle" xmi:id="_uG4emi7PEeSrH6PfyKBTxw" fontHeight="8"/>
                         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uG4emy7PEeSrH6PfyKBTxw" x="90" y="44" width="30" height="30"/>
@@ -110,28 +110,6 @@
                     </children>
                     <styles xmi:type="notation:ShapeStyle" xmi:id="_dDnaxEJrEeSVV45sXpXcWg" fontHeight="8"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dDnaxUJrEeSVV45sXpXcWg" x="316" y="199" width="30" height="30"/>
-                  </children>
-                  <children xmi:type="notation:Node" xmi:id="_QBdZwEJwEeSVV45sXpXcWg" visible="false" type="3007" element="_QA3j4EJwEeSVV45sXpXcWg">
-                    <children xmi:type="notation:Node" xmi:id="_QBdZw0JwEeSVV45sXpXcWg" type="5003">
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_QBdZxEJwEeSVV45sXpXcWg" x="-37" y="31"/>
-                    </children>
-                    <children xmi:type="notation:Node" xmi:id="_QBdZxUJwEeSVV45sXpXcWg" visible="false" type="3001" element="_QBAt1EJwEeSVV45sXpXcWg">
-                      <children xmi:type="notation:Node" xmi:id="_QBdZyEJwEeSVV45sXpXcWg" type="5001">
-                        <layoutConstraint xmi:type="notation:Location" xmi:id="_QBdZyUJwEeSVV45sXpXcWg" y="5"/>
-                      </children>
-                      <children xmi:type="notation:Node" xmi:id="_QBdZzUJwEeSVV45sXpXcWg" type="3003" element="_QBKe0EJwEeSVV45sXpXcWg">
-                        <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZzkJwEeSVV45sXpXcWg"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZz0JwEeSVV45sXpXcWg"/>
-                      </children>
-                      <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZxkJwEeSVV45sXpXcWg" fontHeight="8"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZx0JwEeSVV45sXpXcWg" x="22" y="-8" width="84" height="30"/>
-                    </children>
-                    <children xmi:type="notation:Node" xmi:id="_QBdZykJwEeSVV45sXpXcWg" type="3003" element="_QBAt0EJwEeSVV45sXpXcWg">
-                      <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZy0JwEeSVV45sXpXcWg"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZzEJwEeSVV45sXpXcWg"/>
-                    </children>
-                    <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZwUJwEeSVV45sXpXcWg" fontHeight="8"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZwkJwEeSVV45sXpXcWg" x="291" y="224" width="30" height="30"/>
                   </children>
                   <children xmi:type="notation:Node" xmi:id="_1AB-UEJwEeSVV45sXpXcWg" visible="false" type="3007" element="_0_vDYEJwEeSVV45sXpXcWg">
                     <children xmi:type="notation:Node" xmi:id="_1AB-U0JwEeSVV45sXpXcWg" type="5003">
@@ -171,9 +149,9 @@
                         <children xmi:type="notation:Node" xmi:id="_A0UeEUJsEeSVV45sXpXcWg" type="5003">
                           <layoutConstraint xmi:type="notation:Location" xmi:id="_A0UeEkJsEeSVV45sXpXcWg" x="-19" y="31"/>
                         </children>
-                        <children xmi:type="notation:Node" xmi:id="_A0UeE0JsEeSVV45sXpXcWg" type="3003" element="_uGcZzy7PEeSrH6PfyKBTxw">
-                          <styles xmi:type="notation:ShapeStyle" xmi:id="_A0UeFEJsEeSVV45sXpXcWg"/>
-                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A0UeFUJsEeSVV45sXpXcWg"/>
+                        <children xmi:type="notation:Node" xmi:id="_ctYQ4-nMEeWmiKu29cZZLw" type="3004" element="_PQ1zROnMEeWmiKu29cZZLw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_ctYQ5OnMEeWmiKu29cZZLw"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ctYQ5enMEeWmiKu29cZZLw"/>
                         </children>
                         <styles xmi:type="notation:ShapeStyle" xmi:id="_A0UeD0JsEeSVV45sXpXcWg" fontHeight="8"/>
                         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A0UeEEJsEeSVV45sXpXcWg" x="50" y="27" width="30" height="30"/>
@@ -191,9 +169,9 @@
                         <children xmi:type="notation:Node" xmi:id="_A0UeGUJsEeSVV45sXpXcWg" type="5003">
                           <layoutConstraint xmi:type="notation:Location" xmi:id="_A0UeGkJsEeSVV45sXpXcWg" x="-76" y="31"/>
                         </children>
-                        <children xmi:type="notation:Node" xmi:id="_A0UeG0JsEeSVV45sXpXcWg" type="3003" element="_uGcZxC7PEeSrH6PfyKBTxw">
-                          <styles xmi:type="notation:ShapeStyle" xmi:id="_A0UeHEJsEeSVV45sXpXcWg"/>
-                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A0UeHUJsEeSVV45sXpXcWg"/>
+                        <children xmi:type="notation:Node" xmi:id="_ctYQ5unMEeWmiKu29cZZLw" type="3004" element="_PQ1zRenMEeWmiKu29cZZLw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_ctYQ5-nMEeWmiKu29cZZLw"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ctYQ6OnMEeWmiKu29cZZLw"/>
                         </children>
                         <styles xmi:type="notation:ShapeStyle" xmi:id="_A0UeF0JsEeSVV45sXpXcWg" fontHeight="8"/>
                         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A0UeGEJsEeSVV45sXpXcWg" x="85" y="33" width="30" height="30"/>
@@ -214,28 +192,6 @@
                     </children>
                     <styles xmi:type="notation:ShapeStyle" xmi:id="_yUfakUJvEeSVV45sXpXcWg" fontHeight="8"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yUfakkJvEeSVV45sXpXcWg" x="50" y="239" width="30" height="30"/>
-                  </children>
-                  <children xmi:type="notation:Node" xmi:id="_QBdZ0EJwEeSVV45sXpXcWg" visible="false" type="3007" element="_QBKe1EJwEeSVV45sXpXcWg">
-                    <children xmi:type="notation:Node" xmi:id="_QBdZ00JwEeSVV45sXpXcWg" type="5003">
-                      <layoutConstraint xmi:type="notation:Location" xmi:id="_QBdZ1EJwEeSVV45sXpXcWg" x="-37" y="31"/>
-                    </children>
-                    <children xmi:type="notation:Node" xmi:id="_QBdZ1UJwEeSVV45sXpXcWg" visible="false" type="3001" element="_QBUP1EJwEeSVV45sXpXcWg">
-                      <children xmi:type="notation:Node" xmi:id="_QBdZ2EJwEeSVV45sXpXcWg" type="5001">
-                        <layoutConstraint xmi:type="notation:Location" xmi:id="_QBdZ2UJwEeSVV45sXpXcWg" y="5"/>
-                      </children>
-                      <children xmi:type="notation:Node" xmi:id="_QBdZ3UJwEeSVV45sXpXcWg" type="3003" element="_QBUP1UJwEeSVV45sXpXcWg">
-                        <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZ3kJwEeSVV45sXpXcWg"/>
-                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZ30JwEeSVV45sXpXcWg"/>
-                      </children>
-                      <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZ1kJwEeSVV45sXpXcWg" fontHeight="8"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZ10JwEeSVV45sXpXcWg" x="22" width="89" height="30"/>
-                    </children>
-                    <children xmi:type="notation:Node" xmi:id="_QBdZ2kJwEeSVV45sXpXcWg" type="3003" element="_QBUP0EJwEeSVV45sXpXcWg">
-                      <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZ20JwEeSVV45sXpXcWg"/>
-                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZ3EJwEeSVV45sXpXcWg"/>
-                    </children>
-                    <styles xmi:type="notation:ShapeStyle" xmi:id="_QBdZ0UJwEeSVV45sXpXcWg" fontHeight="8"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QBdZ0kJwEeSVV45sXpXcWg" x="45" y="241" width="30" height="30"/>
                   </children>
                   <children xmi:type="notation:Node" xmi:id="_1ALvUEJwEeSVV45sXpXcWg" visible="false" type="3007" element="_0_4NWUJwEeSVV45sXpXcWg">
                     <children xmi:type="notation:Node" xmi:id="_1ALvU0JwEeSVV45sXpXcWg" type="5003">
@@ -370,161 +326,124 @@
           </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZsS7PEeSrH6PfyKBTxw" name="Video System">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_N8WFgOnMEeWmiKu29cZZLw" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_N8WFgenMEeWmiKu29cZZLw"/>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZsS7PEeSrH6PfyKBTxw" name="Package Video System">
         <target xmi:type="ComponentSample:ComponentPackage" href="VideoOnDemand.componentsample#//@packages.0"/>
         <semanticElements xmi:type="ComponentSample:ComponentPackage" href="VideoOnDemand.componentsample#//@packages.0"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZsi7PEeSrH6PfyKBTxw">
-          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZsy7PEeSrH6PfyKBTxw"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZsi7PEeSrH6PfyKBTxw" borderColor="114,159,207" backgroundColor="255,245,181" foregroundColor="255,245,181">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@style"/>
-          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZtC7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZtS7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
-          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZti7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']"/>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ0y7PEeSrH6PfyKBTxw" name="Ethernet" outgoingEdges="_xYZnwC7REeSrH6PfyKBTxw" incomingEdges="_wXs_wC7REeSrH6PfyKBTxw">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ0y7PEeSrH6PfyKBTxw" name="HWEthernet" outgoingEdges="_xYZnwC7REeSrH6PfyKBTxw" incomingEdges="_wXs_wC7REeSrH6PfyKBTxw">
           <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.0"/>
           <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ1C7PEeSrH6PfyKBTxw">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ1S7PEeSrH6PfyKBTxw"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ1C7PEeSrH6PfyKBTxw" borderColor="239,41,41" backgroundColor="253,206,137" foregroundColor="224,133,3">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ1i7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ1y7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ2C7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ2S7PEeSrH6PfyKBTxw" name="Area Distribution" outgoingEdges="_yJCagC7REeSrH6PfyKBTxw" incomingEdges="_xYZnwC7REeSrH6PfyKBTxw">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ2S7PEeSrH6PfyKBTxw" name="HWArea Distribution" outgoingEdges="_yJCagC7REeSrH6PfyKBTxw" incomingEdges="_xYZnwC7REeSrH6PfyKBTxw">
           <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.1"/>
           <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.1"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ2i7PEeSrH6PfyKBTxw">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ2y7PEeSrH6PfyKBTxw"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ2i7PEeSrH6PfyKBTxw" borderColor="239,41,41" backgroundColor="253,206,137" foregroundColor="224,133,3">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ3C7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ3S7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ3i7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ3y7PEeSrH6PfyKBTxw" name="Seat Distribution" outgoingEdges="_ym73cC7REeSrH6PfyKBTxw" incomingEdges="_yJCagC7REeSrH6PfyKBTxw">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ3y7PEeSrH6PfyKBTxw" name="HWSeat Distribution" outgoingEdges="_ym73cC7REeSrH6PfyKBTxw" incomingEdges="_yJCagC7REeSrH6PfyKBTxw">
           <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.2"/>
           <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.2"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ4C7PEeSrH6PfyKBTxw">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ4S7PEeSrH6PfyKBTxw"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ4C7PEeSrH6PfyKBTxw" borderColor="239,41,41" backgroundColor="253,206,137" foregroundColor="224,133,3">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ4i7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ4y7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ5C7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ5S7PEeSrH6PfyKBTxw" name="Video Display (VD)" incomingEdges="_ym73cC7REeSrH6PfyKBTxw">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ5S7PEeSrH6PfyKBTxw" name="HWVideo Display (VD)" incomingEdges="_ym73cC7REeSrH6PfyKBTxw">
           <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3"/>
           <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ5i7PEeSrH6PfyKBTxw">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ5y7PEeSrH6PfyKBTxw"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ5i7PEeSrH6PfyKBTxw" borderColor="239,41,41" backgroundColor="253,206,137" foregroundColor="224,133,3">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ6C7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ6S7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ6i7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
-          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ6y7PEeSrH6PfyKBTxw" name="VD Processor" outgoingEdges="_D_NK0C7SEeSrH6PfyKBTxw">
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZ6y7PEeSrH6PfyKBTxw" name="HWVD Processor" outgoingEdges="_D_NK0C7SEeSrH6PfyKBTxw">
             <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0"/>
             <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ7C7PEeSrH6PfyKBTxw">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ7S7PEeSrH6PfyKBTxw"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZ7C7PEeSrH6PfyKBTxw" foregroundColor="255,255,255">
               <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ7i7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ7y7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-              <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ8C7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']"/>
-            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZ8S7PEeSrH6PfyKBTxw" name="Generic Passenger - System Interactions" width="3" height="3" resizeKind="NSEW">
+            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZ8S7PEeSrH6PfyKBTxw" name="SWGeneric Passenger - System Interactions" width="3" height="3" resizeKind="NSEW">
               <target xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0/@abstractComponent.0"/>
               <semanticElements xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0/@abstractComponent.0"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_uGcZ8i7PEeSrH6PfyKBTxw" showIcon="false">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ8y7PEeSrH6PfyKBTxw"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ9C7PEeSrH6PfyKBTxw"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ9S7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
+              <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PQ1zQOnMEeWmiKu29cZZLw" shape="ring" color="194,239,255">
+                <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
             </ownedDiagramElements>
-            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZ9i7PEeSrH6PfyKBTxw" name="Video Player Movie Controler" width="3" height="3" resizeKind="NSEW">
+            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZ9i7PEeSrH6PfyKBTxw" name="SWVideo Player Movie Controler" width="3" height="3" resizeKind="NSEW">
               <target xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0/@abstractComponent.1"/>
               <semanticElements xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0/@abstractComponent.1"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_uGcZ9y7PEeSrH6PfyKBTxw" showIcon="false">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ-C7PEeSrH6PfyKBTxw"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ-S7PEeSrH6PfyKBTxw"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ-i7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
+              <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PQ1zQenMEeWmiKu29cZZLw" shape="ring" color="194,239,255">
+                <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
             </ownedDiagramElements>
-            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZ-y7PEeSrH6PfyKBTxw" name="Video Player Data Packets Manager" width="3" height="3" resizeKind="NSEW">
+            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZ-y7PEeSrH6PfyKBTxw" name="SWVideo Player Data Packets Manager" width="3" height="3" resizeKind="NSEW">
               <target xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0/@abstractComponent.2"/>
               <semanticElements xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0/@abstractComponent.2"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_uGcZ_C7PEeSrH6PfyKBTxw" showIcon="false">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ_S7PEeSrH6PfyKBTxw"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ_i7PEeSrH6PfyKBTxw"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ_y7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
+              <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PQ1zQunMEeWmiKu29cZZLw" shape="ring" color="194,239,255">
+                <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
             </ownedDiagramElements>
           </ownedDiagramElements>
-          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcaAC7PEeSrH6PfyKBTxw" name="Screen" incomingEdges="_D_NK0C7SEeSrH6PfyKBTxw">
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcaAC7PEeSrH6PfyKBTxw" name="HWScreen" incomingEdges="_D_NK0C7SEeSrH6PfyKBTxw">
             <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.1"/>
             <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.1"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcaAS7PEeSrH6PfyKBTxw">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcaAi7PEeSrH6PfyKBTxw"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcaAS7PEeSrH6PfyKBTxw" foregroundColor="255,255,255">
               <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcaAy7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcaBC7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-              <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcaBS7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']"/>
-            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcaBi7PEeSrH6PfyKBTxw" name="Airline Specific Passenger - System HMI" width="3" height="3" resizeKind="NSEW">
+            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcaBi7PEeSrH6PfyKBTxw" name="SWAirline Specific Passenger - System HMI" width="3" height="3" resizeKind="NSEW">
               <target xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.1/@abstractComponent.0"/>
               <semanticElements xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.1/@abstractComponent.0"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_uGcaBy7PEeSrH6PfyKBTxw" showIcon="false">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcaCC7PEeSrH6PfyKBTxw"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcaCS7PEeSrH6PfyKBTxw"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_uGcaCi7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
+              <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PQ1zQ-nMEeWmiKu29cZZLw" shape="ring" color="194,239,255">
+                <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
             </ownedDiagramElements>
@@ -535,41 +454,10 @@
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_c1I550JrEeSVV45sXpXcWg" showIcon="false">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_c1I56EJrEeSVV45sXpXcWg"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_c1I550JrEeSVV45sXpXcWg" showIcon="false" color="233,185,110">
               <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplesafety.design/description/ComponentSampleSafety.odesign#//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@subNodeMappings[name='SafetyNode_NM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_c1I56UJrEeSVV45sXpXcWg"/>
-              <color xmi:type="viewpoint:RGBValues" xmi:id="_c1I56kJrEeSVV45sXpXcWg" red="233" green="185" blue="110"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplesafety.design/description/ComponentSampleSafety.odesign#//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@subNodeMappings[name='SafetyNode_NM']"/>
-          </ownedDiagramElements>
-          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QA3j4EJwEeSVV45sXpXcWg" name="Cost: 2/Complexity: 2" visible="false" width="3" height="3" resizeKind="NSEW">
-            <target xmi:type="ComponentSamplePerformance:Performance" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@ownedExtensions.0"/>
-            <semanticElements xmi:type="ComponentSamplePerformance:Performance" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@ownedExtensions.0"/>
-            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_QBAt1EJwEeSVV45sXpXcWg" name="Overhead: true" visible="false" width="3" height="3" resizeKind="NSEW">
-              <target xmi:type="ComponentSamplePerformance:PerformanceStatus" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@ownedExtensions.0/@status"/>
-              <semanticElements xmi:type="ComponentSamplePerformance:PerformanceStatus" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@ownedExtensions.0/@status"/>
-              <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-              <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-              <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_QBKe0EJwEeSVV45sXpXcWg" showIcon="false" labelPosition="node">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_QBKe0UJwEeSVV45sXpXcWg"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@borderedNodeMappings[name='PerformanceStatusNode_BNM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_QBKe0kJwEeSVV45sXpXcWg"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_QBKe00JwEeSVV45sXpXcWg" red="238" green="201" blue="142"/>
-              </ownedStyle>
-              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@borderedNodeMappings[name='PerformanceStatusNode_BNM']"/>
-            </ownedBorderedNodes>
-            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_QBAt0EJwEeSVV45sXpXcWg" showIcon="false">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_QBAt0UJwEeSVV45sXpXcWg"/>
-              <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_QBAt0kJwEeSVV45sXpXcWg"/>
-              <color xmi:type="viewpoint:RGBValues" xmi:id="_QBAt00JwEeSVV45sXpXcWg" red="233" green="185" blue="110"/>
-            </ownedStyle>
-            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_0_vDYEJwEeSVV45sXpXcWg" name="Quality: High" visible="false" width="3" height="3" resizeKind="NSEW">
             <target xmi:type="ComponentSampleQualityAssessment:QualityAssessment" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@ownedExtensions.1"/>
@@ -577,94 +465,70 @@
             <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_0_4NVEJwEeSVV45sXpXcWg" name="3" visible="false" width="3" height="3" resizeKind="NSEW">
               <target xmi:type="ComponentSampleQualityAssessment:QualityMeasure" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@ownedExtensions.1/@measures.0"/>
               <semanticElements xmi:type="ComponentSampleQualityAssessment:QualityMeasure" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@ownedExtensions.1/@measures.0"/>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NVUJwEeSVV45sXpXcWg" showIcon="false" labelPosition="node">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NVkJwEeSVV45sXpXcWg"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NVUJwEeSVV45sXpXcWg" showIcon="false" labelPosition="node" color="238,201,142">
                 <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']/@borderedNodeMappings[name='QualityMeasureBorderedNode_BNM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NV0JwEeSVV45sXpXcWg"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_0_4NWEJwEeSVV45sXpXcWg" red="238" green="201" blue="142"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']/@borderedNodeMappings[name='QualityMeasureBorderedNode_BNM']"/>
             </ownedBorderedNodes>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NUEJwEeSVV45sXpXcWg" showIcon="false">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NUUJwEeSVV45sXpXcWg"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NUEJwEeSVV45sXpXcWg" showIcon="false" color="233,185,110">
               <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NUkJwEeSVV45sXpXcWg"/>
-              <color xmi:type="viewpoint:RGBValues" xmi:id="_0_4NU0JwEeSVV45sXpXcWg" red="233" green="185" blue="110"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']"/>
           </ownedDiagramElements>
         </ownedDiagramElements>
-        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_-xqCsEJrEeSVV45sXpXcWg" name="Video Server (VS)" outgoingEdges="_wXs_wC7REeSrH6PfyKBTxw">
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_-xqCsEJrEeSVV45sXpXcWg" name="HWVideo Server (VS)" outgoingEdges="_wXs_wC7REeSrH6PfyKBTxw">
           <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4"/>
           <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-xqCsUJrEeSVV45sXpXcWg">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_-xqCskJrEeSVV45sXpXcWg"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-xqCsUJrEeSVV45sXpXcWg" borderColor="239,41,41" backgroundColor="253,206,137" foregroundColor="224,133,3">
             <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@style"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_-xqCs0JrEeSVV45sXpXcWg" red="114" green="159" blue="207"/>
-            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_-xqCtEJrEeSVV45sXpXcWg" red="238" green="201" blue="142"/>
-            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_-xqCtUJrEeSVV45sXpXcWg" red="238" green="201" blue="142"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
-          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZyC7PEeSrH6PfyKBTxw" name="VS Hard Disk" incomingEdges="_4d5q0C7REeSrH6PfyKBTxw">
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZyC7PEeSrH6PfyKBTxw" name="HWVS Hard Disk" incomingEdges="_4d5q0C7REeSrH6PfyKBTxw">
             <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.0"/>
             <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.0"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZyS7PEeSrH6PfyKBTxw">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZyi7PEeSrH6PfyKBTxw"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZyS7PEeSrH6PfyKBTxw" foregroundColor="255,255,255">
               <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZyy7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZzC7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-              <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZzS7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']"/>
-            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZzi7PEeSrH6PfyKBTxw" name="Data Manager" width="3" height="3" resizeKind="NSEW">
+            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZzi7PEeSrH6PfyKBTxw" name="SWData Manager" width="3" height="3" resizeKind="NSEW">
               <target xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.0/@abstractComponent.0"/>
               <semanticElements xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.0/@abstractComponent.0"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_uGcZzy7PEeSrH6PfyKBTxw" showIcon="false">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ0C7PEeSrH6PfyKBTxw"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ0S7PEeSrH6PfyKBTxw"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_uGcZ0i7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
+              <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PQ1zROnMEeWmiKu29cZZLw" shape="ring" color="194,239,255">
+                <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
             </ownedDiagramElements>
           </ownedDiagramElements>
-          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZvS7PEeSrH6PfyKBTxw" name="VS Processor" outgoingEdges="_4d5q0C7REeSrH6PfyKBTxw">
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_uGcZvS7PEeSrH6PfyKBTxw" name="HWVS Processor" outgoingEdges="_4d5q0C7REeSrH6PfyKBTxw">
             <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.1"/>
             <semanticElements xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.1"/>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZvi7PEeSrH6PfyKBTxw">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZvy7PEeSrH6PfyKBTxw"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_uGcZvi7PEeSrH6PfyKBTxw" foregroundColor="255,255,255">
               <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZwC7PEeSrH6PfyKBTxw" red="114" green="159" blue="207"/>
-              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZwS7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
-              <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZwi7PEeSrH6PfyKBTxw" red="238" green="201" blue="142"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']"/>
-            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZwy7PEeSrH6PfyKBTxw" name="Individual Entertainment Media Server" width="3" height="3" resizeKind="NSEW">
+            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_uGcZwy7PEeSrH6PfyKBTxw" name="SWIndividual Entertainment Media Server" width="3" height="3" resizeKind="NSEW">
               <target xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.1/@abstractComponent.0"/>
               <semanticElements xmi:type="ComponentSample:SoftwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.1/@abstractComponent.0"/>
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_uGcZxC7PEeSrH6PfyKBTxw" showIcon="false">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZxS7PEeSrH6PfyKBTxw"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_uGcZxi7PEeSrH6PfyKBTxw"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_uGcZxy7PEeSrH6PfyKBTxw" red="209" green="209" blue="209"/>
+              <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PQ1zRenMEeWmiKu29cZZLw" shape="ring" color="194,239,255">
+                <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']/@style"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
             </ownedDiagramElements>
@@ -675,41 +539,10 @@
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_yUVpkUJvEeSVV45sXpXcWg" showIcon="false">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_yUVpkkJvEeSVV45sXpXcWg"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_yUVpkUJvEeSVV45sXpXcWg" showIcon="false" color="233,185,110">
               <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplesafety.design/description/ComponentSampleSafety.odesign#//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@subNodeMappings[name='SafetyNode_NM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_yUVpk0JvEeSVV45sXpXcWg"/>
-              <color xmi:type="viewpoint:RGBValues" xmi:id="_yUVplEJvEeSVV45sXpXcWg" red="233" green="185" blue="110"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplesafety.design/description/ComponentSampleSafety.odesign#//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@subNodeMappings[name='SafetyNode_NM']"/>
-          </ownedDiagramElements>
-          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QBKe1EJwEeSVV45sXpXcWg" name="Cost: 3/Complexity: 2" visible="false" width="3" height="3" resizeKind="NSEW">
-            <target xmi:type="ComponentSamplePerformance:Performance" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@ownedExtensions.0"/>
-            <semanticElements xmi:type="ComponentSamplePerformance:Performance" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@ownedExtensions.0"/>
-            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_QBUP1EJwEeSVV45sXpXcWg" name="Overhead: false" visible="false" width="3" height="3" resizeKind="NSEW">
-              <target xmi:type="ComponentSamplePerformance:PerformanceStatus" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@ownedExtensions.0/@status"/>
-              <semanticElements xmi:type="ComponentSamplePerformance:PerformanceStatus" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@ownedExtensions.0/@status"/>
-              <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-              <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-              <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_QBUP1UJwEeSVV45sXpXcWg" showIcon="false" labelPosition="node">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_QBUP1kJwEeSVV45sXpXcWg"/>
-                <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@borderedNodeMappings[name='PerformanceStatusNode_BNM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_QBUP10JwEeSVV45sXpXcWg"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_QBUP2EJwEeSVV45sXpXcWg" red="238" green="201" blue="142"/>
-              </ownedStyle>
-              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@borderedNodeMappings[name='PerformanceStatusNode_BNM']"/>
-            </ownedBorderedNodes>
-            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_QBUP0EJwEeSVV45sXpXcWg" showIcon="false">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_QBUP0UJwEeSVV45sXpXcWg"/>
-              <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_QBUP0kJwEeSVV45sXpXcWg"/>
-              <color xmi:type="viewpoint:RGBValues" xmi:id="_QBUP00JwEeSVV45sXpXcWg" red="233" green="185" blue="110"/>
-            </ownedStyle>
-            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']/@ownedRepresentationExtensions[name='ComponentSamplePerformanceDiagram']/@layers[name='Component%20Sample%20Performance']/@containerMappings[name='ComponentSamplePerformance_Imported_CM']/@subNodeMappings[name='PerformanceNode_NM']"/>
           </ownedDiagramElements>
           <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_0_4NWUJwEeSVV45sXpXcWg" name="Quality: Medium" visible="false" width="3" height="3" resizeKind="NSEW">
             <target xmi:type="ComponentSampleQualityAssessment:QualityAssessment" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@ownedExtensions.1"/>
@@ -720,22 +553,16 @@
               <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
               <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
               <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-              <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NX0JwEeSVV45sXpXcWg" showIcon="false" labelPosition="node">
-                <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NYEJwEeSVV45sXpXcWg"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NX0JwEeSVV45sXpXcWg" showIcon="false" labelPosition="node" color="238,201,142">
                 <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']/@borderedNodeMappings[name='QualityMeasureBorderedNode_BNM']/@style"/>
-                <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NYUJwEeSVV45sXpXcWg"/>
-                <color xmi:type="viewpoint:RGBValues" xmi:id="_0_4NYkJwEeSVV45sXpXcWg" red="238" green="201" blue="142"/>
               </ownedStyle>
               <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']/@borderedNodeMappings[name='QualityMeasureBorderedNode_BNM']"/>
             </ownedBorderedNodes>
             <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
             <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
             <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-            <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NWkJwEeSVV45sXpXcWg" showIcon="false">
-              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NW0JwEeSVV45sXpXcWg"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_0_4NWkJwEeSVV45sXpXcWg" showIcon="false" color="233,185,110">
               <description xmi:type="style:SquareDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']/@style"/>
-              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_0_4NXEJwEeSVV45sXpXcWg"/>
-              <color xmi:type="viewpoint:RGBValues" xmi:id="_0_4NXUJwEeSVV45sXpXcWg" red="233" green="185" blue="110"/>
             </ownedStyle>
             <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']/@ownedRepresentationExtensions[name='ComponentSampleQualityAssessmentDiagram']/@layers[name='Component%20Sample%20Quality%20Assessment']/@containerMappings[name='QualityAssessment_ComponentSample_Imported_CM']/@subNodeMappings[name='QualityAssessmentNode_NM']"/>
           </ownedDiagramElements>
@@ -743,55 +570,49 @@
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_wXs_wC7REeSrH6PfyKBTxw" sourceNode="_-xqCsEJrEeSVV45sXpXcWg" targetNode="_uGcZ0y7PEeSrH6PfyKBTxw">
         <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_wXs_wS7REeSrH6PfyKBTxw" size="2" routingStyle="manhattan">
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_wXs_wS7REeSrH6PfyKBTxw" size="2" routingStyle="manhattan" strokeColor="0,0,0">
           <customFeatures>size</customFeatures>
           <customFeatures>routingStyle</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_wXs_wi7REeSrH6PfyKBTxw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_xYZnwC7REeSrH6PfyKBTxw" sourceNode="_uGcZ0y7PEeSrH6PfyKBTxw" targetNode="_uGcZ2S7PEeSrH6PfyKBTxw">
         <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.0"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xYZnwS7REeSrH6PfyKBTxw" size="2">
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_xYZnwS7REeSrH6PfyKBTxw" size="2" strokeColor="0,0,0">
           <customFeatures>size</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_xYZnwi7REeSrH6PfyKBTxw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_yJCagC7REeSrH6PfyKBTxw" sourceNode="_uGcZ2S7PEeSrH6PfyKBTxw" targetNode="_uGcZ3y7PEeSrH6PfyKBTxw">
         <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.1"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yJCagS7REeSrH6PfyKBTxw" size="2">
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_yJCagS7REeSrH6PfyKBTxw" size="2" strokeColor="0,0,0">
           <customFeatures>size</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_yJCagi7REeSrH6PfyKBTxw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ym73cC7REeSrH6PfyKBTxw" sourceNode="_uGcZ3y7PEeSrH6PfyKBTxw" targetNode="_uGcZ5S7PEeSrH6PfyKBTxw">
         <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.2"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ym73cS7REeSrH6PfyKBTxw" size="2">
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ym73cS7REeSrH6PfyKBTxw" size="2" strokeColor="0,0,0">
           <customFeatures>size</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_ym73ci7REeSrH6PfyKBTxw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_4d5q0C7REeSrH6PfyKBTxw" sourceNode="_uGcZvS7PEeSrH6PfyKBTxw" targetNode="_uGcZyC7PEeSrH6PfyKBTxw">
         <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.4/@abstractComponent.1"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_4d5q0S7REeSrH6PfyKBTxw" size="0">
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_4d5q0S7REeSrH6PfyKBTxw" size="0" strokeColor="0,0,0">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_4d5q0i7REeSrH6PfyKBTxw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_D_NK0C7SEeSrH6PfyKBTxw" sourceNode="_uGcZ6y7PEeSrH6PfyKBTxw" targetNode="_uGcaAC7PEeSrH6PfyKBTxw">
         <target xmi:type="ComponentSample:HardwareComponent" href="VideoOnDemand.componentsample#//@packages.0/@components.3/@abstractComponent.0"/>
-        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_D_NK0S7SEeSrH6PfyKBTxw" size="2">
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_D_NK0S7SEeSrH6PfyKBTxw" size="2" strokeColor="0,0,0">
           <customFeatures>size</customFeatures>
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']/@style"/>
-          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_D_NK0i7SEeSrH6PfyKBTxw"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@edgeMappings[name='UseComponentToComponentEdge_EM']"/>
       </ownedDiagramElements>
@@ -803,22 +624,19 @@
     </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_md1CgS7PEeSrH6PfyKBTxw" initialized="true">
-    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ad.example.componentsample.safety.design/description/safety.odesign#//@ownedViewpoints[name='safety']"/>
-  </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_md-zgC7PEeSrH6PfyKBTxw" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_md-zgC7PEeSrH6PfyKBTxw">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplesafety.design/description/ComponentSampleSafety.odesign#//@ownedViewpoints[name='ComponentSampleSafety_ID']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_md-zgS7PEeSrH6PfyKBTxw" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_md-zgS7PEeSrH6PfyKBTxw">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsampleperformance.design/description/ComponentSamplePerformance.odesign#//@ownedViewpoints[name='ComponentSamplePerformance_ID']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_meIkgC7PEeSrH6PfyKBTxw" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_meIkgC7PEeSrH6PfyKBTxw">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design/description/ComponentSampleQualityAssessment.odesign#//@ownedViewpoints[name='ComponentSampleQualityAssessment_ID']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_meIkgS7PEeSrH6PfyKBTxw" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_meIkgS7PEeSrH6PfyKBTxw">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.vp.componentsamplesafetypattern.design/description/ComponentSampleSafetyPattern.odesign#//@ownedViewpoints[name='ComponentSampleSafetyPattern_ID']"/>
   </ownedViews>
-  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_IOEV8EJwEeSVV45sXpXcWg" initialized="true">
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_IOEV8EJwEeSVV45sXpXcWg">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']"/>
   </ownedViews>
 </viewpoint:DAnalysis>

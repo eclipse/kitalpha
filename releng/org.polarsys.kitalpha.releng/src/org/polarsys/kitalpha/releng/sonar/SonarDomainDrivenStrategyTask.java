@@ -65,6 +65,15 @@ public class SonarDomainDrivenStrategyTask extends DomainDrivenStrategyTask {
 		prop.append("sonar.projectKey=org.polarsys:org.polarsys.kitalpha").append("\n");
 		prop.append("sonar.projectName=???").append("\n");
 		prop.append("sonar.projectVersion=master").append("\n");
+		prop.append("sonar.binaries=bin").append("\n");
+		prop.append("sonar.sources=src").append("\n").append("\n");
+
+		prop.append("#Tells SonarQube that the code coverage tool by unit tests is JaCoCo").append("\n");
+		prop.append("sonar.java.coveragePlugin=jacoco").append("\n");
+		prop.append("#Tells SonarQube where the unit tests code coverage report is").append("\n");
+		prop.append("sonar.jacoco.reportPath=../jacoco.exec").append("\n").append("\n");
+
+
 	}
 	@Override
 	protected void writeContext(ITaskProductionContext context, PatternContext ctx) throws InvocationException {

@@ -96,7 +96,9 @@ public class NodeDescriptionImpl extends AbstractDescriptionImpl implements
 	 * @generated
 	 */
 	protected NodeDescriptionImpl() {
+
 		super();
+
 	}
 
 	/**

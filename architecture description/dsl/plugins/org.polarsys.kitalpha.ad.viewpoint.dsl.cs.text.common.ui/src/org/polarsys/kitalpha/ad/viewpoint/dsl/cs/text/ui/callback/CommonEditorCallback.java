@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -59,6 +60,7 @@ import com.google.inject.Injector;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal ABKA
  *
  */
 
@@ -66,9 +68,9 @@ import com.google.inject.Injector;
 @SuppressWarnings("restriction")
 public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
-	protected Logger logger = Logger.getLogger(CommonEditorCallback.class);
+	private Logger logger = Logger.getLogger(CommonEditorCallback.class);
 	
-	protected XtextEditor currentEditor;
+	private XtextEditor currentEditor;
 	
 	@Inject
 	private ToggleXtextNatureAction toggleNature;
@@ -101,8 +103,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
 	@Override
 	public void afterCreatePartControl(XtextEditor editor) {
-		if (this.currentEditor != editor)
+		if (this.currentEditor != editor) {
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
+		}
 		IResource resource = editor.getResource();
 		if (resource!=null && !toggleNature.hasNature(resource.getProject()) && resource.getProject().isAccessible() && !resource.getProject().isHidden()) {
 			toggleNature.toggleNature(resource.getProject());
@@ -111,16 +114,17 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	
 	@Override
 	public void beforeDispose(XtextEditor editor) {
-		if (this.currentEditor != editor)
+		if (this.currentEditor != editor){
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
-		
+		}
 		this.currentEditor = null;
 	}
 
 	@Override
 	public boolean onValidateEditorInputState(XtextEditor editor) {
-		if (this.currentEditor != editor)
+		if (this.currentEditor != editor){
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
+		}
 		return currentEditor.getDirtyStateEditorSupport().isEditingPossible(currentEditor);
 	}
 
@@ -131,8 +135,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	@Override
 	public void afterSetInput(XtextEditor editor) {
 		if (this.currentEditor != null) {
-			if (this.currentEditor != editor)
+			if (this.currentEditor != editor){
 				throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
+			}
 		} else {
 			this.currentEditor = editor;
 		}
@@ -141,16 +146,18 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	public void removeVerifyListener(VerifyListener listener) {
 		ISourceViewer sourceViewer = currentEditor.getInternalSourceViewer();
 		StyledText widget = sourceViewer.getTextWidget();
-		if (widget != null)
+		if (widget != null){
 			widget.removeVerifyListener(listener);
+		}
 	}
 	
 
 	
 	@Override
 	public void afterSave(XtextEditor editor) {
-		if (this.currentEditor != editor)
+		if (this.currentEditor != editor){
 			throw new IllegalStateException(Messages.CommonEditorCallback_MultipleInstancesError);
+		}
 
 		final XtextEditor current = editor;
 		Runnable runnable = new Runnable() {		
@@ -159,8 +166,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 				doSynchronize(file);
 			}
 		};
-		if (runnable != null)
+		if (runnable != null){
 			update(runnable);
+		}
 	}
 
 	protected boolean doSynchronize(IFile file){
@@ -186,7 +194,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 						synchronizedObject.eResource().save(saveOptions);
 						result = true;
 					} catch (IOException e) {
-						e.printStackTrace();
+						logger.error("Cannot Synchronize " + file.getName(), e);
 					} finally {
 						inputObjects.clear();
 					}
@@ -212,16 +220,18 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		
 		for (IResource r : resources) {
 			result &= ResourceHelper.getSyncProperty(r);
-			if (!result) 
+			if (!result) {
 				return result;
+			}
 		}
 		return result;
 	}
 	
 	protected boolean validate(List<EObject> inputObjects) {
 		for (EObject current: inputObjects) {
-			if (!validate(current))
+			if (!validate(current)){
 				return false;
+			}
 		}
 		return true;
 	}
@@ -256,8 +266,9 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 		List<EObject> eCrossReferences = viewpoint.eCrossReferences();
 		for (EObject object:eCrossReferences) {
 			URI uri = EcoreUtil.getURI(object);
-			if (uri.hasFragment())
+			if (uri.hasFragment()){
 				uris.add(uri.trimFragment());
+			}
 		}
 		return uris;
 	}
@@ -291,11 +302,12 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 			if (resource.getURI().isPlatformResource() && holdInPoject(resource.getURI(), projectName)){			
 				EcoreUtil2.resolveLazyCrossReferences(resource, CancelIndicator.NullImpl);
 				
+				boolean _tmp = handleXtextResourceErrors(resource);
+				isResourceClean = isResourceClean && _tmp;
 				
-				isResourceClean &= handleXtextResourceErrors(resource);
-				
-				if (!isResourceClean)
+				if (!isResourceClean){
 					isResourceClean &= handleEMFValidationErrors(resource);
+				}
 			}
 		}
 		
@@ -313,15 +325,19 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	}
 
 	private void createOrReinitializeMessagesBuffer(){
-		if (messages == null)
+		if (messages == null) {
 			messages = new HashMap<String, String>();
-		else
+		}
+		else {
 			messages.clear();
+		}
 		
-		if (logMessages == null)
+		if (logMessages == null){
 			logMessages = new StringBuffer();
-		else
+		}
+		else {
 			logMessages.setLength(0);
+		}
 	}
 	
 	private boolean handleEMFValidationErrors(Resource resource) {
@@ -401,9 +417,17 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 	private String flattenMessages(Map<String, String> messages) {
 		StringBuffer tmp = new StringBuffer();
 		
-		for (String key : messages.keySet()) {
-			tmp.append(key).append(messages.get(key));
+		for (Entry<String, String> entry : messages.entrySet()) {
+			tmp.append(entry.getKey()).append(entry.getValue());
 		}
 		return tmp.toString();
+	}
+	
+	protected Logger getLogger(){
+		return logger;
+	}
+	
+	protected XtextEditor getCurrentEditor() {
+		return currentEditor;
 	}
 }

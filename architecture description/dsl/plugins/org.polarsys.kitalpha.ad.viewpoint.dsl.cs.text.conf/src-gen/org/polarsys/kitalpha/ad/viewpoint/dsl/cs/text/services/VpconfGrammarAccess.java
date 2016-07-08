@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,23 +10,16 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
 
 @Singleton
 public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
@@ -86,12 +79,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetApplicationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cGenerationConfigurationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cGenerationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cReleaseParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//ConfigurationElement returns vpconf::ConfigurationElement:
-		//	TargetApplication | GenerationConfiguration | Generation;
+		//	TargetApplication | GenerationConfiguration | Generation | Release;
 		@Override public ParserRule getRule() { return rule; }
 
-		//TargetApplication | GenerationConfiguration | Generation
+		//TargetApplication | GenerationConfiguration | Generation | Release
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//TargetApplication
@@ -102,6 +96,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Generation
 		public RuleCall getGenerationParserRuleCall_2() { return cGenerationParserRuleCall_2; }
+
+		//Release
+		public RuleCall getReleaseParserRuleCall_3() { return cReleaseParserRuleCall_3; }
 	}
 
 	public class TargetApplicationElements extends AbstractParserRuleElementFinder {
@@ -546,6 +543,228 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
+
+	public class ReleaseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Release");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cReleaseAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cReleaseKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cVersionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cViewpointVersionAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cViewpointVersionVersionParserRuleCall_3_2_0 = (RuleCall)cViewpointVersionAssignment_3_2.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cDescriptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cViewpointDescriptionAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cViewpointDescriptionEStringParserRuleCall_4_2_0 = (RuleCall)cViewpointDescriptionAssignment_4_2.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cExecutionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cEnvironmentsKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Keyword cColonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
+		private final Assignment cRequiredExecutionEnvironmentAssignment_5_3_0 = (Assignment)cGroup_5_3.eContents().get(0);
+		private final RuleCall cRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_0_0 = (RuleCall)cRequiredExecutionEnvironmentAssignment_5_3_0.eContents().get(0);
+		private final Group cGroup_5_3_1 = (Group)cGroup_5_3.eContents().get(1);
+		private final Keyword cCommaKeyword_5_3_1_0 = (Keyword)cGroup_5_3_1.eContents().get(0);
+		private final Assignment cRequiredExecutionEnvironmentAssignment_5_3_1_1 = (Assignment)cGroup_5_3_1.eContents().get(1);
+		private final RuleCall cRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_1_1_0 = (RuleCall)cRequiredExecutionEnvironmentAssignment_5_3_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Release returns vpconf::Release:
+		//	{vpconf::Release} "release" "{" ("version" ":" viewpointVersion=Version)? ("description" ":"
+		//	viewpointDescription=EString)? ("execution" "environments" ":" (requiredExecutionEnvironment+=STRING (","
+		//	requiredExecutionEnvironment+=STRING)*))? "}";
+		@Override public ParserRule getRule() { return rule; }
+
+		//{vpconf::Release} "release" "{" ("version" ":" viewpointVersion=Version)? ("description" ":"
+		//viewpointDescription=EString)? ("execution" "environments" ":" (requiredExecutionEnvironment+=STRING (","
+		//requiredExecutionEnvironment+=STRING)*))? "}"
+		public Group getGroup() { return cGroup; }
+
+		//{vpconf::Release}
+		public Action getReleaseAction_0() { return cReleaseAction_0; }
+
+		//"release"
+		public Keyword getReleaseKeyword_1() { return cReleaseKeyword_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//("version" ":" viewpointVersion=Version)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"version"
+		public Keyword getVersionKeyword_3_0() { return cVersionKeyword_3_0; }
+
+		//":"
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
+
+		//viewpointVersion=Version
+		public Assignment getViewpointVersionAssignment_3_2() { return cViewpointVersionAssignment_3_2; }
+
+		//Version
+		public RuleCall getViewpointVersionVersionParserRuleCall_3_2_0() { return cViewpointVersionVersionParserRuleCall_3_2_0; }
+
+		//("description" ":" viewpointDescription=EString)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"description"
+		public Keyword getDescriptionKeyword_4_0() { return cDescriptionKeyword_4_0; }
+
+		//":"
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+
+		//viewpointDescription=EString
+		public Assignment getViewpointDescriptionAssignment_4_2() { return cViewpointDescriptionAssignment_4_2; }
+
+		//EString
+		public RuleCall getViewpointDescriptionEStringParserRuleCall_4_2_0() { return cViewpointDescriptionEStringParserRuleCall_4_2_0; }
+
+		//("execution" "environments" ":" (requiredExecutionEnvironment+=STRING ("," requiredExecutionEnvironment+=STRING)*))?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"execution"
+		public Keyword getExecutionKeyword_5_0() { return cExecutionKeyword_5_0; }
+
+		//"environments"
+		public Keyword getEnvironmentsKeyword_5_1() { return cEnvironmentsKeyword_5_1; }
+
+		//":"
+		public Keyword getColonKeyword_5_2() { return cColonKeyword_5_2; }
+
+		//requiredExecutionEnvironment+=STRING ("," requiredExecutionEnvironment+=STRING)*
+		public Group getGroup_5_3() { return cGroup_5_3; }
+
+		//requiredExecutionEnvironment+=STRING
+		public Assignment getRequiredExecutionEnvironmentAssignment_5_3_0() { return cRequiredExecutionEnvironmentAssignment_5_3_0; }
+
+		//STRING
+		public RuleCall getRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_0_0() { return cRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_0_0; }
+
+		//("," requiredExecutionEnvironment+=STRING)*
+		public Group getGroup_5_3_1() { return cGroup_5_3_1; }
+
+		//","
+		public Keyword getCommaKeyword_5_3_1_0() { return cCommaKeyword_5_3_1_0; }
+
+		//requiredExecutionEnvironment+=STRING
+		public Assignment getRequiredExecutionEnvironmentAssignment_5_3_1_1() { return cRequiredExecutionEnvironmentAssignment_5_3_1_1; }
+
+		//STRING
+		public RuleCall getRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_1_1_0() { return cRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_1_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+
+	public class VersionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Version");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_1_1_0 = (RuleCall)cGroup_1_1.eContents().get(0);
+		private final Group cGroup_1_1_1 = (Group)cGroup_1_1.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1_1_1_1 = (RuleCall)cGroup_1_1_1.eContents().get(1);
+		private final Group cGroup_1_1_1_2 = (Group)cGroup_1_1_1.eContents().get(2);
+		private final Keyword cFullStopKeyword_1_1_1_2_0 = (Keyword)cGroup_1_1_1_2.eContents().get(0);
+		private final RuleCall cQualifierParserRuleCall_1_1_1_2_1 = (RuleCall)cGroup_1_1_1_2.eContents().get(1);
+		
+		//Version returns vpconf::Version:
+		//	INT ("." (INT ("." INT ("." Qualifier)?)?))?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//INT ("." (INT ("." INT ("." Qualifier)?)?))?
+		public Group getGroup() { return cGroup; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+
+		//("." (INT ("." INT ("." Qualifier)?)?))?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//INT ("." INT ("." Qualifier)?)?
+		public Group getGroup_1_1() { return cGroup_1_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_1_0() { return cINTTerminalRuleCall_1_1_0; }
+
+		//("." INT ("." Qualifier)?)?
+		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_1_1_0() { return cFullStopKeyword_1_1_1_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_1_1_1() { return cINTTerminalRuleCall_1_1_1_1; }
+
+		//("." Qualifier)?
+		public Group getGroup_1_1_1_2() { return cGroup_1_1_1_2; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_1_1_2_0() { return cFullStopKeyword_1_1_1_2_0; }
+
+		//Qualifier
+		public RuleCall getQualifierParserRuleCall_1_1_1_2_1() { return cQualifierParserRuleCall_1_1_1_2_1; }
+	}
+
+	public class QualifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Qualifier");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final Keyword c_Keyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final Keyword c_Keyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
+		
+		////terminal QUALIFIER: '^'?('a'..'z'|'A'..'Z'|'_' | '0'..'9') ('a'..'z'|'A'..'Z'|'_' | '-' |'0'..'9')*;
+		// Qualifier
+		//returns ecore::EString:
+		//	(INT | ID | "_") (INT | ID | "_" | "-")*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//(INT | ID | "_") (INT | ID | "_" | "-")*
+		public Group getGroup() { return cGroup; }
+
+		//INT | ID | "_"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_0_0() { return cINTTerminalRuleCall_0_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0_1() { return cIDTerminalRuleCall_0_1; }
+
+		//"_"
+		public Keyword get_Keyword_0_2() { return c_Keyword_0_2; }
+
+		//(INT | ID | "_" | "-")*
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_0() { return cINTTerminalRuleCall_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+
+		//"_"
+		public Keyword get_Keyword_1_2() { return c_Keyword_1_2; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_1_3() { return cHyphenMinusKeyword_1_3; }
+	}
 	
 	
 	private final ConfigurationElements pConfiguration;
@@ -558,6 +777,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	private final DiagramGenerationConfigurationElements pDiagramGenerationConfiguration;
 	private final DocumentationGenerationConfigurationElements pDocumentationGenerationConfiguration;
 	private final ModelsAirdGenerationConfigurationElements pModelsAirdGenerationConfiguration;
+	private final ReleaseElements pRelease;
+	private final VersionElements pVersion;
+	private final QualifierElements pQualifier;
 	
 	private final Grammar grammar;
 
@@ -578,6 +800,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDiagramGenerationConfiguration = new DiagramGenerationConfigurationElements();
 		this.pDocumentationGenerationConfiguration = new DocumentationGenerationConfigurationElements();
 		this.pModelsAirdGenerationConfiguration = new ModelsAirdGenerationConfigurationElements();
+		this.pRelease = new ReleaseElements();
+		this.pVersion = new VersionElements();
+		this.pQualifier = new QualifierElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -622,7 +847,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConfigurationElement returns vpconf::ConfigurationElement:
-	//	TargetApplication | GenerationConfiguration | Generation;
+	//	TargetApplication | GenerationConfiguration | Generation | Release;
 	public ConfigurationElementElements getConfigurationElementAccess() {
 		return pConfigurationElement;
 	}
@@ -713,6 +938,40 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getModelsAirdGenerationConfigurationRule() {
 		return getModelsAirdGenerationConfigurationAccess().getRule();
+	}
+
+	//Release returns vpconf::Release:
+	//	{vpconf::Release} "release" "{" ("version" ":" viewpointVersion=Version)? ("description" ":"
+	//	viewpointDescription=EString)? ("execution" "environments" ":" (requiredExecutionEnvironment+=STRING (","
+	//	requiredExecutionEnvironment+=STRING)*))? "}";
+	public ReleaseElements getReleaseAccess() {
+		return pRelease;
+	}
+	
+	public ParserRule getReleaseRule() {
+		return getReleaseAccess().getRule();
+	}
+
+	//Version returns vpconf::Version:
+	//	INT ("." (INT ("." INT ("." Qualifier)?)?))?;
+	public VersionElements getVersionAccess() {
+		return pVersion;
+	}
+	
+	public ParserRule getVersionRule() {
+		return getVersionAccess().getRule();
+	}
+
+	////terminal QUALIFIER: '^'?('a'..'z'|'A'..'Z'|'_' | '0'..'9') ('a'..'z'|'A'..'Z'|'_' | '-' |'0'..'9')*;
+	// Qualifier
+	//returns ecore::EString:
+	//	(INT | ID | "_") (INT | ID | "_" | "-")*;
+	public QualifierElements getQualifierAccess() {
+		return pQualifier;
+	}
+	
+	public ParserRule getQualifierRule() {
+		return getQualifierAccess().getRule();
 	}
 
 	//EString returns ecore::EString:

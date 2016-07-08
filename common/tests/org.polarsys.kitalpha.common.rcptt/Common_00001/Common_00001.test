@@ -1,0 +1,38 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _hTNYwB5fEeavOeOrSpOt_g,_nijywB5mEeavOeOrSpOt_g
+Element-Name: Common_00001
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _bMNlUB5fEeavOeOrSpOt_g
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 5/20/16 10:41 AM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Platform is starting successfully
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-button Kitalpha | get-property caption | equals Kitalpha | verify-true
+get-menu "Window/Show View/Other..." | click
+with [get-window "Show View"] {
+    get-tree | select "Kitalpha/Reports"
+    get-button OK | click
+}
+get-menu "Window/Show View/Other..." | click
+get-window "Show View" | get-tree | select "Kitalpha/ResourceReuse" | double-click
+get-menu "Window/Show View/Other..." | click
+with [get-window "Show View"] {
+    get-tree | select "Kitalpha/Viewpoint Manager"
+    get-button OK | click
+}
+
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

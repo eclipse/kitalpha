@@ -60,7 +60,9 @@ public class MappingSetImpl extends EObjectImpl implements MappingSet {
 	 * @generated
 	 */
 	protected MappingSetImpl() {
+
 		super();
+
 	}
 
 	/**

@@ -64,7 +64,9 @@ public abstract class AbstractNodeStyleImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected AbstractNodeStyleImpl() {
+
 		super();
+
 	}
 
 	/**

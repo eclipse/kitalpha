@@ -83,7 +83,9 @@ public class EdgeImpl extends AbstractEdgeImpl implements Edge {
 	 * @generated
 	 */
 	protected EdgeImpl() {
+
 		super();
+
 	}
 
 	/**

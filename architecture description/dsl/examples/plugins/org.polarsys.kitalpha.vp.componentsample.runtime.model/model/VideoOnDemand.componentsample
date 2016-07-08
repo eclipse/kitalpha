@@ -4,7 +4,8 @@
     xmlns:ComponentSamplePerformance="http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0"
     xmlns:ComponentSampleQualityAssessment="http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0"
     xmlns:ComponentSampleSafety="http://www.polarsys.org/kitalpha/ComponentSampleSafety/1.0.0"
-    xmlns:ComponentSampleSafetyPattern="http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0">
+    xmlns:ComponentSampleSafetyPattern="http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0"
+    name="Video On Demande">
   <packages xmi:type="ComponentSample:ComponentPackage" name="Video System" description="">
     <components xmi:type="ComponentSample:HardwareComponent" name="Ethernet" use="#//@packages.0/@components.1"/>
     <components xmi:type="ComponentSample:HardwareComponent" name="Area Distribution"

@@ -1,0 +1,7 @@
+<%
+
+if(((EClass) parameter).isAbstract())
+	iconPath = "../../img/AbstractClass.png";
+else 
+	iconPath = "../../img/ConcreteClass.png";
+%>

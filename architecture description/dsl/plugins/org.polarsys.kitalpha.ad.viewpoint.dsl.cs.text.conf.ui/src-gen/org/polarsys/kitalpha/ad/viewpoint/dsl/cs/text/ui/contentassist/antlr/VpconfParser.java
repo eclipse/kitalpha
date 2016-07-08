@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -11,17 +11,18 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
 
 import com.google.inject.Inject;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
 
 public class VpconfParser extends AbstractContentAssistParser {
 	
@@ -45,6 +46,8 @@ public class VpconfParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getConfigurationElementAccess().getAlternatives(), "rule__ConfigurationElement__Alternatives");
 					put(grammarAccess.getExtensionGeneratrionConfigurationAccess().getAlternatives(), "rule__ExtensionGeneratrionConfiguration__Alternatives");
+					put(grammarAccess.getQualifierAccess().getAlternatives_0(), "rule__Qualifier__Alternatives_0");
+					put(grammarAccess.getQualifierAccess().getAlternatives_1(), "rule__Qualifier__Alternatives_1");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 					put(grammarAccess.getConfigurationAccess().getGroup(), "rule__Configuration__Group__0");
@@ -66,6 +69,18 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getGroup_3(), "rule__DocumentationGenerationConfiguration__Group_3__0");
 					put(grammarAccess.getModelsAirdGenerationConfigurationAccess().getGroup(), "rule__ModelsAirdGenerationConfiguration__Group__0");
 					put(grammarAccess.getModelsAirdGenerationConfigurationAccess().getGroup_3(), "rule__ModelsAirdGenerationConfiguration__Group_3__0");
+					put(grammarAccess.getReleaseAccess().getGroup(), "rule__Release__Group__0");
+					put(grammarAccess.getReleaseAccess().getGroup_3(), "rule__Release__Group_3__0");
+					put(grammarAccess.getReleaseAccess().getGroup_4(), "rule__Release__Group_4__0");
+					put(grammarAccess.getReleaseAccess().getGroup_5(), "rule__Release__Group_5__0");
+					put(grammarAccess.getReleaseAccess().getGroup_5_3(), "rule__Release__Group_5_3__0");
+					put(grammarAccess.getReleaseAccess().getGroup_5_3_1(), "rule__Release__Group_5_3_1__0");
+					put(grammarAccess.getVersionAccess().getGroup(), "rule__Version__Group__0");
+					put(grammarAccess.getVersionAccess().getGroup_1(), "rule__Version__Group_1__0");
+					put(grammarAccess.getVersionAccess().getGroup_1_1(), "rule__Version__Group_1_1__0");
+					put(grammarAccess.getVersionAccess().getGroup_1_1_1(), "rule__Version__Group_1_1_1__0");
+					put(grammarAccess.getVersionAccess().getGroup_1_1_1_2(), "rule__Version__Group_1_1_1_2__0");
+					put(grammarAccess.getQualifierAccess().getGroup(), "rule__Qualifier__Group__0");
 					put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 					put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
 					put(grammarAccess.getConfigurationAccess().getNameAssignment_2(), "rule__Configuration__NameAssignment_2");
@@ -84,6 +99,10 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDiagramGenerationConfigurationAccess().getOverwriteVSMAssignment_3_2(), "rule__DiagramGenerationConfiguration__OverwriteVSMAssignment_3_2");
 					put(grammarAccess.getDocumentationGenerationConfigurationAccess().getEcoreToHtmlAssignment_3_1(), "rule__DocumentationGenerationConfiguration__EcoreToHtmlAssignment_3_1");
 					put(grammarAccess.getModelsAirdGenerationConfigurationAccess().getGenRepresentationsAssignment_3_2(), "rule__ModelsAirdGenerationConfiguration__GenRepresentationsAssignment_3_2");
+					put(grammarAccess.getReleaseAccess().getViewpointVersionAssignment_3_2(), "rule__Release__ViewpointVersionAssignment_3_2");
+					put(grammarAccess.getReleaseAccess().getViewpointDescriptionAssignment_4_2(), "rule__Release__ViewpointDescriptionAssignment_4_2");
+					put(grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentAssignment_5_3_0(), "rule__Release__RequiredExecutionEnvironmentAssignment_5_3_0");
+					put(grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentAssignment_5_3_1_1(), "rule__Release__RequiredExecutionEnvironmentAssignment_5_3_1_1");
 				}
 			};
 		}

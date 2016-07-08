@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,7 +16,6 @@ import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.VpDiagramEditorCallBack;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateStore;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.template.VpdiagramTemplateProposalProvider;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
 
 
 /**
@@ -29,7 +28,7 @@ public class VpdiagramUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs
 	
 	@Override
 	public Class<? extends IEObjectHover> bindIEObjectHover() {
-		return CommonEObjectHover.class;
+		return org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.VpDiagramHover.class;
 	}
 	
 	

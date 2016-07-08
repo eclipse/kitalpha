@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,15 +21,15 @@ public class MappingImportData {
 	/**
 	 * Define the kind of the Import. Kind can be SPECIFIED or AUTO.
 	 */
-	private MappingImportKind import_kind;
+	private MappingImportKind importKind;
 	/**
 	 * The original Mapping is the mapping defined in the extended diagram.
 	 */
-	private AbstractNodeMapping original_mapping;
+	private AbstractNodeMapping originalMapping;
 	/**
 	 * The imported Mapping is the mapping specified/generated in the diagram extension.
 	 */
-	private AbstractNodeMapping imported_mapping;
+	private AbstractNodeMapping importedMapping;
 	/**
 	 * The parent Mapping of the original_mapping as defined in the original diagram.
 	 */
@@ -50,29 +50,38 @@ public class MappingImportData {
 	 * 		2- If the value of imported_m is NOT NULL and kind is NULL then the kind is set to: 
 	 * 		   MappingImportKind.SPECIFIED
 	 * 
-	 * @param original_m : the mapping defined in the target original odesign model
-	 * @param imported_m : the generated mapping import 
+	 * @param originalMapping : the mapping defined in the target original odesign model
+	 * @param importedMapping : the generated mapping import 
 	 * @param kind
 	 */
-	public MappingImportData(AbstractNodeMapping original_m, AbstractNodeMapping imported_m, MappingImportKind kind) {
-		original_mapping = original_m;
+	public MappingImportData(AbstractNodeMapping originalMapping, AbstractNodeMapping importedMapping, MappingImportKind kind) {
+		this.originalMapping = originalMapping;
 		
-		if (imported_m != null)
+		if (importedMapping != null)
 		{
-			imported_mapping = imported_m;
+			this.importedMapping = importedMapping;
 			if (kind != null)
-				import_kind = kind;
+			{
+				this.importKind = kind;
+			}
 			else
-				import_kind = MappingImportKind.SPECIFIED;
+			{
+				this.importKind = MappingImportKind.SPECIFIED;
+			}
 		}
 		else
 		{
-			import_kind = MappingImportKind.AUTO;
+			this.importKind = MappingImportKind.AUTO;
 		}
 	}
 	
-	public MappingImportData(AbstractNodeMapping original_m) {
-		this(original_m, null, null);
+	public MappingImportData(AbstractNodeMapping originalMapping) {
+		this(originalMapping, null, null);
+	}
+	
+	@Override
+	public int hashCode() {
+		return super.hashCode();
 	}
 	
 	@Override
@@ -81,21 +90,21 @@ public class MappingImportData {
 		{
 			MappingImportData parameter = (MappingImportData) arg0;
 
-			if (parameter.getImport_kind() == null)
+			if (parameter.getImportKind() == null)
 			{
-				return parameter.getOriginal_mapping().equals(original_mapping);
+				return parameter.getOriginalMapping().equals(originalMapping);
 			}
 			else
 			{
-				switch (parameter.getImport_kind()) {
+				switch (parameter.getImportKind()) {
 				case SPECIFIED:
-					return (parameter.getImport_kind().equals(import_kind)
-							&& parameter.getImported_mapping().equals(imported_mapping)
-							&& parameter.getOriginal_mapping().equals(original_mapping));
+					return (parameter.getImportKind().equals(importKind)
+							&& parameter.getImportedMapping().equals(importedMapping)
+							&& parameter.getOriginalMapping().equals(originalMapping));
 
 				case AUTO:
-					return (parameter.getImport_kind().equals(import_kind)
-							&& parameter.getOriginal_mapping().equals(original_mapping));
+					return (parameter.getImportKind().equals(importKind)
+							&& parameter.getOriginalMapping().equals(originalMapping));
 
 				}
 			}
@@ -103,34 +112,34 @@ public class MappingImportData {
 		return super.equals(arg0);
 	}
 	
-	public boolean original_equals(Object arg0){
+	public boolean originalEquals(Object arg0){
 		return (arg0 instanceof MappingImportData 
-					? ((MappingImportData)arg0).getOriginal_mapping().equals(original_mapping) 
+					? ((MappingImportData)arg0).getOriginalMapping().equals(originalMapping) 
 					: false);
 	}
 	
-	public MappingImportKind getImport_kind() {
-		return import_kind;
+	public MappingImportKind getImportKind() {
+		return importKind;
 	}
 
-	public void setImport_kind(MappingImportKind mapping_kind) {
-		this.import_kind = mapping_kind;
+	public void setImportKind(MappingImportKind mappingKind) {
+		this.importKind = mappingKind;
 	}
 
-	public AbstractNodeMapping getOriginal_mapping() {
-		return original_mapping;
+	public AbstractNodeMapping getOriginalMapping() {
+		return originalMapping;
 	}
 
-	public void setOriginal_mapping(AbstractNodeMapping original_mapping) {
-		this.original_mapping = original_mapping;
+	public void setOriginalMapping(AbstractNodeMapping originalMapping) {
+		this.originalMapping = originalMapping;
 	}
 
-	public AbstractNodeMapping getImported_mapping() {
-		return imported_mapping;
+	public AbstractNodeMapping getImportedMapping() {
+		return importedMapping;
 	}
 
-	public void setImported_mapping(AbstractNodeMapping imported_mapping) {
-		this.imported_mapping = imported_mapping;
+	public void setImportedMapping(AbstractNodeMapping importedMapping) {
+		this.importedMapping = importedMapping;
 	}
 
 	public MappingImportData getParent() {

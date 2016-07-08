@@ -118,7 +118,9 @@ public class HistogramSectionImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected HistogramSectionImpl() {
+
 		super();
+
 	}
 
 	/**

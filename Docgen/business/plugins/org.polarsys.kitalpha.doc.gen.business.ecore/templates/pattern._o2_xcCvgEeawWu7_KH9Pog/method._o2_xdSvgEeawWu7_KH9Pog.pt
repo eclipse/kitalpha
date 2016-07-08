@@ -1,0 +1,14 @@
+<%
+String text = LabelProviderHelper.getText(parameter);
+text = EscapeChars.forHTML(text);
+String projectName = ctx.getValue("projectName").toString();
+String outputFolder = ctx.getValue("outputFolder").toString();
+%>
+
+<%
+String subPackages = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EPackageContentHelper.getSubPackagesList(parameter, projectName, outputFolder);
+if(subPackages != "") {
+%>
+<h2>Sub Packages</h2>
+<%=subPackages%>
+<%}%>

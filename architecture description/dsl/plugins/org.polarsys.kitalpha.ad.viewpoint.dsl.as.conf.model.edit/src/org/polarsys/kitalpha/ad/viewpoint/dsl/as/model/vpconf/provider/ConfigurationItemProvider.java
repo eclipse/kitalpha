@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider.AspectIte
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConfigurationItemProvider extends AspectItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ConfigurationItemProvider extends AspectItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -114,10 +112,12 @@ public class ConfigurationItemProvider extends AspectItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
+
 		String label = ((Configuration)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Configuration_type") :
 			getString("_UI_Configuration_type") + " " + label;
+
 	}
 
 	/**
@@ -151,20 +151,33 @@ public class ConfigurationItemProvider extends AspectItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-				 VpconfFactory.eINSTANCE.createTargetApplication()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+						 VpconfFactory.eINSTANCE.createTargetApplication()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-				 VpconfFactory.eINSTANCE.createGenerationConfiguration()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-				 VpconfFactory.eINSTANCE.createGeneration()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+						 VpconfFactory.eINSTANCE.createGenerationConfiguration()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+						 VpconfFactory.eINSTANCE.createGeneration()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+						 VpconfFactory.eINSTANCE.createRelease()));
+
+
 	}
 
 }

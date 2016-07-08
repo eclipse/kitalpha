@@ -17,15 +17,21 @@
         <type xmi:type="types:TypeString" xmi:id="_HYKDMN5iEeKJqJUhCNewAQ"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_Xtc2oN5iEeKJqJUhCNewAQ"
-          name="execution.environment" invocationContracts="#_xU_4kN5iEeKJqJUhCNewAQ">
-        <type xmi:type="types:TypeString" xmi:id="_bJPoEN5iEeKJqJUhCNewAQ" value="J2SE-1.5"/>
+          name="required.ee" invocationContracts="#_xU_4kN5iEeKJqJUhCNewAQ #_3ZNWRO0tEeWIDN8jHBcB7A">
+        <type xmi:type="types:TypeString" xmi:id="_m657AOwgEeW0Hf5pn0JwLg"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_oQJPoOwgEeW0Hf5pn0JwLg"
+          name="viewpoint.version" invocationContracts="#_3ZNWQ-0tEeWIDN8jHBcB7A">
+        <type xmi:type="types:TypeString" xmi:id="_p6iU4OwgEeW0Hf5pn0JwLg"/>
       </contracts>
     </contractContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_XzrXEN45EeKJqJUhCNewAQ">
       <invocations xmi:id="_-l_UsN46EeKJqJUhCNewAQ" name="Create Releng Plugin" invokedActivity="#_dVahUN45EeKJqJUhCNewAQ">
         <invocationContractContainer xmi:id="_6oTdgN5CEeKJqJUhCNewAQ">
           <invocationContracts xmi:id="_xU_4kN5iEeKJqJUhCNewAQ" factoryComponentContract="#_Xtc2oN5iEeKJqJUhCNewAQ"
-              invokedContract="#_KhZ-AN5gEeKJqJUhCNewAQ"/>
+              invokedContract="#_KhZ-AN5gEeKJqJUhCNewAQ">
+            <type xmi:type="types:TypeString" xmi:id="_kHy6MOwgEeW0Hf5pn0JwLg" value="J2SE-1.5"/>
+          </invocationContracts>
           <invocationContracts xmi:id="_8J6aMN5CEeKJqJUhCNewAQ" factoryComponentContract="#_DnxecN45EeKJqJUhCNewAQ"
               invokedContract="#_UapT0N47EeKJqJUhCNewAQ"/>
           <invocationContracts xmi:id="_IvBvgN5iEeKJqJUhCNewAQ" factoryComponentContract="#_ZzqHcN5dEeKJqJUhCNewAQ"
@@ -50,6 +56,18 @@
               invokedContract="#_u7aggLpoEeOGg8kikocj6w"/>
           <invocationContracts xmi:id="_92RWQLpoEeOGg8kikocj6w" targetInvocationContract="#_gH0ecLpqEeOGg8kikocj6w"
               invokedContract="#_4ElEcLpoEeOGg8kikocj6w"/>
+          <invocationContracts xmi:id="_cTRN8OwgEeW0Hf5pn0JwLg" targetInvocationContract="#_3ZNWQu0tEeWIDN8jHBcB7A"
+              invokedContract="#_NWBLgOwgEeW0Hf5pn0JwLg"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_3ZNWQO0tEeWIDN8jHBcB7A" name="" invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_K0EvIO0QEeWIDN8jHBcB7A">
+        <invocationContractContainer xmi:id="_3ZNWQe0tEeWIDN8jHBcB7A">
+          <invocationContracts xmi:id="_3ZNWQu0tEeWIDN8jHBcB7A" sourceInvocationContract="#_cTRN8OwgEeW0Hf5pn0JwLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_QMvc8O0QEeWIDN8jHBcB7A"/>
+          <invocationContracts xmi:id="_3ZNWQ-0tEeWIDN8jHBcB7A" factoryComponentContract="#_oQJPoOwgEeW0Hf5pn0JwLg"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_SJwjQO0QEeWIDN8jHBcB7A"/>
+          <invocationContracts xmi:id="_3ZNWRO0tEeWIDN8jHBcB7A" factoryComponentContract="#_Xtc2oN5iEeKJqJUhCNewAQ"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdslCommonFactories.fcore#_STS5wO0QEeWIDN8jHBcB7A"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_sdtnEN5CEeKJqJUhCNewAQ" name="Create Build Model" invokedActivity="#_jPvxwN45EeKJqJUhCNewAQ">
@@ -167,6 +185,9 @@
       </contracts>
       <contracts xmi:id="_4ElEcLpoEeOGg8kikocj6w" name="generation.location" mode="Out">
         <type xmi:type="types:TypeMap" xmi:id="_8zzzsLpoEeOGg8kikocj6w"/>
+      </contracts>
+      <contracts xmi:id="_NWBLgOwgEeW0Hf5pn0JwLg" name="releng.project.name" mode="Out">
+        <type xmi:type="types:TypeString" xmi:id="_PLuv8OwgEeW0Hf5pn0JwLg"/>
       </contracts>
     </contractContainer>
   </ftask:Task>

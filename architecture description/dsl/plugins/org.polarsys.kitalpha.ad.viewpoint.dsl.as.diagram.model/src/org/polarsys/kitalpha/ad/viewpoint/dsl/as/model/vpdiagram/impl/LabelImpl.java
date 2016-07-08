@@ -137,7 +137,9 @@ public class LabelImpl extends EObjectImpl implements Label {
 	 * @generated
 	 */
 	protected LabelImpl() {
+
 		super();
+
 	}
 
 	/**

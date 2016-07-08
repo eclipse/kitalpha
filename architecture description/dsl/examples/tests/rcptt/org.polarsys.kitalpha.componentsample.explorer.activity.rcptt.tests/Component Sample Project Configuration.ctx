@@ -1,0 +1,39 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.parameters
+Element-Name: Component Sample Project Configuration
+Element-Type: context
+Element-Version: 2.0
+Id: _-gv7oObVEeWyM-T_36Gzrg
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 12:18 PM
+
+------=_.parameters.context-2e023de5-3294-36a9-ac1d-6701f05a40ee
+Content-Type: text/properties
+Entry-Name: .parameters.context
+
+#Mon Mar 14 12:18:52 CET 2016
+CsProjectName=org.polarsys.kitalpha.vp.componentsample.runtime.model
+ViewpointManager=Viewpoint Manager
+ModelNameEditorName=Model name - Activity Explorer
+CsActivityExplorerArchitecturePage=Component Sample Architecture
+GoToActivityExplorer=Go To Activity Explorer
+ComponentSampleModelVideo=org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.componentsample
+StopAllLink=Stop All
+DiagramCsArchitectureSection=Diagrams of Component Sample Architecture
+CreateANewDiagramLink=Create a new Diagram
+FullPathToAird=org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird
+SetNameToComponentSampleModelLink=Set Name To Component Sample Model
+Start=Start
+OpenActivityExplorerAction=Open Activity Explorer
+NewComponentSampleDiagramTitle=New ComponentSampleDiagram
+csAirdPathName=model/VideoOnDemand.aird
+ViewpointStatesSection=Viewpoints States
+StartAllLink=Start All
+DiagramViewer=Diagrams Viewer
+ComponentSampleViewpointsSection=Component Sample Viewpoints
+StartStopVpSection=Start or Stop All Component Sample Viewpoints
+NoNameEditorActivityExplorer=Video On Demande - Activity Explorer
+Stop=Stop
+
+------=_.parameters.context-2e023de5-3294-36a9-ac1d-6701f05a40ee--

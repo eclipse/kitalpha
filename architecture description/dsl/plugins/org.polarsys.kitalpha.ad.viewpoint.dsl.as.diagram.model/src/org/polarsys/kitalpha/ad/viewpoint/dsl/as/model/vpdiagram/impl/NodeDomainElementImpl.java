@@ -90,7 +90,9 @@ public class NodeDomainElementImpl extends EObjectImpl implements
 	 * @generated
 	 */
 	protected NodeDomainElementImpl() {
+
 		super();
+
 	}
 
 	/**

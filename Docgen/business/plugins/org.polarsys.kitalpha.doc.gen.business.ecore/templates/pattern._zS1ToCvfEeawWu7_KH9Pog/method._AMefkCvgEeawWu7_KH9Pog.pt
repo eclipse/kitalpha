@@ -1,0 +1,3 @@
+<%
+fileNameService = EcoreFileNameService.INSTANCE;
+%>

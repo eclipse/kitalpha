@@ -35,7 +35,7 @@ Configuration returns vpdesc::Aspect:
 	'}';
 
 ConfigurationElement returns vpconf::ConfigurationElement:
-	TargetApplication | GenerationConfiguration | Generation
+	TargetApplication | GenerationConfiguration | Generation | Release
 ;
 
 TargetApplication returns vpconf::ConfigurationElement:
@@ -101,3 +101,23 @@ ModelsAirdGenerationConfiguration returns vpconf::ExtensionGeneratrionConfigurat
 		('aird' ':' genRepresentations=EBoolean)?
 	')'
 ;
+
+
+Release returns vpconf::Release: 
+	{vpconf::Release}
+	'release' '{'
+		('version' ':' viewpointVersion = Version)?
+		('description' ':' viewpointDescription = EString)?
+		('execution' 'environments' ':' (requiredExecutionEnvironment+=STRING (',' requiredExecutionEnvironment+=STRING)*))?
+	'}'
+;
+
+
+Version returns vpconf::Version: 
+	INT ('.' (INT ('.' INT ('.' Qualifier)?)?))?
+;
+
+Qualifier returns ecore::EString:
+	(INT | ID | '_') (INT | ID | '_' | '-')*
+;
+

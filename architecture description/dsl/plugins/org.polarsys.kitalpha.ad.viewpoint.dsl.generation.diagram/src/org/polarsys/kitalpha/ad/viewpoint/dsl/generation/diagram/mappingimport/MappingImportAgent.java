@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,11 +31,11 @@ public class MappingImportAgent {
 	/**
 	 * _Layer is a generated Layer.
 	 */
-	private Layer _Layer;
+	private Layer layer;
 	/**
 	 * _MappingImportList contains import data. (see {@link MappingImportData}).
 	 */
-	private List<MappingImportData> _MappingImportList;
+	private List<MappingImportData> mappingImportList;
 	
 	/**
 	 * Default Constructor.
@@ -45,10 +45,12 @@ public class MappingImportAgent {
 	 */
 	public MappingImportAgent(Layer layer) {
 		if (layer == null)
-			throw new IllegalArgumentException("Mapping Import Agent Layer can not be null");
+		{
+			throw new IllegalArgumentException("Mapping Import Agent Layer can not be null"); ////$NON-NLS-1$
+		}
 		
-		_Layer = layer;
-		_MappingImportList = new ArrayList<MappingImportData>();
+		this.layer = layer;
+		mappingImportList = new ArrayList<MappingImportData>();
 	}
 	
 	/**
@@ -79,7 +81,7 @@ public class MappingImportAgent {
 	}
 	
 	public Layer get_Layer() {
-		return _Layer;
+		return this.layer;
 	}
 	
 	/**
@@ -91,7 +93,7 @@ public class MappingImportAgent {
 		Layer layer = getCorrespondingLayer(eObject);
 		if (layer != null)
 		{
-			return layer.equals(_Layer);
+			return layer.equals(this.layer);
 		}
 		
 		return false;
@@ -99,9 +101,9 @@ public class MappingImportAgent {
 	
 	public boolean isImportRegistred(MappingImportData data){
 		boolean result = false;
-		for (MappingImportData iMappingImportData : _MappingImportList) 
+		for (MappingImportData iMappingImportData : mappingImportList) 
 		{
-			if (iMappingImportData.equals(data) || iMappingImportData.original_equals(data))
+			if (iMappingImportData.equals(data) || iMappingImportData.originalEquals(data))
 			{
 				result = true;
 				break;
@@ -115,21 +117,21 @@ public class MappingImportAgent {
 	 * and update the reuse mapping
 	 * @throws Exception 
 	 */
-	public void patchImports(boolean save) throws Exception{
+	public void patchImports(boolean save) throws AutoImportException{
 		// First, ADD all auto imported mapping.
-		for (MappingImportData iMappingImportData : _MappingImportList) 
+		for (MappingImportData iMappingImportData : mappingImportList) 
 		{
 			// Take into account only mapping added automatically by the agent.
 			// Patch Auto Import handle a root mapping and all its children 
 			if (iMappingImportData.getParent() == null && 
-				iMappingImportData.getImport_kind().equals(MappingImportKind.AUTO))
+				iMappingImportData.getImportKind().equals(MappingImportKind.AUTO))
 			{
 				patchAutoImport(iMappingImportData);
 			}
 		}
 		
 		// Second, UPDATE the mapping reuse of any imported mapping 
-		for (MappingImportData iMappingImportData : _MappingImportList) 
+		for (MappingImportData iMappingImportData : mappingImportList) 
 		{
 			patchMappingReuse(iMappingImportData);
 		}
@@ -139,12 +141,12 @@ public class MappingImportAgent {
 	 * Clear the registered mappings
 	 */
 	public void clear(){
-		_MappingImportList.clear();
-		_Layer = null;
+		mappingImportList.clear();
+		this.layer = null;
 	}
 	
 	
-	private void patchAutoImport(MappingImportData data) throws Exception{
+	private void patchAutoImport(MappingImportData data) throws AutoImportException{
 
 		/** I. Create the Container/Node(/BorderedNode) Import */
 		createImport(data);
@@ -154,71 +156,77 @@ public class MappingImportAgent {
 		
 		/********** III. fire children patching ****************/
 		for (MappingImportData iMappingImportData : lookForChildrenOf(data)) 
+		{
 			patchAutoImport(iMappingImportData);
+		}
 	}
 
 	/**
 	 * @param data : the current import data
 	 * @throws Exception 
 	 */
-	private void addImportToItParent(MappingImportData data) throws Exception {
-		MappingImportData parent_data = data.getParent();
-		AbstractNodeMapping imported_mapping = data.getImported_mapping();
-		AbstractNodeMapping original_mapping = data.getOriginal_mapping();
+	private void addImportToItParent(MappingImportData data) throws AutoImportException {
+		MappingImportData parentData = data.getParent();
+		AbstractNodeMapping importedMapping = data.getImportedMapping();
+		AbstractNodeMapping originalMapping = data.getOriginalMapping();
 		
-		if (imported_mapping == null)
+		if (importedMapping == null)
 		{
-			throw new Exception("Import Agent doesn't find a MappingImport");
+			throw new AutoImportException(AutoImportException.MSG_CANT_FIND_MAPPING);
 		}
 		
-		if (parent_data == null)
+		if (parentData == null)
 		{
-			if (imported_mapping instanceof NodeMappingImport)
-				_Layer.getNodeMappings().add((NodeMappingImport)imported_mapping);
+			if (importedMapping instanceof NodeMappingImport)
+			{
+				this.layer.getNodeMappings().add((NodeMappingImport)importedMapping);
+			}
 			
-			if (imported_mapping instanceof ContainerMappingImport)
-				_Layer.getContainerMappings().add((ContainerMappingImport)imported_mapping);
+			if (importedMapping instanceof ContainerMappingImport)
+			{
+				this.layer.getContainerMappings().add((ContainerMappingImport)importedMapping);
+			}
 		}
 		else
 		{
 			// Get the Parent Original Mapping
-			AbstractNodeMapping parent_imported_m = parent_data.getImported_mapping();
+			AbstractNodeMapping parentImportedMapping = parentData.getImportedMapping();
 			
-			if (imported_mapping instanceof ContainerMapping)
+			if (importedMapping instanceof ContainerMapping)
 			{
-				ContainerMapping parent_container_imported_m = (ContainerMapping)parent_imported_m;
-				parent_container_imported_m.getSubContainerMappings().remove(original_mapping);
-				parent_container_imported_m.getSubContainerMappings().add((ContainerMapping)imported_mapping);
+				ContainerMapping parentContainerImportedMapping = (ContainerMapping)parentImportedMapping;
+				parentContainerImportedMapping.getSubContainerMappings().remove(originalMapping);
+				parentContainerImportedMapping.getSubContainerMappings().add((ContainerMapping)importedMapping);
 			}
 			
-			if (parent_imported_m instanceof NodeMapping)
+			if (parentImportedMapping instanceof NodeMapping)
 			{
-				NodeMapping parent_Node_imported_m = (NodeMapping)parent_imported_m;
-				if (parent_Node_imported_m.getBorderedNodeMappings().contains(original_mapping))
+				NodeMapping parentNodeImportedMapping = (NodeMapping)parentImportedMapping;
+				if (parentNodeImportedMapping.getBorderedNodeMappings().contains(originalMapping))
 				{
-					parent_Node_imported_m.getBorderedNodeMappings().remove(original_mapping);
-					parent_Node_imported_m.getBorderedNodeMappings().add((NodeMapping)imported_mapping);
+					parentNodeImportedMapping.getBorderedNodeMappings().remove(originalMapping);
+					parentNodeImportedMapping.getBorderedNodeMappings().add((NodeMapping)importedMapping);
 				}
 			}
 
-			if (parent_imported_m instanceof ContainerMapping)
+			if (parentImportedMapping instanceof ContainerMapping)
 			{
-				ContainerMapping parent_container_imported_m = (ContainerMapping)parent_imported_m;
-				if (parent_container_imported_m.getSubContainerMappings().contains(original_mapping))
+				ContainerMapping parentContainerImportedMapping = (ContainerMapping)parentImportedMapping;
+				if (parentContainerImportedMapping.getSubContainerMappings().contains(originalMapping))
 				{
-					parent_container_imported_m.getSubContainerMappings().remove(original_mapping);
-					parent_container_imported_m.getSubContainerMappings().add((ContainerMapping)imported_mapping);
+					parentContainerImportedMapping.getSubContainerMappings().remove(originalMapping);
+					parentContainerImportedMapping.getSubContainerMappings().add((ContainerMapping)importedMapping);
 				}
-				if (parent_container_imported_m.getSubNodeMappings().contains(original_mapping))
+				if (parentContainerImportedMapping.getSubNodeMappings().contains(originalMapping))
 				{
-					parent_container_imported_m.getSubNodeMappings().remove(original_mapping);
-					parent_container_imported_m.getSubNodeMappings().add((NodeMapping)imported_mapping);
+					parentContainerImportedMapping.getSubNodeMappings().remove(originalMapping);
+					parentContainerImportedMapping.getSubNodeMappings().add((NodeMapping)importedMapping);
 				}
 
-				if (parent_container_imported_m.getBorderedNodeMappings().contains(original_mapping))
+				if (parentContainerImportedMapping.getBorderedNodeMappings().contains(originalMapping))
 				{
-					parent_container_imported_m.getBorderedNodeMappings().remove(original_mapping);
-					parent_container_imported_m.getBorderedNodeMappings().add((NodeMapping)imported_mapping);
+					parentContainerImportedMapping.getBorderedNodeMappings().remove(originalMapping);
+					parentContainerImportedMapping.getBorderedNodeMappings().add((NodeMapping)importedMapping);
 				}
 			}
 		}
@@ -228,97 +236,97 @@ public class MappingImportAgent {
 	 * @param data : the current import data
 	 */
 	private void createImport(MappingImportData data) {
-		AbstractNodeMapping original_m = data.getOriginal_mapping();
-		AbstractNodeMapping imported_m = data.getImported_mapping();
-		if (imported_m == null && original_m != null)
+		AbstractNodeMapping originalMapping = data.getOriginalMapping();
+		AbstractNodeMapping importedMapping = data.getImportedMapping();
+		if (importedMapping == null && originalMapping != null)
 		{
-			AbstractNodeMapping mapping_import = null;
-			if (original_m instanceof ContainerMapping)
+			AbstractNodeMapping mappingImport = null;
+			if (originalMapping instanceof ContainerMapping)
 			{
-				ContainerMapping container_mapping_original = (ContainerMapping)original_m;
+				ContainerMapping containerMappingOriginal = (ContainerMapping)originalMapping;
 				// Create a new Container AMpping Import
-				ContainerMappingImport container_mapping_import = DescriptionFactory.eINSTANCE.createContainerMappingImport();
-				mapping_import = container_mapping_import;
+				ContainerMappingImport containerMappingImport = DescriptionFactory.eINSTANCE.createContainerMappingImport();
+				mappingImport = containerMappingImport;
 				// Define the mapping link between the original mapping and the new imported mapping 
-				container_mapping_import.setImportedMapping(container_mapping_original);
+				containerMappingImport.setImportedMapping(containerMappingOriginal);
 			}
 			
-			if (original_m instanceof NodeMapping)
+			if (originalMapping instanceof NodeMapping)
 			{
-				NodeMapping node_original_m = (NodeMapping)original_m;
+				NodeMapping node_originalMapping = (NodeMapping)originalMapping;
 				// create a new Node Mapping Import
-				NodeMappingImport node_mapping_import= DescriptionFactory.eINSTANCE.createNodeMappingImport();
-				mapping_import = node_mapping_import;
+				NodeMappingImport nodeMappingImport= DescriptionFactory.eINSTANCE.createNodeMappingImport();
+				mappingImport = nodeMappingImport;
 				// Define the mapping link between the original mapping and the new imported mapping
-				node_mapping_import.setImportedMapping(node_original_m);
+				nodeMappingImport.setImportedMapping(node_originalMapping);
 			}
 			
-			if (mapping_import != null)
+			if (mappingImport != null)
 			{
 				// Inherits data from the original mapping
-				mapping_import.setName(original_m.getName()+"_Import");
-				mapping_import.setLabel((original_m.getLabel() != null ? original_m.getLabel()+"_Import" : mapping_import.getName()));
-				mapping_import.setDomainClass(original_m.getDomainClass());
-				mapping_import.setPreconditionExpression(original_m.getPreconditionExpression());
-				mapping_import.setSemanticElements(original_m.getSemanticElements());
+				mappingImport.setName(originalMapping.getName()+"_Import");
+				mappingImport.setLabel((originalMapping.getLabel() != null ? originalMapping.getLabel()+"_Import" : mappingImport.getName()));
+				mappingImport.setDomainClass(originalMapping.getDomainClass());
+				mappingImport.setPreconditionExpression(originalMapping.getPreconditionExpression());
+				mappingImport.setSemanticElements(originalMapping.getSemanticElements());
 				
 				// Inherit all tool of the original Container Mapping except of DROP tools
-				reuseTools(original_m, mapping_import);
+				reuseTools(originalMapping, mappingImport);
 				
 				// Reuse all mapping contained in and reused by the original mapping
-				reuseMappings(original_m, mapping_import);
+				reuseMappings(originalMapping, mappingImport);
 			}
 			else
 			{
 				// TODO: Throw an exception
 			}
 			
-			data.setImported_mapping(mapping_import);
+			data.setImportedMapping(mappingImport);
 			data.setGenerated(true);
 		}
 	}
 	
-	public static void reuseMappings(AbstractNodeMapping original_m, AbstractNodeMapping imported_m){
+	public static void reuseMappings(AbstractNodeMapping originalMapping, AbstractNodeMapping importedMapping){
 		// Reuse all Bordered Nodes of the the original mapping (the contained one and reused one)
-		imported_m.getReusedBorderedNodeMappings().addAll(original_m.getAllBorderedNodeMappings());
+		importedMapping.getReusedBorderedNodeMappings().addAll(originalMapping.getAllBorderedNodeMappings());
 		
-		if (imported_m instanceof ContainerMappingImport)
+		if (importedMapping instanceof ContainerMappingImport)
 		{
-			ContainerMapping original_container_m = (ContainerMapping)original_m;
-			ContainerMappingImport container_import = (ContainerMappingImport) imported_m;
+			ContainerMapping originalContainerMapping = (ContainerMapping)originalMapping;
+			ContainerMappingImport containerImport = (ContainerMappingImport) importedMapping;
 			// Reuse all Nodes of the the original mapping (contained and reused)
-			container_import.getReusedNodeMappings().addAll(original_container_m.getAllNodeMappings());
+			containerImport.getReusedNodeMappings().addAll(originalContainerMapping.getAllNodeMappings());
 			// Reuse all Containers of the the original mapping (contained and reused)
-			container_import.getReusedContainerMappings().addAll(original_container_m.getAllContainerMappings());
+			containerImport.getReusedContainerMappings().addAll(originalContainerMapping.getAllContainerMappings());
 		}
 	}
 	
 	/**
 	 * This method reuse all tools of the original Mapping into the imported mapping
-	 * @param original_m
-	 * @param imported_m
+	 * @param originalMapping
+	 * @param importedMapping
 	 */
-	public static void reuseTools(AbstractNodeMapping original_m, AbstractNodeMapping imported_m){
-		if (original_m != null && imported_m != null)
+	public static void reuseTools(AbstractNodeMapping originalMapping, AbstractNodeMapping importedMapping){
+		if (originalMapping != null && importedMapping != null)
 		{
-			if (imported_m instanceof NodeMappingImport)
+			if (importedMapping instanceof NodeMappingImport)
 			{
-				NodeMappingImport node_mapping_import = (NodeMappingImport) imported_m;
-				node_mapping_import.getDropDescriptions().addAll(((NodeMapping)original_m).getDropDescriptions());
+				NodeMappingImport nodeMappingImport = (NodeMappingImport) importedMapping;
+				nodeMappingImport.getDropDescriptions().addAll(((NodeMapping)originalMapping).getDropDescriptions());
 			}
 			
-			if (imported_m instanceof ContainerMappingImport)
+			if (importedMapping instanceof ContainerMappingImport)
 			{
-				ContainerMappingImport container_mapping_import = (ContainerMappingImport) imported_m;
-				container_mapping_import.getDropDescriptions().addAll(((ContainerMapping)original_m).getDropDescriptions());
+				ContainerMappingImport containerMappingImport = (ContainerMappingImport) importedMapping;
+				containerMappingImport.getDropDescriptions().addAll(((ContainerMapping)originalMapping).getDropDescriptions());
 			}
 
-			imported_m.getDetailDescriptions().addAll(original_m.getDetailDescriptions());
-			imported_m.setDeletionDescription(original_m.getDeletionDescription());
-			imported_m.getPasteDescriptions().addAll(original_m.getPasteDescriptions());
-			imported_m.setDoubleClickDescription(original_m.getDoubleClickDescription());
-			imported_m.setLabelDirectEdit(original_m.getLabelDirectEdit());
-			imported_m.getNavigationDescriptions().addAll(original_m.getNavigationDescriptions());
+			importedMapping.getDetailDescriptions().addAll(originalMapping.getDetailDescriptions());
+			importedMapping.setDeletionDescription(originalMapping.getDeletionDescription());
+			importedMapping.getPasteDescriptions().addAll(originalMapping.getPasteDescriptions());
+			importedMapping.setDoubleClickDescription(originalMapping.getDoubleClickDescription());
+			importedMapping.setLabelDirectEdit(originalMapping.getLabelDirectEdit());
+			importedMapping.getNavigationDescriptions().addAll(originalMapping.getNavigationDescriptions());
 		}
 	}
 	
@@ -326,53 +334,54 @@ public class MappingImportAgent {
 		List<MappingImportData> result = new ArrayList<MappingImportData>();
 		if (data != null)
 		{
-			for (MappingImportData iMappingImportData : _MappingImportList) 
-				if (iMappingImportData.getParent() != null &&
-						iMappingImportData.getParent().equals(data))
+			for (MappingImportData iMappingImportData : mappingImportList) 
+			{
+				if (iMappingImportData.getParent() != null && iMappingImportData.getParent().equals(data))
 				{
 					result.add(iMappingImportData);
 				}
+			}
 		}
 		
 		return result;
 	}
 	
-	private void patchMappingReuse(MappingImportData data_to_reuse){
+	private void patchMappingReuse(MappingImportData dataToReuse){
 		// Update reuse of each imported mapping
-		for (MappingImportData iMappingImportData : _MappingImportList) 
+		for (MappingImportData iMappingImportData : mappingImportList) 
 		{
-			AbstractNodeMapping reusing_node = iMappingImportData.getImported_mapping();
-			AbstractNodeMapping node_to_reuse = data_to_reuse.getImported_mapping();
+			AbstractNodeMapping reusingNode = iMappingImportData.getImportedMapping();
+			AbstractNodeMapping nodeToReuse = dataToReuse.getImportedMapping();
 			// Reuse of a Node or a BorderedNode
-			if (node_to_reuse instanceof NodeMapping)
+			if (nodeToReuse instanceof NodeMapping)
 			{
-				reuseBorderedNode(reusing_node, data_to_reuse);
-				if (reusing_node instanceof ContainerMapping)
+				reuseBorderedNode(reusingNode, dataToReuse);
+				if (reusingNode instanceof ContainerMapping)
 				{
-					ContainerMapping reusing_container = (ContainerMapping)reusing_node;
-					reuseNode(reusing_container, data_to_reuse);
+					ContainerMapping reusing_container = (ContainerMapping)reusingNode;
+					reuseNode(reusing_container, dataToReuse);
 				}
 			}
 			else // Reuse of a container
 			{
-				if (node_to_reuse instanceof ContainerMapping &&
-						reusing_node instanceof ContainerMapping)
+				if (nodeToReuse instanceof ContainerMapping &&
+						reusingNode instanceof ContainerMapping)
 				{
-					ContainerMapping reusing_container = (ContainerMapping)reusing_node;
-					reuseContainer(reusing_container, data_to_reuse);
+					ContainerMapping reusing_container = (ContainerMapping)reusingNode;
+					reuseContainer(reusing_container, dataToReuse);
 				}
 			}
 		}
 	}
 	
-	public static void reuseBorderedNode(AbstractNodeMapping reusing, MappingImportData data_to_reuse){
+	public static void reuseBorderedNode(AbstractNodeMapping reusing, MappingImportData dataToReuse){
 		boolean reused = false;
-		NodeMapping reused_Node_Mapping = null;
+		NodeMapping reusedNodeMapping = null;
 		for (NodeMapping iBorderedNode : reusing.getReusedBorderedNodeMappings()) 
 		{
-			if (iBorderedNode.equals(data_to_reuse.getOriginal_mapping()))
+			if (iBorderedNode.equals(dataToReuse.getOriginalMapping()))
 			{
-				reused_Node_Mapping = iBorderedNode;
+				reusedNodeMapping = iBorderedNode;
 				reused = true;
 				break;
 			}
@@ -380,19 +389,19 @@ public class MappingImportAgent {
 		
 		if (reused)
 		{
-			reusing.getReusedBorderedNodeMappings().remove(reused_Node_Mapping);
-			reusing.getReusedBorderedNodeMappings().add((NodeMapping)data_to_reuse.getImported_mapping());
+			reusing.getReusedBorderedNodeMappings().remove(reusedNodeMapping);
+			reusing.getReusedBorderedNodeMappings().add((NodeMapping)dataToReuse.getImportedMapping());
 		}
 	}
 	
-	public static void reuseNode(ContainerMapping reusing, MappingImportData data_to_reuse){
+	public static void reuseNode(ContainerMapping reusing, MappingImportData dataToReuse){
 		boolean reused = false;
-		NodeMapping reused_Node_Mapping = null;
+		NodeMapping reusedNodeMapping = null;
 		for (NodeMapping iNode : reusing.getReusedNodeMappings()) 
 		{
-			if (iNode.equals(data_to_reuse.getOriginal_mapping()))
+			if (iNode.equals(dataToReuse.getOriginalMapping()))
 			{
-				reused_Node_Mapping = iNode;
+				reusedNodeMapping = iNode;
 				reused = true;
 				break;
 			}
@@ -400,19 +409,19 @@ public class MappingImportAgent {
 		
 		if (reused)
 		{
-			reusing.getReusedNodeMappings().remove(reused_Node_Mapping);
-			reusing.getReusedNodeMappings().add((NodeMapping)data_to_reuse.getImported_mapping());
+			reusing.getReusedNodeMappings().remove(reusedNodeMapping);
+			reusing.getReusedNodeMappings().add((NodeMapping)dataToReuse.getImportedMapping());
 		}
 	}
 	
-	public static void reuseContainer(ContainerMapping reusing, MappingImportData data_to_reuse){
+	public static void reuseContainer(ContainerMapping reusing, MappingImportData dataToReuse){
 		boolean reused = false;
-		ContainerMapping reused_Container_Mapping = null;
+		ContainerMapping reusedContainerMapping = null;
 		for (ContainerMapping iContainer : reusing.getReusedContainerMappings()) 
 		{
-			if (iContainer.equals(data_to_reuse.getOriginal_mapping()))
+			if (iContainer.equals(dataToReuse.getOriginalMapping()))
 			{
-				reused_Container_Mapping = iContainer;
+				reusedContainerMapping = iContainer;
 				reused = true;
 				break;
 			}
@@ -420,82 +429,90 @@ public class MappingImportAgent {
 		
 		if (reused)
 		{
-			reusing.getReusedContainerMappings().remove(reused_Container_Mapping);
-			reusing.getReusedContainerMappings().add((ContainerMapping)data_to_reuse.getImported_mapping());
+			reusing.getReusedContainerMappings().remove(reusedContainerMapping);
+			reusing.getReusedContainerMappings().add((ContainerMapping)dataToReuse.getImportedMapping());
 		}
 	}
 	
 	private void registerImportData(MappingImportData data){
 		if (! isImportRegistred(data))
 		{
-			_MappingImportList.add(data);
+			mappingImportList.add(data);
 			computeAutoImport(data);
 		}
 		else
 		{
-			for (MappingImportData iMappingImportData : _MappingImportList) 
+			for (MappingImportData iMappingImportData : mappingImportList) 
 			{
-				if ((iMappingImportData.equals(data) || iMappingImportData.original_equals(data))
-						&& iMappingImportData.getImport_kind().equals(MappingImportKind.AUTO))
+				if ((iMappingImportData.equals(data) || iMappingImportData.originalEquals(data))
+						&& iMappingImportData.getImportKind().equals(MappingImportKind.AUTO))
 				{
 					iMappingImportData.setGenerated(true);
-					iMappingImportData.setImport_kind(data.getImport_kind());
-					iMappingImportData.setImported_mapping(data.getImported_mapping());
+					iMappingImportData.setImportKind(data.getImportKind());
+					iMappingImportData.setImportedMapping(data.getImportedMapping());
 					iMappingImportData.setParent(data.getParent());
 				}
 			}
 		}
 	}
 	
-	private void computeAutoImport(MappingImportData current_data){
-		AbstractNodeMapping original_m = current_data.getOriginal_mapping();
+	private void computeAutoImport(MappingImportData currentData){
+		AbstractNodeMapping originalMapping = currentData.getOriginalMapping();
 		
 		/********************** Handle container of original Mapping ***********************/
-		if (! (original_m.eContainer() instanceof Layer))
+		if (! (originalMapping.eContainer() instanceof Layer))
 		{
-			MappingImportData parrent_data = createOrGetParentDataOf(current_data);
-			if (! isImportRegistred(parrent_data))
+			MappingImportData parrentData = createOrGetParentDataOf(currentData);
+			if (! isImportRegistred(parrentData))
 			{
-				registerImportData(parrent_data);
+				registerImportData(parrentData);
 			}
 			
-			if (current_data.getParent() == null &&
-					current_data.getImport_kind().equals(MappingImportKind.AUTO))
+			if (currentData.getParent() == null &&
+					currentData.getImportKind().equals(MappingImportKind.AUTO))
 			{
-				current_data.setParent(parrent_data);
+				currentData.setParent(parrentData);
 			}
 		}
 		
 		/********************** Handle mapping reusing original Mapping ***********************/
 		// get the Layer of original_m.
-		Layer original_layer = getCorrespondingLayer(original_m);
+		Layer originalLayer = getCorrespondingLayer(originalMapping);
 		
 		// check any element
-		if (original_m instanceof NodeMapping)
+		if (originalMapping instanceof NodeMapping)
 		{
-			for (ContainerMapping iContainerMapping : original_layer.getContainerMappings()) 
-				if (iContainerMapping.getReusedBorderedNodeMappings().contains(original_m) ||
-					iContainerMapping.getReusedNodeMappings().contains(original_m))
+			for (ContainerMapping iContainerMapping : originalLayer.getContainerMappings()) 
+			{
+				if (iContainerMapping.getReusedBorderedNodeMappings().contains(originalMapping) 
+						|| iContainerMapping.getReusedNodeMappings().contains(originalMapping))
 				{
 					registerImportData(new MappingImportData(iContainerMapping));
 				}
+			}
 			
-			for (NodeMapping iNodeMapping : original_layer.getNodeMappings()) 
-				if (iNodeMapping.getReusedBorderedNodeMappings().contains(original_m))
-					if (! original_m.equals(iNodeMapping))
-					{
-						registerImportData(new MappingImportData(iNodeMapping));
-					}
+			for (NodeMapping iNodeMapping : originalLayer.getNodeMappings()) 
+			{
+				if (iNodeMapping.getReusedBorderedNodeMappings().contains(originalMapping) 
+						&& ! originalMapping.equals(iNodeMapping))
+				{
+					registerImportData(new MappingImportData(iNodeMapping));
+				}
+			}
 		}
 		
 		// check only containers
-		if (original_m instanceof ContainerMapping)
-			for (ContainerMapping iContainerMapping : original_layer.getContainerMappings()) 
-				if (iContainerMapping.getReusedContainerMappings().contains(original_m))
-					if (! original_m.equals(iContainerMapping))
-					{
-						registerImportData(new MappingImportData(iContainerMapping));
-					}
+		if (originalMapping instanceof ContainerMapping)
+		{
+			for (ContainerMapping iContainerMapping : originalLayer.getContainerMappings()) 
+			{
+				if (iContainerMapping.getReusedContainerMappings().contains(originalMapping) 
+						&& ! originalMapping.equals(iContainerMapping))
+				{
+					registerImportData(new MappingImportData(iContainerMapping));
+				}
+			}
+		}
 	}
 	
 	private MappingImportData createOrGetParentDataOf(MappingImportData data){
@@ -505,9 +522,9 @@ public class MappingImportAgent {
 		}
 		else
 		{
-			if (!(data.getOriginal_mapping().eContainer() instanceof Layer))
+			if (!(data.getOriginalMapping().eContainer() instanceof Layer))
 			{
-				AbstractNodeMapping parent_original_mapping = (AbstractNodeMapping)data.getOriginal_mapping().eContainer();
+				AbstractNodeMapping parent_original_mapping = (AbstractNodeMapping)data.getOriginalMapping().eContainer();
 				MappingImportData parent_data = new MappingImportData(parent_original_mapping);
 				return lookForMappingInRegisteredMapping(parent_data);
 			}
@@ -521,9 +538,13 @@ public class MappingImportAgent {
 	private MappingImportData lookForMappingInRegisteredMapping(MappingImportData data){
 		if (data != null)
 		{
-			for (MappingImportData iMappingImportData : _MappingImportList) 
+			for (MappingImportData iMappingImportData : mappingImportList) 
+			{
 				if (iMappingImportData.equals(data))
+				{
 					return iMappingImportData;
+				}
+			}
 		}
 		return data;
 	}
@@ -540,10 +561,14 @@ public class MappingImportAgent {
 			EObject parent = aNodeMapping.eContainer();
 			
 			while (parent.eContainer() != null && !(parent instanceof Layer)) 
+			{
 				parent = parent.eContainer();
+			}
 			
 			if (parent != null && parent instanceof Layer)
+			{
 				return (Layer) parent;
+			}
 		}
 		return null;
 	}

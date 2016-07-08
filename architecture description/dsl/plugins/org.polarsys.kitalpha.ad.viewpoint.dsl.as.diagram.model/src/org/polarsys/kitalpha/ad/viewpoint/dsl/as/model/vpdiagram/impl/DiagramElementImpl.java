@@ -33,7 +33,9 @@ public abstract class DiagramElementImpl extends NamedElementImpl implements
 	 * @generated
 	 */
 	protected DiagramElementImpl() {
+
 		super();
+
 	}
 
 	/**

@@ -97,7 +97,9 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 * @generated
 	 */
 	protected ActionImpl() {
+
 		super();
+
 	}
 
 	/**

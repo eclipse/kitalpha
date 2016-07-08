@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,13 +30,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramChildren;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationDescriptions;
 
 /**
@@ -125,6 +129,39 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			proposal = createProposalForComplexKeyword(keyword, contentAssistContext);
 			acceptProposal(proposal, contentAssistContext, acceptor);
 			
+			return;
+		}
+		
+		if (keyword.getValue().equals(SynchronizationMode.NOT_SYNCHRONIZED.getLiteral())){
+			StyledString styledString = new StyledString();
+			styledString.append(keyword.getValue());
+			styledString.append(" - ");
+			styledString.append(new StyledString("The Mapping Will Be Always Not synchronized", StyledString.QUALIFIER_STYLER)); //$NON-NLS-1$;
+			
+			proposal = createCompletionProposal(keyword.getValue(), styledString, getImage(keyword), contentAssistContext);
+			acceptor.accept(proposal);
+			return;
+		}
+		
+		if (keyword.getValue().equals(SynchronizationMode.SYNCHRONIZED.getLiteral())){
+			StyledString styledString = new StyledString();
+			styledString.append(keyword.getValue());
+			styledString.append(" - ");
+			styledString.append(new StyledString("The Mapping Will Be always Synchronized", StyledString.QUALIFIER_STYLER)); //$NON-NLS-1$;
+			
+			proposal = createCompletionProposal(keyword.getValue(), styledString, getImage(keyword), contentAssistContext);
+			acceptor.accept(proposal);
+			return;
+		}
+		
+		if (keyword.getValue().equals(SynchronizationMode.UNSYNCHRONIZABLE.getLiteral())){
+			StyledString styledString = new StyledString();
+			styledString.append(keyword.getValue());
+			styledString.append(" - ");
+			styledString.append(new StyledString("The Synchronization Of The Mapping Depends On the Synchronization Defined By The User", StyledString.QUALIFIER_STYLER)); //$NON-NLS-1$;
+			
+			proposal = createCompletionProposal(keyword.getValue(), styledString, getImage(keyword), contentAssistContext);
+			acceptor.accept(proposal);
 			return;
 		}
 		
@@ -257,6 +294,7 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
          }
 
 	}
+	
 
 	private String createProposal(String uri) {
 		StringBuffer tmp = new StringBuffer();

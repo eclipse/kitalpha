@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -371,6 +372,71 @@ public interface VpconfPackage extends EPackage {
 	int EXTENSION_GENERATRION_CONFIGURATION_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ReleaseImpl <em>Release</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ReleaseImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getRelease()
+	 * @generated
+	 */
+	int RELEASE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE__ID = CONFIGURATION_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Viewpoint Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE__VIEWPOINT_VERSION = CONFIGURATION_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Viewpoint Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE__VIEWPOINT_DESCRIPTION = CONFIGURATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Required Execution Environment</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE__REQUIRED_EXECUTION_ENVIRONMENT = CONFIGURATION_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Release</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_FEATURE_COUNT = CONFIGURATION_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '<em>Version</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.osgi.framework.Version
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getVersion()
+	 * @generated
+	 */
+	int VERSION = 8;
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -573,6 +639,60 @@ public interface VpconfPackage extends EPackage {
 	EClass getExtensionGeneratrionConfiguration();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Release</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release
+	 * @generated
+	 */
+	EClass getRelease();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getViewpointVersion <em>Viewpoint Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Viewpoint Version</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getViewpointVersion()
+	 * @see #getRelease()
+	 * @generated
+	 */
+	EAttribute getRelease_ViewpointVersion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getViewpointDescription <em>Viewpoint Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Viewpoint Description</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getViewpointDescription()
+	 * @see #getRelease()
+	 * @generated
+	 */
+	EAttribute getRelease_ViewpointDescription();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getRequiredExecutionEnvironment <em>Required Execution Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Required Execution Environment</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getRequiredExecutionEnvironment()
+	 * @see #getRelease()
+	 * @generated
+	 */
+	EAttribute getRelease_RequiredExecutionEnvironment();
+
+	/**
+	 * Returns the meta object for data type '{@link org.osgi.framework.Version <em>Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Version</em>'.
+	 * @see org.osgi.framework.Version
+	 * @model instanceClass="org.osgi.framework.Version"
+	 * @generated
+	 */
+	EDataType getVersion();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -759,6 +879,50 @@ public interface VpconfPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXTENSION_GENERATRION_CONFIGURATION = eINSTANCE.getExtensionGeneratrionConfiguration();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ReleaseImpl <em>Release</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ReleaseImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getRelease()
+		 * @generated
+		 */
+		EClass RELEASE = eINSTANCE.getRelease();
+
+		/**
+		 * The meta object literal for the '<em><b>Viewpoint Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELEASE__VIEWPOINT_VERSION = eINSTANCE.getRelease_ViewpointVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Viewpoint Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELEASE__VIEWPOINT_DESCRIPTION = eINSTANCE.getRelease_ViewpointDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Execution Environment</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELEASE__REQUIRED_EXECUTION_ENVIRONMENT = eINSTANCE.getRelease_RequiredExecutionEnvironment();
+
+		/**
+		 * The meta object literal for the '<em>Version</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.osgi.framework.Version
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getVersion()
+		 * @generated
+		 */
+		EDataType VERSION = eINSTANCE.getVersion();
 
 	}
 

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %BundleName
 Bundle-SymbolicName: org.polarsys.kitalpha.doc.gen.business.ecore;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.doc.gen.business.ecore.Activator
 Bundle-Vendor: %BundleVendor
 Require-Bundle: org.polarsys.kitalpha.doc.gen.business.core.ui,
@@ -20,9 +20,12 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.doc.gen.business.ecore,
  org.polarsys.kitalpha.doc.gen.business.ecore.actions,
- org.polarsys.kitalpha.doc.gen.business.ecore.content,
+ org.polarsys.kitalpha.doc.gen.business.ecore.egf.query,
+ org.polarsys.kitalpha.doc.gen.business.ecore.extension.content,
+ org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl,
  org.polarsys.kitalpha.doc.gen.business.ecore.helpers,
  org.polarsys.kitalpha.doc.gen.business.ecore.index,
  org.polarsys.kitalpha.doc.gen.business.ecore.services,
- org.polarsys.kitalpha.doc.gen.business.ecore.sidebar
+ org.polarsys.kitalpha.doc.gen.business.ecore.sidebar,
+ org.polarsys.kitalpha.doc.gen.business.ecore.task
 Bundle-Localization: plugin

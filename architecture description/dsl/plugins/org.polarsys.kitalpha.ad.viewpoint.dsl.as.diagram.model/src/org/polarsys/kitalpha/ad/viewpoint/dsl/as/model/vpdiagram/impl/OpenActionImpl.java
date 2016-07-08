@@ -105,7 +105,9 @@ public class OpenActionImpl extends NamedElementImpl implements OpenAction {
 	 * @generated
 	 */
 	protected OpenActionImpl() {
+
 		super();
+
 	}
 
 	/**

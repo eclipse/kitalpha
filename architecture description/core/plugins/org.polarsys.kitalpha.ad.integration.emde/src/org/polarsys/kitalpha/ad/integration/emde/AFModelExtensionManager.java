@@ -116,8 +116,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 		if (getTarget() == null)
 			throw new UnsupportedOperationException();
 		String nsURI = extended.getName();
-		// if (managedByAF2state.containsKey(nsURI))
-		// return !managedByAF2state.get(nsURI);
+		if (managedByAF2state.containsKey(nsURI))
+			return !managedByAF2state.get(nsURI);
 		ResourceSet set = new ResourceSetImpl();
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
@@ -160,9 +160,6 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 			throw new UnsupportedOperationException();
 
 		String nsURI = extended.getName();
-
-		// TODO
-
 		if (extension2state.containsKey(nsURI)) {
 			return !extension2state.get(nsURI);
 		}

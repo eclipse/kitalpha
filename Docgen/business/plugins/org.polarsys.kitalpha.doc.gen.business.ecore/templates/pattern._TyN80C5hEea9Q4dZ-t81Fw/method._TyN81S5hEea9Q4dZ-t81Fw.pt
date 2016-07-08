@@ -1,0 +1,13 @@
+<% 
+String text = LabelProviderHelper.getText(parameter);
+%>
+
+<% if (text != null && !text.isEmpty()) { %>
+<h2>EDataType</h2>
+<%= text %>
+<br/>
+<ul>
+	<li>Name : <%= parameter.getName() %></li>
+	<li>Instance Class: <%= parameter.getInstanceClass().getCanonicalName() %></li>
+</ul>
+<%}%>

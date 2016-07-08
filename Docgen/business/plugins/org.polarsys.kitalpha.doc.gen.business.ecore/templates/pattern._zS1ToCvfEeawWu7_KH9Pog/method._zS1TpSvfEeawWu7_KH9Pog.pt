@@ -1,0 +1,3 @@
+<%@ egf:patternInjectedCall toInject="parameter"
+	patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGen.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.HTMLSection"
+%>

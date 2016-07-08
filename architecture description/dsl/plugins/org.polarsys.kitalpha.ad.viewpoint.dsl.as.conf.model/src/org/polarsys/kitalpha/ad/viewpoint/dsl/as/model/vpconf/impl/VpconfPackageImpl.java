@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,18 +13,21 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ConfigurationElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratrionConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
@@ -86,6 +89,20 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 	 * @generated
 	 */
 	private EClass extensionGeneratrionConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass releaseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType versionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -327,6 +344,51 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRelease() {
+		return releaseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRelease_ViewpointVersion() {
+		return (EAttribute)releaseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRelease_ViewpointDescription() {
+		return (EAttribute)releaseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRelease_RequiredExecutionEnvironment() {
+		return (EAttribute)releaseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getVersion() {
+		return versionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public VpconfFactory getVpconfFactory() {
 		return (VpconfFactory)getEFactoryInstance();
 	}
@@ -375,6 +437,14 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 		createEAttribute(gDataEClass, GDATA__OVERWRITE_ECORE);
 
 		extensionGeneratrionConfigurationEClass = createEClass(EXTENSION_GENERATRION_CONFIGURATION);
+
+		releaseEClass = createEClass(RELEASE);
+		createEAttribute(releaseEClass, RELEASE__VIEWPOINT_VERSION);
+		createEAttribute(releaseEClass, RELEASE__VIEWPOINT_DESCRIPTION);
+		createEAttribute(releaseEClass, RELEASE__REQUIRED_EXECUTION_ENVIRONMENT);
+
+		// Create data types
+		versionEDataType = createEDataType(VERSION);
 	}
 
 	/**
@@ -414,6 +484,7 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 		targetApplicationEClass.getESuperTypes().add(this.getConfigurationElement());
 		generationConfigurationEClass.getESuperTypes().add(this.getConfigurationElement());
 		generationEClass.getESuperTypes().add(this.getConfigurationElement());
+		releaseEClass.getESuperTypes().add(this.getConfigurationElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -441,6 +512,14 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 		initEAttribute(getGData_OverwriteEcore(), theEcorePackage.getEBoolean(), "overwriteEcore", "true", 0, 1, GData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(extensionGeneratrionConfigurationEClass, ExtensionGeneratrionConfiguration.class, "ExtensionGeneratrionConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(releaseEClass, Release.class, "Release", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRelease_ViewpointVersion(), this.getVersion(), "viewpointVersion", "0.0.0", 0, 1, Release.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelease_ViewpointDescription(), theEcorePackage.getEString(), "viewpointDescription", null, 0, 1, Release.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelease_RequiredExecutionEnvironment(), theEcorePackage.getEString(), "requiredExecutionEnvironment", "JavaSE-1.7", 0, -1, Release.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(versionEDataType, Version.class, "Version", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

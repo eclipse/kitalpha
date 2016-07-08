@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -36,19 +36,20 @@ import com.google.inject.name.Named;
 /**
  * 
  * @author Amine Lajmi
+ * 		   Faycal ABKA
  *
  */
 public class CommonTemplateStore extends TemplateStore {
 	
-	private static final String TemplateProvider_ExtensionPoint = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui.templateprovider"; //$NON-NLS-1$
+	private static final String TEMPLATEPROVIDER_EXTENSIONPOINT = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui.templateprovider"; //$NON-NLS-1$
 	
-	private static final String TemplateProvider_configElement = "TemplateProvider"; //$NON-NLS-1$
+	private static final String TEMPLATEPROVIDER_CONFIGELEMENT = "TemplateProvider"; //$NON-NLS-1$
 
 	private final URL resourceTemplate;
 	
 	protected final Plugin plugin;
 	
-	protected final static Logger log = Logger.getLogger(CommonTemplateStore.class);
+	protected static final Logger log = Logger.getLogger(CommonTemplateStore.class);
 
 	@Inject
 	public CommonTemplateStore(ContextTypeRegistry registry, IPreferenceStore store, @Named(Constants.LANGUAGE_NAME) String key,	AbstractUIPlugin plugin) {
@@ -65,6 +66,7 @@ public class CommonTemplateStore extends TemplateStore {
 	public Plugin getPlugin() {
 		return plugin;
 	}
+	
 	protected URL getTemplateFileURL() {		
 		Map<Bundle, String> templateStores = lookupTemplateStores();
 		if (templateStores.size() >1){
@@ -79,8 +81,9 @@ public class CommonTemplateStore extends TemplateStore {
 
 	@Override
 	protected void loadContributedTemplates() throws IOException {
-		if (resourceTemplate==null)
+		if (resourceTemplate==null){
 			return;
+		}
 		TemplateReaderWriter reader = new TemplateReaderWriter();
 		InputStream openStream = null;
 		try {
@@ -100,10 +103,10 @@ public class CommonTemplateStore extends TemplateStore {
 	
 	public Map<Bundle, String> lookupTemplateStores() {
 		Map<Bundle, String>  templateStores = new HashMap<Bundle, String>();
-		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(TemplateProvider_ExtensionPoint);
+		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(TEMPLATEPROVIDER_EXTENSIONPOINT);
 		if (config.length != 0) {
 			for (IConfigurationElement iConfigElement : config){
-				if (iConfigElement.getName().toLowerCase().equals(TemplateProvider_configElement.toLowerCase())) {
+				if (iConfigElement.getName().toLowerCase().equals(TEMPLATEPROVIDER_CONFIGELEMENT.toLowerCase())) {
 					//Get the contributing bundle
 					Bundle bundle = Platform.getBundle(iConfigElement.getContributor().getName());
 					//Map the contributing bundle to template file path

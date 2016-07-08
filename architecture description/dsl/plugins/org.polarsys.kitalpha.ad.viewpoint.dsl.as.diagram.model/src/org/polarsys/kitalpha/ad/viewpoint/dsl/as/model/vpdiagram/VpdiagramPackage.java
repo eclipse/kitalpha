@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -508,13 +508,22 @@ public interface VpdiagramPackage extends EPackage {
 	int DIAGRAM_CHILDREN__DESCRIPTION = DIAGRAM_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE = DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Diagram Children</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_CHILDREN_FEATURE_COUNT = DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
+	int DIAGRAM_CHILDREN_FEATURE_COUNT = DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeImpl <em>Node</em>}' class.
@@ -552,6 +561,15 @@ public interface VpdiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int NODE__DESCRIPTION = DIAGRAM_CHILDREN__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__SYNCHRONIZATION_MODE = DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE;
 
 	/**
 	 * The feature id for the '<em><b>The domain</b></em>' containment reference.
@@ -636,6 +654,15 @@ public interface VpdiagramPackage extends EPackage {
 	int ABSTRACT_EDGE__DESCRIPTION = DIAGRAM_CHILDREN__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_EDGE__SYNCHRONIZATION_MODE = DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE;
+
+	/**
 	 * The feature id for the '<em><b>Edescription</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -689,6 +716,15 @@ public interface VpdiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDGE__DESCRIPTION = ABSTRACT_EDGE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__SYNCHRONIZATION_MODE = ABSTRACT_EDGE__SYNCHRONIZATION_MODE;
 
 	/**
 	 * The feature id for the '<em><b>Edescription</b></em>' containment reference list.
@@ -1209,6 +1245,15 @@ public interface VpdiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDGE_IMPORT__DESCRIPTION = ABSTRACT_EDGE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE_IMPORT__SYNCHRONIZATION_MODE = ABSTRACT_EDGE__SYNCHRONIZATION_MODE;
 
 	/**
 	 * The feature id for the '<em><b>Edescription</b></em>' containment reference list.
@@ -1808,6 +1853,15 @@ public interface VpdiagramPackage extends EPackage {
 	int CONTAINER__DESCRIPTION = DIAGRAM_CHILDREN__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__SYNCHRONIZATION_MODE = DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE;
+
+	/**
 	 * The feature id for the '<em><b>The domain</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2342,6 +2396,16 @@ public interface VpdiagramPackage extends EPackage {
 	int NODE_FORM = 41;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode <em>Synchronization Mode</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getSynchronizationMode()
+	 * @generated
+	 */
+	int SYNCHRONIZATION_MODE = 42;
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation <em>Diagram Representation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2617,6 +2681,17 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDiagramChildren();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramChildren#getSynchronizationMode <em>Synchronization Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Synchronization Mode</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramChildren#getSynchronizationMode()
+	 * @see #getDiagramChildren()
+	 * @generated
+	 */
+	EAttribute getDiagramChildren_SynchronizationMode();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create <em>Create</em>}'.
@@ -3653,6 +3728,16 @@ public interface VpdiagramPackage extends EPackage {
 	EEnum getNode_Form();
 
 	/**
+	 * Returns the meta object for enum '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode <em>Synchronization Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Synchronization Mode</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode
+	 * @generated
+	 */
+	EEnum getSynchronizationMode();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3899,6 +3984,14 @@ public interface VpdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DIAGRAM_CHILDREN = eINSTANCE.getDiagramChildren();
+
+		/**
+		 * The meta object literal for the '<em><b>Synchronization Mode</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE = eINSTANCE.getDiagramChildren_SynchronizationMode();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.CreateImpl <em>Create</em>}' class.
@@ -4741,6 +4834,16 @@ public interface VpdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum NODE_FORM = eINSTANCE.getNode_Form();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode <em>Synchronization Mode</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getSynchronizationMode()
+		 * @generated
+		 */
+		EEnum SYNCHRONIZATION_MODE = eINSTANCE.getSynchronizationMode();
 
 	}
 

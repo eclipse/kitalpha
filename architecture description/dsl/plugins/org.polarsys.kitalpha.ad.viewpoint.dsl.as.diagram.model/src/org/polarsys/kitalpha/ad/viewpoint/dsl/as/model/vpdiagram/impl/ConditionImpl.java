@@ -56,7 +56,9 @@ public class ConditionImpl extends EObjectImpl implements Condition {
 	 * @generated
 	 */
 	protected ConditionImpl() {
+
 		super();
+
 	}
 
 	/**

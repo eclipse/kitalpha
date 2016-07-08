@@ -1,0 +1,154 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _Ml8KMOOgEeWanemHN2-Kkw
+Element-Name: Component Sample Activity Explorer
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _-x8gsObSEeWyM-T_36Gzrg
+Runtime-Version: 2.0.0.201506120617
+Save-Time: 3/14/16 2:03 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+openSession -projectName $CsProjectName -airdName $csAirdPathName
+
+get-editor $NoNameEditorActivityExplorer | get-tab-item $CsActivityExplorerArchitecturePage | click
+get-editor $NoNameEditorActivityExplorer | get-section $DiagramCsArchitectureSection | get-property "isExpanded()" | equals false | verify-true
+with [get-editor $NoNameEditorActivityExplorer | get-section $DiagramCsArchitectureSection ] {
+    click
+    get-link $SetNameToComponentSampleModelLink | click
+}
+get-window "Name of Component Sample Model" | get-button OK | click
+get-editor $ModelNameEditorName | get-tab-folder | get-tab-item $ComponentSampleViewpointsSection | click
+get-editor $ModelNameEditorName | get-link "" | click
+get-editor $ModelNameEditorName | get-section $DiagramCsArchitectureSection
+    | get-property "isExpanded()" | equals false | verify-true
+with [get-editor $ModelNameEditorName | get-section $DiagramCsArchitectureSection] {
+    click
+    get-link $CreateANewDiagramLink | click
+}
+get-window "Type ComponentSampleDiagram name" | get-button OK | click
+get-menu "File/Save All" | click
+get-editor $NewComponentSampleDiagramTitle | close
+get-editor $ModelNameEditorName | get-section $DiagramViewer | get-tree 
+    | select "ComponentSample/ComponentSampleDiagram/Video on demand Architecture" | double-click
+if [ get-editor "Video on demand Architecture" | get-property "isDirty" | equals true] {
+	get-menu "File/Save All" | click
+}
+get-editor "Video on demand Architecture" | close
+get-editor $ModelNameEditorName | get-section $DiagramViewer | get-tree 
+    | get-item "ComponentSample/ComponentSampleDiagram" | get-property childCount | equals 2 | verify-true
+with [get-view $ProjectExplorerName | get-tree] {
+    select $FullPathToAird | get-menu $GoToActivityExplorer | click
+}
+get-tab-folder -index 2 | get-property activePage | equals $ModelNameEditorName | verify-true
+with [get-editor $ModelNameEditorName] {
+    get-link -index 2 | click
+    get-link -index 1 | click
+    get-link -index 2 | click
+    get-link -index 1 | click
+    get-link -index 2 | click
+    get-link -index 1 | click
+    get-link -index 2 | click
+    with [get-section "Component Sample Safety Pattern Viewpoint"] {
+        click
+        get-link Stop | click
+    }
+    with [get-section "Component Sample Safety Pattern Viewpoint"] {
+        click
+        get-link Start | click
+    }
+}
+with [get-editor $ModelNameEditorName] {
+    get-section $StartStopVpSection | get-property "isExpanded()" | equals false 
+        | verify-true
+    get-section "Component Sample Framework" | get-property "isExpanded()" | equals false | verify-true
+    get-section "Component Sample Quality Assessment Viewpoint" | get-property "isExpanded()" | equals false 
+        | verify-true
+    get-section "Component Sample Performance Viewpoint" | get-property "isExpanded()" | equals false | verify-true
+    get-section "Component Sample Viewpoint" | get-property "isExpanded()" | equals false | verify-true
+    with [get-section "Component Sample Framework"] {
+        get-property "isExpanded()" | equals false | verify-true
+        get-property "isExpanded()" | equals false | verify-true
+    }
+    get-section $StartStopVpSection | get-property "isExpanded()" | equals false | verify-true
+}
+with [get-editor $ModelNameEditorName] {
+    with [get-section "Component Sample Safety Pattern Viewpoint"] {
+        click
+        get-link Stop | click
+    }
+    with [get-section "Component Sample Safety Viewpoint"] {
+        click
+        get-link Stop | click
+    }
+    with [get-section "Component Sample Quality Assessment Viewpoint"] {
+        click
+        get-link Stop | click
+    }
+    with [get-section "Component Sample Performance Viewpoint"] {
+        click
+        get-link Stop | click
+    }
+    with [get-section "Component Sample Viewpoint"] {
+        click
+        get-link Stop | click
+    }
+    with [get-section "Component Sample Framework"] {
+        click
+        get-link Stop | click
+    }
+    with [get-section $StartStopVpSection] {
+        click
+        get-link $StartAllLink | click
+    }
+}
+with [get-view $ViewpointManager | get-table] {
+	if [ select $ComponentSampleSafetyPattern | get-menu Stop | get-property "isDisabled" | equals false ] {
+    	select $ComponentSampleSafetyPattern | get-menu Stop | click
+    }
+    if [ select $ComponentSampleSafety | get-menu Stop | get-property "isDisabled" | equals false ] {
+    	select $ComponentSampleSafety | get-menu Stop | click
+    }
+    if [ select $ComponentSampleQualityAssessment | get-menu Stop | get-property "isDisabled" | equals false ] {
+    	select $ComponentSampleQualityAssessment | get-menu Stop | click
+    }
+    if [ select $ComponentSamplePerformance | get-menu Stop | get-property "isDisabled" | equals false ] {
+    	select $ComponentSamplePerformance | get-menu Stop | click
+    }
+    if [ select $ComponentSample | get-menu Stop | get-property "isDisabled" | equals false ] {
+    	select $ComponentSample | get-menu Stop | click
+    }
+    if [ select $ComponentSampleFramework | get-menu Stop | get-property "isDisabled" | equals false ] {
+    	select $ComponentSampleFramework | get-menu Stop | click
+    }
+}
+
+with [get-editor $ModelNameEditorName ] {
+    with [get-section $StartStopVpSection] {
+//        click
+        with [get-link $StartAllLink] {
+            click
+        }
+    }
+    close
+}
+get-view $ProjectExplorerName | get-tree 
+    | select $FullPathToAird 
+    | get-menu $OpenActivityExplorerAction | click
+get-tab-folder -index 2 | get-property activePage | equals $ModelNameEditorName | verify-true
+//select $ComponentSampleModelVideo | get-menu "Open"
+//get-editor $ComponentSampleModelVideo | close
+get-view $ProjectExplorerName | get-tree 
+    | select $FullPathToAird | get-menu Close | click
+with [get-tab-folder -index 2] {
+    get-property enablement | equals false | verify-true
+    get-property containMenu | equals false | verify-true
+    get-property borderWith | equals 0 | verify-true
+    get-property tabCount | equals 0 | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
