@@ -7,7 +7,8 @@
     editorPluginClass="org.polarsys.kitalpha.emde.presentation.EmdeEditorPlugin" nonNLSMarkers="true"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
     copyrightFields="false" editPluginID="org.polarsys.kitalpha.emde.model.edit" editorPluginID="org.polarsys.kitalpha.emde.model.editor"
-    tableProviders="true" colorProviders="true" fontProviders="true" operationReflection="true">
+    tableProviders="true" colorProviders="true" fontProviders="true" operationReflection="true"
+    importOrganizing="true">
   <foreignModel>platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore</foreignModel>
   <genPackages prefix="Emde" basePackage="org.polarsys.kitalpha" resource="XMI" disposableProviderFactory="true"
       interfacePackageSuffix="model" metaDataPackageSuffix="model" classPackageSuffix="model.impl"
