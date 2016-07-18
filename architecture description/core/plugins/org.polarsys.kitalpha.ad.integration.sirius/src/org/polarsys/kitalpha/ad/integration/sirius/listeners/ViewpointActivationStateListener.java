@@ -37,12 +37,14 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 
 /**
+ * Use a job with scheduling delay to handle project creation and keep sync from metadata. By default the project creation wizard will enable all available Sirius viewpoints.
+ * 
  * @author Thomas Guiu
  * 
  */
 public class ViewpointActivationStateListener extends Stub {
 
-	private Map<String, org.eclipse.sirius.viewpoint.description.Viewpoint> getAllDoremiViewpoints() {
+	private Map<String, org.eclipse.sirius.viewpoint.description.Viewpoint> getAllSiriusViewpoints() {
 		Map<String, org.eclipse.sirius.viewpoint.description.Viewpoint> vps = new HashMap<String, org.eclipse.sirius.viewpoint.description.Viewpoint>();
 		for (org.eclipse.sirius.viewpoint.description.Viewpoint vp : ViewpointRegistry.getInstance().getViewpoints()) {
 			vps.put(vp.getName(), vp);
@@ -88,17 +90,15 @@ public class ViewpointActivationStateListener extends Stub {
 	}
 
 	public void notifyAddSession(final Session session) {
-		// use a job with scheduling delay to handle project creation.
-		// By default the wizard will enable all available Sirius viewpoints.
-		// It would be better to improve project creation but we don't to add a
-		// dependency on AF plugins...
-		// need to care aout migration process ...
+
 		Job job = new Job("") {
 			@Override
 			protected IStatus run(final IProgressMonitor monitor) {
-				if (!session.isOpen())
+				if (!session.isOpen()) {
+					// wait until the session is really open
+					schedule(500);
 					return Status.OK_STATUS;
-
+				}
 				try {
 					final Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newSelectedViewpoints = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
 					final Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newDeselectedViewpoints = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
@@ -107,7 +107,7 @@ public class ViewpointActivationStateListener extends Stub {
 					final Set<String> toDesactivate = new HashSet<String>();
 					ViewpointManager mgr = SiriusHelper.getViewpointManager(session);
 					collectionSiriusViewpoint(mgr, toActivate, toDesactivate);
-					final Map<String, org.eclipse.sirius.viewpoint.description.Viewpoint> allDoremiViewpoints = getAllDoremiViewpoints();
+					final Map<String, org.eclipse.sirius.viewpoint.description.Viewpoint> allSiriusViewpoints = getAllSiriusViewpoints();
 
 					for (org.eclipse.sirius.viewpoint.description.Viewpoint vp : session.getSelectedViewpoints(false)) {
 						if (toActivate.contains(vp.getName()))
@@ -116,7 +116,7 @@ public class ViewpointActivationStateListener extends Stub {
 							newDeselectedViewpoints.add(vp);
 					}
 					for (String name : toActivate) {
-						newSelectedViewpoints.add(allDoremiViewpoints.get(name));
+						newSelectedViewpoints.add(allSiriusViewpoints.get(name));
 					}
 
 					RecordingCommand command = new RecordingCommand(session.getTransactionalEditingDomain()) {
@@ -137,14 +137,14 @@ public class ViewpointActivationStateListener extends Stub {
 						session.getTransactionalEditingDomain().getCommandStack().execute(command);
 				} catch (Exception e) {
 					// fail silently ...
-				 Activator.getDefault().logWarning(e);
+					Activator.getDefault().logWarning(e);
 				}
 				return Status.OK_STATUS;
 			}
 		};
 		job.setSystem(true);
 		job.setUser(false);
-		job.schedule(1000);
+		job.schedule(500);
 		super.notifyAddSession(session);
 	}
 
