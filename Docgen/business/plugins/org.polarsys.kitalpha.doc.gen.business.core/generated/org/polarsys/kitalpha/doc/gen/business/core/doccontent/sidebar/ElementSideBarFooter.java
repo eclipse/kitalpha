@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -18,8 +8,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ElementSideBarFooter extends
-		org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
+public class ElementSideBarFooter extends org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
 	protected static String nl;
 
 	public static synchronized ElementSideBarFooter create(String lineSeparator) {
@@ -29,14 +18,11 @@ public class ElementSideBarFooter extends
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "</ul>" + NL
-			+ "\t<script type=\"text/javascript\">" + NL
-			+ "\t\t$(\"#treemenu1\").treeview({" + NL + "\t\t collapsed: true,"
-			+ NL + "\t\t animated: \"fast\"," + NL + "\t\t unique: false," + NL
-			+ "\t\t control: \"#treecontrol\"" + NL + "\t\t});" + NL
-			+ "\t</script>" + NL + "   </body>" + NL + "</html>";
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "</ul>" + NL + "\t<script type=\"text/javascript\">" + NL
+			+ "\t\t$(\"#treemenu1\").treeview({" + NL + "\t\t collapsed: true," + NL + "\t\t animated: \"fast\"," + NL
+			+ "\t\t unique: false," + NL + "\t\t control: \"#treecontrol\"" + NL + "\t\t});" + NL + "\t</script>" + NL
+			+ "   </body>" + NL + "</html>";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -71,8 +57,7 @@ public class ElementSideBarFooter extends
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_2);
@@ -92,8 +77,7 @@ public class ElementSideBarFooter extends
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -110,13 +94,11 @@ public class ElementSideBarFooter extends
 		return parameters;
 	}
 
-	protected void method_body(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_body(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "body",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "body", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

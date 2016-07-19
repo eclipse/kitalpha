@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated on Tue Aug 12 15:01:04 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.generic;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,20 +10,17 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.*;
 
 public class ElementGenerateByPropterty
-		extends
-		org.polarsys.kitalpha.doc.gen.business.core.generic.AbstractElementDescription {
+		extends org.polarsys.kitalpha.doc.gen.business.core.generic.AbstractElementDescription {
 	protected static String nl;
 
-	public static synchronized ElementGenerateByPropterty create(
-			String lineSeparator) {
+	public static synchronized ElementGenerateByPropterty create(String lineSeparator) {
 		nl = lineSeparator;
 		ElementGenerateByPropterty result = new ElementGenerateByPropterty();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL + "\t" + NL + NL;
 	protected final String TEXT_3 = NL + "<h2>";
@@ -83,8 +70,7 @@ public class ElementGenerateByPropterty
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_6);
@@ -104,8 +90,7 @@ public class ElementGenerateByPropterty
 			parameterValues.put("eObject", this.eObject);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -130,12 +115,11 @@ public class ElementGenerateByPropterty
 		return parameters;
 	}
 
-	protected void method_generateDescription(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_generateDescription(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		EClass eClass = eObject.eClass();
-		EStructuralFeature eStructuralFeature = eClass
-				.getEStructuralFeature(property);
+		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(property);
 		if (eStructuralFeature != null) {
 			Object value = eObject.eGet(eStructuralFeature);
 			String description = null;
@@ -145,37 +129,30 @@ public class ElementGenerateByPropterty
 				description = "No " + property;
 			}
 			stringBuffer.append(TEXT_1);
-			stringBuffer.append(EscapeChars
-					.replaceSpecialCharacters(description));
+			stringBuffer.append(EscapeChars.replaceSpecialCharacters(description));
 		}
 		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "generateDescription",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "generateDescription", stringBuffer.toString());
 	}
 
-	protected void method_openDescription(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_openDescription(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String string = "";
 		if (title == null) {
-			string = Character.toString(property.charAt(0)).toUpperCase()
-					+ property.substring(1);
+			string = Character.toString(property.charAt(0)).toUpperCase() + property.substring(1);
 		}
 		stringBuffer.append(TEXT_3);
 		stringBuffer.append(string);
 		stringBuffer.append(TEXT_4);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "openDescription",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "openDescription", stringBuffer.toString());
 	}
 
-	protected void method_closeDescription(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_closeDescription(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_5);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "closeDescription",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "closeDescription", stringBuffer.toString());
 	}
 }

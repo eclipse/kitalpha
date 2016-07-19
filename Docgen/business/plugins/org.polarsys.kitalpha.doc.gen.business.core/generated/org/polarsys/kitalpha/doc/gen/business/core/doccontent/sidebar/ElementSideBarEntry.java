@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated on Tue Aug 12 15:01:03 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,8 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.*;
 
-public class ElementSideBarEntry extends
-		org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
+public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
 	protected static String nl;
 
 	public static synchronized ElementSideBarEntry create(String lineSeparator) {
@@ -30,8 +19,7 @@ public class ElementSideBarEntry extends
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "<li>" + NL;
 	protected final String TEXT_2 = NL + "<img src=\"../icon/";
 	protected final String TEXT_3 = "\" alt=\"";
@@ -82,8 +70,7 @@ public class ElementSideBarEntry extends
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_7);
@@ -103,10 +90,9 @@ public class ElementSideBarEntry extends
 			final Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
+					ctx_local, parameters);
 		}
 
 		{
@@ -119,10 +105,9 @@ public class ElementSideBarEntry extends
 			final Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
+					ctx_local, parameters);
 		}
 
 		method_endSidebarElement(new StringBuffer(), ictx);
@@ -134,8 +119,7 @@ public class ElementSideBarEntry extends
 			parameterValues.put("folderName", this.folderName);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -166,21 +150,18 @@ public class ElementSideBarEntry extends
 		return parameters;
 	}
 
-	protected void method_startSidebarElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_contentSidebarElement(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
-		String imageFileName = LabelProviderHelper.getImageFileName(parameter,
-				projectName, folderName);
+		String imageFileName = LabelProviderHelper.getImageFileName(parameter, projectName, folderName);
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(imageFileName);
 		stringBuffer.append(TEXT_3);
@@ -189,16 +170,14 @@ public class ElementSideBarEntry extends
 		stringBuffer.append(LabelProviderHelper.getText(parameter));
 		stringBuffer.append(TEXT_5);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		stringBuffer.append(TEXT_6);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarElement", stringBuffer.toString());
 	}
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,9 +12,7 @@
 package org.polarsys.kitalpha.doc.gen.business.core.preference.ui;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
-import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.swt.SWT;
@@ -22,24 +20,16 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.polarsys.kitalpha.doc.gen.business.core.preference.Activator;
-import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenBrandingPreferenceConstant;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenPreferenceConstant;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.internal.Messages;
 
 /**
  * @author Boubekeur Zendagui
  */
 
-public class DocgenBrandingPreferencesPage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
+public class DocgenBrandingPreferencesPage extends AbstractDocgenPreferencePage {
 	protected static final String[] LOGO_EXTENSIONS = { "*.png", "*.gif", "*.jpeg", "*.jpg", "*.bmp", "*.*" };
 	
-	/**
-	 * An instance of {@link IPreferenceStore}
-	 */
-	private final IPreferenceStore store = Activator.getDefault().getPreferenceStore();
-
 	/**
 	 * The String field that allows to set ROOT_PROJECT_NAME__VALUE value
 	 */
@@ -54,22 +44,6 @@ public class DocgenBrandingPreferencesPage extends FieldEditorPreferencePage imp
 	private FileFieldEditor logoPathField;
 	private StringFieldEditor logoAltField;
 	
-	/**
-	 * Default Constructor
-	 */
-	public DocgenBrandingPreferencesPage() {
-		super(FieldEditorPreferencePage.GRID);
-	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.IWorkbenchPreferencePage#init(org.eclipse.ui.IWorkbench)
-	 */
-	@Override
-	public void init(IWorkbench workbench) {
-		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#createFieldEditors()
@@ -77,7 +51,7 @@ public class DocgenBrandingPreferencesPage extends FieldEditorPreferencePage imp
 	@Override
 	protected void createFieldEditors() {
 		// Create Copyright fields
-		copyrightField = createCopyrightField(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT, 
+		copyrightField = createCopyrightField(DocgenPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT, 
 											  Messages.DOCGEN_BRANDING_COPYRIGHT_FIELD_LABEL, 
 											  getFieldEditorParent());
 		createLogoWidgets();
@@ -115,13 +89,13 @@ public class DocgenBrandingPreferencesPage extends FieldEditorPreferencePage imp
 		gd.verticalIndent = 5;
 		Composite composite = new Composite(logoGroup, SWT.NONE);
 		composite.setLayoutData(gd);
-		useDefaultLogoValue = new BooleanFieldEditor(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT, 
+		useDefaultLogoValue = new BooleanFieldEditor(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT, 
 													 Messages.DOCGEN_BRANDING_LOGO_USE_DEFAULT_FIELD_LABEL, 
 													 composite);
 		
 		// Create image path fields
 		imgPathGroup = createParent(logoGroup, null);
-		logoPathField  = new FileFieldEditor(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH, 
+		logoPathField  = new FileFieldEditor(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH, 
 				  							 Messages.DOCGEN_BRANDING_LOGO_FIELD_LABEL, 
 				  							 true,
 				  							 FileFieldEditor.VALIDATE_ON_KEY_STROKE,
@@ -140,7 +114,7 @@ public class DocgenBrandingPreferencesPage extends FieldEditorPreferencePage imp
 		logoPathField.setFileExtensions(LOGO_EXTENSIONS);
 		
 		// Create image alternate text fields
-		logoAltField = createCopyrightField(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT, 
+		logoAltField = createCopyrightField(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT, 
 											 Messages.DOCGEN_BRANDING_LOGO_ALT_FIELD_LABEL, 
 											 logoGroup);
 		
@@ -154,8 +128,8 @@ public class DocgenBrandingPreferencesPage extends FieldEditorPreferencePage imp
 	@Override
 	protected void performDefaults() {
 		super.performDefaults();
-		getPreferenceStore().setDefault(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT, 
-				DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT_DEFAULT_VALUE);
+		getPreferenceStore().setDefault(DocgenPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT, 
+				DocgenPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT_DEFAULT_VALUE);
 	}
 	
 	
@@ -247,15 +221,15 @@ public class DocgenBrandingPreferencesPage extends FieldEditorPreferencePage imp
 	 */
 	private void handleLogoPreferencesDefaultValues(){
 		// Handle enable state 
-		Boolean useDefaultLogo = store.getBoolean(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT);
+		Boolean useDefaultLogo = store.getBoolean(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT);
 		// logoPathField default value
 		logoPathField.setEmptyStringAllowed(useDefaultLogo);
 		logoPathField.setEnabled(! useDefaultLogo, imgPathGroup);
 		if (! useDefaultLogo)
-			store.setDefault(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH, DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE);
+			store.setDefault(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH, DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE);
 		// logoAltField default value
 		logoAltField.setEnabled(! useDefaultLogo, logoGroup);
 		if (! useDefaultLogo)
-			store.setDefault(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT, DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE);
+			store.setDefault(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT, DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE);
 	}
 }

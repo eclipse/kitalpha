@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,8 +13,8 @@ package org.polarsys.kitalpha.doc.gen.business.core.branding;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenBrandingPreferenceConstant;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenBrandingPreferencesHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenPreferenceConstant;
 
 /**
  * @author Boubekeur Zendagui
@@ -37,8 +37,8 @@ public final class DocumentationBrandingDefaultData {
 		final Boolean useDefaultLogo = DocgenBrandingPreferencesHelper.getUseDefaultLogo();
 		if (useDefaultLogo)
 		{
-			data.put("logoPath", DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE);
-			data.put("logoAlt", DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE);
+			data.put("logoPath", DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE);
+			data.put("logoAlt", DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE);
 		}
 		else
 		{

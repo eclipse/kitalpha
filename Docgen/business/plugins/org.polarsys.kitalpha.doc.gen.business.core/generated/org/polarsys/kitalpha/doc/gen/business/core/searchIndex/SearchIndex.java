@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.searchIndex;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,9 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 
-public class SearchIndex
-		extends
-		org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
+public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
 	protected static String nl;
 
 	public static synchronized SearchIndex create(String lineSeparator) {
@@ -31,57 +19,28 @@ public class SearchIndex
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = NL
-			+ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">"
-			+ NL
-			+ "<html>"
-			+ NL
-			+ "<head>"
-			+ NL
-			+ "\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\"></script>\t"
-			+ NL
-			+ "</head>"
-			+ NL
-			+ "<body style=\"padding:0px; margin:0px; background-color:#F6F6F6\">"
-			+ NL
-			+ ""
-			+ NL
-			+ "\t\t<div style=\"height:30px;\">"
-			+ NL
-			+ "\t\t\t<div style=\"padding:3px;position:fixed;background-color:#DDE0E3; width:100%;\">"
-			+ NL
-			+ "\t\t\t\t<div style=\"float:right; margin-right:5px; font-size:12px; font-family:Arial\">"
-			+ NL
-			+ "\t\t\t\t\t<a href=\"sidebar.html\">Back to Model</a>"
-			+ NL
-			+ "\t\t\t\t</div>"
-			+ NL
-			+ "\t\t\t</div>"
-			+ NL
-			+ "\t\t</div>"
-			+ NL
-			+ "<div style=\"font-family:Arial; font-size:12px;padding-left:5px;\">"
-			+ NL + "  \t<input id=\"input1\" type=\"text\" value=\"\"/> " + NL
-			+ "  \t<p id=\"p1\"></p>" + NL + "    <p id=\"p2\"></p>\t" + NL
-			+ "\t<script type=\"text/javascript\">" + NL + "\t\t" + NL
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = NL + "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">" + NL
+			+ "<html>" + NL + "<head>" + NL
+			+ "\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\"></script>\t" + NL + "</head>" + NL
+			+ "<body style=\"padding:0px; margin:0px; background-color:#F6F6F6\">" + NL + "" + NL
+			+ "\t\t<div style=\"height:30px;\">" + NL
+			+ "\t\t\t<div style=\"padding:3px;position:fixed;background-color:#DDE0E3; width:100%;\">" + NL
+			+ "\t\t\t\t<div style=\"float:right; margin-right:5px; font-size:12px; font-family:Arial\">" + NL
+			+ "\t\t\t\t\t<a href=\"sidebar.html\">Back to Model</a>" + NL + "\t\t\t\t</div>" + NL + "\t\t\t</div>" + NL
+			+ "\t\t</div>" + NL + "<div style=\"font-family:Arial; font-size:12px;padding-left:5px;\">" + NL
+			+ "  \t<input id=\"input1\" type=\"text\" value=\"\"/> " + NL + "  \t<p id=\"p1\"></p>" + NL
+			+ "    <p id=\"p2\"></p>\t" + NL + "\t<script type=\"text/javascript\">" + NL + "\t\t" + NL
 			+ "\t\tvar tabCount = ";
-	protected final String TEXT_2 = ";" + NL
-			+ "\t\tvar conceptsList = new Array(tabCount);" + NL
-			+ "\t\tvar currentSize = 0;" + NL
-			+ "\t\tvar addedConceptCount = 0;" + NL
+	protected final String TEXT_2 = ";" + NL + "\t\tvar conceptsList = new Array(tabCount);" + NL
+			+ "\t\tvar currentSize = 0;" + NL + "\t\tvar addedConceptCount = 0;" + NL
 			+ "\t\tfor(x = 0; x < tabCount; x++) {" + NL + "\t\t\tif ((";
-	protected final String TEXT_3 = " - addedConceptCount) > 255){" + NL
-			+ "\t\t\t\tcurrentSize = 255;" + NL + "\t\t\t}else{" + NL
-			+ "\t\t\t\tcurrentSize = ";
-	protected final String TEXT_4 = " - addedConceptCount;" + NL + "\t\t\t}"
-			+ NL + "\t\t\tvar jConcepts = new Array(currentSize);" + NL
-			+ "\t\t\tfor(i = 0; i < currentSize;i++) {" + NL
-			+ "\t\t\t\tjConcepts[i] = new Array();" + NL + "\t\t\t}" + NL
-			+ "\t\t\tconceptsList[x] = jConcepts;" + NL
-			+ "\t\t\taddedConceptCount = addedConceptCount + 255;" + NL
-			+ "\t\t}" + NL;
+	protected final String TEXT_3 = " - addedConceptCount) > 255){" + NL + "\t\t\t\tcurrentSize = 255;" + NL
+			+ "\t\t\t}else{" + NL + "\t\t\t\tcurrentSize = ";
+	protected final String TEXT_4 = " - addedConceptCount;" + NL + "\t\t\t}" + NL
+			+ "\t\t\tvar jConcepts = new Array(currentSize);" + NL + "\t\t\tfor(i = 0; i < currentSize;i++) {" + NL
+			+ "\t\t\t\tjConcepts[i] = new Array();" + NL + "\t\t\t}" + NL + "\t\t\tconceptsList[x] = jConcepts;" + NL
+			+ "\t\t\taddedConceptCount = addedConceptCount + 255;" + NL + "\t\t}" + NL;
 	protected final String TEXT_5 = "conceptsList[";
 	protected final String TEXT_6 = "][";
 	protected final String TEXT_7 = "][0] = \"";
@@ -89,38 +48,19 @@ public class SearchIndex
 	protected final String TEXT_9 = "][";
 	protected final String TEXT_10 = "][1] = \"";
 	protected final String TEXT_11 = "\";" + NL + "\t\t";
-	protected final String TEXT_12 = "\t\t\t"
-			+ NL
-			+ "\t    $(\"#input1\").keyup(function () {"
-			+ NL
-			+ "\t      var value = $(this).val();"
-			+ NL
-			+ "\t      // $(\"#p1\").text(value);"
-			+ NL
-			+ "\t      var element = document.getElementById('possible_keywords');"
-			+ NL
-			+ "\t      var t = \"\";"
-			+ NL
-			+ "\t      for (x=0; x < tabCount; x++){"
-			+ NL
-			+ "\t\t  \tvar concepts = conceptsList[x];"
-			+ NL
-			+ "\t      \tfor(i=0;i<concepts.length;i++) {"
-			+ NL
-			+ "\t      \t\tvar index = concepts[i][0].toLowerCase().indexOf(value.toLowerCase());"
-			+ NL
-			+ "\t      \t\tif(index != -1) {"
-			+ NL
-			+ "\t\t      \t\tvar value2 = concepts[i][0];"
-			+ NL
-			+ "\t      \t\t\tvar value3 = concepts[i][1];"
-			+ NL
+	protected final String TEXT_12 = "\t\t\t" + NL + "\t    $(\"#input1\").keyup(function () {" + NL
+			+ "\t      var value = $(this).val();" + NL + "\t      // $(\"#p1\").text(value);" + NL
+			+ "\t      var element = document.getElementById('possible_keywords');" + NL + "\t      var t = \"\";" + NL
+			+ "\t      for (x=0; x < tabCount; x++){" + NL + "\t\t  \tvar concepts = conceptsList[x];" + NL
+			+ "\t      \tfor(i=0;i<concepts.length;i++) {" + NL
+			+ "\t      \t\tvar index = concepts[i][0].toLowerCase().indexOf(value.toLowerCase());" + NL
+			+ "\t      \t\tif(index != -1) {" + NL + "\t\t      \t\tvar value2 = concepts[i][0];" + NL
+			+ "\t      \t\t\tvar value3 = concepts[i][1];" + NL
 			+ "\t      \t\t\tt = t.concat(\"<a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");\t      \t\t"
-			+ NL + "\t      \t\t}" + NL + "\t      \t}" + NL + "\t      }" + NL
-			+ "\t      " + NL + "\t      $(\"#p2\").html(t);" + NL + "\t      "
-			+ NL + "\t      element.value = value;" + NL + "\t    }).keyup();"
-			+ NL + "\t    " + NL + "\t</script>" + NL + "\t</div>" + NL
-			+ "</body>" + NL + "</html>";
+			+ NL + "\t      \t\t}" + NL + "\t      \t}" + NL + "\t      }" + NL + "\t      " + NL
+			+ "\t      $(\"#p2\").html(t);" + NL + "\t      " + NL + "\t      element.value = value;" + NL
+			+ "\t    }).keyup();" + NL + "\t    " + NL + "\t</script>" + NL + "\t</div>" + NL + "</body>" + NL
+			+ "</html>";
 	protected final String TEXT_13 = NL;
 	protected final String TEXT_14 = NL;
 
@@ -147,8 +87,7 @@ public class SearchIndex
 
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_13);
@@ -169,8 +108,7 @@ public class SearchIndex
 		return parameters;
 	}
 
-	protected void method_content(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		List<String> concepts = (List<String>) ctx.getValue("concepts");
 
@@ -199,8 +137,7 @@ public class SearchIndex
 			stringBuffer.append(TEXT_9);
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_10);
-			stringBuffer.append(i + "_"
-					+ DocGenHtmlUtil.getValidFileName(currentConcept));
+			stringBuffer.append(i + "_" + DocGenHtmlUtil.getValidFileName(currentConcept));
 			stringBuffer.append(TEXT_11);
 
 			if (count == 254) {
@@ -213,49 +150,38 @@ public class SearchIndex
 
 		stringBuffer.append(TEXT_12);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "content",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
 	}
 
-	protected void method_docFooter(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_docFooter(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "docFooter",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "docFooter", stringBuffer.toString());
 	}
 
-	protected void method_docHeader(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_docHeader(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "docHeader",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "docHeader", stringBuffer.toString());
 	}
 
-	protected void method_endContent(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_endContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endContent",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "endContent", stringBuffer.toString());
 	}
 
-	protected void method_startContent(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_startContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startContent",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "startContent", stringBuffer.toString());
 	}
 
-	protected void method_setContext(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		fileName = "searchIndex";
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setContext",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setContext", stringBuffer.toString());
 	}
 }

@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150608-0917
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.sirius;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 
 public class DiagramGenerator {
 	protected static String nl;
@@ -288,6 +289,6 @@ public class DiagramGenerator {
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
+		return DocgenDiagramPreferencesHelper.getExportDiagram();
 	}
 }

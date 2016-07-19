@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated on Tue Aug 12 15:01:04 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,8 +10,7 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class ElementSideBarContent extends
-		org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
+public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
 	protected static String nl;
 
 	public static synchronized ElementSideBarContent create(String lineSeparator) {
@@ -31,8 +20,7 @@ public class ElementSideBarContent extends
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = " ";
 	protected final String TEXT_2 = NL + "<li ";
 	protected final String TEXT_3 = "id=\"";
@@ -74,8 +62,7 @@ public class ElementSideBarContent extends
 
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_16);
@@ -121,17 +108,15 @@ public class ElementSideBarContent extends
 		return parameters;
 	}
 
-	protected void method_setCurrentObject(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setCurrentObject(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setCurrentObject",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setCurrentObject", stringBuffer.toString());
 	}
 
-	protected void method_startSidebarElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		String id = EcoreUtil.getID(currentObject);
 		stringBuffer.append(TEXT_2);
@@ -142,12 +127,10 @@ public class ElementSideBarContent extends
 		}
 		stringBuffer.append(TEXT_5);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_contentSidebarElement(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		String projectName = ctx.getValue("projectName").toString();
@@ -156,8 +139,7 @@ public class ElementSideBarContent extends
 		text = EscapeChars.forHTML(text);
 
 		stringBuffer.append(TEXT_6);
-		String imageFileName = LabelProviderHelper.getImageFileName(
-				currentObject, projectName, outputFolder);
+		String imageFileName = LabelProviderHelper.getImageFileName(currentObject, projectName, outputFolder);
 		stringBuffer.append(TEXT_7);
 		stringBuffer.append(imageFileName);
 		stringBuffer.append(TEXT_8);
@@ -170,74 +152,62 @@ public class ElementSideBarContent extends
 		stringBuffer.append(text);
 		stringBuffer.append(TEXT_12);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_startSidebarSubElement(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_startSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarSubEntry_Start" args="currentObject:parameter"%>
 
 			InternalPatternContext ictx = (InternalPatternContext) ctx;
-			new Node.DataLeaf(ictx.getNode(), getClass(), null,
-					stringBuffer.toString());
+			new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
 			stringBuffer.setLength(0);
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("parameter", currentObject);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
-							new ExecutionContext((InternalPatternContext) ctx),
-							callParameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
+					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarSubElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarSubElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_endSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarSubEntry_End" args="currentObject:parameter"%>
 
 			InternalPatternContext ictx = (InternalPatternContext) ctx;
-			new Node.DataLeaf(ictx.getNode(), getClass(), null,
-					stringBuffer.toString());
+			new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
 			stringBuffer.setLength(0);
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("parameter", currentObject);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
-							new ExecutionContext((InternalPatternContext) ctx),
-							callParameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
+					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarSubElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		stringBuffer.append(TEXT_13);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_body(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_body(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String projectName = ctx.getValue("projectName").toString();
 		String outputFolder = ctx.getValue("outputFolder").toString();
@@ -248,35 +218,29 @@ public class ElementSideBarContent extends
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarEntry" args="currentObject:parameter, projectName:projectName, outputFolder:folderName"%>
 
 			InternalPatternContext ictx = (InternalPatternContext) ctx;
-			new Node.DataLeaf(ictx.getNode(), getClass(), null,
-					stringBuffer.toString());
+			new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
 			stringBuffer.setLength(0);
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("parameter", currentObject);
 			callParameters.put("projectName", projectName);
 			callParameters.put("folderName", outputFolder);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_-jjtYPeqEd-vRuaiXg4Fzg",
-							new ExecutionContext((InternalPatternContext) ctx),
-							callParameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_-jjtYPeqEd-vRuaiXg4Fzg",
+					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "body",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "body", stringBuffer.toString());
 	}
 
-	protected void method_indexing(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_indexing(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		//org.polarsys.kitalpha.doc.gen.business.core.services.IndexerService indexer = org.polarsys.kitalpha.doc.gen.business.core.services.IndexerService.INSTANCE;
 		//indexer.addElement(currentObject);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "indexing",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "indexing", stringBuffer.toString());
 	}
 }

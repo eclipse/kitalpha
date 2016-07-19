@@ -28,9 +28,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
-import org.polarsys.kitalpha.doc.gen.business.core.ui.wizards.string.Messages;
-import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenBrandingPreferenceConstant;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenBrandingPreferencesHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenPreferenceConstant;
+import org.polarsys.kitalpha.doc.gen.business.core.ui.wizards.string.Messages;
 
 /**
  * @author Boubekeur Zendagui
@@ -136,28 +136,28 @@ public class HTMLDocumentationBrandingWizardPage extends WizardPage {
 	 * Update the Branding Data Preferences by the values provided by the user in the Wizard
 	 */
 	public void updateBrandingPreferences(){
-		IPreferenceStore store = DocgenBrandingPreferencesHelper.store;
+		IPreferenceStore store = DocgenBrandingPreferencesHelper.STORE;
 		if (! copyrightText.getText().equals(DocgenBrandingPreferencesHelper.getCopyright()))
 		{
-			store.setValue(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT, copyrightText.getText());
+			store.setValue(DocgenPreferenceConstant.DOCGEN_BRANDING_COPYRIGHT, copyrightText.getText());
 		}
 		if (! logoPathText.getText().equals(DocgenBrandingPreferencesHelper.getLogoPath()))
 		{
-			store.setValue(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH, logoPathText.getText());
+			store.setValue(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH, logoPathText.getText());
 		}
 		if (! logoAltText.getText().equals(DocgenBrandingPreferencesHelper.getLogoAlternateText()))
 		{
-			store.setValue(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT, logoAltText.getText());
+			store.setValue(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT, logoAltText.getText());
 		}
 		
-		if (logoPathText.getText().equals(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE) &&
-			logoAltText.getText().equals(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE))
+		if (logoPathText.getText().equals(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE) &&
+			logoAltText.getText().equals(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE))
 		{
-			store.setValue(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT, true);
+			store.setValue(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT, true);
 		}
 		else
 		{
-			store.setValue(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT, false);
+			store.setValue(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_USE_DEFAULT, false);
 		}
 	}
 	
@@ -221,7 +221,7 @@ public class HTMLDocumentationBrandingWizardPage extends WizardPage {
 	 */
 	private void dialogChanged() {
 		final String logoPqth = logoPathText.getText();
-		if (logoPqth.equals(DocgenBrandingPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE))
+		if (logoPqth.equals(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE))
 		{
 			updateStatus(null);
 		}

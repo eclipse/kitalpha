@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014 Thales Global Services S.A.S.
+Copyright (c) 2014-2016 Thales Global Services S.A.S.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -16,9 +16,25 @@ Contributors:
          point="org.eclipse.ui.preferencePages">
       <page
             category="org.polarsys.kitalpha.mdecore.preference.category"
+            class="org.polarsys.kitalpha.doc.gen.business.core.preference.ui.DocgenPreferencePage"
+            id="org.polarsys.kitalpha.mdecore.docgen.preference.category"
+            name="%DocGen">
+      </page>
+   </extension>
+   	
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.polarsys.kitalpha.mdecore.docgen.preference.category"
             class="org.polarsys.kitalpha.doc.gen.business.core.preference.ui.DocgenBrandingPreferencesPage"
             id="org.polarsys.kitalpha.doc.gen.branding.preference.page"
             name="%DocGenBranding">
+      </page>
+      <page
+            category="org.polarsys.kitalpha.mdecore.docgen.preference.category"
+            class="org.polarsys.kitalpha.doc.gen.business.core.preference.ui.DocgenDiagramsPreferencesPage"
+            id="org.polarsys.kitalpha.doc.gen.diagrams.preference.page"
+            name="%DocGenDiagrams">
       </page>
    </extension>
    <extension
@@ -26,6 +42,8 @@ Contributors:
       <initializer
             class="org.polarsys.kitalpha.doc.gen.business.core.preference.internal.DocgenBrandingPreferencesInitializer">
       </initializer>
+      <initializer
+            class="org.polarsys.kitalpha.doc.gen.business.core.preference.internal.DocgenDiagramPreferencesInitializer">
+      </initializer>
    </extension>
-
 </plugin>

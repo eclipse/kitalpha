@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated on Tue Aug 12 15:01:03 CEST 2014 with EGF 1.2.0.v20140721-0706
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.index;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,9 +11,7 @@ import org.eclipse.egf.model.domain.EMFDomain;
 import org.polarsys.kitalpha.doc.gen.business.core.branding.DocumentationBrandingData;
 import org.polarsys.kitalpha.doc.gen.business.core.branding.DocumentationBrandingDataHelper;
 
-public class HeaderBuilder
-		extends
-		org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
+public class HeaderBuilder extends org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
 	protected static String nl;
 
 	public static synchronized HeaderBuilder create(String lineSeparator) {
@@ -33,29 +21,19 @@ public class HeaderBuilder
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\""
-			+ NL
-			+ "       \"http://www.w3.org/TR/html4/loose.dtd\">"
-			+ NL
-			+ "<html>" + NL + "<head>" + NL + "<title>";
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"" + NL
+			+ "       \"http://www.w3.org/TR/html4/loose.dtd\">" + NL + "<html>" + NL + "<head>" + NL + "<title>";
 	protected final String TEXT_2 = "</title>" + NL + "</head>";
 	protected final String TEXT_3 = "</html>";
-	protected final String TEXT_4 = NL
-			+ "<body style=\"background-color:#5C74A2; "
-			+ NL
-			+ "\t  background-image:url('../../img/heander_fndContenuGauche_small3.jpg'); "
-			+ NL + "\t  background-repeat:repeat-x;\">" + NL + "\t" + NL
-			+ "\t<h1 style=\"width:50%; " + NL + "\t\tfloat:left; " + NL
-			+ "\t\tcolor:#FFFFFF; " + NL + "\t\tmargin:15px; " + NL
-			+ "\t\tfont-family: Arial, sans-serif; " + NL
-			+ "\t\tfont-size:25px\">" + NL + "\t\t";
-	protected final String TEXT_5 = NL + "\t</h1>" + NL
-			+ "\t<div style=\"float:right; " + NL + "\t\t position:relative; "
-			+ NL + "\t\t top:10px; " + NL + "\t\t right:30px;\">" + NL
-			+ "\t\t <img style=\"height:45px;\" " + NL
-			+ "\t\t\t  src=\"../../img/logo.gif\" " + NL + "\t\t\t  alt=\"";
+	protected final String TEXT_4 = NL + "<body style=\"background-color:#5C74A2; " + NL
+			+ "\t  background-image:url('../../img/heander_fndContenuGauche_small3.jpg'); " + NL
+			+ "\t  background-repeat:repeat-x;\">" + NL + "\t" + NL + "\t<h1 style=\"width:50%; " + NL
+			+ "\t\tfloat:left; " + NL + "\t\tcolor:#FFFFFF; " + NL + "\t\tmargin:15px; " + NL
+			+ "\t\tfont-family: Arial, sans-serif; " + NL + "\t\tfont-size:25px\">" + NL + "\t\t";
+	protected final String TEXT_5 = NL + "\t</h1>" + NL + "\t<div style=\"float:right; " + NL
+			+ "\t\t position:relative; " + NL + "\t\t top:10px; " + NL + "\t\t right:30px;\">" + NL
+			+ "\t\t <img style=\"height:45px;\" " + NL + "\t\t\t  src=\"../../img/logo.gif\" " + NL + "\t\t\t  alt=\"";
 	protected final String TEXT_6 = "\"/> " + NL + "\t</div>" + NL + "</body>";
 	protected final String TEXT_7 = NL;
 	protected final String TEXT_8 = NL;
@@ -83,8 +61,7 @@ public class HeaderBuilder
 
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_7);
@@ -105,77 +82,61 @@ public class HeaderBuilder
 		return parameters;
 	}
 
-	protected void method_setContext(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		title = "Index";
 		fileName = "header";
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setContext",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setContext", stringBuffer.toString());
 	}
 
-	protected void method_docHeader(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_docHeader(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(title);
 		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "docHeader",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "docHeader", stringBuffer.toString());
 	}
 
-	protected void method_docFooter(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_docFooter(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_3);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "docFooter",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "docFooter", stringBuffer.toString());
 	}
 
-	protected void method_content(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String projectName = ctx.getValue("projectName").toString();
 		String outputFolder = ctx.getValue("outputFolder").toString();
 		List<EObject> domain = (List<EObject>) ctx.getValue("domain");
-		String logoAlt = (String) DocumentationBrandingData.getInstance()
-				.getData("logoAlt");
-		String logoPath = (String) DocumentationBrandingData.getInstance()
-				.getData("logoPath");
+		String logoAlt = (String) DocumentationBrandingData.getInstance().getData("logoAlt");
+		String logoPath = (String) DocumentationBrandingData.getInstance().getData("logoPath");
 		// Copier l'image dans le répertoire généré des images et la nommer logo.gif (../../img/logo.gif)
 		if (logoPath.equals("Default") == false)
-			DocumentationBrandingDataHelper.copyLogoFile(projectName,
-					outputFolder, logoPath);
+			DocumentationBrandingDataHelper.copyLogoFile(projectName, outputFolder, logoPath);
 
 		stringBuffer.append(TEXT_4);
 		stringBuffer
-				.append(org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil
-						.getModelName(domain.get(0)));
+				.append(org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil.getModelName(domain.get(0)));
 		stringBuffer.append(TEXT_5);
 		stringBuffer.append(logoAlt);
 		stringBuffer.append(TEXT_6);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "content",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
 	}
 
-	protected void method_startContent(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_startContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startContent",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "startContent", stringBuffer.toString());
 	}
 
-	protected void method_endContent(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_endContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endContent",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "endContent", stringBuffer.toString());
 	}
 }

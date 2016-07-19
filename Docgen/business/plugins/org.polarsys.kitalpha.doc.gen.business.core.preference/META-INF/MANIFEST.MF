@@ -5,7 +5,8 @@ Bundle-SymbolicName: org.polarsys.kitalpha.doc.gen.business.core.preference;sing
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.doc.gen.business.core.preference.Activator
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.polarsys.kitalpha.common.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Localization: plugin

@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -18,8 +8,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ElementSideBarHeader extends
-		org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
+public class ElementSideBarHeader extends org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
 	protected static String nl;
 
 	public static synchronized ElementSideBarHeader create(String lineSeparator) {
@@ -29,68 +18,29 @@ public class ElementSideBarHeader extends
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>"
-			+ NL
-			+ "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" "
-			+ NL
-			+ "        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
-			+ NL
-			+ "        "
-			+ NL
-			+ "<html xmlns=\"http://www.w3.org/1999/xhtml\">"
-			+ NL
-			+ ""
-			+ NL
-			+ "    <head>"
-			+ NL
-			+ "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />"
-			+ NL
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>" + NL
+			+ "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" " + NL
+			+ "        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" + NL + "        " + NL
+			+ "<html xmlns=\"http://www.w3.org/1999/xhtml\">" + NL + "" + NL + "    <head>" + NL
+			+ "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />" + NL
 			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\" type=\"text/javascript\"></script>"
 			+ NL
 			+ "  \t\t<script src=\"../../scripts/jquery-treeview/jquery.treeview.js\" type=\"text/javascript\"></script>"
-			+ NL
-			+ "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/simpletree.css\" />"
-			+ NL
-			+ "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />"
-			+ NL
-			+ "    </head>"
-			+ NL
-			+ "    "
-			+ NL
-			+ "    <body style=\"padding:0px; margin:0px;\">"
-			+ NL
-			+ "\t\t<div style=\"height:30px;\">"
-			+ NL
-			+ "\t\t\t<div style=\"padding:3px;position:fixed;background-color:#DDE0E3; width:100%;\">"
-			+ NL
-			+ "\t\t\t\t<div id=\"treecontrol\" style=\"float:left\">"
-			+ NL
-			+ "\t\t\t\t\t<a href=\"#\">"
-			+ NL
-			+ "\t\t\t\t\t\t<img src=\"../../img/open.gif\" alt=\"Collapse All\" style=\"border:0px\"/>"
-			+ NL
-			+ "\t\t\t\t\t</a> "
-			+ NL
-			+ "\t\t\t\t\t<a href=\"#\">"
-			+ NL
-			+ "\t\t\t\t\t\t<img src=\"../../img/closed.gif\" alt=\"Expand All\" style=\"border:0px\"/>"
-			+ NL
-			+ "\t\t\t\t\t</a>"
-			+ NL
-			+ "\t\t\t\t</div> "
-			+ NL
-			+ "\t\t\t\t<div style=\"float:right; margin-right:5px; font-size:12px; font-family:Arial\">"
-			+ NL
+			+ NL + "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/simpletree.css\" />" + NL
+			+ "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />" + NL + "    </head>"
+			+ NL + "    " + NL + "    <body style=\"padding:0px; margin:0px;\">" + NL
+			+ "\t\t<div style=\"height:30px;\">" + NL
+			+ "\t\t\t<div style=\"padding:3px;position:fixed;background-color:#DDE0E3; width:100%;\">" + NL
+			+ "\t\t\t\t<div id=\"treecontrol\" style=\"float:left\">" + NL + "\t\t\t\t\t<a href=\"#\">" + NL
+			+ "\t\t\t\t\t\t<img src=\"../../img/open.gif\" alt=\"Collapse All\" style=\"border:0px\"/>" + NL
+			+ "\t\t\t\t\t</a> " + NL + "\t\t\t\t\t<a href=\"#\">" + NL
+			+ "\t\t\t\t\t\t<img src=\"../../img/closed.gif\" alt=\"Expand All\" style=\"border:0px\"/>" + NL
+			+ "\t\t\t\t\t</a>" + NL + "\t\t\t\t</div> " + NL
+			+ "\t\t\t\t<div style=\"float:right; margin-right:5px; font-size:12px; font-family:Arial\">" + NL
 			+ "\t\t\t\t\t<a href=\"searchIndex.html\">Search Index</a> | <a href=\"../modelindex.html\" >Back to Index</a>"
-			+ NL
-			+ "\t\t\t\t</div>"
-			+ NL
-			+ "\t\t\t</div>"
-			+ NL
-			+ "\t\t</div>"
-			+ NL + "\t\t<ul id=\"treemenu1\" class=\"treeview\">";
+			+ NL + "\t\t\t\t</div>" + NL + "\t\t\t</div>" + NL + "\t\t</div>" + NL
+			+ "\t\t<ul id=\"treemenu1\" class=\"treeview\">";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -125,8 +75,7 @@ public class ElementSideBarHeader extends
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_2);
@@ -146,8 +95,7 @@ public class ElementSideBarHeader extends
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -164,13 +112,11 @@ public class ElementSideBarHeader extends
 		return parameters;
 	}
 
-	protected void method_body(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_body(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "body",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "body", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
