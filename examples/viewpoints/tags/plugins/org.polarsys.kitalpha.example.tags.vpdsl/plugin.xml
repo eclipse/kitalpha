@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.example.tags.vpdsl.description"
+	        tags="vpdesc"
+	        name="tags"
+	        path="/org.polarsys.kitalpha.example.tags.vpdsl/model/tags.vpdesc"/>
+	</extension>
+
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.example.tags.vpdsl.resource.tags.spec"
+	        tags="Viewpoint"
+	        name="spec"
+	        path="/org.polarsys.kitalpha.example.tags.vpdsl/model/tags.spec.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.example.tags.vpdsl.resource.tags.data"
+	        tags="Viewpoint"
+	        name="data"
+	        path="/org.polarsys.kitalpha.example.tags.vpdsl/model/tags.data.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.example.tags.vpdsl.resource.tags.conf"
+	        tags="Viewpoint"
+	        name="conf"
+	        path="/org.polarsys.kitalpha.example.tags.vpdsl/model/tags.conf.vptext"/>
+	</extension>
+</plugin>

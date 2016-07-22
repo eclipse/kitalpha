@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdoExtension="http://www.thalesgroup.com/mde/genchain/extension/cdo/1.0.0" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="tags" factoryComponentName="org.polarsys.kitalpha.example.tags.fc">
+  <elements xsi:type="generationChain:GenerationChain" name="tags">
+    <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for tags" modelPath="/org.polarsys.kitalpha.example.tags/models/tags.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.example.tags.model" basePackage="org.polarsys.kitalpha.example.tags"/>
+    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for tags">
+      <additions>org.polarsys.kitalpha.example.tags.vpdsl</additions>
+    </elements>
+    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for tags">
+      <additions>org.polarsys.kitalpha.example.tags.af.feature</additions>
+      <additions>org.polarsys.kitalpha.example.tags.representation.feature</additions>
+      <additions>org.polarsys.kitalpha.example.tags.rules.feature</additions>
+    </elements>
+    <elements xsi:type="cdoExtension:CdoGeneration" name="cdo" modelPath="/org.polarsys.kitalpha.example.tags/models/tags.ecore"/>
+  </elements>
+</generationChain:GenerationChain>

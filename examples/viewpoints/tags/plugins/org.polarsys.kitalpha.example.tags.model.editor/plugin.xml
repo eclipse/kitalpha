@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.ui.newWizards">
+      <wizard category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.mdeCoreTechnology.wizard.category" class="org.polarsys.kitalpha.example.tags.tags.presentation.TagsModelWizard" icon="icons/full/obj16/TagsModelFile.gif" id="org.polarsys.kitalpha.example.tags.tags.presentation.TagsModelWizardID" name="%_UI_TagsModelWizard_label">
+         <description>%_UI_TagsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.ui.editors">
+      <editor class="org.polarsys.kitalpha.example.tags.tags.presentation.TagsEditor" contributorClass="org.polarsys.kitalpha.example.tags.tags.presentation.TagsActionBarContributor" extensions="tags" icon="icons/full/obj16/TagsModelFile.gif" id="org.polarsys.kitalpha.example.tags.tags.presentation.TagsEditorID" name="%_UI_TagsEditor_label">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tags" nsURI="http://www.polarsys.org/kitalpha/example/tags/1.0.0"
+    nsPrefix="tags">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTagEntity" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractNamedEntity" abstract="true"
+      eSuperTypes="#//AbstractTagEntity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagDefinitionModel" eSuperTypes="#//AbstractNamedEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedStatuses" upperBound="-1"
+        eType="#//Status" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedKinds" upperBound="-1"
+        eType="#//Kind" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag" eSuperTypes="#//AbstractTagEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="status" eType="#//Status"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statusHistory" upperBound="-1"
+        eType="#//History" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Status" eSuperTypes="#//AbstractNamedEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="kind" eType="#//Kind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Kind" eSuperTypes="#//AbstractNamedEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="History" eSuperTypes="#//AbstractTagEntity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldStatus" eType="#//Status"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changeDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changeComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Color">
+    <eLiterals name="White" literal="White"/>
+    <eLiterals name="Black" value="1" literal="Black"/>
+    <eLiterals name="Blue" value="2" literal="Blue"/>
+    <eLiterals name="Red" value="3" literal="Red"/>
+    <eLiterals name="Green" value="4" literal="Green"/>
+    <eLiterals name="Yellow" value="5" literal="Yellow"/>
+    <eLiterals name="Other" value="6" literal="Other"/>
+  </eClassifiers>
+</ecore:EPackage>

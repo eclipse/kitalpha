@@ -1,0 +1,81 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<script src="../../scripts/search.js"></script> 
+	<script src="../../scripts/jquery-treeview/lib/jquery.js"></script>	
+</head>
+<body style="padding:0px; margin:0px; background-color:#F6F6F6">
+
+		<div style="height:30px;">
+			<div style="padding:3px;position:fixed;background-color:#DDE0E3; width:100%;">
+				<div style="float:right; margin-right:5px; font-size:12px; font-family:Arial">
+					<a href="sidebar.html">Back to Model</a>
+				</div>
+			</div>
+		</div>
+<div style="font-family:Arial; font-size:12px;padding-left:5px;">
+  	<input id="input1" type="text" value=""/> 
+  	<p id="p1"></p>
+    <p id="p2"></p>	
+	<script type="text/javascript">
+		
+		var tabCount = 1;
+		var conceptsList = new Array(tabCount);
+		var currentSize = 0;
+		var addedConceptCount = 0;
+		for(x = 0; x < tabCount; x++) {
+			if ((4 - addedConceptCount) > 255){
+				currentSize = 255;
+			}else{
+				currentSize = 4 - addedConceptCount;
+			}
+			var jConcepts = new Array(currentSize);
+			for(i = 0; i < currentSize;i++) {
+				jConcepts[i] = new Array();
+			}
+			conceptsList[x] = jConcepts;
+			addedConceptCount = addedConceptCount + 255;
+		}
+		
+		<!-- Original code
+		//var concepts = new Array();
+		//for(i = 0; i < 4;i++) {
+		//	concepts[i] = new Array();
+		//}
+		-->
+conceptsList[0][0][0] = "ComponentSampleQualityAssessment";
+		conceptsList[0][0][1] = "1_ComponentSampleQualityAssessment";
+		conceptsList[0][1][0] = "QualityAssessment";
+		conceptsList[0][1][1] = "2_QualityAssessment";
+		conceptsList[0][2][0] = "QualityMeasure";
+		conceptsList[0][2][1] = "3_QualityMeasure";
+		conceptsList[0][3][0] = "confidenceLevel_Type";
+		conceptsList[0][3][1] = "4_confidenceLevel_Type";
+					
+	    $("#input1").keyup(function () {
+	      var value = $(this).val();
+	      // $("#p1").text(value);
+	      var element = document.getElementById('possible_keywords');
+	      var t = "";
+	      for (x=0; x < tabCount; x++){
+		  	var concepts = conceptsList[x];
+	      	for(i=0;i<concepts.length;i++) {
+	      		var index = concepts[i][0].toLowerCase().indexOf(value.toLowerCase());
+	      		if(index != -1) {
+		      		var value2 = concepts[i][0];
+	      			var value3 = concepts[i][1];
+	      			t = t.concat("<a href='concepts/" + value3 + ".html' target='content'>" + value2 + "</a><br/>");	      		
+	      		}
+	      	}
+	      }
+	      
+	      $("#p2").html(t);
+	      
+	      element.value = value;
+	    }).keyup();
+	    
+	</script>
+	</div>
+</body>
+</html>

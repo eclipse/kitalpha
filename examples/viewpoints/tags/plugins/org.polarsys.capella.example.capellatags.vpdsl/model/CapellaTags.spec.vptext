@@ -1,0 +1,14 @@
+/**
+ * Copyright (c) PolarSys, 2016. All rights reserved. 
+ *
+ *	Viewpoint CapellaTags
+ *	@author: S0020807
+ *	@date: 20/07/16
+ *
+ */
+Viewpoint CapellaTags {
+	name: "CapellaTags"
+	uses viewpoint tags
+	Data CapellaTags.data
+	Configuration CapellaTags.conf
+}

@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) PolarSys, 2016. All rights reserved. 
+ *
+ *	Viewpoint CapellaTags
+ *	@author: S0020807
+ *	@date: 20/07/16
+ *
+ */
+import external "platform:/resource/org.polarsys.kitalpha.example.tags/models/tags.ecore"
+
+Data CapellaTags.data {
+	Class CapellaTag {
+		extends capellacore.CapellaElement
+		superClass external tags.Tag
+		Associations:
+			modelElement refers [1,1] external capellacore.NamedElement derived: true
+	}
+}

@@ -1,0 +1,73 @@
+/**
+ * Copyright (c) PolarSys, 2016. All rights reserved. 
+ *
+ *	Viewpoint tags
+ *	@author: S0020807
+ *	@date: 20/07/16
+ *
+ */
+Data tags.data {
+	
+	Class AbstractTagEntity {
+		abstract: true
+		Attributes:
+			id type ecore.EString id: false
+	}
+	
+	Class AbstractNamedEntity {
+		superClass AbstractTagEntity
+		abstract: true
+		Attributes:
+			name type ecore.EString
+	}
+	
+	Class TagDefinitionModel {
+		superClass AbstractNamedEntity
+		Attributes:
+			^description type ecore.EString
+			
+		Associations:
+			ownedStatuses contains[0,*] Status
+			ownedKinds contains[0,*] Kind
+	}
+	
+	Class Tag {
+		superClass AbstractTagEntity
+		Associations:
+			status refers [0,1] Status
+			statusHistory contains [0,*] History
+			
+	}
+	
+	Class Status {
+		description: "Allows to define the current status of a Tag. 
+					  The status can be, for example, TODO, in progress, etc."
+		superClass AbstractNamedEntity
+		Attributes:
+			icone type ecore.EString
+			color enum Color
+		Associations:
+			kind refers [0,1] Kind
+	}
+	
+	Class Kind {
+		description: "Allows the definition of the nature of a Tag. For example: Workflow, Severity, etc."
+		superClass AbstractNamedEntity
+	}
+	
+	Class History {
+		superClass AbstractTagEntity
+		Attributes:
+			changeDate type ecore.EDate
+			user type ecore.EString
+			changeComment type ecore.EString
+			
+		Associations:
+			oldStatus refers [0,1] Status
+	}
+	
+	Enumeration Color { 
+		White, Black, Blue, Red, Green, Yellow, Other
+	}
+	
+}

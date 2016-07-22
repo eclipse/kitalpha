@@ -1,0 +1,34 @@
+/**
+ * Copyright (c) PolarSys, 2016. All rights reserved. 
+ *
+ *	Viewpoint CapellaTags
+ *	@author: S0020807
+ *	@date: 20/07/16
+ *
+ */
+Configuration CapellaTags.conf {
+	target "Melody Advance-Team"
+	project org.polarsys.capella.example.capellatags
+	nsuri "http://www.polarsys.org/capella/example/CapellaTags/1.0.0"
+	release {
+		version : 1.0.0.qualifier
+		description : "Viewpoint Description"
+		execution environments : "JavaSE-1.6"
+	}
+	generation {
+		data (
+			Model: true
+			Edit: true
+			Editor: false
+			Test: false
+			Javadoc: false
+			OverwriteEcore: true
+		)
+		diagram (
+			OverwriteOdesign: true
+		)
+		documentation (
+			EcoreToHtml: false
+		)
+	}
+}

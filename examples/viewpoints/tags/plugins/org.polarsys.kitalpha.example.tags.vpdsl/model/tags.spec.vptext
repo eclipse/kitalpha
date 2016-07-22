@@ -1,0 +1,13 @@
+/**
+ * Copyright (c) PolarSys, 2016. All rights reserved. 
+ *
+ *	Viewpoint tags
+ *	@author: S0020807
+ *	@date: 20/07/16
+ *
+ */
+Viewpoint tags {
+	name: "tags"
+	Data tags.data
+	Configuration tags.conf
+}

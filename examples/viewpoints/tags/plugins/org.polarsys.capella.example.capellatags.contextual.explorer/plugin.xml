@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.capella.example.capellatags.contextual.explorer.queries.CapellaTag.Parent"
+            isTopLevel="true"
+            name="Parent">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.capella.example.capellatags.CapellaTags.CapellaTag">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.capella.example.capellatags.contextual.explorer.queries.capellatag.ParentQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>

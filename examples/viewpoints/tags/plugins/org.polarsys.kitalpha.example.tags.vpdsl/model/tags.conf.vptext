@@ -1,0 +1,34 @@
+/**
+ * Copyright (c) PolarSys, 2016. All rights reserved. 
+ *
+ *	Viewpoint tags
+ *	@author: S0020807
+ *	@date: 20/07/16
+ *
+ */
+Configuration tags.conf {
+	target EMF
+	project org.polarsys.kitalpha.example.tags
+	nsuri "http://www.polarsys.org/kitalpha/example/tags/1.0.0"
+	release {
+		version : 1.0.0.qualifier
+		description : "Model for tagging any model elements"
+		execution environments : "JavaSE-1.6"
+	}
+	generation {
+		data (
+			Model: true
+			Edit: true
+			Editor: true
+			Test: false
+			Javadoc: false
+			OverwriteEcore: true
+		)
+		diagram (
+			OverwriteOdesign: true
+		)
+		documentation (
+			EcoreToHtml: false
+		)
+	}
+}
