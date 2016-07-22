@@ -12,7 +12,7 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.transposer.examples.feature"
       label="Kitalpha Transposer Examples Feature"
-      version="1.0.0.qualifier">
+      version="1.1.0.qualifier">
 
    <description>
       %description
