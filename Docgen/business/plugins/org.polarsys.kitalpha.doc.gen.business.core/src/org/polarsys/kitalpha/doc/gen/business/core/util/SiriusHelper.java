@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,25 +14,56 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 
 
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
+import org.eclipse.sirius.business.api.session.Session;
 
+/**
+ * @author Zendagui Boubekeur
+ */
 public class SiriusHelper {
+	
+	/**
+	 * <p>
+	 * Get all representation element having the model element as target.
+	 * </p>
+	 * @param element The model element
+	 * @return a {@link Collection} of all {@link DRepresentation}
+	 */
 	public static Collection<DRepresentation> getDiagramForObject(EObject element) {
-		Collection<DRepresentation> representations = 
-				DialectManager.INSTANCE.getRepresentations(element, DiagramSessionHelper.getCurrentSession());
-		
-		// This issue must be resolved in Sirius.
+		Session currentSession = DiagramSessionHelper.getCurrentSession();
+		return getDiagramForObject(element, currentSession);
+	}
+	
+	/**
+	 * <p>
+	 * Get all representation element having the model element as target.
+	 * <br>
+	 * This method keep only one instance of a given representation if it 
+	 * is return many times by Sirius APIs.
+	 * </p>
+	 * @param element The model element
+	 * @param session the {@link Session} used to get {@link DRepresentation}s 
+	 * @return a {@link Collection} of all {@link DRepresentation}
+	 */
+	public static Collection<DRepresentation> getDiagramForObject(EObject element, Session session) {
 		Collection<DRepresentation> result = new ArrayList<DRepresentation>();
-		for (DRepresentation dRepresentation : representations) 
+		if (DocgenDiagramPreferencesHelper.getExportDiagram())
 		{
-			if (result.contains(dRepresentation) == false)
-				result.add(dRepresentation);
+			Collection<DRepresentation> representations = 
+					DialectManager.INSTANCE.getRepresentations(element, session);
+
+			// This issue must be resolved in Sirius.
+			for (DRepresentation dRepresentation : representations) 
+			{
+				if (result.contains(dRepresentation) == false)
+					result.add(dRepresentation);
+			}
 		}
-		
 		return result;
 	}
 }

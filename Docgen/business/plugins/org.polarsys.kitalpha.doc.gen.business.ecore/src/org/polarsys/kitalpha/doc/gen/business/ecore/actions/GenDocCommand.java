@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 - 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.egf.model.domain.Domain;
 import org.eclipse.egf.model.domain.DomainViewpoint;
 import org.eclipse.egf.model.domain.EMFDomain;
@@ -35,15 +33,13 @@ import org.eclipse.egf.model.types.TypeString;
 import org.eclipse.egf.pattern.EGFPatternPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.swt.widgets.Display;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.ui.helper.InvokeActivityHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
-import org.polarsys.kitalpha.doc.gen.business.ecore.Activator;
 import org.polarsys.kitalpha.doc.gen.business.ecore.services.GenerateDiagramsService;
-
-
-import org.eclipse.sirius.business.api.session.Session;
 
 public class GenDocCommand {
 	private Activity launcher;
@@ -87,7 +83,7 @@ public class GenDocCommand {
 
 	/**
 	 * Logo path setter
-	 * @param copyright the Logo path value
+	 * @param logoPath the Logo path value
 	 */
 	public void setLogoPath(String logoPath) {
 		this.logoPath = logoPath;
@@ -95,7 +91,7 @@ public class GenDocCommand {
 
 	/**
 	 * Logo alternative text setter
-	 * @param copyright the Logo alternative text value
+	 * @param logoAlt the Logo alternative text value
 	 */
 	public void setLogoAlt(String logoAlt) {
 		this.logoAlt = logoAlt;
@@ -104,16 +100,12 @@ public class GenDocCommand {
 	public void execute(IProgressMonitor progressMonitor) {
 		createProject();
 		cleanFiles();
-		generateDiagrams(progressMonitor);
-		if (airdUri != null) 
+		if (DocgenDiagramPreferencesHelper.getExportDiagram())
 		{
-			generateDocumentation(progressMonitor);
-		} 
-		else 
-		{
-			Activator.getDefault().getLog()
-					.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Cannot Generate Diagrams"));
+			generateDiagrams(progressMonitor);
+			DiagramSessionHelper.setAirdUri(airdUri);
 		}
+		generateDocumentation(progressMonitor);
 	}
 
 	private void createProject() {
@@ -134,7 +126,6 @@ public class GenDocCommand {
 	}
 
 	private void generateDocumentation(IProgressMonitor progressMonitor) {
-		DiagramSessionHelper.setAirdUri(airdUri);
 		Session session = DiagramSessionHelper.initSession();
 		if (launcher instanceof FactoryComponent) 
 		{
@@ -163,7 +154,7 @@ public class GenDocCommand {
 			}
 		}
 		
-		if (session.isOpen())
+		if (session != null && session.isOpen())
 		{
 			session.save(progressMonitor);
 			session.close(progressMonitor);
