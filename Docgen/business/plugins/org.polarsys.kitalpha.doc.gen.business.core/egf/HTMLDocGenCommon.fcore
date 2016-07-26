@@ -124,7 +124,10 @@
             <methods xmi:id="_QAoOQN3uEd-Qav1YnqlO9A" name="docFooter" patternFilePath="templates/pattern._lERcoN3tEd-Qav1YnqlO9A/method._QAoOQN3uEd-Qav1YnqlO9A.pt"/>
             <methods xmi:id="_9E214N3vEd-Qav1YnqlO9A" name="setContext" patternFilePath="templates/pattern._lERcoN3tEd-Qav1YnqlO9A/method._9E214N3vEd-Qav1YnqlO9A.pt"/>
             <methods xmi:id="_plUFId99Ed-H1eDOwgl1uw" name="startContent" patternFilePath="templates/pattern._lERcoN3tEd-Qav1YnqlO9A/method._plUFId99Ed-H1eDOwgl1uw.pt"/>
+            <methods xmi:id="_OyJy4Ff7EeaUtPoEiDG9sQ" name="preContentExtension" patternFilePath="templates/pattern._lERcoN3tEd-Qav1YnqlO9A/method._OyJy4Ff7EeaUtPoEiDG9sQ.pt"/>
             <methods xmi:id="_OLDMsN3uEd-Qav1YnqlO9A" name="content" patternFilePath="templates/pattern._lERcoN3tEd-Qav1YnqlO9A/method._OLDMsN3uEd-Qav1YnqlO9A.pt"/>
+            <methods xmi:id="_Kys6wFf7EeaUtPoEiDG9sQ" name="postContentExtension"
+                patternFilePath="templates/pattern._lERcoN3tEd-Qav1YnqlO9A/method._Kys6wFf7EeaUtPoEiDG9sQ.pt"/>
             <methods xmi:id="_rWHUYN99Ed-H1eDOwgl1uw" name="endContent" patternFilePath="templates/pattern._lERcoN3tEd-Qav1YnqlO9A/method._rWHUYN99Ed-H1eDOwgl1uw.pt"/>
             <variables xmi:id="_0kUYMN3vEd-Qav1YnqlO9A" name="title" type="java.lang.String"/>
             <variables xmi:id="_1QIVUN3vEd-Qav1YnqlO9A" name="copyright" type="java.lang.String"/>
@@ -138,8 +141,12 @@
                 called="#_lERcpd3tEd-Qav1YnqlO9A"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_xbVmMN99Ed-H1eDOwgl1uw"
                 called="#_plUFId99Ed-H1eDOwgl1uw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_TzPRsFf8EeaUtPoEiDG9sQ"
+                called="#_OyJy4Ff7EeaUtPoEiDG9sQ"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_yPvssN4fEd-Qav1YnqlO9A"
                 called="#_OLDMsN3uEd-Qav1YnqlO9A"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_xMDl0Ff8EeaUtPoEiDG9sQ"
+                called="#_Kys6wFf7EeaUtPoEiDG9sQ"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_ynepMN99Ed-H1eDOwgl1uw"
                 called="#_rWHUYN99Ed-H1eDOwgl1uw"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_ygllEN4fEd-Qav1YnqlO9A"
