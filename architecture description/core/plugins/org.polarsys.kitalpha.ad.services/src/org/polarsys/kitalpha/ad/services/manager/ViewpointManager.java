@@ -11,11 +11,6 @@
 
 package org.polarsys.kitalpha.ad.services.manager;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,18 +21,29 @@ import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.command.AbstractCommand;
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
+import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
+import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
 import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
@@ -53,9 +59,7 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 public class ViewpointManager {
 
 	private static final String VIEWPOINT_STATE_READ_ONLY = "stateReadOnly";
-	private static final String STATE_FILENAME = "viewpointManager.state";
-	protected static final ViewpointManager INSTANCE;
-
+	private static final String VIEWPOINT_STATE_HIDDEN = "stateHidden";
 	private final static Set<String> discarded = new HashSet<String>();
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
@@ -66,13 +70,20 @@ public class ViewpointManager {
 	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
-	private final Set<String> activated = new HashSet<String>();
 	private final Set<String> managed = new HashSet<String>();
 	private ResourceSet target;
-	private final StateManager stateManager = new StateManager();
+
+	public static boolean canChangeState(String id) {
+		Resource res = getViewpoint(id);
+		return canChangeState(res);
+	}
 
 	public static boolean canChangeState(Resource res) {
-		return !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
+		return res != null && !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
+	}
+
+	public void setTarget(ResourceSet target) {
+		this.target = target;
 	}
 
 	public static Resource getViewpoint(String id) {
@@ -83,8 +94,61 @@ public class ViewpointManager {
 		return null;
 	}
 
-	public static void pinError(Resource vp) {
+	public static void pinError(Resource vp, Exception e) {
 		discarded.add(vp.getId());
+		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.";
+		AD_Log.getDefault().logError(msg, e);
+	}
+
+	public static void pinError(Resource vp, String details) {
+		discarded.add(vp.getId());
+		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.\n" + details;
+		AD_Log.getDefault().logError(msg);
+	}
+
+	public static Description[] getAvailableViewpointDescriptions() {
+		ResourceSet set = new ResourceSetImpl();
+		List<Description> result = new ArrayList<ViewpointManager.Description>();
+		try {
+			for (Resource resource : getAvailableViewpoints()) {
+				try {
+					URI uri = URIHelper.createURI(resource);
+					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+					result.add(new Description(vp.getId(), vp.getName(), vp.getVersion(), resource));
+				} catch (Exception e) {
+					pinError(resource, e);
+				}
+			}
+		} finally {
+			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+				r.unload();
+			}
+			set.getResources().clear();
+		}
+		return result.toArray(new Description[result.size()]);
+	}
+
+	public static Version readVersion(Resource resource) {
+		ResourceSet set = new ResourceSetImpl();
+		try {
+			return readVersion(set, resource);
+		} finally {
+			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+				r.unload();
+			}
+			set.getResources().clear();
+		}
+	}
+
+	private static Version readVersion(ResourceSet set, Resource resource) {
+		try {
+			URI uri = URIHelper.createURI(resource);
+			Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+			return vp.getVersion();
+		} catch (Exception e) {
+			pinError(resource, e);
+			return null;
+		}
 
 	}
 
@@ -95,7 +159,63 @@ public class ViewpointManager {
 	 * @return
 	 */
 	public static IStatus checkViewpointsCompliancy(ResourceSet context) {
+		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
+
+		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
+		if (!viewpointMetadata.hasMetadata()) {
+			error.add(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Cannot find metadate resource"));
+			return error;
+		}
+		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
+		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointUsages();
+
+		for (Entry<String, Version> usage : viewpointUsages.entrySet()) {
+			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
+			if (!res.isOK())
+				error.add(res);
+		}
+		if (!error.isOK())
+			return error;
 		return Status.OK_STATUS;
+	}
+
+	private static Map<String, Version> computeAvailableViewpointVersions() {
+		Map<String, Version> availableViewpoints = new HashMap<String, Version>();
+		ResourceSet set = new ResourceSetImpl();
+		Resource resource = null;
+		try {
+			for (Resource res : getAvailableViewpoints()) {
+				try {
+					resource = res;
+					URI uri = URIHelper.createURI(res);
+					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+					if (vp == null) {
+						pinError(resource, "Cannot get object from " + uri.toString());
+						continue;
+					}
+					availableViewpoints.put(res.getId(), vp.getVersion());
+				} catch (Exception e) {
+					pinError(resource, e);
+				}
+			}
+		} finally {
+			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+				r.unload();
+			}
+			set.getResources().clear();
+		}
+		return availableViewpoints;
+	}
+
+	private static IStatus useViewpoint(Map<String, Version> availableViewpoints, String id, Version version) {
+		for (Entry<String, Version> res : availableViewpoints.entrySet()) {
+			if (res.getKey().equals(id)) {
+				if (version == null || version.equals(res.getValue()))
+					return Status.OK_STATUS;
+				return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Expecting version '" + version + "' for viewpoint '" + id + "' (current version: '" + res.getValue() + "')");
+			}
+		}
+		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Missing viewpoint '" + id + "'");
 	}
 
 	public static Resource[] getAvailableViewpoints() {
@@ -114,43 +234,65 @@ public class ViewpointManager {
 	}
 
 	public boolean isActive(String id) {
-		return activated.contains(id);
+		return MetadataHelper.getViewpointMetadata(target).isInUse(id);
 	}
 
 	public boolean isUsed(String id) {
-		return isActive(id);
+		return MetadataHelper.getViewpointMetadata(target).isInUse(id);
 	}
 
 	public boolean isFiltered(String id) {
-		return false;
+		return MetadataHelper.getViewpointMetadata(target).isFiltered(id);
 	}
 
-	public void activate(String id) throws ViewpointActivationException {
+	public void filter(String id, boolean state) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (activated.contains(id))
+		if (!isUsed(id))
+			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
+
+		ChangeViewpointVisibilityCommand command = new ChangeViewpointVisibilityCommand(vpResource, !state);
+		executeCommand(command);
+
+	}
+
+	public void activate(String id) throws ViewpointActivationException {
+		startUse(id);
+	}
+
+	public void startUse(String id) throws ViewpointActivationException {
+		Resource vpResource = getViewpoint(id);
+		if (vpResource == null)
+			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
+		if (isUsed(id))
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
 
 		ResourceSet set = new ResourceSetImpl();
 		try {
-			doActivate(set, vpResource);
+			doStartUse(set, vpResource);
 		} finally {
 			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
 				r.unload();
 			}
 			set.getResources().clear();
-			stateManager.saveState();
 		}
 	}
 
-	protected void doActivate(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
+	protected void doStartUse(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
-		activated.add(vpResource.getId());
-		if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
-			managed.add(vpResource.getProviderSymbolicName());
-		fireEvent(vpResource, ACTIVATED);
+
+		Command command = new UseViewpointCommand(vpResource, set);
+		executeCommand(command);
+	}
+
+	private void executeCommand(Command command) {
+		EditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
+		if (editingDomain == null && target instanceof IEditingDomainProvider)
+			editingDomain = ((IEditingDomainProvider) target).getEditingDomain();
+
+		editingDomain.getCommandStack().execute(command);
 	}
 
 	protected void manageDependencies(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
@@ -167,8 +309,8 @@ public class ViewpointManager {
 		for (Viewpoint dep : dependencies) {
 			String id = dep.getId();
 			vpDependencies.add(id);
-			if (!activated.contains(id))
-				doActivate(set, getViewpoint(id));
+			if (!isUsed(id))
+				doStartUse(set, getViewpoint(id));
 		}
 
 	}
@@ -202,11 +344,27 @@ public class ViewpointManager {
 
 	}
 
+	/**
+	 * There is really no for this method since to stop usage of a viewpoint a detachment is performed
+	 * 
+	 * @param id
+	 * @throws ViewpointActivationException
+	 */
 	public void desactivate(String id) throws ViewpointActivationException {
+		stopUse(id);
+	}
+
+	/**
+	 * There is really no for this method since to stop usage of a viewpoint a detachment is performed
+	 * 
+	 * @param id
+	 * @throws ViewpointActivationException
+	 */
+	public void stopUse(String id) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (!activated.contains(id))
+		if (!isUsed(id))
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_6, id));
 		for (Entry<String, List<String>> entry : dependencies.entrySet()) {
 			if (entry.getValue().contains(id))
@@ -218,9 +376,8 @@ public class ViewpointManager {
 		// additional events such PRE_DEACTIVATED or POST_DEACTIVATED
 		String providerSymbolicName = vpResource.getProviderSymbolicName();
 		desactivateBundle(providerSymbolicName);
-		activated.remove(id);
+		MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, null, false);
 		fireEvent(vpResource, DEACTIVATED);
-		stateManager.saveState();
 	}
 
 	public static void addOverallListener(OverallListener l) {
@@ -278,68 +435,73 @@ public class ViewpointManager {
 		}
 	}
 
-	public void loadState() {
-		stateManager.loadState();
+	protected final class ChangeViewpointVisibilityCommand extends AbstractCommand {
+
+		private boolean visible;
+		private Resource vpResource;
+
+		public ChangeViewpointVisibilityCommand(Resource vpResource, boolean visible) {
+			super(visible ? "Show viewpoint" : "Hide viewpoint");
+			this.vpResource = vpResource;
+			this.visible = visible;
+		}
+
+		@Override
+		public void execute() {
+			MetadataHelper.getViewpointMetadata(target).setFilter(vpResource.getId(), !visible);
+			fireEvent(vpResource, visible ? DISPLAYED : FILTERED);
+		}
+
+		public void undo() {
+			MetadataHelper.getViewpointMetadata(target).setFilter(vpResource.getId(), visible);
+			fireEvent(vpResource, !visible ? DISPLAYED : FILTERED);
+		}
+
+		@Override
+		public void redo() {
+			execute();
+		}
+
+		protected boolean prepare() {
+			return true;
+		}
+
 	}
 
-	public class StateManager {
-		private boolean loading = false;
+	protected final class UseViewpointCommand extends AbstractCommand {
+		private final Resource vpResource;
+		private final ResourceSet set;
 
-		public void loadState() {
-			if (!activated.isEmpty()) {
-				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_1);
-				return;
-			}
-			boolean errorInLoading = false;
-			loading = true;
-			try {
-				IPath stateLocation = Activator.getDefault().getStateLocation();
-				stateLocation = stateLocation.append(STATE_FILENAME);
-				File file = stateLocation.toFile();
-				if (!file.exists())
-					return;
-				ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
-				Set<String> data = (Set<String>) in.readObject();
-				in.close();
-				for (String id : data) {
-					try {
-						activate(id);
-					} catch (AlreadyInStateException e) {
-						// don't care
-					} catch (Exception e) {
-						AD_Log.getDefault().logError(e);
-						errorInLoading = true;
-					}
-				}
+		public UseViewpointCommand(Resource vpResource, ResourceSet set) {
+			super("Use viewpoint");
+			this.vpResource = vpResource;
+			this.set = set;
+		}
 
-			} catch (Exception e) {
-				AD_Log.getDefault().logError(e);
-			} finally {
-				loading = false;
-				if (errorInLoading)
-					saveState();
-			}
+		@Override
+		public void execute() {
+			Version readVersion = readVersion(set, vpResource);
+			MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, readVersion, true);
+			if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
+				managed.add(vpResource.getProviderSymbolicName());
+			fireEvent(vpResource, ACTIVATED);
 
 		}
 
-		public void saveState() {
-			if (loading)
-				return;
-			IPath stateLocation = Activator.getDefault().getStateLocation();
-			stateLocation = stateLocation.append(STATE_FILENAME);
-			File file = stateLocation.toFile();
-			try {
-				if (!file.exists())
-					file.createNewFile();
-				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
-				out.writeObject(activated);
-				out.close();
-			} catch (Exception e) {
-				AD_Log.getDefault().logError(e);
-			}
-
+		@Override
+		public void undo() {
+			MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, null, false);
+			fireEvent(vpResource, DEACTIVATED);
 		}
 
+		@Override
+		public void redo() {
+			execute();
+		}
+
+		protected boolean prepare() {
+			return true;
+		}
 	}
 
 	public static interface OverallListener {
@@ -364,14 +526,29 @@ public class ViewpointManager {
 	}
 
 	public static ViewpointManager getInstance(EObject ctx1) {
-		return INSTANCE;
+		ResourceSet ctx = ctx1.eResource().getResourceSet();
+		return getInstance(ctx);
 	}
 
 	public static ViewpointManager getInstance(final ResourceSet ctx) {
-		return INSTANCE;
+		ViewpointManager instance = instances.get(ctx);
+		if (instance == null) {
+			instances.put(ctx, instance = createInstance());
+			ctx.eAdapters().add(new AdapterImpl() {
+
+				@Override
+				public void notifyChanged(Notification msg) {
+					if (msg.getEventType() == Notification.REMOVE && ctx.getResources().isEmpty())
+						instances.remove(ctx);
+				}
+
+			});
+			instance.setTarget(ctx);
+		}
+		return instance;
 	}
 
-	static {
+	private static ViewpointManager createInstance() {
 		ViewpointManager instance = null;
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.services.viewpoint.manager");
@@ -383,7 +560,39 @@ public class ViewpointManager {
 			AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_2, e);
 			instance = new ViewpointManager();
 		}
-		INSTANCE = instance;
+		return instance;
+	}
+
+	public static class Description {
+		private final String id;
+		private final String label;
+		private final Version version;
+		private Resource resource;
+
+		public Description(String id, String label, Version version, Resource resource) {
+			super();
+			this.id = id;
+			this.label = label;
+			this.version = version;
+			this.resource = resource;
+		}
+
+		public String getId() {
+			return id;
+		}
+
+		public String getLabel() {
+			return label;
+		}
+
+		public Version getVersion() {
+			return version;
+		}
+
+		public boolean shloudBeHidden() {
+			return resource.getTags().contains(VIEWPOINT_STATE_HIDDEN);
+		}
+
 	}
 
 }

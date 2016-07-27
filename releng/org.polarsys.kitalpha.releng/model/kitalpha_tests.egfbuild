@@ -69,11 +69,14 @@
         <steps xsi:type="buildcore:ReuseStep" xmi:id="_KPLZQAhiEea8qJG07M9K-Q" name="build transposer">
           <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_x7ip4Z7uEeOjCb9D2yIVHQ"/>
         </steps>
+        <steps xsi:type="buildcore:ReuseStep" xmi:id="_R__DIAhiEea8qJG07M9K-Q" name="build detach_attach">
+          <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_j6USsAHGEeSWLIhgOb7dcQ"/>
+        </steps>
         <steps xsi:type="buildcore:ReuseStep" xmi:id="_OtmFUAhiEea8qJG07M9K-Q" name="build ad">
           <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_8az7gEVREeOxuMV9a71i9w"/>
         </steps>
-        <steps xsi:type="buildcore:ReuseStep" xmi:id="_R__DIAhiEea8qJG07M9K-Q" name="build detach_attach">
-          <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_j6USsAHGEeSWLIhgOb7dcQ"/>
+        <steps xsi:type="buildcore:ReuseStep" xmi:id="_TzSscFQUEeaBpMSWpwWaoQ" name="build detach_attach_contrib">
+          <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_SWRBoS_IEeWgzaFRAlpLXA"/>
         </steps>
         <steps xsi:type="buildcore:ReuseStep" xmi:id="_XkUOYAhiEea8qJG07M9K-Q" name="build product" enabled="false">
           <reusedStep xsi:type="buildstep:BuildStep" href="kitalpha_runtime.egfbuild#_qsm0MPxHEeOQxJjwrfaNsA"/>

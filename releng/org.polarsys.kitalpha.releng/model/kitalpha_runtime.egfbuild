@@ -26,9 +26,9 @@
     <steps xsi:type="buildstep:CleanStep" xmi:id="_oIj20DZJEeOP8MSofnrGNA" type="Result"/>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_Hh5UQJKEEeSPapwxSH2ZqQ" name="TP">
       <properties xmi:id="_S07kMJKDEeSPapwxSH2ZqQ" key="TP_name" value="TP" type="INLINED"/>
-      <properties xmi:id="_eG7gEJKHEeSPapwxSH2ZqQ" key="TP_arch" value="" type="INLINED"/>
-      <properties xmi:id="_eayQMJKHEeSPapwxSH2ZqQ" key="TP_os" value="" type="INLINED"/>
-      <properties xmi:id="_evriIJKHEeSPapwxSH2ZqQ" key="TP_ws" value="" type="INLINED"/>
+      <properties xmi:id="_eG7gEJKHEeSPapwxSH2ZqQ" key="TP_arch" value="x86" type="INLINED"/>
+      <properties xmi:id="_eayQMJKHEeSPapwxSH2ZqQ" key="TP_os" value="win32" type="INLINED"/>
+      <properties xmi:id="_evriIJKHEeSPapwxSH2ZqQ" key="TP_ws" value="win32" type="INLINED"/>
       <properties xmi:id="_d2Gu0aF6EeSwPMM9dkSLiw" key="TP_profile" value="SDKProfile" type="INLINED"/>
       <steps xsi:type="buildcore:ReuseStep" xmi:id="_Cs0RIJKDEeSPapwxSH2ZqQ" name="">
         <reusedStep xsi:type="buildcore:StepContainer" href="platformSetup.egfbuild#_9Q1LMFMBEeW1O6N91pz95w"/>
@@ -179,17 +179,17 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_btE9AI5uEeORY9jpJq94Og" name="common feature" id="TP" profile="SDKProfile" resultSteps="_GzpY8ECvEeOkCsna5l9rlg" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_FDObEaRCEeOdPJBpl-8efw" name="accuracy">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_KBUswKRCEeOdPJBpl-8efw" name="accuracy">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_KBUswKRCEeOdPJBpl-8efw">
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_WTxV0KRCEeOdPJBpl-8efw" path="${publish}/TP"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_T4VY8P35EeOAVuD-0y5mBw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_VM4KAP35EeOAVuD-0y5mBw" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="accuracy/features"/>
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_WTxV0KRCEeOdPJBpl-8efw" path="${publish}/TP"/>
       <components xsi:type="buildstep:Feature" xmi:id="_XG_igKRCEeOdPJBpl-8efw" id="org.polarsys.kitalpha.accuracy.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_dAuWAKRCEeOdPJBpl-8efw" component="_XG_igKRCEeOdPJBpl-8efw"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_ffSqMKRCEeOdPJBpl-8efw" name="accuracy feature" id="TP" profile="SDKProfile" resultSteps="_dAuWAKRCEeOdPJBpl-8efw" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_WrFHIC9VEeOlq-9ObYy--w" name="resourcereuse">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_e9aJsC9VEeOlq-9ObYy--w" name="resource reuse">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_e9aJsC9VEeOlq-9ObYy--w" name="resourcereuse">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIBGNEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fXwMIRGNEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_Yk0yoI5uEeORY9jpJq94Og" path="${publish}/TP"/>
@@ -284,16 +284,6 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_x7ip5Z7uEeOjCb9D2yIVHQ" name="" component="_x7ip5J7uEeOjCb9D2yIVHQ"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_x7ip5p7uEeOjCb9D2yIVHQ" name="transposer feature" id="TP" profile="SDKProfile" resultSteps="_x7ip5Z7uEeOjCb9D2yIVHQ" installResultStepsSourceFeatures="true"/>
   </jobs>
-  <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
-      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_-JSnoI5wEeORY9jpJq94Og" path="${publish}/TP"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_GvpjgH6ZEeOkCccPIIQ2Yw" id="org.polarsys.kitalpha.ad.runtime.feature"/>
-    </steps>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_T8jukEVSEeOxuMV9a71i9w" component="_GvpjgH6ZEeOkCccPIIQ2Yw"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" id="TP" profile="SDKProfile" resultSteps="_T8jukEVSEeOxuMV9a71i9w" installResultStepsSourceFeatures="true"/>
-  </jobs>
   <jobs xmi:id="_eJXnwQHGEeSWLIhgOb7dcQ" name="detach_attach">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_j6USsAHGEeSWLIhgOb7dcQ" name="detachment">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fBRgoBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/plugins"/>
@@ -316,6 +306,30 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_GiG_4FOGEeS0CZx9NVRo1A" name="detachment feature" id="TP" profile="SDKProfile" resultSteps="_tZFTMAHGEeSWLIhgOb7dcQ" installResultStepsSourceFeatures="true"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_bFHvoF64EeSHbaZAI7j8zw" name="attachment feature" id="TP" profile="SDKProfile" resultSteps="_YGNHcF64EeSHbaZAI7j8zw" installResultStepsSourceFeatures="true"/>
   </jobs>
+  <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_8az7gEVREeOxuMV9a71i9w" name="ad">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYBGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_NmgvYRGeEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_BklVAMN0EeWAZKNBvSdOSg" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/metadata/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_Pq_7AMQBEeW1q_kk0b3YWA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/metadata/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_-JSnoI5wEeORY9jpJq94Og" path="${publish}/TP"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_GvpjgH6ZEeOkCccPIIQ2Yw" id="org.polarsys.kitalpha.ad.runtime.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_T8jukEVSEeOxuMV9a71i9w" component="_GvpjgH6ZEeOkCccPIIQ2Yw"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_DR0AoI5xEeORY9jpJq94Og" name="ad feature" id="TP" profile="SDKProfile" resultSteps="_T8jukEVSEeOxuMV9a71i9w" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_SWRBoC_IEeWgzaFRAlpLXA" name="detach_attach_contrib">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_SWRBoS_IEeWgzaFRAlpLXA" name="detachment_contrib">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBoi_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBoy_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="detachment/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBpC_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="attachment/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SWRBpS_IEeWgzaFRAlpLXA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="attachment/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_SWRBpi_IEeWgzaFRAlpLXA" path="${publish}/TP"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_SWRBqC_IEeWgzaFRAlpLXA" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_SWRBrS_IEeWgzaFRAlpLXA" component="_SWRBqC_IEeWgzaFRAlpLXA"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_SWRBsi_IEeWgzaFRAlpLXA" name="contrib feature" id="TP" profile="SDKProfile" resultSteps="_SWRBrS_IEeWgzaFRAlpLXA" installResultStepsSourceFeatures="true"/>
+  </jobs>
   <jobs xmi:id="_m9Jf4fxHEeOQxJjwrfaNsA" name="product">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_qsm0MPxHEeOQxJjwrfaNsA">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XkY4UBGfEeS7tbIPWaBUAQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="product/features"/>
@@ -328,7 +342,7 @@
   </jobs>
   <jobs xmi:id="_32V0wDY9EeOP8MSofnrGNA" name="All in one">
     <steps xsi:type="buildstep:AntStep" xmi:id="_A3txYD5oEeSTuepII-sKzw" targetName="move_egf_to_tools2" xml="&lt;target name=&quot;move_egf_to_tools2&quot;>&#xD;&#xA;&#x9;&lt;delete dir=&quot;${tools}/egf&quot;/>&#xD;&#xA;&#x9;&lt;move file=&quot;${publish}/TP_build&quot; tofile=&quot;${tools}/egf&quot; />&#xD;&#xA;&lt;/target>"/>
-    <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha_runtime" id="kitalpha_runtime" publishSteps="_dAuWAKRCEeOdPJBpl-8efw _T8jukEVSEeOxuMV9a71i9w _peSJsJ7uEeOjCb9D2yIVHQ _GzpY8ECvEeOkCsna5l9rlg _vjsoxZ7uEeOjCb9D2yIVHQ _mZV-8CL5EeSSoPlV7ILP2g _LT5kBzRbEeW5Te4c0tZ9OQ _yWFRMDY9EeOP8MSofnrGNA _3viaIDEFEeWlw8zUy2aPZQ _YGNHcF64EeSHbaZAI7j8zw _7StIMFOFEeS0CZx9NVRo1A _-y7GoFOFEeS0CZx9NVRo1A __SUYYFOFEeS0CZx9NVRo1A _tZFTMAHGEeSWLIhgOb7dcQ _Ky5S2lkcEeSo0vu-C-A3cw _J12CcD5GEeSicsfEyxBYkg _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w _3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w _6xX4UPxHEeOQxJjwrfaNsA _x7ip5Z7uEeOjCb9D2yIVHQ"/>
+    <steps xsi:type="buildstep:AggregateStep" xmi:id="_8qpRQDY9EeOP8MSofnrGNA" name="kitalpha_runtime" id="kitalpha_runtime" publishSteps="_dAuWAKRCEeOdPJBpl-8efw _T8jukEVSEeOxuMV9a71i9w _peSJsJ7uEeOjCb9D2yIVHQ _GzpY8ECvEeOkCsna5l9rlg _vjsoxZ7uEeOjCb9D2yIVHQ _mZV-8CL5EeSSoPlV7ILP2g _LT5kBzRbEeW5Te4c0tZ9OQ _yWFRMDY9EeOP8MSofnrGNA _3viaIDEFEeWlw8zUy2aPZQ _YGNHcF64EeSHbaZAI7j8zw _7StIMFOFEeS0CZx9NVRo1A _-y7GoFOFEeS0CZx9NVRo1A __SUYYFOFEeS0CZx9NVRo1A _tZFTMAHGEeSWLIhgOb7dcQ _Ky5S2lkcEeSo0vu-C-A3cw _J12CcD5GEeSicsfEyxBYkg _RKKqCS9aEeOlq-9ObYy--w _RKKqCC9aEeOlq-9ObYy--w _3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w _6xX4UPxHEeOQxJjwrfaNsA _x7ip5Z7uEeOjCb9D2yIVHQ _SWRBrS_IEeWgzaFRAlpLXA"/>
   </jobs>
   <jobs xmi:id="_5jxR4JKWEeSPapwxSH2ZqQ" name="platforms" enabled="false">
     <steps xsi:type="buildcore:StepContainer" xmi:id="_KLyusJKEEeSPapwxSH2ZqQ" name="TP_win32-win32-x86">
@@ -434,6 +448,6 @@
     </steps>
   </jobs>
   <jobs xmi:id="_Q1gsQKH8EeSCV64W9A5FeQ" name="clean all">
-    <steps xsi:type="buildstep:AntStep" xmi:id="_R7SokKH8EeSCV64W9A5FeQ" targetName="cleanUp" xml="&lt;target name=&quot;cleanUp&quot;>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.accuracy.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.dsl.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.integration.sirius.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.runtime.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.ta.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.cadence.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.common.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.composer.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.doc.gen.business.core.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.doc.gen.business.ecore.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.genchain.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.attachment.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.commands.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.scrutiny.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.share.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.detachment.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.patterns.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.product.feature&quot;/>&#xD;&#xA;     &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.releng.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.report.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.report.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.representation.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.resourcereuse.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.resourcereuse.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.runtime.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.transposer.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.cadence.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.composer.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.transposer.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.explorer.contextual.feature&quot;/>&#xD;&#xA;&lt;/target>&#xD;&#xA;"/>
+    <steps xsi:type="buildstep:AntStep" xmi:id="_R7SokKH8EeSCV64W9A5FeQ" targetName="cleanUp" xml="&lt;target name=&quot;cleanUp&quot;>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.accuracy.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.dsl.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.integration.sirius.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.runtime.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.ad.ta.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.cadence.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.common.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.composer.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.doc.gen.business.core.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.doc.gen.business.ecore.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.genchain.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.attachment.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.commands.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.scrutiny.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.common.share.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.detachment.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.patterns.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.product.feature&quot;/>&#xD;&#xA;     &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.releng.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.report.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.report.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.representation.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.resourcereuse.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.resourcereuse.ui.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.runtime.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.sdk.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.transposer.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.cadence.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.composer.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.transposer.examples.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.emde.explorer.contextual.feature&quot;/>&#xD;&#xA;    &lt;delete dir=&quot;${publish}/org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature&quot;/>&#xD;&#xA;&lt;/target>&#xD;&#xA;"/>
   </jobs>
 </buildcore:Chain>

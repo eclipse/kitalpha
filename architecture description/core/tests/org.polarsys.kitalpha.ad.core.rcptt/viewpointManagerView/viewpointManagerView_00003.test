@@ -1,0 +1,40 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _STZ8YB3BEea9EIJxawXROw,_UM2xUB3BEea9EIJxawXROw
+Element-Name: viewpointManagerView_00003
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _FK3bsDoDEeaR19Kr2i33JA
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 7/1/16 2:58 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Viewpoint Manager" | get-table | get-property itemCount | equals 6 | verify-true
+get-view "Project Explorer" | get-tree | get-menu "New/Project..." | click
+
+with [get-window "New Project" | get-tree] {
+    select Kitalpha | double-click
+    select "Kitalpha/Architecture description" | double-click
+    select "Kitalpha/Architecture description/Viewpoint project" | double-click
+}
+
+with [get-window -class WizardDialog] {
+    get-editbox -after [get-label "Project name:"] | set-text "org.polarsys.kitalpha.viewpoint.myviewpointproject2"
+    get-editbox -after [get-label "Viewpoint ID:"] | set-text "org.polarsys.kitalpha.viewpoint.myviewpoint2"
+    get-editbox -after [get-label "Viewpoint short name:"] | set-text myviewpoint2
+    get-editbox -after [get-label "Viewpoint name:"] | set-text "My Viewpoint2"
+    get-button Finish | click
+}
+wait 1000
+get-view "Viewpoint Manager" | get-table | get-property itemCount | equals 7 | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.viewpoint.myviewpointproject2" 
+    | get-menu "Close Project" | click
+wait 1000
+get-view "Viewpoint Manager" | get-table | get-property itemCount | equals 6 | verify-true
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

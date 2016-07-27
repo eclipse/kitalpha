@@ -61,6 +61,19 @@ public class ViewpointTreeContainer {
 		}
 	}
 
+	public Collection<String> getViewpointToRemove() {
+		Collection<String> vps = new HashSet<String>();
+
+		for (IViewpointTreeDescription vpd : roots) {
+			if (!vpd.isCandidateToKeep()) {
+				vps.add(vpd.getViewpointId());
+			}
+			collectUriChildrenToRemove(vpd.getChildren(), vps);
+		}
+
+		return vps;
+	}
+
 	public Collection<String> getUriToRemove() {
 		Collection<String> uris = new HashSet<String>();
 
@@ -83,6 +96,18 @@ public class ViewpointTreeContainer {
 				uriToRemove.addAll(child.getViewpointNsUri());
 			}
 			collectUriChildrenToRemove(child.getChildren(), uriToRemove);
+		}
+	}
+
+	protected void collectViewpointChildrenToRemove(Collection<IViewpointTreeDescription> children, Collection<String> viewpointToRemove) {
+		if (children.isEmpty())
+			return;
+
+		for (IViewpointTreeDescription child : children) {
+			if (!child.isCandidateToKeep()) {
+				viewpointToRemove.add(child.getViewpointId());
+			}
+			collectUriChildrenToRemove(child.getChildren(), viewpointToRemove);
 		}
 	}
 

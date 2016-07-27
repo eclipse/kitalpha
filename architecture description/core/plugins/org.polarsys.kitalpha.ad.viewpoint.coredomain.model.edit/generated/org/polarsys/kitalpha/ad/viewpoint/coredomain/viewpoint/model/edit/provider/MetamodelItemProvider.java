@@ -21,6 +21,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -29,8 +30,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers.ModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage;
 
@@ -78,23 +80,28 @@ public class MetamodelItemProvider
 	 * This adds a property descriptor for the Models feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	protected void addModelsPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Metamodel_models_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Metamodel_models_feature", "_UI_Metamodel_type"),
-				 ViewpointPackage.Literals.METAMODEL__MODELS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+			(new ItemPropertyDescriptor(
+			  ((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			  getResourceLocator(),
+			  getString("_UI_Metamodel_models_feature"),
+			  getString("_UI_PropertyDescriptor_description", "_UI_Metamodel_models_feature", "_UI_Metamodel_type"),
+			  ViewpointPackage.Literals.METAMODEL__MODELS,
+			  true,
+			  false,
+			  true,
+			  null,
+			  null,
+			  null) {
+
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					return ModelHelper.getCandidates((EObject) object, EPackage.class, "*.ecore");
+				}});
 
 	}
 

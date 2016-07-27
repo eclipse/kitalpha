@@ -17,7 +17,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,9 +25,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.sirius.viewpoint.description.Group;
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusPackage;
-
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers.ModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.edit.provider.RepresentationElementItemProvider;
 
 /**
@@ -74,23 +75,28 @@ public class SiriusRepresentationItemProvider
 	 * This adds a property descriptor for the Odesign feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	protected void addOdesignPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SiriusRepresentation_odesign_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SiriusRepresentation_odesign_feature", "_UI_SiriusRepresentation_type"),
-				 SiriusPackage.Literals.SIRIUS_REPRESENTATION__ODESIGN,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+			(new ItemPropertyDescriptor(
+			  ((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			  getResourceLocator(),
+			  (String) getString("_UI_SiriusRepresentation_odesign_feature"),
+			  (String) getString("_UI_PropertyDescriptor_description", "_UI_SiriusRepresentation_odesign_feature", "_UI_SiriusRepresentation_type"),
+			  SiriusPackage.Literals.SIRIUS_REPRESENTATION__ODESIGN,
+			  true,
+			  false,
+			  true,
+			  null,
+			  null,
+			  null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					return ModelHelper.getCandidates((EObject) object, Group.class, "*.odesign");
+			
+				}});
 
 	}
 

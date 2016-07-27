@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.ui,
  org.polarsys.kitalpha.ad.af.coredomain.model.edit,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit,
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui,
+ org.polarsys.kitalpha.model.detachment.ui
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.ikoffice.widgets,

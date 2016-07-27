@@ -12,10 +12,13 @@
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
+import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
@@ -26,29 +29,39 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 public class ViewpointManagerLabelProvider extends LabelProvider implements ITableLabelProvider {
 
+	private ResourceSet context;
+
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (columnIndex != 0)
 			return null;
-		Resource vp = (Resource) element;
-		if (ViewpointManager.getInstance((EObject)null).isUsed(vp.getId()))
+		Description vp = (Description) element;
+		if (context != null && ViewpointManager.getInstance(context).isUsed(vp.getId()))
 			return Activator.getDefault().getImage(AFImages.RUNNING_VP);
 		return Activator.getDefault().getImage(AFImages.VP);
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
-		Resource vp = (Resource) element;
+		Description vp = (Description) element;
 		switch (columnIndex) {
 		case 0:
-			return vp.getName();
-		case 1:
-			return ViewpointManager.getInstance((EObject)null).isUsed(vp.getId()) ? "Active" : "Unactive";
+			return vp.getLabel();
 		case 2:
-			return vp.getProviderLocation().toString();
-		case 3:
-			return vp.getProviderSymbolicName();
-		case 4:
-			return "";
+			if (context == null)
+				return "N/A";
+			ViewpointManager instance = ViewpointManager.getInstance(context);
+			if (instance.isUsed(vp.getId())) {
+				return "Used" + (instance.isFiltered(vp.getId()) ? " & filtered" : "");
+			}
+			return "Unused";
+		case 1:
+			Version version = vp.getVersion();
+			return version == null || version.equals(Version.emptyVersion) ? "no version" : version.toString();
 		}
 		return "";
 	}
+
+	public void setContext(ResourceSet context) {
+		this.context = context;
+	}
+
 }

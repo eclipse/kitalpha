@@ -133,7 +133,7 @@ public class MetamodelTab extends AbstractTab {
 				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 				IProject project = root.getProject(segment);
 
-				ModelFileDialog dialog = new ModelFileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), project, "*.ecore");
+				ModelFileDialog dialog = new ModelFileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), viewpoint, "*.ecore");
 
 				if (dialog.open() == Window.OK) {
 					ResourceSet resourceSet = viewpoint.eResource().getResourceSet();

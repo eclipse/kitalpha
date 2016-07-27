@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="metadata" factoryComponentName="org.polarsys.kitalpha.ad.metadata.egf">
+  <elements xsi:type="generationChain:GenerationChain" name="metadata">
+    <elements xsi:type="generationChain:EmfGeneration" name="Emf Generation for metadata" modelPath="/org.polarsys.kitalpha.ad.metadata/model/metadata.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.ad.metadata.model" basePackage="org.polarsys.kitalpha.ad.metadata"/>
+  </elements>
+</generationChain:GenerationChain>

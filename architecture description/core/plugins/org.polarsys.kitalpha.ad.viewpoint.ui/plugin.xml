@@ -4,6 +4,7 @@
    <extension-point id="org.polarsys.kitalpha.ad.viewpoint.ui.provider.selection" name="Selection provider" schema="schema/provider.selection.exsd"/>
    <extension-point id="org.polarsys.kitalpha.ad.viewpoint.ui.viewpointview.tab" name="Viewpoint View Tab" schema="schema/viewpointview.tab.exsd"/>
    <extension-point id="org.polarsys.kitalpha.ad.viewpoint.ui.rule.wizard.providers" name="Rule Wizard Providers" schema="schema/rule.wizard.providers.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.ad.viewpoint.ui.provider.context" name="ViewpointMangerView context provider" schema="schema/provider.context.exsd"/>
    <extension
          point="org.polarsys.kitalpha.ad.viewpoint.implementation.services">
       <Implementation
@@ -34,8 +35,7 @@
       <tab
             class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.metamodels.MetamodelTab"
             id="org.polarsys.kitalpha.ad.viewpoint.ui.metamodel"
-            weight="40"
-            designOnly="true">
+            weight="40">
       </tab>
       <tab
             class="org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.overview.OverviewTab"
@@ -58,6 +58,12 @@
       <RuleWizardProvider
             class="org.polarsys.kitalpha.ad.viewpoint.ui.integration.rules.JavaRuleProviderWizard">
       </RuleWizardProvider>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.ui.provider.context">
+      <ContextProvider
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.provider.DefaultContextProvider">
+      </ContextProvider>
    </extension>
 
 

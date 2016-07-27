@@ -34,7 +34,6 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.progress.IProgressService;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
@@ -48,6 +47,11 @@ public final class SiriusViewpointActivationManager implements OverallListener {
 		updateActiveViewpoint(ctx, getURI(vp), true);
 	}
 
+	private URI getURI(Resource res) {
+		return URIHelper.createURI(res);
+	}
+
+	@Override
 	public void hasBeenFiltered(Object ctx, Resource vp) {
 		updateActiveViewpoint(ctx, getURI(vp), false);
 	}
@@ -56,50 +60,33 @@ public final class SiriusViewpointActivationManager implements OverallListener {
 	public void hasBeenDisplayed(Object ctx, Resource vp) {
 		updateActiveViewpoint(ctx, getURI(vp), true);
 	}
-
-	private URI getURI(Resource res) {
-		return URIHelper.createURI(res);
-	}
  
 	private void updateActiveViewpoint(Object ctx, URI vpURI, boolean activate) {
 		ViewpointSelectionCallback callback = new ViewpointSelectionCallback();
-		for (Session session : SessionManager.INSTANCE.getSessions()) {
-			final TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) domain.getResourceSet().getEObject(vpURI, true);
-			Viewpoint genericVp = (Viewpoint) domain.getResourceSet().getEObject(Activator.GENERIC_VP_URI, true);
+		Session session = SiriusHelper.getSession((ResourceSet) ctx);
+		if (session == null)
+			return ;
+		final TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
+		org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) domain.getResourceSet().getEObject(vpURI, true);
+		Viewpoint genericVp = (Viewpoint) domain.getResourceSet().getEObject(Activator.GENERIC_VP_URI, true);
 
-			Set<Viewpoint> viewpoints = SiriusHelper.getViewpoints(vp);
-			if (viewpoints.isEmpty())
-				continue;
-			Set<Viewpoint> newSelectedViewpoints = new HashSet<Viewpoint>();
-			Set<Viewpoint> newDeselectedViewpoints = SiriusHelper.EMPTY_SET;
-			newSelectedViewpoints.add(genericVp);
-			if (activate)
-				newSelectedViewpoints.addAll(viewpoints);
-			else
-				newDeselectedViewpoints = viewpoints;
-			final RecordingCommand command = new ChangeViewpointSelectionCommand(session, callback, newSelectedViewpoints, newDeselectedViewpoints, new NullProgressMonitor());
-			execute(domain, command);
+		Set<Viewpoint> viewpoints = SiriusHelper.getViewpoints(vp);
+		if (viewpoints.isEmpty())
+			return;
+		Set<Viewpoint> newSelectedViewpoints = new HashSet<Viewpoint>();
+		Set<Viewpoint> newDeselectedViewpoints = SiriusHelper.EMPTY_SET;
+		newSelectedViewpoints.add(genericVp);
+		if (activate)
+			newSelectedViewpoints.addAll(viewpoints);
+		else
+			newDeselectedViewpoints = viewpoints;
+		final RecordingCommand command = new ChangeViewpointSelectionCommand(session, callback, newSelectedViewpoints, newDeselectedViewpoints, new NullProgressMonitor());
+		execute(domain, command);
 
-		}
+		
 	}
 	
 	public void execute(final TransactionalEditingDomain domain, final RecordingCommand command) {
-		final IProgressService ps = PlatformUI.getWorkbench().getProgressService();
-		try {
-			ps.run(false, false, new WorkspaceModifyOperation() {
-
-				@Override
-				protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
-					monitor.beginTask("Apply new viewpoints selection...", 1);
-					domain.getCommandStack().execute(command);
-					monitor.done();
-				}
-			});
-		} catch (Exception e) {
-			// MessageDialog.openError(shell, "Error while opening view",
-			// "See details in error log ");
-			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.getSymbolicName(), "Error while starting bundle", e));
-		}
+		domain.getCommandStack().execute(command);
 	}
 }

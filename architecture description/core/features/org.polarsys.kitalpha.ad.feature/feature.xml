@@ -23,6 +23,7 @@
       <import feature="org.polarsys.kitalpha.resourcereuse.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.resourcereuse.ui.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.report.ui.feature" version="1.1.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.metadata.feature" version="1.1.0.qualifier"/>
    </requires>
 
    <plugin

@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
@@ -31,7 +32,7 @@ public class ViewpointManagerContentProvider implements IStructuredContentProvid
 	}
 
 	public Object[] getElements(Object inputElement) {
-		if (inputElement instanceof Resource[]) {
+		if (inputElement instanceof Description[]) {
 			return (Object[]) inputElement;
 		}
 		return EMPTY_LIST;

@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.integration.emde;
 
-import org.eclipse.emf.ecore.EObject;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -32,7 +31,6 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		ViewpointManager.getInstance((EObject)null).loadState();
 	}
 
 	/*

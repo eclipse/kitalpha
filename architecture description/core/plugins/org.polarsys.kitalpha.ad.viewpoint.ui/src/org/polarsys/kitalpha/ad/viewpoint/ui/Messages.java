@@ -113,6 +113,8 @@ public class Messages extends NLS {
 	public static String RunServiceAction_error2;
 	public static String RunServiceAction_error3;
 	public static String RunServiceAction_error4;
+	
+	public static String ViewpointManagerView_default_label;
 	// public static String ;
 	// public static String ;
 	// public static String ;
