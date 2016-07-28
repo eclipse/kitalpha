@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _ZJb70EzvEeaqnfqT84uNJQ
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 7/18/16 4:13 PM
+Save-Time: 7/22/16 5:25 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -48,5 +48,34 @@ with [get-window "Viewpoints Selection" | get-table] {
     get-item "" -index 1 | get-property "columns[2]" | equals ComponentSampleQualityAssessment | verify-true
     get-item "" | get-property "columns[0]" | equals true | verify-true
     get-item "" | get-property "columns[2]" | equals ComponentSamplePerformance | verify-true
+}
+get-window "Viewpoints Selection" | get-button Cancel | click
+get-view "Project Explorer" | get-tree | select "A/My.componentsample" | get-menu "New/Representations File" | click
+with [get-window "New Representations File"] {
+    with [get-button "Next >"] {
+        click
+        click
+    }
+    with [get-editbox -after [get-label "File name:"]] {
+        click-text 2
+        key-type Right
+        set-text "My2.aird"
+    }
+    get-button Finish | click
+    get-window "Viewpoints Selection" | get-button OK | click
+}
+get-view "Project Explorer" | get-tree | select "A/My2.aird" | get-menu "Viewpoints Selection" | click
+with [get-window "Viewpoints Selection" | get-table] {
+    get-item "Architecture Description" | get-property caption | equals "Architecture Description" | verify-true
+    get-item "Architecture Description" | get-property checked | equals true | verify-true
+    get-item ComponentSamplePerformance | get-property caption | equals ComponentSamplePerformance | verify-true
+    get-item ComponentSamplePerformance | get-property checked | equals false | verify-true
+    get-item ComponentSampleQualityAssessment | get-property caption | equals ComponentSampleQualityAssessment 
+        | verify-true
+    get-item ComponentSampleQualityAssessment | get-property checked | equals false | verify-true
+    get-item ComponentSampleSafety | get-property caption | equals ComponentSampleSafety | verify-true
+    get-item ComponentSampleSafety | get-property checked | equals false | verify-true
+    get-item ComponentSample | get-property caption | equals ComponentSample | verify-true
+    get-item ComponentSample | get-property checked | equals false | verify-true
 }
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

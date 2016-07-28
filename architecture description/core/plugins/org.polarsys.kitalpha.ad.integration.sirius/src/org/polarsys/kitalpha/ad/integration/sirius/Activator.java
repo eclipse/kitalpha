@@ -34,9 +34,10 @@ public class Activator extends AFUIActivator {
 	public static final String IMG_CHECKBOX_GRAYED_SELECTED = "icons/checkboxgrayedselected.gif";
 	public static final String IMG_CHECKBOX_GRAYED_UNSELECTED = "icons/checkboxgrayedunselected.gif";
 
+	public static final String AF_VP_NAME = "ad";
 	public static final String AF_DESIGN = "/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign";
-	public static final URI GENERIC_VP_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='ad']", false);
-	public static final URI FILTER_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']", false);
+	public static final URI GENERIC_VP_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='"+AF_VP_NAME+"']", false);
+	public static final URI FILTER_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='"+AF_VP_NAME+"']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']", false);
 
 	private final OverallListener listener = new SiriusViewpointActivationManager();
 	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener() };
