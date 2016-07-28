@@ -172,6 +172,7 @@
     <steps xsi:type="buildstep:BuildStep" xmi:id="_7EMvQECuEeOkCsna5l9rlg" name="common">
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_RnLJgP1HEeONEpLzC2FMiA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="common/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_SNwoYP1HEeONEpLzC2FMiA" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="common/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_110ewFSlEeaNJt84_7QgMA" path="${publish}/TP_build"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_VO6gYBceEeSiX7noNBdBeQ" path="${publish}/TP"/>
       <components xsi:type="buildstep:Feature" xmi:id="_DfwmUECvEeOkCsna5l9rlg" id="org.polarsys.kitalpha.common.feature"/>
     </steps>
