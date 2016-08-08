@@ -234,8 +234,12 @@ public class ViewpointManager {
 		return result.toArray(new Resource[result.size()]);
 	}
 
+	/**
+	 * @Deprecated replaced by isUsed(String id) and isFiltered(String id)
+	 */
+	@Deprecated
 	public boolean isActive(String id) {
-		return MetadataHelper.getViewpointMetadata(target).isInUse(id);
+		return isUsed(id) && !isFiltered(id);
 	}
 
 	public boolean isUsed(String id) {
@@ -258,6 +262,14 @@ public class ViewpointManager {
 
 	}
 
+	public boolean hasMetadata() {
+		return MetadataHelper.getViewpointMetadata(target).hasMetadata();
+	}
+
+	/**
+	 * @Deprecated replaced by startUse(String id)
+	 */
+	@Deprecated
 	public void activate(String id) throws ViewpointActivationException {
 		startUse(id);
 	}
@@ -350,7 +362,9 @@ public class ViewpointManager {
 	 * 
 	 * @param id
 	 * @throws ViewpointActivationException
+	 * @Deprecated replaced by stopUse(String id)
 	 */
+	@Deprecated
 	public void desactivate(String id) throws ViewpointActivationException {
 		stopUse(id);
 	}
