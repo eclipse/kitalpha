@@ -70,7 +70,7 @@ public class ViewpointMetadata {
 	}
 	
 	public void updateVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version) {
-		Metadata metadata = getMetadataStorage();
+		Metadata metadata = getMetadataStorage(true);
 		if (metadata == null)
 			throw new IllegalStateException("cannot find integration resource");
 
@@ -90,7 +90,7 @@ public class ViewpointMetadata {
 	}
 
 	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version, boolean usage) {
-		Metadata metadata = getMetadataStorage();
+		Metadata metadata = getMetadataStorage(true);
 		if (metadata == null)
 			throw new UnsupportedOperationException("cannot find metadata resource");
 
@@ -123,7 +123,7 @@ public class ViewpointMetadata {
 	}
 
 	public void setFilter(String id, boolean filter) {
-		Metadata metadata = getMetadataStorage();
+		Metadata metadata = getMetadataStorage(true);
 		if (metadata == null)
 			throw new UnsupportedOperationException("cannot find integration resource");
 
@@ -168,7 +168,7 @@ public class ViewpointMetadata {
 	 * @return
 	 */
 	public Resource initMetadataStorage() {
-		URI uri = getMetadataStorageURI();
+		URI uri = getExpectedMetadataStorageURI();
 		try {
 			context.getResource(uri, true);
 		} catch (Exception e) {
@@ -192,7 +192,8 @@ public class ViewpointMetadata {
 		return resource;
 	}
 
-	private URI getMetadataStorageURI() {
+	
+	public URI getExpectedMetadataStorageURI() {
 		URI uri = context.getResources().get(0).getURI();
 		String path = uri.toPlatformString(true);
 		if (path.contains(".")) {
@@ -208,7 +209,13 @@ public class ViewpointMetadata {
 	}
 
 	protected Metadata getMetadataStorage() {
+		return getMetadataStorage(false) ;
+	}
+	
+	protected Metadata getMetadataStorage(boolean create) {
 		Resource resource = getResource(STORAGE_EXTENSION);
+		if (create && resource == null)
+			resource = initMetadataStorage();
 		if (resource == null)
 			return null;
 		if (resource.getContents().isEmpty())
@@ -224,7 +231,7 @@ public class ViewpointMetadata {
 			}
 		}
 		// None loaded, try to load an existing one
-		URI uri = getMetadataStorageURI();
+		URI uri = getExpectedMetadataStorageURI();
 		try {
 			return context.getResource(uri, true);
 		} catch (Exception e) {

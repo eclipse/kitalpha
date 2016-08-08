@@ -163,7 +163,8 @@ public class ViewpointManager {
 
 		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
 		if (!viewpointMetadata.hasMetadata()) {
-			error.add(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Cannot find metadata resource"));
+			URI uri = viewpointMetadata.getExpectedMetadataStorageURI();
+			error.add(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Cannot find metadata resource: "+uri.toPlatformString(false)));
 			return error;
 		}
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
