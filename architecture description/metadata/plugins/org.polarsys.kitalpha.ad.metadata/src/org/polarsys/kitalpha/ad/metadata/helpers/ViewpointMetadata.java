@@ -59,7 +59,7 @@ public class ViewpointMetadata {
 	public Version getVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource) {
 		Metadata metadata = getMetadataStorage();
 		if (metadata == null)
-			throw new IllegalStateException("cannot find integration resource");
+			throw new IllegalStateException("cannot find metadata resource");
 
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
@@ -71,8 +71,6 @@ public class ViewpointMetadata {
 	
 	public void updateVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version) {
 		Metadata metadata = getMetadataStorage(true);
-		if (metadata == null)
-			throw new IllegalStateException("cannot find integration resource");
 
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
@@ -80,19 +78,12 @@ public class ViewpointMetadata {
 				return ;
 			}
 		}
-		throw new IllegalStateException("Cannot set version since Viewpoint '"+vpResource.getName()+"' is not in use.");
-//		ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
-//		uv.setFiltered(false);
-//		uv.setVpId(vpResource.getId());
-//		uv.setVersion(version);
-//		metadata.getViewpointUsages().add(uv);
+		setUsage(vpResource, version, true);
 
 	}
 
 	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version, boolean usage) {
 		Metadata metadata = getMetadataStorage(true);
-		if (metadata == null)
-			throw new UnsupportedOperationException("cannot find metadata resource");
 
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
@@ -124,8 +115,6 @@ public class ViewpointMetadata {
 
 	public void setFilter(String id, boolean filter) {
 		Metadata metadata = getMetadataStorage(true);
-		if (metadata == null)
-			throw new UnsupportedOperationException("cannot find integration resource");
 
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
 			if (id.equals(uv.getVpId())) {
