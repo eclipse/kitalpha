@@ -7,11 +7,15 @@ Require-Bundle: org.eclipse.egf.domain,
  org.eclipse.egf.model,
  org.eclipse.ui;bundle-version="3.6.2",
  org.eclipse.egf.model.ftask;visibility:=reexport,
- org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.manager,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.modelchecking
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.modelchecking,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.precondition
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter
 Bundle-Localization: plugin
 Bundle-Vendor: %BundleVendor
+Bundle-ActivationPolicy: lazy
