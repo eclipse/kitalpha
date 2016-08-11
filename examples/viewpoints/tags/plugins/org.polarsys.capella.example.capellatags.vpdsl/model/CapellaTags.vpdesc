@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DocGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" name="CapellaTags" shortName="CapellaTags">
+  <VP_Data name="CapellaTags.data">
+    <VP_Classes name="CapellaTag">
+      <VP_Classes_Associations xsi:type="vpdesc:ExternalClassAssociation" name="modelElement" cardinality="1" derived="true" type="reference">
+        <ExternalTarget href="http://www.polarsys.org/capella/core/core/1.0.0#//NamedElement"/>
+      </VP_Classes_Associations>
+      <extends href="http://www.polarsys.org/capella/core/core/1.0.0#//CapellaElement"/>
+      <Inheritences xsi:type="vpdesc:ExternalSuperClass">
+        <superClass href="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Tag"/>
+      </Inheritences>
+    </VP_Classes>
+    <additionalExternalData href="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#/"/>
+  </VP_Data>
+  <VP_Aspects xsi:type="vpconf:Configuration" name="CapellaTags.conf">
+    <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="Melody Advance-Team"/>
+    <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.capella.example.capellatags" nsuri="http://www.polarsys.org/capella/example/CapellaTags/1.0.0"/>
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.0.0.qualifier" viewpointDescription="Viewpoint Description">
+      <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
+    </vpConfigurationElements>
+    <vpConfigurationElements xsi:type="vpconf:Generation">
+      <ownedDataGenerationConf/>
+      <ownedExtensionGenConf xsi:type="configuration:DiagramGenerationConfiguration" overwriteVSM="true"/>
+      <ownedExtensionGenConf xsi:type="DocGenConfiguration:DocumentationGenerationConfiguration"/>
+    </vpConfigurationElements>
+  </VP_Aspects>
+  <useViewpoint href="../../org.polarsys.kitalpha.example.tags.vpdsl/model/tags.vpdesc#/"/>
+</vpdesc:Viewpoint>

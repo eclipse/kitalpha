@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+	     point="org.eclipse.ui.views">
+	  <view
+	        name="tags"
+	        icon="icons/view.gif"
+	        category="org.polarsys.kitalpha.view.category"
+	        class="org.polarsys.kitalpha.ad.viewpoint.ui.views.ViewpointView"
+	        id="org.polarsys.kitalpha.example.tags.view"
+	        resourceId="org.polarsys.kitalpha.example.tags"/>
+	</extension>
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="AF"
+	        id="org.polarsys.kitalpha.example.tags"
+	        tags="vp"
+	        name="tags"
+	        path="/org.polarsys.kitalpha.example.tags.af/model/tags.vp#_nFl9cE6LEeaG_-DH2xXe6g"/>
+	</extension>
+	<extension 
+	     point="org.eclipse.ui.propertiesView">
+	 	<excludeSources
+	    	id="org.polarsys.kitalpha.example.tags.view">
+	 	</excludeSources>
+	</extension>
+</plugin>
+

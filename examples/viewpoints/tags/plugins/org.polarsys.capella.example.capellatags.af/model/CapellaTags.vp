@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Capella Tags" id="org.polarsys.capella.example.capellatags" vpid="_4McqUE6DEeaG_-DH2xXe6g" version="1.0.0.qualifier">
+  <dependencies href="../../org.polarsys.kitalpha.example.tags.af/model/tags.vp#_1lrcYE6DEeaG_-DH2xXe6g"/>
+  <metamodel>
+    <models href="../../org.polarsys.capella.example.capellatags/models/CapellaTags.ecore#/"/>
+  </metamodel>
+  <representation/>
+</vp:Viewpoint>

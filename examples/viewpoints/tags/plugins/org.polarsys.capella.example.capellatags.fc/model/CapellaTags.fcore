@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+    xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
+    xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern">
+  <fcore:FactoryComponent xmi:id="_3p7zJU6DEeaG_-DH2xXe6g" name="CapellaTags Launcher">
+    <viewpointContainer xmi:id="_3p7zJk6DEeaG_-DH2xXe6g">
+      <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_3p7zJ06DEeaG_-DH2xXe6g"/>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_3p7zKE6DEeaG_-DH2xXe6g">
+      <orchestrationParameterContainer xmi:id="_3p7zKU6DEeaG_-DH2xXe6g">
+        <orchestrationParameters xmi:id="_3p7zKk6DEeaG_-DH2xXe6g" name="generation extension">
+          <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_3p7zK06DEeaG_-DH2xXe6g"/>
+        </orchestrationParameters>
+      </orchestrationParameterContainer>
+      <invocations xmi:id="_AUVd0E6MEeaG_-DH2xXe6g" name="CapellaTags invocation"
+          invokedActivity="#_3p7zLE6DEeaG_-DH2xXe6g">
+        <invocationContractContainer xmi:id="_AUVd0U6MEeaG_-DH2xXe6g"/>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_3p7zLE6DEeaG_-DH2xXe6g" name="CapellaTags">
+    <viewpointContainer xmi:id="_3p7zLU6DEeaG_-DH2xXe6g">
+      <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_3p7zLk6DEeaG_-DH2xXe6g"/>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_3p7zL06DEeaG_-DH2xXe6g">
+      <orchestrationParameterContainer xmi:id="_3p7zME6DEeaG_-DH2xXe6g">
+        <orchestrationParameters xmi:id="_3p7zMU6DEeaG_-DH2xXe6g" name="generation extension">
+          <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_3p7zMk6DEeaG_-DH2xXe6g"/>
+        </orchestrationParameters>
+      </orchestrationParameterContainer>
+      <invocations xmi:id="_AUVd0k6MEeaG_-DH2xXe6g" name="CapellaTags invocation"
+          invokedActivity="#_3p7zNU6DEeaG_-DH2xXe6g">
+        <invocationContractContainer xmi:id="_AUVd006MEeaG_-DH2xXe6g"/>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+  <fcore:FactoryComponent xmi:id="_3p7zNU6DEeaG_-DH2xXe6g" name="CapellaTags">
+    <viewpointContainer xmi:id="_3p7zNk6DEeaG_-DH2xXe6g">
+      <viewpoints xmi:type="domain:DomainViewpoint" xmi:id="_3p7zN06DEeaG_-DH2xXe6g">
+        <domains xmi:type="domain:EMFDomain" xmi:id="_3sKnwE6DEeaG_-DH2xXe6g" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
+            uri="platform:/resource/org.polarsys.capella.example.capellatags.model/models/CapellaTags.genmodel"/>
+        <domains xmi:type="domain:EMFDomain" xmi:id="_AUVd3k6MEeaG_-DH2xXe6g" helperImplementation="org.eclipse.egf.domain.emf.EMFDomainHelper"
+            uri="platform:/resource/org.polarsys.capella.example.capellatags/models/CapellaTags.ecore"/>
+      </viewpoints>
+    </viewpointContainer>
+    <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_3p7zOE6DEeaG_-DH2xXe6g">
+      <orchestrationParameterContainer xmi:id="_3p7zOU6DEeaG_-DH2xXe6g">
+        <orchestrationParameters xmi:id="_3p7zOk6DEeaG_-DH2xXe6g" name="generation extension"
+            invocationContracts="#_AUVd2E6MEeaG_-DH2xXe6g #_AUVd3U6MEeaG_-DH2xXe6g #_AUfO1U6MEeaG_-DH2xXe6g">
+          <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_3p7zO06DEeaG_-DH2xXe6g"/>
+        </orchestrationParameters>
+      </orchestrationParameterContainer>
+      <invocations xmi:id="_AUVd1E6MEeaG_-DH2xXe6g" name="capella.emf.gen.model invocation"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_fRRLIB_3EeCuNfuGnuOPDw">
+        <invocationContractContainer xmi:id="_AUVd1U6MEeaG_-DH2xXe6g">
+          <invocationContracts xmi:id="_AUVd1k6MEeaG_-DH2xXe6g" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_l7ckIB_3EeCuNfuGnuOPDw">
+            <type xmi:type="domain:TypeDomain" xmi:id="_AUVd106MEeaG_-DH2xXe6g" domain="#_3sKnwE6DEeaG_-DH2xXe6g"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_AUVd2E6MEeaG_-DH2xXe6g" orchestrationParameter="#_3p7zOk6DEeaG_-DH2xXe6g"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_l7ckJB_3EeCuNfuGnuOPDw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_AUVd2U6MEeaG_-DH2xXe6g" name="capella.emf.gen.edit invocation"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_WJu-4B_3EeCuNfuGnuOPDw">
+        <invocationContractContainer xmi:id="_AUVd2k6MEeaG_-DH2xXe6g">
+          <invocationContracts xmi:id="_AUVd206MEeaG_-DH2xXe6g" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_tt5z0B_3EeCuNfuGnuOPDw">
+            <type xmi:type="domain:TypeDomain" xmi:id="_AUVd3E6MEeaG_-DH2xXe6g" domain="#_3sKnwE6DEeaG_-DH2xXe6g"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_AUVd3U6MEeaG_-DH2xXe6g" orchestrationParameter="#_3p7zOk6DEeaG_-DH2xXe6g"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.capella.extension.tools/egf/capellaTools.fcore#_tt5z1B_3EeCuNfuGnuOPDw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_AUVd306MEeaG_-DH2xXe6g" name="connectorAdditionalDescription invocation"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/com.thalesgroup.mde.melody.connector.portfolio/egf/connectorAdditionalDescription.fcore#_n2ZGgBIGEeKTuJ3Ft5PbJQ">
+        <invocationContractContainer xmi:id="_AUVd4E6MEeaG_-DH2xXe6g">
+          <invocationContracts xmi:id="_AUVd4U6MEeaG_-DH2xXe6g" invokedContract="fcore:FactoryComponentContract platform:/plugin/com.thalesgroup.mde.melody.connector.portfolio/egf/connectorAdditionalDescription.fcore#_r3b6ERIGEeKTuJ3Ft5PbJQ">
+            <type xmi:type="domain:TypeDomain" xmi:id="_AUfO0E6MEeaG_-DH2xXe6g" domain="#_AUVd3k6MEeaG_-DH2xXe6g"/>
+          </invocationContracts>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_AUfO0U6MEeaG_-DH2xXe6g" name="EMF Pattern CDO - Factory Override invocation"
+          invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.emf.pattern.cdo/egf/EMF_Pattern_CDO.fcore#_jgrokOCEEeGKHKVgqEoOmg">
+        <invocationContractContainer xmi:id="_AUfO0k6MEeaG_-DH2xXe6g">
+          <invocationContracts xmi:id="_AUfO006MEeaG_-DH2xXe6g" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern.cdo/egf/EMF_Pattern_CDO.fcore#_mehSseCEEeGKHKVgqEoOmg">
+            <type xmi:type="domain:TypeDomain" xmi:id="_AUfO1E6MEeaG_-DH2xXe6g" domain="#_3sKnwE6DEeaG_-DH2xXe6g"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_AUfO1U6MEeaG_-DH2xXe6g" orchestrationParameter="#_3p7zOk6DEeaG_-DH2xXe6g"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern.cdo/egf/EMF_Pattern_CDO.fcore#_mehSt-CEEeGKHKVgqEoOmg"/>
+        </invocationContractContainer>
+      </invocations>
+    </orchestration>
+  </fcore:FactoryComponent>
+</xmi:XMI>

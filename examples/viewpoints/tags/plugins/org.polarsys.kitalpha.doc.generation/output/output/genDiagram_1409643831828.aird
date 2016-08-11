@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_4ly4gDJ0EeSgKpmqleldcA" selectedViews="_5tKwQDJ0EeSgKpmqleldcA" version="8.1.1">
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsampleframework.aird#_5uNSEDJ0EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsample.aird#_LKwogDJ1EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsampleperformance.aird#_fNv1sDJ1EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsamplequalityassessment.aird#_txXQIDJ1EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsamplesafety.aird#_9dQhQDJ1EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsamplesafetypattern.aird#_OBB1kDJ2EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/mass.aird#_faUnMDJ3EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/mass.aird#_RId1sDJ4EeSgKpmqleldcA"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsample.aird#_64M74DQoEeS4Tat3hTi2xQ"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsampleperformance.aird#_FbPc0DQpEeS4Tat3hTi2xQ"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsample.aird#_jFZYkDQpEeS4Tat3hTi2xQ"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsampleperformance.aird#_wIh3sDQpEeS4Tat3hTi2xQ"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsampleperformance.aird#_19Ug0DQpEeS4Tat3hTi2xQ"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsampleperformance.aird#_IT4BYDQqEeS4Tat3hTi2xQ"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsampleperformance.aird#_OZps0DQqEeS4Tat3hTi2xQ"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsample.aird#__KZIsDW7EeS-dMxOvMKVXg"/>
+  <referencedAnalysis xmi:type="viewpoint:DAnalysis" href="diagrams/componentsample.aird#_JBFm0EGKEeSvlsmRIlbBAA"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsampleframework/models/ComponentSampleFramework.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsampleperformance/models/ComponentSamplePerformance.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplequalityassessment/models/ComponentSampleQualityAssessment.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.componentsamplesafetypattern/models/ComponentSampleSafetyPattern.ecore#/"/>
+  <models xmi:type="ecore:EPackage" href="platform:/resource/org.polarsys.kitalpha.vp.mass/models/Mass.ecore#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_5tKwQDJ0EeSgKpmqleldcA" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ecore.diagram/description/EcoreToolsExtra.odesign#//@ownedViewpoints[name='EcoreToolsExtra_ClassView']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

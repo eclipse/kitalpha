@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DocGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" name="tags" shortName="tags">
+  <VP_Data name="tags.data">
+    <VP_Classes name="AbstractTagEntity" abstract="true">
+      <VP_Class_Attributes name="id">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+    </VP_Classes>
+    <VP_Classes name="AbstractNamedEntity" abstract="true">
+      <VP_Class_Attributes name="name">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="TagDefinitionModel">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="ownedStatuses" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="ownedKinds" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.5"/>
+      <VP_Class_Attributes name="description">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.1"/>
+    </VP_Classes>
+    <VP_Classes name="Tag">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="status" type="reference" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="statusHistory" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.6"/>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Classes name="Status" description="Allows to define the current status of a Tag. &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;  The status can be, for example, TODO, in progress, etc.">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="kind" type="reference" LocalTarget="//@VP_Data/@VP_Classes.5"/>
+      <VP_Class_Attributes name="icone">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <VP_Class_Attributes name="color">
+        <owned_type xsi:type="vpdesc:LocalAttributeType" type="//@VP_Data/@VP_Enumerations.0"/>
+      </VP_Class_Attributes>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.1"/>
+    </VP_Classes>
+    <VP_Classes name="Kind" description="Allows the definition of the nature of a Tag. For example: Workflow, Severity, etc.">
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.1"/>
+    </VP_Classes>
+    <VP_Classes name="History">
+      <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="oldStatus" type="reference" LocalTarget="//@VP_Data/@VP_Classes.4"/>
+      <VP_Class_Attributes name="changeDate">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <VP_Class_Attributes name="user">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <VP_Class_Attributes name="changeComment">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
+      <Inheritences xsi:type="vpdesc:LocalSuperClass" superClass="//@VP_Data/@VP_Classes.0"/>
+    </VP_Classes>
+    <VP_Enumerations name="Color">
+      <ownedValues name="White" literal="White"/>
+      <ownedValues name="Black" literal="Black"/>
+      <ownedValues name="Blue" literal="Blue"/>
+      <ownedValues name="Red" literal="Red"/>
+      <ownedValues name="Green" literal="Green"/>
+      <ownedValues name="Yellow" literal="Yellow"/>
+      <ownedValues name="Other" literal="Other"/>
+    </VP_Enumerations>
+  </VP_Data>
+  <VP_Aspects xsi:type="vpconf:Configuration" name="tags.conf">
+    <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
+    <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.example.tags" nsuri="http://www.polarsys.org/kitalpha/example/tags/1.0.0"/>
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.0.0.qualifier" viewpointDescription="Model for tagging any model elements">
+      <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
+    </vpConfigurationElements>
+    <vpConfigurationElements xsi:type="vpconf:Generation">
+      <ownedDataGenerationConf editor="true"/>
+      <ownedExtensionGenConf xsi:type="configuration:DiagramGenerationConfiguration" overwriteVSM="true"/>
+      <ownedExtensionGenConf xsi:type="DocGenConfiguration:DocumentationGenerationConfiguration"/>
+    </vpConfigurationElements>
+  </VP_Aspects>
+</vpdesc:Viewpoint>

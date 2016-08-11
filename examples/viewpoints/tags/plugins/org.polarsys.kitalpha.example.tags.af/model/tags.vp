@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="tags" id="org.polarsys.kitalpha.example.tags" vpid="_nFl9cE6LEeaG_-DH2xXe6g" version="1.0.0.qualifier">
+  <metamodel>
+    <models href="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#/"/>
+  </metamodel>
+  <representation/>
+</vp:Viewpoint>

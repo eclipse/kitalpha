@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.example.tags.model.cdo/src"
+    modelPluginID="org.polarsys.kitalpha.example.tags.model.cdo" modelName="Tags"
+    nonNLSMarkers="true" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Reflective" complianceLevel="7.0" copyrightFields="false" optimizedHasChildren="true"
+    runtimeVersion="2.11" operationReflection="true" importOrganizing="true">
+  <foreignModel>../../org.polarsys.kitalpha.example.tags/models/tags.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Tags" basePackage="org.polarsys.kitalpha.example.tags" resource="XMI"
+      disposableProviderFactory="true" generateExampleClass="false" multipleEditorPages="false"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color">
+      <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color/White"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color/Black"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color/Blue"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color/Red"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color/Green"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color/Yellow"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Color/Other"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//AbstractTagEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//AbstractTagEntity/id"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//AbstractNamedEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//AbstractNamedEntity/name"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//TagDefinitionModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//TagDefinitionModel/ownedStatuses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//TagDefinitionModel/ownedKinds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//TagDefinitionModel/description"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Tag">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Tag/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Tag/statusHistory"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Status">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Status/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Status/icone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Status/color"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//Kind"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//History">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//History/oldStatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//History/changeDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//History/user"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.example.tags/models/tags.ecore#//History/changeComment"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

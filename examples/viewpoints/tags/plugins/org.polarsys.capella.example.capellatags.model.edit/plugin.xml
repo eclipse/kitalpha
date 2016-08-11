@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory class="org.polarsys.capella.example.capellatags.CapellaTags.provider.CapellaTagsItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.polarsys.org/capella/example/CapellaTags/1.0.0"/>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender class="org.polarsys.capella.example.capellatags.CapellaTags.provider.CapellaTagsItemProviderAdapterFactory$EmdeChildCreationExtender" uri="http://www.polarsys.org/kitalpha/emde/1.0.0"/>
+   </extension>
+
+
+<!--@generated-->
+  <extension point="org.polarsys.capella.common.menu.dynamic.MDEMenuItemContribution">
+</extension>
+
+<!--@generated-->
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
+</propertySections>
+    </extension>
+
+<!--@generated-->
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+    <propertySections contributorId="org.eclipse.sirius.diagram.ui">
+</propertySections>
+    </extension>
+</plugin>

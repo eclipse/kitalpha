@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.example.capellatags.vpdsl.description"
+	        tags="vpdesc"
+	        name="capellatags"
+	        path="/org.polarsys.capella.example.capellatags.vpdsl/model/CapellaTags.vpdesc"/>
+	</extension>
+
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.example.capellatags.vpdsl.resource.CapellaTags.spec"
+	        tags="Viewpoint"
+	        name="spec"
+	        path="/org.polarsys.capella.example.capellatags.vpdsl/model/CapellaTags.spec.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.example.capellatags.vpdsl.resource.CapellaTags.data"
+	        tags="Viewpoint"
+	        name="data"
+	        path="/org.polarsys.capella.example.capellatags.vpdsl/model/CapellaTags.data.vptext"/>
+	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.capella.example.capellatags.vpdsl.resource.CapellaTags.conf"
+	        tags="Viewpoint"
+	        name="conf"
+	        path="/org.polarsys.capella.example.capellatags.vpdsl/model/CapellaTags.conf.vptext"/>
+	</extension>
+</plugin>
