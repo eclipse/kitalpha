@@ -28,7 +28,9 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
@@ -59,6 +61,9 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
  */
 
 public class CreateViewpointSpecificationProjectTask implements ITaskProduction {
+	
+	private static final String DEFAUT_JAVA_SERVICE_NAME = "Services"; //$NON-NLS-1$
+	private static final String SOURCE_FOLDER_NAME = "src/"; //$NON-NLS-1$
 
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
@@ -78,27 +83,38 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 				final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(designProjectName);
 				WorkspaceModifyOperation projectcreationOperation = new WorkspaceModifyOperation() {
 					@Override
-					protected void execute(IProgressMonitor monitor) throws CoreException,
-									InvocationTargetException, InterruptedException {
+					protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
+						boolean initialization = false;
 						if (! project.exists())
-							ViewpointSpecificationProject.createNewViewpointSpecificationProject(designProjectName, modelName_withextension);
-						else
 						{
-							IFolder description = project.getFolder("description");
-							if (! description.exists())
-							{
-								description.create(IFolder.DEPTH_INFINITE, true, null);
-							}
+							ViewpointSpecificationProject.createNewViewpointSpecificationProject(designProjectName, modelName_withextension);
+							initialization = true;
+						}
+						
+						
+						IFolder description = project.getFolder("description");
+						if (! description.exists())
+						{
+							description.create(IFolder.DEPTH_INFINITE, true, null);
+						}
 
-							IFile odesign_file = description.getFile(modelName_withextension);
-							if (odesign_file.exists())
+						IFile odesign_file = description.getFile(modelName_withextension);
+						if (odesign_file.exists())
+						{
+							if (! initialization)
 							{
 								copyOdesignFile(odesign_file, monitor);
-								try {
-									clearODesignModelContent(odesign_file, monitor);
-								} catch (IOException e) {
-									e.printStackTrace();
+							}
+							
+							try {
+								clearODesignModelContent(odesign_file, monitor);
+								// Remove the Java service
+								if (initialization)
+								{
+									removeDefaultJavaService(project, DEFAUT_JAVA_SERVICE_NAME, monitor);
 								}
+							} catch (IOException e) {
+								e.printStackTrace();
 							}
 						}
 					}
@@ -115,6 +131,29 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 		});
 		
 		updateProjectDependecies(designProjectName, rootProjectName);
+	}
+	
+	/**
+	 * Removes the created Java file by the project initialization if it exists
+	 * @param project the Design project
+	 * @param jserviceName the java service file name
+	 * @param monitor an {@link IProgressMonitor}
+	 * @throws CoreException
+	 */
+	private void removeDefaultJavaService(IProject project, String jserviceName, IProgressMonitor monitor) throws CoreException{
+		if (project.exists())
+		{
+			final String name = project.getName();
+			IFile serviceFile = project.getFile(SOURCE_FOLDER_NAME + name.replace('.','/') + '/' + jserviceName + ".java");
+			if (serviceFile.exists())
+			{
+				serviceFile.delete(true, monitor);
+			}
+		}
+		else
+		{
+			throw new CoreException(new Status(IStatus.ERROR, project.getName(), "Could not find project "+ project.getName()));
+		}
 	}
 	
 	private void updateProjectDependecies(String designProjectName, String rootProjectName) throws InvocationException{
