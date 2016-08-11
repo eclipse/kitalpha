@@ -13,17 +13,10 @@ package org.polarsys.kitalpha.ad.integration.amalgam.providers;
 
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.ActivityExplorerEditor;
 import org.eclipse.amalgam.explorer.activity.ui.api.editor.input.ActivityExplorerEditorInput;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.ui.IWorkbenchPart;
 import org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider;
 
@@ -33,11 +26,6 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider;
  */
 public class AmalgamContextProvider implements AFContextProvider {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider#computeContext(org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
-	 */
 	@Override
 	public ResourceSet computeContext(IWorkbenchPart part, ISelection selection) {
 	    if (part instanceof ActivityExplorerEditor) {
@@ -48,7 +36,8 @@ public class AmalgamContextProvider implements AFContextProvider {
 			Session session = editorInput.getSession();
 			if (session == null)
 				return null;
-			return session.getTransactionalEditingDomain().getResourceSet();
+			TransactionalEditingDomain ed = session.getTransactionalEditingDomain();
+			return ed == null ? null: ed.getResourceSet();
 	    }
 		return null;
 	}
