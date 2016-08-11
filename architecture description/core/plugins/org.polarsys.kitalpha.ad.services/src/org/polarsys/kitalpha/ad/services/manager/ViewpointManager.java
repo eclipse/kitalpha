@@ -417,35 +417,43 @@ public class ViewpointManager {
 
 	protected void fireEvent(Resource vpResource, int event) {
 		for (Listener l : listeners.toArray(new Listener[listeners.size()])) {
-			switch (event) {
-			case ACTIVATED:
-				l.hasBeenActivated(vpResource);
-				break;
-			case DEACTIVATED:
-				l.hasBeenDeactivated(vpResource);
-				break;
-			case FILTERED:
-				l.hasBeenFiltered(vpResource);
-				break;
-			case DISPLAYED:
-				l.hasBeenDisplayed(vpResource);
-				break;
+			try {
+				switch (event) {
+				case ACTIVATED:
+					l.hasBeenActivated(vpResource);
+					break;
+				case DEACTIVATED:
+					l.hasBeenDeactivated(vpResource);
+					break;
+				case FILTERED:
+					l.hasBeenFiltered(vpResource);
+					break;
+				case DISPLAYED:
+					l.hasBeenDisplayed(vpResource);
+					break;
+				}
+			}catch (Exception e) {
+				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
 			}
 		}
 		for (OverallListener l : overallListeners.toArray(new OverallListener[overallListeners.size()])) {
-			switch (event) {
-			case ACTIVATED:
-				l.hasBeenActivated(target, vpResource);
-				break;
-			case DEACTIVATED:
-				l.hasBeenDeactivated(target, vpResource);
-				break;
-			case FILTERED:
-				l.hasBeenFiltered(target, vpResource);
-				break;
-			case DISPLAYED:
-				l.hasBeenDisplayed(target, vpResource);
-				break;
+			try {
+				switch (event) {
+				case ACTIVATED:
+					l.hasBeenActivated(target, vpResource);
+					break;
+				case DEACTIVATED:
+					l.hasBeenDeactivated(target, vpResource);
+					break;
+				case FILTERED:
+					l.hasBeenFiltered(target, vpResource);
+					break;
+				case DISPLAYED:
+					l.hasBeenDisplayed(target, vpResource);
+					break;
+				}
+			}catch (Exception e) {
+				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
 			}
 		}
 	}
