@@ -23,6 +23,7 @@ public class Messages extends NLS {
 	public static String Viewpoint_Manager_error_6;
 	public static String Viewpoint_Manager_error_7;
 	public static String Viewpoint_Manager_error_8;
+	public static String Viewpoint_Manager_error_9;
 	// public static String ;
 	// public static String ;
 	// public static String ;
