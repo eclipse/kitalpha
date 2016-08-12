@@ -41,6 +41,11 @@
       <import feature="org.polarsys.kitalpha.resourcereuse.source.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.resourcereuse.ui.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.resourcereuse.ui.source.feature" version="1.1.0.qualifier"/>
+      
+      <import feature="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="1.1.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.resourcereuse.emfscheme.source.feature" version="1.1.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature" version="1.1.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.source.feature" version="1.1.0.qualifier"/>
 
       <import feature="org.polarsys.kitalpha.model.attachment.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.model.attachment.source.feature" version="1.1.0.qualifier"/>

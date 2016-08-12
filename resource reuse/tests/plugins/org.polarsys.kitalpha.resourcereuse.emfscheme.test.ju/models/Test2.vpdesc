@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" name="Test2">
+  <VP_Data name="Test2.data">
+    <VP_Classes name="Class2">
+      <VP_Class_Attributes name="attribute2">
+        <owned_type xsi:type="vpdesc:LocalAttributeType" type="//@VP_Data/@VP_Enumerations.0"/>
+      </VP_Class_Attributes>
+    </VP_Classes>
+    <VP_Enumerations name="Enum2">
+      <ownedValues name="V1" literal="V1"/>
+    </VP_Enumerations>
+  </VP_Data>
+</vpdesc:Viewpoint>

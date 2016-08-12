@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.polarsys.kitalpha.resourcereuse.emfscheme.dialog
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.resourcereuse.internal.emfscheme.dialog.Activator
+Bundle-Vendor: %Bundle-Vendor
+Require-Bundle: org.eclipse.ui,
+ org.polarsys.kitalpha.resourcereuse.emfscheme,
+ org.polarsys.kitalpha.resourcereuse.ui,
+ org.eclipse.sirius,
+ org.eclipse.emf.transaction,
+ org.polarsys.kitalpha.resourcereuse.emfscheme.utils
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.kitalpha.resourcereuse.emfscheme.dialog,
+ org.polarsys.kitalpha.resourcereuse.emfscheme.dialog.services
