@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent;
 
 import org.eclipse.egf.common.helper.*;
@@ -86,7 +86,11 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 
 		method_startContent(new StringBuffer(), ictx);
 
+		method_preContentExtension(new StringBuffer(), ictx);
+
 		method_content(new StringBuffer(), ictx);
+
+		method_postContentExtension(new StringBuffer(), ictx);
 
 		method_endContent(new StringBuffer(), ictx);
 
@@ -160,10 +164,30 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 		new Node.DataLeaf(ictx.getNode(), getClass(), "startContent", stringBuffer.toString());
 	}
 
+	protected void method_preContentExtension(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
+
+		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine()
+				.apply("PRE_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
+
+		InternalPatternContext ictx = (InternalPatternContext) ctx;
+		new Node.DataLeaf(ictx.getNode(), getClass(), "preContentExtension", stringBuffer.toString());
+	}
+
 	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
+	}
+
+	protected void method_postContentExtension(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
+
+		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine()
+				.apply("POST_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
+
+		InternalPatternContext ictx = (InternalPatternContext) ctx;
+		new Node.DataLeaf(ictx.getNode(), getClass(), "postContentExtension", stringBuffer.toString());
 	}
 
 	protected void method_endContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {

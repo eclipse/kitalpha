@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<!--
+Copyright (c) 2016 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+<schema targetNamespace="org.polarsys.kitalpha.doc.gen.business.core" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.polarsys.kitalpha.doc.gen.business.core" id="contentExtension" name="DocGen Content Extension"/>
+      </appInfo>
+      <documentation>
+         Allow to extend the content of generated pages
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="contentExtension" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="contentExtension">
+      <annotation>
+         <documentation>
+            &lt;div&gt;The contribution is aimed to collect all patterns found in the fcore, pattern libraries or pattern. All the patterns will be executed with injection of context where are called.&lt;/div&gt;
+&lt;div&gt;
+The patterns must declare these required parameters:
+&lt;ol&gt;
+ &lt;li&gt;parameter: it type is EObject or EObject subtypes&lt;/li&gt;
+ &lt;li&gt;id: it type is String&lt;/li&gt;
+&lt;/ol&gt;
+The id pattern is used to identifie where the patterns are executed
+&lt;/div&gt;
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="fcores" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="topic" type="string" use="required">
+            <annotation>
+               <documentation>
+                  &lt;div&gt;
+This is field indicates where the contributions will be applied
+A specialized DocGen (e.g,. Ecore DocGen) must explicitly provide an exhaustive liste of 
+contribution topic identifiers.
+&lt;/div&gt;
+&lt;div&gt;
+&lt;b&gt;Format: TOPIC_ID [, TOPIC_ID | ... ]&lt;/b&gt;
+&lt;/div&gt;
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="priority" type="string">
+            <annotation>
+               <documentation>
+                  &lt;div&gt;Priority indicates if the contribution will be execute before another one. It is must an integer from -1 to n&lt;/div&gt;
+&lt;div&gt; &lt;ul&gt;&lt;li&gt;0 is the highest priority&lt;/li&gt;&lt;li&gt;-1 is lowest priority&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+if there are no priority specified, the default one is -1.
+&lt;/div&gt;
+&lt;div&gt;
+&lt;b&gt;
+&lt;i&gt;Warning: If the specified priority is not integer, a default value will be assigned as priority&lt;/i&gt;
+&lt;/b&gt;
+&lt;/div&gt;
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="fcores">
+      <complexType>
+         <attribute name="patternURI" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Platform URI with fragment to:
+&lt;div&gt;
+&lt;ol&gt; 
+ &lt;li&gt;Factory Component&lt;/li&gt;
+ &lt;li&gt;Pattern Library&lt;/li&gt;
+ &lt;li&gt;Single Pattern&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

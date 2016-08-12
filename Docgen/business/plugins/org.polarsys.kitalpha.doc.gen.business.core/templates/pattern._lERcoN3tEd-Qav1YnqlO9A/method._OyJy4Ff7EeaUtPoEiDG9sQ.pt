@@ -1,0 +1,3 @@
+<%
+org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine().apply("PRE_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
+%>
