@@ -21,6 +21,8 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.osgi.framework.BundleContext;
 import org.polarsys.kitalpha.ad.common.utils.URIFix;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.DiagramUpdater;
+import org.polarsys.kitalpha.ad.integration.sirius.listeners.MetadataResourceListener;
+import org.polarsys.kitalpha.ad.integration.sirius.listeners.RegisterMetadataListener;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.SiriusViewpointActivationManager;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.ViewpointActivationStateListener;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -40,7 +42,7 @@ public class Activator extends AFUIActivator {
 	public static final URI FILTER_URI = URIFix.createPlatformPluginURI(Activator.AF_DESIGN + "#//@ownedViewpoints[name='"+AF_VP_NAME+"']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']", false);
 
 	private final OverallListener listener = new SiriusViewpointActivationManager();
-	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener() };
+	private final SessionManagerListener[] sessionListeners = { new ViewpointActivationStateListener() , new RegisterMetadataListener()};
 	private final ModelExtensionOverallListener[] listeners = { new DiagramUpdater() };
 
 	private static Activator plugin;
