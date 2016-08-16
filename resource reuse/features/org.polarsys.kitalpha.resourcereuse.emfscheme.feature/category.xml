@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature_1.0.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="1.0.0.qualifier">
+      <category name="org.polarsys.kitalpha.resourcereuse.emfscheme"/>
+   </feature>
+   <category-def name="org.polarsys.kitalpha.resourcereuse.emfscheme" label="Model Reuse protocol (modelreuse:/) and loading utilities (menu)"/>
+</site>

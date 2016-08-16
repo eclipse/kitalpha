@@ -1,0 +1,58 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+package org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.sirius.business.api.session.Session;
+import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
+
+/**
+ * 
+ * @author Xavier DECOOL
+ *
+ */
+
+/**
+ * 
+ * FIXME Is this a singleton? The initializer by default is public. A client can create
+ * other instances of model reuse.
+ *
+ */
+public class ModelReuseContext {
+	
+	public static final ModelReuseContext INSTANCE = new ModelReuseContext();
+	
+	public Session session;
+	public List<SearchCriteria> criterias = new ArrayList<SearchCriteria>();
+	
+	
+	public List<SearchCriteria> getCriterias() {
+		return criterias;
+	}
+
+	public void addCriteria(SearchCriteria criteria) {
+		criterias.add(criteria);
+	}
+	
+	public void resetCriterias(){
+		criterias.clear();
+	}
+
+	public Session getSession() {
+		return session;
+	}
+	
+	public void setSession(Session session) {
+		this.session = session;
+	}
+}

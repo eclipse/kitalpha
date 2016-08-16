@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" name="Viewpoint" shortName="Viewpoint">
+  <VP_Data name="Viewpont.data">
+    <VP_Classes name="A"/>
+    <VP_Classes name="B"/>
+    <VP_Enumerations name="C"/>
+  </VP_Data>
+</vpdesc:Viewpoint>
