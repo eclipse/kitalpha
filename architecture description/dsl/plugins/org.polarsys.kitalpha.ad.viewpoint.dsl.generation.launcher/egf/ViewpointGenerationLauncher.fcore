@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
     xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
     xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
   <fcore:FactoryComponent xmi:id="_HQHKEI7vEeGaBt8RXbnVpQ" name="lvpsLauncher">
     <contractContainer xmi:id="_G1oYEI7wEeGaBt8RXbnVpQ">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_HPRAEI7wEeGaBt8RXbnVpQ"
-          name="vpdesc.model" invocationContracts="#_NTQi0I7wEeGaBt8RXbnVpQ #_ZqNCAt1rEeGFjvAVq0F9Vw">
+          name="vpdesc.model" invocationContracts="#_NTQi0I7wEeGaBt8RXbnVpQ #_ZqNCAt1rEeGFjvAVq0F9Vw #_hAgj0l_JEeavk4PdIRv_Nw">
         <type xmi:type="domain:TypeDomain" xmi:id="_zMs0MI7wEeGaBt8RXbnVpQ" domain="#_VWgnkI7wEeGaBt8RXbnVpQ"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_INimMI7wEeGaBt8RXbnVpQ"
@@ -35,6 +34,13 @@
               invokedContract="#_NdFk4N1rEeGFjvAVq0F9Vw"/>
         </invocationContractContainer>
       </invocations>
+      <invocations xmi:id="_hAgj0F_JEeavk4PdIRv_Nw" name="Checking preconditions"
+          invokedActivity="#_6JrIAF_GEeavk4PdIRv_Nw">
+        <invocationContractContainer xmi:id="_hAgj0V_JEeavk4PdIRv_Nw">
+          <invocationContracts xmi:id="_hAgj0l_JEeavk4PdIRv_Nw" factoryComponentContract="#_HPRAEI7wEeGaBt8RXbnVpQ"
+              invokedContract="#_e8jIAF_JEeavk4PdIRv_Nw"/>
+        </invocationContractContainer>
+      </invocations>
       <invocations xmi:id="_LcDwoI7wEeGaBt8RXbnVpQ" name="Fire viewpoint generation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslCoreGenerator.fcore#_Pfv4EI66EeGdJv40MVeUZQ">
         <invocationContractContainer xmi:id="_ND6fQI7wEeGaBt8RXbnVpQ">
@@ -55,6 +61,14 @@
     <contractContainer xmi:id="_M1TMIN1rEeGFjvAVq0F9Vw">
       <contracts xmi:id="_NdFk4N1rEeGFjvAVq0F9Vw" name="vpdesc.model">
         <type xmi:type="domain:TypeDomain" xmi:id="_OB47EN1rEeGFjvAVq0F9Vw"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
+  <ftask:Task xmi:id="_6JrIAF_GEeavk4PdIRv_Nw" name="GenerationPreconditionTask" kind="java"
+      implementation="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.precondition.GenerationPreconditionTask">
+    <contractContainer xmi:id="_c3XkMF_JEeavk4PdIRv_Nw">
+      <contracts xmi:id="_e8jIAF_JEeavk4PdIRv_Nw" name="vpdesc.model">
+        <type xmi:type="domain:TypeDomain" xmi:id="_e8jIAV_JEeavk4PdIRv_Nw"/>
       </contracts>
     </contractContainer>
   </ftask:Task>

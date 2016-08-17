@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,6 @@ import org.eclipse.sirius.viewpoint.description.Group;
 
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusFactory;
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusRepresentation;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Metamodel;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Representation;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RepresentationElement;
@@ -284,29 +282,13 @@ public class AFIntegrationManager {
 	
 	private void saveAFModel(Viewpoint viewpoint) throws AFIntegrationException{
 		try {
-			// Save the state of the AF Viewpoint
-			boolean vpWasActif = ViewpointManager.getInstance((EObject)null).isActive(viewpoint.getId());
-			
-			// Shutdown the AF Viewpoint
-			if (vpWasActif)
-				ViewpointManager.getInstance((EObject)null).desactivate(viewpoint.getId());
-			
 			// Save the Resource containing the AF Model
 			Resource resource = viewpoint.eResource();
 			resource.save(Collections.EMPTY_MAP);
-			
-			// Start the AF Viewpoint only if it was running before save operation
-			if (vpWasActif)
-				ViewpointManager.getInstance((EObject)null).activate(viewpoint.getId());
-			
 		} catch (IOException e) {
 			throw new AFIntegrationException(AFIntegrationException.Patch_Model,
 												AFIntegrationException.model_save_MSG,
 												e.getStackTrace());
-		}catch (ViewpointActivationException e1) {
-			throw new AFIntegrationException(AFIntegrationException.Patch_Model,
-												AFIntegrationException.model_save_MSG,
-												e1.getStackTrace());
 		}
 	}
 	

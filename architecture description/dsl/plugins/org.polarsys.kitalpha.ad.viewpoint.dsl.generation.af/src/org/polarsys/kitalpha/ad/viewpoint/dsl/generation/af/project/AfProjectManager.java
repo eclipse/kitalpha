@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,14 +51,10 @@ public class AfProjectManager {
 	private String _vpURI = "";
 	private IProject _project = null;
 	
-	/**
-	 * Temporaire, doivent disparaitre apr�s bonne impl�mentation du merge des Plugin.xml
-	 * */
 	protected String _vpName = "";  
 	protected String _viewpointShortName = ""; 
 	protected String _viewpointId = "";
 	protected String _vpuuid = "";
-	/* Fin Temporaire */
 	
 	private Map<String, String> _javaRulesClasses = new HashMap<String, String>();
 	
@@ -180,13 +176,6 @@ public class AfProjectManager {
 			@Override
 			protected void execute(IProgressMonitor monitor) throws CoreException,
 					InvocationTargetException, InterruptedException {
-				boolean vpWasActif = ViewpointManager.getInstance((EObject)null).isActive(_vp.getId());
-				try {
-					if (vpWasActif)
-						ViewpointManager.getInstance((EObject)null).desactivate(_vp.getId());
-				} catch (ViewpointActivationException e1) {
-					e1.printStackTrace();
-				}
 				Resource vpResource = _vp.eResource();
 				if (vpResource == null)
 				{
@@ -202,15 +191,6 @@ public class AfProjectManager {
 						vpResource.save(Collections.EMPTY_MAP);
 					} catch (IOException e) {
 						throw new RuntimeException("Can not save resource", e);
-					}
-				}
-				
-				if (vpWasActif)
-				{
-					try {
-						ViewpointManager.getInstance((EObject)null).activate(_vp.getId());
-					} catch (ViewpointActivationException e) {
-						e.printStackTrace();
 					}
 				}
 			}
