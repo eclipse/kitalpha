@@ -58,6 +58,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.IActionBars;
@@ -478,8 +479,20 @@ public class ViewpointManagerView extends ViewPart {
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
 				if (!vpMgr.isUsed(res.getId()))
 					return;
+				Shell site = getSite().getShell();
 				try {
-					if (!MessageDialog.openQuestion(getSite().getShell(), "Stop using viewpoint " + res.getLabel(), "Viewpoint Detachment is required. Close model and Proceed ?"))
+					boolean dirty = false;
+					for (org.eclipse.emf.ecore.resource.Resource r: context.getResources())
+					{
+						dirty |= r.isModified();
+					}
+					String title = "Stop using viewpoint " + res.getLabel();
+					if (dirty) {
+						MessageDialog.openInformation(site, title, "You must save the model before stopping the viewpoint.");
+						return ;
+					}
+					
+					if (!MessageDialog.openQuestion(site, title, "Viewpoint Detachment is required. Proceed ?"))
 						return;
 					// Launch detach editor
 					// if the detachement is successful then the viewpoint is no more in use
@@ -488,7 +501,7 @@ public class ViewpointManagerView extends ViewPart {
 					DetachmentHelper.openEditor(file, new NullProgressMonitor());
 
 				} catch (Exception e) {
-					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
+					MessageDialog.openError(site, "Error", e.getMessage());
 					Activator.getDefault().logError(e);
 				}
 			}
