@@ -79,11 +79,15 @@
             <methods xmi:id="_ytbmpl5nEeKooNX-rGQuxA" name="footer" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._ytbmpl5nEeKooNX-rGQuxA.pt"/>
             <methods xmi:id="_mg2KQGCyEeKiadLjZ_FAOQ" name="setStyle" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._mg2KQGCyEeKiadLjZ_FAOQ.pt"/>
             <methods xmi:id="_neYwkGCyEeKiadLjZ_FAOQ" name="setSemanticData" patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._neYwkGCyEeKiadLjZ_FAOQ.pt"/>
+            <methods xmi:id="_bLQu4GSDEeanzKiDzJB_vQ" name="setSynchronizationMode"
+                patternFilePath="templates/pattern._ytbmoF5nEeKooNX-rGQuxA/method._bLQu4GSDEeanzKiDzJB_vQ.pt"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_ytbmp15nEeKooNX-rGQuxA"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_sYghMGCyEeKiadLjZ_FAOQ"
                 called="#_mg2KQGCyEeKiadLjZ_FAOQ"/>
             <orchestration xmi:type="pattern:MethodCall" xmi:id="_vvOlYGCyEeKiadLjZ_FAOQ"
                 called="#_neYwkGCyEeKiadLjZ_FAOQ"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_c6sFIGSDEeanzKiDzJB_vQ"
+                called="#_bLQu4GSDEeanzKiDzJB_vQ"/>
           </elements>
         </libraries>
         <libraries xmi:id="_pAGNcIStEeKlgrb0i1zvPQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.utils">
@@ -602,6 +606,19 @@
             <methods xmi:id="_hERkZWxZEeKZOKJHxkRgdw" name="createConcretTool" patternFilePath="templates/pattern._hERkYGxZEeKZOKJHxkRgdw/method._hERkZWxZEeKZOKJHxkRgdw.pt"/>
             <methods xmi:id="_hERkZmxZEeKZOKJHxkRgdw" name="footer" patternFilePath="templates/pattern._hERkYGxZEeKZOKJHxkRgdw/method._hERkZmxZEeKZOKJHxkRgdw.pt"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_hERkZ2xZEeKZOKJHxkRgdw"/>
+          </elements>
+          <elements xmi:id="_nz15kGU_EeanzKiDzJB_vQ" name="CreateViewToolPattern"
+              superPattern="#_HBdJoGyDEeKZOKJHxkRgdw" headerMethod="#_nz15kmU_EeanzKiDzJB_vQ"
+              conditionMethod="#_nz15lGU_EeanzKiDzJB_vQ" initMethod="#_nz15k2U_EeanzKiDzJB_vQ"
+              footerMethod="#_nz15lmU_EeanzKiDzJB_vQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_nz15kWU_EeanzKiDzJB_vQ"
+                name="Java"/>
+            <methods xmi:id="_nz15kmU_EeanzKiDzJB_vQ" name="header" patternFilePath="templates/pattern._nz15kGU_EeanzKiDzJB_vQ/method._nz15kmU_EeanzKiDzJB_vQ.pt"/>
+            <methods xmi:id="_nz15k2U_EeanzKiDzJB_vQ" name="init" patternFilePath="templates/pattern._nz15kGU_EeanzKiDzJB_vQ/method._nz15k2U_EeanzKiDzJB_vQ.pt"/>
+            <methods xmi:id="_nz15lGU_EeanzKiDzJB_vQ" name="preCondition" patternFilePath="templates/pattern._nz15kGU_EeanzKiDzJB_vQ/method._nz15lGU_EeanzKiDzJB_vQ.pt"/>
+            <methods xmi:id="_nz15lWU_EeanzKiDzJB_vQ" name="createConcretTool" patternFilePath="templates/pattern._nz15kGU_EeanzKiDzJB_vQ/method._nz15lWU_EeanzKiDzJB_vQ.pt"/>
+            <methods xmi:id="_nz15lmU_EeanzKiDzJB_vQ" name="footer" patternFilePath="templates/pattern._nz15kGU_EeanzKiDzJB_vQ/method._nz15lmU_EeanzKiDzJB_vQ.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_nz15l2U_EeanzKiDzJB_vQ"/>
           </elements>
           <elements xmi:id="_qzSAUGxZEeKZOKJHxkRgdw" name="DeleteToolForRelationBasedEdge"
               superPattern="#_xhhc4HbAEeKyirS_NQF8eQ" headerMethod="#_qzSAUmxZEeKZOKJHxkRgdw"

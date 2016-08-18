@@ -13,6 +13,7 @@
  * 
  * @author Amine Lajmi
  * 		   Faycal Abka
+ * 		   Boubekeur Zendagui
  *
  */
 grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
@@ -267,6 +268,7 @@ BorderedNode returns vpdiagram::BorderedNode:
 	'BorderedNode' name=EString '{'
 		('import:' imports=[siriusDiagramDescription::NodeMapping | FQN])? 
 		('domain-context:' the_domain=NodeDomainElement)?
+		(synchronizationMode=SynchronizationMode)?
 		(style+=NodeDescription)*
 	'}'
 ;
@@ -310,6 +312,7 @@ Create returns vpdiagram::Action:
 		('precondition:' precondition=EString)?
 		('label:' label=STRING)?
 		('action-for:' tool_For=[vpdiagram::DiagramElement | FQN])
+		(onlyTheView?='only-view' )?
 		('icon:' icon=STRING)?
 	'}'
 ;
@@ -727,9 +730,9 @@ enum ContainerLayout returns siriusDiagram::ContainerLayout:
 ;
 
 enum SynchronizationMode returns vpdiagram::SynchronizationMode:
-	Unsynchronizable = "Unsynchronizable"		|
-	Not_Synchronized = "Not_Synchronized"		|
-	Synchronized 	 = "Synchronized"
+	Synchronized 	 = "Synchronized" 		|
+	Unsynchronizable = "Unsynchronizable"	|
+	Not_Synchronized = "Not_Synchronized"	
 ;
 
 

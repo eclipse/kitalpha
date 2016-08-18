@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,6 +52,7 @@ public class CreateItemProvider extends ActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addIconPropertyDescriptor(object);
+			addOnlyTheViewPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,6 +76,30 @@ public class CreateItemProvider extends ActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+
+	}
+
+	/**
+	 * This adds a property descriptor for the Only The View feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnlyTheViewPropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Create_onlyTheView_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Create_onlyTheView_feature", "_UI_Create_type"),
+				 VpdiagramPackage.Literals.CREATE__ONLY_THE_VIEW,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 
@@ -120,6 +145,7 @@ public class CreateItemProvider extends ActionItemProvider {
 
 		switch (notification.getFeatureID(Create.class)) {
 			case VpdiagramPackage.CREATE__ICON:
+			case VpdiagramPackage.CREATE__ONLY_THE_VIEW:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

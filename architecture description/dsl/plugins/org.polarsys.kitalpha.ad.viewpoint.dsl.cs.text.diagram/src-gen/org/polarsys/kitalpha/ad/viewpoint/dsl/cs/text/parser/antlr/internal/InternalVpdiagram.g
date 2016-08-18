@@ -2780,24 +2780,42 @@ ruleBorderedNode returns [EObject current=null]
 ))?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBorderedNodeAccess().getStyleNodeDescriptionParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getBorderedNodeAccess().getSynchronizationModeSynchronizationModeEnumRuleCall_6_0()); 
 	    }
-		lv_style_8_0=ruleNodeDescription		{
+		lv_synchronizationMode_8_0=ruleSynchronizationMode		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBorderedNodeRule());
+	        }
+       		set(
+       			$current, 
+       			"synchronizationMode",
+        		lv_synchronizationMode_8_0, 
+        		"SynchronizationMode");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBorderedNodeAccess().getStyleNodeDescriptionParserRuleCall_7_0()); 
+	    }
+		lv_style_9_0=ruleNodeDescription		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBorderedNodeRule());
 	        }
        		add(
        			$current, 
        			"style",
-        		lv_style_8_0, 
+        		lv_style_9_0, 
         		"NodeDescription");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_9='}' 
+)*	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getBorderedNodeAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_10, grammarAccess.getBorderedNodeAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;
@@ -3334,15 +3352,30 @@ ruleCreate returns [EObject current=null]
 	    }
 
 )
-))(	otherlv_10='icon:' 
+))(
+(
+		lv_onlyTheView_10_0=	'only-view' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getCreateAccess().getIconKeyword_7_0());
+        newLeafNode(lv_onlyTheView_10_0, grammarAccess.getCreateAccess().getOnlyTheViewOnlyViewKeyword_7_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getCreateRule());
+	        }
+       		setWithLastConsumed($current, "onlyTheView", true, "only-view");
+	    }
+
+)
+)?(	otherlv_11='icon:' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getCreateAccess().getIconKeyword_8_0());
     }
 (
 (
-		lv_icon_11_0=RULE_STRING
+		lv_icon_12_0=RULE_STRING
 		{
-			newLeafNode(lv_icon_11_0, grammarAccess.getCreateAccess().getIconSTRINGTerminalRuleCall_7_1_0()); 
+			newLeafNode(lv_icon_12_0, grammarAccess.getCreateAccess().getIconSTRINGTerminalRuleCall_8_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -3351,14 +3384,14 @@ ruleCreate returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"icon",
-        		lv_icon_11_0, 
+        		lv_icon_12_0, 
         		"STRING");
 	    }
 
 )
-))?	otherlv_12='}' 
+))?	otherlv_13='}' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getCreateAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_13, grammarAccess.getCreateAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
@@ -8480,22 +8513,22 @@ ruleContainerLayout returns [Enumerator current=null]
 ruleSynchronizationMode returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='Unsynchronizable' 
+((	enumLiteral_0='Synchronized' 
 	{
-        $current = grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='Not_Synchronized' 
+    |(	enumLiteral_1='Unsynchronizable' 
 	{
-        $current = grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_1()); 
+        $current = grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='Synchronized' 
+    |(	enumLiteral_2='Not_Synchronized' 
 	{
-        $current = grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_2()); 
+        $current = grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_2()); 
     }
 ));
 

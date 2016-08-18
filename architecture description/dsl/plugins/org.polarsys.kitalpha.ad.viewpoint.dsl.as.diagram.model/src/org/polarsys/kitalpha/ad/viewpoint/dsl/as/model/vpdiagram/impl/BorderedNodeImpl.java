@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 
 /**
@@ -41,6 +42,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getSynchronizationMode <em>Synchronization Mode</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BorderedNodeImpl#getStyle <em>Style</em>}</li>
  * </ul>
@@ -108,6 +110,26 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSynchronizationMode() <em>Synchronization Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSynchronizationMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final SynchronizationMode SYNCHRONIZATION_MODE_EDEFAULT = SynchronizationMode.SYNCHRONIZED;
+
+	/**
+	 * The cached value of the '{@link #getSynchronizationMode() <em>Synchronization Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSynchronizationMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected SynchronizationMode synchronizationMode = SYNCHRONIZATION_MODE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' reference.
@@ -234,6 +256,32 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 * @generated
 	 */
 
+	public SynchronizationMode getSynchronizationMode() {
+
+		return synchronizationMode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public void setSynchronizationMode(SynchronizationMode newSynchronizationMode) {
+
+		SynchronizationMode oldSynchronizationMode = synchronizationMode;
+		synchronizationMode = newSynchronizationMode == null ? SYNCHRONIZATION_MODE_EDEFAULT : newSynchronizationMode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE, oldSynchronizationMode, synchronizationMode));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
 	public NodeMapping getImports() {
 
 		if (imports != null && imports.eIsProxy()) {
@@ -316,6 +364,8 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 				return getName();
 			case VpdiagramPackage.BORDERED_NODE__DESCRIPTION:
 				return getDescription();
+			case VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE:
+				return getSynchronizationMode();
 			case VpdiagramPackage.BORDERED_NODE__IMPORTS:
 				if (resolve) return getImports();
 				return basicGetImports();
@@ -342,6 +392,9 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 				return;
 			case VpdiagramPackage.BORDERED_NODE__DESCRIPTION:
 				setDescription((String)newValue);
+				return;
+			case VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE:
+				setSynchronizationMode((SynchronizationMode)newValue);
 				return;
 			case VpdiagramPackage.BORDERED_NODE__IMPORTS:
 				setImports((NodeMapping)newValue);
@@ -371,6 +424,9 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 			case VpdiagramPackage.BORDERED_NODE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
+			case VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE:
+				setSynchronizationMode(SYNCHRONIZATION_MODE_EDEFAULT);
+				return;
 			case VpdiagramPackage.BORDERED_NODE__IMPORTS:
 				setImports((NodeMapping)null);
 				return;
@@ -395,6 +451,8 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case VpdiagramPackage.BORDERED_NODE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE:
+				return synchronizationMode != SYNCHRONIZATION_MODE_EDEFAULT;
 			case VpdiagramPackage.BORDERED_NODE__IMPORTS:
 				return imports != null;
 			case VpdiagramPackage.BORDERED_NODE__STYLE:
@@ -425,6 +483,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 		}
 		if (baseClass == DiagramElement.class) {
 			switch (derivedFeatureID) {
+				case VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE: return VpdiagramPackage.DIAGRAM_ELEMENT__SYNCHRONIZATION_MODE;
 				default: return -1;
 			}
 		}
@@ -453,6 +512,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 		}
 		if (baseClass == DiagramElement.class) {
 			switch (baseFeatureID) {
+				case VpdiagramPackage.DIAGRAM_ELEMENT__SYNCHRONIZATION_MODE: return VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE;
 				default: return -1;
 			}
 		}
@@ -475,6 +535,8 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 		result.append(name);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", synchronizationMode: ");
+		result.append(synchronizationMode);
 		result.append(')');
 		return result.toString();
 	}

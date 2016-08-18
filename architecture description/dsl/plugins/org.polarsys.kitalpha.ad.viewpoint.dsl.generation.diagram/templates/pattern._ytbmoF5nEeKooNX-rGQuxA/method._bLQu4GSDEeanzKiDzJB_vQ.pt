@@ -1,0 +1,29 @@
+if (doremiElement instanceof DiagramElementMapping)
+{
+	// Getting attribute default values.
+	final EAttribute synchronizationLock = DescriptionPackage.eINSTANCE.getDiagramElementMapping_SynchronizationLock();
+	boolean synchronizationLockDefaultValue = (Boolean) synchronizationLock.getDefaultValue();
+	final EAttribute createElements = DescriptionPackage.eINSTANCE.getDiagramElementMapping_CreateElements();
+	boolean createElementDefaultValue = (Boolean) createElements.getDefaultValue();
+	
+	final DiagramElementMapping siriusElement = (DiagramElementMapping) doremiElement;
+	final DiagramElement dslElement = (DiagramElement) dslvpElement;
+	
+	// Initializing attributes to their default values
+	siriusElement.setSynchronizationLock(synchronizationLockDefaultValue);
+	siriusElement.setCreateElements(createElementDefaultValue);
+	
+	// Setting attributes values depending on their synchronization mode.
+	switch (dslElement.getSynchronizationMode()) {
+	case NOT_SYNCHRONIZED:
+		siriusElement.setCreateElements(false);
+		break;
+	case SYNCHRONIZED:
+		siriusElement.setSynchronizationLock(true);
+		break;
+	case UNSYNCHRONIZABLE:
+		// Do nothing
+		// keep default values
+		break;
+	}
+}

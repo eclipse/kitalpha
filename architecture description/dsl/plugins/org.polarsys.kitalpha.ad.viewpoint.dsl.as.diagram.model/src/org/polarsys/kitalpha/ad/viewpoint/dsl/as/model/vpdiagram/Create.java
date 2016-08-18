@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,6 +21,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create#getIcon <em>Icon</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create#isOnlyTheView <em>Only The View</em>}</li>
  * </ul>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getCreate()
@@ -58,5 +59,36 @@ public interface Create extends Action {
 	 */
 
 	void setIcon(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Only The View</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Only The View</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Only The View</em>' attribute.
+	 * @see #setOnlyTheView(boolean)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage#getCreate_OnlyTheView()
+	 * @model default="false"
+	 * @generated
+	 */
+
+	boolean isOnlyTheView();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create#isOnlyTheView <em>Only The View</em>}' attribute.
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Only The View</em>' attribute.
+	 * @see #isOnlyTheView()
+	 * @generated
+	 */
+
+	void setOnlyTheView(boolean value);
 
 } // Create

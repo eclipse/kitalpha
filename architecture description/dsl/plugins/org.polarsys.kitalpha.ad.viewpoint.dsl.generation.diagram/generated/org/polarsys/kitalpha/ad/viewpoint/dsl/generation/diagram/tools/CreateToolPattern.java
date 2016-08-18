@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150608-0917
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -54,7 +54,6 @@ public class CreateToolPattern
 	public CreateToolPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
-
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -445,6 +444,10 @@ public class CreateToolPattern
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "createConcretTool", out.toString());
+	}
+
+	public boolean preCondition(PatternContext ctx) throws Exception {
+		return !parameter.isOnlyTheView();
 	}
 
 	public Map<String, Object> getParameters() {

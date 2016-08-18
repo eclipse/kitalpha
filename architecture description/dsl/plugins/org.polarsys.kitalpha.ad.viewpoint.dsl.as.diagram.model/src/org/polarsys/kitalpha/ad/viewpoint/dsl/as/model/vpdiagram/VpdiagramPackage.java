@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -462,13 +462,22 @@ public interface VpdiagramPackage extends EPackage {
 	int DIAGRAM_ELEMENT__DESCRIPTION = VpdescPackage.NAMED_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_ELEMENT__SYNCHRONIZATION_MODE = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Diagram Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_ELEMENT_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int DIAGRAM_ELEMENT_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramChildrenImpl <em>Diagram Children</em>}' class.
@@ -514,7 +523,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE = DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
+	int DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE = DIAGRAM_ELEMENT__SYNCHRONIZATION_MODE;
 
 	/**
 	 * The number of structural features of the '<em>Diagram Children</em>' class.
@@ -523,7 +532,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_CHILDREN_FEATURE_COUNT = DIAGRAM_ELEMENT_FEATURE_COUNT + 1;
+	int DIAGRAM_CHILDREN_FEATURE_COUNT = DIAGRAM_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.NodeImpl <em>Node</em>}' class.
@@ -845,13 +854,22 @@ public interface VpdiagramPackage extends EPackage {
 	int CREATE__ICON = ACTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Only The View</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE__ONLY_THE_VIEW = ACTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Create</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+	int CREATE_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DeleteImpl <em>Delete</em>}' class.
@@ -2110,13 +2128,22 @@ public interface VpdiagramPackage extends EPackage {
 	int BORDERED_NODE__DESCRIPTION = ABSTRACT_NODE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Synchronization Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BORDERED_NODE__SYNCHRONIZATION_MODE = ABSTRACT_NODE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Imports</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BORDERED_NODE__IMPORTS = ABSTRACT_NODE_FEATURE_COUNT + 3;
+	int BORDERED_NODE__IMPORTS = ABSTRACT_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference list.
@@ -2125,7 +2152,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BORDERED_NODE__STYLE = ABSTRACT_NODE_FEATURE_COUNT + 4;
+	int BORDERED_NODE__STYLE = ABSTRACT_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Bordered Node</em>' class.
@@ -2134,7 +2161,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BORDERED_NODE_FEATURE_COUNT = ABSTRACT_NODE_FEATURE_COUNT + 5;
+	int BORDERED_NODE_FEATURE_COUNT = ABSTRACT_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ConditionImpl <em>Condition</em>}' class.
@@ -2683,17 +2710,6 @@ public interface VpdiagramPackage extends EPackage {
 	EClass getDiagramChildren();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramChildren#getSynchronizationMode <em>Synchronization Mode</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Synchronization Mode</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramChildren#getSynchronizationMode()
-	 * @see #getDiagramChildren()
-	 * @generated
-	 */
-	EAttribute getDiagramChildren_SynchronizationMode();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create <em>Create</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2713,6 +2729,17 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCreate_Icon();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create#isOnlyTheView <em>Only The View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Only The View</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create#isOnlyTheView()
+	 * @see #getCreate()
+	 * @generated
+	 */
+	EAttribute getCreate_OnlyTheView();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete <em>Delete</em>}'.
@@ -3410,6 +3437,17 @@ public interface VpdiagramPackage extends EPackage {
 	EClass getDiagramElement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement#getSynchronizationMode <em>Synchronization Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Synchronization Mode</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement#getSynchronizationMode()
+	 * @see #getDiagramElement()
+	 * @generated
+	 */
+	EAttribute getDiagramElement_SynchronizationMode();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDescription <em>Abstract Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3986,14 +4024,6 @@ public interface VpdiagramPackage extends EPackage {
 		EClass DIAGRAM_CHILDREN = eINSTANCE.getDiagramChildren();
 
 		/**
-		 * The meta object literal for the '<em><b>Synchronization Mode</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE = eINSTANCE.getDiagramChildren_SynchronizationMode();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.CreateImpl <em>Create</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4010,6 +4040,14 @@ public interface VpdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CREATE__ICON = eINSTANCE.getCreate_Icon();
+
+		/**
+		 * The meta object literal for the '<em><b>Only The View</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATE__ONLY_THE_VIEW = eINSTANCE.getCreate_OnlyTheView();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DeleteImpl <em>Delete</em>}' class.
@@ -4570,6 +4608,14 @@ public interface VpdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DIAGRAM_ELEMENT = eINSTANCE.getDiagramElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Synchronization Mode</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIAGRAM_ELEMENT__SYNCHRONIZATION_MODE = eINSTANCE.getDiagramElement_SynchronizationMode();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractDescriptionImpl <em>Abstract Description</em>}' class.
