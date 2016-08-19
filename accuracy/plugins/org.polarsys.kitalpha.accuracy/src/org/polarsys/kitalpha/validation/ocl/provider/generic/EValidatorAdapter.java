@@ -7,6 +7,7 @@
  * 
  * Contributors:
  *  IBM Corporation - initial API and implementation
+ *  Thales Global Services S.A.S
  ******************************************************************************/
 package org.polarsys.kitalpha.validation.ocl.provider.generic;
 
@@ -15,7 +16,6 @@ import java.util.Map;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -26,6 +26,7 @@ import org.eclipse.emf.validation.model.IConstraintStatus;
 import org.eclipse.emf.validation.service.IBatchValidator;
 import org.eclipse.emf.validation.service.ITraversalStrategy;
 import org.eclipse.emf.validation.service.ModelValidationService;
+import org.polarsys.kitalpha.validation.diagnostic.DiagnosticWithConstraintStatus;
 
 /**
  * An adapter that plugs the EMF Model Validation Service API into the {@link org.eclipse.emf.ecore.EValidator} API.
@@ -45,8 +46,7 @@ public class EValidatorAdapter extends EObjectValidator {
         appendDiagnostics(children[i], diagnostics);
       }
     } else if (status instanceof IConstraintStatus) {
-      diagnostics.add(new BasicDiagnostic(status.getSeverity(), status.getPlugin(), status.getCode(), status.getMessage(), ((IConstraintStatus) status)
-          .getResultLocus().toArray()));
+      diagnostics.add(new DiagnosticWithConstraintStatus((IConstraintStatus) status));
     }
   }
 
