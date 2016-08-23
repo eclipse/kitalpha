@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Menu Kitalpha
+Bundle-SymbolicName: org.polarsys.kitalpha.model.detachement.ui.menu;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Require-Bundle: org.eclipse.ui
