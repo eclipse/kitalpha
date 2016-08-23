@@ -1,4 +1,4 @@
-URI DOC_GEN_ACTIVITY_MODEL_URI = URI.createPlatformPluginURI("/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore#", false);
+URI DOC_GEN_ACTIVITY_MODEL_URI = URI.createPlatformPluginURI("/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore", false);
 String DOC_GEN_ACTIVITY_ID = "_B9nwIR4UEeSYicwoCfn9sQ";
 
 /** Preparing the contract values **/

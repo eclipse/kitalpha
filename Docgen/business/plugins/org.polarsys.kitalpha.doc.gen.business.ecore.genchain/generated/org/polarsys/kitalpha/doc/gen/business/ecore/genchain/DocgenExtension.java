@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 - 2016 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-// Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.doc.gen.business.ecore.genchain;
 
 import java.util.*;
@@ -38,7 +27,6 @@ public class DocgenExtension {
 	public DocgenExtension() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
-
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -99,7 +87,7 @@ public class DocgenExtension {
 
 	protected void method_body(final StringBuffer out, final PatternContext ctx) throws Exception {
 		URI DOC_GEN_ACTIVITY_MODEL_URI = URI.createPlatformPluginURI(
-				"/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore#", false);
+				"/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore", false);
 		String DOC_GEN_ACTIVITY_ID = "_B9nwIR4UEeSYicwoCfn9sQ";
 
 		/** Preparing the contract values **/
