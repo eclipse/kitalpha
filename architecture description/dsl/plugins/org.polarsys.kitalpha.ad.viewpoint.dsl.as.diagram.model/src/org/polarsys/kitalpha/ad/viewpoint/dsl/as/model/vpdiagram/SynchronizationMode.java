@@ -1,9 +1,13 @@
-/**
- * <copyright>
- * </copyright>
- *
- * $Id$
- */
+/*******************************************************************************
+ * Copyright (c) 2016 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram;
 
@@ -24,24 +28,6 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum SynchronizationMode implements Enumerator {
 	/**
-	 * The '<em><b>Unsynchronizable</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #UNSYNCHRONIZABLE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	UNSYNCHRONIZABLE(0, "Unsynchronizable", "Unsynchronizable"), /**
-	 * The '<em><b>Not Synchronized</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #NOT_SYNCHRONIZED_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	NOT_SYNCHRONIZED(1, "Not_Synchronized", "Not_Synchronized"),
-
-	/**
 	 * The '<em><b>Synchronized</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,37 +35,23 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SYNCHRONIZED(2, "Synchronized", "Synchronized");
-
-	/**
-	 * The '<em><b>Unsynchronizable</b></em>' literal value.
+	SYNCHRONIZED(0, "Synchronized", "Synchronized"), /**
+	 * The '<em><b>Unsynchronizable</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Unsynchronizable</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UNSYNCHRONIZABLE
-	 * @model name="Unsynchronizable"
+	 * @see #UNSYNCHRONIZABLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNSYNCHRONIZABLE_VALUE = 0;
-
-	/**
-	 * The '<em><b>Not Synchronized</b></em>' literal value.
+	UNSYNCHRONIZABLE(1, "Unsynchronizable", "Unsynchronizable"), /**
+	 * The '<em><b>Not Synchronized</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Not Synchronized</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #NOT_SYNCHRONIZED
-	 * @model name="Not_Synchronized"
+	 * @see #NOT_SYNCHRONIZED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_SYNCHRONIZED_VALUE = 1;
+	NOT_SYNCHRONIZED(2, "Not_Synchronized", "Not_Synchronized");
 
 	/**
 	 * The '<em><b>Synchronized</b></em>' literal value.
@@ -94,7 +66,37 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SYNCHRONIZED_VALUE = 2;
+	public static final int SYNCHRONIZED_VALUE = 0;
+
+	/**
+	 * The '<em><b>Unsynchronizable</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Unsynchronizable</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UNSYNCHRONIZABLE
+	 * @model name="Unsynchronizable"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNSYNCHRONIZABLE_VALUE = 1;
+
+	/**
+	 * The '<em><b>Not Synchronized</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Not Synchronized</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SYNCHRONIZED
+	 * @model name="Not_Synchronized"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOT_SYNCHRONIZED_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Synchronization Mode</b></em>' enumerators.
@@ -104,9 +106,9 @@ public enum SynchronizationMode implements Enumerator {
 	 */
 	private static final SynchronizationMode[] VALUES_ARRAY =
 		new SynchronizationMode[] {
+			SYNCHRONIZED,
 			UNSYNCHRONIZABLE,
 			NOT_SYNCHRONIZED,
-			SYNCHRONIZED,
 		};
 
 	/**
@@ -163,9 +165,9 @@ public enum SynchronizationMode implements Enumerator {
 	 */
 	public static SynchronizationMode get(int value) {
 		switch (value) {
+			case SYNCHRONIZED_VALUE: return SYNCHRONIZED;
 			case UNSYNCHRONIZABLE_VALUE: return UNSYNCHRONIZABLE;
 			case NOT_SYNCHRONIZED_VALUE: return NOT_SYNCHRONIZED;
-			case SYNCHRONIZED_VALUE: return SYNCHRONIZED;
 		}
 		return null;
 	}

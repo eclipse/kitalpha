@@ -50,12 +50,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="the_domain" lowerBound="1"
         eType="#//EdgeDomainAssociation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiagramChildren" abstract="true" eSuperTypes="#//DiagramElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationMode" eType="#//SynchronizationMode"
-        defaultValueLiteral=""/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramChildren" abstract="true" eSuperTypes="#//DiagramElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onlyTheView" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="OpenAction" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
@@ -168,7 +167,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" upperBound="-1"
         eType="#//NodeDescription" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DiagramElement" abstract="true" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramElement" abstract="true" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationMode" eType="#//SynchronizationMode"
+        defaultValueLiteral=""/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDescription" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="node_Label" eType="#//Label"
         containment="true"/>
@@ -228,9 +230,9 @@
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationMode">
-    <eLiterals name="Unsynchronizable"/>
-    <eLiterals name="Not_Synchronized" value="1"/>
-    <eLiterals name="Synchronized" value="2"/>
+    <eLiterals name="Synchronized"/>
+    <eLiterals name="Unsynchronizable" value="1"/>
+    <eLiterals name="Not_Synchronized" value="2"/>
   </eClassifiers>
   <eSubpackages name="configuration" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0"
       nsPrefix="configuration">

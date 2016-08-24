@@ -331,7 +331,7 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=EString imports=[NodeMapping|FQN]? the_domain=NodeDomainElement? style+=NodeDescription*)
+	 *     (name=EString imports=[NodeMapping|FQN]? the_domain=NodeDomainElement? synchronizationMode=SynchronizationMode? style+=NodeDescription*)
 	 */
 	protected void sequence_BorderedNode(EObject context, BorderedNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -436,7 +436,14 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=EString precondition=EString? label=STRING? tool_For=[DiagramElement|FQN] icon=STRING?)
+	 *     (
+	 *         name=EString 
+	 *         precondition=EString? 
+	 *         label=STRING? 
+	 *         tool_For=[DiagramElement|FQN] 
+	 *         onlyTheView?='only-view'? 
+	 *         icon=STRING?
+	 *     )
 	 */
 	protected void sequence_Create(EObject context, Create semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

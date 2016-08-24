@@ -166,7 +166,7 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCreateAccess().getGroup_4(), "rule__Create__Group_4__0");
 					put(grammarAccess.getCreateAccess().getGroup_5(), "rule__Create__Group_5__0");
 					put(grammarAccess.getCreateAccess().getGroup_6(), "rule__Create__Group_6__0");
-					put(grammarAccess.getCreateAccess().getGroup_7(), "rule__Create__Group_7__0");
+					put(grammarAccess.getCreateAccess().getGroup_8(), "rule__Create__Group_8__0");
 					put(grammarAccess.getDeleteAccess().getGroup(), "rule__Delete__Group__0");
 					put(grammarAccess.getDeleteAccess().getGroup_4(), "rule__Delete__Group_4__0");
 					put(grammarAccess.getDeleteAccess().getGroup_5(), "rule__Delete__Group_5__0");
@@ -367,7 +367,8 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBorderedNodeAccess().getNameAssignment_2(), "rule__BorderedNode__NameAssignment_2");
 					put(grammarAccess.getBorderedNodeAccess().getImportsAssignment_4_1(), "rule__BorderedNode__ImportsAssignment_4_1");
 					put(grammarAccess.getBorderedNodeAccess().getThe_domainAssignment_5_1(), "rule__BorderedNode__The_domainAssignment_5_1");
-					put(grammarAccess.getBorderedNodeAccess().getStyleAssignment_6(), "rule__BorderedNode__StyleAssignment_6");
+					put(grammarAccess.getBorderedNodeAccess().getSynchronizationModeAssignment_6(), "rule__BorderedNode__SynchronizationModeAssignment_6");
+					put(grammarAccess.getBorderedNodeAccess().getStyleAssignment_7(), "rule__BorderedNode__StyleAssignment_7");
 					put(grammarAccess.getNodeDescriptionAccess().getConditionAssignment_3(), "rule__NodeDescription__ConditionAssignment_3");
 					put(grammarAccess.getNodeDescriptionAccess().getNode_LabelAssignment_4_2(), "rule__NodeDescription__Node_LabelAssignment_4_2");
 					put(grammarAccess.getNodeDescriptionAccess().getLabel_positionAssignment_4_3_1(), "rule__NodeDescription__Label_positionAssignment_4_3_1");
@@ -383,7 +384,8 @@ public class VpdiagramParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCreateAccess().getPreconditionAssignment_4_1(), "rule__Create__PreconditionAssignment_4_1");
 					put(grammarAccess.getCreateAccess().getLabelAssignment_5_1(), "rule__Create__LabelAssignment_5_1");
 					put(grammarAccess.getCreateAccess().getTool_ForAssignment_6_1(), "rule__Create__Tool_ForAssignment_6_1");
-					put(grammarAccess.getCreateAccess().getIconAssignment_7_1(), "rule__Create__IconAssignment_7_1");
+					put(grammarAccess.getCreateAccess().getOnlyTheViewAssignment_7(), "rule__Create__OnlyTheViewAssignment_7");
+					put(grammarAccess.getCreateAccess().getIconAssignment_8_1(), "rule__Create__IconAssignment_8_1");
 					put(grammarAccess.getDeleteAccess().getNameAssignment_2(), "rule__Delete__NameAssignment_2");
 					put(grammarAccess.getDeleteAccess().getPreconditionAssignment_4_1(), "rule__Delete__PreconditionAssignment_4_1");
 					put(grammarAccess.getDeleteAccess().getLabelAssignment_5_1(), "rule__Delete__LabelAssignment_5_1");

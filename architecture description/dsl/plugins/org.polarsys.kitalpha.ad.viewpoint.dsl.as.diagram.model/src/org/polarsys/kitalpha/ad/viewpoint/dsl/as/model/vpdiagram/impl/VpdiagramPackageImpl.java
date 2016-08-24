@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -693,15 +693,6 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDiagramChildren_SynchronizationMode() {
-		return (EAttribute)diagramChildrenEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCreate() {
 		return createEClass;
 	}
@@ -713,6 +704,15 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 */
 	public EAttribute getCreate_Icon() {
 		return (EAttribute)createEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreate_OnlyTheView() {
+		return (EAttribute)createEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1305,6 +1305,15 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDiagramElement_SynchronizationMode() {
+		return (EAttribute)diagramElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAbstractDescription() {
 		return abstractDescriptionEClass;
 	}
@@ -1641,10 +1650,10 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		createEReference(edgeEClass, EDGE__THE_DOMAIN);
 
 		diagramChildrenEClass = createEClass(DIAGRAM_CHILDREN);
-		createEAttribute(diagramChildrenEClass, DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE);
 
 		createEClass = createEClass(CREATE);
 		createEAttribute(createEClass, CREATE__ICON);
+		createEAttribute(createEClass, CREATE__ONLY_THE_VIEW);
 
 		deleteEClass = createEClass(DELETE);
 
@@ -1730,6 +1739,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		createEReference(borderedNodeEClass, BORDERED_NODE__STYLE);
 
 		diagramElementEClass = createEClass(DIAGRAM_ELEMENT);
+		createEAttribute(diagramElementEClass, DIAGRAM_ELEMENT__SYNCHRONIZATION_MODE);
 
 		abstractDescriptionEClass = createEClass(ABSTRACT_DESCRIPTION);
 		createEReference(abstractDescriptionEClass, ABSTRACT_DESCRIPTION__NODE_LABEL);
@@ -1884,10 +1894,10 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		initEReference(getEdge_The_domain(), this.getEdgeDomainAssociation(), null, "the_domain", null, 1, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(diagramChildrenEClass, DiagramChildren.class, "DiagramChildren", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDiagramChildren_SynchronizationMode(), this.getSynchronizationMode(), "synchronizationMode", "", 0, 1, DiagramChildren.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(createEClass, Create.class, "Create", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreate_Icon(), theEcorePackage.getEString(), "icon", null, 0, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCreate_OnlyTheView(), theEcorePackage.getEBoolean(), "onlyTheView", "false", 0, 1, Create.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deleteEClass, Delete.class, "Delete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1973,6 +1983,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		initEReference(getBorderedNode_Style(), this.getNodeDescription(), null, "style", null, 0, -1, BorderedNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(diagramElementEClass, DiagramElement.class, "DiagramElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDiagramElement_SynchronizationMode(), this.getSynchronizationMode(), "synchronizationMode", "", 0, 1, DiagramElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractDescriptionEClass, AbstractDescription.class, "AbstractDescription", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAbstractDescription_Node_Label(), this.getLabel(), null, "node_Label", null, 0, 1, AbstractDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2026,9 +2037,9 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		addEEnumLiteral(node_FormEEnum, Node_Form.RING);
 
 		initEEnum(synchronizationModeEEnum, SynchronizationMode.class, "SynchronizationMode");
+		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.SYNCHRONIZED);
 		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.UNSYNCHRONIZABLE);
 		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.NOT_SYNCHRONIZED);
-		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.SYNCHRONIZED);
 
 		// Create resource
 		createResource(eNS_URI);

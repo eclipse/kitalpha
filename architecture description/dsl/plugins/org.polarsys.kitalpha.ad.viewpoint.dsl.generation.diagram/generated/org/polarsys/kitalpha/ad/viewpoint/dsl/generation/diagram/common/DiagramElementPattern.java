@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150608-0917
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common;
 
 import java.util.*;
@@ -8,13 +8,18 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.eclipse.egf.common.helper.*;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.sirius.diagram.description.DescriptionPackage;
+import org.eclipse.sirius.diagram.description.DiagramElementMapping;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
+
 public class DiagramElementPattern
 		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DoremiElementPattern {
 
 	public DiagramElementPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
-
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -37,6 +42,7 @@ public class DiagramElementPattern
 		super.orchestration(new SuperOrchestrationContext(ictx));
 		method_setStyle(new StringBuffer(), ictx);
 		method_setSemanticData(new StringBuffer(), ictx);
+		method_setSynchronizationMode(new StringBuffer(), ictx);
 		ictx.setNode(currentNode);
 		return null;
 	}
@@ -51,6 +57,41 @@ public class DiagramElementPattern
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setSemanticData", out.toString());
+	}
+
+	protected void method_setSynchronizationMode(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (doremiElement instanceof DiagramElementMapping) {
+			// Getting attribute default values.
+			final EAttribute synchronizationLock = DescriptionPackage.eINSTANCE
+					.getDiagramElementMapping_SynchronizationLock();
+			boolean synchronizationLockDefaultValue = (Boolean) synchronizationLock.getDefaultValue();
+			final EAttribute createElements = DescriptionPackage.eINSTANCE.getDiagramElementMapping_CreateElements();
+			boolean createElementDefaultValue = (Boolean) createElements.getDefaultValue();
+
+			final DiagramElementMapping siriusElement = (DiagramElementMapping) doremiElement;
+			final DiagramElement dslElement = (DiagramElement) dslvpElement;
+
+			// Initializing attributes to their default values
+			siriusElement.setSynchronizationLock(synchronizationLockDefaultValue);
+			siriusElement.setCreateElements(createElementDefaultValue);
+
+			// Setting attributes values depending on their synchronization mode.
+			switch (dslElement.getSynchronizationMode()) {
+			case NOT_SYNCHRONIZED:
+				siriusElement.setCreateElements(false);
+				break;
+			case SYNCHRONIZED:
+				siriusElement.setSynchronizationLock(true);
+				break;
+			case UNSYNCHRONIZABLE:
+				// Do nothing
+				// keep default values
+				break;
+			}
+		}
+
+		InternalPatternContext ictx = (InternalPatternContext) ctx;
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setSynchronizationMode", out.toString());
 	}
 
 	public Map<String, Object> getParameters() {

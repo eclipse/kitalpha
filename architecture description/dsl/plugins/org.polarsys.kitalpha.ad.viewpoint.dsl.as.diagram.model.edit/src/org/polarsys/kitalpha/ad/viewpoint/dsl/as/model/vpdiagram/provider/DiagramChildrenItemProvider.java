@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,33 +51,8 @@ public class DiagramChildrenItemProvider extends DiagramElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSynchronizationModePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Synchronization Mode feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSynchronizationModePropertyDescriptor(Object object) {
-
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiagramChildren_synchronizationMode_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramChildren_synchronizationMode_feature", "_UI_DiagramChildren_type"),
-				 VpdiagramPackage.Literals.DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-
 	}
 
 	/**
@@ -106,12 +81,6 @@ public class DiagramChildrenItemProvider extends DiagramElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DiagramChildren.class)) {
-			case VpdiagramPackage.DIAGRAM_CHILDREN__SYNCHRONIZATION_MODE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

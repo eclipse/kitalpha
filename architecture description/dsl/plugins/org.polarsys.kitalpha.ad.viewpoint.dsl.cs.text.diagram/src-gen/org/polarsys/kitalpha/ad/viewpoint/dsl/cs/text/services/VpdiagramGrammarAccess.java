@@ -1810,19 +1810,21 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDomainContextKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cThe_domainAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final RuleCall cThe_domainNodeDomainElementParserRuleCall_5_1_0 = (RuleCall)cThe_domainAssignment_5_1.eContents().get(0);
-		private final Assignment cStyleAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cStyleNodeDescriptionParserRuleCall_6_0 = (RuleCall)cStyleAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cSynchronizationModeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSynchronizationModeSynchronizationModeEnumRuleCall_6_0 = (RuleCall)cSynchronizationModeAssignment_6.eContents().get(0);
+		private final Assignment cStyleAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cStyleNodeDescriptionParserRuleCall_7_0 = (RuleCall)cStyleAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//BorderedNode returns vpdiagram::BorderedNode:
 		//	{vpdiagram::BorderedNode} "BorderedNode" name=EString "{" ("import:"
 		//	imports=[siriusDiagramDescription::NodeMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-		//	style+=NodeDescription* "}";
+		//	synchronizationMode=SynchronizationMode? style+=NodeDescription* "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//{vpdiagram::BorderedNode} "BorderedNode" name=EString "{" ("import:"
 		//imports=[siriusDiagramDescription::NodeMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-		//style+=NodeDescription* "}"
+		//synchronizationMode=SynchronizationMode? style+=NodeDescription* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::BorderedNode}
@@ -1867,14 +1869,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//NodeDomainElement
 		public RuleCall getThe_domainNodeDomainElementParserRuleCall_5_1_0() { return cThe_domainNodeDomainElementParserRuleCall_5_1_0; }
 
+		//synchronizationMode=SynchronizationMode?
+		public Assignment getSynchronizationModeAssignment_6() { return cSynchronizationModeAssignment_6; }
+
+		//SynchronizationMode
+		public RuleCall getSynchronizationModeSynchronizationModeEnumRuleCall_6_0() { return cSynchronizationModeSynchronizationModeEnumRuleCall_6_0; }
+
 		//style+=NodeDescription*
-		public Assignment getStyleAssignment_6() { return cStyleAssignment_6; }
+		public Assignment getStyleAssignment_7() { return cStyleAssignment_7; }
 
 		//NodeDescription
-		public RuleCall getStyleNodeDescriptionParserRuleCall_6_0() { return cStyleNodeDescriptionParserRuleCall_6_0; }
+		public RuleCall getStyleNodeDescriptionParserRuleCall_7_0() { return cStyleNodeDescriptionParserRuleCall_7_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class NodeDescriptionElements extends AbstractParserRuleElementFinder {
@@ -2177,19 +2185,21 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTool_ForAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final CrossReference cTool_ForDiagramElementCrossReference_6_1_0 = (CrossReference)cTool_ForAssignment_6_1.eContents().get(0);
 		private final RuleCall cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1 = (RuleCall)cTool_ForDiagramElementCrossReference_6_1_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cIconKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cIconAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cIconSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cIconAssignment_7_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cOnlyTheViewAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final Keyword cOnlyTheViewOnlyViewKeyword_7_0 = (Keyword)cOnlyTheViewAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cIconKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cIconAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cIconSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cIconAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Create returns vpdiagram::Action:
 		//	{vpdiagram::Create} "Create" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) ("icon:" icon=STRING)? "}";
+		//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?="only-view"? ("icon:" icon=STRING)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//{vpdiagram::Create} "Create" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) ("icon:" icon=STRING)? "}"
+		//("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?="only-view"? ("icon:" icon=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Create}
@@ -2246,20 +2256,26 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getTool_ForDiagramElementFQNParserRuleCall_6_1_0_1() { return cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1; }
 
+		//onlyTheView?="only-view"?
+		public Assignment getOnlyTheViewAssignment_7() { return cOnlyTheViewAssignment_7; }
+
+		//"only-view"
+		public Keyword getOnlyTheViewOnlyViewKeyword_7_0() { return cOnlyTheViewOnlyViewKeyword_7_0; }
+
 		//("icon:" icon=STRING)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_8() { return cGroup_8; }
 
 		//"icon:"
-		public Keyword getIconKeyword_7_0() { return cIconKeyword_7_0; }
+		public Keyword getIconKeyword_8_0() { return cIconKeyword_8_0; }
 
 		//icon=STRING
-		public Assignment getIconAssignment_7_1() { return cIconAssignment_7_1; }
+		public Assignment getIconAssignment_8_1() { return cIconAssignment_8_1; }
 
 		//STRING
-		public RuleCall getIconSTRINGTerminalRuleCall_7_1_0() { return cIconSTRINGTerminalRuleCall_7_1_0; }
+		public RuleCall getIconSTRINGTerminalRuleCall_8_1_0() { return cIconSTRINGTerminalRuleCall_8_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class DeleteElements extends AbstractParserRuleElementFinder {
@@ -6437,37 +6453,37 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	public class SynchronizationModeElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SynchronizationMode");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cUnsynchronizableEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cUnsynchronizableUnsynchronizableKeyword_0_0 = (Keyword)cUnsynchronizableEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cNot_SynchronizedEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cNot_SynchronizedNot_SynchronizedKeyword_1_0 = (Keyword)cNot_SynchronizedEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cSynchronizedEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cSynchronizedSynchronizedKeyword_2_0 = (Keyword)cSynchronizedEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cSynchronizedEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSynchronizedSynchronizedKeyword_0_0 = (Keyword)cSynchronizedEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cUnsynchronizableEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cUnsynchronizableUnsynchronizableKeyword_1_0 = (Keyword)cUnsynchronizableEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cNot_SynchronizedEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cNot_SynchronizedNot_SynchronizedKeyword_2_0 = (Keyword)cNot_SynchronizedEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum SynchronizationMode returns vpdiagram::SynchronizationMode:
-		//	Unsynchronizable | Not_Synchronized | Synchronized;
+		//	Synchronized | Unsynchronizable | Not_Synchronized;
 		public EnumRule getRule() { return rule; }
 
-		//Unsynchronizable | Not_Synchronized | Synchronized
+		//Synchronized | Unsynchronizable | Not_Synchronized
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Unsynchronizable
-		public EnumLiteralDeclaration getUnsynchronizableEnumLiteralDeclaration_0() { return cUnsynchronizableEnumLiteralDeclaration_0; }
-
-		//"Unsynchronizable"
-		public Keyword getUnsynchronizableUnsynchronizableKeyword_0_0() { return cUnsynchronizableUnsynchronizableKeyword_0_0; }
-
-		//Not_Synchronized
-		public EnumLiteralDeclaration getNot_SynchronizedEnumLiteralDeclaration_1() { return cNot_SynchronizedEnumLiteralDeclaration_1; }
-
-		//"Not_Synchronized"
-		public Keyword getNot_SynchronizedNot_SynchronizedKeyword_1_0() { return cNot_SynchronizedNot_SynchronizedKeyword_1_0; }
-
 		//Synchronized
-		public EnumLiteralDeclaration getSynchronizedEnumLiteralDeclaration_2() { return cSynchronizedEnumLiteralDeclaration_2; }
+		public EnumLiteralDeclaration getSynchronizedEnumLiteralDeclaration_0() { return cSynchronizedEnumLiteralDeclaration_0; }
 
 		//"Synchronized"
-		public Keyword getSynchronizedSynchronizedKeyword_2_0() { return cSynchronizedSynchronizedKeyword_2_0; }
+		public Keyword getSynchronizedSynchronizedKeyword_0_0() { return cSynchronizedSynchronizedKeyword_0_0; }
+
+		//Unsynchronizable
+		public EnumLiteralDeclaration getUnsynchronizableEnumLiteralDeclaration_1() { return cUnsynchronizableEnumLiteralDeclaration_1; }
+
+		//"Unsynchronizable"
+		public Keyword getUnsynchronizableUnsynchronizableKeyword_1_0() { return cUnsynchronizableUnsynchronizableKeyword_1_0; }
+
+		//Not_Synchronized
+		public EnumLiteralDeclaration getNot_SynchronizedEnumLiteralDeclaration_2() { return cNot_SynchronizedEnumLiteralDeclaration_2; }
+
+		//"Not_Synchronized"
+		public Keyword getNot_SynchronizedNot_SynchronizedKeyword_2_0() { return cNot_SynchronizedNot_SynchronizedKeyword_2_0; }
 	}
 	
 	private final DiagramsElements pDiagrams;
@@ -7064,7 +7080,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//BorderedNode returns vpdiagram::BorderedNode:
 	//	{vpdiagram::BorderedNode} "BorderedNode" name=EString "{" ("import:"
 	//	imports=[siriusDiagramDescription::NodeMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-	//	style+=NodeDescription* "}";
+	//	synchronizationMode=SynchronizationMode? style+=NodeDescription* "}";
 	public BorderedNodeElements getBorderedNodeAccess() {
 		return pBorderedNode;
 	}
@@ -7118,7 +7134,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Create returns vpdiagram::Action:
 	//	{vpdiagram::Create} "Create" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-	//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) ("icon:" icon=STRING)? "}";
+	//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?="only-view"? ("icon:" icon=STRING)? "}";
 	public CreateElements getCreateAccess() {
 		return pCreate;
 	}
@@ -7679,7 +7695,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum SynchronizationMode returns vpdiagram::SynchronizationMode:
-	//	Unsynchronizable | Not_Synchronized | Synchronized;
+	//	Synchronized | Unsynchronizable | Not_Synchronized;
 	public SynchronizationModeElements getSynchronizationModeAccess() {
 		return unknownRuleSynchronizationMode;
 	}

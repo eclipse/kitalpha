@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,6 +57,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider {
 			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addSynchronizationModePropertyDescriptor(object);
 			addImportsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -125,6 +126,30 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider {
 				 getString("_UI_NamedElement_description_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_description_feature", "_UI_NamedElement_type"),
 				 VpdescPackage.Literals.NAMED_ELEMENT__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+
+	}
+
+	/**
+	 * This adds a property descriptor for the Synchronization Mode feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSynchronizationModePropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiagramElement_synchronizationMode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiagramElement_synchronizationMode_feature", "_UI_DiagramElement_type"),
+				 VpdiagramPackage.Literals.DIAGRAM_ELEMENT__SYNCHRONIZATION_MODE,
 				 true,
 				 false,
 				 false,
@@ -237,6 +262,7 @@ public class BorderedNodeItemProvider extends AbstractNodeItemProvider {
 			case VpdiagramPackage.BORDERED_NODE__ID:
 			case VpdiagramPackage.BORDERED_NODE__NAME:
 			case VpdiagramPackage.BORDERED_NODE__DESCRIPTION:
+			case VpdiagramPackage.BORDERED_NODE__SYNCHRONIZATION_MODE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VpdiagramPackage.BORDERED_NODE__STYLE:
