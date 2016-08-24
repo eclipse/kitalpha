@@ -210,12 +210,16 @@ public class ViewpointManager {
 	private static IStatus useViewpoint(Map<String, Version> availableViewpoints, String id, Version version) {
 		for (Entry<String, Version> res : availableViewpoints.entrySet()) {
 			if (res.getKey().equals(id)) {
-				if (version == null || version.equals(res.getValue()))
+				if (version == null || areEquivalentTo(version, res.getValue()))
 					return Status.OK_STATUS;
 				return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Expecting version '" + version + "' for viewpoint '" + id + "' (current version: '" + res.getValue() + "')");
 			}
 		}
 		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Missing viewpoint '" + id + "'");
+	}
+
+	private static boolean areEquivalentTo(Version v1, Version v2) {
+		return v1.getMajor() == v2.getMajor() && v1.getMinor() == v2.getMinor();
 	}
 
 	public static Resource[] getAvailableViewpoints() {
