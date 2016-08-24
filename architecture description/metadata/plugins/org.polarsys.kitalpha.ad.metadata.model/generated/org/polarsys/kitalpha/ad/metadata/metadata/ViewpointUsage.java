@@ -16,7 +16,6 @@
 
 package org.polarsys.kitalpha.ad.metadata.metadata;
 
-import org.eclipse.emf.ecore.EObject;
 import org.osgi.framework.Version;
 
 
@@ -39,7 +38,7 @@ import org.osgi.framework.Version;
  * @generated
  */
 
-public interface ViewpointUsage extends EObject {
+public interface ViewpointUsage extends MetadataElement {
 
 
 

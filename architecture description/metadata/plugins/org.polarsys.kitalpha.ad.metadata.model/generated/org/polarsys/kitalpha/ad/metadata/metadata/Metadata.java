@@ -18,8 +18,6 @@ package org.polarsys.kitalpha.ad.metadata.metadata;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +36,7 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 
-public interface Metadata extends EObject {
+public interface Metadata extends MetadataElement {
 
 
 

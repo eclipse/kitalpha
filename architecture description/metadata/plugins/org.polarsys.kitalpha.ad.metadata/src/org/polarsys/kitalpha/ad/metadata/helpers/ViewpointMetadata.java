@@ -13,10 +13,12 @@ package org.polarsys.kitalpha.ad.metadata.helpers;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -95,6 +97,7 @@ public class ViewpointMetadata {
 		}
 		if (usage) {
 			ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
+			uv.setId(EcoreUtil.generateUUID());
 			uv.setFiltered(false);
 			uv.setVpId(vpResource.getId());
 			uv.setVersion(version);
@@ -174,10 +177,12 @@ public class ViewpointMetadata {
 			context.getResources().remove(resource);
 		}
 		resource = context.createResource(uri);
-		Metadata integration = MetadataFactory.eINSTANCE.createMetadata();
+		Metadata metadata = MetadataFactory.eINSTANCE.createMetadata();
+		metadata.setId(EcoreUtil.generateUUID());
+		
 		// TODO init the integration object
 		context.getResources().add(resource);
-		resource.getContents().add(integration);
+		resource.getContents().add(metadata);
 		return resource;
 	}
 

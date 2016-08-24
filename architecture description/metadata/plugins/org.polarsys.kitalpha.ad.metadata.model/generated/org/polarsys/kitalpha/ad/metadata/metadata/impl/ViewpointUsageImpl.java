@@ -21,8 +21,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
 import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
@@ -42,7 +40,7 @@ import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
  *
  * @generated
  */
-public class ViewpointUsageImpl extends MinimalEObjectImpl.Container implements ViewpointUsage {
+public class ViewpointUsageImpl extends MetadataElementImpl implements ViewpointUsage {
 
 	/**
 	 * The default value of the '{@link #getVpId() <em>Vp Id</em>}' attribute.
