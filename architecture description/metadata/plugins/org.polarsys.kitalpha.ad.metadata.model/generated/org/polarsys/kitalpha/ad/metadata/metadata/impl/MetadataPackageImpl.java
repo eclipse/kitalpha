@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
+import org.polarsys.kitalpha.ad.metadata.metadata.MetadataElement;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
 import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
@@ -50,6 +51,13 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * @generated
 	 */
 	private EClass viewpointUsageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass metadataElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,6 +186,24 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMetadataElement() {
+		return metadataElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMetadataElement_Id() {
+		return (EAttribute)metadataElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getVersion() {
 		return versionEDataType;
 	}
@@ -218,6 +244,9 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__VERSION);
 		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__FILTERED);
 
+		metadataElementEClass = createEClass(METADATA_ELEMENT);
+		createEAttribute(metadataElementEClass, METADATA_ELEMENT__ID);
+
 		// Create data types
 		versionEDataType = createEDataType(VERSION);
 	}
@@ -250,6 +279,8 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		metadataEClass.getESuperTypes().add(this.getMetadataElement());
+		viewpointUsageEClass.getESuperTypes().add(this.getMetadataElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -259,6 +290,9 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 		initEAttribute(getViewpointUsage_VpId(), ecorePackage.getEString(), "vpId", null, 1, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getViewpointUsage_Version(), this.getVersion(), "version", null, 0, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getViewpointUsage_Filtered(), ecorePackage.getEBoolean(), "filtered", null, 0, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(metadataElementEClass, MetadataElement.class, "MetadataElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMetadataElement_Id(), ecorePackage.getEString(), "id", null, 1, 1, MetadataElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(versionEDataType, Version.class, "Version", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

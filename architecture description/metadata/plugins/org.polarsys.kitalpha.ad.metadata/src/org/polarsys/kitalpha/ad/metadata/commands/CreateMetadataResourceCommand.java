@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.metadata.commands;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
@@ -36,9 +37,10 @@ public class CreateMetadataResourceCommand extends MetadataCommand {
 	@Override
 	public void execute() {
 		newResource = resourceSet.createResource(uri);
-		Metadata integration = MetadataFactory.eINSTANCE.createMetadata();
+		Metadata metadata = MetadataFactory.eINSTANCE.createMetadata();
+		metadata.setId(EcoreUtil.generateUUID());
 		resourceSet.getResources().add(newResource);
-		newResource.getContents().add(integration);
+		newResource.getContents().add(metadata);
 	}
 
 	@Override

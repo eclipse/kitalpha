@@ -72,6 +72,43 @@ public interface MetadataPackage extends EPackage {
 	MetadataPackage eINSTANCE = org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataElementImpl <em>Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataElementImpl
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getMetadataElement()
+	 * @generated
+	 */
+	int METADATA_ELEMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA_ELEMENT__ID = 0;
+
+	/**
+	 * The number of structural features of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataImpl <em>Metadata</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,13 +119,22 @@ public interface MetadataPackage extends EPackage {
 	int METADATA = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA__ID = METADATA_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Viewpoint Usages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__VIEWPOINT_USAGES = 0;
+	int METADATA__VIEWPOINT_USAGES = METADATA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Metadata</em>' class.
@@ -97,7 +143,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA_FEATURE_COUNT = 1;
+	int METADATA_FEATURE_COUNT = METADATA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Metadata</em>' class.
@@ -106,7 +152,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA_OPERATION_COUNT = 0;
+	int METADATA_OPERATION_COUNT = METADATA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl <em>Viewpoint Usage</em>}' class.
@@ -119,13 +165,22 @@ public interface MetadataPackage extends EPackage {
 	int VIEWPOINT_USAGE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEWPOINT_USAGE__ID = METADATA_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Vp Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE__VP_ID = 0;
+	int VIEWPOINT_USAGE__VP_ID = METADATA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -134,7 +189,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE__VERSION = 1;
+	int VIEWPOINT_USAGE__VERSION = METADATA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Filtered</b></em>' attribute.
@@ -143,7 +198,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE__FILTERED = 2;
+	int VIEWPOINT_USAGE__FILTERED = METADATA_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Viewpoint Usage</em>' class.
@@ -152,7 +207,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE_FEATURE_COUNT = 3;
+	int VIEWPOINT_USAGE_FEATURE_COUNT = METADATA_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Viewpoint Usage</em>' class.
@@ -161,7 +216,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE_OPERATION_COUNT = 0;
+	int VIEWPOINT_USAGE_OPERATION_COUNT = METADATA_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -172,7 +227,7 @@ public interface MetadataPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getVersion()
 	 * @generated
 	 */
-	int VERSION = 2;
+	int VERSION = 3;
 
 
 	/**
@@ -238,6 +293,27 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getViewpointUsage_Filtered();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.metadata.metadata.MetadataElement <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element</em>'.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataElement
+	 * @generated
+	 */
+	EClass getMetadataElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.metadata.metadata.MetadataElement#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataElement#getId()
+	 * @see #getMetadataElement()
+	 * @generated
+	 */
+	EAttribute getMetadataElement_Id();
 
 	/**
 	 * Returns the meta object for data type '{@link org.osgi.framework.Version <em>Version</em>}'.
@@ -324,6 +400,24 @@ public interface MetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIEWPOINT_USAGE__FILTERED = eINSTANCE.getViewpointUsage_Filtered();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataElementImpl <em>Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataElementImpl
+		 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getMetadataElement()
+		 * @generated
+		 */
+		EClass METADATA_ELEMENT = eINSTANCE.getMetadataElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute METADATA_ELEMENT__ID = eINSTANCE.getMetadataElement_Id();
 
 		/**
 		 * The meta object literal for the '<em>Version</em>' data type.
