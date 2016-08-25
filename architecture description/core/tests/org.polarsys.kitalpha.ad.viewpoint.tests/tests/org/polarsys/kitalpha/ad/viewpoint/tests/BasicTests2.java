@@ -11,9 +11,20 @@
 package org.polarsys.kitalpha.ad.viewpoint.tests;
 
 
+import org.eclipse.emf.common.command.BasicCommandStack;
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain.EditingDomainProvider;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
@@ -22,6 +33,8 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.edit.provider.ViewpointItemProviderAdapterFactory;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.edit.provider.ToolsItemProviderAdapterFactory;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
@@ -40,7 +53,19 @@ public class BasicTests2 extends TestCase {
 	
 	@Override
 	protected void setUp() throws Exception {
-		set = new ResourceSetImpl();  
+		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+
+		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
+
+		adapterFactory.addAdapterFactory(new ViewpointItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ToolsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
+
+
+		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
+
+		EditingDomain ed = new AdapterFactoryEditingDomain(adapterFactory, new BasicCommandStack());
+		set = ed.getResourceSet();  
 		URI uri = URI.createPlatformPluginURI("/org.polarsys.kitalpha.ad.viewpoint.tests/resource/My.componentsample", true);
 		set.getResource(uri, true);
 		m1 = ViewpointManager.getInstance(set);

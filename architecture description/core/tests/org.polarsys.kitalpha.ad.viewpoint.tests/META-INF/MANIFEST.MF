@@ -10,6 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.junit,
  org.eclipse.emf.ecore,
  org.polarsys.kitalpha.ad.services,
- org.polarsys.kitalpha.ad.metadata
+ org.polarsys.kitalpha.ad.metadata,
+ org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
