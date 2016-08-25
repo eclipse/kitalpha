@@ -4,16 +4,16 @@
     <VP_Classes name="ComponentElement" abstract="true">
       <VP_Class_Attributes name="name">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </owned_type>
       </VP_Class_Attributes>
       <VP_Class_Attributes name="description">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </owned_type>
       </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="../../../plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement"/>
+        <superClass href="http://www.polarsys.org/kitalpha/emde/1.0.0#//ExtensibleElement"/>
       </Inheritences>
     </VP_Classes>
     <VP_Classes name="ComponentModel" icon="model-icon.png">
@@ -53,6 +53,7 @@
   <VP_Aspects xsi:type="vpconf:Configuration" name="ComponentSample.conf">
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
     <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsample" nsuri="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"/>
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.1.0"/>
     <vpConfigurationElements xsi:type="vpconf:Generation">
       <ownedDataGenerationConf editor="true"/>
       <ownedExtensionGenConf xsi:type="configuration:DiagramGenerationConfiguration" overwriteVSM="true"/>
@@ -211,8 +212,8 @@
     <vpRules name="RuleTwo"/>
     <vpRules name="RuleThree"/>
   </VP_Aspects>
-  <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSample.build" target_platform="C:/eclipse.exe">
-    <mapped_repositories location="ComponentSample/ComponentSample.git">
+  <VP_Aspects xsi:type="vpbuild:Build" name="ComponentSample2.build" target_platform="D:/Eclipse/Platform/Kitalpha-0.5/kitalpha_juno_0.5.0-20140921_00-01-01/eclipse.exe">
+    <mapped_repositories protocol="svnssh" location="ComponentSample/ComponentSample.git">
       <features name="org.polarsys.kitalpha.vp.ComponentSample.feature"/>
     </mapped_repositories>
   </VP_Aspects>

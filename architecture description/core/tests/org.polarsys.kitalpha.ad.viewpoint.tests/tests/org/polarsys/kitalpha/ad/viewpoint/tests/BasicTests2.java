@@ -11,25 +11,20 @@
 package org.polarsys.kitalpha.ad.viewpoint.tests;
 
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.command.BasicCommandStack;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CommandStack;
-import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain.EditingDomainProvider;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
-import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
 import org.polarsys.kitalpha.ad.services.manager.AlreadyInStateException;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
@@ -225,7 +220,32 @@ public class BasicTests2 extends TestCase {
 		assertFalse(listener2.displayed);
 		assertFalse(listener2.activated);
 
-}
+	}
+	
+	public void testManager18() throws Exception {
+		m1.startUse("org.polarsys.kitalpha.vp.componentsample");
+		Resource viewpoint = ViewpointManager.getViewpoint("org.polarsys.kitalpha.vp.componentsample");
+
+		// no version information
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, null);
+		IStatus result = ViewpointManager.checkViewpointsCompliancy(set);
+		assertTrue(result.isOK());
+
+		// versions match exactly
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 1, 0, null));
+		result = ViewpointManager.checkViewpointsCompliancy(set);
+		assertTrue(result.isOK());
+
+		// versions match since major & minor are equals
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 1, 0, null));
+		result = ViewpointManager.checkViewpointsCompliancy(set);
+		assertTrue(result.isOK());
+
+		// doesn't match
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 0, 0, null));
+		result = ViewpointManager.checkViewpointsCompliancy(set);
+		assertFalse(result.isOK());
+	}
 
 	public class TestOverallListener implements OverallListener {
 		public boolean filtered, displayed, activated, desactivated; 

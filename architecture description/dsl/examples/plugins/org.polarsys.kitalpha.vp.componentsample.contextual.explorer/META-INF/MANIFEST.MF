@@ -2,8 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Explorer
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.contextual.explorer;singleton:=true
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.1.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.kitalpha.vp.componentsample.model.edit
+Export-Package: org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.componentmodel,
+ org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.componentpackage,
+ org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.hardwarecomponent,
+ org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.softwarecomponent
