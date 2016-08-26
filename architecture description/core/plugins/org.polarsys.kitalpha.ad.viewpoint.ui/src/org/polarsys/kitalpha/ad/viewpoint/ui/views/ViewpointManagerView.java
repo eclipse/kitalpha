@@ -158,8 +158,8 @@ public class ViewpointManagerView extends ViewPart {
 
 	private ResourceSet context;
 	private TableViewer viewer;
-	private Action filterAction;
-	private Action unFilterAction;
+	private MyAction filterAction;
+	private MyAction unFilterAction;
 	private Action useAction;
 	private Action unUseAction;
 	private Action refreshAction;
@@ -356,28 +356,17 @@ public class ViewpointManagerView extends ViewPart {
 
 	private void contributeToActionBars() {
 		IActionBars bars = getViewSite().getActionBars();
-		fillLocalPullDown(bars.getMenuManager());
 		fillLocalToolBar(bars.getToolBarManager());
-	}
-
-	private void fillLocalPullDown(IMenuManager manager) {
-		manager.add(useAction);
-		manager.add(new Separator());
-		manager.add(unUseAction);
-		manager.add(new Separator());
-		manager.add(filterAction);
-		manager.add(new Separator());
-		manager.add(unFilterAction);
-		manager.add(new Separator());
-		manager.add(openViewAction);
 	}
 
 	private void fillContextMenu(IMenuManager manager) {
 		manager.add(useAction);
 		manager.add(unUseAction);
-		manager.add(new Separator());
-		manager.add(filterAction);
-		manager.add(unFilterAction);
+		if (filterAction.isVisible() && unFilterAction.isVisible()) {
+			manager.add(new Separator());
+			manager.add(filterAction);
+			manager.add(unFilterAction);
+		}
 		manager.add(new Separator());
 		manager.add(openViewAction);
 		// Other plug-ins can contribute there actions here
@@ -387,14 +376,14 @@ public class ViewpointManagerView extends ViewPart {
 	private void fillLocalToolBar(IToolBarManager manager) {
 		manager.add(refreshAction);
 		manager.add(new Separator());
-		manager.add(useAction);
-		manager.add(unUseAction);
-		manager.add(new Separator());
-		manager.add(filterAction);
-		manager.add(unFilterAction);
-		manager.add(new Separator());
-		manager.add(openViewAction);
-		manager.add(new Separator());
+//		manager.add(useAction);
+//		manager.add(unUseAction);
+//		manager.add(new Separator());
+//		manager.add(filterAction);
+//		manager.add(unFilterAction);
+//		manager.add(new Separator());
+//		manager.add(openViewAction);
+//		manager.add(new Separator());
 		manager.add(showHiddenViewpointAction);
 	}
 
@@ -405,6 +394,7 @@ public class ViewpointManagerView extends ViewPart {
 			if (context != null) {
 				boolean used = ViewpointManager.getInstance(context).isUsed(res.getId());
 				boolean canChangeState = ViewpointManager.canChangeState(res.getId());
+				boolean canChangeActivation = ViewpointManager.canChangeActivation(res.getId());
 				useAction.setEnabled(!used && canChangeState);
 				unUseAction.setEnabled(used && canChangeState);
 				if (used) {
@@ -415,6 +405,8 @@ public class ViewpointManagerView extends ViewPart {
 					filterAction.setEnabled(false);
 					unFilterAction.setEnabled(false);
 				}
+				filterAction.setVisible(canChangeActivation);
+				unFilterAction.setVisible(canChangeActivation);
 			}
 			openViewAction.setResource(ViewpointManager.getViewpoint(res.getId()));
 		} else {
@@ -510,7 +502,7 @@ public class ViewpointManagerView extends ViewPart {
 		unUseAction.setToolTipText("Stop using the viewpoint");
 		unUseAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.STOP));
 
-		filterAction = new Action() {
+		filterAction = new MyAction() {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -532,7 +524,7 @@ public class ViewpointManagerView extends ViewPart {
 		filterAction.setToolTipText("Display the viewpoint elements");
 		filterAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.EYE));
 
-		unFilterAction = new Action() {
+		unFilterAction = new MyAction() {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -580,6 +572,21 @@ public class ViewpointManagerView extends ViewPart {
 		super.dispose();
 		ViewpointManager.removeOverallListener(vpListener);
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(wsListener);
+	}
+	
+	private class MyAction extends Action {
+		private boolean visible = false;
+
+		
+		public boolean isVisible() {
+			return visible;
+		}
+
+		public void setVisible(boolean visible) {
+			this.visible = visible;
+		}
+		
+		
 	}
 
 }

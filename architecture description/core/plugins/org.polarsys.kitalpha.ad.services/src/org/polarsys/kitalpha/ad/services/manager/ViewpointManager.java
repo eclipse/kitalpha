@@ -59,6 +59,7 @@ public class ViewpointManager {
 
 	private static final String VIEWPOINT_STATE_READ_ONLY = "stateReadOnly";
 	private static final String VIEWPOINT_STATE_HIDDEN = "stateHidden";
+	private static final String VIEWPOINT_STATE_MUTABLE_ACTIVATION = "stateMutableActivation";
 	private final static Set<String> discarded = new HashSet<String>();
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
@@ -77,8 +78,17 @@ public class ViewpointManager {
 		return canChangeState(res);
 	}
 
+	public static boolean canChangeActivation(String id) {
+		Resource res = getViewpoint(id);
+		return canChangeActivation(res);
+	}
+
 	public static boolean canChangeState(Resource res) {
 		return res != null && !res.getTags().contains(VIEWPOINT_STATE_READ_ONLY);
+	}
+	
+	public static boolean canChangeActivation(Resource res) {
+		return res != null && res.getTags().contains(VIEWPOINT_STATE_MUTABLE_ACTIVATION);
 	}
 
 	public void setTarget(ResourceSet target) {
