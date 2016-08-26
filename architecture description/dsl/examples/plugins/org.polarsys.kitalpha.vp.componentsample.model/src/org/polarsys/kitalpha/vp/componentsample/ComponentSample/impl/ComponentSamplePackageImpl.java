@@ -373,7 +373,6 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 
 		// Obtain other dependent packages
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -391,10 +390,10 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentElementEClass, ComponentElement.class, "ComponentElement", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentElement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getComponentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, //$NON-NLS-1$
 				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentElement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getComponentElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, //$NON-NLS-1$
 				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
