@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -41,11 +41,11 @@ import org.polarsys.kitalpha.model.common.precondition.exception.InvalidPrecondi
 import org.polarsys.kitalpha.model.common.precondition.runner.IPreconditionRunner;
 import org.polarsys.kitalpha.model.common.precondition.runner.PreconditionRunner;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
-import org.polarsys.kitalpha.model.common.share.resource.loading.LoadResource;
 import org.polarsys.kitalpha.model.detachment.ui.Activator;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
 import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentEditorInput;
 import org.polarsys.kitalpha.model.detachment.ui.editor.ModelDetachment;
+import org.polarsys.kitalpha.model.detachment.ui.internal.DetachmentResourceProviderUtil;
 
 /**
  * @author Faycal Abka
@@ -82,7 +82,7 @@ public class DetachmentActionHandler extends AbstractHandler {
 
 						monitor.beginTask("Analyzing of resource: " + airdIResource.getProjectRelativePath(), 2);
 						monitor.subTask("Loading : " + airdIResource.getProjectRelativePath());
-						Resource resource = (new LoadResource(airdIResource)).getResource();
+						Resource resource = DetachmentResourceProviderUtil.getResource(airdIResource);
 						
 						ECrossReferenceAdapter adapter = new ECrossReferenceAdapter();
 						resource.eAdapters().add(adapter);

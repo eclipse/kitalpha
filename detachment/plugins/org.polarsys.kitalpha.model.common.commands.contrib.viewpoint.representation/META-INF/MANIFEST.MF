@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Viewpoint Representation Representation
+Bundle-SymbolicName: org.polarsys.kitalpha.model.common.commands.contrib.viewpoint.representation;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.model.common.commands.contrib.viewpoint.representation.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.polarsys.kitalpha.model.common.commands,
+ org.eclipse.sirius,
+ org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints,
+ org.polarsys.kitalpha.ad.viewpoint.coredomain,
+ org.polarsys.kitalpha.ad.integration.sirius.model,
+ org.eclipse.emf.transaction,
+ org.eclipse.sirius.diagram,
+ org.eclipse.sirius.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.sirius.ui.business.internal.commands

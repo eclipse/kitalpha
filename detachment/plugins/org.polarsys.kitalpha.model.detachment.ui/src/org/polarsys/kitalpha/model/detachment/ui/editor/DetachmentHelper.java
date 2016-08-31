@@ -11,9 +11,7 @@
 package org.polarsys.kitalpha.model.detachment.ui.editor;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
@@ -24,8 +22,8 @@ import org.polarsys.kitalpha.model.common.precondition.exception.InvalidPrecondi
 import org.polarsys.kitalpha.model.common.precondition.runner.IPreconditionRunner;
 import org.polarsys.kitalpha.model.common.precondition.runner.PreconditionRunner;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
-import org.polarsys.kitalpha.model.common.share.resource.loading.LoadResource;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
+import org.polarsys.kitalpha.model.detachment.ui.internal.DetachmentResourceProviderUtil;
 
 /**
  * @author Thomas Guiu
@@ -43,26 +41,19 @@ public class DetachmentHelper {
 	
 	public static void openEditor(IFile airdIResource, IProgressMonitor monitor) throws PartInitException, InvalidPreconditionException {
 		checkPreconditions(airdIResource, monitor);
-		
-		monitor.beginTask("Analyzing of resource: " + airdIResource.getProjectRelativePath(), 2);
-		monitor.subTask("Loading : " + airdIResource.getProjectRelativePath());
-		Resource resource = (new LoadResource(airdIResource)).getResource();
-		monitor.worked(1);
+		Resource resource = DetachmentResourceProviderUtil.getResource(airdIResource);
 
 		monitor.subTask("Scrutinizing : " + resource.getURI());
 		Scrutineer.startScrutiny(resource);
 		monitor.worked(1);
 		monitor.done();
-
-
-
-			IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-			IEditorPart editor;
-			editor = IDE.openEditor(page, new DetachmentEditorInput(), Constants.EDITOR_ID);
-			if (editor != null && editor instanceof ModelDetachment){
-				ModelDetachment modelDetachmentEditor = (ModelDetachment) editor;
-				modelDetachmentEditor.initAndLaunchDetachmentAction(resource);
-			}
+		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+		IEditorPart editor;
+		editor = IDE.openEditor(page, new DetachmentEditorInput(), Constants.EDITOR_ID);
+		if (editor != null && editor instanceof ModelDetachment){
+			ModelDetachment modelDetachmentEditor = (ModelDetachment) editor;
+			modelDetachmentEditor.initAndLaunchDetachmentAction(resource);
+		}
 
 	}
 

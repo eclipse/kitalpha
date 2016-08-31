@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.kitalpha.model.common.share.Messages;
 
 /**
@@ -87,6 +88,7 @@ public class LoadResource {
 		URI resourceURI = URI.createPlatformResourceURI(getAirdResource()
 				.getFullPath().toString(), false);
 		this.resource = getResourceSet(getMonitor()).getResource(resourceURI, true);
+		TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(this.resource.getResourceSet());
 		
 		return this.resource;
 	}
