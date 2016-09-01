@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20150211-1405
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.releng;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,7 +19,8 @@ public class runinxvnc extends org.eclipse.egf.portfolio.eclipse.build.hudson.ca
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "    <hudson.plugins.xvnc.Xvnc>" + NL + "      <takeScreenshot>false</takeScreenshot>" + NL + "    </hudson.plugins.xvnc.Xvnc>" + NL;
+	protected final String TEXT_1 = "    <hudson.plugins.xvnc.Xvnc>" + NL
+			+ "      <takeScreenshot>false</takeScreenshot>" + NL + "    </hudson.plugins.xvnc.Xvnc>" + NL;
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 

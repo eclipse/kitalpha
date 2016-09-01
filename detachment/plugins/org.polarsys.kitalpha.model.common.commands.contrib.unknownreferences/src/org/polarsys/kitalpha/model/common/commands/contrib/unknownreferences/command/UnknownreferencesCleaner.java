@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,13 +10,15 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.command;
 
-import java.util.Iterator;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -26,12 +28,17 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
+import org.eclipse.emf.edit.command.DeleteCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.description.Layer;
 import org.eclipse.sirius.diagram.description.filter.FilterDescription;
-import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
+import org.eclipse.sirius.viewpoint.DView;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
@@ -59,17 +66,23 @@ public class UnknownreferencesCleaner extends ModelCommand {
 	
 	
 	private ECrossReferenceAdapter installCrossReferencer(Resource resource){
-		ECrossReferenceAdapter crossReferenceAdapter = new ECrossReferenceAdapter();
-		EList<Resource> resources = resource.getResourceSet().getResources();
-
-		Iterator<Resource> it = resources.iterator();
-
-		while(it.hasNext()){
-			Resource resource2 = it.next();
-			resource2.eAdapters().add(crossReferenceAdapter);
+		EList<Adapter> eAdapters = resource.getResourceSet().eAdapters();
+		boolean containsECrossReferenceAdapter = false;
+		
+		for (Adapter adapter : eAdapters) {
+			if (adapter instanceof ECrossReferenceAdapter){
+				containsECrossReferenceAdapter = true;
+				return (ECrossReferenceAdapter)adapter;
+			}
 		}
-
-		return crossReferenceAdapter;
+		
+		if (!containsECrossReferenceAdapter){
+			ECrossReferenceAdapter crossReferenceAdapter = new ECrossReferenceAdapter();
+			resource.getResourceSet().eAdapters().add(crossReferenceAdapter);
+			return crossReferenceAdapter;
+		}
+		//Should never occur
+		return null;
 		
 	}
 	
@@ -79,6 +92,7 @@ public class UnknownreferencesCleaner extends ModelCommand {
 			throws ModelCommandException {
 		
 		ECrossReferenceAdapter crossReferenceAdapter = installCrossReferencer(resource);
+		TransactionalEditingDomain ed = TransactionUtil.getEditingDomain(resource.getResourceSet());
 		
 		try {
 			
@@ -95,7 +109,14 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					
 					InvalidDMapping invalidDMappings = (InvalidDMapping) finder;
 					for (DRepresentationElement dRepresentationElement : invalidDMappings.getAnalysisResult()) {
-						EcoreUtil.remove(dRepresentationElement);
+						if (ed != null){
+							Command remove = RemoveCommand.create(ed, dRepresentationElement);
+							if (remove.canExecute()){
+								ed.getCommandStack().execute(remove);
+							}
+						} else {
+							EcoreUtil.remove(dRepresentationElement);
+						}
 					}
 				}
 				
@@ -106,7 +127,14 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					InvalidDView invalidDRepresentationContainer = (InvalidDView) finder;
 					
 					for (DView dRepresentationContainer : invalidDRepresentationContainer.getAnalysisResult()) {
-						EcoreUtil.remove(dRepresentationContainer);
+						if (ed != null){
+							Command remove = RemoveCommand.create(ed, dRepresentationContainer);
+							if (remove.canExecute()){
+								ed.getCommandStack().execute(remove);
+							}
+						} else {
+							EcoreUtil.remove(dRepresentationContainer);
+						}
 					}
 				}
 				
@@ -115,11 +143,23 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					monitor.subTask(Messages.CLEAN_INVALID_FILTER_DESCRIPTION);
 					InvalidFilterDescription invalidFilterDescription = (InvalidFilterDescription) finder;
 					
-					for (FilterDescription filterDescription : invalidFilterDescription.getAnalysisResult()) {
+					for (final FilterDescription filterDescription : invalidFilterDescription.getAnalysisResult()) {
 						for (Setting setting : crossReferenceAdapter.getInverseReferences(filterDescription)) {
 							if (setting.getEStructuralFeature().equals(DiagramPackage.eINSTANCE.getDDiagram_ActivatedFilters())) {
-								DDiagram dDiagram = (DDiagram) setting.getEObject();
-								dDiagram.getActivatedFilters().remove(filterDescription);
+								final DDiagram dDiagram = (DDiagram) setting.getEObject();
+								if (ed != null){
+									Command remove = new RecordingCommand(ed) {
+										@Override
+										protected void doExecute() {
+											dDiagram.getActivatedFilters().remove(filterDescription);
+										}
+									};
+									if (remove.canExecute()){
+										ed.getCommandStack().execute(remove);
+									}
+								} else {
+									dDiagram.getActivatedFilters().remove(filterDescription);
+								}
 							}
 						}
 					}
@@ -130,11 +170,23 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					monitor.subTask(Messages.CLEAN_INVALID_LAYER);
 					InvalidLayer invalidLayer = (InvalidLayer) finder;
 					
-					for (Layer layer : invalidLayer.getAnalysisResult()) {
+					for (final Layer layer : invalidLayer.getAnalysisResult()) {
 						for (Setting setting : crossReferenceAdapter.getInverseReferences(layer)) {
 							if (setting.getEStructuralFeature().equals(DiagramPackage.eINSTANCE.getDDiagram_ActivatedLayers())) {
-								DDiagram dDiagram = (DDiagram) setting.getEObject();
-								dDiagram.getActivatedLayers().remove(layer);
+								final DDiagram dDiagram = (DDiagram) setting.getEObject();
+								if (ed != null){
+									Command remove = new RecordingCommand(ed) {
+										@Override
+										protected void doExecute() {
+											dDiagram.getActivatedLayers().remove(layer);
+										}
+									};
+									if (remove.canExecute()){
+										ed.getCommandStack().execute(remove);
+									}
+								} else {
+									dDiagram.getActivatedLayers().remove(layer);
+								}
 							}
 						}
 					}
@@ -148,7 +200,14 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					
 					for (AnyType anyType : missingEPackage.getAnalysisResult().getAnyTypes()) {
 						//TODO should use our own crossReferenceAdapter
-						EcoreUtil.delete(anyType, true);
+						if (ed != null){
+							Command delete = DeleteCommand.create(ed, anyType);
+							if (delete.canExecute()){
+								ed.getCommandStack().execute(delete);
+							}
+						} else {
+							EcoreUtil.delete(anyType, true);
+						}
 					}
 					for (XMLResource xmlResource : missingEPackage.getAnalysisResult().getXmlResources()) {
 						xmlResource.getEObjectToExtensionMap().clear();
@@ -166,7 +225,7 @@ public class UnknownreferencesCleaner extends ModelCommand {
 						List<EReference> eReferences = entry.getValue();
 						
 						for (EReference r : eReferences) {
-							clean(key, r);
+							clean(ed, key, r);
 						}
 					}
 				}
@@ -183,16 +242,27 @@ public class UnknownreferencesCleaner extends ModelCommand {
 		monitor.done();
 	}
 	
-	private void clean(EObject key, EReference r) {
+	private void clean(TransactionalEditingDomain ed, EObject key, EReference r) {
 		Object value = key.eGet(r);
 		try {
-			EcoreUtil.remove(key, r, value);
+			if (ed != null){
+				Collection<Object> values = new HashSet<Object>();
+				values.add(value);
+				RemoveCommand.create(ed, key, r, values);
+			} else {
+				EcoreUtil.remove(key, r, value);
+			}
 		} catch (Exception e){
 			//If we can't unset the reference, delete the holding
 			//object.
 			//XXX May be do it recursively until the success of clean operation
 			try {
-				EcoreUtil.delete(key);
+				Command delete = DeleteCommand.create(ed, key);
+				if (delete.canExecute()){
+					ed.getCommandStack().execute(delete);
+				} else {
+					EcoreUtil.delete(key);
+				}
 			} catch (Exception e2){
 				EReference eContainmentFeature = key.eContainmentFeature();
 				if (eContainmentFeature != null && key.eContainer() != null && !key.equals(EcoreUtil.getRootContainer(key))){

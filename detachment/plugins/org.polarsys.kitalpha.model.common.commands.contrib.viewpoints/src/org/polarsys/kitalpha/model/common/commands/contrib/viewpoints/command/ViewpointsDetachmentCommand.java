@@ -16,11 +16,17 @@ import java.util.HashSet;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.DeleteCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
@@ -53,7 +59,6 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 			
 			SubMonitor subMonitor = SubMonitor.convert(monitor);
 			
-			//TODO check finder id if it is null
 			regElt = Scrutineer.getRegistryElement(getModelAnalysisID());
 			UsedAFViewpoints usedVpFinder = getUsedAFFinder(regElt);
 			
@@ -61,8 +66,21 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 				ViewpointTreeContainer container = usedVpFinder.getAnalysisResult();
 				Collection<String> unSelectedUri = container.getUriToRemove();
 				Collection<String> unSelectedViewpoint = container.getViewpointToRemove();
-				cleanUnselectedUris(resource.getResourceSet(), unSelectedUri, unSelectedViewpoint, subMonitor);
-				container.dispose();
+				ResourceSet resourceSet = resource.getResourceSet();
+				Session session = SessionManager.INSTANCE.getExistingSession(resource.getURI());
+				TransactionalEditingDomain editingDomain;
+				if (session != null){
+					editingDomain = session.getTransactionalEditingDomain();
+				} else {
+					//The last Chance to get an Editing Domain
+					editingDomain = TransactionUtil.getEditingDomain(resourceSet);
+				}
+				if (editingDomain != null){
+					cleanUnselectedUris(editingDomain, unSelectedUri, unSelectedViewpoint, subMonitor);
+				} else {
+					cleanUnselectedUris(resourceSet, unSelectedUri, unSelectedViewpoint, subMonitor);
+				}
+					
 			}
 			subMonitor.worked(1);
 			subMonitor.done();
@@ -72,6 +90,43 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 			LOGGER.error(e.getMessage(), e);
 		}
 		
+	}
+
+	private void cleanUnselectedUris(TransactionalEditingDomain editingDomain, Collection<String> unSelectedUri,
+			Collection<String> unSelectedViewpoint, SubMonitor monitor) {
+		Collection<EObject> eObjectToRemove = new HashSet<EObject>();
+		for (Resource resource : editingDomain.getResourceSet().getResources()) 
+		{
+			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata)
+			{
+				Metadata root = (Metadata)resource.getContents().get(0);
+				for (ViewpointUsage uv : root.getViewpointUsages())
+				{
+					if (unSelectedViewpoint.contains(uv.getVpId()))
+						eObjectToRemove.add(uv);
+				}
+			}
+
+			TreeIterator<EObject> it = resource.getAllContents();
+
+			while (it.hasNext())
+			{
+				EObject eObject = it.next();
+				
+				String current_uri = eObject.eClass().getEPackage().getNsURI();
+				if (unSelectedUri.contains(current_uri))
+				{
+					eObjectToRemove.add(eObject);
+				}
+			}
+		}
+		if (eObjectToRemove != null && !eObjectToRemove.isEmpty())
+		{
+			Command deleteCommand = DeleteCommand.create(editingDomain, eObjectToRemove);
+			if (deleteCommand.canExecute()){
+				editingDomain.getCommandStack().execute(deleteCommand);
+			}
+		}
 	}
 
 	private void cleanUnselectedUris(ResourceSet set,
@@ -84,7 +139,7 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 			{
 				Metadata root = (Metadata)resource.getContents().get(0);
 				for (ViewpointUsage uv : root.getViewpointUsages())
-			{
+				{
 					if (unSelectedViewpoint.contains(uv.getVpId()))
 						eObjectToRemove.add(uv);
 				}
@@ -92,38 +147,36 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 
 			TreeIterator<EObject> it = resource.getAllContents();
 
-
-				while (it.hasNext())
+			while (it.hasNext())
+			{
+				EObject eObject = it.next();
+				
+				String current_uri = eObject.eClass().getEPackage().getNsURI();
+				if (unSelectedUri.contains(current_uri))
 				{
-					EObject eObject = it.next();
-					String current_uri = eObject.eClass().getEPackage().getNsURI();
-
-					if (unSelectedUri.contains(current_uri))
-					{
-
-						eObjectToRemove.add(eObject);
-					}
+					eObjectToRemove.add(eObject);
 				}
+			}
 
-				if (eObjectToRemove != null && !eObjectToRemove.isEmpty())
+			if (eObjectToRemove != null && !eObjectToRemove.isEmpty())
+			{
+				for (EObject eObject2 : eObjectToRemove) 
 				{
-					for (EObject eObject2 : eObjectToRemove) 
-					{
-						monitor.subTask(Messages.bind(Messages.REMOVE_OBJECT, new Object[] { EcoreUtil.getURI(eObject2), eObject2.eClass().getEPackage().getNsURI() }));
-
-						EObject rootContainer = EcoreUtil.getRootContainer(eObject2);
-						if (!eObject2.equals(rootContainer))
-							EcoreUtil.delete(eObject2, false);
+					monitor.subTask(Messages.bind(Messages.REMOVE_OBJECT, new Object[] { EcoreUtil.getURI(eObject2), eObject2.eClass().getEPackage().getNsURI() }));
+					EObject rootContainer = EcoreUtil.getRootContainer(eObject2);
+					if (!eObject2.equals(rootContainer)){
+						EcoreUtil.delete(eObject2, false);
 					}
 				}
 			}
+		}
 	}
 
 	@SuppressWarnings("rawtypes")
 	private UsedAFViewpoints getUsedAFFinder(RegistryElement regElt) {
-		
+
 		Collection<IScrutinize> finders = regElt.getFinders();
-		
+
 		for (IScrutinize iFinder : finders) {
 			if (iFinder instanceof UsedAFViewpoints){
 				//There are one finder of viewpoints
@@ -132,5 +185,4 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 		}
 		return null;
 	}
-
 }

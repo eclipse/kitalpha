@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,10 +16,12 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
+import org.eclipse.sirius.business.api.helper.SiriusUtil;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -38,20 +40,26 @@ public class RefreshRepresentation extends ModelCommand {
 	public void exec(Resource resource, IProgressMonitor monitor)
 			throws ModelCommandException {
 		
+		if (resource.getURI().lastSegment() == null || !resource.getURI().lastSegment().endsWith(SiriusUtil.SESSION_RESOURCE_EXTENSION))
+			return;
+		
 		SubMonitor subMonitor = SubMonitor.convert(monitor);
 		
-		if (resource.isLoaded()){
-			resource.unload();
+		Session session = SessionManager.INSTANCE.getExistingSession(resource.getURI());
+		if (session == null){
+			//Unload all resources. Resources will be realoaded by opening
+			//Sirius session
+			EList<Resource> resources = resource.getResourceSet().getResources();
+			for (Resource resource2 : resources) {
+				if (!resource2.isLoaded()){
+					resource2.unload();
+				}
+			}
+			session = SessionManager.INSTANCE.getSession(resource.getURI(), subMonitor);
 		}
 		
-//		try {
-//			resource.load(null);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-		
-		Session session = SessionManager.INSTANCE.getSession(resource.getURI(), subMonitor);
-		session.open(subMonitor);
+		if (!session.isOpen())
+			session.open(subMonitor);
 		
 		subMonitor.beginTask(Messages.REFRESH_REMPRESENTATIONS, IProgressMonitor.UNKNOWN);
 		

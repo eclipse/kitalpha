@@ -27,11 +27,6 @@ Contributors:
       %license
    </license>
 
-   <includes
-         id="org.polarsys.kitalpha.model.detachment.ui.menu.feature"
-         version="0.0.0"
-         optional="true"/>
-
    <plugin
          id="org.polarsys.kitalpha.model.detachment.ui"
          download-size="0"
