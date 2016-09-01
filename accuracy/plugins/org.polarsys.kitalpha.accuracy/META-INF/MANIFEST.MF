@@ -10,6 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.ecore,
  org.eclipse.emf.edit
 Export-Package: org.polarsys.kitalpha.validation.configurer,
+ org.polarsys.kitalpha.validation.diagnostic,
  org.polarsys.kitalpha.validation.java.provider.generic,
  org.polarsys.kitalpha.validation.ocl.provider.generic,
  org.polarsys.kitalpha.validation.ocl.provider.generic.util,
