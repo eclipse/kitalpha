@@ -324,7 +324,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="__SUYYFOFEeS0CZx9NVRo1A" component="_z870gVOFEeS0CZx9NVRo1A"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_YGNHcF64EeSHbaZAI7j8zw" component="_TfAS0V64EeSHbaZAI7j8zw"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_xC4EYAHGEeSWLIhgOb7dcQ" name="common 1 feature" id="TP" profile="SDKProfile" resultSteps="_7StIMFOFEeS0CZx9NVRo1A _-y7GoFOFEeS0CZx9NVRo1A __SUYYFOFEeS0CZx9NVRo1A" installResultStepsSourceFeatures="true"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_GiG_4FOGEeS0CZx9NVRo1A" name="detachment feature" id="TP" profile="SDKProfile" resultSteps="_tZFTMAHGEeSWLIhgOb7dcQ _ZLBggG97EeapUespu64C6A" installResultStepsSourceFeatures="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_GiG_4FOGEeS0CZx9NVRo1A" name="detachment feature" id="TP" profile="SDKProfile" resultSteps="_tZFTMAHGEeSWLIhgOb7dcQ" installResultStepsSourceFeatures="true"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_bFHvoF64EeSHbaZAI7j8zw" name="attachment feature" id="TP" profile="SDKProfile" resultSteps="_YGNHcF64EeSHbaZAI7j8zw" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_1i8EwUVREeOxuMV9a71i9w" name="ad">
