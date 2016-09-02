@@ -427,6 +427,43 @@ public interface VpconfPackage extends EPackage {
 	int RELEASE_FEATURE_COUNT = CONFIGURATION_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl <em>Representation Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getRepresentationConfiguration()
+	 * @generated
+	 */
+	int REPRESENTATION_CONFIGURATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPRESENTATION_CONFIGURATION__ID = CONFIGURATION_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Visible</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPRESENTATION_CONFIGURATION__VISIBLE = CONFIGURATION_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Representation Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPRESENTATION_CONFIGURATION_FEATURE_COUNT = CONFIGURATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '<em>Version</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,7 +471,7 @@ public interface VpconfPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getVersion()
 	 * @generated
 	 */
-	int VERSION = 8;
+	int VERSION = 9;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration <em>Configuration</em>}'.
@@ -682,6 +719,27 @@ public interface VpconfPackage extends EPackage {
 	EAttribute getRelease_RequiredExecutionEnvironment();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration <em>Representation Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Representation Configuration</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration
+	 * @generated
+	 */
+	EClass getRepresentationConfiguration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration#isVisible <em>Visible</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Visible</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration#isVisible()
+	 * @see #getRepresentationConfiguration()
+	 * @generated
+	 */
+	EAttribute getRepresentationConfiguration_Visible();
+
+	/**
 	 * Returns the meta object for data type '{@link org.osgi.framework.Version <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -913,6 +971,24 @@ public interface VpconfPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RELEASE__REQUIRED_EXECUTION_ENVIRONMENT = eINSTANCE.getRelease_RequiredExecutionEnvironment();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl <em>Representation Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getRepresentationConfiguration()
+		 * @generated
+		 */
+		EClass REPRESENTATION_CONFIGURATION = eINSTANCE.getRepresentationConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Visible</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REPRESENTATION_CONFIGURATION__VISIBLE = eINSTANCE.getRepresentationConfiguration_Visible();
 
 		/**
 		 * The meta object literal for the '<em>Version</em>' data type.

@@ -111,12 +111,10 @@ public class GenerationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-
 		String label = ((Generation)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Generation_type") :
 			getString("_UI_Generation_type") + " " + label;
-
 	}
 
 	/**
@@ -150,12 +148,10 @@ public class GenerationItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-				newChildDescriptors.add
-					(createChildParameter
-						(VpconfPackage.Literals.GENERATION__OWNED_DATA_GENERATION_CONF,
-						 VpconfFactory.eINSTANCE.createGData()));
-
-
+		newChildDescriptors.add
+			(createChildParameter
+				(VpconfPackage.Literals.GENERATION__OWNED_DATA_GENERATION_CONF,
+				 VpconfFactory.eINSTANCE.createGData()));
 	}
 
 

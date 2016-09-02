@@ -72,7 +72,6 @@ public class GenerationConfigurationItemProvider extends
 	 * @generated
 	 */
 	protected void addProjectNamePropertyDescriptor(Object object) {
-
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -86,7 +85,6 @@ public class GenerationConfigurationItemProvider extends
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-
 	}
 
 	/**
@@ -96,7 +94,6 @@ public class GenerationConfigurationItemProvider extends
 	 * @generated
 	 */
 	protected void addNsuriPropertyDescriptor(Object object) {
-
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -110,7 +107,6 @@ public class GenerationConfigurationItemProvider extends
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-
 	}
 
 	/**

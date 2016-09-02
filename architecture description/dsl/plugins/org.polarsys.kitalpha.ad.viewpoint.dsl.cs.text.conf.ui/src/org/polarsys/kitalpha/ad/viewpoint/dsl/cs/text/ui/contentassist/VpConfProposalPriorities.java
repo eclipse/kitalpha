@@ -12,28 +12,44 @@ public class VpConfProposalPriorities extends ContentProposalPriorities {
 	@Inject
 	private IGrammarAccess access;
 	
+	private static final int confRepresentationPriority				= 850;
+	private static final int confReleasePriority					= 800;
+	private static final int confGenerationPriority					= 750;
 	private static final int confDataModelPriority 					= 550;
 	private static final int confDataEditPriority					= 500;
 	private static final int confDataEditorPriority					= 450;
 	private static final int confDataTestPriority					= 400;
 	private static final int confDataJavaDocPriority				= 350;
 	private static final int confDataOverwriteEcore					= 300;
-	
 	private static final int confDiagramOverwriteOdesign			= 200;
-	
 	private static final int confDocumentationEcoreToHtmlPriority	= 100;
 	
 	
 	public void adjustKeywordPriority(ICompletionProposal proposal,
 			String prefix){
 		//Default priority
-		keywordPriority = 100;
+		keywordPriority = 300;
 		
 		if (access instanceof VpconfGrammarAccess){
 			
 			boolean affected = false;
 			VpconfGrammarAccess grammar = (VpconfGrammarAccess)access;
 			
+			if (!affected && proposal.getDisplayString().matches(grammar.getRepresentationConfigurationAccess().getRepresentationKeyword_1().getValue())){
+				keywordPriority = confRepresentationPriority;
+				affected = true;
+			}
+			
+
+			if (!affected && proposal.getDisplayString().matches(grammar.getReleaseAccess().getReleaseKeyword_1().getValue())){
+				keywordPriority = confReleasePriority;
+				affected = true;
+			}
+			
+			if (!affected && proposal.getDisplayString().matches(grammar.getGenerationAccess().getGenerationKeyword_1().getValue())){
+				keywordPriority = confGenerationPriority;
+				affected = true;
+			}
 			
 			if (!affected && proposal.getDisplayString().matches(grammar.getDocumentationGenerationConfigurationAccess().getEcoreToHtmlKeyword_3_0().getValue())){
 				keywordPriority = confDocumentationEcoreToHtmlPriority;

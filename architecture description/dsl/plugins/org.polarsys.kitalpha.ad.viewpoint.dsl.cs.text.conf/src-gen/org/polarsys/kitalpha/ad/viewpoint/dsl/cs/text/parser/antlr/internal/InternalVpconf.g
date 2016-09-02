@@ -198,6 +198,16 @@ ruleConfigurationElement returns [EObject current=null]
         $current = $this_Release_3.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getConfigurationElementAccess().getRepresentationConfigurationParserRuleCall_4()); 
+    }
+    this_RepresentationConfiguration_4=ruleRepresentationConfiguration
+    { 
+        $current = $this_RepresentationConfiguration_4.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -971,6 +981,71 @@ ruleRelease returns [EObject current=null]
 ))*))?	otherlv_15='}' 
     {
     	newLeafNode(otherlv_15, grammarAccess.getReleaseAccess().getRightCurlyBracketKeyword_6());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleRepresentationConfiguration
+entryRuleRepresentationConfiguration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRepresentationConfigurationRule()); }
+	 iv_ruleRepresentationConfiguration=ruleRepresentationConfiguration 
+	 { $current=$iv_ruleRepresentationConfiguration.current; } 
+	 EOF 
+;
+
+// Rule RepresentationConfiguration
+ruleRepresentationConfiguration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getRepresentationConfigurationAccess().getRepresentationConfigurationAction_0(),
+            $current);
+    }
+)	otherlv_1='representation' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getRepresentationConfigurationAccess().getRepresentationKeyword_1());
+    }
+	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getRepresentationConfigurationAccess().getLeftCurlyBracketKeyword_2());
+    }
+	otherlv_3='visible' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getRepresentationConfigurationAccess().getVisibleKeyword_3());
+    }
+	otherlv_4=':' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getRepresentationConfigurationAccess().getColonKeyword_4());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRepresentationConfigurationAccess().getVisibleEBooleanParserRuleCall_5_0()); 
+	    }
+		lv_visible_5_0=ruleEBoolean		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRepresentationConfigurationRule());
+	        }
+       		set(
+       			$current, 
+       			"visible",
+        		lv_visible_5_0, 
+        		"EBoolean");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_6='}' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getRepresentationConfigurationAccess().getRightCurlyBracketKeyword_6());
     }
 )
 ;

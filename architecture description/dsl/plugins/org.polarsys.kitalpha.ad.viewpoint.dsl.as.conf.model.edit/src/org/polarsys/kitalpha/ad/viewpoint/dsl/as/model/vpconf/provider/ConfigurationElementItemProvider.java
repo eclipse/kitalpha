@@ -70,12 +70,10 @@ public class ConfigurationElementItemProvider extends
 	 */
 	@Override
 	public String getText(Object object) {
-
 		String label = ((ConfigurationElement)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ConfigurationElement_type") :
 			getString("_UI_ConfigurationElement_type") + " " + label;
-
 	}
 
 	/**

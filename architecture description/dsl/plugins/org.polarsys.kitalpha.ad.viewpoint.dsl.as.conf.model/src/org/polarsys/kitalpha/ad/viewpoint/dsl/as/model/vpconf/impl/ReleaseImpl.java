@@ -126,7 +126,6 @@ public class ReleaseImpl extends ConfigurationElementImpl implements Release {
 	 */
 
 	public Version getViewpointVersion() {
-
 		return viewpointVersion;
 	}
 
@@ -139,12 +138,10 @@ public class ReleaseImpl extends ConfigurationElementImpl implements Release {
 	 */
 
 	public void setViewpointVersion(Version newViewpointVersion) {
-
 		Version oldViewpointVersion = viewpointVersion;
 		viewpointVersion = newViewpointVersion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.RELEASE__VIEWPOINT_VERSION, oldViewpointVersion, viewpointVersion));
-
 	}
 
 	/**
@@ -154,7 +151,6 @@ public class ReleaseImpl extends ConfigurationElementImpl implements Release {
 	 */
 
 	public String getViewpointDescription() {
-
 		return viewpointDescription;
 	}
 
@@ -167,12 +163,10 @@ public class ReleaseImpl extends ConfigurationElementImpl implements Release {
 	 */
 
 	public void setViewpointDescription(String newViewpointDescription) {
-
 		String oldViewpointDescription = viewpointDescription;
 		viewpointDescription = newViewpointDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.RELEASE__VIEWPOINT_DESCRIPTION, oldViewpointDescription, viewpointDescription));
-
 	}
 
 
@@ -187,7 +181,6 @@ public class ReleaseImpl extends ConfigurationElementImpl implements Release {
 	 */
 
 	public EList<String> getRequiredExecutionEnvironment() {
-
 		if (requiredExecutionEnvironment == null) {
 			requiredExecutionEnvironment = new EDataTypeUniqueEList<String>(String.class, this, VpconfPackage.RELEASE__REQUIRED_EXECUTION_ENVIRONMENT);
 		}

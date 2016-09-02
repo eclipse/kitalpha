@@ -112,6 +112,10 @@ public class VpconfAdapterFactory extends AdapterFactoryImpl {
 				return createReleaseAdapter();
 			}
 			@Override
+			public Adapter caseRepresentationConfiguration(RepresentationConfiguration object) {
+				return createRepresentationConfigurationAdapter();
+			}
+			@Override
 			public Adapter caseViewpointElement(ViewpointElement object) {
 				return createViewpointElementAdapter();
 			}
@@ -251,6 +255,20 @@ public class VpconfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReleaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration <em>Representation Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration
+	 * @generated
+	 */
+	public Adapter createRepresentationConfigurationAdapter() {
 		return null;
 	}
 

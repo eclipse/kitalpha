@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -39,8 +39,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.Requi
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ConfigurationElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratrionConfiguration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration;
@@ -87,7 +91,6 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 	}
 	
 	
-	//Forbid many declarations of diagram/documentation overwrite.
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext,	ICompletionProposalAcceptor acceptor) {
 		if (grammar instanceof VpconfGrammarAccess) {
@@ -109,6 +112,22 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 					
 					while (it.hasNext()){
 						ConfigurationElement ce = it.next();
+						if (ce instanceof GenerationConfiguration){
+							if (proposal.getDisplayString().matches(access.getGenerationConfigurationAccess().getProjectKeyword_1().getValue())){
+								return;
+							}
+							
+							if (proposal.getDisplayString().matches(access.getGenerationConfigurationAccess().getNsuriKeyword_3_0().getValue())){
+								return;
+							}
+						}
+						
+						if (ce instanceof TargetApplication){
+							if (proposal.getDisplayString().matches(access.getTargetApplicationAccess().getTargetKeyword_1().getValue())){
+								return;
+							}
+						}
+						
 						if (ce instanceof Generation){
 							Generation gen = (Generation)ce;
 							
@@ -118,10 +137,12 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 							EList<ExtensionGeneratrionConfiguration> listConfig = gen.getOwnedExtensionGenConf();
 							
 							for (ExtensionGeneratrionConfiguration confOpt : listConfig) {
-								
+								if (confOpt instanceof GData &&
+										proposal.getDisplayString().matches(access.getGDataAccess().getDataKeyword_1().getValue())){
+									return;
+								}
 								if (confOpt instanceof DiagramGenerationConfiguration &&
 										proposal.getDisplayString().matches(access.getDiagramGenerationConfigurationAccess().getDiagramKeyword_1().getValue())){
-									
 									return;
 								}
 								
@@ -141,13 +162,16 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 							}
 						}
 						
+						if (ce instanceof RepresentationConfiguration &&
+								proposal.getDisplayString().matches(access.getRepresentationConfigurationAccess().getRepresentationKeyword_1().getValue())){
+							return;
+						}
 						if (ce instanceof Release){
 							if (proposal.getDisplayString().matches(access.getReleaseAccess().getReleaseKeyword_1().getValue()))
 								return;
 						}
 					}
 				}
-				
 				getPriorityHelper().adjustKeywordPriority(proposal, contentAssistContext.getPrefix());
 				acceptor.accept(proposal);
 			}

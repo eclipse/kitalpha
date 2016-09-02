@@ -65,7 +65,6 @@ public class ReleaseItemProvider extends ConfigurationElementItemProvider {
 	 * @generated
 	 */
 	protected void addViewpointVersionPropertyDescriptor(Object object) {
-
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -79,7 +78,6 @@ public class ReleaseItemProvider extends ConfigurationElementItemProvider {
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-
 	}
 
 	/**
@@ -89,7 +87,6 @@ public class ReleaseItemProvider extends ConfigurationElementItemProvider {
 	 * @generated
 	 */
 	protected void addViewpointDescriptionPropertyDescriptor(Object object) {
-
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -103,7 +100,6 @@ public class ReleaseItemProvider extends ConfigurationElementItemProvider {
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-
 	}
 
 	/**
@@ -152,12 +148,10 @@ public class ReleaseItemProvider extends ConfigurationElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-
 		String label = ((Release)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Release_type") :
 			getString("_UI_Release_type") + " " + label;
-
 	}
 	
 

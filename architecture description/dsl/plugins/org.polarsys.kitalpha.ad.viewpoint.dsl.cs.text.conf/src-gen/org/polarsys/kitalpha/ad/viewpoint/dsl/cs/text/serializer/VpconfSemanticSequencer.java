@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.ConfigurationPackage;
@@ -73,6 +74,9 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case VpconfPackage.RELEASE:
 				sequence_Release(context, (Release) semanticObject); 
+				return; 
+			case VpconfPackage.REPRESENTATION_CONFIGURATION:
+				sequence_RepresentationConfiguration(context, (RepresentationConfiguration) semanticObject); 
 				return; 
 			case VpconfPackage.TARGET_APPLICATION:
 				sequence_TargetApplication(context, (TargetApplication) semanticObject); 
@@ -156,6 +160,15 @@ public class VpconfSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (viewpointVersion=Version? viewpointDescription=EString? (requiredExecutionEnvironment+=STRING requiredExecutionEnvironment+=STRING*)?)
 	 */
 	protected void sequence_Release(EObject context, Release semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     visible=EBoolean
+	 */
+	protected void sequence_RepresentationConfiguration(EObject context, RepresentationConfiguration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

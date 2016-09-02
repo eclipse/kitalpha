@@ -40,7 +40,6 @@ public interface Release extends ConfigurationElement {
 	/**
 	 * Returns the value of the '<em><b>Viewpoint Version</b></em>' attribute.
 	 * The default value is <code>"0.0.0"</code>.
-
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Viewpoint Version</em>' attribute isn't clear,
@@ -61,7 +60,6 @@ public interface Release extends ConfigurationElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getViewpointVersion <em>Viewpoint Version</em>}' attribute.
-
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Viewpoint Version</em>' attribute.
@@ -76,7 +74,6 @@ public interface Release extends ConfigurationElement {
 
 	/**
 	 * Returns the value of the '<em><b>Viewpoint Description</b></em>' attribute.
-
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Viewpoint Description</em>' attribute isn't clear,
@@ -97,7 +94,6 @@ public interface Release extends ConfigurationElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release#getViewpointDescription <em>Viewpoint Description</em>}' attribute.
-
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Viewpoint Description</em>' attribute.
@@ -116,7 +112,6 @@ public interface Release extends ConfigurationElement {
 	/**
 	 * Returns the value of the '<em><b>Required Execution Environment</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
-
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Required Execution Environment</em>' attribute isn't clear,

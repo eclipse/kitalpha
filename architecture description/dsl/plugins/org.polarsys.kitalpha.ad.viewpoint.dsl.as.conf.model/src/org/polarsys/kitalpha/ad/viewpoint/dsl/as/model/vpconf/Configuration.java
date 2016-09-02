@@ -36,7 +36,6 @@ public interface Configuration extends Aspect {
 	/**
 	 * Returns the value of the '<em><b>Vp Configuration Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ConfigurationElement}.
-
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Vp Configuration Elements</em>' containment reference list isn't clear,

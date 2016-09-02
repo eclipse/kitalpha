@@ -204,7 +204,6 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public boolean isModel() {
-
 		return model;
 	}
 
@@ -217,12 +216,10 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public void setModel(boolean newModel) {
-
 		boolean oldModel = model;
 		model = newModel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GDATA__MODEL, oldModel, model));
-
 	}
 
 
@@ -237,7 +234,6 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public boolean isEdit() {
-
 		return edit;
 	}
 
@@ -250,12 +246,10 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public void setEdit(boolean newEdit) {
-
 		boolean oldEdit = edit;
 		edit = newEdit;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GDATA__EDIT, oldEdit, edit));
-
 	}
 
 
@@ -270,7 +264,6 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public boolean isEditor() {
-
 		return editor;
 	}
 
@@ -283,12 +276,10 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public void setEditor(boolean newEditor) {
-
 		boolean oldEditor = editor;
 		editor = newEditor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GDATA__EDITOR, oldEditor, editor));
-
 	}
 
 
@@ -303,7 +294,6 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public boolean isTest() {
-
 		return test;
 	}
 
@@ -316,12 +306,10 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public void setTest(boolean newTest) {
-
 		boolean oldTest = test;
 		test = newTest;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GDATA__TEST, oldTest, test));
-
 	}
 
 
@@ -336,7 +324,6 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public boolean isJavaDoc() {
-
 		return javaDoc;
 	}
 
@@ -349,12 +336,10 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public void setJavaDoc(boolean newJavaDoc) {
-
 		boolean oldJavaDoc = javaDoc;
 		javaDoc = newJavaDoc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GDATA__JAVA_DOC, oldJavaDoc, javaDoc));
-
 	}
 
 
@@ -369,7 +354,6 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public boolean isOverwriteEcore() {
-
 		return overwriteEcore;
 	}
 
@@ -382,12 +366,10 @@ public class GDataImpl extends EObjectImpl implements GData {
 	 */
 
 	public void setOverwriteEcore(boolean newOverwriteEcore) {
-
 		boolean oldOverwriteEcore = overwriteEcore;
 		overwriteEcore = newOverwriteEcore;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GDATA__OVERWRITE_ECORE, oldOverwriteEcore, overwriteEcore));
-
 	}
 
 

@@ -28,6 +28,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
@@ -96,6 +97,13 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 	 * @generated
 	 */
 	private EClass releaseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass representationConfigurationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -380,6 +388,24 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRepresentationConfiguration() {
+		return representationConfigurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRepresentationConfiguration_Visible() {
+		return (EAttribute)representationConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getVersion() {
 		return versionEDataType;
 	}
@@ -443,6 +469,9 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 		createEAttribute(releaseEClass, RELEASE__VIEWPOINT_DESCRIPTION);
 		createEAttribute(releaseEClass, RELEASE__REQUIRED_EXECUTION_ENVIRONMENT);
 
+		representationConfigurationEClass = createEClass(REPRESENTATION_CONFIGURATION);
+		createEAttribute(representationConfigurationEClass, REPRESENTATION_CONFIGURATION__VISIBLE);
+
 		// Create data types
 		versionEDataType = createEDataType(VERSION);
 	}
@@ -485,6 +514,7 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 		generationConfigurationEClass.getESuperTypes().add(this.getConfigurationElement());
 		generationEClass.getESuperTypes().add(this.getConfigurationElement());
 		releaseEClass.getESuperTypes().add(this.getConfigurationElement());
+		representationConfigurationEClass.getESuperTypes().add(this.getConfigurationElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -517,6 +547,9 @@ public class VpconfPackageImpl extends EPackageImpl implements VpconfPackage {
 		initEAttribute(getRelease_ViewpointVersion(), this.getVersion(), "viewpointVersion", "0.0.0", 0, 1, Release.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelease_ViewpointDescription(), theEcorePackage.getEString(), "viewpointDescription", null, 0, 1, Release.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelease_RequiredExecutionEnvironment(), theEcorePackage.getEString(), "requiredExecutionEnvironment", "JavaSE-1.7", 0, -1, Release.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(representationConfigurationEClass, RepresentationConfiguration.class, "RepresentationConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRepresentationConfiguration_Visible(), ecorePackage.getEBoolean(), "visible", null, 0, 1, RepresentationConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(versionEDataType, Version.class, "Version", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

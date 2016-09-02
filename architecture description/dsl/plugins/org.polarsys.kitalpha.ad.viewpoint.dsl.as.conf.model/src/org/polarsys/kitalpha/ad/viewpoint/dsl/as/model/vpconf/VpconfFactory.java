@@ -85,6 +85,15 @@ public interface VpconfFactory extends EFactory {
 	Release createRelease();
 
 	/**
+	 * Returns a new object of class '<em>Representation Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Representation Configuration</em>'.
+	 * @generated
+	 */
+	RepresentationConfiguration createRepresentationConfiguration();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
