@@ -311,14 +311,12 @@
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_DHdd8VOGEeS0CZx9NVRo1A" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="attachment/features"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_j6UStQHGEeSWLIhgOb7dcQ" path="${publish}/TP"/>
       <components xsi:type="buildstep:Feature" xmi:id="_j6UStgHGEeSWLIhgOb7dcQ" id="org.polarsys.kitalpha.model.detachment.feature"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_VYRnoG97EeapUespu64C6A" id="org.polarsys.kitalpha.model.detachment.ui.menu.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_z870gVOFEeS0CZx9NVRo1A" id="org.polarsys.kitalpha.model.common.share.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_2mdbgFOFEeS0CZx9NVRo1A" id="org.polarsys.kitalpha.model.common.scrutiny.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_40cWAFOFEeS0CZx9NVRo1A" id="org.polarsys.kitalpha.model.common.commands.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_TfAS0V64EeSHbaZAI7j8zw" id="org.polarsys.kitalpha.model.attachment.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_tZFTMAHGEeSWLIhgOb7dcQ" component="_j6UStgHGEeSWLIhgOb7dcQ"/>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_ZLBggG97EeapUespu64C6A" name="" component="_VYRnoG97EeapUespu64C6A"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_7StIMFOFEeS0CZx9NVRo1A" component="_40cWAFOFEeS0CZx9NVRo1A"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_-y7GoFOFEeS0CZx9NVRo1A" component="_2mdbgFOFEeS0CZx9NVRo1A"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="__SUYYFOFEeS0CZx9NVRo1A" component="_z870gVOFEeS0CZx9NVRo1A"/>
