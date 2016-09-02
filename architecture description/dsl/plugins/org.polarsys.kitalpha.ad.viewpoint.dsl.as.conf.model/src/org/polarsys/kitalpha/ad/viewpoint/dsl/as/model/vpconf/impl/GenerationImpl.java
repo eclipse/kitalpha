@@ -94,7 +94,6 @@ public class GenerationImpl extends ConfigurationElementImpl implements Generati
 	 */
 
 	public GData getOwnedDataGenerationConf() {
-
 		return ownedDataGenerationConf;
 	}
 
@@ -107,14 +106,12 @@ public class GenerationImpl extends ConfigurationElementImpl implements Generati
 	 */
 
 	public NotificationChain basicSetOwnedDataGenerationConf(GData newOwnedDataGenerationConf, NotificationChain msgs) {
-
 		GData oldOwnedDataGenerationConf = ownedDataGenerationConf;
 		ownedDataGenerationConf = newOwnedDataGenerationConf;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpconfPackage.GENERATION__OWNED_DATA_GENERATION_CONF, oldOwnedDataGenerationConf, newOwnedDataGenerationConf);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-
 		return msgs;
 	}
 
@@ -127,7 +124,6 @@ public class GenerationImpl extends ConfigurationElementImpl implements Generati
 	 */
 
 	public void setOwnedDataGenerationConf(GData newOwnedDataGenerationConf) {
-
 		if (newOwnedDataGenerationConf != ownedDataGenerationConf) {
 			NotificationChain msgs = null;
 			if (ownedDataGenerationConf != null)
@@ -139,7 +135,6 @@ public class GenerationImpl extends ConfigurationElementImpl implements Generati
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GENERATION__OWNED_DATA_GENERATION_CONF, newOwnedDataGenerationConf, newOwnedDataGenerationConf));
-
 	}
 
 
@@ -152,7 +147,6 @@ public class GenerationImpl extends ConfigurationElementImpl implements Generati
 	 */
 
 	public EList<ExtensionGeneratrionConfiguration> getOwnedExtensionGenConf() {
-
 		if (ownedExtensionGenConf == null) {
 			ownedExtensionGenConf = new EObjectContainmentEList<ExtensionGeneratrionConfiguration>(ExtensionGeneratrionConfiguration.class, this, VpconfPackage.GENERATION__OWNED_EXTENSION_GEN_CONF);
 		}

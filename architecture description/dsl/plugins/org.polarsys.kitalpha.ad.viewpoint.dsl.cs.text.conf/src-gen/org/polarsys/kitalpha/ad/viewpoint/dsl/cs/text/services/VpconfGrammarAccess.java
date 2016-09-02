@@ -80,12 +80,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cGenerationConfigurationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cGenerationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cReleaseParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cRepresentationConfigurationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//ConfigurationElement returns vpconf::ConfigurationElement:
-		//	TargetApplication | GenerationConfiguration | Generation | Release;
+		//	TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration;
 		@Override public ParserRule getRule() { return rule; }
 
-		//TargetApplication | GenerationConfiguration | Generation | Release
+		//TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//TargetApplication
@@ -99,6 +100,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Release
 		public RuleCall getReleaseParserRuleCall_3() { return cReleaseParserRuleCall_3; }
+
+		//RepresentationConfiguration
+		public RuleCall getRepresentationConfigurationParserRuleCall_4() { return cRepresentationConfigurationParserRuleCall_4; }
 	}
 
 	public class TargetApplicationElements extends AbstractParserRuleElementFinder {
@@ -660,6 +664,50 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
+	public class RepresentationConfigurationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RepresentationConfiguration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cRepresentationConfigurationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cRepresentationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cVisibleKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cVisibleAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cVisibleEBooleanParserRuleCall_5_0 = (RuleCall)cVisibleAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//RepresentationConfiguration returns vpconf::RepresentationConfiguration:
+		//	{vpconf::RepresentationConfiguration} "representation" "{" "visible" ":" visible=EBoolean "}";
+		@Override public ParserRule getRule() { return rule; }
+
+		//{vpconf::RepresentationConfiguration} "representation" "{" "visible" ":" visible=EBoolean "}"
+		public Group getGroup() { return cGroup; }
+
+		//{vpconf::RepresentationConfiguration}
+		public Action getRepresentationConfigurationAction_0() { return cRepresentationConfigurationAction_0; }
+
+		//"representation"
+		public Keyword getRepresentationKeyword_1() { return cRepresentationKeyword_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//"visible"
+		public Keyword getVisibleKeyword_3() { return cVisibleKeyword_3; }
+
+		//":"
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+
+		//visible=EBoolean
+		public Assignment getVisibleAssignment_5() { return cVisibleAssignment_5; }
+
+		//EBoolean
+		public RuleCall getVisibleEBooleanParserRuleCall_5_0() { return cVisibleEBooleanParserRuleCall_5_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+
 	public class VersionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Version");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -729,9 +777,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword c_Keyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
 		private final Keyword cHyphenMinusKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
 		
-		////terminal QUALIFIER: '^'?('a'..'z'|'A'..'Z'|'_' | '0'..'9') ('a'..'z'|'A'..'Z'|'_' | '-' |'0'..'9')*;
-		// Qualifier
-		//returns ecore::EString:
+		//Qualifier returns ecore::EString:
 		//	(INT | ID | "_") (INT | ID | "_" | "-")*;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -778,6 +824,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	private final DocumentationGenerationConfigurationElements pDocumentationGenerationConfiguration;
 	private final ModelsAirdGenerationConfigurationElements pModelsAirdGenerationConfiguration;
 	private final ReleaseElements pRelease;
+	private final RepresentationConfigurationElements pRepresentationConfiguration;
 	private final VersionElements pVersion;
 	private final QualifierElements pQualifier;
 	
@@ -801,6 +848,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDocumentationGenerationConfiguration = new DocumentationGenerationConfigurationElements();
 		this.pModelsAirdGenerationConfiguration = new ModelsAirdGenerationConfigurationElements();
 		this.pRelease = new ReleaseElements();
+		this.pRepresentationConfiguration = new RepresentationConfigurationElements();
 		this.pVersion = new VersionElements();
 		this.pQualifier = new QualifierElements();
 	}
@@ -847,7 +895,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConfigurationElement returns vpconf::ConfigurationElement:
-	//	TargetApplication | GenerationConfiguration | Generation | Release;
+	//	TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration;
 	public ConfigurationElementElements getConfigurationElementAccess() {
 		return pConfigurationElement;
 	}
@@ -952,6 +1000,16 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getReleaseAccess().getRule();
 	}
 
+	//RepresentationConfiguration returns vpconf::RepresentationConfiguration:
+	//	{vpconf::RepresentationConfiguration} "representation" "{" "visible" ":" visible=EBoolean "}";
+	public RepresentationConfigurationElements getRepresentationConfigurationAccess() {
+		return pRepresentationConfiguration;
+	}
+	
+	public ParserRule getRepresentationConfigurationRule() {
+		return getRepresentationConfigurationAccess().getRule();
+	}
+
 	//Version returns vpconf::Version:
 	//	INT ("." (INT ("." INT ("." Qualifier)?)?))?;
 	public VersionElements getVersionAccess() {
@@ -962,9 +1020,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getVersionAccess().getRule();
 	}
 
-	////terminal QUALIFIER: '^'?('a'..'z'|'A'..'Z'|'_' | '0'..'9') ('a'..'z'|'A'..'Z'|'_' | '-' |'0'..'9')*;
-	// Qualifier
-	//returns ecore::EString:
+	//Qualifier returns ecore::EString:
 	//	(INT | ID | "_") (INT | ID | "_" | "-")*;
 	public QualifierElements getQualifierAccess() {
 		return pQualifier;

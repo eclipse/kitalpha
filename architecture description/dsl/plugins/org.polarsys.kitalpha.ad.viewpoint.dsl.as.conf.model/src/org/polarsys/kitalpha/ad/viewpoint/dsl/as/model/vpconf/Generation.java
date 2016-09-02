@@ -35,7 +35,6 @@ public interface Generation extends ConfigurationElement {
 
 	/**
 	 * Returns the value of the '<em><b>Owned Data Generation Conf</b></em>' containment reference.
-
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Data Generation Conf</em>' containment reference isn't clear,
@@ -56,7 +55,6 @@ public interface Generation extends ConfigurationElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation#getOwnedDataGenerationConf <em>Owned Data Generation Conf</em>}' containment reference.
-
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Owned Data Generation Conf</em>' containment reference.
@@ -72,7 +70,6 @@ public interface Generation extends ConfigurationElement {
 	/**
 	 * Returns the value of the '<em><b>Owned Extension Gen Conf</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ExtensionGeneratrionConfiguration}.
-
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Extension Gen Conf</em>' containment reference list isn't clear,

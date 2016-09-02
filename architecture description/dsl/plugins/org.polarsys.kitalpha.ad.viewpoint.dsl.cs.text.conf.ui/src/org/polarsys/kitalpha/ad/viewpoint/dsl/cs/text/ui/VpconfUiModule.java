@@ -15,9 +15,9 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback.CommonEditorCallback;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateContextType;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.CommonTemplateStore;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpConfProposalPriorities;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.VpConfTemplateProposalProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.documentation.CommonEObjectHover;
 
 
@@ -36,7 +36,7 @@ public class VpconfUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.te
 	
 	@Override
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider> bindITemplateProposalProvider(){
-		return CommonTemplateProposalProvider.class;
+		return VpConfTemplateProposalProvider.class;
 	}
 	
 	public Class<? extends org.eclipse.jface.text.templates.persistence.TemplateStore> bindTemplateStore() {

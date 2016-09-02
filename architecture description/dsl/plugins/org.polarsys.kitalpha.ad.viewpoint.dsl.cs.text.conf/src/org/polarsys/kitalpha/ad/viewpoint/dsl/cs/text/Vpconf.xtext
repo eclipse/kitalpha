@@ -35,7 +35,7 @@ Configuration returns vpdesc::Aspect:
 	'}';
 
 ConfigurationElement returns vpconf::ConfigurationElement:
-	TargetApplication | GenerationConfiguration | Generation | Release
+	TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration
 ;
 
 TargetApplication returns vpconf::ConfigurationElement:
@@ -111,6 +111,14 @@ Release returns vpconf::Release:
 		('execution' 'environments' ':' (requiredExecutionEnvironment+=STRING (',' requiredExecutionEnvironment+=STRING)*))?
 	'}'
 ;
+
+RepresentationConfiguration returns vpconf::RepresentationConfiguration:
+	{vpconf::RepresentationConfiguration}
+	'representation' '{'
+		'visible' ':' visible = EBoolean
+	'}'
+;
+
 
 
 Version returns vpconf::Version: 

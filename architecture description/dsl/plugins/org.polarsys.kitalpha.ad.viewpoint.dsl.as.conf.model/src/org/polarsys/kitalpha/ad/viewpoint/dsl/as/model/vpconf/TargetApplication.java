@@ -31,7 +31,6 @@ public interface TargetApplication extends ConfigurationElement {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -49,7 +48,6 @@ public interface TargetApplication extends ConfigurationElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication#getType <em>Type</em>}' attribute.
-
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.

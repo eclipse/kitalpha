@@ -103,7 +103,6 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public String getProjectName() {
-
 		return projectName;
 	}
 
@@ -114,12 +113,10 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public void setProjectName(String newProjectName) {
-
 		String oldProjectName = projectName;
 		projectName = newProjectName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GENERATION_CONFIGURATION__PROJECT_NAME, oldProjectName, projectName));
-
 	}
 
 	/**
@@ -129,7 +126,6 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public String getNsuri() {
-
 		return nsuri;
 	}
 
@@ -140,12 +136,10 @@ public class GenerationConfigurationImpl extends ConfigurationElementImpl
 	 */
 
 	public void setNsuri(String newNsuri) {
-
 		String oldNsuri = nsuri;
 		nsuri = newNsuri;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.GENERATION_CONFIGURATION__NSURI, oldNsuri, nsuri));
-
 	}
 
 	/**

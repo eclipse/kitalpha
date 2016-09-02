@@ -112,12 +112,10 @@ public class ConfigurationItemProvider extends AspectItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-
 		String label = ((Configuration)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Configuration_type") :
 			getString("_UI_Configuration_type") + " " + label;
-
 	}
 
 	/**
@@ -151,33 +149,30 @@ public class ConfigurationItemProvider extends AspectItemProvider {
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-				newChildDescriptors.add
-					(createChildParameter
-						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-						 VpconfFactory.eINSTANCE.createTargetApplication()));
+		newChildDescriptors.add
+			(createChildParameter
+				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+				 VpconfFactory.eINSTANCE.createTargetApplication()));
 
+		newChildDescriptors.add
+			(createChildParameter
+				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+				 VpconfFactory.eINSTANCE.createGenerationConfiguration()));
 
+		newChildDescriptors.add
+			(createChildParameter
+				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+				 VpconfFactory.eINSTANCE.createGeneration()));
 
-				newChildDescriptors.add
-					(createChildParameter
-						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-						 VpconfFactory.eINSTANCE.createGenerationConfiguration()));
+		newChildDescriptors.add
+			(createChildParameter
+				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+				 VpconfFactory.eINSTANCE.createRelease()));
 
-
-
-				newChildDescriptors.add
-					(createChildParameter
-						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-						 VpconfFactory.eINSTANCE.createGeneration()));
-
-
-
-				newChildDescriptors.add
-					(createChildParameter
-						(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-						 VpconfFactory.eINSTANCE.createRelease()));
-
-
+		newChildDescriptors.add
+			(createChildParameter
+				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
+				 VpconfFactory.eINSTANCE.createRepresentationConfiguration()));
 	}
 
 }

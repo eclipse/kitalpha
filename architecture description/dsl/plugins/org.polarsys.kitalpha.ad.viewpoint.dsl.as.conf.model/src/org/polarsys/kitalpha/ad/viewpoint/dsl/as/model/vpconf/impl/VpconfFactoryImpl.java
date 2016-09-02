@@ -73,6 +73,7 @@ public class VpconfFactoryImpl extends EFactoryImpl implements VpconfFactory {
 			case VpconfPackage.GENERATION: return createGeneration();
 			case VpconfPackage.GDATA: return createGData();
 			case VpconfPackage.RELEASE: return createRelease();
+			case VpconfPackage.REPRESENTATION_CONFIGURATION: return createRepresentationConfiguration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -166,6 +167,16 @@ public class VpconfFactoryImpl extends EFactoryImpl implements VpconfFactory {
 	public Release createRelease() {
 		ReleaseImpl release = new ReleaseImpl();
 		return release;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RepresentationConfiguration createRepresentationConfiguration() {
+		RepresentationConfigurationImpl representationConfiguration = new RepresentationConfigurationImpl();
+		return representationConfiguration;
 	}
 
 	/**

@@ -75,6 +75,7 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReleaseAccess().getGroup_5(), "rule__Release__Group_5__0");
 					put(grammarAccess.getReleaseAccess().getGroup_5_3(), "rule__Release__Group_5_3__0");
 					put(grammarAccess.getReleaseAccess().getGroup_5_3_1(), "rule__Release__Group_5_3_1__0");
+					put(grammarAccess.getRepresentationConfigurationAccess().getGroup(), "rule__RepresentationConfiguration__Group__0");
 					put(grammarAccess.getVersionAccess().getGroup(), "rule__Version__Group__0");
 					put(grammarAccess.getVersionAccess().getGroup_1(), "rule__Version__Group_1__0");
 					put(grammarAccess.getVersionAccess().getGroup_1_1(), "rule__Version__Group_1_1__0");
@@ -103,6 +104,7 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReleaseAccess().getViewpointDescriptionAssignment_4_2(), "rule__Release__ViewpointDescriptionAssignment_4_2");
 					put(grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentAssignment_5_3_0(), "rule__Release__RequiredExecutionEnvironmentAssignment_5_3_0");
 					put(grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentAssignment_5_3_1_1(), "rule__Release__RequiredExecutionEnvironmentAssignment_5_3_1_1");
+					put(grammarAccess.getRepresentationConfigurationAccess().getVisibleAssignment_5(), "rule__RepresentationConfiguration__VisibleAssignment_5");
 				}
 			};
 		}

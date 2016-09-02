@@ -238,6 +238,29 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RepresentationConfigurationItemProvider representationConfigurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRepresentationConfigurationAdapter() {
+		if (representationConfigurationItemProvider == null) {
+			representationConfigurationItemProvider = new RepresentationConfigurationItemProvider(this);
+		}
+
+		return representationConfigurationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,6 +393,7 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 		if (generationItemProvider != null) generationItemProvider.dispose();
 		if (gDataItemProvider != null) gDataItemProvider.dispose();
 		if (releaseItemProvider != null) releaseItemProvider.dispose();
+		if (representationConfigurationItemProvider != null) representationConfigurationItemProvider.dispose();
 	}
 
 	/**
@@ -422,13 +446,10 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 			 */
 			@Override
 			public Object caseViewpoint(Viewpoint object) {
-
 				newChildDescriptors.add
 					(createChildParameter
 						(VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
 						 VpconfFactory.eINSTANCE.createConfiguration()));
-
-
 
 				return null;
 			}

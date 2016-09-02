@@ -82,7 +82,6 @@ public class TargetApplicationImpl extends ConfigurationElementImpl implements
 	 */
 
 	public String getType() {
-
 		return type;
 	}
 
@@ -93,12 +92,10 @@ public class TargetApplicationImpl extends ConfigurationElementImpl implements
 	 */
 
 	public void setType(String newType) {
-
 		String oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VpconfPackage.TARGET_APPLICATION__TYPE, oldType, type));
-
 	}
 
 	/**

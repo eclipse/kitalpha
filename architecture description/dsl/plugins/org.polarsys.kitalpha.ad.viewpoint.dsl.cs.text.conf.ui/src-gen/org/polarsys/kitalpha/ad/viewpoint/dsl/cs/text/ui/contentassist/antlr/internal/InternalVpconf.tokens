@@ -2,7 +2,7 @@
 ')'=24
 ','=43
 '-'=12
-'.'=44
+'.'=46
 ':'=26
 'Configuration'=15
 'EcoreToHtml:'=35
@@ -27,9 +27,11 @@
 'nsuri'=20
 'project'=19
 'release'=38
+'representation'=44
 'target'=18
 'true'=13
 'version'=39
+'visible'=45
 '{'=16
 '}'=17
 RULE_ANY_OTHER=10
@@ -73,3 +75,5 @@ T__41=41
 T__42=42
 T__43=43
 T__44=44
+T__45=45
+T__46=46
