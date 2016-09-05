@@ -188,7 +188,17 @@ public class ViewpointManager {
 			return error;
 		return Status.OK_STATUS;
 	}
-
+	
+	public static IStatus checkViewpointCompliancy(ResourceSet context, String vpId) {
+		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
+		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
+		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointUsages();
+		if (viewpointUsages.containsKey(vpId)) {
+			return useViewpoint(availableViewpoints, vpId, viewpointUsages.get(vpId));
+		}
+		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Not used viewpoint '" + vpId + "'");
+	}
+	
 	private static Map<String, Version> computeAvailableViewpointVersions() {
 		Map<String, Version> availableViewpoints = new HashMap<String, Version>();
 		ResourceSet set = new ResourceSetImpl();

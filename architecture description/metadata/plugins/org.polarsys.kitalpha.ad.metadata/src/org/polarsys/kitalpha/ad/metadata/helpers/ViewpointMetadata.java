@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.metadata.helpers;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -70,21 +69,22 @@ public class ViewpointMetadata {
 		}
 		return null;
 	}
-	
+
 	public void updateVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version) {
 		Metadata metadata = getMetadataStorage(true);
 
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
 				uv.setVersion(version);
-				return ;
+				return;
 			}
 		}
 		setUsage(vpResource, version, true);
 
 	}
 
-	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version, boolean usage) {
+	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version,
+			boolean usage) {
 		Metadata metadata = getMetadataStorage(true);
 
 		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
@@ -149,9 +149,9 @@ public class ViewpointMetadata {
 	}
 
 	public Resource initMetadataStorage(URI location) {
-		executeCommandInTransaction(new CreateMetadataResourceCommand(context, location));
-
-		return context.getResource(location, true);
+		CreateMetadataResourceCommand command = new CreateMetadataResourceCommand(context, location);
+		executeCommandInTransaction(command);
+		return command.getMetadataResource();
 	}
 
 	/**
@@ -160,33 +160,10 @@ public class ViewpointMetadata {
 	 * @return
 	 */
 	public Resource initMetadataStorage() {
-		URI uri = getExpectedMetadataStorageURI();
-		try {
-			context.getResource(uri, true);
-		} catch (Exception e) {
-			return createMetadataStorage(uri);
-		}
-		return null;
+		return initMetadataStorage(getExpectedMetadataStorageURI());
+
 	}
 
-	private Resource createMetadataStorage(URI uri) {
-		// delete proxy resource.
-		Resource resource = context.getResource(uri, false);
-		if (resource != null && resource.getContents().isEmpty()) {
-			resource.unload();
-			context.getResources().remove(resource);
-		}
-		resource = context.createResource(uri);
-		Metadata metadata = MetadataFactory.eINSTANCE.createMetadata();
-		metadata.setId(EcoreUtil.generateUUID());
-		
-		// TODO init the integration object
-		context.getResources().add(resource);
-		resource.getContents().add(metadata);
-		return resource;
-	}
-
-	
 	public URI getExpectedMetadataStorageURI() {
 		URI uri = context.getResources().get(0).getURI();
 		String path = uri.toPlatformString(true);
@@ -203,9 +180,9 @@ public class ViewpointMetadata {
 	}
 
 	protected Metadata getMetadataStorage() {
-		return getMetadataStorage(false) ;
+		return getMetadataStorage(false);
 	}
-	
+
 	protected Metadata getMetadataStorage(boolean create) {
 		Resource resource = getResource(STORAGE_EXTENSION);
 		if (create && resource == null)

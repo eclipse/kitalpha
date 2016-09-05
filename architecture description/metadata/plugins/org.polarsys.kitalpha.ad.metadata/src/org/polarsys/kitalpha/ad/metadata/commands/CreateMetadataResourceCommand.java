@@ -10,11 +10,13 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.metadata.commands;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 
@@ -25,7 +27,6 @@ import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 public class CreateMetadataResourceCommand extends MetadataCommand {
 
 	private URI uri;
-	private Resource newResource;
 	private ResourceSet resourceSet;
 
 	public CreateMetadataResourceCommand(ResourceSet resourceSet, URI uri) {
@@ -36,17 +37,53 @@ public class CreateMetadataResourceCommand extends MetadataCommand {
 
 	@Override
 	public void execute() {
-		newResource = resourceSet.createResource(uri);
-		Metadata metadata = MetadataFactory.eINSTANCE.createMetadata();
-		metadata.setId(EcoreUtil.generateUUID());
-		resourceSet.getResources().add(newResource);
-		newResource.getContents().add(metadata);
+
+		try {
+
+			resourceSet.getResource(uri, true);
+
+		} catch (Exception e) {
+			// Nothing here
+
+		} finally {
+			Resource resource = resourceSet.getResource(uri, false);
+			if (resource != null && resource.getContents().isEmpty()) {
+				resource.unload();
+				resourceSet.getResources().remove(resource);
+				resource = null;
+			}
+
+			if (resource == null) {
+				Resource newResource = resourceSet.createResource(uri);
+				Metadata metadata = MetadataFactory.eINSTANCE.createMetadata();
+				metadata.setId(EcoreUtil.generateUUID());
+				resourceSet.getResources().add(newResource);
+				newResource.getContents().add(metadata);
+			}
+		}
+
+	}
+
+	@Override
+	public Collection<?> getResult() {
+		return Collections.singletonList(resourceSet.getResource(uri, false));
+	}
+
+	public Resource getMetadataResource() {
+		Collection<?> results = getResult();
+		if (!results.isEmpty()) {
+			return (Resource) (getResult().iterator().next());
+		}
+		return null;
 	}
 
 	@Override
 	public void undo() {
-		resourceSet.getResources().remove(newResource);
-		newResource.unload();
+		Resource resource = resourceSet.getResource(uri, false);
+		if (resource != null) {
+			resource.unload();
+			resourceSet.getResources().remove(resource);
+		}
 	}
 
 }
