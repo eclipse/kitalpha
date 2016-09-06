@@ -20,6 +20,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
@@ -30,8 +31,21 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 
 public class VpDslConfigurationHelper {
 	
-	public static final String VIEWPOINT_VERSION_DEFAULT = "0.0.0";
-	public static final String VIEWPOINT_EE_DEFAULT = "JavaSE-1.6";
+	public static final String VIEWPOINT_VERSION_DEFAULT = "0.0.0"; //$NON-NLS-1$
+	public static final String VIEWPOINT_EE_DEFAULT = "JavaSE-1.6"; //$NON-NLS-1$
+	public static final String VIEWPOINT_VISIBLITY_TAG = "stateHidden"; //$NON-NLS-1$
+	
+	
+	public static boolean getViewpointVisibility(Object object){
+		Configuration viewpointConfiguration = getViewpointConfiguration(object);
+		if (viewpointConfiguration != null){
+			RepresentationConfiguration vpRepresentationConf = getViewpointConfigurationElement(object, RepresentationConfiguration.class);
+			return vpRepresentationConf.isVisible();
+		}
+		//Default value is true. If there are no specification of visibility
+		//the viewpoint is visible by default
+		return true;
+	}
 	
 	/**
 	 * @param object any model element

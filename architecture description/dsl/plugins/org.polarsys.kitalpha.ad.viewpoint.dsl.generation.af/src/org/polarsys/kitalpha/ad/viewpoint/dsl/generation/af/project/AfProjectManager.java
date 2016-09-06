@@ -35,7 +35,9 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointFactory;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.AFIntegrationManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.resourceimpl.ViewpointResourceProviderRegistry;
 import org.polarsys.kitalpha.ad.viewpoint.ui.wizard.ProjectHelper;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 
@@ -230,6 +232,7 @@ public class AfProjectManager {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		IFile xml = project.getFile("plugin.xml");
 		StringBuffer contents = new StringBuffer();
+		boolean isVisible = isVisibleViewpoint();
 
 		contents.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 		contents.append("<?eclipse version=\"3.4\"?>\n");
@@ -248,9 +251,19 @@ public class AfProjectManager {
 		contents.append("	<extension\n");
 		contents.append("	     point=\"org.polarsys.kitalpha.resourcereuse.resources\">\n");
 		contents.append("	  <resource\n");
+		
 		contents.append("	        domain=\"AF\"\n");
 		contents.append("	        id=\"").append(_viewpointId).append("\"\n");
-		contents.append("	        tags=\"vp\"\n");
+		if (isVisible){
+			contents.append("	        tags=\"vp\"\n");
+		} else {
+			//Ad tag to resourcereuse to avoid the visiblity of viewpoint
+			//in viewpoint manager: tags="vp,not_visible"
+			contents.append("	        tags=\"vp")
+					.append(",")
+					.append(VpDslConfigurationHelper.VIEWPOINT_VISIBLITY_TAG)
+					.append("\"\n");
+		}
 		contents.append("	        name=\"").append(_vpName).append("\"\n");
 		contents.append("	        path=\"").append(_vpURI).append('#').append(_vpuuid).append("\"/>\n");
 		contents.append("	</extension>\n");
@@ -285,6 +298,11 @@ public class AfProjectManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	private boolean isVisibleViewpoint(){
+		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
+		return VpDslConfigurationHelper.getViewpointVisibility(viewpoint);
 	}
 
 }
