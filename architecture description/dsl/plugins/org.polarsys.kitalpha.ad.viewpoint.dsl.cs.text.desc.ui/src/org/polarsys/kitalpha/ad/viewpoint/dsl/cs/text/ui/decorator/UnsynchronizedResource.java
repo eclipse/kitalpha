@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 public class UnsynchronizedResource extends LabelProvider implements ILightweightLabelDecorator {
 	
 	public static final String DECORATOR_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui.vpdesc.decorator";
-	private static final String UNSYNCRONIZED_RESOURCE_LABEL = "[ Unsyncronized ] ";
+	private static final String UNSYNCRONIZED_RESOURCE_LABEL = "[ Unsynchronized ] ";
 	
 	
 	public UnsynchronizedResource() {
@@ -37,6 +37,7 @@ public class UnsynchronizedResource extends LabelProvider implements ILightweigh
 		if (resource == null || 
 				!(resource.exists()) ||
 				!(resource.isAccessible()) ||
+				(resource.getFullPath().getFileExtension() == null) ||
 				!(resource.getFullPath().getFileExtension().endsWith(FileExtension.PRIMARY_EXTENSION))) return;
 
 		boolean value = ResourceHelper.getSyncProperty(resource);
