@@ -68,7 +68,7 @@ public class ViewpointTreeContainer {
 			if (!vpd.isCandidateToKeep()) {
 				vps.add(vpd.getViewpointId());
 			}
-			collectUriChildrenToRemove(vpd.getChildren(), vps);
+			collectViewpointChildrenToRemove(vpd.getChildren(), vps);
 		}
 
 		return vps;
@@ -107,7 +107,7 @@ public class ViewpointTreeContainer {
 			if (!child.isCandidateToKeep()) {
 				viewpointToRemove.add(child.getViewpointId());
 			}
-			collectUriChildrenToRemove(child.getChildren(), viewpointToRemove);
+			collectViewpointChildrenToRemove(child.getChildren(), viewpointToRemove);
 		}
 	}
 
