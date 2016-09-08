@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,6 +19,7 @@ import org.eclipse.jface.action.IMenuCreator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MenuEvent;
 import org.eclipse.swt.events.MenuListener;
+import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Control;
@@ -31,12 +32,17 @@ import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
+/**
+ * @author Thomas Guiu
+ * @author Guillaume Gebhart
+ */
 final class OpenViewAction extends Action implements IMenuCreator {
 	private Resource resource;
-	private List<String> viewIds = new ArrayList<String>();
+	private List<ViewElement> viewIds = new ArrayList<ViewElement>();
 
-	private SelectionListener listener = new SelectionListener() {
+	private SelectionListener listener = new SelectionAdapter() {
 
+		@Override
 		public void widgetSelected(SelectionEvent ee) {
 			try {
 				MenuItem menuItem = (MenuItem) ee.getSource();
@@ -48,27 +54,28 @@ final class OpenViewAction extends Action implements IMenuCreator {
 
 		}
 
-		public void widgetDefaultSelected(SelectionEvent e) {
-
-		}
 	};
 
 	public OpenViewAction() {
-		super("", IAction.AS_DROP_DOWN_MENU);
+		super("", IAction.AS_DROP_DOWN_MENU); //$NON-NLS-1$
 		setMenuCreator(this);
 	}
-
+	@Override
 	public void run() {
 		try {
-			for (String id : viewIds) {
-				showView(id);
+			for (ViewElement id : viewIds) {
+				showView(id.getId());
 			}
 		} catch (Exception e) {
 			AD_Log.getDefault().logError(e);
 		}
 	}
 
-	public void setResource(Resource resource) {
+	/**
+	 * 
+	 * @param resource
+	 */
+	public void setResource(final Resource resource) {
 		if (this.resource == resource)
 			return;
 		this.resource = resource;
@@ -86,10 +93,10 @@ final class OpenViewAction extends Action implements IMenuCreator {
 	private void fillMenu(Menu menu) {
 		for (MenuItem mi : menu.getItems())
 			mi.dispose();
-		for (String id : viewIds) {
+		for (ViewElement view : viewIds) {
 			MenuItem mi = new MenuItem(menu, SWT.PUSH);
-			mi.setText(id);
-			mi.setData(id);
+			mi.setText(view.getName());
+			mi.setData(view);
 			mi.addSelectionListener(listener);
 		}
 	}
