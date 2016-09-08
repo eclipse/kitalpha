@@ -314,14 +314,17 @@
       <components xsi:type="buildstep:Feature" xmi:id="_z870gVOFEeS0CZx9NVRo1A" id="org.polarsys.kitalpha.model.common.share.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_2mdbgFOFEeS0CZx9NVRo1A" id="org.polarsys.kitalpha.model.common.scrutiny.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_40cWAFOFEeS0CZx9NVRo1A" id="org.polarsys.kitalpha.model.common.commands.feature"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_L4urQHNxEeaBFLuOt0-20g" id="org.polarsys.kitalpha.model.common.ui.menu.feature"/>
       <components xsi:type="buildstep:Feature" xmi:id="_TfAS0V64EeSHbaZAI7j8zw" id="org.polarsys.kitalpha.model.attachment.feature"/>
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_tZFTMAHGEeSWLIhgOb7dcQ" component="_j6UStgHGEeSWLIhgOb7dcQ"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_7StIMFOFEeS0CZx9NVRo1A" component="_40cWAFOFEeS0CZx9NVRo1A"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_-y7GoFOFEeS0CZx9NVRo1A" component="_2mdbgFOFEeS0CZx9NVRo1A"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_UCSMUHNxEeaBFLuOt0-20g" component="_L4urQHNxEeaBFLuOt0-20g" generateSources="false"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="__SUYYFOFEeS0CZx9NVRo1A" component="_z870gVOFEeS0CZx9NVRo1A"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_YGNHcF64EeSHbaZAI7j8zw" component="_TfAS0V64EeSHbaZAI7j8zw"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_xC4EYAHGEeSWLIhgOb7dcQ" name="common 1 feature" id="TP" profile="SDKProfile" resultSteps="_7StIMFOFEeS0CZx9NVRo1A _-y7GoFOFEeS0CZx9NVRo1A __SUYYFOFEeS0CZx9NVRo1A" installResultStepsSourceFeatures="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_uL4ycHNxEeaBFLuOt0-20g" name="detachment and attachment menu feature" id="TP" profile="SDKProfile" resultSteps="_UCSMUHNxEeaBFLuOt0-20g" installResultStepsSourceFeatures="true"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_GiG_4FOGEeS0CZx9NVRo1A" name="detachment feature" id="TP" profile="SDKProfile" resultSteps="_tZFTMAHGEeSWLIhgOb7dcQ" installResultStepsSourceFeatures="true"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_bFHvoF64EeSHbaZAI7j8zw" name="attachment feature" id="TP" profile="SDKProfile" resultSteps="_YGNHcF64EeSHbaZAI7j8zw" installResultStepsSourceFeatures="true"/>
   </jobs>

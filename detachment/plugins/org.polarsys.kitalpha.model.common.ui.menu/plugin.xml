@@ -16,7 +16,7 @@ Contributors:
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription?after=additions">
+            locationURI="popup:org.polarsys.kitalpha.model.common.ui.menu.architectureDescription?after=additions">
          <command
                commandId="org.polarsys.kitalpha.model.detachment.ui.command.a"
                icon="icons/detach_icon.png"
@@ -49,13 +49,26 @@ Contributors:
       </menuContribution>
       <menuContribution
             allPopups="false"
-            locationURI="popup:org.eclipse.ui.popup.any">
-         <menu
-               icon="icons/Kitalpha_Logo_alpha.png"
-               id="org.polarsys.kitalpha.model.detachment.ui.menu.architectureDescription"
-               label="Kitalpha">
-         </menu>
+            locationURI="popup:org.polarsys.kitalpha.model.common.ui.menu.architectureDescription?after=additions">
+         <command
+               commandId="org.polarsys.kitalpha.model.attachment.ui.command.attachment"
+               icon="icons/attachment.png"
+               label="Model Attachment"
+               style="push">
+         </command>
       </menuContribution>
    </extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="popup:org.eclipse.ui.popup.any">
+      <menu
+            icon="icons/Kitalpha_Logo_alpha.png"
+            id="org.polarsys.kitalpha.model.common.ui.menu.architectureDescription"
+            label="Kitalpha">
+      </menu>
+   </menuContribution>
+</extension>
 
 </plugin>

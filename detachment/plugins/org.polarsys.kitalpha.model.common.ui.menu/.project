@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.polarsys.kitalpha.model.detachment.ui.menu</name>
+	<name>org.polarsys.kitalpha.model.common.ui.menu</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -18,5 +18,6 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.pde.PluginNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>
