@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,22 +27,23 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
  * @author Thomas Guiu
+ * @author Guillaume Gebhart
  * 
  */
 public class ViewHelper {
 	public static void openViews(Resource resource) {
 		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		for (String id : getViewIds(resource)) {
+		for (ViewElement current : getViewIds(resource)) {
 			try {
-				activePage.showView(id);
+				activePage.showView(current.getId());
 			} catch (PartInitException e) {
 				AD_Log.getDefault().logError(e);
 			}
 		}
 	}
 
-	public static List<String> getViewIds(Resource resource) {
-		List<String> viewIds = new ArrayList<String>();
+	public static List<ViewElement> getViewIds(Resource resource) {
+		List<ViewElement> viewIds = new ArrayList<ViewElement>();
 		String providerSymbolicName = resource.getProviderSymbolicName();
 		IPluginModelBase bundle = PluginRegistry.findModel(providerSymbolicName);
 		if (bundle == null)
@@ -53,7 +54,14 @@ public class ViewHelper {
 					if (children instanceof PluginElement) {
 						PluginElement elt = (PluginElement) children;
 						if (elt.getAttribute("resourceId") != null && elt.getAttribute("id") != null) {
-							viewIds.add(elt.getAttribute("id").getValue());
+							String id = (elt.getAttribute("id").getValue());
+							String name = (elt.getAttribute("name").getValue());
+							name = (name == null || name.isEmpty()) ? id :  name; 
+							
+							final ViewElement view = new ViewElement(id,name);
+							viewIds.add(view);		
+									
+							
 						}
 					}
 				}
