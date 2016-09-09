@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.4.0.v20160519-0641
 package org.polarsys.kitalpha.releng.sonar;
 
 import java.util.*;
