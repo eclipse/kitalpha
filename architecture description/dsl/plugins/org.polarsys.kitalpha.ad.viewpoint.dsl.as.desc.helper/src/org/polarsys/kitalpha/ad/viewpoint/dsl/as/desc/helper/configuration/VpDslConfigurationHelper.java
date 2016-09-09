@@ -40,7 +40,7 @@ public class VpDslConfigurationHelper {
 		Configuration viewpointConfiguration = getViewpointConfiguration(object);
 		if (viewpointConfiguration != null){
 			RepresentationConfiguration vpRepresentationConf = getViewpointConfigurationElement(object, RepresentationConfiguration.class);
-			return vpRepresentationConf.isVisible();
+			return vpRepresentationConf != null ? vpRepresentationConf.isVisible() : true;
 		}
 		//Default value is true. If there are no specification of visibility
 		//the viewpoint is visible by default

@@ -258,7 +258,7 @@ public class AfProjectManager {
 			contents.append("	        tags=\"vp\"\n");
 		} else {
 			//Ad tag to resourcereuse to avoid the visiblity of viewpoint
-			//in viewpoint manager: tags="vp,not_visible"
+			//in viewpoint manager: tags="vp,stateHidden"
 			contents.append("	        tags=\"vp")
 					.append(",")
 					.append(VpDslConfigurationHelper.VIEWPOINT_VISIBLITY_TAG)
