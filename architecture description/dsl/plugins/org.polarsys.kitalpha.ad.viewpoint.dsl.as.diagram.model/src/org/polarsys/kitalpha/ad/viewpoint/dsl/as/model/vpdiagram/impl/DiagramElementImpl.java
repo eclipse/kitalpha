@@ -44,7 +44,7 @@ public abstract class DiagramElementImpl extends NamedElementImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SynchronizationMode SYNCHRONIZATION_MODE_EDEFAULT = SynchronizationMode.SYNCHRONIZED;
+	protected static final SynchronizationMode SYNCHRONIZATION_MODE_EDEFAULT = SynchronizationMode.DEFAULT;
 	/**
 	 * The cached value of the '{@link #getSynchronizationMode() <em>Synchronization Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->

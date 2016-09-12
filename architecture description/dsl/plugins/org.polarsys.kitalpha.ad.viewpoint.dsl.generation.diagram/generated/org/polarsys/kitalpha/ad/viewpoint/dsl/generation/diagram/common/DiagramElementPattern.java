@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common;
 
 import java.util.*;
@@ -71,22 +71,26 @@ public class DiagramElementPattern
 			final DiagramElementMapping siriusElement = (DiagramElementMapping) doremiElement;
 			final DiagramElement dslElement = (DiagramElement) dslvpElement;
 
-			// Initializing attributes to their default values
-			siriusElement.setSynchronizationLock(synchronizationLockDefaultValue);
-			siriusElement.setCreateElements(createElementDefaultValue);
+			SynchronizationMode mode = dslElement.getSynchronizationMode();
+			if (!mode.equals(SynchronizationMode.DEFAULT)) {
+				// Initializing attributes to their default values
+				siriusElement.setSynchronizationLock(synchronizationLockDefaultValue);
+				siriusElement.setCreateElements(createElementDefaultValue);
 
-			// Setting attributes values depending on their synchronization mode.
-			switch (dslElement.getSynchronizationMode()) {
-			case NOT_SYNCHRONIZED:
-				siriusElement.setCreateElements(false);
-				break;
-			case SYNCHRONIZED:
-				siriusElement.setSynchronizationLock(true);
-				break;
-			case UNSYNCHRONIZABLE:
-				// Do nothing
-				// keep default values
-				break;
+				// Setting attributes values depending on their synchronization mode.
+				switch (mode) {
+				case NOT_SYNCHRONIZED:
+					siriusElement.setCreateElements(false);
+					break;
+				case SYNCHRONIZED:
+					siriusElement.setSynchronizationLock(true);
+					break;
+				case UNSYNCHRONIZABLE:
+				case DEFAULT:
+					// Do nothing
+					// keep default values (capture Unsynchronizable mode)
+					break;
+				}
 			}
 		}
 

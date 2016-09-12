@@ -2037,6 +2037,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		addEEnumLiteral(node_FormEEnum, Node_Form.RING);
 
 		initEEnum(synchronizationModeEEnum, SynchronizationMode.class, "SynchronizationMode");
+		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.DEFAULT);
 		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.SYNCHRONIZED);
 		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.UNSYNCHRONIZABLE);
 		addEEnumLiteral(synchronizationModeEEnum, SynchronizationMode.NOT_SYNCHRONIZED);

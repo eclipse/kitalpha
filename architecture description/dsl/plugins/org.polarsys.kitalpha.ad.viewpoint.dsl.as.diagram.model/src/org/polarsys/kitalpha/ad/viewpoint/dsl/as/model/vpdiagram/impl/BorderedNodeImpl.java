@@ -119,7 +119,7 @@ public class BorderedNodeImpl extends AbstractNodeImpl implements BorderedNode {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SynchronizationMode SYNCHRONIZATION_MODE_EDEFAULT = SynchronizationMode.SYNCHRONIZED;
+	protected static final SynchronizationMode SYNCHRONIZATION_MODE_EDEFAULT = SynchronizationMode.DEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSynchronizationMode() <em>Synchronization Mode</em>}' attribute.

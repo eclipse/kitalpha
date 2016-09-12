@@ -230,9 +230,10 @@
         upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationMode">
-    <eLiterals name="Synchronized"/>
-    <eLiterals name="Unsynchronizable" value="1"/>
-    <eLiterals name="Not_Synchronized" value="2"/>
+    <eLiterals name="Default"/>
+    <eLiterals name="Synchronized" value="1"/>
+    <eLiterals name="Unsynchronizable" value="2"/>
+    <eLiterals name="Not_Synchronized" value="3"/>
   </eClassifiers>
   <eSubpackages name="configuration" nsURI="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0"
       nsPrefix="configuration">

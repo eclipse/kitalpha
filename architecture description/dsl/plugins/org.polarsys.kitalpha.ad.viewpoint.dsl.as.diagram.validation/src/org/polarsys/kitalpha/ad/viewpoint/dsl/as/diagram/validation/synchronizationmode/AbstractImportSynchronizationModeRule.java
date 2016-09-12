@@ -99,6 +99,10 @@ public abstract class AbstractImportSynchronizationModeRule implements IAddition
 				return isCompatibleSyncMode(syncMode);
 			case NOT_SYNCHRONIZED:
 				return isCompatibleNotSyncMode(syncMode);
+			case DEFAULT:
+				//When the default mode is specified, we delegate the management
+				//of diagram synchronization to Sirius framework
+				return ValidationStatus.Ok;
 			default:
 				break;
 			}

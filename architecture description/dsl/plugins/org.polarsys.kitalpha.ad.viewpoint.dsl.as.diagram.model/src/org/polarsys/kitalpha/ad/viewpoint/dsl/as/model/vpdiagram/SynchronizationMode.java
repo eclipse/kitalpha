@@ -28,6 +28,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum SynchronizationMode implements Enumerator {
 	/**
+	 * The '<em><b>Default</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DEFAULT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DEFAULT(0, "Default", "Default"), /**
 	 * The '<em><b>Synchronized</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -35,7 +43,7 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SYNCHRONIZED(0, "Synchronized", "Synchronized"), /**
+	SYNCHRONIZED(1, "Synchronized", "Synchronized"), /**
 	 * The '<em><b>Unsynchronizable</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,7 +51,7 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNSYNCHRONIZABLE(1, "Unsynchronizable", "Unsynchronizable"), /**
+	UNSYNCHRONIZABLE(2, "Unsynchronizable", "Unsynchronizable"), /**
 	 * The '<em><b>Not Synchronized</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,7 +59,22 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NOT_SYNCHRONIZED(2, "Not_Synchronized", "Not_Synchronized");
+	NOT_SYNCHRONIZED(3, "Not_Synchronized", "Not_Synchronized");
+
+	/**
+	 * The '<em><b>Default</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Default</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DEFAULT
+	 * @model name="Default"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DEFAULT_VALUE = 0;
 
 	/**
 	 * The '<em><b>Synchronized</b></em>' literal value.
@@ -66,7 +89,7 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SYNCHRONIZED_VALUE = 0;
+	public static final int SYNCHRONIZED_VALUE = 1;
 
 	/**
 	 * The '<em><b>Unsynchronizable</b></em>' literal value.
@@ -81,7 +104,7 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNSYNCHRONIZABLE_VALUE = 1;
+	public static final int UNSYNCHRONIZABLE_VALUE = 2;
 
 	/**
 	 * The '<em><b>Not Synchronized</b></em>' literal value.
@@ -96,7 +119,7 @@ public enum SynchronizationMode implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_SYNCHRONIZED_VALUE = 2;
+	public static final int NOT_SYNCHRONIZED_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Synchronization Mode</b></em>' enumerators.
@@ -106,6 +129,7 @@ public enum SynchronizationMode implements Enumerator {
 	 */
 	private static final SynchronizationMode[] VALUES_ARRAY =
 		new SynchronizationMode[] {
+			DEFAULT,
 			SYNCHRONIZED,
 			UNSYNCHRONIZABLE,
 			NOT_SYNCHRONIZED,
@@ -165,6 +189,7 @@ public enum SynchronizationMode implements Enumerator {
 	 */
 	public static SynchronizationMode get(int value) {
 		switch (value) {
+			case DEFAULT_VALUE: return DEFAULT;
 			case SYNCHRONIZED_VALUE: return SYNCHRONIZED;
 			case UNSYNCHRONIZABLE_VALUE: return UNSYNCHRONIZABLE;
 			case NOT_SYNCHRONIZED_VALUE: return NOT_SYNCHRONIZED;
