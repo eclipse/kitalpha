@@ -1,0 +1,27 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _7A2tkHiyEeaI368ba7nlrQ,_FHeGUHi1EeaI368ba7nlrQ
+Element-Name: menuKitalpha
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _sCHLcHi0EeaI368ba7nlrQ
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 9/12/16 8:52 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "projectA/model/A.aird" | get-menu "Kitalpha/Model Detachment" | click
+get-tab-folder -index 2 | get-property activePage | equals Detachment | verify-true
+get-editor "Detachment" | close
+with [get-view "Project Explorer" | get-tree] {
+    select "projectA/model/A.aird" "projectA/model/B.aird"
+    get-menu "Kitalpha/Model Attachment" | click
+}
+get-window "Model Attachment" | get-control Any | get-property "getShell().getText()" | equals "Model Attachment" 
+    | verify-true
+get-window "Model Attachment" | get-button Cancel | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
