@@ -1,0 +1,17 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: ViewpointTestSuit
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _g18_kHi1EeaI368ba7nlrQ
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 9/12/16 8:52 AM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_cz690HaiEeaI368ba7nlrQ	// kind: 'test' name: 'ViewpointVisibilityGen' path: '../test cases/ViewpointVisibilityGen.test'
+_sCHLcHi0EeaI368ba7nlrQ	// kind: 'test' name: 'menuKitalpha' path: '../test cases/menuKitalpha.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

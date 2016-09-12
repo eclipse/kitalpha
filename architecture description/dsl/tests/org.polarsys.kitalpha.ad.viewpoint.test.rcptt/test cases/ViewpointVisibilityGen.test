@@ -1,0 +1,86 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _16YjAHiyEeaI368ba7nlrQ,_7A2tkHiyEeaI368ba7nlrQ
+Element-Name: ViewpointVisibilityGen
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _cz690HaiEeaI368ba7nlrQ
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 9/12/16 8:45 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | get-menu "New/Other..." | click
+with [get-window New] {
+    get-editbox -after [get-label "Wizards:"] | set-text ds
+    get-tree | select "Kitalpha/Architecture description/Viewpoint DSL project"
+    get-button "Next >" | click
+}
+with [get-window "New Viewpoint DSL Project"] {
+    get-editbox -after [get-label "Viewpoint short name :"] | set-text visibility
+    get-button "Next >" | click
+}
+exec-with-options {
+    get-window "New Viewpoint DSL Project" | get-button Finish | click
+} -allowStatusDialog
+with [get-editor "visibility.spec.vptext" | get-text-viewer] {
+    set-caret-pos 12 24
+    open-declaration
+}
+with [get-editor "visibility.conf.vptext" | get-text-viewer] {
+    set-caret-pos 12 56
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 3
+    key-type Up
+    key-type Enter
+    key-type "M1+s"
+    set-caret-pos 14 9
+    select-range 15 6 13 5
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.visibility.vpdsl/model/visibility.vpdesc" 
+    | double-click
+get-editor "visibility.vpdesc" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.visibility.vpdsl\\/model\\/visibility.vpdesc/Viewpoint visibility/Configuration visibility.conf/Representation Configuration" 
+    | click
+get-tab-folder -index 4 | get-tab-item Properties | click
+with [get-view Properties | get-tree] {
+    get-item Visible | get-property "columns[0]" | equals Visible | verify-true
+    get-item Visible | get-property "columns[1]" | equals true | verify-true
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.visibility.vpdsl/model/visibility.vpdesc" 
+    | get-menu "Viewpoint DSL/Generate viewpoint" | click
+get-view "Project Explorer" | get-tree | get-item "org.polarsys.kitalpha.vp.visibility.af" | get-property caption 
+    | equals "org.polarsys.kitalpha.vp.visibility.af" | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.visibility.af/plugin.xml" | double-click
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.visibility.vpdsl/model/visibility.conf.vptext" | double-click
+with [get-editor "visibility.conf.vptext" | get-text-viewer] {
+    set-caret-pos 14 21
+    select-range 14 19 14 23
+    type-text false
+    key-type "M1+s"
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.visibility.vpdsl/model/visibility.vpdesc" 
+    | double-click
+get-editor "visibility.vpdesc" | get-tree 
+    | select "platform:\\/resource\\/org.polarsys.kitalpha.vp.visibility.vpdsl\\/model\\/visibility.vpdesc/Viewpoint visibility/Configuration visibility.conf/Representation Configuration"
+with [get-view Properties | get-tree] {
+    get-item Visible | get-property caption | equals Visible | verify-true
+    get-item Visible | get-property "columns[0]" | equals Visible | verify-true
+    get-item Visible | get-property "columns[1]" | equals false | verify-true
+}
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.visibility.vpdsl/model/visibility.vpdesc" 
+        | get-menu "Viewpoint DSL/Generate viewpoint" | click
+    select "org.polarsys.kitalpha.vp.visibility.af/plugin.xml" | double-click
+}
+get-editor "org.polarsys.kitalpha.vp.visibility.af" | get-section "All Extensions" | get-tree 
+    | select "org.polarsys.kitalpha.resourcereuse.resources/visibility (resource)"
+get-editor "org.polarsys.kitalpha.vp.visibility.af" | get-section "Extension Element Details" | get-editbox 
+    -after [get-label "tags:"] | get-property text | equals "vp,stateHidden" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
