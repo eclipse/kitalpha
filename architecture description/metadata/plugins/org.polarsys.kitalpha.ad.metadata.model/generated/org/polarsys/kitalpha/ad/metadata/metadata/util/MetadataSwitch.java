@@ -87,10 +87,10 @@ public class MetadataSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MetadataPackage.VIEWPOINT_USAGE: {
-				ViewpointUsage viewpointUsage = (ViewpointUsage)theEObject;
-				T result = caseViewpointUsage(viewpointUsage);
-				if (result == null) result = caseMetadataElement(viewpointUsage);
+			case MetadataPackage.VIEWPOINT_REFERENCE: {
+				ViewpointReference viewpointReference = (ViewpointReference)theEObject;
+				T result = caseViewpointReference(viewpointReference);
+				if (result == null) result = caseMetadataElement(viewpointReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,17 +120,17 @@ public class MetadataSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Viewpoint Usage</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Viewpoint Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Viewpoint Usage</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Viewpoint Reference</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseViewpointUsage(ViewpointUsage object) {
+	public T caseViewpointReference(ViewpointReference object) {
 		return null;
 	}
 

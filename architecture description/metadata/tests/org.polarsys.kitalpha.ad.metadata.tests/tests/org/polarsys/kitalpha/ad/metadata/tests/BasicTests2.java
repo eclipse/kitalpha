@@ -37,7 +37,7 @@ public class BasicTests2 extends TestCase {
 	public void testHelper1() throws Exception {
 		ResourceSet set1 = new ResourceSetImpl();  
 		ViewpointMetadata m1 = MetadataHelper.getViewpointMetadata(set1);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertNotNull(viewpointUsages);
 		assertEquals(0, viewpointUsages.size());
 	}
@@ -62,6 +62,6 @@ public class BasicTests2 extends TestCase {
 		assertNotNull(eObject);
 		assertTrue(eObject instanceof Metadata);
 		Metadata meta = (Metadata)eObject;
-		assertEquals(0, meta.getViewpointUsages().size());
+		assertEquals(0, meta.getViewpointReferences().size());
 	}
 }

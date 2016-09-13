@@ -27,7 +27,9 @@ import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.polarsys.kitalpha.ad.services.manager.AlreadyInStateException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener2;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener2;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.edit.provider.ViewpointItemProviderAdapterFactory;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.edit.provider.ToolsItemProviderAdapterFactory;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
@@ -75,60 +77,60 @@ public class BasicTests2 extends TestCase {
 	}
 
 	public void testManager5() throws Exception {
-		assertFalse(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
-		assertTrue(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertTrue(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
 	}
 
 	public void testManager5_1() throws Exception {
 		try {
-			m1.desactivate("org.polarsys.kitalpha.vp.componentsampleperformance");
+			m1.unReference("org.polarsys.kitalpha.vp.componentsampleperformance");
 			fail("expecting an exception");
 		} catch (AlreadyInStateException e) {
 		}
 	}
 
 	public void testManager6() throws Exception {
-		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
 		try {
-			m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
+			m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
 			fail("expecting an exception");
 		} catch (AlreadyInStateException e) {
 		}
 	}
 	
 	public void testManager7() throws Exception {
-		assertFalse(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
-		assertTrue(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.desactivate("org.polarsys.kitalpha.vp.componentsampleperformance");
-		assertFalse(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		assertFalse(m1.isUsed("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertTrue(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.unReference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertFalse(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isInactive("org.polarsys.kitalpha.vp.componentsampleperformance"));
 	}
 	
 	public void testManager8() throws Exception {
-		assertFalse(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.startUse("org.polarsys.kitalpha.vp.componentsampleperformance");
-		assertTrue(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertTrue(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
 	}
 	
 	public void testManager9() throws Exception {
-		assertFalse(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.startUse("org.polarsys.kitalpha.vp.componentsampleperformance");
-		assertTrue(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.stopUse("org.polarsys.kitalpha.vp.componentsampleperformance");
-		assertFalse(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		assertFalse(m1.isUsed("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertTrue(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.unReference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertFalse(m1.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isInactive("org.polarsys.kitalpha.vp.componentsampleperformance"));
 	}
 	
 	public void testManager10() throws Exception {
-		assertFalse(m1.isFiltered("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
-		assertFalse(m1.isFiltered("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", true);
-		assertTrue(m1.isFiltered("org.polarsys.kitalpha.vp.componentsampleperformance"));
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", false);
-		assertFalse(m1.isFiltered("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isInactive("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertFalse(m1.isInactive("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", false);
+		assertTrue(m1.isInactive("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", true);
+		assertFalse(m1.isInactive("org.polarsys.kitalpha.vp.componentsampleperformance"));
 	}
 	
 	public void testManager11() throws Exception {
@@ -160,10 +162,10 @@ public class BasicTests2 extends TestCase {
 		TestListener listener = new TestListener();
 		m1.addListener(listener);
 		
-		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", true);
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", false);
-		m1.desactivate("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", false);
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", true);
+		m1.unReference("org.polarsys.kitalpha.vp.componentsampleperformance");
 		
 		assertTrue(listener.filtered);
 		assertTrue(listener.desactivated);
@@ -177,10 +179,10 @@ public class BasicTests2 extends TestCase {
 		TestListener listener = new TestListener();
 		m2.addListener(listener);
 		
-		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", true);
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", false);
-		m1.desactivate("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", false);
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", true);
+		m1.unReference("org.polarsys.kitalpha.vp.componentsampleperformance");
 		
 		assertFalse(listener.filtered);
 		assertFalse(listener.desactivated);
@@ -200,10 +202,10 @@ public class BasicTests2 extends TestCase {
 		m2.addListener(listener2);
 
 
-		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", true);
-		m1.filter("org.polarsys.kitalpha.vp.componentsampleperformance", false);
-		m1.desactivate("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", false);
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", true);
+		m1.unReference("org.polarsys.kitalpha.vp.componentsampleperformance");
 		
 		assertTrue(overallListener.filtered);
 		assertTrue(overallListener.desactivated);
@@ -223,7 +225,7 @@ public class BasicTests2 extends TestCase {
 	}
 	
 	public void testManager18() throws Exception {
-		m1.startUse("org.polarsys.kitalpha.vp.componentsample");
+		m1.reference("org.polarsys.kitalpha.vp.componentsample");
 		Resource viewpoint = ViewpointManager.getViewpoint("org.polarsys.kitalpha.vp.componentsample");
 
 		// no version information
@@ -247,49 +249,50 @@ public class BasicTests2 extends TestCase {
 		assertFalse(result.isOK());
 	}
 
-	public class TestOverallListener implements OverallListener {
+	public class TestOverallListener implements OverallListener2 {
 		public boolean filtered, displayed, activated, desactivated; 
+
 		@Override
-		public void hasBeenActivated(Object ctx, Resource vp) {
+		public void handleReferencing(Object ctx, Resource vp) {
 			activated = true;
 		}
 
 		@Override
-		public void hasBeenDeactivated(Object ctx, Resource vp) {
+		public void handleUnReferencing(Object ctx, Resource vp) {
 			desactivated = true;
 		}
 
 		@Override
-		public void hasBeenFiltered(Object ctx, Resource vp) {
-			filtered = true;
+		public void handleActivation(Object ctx, Resource vp) {
+			displayed = true;
 		}
 
 		@Override
-		public void hasBeenDisplayed(Object ctx, Resource vp) {
-			displayed = true;
+		public void handleInactivation(Object ctx, Resource vp) {
+			filtered = true;
 		}
 		
 	}
-	public class TestListener implements Listener {
+	public class TestListener implements Listener2 {
 		public boolean filtered, displayed, activated, desactivated; 
 		@Override
-		public void hasBeenFiltered(Resource vp) {
-			filtered = true;
+		public void handleReferencing(Resource vp) {
+			activated = true;
 		}
-		
+
 		@Override
-		public void hasBeenDisplayed(Resource vp) {
-			displayed = true;
-		}
-		
-		@Override
-		public void hasBeenDeactivated(Resource vp) {
+		public void handleUnReferencing(Resource vp) {
 			desactivated = true;
 		}
-		
+
 		@Override
-		public void hasBeenActivated(Resource vp) {
-			activated = true;
+		public void handleActivation(Resource vp) {
+			displayed = true;
+		}
+
+		@Override
+		public void handleInactivation(Resource vp) {
+			filtered = true;
 		}
 	}
 }

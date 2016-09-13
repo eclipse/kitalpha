@@ -158,10 +158,10 @@ public class ViewpointManagerView extends ViewPart {
 
 	private ResourceSet context;
 	private TableViewer viewer;
-	private MyAction filterAction;
-	private MyAction unFilterAction;
-	private Action useAction;
-	private Action unUseAction;
+	private MyAction activateAction;
+	private MyAction desacticateAction;
+	private Action referenceAction;
+	private Action unReferenceAction;
 	private Action refreshAction;
 	private Action showHiddenViewpointAction;
 	private OpenViewAction openViewAction;
@@ -360,12 +360,12 @@ public class ViewpointManagerView extends ViewPart {
 	}
 
 	private void fillContextMenu(IMenuManager manager) {
-		manager.add(useAction);
-		manager.add(unUseAction);
-		if (filterAction.isVisible() && unFilterAction.isVisible()) {
+		manager.add(referenceAction);
+		manager.add(unReferenceAction);
+		if (activateAction.isVisible() && desacticateAction.isVisible()) {
 			manager.add(new Separator());
-			manager.add(filterAction);
-			manager.add(unFilterAction);
+			manager.add(activateAction);
+			manager.add(desacticateAction);
 		}
 		manager.add(new Separator());
 		manager.add(openViewAction);
@@ -395,25 +395,25 @@ public class ViewpointManagerView extends ViewPart {
 				boolean used = ViewpointManager.getInstance(context).isUsed(res.getId());
 				boolean canChangeState = ViewpointManager.canChangeState(res.getId());
 				boolean canChangeActivation = ViewpointManager.canChangeActivation(res.getId());
-				useAction.setEnabled(!used && canChangeState);
-				unUseAction.setEnabled(used && canChangeState);
+				referenceAction.setEnabled(!used && canChangeState);
+				unReferenceAction.setEnabled(used && canChangeState);
 				if (used) {
 					boolean filtered = ViewpointManager.getInstance(context).isFiltered(res.getId());
-					filterAction.setEnabled(filtered && canChangeState);
-					unFilterAction.setEnabled(!filtered && canChangeState);
+					activateAction.setEnabled(filtered && canChangeState);
+					desacticateAction.setEnabled(!filtered && canChangeState);
 				} else {
-					filterAction.setEnabled(false);
-					unFilterAction.setEnabled(false);
+					activateAction.setEnabled(false);
+					desacticateAction.setEnabled(false);
 				}
-				filterAction.setVisible(canChangeActivation);
-				unFilterAction.setVisible(canChangeActivation);
+				activateAction.setVisible(canChangeActivation);
+				desacticateAction.setVisible(canChangeActivation);
 			}
 			openViewAction.setResource(ViewpointManager.getViewpoint(res.getId()));
 		} else {
-			useAction.setEnabled(false);
-			unUseAction.setEnabled(false);
-			filterAction.setEnabled(false);
-			unFilterAction.setEnabled(false);
+			referenceAction.setEnabled(false);
+			unReferenceAction.setEnabled(false);
+			activateAction.setEnabled(false);
+			desacticateAction.setEnabled(false);
 			openViewAction.setResource(null);
 		}
 	}
@@ -439,7 +439,7 @@ public class ViewpointManagerView extends ViewPart {
 		showHiddenViewpointAction.setToolTipText("Show all viewpoints");
 		showHiddenViewpointAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.DISPLAY_ALL));
 
-		useAction = new Action() {
+		referenceAction = new Action() {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -447,21 +447,21 @@ public class ViewpointManagerView extends ViewPart {
 					return;
 				final Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (vpMgr.isUsed(res.getId()))
+				if (vpMgr.isReferenced(res.getId()))
 					return;
 				try {
-					vpMgr.activate(res.getId());
+					vpMgr.reference(res.getId());
 				} catch (ViewpointActivationException e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					AD_Log.getDefault().logError(e);
 				}
 			}
 		};
-		useAction.setText("Start use");
-		useAction.setToolTipText("Start using this viewpoint");
-		useAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.START));
+		referenceAction.setText("Reference");
+		referenceAction.setToolTipText("Reference this viewpoint");
+		referenceAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.REFERENCE));
 
-		unUseAction = new Action() {
+		unReferenceAction = new Action() {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -469,7 +469,7 @@ public class ViewpointManagerView extends ViewPart {
 					return;
 				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (!vpMgr.isUsed(res.getId()))
+				if (!vpMgr.isReferenced(res.getId()))
 					return;
 				Shell site = getSite().getShell();
 				try {
@@ -478,9 +478,9 @@ public class ViewpointManagerView extends ViewPart {
 					{
 						dirty |= r.isModified();
 					}
-					String title = "Stop using viewpoint " + res.getLabel();
+					String title = "Unreference viewpoint " + res.getLabel();
 					if (dirty) {
-						MessageDialog.openInformation(site, title, "You must save the model before stopping the viewpoint.");
+						MessageDialog.openInformation(site, title, "You must save the model before unreferencing the viewpoint.");
 						return ;
 					}
 					
@@ -498,11 +498,11 @@ public class ViewpointManagerView extends ViewPart {
 				}
 			}
 		};
-		unUseAction.setText("Stop use");
-		unUseAction.setToolTipText("Stop using the viewpoint");
-		unUseAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.STOP));
+		unReferenceAction.setText("Unreference");
+		unReferenceAction.setToolTipText("Unreference the viewpoint");
+		unReferenceAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.UNREFERENCE));
 
-		filterAction = new MyAction() {
+		activateAction = new MyAction() {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -510,21 +510,21 @@ public class ViewpointManagerView extends ViewPart {
 					return;
 				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (!vpMgr.isUsed(res.getId()))
+				if (!vpMgr.isReferenced(res.getId()))
 					return;
 				try {
-					vpMgr.filter(res.getId(), false);
+					vpMgr.setActivationState(res.getId(), true);
 				} catch (ViewpointActivationException e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					Activator.getDefault().logError(e);
 				}
 			}
 		};
-		filterAction.setText("Show");
-		filterAction.setToolTipText("Display the viewpoint elements");
-		filterAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.EYE));
+		activateAction.setText("Activate");
+		activateAction.setToolTipText("Activate the viewpoint");
+		activateAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.ACTIVATE));
 
-		unFilterAction = new MyAction() {
+		desacticateAction = new MyAction() {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -532,19 +532,19 @@ public class ViewpointManagerView extends ViewPart {
 					return;
 				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (!vpMgr.isUsed(res.getId()))
+				if (!vpMgr.isReferenced(res.getId()))
 					return;
 				try {
-					vpMgr.filter(res.getId(), true);
+					vpMgr.setActivationState(res.getId(), false);
 				} catch (ViewpointActivationException e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					Activator.getDefault().logError(e);
 				}
 			}
 		};
-		unFilterAction.setText("Hide");
-		unFilterAction.setToolTipText("Hide the viewpoint elements");
-		unFilterAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.EYE_DISABLED));
+		desacticateAction.setText("Desactivate");
+		desacticateAction.setToolTipText("Desactiavte the viewpoint");
+		desacticateAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.DEACTIVATE));
 
 		refreshAction = new Action() {
 			public void run() {

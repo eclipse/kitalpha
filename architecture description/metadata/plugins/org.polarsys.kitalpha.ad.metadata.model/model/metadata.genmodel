@@ -8,14 +8,19 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore</foreignModel>
   <genPackages prefix="Metadata" basePackage="org.polarsys.kitalpha.ad.metadata" disposableProviderFactory="true"
-      childCreationExtenders="true" fileExtensions="afm" ecorePackage="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#/">
+      childCreationExtenders="true" fileExtensions="afm"
+      ecorePackage="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#/">
+    <genDataTypes ecoreDataType="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//Version"/>
     <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//Metadata">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//Metadata/usedViewpoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//Metadata/viewpointReferences"/>
     </genClasses>
-    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointUsage">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointUsage/vpId"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointUsage/version"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointUsage/filtered"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointReference/vpId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointReference/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//ViewpointReference/inactive"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//MetadataElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//MetadataElement/id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

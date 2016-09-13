@@ -62,11 +62,13 @@ public class ViewpointManager {
 	private static final String VIEWPOINT_STATE_MUTABLE_ACTIVATION = "stateMutableActivation";
 	private final static Set<String> discarded = new HashSet<String>();
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
+	private final static List<OverallListener2> overallListener2s = new ArrayList<OverallListener2>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
-	private static final int ACTIVATED = 1;
-	private static final int DEACTIVATED = 2;
-	private static final int DISPLAYED = 4;
-	private static final int FILTERED = 8;
+	private final List<Listener2> listener2s = new ArrayList<Listener2>();
+	private static final int REFERENCE = 16;
+	private static final int UNREFERENCE = 32;
+	private static final int ACTIVE = 64;
+	private static final int INACTIVE = 128;
 	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
@@ -177,7 +179,7 @@ public class ViewpointManager {
 			return error;
 		}
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
-		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointUsages();
+		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointReferences();
 
 		for (Entry<String, Version> usage : viewpointUsages.entrySet()) {
 			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
@@ -192,7 +194,7 @@ public class ViewpointManager {
 	public static IStatus checkViewpointCompliancy(ResourceSet context, String vpId) {
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
 		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
-		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointUsages();
+		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointReferences();
 		if (viewpointUsages.containsKey(vpId)) {
 			return useViewpoint(availableViewpoints, vpId, viewpointUsages.get(vpId));
 		}
@@ -258,29 +260,50 @@ public class ViewpointManager {
 	}
 
 	/**
-	 * @Deprecated replaced by isUsed(String id) and isFiltered(String id)
+	 * @deprecated replaced by isUsed(String id) and isFiltered(String id)
 	 */
-	@Deprecated
 	public boolean isActive(String id) {
 		return isUsed(id) && !isFiltered(id);
 	}
 
+	
+	/**
+	 * @deprecated replaced by isReferenced(String id)
+	 */
 	public boolean isUsed(String id) {
-		return MetadataHelper.getViewpointMetadata(target).isInUse(id);
+		return isReferenced(id);
+	}
+	
+	public boolean isReferenced(String id) {
+		return MetadataHelper.getViewpointMetadata(target).isReferenced(id);
 	}
 
+	/**
+	 * @deprecated replaced by isInactive(String id)
+	 */
 	public boolean isFiltered(String id) {
-		return MetadataHelper.getViewpointMetadata(target).isFiltered(id);
+		return isInactive(id);
+	}
+	
+	public boolean isInactive(String id) {
+		return MetadataHelper.getViewpointMetadata(target).isInactive(id);
 	}
 
+	/**
+	 * @deprecated replaced by setActivationState(String id)
+	 */
 	public void filter(String id, boolean state) throws ViewpointActivationException {
+		setActivationState(id, !state);
+	}
+	
+	public void setActivationState(String id, boolean active) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (!isUsed(id))
+		if (!isReferenced(id))
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
 
-		ChangeViewpointVisibilityCommand command = new ChangeViewpointVisibilityCommand(vpResource, !state);
+		ChangeViewpointVisibilityCommand command = new ChangeViewpointVisibilityCommand(vpResource, active);
 		executeCommand(command);
 
 	}
@@ -290,14 +313,20 @@ public class ViewpointManager {
 	}
 
 	/**
-	 * @Deprecated replaced by startUse(String id)
+	 * @deprecated replaced by reference(String id)
 	 */
-	@Deprecated
 	public void activate(String id) throws ViewpointActivationException {
-		startUse(id);
+		reference(id);
 	}
 
+	/**
+	 * @deprecated replaced by reference(String id)
+	 */
 	public void startUse(String id) throws ViewpointActivationException {
+		reference(id);
+	}
+	
+	public void reference(String id) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
@@ -306,7 +335,7 @@ public class ViewpointManager {
 
 		ResourceSet set = new ResourceSetImpl();
 		try {
-			doStartUse(set, vpResource);
+			doReference(set, vpResource);
 		} finally {
 			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
 				r.unload();
@@ -315,11 +344,11 @@ public class ViewpointManager {
 		}
 	}
 
-	protected void doStartUse(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
+	protected void doReference(ResourceSet set, Resource vpResource) throws ViewpointActivationException {
 		startBundle(vpResource);
 		manageDependencies(set, vpResource);
 
-		Command command = new UseViewpointCommand(vpResource, set);
+		Command command = new ReferenceViewpointCommand(vpResource, set);
 		executeCommand(command);
 	}
 
@@ -345,8 +374,8 @@ public class ViewpointManager {
 		for (Viewpoint dep : dependencies) {
 			String id = dep.getId();
 			vpDependencies.add(id);
-			if (!isUsed(id))
-				doStartUse(set, getViewpoint(id));
+			if (!isReferenced(id))
+				doReference(set, getViewpoint(id));
 		}
 
 	}
@@ -385,9 +414,8 @@ public class ViewpointManager {
 	 * 
 	 * @param id
 	 * @throws ViewpointActivationException
-	 * @Deprecated replaced by stopUse(String id)
+	 * @deprecated replaced by stopUse(String id)
 	 */
-	@Deprecated
 	public void desactivate(String id) throws ViewpointActivationException {
 		stopUse(id);
 	}
@@ -397,8 +425,14 @@ public class ViewpointManager {
 	 * 
 	 * @param id
 	 * @throws ViewpointActivationException
+	 * @deprecated use unReference()
+	 * 
 	 */
 	public void stopUse(String id) throws ViewpointActivationException {
+		unReference(id);
+	}
+	
+	public void unReference(String id) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
 		if (vpResource == null)
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
@@ -415,9 +449,19 @@ public class ViewpointManager {
 		String providerSymbolicName = vpResource.getProviderSymbolicName();
 		desactivateBundle(providerSymbolicName);
 		MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, null, false);
-		fireEvent(vpResource, DEACTIVATED);
+		fireEvent(vpResource, UNREFERENCE);
 	}
 
+	public static void addOverallListener(OverallListener2 l) {
+		if (overallListener2s.contains(l))
+			return;
+		overallListener2s.add(l);
+	}
+	
+	public static void removeOverallListener(OverallListener2 l) {
+		overallListener2s.remove(l);
+	}
+	
 	public static void addOverallListener(OverallListener l) {
 		if (overallListeners.contains(l))
 			return;
@@ -438,21 +482,51 @@ public class ViewpointManager {
 		listeners.remove(l);
 	}
 
+	public void addListener(Listener2 l) {
+		if (listener2s.contains(l))
+			return;
+		listener2s.add(l);
+	}
+
+	public void removeListener(Listener2 l) {
+		listener2s.remove(l);
+	}
+
 	protected void fireEvent(Resource vpResource, int event) {
 		for (Listener l : listeners.toArray(new Listener[listeners.size()])) {
 			try {
 				switch (event) {
-				case ACTIVATED:
+				case REFERENCE:
 					l.hasBeenActivated(vpResource);
 					break;
-				case DEACTIVATED:
+				case UNREFERENCE:
 					l.hasBeenDeactivated(vpResource);
 					break;
-				case FILTERED:
+				case INACTIVE:
 					l.hasBeenFiltered(vpResource);
 					break;
-				case DISPLAYED:
+				case ACTIVE:
 					l.hasBeenDisplayed(vpResource);
+					break;
+				}
+			}catch (Exception e) {
+				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
+			}
+		}
+		for (Listener2 l : listener2s.toArray(new Listener2[listener2s.size()])) {
+			try {
+				switch (event) {
+				case REFERENCE:
+					l.handleReferencing(vpResource);
+					break;
+				case UNREFERENCE:
+					l.handleUnReferencing(vpResource);
+					break;
+				case ACTIVE:
+					l.handleActivation(vpResource);
+					break;
+				case INACTIVE:
+					l.handleInactivation(vpResource);
 					break;
 				}
 			}catch (Exception e) {
@@ -462,17 +536,38 @@ public class ViewpointManager {
 		for (OverallListener l : overallListeners.toArray(new OverallListener[overallListeners.size()])) {
 			try {
 				switch (event) {
-				case ACTIVATED:
+				case REFERENCE:
 					l.hasBeenActivated(target, vpResource);
 					break;
-				case DEACTIVATED:
+				case UNREFERENCE:
 					l.hasBeenDeactivated(target, vpResource);
 					break;
-				case FILTERED:
+				case INACTIVE:
 					l.hasBeenFiltered(target, vpResource);
 					break;
-				case DISPLAYED:
+				case ACTIVE:
 					l.hasBeenDisplayed(target, vpResource);
+					break;
+				}
+			}catch (Exception e) {
+				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
+			}
+		}
+		
+		for (OverallListener2 l : overallListener2s.toArray(new OverallListener2[overallListener2s.size()])) {
+			try {
+				switch (event) {
+				case REFERENCE:
+					l.handleReferencing(target, vpResource);
+					break;
+				case UNREFERENCE:
+					l.handleUnReferencing(target, vpResource);
+					break;
+				case ACTIVE:
+					l.handleActivation(target, vpResource);
+					break;
+				case INACTIVE:
+					l.handleInactivation(target, vpResource);
 					break;
 				}
 			}catch (Exception e) {
@@ -494,13 +589,13 @@ public class ViewpointManager {
 
 		@Override
 		public void execute() {
-			MetadataHelper.getViewpointMetadata(target).setFilter(vpResource.getId(), !visible);
-			fireEvent(vpResource, visible ? DISPLAYED : FILTERED);
+			MetadataHelper.getViewpointMetadata(target).setActivationSate(vpResource.getId(), visible);
+			fireEvent(vpResource, visible ? ACTIVE : INACTIVE);
 		}
 
 		public void undo() {
-			MetadataHelper.getViewpointMetadata(target).setFilter(vpResource.getId(), visible);
-			fireEvent(vpResource, !visible ? DISPLAYED : FILTERED);
+			MetadataHelper.getViewpointMetadata(target).setActivationSate(vpResource.getId(), !visible);
+			fireEvent(vpResource, !visible ? ACTIVE : INACTIVE);
 		}
 
 		@Override
@@ -514,12 +609,12 @@ public class ViewpointManager {
 
 	}
 
-	protected final class UseViewpointCommand extends AbstractCommand {
+	protected final class ReferenceViewpointCommand extends AbstractCommand {
 		private final Resource vpResource;
 		private final ResourceSet set;
 
-		public UseViewpointCommand(Resource vpResource, ResourceSet set) {
-			super("Use viewpoint");
+		public ReferenceViewpointCommand(Resource vpResource, ResourceSet set) {
+			super("Reference viewpoint");
 			this.vpResource = vpResource;
 			this.set = set;
 		}
@@ -527,17 +622,17 @@ public class ViewpointManager {
 		@Override
 		public void execute() {
 			Version readVersion = readVersion(set, vpResource);
-			MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, readVersion, true);
+			MetadataHelper.getViewpointMetadata(target).reference(vpResource, readVersion);
 			if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
 				managed.add(vpResource.getProviderSymbolicName());
-			fireEvent(vpResource, ACTIVATED);
+			fireEvent(vpResource, REFERENCE);
 
 		}
 
 		@Override
 		public void undo() {
-			MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, null, false);
-			fireEvent(vpResource, DEACTIVATED);
+			MetadataHelper.getViewpointMetadata(target).unReference(vpResource);
+			fireEvent(vpResource, UNREFERENCE);
 		}
 
 		@Override
@@ -550,25 +645,42 @@ public class ViewpointManager {
 		}
 	}
 
+	@Deprecated
 	public static interface OverallListener {
+		@Deprecated
 		void hasBeenActivated(Object ctx, Resource vp);
-
+		@Deprecated
 		void hasBeenDeactivated(Object ctx, Resource vp);
-
+		@Deprecated
 		void hasBeenFiltered(Object ctx, Resource vp);
-
+		@Deprecated
 		void hasBeenDisplayed(Object ctx, Resource vp);
 	}
+	
+	public static interface OverallListener2 {
+		void handleReferencing(Object ctx, Resource vp);
+		void handleUnReferencing(Object ctx, Resource vp);
+		void handleActivation(Object ctx, Resource vp);
+		void handleInactivation(Object ctx, Resource vp);
+	}
 
+	@Deprecated
 	public static interface Listener {
+		@Deprecated
 		void hasBeenActivated(Resource vp);
-
+		@Deprecated
 		void hasBeenDeactivated(Resource vp);
-
+		@Deprecated
 		void hasBeenFiltered(Resource vp);
-
+		@Deprecated
 		void hasBeenDisplayed(Resource vp);
-
+	}
+	
+	public static interface Listener2 {
+		void handleReferencing(Resource vp);
+		void handleUnReferencing(Resource vp);
+		void handleActivation(Resource vp);
+		void handleInactivation(Resource vp);
 	}
 
 	public static ViewpointManager getInstance(EObject ctx1) {

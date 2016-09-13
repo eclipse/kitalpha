@@ -20,7 +20,8 @@ import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.business.api.session.SessionManagerListener.Stub;
 import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener2;
+import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
  * This listener ensures the metadata resource is added to the session sementic resources. 
@@ -29,7 +30,7 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
  * 
  */
 public class RegisterMetadataListener  extends Stub {
-	private final class MyListener implements Listener {
+	private final class MyListener implements Listener2 {
 		private final Session session;
 
 		private MyListener(Session session) {
@@ -37,20 +38,20 @@ public class RegisterMetadataListener  extends Stub {
 		}
 
 		@Override
-		public void hasBeenFiltered(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-		}
-
-		@Override
-		public void hasBeenDisplayed(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-		}
-
-		@Override
-		public void hasBeenDeactivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-		}
-
-		@Override
-		public void hasBeenActivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+		public void handleReferencing(Resource vp) {
 			registerMetadataResource(session);
+		}
+
+		@Override
+		public void handleUnReferencing(Resource vp) {
+		}
+
+		@Override
+		public void handleActivation(Resource vp) {
+		}
+
+		@Override
+		public void handleInactivation(Resource vp) {
 		}
 
 		@Override

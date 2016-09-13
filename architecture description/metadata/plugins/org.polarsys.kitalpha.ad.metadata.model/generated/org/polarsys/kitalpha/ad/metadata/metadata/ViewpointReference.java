@@ -21,24 +21,24 @@ import org.osgi.framework.Version;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Viewpoint Usage</b></em>'.
+ * A representation of the model object '<em><b>Viewpoint Reference</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVpId <em>Vp Id</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVersion <em>Version</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#isFiltered <em>Filtered</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVpId <em>Vp Id</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#isInactive <em>Inactive</em>}</li>
  * </ul>
  *
- * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointUsage()
+ * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointReference()
  * @model
  * @generated
  */
 
-public interface ViewpointUsage extends MetadataElement {
+public interface ViewpointReference extends MetadataElement {
 
 
 
@@ -55,7 +55,7 @@ public interface ViewpointUsage extends MetadataElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vp Id</em>' attribute.
 	 * @see #setVpId(String)
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointUsage_VpId()
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointReference_VpId()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -66,7 +66,7 @@ public interface ViewpointUsage extends MetadataElement {
 
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVpId <em>Vp Id</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVpId <em>Vp Id</em>}' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,7 +94,7 @@ public interface ViewpointUsage extends MetadataElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Version</em>' attribute.
 	 * @see #setVersion(Version)
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointUsage_Version()
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointReference_Version()
 	 * @model dataType="org.polarsys.kitalpha.ad.metadata.metadata.Version"
 	 * @generated
 	 */
@@ -105,7 +105,7 @@ public interface ViewpointUsage extends MetadataElement {
 
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVersion <em>Version</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVersion <em>Version</em>}' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,41 +119,44 @@ public interface ViewpointUsage extends MetadataElement {
 
 
 
+
+
+
 	/**
-	 * Returns the value of the '<em><b>Filtered</b></em>' attribute.
+	 * Returns the value of the '<em><b>Inactive</b></em>' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Filtered</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Inactive</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filtered</em>' attribute.
-	 * @see #setFiltered(boolean)
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointUsage_Filtered()
+	 * @return the value of the '<em>Inactive</em>' attribute.
+	 * @see #setInactive(boolean)
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getViewpointReference_Inactive()
 	 * @model
 	 * @generated
 	 */
 
-	boolean isFiltered();
+	boolean isInactive();
 
 
 
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#isFiltered <em>Filtered</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#isInactive <em>Inactive</em>}' attribute.
 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Filtered</em>' attribute.
-	 * @see #isFiltered()
+	 * @param value the new value of the '<em>Inactive</em>' attribute.
+	 * @see #isInactive()
 	 * @generated
 	 */
 
-	void setFiltered(boolean value);
+	void setInactive(boolean value);
 
 
 
 
 
-} // ViewpointUsage
+} // ViewpointReference

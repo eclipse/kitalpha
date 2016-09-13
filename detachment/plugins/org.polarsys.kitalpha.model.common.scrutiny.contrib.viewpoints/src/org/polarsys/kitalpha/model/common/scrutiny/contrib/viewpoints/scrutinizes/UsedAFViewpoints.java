@@ -27,7 +27,7 @@ import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusRepresentation;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RepresentationElement;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
@@ -66,7 +66,7 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 	public void findIn(Resource resource) {
 		if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata) {
 			Metadata root = (Metadata) resource.getContents().get(0);
-			for (ViewpointUsage uv : root.getViewpointUsages()) {
+			for (ViewpointReference uv : root.getViewpointReferences()) {
 				usedViewpoints.add(uv.getVpId());
 			}
 		}

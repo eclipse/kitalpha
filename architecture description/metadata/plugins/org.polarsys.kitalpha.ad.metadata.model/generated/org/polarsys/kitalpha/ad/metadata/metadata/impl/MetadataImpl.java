@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +39,7 @@ import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataImpl#getViewpointUsages <em>Viewpoint Usages</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataImpl#getViewpointReferences <em>Viewpoint References</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,14 +47,14 @@ import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
 public class MetadataImpl extends MetadataElementImpl implements Metadata {
 
 	/**
-	 * The cached value of the '{@link #getViewpointUsages() <em>Viewpoint Usages</em>}' containment reference list.
+	 * The cached value of the '{@link #getViewpointReferences() <em>Viewpoint References</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getViewpointUsages()
+	 * @see #getViewpointReferences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ViewpointUsage> viewpointUsages;
+	protected EList<ViewpointReference> viewpointReferences;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,12 +86,12 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	 * @generated
 	 */
 
-	public EList<ViewpointUsage> getViewpointUsages() {
+	public EList<ViewpointReference> getViewpointReferences() {
 
-		if (viewpointUsages == null) {
-			viewpointUsages = new EObjectContainmentEList<ViewpointUsage>(ViewpointUsage.class, this, MetadataPackage.METADATA__VIEWPOINT_USAGES);
+		if (viewpointReferences == null) {
+			viewpointReferences = new EObjectContainmentEList<ViewpointReference>(ViewpointReference.class, this, MetadataPackage.METADATA__VIEWPOINT_REFERENCES);
 		}
-		return viewpointUsages;
+		return viewpointReferences;
 	}
 
 	/**
@@ -102,8 +102,8 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MetadataPackage.METADATA__VIEWPOINT_USAGES:
-				return ((InternalEList<?>)getViewpointUsages()).basicRemove(otherEnd, msgs);
+			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
+				return ((InternalEList<?>)getViewpointReferences()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,8 +116,8 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MetadataPackage.METADATA__VIEWPOINT_USAGES:
-				return getViewpointUsages();
+			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
+				return getViewpointReferences();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,9 +131,9 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MetadataPackage.METADATA__VIEWPOINT_USAGES:
-				getViewpointUsages().clear();
-				getViewpointUsages().addAll((Collection<? extends ViewpointUsage>)newValue);
+			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
+				getViewpointReferences().clear();
+				getViewpointReferences().addAll((Collection<? extends ViewpointReference>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -148,8 +148,8 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.METADATA__VIEWPOINT_USAGES:
-				getViewpointUsages().clear();
+			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
+				getViewpointReferences().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -165,8 +165,8 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.METADATA__VIEWPOINT_USAGES:
-				return viewpointUsages != null && !viewpointUsages.isEmpty();
+			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
+				return viewpointReferences != null && !viewpointReferences.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

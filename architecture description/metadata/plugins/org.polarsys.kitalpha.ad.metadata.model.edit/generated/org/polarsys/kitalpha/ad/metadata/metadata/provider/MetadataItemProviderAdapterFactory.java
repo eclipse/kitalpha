@@ -109,26 +109,26 @@ public class MetadataItemProviderAdapterFactory extends MetadataAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage} instances.
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewpointUsageItemProvider viewpointUsageItemProvider;
+	protected ViewpointReferenceItemProvider viewpointReferenceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage}.
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createViewpointUsageAdapter() {
-		if (viewpointUsageItemProvider == null) {
-			viewpointUsageItemProvider = new ViewpointUsageItemProvider(this);
+	public Adapter createViewpointReferenceAdapter() {
+		if (viewpointReferenceItemProvider == null) {
+			viewpointReferenceItemProvider = new ViewpointReferenceItemProvider(this);
 		}
 
-		return viewpointUsageItemProvider;
+		return viewpointReferenceItemProvider;
 	}
 
 	/**
@@ -231,7 +231,7 @@ public class MetadataItemProviderAdapterFactory extends MetadataAdapterFactory i
 	 */
 	public void dispose() {
 		if (metadataItemProvider != null) metadataItemProvider.dispose();
-		if (viewpointUsageItemProvider != null) viewpointUsageItemProvider.dispose();
+		if (viewpointReferenceItemProvider != null) viewpointReferenceItemProvider.dispose();
 	}
 
 }

@@ -128,13 +128,13 @@ public interface MetadataPackage extends EPackage {
 	int METADATA__ID = METADATA_ELEMENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Viewpoint Usages</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Viewpoint References</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__VIEWPOINT_USAGES = METADATA_ELEMENT_FEATURE_COUNT + 0;
+	int METADATA__VIEWPOINT_REFERENCES = METADATA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Metadata</em>' class.
@@ -155,14 +155,14 @@ public interface MetadataPackage extends EPackage {
 	int METADATA_OPERATION_COUNT = METADATA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl <em>Viewpoint Usage</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl <em>Viewpoint Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getViewpointUsage()
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getViewpointReference()
 	 * @generated
 	 */
-	int VIEWPOINT_USAGE = 1;
+	int VIEWPOINT_REFERENCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -171,7 +171,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE__ID = METADATA_ELEMENT__ID;
+	int VIEWPOINT_REFERENCE__ID = METADATA_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Vp Id</b></em>' attribute.
@@ -180,7 +180,7 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE__VP_ID = METADATA_ELEMENT_FEATURE_COUNT + 0;
+	int VIEWPOINT_REFERENCE__VP_ID = METADATA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -189,35 +189,34 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE__VERSION = METADATA_ELEMENT_FEATURE_COUNT + 1;
+	int VIEWPOINT_REFERENCE__VERSION = METADATA_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Filtered</b></em>' attribute.
+	 * The feature id for the '<em><b>Inactive</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE__FILTERED = METADATA_ELEMENT_FEATURE_COUNT + 2;
+	int VIEWPOINT_REFERENCE__INACTIVE = METADATA_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Viewpoint Usage</em>' class.
+	 * The number of structural features of the '<em>Viewpoint Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE_FEATURE_COUNT = METADATA_ELEMENT_FEATURE_COUNT + 3;
+	int VIEWPOINT_REFERENCE_FEATURE_COUNT = METADATA_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>Viewpoint Usage</em>' class.
+	 * The number of operations of the '<em>Viewpoint Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEWPOINT_USAGE_OPERATION_COUNT = METADATA_ELEMENT_OPERATION_COUNT + 0;
-
+	int VIEWPOINT_REFERENCE_OPERATION_COUNT = METADATA_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '<em>Version</em>' data type.
@@ -241,58 +240,58 @@ public interface MetadataPackage extends EPackage {
 	EClass getMetadata();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getViewpointUsages <em>Viewpoint Usages</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getViewpointReferences <em>Viewpoint References</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Viewpoint Usages</em>'.
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getViewpointUsages()
+	 * @return the meta object for the containment reference list '<em>Viewpoint References</em>'.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getViewpointReferences()
 	 * @see #getMetadata()
 	 * @generated
 	 */
-	EReference getMetadata_ViewpointUsages();
+	EReference getMetadata_ViewpointReferences();
 
 	/**
-	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage <em>Viewpoint Usage</em>}'.
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference <em>Viewpoint Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Viewpoint Usage</em>'.
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage
+	 * @return the meta object for class '<em>Viewpoint Reference</em>'.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference
 	 * @generated
 	 */
-	EClass getViewpointUsage();
+	EClass getViewpointReference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVpId <em>Vp Id</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVpId <em>Vp Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Vp Id</em>'.
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVpId()
-	 * @see #getViewpointUsage()
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVpId()
+	 * @see #getViewpointReference()
 	 * @generated
 	 */
-	EAttribute getViewpointUsage_VpId();
+	EAttribute getViewpointReference_VpId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVersion <em>Version</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Version</em>'.
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#getVersion()
-	 * @see #getViewpointUsage()
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#getVersion()
+	 * @see #getViewpointReference()
 	 * @generated
 	 */
-	EAttribute getViewpointUsage_Version();
+	EAttribute getViewpointReference_Version();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#isFiltered <em>Filtered</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#isInactive <em>Inactive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Filtered</em>'.
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage#isFiltered()
-	 * @see #getViewpointUsage()
+	 * @return the meta object for the attribute '<em>Inactive</em>'.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference#isInactive()
+	 * @see #getViewpointReference()
 	 * @generated
 	 */
-	EAttribute getViewpointUsage_Filtered();
+	EAttribute getViewpointReference_Inactive();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.metadata.metadata.MetadataElement <em>Element</em>}'.
@@ -360,22 +359,22 @@ public interface MetadataPackage extends EPackage {
 		EClass METADATA = eINSTANCE.getMetadata();
 
 		/**
-		 * The meta object literal for the '<em><b>Viewpoint Usages</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Viewpoint References</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference METADATA__VIEWPOINT_USAGES = eINSTANCE.getMetadata_ViewpointUsages();
+		EReference METADATA__VIEWPOINT_REFERENCES = eINSTANCE.getMetadata_ViewpointReferences();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl <em>Viewpoint Usage</em>}' class.
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl <em>Viewpoint Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl
-		 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getViewpointUsage()
+		 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl
+		 * @see org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataPackageImpl#getViewpointReference()
 		 * @generated
 		 */
-		EClass VIEWPOINT_USAGE = eINSTANCE.getViewpointUsage();
+		EClass VIEWPOINT_REFERENCE = eINSTANCE.getViewpointReference();
 
 		/**
 		 * The meta object literal for the '<em><b>Vp Id</b></em>' attribute feature.
@@ -383,7 +382,7 @@ public interface MetadataPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEWPOINT_USAGE__VP_ID = eINSTANCE.getViewpointUsage_VpId();
+		EAttribute VIEWPOINT_REFERENCE__VP_ID = eINSTANCE.getViewpointReference_VpId();
 
 		/**
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
@@ -391,15 +390,15 @@ public interface MetadataPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEWPOINT_USAGE__VERSION = eINSTANCE.getViewpointUsage_Version();
+		EAttribute VIEWPOINT_REFERENCE__VERSION = eINSTANCE.getViewpointReference_Version();
 
 		/**
-		 * The meta object literal for the '<em><b>Filtered</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Inactive</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VIEWPOINT_USAGE__FILTERED = eINSTANCE.getViewpointUsage_Filtered();
+		EAttribute VIEWPOINT_REFERENCE__INACTIVE = eINSTANCE.getViewpointReference_Inactive();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataElementImpl <em>Element</em>}' class.

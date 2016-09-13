@@ -21,26 +21,28 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.osgi.framework.Version;
+
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Viewpoint Usage</b></em>'.
+ * An implementation of the model object '<em><b>Viewpoint Reference</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl#getVpId <em>Vp Id</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointUsageImpl#isFiltered <em>Filtered</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl#getVpId <em>Vp Id</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl#isInactive <em>Inactive</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ViewpointUsageImpl extends MetadataElementImpl implements ViewpointUsage {
+public class ViewpointReferenceImpl extends MetadataElementImpl implements ViewpointReference {
 
 	/**
 	 * The default value of the '{@link #getVpId() <em>Vp Id</em>}' attribute.
@@ -89,24 +91,24 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 
 
 	/**
-	 * The default value of the '{@link #isFiltered() <em>Filtered</em>}' attribute.
+	 * The default value of the '{@link #isInactive() <em>Inactive</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isFiltered()
+	 * @see #isInactive()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean FILTERED_EDEFAULT = false;
+	protected static final boolean INACTIVE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isFiltered() <em>Filtered</em>}' attribute.
+	 * The cached value of the '{@link #isInactive() <em>Inactive</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isFiltered()
+	 * @see #isInactive()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean filtered = FILTERED_EDEFAULT;
+	protected boolean inactive = INACTIVE_EDEFAULT;
 
 
 
@@ -115,7 +117,7 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewpointUsageImpl() {
+	protected ViewpointReferenceImpl() {
 
 		super();
 
@@ -128,7 +130,7 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MetadataPackage.Literals.VIEWPOINT_USAGE;
+		return MetadataPackage.Literals.VIEWPOINT_REFERENCE;
 	}
 
 
@@ -159,7 +161,7 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 		String oldVpId = vpId;
 		vpId = newVpId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetadataPackage.VIEWPOINT_USAGE__VP_ID, oldVpId, vpId));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetadataPackage.VIEWPOINT_REFERENCE__VP_ID, oldVpId, vpId));
 
 	}
 
@@ -192,20 +194,12 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 		Version oldVersion = version;
 		version = newVersion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetadataPackage.VIEWPOINT_USAGE__VERSION, oldVersion, version));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetadataPackage.VIEWPOINT_REFERENCE__VERSION, oldVersion, version));
 
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 
-	public boolean isFiltered() {
 
-		return filtered;
-	}
 
 
 
@@ -215,12 +209,25 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 	 * @generated
 	 */
 
-	public void setFiltered(boolean newFiltered) {
+	public boolean isInactive() {
 
-		boolean oldFiltered = filtered;
-		filtered = newFiltered;
+		return inactive;
+	}
+
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public void setInactive(boolean newInactive) {
+
+		boolean oldInactive = inactive;
+		inactive = newInactive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MetadataPackage.VIEWPOINT_USAGE__FILTERED, oldFiltered, filtered));
+			eNotify(new ENotificationImpl(this, Notification.SET, MetadataPackage.VIEWPOINT_REFERENCE__INACTIVE, oldInactive, inactive));
 
 	}
 
@@ -235,12 +242,12 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MetadataPackage.VIEWPOINT_USAGE__VP_ID:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VP_ID:
 				return getVpId();
-			case MetadataPackage.VIEWPOINT_USAGE__VERSION:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VERSION:
 				return getVersion();
-			case MetadataPackage.VIEWPOINT_USAGE__FILTERED:
-				return isFiltered();
+			case MetadataPackage.VIEWPOINT_REFERENCE__INACTIVE:
+				return isInactive();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,14 +260,14 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MetadataPackage.VIEWPOINT_USAGE__VP_ID:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VP_ID:
 				setVpId((String)newValue);
 				return;
-			case MetadataPackage.VIEWPOINT_USAGE__VERSION:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VERSION:
 				setVersion((Version)newValue);
 				return;
-			case MetadataPackage.VIEWPOINT_USAGE__FILTERED:
-				setFiltered((Boolean)newValue);
+			case MetadataPackage.VIEWPOINT_REFERENCE__INACTIVE:
+				setInactive((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,14 +282,14 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.VIEWPOINT_USAGE__VP_ID:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VP_ID:
 				setVpId(VP_ID_EDEFAULT);
 				return;
-			case MetadataPackage.VIEWPOINT_USAGE__VERSION:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VERSION:
 				setVersion(VERSION_EDEFAULT);
 				return;
-			case MetadataPackage.VIEWPOINT_USAGE__FILTERED:
-				setFiltered(FILTERED_EDEFAULT);
+			case MetadataPackage.VIEWPOINT_REFERENCE__INACTIVE:
+				setInactive(INACTIVE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -298,12 +305,12 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MetadataPackage.VIEWPOINT_USAGE__VP_ID:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VP_ID:
 				return VP_ID_EDEFAULT == null ? vpId != null : !VP_ID_EDEFAULT.equals(vpId);
-			case MetadataPackage.VIEWPOINT_USAGE__VERSION:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-			case MetadataPackage.VIEWPOINT_USAGE__FILTERED:
-				return filtered != FILTERED_EDEFAULT;
+			case MetadataPackage.VIEWPOINT_REFERENCE__INACTIVE:
+				return inactive != INACTIVE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -323,11 +330,11 @@ public class ViewpointUsageImpl extends MetadataElementImpl implements Viewpoint
 		result.append(vpId);
 		result.append(", version: ");
 		result.append(version);
-		result.append(", filtered: ");
-		result.append(filtered);
+		result.append(", inactive: ");
+		result.append(inactive);
 		result.append(')');
 		return result.toString();
 	}
 
 
-} //ViewpointUsageImpl
+} //ViewpointReferenceImpl

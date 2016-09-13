@@ -28,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getViewpointUsages <em>Viewpoint Usages</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getViewpointReferences <em>Viewpoint References</em>}</li>
  * </ul>
  *
  * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getMetadata()
@@ -43,22 +43,22 @@ public interface Metadata extends MetadataElement {
 
 
 	/**
-	 * Returns the value of the '<em><b>Viewpoint Usages</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage}.
+	 * Returns the value of the '<em><b>Viewpoint References</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference}.
 
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Viewpoint Usages</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Viewpoint References</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Viewpoint Usages</em>' containment reference list.
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getMetadata_ViewpointUsages()
+	 * @return the value of the '<em>Viewpoint References</em>' containment reference list.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getMetadata_ViewpointReferences()
 	 * @model containment="true"
 	 * @generated
 	 */
 
-	EList<ViewpointUsage> getViewpointUsages();
+	EList<ViewpointReference> getViewpointReferences();
 
 
 
