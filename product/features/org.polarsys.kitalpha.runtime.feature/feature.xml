@@ -51,7 +51,9 @@
       <import feature="org.polarsys.kitalpha.model.attachment.source.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.model.detachment.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.model.detachment.source.feature" version="1.1.0.qualifier"/>
-
+      <import feature="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature" version="1.0.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.source.feature" version="1.0.0.qualifier"/>
+      
       <import feature="org.polarsys.kitalpha.report.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.report.source.feature" version="1.1.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.report.ui.feature" version="1.1.0.qualifier"/>
