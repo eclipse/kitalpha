@@ -1,0 +1,271 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _7A2tkHiyEeaI368ba7nlrQ,_16YjAHiyEeaI368ba7nlrQ
+Element-Name: ImportMappingWithSynchronizationMode
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _GHzeAHqOEeadK6jIYFHAOw
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 9/14/16 5:38 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | get-menu "New/Other..." | click
+with [get-window New] {
+    get-editbox -after [get-label "Wizards:"] | set-text dsl
+    get-tree | select "Kitalpha/Architecture description/Viewpoint DSL project"
+    get-button "Next >" | click
+}
+with [get-window "New Viewpoint DSL Project"] {
+    get-editbox -after [get-label "Viewpoint short name :"] | set-text test
+    get-button Finish | click
+}
+with [get-editor "test.spec.vptext" | get-text-viewer] {
+    set-caret-pos 11 19
+    key-type Up
+    key-type Enter
+    type-text use
+    key-type "M1+SPACE"
+    key-type Down -times 2
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "platform:\\/plugin\\/org.polarsys.kitalpha.vp.componentsample.design\\/description\\/ComponentSample.odesign" 
+    | click -default
+with [get-editor "test.spec.vptext" | get-text-viewer] {
+    key-type "M1+s"
+    set-caret-pos 12 19
+    key-type Enter
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "Diagrams - New Diagrams" 
+    | click -default
+get-window "Viewpoint Diagram File Creation Wizard" | get-button Finish | click
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 9 24
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 3
+    key-type Enter
+    key-type "M1+SPACE"
+    type-text " "
+    key-type "M1+SPACE"
+    key-type Enter
+    set-caret-pos 8 4
+    key-type Enter -times 2
+    key-type "M1+SPACE"
+    key-type Down -times 2
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Down -times 6
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 5
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Tab
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type "M1+s"
+    key-type Up
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 6
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type "M1+s"
+}
+get-button "Save All (M1+M2+S)" | click
+get-menu "Window/Show View/Other..." | click
+with [get-window "Show View"] {
+    get-editbox | set-text view
+    get-tree | select "Kitalpha/Viewpoint Manager" | double-click
+}
+get-tab-folder -index 3 | get-tab-item Properties | click
+get-editor "test.diagram.vptext" | get-text-viewer | set-caret-pos 19 53
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.test.vpdsl/model/test.vpdesc" | double-click
+get-editor "test.vpdesc" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.test.vpdsl\\/model\\/test.vpdesc/Viewpoint test/Diagram Set test.diagram/Diagram newDiagramName/Mapping Set/Container newContainerName" 
+    | click
+with [get-view Properties | get-tree] {
+    get-item "Synchronization Mode" | get-property caption | equals "Synchronization Mode" | verify-true
+    get-item "Synchronization Mode" | get-property "columns[0]" | equals "Synchronization Mode" | verify-true
+    get-item "Synchronization Mode" | get-property "columns[1]" | equals Default | verify-true
+}
+get-tab-folder -index 2 | get-tab-item "test.diagram.vptext" | click
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 20 125
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 2
+    key-type Up -times 2
+    key-type Enter
+}
+get-button "Save All (M1+M2+S)" | click
+with [get-view "Project Explorer" | get-tree] {
+    get-item "org.polarsys.kitalpha.vp.test.vpdsl/model/\\[ Unsynchronized \\] test.diagram.vptext" 
+        | get-property caption | equals "[ Unsynchronized ] test.diagram.vptext" | verify-true
+    get-item "org.polarsys.kitalpha.vp.test.vpdsl/model/\\[ Unsynchronized \\] test.diagram.vptext" 
+        | get-property "getText()" | equals "[ Unsynchronized ] test.diagram.vptext" | verify-true
+}
+get-editor "test.diagram.vptext" | get-text-viewer | get-property "markers['18'][0].text" 
+    | equals "Container: Imported mapping has [ Unsynchronizable ] synchronization mode while the current has [ Not_Synchronized ] synchronization mode. Only accepted values: [Synchronized, Unsynchronizable]" 
+    | verify-true
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 21 31
+    select-range 21 17 21 33
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Unsynchronizable - The Synchronization Of The Mapping Depends On the Synchronization Defined By The User" 
+    | click -default
+get-editor "test.diagram.vptext" | get-text-viewer | key-type "M1+s"
+get-view "Project Explorer" | get-tree | get-item "org.polarsys.kitalpha.vp.test.vpdsl/model/test.diagram.vptext" 
+    | get-property caption | equals "test.diagram.vptext" | verify-true
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 20 50
+    hover-text 20 54
+}
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 31 14
+    key-type Enter -times 2
+    key-type "M1+SPACE"
+    key-type Down -times 8
+    key-type Enter
+    key-type "M1+SPACE"
+    type-text " "
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Tab
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Up
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 5
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Down -times 3
+    key-type Up -times 2
+    key-type "M1+s"
+    set-caret-pos 36 125
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 3
+    key-type Up -times 2
+    key-type Enter
+    key-type "M1+s"
+    set-caret-pos 37 27
+    select-range 37 17 37 29
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Synchronized - The Mapping Will Be always Synchronized" | click -default
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    key-type "M1+s"
+    set-caret-pos 37 26
+    select-range 37 17 37 29
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Unsynchronizable - The Synchronization Of The Mapping Depends On the Synchronization Defined By The User" 
+    | click -default
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    key-type "M1+s"
+    set-caret-pos 37 27
+    select-range 37 17 37 33
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Not_Synchronized - The Mapping Will Be Always Not synchronized" | click -default
+get-editor "test.diagram.vptext" | get-text-viewer | key-type "M1+s"
+get-view "Project Explorer" | get-tree 
+    | get-item "org.polarsys.kitalpha.vp.test.vpdsl/model/\\[ Unsynchronized \\] test.diagram.vptext" 
+    | get-property caption | equals "[ Unsynchronized ] test.diagram.vptext" | verify-true
+get-editor "test.diagram.vptext" | get-text-viewer | get-property "markers['34'][0].text" 
+    | equals "Node: Imported mapping has [ Unsynchronizable ] synchronization mode while the current has [ Not_Synchronized ] synchronization mode. Only accepted values: [Synchronized, Unsynchronizable]" 
+    | verify-true
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 37 25
+    select-range 37 17 37 33
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Synchronized - The Mapping Will Be always Synchronized" | click -default
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    key-type "M1+s"
+    set-caret-pos 47 14
+    key-type Enter -times 2
+    key-type "M1+SPACE"
+    key-type Down -times 8
+    key-type Up
+    set-caret-pos 54 14
+    select-range 54 13 54 24
+    key-type BackSpace
+    key-type "M1+SPACE"
+    key-type Down -times 6
+    key-type Enter
+    key-type Tab
+    set-caret-pos 55 97
+    type-text " "
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "only-view" | click -default
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    key-type "M1+s"
+    set-caret-pos 37 27
+    select-range 37 17 37 29
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Not_Synchronized - The Mapping Will Be Always Not synchronized" | click -default
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    key-type "M1+s"
+    hover-text 55 89
+    set-caret-pos 37 29
+    select-range 37 17 37 33
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Synchronized - The Mapping Will Be always Synchronized" | click -default
+
+
+get-eclipse-window | key-type "" "\\u0000"
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 21 29
+    select-range 21 17 21 33
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Synchronized - The Mapping Will Be always Synchronized" | click -default
+get-editor "test.diagram.vptext" | get-text-viewer | key-type "M1+s"
+with [get-view "Project Explorer" | get-tree] {
+    get-item "org.polarsys.kitalpha.vp.test.vpdsl/model/\\[ Unsynchronized \\] test.diagram.vptext" 
+        | get-property caption | equals "[ Unsynchronized ] test.diagram.vptext" | verify-true
+    get-item "org.polarsys.kitalpha.vp.test.vpdsl/model/\\[ Unsynchronized \\] test.diagram.vptext" 
+        | get-property "styles[0].text" | equals "[ Unsynchronized ] " | verify-true
+}
+get-editor "test.diagram.vptext" | get-text-viewer | get-property "markers['55'][0].text" 
+    | equals "Only-view attribute on Create Action can be performed only on Not Synchronized or Unsyncronizable mapping" 
+    | verify-true
+with [get-editor "test.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 55 107
+    key-type BackSpace -times 10
+    key-type "M1+s"
+}
+get-view "Project Explorer" | get-tree | get-item "org.polarsys.kitalpha.vp.test.vpdsl/model/test.diagram.vptext" 
+    | get-property caption | equals "test.diagram.vptext" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
