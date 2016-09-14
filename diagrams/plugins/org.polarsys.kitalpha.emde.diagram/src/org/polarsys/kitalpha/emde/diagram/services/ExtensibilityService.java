@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,6 +54,7 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNodeList;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
@@ -567,9 +568,10 @@ public class ExtensibilityService {
 			{
 				List<Resource> resourceList = new UniqueEList<Resource>();
 				
-				final EList<DRepresentation> ownedRepresentations = container.getOwnedRepresentations();
-				for (DRepresentation dRepresentation : ownedRepresentations) 
+				final EList<DRepresentationDescriptor> ownedRepresentationDescs = container.getOwnedRepresentationDescriptors();
+				for (DRepresentationDescriptor dRepresentationDesc : ownedRepresentationDescs) 
 				{
+					DRepresentation dRepresentation = dRepresentationDesc.getRepresentation();
 					if (dRepresentation instanceof DDiagram)
 					{
 						DDiagram diagram = (DDiagram) dRepresentation;

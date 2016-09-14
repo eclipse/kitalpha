@@ -70,6 +70,7 @@ import org.eclipse.sirius.tools.api.command.SiriusCommand;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
@@ -169,13 +170,14 @@ public class GenerateDiagramsService{
 			AirdGenerationRecordingCommand command = 
 				new AirdGenerationRecordingCommand(localSession.getTransactionalEditingDomain(), localSession, createNewAIRD, semantics, _monitor);
 			stack.execute(command);
-			final Collection<DRepresentation> createdRepresentations = command.getCreatedRepresentation();
+			Collection<DRepresentationDescriptor> createdRepDescriptors = command.getCreatedRepresentationDescriptors();
 			
 			// Create an aird fragment and put in it all new generated representation
 			URI fragmentUri = getFragmentUri();
 			savingPolicy.setFragmentURI(fragmentUri);
-			fragmentResource(localSession, fragmentUri , editing_domain, createdRepresentations);
+			fragmentResource(localSession, fragmentUri , editing_domain, createdRepDescriptors);
 			
+			final Collection<DRepresentation> createdRepresentations = command.getCreatedRepresentation();
 			// Layout the generated representations 
 			layoutNewRepresentations(createdRepresentations);
 			
@@ -216,7 +218,7 @@ public class GenerateDiagramsService{
 		return fUri.appendSegment(modelName).appendFileExtension("aird");
 	}
 	
-	private void fragmentResource(Session session, URI fragmentResourceURI, TransactionalEditingDomain domain, Collection<DRepresentation> movableRepresentations){
+	private void fragmentResource(Session session, URI fragmentResourceURI, TransactionalEditingDomain domain, Collection<DRepresentationDescriptor> movableRepresentations){
 		_monitor.beginTask("Creating fragment : " + fragmentResourceURI.toString(), 1);
 		ExtractRepresentationSilentCommand command = new ExtractRepresentationSilentCommand(session, fragmentResourceURI, domain, movableRepresentations);
 		command.execute();
@@ -302,8 +304,9 @@ public class GenerateDiagramsService{
 			// Handling the current DAnalysis views
 			for (DView view : analysis.getOwnedViews()) 
 			{
-				for (DRepresentation representation : view.getOwnedRepresentations()) 
+				for (DRepresentationDescriptor representationDesc : view.getOwnedRepresentationDescriptors()) 
 				{
+					DRepresentation representation = representationDesc.getRepresentation();
 					if (representation instanceof DSemanticDecorator) 
 						result.add((DSemanticDiagram) representation);
 				}
@@ -539,6 +542,7 @@ public class GenerateDiagramsService{
 		private boolean _newAird;
 		private Collection<Resource> _semanticResources;
 		private Collection<DRepresentation> _createdRepresentations;
+		private Collection<DRepresentationDescriptor> _createdRepresentationDescriptors;
 		private IProgressMonitor _monitor ;
 		
 		public AirdGenerationRecordingCommand(TransactionalEditingDomain editindDomain,
@@ -552,12 +556,18 @@ public class GenerateDiagramsService{
 			_newAird = newAird;
 			_semanticResources = semanticResources;
 			_createdRepresentations = new ArrayList<DRepresentation>();
+			_createdRepresentationDescriptors = new ArrayList<DRepresentationDescriptor>();
 			_monitor = monitor;
 		}
 		
 		public Collection<DRepresentation> getCreatedRepresentation(){
 			return _createdRepresentations;
 		}
+		
+		public Collection<DRepresentationDescriptor> getCreatedRepresentationDescriptors(){
+			return _createdRepresentationDescriptors;
+		}
+		
 		
 		@Override
 		public void dispose() {
@@ -568,6 +578,7 @@ public class GenerateDiagramsService{
 			 * Commented to avoid ConccurrentModificationException
 			 */
 //			_createdRepresentations.clear();
+//			_createdRepresentationDescriptors.clear();
 			_monitor = null;
 			super.dispose();
 		}
@@ -601,11 +612,19 @@ public class GenerateDiagramsService{
 					{
 						String stepIndex = " (" + (eClasses.indexOf(eClass) * 5) + "/" + ( eClasses.size() * 5) + ")";
 						_monitor.beginTask("Diagram generation for : " + (eClass).getName() + stepIndex, 1);
-						Collection<DRepresentation> newRepresentation = init(eClass, viewpoint, _session);
-						if (newRepresentation.size() > 0)
+						Collection<DRepresentationDescriptor> newRepDescriptors = init(eClass, viewpoint, _session);
+						if (newRepDescriptors.size() > 0)
 						{
-							refreshNewDiagram(_session, newRepresentation);
-							_createdRepresentations.addAll(newRepresentation);
+							refreshNewDiagramDescriptors(_session, newRepDescriptors);
+							for (DRepresentationDescriptor dRepresentationDescriptor : newRepDescriptors) 
+							{
+								DRepresentation representation = dRepresentationDescriptor.getRepresentation();
+								if (representation != null)
+								{
+									_createdRepresentations.add(representation);
+								}
+							}
+							_createdRepresentationDescriptors.addAll(newRepDescriptors);
 						}
 					}
 				}
@@ -616,6 +635,8 @@ public class GenerateDiagramsService{
 				Collection<DRepresentation> newRepresentation = refreshExistedDiagram(_session);
 				if (newRepresentation.size() > 0)
 					_createdRepresentations.addAll(newRepresentation);
+				
+				// FIXME: haldle _createdRepresentationDescriptors list
 			}
 		}
 		
@@ -668,18 +689,40 @@ public class GenerateDiagramsService{
 		 * @param viewpoint
 		 * @param session
 		 */
-		private Collection<DRepresentation> init(EObject semanticObject, Viewpoint viewpoint,Session session) {
-			Collection<DRepresentation> result = new ArrayList<DRepresentation>();
+		private Collection<DRepresentationDescriptor> init(EObject semanticObject, Viewpoint viewpoint,Session session) {
+			Collection<DRepresentationDescriptor> result = new ArrayList<DRepresentationDescriptor>();
 			for (RepresentationDescription description : viewpoint.getOwnedRepresentations()) 
 			{
 				ENamedElement namedElement = (ENamedElement) semanticObject;
 				String name = namedElement.getName() + " - " + description.getName();
-//				String name = semanticObject.eGet(semanticObject.eClass().getEStructuralFeature("name")).toString() + " " + description.getName();
-				DRepresentation nRepresentation = DialectManager.INSTANCE.createRepresentation(name, semanticObject, description, session, new NullProgressMonitor());
-				if (null != nRepresentation)
-					result.add(nRepresentation);
+				DRepresentation nRepresentation = 
+						DialectManager.INSTANCE.createRepresentation(name, semanticObject, description, session, new NullProgressMonitor());
+				DRepresentationDescriptor represnetationDescriptor = getRepresentationDescriptor(session, nRepresentation);
+				if (null != represnetationDescriptor)
+					result.add(represnetationDescriptor);
 			}
 			return result;
+		}
+		
+		private DRepresentationDescriptor getRepresentationDescriptor(Session session, DRepresentation representation){
+			Collection<DRepresentationDescriptor> repDescriptors = DialectManager.INSTANCE.getAllRepresentationDescriptors(session);
+			for (DRepresentationDescriptor dRepresentationDescriptor : repDescriptors) 
+			{
+				if (dRepresentationDescriptor.getRepresentation().equals(representation))
+					return dRepresentationDescriptor;
+			}
+			
+//			Collection<DView> ownedViews = session.getOwnedViews();
+//			for (DView dView : ownedViews) 
+//			{
+//				EList<DRepresentationDescriptor> representationDescriptors = dView.getOwnedRepresentationDescriptors();
+//				for (DRepresentationDescriptor dRepresentationDescriptor : representationDescriptors) 
+//				{
+//					if (dRepresentationDescriptor.getRepresentation().equals(representation))
+//						return dRepresentationDescriptor;
+//				}
+//			}
+			return null;
 		}
 		
 		private Collection<DRepresentation> refreshExistedDiagram(final Session session) {
@@ -735,8 +778,32 @@ public class GenerateDiagramsService{
 			editing_domain.getCommandStack().execute(compoundCommand);
 			for (DRepresentation currentDRepresentation :  representations) 
 			{
-			if (currentDRepresentation instanceof DDiagram) 
-				refreshNewDSemanticDiagram(currentDRepresentation, session);
+				if (currentDRepresentation instanceof DDiagram) 
+					refreshNewDSemanticDiagram(currentDRepresentation, session);
+			}
+		}
+		
+		private void refreshNewDiagramDescriptors(final Session session, Collection<DRepresentationDescriptor> repDescriptors) {
+			CompoundCommand compoundCommand = new CompoundCommand();
+//			Collection<DRepresentation> representations = DialectManager.INSTANCE.getAllRepresentations(session);
+			
+			Collection<DRepresentation> representations = new ArrayList<DRepresentation>();
+			for (DRepresentationDescriptor descriptor : repDescriptors) 
+			{
+				DRepresentation representation = descriptor.getRepresentation();
+				if (representation != null)
+				{
+					representations.add(representation);
+				}
+			}
+
+			RefreshRepresentationsCommand refreshRepresentationsCommand = new RefreshRepresentationsCommand(editing_domain, _monitor, representations);
+			compoundCommand.append(refreshRepresentationsCommand);
+			editing_domain.getCommandStack().execute(compoundCommand);
+			for (DRepresentation currentDRepresentation :  representations) 
+			{
+				if (currentDRepresentation instanceof DDiagram) 
+					refreshNewDSemanticDiagram(currentDRepresentation, session);
 			}
 		}
 		
