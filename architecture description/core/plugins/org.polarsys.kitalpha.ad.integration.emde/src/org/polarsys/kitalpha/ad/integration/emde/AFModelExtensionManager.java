@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener2;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
@@ -44,26 +44,28 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	public void setTarget(ResourceSet target) {
 		super.setTarget(target);
 		ViewpointManager mgr = ViewpointManager.getInstance(getTarget());
-		mgr.addListener(new Listener() {
+		mgr.addListener(new Listener2() {
 
 			private final ResourceSet set = new ResourceSetImpl();
 
-			public void hasBeenDeactivated(org.polarsys.kitalpha.resourcereuse.model.Resource res) {
-				sendEvent(res, false);
-			}
-
-			public void hasBeenActivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, true);
-			}
-
 			@Override
-			public void hasBeenFiltered(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			public void handleReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 				sendEvent(vp, false);
 			}
 
 			@Override
-			public void hasBeenDisplayed(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, true);
+			public void handleUnReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+				sendEvent(vp, false);
+			}
+
+			@Override
+			public void handleActivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+				sendEvent(vp, false);
+			}
+
+			@Override
+			public void handleInactivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+				sendEvent(vp, false);
 			}
 
 			private void sendEvent(org.polarsys.kitalpha.resourcereuse.model.Resource res, boolean enable) {
@@ -83,27 +85,29 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 				}
 				set.getResources().clear();
 			}
+
 		});
 
 		// TODO: quick solution clear all data
-		mgr.addListener(new Listener() {
+		mgr.addListener(new Listener2() {
 
 			@Override
-			public void hasBeenActivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			public void handleReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 			}
 
 			@Override
-			public void hasBeenDeactivated(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			public void handleUnReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 				extension2state.clear();
 				managedByAF2state.clear();
 				ModelExtensionDescriptor.INSTANCE.loadExtensibleModels();
 			}
+
 			@Override
-			public void hasBeenFiltered(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			public void handleActivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 			}
 
 			@Override
-			public void hasBeenDisplayed(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			public void handleInactivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 			}
 		});
 	}

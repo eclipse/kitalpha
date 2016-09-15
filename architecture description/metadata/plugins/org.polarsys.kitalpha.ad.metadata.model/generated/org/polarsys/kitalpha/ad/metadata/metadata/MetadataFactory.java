@@ -45,13 +45,13 @@ public interface MetadataFactory extends EFactory {
 	Metadata createMetadata();
 
 	/**
-	 * Returns a new object of class '<em>Viewpoint Usage</em>'.
+	 * Returns a new object of class '<em>Viewpoint Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Viewpoint Usage</em>'.
+	 * @return a new object of class '<em>Viewpoint Reference</em>'.
 	 * @generated
 	 */
-	ViewpointUsage createViewpointUsage();
+	ViewpointReference createViewpointReference();
 
 	/**
 	 * Returns the package supported by this factory.

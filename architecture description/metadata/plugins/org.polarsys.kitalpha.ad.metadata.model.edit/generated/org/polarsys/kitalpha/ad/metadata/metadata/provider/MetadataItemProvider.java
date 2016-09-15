@@ -75,7 +75,7 @@ public class MetadataItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MetadataPackage.Literals.METADATA__VIEWPOINT_USAGES);
+			childrenFeatures.add(MetadataPackage.Literals.METADATA__VIEWPOINT_REFERENCES);
 		}
 		return childrenFeatures;
 	}
@@ -133,7 +133,7 @@ public class MetadataItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Metadata.class)) {
-			case MetadataPackage.METADATA__VIEWPOINT_USAGES:
+			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -153,8 +153,8 @@ public class MetadataItemProvider
 
 				newChildDescriptors.add
 					(createChildParameter
-						(MetadataPackage.Literals.METADATA__VIEWPOINT_USAGES,
-						 MetadataFactory.eINSTANCE.createViewpointUsage()));
+						(MetadataPackage.Literals.METADATA__VIEWPOINT_REFERENCES,
+						 MetadataFactory.eINSTANCE.createViewpointReference()));
 
 
 	}

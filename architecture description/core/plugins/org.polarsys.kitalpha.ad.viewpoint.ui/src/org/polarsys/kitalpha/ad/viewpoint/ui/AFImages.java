@@ -17,8 +17,6 @@ package org.polarsys.kitalpha.ad.viewpoint.ui;
  */
 public interface AFImages {
 	String DISPLAY_ALL = "icons/displayAll.png";
-	String EYE = "icons/eye.png";
-	String EYE_DISABLED = "icons/eye_disabled.png";
 	String NEW_RULE = "icons/NewRule.gif";
 	String NEW_SERVICE = "icons/NewService.gif";
 	String ADD = "icons/add.gif";
@@ -30,8 +28,10 @@ public interface AFImages {
 	String OVERRIDING = "icons/overriding.gif";
 	String EMPTY = "icons/empty.gif";
 	String MISC = "icons/misc.gif";
-	String START = "icons/start.gif";
-	String STOP = "icons/stop.gif";
+	String ACTIVATE = "icons/activate.gif";
+	String DEACTIVATE = "icons/desactivate.gif";
+	String REFERENCE = "icons/reference.gif";
+	String UNREFERENCE = "icons/unreference.gif";
 	String REFRESH = "icons/refresh.gif";
 	String RUNNING_VP = "icons/runningVP.gif";
 	String VP = "icons/VP.gif";

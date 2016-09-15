@@ -86,8 +86,8 @@ public class MetadataAdapterFactory extends AdapterFactoryImpl {
 				return createMetadataAdapter();
 			}
 			@Override
-			public Adapter caseViewpointUsage(ViewpointUsage object) {
-				return createViewpointUsageAdapter();
+			public Adapter caseViewpointReference(ViewpointReference object) {
+				return createViewpointReferenceAdapter();
 			}
 			@Override
 			public Adapter caseMetadataElement(MetadataElement object) {
@@ -128,16 +128,16 @@ public class MetadataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage <em>Viewpoint Usage</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference <em>Viewpoint Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference
 	 * @generated
 	 */
-	public Adapter createViewpointUsageAdapter() {
+	public Adapter createViewpointReferenceAdapter() {
 		return null;
 	}
 

@@ -73,7 +73,7 @@ public class MetadataFactoryImpl extends EFactoryImpl implements MetadataFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case MetadataPackage.METADATA: return createMetadata();
-			case MetadataPackage.VIEWPOINT_USAGE: return createViewpointUsage();
+			case MetadataPackage.VIEWPOINT_REFERENCE: return createViewpointReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -124,9 +124,9 @@ public class MetadataFactoryImpl extends EFactoryImpl implements MetadataFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewpointUsage createViewpointUsage() {
-		ViewpointUsageImpl viewpointUsage = new ViewpointUsageImpl();
-		return viewpointUsage;
+	public ViewpointReference createViewpointReference() {
+		ViewpointReferenceImpl viewpointReference = new ViewpointReferenceImpl();
+		return viewpointReference;
 	}
 
 	/**

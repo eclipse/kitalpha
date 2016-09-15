@@ -29,7 +29,7 @@ import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataElement;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass viewpointUsageEClass = null;
+	private EClass viewpointReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,7 +141,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMetadata_ViewpointUsages() {
+	public EReference getMetadata_ViewpointReferences() {
 		return (EReference)metadataEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -150,8 +150,8 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getViewpointUsage() {
-		return viewpointUsageEClass;
+	public EClass getViewpointReference() {
+		return viewpointReferenceEClass;
 	}
 
 	/**
@@ -159,8 +159,8 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewpointUsage_VpId() {
-		return (EAttribute)viewpointUsageEClass.getEStructuralFeatures().get(0);
+	public EAttribute getViewpointReference_VpId() {
+		return (EAttribute)viewpointReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -168,8 +168,8 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewpointUsage_Version() {
-		return (EAttribute)viewpointUsageEClass.getEStructuralFeatures().get(1);
+	public EAttribute getViewpointReference_Version() {
+		return (EAttribute)viewpointReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -177,8 +177,8 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewpointUsage_Filtered() {
-		return (EAttribute)viewpointUsageEClass.getEStructuralFeatures().get(2);
+	public EAttribute getViewpointReference_Inactive() {
+		return (EAttribute)viewpointReferenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -237,12 +237,12 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 
 		// Create classes and their features
 		metadataEClass = createEClass(METADATA);
-		createEReference(metadataEClass, METADATA__VIEWPOINT_USAGES);
+		createEReference(metadataEClass, METADATA__VIEWPOINT_REFERENCES);
 
-		viewpointUsageEClass = createEClass(VIEWPOINT_USAGE);
-		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__VP_ID);
-		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__VERSION);
-		createEAttribute(viewpointUsageEClass, VIEWPOINT_USAGE__FILTERED);
+		viewpointReferenceEClass = createEClass(VIEWPOINT_REFERENCE);
+		createEAttribute(viewpointReferenceEClass, VIEWPOINT_REFERENCE__VP_ID);
+		createEAttribute(viewpointReferenceEClass, VIEWPOINT_REFERENCE__VERSION);
+		createEAttribute(viewpointReferenceEClass, VIEWPOINT_REFERENCE__INACTIVE);
 
 		metadataElementEClass = createEClass(METADATA_ELEMENT);
 		createEAttribute(metadataElementEClass, METADATA_ELEMENT__ID);
@@ -280,16 +280,16 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 
 		// Add supertypes to classes
 		metadataEClass.getESuperTypes().add(this.getMetadataElement());
-		viewpointUsageEClass.getESuperTypes().add(this.getMetadataElement());
+		viewpointReferenceEClass.getESuperTypes().add(this.getMetadataElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMetadata_ViewpointUsages(), this.getViewpointUsage(), null, "viewpointUsages", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadata_ViewpointReferences(), this.getViewpointReference(), null, "viewpointReferences", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(viewpointUsageEClass, ViewpointUsage.class, "ViewpointUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getViewpointUsage_VpId(), ecorePackage.getEString(), "vpId", null, 1, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getViewpointUsage_Version(), this.getVersion(), "version", null, 0, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getViewpointUsage_Filtered(), ecorePackage.getEBoolean(), "filtered", null, 0, 1, ViewpointUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(viewpointReferenceEClass, ViewpointReference.class, "ViewpointReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewpointReference_VpId(), ecorePackage.getEString(), "vpId", null, 1, 1, ViewpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewpointReference_Version(), this.getVersion(), "version", null, 0, 1, ViewpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewpointReference_Inactive(), ecorePackage.getEBoolean(), "inactive", null, 0, 1, ViewpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(metadataElementEClass, MetadataElement.class, "MetadataElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMetadataElement_Id(), ecorePackage.getEString(), "id", null, 1, 1, MetadataElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

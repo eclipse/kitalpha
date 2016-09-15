@@ -52,15 +52,15 @@ public class ComponentSampleTests extends TestCase {
 	}
 
 	public void testHelper1() throws Exception {
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertNotNull(viewpointUsages);
 	}
 	
 	public void testHelper2() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
 		
 	}
@@ -68,65 +68,65 @@ public class ComponentSampleTests extends TestCase {
 	public void testHelper3() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
-		m1.setUsage(resource, null, false);
-		viewpointUsages = m1.getViewpointUsages();
+		m1.unReference(resource);
+		viewpointUsages = m1.getViewpointReferences();
 		assertEquals(0, viewpointUsages.size());
 	}
 	
 	public void testHelper4() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		assertFalse(m1.isInUse(resource.getId()));
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		assertFalse(m1.isReferenced(resource.getId()));
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
-		assertTrue(m1.isInUse(resource.getId()));
+		assertTrue(m1.isReferenced(resource.getId()));
 		
 	}
 
 	public void testHelper5() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
-		assertFalse(m1.isFiltered(resource.getId()));
+		assertFalse(m1.isInactive(resource.getId()));
 	}
 
 	public void testHelper6() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
-		m1.setFilter(resource.getId(), true);
-		assertTrue(m1.isFiltered(resource.getId()));
+		m1.setActivationSate(resource.getId(), false);
+		assertTrue(m1.isInactive(resource.getId()));
 	}
 
 	public void testHelper7() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
-		m1.setFilter(resource.getId(), true);
-		m1.setFilter(resource.getId(), false);
-		assertFalse(m1.isFiltered(resource.getId()));
+		m1.setActivationSate(resource.getId(), false);
+		m1.setActivationSate(resource.getId(), true);
+		assertFalse(m1.isInactive(resource.getId()));
 		
 	}
 
 	public void testHelper9() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
 		String versionString = "1.0.0";
 		m1.updateVersion(resource, new Version(versionString));
-		viewpointUsages = m1.getViewpointUsages();
+		viewpointUsages = m1.getViewpointReferences();
 		Version version2 = viewpointUsages.get(resource.getId());
 		assertNotNull(version2);
 		assertEquals(versionString, version2.toString());
@@ -135,8 +135,8 @@ public class ComponentSampleTests extends TestCase {
 	public void testHelper8() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		assertNotNull(resource);
-		m1.setUsage(resource, null, true);
-		Map<String, Version> viewpointUsages = m1.getViewpointUsages();
+		m1.reference(resource, null);
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
 		assertEquals(1, viewpointUsages.size());
 		Version version = viewpointUsages.get(resource.getId());
 		assertNull(version);

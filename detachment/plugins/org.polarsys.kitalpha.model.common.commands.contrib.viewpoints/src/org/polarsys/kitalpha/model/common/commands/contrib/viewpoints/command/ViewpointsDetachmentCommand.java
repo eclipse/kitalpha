@@ -28,7 +28,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.viewpoints.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
@@ -100,7 +100,7 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata)
 			{
 				Metadata root = (Metadata)resource.getContents().get(0);
-				for (ViewpointUsage uv : root.getViewpointUsages())
+				for (ViewpointReference uv : root.getViewpointReferences())
 				{
 					if (unSelectedViewpoint.contains(uv.getVpId()))
 						eObjectToRemove.add(uv);
@@ -138,7 +138,7 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata)
 			{
 				Metadata root = (Metadata)resource.getContents().get(0);
-				for (ViewpointUsage uv : root.getViewpointUsages())
+				for (ViewpointReference uv : root.getViewpointReferences())
 				{
 					if (unSelectedViewpoint.contains(uv.getVpId()))
 						eObjectToRemove.add(uv);

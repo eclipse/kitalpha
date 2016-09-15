@@ -56,7 +56,7 @@ public class BasicTests extends TestCase {
 		ResourceSet set1 = new ResourceSetImpl();  
 		ViewpointManager m1 = ViewpointManager.getInstance(set1);
 		try {
-			m1.activate("");
+			m1.reference("");
 			fail("expecting an exception");
 		} catch (ViewpointActivationException e) {
 		}

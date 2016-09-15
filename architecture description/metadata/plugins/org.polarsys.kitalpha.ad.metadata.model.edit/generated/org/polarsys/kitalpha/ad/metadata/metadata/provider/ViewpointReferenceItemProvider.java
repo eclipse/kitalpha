@@ -22,29 +22,29 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 
 /**
- * This is the item provider adapter for a {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage} object.
+ * This is the item provider adapter for a {@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ViewpointUsageItemProvider 
-	extends MetadataElementItemProvider {
+public class ViewpointReferenceItemProvider extends MetadataElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewpointUsageItemProvider(AdapterFactory adapterFactory) {
+	public ViewpointReferenceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +61,7 @@ public class ViewpointUsageItemProvider
 
 			addVpIdPropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
-			addFilteredPropertyDescriptor(object);
+			addInactivePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,9 +78,9 @@ public class ViewpointUsageItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ViewpointUsage_vpId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewpointUsage_vpId_feature", "_UI_ViewpointUsage_type"),
-				 MetadataPackage.Literals.VIEWPOINT_USAGE__VP_ID,
+				 getString("_UI_ViewpointReference_vpId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ViewpointReference_vpId_feature", "_UI_ViewpointReference_type"),
+				 MetadataPackage.Literals.VIEWPOINT_REFERENCE__VP_ID,
 				 true,
 				 false,
 				 false,
@@ -102,9 +102,9 @@ public class ViewpointUsageItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ViewpointUsage_version_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewpointUsage_version_feature", "_UI_ViewpointUsage_type"),
-				 MetadataPackage.Literals.VIEWPOINT_USAGE__VERSION,
+				 getString("_UI_ViewpointReference_version_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ViewpointReference_version_feature", "_UI_ViewpointReference_type"),
+				 MetadataPackage.Literals.VIEWPOINT_REFERENCE__VERSION,
 				 true,
 				 false,
 				 false,
@@ -115,20 +115,20 @@ public class ViewpointUsageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Filtered feature.
+	 * This adds a property descriptor for the Inactive feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFilteredPropertyDescriptor(Object object) {
+	protected void addInactivePropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ViewpointUsage_filtered_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewpointUsage_filtered_feature", "_UI_ViewpointUsage_type"),
-				 MetadataPackage.Literals.VIEWPOINT_USAGE__FILTERED,
+				 getString("_UI_ViewpointReference_inactive_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ViewpointReference_inactive_feature", "_UI_ViewpointReference_type"),
+				 MetadataPackage.Literals.VIEWPOINT_REFERENCE__INACTIVE,
 				 true,
 				 false,
 				 false,
@@ -139,14 +139,14 @@ public class ViewpointUsageItemProvider
 	}
 
 	/**
-	 * This returns ViewpointUsage.gif.
+	 * This returns ViewpointReference.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ViewpointUsage"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ViewpointReference"));
 	}
 
 	/**
@@ -158,10 +158,10 @@ public class ViewpointUsageItemProvider
 	@Override
 	public String getText(Object object) {
 
-		String label = ((ViewpointUsage)object).getId();
+		String label = ((ViewpointReference)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ViewpointUsage_type") :
-			getString("_UI_ViewpointUsage_type") + " " + label;
+			getString("_UI_ViewpointReference_type") :
+			getString("_UI_ViewpointReference_type") + " " + label;
 
 	}
 	
@@ -177,10 +177,10 @@ public class ViewpointUsageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ViewpointUsage.class)) {
-			case MetadataPackage.VIEWPOINT_USAGE__VP_ID:
-			case MetadataPackage.VIEWPOINT_USAGE__VERSION:
-			case MetadataPackage.VIEWPOINT_USAGE__FILTERED:
+		switch (notification.getFeatureID(ViewpointReference.class)) {
+			case MetadataPackage.VIEWPOINT_REFERENCE__VP_ID:
+			case MetadataPackage.VIEWPOINT_REFERENCE__VERSION:
+			case MetadataPackage.VIEWPOINT_REFERENCE__INACTIVE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

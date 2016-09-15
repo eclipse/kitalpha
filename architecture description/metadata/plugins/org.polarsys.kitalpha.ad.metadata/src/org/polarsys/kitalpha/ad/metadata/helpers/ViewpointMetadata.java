@@ -26,7 +26,7 @@ import org.polarsys.kitalpha.ad.metadata.commands.CreateMetadataResourceCommand;
 import org.polarsys.kitalpha.ad.metadata.commands.MetadataCommand;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
-import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointUsage;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 
 /**
  * @author Thomas Guiu
@@ -42,7 +42,14 @@ public class ViewpointMetadata {
 		this.context = context;
 	}
 
+	/**
+	 * @deprecated replaced by getViewpointReferences()
+	 */
 	public Map<String, Version> getViewpointUsages() {
+		return getViewpointReferences();
+	}
+	
+	public Map<String, Version> getViewpointReferences() {
 		Map<String, Version> id2version = new HashMap<String, Version>();
 		if (context.getResources().isEmpty())
 			return id2version;
@@ -52,7 +59,7 @@ public class ViewpointMetadata {
 		if (metadataStorage == null)
 			return id2version;
 
-		for (ViewpointUsage usedViewpoint : metadataStorage.getViewpointUsages())
+		for (ViewpointReference usedViewpoint : metadataStorage.getViewpointReferences())
 			id2version.put(usedViewpoint.getVpId(), usedViewpoint.getVersion());
 		return id2version;
 	}
@@ -62,7 +69,7 @@ public class ViewpointMetadata {
 		if (metadata == null)
 			throw new IllegalStateException("cannot find metadata resource");
 
-		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
 				return uv.getVersion();
 			}
@@ -73,35 +80,49 @@ public class ViewpointMetadata {
 	public void updateVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version) {
 		Metadata metadata = getMetadataStorage(true);
 
-		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
 				uv.setVersion(version);
 				return;
 			}
 		}
 		setUsage(vpResource, version, true);
-
 	}
 
-	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version,
-			boolean usage) {
+	/**
+	 * @deprecated replaced by reference() and unReference()
+	 */
+	public void setUsage(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version, boolean usage) {
+		if (usage)
+			reference(vpResource, version);
+		else
+			unReference(vpResource);
+	}
+	
+	public void reference(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource, Version version) {
 		Metadata metadata = getMetadataStorage(true);
 
-		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
-				if (usage)
-					return; // object is already there, nothing to do
-				metadata.getViewpointUsages().remove(uv);
+				return; // object is already there, nothing to do
 			}
 
 		}
-		if (usage) {
-			ViewpointUsage uv = MetadataFactory.eINSTANCE.createViewpointUsage();
-			uv.setId(EcoreUtil.generateUUID());
-			uv.setFiltered(false);
-			uv.setVpId(vpResource.getId());
-			uv.setVersion(version);
-			metadata.getViewpointUsages().add(uv);
+		ViewpointReference uv = MetadataFactory.eINSTANCE.createViewpointReference();
+		uv.setId(EcoreUtil.generateUUID());
+		uv.setInactive(false);
+		uv.setVpId(vpResource.getId());
+		uv.setVersion(version);
+		metadata.getViewpointReferences().add(uv);
+	}
+
+	public void unReference(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource) {
+		Metadata metadata = getMetadataStorage(true);
+
+		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
+			if (vpResource.getId().equals(uv.getVpId())) {
+				metadata.getViewpointReferences().remove(uv);
+			}
 		}
 	}
 
@@ -116,20 +137,34 @@ public class ViewpointMetadata {
 			editingDomain.getCommandStack().execute(command);
 	}
 
+	/**
+	 * @deprecated replaced by setActivationSate(String id, boolean active)
+	 */
 	public void setFilter(String id, boolean filter) {
+		setActivationSate(id, !filter);
+	}
+	
+	public void setActivationSate(String id, boolean active) {
 		Metadata metadata = getMetadataStorage(true);
 
-		for (ViewpointUsage uv : new ArrayList<ViewpointUsage>(metadata.getViewpointUsages())) {
+		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
 			if (id.equals(uv.getVpId())) {
-				uv.setFiltered(filter);
+				uv.setInactive(!active);
 			}
 		}
 	}
 
+	/**
+	 * @deprecated replaced by isReferenced(String id)
+	 */
 	public boolean isInUse(String id) {
-		Metadata integ = getMetadataStorage();
-		if (integ != null) {
-			for (ViewpointUsage uv : integ.getViewpointUsages()) {
+		return isReferenced(id);
+	}
+	
+	public boolean isReferenced(String id) {
+		Metadata metadata = getMetadataStorage();
+		if (metadata != null) {
+			for (ViewpointReference uv : metadata.getViewpointReferences()) {
 				if (id.equals(uv.getVpId()))
 					return true;
 			}
@@ -137,12 +172,20 @@ public class ViewpointMetadata {
 		return false;
 	}
 
+	
+	/**
+	 * @deprecated replaced by isInactive(String id)
+	 */
 	public boolean isFiltered(String id) {
-		Metadata integ = getMetadataStorage();
-		if (integ != null) {
-			for (ViewpointUsage uv : integ.getViewpointUsages()) {
+		return isInactive(id);
+	}
+	
+	public boolean isInactive(String id) {
+		Metadata metadata = getMetadataStorage();
+		if (metadata != null) {
+			for (ViewpointReference uv : metadata.getViewpointReferences()) {
 				if (id.equals(uv.getVpId()))
-					return uv.isFiltered();
+					return uv.isInactive();
 			}
 		}
 		return false;
@@ -191,8 +234,8 @@ public class ViewpointMetadata {
 			return null;
 		if (resource.getContents().isEmpty())
 			return null;
-		Metadata integ = (Metadata) resource.getContents().get(0);
-		return integ;
+		Metadata metadata = (Metadata) resource.getContents().get(0);
+		return metadata;
 	}
 
 	private Resource getResource(String extension) {
