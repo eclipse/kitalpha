@@ -39,7 +39,8 @@ public class ExtensionRefreshExtension implements IRefreshExtension {
 		if (!contains(diagram.getActivatedFilters(), filterDesc))
 		{
 			diagram.getActivatedFilters().add(filterDesc);
-			diagram.getCurrentConcern().getFilters().add(filterDesc);
+			if (diagram.getCurrentConcern() != null)
+				diagram.getCurrentConcern().getFilters().add(filterDesc);
 		}
 	}
 
