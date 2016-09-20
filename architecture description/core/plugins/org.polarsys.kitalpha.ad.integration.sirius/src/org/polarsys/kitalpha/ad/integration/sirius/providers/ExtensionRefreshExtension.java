@@ -37,7 +37,10 @@ public class ExtensionRefreshExtension implements IRefreshExtension {
 	public void process(DDiagram diagram) {
 		CompositeFilterDescription filterDesc = (CompositeFilterDescription) localSet.getEObject(Activator.FILTER_URI, true);
 		if (!contains(diagram.getActivatedFilters(), filterDesc))
+		{
 			diagram.getActivatedFilters().add(filterDesc);
+			diagram.getCurrentConcern().getFilters().add(filterDesc);
+		}
 	}
 
 	private boolean contains(EList<FilterDescription> activatedFilters, CompositeFilterDescription filterDesc) {
