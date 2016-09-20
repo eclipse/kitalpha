@@ -50,7 +50,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 			@Override
 			public void handleReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, false);
+				sendEvent(vp, true);
 			}
 
 			@Override
@@ -60,7 +60,7 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 			@Override
 			public void handleActivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, false);
+				sendEvent(vp, true);
 			}
 
 			@Override
