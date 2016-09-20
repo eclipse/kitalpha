@@ -8513,19 +8513,19 @@ ruleContainerLayout returns [Enumerator current=null]
 ruleSynchronizationMode returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-((	enumLiteral_0='Synchronized' 
+((	enumLiteral_0='synchronized' 
 	{
         $current = grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_0, grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='Unsynchronizable' 
+    |(	enumLiteral_1='unsynchronizable' 
 	{
         $current = grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_1, grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='Not_Synchronized' 
+    |(	enumLiteral_2='not-synchronized' 
 	{
         $current = grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_2, grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_2()); 

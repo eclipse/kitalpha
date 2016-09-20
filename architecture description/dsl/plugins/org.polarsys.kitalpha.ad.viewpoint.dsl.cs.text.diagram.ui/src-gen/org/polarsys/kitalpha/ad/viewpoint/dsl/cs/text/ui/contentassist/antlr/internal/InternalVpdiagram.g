@@ -4267,21 +4267,21 @@ rule__SynchronizationMode__Alternatives
 :
 (
 { before(grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_0()); }
-(	'Synchronized' 
+(	'synchronized' 
 )
 { after(grammarAccess.getSynchronizationModeAccess().getSynchronizedEnumLiteralDeclaration_0()); }
 )
 
     |(
 { before(grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_1()); }
-(	'Unsynchronizable' 
+(	'unsynchronizable' 
 )
 { after(grammarAccess.getSynchronizationModeAccess().getUnsynchronizableEnumLiteralDeclaration_1()); }
 )
 
     |(
 { before(grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_2()); }
-(	'Not_Synchronized' 
+(	'not-synchronized' 
 )
 { after(grammarAccess.getSynchronizationModeAccess().getNot_SynchronizedEnumLiteralDeclaration_2()); }
 )
