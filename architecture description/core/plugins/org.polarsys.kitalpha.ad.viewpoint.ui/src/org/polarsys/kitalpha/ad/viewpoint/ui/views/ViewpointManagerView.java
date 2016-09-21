@@ -476,7 +476,8 @@ public class ViewpointManagerView extends ViewPart {
 					boolean dirty = false;
 					for (org.eclipse.emf.ecore.resource.Resource r: context.getResources())
 					{
-						dirty |= r.isModified();
+						if (r.getURI().isPlatformResource())
+							dirty |= r.isModified();
 					}
 					String title = "Unreference viewpoint " + res.getLabel();
 					if (dirty) {
