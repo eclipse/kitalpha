@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
 import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
 
@@ -55,6 +56,11 @@ public class CreateMetadataResourceCommand extends MetadataCommand {
 
 			if (resource == null) {
 				Resource newResource = resourceSet.createResource(uri);
+				if (newResource instanceof XMLResource)
+				{
+					XMLResource xmlRes = (XMLResource)newResource;
+					xmlRes.setEncoding("UTF-8");
+				}
 				Metadata metadata = MetadataFactory.eINSTANCE.createMetadata();
 				metadata.setId(EcoreUtil.generateUUID());
 				resourceSet.getResources().add(newResource);
