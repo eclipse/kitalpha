@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.metadata,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
- org.polarsys.kitalpha.ad.metadata.model
+ org.polarsys.kitalpha.ad.metadata.model,
+ org.eclipse.emf.ecore.xmi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy

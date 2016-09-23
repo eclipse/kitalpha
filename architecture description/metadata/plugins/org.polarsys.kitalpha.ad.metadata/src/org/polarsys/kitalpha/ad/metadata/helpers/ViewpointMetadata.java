@@ -239,6 +239,8 @@ public class ViewpointMetadata {
 	}
 
 	private Resource getResource(String extension) {
+		if (context.getResources().isEmpty())
+			return null;
 		for (Resource res : context.getResources()) {
 			if (res.getURI().toString().endsWith(extension)) {
 				return res;

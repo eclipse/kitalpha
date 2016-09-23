@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
@@ -63,5 +64,21 @@ public class BasicTests2 extends TestCase {
 		assertTrue(eObject instanceof Metadata);
 		Metadata meta = (Metadata)eObject;
 		assertEquals(0, meta.getViewpointReferences().size());
+	}
+
+	public void testHelper4() throws Exception {
+		ResourceSet set = new ResourceSetImpl();  
+		ViewpointMetadata m1 = MetadataHelper.getViewpointMetadata(set);
+		assertFalse(m1.hasMetadata());
+		Resource initMetadataStorage = m1.initMetadataStorage(URI.createPlatformPluginURI("/org.polarsys.kitalpha.ad.metadata.tests/resource/My."+ViewpointMetadata.STORAGE_EXTENSION, true));
+		assertTrue(m1.hasMetadata());
+	}
+
+	public void testHelper5() throws Exception {
+		ResourceSet set = new ResourceSetImpl();  
+		ViewpointMetadata m1 = MetadataHelper.getViewpointMetadata(set);
+		Resource initMetadataStorage = m1.initMetadataStorage(URI.createPlatformPluginURI("/org.polarsys.kitalpha.ad.metadata.tests/resource/My."+ViewpointMetadata.STORAGE_EXTENSION, true));
+		assertTrue(initMetadataStorage instanceof XMLResource);
+		assertEquals("UTF-8", ((XMLResource)initMetadataStorage).getEncoding());
 	}
 }
