@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentSample:ComponentModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ComponentSample="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"
+    xmlns:ComponentSamplePerformance="http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0">
+  <packages xmi:type="ComponentSample:ComponentPackage">
+    <components xmi:type="ComponentSample:HardwareComponent">
+      <ownedExtensions xmi:type="ComponentSamplePerformance:Performance"/>
+      <abstractComponent xmi:type="ComponentSample:SoftwareComponent"/>
+    </components>
+  </packages>
+</ComponentSample:ComponentModel>

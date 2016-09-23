@@ -14,8 +14,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.model.common.scrutiny.contrib.modelresources,
  org.polarsys.kitalpha.ad.common,
  org.polarsys.kitalpha.ad.services,
- org.polarsys.kitalpha.ad.integration.sirius.model
+ org.polarsys.kitalpha.ad.integration.sirius.model,
+ org.polarsys.kitalpha.ad.metadata
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints,
+ org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.metadata,
  org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes

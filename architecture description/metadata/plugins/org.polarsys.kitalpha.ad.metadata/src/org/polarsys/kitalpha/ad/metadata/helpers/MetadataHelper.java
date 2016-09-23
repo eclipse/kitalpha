@@ -52,4 +52,25 @@ public class MetadataHelper {
 		return ViewpointMetadata.STORAGE_EXTENSION.equals(resource.getFileExtension());
 
 	}
+	
+	
+	/**
+	 * Create or update the metadata resource
+	 * 
+	 * @param modelResource
+	 * @return null if the metadata resource already exists
+	 */
+	public static Resource initMetadata(Resource modelResource) {
+		
+		ResourceSet ctx = modelResource.getResourceSet();
+		ViewpointMetadata metadata = getViewpointMetadata(ctx);
+		Resource initMetadataStorage = metadata.initMetadataStorage();
+		
+		for (Contribution contrib : Contribution.getContributions())
+			contrib.update(ctx);
+		
+		return initMetadataStorage;
+	}
+
+	
 }

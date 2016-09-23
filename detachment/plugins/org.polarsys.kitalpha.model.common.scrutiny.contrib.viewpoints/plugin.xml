@@ -24,5 +24,11 @@ Contributors:
          </class>
       </scrutiny>
    </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.metadata.contribution">
+      <contribution
+            class="org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.metadata.ViewpointContribution">
+      </contribution>
+   </extension>
 
 </plugin>

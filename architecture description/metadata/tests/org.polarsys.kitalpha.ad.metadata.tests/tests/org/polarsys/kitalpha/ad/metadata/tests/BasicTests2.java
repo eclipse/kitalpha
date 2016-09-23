@@ -81,4 +81,19 @@ public class BasicTests2 extends TestCase {
 		assertTrue(initMetadataStorage instanceof XMLResource);
 		assertEquals("UTF-8", ((XMLResource)initMetadataStorage).getEncoding());
 	}
+
+	public void testHelper6() throws Exception {
+		ResourceSet set = new ResourceSetImpl();  
+		Resource modelResource = set.getResource(URI.createPlatformPluginURI("/org.polarsys.kitalpha.ad.metadata.tests/resource/My2.componentsample", true), true);
+		Resource initMetadata = MetadataHelper.initMetadata(modelResource);
+		assertNotNull(initMetadata);
+		EList<EObject> contents = initMetadata.getContents();
+		assertNotNull(contents);
+		assertEquals(1, contents.size());
+		EObject eObject = contents.get(0);
+		assertNotNull(eObject);
+		assertTrue(eObject instanceof Metadata);
+		Metadata meta = (Metadata)eObject;
+		assertEquals(2, meta.getViewpointReferences().size());
+	}
 }
