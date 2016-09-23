@@ -6458,32 +6458,32 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cUnsynchronizableEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cUnsynchronizableUnsynchronizableKeyword_1_0 = (Keyword)cUnsynchronizableEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cNot_SynchronizedEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cNot_SynchronizedNot_SynchronizedKeyword_2_0 = (Keyword)cNot_SynchronizedEnumLiteralDeclaration_2.eContents().get(0);
+		private final Keyword cNot_SynchronizedNotSynchronizedKeyword_2_0 = (Keyword)cNot_SynchronizedEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum SynchronizationMode returns vpdiagram::SynchronizationMode:
-		//	Synchronized | Unsynchronizable | Not_Synchronized;
+		//	Synchronized="synchronized" | Unsynchronizable="unsynchronizable" | Not_Synchronized="not-synchronized";
 		public EnumRule getRule() { return rule; }
 
-		//Synchronized | Unsynchronizable | Not_Synchronized
+		//Synchronized="synchronized" | Unsynchronizable="unsynchronizable" | Not_Synchronized="not-synchronized"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//Synchronized
+		//Synchronized="synchronized"
 		public EnumLiteralDeclaration getSynchronizedEnumLiteralDeclaration_0() { return cSynchronizedEnumLiteralDeclaration_0; }
 
-		//"Synchronized"
+		//"synchronized"
 		public Keyword getSynchronizedSynchronizedKeyword_0_0() { return cSynchronizedSynchronizedKeyword_0_0; }
 
-		//Unsynchronizable
+		//Unsynchronizable="unsynchronizable"
 		public EnumLiteralDeclaration getUnsynchronizableEnumLiteralDeclaration_1() { return cUnsynchronizableEnumLiteralDeclaration_1; }
 
-		//"Unsynchronizable"
+		//"unsynchronizable"
 		public Keyword getUnsynchronizableUnsynchronizableKeyword_1_0() { return cUnsynchronizableUnsynchronizableKeyword_1_0; }
 
-		//Not_Synchronized
+		//Not_Synchronized="not-synchronized"
 		public EnumLiteralDeclaration getNot_SynchronizedEnumLiteralDeclaration_2() { return cNot_SynchronizedEnumLiteralDeclaration_2; }
 
-		//"Not_Synchronized"
-		public Keyword getNot_SynchronizedNot_SynchronizedKeyword_2_0() { return cNot_SynchronizedNot_SynchronizedKeyword_2_0; }
+		//"not-synchronized"
+		public Keyword getNot_SynchronizedNotSynchronizedKeyword_2_0() { return cNot_SynchronizedNotSynchronizedKeyword_2_0; }
 	}
 	
 	private final DiagramsElements pDiagrams;
@@ -7695,7 +7695,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum SynchronizationMode returns vpdiagram::SynchronizationMode:
-	//	Synchronized | Unsynchronizable | Not_Synchronized;
+	//	Synchronized="synchronized" | Unsynchronizable="unsynchronizable" | Not_Synchronized="not-synchronized";
 	public SynchronizationModeElements getSynchronizationModeAccess() {
 		return unknownRuleSynchronizationMode;
 	}

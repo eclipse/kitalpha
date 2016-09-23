@@ -54,7 +54,6 @@
 'NoDecoration'=62
 'Node'=153
 'None'=31
-'Not_Synchronized'=105
 'Note'=46
 'OpenAction'=158
 'OutputArrow'=63
@@ -70,11 +69,9 @@
 'Square'=43
 'Stroke'=49
 'Style'=121
-'Synchronized'=103
 'TARGET'=35
 'Target'=33
 'Triangle'=48
-'Unsynchronizable'=104
 'VERTICAL'=16
 'VerticalStack'=102
 'action-for:'=163
@@ -164,6 +161,7 @@
 'maxValue:'=146
 'minValue:'=144
 'node'=55
+'not-synchronized'=105
 'on'=231
 'only-view'=235
 'orange'=79
@@ -205,6 +203,7 @@
 'strike_through'=29
 'stroke'=20
 'stroke-dimension'=230
+'synchronized'=103
 'target'=188
 'target-association:'=175
 'target-query:'=174
@@ -214,6 +213,7 @@
 'triangle'=21
 'true'=12
 'underline'=28
+'unsynchronizable'=104
 'value:'=145
 'vertical'=228
 'when'=181

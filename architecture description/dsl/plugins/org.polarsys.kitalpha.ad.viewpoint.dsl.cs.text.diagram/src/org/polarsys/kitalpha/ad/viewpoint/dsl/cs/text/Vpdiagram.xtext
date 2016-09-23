@@ -730,9 +730,9 @@ enum ContainerLayout returns siriusDiagram::ContainerLayout:
 ;
 
 enum SynchronizationMode returns vpdiagram::SynchronizationMode:
-	Synchronized 	 = "Synchronized" 		|
-	Unsynchronizable = "Unsynchronizable"	|
-	Not_Synchronized = "Not_Synchronized"	
+	Synchronized 	 = "synchronized" 		|
+	Unsynchronizable = "unsynchronizable"	|
+	Not_Synchronized = "not-synchronized"	
 ;
 
 
