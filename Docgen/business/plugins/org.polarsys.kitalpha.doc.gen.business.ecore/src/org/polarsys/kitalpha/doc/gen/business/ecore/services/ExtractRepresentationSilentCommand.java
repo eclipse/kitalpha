@@ -34,6 +34,7 @@ import org.polarsys.kitalpha.doc.gen.business.ecore.Activator;
 
 import org.eclipse.sirius.viewpoint.DAnalysis;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.ViewpointFactory;
 import org.eclipse.sirius.business.api.dialect.command.MoveRepresentationCommand;
 import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
@@ -55,7 +56,7 @@ public class ExtractRepresentationSilentCommand {
 
 	private Session session;
 
-	private Collection<DRepresentation> representations;
+	private Collection<DRepresentationDescriptor> representationDescriptors;
 
 	private Resource pickedResource;
 
@@ -71,10 +72,10 @@ public class ExtractRepresentationSilentCommand {
 	 * @param movableRepresentations
 	 *            the DView instance
 	 */
-	public ExtractRepresentationSilentCommand(Session session, URI fragmentResourceURI, TransactionalEditingDomain domain, Collection<DRepresentation> movableRepresentations) {
+	public ExtractRepresentationSilentCommand(Session session, URI fragmentResourceURI, TransactionalEditingDomain domain, Collection<DRepresentationDescriptor> movableRepDescriptors) {
 		this.domain = session.getTransactionalEditingDomain();
 		this.session = session;
-		this.representations = movableRepresentations;
+		this.representationDescriptors = movableRepDescriptors;
 		this.fragmentResourceURI = fragmentResourceURI;
 	}
 
@@ -97,7 +98,7 @@ public class ExtractRepresentationSilentCommand {
 	 private void moveRepresentations(final DAnalysis slaveAnalysis) {
 		 final IRunnableWithProgress moveReps = new IRunnableWithProgress() {
 			 public void run(final IProgressMonitor mon) {
-				 domain.getCommandStack().execute(new MoveRepresentationCommand(session, slaveAnalysis, representations));
+				 domain.getCommandStack().execute(new MoveRepresentationCommand(session, slaveAnalysis, representationDescriptors));
 			 }
 		 };
 
