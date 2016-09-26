@@ -12,18 +12,41 @@ Contributors:
 -->
 <plugin>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="true"
-            id="org.polarsys.kitalpha.resourcereuse.model.ui.popupMenu"
-            objectClass="org.eclipse.emf.ecore.EObject">
-         <action
-               class="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.LoadResourceReusePopUp"
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.LoadResourceReuseHandler"
+            commandId="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.load.content.handler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.LoadResourceReuseHandler"
+            id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.load.content.command"
+            name="Load ResourceReuse Content">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.load.content.command"
                icon="icons/searchView.gif"
-               id="org.polarsys.kitalpha.resourcereuse.model.ui.loadResource"
-               label="Load ResourceReuse content...">
-         </action>
-      </objectContribution>
+               label="Load Reusable Resource..."
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+               <with
+                     variable="activePart">
+                  <instanceof
+                        value="org.eclipse.emf.edit.domain.IEditingDomainProvider">
+                  </instanceof>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
 
 </plugin>

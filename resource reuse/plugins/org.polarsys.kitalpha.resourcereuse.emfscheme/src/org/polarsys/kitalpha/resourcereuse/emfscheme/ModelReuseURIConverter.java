@@ -67,7 +67,7 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 	public URI normalize(URI uri) {
 		String scheme = uri.scheme();
 
-		if (scheme.equals("modelreuse")){
+		if (scheme != null && scheme.equals("modelreuse")){
 			try {
 				/*
 				 * Workaround to decode uri from Sirius representation
