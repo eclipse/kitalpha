@@ -30,16 +30,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
-import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.Bundle;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramChildren;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationDescriptions;
 
@@ -132,7 +129,7 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			return;
 		}
 		
-		if (keyword.getValue().equals(SynchronizationMode.NOT_SYNCHRONIZED.getLiteral())){
+		if (keyword.getValue().equalsIgnoreCase(SynchronizationMode.NOT_SYNCHRONIZED.getLiteral().replace("_", "-"))){
 			StyledString styledString = new StyledString();
 			styledString.append(keyword.getValue());
 			styledString.append(" - ");
@@ -143,7 +140,7 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			return;
 		}
 		
-		if (keyword.getValue().equals(SynchronizationMode.SYNCHRONIZED.getLiteral())){
+		if (keyword.getValue().equalsIgnoreCase(SynchronizationMode.SYNCHRONIZED.getLiteral())){
 			StyledString styledString = new StyledString();
 			styledString.append(keyword.getValue());
 			styledString.append(" - ");
@@ -154,7 +151,7 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			return;
 		}
 		
-		if (keyword.getValue().equals(SynchronizationMode.UNSYNCHRONIZABLE.getLiteral())){
+		if (keyword.getValue().equalsIgnoreCase(SynchronizationMode.UNSYNCHRONIZABLE.getLiteral())){
 			StyledString styledString = new StyledString();
 			styledString.append(keyword.getValue());
 			styledString.append(" - ");
