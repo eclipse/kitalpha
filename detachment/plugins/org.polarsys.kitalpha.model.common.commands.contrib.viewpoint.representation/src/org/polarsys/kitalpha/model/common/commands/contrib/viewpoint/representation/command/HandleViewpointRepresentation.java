@@ -123,10 +123,9 @@ public class HandleViewpointRepresentation extends org.polarsys.kitalpha.model.c
 								deactivateViewpointAdditionalLayers(session, monitor, ownedViewpoints, diagram);
 							}
 						}
-						Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newViewpointSelection = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
-						deleteViewpointDView(session, ownedViewpoints, selectedViewpoints, newViewpointSelection);
+						deleteViewpointDView(session, ownedViewpoints, selectedViewpoints);
 						
-						unselectSiriusViewpointFromSession(session, monitor, ownedViewpoints, newViewpointSelection);
+						unselectSiriusViewpointFromSession(session, monitor, ownedViewpoints);
 					}
 				}
 			} catch (ResourceNotFoundException e) {
@@ -136,10 +135,9 @@ public class HandleViewpointRepresentation extends org.polarsys.kitalpha.model.c
 	}
 
 	private void unselectSiriusViewpointFromSession(Session session, IProgressMonitor monitor,
-			EList<org.eclipse.sirius.viewpoint.description.Viewpoint> ownedViewpoints,
-			Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newViewpointSelection) {
+			EList<org.eclipse.sirius.viewpoint.description.Viewpoint> ownedViewpoints) {
 		Set<org.eclipse.sirius.viewpoint.description.Viewpoint> deselectedViewpoints = new HashSet<>(ownedViewpoints);
-		ChangeViewpointSelectionCommand  deselectSiriusVp = new ChangeViewpointSelectionCommand(session, new ViewpointSelectionCallback(), newViewpointSelection, deselectedViewpoints, monitor);
+		ChangeViewpointSelectionCommand  deselectSiriusVp = new ChangeViewpointSelectionCommand(session, new ViewpointSelectionCallback(),  new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>(), deselectedViewpoints, monitor);
 		TransactionalEditingDomain ed = session.getTransactionalEditingDomain();
 		CommandStack commandStack = ed.getCommandStack();
 		if (deselectSiriusVp.canExecute()){
@@ -149,28 +147,22 @@ public class HandleViewpointRepresentation extends org.polarsys.kitalpha.model.c
 
 	private void deleteViewpointDView(Session session,
 			EList<org.eclipse.sirius.viewpoint.description.Viewpoint> ownedViewpoints,
-			Collection<org.eclipse.sirius.viewpoint.description.Viewpoint> selectedViewpoints,
-			Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newViewpointSelection) {
+			Collection<org.eclipse.sirius.viewpoint.description.Viewpoint> selectedViewpoints) {
 		
+		Collection<DView> ownedViews = session.getOwnedViews();
+		Collection<DView> toDelete = new HashSet<>();
 		for (org.eclipse.sirius.viewpoint.description.Viewpoint viewpoint : ownedViewpoints) {
-			for (org.eclipse.sirius.viewpoint.description.Viewpoint selectedVp : selectedViewpoints) {
-				if (!selectedViewpoints.equals(viewpoint)){
-					newViewpointSelection.add(selectedVp);
-				}
-			}
-			Collection<DView> ownedViews = session.getOwnedViews();
-			Collection<DView> toDelete = new HashSet<>();
 			for (DView dView : ownedViews) {
 				if (dView.getViewpoint().getName().equals(viewpoint.getName())){
 					toDelete.add(dView);
 				}
 			}
-			for (DView dView : toDelete) {
-				Command deleteCommand = RemoveCommand.create(session.getTransactionalEditingDomain(), dView);
-				
-				if (deleteCommand.canExecute()){
-					session.getTransactionalEditingDomain().getCommandStack().execute(deleteCommand);
-				}
+		}
+		for (DView dView : toDelete) {
+			Command deleteCommand = RemoveCommand.create(session.getTransactionalEditingDomain(), dView);
+			
+			if (deleteCommand.canExecute()){
+				session.getTransactionalEditingDomain().getCommandStack().execute(deleteCommand);
 			}
 		}
 	}
