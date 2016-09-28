@@ -1,0 +1,70 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.workspace
+Element-Name: initialWS
+Element-Type: context
+Element-Version: 2.0
+Id: _FtaIsIVdEeaAeqHNRvXNqw
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 9/28/16 11:22 AM
+
+------=_contents/test/test.afm-494d65fc-49dc-3870-831f-fb645c267182
+Content-Type: q7/binary
+Entry-Name: contents/test/test.afm
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSlkktrwzAQhO+F/gehe62kFBqM3ZCD
+A4a6Lalb2lNZ7LUjYj2QhJXk11cOcR/kkENuYjUz34hVMt+KjvRoLFcypdNoQgnKStVctil9K5c3Mzp/
+uL5KBDqowUFcHA9kK3j8Y7wdjCFK2jjMU7p2TseMee8jJdpImZZ9FPkoGcP+6bTqwNidPYg33EGn18Cg
+ZqOahXYDhtcp/Zo931dZ/l5lCE+Tvnosy/0q8zRUJSTpOXqtuHQrbNCE96A9ul4+88Wpi/Q6D9cB/Nti
+bBD1OqqU0EqidBaE7rAxINArs6HsHO+12LUX8+jfBQ0rOoutl/u7i7EaTaOMgJB7ICbs5BOE6TdQSwcI
+a/vvEQIBAABCAgAAUEsBAhQAFAAICAgAAAAhAGv77xECAQAAQgIAAAgAAAAAAAAAAAAAAAAAAAAAAC5j
+b250ZW50UEsFBgAAAAABAAEANgAAADgBAAAAAA==
+------=_contents/test/test.afm-494d65fc-49dc-3870-831f-fb645c267182--
+------=_contents/test/test.componentsample-92c5e897-56eb-38e2-9ef0-cbc2e3638a36
+Content-Type: q7/binary
+Entry-Name: contents/test/test.componentsample
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRdjsEKwjAMhu+DvUPJ3VU9SdncQRA8
+7KSC1+LKLLZJWYubb290MHC5Jfzfl7+sR+/Ey/TRElawKdYgDN6ptdhVcL0cVzuo93lWHsgHQoPprH1w
+Rs17Q61xYvRWzZbt18JejIrvFTxSCkrKYRgK8l1BfSdvzQnyTPBMuYX+jwnkdB/f8Qc+bdIuPLRcEJKr
+89vJidqzIpmYQHL5D1BLBwg8aImsmwAAAOUAAABQSwECFAAUAAgICAAAACEAPGiJrJsAAADlAAAACAAA
+AAAAAAAAAAAAAAAAAAAALmNvbnRlbnRQSwUGAAAAAAEAAQA2AAAA0QAAAAAA
+------=_contents/test/test.componentsample-92c5e897-56eb-38e2-9ef0-cbc2e3638a36--
+------=_contents/test/.project-692291b7-4dfa-3e9e-9272-95fc5cc5f39a
+Content-Type: q7/binary
+Entry-Name: contents/test/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSzsa/IzVEoSy0qzszPs1Uy1DNQUkjN
+S85PycxLt1UKDXHTtVCyt+Plsikoys9KTS5xSS1OLsosKAGqBopy2uQl5qbalaQWl9jog5kgseT83NzU
+vBI7G30YCyQKNaAYzNFH4SWVZuakBBekJkPkULl5iSWlRalQbQgO3AhUFwEAUEsHCLwVnbJ/AAAA0AAA
+AFBLAQIUABQACAgIAAAAIQC8FZ2yfwAAANAAAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYA
+AAAAAQABADYAAAC1AAAAAAA=
+------=_contents/test/.project-692291b7-4dfa-3e9e-9272-95fc5cc5f39a--
+------=_contents/test/test.aird-c974c077-a1f2-3eab-bf96-8b9c73cce00f
+Content-Type: q7/binary
+Entry-Name: contents/test/test.aird
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnS9lF1v0zAUhu+R+A+RudjV7CQDVEXJ
+xsSGVKlDsHYVCKHKOKepRWJbPk6z8utxU9pmW9jGBFzGft/z8ZwTpyfXVRkswaLUKiMRDUkASuhcqiIj
+V5N3hwNycvz8WbqU0BgtlUvOThUvVygxuK5ksrPGa6sPpjDx5xlZOGcSxpqmoboqqLYF+3Qx3EnwpqQ5
+ahVxGEZeNhqLBVT8UCp0XAnYunJAYaVxbcKOG0QpDUIbAqWVNbKOlEU02he3a+ShCFsXygTbckZa8Cel
+Dh6R6AXr+kjLVuYZma2O4tnpcCrOgb8Pl2I0mfy4PG9IgFCCcJBPfT/odS+/1R8v7uiC2WBcXBV95/nn
+OuyJu9+Fti4ah9HrcBC/ivxsiN+EIEjRw1BOiktAXVsBeOwAHRW6MlqBcsgrU0LK7urus/N59VuLbtSv
+TlswbmUgI52VXF91mPWz2FTvo+2MnWAd+Ml0e0+ChYV5RkzJ3VzbKmGmrAupmJ8eNbrkFldIv0vHS7Pg
+lOfUm6Cw7ZrQnnXwCu2/ZaH8vN/sumqT4RfFK8gOeH7wlbBN32zf+JNA9A//n4NYmtvLQDdd34DxdisZ
+byQPkrllmA3P/iKp/t/h/5MyYNe+9bP3CGgfOuo/5dfx3oMyZT1Pvz//CVBLBwgcWN5p5QEAADoGAABQ
+SwECFAAUAAgICAAAACEAHFjeaeUBAAA6BgAACAAAAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRQSwUGAAAA
+AAEAAQA2AAAAGwIAAAAA
+------=_contents/test/test.aird-c974c077-a1f2-3eab-bf96-8b9c73cce00f--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSVkj9PwzAQxXckvoPlHRuYUJRQoQpE
+BjqARLsh41xSg//VvjT5+DglCQsCZfP53u+d38n5qjeaHCFE5WxBr9glJWClq5RtCtpifXFDV7fnZ7kL
+DQOplY/AgvSITGLPOhc+oxcSsu10WjuL0CPpjcpm3+vBN02yMUv3Bd0j+ozzruuYMw1L5nz3VE6Sf2bN
++KQZ8JOOJx2fdZRYYZJaWYVK6O0LJaoq6NsDijKWr9U9iDs4PG6ej7vNoaMpJSG5HJ5v8VSk0gf3ARLj
+aIUQkY691K2VhqnFRmnaXw+yRfGuByC0QPnvxGDGRG2WEipUCxHpjHc2xYrCeA1/0DmfEn+vg//sI+dL
+/0CCvgBQSwcIeMUVuAsBAABgAgAAUEsBAhQAFAAICAgAAAAhAHjFFbgLAQAAYAIAAAgAAAAAAAAAAAAA
+AAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAAEEBAAAAAA==
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
