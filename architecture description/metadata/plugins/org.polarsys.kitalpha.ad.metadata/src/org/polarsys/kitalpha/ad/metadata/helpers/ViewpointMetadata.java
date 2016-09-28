@@ -209,13 +209,15 @@ public class ViewpointMetadata {
 
 	public URI getExpectedMetadataStorageURI() {
 		URI uri = context.getResources().get(0).getURI();
-		String path = uri.toPlatformString(true);
-		if (path.contains(".")) {
-			int index = path.lastIndexOf('.');
-			path = path.substring(0, index) + "." + STORAGE_EXTENSION;
+		if (uri.isPlatform()) {
+			String path = uri.toPlatformString(true);
+			if (path.contains(".")) {
+				int index = path.lastIndexOf('.');
+				path = path.substring(0, index) + "." + STORAGE_EXTENSION;
+			}
+			return URI.createPlatformResourceURI(path, true);
 		}
-		uri = URI.createPlatformResourceURI(path, true);
-		return uri;
+		return uri.trimFileExtension().appendFileExtension(STORAGE_EXTENSION);
 	}
 
 	public boolean hasMetadata() {
