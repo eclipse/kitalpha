@@ -24,6 +24,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -474,14 +475,24 @@ public class ViewpointManagerView extends ViewPart {
 				Shell site = getSite().getShell();
 				try {
 					boolean dirty = false;
+					org.eclipse.emf.ecore.resource.Resource airdResource = null;
 					for (org.eclipse.emf.ecore.resource.Resource r: context.getResources())
 					{
-						if (r.getURI().isPlatformResource())
+						URI uri = r.getURI();
+						if (uri.isPlatformResource()) {
 							dirty |= r.isModified();
+							if (airdResource == null && "aird".equals(uri.fileExtension()))
+								airdResource = r;
+						}
 					}
 					String title = "Unreference viewpoint " + res.getLabel();
 					if (dirty) {
 						MessageDialog.openInformation(site, title, "You must save the model before unreferencing the viewpoint.");
+						return ;
+					}
+					if (airdResource == null)
+					{
+						MessageDialog.openError(site, title, "Cannot locate aird resource to work on.");
 						return ;
 					}
 					
@@ -489,8 +500,7 @@ public class ViewpointManagerView extends ViewPart {
 						return;
 					// Launch detach editor
 					// if the detachement is successful then the viewpoint is no more in use
-					org.eclipse.emf.ecore.resource.Resource resource = context.getResources().get(0);
-					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(resource.getURI().toPlatformString(true)));
+					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(airdResource.getURI().toPlatformString(true)));
 					DetachmentHelper.openEditor(file, new NullProgressMonitor());
 
 				} catch (Exception e) {
