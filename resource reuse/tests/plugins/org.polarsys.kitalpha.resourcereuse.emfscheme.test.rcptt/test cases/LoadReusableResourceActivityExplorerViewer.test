@@ -1,0 +1,35 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _dd8CAIWGEeaORbl6mkbILg,_qz6dQIWJEeaORbl6mkbILg
+Element-Name: LoadReusableResourceActivityExplorerViewer
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _FXmUIIWGEeaORbl6mkbILg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 9/28/16 5:03 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+EMFSCHEME_00003
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+    select "example/example.aird" | get-menu Open | click
+    select "example/example.aird" | get-menu "Open Activity Explorer" | click
+}
+with [get-editor "example - Activity Explorer"] {
+    get-tab-folder | get-tab-item "Component Sample Architecture" | click
+    with [get-section "Diagrams Viewer" | get-tree] {
+    	try -command {
+        	select ComponentSample | verify-error { get-menu "Load Reusable Resource..." }
+        }
+    }
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
