@@ -104,6 +104,7 @@ public class ViewpointMetadata {
 
 		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
 			if (vpResource.getId().equals(uv.getVpId())) {
+				uv.setVersion(version);
 				return; // object is already there, nothing to do
 			}
 

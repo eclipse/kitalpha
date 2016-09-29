@@ -142,4 +142,20 @@ public class ComponentSampleTests extends TestCase {
 		assertNull(version);
 	}
 
+	public void testHelper10() throws Exception {
+		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
+		assertNotNull(resource);
+		m1.reference(resource, new Version("1.0.0"));
+		Map<String, Version> viewpointUsages = m1.getViewpointReferences();
+		assertEquals(1, viewpointUsages.size());
+		Version version = viewpointUsages.get(resource.getId());
+		assertTrue(version.equals(new Version("1.0.0")));
+		
+		m1.reference(resource, new Version("2.0.0"));
+		viewpointUsages = m1.getViewpointReferences();
+		assertEquals(1, viewpointUsages.size());
+		version = viewpointUsages.get(resource.getId());
+		assertTrue(version.equals(new Version("2.0.0")));
+	}
+
 }
