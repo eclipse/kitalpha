@@ -249,6 +249,21 @@ public class BasicTests2 extends TestCase {
 		assertFalse(result.isOK());
 	}
 
+	public void testManager19() throws Exception {
+		m1.reference("org.polarsys.kitalpha.vp.componentsample");
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		Resource viewpoint = ViewpointManager.getViewpoint("org.polarsys.kitalpha.vp.componentsampleperformance");
+
+		// no version information
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, null);
+		IStatus result = ViewpointManager.checkViewpointsCompliancy(set);
+		assertTrue(result.isOK());
+
+		// versions match exactly
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 1, 0, null));
+		result = ViewpointManager.checkViewpointsCompliancy(set);
+		assertTrue(result.isOK());
+	}
 	public class TestOverallListener implements OverallListener2 {
 		public boolean filtered, displayed, activated, desactivated; 
 

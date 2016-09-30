@@ -241,6 +241,8 @@ public class ViewpointManager {
 	}
 
 	private static boolean areEquivalentTo(Version v1, Version v2) {
+		if (v1 == null || v2 == null)
+			return true;
 		return v1.getMajor() == v2.getMajor() && v1.getMinor() == v2.getMinor();
 	}
 
