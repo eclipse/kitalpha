@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_tests">
   <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
-    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK/lastSuccessfulBuild"/>
+    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/lastSuccessfulBuild"/>
     <properties xmi:id="_SQl0IOX2EeWn8_iL6inCSQ" key="rcptt.url" value="http://download.eclipse.org/rcptt/release/2.0.2/runner/rcptt.runner-2.0.2.zip"/>
     <properties xmi:id="_jHR-0AFdEeawr7sRcA8zAQ" key="jacoco.url" value="http://search.maven.org/remotecontent?filepath=org/jacoco/jacoco/0.7.1.201405082137/jacoco-0.7.1.201405082137.zip"/>
-    <properties xmi:id="_YK42sAVjEeaiMI0G7SovBw" key="example.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_SDK/lastSuccessfulBuild/artifact/result/publish/org.polarsys.kitalpha.vp.componentsample.example.feature/site.p2"/>
+    <properties xmi:id="_YK42sAVjEeaiMI0G7SovBw" key="example.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/lastSuccessfulBuild/artifact/result/publish/org.polarsys.kitalpha.vp.componentsample.example.feature/site.p2"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.1.0"/>
@@ -88,15 +88,21 @@
         <steps xsi:type="buildstep:BuildStep" xmi:id="_IH3dsD5GEeSicsfEyxBYkg">
           <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_IH3dsT5GEeSicsfEyxBYkg" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="resource reuse/tests/plugins"/>
           <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_XjPJMAVVEeaiMI0G7SovBw" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="emde/tests"/>
+          <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_DXAlAIb9EeahvvnP6QGVxQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/core/tests"/>
+          <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_ONsZsIcIEeahvvnP6QGVxQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/metadata/tests"/>
           <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_IH3dsj5GEeSicsfEyxBYkg" path="${publish}/TP"/>
           <components xsi:type="buildstep:Plugin" xmi:id="_bxUGQOCBEeWAfLzfCqvfTA" id="org.polarsys.kitalpha.resourcereuse.tests"/>
           <components xsi:type="buildstep:Plugin" xmi:id="_BYBfUGRMEeanzKiDzJB_vQ" id="org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju"/>
           <components xsi:type="buildstep:Plugin" xmi:id="_iGXJsAVVEeaiMI0G7SovBw" id="org.polarsys.kitalpha.emde.tests"/>
+          <components xsi:type="buildstep:Plugin" xmi:id="_bxjoUIb9EeahvvnP6QGVxQ" id="org.polarsys.kitalpha.ad.metadata.tests"/>
+          <components xsi:type="buildstep:Plugin" xmi:id="_dzV54Ib9EeahvvnP6QGVxQ" id="org.polarsys.kitalpha.ad.viewpoint.tests"/>
         </steps>
       </steps>
       <steps xsi:type="buildstep:TestStep" xmi:id="_hNI1wOCBEeWAfLzfCqvfTA" name="Resource Reuse" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.tests/Resource_Reuse_Tests.launch"/>
       <steps xsi:type="buildstep:TestStep" xmi:id="_P8E-oGRMEeanzKiDzJB_vQ" name="Resource Reuse - Emf Scheme" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/EMFSchemeTestSuite.launch"/>
       <steps xsi:type="buildstep:TestStep" xmi:id="_nNjtAAVVEeaiMI0G7SovBw" name="emde" launchConfigurationPath="org.polarsys.kitalpha.emde.tests/eMDE_Tests.launch"/>
+      <steps xsi:type="buildstep:TestStep" xmi:id="_h1uxQIb9EeahvvnP6QGVxQ" name="ad" launchConfigurationPath="org.polarsys.kitalpha.ad.viewpoint.tests/Viewpoint_Tests.launch"/>
+      <steps xsi:type="buildstep:TestStep" xmi:id="_inzHYIb9EeahvvnP6QGVxQ" name="metadata" launchConfigurationPath="org.polarsys.kitalpha.ad.metadata.tests/Metadata_Tests.launch"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_Zvyo0AYwEea74KmXjv6MFA" name="sdk tests"/>
     <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
