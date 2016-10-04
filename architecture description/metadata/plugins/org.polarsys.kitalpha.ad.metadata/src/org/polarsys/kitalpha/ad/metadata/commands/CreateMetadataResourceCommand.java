@@ -56,6 +56,8 @@ public class CreateMetadataResourceCommand extends MetadataCommand {
 
 			if (resource == null) {
 				Resource newResource = resourceSet.createResource(uri);
+				newResource.setTrackingModification(true);
+				
 				if (newResource instanceof XMLResource)
 				{
 					XMLResource xmlRes = (XMLResource)newResource;
