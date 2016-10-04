@@ -9,7 +9,7 @@
     </steps>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0ZKKEeSPapwxSH2ZqQ" name="install cots features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${egf.repo.url}</updateSiteUrls>
-      <updateSiteUrls>${eclipse.download.prefix}/releases/${eclipse_version}</updateSiteUrls>
+      <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
       <updateSiteUrls>${eef.repo.url}</updateSiteUrls>
       <updateSiteUrls>${acceleo.repo.url}</updateSiteUrls>
       <featureNames>org.eclipse.uml2.sdk</featureNames>
