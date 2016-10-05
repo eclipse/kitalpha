@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
@@ -29,6 +30,9 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.DragSourceListener;
+import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Composite;
@@ -46,6 +50,7 @@ import org.polarsys.kitalpha.resourcereuse.ui.Activator;
 import org.polarsys.kitalpha.resourcereuse.ui.Messages;
 import org.polarsys.kitalpha.resourcereuse.ui.ResourceReuseImages;
 import org.polarsys.kitalpha.resourcereuse.ui.dialog.ResourceSearchDialog;
+import org.polarsys.kitalpha.resourcereuse.ui.drag.ModelReuseDragSourceListener;
 
 /**
  * @author Thomas Guiu
@@ -177,9 +182,20 @@ public class ResourceSearchView extends ViewPart {
 		hookContextMenu();
 		hookDoubleClickAction();
 		contributeToActionBars();
+		addDragSupport();
 	}
 
-	private void updateView(Resource[] resources) {
+
+    /**
+     * Allow models to be copied from the drag source.<br>
+     */
+    private void addDragSupport() {
+        int operations = DND.DROP_MOVE | DND.DROP_COPY  | DND.DROP_LINK;
+        Transfer[] transferTypes = new Transfer[] { LocalSelectionTransfer.getTransfer() };
+        viewer.addDragSupport(operations, transferTypes, new ModelReuseDragSourceListener(viewer));
+    }
+
+    private void updateView(Resource[] resources) {
 		viewer.setInput(resources);
 	}
 

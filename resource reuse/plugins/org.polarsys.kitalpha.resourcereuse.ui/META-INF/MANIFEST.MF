@@ -7,7 +7,8 @@ Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.resourcereuse.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.polarsys.kitalpha.resourcereuse;visibility:=reexport
+ org.polarsys.kitalpha.resourcereuse;visibility:=reexport,
+ org.eclipse.swt
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
