@@ -12,7 +12,6 @@ package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.metadata;
 
 import java.util.Set;
 
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.ad.metadata.helpers.Contribution;
@@ -26,18 +25,16 @@ import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinize
  */
 public class ViewpointContribution extends Contribution {
 
-	public ViewpointContribution() {
-	}
+  public ViewpointContribution() {
+  }
 
-	public void update(ResourceSet context) {
-		for (Resource resource : context.getResources()) {
-			Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookForViewpoints = UsedAFViewpoints.lookUp(resource);
-			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : lookForViewpoints) {
-				Version version = ViewpointManager.readVersion(res);
-				MetadataHelper.getViewpointMetadata(context).updateVersion(res, version);
-			}
-		}
-
-	}
+  public void update(ResourceSet context) {
+    Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookForViewpoints = UsedAFViewpoints
+        .lookUp(context.getResources());
+    for (org.polarsys.kitalpha.resourcereuse.model.Resource res : lookForViewpoints) {
+      Version version = ViewpointManager.readVersion(res);
+      MetadataHelper.getViewpointMetadata(context).updateVersion(res, version);
+    }
+  }
 
 }

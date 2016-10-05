@@ -12,6 +12,7 @@ package org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutiniz
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -44,148 +45,154 @@ import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.Vie
  * @author Faycal Abka
  */
 public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Object> {
-	
-	private Set<String> usedNsURI = new HashSet<String>();
-	private Set<String> usedViewpoints = new HashSet<String>();
-	private ViewpointTreeContainer container;
-	
 
-	public UsedAFViewpoints() {
-	}
+  private Set<String> usedNsURI = new HashSet<String>();
+  private Set<String> usedViewpoints = new HashSet<String>();
+  private ViewpointTreeContainer container;
 
-	@Override
-	public void findIn(EObject eObject) {
-		String ePackageURI = FinderAFViewpointHelper.getEPackageNsURI_of(eObject);
-		
-		if (!usedNsURI.contains(ePackageURI)){
-			usedNsURI.add(ePackageURI);
-		}
-	}
+  public UsedAFViewpoints() {
+  }
 
-	@Override
-	public void findIn(Resource resource) {
-		if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata) {
-			Metadata root = (Metadata) resource.getContents().get(0);
-			for (ViewpointReference uv : root.getViewpointReferences()) {
-				usedViewpoints.add(uv.getVpId());
-			}
-		}
-	}
+  @Override
+  public void findIn(EObject eObject) {
+    String ePackageURI = FinderAFViewpointHelper.getEPackageNsURI_of(eObject);
 
-	@Override
-	public ViewpointTreeContainer getAnalysisResult() {
-		if (container != null)
-			return container;
-		
-		//initialize container
-		computeUsedViewpointsHierarchy();
-		return container;
-	}
-	
-	private void computeUsedViewpointsHierarchy(){
-		
-		org.polarsys.kitalpha.resourcereuse.model.Resource[] allVpResources = ViewpointsSearcherHelper.getAllViewpoints();
-		
-		Map<String, Collection<String>> viewpointsURIDependencies = ViewpointRelationshipHelper.getUsedRelationship(allVpResources);
-		
-		usedNsURI = FinderAFViewpointHelper.filterURISet(usedNsURI, viewpointsURIDependencies);
-		Map<String, Collection<String>> filtredVpDependencies = FinderAFViewpointHelper.filterURIMap(viewpointsURIDependencies, usedNsURI);
-		
-		ViewpointTreeBuilder vpTreeBuilder = new ViewpointTreeBuilder();
-		
-		//Initialize container
-		container = vpTreeBuilder.getViewpointTreeContainer(filtredVpDependencies, usedViewpoints);
-	}
+    if (!usedNsURI.contains(ePackageURI)) {
+      usedNsURI.add(ePackageURI);
+    }
+  }
 
-	@Override
-	public Object getFeedbackAnalysisMessages() {
-		// Not need to feedback the user. ViewpointTreeContainer is used for this aim
-		return null;
-	}
-	
-	public void dispose(){
-		container.dispose();
-		container = null;
-	}
+  @Override
+  public void findIn(Resource resource) {
+    if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata) {
+      Metadata root = (Metadata) resource.getContents().get(0);
+      for (ViewpointReference uv : root.getViewpointReferences()) {
+        usedViewpoints.add(uv.getVpId());
+      }
+    }
+  }
 
-	public Collection<String> getUsedNsURIs() {
-		return new ArrayList<String>(usedNsURI);
-	}
-	
-	public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Resource resource) {
-		Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result = new HashSet<org.polarsys.kitalpha.resourcereuse.model.Resource>();
-		Scrutineer.startScrutiny(resource);
+  @Override
+  public ViewpointTreeContainer getAnalysisResult() {
+    if (container != null)
+      return container;
 
-		Set<String> nsUris = new HashSet<String>();
-		Set<String> odesigns = new HashSet<String>();
-		
-		collectData(nsUris, odesigns);
-		
-		ResourceSet set = new ResourceSetImpl();
-		try {
-			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
-				try {
-					URI uri = URIHelper.createURI(res);
-					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-					if (vp.getMetamodel() != null) {
-						for (EPackage pack : vp.getMetamodel().getModels()) {
-							if (pack.getNsURI() != null && nsUris.contains(pack.getNsURI())) 
-								result.add(res);
-							
-						}
-					}
-					if (vp.getRepresentation() != null) {
-						for (RepresentationElement representation : vp.getRepresentation().getRepresentations()) {
-							if (representation instanceof SiriusRepresentation) {
-								SiriusRepresentation sr = (SiriusRepresentation)representation;
-								URI uri2 = EcoreUtil.getURI(sr.getOdesign());
-								if (odesigns.contains(uri2.lastSegment()))
-									result.add(res);
-							}
-						}
-					}
-				} catch (Exception e) {
-					ViewpointManager.pinError(res, e);
+    // initialize container
+    computeUsedViewpointsHierarchy();
+    return container;
+  }
 
-				}
-			}
-		} finally {
-			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
-				r.unload();
-			}
-			set.getResources().clear();
-		}
+  private void computeUsedViewpointsHierarchy() {
 
-		return result;
-	}
+    org.polarsys.kitalpha.resourcereuse.model.Resource[] allVpResources = ViewpointsSearcherHelper.getAllViewpoints();
 
-	private static void collectData(Set<String> nsUris, Set<String> odesigns) {
-		try {
-			// look for odesign 
-			RegistryElement element = Scrutineer.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownresources.scrutiny");
-			for (IScrutinize iFinder : element.getFinders()) {
-				if (iFinder instanceof ModelResourcesScrutinizer)
-				{
-					ModelResourcesScrutinizer resources = (ModelResourcesScrutinizer)iFinder;
-					for (URI uri :resources.getAnalysisResult().getAllModelResourceURI()) {
-						if ("odesign".equals(uri.fileExtension()))
-							odesigns.add(uri.lastSegment());
-					}
-				}
-			}
-			RegistryElement vpElement = Scrutineer.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints");
-			for (IScrutinize iFinder : vpElement.getFinders()) {
-				if (iFinder instanceof UsedAFViewpoints)
-				{
-					UsedAFViewpoints afFinder = (UsedAFViewpoints)iFinder;
-					nsUris.addAll(afFinder.getUsedNsURIs());
-				}
-			}
+    Map<String, Collection<String>> viewpointsURIDependencies = ViewpointRelationshipHelper
+        .getUsedRelationship(allVpResources);
 
-			
-		} catch (ModelScrutinyException e) {
-			AD_Log.getDefault().logWarning(e);
-		}
-	}
+    usedNsURI = FinderAFViewpointHelper.filterURISet(usedNsURI, viewpointsURIDependencies);
+    Map<String, Collection<String>> filtredVpDependencies = FinderAFViewpointHelper
+        .filterURIMap(viewpointsURIDependencies, usedNsURI);
+
+    ViewpointTreeBuilder vpTreeBuilder = new ViewpointTreeBuilder();
+
+    // Initialize container
+    container = vpTreeBuilder.getViewpointTreeContainer(filtredVpDependencies, usedViewpoints);
+  }
+
+  @Override
+  public Object getFeedbackAnalysisMessages() {
+    // Not need to feedback the user. ViewpointTreeContainer is used for this aim
+    return null;
+  }
+
+  public void dispose() {
+    container.dispose();
+    container = null;
+  }
+
+  public Collection<String> getUsedNsURIs() {
+    return new ArrayList<String>(usedNsURI);
+  }
+
+  /**
+   * Please use lookUp(resourceSet) instead of calling many lookUp(resource) for performance issues
+   */
+  @Deprecated
+  public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Resource resource) {
+    return lookUp(Collections.singleton(resource));
+  }
+
+  public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Collection<Resource> resources) {
+    Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result = new HashSet<org.polarsys.kitalpha.resourcereuse.model.Resource>();
+    Scrutineer.startScrutiny(resources);
+
+    Set<String> nsUris = new HashSet<String>();
+    Set<String> odesigns = new HashSet<String>();
+    collectData(nsUris, odesigns);
+
+    ResourceSet set = new ResourceSetImpl();
+    try {
+      for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
+        try {
+          URI uri = URIHelper.createURI(res);
+          Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+          if (vp.getMetamodel() != null) {
+            for (EPackage pack : vp.getMetamodel().getModels()) {
+              if (pack.getNsURI() != null && nsUris.contains(pack.getNsURI()))
+                result.add(res);
+            }
+          }
+          if (vp.getRepresentation() != null) {
+            for (RepresentationElement representation : vp.getRepresentation().getRepresentations()) {
+              if (representation instanceof SiriusRepresentation) {
+                SiriusRepresentation sr = (SiriusRepresentation) representation;
+                URI uri2 = EcoreUtil.getURI(sr.getOdesign());
+                if (odesigns.contains(uri2.lastSegment()))
+                  result.add(res);
+              }
+            }
+          }
+        } catch (Exception e) {
+          ViewpointManager.pinError(res, e);
+
+        }
+      }
+    } finally {
+      for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+        r.unload();
+      }
+      set.getResources().clear();
+    }
+
+    return result;
+  }
+
+  private static void collectData(Set<String> nsUris, Set<String> odesigns) {
+    try {
+      // look for odesign
+      RegistryElement element = Scrutineer
+          .getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownresources.scrutiny");
+      for (IScrutinize iFinder : element.getFinders()) {
+        if (iFinder instanceof ModelResourcesScrutinizer) {
+          ModelResourcesScrutinizer resources = (ModelResourcesScrutinizer) iFinder;
+          for (URI uri : resources.getAnalysisResult().getAllModelResourceURI()) {
+            if ("odesign".equals(uri.fileExtension()))
+              odesigns.add(uri.lastSegment());
+          }
+        }
+      }
+      RegistryElement vpElement = Scrutineer
+          .getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints");
+      for (IScrutinize iFinder : vpElement.getFinders()) {
+        if (iFinder instanceof UsedAFViewpoints) {
+          UsedAFViewpoints afFinder = (UsedAFViewpoints) iFinder;
+          nsUris.addAll(afFinder.getUsedNsURIs());
+        }
+      }
+
+    } catch (ModelScrutinyException e) {
+      AD_Log.getDefault().logWarning(e);
+    }
+  }
 
 }

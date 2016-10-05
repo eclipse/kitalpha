@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -24,40 +24,51 @@ import org.polarsys.kitalpha.model.common.scrutiny.visitor.ScrutinizeVisitor;
  * @author Faycal Abka
  */
 public class Scrutineer {
-	
-	private static Logger LOGGER = Logger.getLogger(Scrutineer.class);
-	
-	
-	public static void startScrutiny(Resource resource){
-		ScrutinizeVisitor visitor = new ScrutinizeVisitor();
-		visitor.accept(resource);
-	}
-	
-	public static RegistryElement getRegistryElement(String id) 
-			throws ModelScrutinyException {
-		
-		if (isKnownScrutinizeId(id))
-			return ModelScrutinyRegistry.INSTANCE.getRegistryElement(id);
-		
-		String message = Messages.NO_SUCH_REGISTRY_ELEMENT;
-		message = message + ": " + id;
-		
-		ModelScrutinyException e = new ModelScrutinyException(message);
-		LOGGER.error(message, e);
-		
-		throw e;
-		
-	}
-	
-	public static Collection<RegistryElement> getAllRegistryElement(){
-		return ModelScrutinyRegistry.INSTANCE.getRegistry().values();
-	}
-	
-	public static Set<String> getAllScrutinizeId(){
-		return ModelScrutinyRegistry.INSTANCE.getRegistry().keySet();
-	}
-	
-	public static boolean isKnownScrutinizeId(String id){
-		return getAllScrutinizeId().contains(id);
-	}
+
+  private static Logger LOGGER = Logger.getLogger(Scrutineer.class);
+
+  /**
+   * Perform a Scrutiny on given resources. All resources shall be defined in the same resourceSet
+   */
+  public static void startScrutiny(Collection<Resource> resources) {
+    ScrutinizeVisitor visitor = new ScrutinizeVisitor();
+    for (Resource resource : resources) {
+      visitor.accept(resource);
+    }
+  }
+
+  /**
+   * Please use startScrutiny(resources) instead of calling many startScrutiny(resource) for performance issues
+   */
+  public static void startScrutiny(Resource resource) {
+    ScrutinizeVisitor visitor = new ScrutinizeVisitor();
+    visitor.accept(resource);
+  }
+
+  public static RegistryElement getRegistryElement(String id) throws ModelScrutinyException {
+
+    if (isKnownScrutinizeId(id))
+      return ModelScrutinyRegistry.INSTANCE.getRegistryElement(id);
+
+    String message = Messages.NO_SUCH_REGISTRY_ELEMENT;
+    message = message + ": " + id;
+
+    ModelScrutinyException e = new ModelScrutinyException(message);
+    LOGGER.error(message, e);
+
+    throw e;
+
+  }
+
+  public static Collection<RegistryElement> getAllRegistryElement() {
+    return ModelScrutinyRegistry.INSTANCE.getRegistry().values();
+  }
+
+  public static Set<String> getAllScrutinizeId() {
+    return ModelScrutinyRegistry.INSTANCE.getRegistry().keySet();
+  }
+
+  public static boolean isKnownScrutinizeId(String id) {
+    return getAllScrutinizeId().contains(id);
+  }
 }
