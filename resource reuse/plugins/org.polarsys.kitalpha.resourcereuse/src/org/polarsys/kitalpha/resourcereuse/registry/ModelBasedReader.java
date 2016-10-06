@@ -37,30 +37,30 @@ public abstract class ModelBasedReader implements Constants, ResourceReader {
 		res.setProviderLocation(getLocation());
 		IPluginAttribute attribute = element.getAttribute("id");
 		if (attribute != null)
-			res.setId(attribute.getValue());
+			res.setId(attribute.getValue().trim());
 		attribute = element.getAttribute("name");
 		if (attribute != null)
-			res.setName(attribute.getValue());
+			res.setName(attribute.getValue().trim());
 		attribute = element.getAttribute("weight");
 		if (attribute != null)
 			res.setWeight(Integer.parseInt(attribute.getValue()));
 		attribute = element.getAttribute("domain");
 		if (attribute != null)
-			res.setDomain(attribute.getValue());
+			res.setDomain(attribute.getValue().trim());
 		attribute = element.getAttribute("description");
 		if (attribute != null)
-			res.setDescription(attribute.getValue());
+			res.setDescription(attribute.getValue().trim());
 		attribute = element.getAttribute("version");
 		if (attribute != null)
-			res.setVersion(attribute.getValue());
+			res.setVersion(attribute.getValue().trim());
 		attribute = element.getAttribute("path");
 		if (attribute != null)
-			res.setPath(attribute.getValue());
+			res.setPath(attribute.getValue().trim());
 		attribute = element.getAttribute("tags");
 		if (attribute != null) {
 			String tags = attribute.getValue();
-			for (String tag : tags.split(", "))
-				res.getTags().add(tag);
+			for (String tag : tags.split(","))
+				res.getTags().add(tag.trim());
 		}
 		return res;
 	}

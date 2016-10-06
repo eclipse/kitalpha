@@ -9,7 +9,7 @@
             id="resource1.id"
             name="My test resource 1"
             path="path://test.resourcereuse.resource1"
-            tags="toto, titi">
+            tags="toto ,titi">
       </resource>
       <resource
             domain="test"
