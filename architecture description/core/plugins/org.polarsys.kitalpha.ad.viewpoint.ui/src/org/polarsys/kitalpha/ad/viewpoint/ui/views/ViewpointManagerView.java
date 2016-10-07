@@ -95,12 +95,15 @@ public class ViewpointManagerView extends ViewPart {
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
 			final Description[] availableViewpoints = ViewpointManager.getAvailableViewpointDescriptions();
-			getSite().getShell().getDisplay().asyncExec(new Runnable() {
-				public void run() {
-					viewer.setInput(availableViewpoints);
-					updateActions(null);
-				}
-			});
+			if (viewer != null && viewer.getControl() != null && !viewer.getControl().isDisposed())
+			{
+				getSite().getShell().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						viewer.setInput(availableViewpoints);
+						updateActions(null);
+					}
+				});
+			}
 			return Status.OK_STATUS;
 		}
 	}
