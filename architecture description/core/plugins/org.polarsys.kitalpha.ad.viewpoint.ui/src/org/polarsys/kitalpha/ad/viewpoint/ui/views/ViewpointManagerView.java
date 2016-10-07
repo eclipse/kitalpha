@@ -11,6 +11,8 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
+import java.io.UnsupportedEncodingException;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
@@ -212,13 +214,20 @@ public class ViewpointManagerView extends ViewPart {
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridLayout clayout = new GridLayout();
 		clayout.numColumns = 3;
+		clayout.marginWidth = 2;
+		clayout.marginHeight = 2;
+		clayout.horizontalSpacing = 0;
+		clayout.verticalSpacing = 0;
 		composite.setLayout(clayout);
 
-		final Label label = new Label(composite, SWT.None);
-		label.setText(Messages.ViewpointManagerView_default_label);
+		final Label imgLabel = new Label(composite, SWT.None);
+		final Label textLabel = new Label(composite, SWT.None);
+		imgLabel.setLayoutData(new GridData());
 		GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
-		layoutData.horizontalSpan = 3;
-		label.setLayoutData(layoutData);
+		layoutData.horizontalSpan = 2;
+		textLabel.setLayoutData(layoutData);
+		imgLabel.setImage(Activator.getDefault().getImage(AFImages.WARNING));
+		textLabel.setText(Messages.ViewpointManagerView_default_label);
 		createViewer(composite);
 		init();
 		ViewpointManager.addOverallListener(vpListener);
@@ -229,9 +238,11 @@ public class ViewpointManagerView extends ViewPart {
 			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 				context = analyseChange(part, selection);
 
-				if (!label.isDisposed())
-					label.setText(computeLabel());
-				if (!viewer.getControl().isDisposed()) {
+				if (!textLabel.isDisposed() && !imgLabel.isDisposed()) {
+					imgLabel.setImage(context == null ? Activator.getDefault().getImage(AFImages.WARNING) : null);
+					textLabel.setText(computeLabel());
+				}
+				if (viewer != null && !viewer.getControl().isDisposed()) {
 					updateActions(null);
 					labelProvider.setContext(context);
 					viewer.refresh();
@@ -244,6 +255,11 @@ public class ViewpointManagerView extends ViewPart {
 				if (context.getResources().isEmpty())
 					return "";
 				String segment = context.getResources().get(0).getURI().segment(1);
+				try {
+					segment = java.net.URLDecoder.decode(segment, "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					AD_Log.getDefault().logWarning(e);
+				}
 				return "Project " + segment;
 			}
 
@@ -261,14 +277,24 @@ public class ViewpointManagerView extends ViewPart {
 		});
 	}
 
-	public void createViewer(final Composite composite) {
+	public void createViewer(final Composite parent) {
+		Composite composite = new Composite(parent, SWT.NONE);
+		GridLayout clayout = new GridLayout();
+		clayout.horizontalSpacing = 0;
+		clayout.verticalSpacing = 0;
+		clayout.marginWidth = 2;
+		clayout.marginHeight = 2;
+		composite.setLayout(clayout);
+		GridData layoutData = new GridData(GridData.FILL_BOTH);
+		layoutData.horizontalSpan = 2;
+		composite.setLayoutData(layoutData);
 		viewer = new TableViewer(composite, SWT.FULL_SELECTION | SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
 		viewer.getControl().setFont(composite.getFont());
 		final TableViewerSorter comparator = new TableViewerSorter();
 		viewer.setComparator(comparator);
 
 		GridData data = new GridData(GridData.FILL_BOTH);
-		data.horizontalSpan = 2;
+		data.horizontalSpan = 3;
 		viewer.getControl().setLayoutData(data);
 
 		final Table table = viewer.getTable();

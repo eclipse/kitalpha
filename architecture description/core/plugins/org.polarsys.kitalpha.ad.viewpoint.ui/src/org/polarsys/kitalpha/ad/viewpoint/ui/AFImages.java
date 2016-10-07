@@ -38,4 +38,5 @@ public interface AFImages {
 	String UP = "icons/up.gif";
 	String DOWN = "icons/down.gif";
 	String ERROR_STATE = "icons/errorstate.gif";
+	String WARNING = "icons/warning.png";
 }
