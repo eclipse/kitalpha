@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.classes;
 
 import org.eclipse.egf.common.helper.*;
@@ -15,8 +15,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.JavaNamingConvention;
 
-public class PageJavaClass
-		extends
+public class PageJavaClass extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractActivityExplorerJavaClass {
 	protected static String nl;
 
@@ -27,16 +26,16 @@ public class PageJavaClass
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "import org.eclipse.amalgam.explorer.activity.ui.api.editor.pages.BasicSessionActivityExplorerPage;"
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "import org.polarsys.kitalpha.ad.integration.amalgam.pages.ADActivityExplorerPage;"
 			+ NL + NL + NL;
 	protected final String TEXT_2 = NL + "public class ";
-	protected final String TEXT_3 = " extends BasicSessionActivityExplorerPage  {"
-			+ NL + "" + NL + "}" + NL;
-	protected final String TEXT_4 = NL + NL;
-	protected final String TEXT_5 = NL;
+	protected final String TEXT_3 = " extends ADActivityExplorerPage  {" + NL + "" + NL
+			+ "\tprotected String getViewpointID(){" + NL + "\t\treturn \t\"";
+	protected final String TEXT_4 = "\"; //$NON-NLS-1$" + NL + "\t}" + NL + "" + NL + "}" + NL;
+	protected final String TEXT_5 = NL + NL;
 	protected final String TEXT_6 = NL;
+	protected final String TEXT_7 = NL;
 
 	public PageJavaClass() {
 		//Here is the constructor
@@ -69,12 +68,11 @@ public class PageJavaClass
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_5);
 		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_7);
 		return stringBuffer.toString();
 	}
 
@@ -90,8 +88,7 @@ public class PageJavaClass
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -109,57 +106,48 @@ public class PageJavaClass
 		return parameters;
 	}
 
-	protected void method_setParameters(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// Set the parameters values
 		NamedElement namedParameter = (NamedElement) parameter;
-		classname = JavaNamingConvention.getJavaClassNameFor(namedParameter,
-				JavaNamingConvention.JavaUseContext.Page);
+		classname = JavaNamingConvention.getJavaClassNameFor(namedParameter, JavaNamingConvention.JavaUseContext.Page);
 		projectname = (String) ctx.getValue("activity.explorer.project.name");
-		packagename = JavaNamingConvention.getJavaPackageNameFor(projectname,
-				JavaNamingConvention.JavaUseContext.Page);
+		packagename = JavaNamingConvention.getJavaPackageNameFor(projectname, JavaNamingConvention.JavaUseContext.Page);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
 
-	protected void method_genImports(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genImports(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genImports",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genImports", stringBuffer.toString());
 	}
 
-	protected void method_genClassCode(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genClassCode(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(classname);
 		stringBuffer.append(TEXT_3);
+		stringBuffer.append(org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper
+				.getRootProjectName(parameter));
+		stringBuffer.append(TEXT_4);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassCode",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassCode", stringBuffer.toString());
 	}
 
-	protected void method_updateProjectDependecies(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
-		IProject project = ResourcesPlugin.getWorkspace().getRoot()
-				.getProject(projectname);
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectname);
 		NullProgressMonitor npm = new NullProgressMonitor();
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms", npm);
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui", npm);
-		PDEUtility.updateRequiredBundles(project,
-				"org.eclipse.amalgam.explorer.activity.ui", npm);
-		PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime",
-				npm);
-		stringBuffer.append(TEXT_4);
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.amalgam.explorer.activity.ui", npm);
+		PDEUtility.updateRequiredBundles(project, "org.polarsys.kitalpha.ad.integration.amalgam", npm);
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime", npm);
+		stringBuffer.append(TEXT_5);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"updateProjectDependecies", stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "updateProjectDependecies", stringBuffer.toString());
 	}
 }

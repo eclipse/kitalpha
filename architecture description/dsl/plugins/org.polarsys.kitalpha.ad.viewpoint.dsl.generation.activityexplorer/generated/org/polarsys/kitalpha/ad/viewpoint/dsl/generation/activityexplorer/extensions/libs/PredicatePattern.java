@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,10 +21,8 @@ public class PredicatePattern {
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = NL + "\t\t\t<Predicate" + NL
-			+ "\t\t\t\tclass=\"";
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = NL + "\t\t\t<Predicate" + NL + "\t\t\t\tclass=\"";
 	protected final String TEXT_2 = "\">" + NL + "\t\t\t</Predicate>" + NL;
 	protected final String TEXT_3 = NL;
 	protected final String TEXT_4 = NL;
@@ -65,8 +63,7 @@ public class PredicatePattern {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_3);
@@ -85,8 +82,7 @@ public class PredicatePattern {
 			parameterValues.put("basePackage", this.basePackage);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -111,22 +107,19 @@ public class PredicatePattern {
 		return parameters;
 	}
 
-	protected void method_genPredicateElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genPredicateElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
-		String className = JavaNamingConvention.getJavaClassFQNFor(basePackage,
-				(NamedElement) predicatedElement,
+		String className = JavaNamingConvention.getJavaClassFQNFor(basePackage, (NamedElement) predicatedElement,
 				JavaNamingConvention.JavaUseContext.Predicate);
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(className);
 		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genPredicateElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genPredicateElement", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return predicatedElement instanceof NamedElement
-				&& PredicateHelper.generatePredicate(predicatedElement);
+		return predicatedElement instanceof NamedElement && PredicateHelper.generatePredicate(predicatedElement);
 	}
 }

@@ -1,4 +1,8 @@
 
-public class <%=classname%> extends BasicSessionActivityExplorerPage  {
+public class <%=classname%> extends ADActivityExplorerPage  {
+
+	protected String getViewpointID(){
+		return 	"<%=org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper.getRootProjectName(parameter)%>"; //$NON-NLS-1$
+	}
 
 }

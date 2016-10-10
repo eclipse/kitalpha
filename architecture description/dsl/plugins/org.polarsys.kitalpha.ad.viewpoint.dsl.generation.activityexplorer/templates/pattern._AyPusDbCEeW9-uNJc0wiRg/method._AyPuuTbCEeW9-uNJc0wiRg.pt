@@ -3,5 +3,6 @@
 <%PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms", npm);%>
 <%PDEUtility.updateRequiredBundles(project, "org.eclipse.ui", npm);%>
 <%PDEUtility.updateRequiredBundles(project, "org.eclipse.amalgam.explorer.activity.ui", npm);%>
+<%PDEUtility.updateRequiredBundles(project, "org.polarsys.kitalpha.ad.integration.amalgam", npm);%>
 <%PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime", npm);%>
 

@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.contributions;
 
 import org.eclipse.egf.common.helper.*;
@@ -11,18 +11,15 @@ import org.eclipse.egf.pattern.query.*;
 public class ActivityProviderPattern {
 	protected static String nl;
 
-	public static synchronized ActivityProviderPattern create(
-			String lineSeparator) {
+	public static synchronized ActivityProviderPattern create(String lineSeparator) {
 		nl = lineSeparator;
 		ActivityProviderPattern result = new ActivityProviderPattern();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<extension"
-			+ NL
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "<extension" + NL
 			+ "      point=\"org.eclipse.amalgam.explorer.activity.ui.activitiesProvider\">";
 	protected final String TEXT_2 = "</extension>" + NL;
 	protected final String TEXT_3 = NL;
@@ -59,8 +56,7 @@ public class ActivityProviderPattern {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_3);
@@ -85,8 +81,7 @@ public class ActivityProviderPattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -104,22 +99,18 @@ public class ActivityProviderPattern {
 		return parameters;
 	}
 
-	protected void method_genBegin(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genBegin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genBegin",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genBegin", stringBuffer.toString());
 	}
 
-	protected void method_genEnd(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genEnd",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genEnd", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

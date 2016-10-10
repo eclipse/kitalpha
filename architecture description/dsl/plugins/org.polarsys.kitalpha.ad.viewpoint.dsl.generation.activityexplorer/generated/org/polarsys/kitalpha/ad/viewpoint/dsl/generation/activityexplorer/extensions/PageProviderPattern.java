@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150608-0917
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions;
 
 import org.eclipse.egf.common.helper.*;
