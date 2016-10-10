@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.classes;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,21 +8,18 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ActivityPredicateJavaClass
-		extends
+public class ActivityPredicateJavaClass extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractPredicatedElementJavaClass {
 	protected static String nl;
 
-	public static synchronized ActivityPredicateJavaClass create(
-			String lineSeparator) {
+	public static synchronized ActivityPredicateJavaClass create(String lineSeparator) {
 		nl = lineSeparator;
 		ActivityPredicateJavaClass result = new ActivityPredicateJavaClass();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL;
 
@@ -57,8 +54,7 @@ public class ActivityPredicateJavaClass
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_1);
@@ -76,8 +72,7 @@ public class ActivityPredicateJavaClass
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -95,13 +90,12 @@ public class ActivityPredicateJavaClass
 		return parameters;
 	}
 
-	protected void method_setPredicatedElement(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setPredicatedElement(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		predicatedElement = parameter;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setPredicatedElement",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setPredicatedElement", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

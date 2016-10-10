@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,11 +20,9 @@ public class SectionPattern {
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
-	protected final String TEXT_2 = NL + NL + "\t\t<Section" + NL
-			+ "\t\t\t   expanded=\"";
+	protected final String TEXT_2 = NL + NL + "\t\t<Section" + NL + "\t\t\t   expanded=\"";
 	protected final String TEXT_3 = "\"" + NL + "\t\t\t   filtering=\"";
 	protected final String TEXT_4 = "\"" + NL + "\t\t\t   id=\"";
 	protected final String TEXT_5 = "\"\t   " + NL + "\t\t\t   index=\"";
@@ -68,8 +66,7 @@ public class SectionPattern {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_12);
@@ -87,10 +84,9 @@ public class SectionPattern {
 			final Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg",
+					ctx_local, parameters);
 		}
 
 		{
@@ -106,8 +102,7 @@ public class SectionPattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -137,8 +132,7 @@ public class SectionPattern {
 		return parameters;
 	}
 
-	protected void method_initGenType(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_initGenType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		genPageID = false;
 		final EObject sectionParent = parameter.eContainer();
@@ -150,23 +144,19 @@ public class SectionPattern {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "initGenType",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initGenType", stringBuffer.toString());
 	}
 
-	protected void method_genSectionBegin(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genSectionBegin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String id = parameter.getActivityExplorerItemID();
 		if (null == id || (null != id && id.isEmpty()))
 			id = "Activity1";
 
 		final boolean labelIsSet = parameter
-				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE
-						.getActivityExplorerItem_Label());
-		final String name = labelIsSet
-				&& false == parameter.getLabel().isEmpty() ? parameter
-				.getLabel() : parameter.getName();
+				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+		final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel()
+				: parameter.getName();
 
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(parameter.isExpanded() ? "true" : "false");
@@ -186,17 +176,14 @@ public class SectionPattern {
 		}
 		stringBuffer.append(TEXT_10);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genSectionBegin",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genSectionBegin", stringBuffer.toString());
 	}
 
-	protected void method_genSectionEnd(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genSectionEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_11);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genSectionEnd",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genSectionEnd", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

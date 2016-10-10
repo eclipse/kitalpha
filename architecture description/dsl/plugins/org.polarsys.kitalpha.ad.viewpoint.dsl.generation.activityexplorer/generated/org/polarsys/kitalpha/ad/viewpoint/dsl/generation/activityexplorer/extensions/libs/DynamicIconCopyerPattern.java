@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.3.0.v20160112-1239
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -13,16 +13,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.intern
 public class DynamicIconCopyerPattern {
 	protected static String nl;
 
-	public static synchronized DynamicIconCopyerPattern create(
-			String lineSeparator) {
+	public static synchronized DynamicIconCopyerPattern create(String lineSeparator) {
 		nl = lineSeparator;
 		DynamicIconCopyerPattern result = new DynamicIconCopyerPattern();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL;
 
@@ -62,8 +60,7 @@ public class DynamicIconCopyerPattern {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_1);
@@ -77,13 +74,11 @@ public class DynamicIconCopyerPattern {
 		{
 			final Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("iconElement", this.dynamicIconElement);
-			parameters.put("activityExplorerProjectName",
-					this.activityExplorerProjectName);
+			parameters.put("activityExplorerProjectName", this.activityExplorerProjectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg",
+					ctx_local, parameters);
 		}
 
 		method_copyIconOnFile(new StringBuffer(), ictx);
@@ -91,12 +86,10 @@ public class DynamicIconCopyerPattern {
 		if (ictx.useReporter()) {
 			Map<String, Object> parameterValues = new HashMap<String, Object>();
 			parameterValues.put("dynamicIconElement", this.dynamicIconElement);
-			parameterValues.put("activityExplorerProjectName",
-					this.activityExplorerProjectName);
+			parameterValues.put("activityExplorerProjectName", this.activityExplorerProjectName);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -117,22 +110,18 @@ public class DynamicIconCopyerPattern {
 	public Map<String, Object> getParameters() {
 		final Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("dynamicIconElement", this.dynamicIconElement);
-		parameters.put("activityExplorerProjectName",
-				this.activityExplorerProjectName);
+		parameters.put("activityExplorerProjectName", this.activityExplorerProjectName);
 		return parameters;
 	}
 
-	protected void method_copyIconOnFile(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_copyIconOnFile(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// the source project name is the project containing the resource containing the iconElement
 		final URI resourceURI = dynamicIconElement.eResource().getURI();
 		String sourceProjectName = resourceURI.segment(1);
-		IconsFileHelper.copyIcon(dynamicIconElement.getImagePathOn(),
-				sourceProjectName, activityExplorerProjectName);
+		IconsFileHelper.copyIcon(dynamicIconElement.getImagePathOn(), sourceProjectName, activityExplorerProjectName);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "copyIconOnFile",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "copyIconOnFile", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
