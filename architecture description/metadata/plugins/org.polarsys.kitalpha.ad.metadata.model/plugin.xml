@@ -28,4 +28,11 @@
             genModel="model/metadata.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated metadata -->
+      <parser
+            type="afm"
+            class="org.polarsys.kitalpha.ad.metadata.metadata.util.MetadataResourceFactoryImpl"/>
+   </extension>
+
 </plugin>

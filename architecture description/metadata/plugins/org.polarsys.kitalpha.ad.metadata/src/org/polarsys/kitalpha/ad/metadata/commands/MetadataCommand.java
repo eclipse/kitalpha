@@ -11,8 +11,6 @@
 package org.polarsys.kitalpha.ad.metadata.commands;
 
 import org.eclipse.emf.common.command.AbstractCommand;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 /**
  * @author Thomas Guiu
@@ -26,9 +24,9 @@ public abstract class MetadataCommand extends AbstractCommand {
 
 	@Override
 	protected boolean prepare()
-	  {
-	    return true;
-	  }
+	{
+		return true;
+	}
 	
 	@Override
 	public void redo() {

@@ -7,8 +7,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore</foreignModel>
-  <genPackages prefix="Metadata" basePackage="org.polarsys.kitalpha.ad.metadata" disposableProviderFactory="true"
-      childCreationExtenders="true" fileExtensions="afm"
+  <genPackages prefix="Metadata" basePackage="org.polarsys.kitalpha.ad.metadata" resource="XMI"
+      disposableProviderFactory="true" childCreationExtenders="true" fileExtensions="afm"
       ecorePackage="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#/">
     <genDataTypes ecoreDataType="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//Version"/>
     <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.metadata/model/metadata.ecore#//Metadata">
