@@ -380,7 +380,6 @@ public class ViewpointManagerView extends ViewPart {
 		});
 		Menu menu = menuMgr.createContextMenu(viewer.getControl());
 		viewer.getControl().setMenu(menu);
-		getSite().registerContextMenu(menuMgr, viewer);
 	}
 
 	private void contributeToActionBars() {
@@ -398,21 +397,11 @@ public class ViewpointManagerView extends ViewPart {
 		}
 		manager.add(new Separator());
 		manager.add(openViewAction);
-		// Other plug-ins can contribute there actions here
-		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
 	}
 
 	private void fillLocalToolBar(IToolBarManager manager) {
 		manager.add(refreshAction);
 		manager.add(new Separator());
-//		manager.add(useAction);
-//		manager.add(unUseAction);
-//		manager.add(new Separator());
-//		manager.add(filterAction);
-//		manager.add(unFilterAction);
-//		manager.add(new Separator());
-//		manager.add(openViewAction);
-//		manager.add(new Separator());
 		manager.add(showHiddenViewpointAction);
 	}
 
