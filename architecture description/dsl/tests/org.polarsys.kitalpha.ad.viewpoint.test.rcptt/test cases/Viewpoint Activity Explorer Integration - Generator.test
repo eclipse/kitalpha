@@ -1,0 +1,108 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _16YjAHiyEeaI368ba7nlrQ,_7A2tkHiyEeaI368ba7nlrQ
+Element-Name: Viewpoint Activity Explorer Integration - Generator
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _MIoeYJCPEeaf3P1eYGh88w
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 10/12/16 5:41 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu "File/New/Other..." | click
+with [get-window New] {
+    get-editbox -after [get-label "Wizards:"] | set-text dsl
+    get-tree | select "Kitalpha/Architecture description/Viewpoint DSL project"
+    get-button "Next >" | click
+}
+with [get-window "New Viewpoint DSL Project"] {
+    get-editbox -after [get-label "Viewpoint short name :"] | set-text ae
+    get-button Finish | click
+}
+with [get-editor "ae.spec.vptext" | get-text-viewer] {
+    set-caret-pos 11 17
+    key-type Enter
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "Activity Explorer - New Activity Explorer" | click -default
+get-window "Viewpoint Activity Explorer File Creation Wizard" | get-button Finish | click
+with [get-editor "ae.activityexplorer.vptext" | get-text-viewer] {
+    set-caret-pos 9 40
+    key-type Enter -times 2
+    key-type "M1+SPACE"
+    key-type Down -times 5
+    key-type Up
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "pages - new pages" | click 
+    -default
+with [get-editor "ae.activityexplorer.vptext" | get-text-viewer] {
+    type-text TestPage
+    key-type Tab
+    type-text ecore
+    key-type Tab
+    set-caret-pos 19 50
+    key-type "M1+d" -times 2
+    set-caret-pos 20 21
+    key-type "M1+d" -times 4
+    set-caret-pos 20 30
+    select-range 20 31 20 24
+    type-text "Test Page Tab Name"
+    set-caret-pos 37 46
+    key-type "M1+d"
+    key-type "M1+s"
+}
+get-view Outline | get-tree | get-item "ae.activityexplorer" | get-property caption | equals "ae.activityexplorer" 
+    | verify-true
+get-tab-folder -index 2 | get-tab-item "*ae.spec.vptext" | click
+get-editor "ae.spec.vptext" | get-text-viewer | key-type "M1+s"
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.ae.vpdsl/model/ae.vpdesc" | double-click
+get-editor "ae.vpdesc" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.ae.vpdsl\\/model\\/ae.vpdesc/Viewpoint ae/\\[Viewpoint Activity Explorer\\] ae.activityexplorer" 
+    | get-property caption | equals "[Viewpoint Activity Explorer] ae.activityexplorer" | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.ae.vpdsl/model/ae.vpdesc" 
+    | get-menu "Viewpoint DSL/Generate viewpoint with selection" | click
+with [get-window "User Extension Selection"] {
+    with [get-table] {
+        get-item "Architecture Framework intergation" -column Name | uncheck
+        select "Architecture Framework intergation" -column Name
+        get-item "Architecture Framework intergation" -column Name | check
+        get-item "Amalgam Contextual Explorer generation" -column Name | uncheck
+        get-item "Rules plugins generator" -column Name | uncheck
+    }
+    get-button Finish | click
+}
+with [get-view "Project Explorer" | get-tree] {
+    get-item "org.polarsys.kitalpha.vp.ae.activity.explorer" | get-property caption 
+        | equals "org.polarsys.kitalpha.vp.ae.activity.explorer" | verify-true
+    get-item "org.polarsys.kitalpha.vp.ae.activity.explorer" | get-property "getText()" 
+        | equals "org.polarsys.kitalpha.vp.ae.activity.explorer" | verify-true
+}
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.ae.activity.explorer/src/org.polarsys.kitalpha.vp.ae.activity.explorer.page/TestPagePage.java" 
+    | double-click
+with [get-editor "TestPagePage.java" | get-text-viewer] {
+    hover-text 8 46
+    set-caret-pos 8 39
+    select-range 8 35 8 57
+}
+get-editor "TestPagePage.java" | get-text-viewer | get-property "getSelectionText()" | equals ADActivityExplorerPage 
+    | verify-true
+with [get-editor "TestPagePage.java" | get-text-viewer] {
+    set-caret-pos 8 2
+    select-range 8 1 14 2
+}
+with [get-editor "TestPagePage.java" | get-text-viewer] {
+    get-property "isTextSelected()" | equals true | verify-true
+    get-property "getSelectionText()" | equals "public class TestPagePage extends ADActivityExplorerPage {\n\n"
+        + "\\9protected String getViewpointID() {\n"
+        + "\\9\\9return \"org.polarsys.kitalpha.vp.ae\"; //$NON-NLS-1$\n"
+        + "\\9}\n\n"
+        + "}" | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

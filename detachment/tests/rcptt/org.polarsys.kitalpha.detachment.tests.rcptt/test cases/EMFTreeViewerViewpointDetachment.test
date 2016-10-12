@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _-nkQ0HXZEea2Ve0UEUBuKQ
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 9/9/16 11:05 AM
+Save-Time: 10/12/16 10:11 AM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -57,25 +57,25 @@ with [get-view "Viewpoint Manager" | get-table] {
         | verify-true
     get-item "Component Sample Safety Pattern" | get-property "columns[2]" | equals Unused | verify-true
 }
-get-view "Viewpoint Manager" | get-table | select "Component Sample Performance" | get-menu "Start use" | click
+get-view "Viewpoint Manager" | get-table | select "Component Sample Performance" | get-menu "Reference" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Performance" | get-property "columns[0]" | equals "Component Sample Performance" 
         | verify-true
     get-item "Component Sample Performance" | get-property "columns[2]" | equals Used | verify-true
 }
 get-eclipse-window | key-type "" "\\u0000"
-get-view "Viewpoint Manager" | get-table | select "Component Sample Quality Assessment" | get-menu "Start use" | click
+get-view "Viewpoint Manager" | get-table | select "Component Sample Quality Assessment" | get-menu "Reference" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Quality Assessment" | get-property "columns[0]" 
         | equals "Component Sample Quality Assessment" | verify-true
     get-item "Component Sample Quality Assessment" | get-property "columns[2]" | equals Used | verify-true
 }
-get-view "Viewpoint Manager" | get-table | select "Component Sample Safety" | get-menu "Start use" | click
+get-view "Viewpoint Manager" | get-table | select "Component Sample Safety" | get-menu "Reference" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Safety" | get-property "columns[0]" | equals "Component Sample Safety" | verify-true
     get-item "Component Sample Safety" | get-property "columns[2]" | equals Used | verify-true
 }
-get-view "Viewpoint Manager" | get-table | select "Component Sample Safety Pattern" | get-menu "Start use" | click
+get-view "Viewpoint Manager" | get-table | select "Component Sample Safety Pattern" | get-menu "Reference" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Safety Pattern" | get-property "columns[0]" | equals "Component Sample Safety Pattern" 
         | verify-true
@@ -83,15 +83,13 @@ with [get-view "Viewpoint Manager" | get-table] {
 }
 with [get-editor "VideoOnDemand.componentsample" | get-tree] {
     get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample/Video On Demande" 
-        | get-property childCount | equals 2 | verify-true
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample/Video On Demande/\\[Safety Package\\]" 
-        | get-property caption | equals "[Safety Package]" | verify-true
+        | get-property childCount | equals 1 | verify-true
 }
 get-editor "VideoOnDemand.componentsample" | get-tree 
     | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample/Video On Demande/Video System/Video Display \\(VD\\)" 
-    | get-property childCount | equals 5 | verify-true
-get-view "Viewpoint Manager" | get-table | select "Component Sample" | get-menu "Stop use" | click
-get-window "Stop using viewpoint Component Sample" | get-button Yes | click
+    | get-property childCount | equals 2 | verify-true
+get-view "Viewpoint Manager" | get-table | select "Component Sample" | get-menu "Unreference" | click
+get-window "Unreference viewpoint Component Sample" | get-button Yes | click
 get-editor "Detachment" | get-tab-folder | get-tab-item "Viewpoints Tree Page" | click
 get-editor "Detachment" | get-section "Viewpoints Hierarchy" | get-tree | get-property itemCount | equals 1 
     | verify-true
@@ -102,8 +100,8 @@ get-button "Save (M1+S)" | click
 get-editor "VideoOnDemand.componentsample" | get-tree 
     | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample/Video On Demande/Video System/Video Display \\(VD\\)" 
 wait -ms 1000
-get-view "Viewpoint Manager" | get-table | select "Component Sample" | get-menu "Stop use" | click
-get-window "Stop using viewpoint Component Sample" | get-button Yes | click
+get-view "Viewpoint Manager" | get-table | select "Component Sample" | get-menu "Unreference" | click
+get-window "Unreference viewpoint Component Sample" | get-button Yes | click
 get-editor "Detachment" | get-tab-folder | get-tab-item "Viewpoints Tree Page" | click
 get-editor "Detachment" | get-section "Viewpoints Hierarchy" | get-tree 
     | get-item "Component Sample/Component Sample Performance" | uncheck

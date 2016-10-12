@@ -5,7 +5,7 @@ Element-Type: testsuite
 Element-Version: 2.0
 Id: _g18_kHi1EeaI368ba7nlrQ
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 9/14/16 5:42 PM
+Save-Time: 10/12/16 5:36 PM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -14,5 +14,6 @@ Entry-Name: testcase-items
 _cz690HaiEeaI368ba7nlrQ	// kind: 'test' name: 'ViewpointVisibilityGen' path: '../test cases/ViewpointVisibilityGen.test'
 _GHzeAHqOEeadK6jIYFHAOw	// kind: 'test' name: 'ImportMappingWithSynchronizationMode' path: '../test cases/ImportMappingWithSynchronizationMode.test'
 _sCHLcHi0EeaI368ba7nlrQ	// kind: 'test' name: 'menuKitalpha' path: '../test cases/menuKitalpha.test'
+_MIoeYJCPEeaf3P1eYGh88w	// kind: 'test' name: 'Viewpoint Activity Explorer Integration - Generator' path: '../test cases/Viewpoint Activity Explorer Integration - Generator.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

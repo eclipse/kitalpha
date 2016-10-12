@@ -1,0 +1,112 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _EjWIwJEjEeaf3P1eYGh88w,_wswEAI-9EeaRJJ4zjpMAgQ,_36Q2cJEkEeaf3P1eYGh88w
+Element-Name: Diagram Creation Many Sessions
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _ooIJIJEkEeaf3P1eYGh88w
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 10/13/16 11:17 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+    select "example/example.aird" | get-menu Open | click
+    select " example2/example.aird" | get-menu Open | click
+    select "example/example.aird" | get-menu "Open Activity Explorer" | click
+}
+get-tab-folder -index 2 | get-property activePage | equals "Example I" | verify-true
+with [get-editor "Example I"] {
+    get-tab-folder | get-tab-item "Component Sample Architecture" | click
+    get-section "Diagrams of Component Sample Architecture" | click
+}
+get-editor "Example I" | get-section "Diagrams Viewer" | get-tree | get-property itemCount | equals 0 | verify-true
+get-view "Project Explorer" | get-tree | select " example2/example.aird" | get-menu "Open Activity Explorer" | click
+get-tab-folder -index 2 | get-property activePage | equals "Example II" | verify-true
+get-editor "Example II" | get-tab-folder | get-tab-item "Component Sample Architecture" | click
+get-editor "Example II" | get-section "Diagrams Viewer" | get-tree | get-property itemCount | equals 0 | verify-true
+get-tab-folder -index 2 | get-tab-item "Example I" | click
+get-editor "Example I" | get-section "Diagrams of Component Sample Architecture" | get-link "Create a new Diagram" 
+    | click
+with [get-window "New ComponentSampleDiagram"] {
+    get-editbox -after [get-label "Name:"] | set-text "Diagram in Example I"
+    get-button OK | click
+}
+get-editor "Diagram in Example I" | get-diagram -index 1 | get-edit-part -name "Diagram in Example I" 
+    | mouse-move 32 91 -height 353 -width 588
+get-menu "File/Save All" | click
+get-editor "Diagram in Example I" | get-diagram -index 1 | get-edit-part -name "Diagram in Example I" 
+    | mouse-move 140 0 -height 353 -width 588
+get-tab-folder -index 2 | get-tab-item "Example I" | click
+get-editor "Example I" | get-section "Diagrams Viewer" | get-tree | get-property itemCount | equals 1 | verify-true
+get-editor "Example I" | get-section "Diagrams of Component Sample Architecture" | get-link "Create a new Diagram" 
+    | click
+with [get-window "New ComponentSampleDiagram"] {
+    get-editbox -after [get-label "Name:"] | set-text "Diagram 2 In Example I"
+    get-button OK | click
+}
+get-editor "Diagram 2 In Example I" | get-diagram -index 1 | get-edit-part -name "Diagram 2 In Example I" 
+    | mouse-move 11 58 -height 353 -width 588
+get-tab-folder -index 2 | get-property activePage | equals "*Diagram 2 In Example I" | verify-true
+get-tab-folder -index 2 | get-tab-item "*Example I" | click
+get-menu "File/Save All" | click
+with [get-editor "Example I"] {
+    get-tab-folder | get-tab-item "Process Map" | click
+    get-link | click
+    get-canvas -index 3 | get-menu "Example II" | click
+}
+get-tab-folder -index 2 | get-property activePage | equals "Example II" | verify-true
+with [get-editor "Example II"] {
+    get-tab-folder | get-tab-item "Component Sample Architecture" | click
+    get-section "Diagrams of Component Sample Architecture" | click
+}
+get-editor "Example II" | get-section "Diagrams Viewer" | get-tree | get-property itemCount | equals 0 | verify-true
+get-editor "Example II" | get-section "Diagrams of Component Sample Architecture" | get-link "Create a new Diagram" 
+    | click
+with [get-window "New ComponentSampleDiagram"] {
+    get-editbox -after [get-label "Name:"] | set-text "Diagram In Example II"
+    get-button OK | click
+}
+get-editor "Diagram In Example II" | get-diagram -index 1 | get-edit-part -name "Diagram In Example II" 
+    | mouse-move 40 2 -height 353 -width 588
+get-tab-folder -index 2 | get-tab-item "*Example II" | click
+get-tab-folder -index 2 | get-property activePage | equals "*Example II" | verify-true
+get-tab-folder -index 2 | get-tab-item "*Example II" | click
+get-tab-folder -index 2 | get-property activePage | equals "*Example II" | verify-true
+get-editor "Example II" -index 1 | get-section "Diagrams Viewer" | get-tree | get-property itemCount | equals 1 
+    | verify-true
+with [get-editor "Example II" -index 1] {
+    get-tab-folder | get-tab-item "Process Map" | click
+    get-link | click
+    get-label "Process Map of Example II" | get-menu "Example I" | click
+}
+get-tab-folder -index 2 | get-property activePage | equals "Example I" | verify-true
+with [get-editor "Example I"] {
+    get-tab-folder | get-tab-item "Component Sample Architecture" | click
+    get-section "Diagrams Viewer" | get-tree | select ComponentSample
+}
+get-editor "Example I" | get-section "Diagrams Viewer" | get-tree | get-item "ComponentSample/ComponentSampleDiagram" 
+    | get-property childCount | equals 2 | verify-true
+with [get-editor "Example I"] {
+    get-tab-folder | get-tab-item "Process Map" | click
+    get-link | click
+    get-label "Process Map of Example I" | get-menu "Example II" | click
+}
+get-menu "File/Save" | click
+with [get-editor "Example II" -index 1] {
+    get-link | click
+    get-label "Process Map of Example II" | get-menu "Example I" | click
+}
+with [get-editor "Example I"] {
+    with [get-canvas -index 3] {
+        mouse-press 223 14 button1
+        mouse-release 223 14 button1 524288
+    }
+    get-link | click
+    get-label "Process Map of Example I" | get-menu "Example II" | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

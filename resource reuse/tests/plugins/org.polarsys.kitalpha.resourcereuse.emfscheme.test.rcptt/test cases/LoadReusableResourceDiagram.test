@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _jVpq4ISXEeafkJlIMWFvDg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 9/28/16 5:03 PM
+Save-Time: 10/12/16 3:43 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -22,7 +22,6 @@ Entry-Name: .content
 
 get-eclipse-window | key-type "" "\\u0000"
 with [get-view "Model Explorer" | get-tree] {
-	select "reuse.ecore/model/reuse.aird" | get-menu Close | click
     select "reuse.ecore/model/reuse.aird" | get-menu Open | click
     select "reuse.ecore/model/reuse.aird/reuse.ecore - \\[platform:\\/resource\\/reuse.ecore\\/model\\/reuse.ecore\\]/reuse/reuse class diagram" 
         | double-click
@@ -71,4 +70,7 @@ get-button "Save (M1+S)" | click
 get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -name "reuse class diagram" | get-edit-part 
     -name ReuseClass | get-edit-part -className DNodeListViewNodeListCompartment2EditPart | mouse-move 97 51 
     -height 142 -width 257
+with [get-view "Model Explorer" | get-tree] {
+    select "reuse.ecore/model/reuse.aird" | get-menu Close | click
+}
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
