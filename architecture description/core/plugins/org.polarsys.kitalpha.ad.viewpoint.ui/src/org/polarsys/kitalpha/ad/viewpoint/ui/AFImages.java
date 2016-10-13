@@ -29,7 +29,7 @@ public interface AFImages {
 	String EMPTY = "icons/empty.gif";
 	String MISC = "icons/misc.gif";
 	String ACTIVATE = "icons/activate.gif";
-	String DEACTIVATE = "icons/desactivate.gif";
+	String DEACTIVATE = "icons/deactivate.gif";
 	String REFERENCE = "icons/reference.gif";
 	String UNREFERENCE = "icons/unreference.gif";
 	String REFRESH = "icons/refresh.gif";

@@ -1,0 +1,33 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _STZ8YB3BEea9EIJxawXROw,_UM2xUB3BEea9EIJxawXROw
+Element-Name: viewpointManagerView_00008
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _wB_McJFBEeaq_ZsAWABixA
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 10/13/16 2:42 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "A/My.componentsample" 
+    | get-menu "Open With/ComponentSample Model Editor" | click
+with [get-view "Viewpoint Manager"] {
+    get-button "Show all viewpoints" | click
+    get-table | select "My Viewpoint"
+}
+with [get-view "Viewpoint Manager" | get-table] {
+    get-menu Reference | get-property caption | equals Reference | verify-true
+    get-menu Reference | get-property enablement | equals true | verify-true
+    get-menu Unreference | get-property caption | equals Unreference | verify-true
+    get-menu Unreference | get-property enablement | equals false | verify-true
+    get-menu Activate | get-property caption | equals Activate | verify-true
+    get-menu Activate | get-property enablement | equals false | verify-true
+    get-menu Desactivate | get-property caption | equals Desactivate | verify-true
+    get-menu Desactivate | get-property enablement | equals false | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
