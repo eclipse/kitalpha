@@ -330,12 +330,11 @@ public class ViewpointManagerView extends ViewPart {
 
 		viewer.setContentProvider(new ViewpointManagerContentProvider());
 		viewer.setLabelProvider(labelProvider);
-
 		makeActions();
 		hookContextMenu();
 		hookDoubleClickAction();
 		contributeToActionBars();
-
+		
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			public void selectionChanged(SelectionChangedEvent event) {
@@ -509,9 +508,10 @@ public class ViewpointManagerView extends ViewPart {
 					{
 						URI uri = r.getURI();
 						if (uri.isPlatformResource()) {
-							dirty |= r.isModified();
-							if (airdResource == null && "aird".equals(uri.fileExtension()))
+							dirty |= r.isModified(); 
+							if (airdResource == null && !"afm".equals(uri.fileExtension())){ //$NON-NLS-1$
 								airdResource = r;
+							}
 						}
 					}
 					String title = "Unreference viewpoint " + res.getLabel();
@@ -521,7 +521,7 @@ public class ViewpointManagerView extends ViewPart {
 					}
 					if (airdResource == null)
 					{
-						MessageDialog.openError(site, title, "Cannot locate aird resource to work on.");
+						MessageDialog.openError(site, title, "Cannot locate resource to work on.");
 						return ;
 					}
 					
