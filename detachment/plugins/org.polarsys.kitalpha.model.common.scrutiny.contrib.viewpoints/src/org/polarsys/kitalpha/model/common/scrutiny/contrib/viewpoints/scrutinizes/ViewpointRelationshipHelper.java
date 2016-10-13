@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Metamodel;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
@@ -53,9 +54,12 @@ public class ViewpointRelationshipHelper {
 		for (Resource resource : resources) {
 			String ePath = resource.getPath();
 			Viewpoint currentViewpoints = getViewpointRootEObject(ePath);
-			EList<EPackage> ePackages = currentViewpoints.getMetamodel().getModels();
+			Metamodel metamodel = currentViewpoints.getMetamodel();
+			if(metamodel != null){
+				EList<EPackage> ePackages = metamodel.getModels();
+				viewpointsEPackages.add(ePackages);
+			}
 			
-			viewpointsEPackages.add(ePackages);
 		}
 		
 		return viewpointsEPackages;
