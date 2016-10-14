@@ -70,7 +70,11 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 			return;
 		EObject selectedObj = (EObject)selection.get(0);
 		MenuManager menu = new MenuManager("Viewpoint Services");
-		fillMenu(menu, selectedObj);
+		try {
+			fillMenu(menu, selectedObj);
+		} catch (Exception e) {
+			Activator.getDefault().logError(e);
+		}
 		additions.addContributionItem(menu, null);
 	}
 
