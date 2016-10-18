@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -21,6 +21,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAcce
 /**
  * 
  * @author Amine Lajmi
+ * 	   	   Faycal ABKA
  *
  */
 public class VpconfFormatter extends AbstractDeclarativeFormatter {
@@ -37,6 +38,10 @@ public class VpconfFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1).before(f.getGenerationConfigurationAccess().getProjectKeyword_1());
 		//line wrap before nsuri
 		c.setLinewrap(1).before(f.getGenerationConfigurationAccess().getNsuriKeyword_3_0());
+		
+		c.setLinewrap(1).before(f.getViewConfigurationAccess().getViewKeyword_1());
+		c.setLinewrap(1).after(f.getViewConfigurationAccess().getVisibleEBooleanParserRuleCall_3_2_0());
+		c.setLinewrap(1).after(f.getViewConfigurationAccess().getActivableEBooleanParserRuleCall_4_2_0());
 		
 		//release section
 		c.setLinewrap(1).before(f.getReleaseAccess().getReleaseKeyword_1());

@@ -172,7 +172,7 @@ public class ConfigurationItemProvider extends AspectItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(VpconfPackage.Literals.CONFIGURATION__VP_CONFIGURATION_ELEMENTS,
-				 VpconfFactory.eINSTANCE.createRepresentationConfiguration()));
+				 VpconfFactory.eINSTANCE.createViewConfiguration()));
 	}
 
 }

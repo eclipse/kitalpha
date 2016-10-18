@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014 Thales Global Services S.A.S.
+Copyright (c) 2014, 2016 Thales Global Services S.A.S.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ Contributors:
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
             uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0"
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.provider.DescAirdGenConfItemProviderAdapterFactory"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.provider.DescAirdGenConfItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -32,13 +32,13 @@ Contributors:
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <extender
             uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0"
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.provider.DescAirdGenConfItemProviderAdapterFactory$VpconfChildCreationExtender"/>
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.provider.DescAirdGenConfItemProviderAdapterFactory$VpconfChildCreationExtender"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0"
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.DescAirdGenConfPackage"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.DescAirdGenConfPackage"
             genModel="model/DescAirdGenConf.genmodel"/>
    </extension>
 

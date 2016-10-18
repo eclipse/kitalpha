@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
@@ -7,12 +17,21 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAcce
 
 import com.google.inject.Inject;
 
+
+/**
+ * 
+ * @author Faycal ABKA
+ *
+ */
 public class VpConfProposalPriorities extends ContentProposalPriorities {
 	
 	@Inject
 	private IGrammarAccess access;
 	
-	private static final int confRepresentationPriority				= 850;
+	private static final int confTargetApplicationPriority			= 1000;
+	private static final int confProjectPriority   					= 950;
+	private static final int confNsURIPriority 						= 900;
+	private static final int confViewPriority						= 850;
 	private static final int confReleasePriority					= 800;
 	private static final int confGenerationPriority					= 750;
 	private static final int confDataModelPriority 					= 550;
@@ -35,8 +54,23 @@ public class VpConfProposalPriorities extends ContentProposalPriorities {
 			boolean affected = false;
 			VpconfGrammarAccess grammar = (VpconfGrammarAccess)access;
 			
-			if (!affected && proposal.getDisplayString().matches(grammar.getRepresentationConfigurationAccess().getRepresentationKeyword_1().getValue())){
-				keywordPriority = confRepresentationPriority;
+			if (!affected && proposal.getDisplayString().matches(grammar.getTargetApplicationAccess().getTargetKeyword_1().getValue())){
+				keywordPriority = confTargetApplicationPriority;
+				affected = true;
+			}
+			
+			if (!affected && proposal.getDisplayString().matches(grammar.getGenerationConfigurationAccess().getProjectKeyword_1().getValue())){
+				keywordPriority = confProjectPriority;
+				affected = true;
+			}
+			
+			if (!affected && proposal.getDisplayString().matches(grammar.getGenerationConfigurationAccess().getNsuriKeyword_3_0().getValue())){
+				keywordPriority = confNsURIPriority;
+				affected = true;
+			}
+			
+			if (!affected && proposal.getDisplayString().matches(grammar.getViewConfigurationAccess().getViewKeyword_1().getValue())){
+				keywordPriority = confViewPriority;
 				affected = true;
 			}
 			
@@ -94,5 +128,4 @@ public class VpConfProposalPriorities extends ContentProposalPriorities {
 		}
 		adjustPriority(proposal, prefix, keywordPriority);
 	}
-
 }

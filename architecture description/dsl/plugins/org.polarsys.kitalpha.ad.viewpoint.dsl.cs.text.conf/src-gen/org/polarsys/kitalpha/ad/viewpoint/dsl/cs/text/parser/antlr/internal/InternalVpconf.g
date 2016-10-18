@@ -107,7 +107,7 @@ ruleConfiguration returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -129,7 +129,7 @@ ruleConfiguration returns [EObject current=null]
        			$current, 
        			"vpConfigurationElements",
         		lv_vpConfigurationElements_4_0, 
-        		"ConfigurationElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.ConfigurationElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -201,11 +201,11 @@ ruleConfigurationElement returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getConfigurationElementAccess().getRepresentationConfigurationParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getConfigurationElementAccess().getViewConfigurationParserRuleCall_4()); 
     }
-    this_RepresentationConfiguration_4=ruleRepresentationConfiguration
+    this_ViewConfiguration_4=ruleViewConfiguration
     { 
-        $current = $this_RepresentationConfiguration_4.current; 
+        $current = $this_ViewConfiguration_4.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -252,7 +252,7 @@ ruleTargetApplication returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -301,7 +301,7 @@ ruleGenerationConfiguration returns [EObject current=null]
        			$current, 
        			"projectName",
         		lv_projectName_2_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -324,7 +324,7 @@ ruleGenerationConfiguration returns [EObject current=null]
        			$current, 
        			"nsuri",
         		lv_nsuri_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -376,7 +376,7 @@ ruleGeneration returns [EObject current=null]
        			$current, 
        			"ownedDataGenerationConf",
         		lv_ownedDataGenerationConf_3_0, 
-        		"GData");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.GData");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -394,7 +394,7 @@ ruleGeneration returns [EObject current=null]
        			$current, 
        			"ownedExtensionGenConf",
         		lv_ownedExtensionGenConf_4_0, 
-        		"ExtensionGeneratrionConfiguration");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.ExtensionGeneratrionConfiguration");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -459,7 +459,7 @@ ruleGData returns [EObject current=null]
        			$current, 
        			"model",
         		lv_model_5_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -485,7 +485,7 @@ ruleGData returns [EObject current=null]
        			$current, 
        			"edit",
         		lv_edit_8_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -511,7 +511,7 @@ ruleGData returns [EObject current=null]
        			$current, 
        			"editor",
         		lv_editor_11_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -537,7 +537,7 @@ ruleGData returns [EObject current=null]
        			$current, 
        			"test",
         		lv_test_14_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -563,7 +563,7 @@ ruleGData returns [EObject current=null]
        			$current, 
        			"javaDoc",
         		lv_javaDoc_17_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -589,7 +589,7 @@ ruleGData returns [EObject current=null]
        			$current, 
        			"overwriteEcore",
         		lv_overwriteEcore_20_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -704,7 +704,7 @@ ruleDiagramGenerationConfiguration returns [EObject current=null]
        			$current, 
        			"overwriteVSM",
         		lv_overwriteVSM_5_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -765,7 +765,7 @@ ruleDocumentationGenerationConfiguration returns [EObject current=null]
        			$current, 
        			"ecoreToHtml",
         		lv_ecoreToHtml_4_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -830,7 +830,7 @@ ruleModelsAirdGenerationConfiguration returns [EObject current=null]
        			$current, 
        			"genRepresentations",
         		lv_genRepresentations_5_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -895,7 +895,7 @@ ruleRelease returns [EObject current=null]
        			$current, 
        			"viewpointVersion",
         		lv_viewpointVersion_5_0, 
-        		"Version");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Version");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -921,7 +921,7 @@ ruleRelease returns [EObject current=null]
        			$current, 
        			"viewpointDescription",
         		lv_viewpointDescription_8_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -952,7 +952,7 @@ ruleRelease returns [EObject current=null]
        			$current, 
        			"requiredExecutionEnvironment",
         		lv_requiredExecutionEnvironment_12_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -974,7 +974,7 @@ ruleRelease returns [EObject current=null]
        			$current, 
        			"requiredExecutionEnvironment",
         		lv_requiredExecutionEnvironment_14_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -989,63 +989,89 @@ ruleRelease returns [EObject current=null]
 
 
 
-// Entry rule entryRuleRepresentationConfiguration
-entryRuleRepresentationConfiguration returns [EObject current=null] 
+// Entry rule entryRuleViewConfiguration
+entryRuleViewConfiguration returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getRepresentationConfigurationRule()); }
-	 iv_ruleRepresentationConfiguration=ruleRepresentationConfiguration 
-	 { $current=$iv_ruleRepresentationConfiguration.current; } 
+	{ newCompositeNode(grammarAccess.getViewConfigurationRule()); }
+	 iv_ruleViewConfiguration=ruleViewConfiguration 
+	 { $current=$iv_ruleViewConfiguration.current; } 
 	 EOF 
 ;
 
-// Rule RepresentationConfiguration
-ruleRepresentationConfiguration returns [EObject current=null] 
+// Rule ViewConfiguration
+ruleViewConfiguration returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getRepresentationConfigurationAccess().getRepresentationConfigurationAction_0(),
+            grammarAccess.getViewConfigurationAccess().getViewConfigurationAction_0(),
             $current);
     }
-)	otherlv_1='representation' 
+)	otherlv_1='view' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getRepresentationConfigurationAccess().getRepresentationKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getViewConfigurationAccess().getViewKeyword_1());
     }
 	otherlv_2='{' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getRepresentationConfigurationAccess().getLeftCurlyBracketKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getViewConfigurationAccess().getLeftCurlyBracketKeyword_2());
     }
-	otherlv_3='visible' 
+(	otherlv_3='visible' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getRepresentationConfigurationAccess().getVisibleKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getViewConfigurationAccess().getVisibleKeyword_3_0());
     }
 	otherlv_4=':' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getRepresentationConfigurationAccess().getColonKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getViewConfigurationAccess().getColonKeyword_3_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRepresentationConfigurationAccess().getVisibleEBooleanParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getViewConfigurationAccess().getVisibleEBooleanParserRuleCall_3_2_0()); 
 	    }
 		lv_visible_5_0=ruleEBoolean		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getRepresentationConfigurationRule());
+	            $current = createModelElementForParent(grammarAccess.getViewConfigurationRule());
 	        }
        		set(
        			$current, 
        			"visible",
         		lv_visible_5_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_6='}' 
+))?(	otherlv_6='activable' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getRepresentationConfigurationAccess().getRightCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_6, grammarAccess.getViewConfigurationAccess().getActivableKeyword_4_0());
+    }
+	otherlv_7=':' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getViewConfigurationAccess().getColonKeyword_4_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getViewConfigurationAccess().getActivableEBooleanParserRuleCall_4_2_0()); 
+	    }
+		lv_activable_8_0=ruleEBoolean		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getViewConfigurationRule());
+	        }
+       		set(
+       			$current, 
+       			"activable",
+        		lv_activable_8_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_9='}' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getViewConfigurationAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;

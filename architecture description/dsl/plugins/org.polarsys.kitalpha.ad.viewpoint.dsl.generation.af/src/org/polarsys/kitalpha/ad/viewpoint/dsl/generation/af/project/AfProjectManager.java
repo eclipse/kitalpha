@@ -233,6 +233,7 @@ public class AfProjectManager {
 		IFile xml = project.getFile("plugin.xml");
 		StringBuffer contents = new StringBuffer();
 		boolean isVisible = isVisibleViewpoint();
+		boolean isActivable = isActivableViewpoint();
 
 		contents.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 		contents.append("<?eclipse version=\"3.4\"?>\n");
@@ -254,16 +255,20 @@ public class AfProjectManager {
 		
 		contents.append("	        domain=\"AF\"\n");
 		contents.append("	        id=\"").append(_viewpointId).append("\"\n");
-		if (isVisible){
-			contents.append("	        tags=\"vp\"\n");
-		} else {
-			//Ad tag to resourcereuse to avoid the visiblity of viewpoint
+		contents.append("	        tags=\"vp");
+		if (!isVisible){
+			//Add tag to resourcereuse to avoid the visiblity of viewpoint
 			//in viewpoint manager: tags="vp,stateHidden"
-			contents.append("	        tags=\"vp")
-					.append(",")
-					.append(VpDslConfigurationHelper.VIEWPOINT_VISIBLITY_TAG)
-					.append("\"\n");
+			contents.append(",")
+					.append(VpDslConfigurationHelper.VIEWPOINT_VISIBLITY_TAG);
 		}
+		if (isActivable){
+			//Add tag to resourcereuse to add the ability to activate/deactivate the viewpoint
+			//in viewpoint manager: tags="vp,stateMutableActivation"
+			contents.append(",")
+			.append(VpDslConfigurationHelper.VIEWPOINT_ACTIVABLE_TAG);
+		}
+		contents.append("\"\n");
 		contents.append("	        name=\"").append(_vpName).append("\"\n");
 		contents.append("	        path=\"").append(_vpURI).append('#').append(_vpuuid).append("\"/>\n");
 		contents.append("	</extension>\n");
@@ -303,6 +308,11 @@ public class AfProjectManager {
 	private boolean isVisibleViewpoint(){
 		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
 		return VpDslConfigurationHelper.getViewpointVisibility(viewpoint);
+	}
+	
+	private boolean isActivableViewpoint(){
+		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
+		return VpDslConfigurationHelper.isActivableViewpoint(viewpoint);
 	}
 
 }

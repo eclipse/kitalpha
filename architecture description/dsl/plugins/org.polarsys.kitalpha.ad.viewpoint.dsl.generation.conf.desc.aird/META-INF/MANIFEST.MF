@@ -4,16 +4,16 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird;singleton:=true
 Bundle-Version: 1.1.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.provider.DescAirdGenConfEditPlugin$Implementation
+Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.provider.DescAirdGenConfEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.helper,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.impl,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.provider,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.DescAirdGenConf.util
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.impl,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.provider,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model;visibility:=reexport,

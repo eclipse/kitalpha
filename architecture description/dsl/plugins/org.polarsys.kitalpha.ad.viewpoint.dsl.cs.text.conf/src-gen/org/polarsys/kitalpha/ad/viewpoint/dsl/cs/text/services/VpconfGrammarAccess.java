@@ -10,23 +10,31 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
-import com.google.inject.Singleton;
-import com.google.inject.Inject;
-
 import java.util.List;
 
-import org.eclipse.xtext.*;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.Grammar;
+import org.eclipse.xtext.GrammarUtil;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
-import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 @Singleton
 public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class ConfigurationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Configuration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Configuration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cConfigurationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cConfigurationKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -41,17 +49,17 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		// * 							vpconf
 		// * 
 		// ******************************************************************** /
-		//Configuration returns vpdesc::Aspect:
-		//	{vpconf::Configuration} "Configuration" name=FQN "{" vpConfigurationElements+=ConfigurationElement* "}";
+		//Configuration vpdesc::Aspect:
+		//	{vpconf::Configuration} 'Configuration' name=FQN '{' vpConfigurationElements+=ConfigurationElement* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpconf::Configuration} "Configuration" name=FQN "{" vpConfigurationElements+=ConfigurationElement* "}"
+		//{vpconf::Configuration} 'Configuration' name=FQN '{' vpConfigurationElements+=ConfigurationElement* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::Configuration}
 		public Action getConfigurationAction_0() { return cConfigurationAction_0; }
 
-		//"Configuration"
+		//'Configuration'
 		public Keyword getConfigurationKeyword_1() { return cConfigurationKeyword_1; }
 
 		//name=FQN
@@ -60,7 +68,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getNameFQNParserRuleCall_2_0() { return cNameFQNParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//vpConfigurationElements+=ConfigurationElement*
@@ -69,24 +77,24 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//ConfigurationElement
 		public RuleCall getVpConfigurationElementsConfigurationElementParserRuleCall_4_0() { return cVpConfigurationElementsConfigurationElementParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class ConfigurationElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConfigurationElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.ConfigurationElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cTargetApplicationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cGenerationConfigurationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cGenerationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cReleaseParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cRepresentationConfigurationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cViewConfigurationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		//ConfigurationElement returns vpconf::ConfigurationElement:
-		//	TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration;
+		//ConfigurationElement vpconf::ConfigurationElement:
+		//	TargetApplication | GenerationConfiguration | Generation | Release | ViewConfiguration
 		@Override public ParserRule getRule() { return rule; }
 
-		//TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration
+		//TargetApplication | GenerationConfiguration | Generation | Release | ViewConfiguration
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//TargetApplication
@@ -101,32 +109,32 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//Release
 		public RuleCall getReleaseParserRuleCall_3() { return cReleaseParserRuleCall_3; }
 
-		//RepresentationConfiguration
-		public RuleCall getRepresentationConfigurationParserRuleCall_4() { return cRepresentationConfigurationParserRuleCall_4; }
+		//ViewConfiguration
+		public RuleCall getViewConfigurationParserRuleCall_4() { return cViewConfigurationParserRuleCall_4; }
 	}
 
 	public class TargetApplicationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TargetApplication");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.TargetApplication");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cTargetApplicationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cTargetKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeEStringParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		
-		//TargetApplication returns vpconf::ConfigurationElement:
+		//TargetApplication vpconf::ConfigurationElement:
 		//	{vpconf::TargetApplication} //('id' id = EString)?
-		// "target" type=EString;
+		// 'target' type=EString
 		@Override public ParserRule getRule() { return rule; }
 
 		//{vpconf::TargetApplication} //('id' id = EString)?
-		// "target" type=EString
+		// 'target' type=EString
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::TargetApplication}
 		public Action getTargetApplicationAction_0() { return cTargetApplicationAction_0; }
 
 		////('id' id = EString)?
-		// "target"
+		// 'target'
 		public Keyword getTargetKeyword_1() { return cTargetKeyword_1; }
 
 		//type=EString
@@ -137,7 +145,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class GenerationConfigurationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GenerationConfiguration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.GenerationConfiguration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenerationConfigurationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cProjectKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -148,20 +156,20 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNsuriAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cNsuriSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cNsuriAssignment_3_1.eContents().get(0);
 		
-		//GenerationConfiguration returns vpconf::ConfigurationElement:
+		//GenerationConfiguration vpconf::ConfigurationElement:
 		//	{vpconf::GenerationConfiguration} //('id' id = EString)?
-		// "project" projectName=FQN ("nsuri" nsuri=STRING)?;
+		// 'project' projectName=FQN ('nsuri' nsuri=STRING)?
 		@Override public ParserRule getRule() { return rule; }
 
 		//{vpconf::GenerationConfiguration} //('id' id = EString)?
-		// "project" projectName=FQN ("nsuri" nsuri=STRING)?
+		// 'project' projectName=FQN ('nsuri' nsuri=STRING)?
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::GenerationConfiguration}
 		public Action getGenerationConfigurationAction_0() { return cGenerationConfigurationAction_0; }
 
 		////('id' id = EString)?
-		// "project"
+		// 'project'
 		public Keyword getProjectKeyword_1() { return cProjectKeyword_1; }
 
 		//projectName=FQN
@@ -170,10 +178,10 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getProjectNameFQNParserRuleCall_2_0() { return cProjectNameFQNParserRuleCall_2_0; }
 
-		//("nsuri" nsuri=STRING)?
+		//('nsuri' nsuri=STRING)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"nsuri"
+		//'nsuri'
 		public Keyword getNsuriKeyword_3_0() { return cNsuriKeyword_3_0; }
 
 		//nsuri=STRING
@@ -184,7 +192,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class GenerationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Generation");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Generation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGenerationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cGenerationKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -195,22 +203,22 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwnedExtensionGenConfExtensionGeneratrionConfigurationParserRuleCall_4_0 = (RuleCall)cOwnedExtensionGenConfAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Generation returns vpconf::ConfigurationElement:
-		//	{vpconf::Generation} "generation" "{" ownedDataGenerationConf=GData?
-		//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* "}";
+		//Generation vpconf::ConfigurationElement:
+		//	{vpconf::Generation} 'generation' '{' ownedDataGenerationConf=GData?
+		//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpconf::Generation} "generation" "{" ownedDataGenerationConf=GData?
-		//ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* "}"
+		//{vpconf::Generation} 'generation' '{' ownedDataGenerationConf=GData?
+		//ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::Generation}
 		public Action getGenerationAction_0() { return cGenerationAction_0; }
 
-		//"generation"
+		//'generation'
 		public Keyword getGenerationKeyword_1() { return cGenerationKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//ownedDataGenerationConf=GData?
@@ -225,12 +233,12 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//ExtensionGeneratrionConfiguration
 		public RuleCall getOwnedExtensionGenConfExtensionGeneratrionConfigurationParserRuleCall_4_0() { return cOwnedExtensionGenConfExtensionGeneratrionConfigurationParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class GDataElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GData");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.GData");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGDataAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDataKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -268,35 +276,35 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOverwriteEcoreEBooleanParserRuleCall_3_5_2_0 = (RuleCall)cOverwriteEcoreAssignment_3_5_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//GData returns vpconf::GData:
-		//	{vpconf::GData} "data" "(" (("Model" ":" model=EBoolean)? ("Edit" ":" edit=EBoolean)? ("Editor" ":" editor=EBoolean)?
-		//	("Test" ":" test=EBoolean)? ("Javadoc" ":" javaDoc=EBoolean)? ("OverwriteEcore" ":" overwriteEcore=EBoolean)?) ")";
+		//GData vpconf::GData:
+		//	{vpconf::GData} 'data' '(' (('Model' ':' model=EBoolean)? ('Edit' ':' edit=EBoolean)? ('Editor' ':' editor=EBoolean)?
+		//	('Test' ':' test=EBoolean)? ('Javadoc' ':' javaDoc=EBoolean)? ('OverwriteEcore' ':' overwriteEcore=EBoolean)?) ')'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpconf::GData} "data" "(" (("Model" ":" model=EBoolean)? ("Edit" ":" edit=EBoolean)? ("Editor" ":" editor=EBoolean)?
-		//("Test" ":" test=EBoolean)? ("Javadoc" ":" javaDoc=EBoolean)? ("OverwriteEcore" ":" overwriteEcore=EBoolean)?) ")"
+		//{vpconf::GData} 'data' '(' (('Model' ':' model=EBoolean)? ('Edit' ':' edit=EBoolean)? ('Editor' ':' editor=EBoolean)?
+		//('Test' ':' test=EBoolean)? ('Javadoc' ':' javaDoc=EBoolean)? ('OverwriteEcore' ':' overwriteEcore=EBoolean)?) ')'
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::GData}
 		public Action getGDataAction_0() { return cGDataAction_0; }
 
-		//"data"
+		//'data'
 		public Keyword getDataKeyword_1() { return cDataKeyword_1; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
-		//("Model" ":" model=EBoolean)? ("Edit" ":" edit=EBoolean)? ("Editor" ":" editor=EBoolean)? ("Test" ":" test=EBoolean)?
-		//("Javadoc" ":" javaDoc=EBoolean)? ("OverwriteEcore" ":" overwriteEcore=EBoolean)?
+		//('Model' ':' model=EBoolean)? ('Edit' ':' edit=EBoolean)? ('Editor' ':' editor=EBoolean)? ('Test' ':' test=EBoolean)?
+		//('Javadoc' ':' javaDoc=EBoolean)? ('OverwriteEcore' ':' overwriteEcore=EBoolean)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//("Model" ":" model=EBoolean)?
+		//('Model' ':' model=EBoolean)?
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
-		//"Model"
+		//'Model'
 		public Keyword getModelKeyword_3_0_0() { return cModelKeyword_3_0_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_0_1() { return cColonKeyword_3_0_1; }
 
 		//model=EBoolean
@@ -305,13 +313,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getModelEBooleanParserRuleCall_3_0_2_0() { return cModelEBooleanParserRuleCall_3_0_2_0; }
 
-		//("Edit" ":" edit=EBoolean)?
+		//('Edit' ':' edit=EBoolean)?
 		public Group getGroup_3_1() { return cGroup_3_1; }
 
-		//"Edit"
+		//'Edit'
 		public Keyword getEditKeyword_3_1_0() { return cEditKeyword_3_1_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_1_1() { return cColonKeyword_3_1_1; }
 
 		//edit=EBoolean
@@ -320,13 +328,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getEditEBooleanParserRuleCall_3_1_2_0() { return cEditEBooleanParserRuleCall_3_1_2_0; }
 
-		//("Editor" ":" editor=EBoolean)?
+		//('Editor' ':' editor=EBoolean)?
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//"Editor"
+		//'Editor'
 		public Keyword getEditorKeyword_3_2_0() { return cEditorKeyword_3_2_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_2_1() { return cColonKeyword_3_2_1; }
 
 		//editor=EBoolean
@@ -335,13 +343,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getEditorEBooleanParserRuleCall_3_2_2_0() { return cEditorEBooleanParserRuleCall_3_2_2_0; }
 
-		//("Test" ":" test=EBoolean)?
+		//('Test' ':' test=EBoolean)?
 		public Group getGroup_3_3() { return cGroup_3_3; }
 
-		//"Test"
+		//'Test'
 		public Keyword getTestKeyword_3_3_0() { return cTestKeyword_3_3_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_3_1() { return cColonKeyword_3_3_1; }
 
 		//test=EBoolean
@@ -350,13 +358,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getTestEBooleanParserRuleCall_3_3_2_0() { return cTestEBooleanParserRuleCall_3_3_2_0; }
 
-		//("Javadoc" ":" javaDoc=EBoolean)?
+		//('Javadoc' ':' javaDoc=EBoolean)?
 		public Group getGroup_3_4() { return cGroup_3_4; }
 
-		//"Javadoc"
+		//'Javadoc'
 		public Keyword getJavadocKeyword_3_4_0() { return cJavadocKeyword_3_4_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_4_1() { return cColonKeyword_3_4_1; }
 
 		//javaDoc=EBoolean
@@ -365,13 +373,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getJavaDocEBooleanParserRuleCall_3_4_2_0() { return cJavaDocEBooleanParserRuleCall_3_4_2_0; }
 
-		//("OverwriteEcore" ":" overwriteEcore=EBoolean)?
+		//('OverwriteEcore' ':' overwriteEcore=EBoolean)?
 		public Group getGroup_3_5() { return cGroup_3_5; }
 
-		//"OverwriteEcore"
+		//'OverwriteEcore'
 		public Keyword getOverwriteEcoreKeyword_3_5_0() { return cOverwriteEcoreKeyword_3_5_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_5_1() { return cColonKeyword_3_5_1; }
 
 		//overwriteEcore=EBoolean
@@ -380,19 +388,19 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getOverwriteEcoreEBooleanParserRuleCall_3_5_2_0() { return cOverwriteEcoreEBooleanParserRuleCall_3_5_2_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 
 	public class ExtensionGeneratrionConfigurationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExtensionGeneratrionConfiguration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.ExtensionGeneratrionConfiguration");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDiagramGenerationConfigurationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDocumentationGenerationConfigurationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cModelsAirdGenerationConfigurationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//ExtensionGeneratrionConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-		//	DiagramGenerationConfiguration | DocumentationGenerationConfiguration | ModelsAirdGenerationConfiguration;
+		//ExtensionGeneratrionConfiguration vpconf::ExtensionGeneratrionConfiguration:
+		//	DiagramGenerationConfiguration | DocumentationGenerationConfiguration | ModelsAirdGenerationConfiguration
 		@Override public ParserRule getRule() { return rule; }
 
 		//DiagramGenerationConfiguration | DocumentationGenerationConfiguration | ModelsAirdGenerationConfiguration
@@ -409,7 +417,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DiagramGenerationConfigurationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DiagramGenerationConfiguration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.DiagramGenerationConfiguration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDiagramGenerationConfigurationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDiagramKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -421,29 +429,29 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOverwriteVSMEBooleanParserRuleCall_3_2_0 = (RuleCall)cOverwriteVSMAssignment_3_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-		//	{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("OverwriteOdesign" ":" overwriteVSM=EBoolean)? ")";
+		//DiagramGenerationConfiguration vpconf::ExtensionGeneratrionConfiguration:
+		//	{vpdiagramConfig::DiagramGenerationConfiguration} 'diagram' '(' ('OverwriteOdesign' ':' overwriteVSM=EBoolean)? ')'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("OverwriteOdesign" ":" overwriteVSM=EBoolean)? ")"
+		//{vpdiagramConfig::DiagramGenerationConfiguration} 'diagram' '(' ('OverwriteOdesign' ':' overwriteVSM=EBoolean)? ')'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagramConfig::DiagramGenerationConfiguration}
 		public Action getDiagramGenerationConfigurationAction_0() { return cDiagramGenerationConfigurationAction_0; }
 
-		//"diagram"
+		//'diagram'
 		public Keyword getDiagramKeyword_1() { return cDiagramKeyword_1; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
-		//("OverwriteOdesign" ":" overwriteVSM=EBoolean)?
+		//('OverwriteOdesign' ':' overwriteVSM=EBoolean)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"OverwriteOdesign"
+		//'OverwriteOdesign'
 		public Keyword getOverwriteOdesignKeyword_3_0() { return cOverwriteOdesignKeyword_3_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
 
 		//overwriteVSM=EBoolean
@@ -452,12 +460,12 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getOverwriteVSMEBooleanParserRuleCall_3_2_0() { return cOverwriteVSMEBooleanParserRuleCall_3_2_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 
 	public class DocumentationGenerationConfigurationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DocumentationGenerationConfiguration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.DocumentationGenerationConfiguration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDocumentationGenerationConfigurationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDocumentationKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -468,26 +476,26 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEcoreToHtmlEBooleanParserRuleCall_3_1_0 = (RuleCall)cEcoreToHtmlAssignment_3_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//DocumentationGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-		//	{docGenConfig::DocumentationGenerationConfiguration} "documentation" "(" ("EcoreToHtml:" ecoreToHtml=EBoolean)? ")";
+		//DocumentationGenerationConfiguration vpconf::ExtensionGeneratrionConfiguration:
+		//	{docGenConfig::DocumentationGenerationConfiguration} 'documentation' '(' ('EcoreToHtml:' ecoreToHtml=EBoolean)? ')'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{docGenConfig::DocumentationGenerationConfiguration} "documentation" "(" ("EcoreToHtml:" ecoreToHtml=EBoolean)? ")"
+		//{docGenConfig::DocumentationGenerationConfiguration} 'documentation' '(' ('EcoreToHtml:' ecoreToHtml=EBoolean)? ')'
 		public Group getGroup() { return cGroup; }
 
 		//{docGenConfig::DocumentationGenerationConfiguration}
 		public Action getDocumentationGenerationConfigurationAction_0() { return cDocumentationGenerationConfigurationAction_0; }
 
-		//"documentation"
+		//'documentation'
 		public Keyword getDocumentationKeyword_1() { return cDocumentationKeyword_1; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
-		//("EcoreToHtml:" ecoreToHtml=EBoolean)?
+		//('EcoreToHtml:' ecoreToHtml=EBoolean)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"EcoreToHtml:"
+		//'EcoreToHtml:'
 		public Keyword getEcoreToHtmlKeyword_3_0() { return cEcoreToHtmlKeyword_3_0; }
 
 		//ecoreToHtml=EBoolean
@@ -496,12 +504,12 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getEcoreToHtmlEBooleanParserRuleCall_3_1_0() { return cEcoreToHtmlEBooleanParserRuleCall_3_1_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 
 	public class ModelsAirdGenerationConfigurationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModelsAirdGenerationConfiguration");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.ModelsAirdGenerationConfiguration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cAirdGenerationConfigurationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEcoreKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -513,29 +521,29 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cGenRepresentationsEBooleanParserRuleCall_3_2_0 = (RuleCall)cGenRepresentationsAssignment_3_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//ModelsAirdGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-		//	{airdGenConfig::AirdGenerationConfiguration} "ecore" "(" ("aird" ":" genRepresentations=EBoolean)? ")";
+		//ModelsAirdGenerationConfiguration vpconf::ExtensionGeneratrionConfiguration:
+		//	{airdGenConfig::AirdGenerationConfiguration} 'ecore' '(' ('aird' ':' genRepresentations=EBoolean)? ')'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{airdGenConfig::AirdGenerationConfiguration} "ecore" "(" ("aird" ":" genRepresentations=EBoolean)? ")"
+		//{airdGenConfig::AirdGenerationConfiguration} 'ecore' '(' ('aird' ':' genRepresentations=EBoolean)? ')'
 		public Group getGroup() { return cGroup; }
 
 		//{airdGenConfig::AirdGenerationConfiguration}
 		public Action getAirdGenerationConfigurationAction_0() { return cAirdGenerationConfigurationAction_0; }
 
-		//"ecore"
+		//'ecore'
 		public Keyword getEcoreKeyword_1() { return cEcoreKeyword_1; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
-		//("aird" ":" genRepresentations=EBoolean)?
+		//('aird' ':' genRepresentations=EBoolean)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"aird"
+		//'aird'
 		public Keyword getAirdKeyword_3_0() { return cAirdKeyword_3_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
 
 		//genRepresentations=EBoolean
@@ -544,12 +552,12 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getGenRepresentationsEBooleanParserRuleCall_3_2_0() { return cGenRepresentationsEBooleanParserRuleCall_3_2_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 
 	public class ReleaseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Release");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Release");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cReleaseAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cReleaseKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -577,33 +585,33 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_1_1_0 = (RuleCall)cRequiredExecutionEnvironmentAssignment_5_3_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//Release returns vpconf::Release:
-		//	{vpconf::Release} "release" "{" ("version" ":" viewpointVersion=Version)? ("description" ":"
-		//	viewpointDescription=EString)? ("execution" "environments" ":" (requiredExecutionEnvironment+=STRING (","
-		//	requiredExecutionEnvironment+=STRING)*))? "}";
+		//Release vpconf::Release:
+		//	{vpconf::Release} 'release' '{' ('version' ':' viewpointVersion=Version)? ('description' ':'
+		//	viewpointDescription=EString)? ('execution' 'environments' ':' (requiredExecutionEnvironment+=STRING (','
+		//	requiredExecutionEnvironment+=STRING)*))? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpconf::Release} "release" "{" ("version" ":" viewpointVersion=Version)? ("description" ":"
-		//viewpointDescription=EString)? ("execution" "environments" ":" (requiredExecutionEnvironment+=STRING (","
-		//requiredExecutionEnvironment+=STRING)*))? "}"
+		//{vpconf::Release} 'release' '{' ('version' ':' viewpointVersion=Version)? ('description' ':'
+		//viewpointDescription=EString)? ('execution' 'environments' ':' (requiredExecutionEnvironment+=STRING (','
+		//requiredExecutionEnvironment+=STRING)*))? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpconf::Release}
 		public Action getReleaseAction_0() { return cReleaseAction_0; }
 
-		//"release"
+		//'release'
 		public Keyword getReleaseKeyword_1() { return cReleaseKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("version" ":" viewpointVersion=Version)?
+		//('version' ':' viewpointVersion=Version)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"version"
+		//'version'
 		public Keyword getVersionKeyword_3_0() { return cVersionKeyword_3_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
 
 		//viewpointVersion=Version
@@ -612,13 +620,13 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//Version
 		public RuleCall getViewpointVersionVersionParserRuleCall_3_2_0() { return cViewpointVersionVersionParserRuleCall_3_2_0; }
 
-		//("description" ":" viewpointDescription=EString)?
+		//('description' ':' viewpointDescription=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"description"
+		//'description'
 		public Keyword getDescriptionKeyword_4_0() { return cDescriptionKeyword_4_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 
 		//viewpointDescription=EString
@@ -627,19 +635,19 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getViewpointDescriptionEStringParserRuleCall_4_2_0() { return cViewpointDescriptionEStringParserRuleCall_4_2_0; }
 
-		//("execution" "environments" ":" (requiredExecutionEnvironment+=STRING ("," requiredExecutionEnvironment+=STRING)*))?
+		//('execution' 'environments' ':' (requiredExecutionEnvironment+=STRING (',' requiredExecutionEnvironment+=STRING)*))?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"execution"
+		//'execution'
 		public Keyword getExecutionKeyword_5_0() { return cExecutionKeyword_5_0; }
 
-		//"environments"
+		//'environments'
 		public Keyword getEnvironmentsKeyword_5_1() { return cEnvironmentsKeyword_5_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5_2() { return cColonKeyword_5_2; }
 
-		//requiredExecutionEnvironment+=STRING ("," requiredExecutionEnvironment+=STRING)*
+		//requiredExecutionEnvironment+=STRING (',' requiredExecutionEnvironment+=STRING)*
 		public Group getGroup_5_3() { return cGroup_5_3; }
 
 		//requiredExecutionEnvironment+=STRING
@@ -648,10 +656,10 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_0_0() { return cRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_0_0; }
 
-		//("," requiredExecutionEnvironment+=STRING)*
+		//(',' requiredExecutionEnvironment+=STRING)*
 		public Group getGroup_5_3_1() { return cGroup_5_3_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_5_3_1_0() { return cCommaKeyword_5_3_1_0; }
 
 		//requiredExecutionEnvironment+=STRING
@@ -660,56 +668,80 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_1_1_0() { return cRequiredExecutionEnvironmentSTRINGTerminalRuleCall_5_3_1_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
-	public class RepresentationConfigurationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RepresentationConfiguration");
+	public class ViewConfigurationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.ViewConfiguration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cRepresentationConfigurationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRepresentationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cViewConfigurationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cViewKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cVisibleKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cVisibleAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cVisibleEBooleanParserRuleCall_5_0 = (RuleCall)cVisibleAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cVisibleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cVisibleAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cVisibleEBooleanParserRuleCall_3_2_0 = (RuleCall)cVisibleAssignment_3_2.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cActivableKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cActivableAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cActivableEBooleanParserRuleCall_4_2_0 = (RuleCall)cActivableAssignment_4_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//RepresentationConfiguration returns vpconf::RepresentationConfiguration:
-		//	{vpconf::RepresentationConfiguration} "representation" "{" "visible" ":" visible=EBoolean "}";
+		//ViewConfiguration vpconf::ViewConfiguration:
+		//	{vpconf::ViewConfiguration} 'view' '{' ('visible' ':' visible=EBoolean)? ('activable' ':' activable=EBoolean)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpconf::RepresentationConfiguration} "representation" "{" "visible" ":" visible=EBoolean "}"
+		//{vpconf::ViewConfiguration} 'view' '{' ('visible' ':' visible=EBoolean)? ('activable' ':' activable=EBoolean)? '}'
 		public Group getGroup() { return cGroup; }
 
-		//{vpconf::RepresentationConfiguration}
-		public Action getRepresentationConfigurationAction_0() { return cRepresentationConfigurationAction_0; }
+		//{vpconf::ViewConfiguration}
+		public Action getViewConfigurationAction_0() { return cViewConfigurationAction_0; }
 
-		//"representation"
-		public Keyword getRepresentationKeyword_1() { return cRepresentationKeyword_1; }
+		//'view'
+		public Keyword getViewKeyword_1() { return cViewKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//"visible"
-		public Keyword getVisibleKeyword_3() { return cVisibleKeyword_3; }
+		//('visible' ':' visible=EBoolean)?
+		public Group getGroup_3() { return cGroup_3; }
 
-		//":"
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		//'visible'
+		public Keyword getVisibleKeyword_3_0() { return cVisibleKeyword_3_0; }
+
+		//':'
+		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
 
 		//visible=EBoolean
-		public Assignment getVisibleAssignment_5() { return cVisibleAssignment_5; }
+		public Assignment getVisibleAssignment_3_2() { return cVisibleAssignment_3_2; }
 
 		//EBoolean
-		public RuleCall getVisibleEBooleanParserRuleCall_5_0() { return cVisibleEBooleanParserRuleCall_5_0; }
+		public RuleCall getVisibleEBooleanParserRuleCall_3_2_0() { return cVisibleEBooleanParserRuleCall_3_2_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		//('activable' ':' activable=EBoolean)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//'activable'
+		public Keyword getActivableKeyword_4_0() { return cActivableKeyword_4_0; }
+
+		//':'
+		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
+
+		//activable=EBoolean
+		public Assignment getActivableAssignment_4_2() { return cActivableAssignment_4_2; }
+
+		//EBoolean
+		public RuleCall getActivableEBooleanParserRuleCall_4_2_0() { return cActivableEBooleanParserRuleCall_4_2_0; }
+
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class VersionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Version");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Version");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -723,41 +755,41 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_1_1_1_2_0 = (Keyword)cGroup_1_1_1_2.eContents().get(0);
 		private final RuleCall cQualifierParserRuleCall_1_1_1_2_1 = (RuleCall)cGroup_1_1_1_2.eContents().get(1);
 		
-		//Version returns vpconf::Version:
-		//	INT ("." (INT ("." INT ("." Qualifier)?)?))?;
+		//Version vpconf::Version:
+		//	INT ('.' (INT ('.' INT ('.' Qualifier)?)?))?
 		@Override public ParserRule getRule() { return rule; }
 
-		//INT ("." (INT ("." INT ("." Qualifier)?)?))?
+		//INT ('.' (INT ('.' INT ('.' Qualifier)?)?))?
 		public Group getGroup() { return cGroup; }
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
 
-		//("." (INT ("." INT ("." Qualifier)?)?))?
+		//('.' (INT ('.' INT ('.' Qualifier)?)?))?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"."
+		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 
-		//INT ("." INT ("." Qualifier)?)?
+		//INT ('.' INT ('.' Qualifier)?)?
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_1_1_0() { return cINTTerminalRuleCall_1_1_0; }
 
-		//("." INT ("." Qualifier)?)?
+		//('.' INT ('.' Qualifier)?)?
 		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
 
-		//"."
+		//'.'
 		public Keyword getFullStopKeyword_1_1_1_0() { return cFullStopKeyword_1_1_1_0; }
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_1_1_1_1() { return cINTTerminalRuleCall_1_1_1_1; }
 
-		//("." Qualifier)?
+		//('.' Qualifier)?
 		public Group getGroup_1_1_1_2() { return cGroup_1_1_1_2; }
 
-		//"."
+		//'.'
 		public Keyword getFullStopKeyword_1_1_1_2_0() { return cFullStopKeyword_1_1_1_2_0; }
 
 		//Qualifier
@@ -765,7 +797,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class QualifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Qualifier");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.Qualifier");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
@@ -777,14 +809,14 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword c_Keyword_1_2 = (Keyword)cAlternatives_1.eContents().get(2);
 		private final Keyword cHyphenMinusKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
 		
-		//Qualifier returns ecore::EString:
-		//	(INT | ID | "_") (INT | ID | "_" | "-")*;
+		//Qualifier:
+		//	(INT | ID | '_') (INT | ID | '_' | '-')*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(INT | ID | "_") (INT | ID | "_" | "-")*
+		//(INT | ID | '_') (INT | ID | '_' | '-')*
 		public Group getGroup() { return cGroup; }
 
-		//INT | ID | "_"
+		//INT | ID | '_'
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//INT
@@ -793,10 +825,10 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_0_1() { return cIDTerminalRuleCall_0_1; }
 
-		//"_"
+		//'_'
 		public Keyword get_Keyword_0_2() { return c_Keyword_0_2; }
 
-		//(INT | ID | "_" | "-")*
+		//(INT | ID | '_' | '-')*
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//INT
@@ -805,10 +837,10 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 
-		//"_"
+		//'_'
 		public Keyword get_Keyword_1_2() { return c_Keyword_1_2; }
 
-		//"-"
+		//'-'
 		public Keyword getHyphenMinusKeyword_1_3() { return cHyphenMinusKeyword_1_3; }
 	}
 	
@@ -824,7 +856,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	private final DocumentationGenerationConfigurationElements pDocumentationGenerationConfiguration;
 	private final ModelsAirdGenerationConfigurationElements pModelsAirdGenerationConfiguration;
 	private final ReleaseElements pRelease;
-	private final RepresentationConfigurationElements pRepresentationConfiguration;
+	private final ViewConfigurationElements pViewConfiguration;
 	private final VersionElements pVersion;
 	private final QualifierElements pQualifier;
 	
@@ -832,11 +864,15 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 
 	private final CommonGrammarAccess gaCommon;
 
+	private final TerminalsGrammarAccess gaTerminals;
+
 	@Inject
 	public VpconfGrammarAccess(GrammarProvider grammarProvider,
-		CommonGrammarAccess gaCommon) {
+		CommonGrammarAccess gaCommon,
+		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaCommon = gaCommon;
+		this.gaTerminals = gaTerminals;
 		this.pConfiguration = new ConfigurationElements();
 		this.pConfigurationElement = new ConfigurationElementElements();
 		this.pTargetApplication = new TargetApplicationElements();
@@ -848,7 +884,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDocumentationGenerationConfiguration = new DocumentationGenerationConfigurationElements();
 		this.pModelsAirdGenerationConfiguration = new ModelsAirdGenerationConfigurationElements();
 		this.pRelease = new ReleaseElements();
-		this.pRepresentationConfiguration = new RepresentationConfigurationElements();
+		this.pViewConfiguration = new ViewConfigurationElements();
 		this.pVersion = new VersionElements();
 		this.pQualifier = new QualifierElements();
 	}
@@ -879,13 +915,17 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return gaCommon;
 	}
 
+	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+		return gaTerminals;
+	}
+
 	
 	/// ********************************************************************
 	// * 							vpconf
 	// * 
 	// ******************************************************************** /
-	//Configuration returns vpdesc::Aspect:
-	//	{vpconf::Configuration} "Configuration" name=FQN "{" vpConfigurationElements+=ConfigurationElement* "}";
+	//Configuration vpdesc::Aspect:
+	//	{vpconf::Configuration} 'Configuration' name=FQN '{' vpConfigurationElements+=ConfigurationElement* '}'
 	public ConfigurationElements getConfigurationAccess() {
 		return pConfiguration;
 	}
@@ -894,8 +934,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getConfigurationAccess().getRule();
 	}
 
-	//ConfigurationElement returns vpconf::ConfigurationElement:
-	//	TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration;
+	//ConfigurationElement vpconf::ConfigurationElement:
+	//	TargetApplication | GenerationConfiguration | Generation | Release | ViewConfiguration
 	public ConfigurationElementElements getConfigurationElementAccess() {
 		return pConfigurationElement;
 	}
@@ -904,9 +944,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getConfigurationElementAccess().getRule();
 	}
 
-	//TargetApplication returns vpconf::ConfigurationElement:
+	//TargetApplication vpconf::ConfigurationElement:
 	//	{vpconf::TargetApplication} //('id' id = EString)?
-	// "target" type=EString;
+	// 'target' type=EString
 	public TargetApplicationElements getTargetApplicationAccess() {
 		return pTargetApplication;
 	}
@@ -915,9 +955,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getTargetApplicationAccess().getRule();
 	}
 
-	//GenerationConfiguration returns vpconf::ConfigurationElement:
+	//GenerationConfiguration vpconf::ConfigurationElement:
 	//	{vpconf::GenerationConfiguration} //('id' id = EString)?
-	// "project" projectName=FQN ("nsuri" nsuri=STRING)?;
+	// 'project' projectName=FQN ('nsuri' nsuri=STRING)?
 	public GenerationConfigurationElements getGenerationConfigurationAccess() {
 		return pGenerationConfiguration;
 	}
@@ -926,9 +966,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getGenerationConfigurationAccess().getRule();
 	}
 
-	//Generation returns vpconf::ConfigurationElement:
-	//	{vpconf::Generation} "generation" "{" ownedDataGenerationConf=GData?
-	//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* "}";
+	//Generation vpconf::ConfigurationElement:
+	//	{vpconf::Generation} 'generation' '{' ownedDataGenerationConf=GData?
+	//	ownedExtensionGenConf+=ExtensionGeneratrionConfiguration* '}'
 	public GenerationElements getGenerationAccess() {
 		return pGeneration;
 	}
@@ -937,9 +977,9 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getGenerationAccess().getRule();
 	}
 
-	//GData returns vpconf::GData:
-	//	{vpconf::GData} "data" "(" (("Model" ":" model=EBoolean)? ("Edit" ":" edit=EBoolean)? ("Editor" ":" editor=EBoolean)?
-	//	("Test" ":" test=EBoolean)? ("Javadoc" ":" javaDoc=EBoolean)? ("OverwriteEcore" ":" overwriteEcore=EBoolean)?) ")";
+	//GData vpconf::GData:
+	//	{vpconf::GData} 'data' '(' (('Model' ':' model=EBoolean)? ('Edit' ':' edit=EBoolean)? ('Editor' ':' editor=EBoolean)?
+	//	('Test' ':' test=EBoolean)? ('Javadoc' ':' javaDoc=EBoolean)? ('OverwriteEcore' ':' overwriteEcore=EBoolean)?) ')'
 	public GDataElements getGDataAccess() {
 		return pGData;
 	}
@@ -948,8 +988,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getGDataAccess().getRule();
 	}
 
-	//ExtensionGeneratrionConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-	//	DiagramGenerationConfiguration | DocumentationGenerationConfiguration | ModelsAirdGenerationConfiguration;
+	//ExtensionGeneratrionConfiguration vpconf::ExtensionGeneratrionConfiguration:
+	//	DiagramGenerationConfiguration | DocumentationGenerationConfiguration | ModelsAirdGenerationConfiguration
 	public ExtensionGeneratrionConfigurationElements getExtensionGeneratrionConfigurationAccess() {
 		return pExtensionGeneratrionConfiguration;
 	}
@@ -958,8 +998,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getExtensionGeneratrionConfigurationAccess().getRule();
 	}
 
-	//DiagramGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-	//	{vpdiagramConfig::DiagramGenerationConfiguration} "diagram" "(" ("OverwriteOdesign" ":" overwriteVSM=EBoolean)? ")";
+	//DiagramGenerationConfiguration vpconf::ExtensionGeneratrionConfiguration:
+	//	{vpdiagramConfig::DiagramGenerationConfiguration} 'diagram' '(' ('OverwriteOdesign' ':' overwriteVSM=EBoolean)? ')'
 	public DiagramGenerationConfigurationElements getDiagramGenerationConfigurationAccess() {
 		return pDiagramGenerationConfiguration;
 	}
@@ -968,8 +1008,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramGenerationConfigurationAccess().getRule();
 	}
 
-	//DocumentationGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-	//	{docGenConfig::DocumentationGenerationConfiguration} "documentation" "(" ("EcoreToHtml:" ecoreToHtml=EBoolean)? ")";
+	//DocumentationGenerationConfiguration vpconf::ExtensionGeneratrionConfiguration:
+	//	{docGenConfig::DocumentationGenerationConfiguration} 'documentation' '(' ('EcoreToHtml:' ecoreToHtml=EBoolean)? ')'
 	public DocumentationGenerationConfigurationElements getDocumentationGenerationConfigurationAccess() {
 		return pDocumentationGenerationConfiguration;
 	}
@@ -978,8 +1018,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getDocumentationGenerationConfigurationAccess().getRule();
 	}
 
-	//ModelsAirdGenerationConfiguration returns vpconf::ExtensionGeneratrionConfiguration:
-	//	{airdGenConfig::AirdGenerationConfiguration} "ecore" "(" ("aird" ":" genRepresentations=EBoolean)? ")";
+	//ModelsAirdGenerationConfiguration vpconf::ExtensionGeneratrionConfiguration:
+	//	{airdGenConfig::AirdGenerationConfiguration} 'ecore' '(' ('aird' ':' genRepresentations=EBoolean)? ')'
 	public ModelsAirdGenerationConfigurationElements getModelsAirdGenerationConfigurationAccess() {
 		return pModelsAirdGenerationConfiguration;
 	}
@@ -988,10 +1028,10 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelsAirdGenerationConfigurationAccess().getRule();
 	}
 
-	//Release returns vpconf::Release:
-	//	{vpconf::Release} "release" "{" ("version" ":" viewpointVersion=Version)? ("description" ":"
-	//	viewpointDescription=EString)? ("execution" "environments" ":" (requiredExecutionEnvironment+=STRING (","
-	//	requiredExecutionEnvironment+=STRING)*))? "}";
+	//Release vpconf::Release:
+	//	{vpconf::Release} 'release' '{' ('version' ':' viewpointVersion=Version)? ('description' ':'
+	//	viewpointDescription=EString)? ('execution' 'environments' ':' (requiredExecutionEnvironment+=STRING (','
+	//	requiredExecutionEnvironment+=STRING)*))? '}'
 	public ReleaseElements getReleaseAccess() {
 		return pRelease;
 	}
@@ -1000,18 +1040,18 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getReleaseAccess().getRule();
 	}
 
-	//RepresentationConfiguration returns vpconf::RepresentationConfiguration:
-	//	{vpconf::RepresentationConfiguration} "representation" "{" "visible" ":" visible=EBoolean "}";
-	public RepresentationConfigurationElements getRepresentationConfigurationAccess() {
-		return pRepresentationConfiguration;
+	//ViewConfiguration vpconf::ViewConfiguration:
+	//	{vpconf::ViewConfiguration} 'view' '{' ('visible' ':' visible=EBoolean)? ('activable' ':' activable=EBoolean)? '}'
+	public ViewConfigurationElements getViewConfigurationAccess() {
+		return pViewConfiguration;
 	}
 	
-	public ParserRule getRepresentationConfigurationRule() {
-		return getRepresentationConfigurationAccess().getRule();
+	public ParserRule getViewConfigurationRule() {
+		return getViewConfigurationAccess().getRule();
 	}
 
-	//Version returns vpconf::Version:
-	//	INT ("." (INT ("." INT ("." Qualifier)?)?))?;
+	//Version vpconf::Version:
+	//	INT ('.' (INT ('.' INT ('.' Qualifier)?)?))?
 	public VersionElements getVersionAccess() {
 		return pVersion;
 	}
@@ -1020,8 +1060,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getVersionAccess().getRule();
 	}
 
-	//Qualifier returns ecore::EString:
-	//	(INT | ID | "_") (INT | ID | "_" | "-")*;
+	//Qualifier:
+	//	(INT | ID | '_') (INT | ID | '_' | '-')*;
 	public QualifierElements getQualifierAccess() {
 		return pQualifier;
 	}
@@ -1030,7 +1070,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getQualifierAccess().getRule();
 	}
 
-	//EString returns ecore::EString:
+	//EString:
 	//	STRING | ID;
 	public CommonGrammarAccess.EStringElements getEStringAccess() {
 		return gaCommon.getEStringAccess();
@@ -1040,7 +1080,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getEStringAccess().getRule();
 	}
 
-	//FQN returns ecore::EString:
+	//FQN:
 	//	ID ("." => ID)*;
 	public CommonGrammarAccess.FQNElements getFQNAccess() {
 		return gaCommon.getFQNAccess();
@@ -1050,8 +1090,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getFQNAccess().getRule();
 	}
 
-	//EBoolean returns ecore::EBoolean:
-	//	"true" | "false";
+	//EBoolean ecore::EBoolean:
+	//	'true' | 'false'
 	public CommonGrammarAccess.EBooleanElements getEBooleanAccess() {
 		return gaCommon.getEBooleanAccess();
 	}
@@ -1060,8 +1100,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		return getEBooleanAccess().getRule();
 	}
 
-	//EInt returns ecore::EInt:
-	//	INT;
+	//EInt ecore::EInt:
+	//	INT
 	public CommonGrammarAccess.EIntElements getEIntAccess() {
 		return gaCommon.getEIntAccess();
 	}
@@ -1071,45 +1111,44 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaCommon.getIDRule();
+		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
-		return gaCommon.getINTRule();
+		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
-		return gaCommon.getSTRINGRule();
+		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
-		return gaCommon.getML_COMMENTRule();
+		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaCommon.getSL_COMMENTRule();
+		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
-		return gaCommon.getWSRule();
+		return gaTerminals.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaCommon.getANY_OTHERRule();
+		return gaTerminals.getANY_OTHERRule();
 	} 
 }

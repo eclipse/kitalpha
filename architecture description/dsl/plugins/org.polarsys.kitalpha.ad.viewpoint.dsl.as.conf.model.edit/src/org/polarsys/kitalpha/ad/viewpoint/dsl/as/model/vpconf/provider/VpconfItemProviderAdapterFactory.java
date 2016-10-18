@@ -238,26 +238,26 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration} instances.
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RepresentationConfigurationItemProvider representationConfigurationItemProvider;
+	protected ViewConfigurationItemProvider viewConfigurationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration}.
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRepresentationConfigurationAdapter() {
-		if (representationConfigurationItemProvider == null) {
-			representationConfigurationItemProvider = new RepresentationConfigurationItemProvider(this);
+	public Adapter createViewConfigurationAdapter() {
+		if (viewConfigurationItemProvider == null) {
+			viewConfigurationItemProvider = new ViewConfigurationItemProvider(this);
 		}
 
-		return representationConfigurationItemProvider;
+		return viewConfigurationItemProvider;
 	}
 
 	/**
@@ -393,7 +393,7 @@ public class VpconfItemProviderAdapterFactory extends VpconfAdapterFactory
 		if (generationItemProvider != null) generationItemProvider.dispose();
 		if (gDataItemProvider != null) gDataItemProvider.dispose();
 		if (releaseItemProvider != null) releaseItemProvider.dispose();
-		if (representationConfigurationItemProvider != null) representationConfigurationItemProvider.dispose();
+		if (viewConfigurationItemProvider != null) viewConfigurationItemProvider.dispose();
 	}
 
 	/**

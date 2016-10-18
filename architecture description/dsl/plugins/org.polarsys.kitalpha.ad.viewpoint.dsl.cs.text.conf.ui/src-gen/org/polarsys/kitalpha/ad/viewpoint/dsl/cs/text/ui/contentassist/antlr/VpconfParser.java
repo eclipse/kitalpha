@@ -11,18 +11,17 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
 
 import com.google.inject.Inject;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
 
 public class VpconfParser extends AbstractContentAssistParser {
 	
@@ -75,7 +74,9 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReleaseAccess().getGroup_5(), "rule__Release__Group_5__0");
 					put(grammarAccess.getReleaseAccess().getGroup_5_3(), "rule__Release__Group_5_3__0");
 					put(grammarAccess.getReleaseAccess().getGroup_5_3_1(), "rule__Release__Group_5_3_1__0");
-					put(grammarAccess.getRepresentationConfigurationAccess().getGroup(), "rule__RepresentationConfiguration__Group__0");
+					put(grammarAccess.getViewConfigurationAccess().getGroup(), "rule__ViewConfiguration__Group__0");
+					put(grammarAccess.getViewConfigurationAccess().getGroup_3(), "rule__ViewConfiguration__Group_3__0");
+					put(grammarAccess.getViewConfigurationAccess().getGroup_4(), "rule__ViewConfiguration__Group_4__0");
 					put(grammarAccess.getVersionAccess().getGroup(), "rule__Version__Group__0");
 					put(grammarAccess.getVersionAccess().getGroup_1(), "rule__Version__Group_1__0");
 					put(grammarAccess.getVersionAccess().getGroup_1_1(), "rule__Version__Group_1_1__0");
@@ -104,7 +105,8 @@ public class VpconfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReleaseAccess().getViewpointDescriptionAssignment_4_2(), "rule__Release__ViewpointDescriptionAssignment_4_2");
 					put(grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentAssignment_5_3_0(), "rule__Release__RequiredExecutionEnvironmentAssignment_5_3_0");
 					put(grammarAccess.getReleaseAccess().getRequiredExecutionEnvironmentAssignment_5_3_1_1(), "rule__Release__RequiredExecutionEnvironmentAssignment_5_3_1_1");
-					put(grammarAccess.getRepresentationConfigurationAccess().getVisibleAssignment_5(), "rule__RepresentationConfiguration__VisibleAssignment_5");
+					put(grammarAccess.getViewConfigurationAccess().getVisibleAssignment_3_2(), "rule__ViewConfiguration__VisibleAssignment_3_2");
+					put(grammarAccess.getViewConfigurationAccess().getActivableAssignment_4_2(), "rule__ViewConfiguration__ActivableAssignment_4_2");
 				}
 			};
 		}

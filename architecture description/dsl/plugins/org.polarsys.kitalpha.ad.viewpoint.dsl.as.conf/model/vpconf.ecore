@@ -42,7 +42,10 @@
         defaultValueLiteral="JavaSE-1.7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Version" instanceClassName="org.osgi.framework.Version"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RepresentationConfiguration" eSuperTypes="#//ConfigurationElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewConfiguration" eSuperTypes="#//ConfigurationElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
 </ecore:EPackage>
