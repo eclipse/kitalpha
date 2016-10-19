@@ -18,7 +18,6 @@ import org.eclipse.emf.common.util.UniqueEList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration.ANode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
