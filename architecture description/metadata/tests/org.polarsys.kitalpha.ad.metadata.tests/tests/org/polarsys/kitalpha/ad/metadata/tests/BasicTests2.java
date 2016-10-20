@@ -96,4 +96,26 @@ public class BasicTests2 extends TestCase {
 		Metadata meta = (Metadata)eObject;
 		assertEquals(2, meta.getViewpointReferences().size());
 	}
+	
+	public void testHelper7() throws Exception {
+		ResourceSet set = new ResourceSetImpl();  
+		Resource modelResource = set.getResource(URI.createPlatformPluginURI("/org.polarsys.kitalpha.ad.metadata.tests/resource/My2.componentsample", true), true);
+		TestContribution.testClean();
+		assertFalse(TestContribution.preUpdateCalled);
+		assertFalse(TestContribution.updateCalled);
+		assertFalse(TestContribution.postUpdateCalled);
+		Resource initMetadata = MetadataHelper.initMetadata(modelResource);
+		assertTrue(TestContribution.preUpdateCalled);
+		assertTrue(TestContribution.updateCalled);
+		assertTrue(TestContribution.postUpdateCalled);
+		assertNotNull(initMetadata);
+		EList<EObject> contents = initMetadata.getContents();
+		assertNotNull(contents);
+		assertEquals(1, contents.size());
+		EObject eObject = contents.get(0);
+		assertNotNull(eObject);
+		assertTrue(eObject instanceof Metadata);
+		Metadata meta = (Metadata)eObject;
+		assertEquals(2, meta.getViewpointReferences().size());
+	}
 }
