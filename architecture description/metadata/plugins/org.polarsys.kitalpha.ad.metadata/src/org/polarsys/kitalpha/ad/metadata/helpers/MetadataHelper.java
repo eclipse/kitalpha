@@ -11,6 +11,7 @@
 package org.polarsys.kitalpha.ad.metadata.helpers;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IResource;
@@ -66,8 +67,16 @@ public class MetadataHelper {
 		ViewpointMetadata metadata = getViewpointMetadata(ctx);
 		Resource initMetadataStorage = metadata.initMetadataStorage();
 		
-		for (Contribution contrib : Contribution.getContributions())
+		List<Contribution> contributions = Contribution.getContributions();
+		
+		for (Contribution contrib : contributions)
+			contrib.preUpdate(ctx);
+		
+		for (Contribution contrib : contributions)
 			contrib.update(ctx);
+		
+		for (Contribution contrib : contributions)
+			contrib.postUpdate(ctx);
 		
 		return initMetadataStorage;
 	}

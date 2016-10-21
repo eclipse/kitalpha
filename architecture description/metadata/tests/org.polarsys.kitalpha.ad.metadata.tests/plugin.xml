@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.ad.metadata.contribution">
+      <contribution
+            class="org.polarsys.kitalpha.ad.metadata.tests.TestContribution">
+      </contribution>
+   </extension>
+
+</plugin>

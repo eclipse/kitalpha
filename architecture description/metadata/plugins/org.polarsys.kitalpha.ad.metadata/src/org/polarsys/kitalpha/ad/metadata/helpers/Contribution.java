@@ -26,6 +26,14 @@ import org.polarsys.kitalpha.ad.common.AD_Log;
 public abstract class Contribution {
 	
 	public abstract void update(ResourceSet context);
+
+	public void postUpdate(ResourceSet context) {
+		
+	}
+	
+	public void preUpdate(ResourceSet context) {
+		
+	}
 	
 	public static List<Contribution> getContributions () {
 		List<Contribution> result = new ArrayList<>();
