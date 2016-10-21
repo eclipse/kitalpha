@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -79,7 +79,9 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 
 	@Override
 	public void addChild(IViewpointTreeDescription child) {
-		getChildren().add(child);
+		if (this != child){
+			getChildren().add(child);
+		}
 	}
 
 	@Override
@@ -105,7 +107,9 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 	//TODO checks if the current object is not in the parent/children list
 	@Override
 	public void addParent(IViewpointTreeDescription parent) {
-		getParents().add(parent);
+		if (this != parent){
+			getParents().add(parent);
+		}
 	}
 
 	@Override
@@ -132,12 +136,16 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 
 	@Override
 	public void addViewpointNsUri(String nsuri) {
-		getViewpointNsUri().add(nsuri);		
+		if (!getViewpointNsUri().contains(nsuri)){
+			getViewpointNsUri().add(nsuri);
+		}
 	}
 
 	@Override
 	public void addAllViewpointNsUri(Collection<String> nsuri) {
-		getViewpointNsUri().addAll(nsuri);
+		for (String uri : nsuri) {
+			addViewpointNsUri(uri);
+		}
 	}
 
 	@Override
@@ -147,7 +155,9 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 
 	@Override
 	public void addUsedViewpoint(IViewpointTreeDescription usedVpd) {
-		getUsedViewpoints().add(usedVpd);
+		if (!getUsedViewpoints().contains(usedVpd)){
+			getUsedViewpoints().add(usedVpd);
+		}
 	}
 	
 	

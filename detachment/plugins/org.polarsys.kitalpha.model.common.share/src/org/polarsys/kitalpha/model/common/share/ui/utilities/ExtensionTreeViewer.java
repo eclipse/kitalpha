@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.model.common.share.ui.utilities;
 
-import java.util.Arrays;
-
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.ICheckStateListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
@@ -28,29 +26,29 @@ public class ExtensionTreeViewer extends ContainerCheckedTreeViewer {
 			
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
-				
-				
+				doCheckStateChanged(event.getElement(), event.getChecked());
 			}
 		});
+	}
+
+	protected void doCheckStateChanged(Object element, boolean state) {
+		IViewpointTreeDescription selected_vpd = (IViewpointTreeDescription) element;
+
+		if (selected_vpd != null){
+			boolean checked = state; //Arrays.asList(getCheckedElements()).contains(element);
+			setGrayChecked(selected_vpd, false);
+			selected_vpd.setAsCandidateToKeep(checked);
+			selected_vpd.updateCandidates(selected_vpd.isCandidateToKeep());
+			TreeItem [] allItems = getTree().getItems();
+
+			updateCheckItems(allItems);
+		}
 	}
 
 
 	@Override
 	protected void doCheckStateChanged(Object element) {
-		super.doCheckStateChanged(element);
-		IViewpointTreeDescription selected_vpd = (IViewpointTreeDescription) element;
-		
-		if (selected_vpd != null){
-			boolean checked = Arrays.asList(getCheckedElements()).contains(element);
-			setGrayChecked(selected_vpd, false);
-			
-			selected_vpd.setAsCandidateToKeep(checked);
-			selected_vpd.updateCandidates(selected_vpd.isCandidateToKeep());
-			TreeItem [] allItems = getTree().getItems();
-			
-			updateCheckItems(allItems);
-		}
-
+		//Do nothing
 	}
 
 	private void allChecked(boolean state, Object[] items) {

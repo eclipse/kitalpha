@@ -22,7 +22,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
@@ -58,12 +57,9 @@ public class DetachmentActionHandler extends AbstractHandler {
 	private final Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 	
 	private IFile airdIResource;
-	private IEditorInput detachmentInput;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		
-		this.detachmentInput = new DetachmentEditorInput();
 		
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
 		IStructuredSelection structuredSelection = (IStructuredSelection)currentSelection;
@@ -71,6 +67,7 @@ public class DetachmentActionHandler extends AbstractHandler {
 		airdIResource = (IFile)firstElement;
 		
 		try {
+			
 			pMonitorService.run(false, false, new IRunnableWithProgress() {
 
 				@Override
@@ -84,9 +81,6 @@ public class DetachmentActionHandler extends AbstractHandler {
 						monitor.subTask("Loading : " + airdIResource.getProjectRelativePath());
 						Resource resource = DetachmentResourceProviderUtil.getResource(airdIResource);
 						
-						ECrossReferenceAdapter adapter = new ECrossReferenceAdapter();
-						resource.eAdapters().add(adapter);
-						
 						monitor.worked(1);
 
 						monitor.subTask("Scrutinizing : " + resource.getURI());
@@ -94,18 +88,16 @@ public class DetachmentActionHandler extends AbstractHandler {
 						monitor.worked(1);
 						monitor.done();
 
-
-
-
 						IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 						IEditorPart editor;
+						IEditorInput detachmentInput = new DetachmentEditorInput();
 						editor = IDE.openEditor(page, detachmentInput, Constants.EDITOR_ID);
 						if (editor != null && editor instanceof ModelDetachment){
 							ModelDetachment modelDetachmentEditor = (ModelDetachment) editor;
 							modelDetachmentEditor.initAndLaunchDetachmentAction(resource);
 						}
 					} catch (PartInitException e) {
-						e.printStackTrace();
+						LOGGER.error(e.getMessage(), e);
 					} catch (InvalidPreconditionException e) {
 						handlePreconditionError(e);
 					}

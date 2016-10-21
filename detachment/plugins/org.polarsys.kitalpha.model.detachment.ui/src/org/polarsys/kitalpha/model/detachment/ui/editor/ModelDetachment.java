@@ -35,7 +35,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.IManagedForm;
@@ -60,12 +59,9 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 
 	
 	private Action perfomDetachment;
-	private static DetachmentEditorInput input;
 	private static ModelDetachment editor;
 	
 	public ModelDetachment() {
-		input = new DetachmentEditorInput();
-		setInput(input);
 		editor = this;
 	}
 	
@@ -211,13 +207,4 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 	public boolean isDirty() {
 		return false;
 	}
-	
-	public static IEditorInput getInput(){
-		return input;
-	}
-	
-	public static ModelDetachment getEditor(){
-		return editor;
-	}
-	
 }

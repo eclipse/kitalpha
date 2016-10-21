@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@ import org.eclipse.osgi.util.NLS;
 /**
  * @author Faycal Abka
  */
-public class Messages {
+public class Messages extends NLS {
 	
 	private static final String BUNDLE_NAME = "org.polarsys.kitalpha.model.detachment.ui.messages"; //$NON-NLS-1$
 
