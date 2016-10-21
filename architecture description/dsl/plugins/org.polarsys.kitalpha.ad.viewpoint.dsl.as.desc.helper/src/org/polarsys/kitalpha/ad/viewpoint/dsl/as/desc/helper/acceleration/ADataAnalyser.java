@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,12 +16,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.UniqueEList;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration.AEdge;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration.ANode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Association_Types;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescFactory;
+import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 /**
  * @author Boubekeur Zendagui
@@ -33,12 +34,19 @@ public class ADataAnalyser {
 	private List<AEdge> allEdges;
 	private Class _contextClass ;
 	
+	private boolean includeContextClassAsRoot = false;
+	
 	/**
 	 * Default constructor
 	 * @param context
 	 */
 	public ADataAnalyser(Class context) {
 		_contextClass = context;
+	}
+	
+	public ADataAnalyser(Class context, boolean includeContextClassAsRoot) {
+		this(context);
+		this.includeContextClassAsRoot = includeContextClassAsRoot;
 	}
 	
 	/**
@@ -78,7 +86,19 @@ public class ADataAnalyser {
 		allEdges = new ArrayList<AEdge>();
 		
 		// Begin with root element creation
-		createRootNodes();
+		if (includeContextClassAsRoot)
+		{
+			//FIXME workaround to include the context class as root in the analysis.
+			//This feature must be buildin in the analyzer
+			ExternalClassAssociation eca = VpdescFactory.eINSTANCE.createExternalClassAssociation();
+			eca.setName("external emde.ExtensibleElement.ownedExtensions");
+			eca.setExternalTarget(EmdePackage.Literals.ELEMENT_EXTENSION);
+			createRootNode(_contextClass, eca);
+		}
+		else
+		{
+			createRootNodes();
+		}
 		
 		// Create children of root elements
 		for (ANode node : rootNodes) 

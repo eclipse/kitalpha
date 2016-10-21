@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class DiagramTextAcceleration {
 		this.appendable = appendable;
 		this.prefix = null;
 		
-		dataAnalyser = new ADataAnalyser(rootClass);
+		dataAnalyser = new ADataAnalyser(rootClass, false);
 		dataAnalyser.Analyse();
 		
 		//Reset diagram suffix at each instantiation
@@ -66,7 +66,7 @@ public class DiagramTextAcceleration {
 		this.appendable = appendable;
 		this.prefix = prefix;
 		
-		dataAnalyser = new ADataAnalyser(rootClass);
+		dataAnalyser = new ADataAnalyser(rootClass, true);
 		dataAnalyser.Analyse();
 	}
 	
@@ -317,8 +317,6 @@ public class DiagramTextAcceleration {
 	}
 	
 	public final String getFQN(ANode node){
-		if (prefix != null)
-			return prefix + "." + node.getFQN();
 		return node.getFQN();
 	}
 
@@ -337,7 +335,7 @@ public class DiagramTextAcceleration {
 
 		int size = refrences.length;
 		for (String ref : refrences) {
-			String tmp = prefix + "Container." + prefix + "." + ref.trim(); //FIXME: underscores are not good practice
+			String tmp = prefix + "Container." + ref.trim(); //FIXME: underscores are not good practice
 			
 			result.append(tmp);
 			if (!ref.equals(refrences[size - 1]))

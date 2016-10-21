@@ -14,7 +14,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration.ADataAnalyserHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 
