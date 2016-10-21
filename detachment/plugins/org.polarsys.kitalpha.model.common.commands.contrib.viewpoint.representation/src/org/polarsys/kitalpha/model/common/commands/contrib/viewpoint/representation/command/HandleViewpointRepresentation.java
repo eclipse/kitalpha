@@ -109,23 +109,25 @@ public class HandleViewpointRepresentation extends org.polarsys.kitalpha.model.c
 		for (String id : viewpointToRemove) {
 			try {
 				Representation representation = getViewpointRepresentation(fakeResourceSet, id);
-				EList<RepresentationElement> representations = representation.getRepresentations();
-				for (RepresentationElement re : representations) {
-					if (re instanceof SiriusRepresentation){
-						SiriusRepresentation sr = (SiriusRepresentation)re;
-						EList<org.eclipse.sirius.viewpoint.description.Viewpoint> ownedViewpoints = getViewpointRepresentationGroups(sr);
-						Collection<org.eclipse.sirius.viewpoint.description.Viewpoint> selectedViewpoints = session.getSelectedViewpoints(true);
-						Collection<DRepresentation> allRepresentations = DialectManager.INSTANCE.getAllRepresentations(session);
-						
-						for (DRepresentation dRepresentation : allRepresentations) {
-							if (dRepresentation instanceof DDiagram){
-								DDiagram diagram = (DDiagram)dRepresentation;
-								deactivateViewpointAdditionalLayers(session, monitor, ownedViewpoints, diagram);
+				if (representation != null){
+					EList<RepresentationElement> representations = representation.getRepresentations();
+					for (RepresentationElement re : representations) {
+						if (re instanceof SiriusRepresentation){
+							SiriusRepresentation sr = (SiriusRepresentation)re;
+							EList<org.eclipse.sirius.viewpoint.description.Viewpoint> ownedViewpoints = getViewpointRepresentationGroups(sr);
+							Collection<org.eclipse.sirius.viewpoint.description.Viewpoint> selectedViewpoints = session.getSelectedViewpoints(true);
+							Collection<DRepresentation> allRepresentations = DialectManager.INSTANCE.getAllRepresentations(session);
+
+							for (DRepresentation dRepresentation : allRepresentations) {
+								if (dRepresentation instanceof DDiagram){
+									DDiagram diagram = (DDiagram)dRepresentation;
+									deactivateViewpointAdditionalLayers(session, monitor, ownedViewpoints, diagram);
+								}
 							}
+							deleteViewpointDView(session, ownedViewpoints, selectedViewpoints);
+
+							unselectSiriusViewpointFromSession(session, monitor, ownedViewpoints);
 						}
-						deleteViewpointDView(session, ownedViewpoints, selectedViewpoints);
-						
-						unselectSiriusViewpointFromSession(session, monitor, ownedViewpoints);
 					}
 				}
 			} catch (ResourceNotFoundException e) {

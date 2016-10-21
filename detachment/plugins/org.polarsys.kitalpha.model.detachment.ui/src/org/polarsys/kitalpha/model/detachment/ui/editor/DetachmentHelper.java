@@ -54,7 +54,5 @@ public class DetachmentHelper {
 			ModelDetachment modelDetachmentEditor = (ModelDetachment) editor;
 			modelDetachmentEditor.initAndLaunchDetachmentAction(resource);
 		}
-
 	}
-
 }

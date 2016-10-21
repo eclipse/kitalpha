@@ -192,31 +192,32 @@ public class ViewpointTreeBuilder {
 		if (dependencies != null && !dependencies.isEmpty()) {
 			for (Viewpoint viewpoint : dependencies) {
 
-				EList<EPackage> ePackages = viewpoint.getMetamodel().getModels();
+				final Metamodel metamodel = viewpoint.getMetamodel();
+				
+				if (metamodel != null){
+					EList<EPackage> ePackages = metamodel.getModels();
+					
+					for (EPackage ePackage : ePackages) {
 
-				for (EPackage ePackage : ePackages) {
+						String nsuri = ePackage.getNsURI();
+						Collection<IViewpointTreeDescription> vpdDependencies = searchViewpointTreeDescriptions(nsuri,
+								vpd_set);
 
-					String nsuri = ePackage.getNsURI();
-					Collection<IViewpointTreeDescription> vpdDependencies = searchViewpointTreeDescriptions(nsuri,
-							vpd_set);
+						if (vpdDependencies != null && !vpdDependencies.isEmpty()) {
+							// //If viewpoint A refrence B, B must know which
+							// viewpoint use it (i.e A)
+							// theDependency.addDependency(vpd);
 
-					if (vpdDependencies != null && !vpdDependencies.isEmpty()) {
-						// //If viewpoint A refrence B, B must know which
-						// viewpoint use it (i.e A)
-						// theDependency.addDependency(vpd);
+							// FIXME : not sure. See the comment before!!!
+							for (IViewpointTreeDescription dependency : vpdDependencies) {
+								vpd.addDependency(dependency);
+							}
 
-						// FIXME : not sure. See the comment before!!!
-						for (IViewpointTreeDescription dependency : vpdDependencies) {
-							vpd.addDependency(dependency);
 						}
-
 					}
-
 				}
-
 			}
 		}
-
 	}
 
 	/**

@@ -16,6 +16,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.kitalpha.model.common.share.Messages;
@@ -103,6 +104,10 @@ public class LoadResource {
 				super.demandLoadHelper(resource);
 			}
 		};
+		
+		ECrossReferenceAdapter adapter = new ECrossReferenceAdapter();
+		resourceSetImpl.eAdapters().add(adapter);
+		
 		resourceSetImpl.getLoadOptions().put(
 				XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 		
