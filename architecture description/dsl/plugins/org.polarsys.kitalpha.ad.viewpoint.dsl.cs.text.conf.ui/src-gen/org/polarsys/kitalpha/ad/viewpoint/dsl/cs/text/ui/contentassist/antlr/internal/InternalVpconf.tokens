@@ -2,7 +2,7 @@
 ')'=24
 ','=43
 '-'=12
-'.'=46
+'.'=47
 ':'=26
 'Configuration'=15
 'EcoreToHtml:'=35
@@ -14,6 +14,7 @@
 'OverwriteOdesign'=33
 'Test'=29
 '_'=11
+'activable'=46
 'aird'=37
 'data'=22
 'description'=40
@@ -27,10 +28,10 @@
 'nsuri'=20
 'project'=19
 'release'=38
-'representation'=44
 'target'=18
 'true'=13
 'version'=39
+'view'=44
 'visible'=45
 '{'=16
 '}'=17
@@ -77,3 +78,4 @@ T__43=43
 T__44=44
 T__45=45
 T__46=46
+T__47=47

@@ -3,22 +3,27 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %BundleName
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc;singleton:=true
 Bundle-Version: 1.1.0.qualifier
-Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.Activator
+Bundle-ClassPath: .
+Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.docGenConfiguration.provider.DocGenConfigurationEditPlugin$Implementation
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf;bundle-version="0.5.0",
  org.eclipse.egf.portfolio.genchain;bundle-version="1.2.0",
  org.polarsys.kitalpha.doc.gen.business.ecore.genchain;bundle-version="0.5.0",
- org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model,
- org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model.edit,
- org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model.edit
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.impl,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.provider,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.util
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.docGenConfiguration,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.docGenConfiguration.impl,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.docGenConfiguration.provider,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.docGenConfiguration.util
 Import-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.manager
 Bundle-Localization: plugin

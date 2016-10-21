@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  /**
  * 
  * @author Amine Lajmi
- *
+ * @author Faycal ABKA
  */
 grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
 
@@ -35,7 +35,7 @@ Configuration returns vpdesc::Aspect:
 	'}';
 
 ConfigurationElement returns vpconf::ConfigurationElement:
-	TargetApplication | GenerationConfiguration | Generation | Release | RepresentationConfiguration
+	TargetApplication | GenerationConfiguration | Generation | Release | ViewConfiguration
 ;
 
 TargetApplication returns vpconf::ConfigurationElement:
@@ -112,10 +112,11 @@ Release returns vpconf::Release:
 	'}'
 ;
 
-RepresentationConfiguration returns vpconf::RepresentationConfiguration:
-	{vpconf::RepresentationConfiguration}
-	'representation' '{'
-		'visible' ':' visible = EBoolean
+ViewConfiguration returns vpconf::ViewConfiguration:
+	{vpconf::ViewConfiguration}
+	'view' '{'
+		('visible' ':' visible = EBoolean)?
+		('activable' ':' activable = EBoolean)?
 	'}'
 ;
 

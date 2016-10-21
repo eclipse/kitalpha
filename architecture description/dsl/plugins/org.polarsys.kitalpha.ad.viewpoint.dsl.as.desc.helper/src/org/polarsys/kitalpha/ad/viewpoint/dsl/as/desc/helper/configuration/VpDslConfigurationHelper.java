@@ -20,13 +20,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 
 /**
  * @author Boubekeur Zendagui
+ * 	   Faycal ABKA
  */
 
 public class VpDslConfigurationHelper {
@@ -34,18 +35,33 @@ public class VpDslConfigurationHelper {
 	public static final String VIEWPOINT_VERSION_DEFAULT = "0.0.0"; //$NON-NLS-1$
 	public static final String VIEWPOINT_EE_DEFAULT = "JavaSE-1.6"; //$NON-NLS-1$
 	public static final String VIEWPOINT_VISIBLITY_TAG = "stateHidden"; //$NON-NLS-1$
+	public static final String VIEWPOINT_ACTIVABLE_TAG = "stateMutableActivation"; //$NON-NLS-1$
+  	
+  	private static final boolean DEFAULT_VIEWPOINT_VISIBILITY = true;
+  	private static final boolean DEFAULT_VIEWPOINT_ACTIVABLE_STATE = false;
 	
+	public static boolean isActivableViewpoint(Object object) {
+		Configuration viewpointConfiguration = getViewpointConfiguration(object);
+		if (viewpointConfiguration != null){
+			ViewConfiguration vpViewConfig = getViewpointConfigurationElement(object, ViewConfiguration.class);
+			return vpViewConfig != null ? vpViewConfig.isActivable() : DEFAULT_VIEWPOINT_ACTIVABLE_STATE;
+		}
+		//Default value is false. If there are no specification of activable state
+		//the viewpoint is not activable by default
+		return DEFAULT_VIEWPOINT_ACTIVABLE_STATE;
+	}
 	
 	public static boolean getViewpointVisibility(Object object){
 		Configuration viewpointConfiguration = getViewpointConfiguration(object);
 		if (viewpointConfiguration != null){
-			RepresentationConfiguration vpRepresentationConf = getViewpointConfigurationElement(object, RepresentationConfiguration.class);
-			return vpRepresentationConf != null ? vpRepresentationConf.isVisible() : true;
+			ViewConfiguration vpViewConfig = getViewpointConfigurationElement(object, ViewConfiguration.class);
+			return vpViewConfig != null ? vpViewConfig.isVisible() : DEFAULT_VIEWPOINT_VISIBILITY;
 		}
 		//Default value is true. If there are no specification of visibility
 		//the viewpoint is visible by default
-		return true;
+		return DEFAULT_VIEWPOINT_VISIBILITY;
 	}
+	
 	
 	/**
 	 * @param object any model element
@@ -88,7 +104,7 @@ public class VpDslConfigurationHelper {
 	
 	/**
 	 * @param object any model element
-	 * @return à {@link EList} of <code> Required Execution Environment </code> specified in the {@link Release} configuration Element
+	 * @return Ã  {@link EList} of <code> Required Execution Environment </code> specified in the {@link Release} configuration Element
 	 */
 	@SuppressWarnings("serial")
 	public static EList<String> getViewpointRequiredExecutionEnvironmentList(Object object){

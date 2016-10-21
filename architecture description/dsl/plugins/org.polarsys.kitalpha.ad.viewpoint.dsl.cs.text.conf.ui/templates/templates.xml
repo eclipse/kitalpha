@@ -43,18 +43,18 @@
 	}&#13;
 }&#13;
 </template>
-
 <template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_release" deleted="false" description="Viewpoint Release" enabled="true" id="4" name="Release">release {&#13;
 	version : 0.0.0.qualifier&#13;
 	description : "Viewpoint Description"&#13;
 	execution environments : "JavaSE-1.6"&#13;
 }&#13;
 </template>
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_representation" deleted="false" description="Viewpoint Representation" enabled="true" id="5" name="Representation">representation {&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_view" deleted="false" description="Viewpoint View" enabled="true" id="5" name="View">view {&#13;
 	visible : true&#13;
+	activable : false&#13;
 }&#13;
 </template>
-<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_generation" deleted="false" description="Generation Options" enabled="true" id="6" name="Generation Options">generation {&#13;
+<template autoinsert="true" context="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpconf.kw_generation" deleted="false" description="Generation Options" enabled="true" id="6" name="Generation">generation {&#13;
 	data (&#13;
 		Model: true&#13;
 		Edit: true &#13;

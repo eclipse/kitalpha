@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -56,7 +56,7 @@ public class ExternalDataHelper {
 	private static Map<String, URI> packagesInScopeURIs;
 	
 	//<target, scope>
-	private static Map<String, Map<String, URI>> packagesInScopeURIsTarget;
+	private final static Map<String, Map<String, URI>> packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
 	
 	private ExternalDataHelper() {}
 	
@@ -99,7 +99,7 @@ public class ExternalDataHelper {
 	
 	private static Map<String, URI> lookupPackagesInScopeURis()  throws CoreException {
 		packagesInScopeURIs= Collections.synchronizedMap(new LinkedHashMap<String, URI>());
-		packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
+//		packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
 		metamodelLoaders = getAvailableMetamodelLoaders();
 		for (String loader: metamodelLoaders.keySet()) {
 			List<Pattern> patternList = metamodelLoaders.get(loader);

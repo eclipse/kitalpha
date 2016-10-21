@@ -43,11 +43,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Generation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.GenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Release;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.TargetApplication;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.DiagramGenerationConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpconfGrammarAccess;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.DocGenConfiguration.DocumentationGenerationConfiguration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc.model.docGenConfiguration.DocumentationGenerationConfiguration;
 
 import com.google.inject.Inject;
 
@@ -78,7 +78,7 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 	@Inject
 	private IGrammarAccess grammar;
 	
-
+	
 	@Override
 	public void completeTargetApplication_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		List<String> targetPlatformProposals = TargetApplicationReader.getSupportedModelingEnvironment();
@@ -97,21 +97,24 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 			VpconfGrammarAccess access = (VpconfGrammarAccess) grammar;
 			ICompletionProposal proposal = createCompletionProposal(keyword.getValue(), getKeywordDisplayString(keyword), getImage(keyword), contentAssistContext);
 			
-			
-			
 			EObject current = contentAssistContext.getCurrentModel();
 			
 			if (current != null && NodeModelUtils.getNode(current) != null && proposal != null){
 				ICompositeNode rootNode = NodeModelUtils.getNode(current).getRootNode();
 				EObject root = NodeModelUtils.findActualSemanticObjectFor(rootNode);
 				
-				if (root !=null){
+				if (root != null && root instanceof Configuration){
 					
 					Configuration configAspect = (Configuration)root;
 					Iterator<ConfigurationElement> it = configAspect.getVpConfigurationElements().iterator();
 					
 					while (it.hasNext()){
 						ConfigurationElement ce = it.next();
+						if (ce instanceof ViewConfiguration){
+							if (proposal.getDisplayString().matches(access.getViewConfigurationAccess().getViewKeyword_1().getValue())){
+								return;
+							}
+						}
 						if (ce instanceof GenerationConfiguration){
 							if (proposal.getDisplayString().matches(access.getGenerationConfigurationAccess().getProjectKeyword_1().getValue())){
 								return;
@@ -162,16 +165,45 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 							}
 						}
 						
-						if (ce instanceof RepresentationConfiguration &&
-								proposal.getDisplayString().matches(access.getRepresentationConfigurationAccess().getRepresentationKeyword_1().getValue())){
-							return;
-						}
 						if (ce instanceof Release){
 							if (proposal.getDisplayString().matches(access.getReleaseAccess().getReleaseKeyword_1().getValue()))
 								return;
 						}
 					}
 				}
+				
+				INode currentNode = contentAssistContext.getCurrentNode();
+				
+				if (proposal.getDisplayString().matches(access.getGenerationConfigurationAccess().getNsuriKeyword_3_0().getValue())){
+					INode nextSibling = currentNode.getNextSibling();
+					if (nextSibling != null){
+						String text = nextSibling.getText();
+						if (text.equals(access.getViewConfigurationAccess().getViewKeyword_1().getValue())){
+							return;
+						}
+					}
+				}
+				
+				if (proposal.getDisplayString().matches(access.getViewConfigurationAccess().getViewKeyword_1().getValue())){
+					INode nextSibling = currentNode.getNextSibling();
+					if (nextSibling != null){
+						String text = nextSibling.getText();
+						if (text.equals(access.getGenerationAccess().getGenerationKeyword_1().getValue())){
+							return;
+						}
+					}
+				}
+				
+				if (proposal.getDisplayString().matches(access.getGenerationAccess().getGenerationKeyword_1().getValue())){
+					INode nextSibling = currentNode.getNextSibling();
+					if (nextSibling != null){
+						String text = nextSibling.getText();
+						if (text.equals(access.getViewConfigurationAccess().getViewKeyword_1().getValue())){
+							return;
+						}
+					}
+				}
+				
 				getPriorityHelper().adjustKeywordPriority(proposal, contentAssistContext.getPrefix());
 				acceptor.accept(proposal);
 			}

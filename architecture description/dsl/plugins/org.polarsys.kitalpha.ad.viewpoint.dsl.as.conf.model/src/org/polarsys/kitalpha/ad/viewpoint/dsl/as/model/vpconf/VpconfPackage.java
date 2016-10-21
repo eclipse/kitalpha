@@ -427,14 +427,14 @@ public interface VpconfPackage extends EPackage {
 	int RELEASE_FEATURE_COUNT = CONFIGURATION_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl <em>Representation Configuration</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ViewConfigurationImpl <em>View Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getRepresentationConfiguration()
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ViewConfigurationImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getViewConfiguration()
 	 * @generated
 	 */
-	int REPRESENTATION_CONFIGURATION = 8;
+	int VIEW_CONFIGURATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -443,7 +443,7 @@ public interface VpconfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPRESENTATION_CONFIGURATION__ID = CONFIGURATION_ELEMENT__ID;
+	int VIEW_CONFIGURATION__ID = CONFIGURATION_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -452,16 +452,25 @@ public interface VpconfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPRESENTATION_CONFIGURATION__VISIBLE = CONFIGURATION_ELEMENT_FEATURE_COUNT + 0;
+	int VIEW_CONFIGURATION__VISIBLE = CONFIGURATION_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Representation Configuration</em>' class.
+	 * The feature id for the '<em><b>Activable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPRESENTATION_CONFIGURATION_FEATURE_COUNT = CONFIGURATION_ELEMENT_FEATURE_COUNT + 1;
+	int VIEW_CONFIGURATION__ACTIVABLE = CONFIGURATION_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>View Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_CONFIGURATION_FEATURE_COUNT = CONFIGURATION_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '<em>Version</em>' data type.
@@ -719,25 +728,36 @@ public interface VpconfPackage extends EPackage {
 	EAttribute getRelease_RequiredExecutionEnvironment();
 
 	/**
-	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration <em>Representation Configuration</em>}'.
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration <em>View Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Representation Configuration</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration
+	 * @return the meta object for class '<em>View Configuration</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration
 	 * @generated
 	 */
-	EClass getRepresentationConfiguration();
+	EClass getViewConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration#isVisible <em>Visible</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration#isVisible <em>Visible</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Visible</em>'.
-	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.RepresentationConfiguration#isVisible()
-	 * @see #getRepresentationConfiguration()
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration#isVisible()
+	 * @see #getViewConfiguration()
 	 * @generated
 	 */
-	EAttribute getRepresentationConfiguration_Visible();
+	EAttribute getViewConfiguration_Visible();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration#isActivable <em>Activable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Activable</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ViewConfiguration#isActivable()
+	 * @see #getViewConfiguration()
+	 * @generated
+	 */
+	EAttribute getViewConfiguration_Activable();
 
 	/**
 	 * Returns the meta object for data type '{@link org.osgi.framework.Version <em>Version</em>}'.
@@ -973,14 +993,14 @@ public interface VpconfPackage extends EPackage {
 		EAttribute RELEASE__REQUIRED_EXECUTION_ENVIRONMENT = eINSTANCE.getRelease_RequiredExecutionEnvironment();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl <em>Representation Configuration</em>}' class.
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ViewConfigurationImpl <em>View Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.RepresentationConfigurationImpl
-		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getRepresentationConfiguration()
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.ViewConfigurationImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl.VpconfPackageImpl#getViewConfiguration()
 		 * @generated
 		 */
-		EClass REPRESENTATION_CONFIGURATION = eINSTANCE.getRepresentationConfiguration();
+		EClass VIEW_CONFIGURATION = eINSTANCE.getViewConfiguration();
 
 		/**
 		 * The meta object literal for the '<em><b>Visible</b></em>' attribute feature.
@@ -988,7 +1008,15 @@ public interface VpconfPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REPRESENTATION_CONFIGURATION__VISIBLE = eINSTANCE.getRepresentationConfiguration_Visible();
+		EAttribute VIEW_CONFIGURATION__VISIBLE = eINSTANCE.getViewConfiguration_Visible();
+
+		/**
+		 * The meta object literal for the '<em><b>Activable</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIEW_CONFIGURATION__ACTIVABLE = eINSTANCE.getViewConfiguration_Activable();
 
 		/**
 		 * The meta object literal for the '<em>Version</em>' data type.
