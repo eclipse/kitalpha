@@ -1,0 +1,71 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _7A2tkHiyEeaI368ba7nlrQ,_HEhc0Jm6Eeau1tOlZGduxg
+Element-Name: DiagramExtensionEdgeGeneration
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _z-mU0Jm5Eeau1tOlZGduxg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 10/24/16 9:27 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.spec.vptext" 
+    | double-click
+with [get-editor "edegeGen.spec.vptext" | get-text-viewer] {
+    set-caret-pos 12 23
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Up -times 4
+    key-type Enter
+}
+get-window "Viewpoint Diagram File Creation Wizard" | get-button Finish | click
+with [get-editor "edegeGen.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 8 4
+    key-type Enter -times 2
+    key-type "M1+SPACE"
+    key-type Up
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Down
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Up
+    key-type Enter
+}
+with [get-window "Accelerator of diagram creation"] {
+    get-button "New diagram extension" | click
+    get-button Finish | click
+}
+with [get-editor "edegeGen.diagram.vptext" | get-text-viewer] {
+    key-type "M1+SPACE"
+    key-type Tab
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type "M1+s"
+}
+get-button "Save All (M1+M2+S)" | click
+with [get-editor "edegeGen.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 47 18
+    select-range 47 17 57 18
+}
+with [get-editor "edegeGen.diagram.vptext" | get-text-viewer] {
+    get-property "getSelectionText()" | equals "Edge A_toA {\n"
+        + "\\9\\9\\9\\9\\9association-context: edegeGen.data.A.toA\n"
+        + "\\9\\9\\9\\9\\9source: AContainer.A\n"
+        + "\\9\\9\\9\\9\\9target: AContainer.A\n"
+        + "\\9\\9\\9\\9\\9Representation {\n"
+        + "\\9\\9\\9\\9\\9\\9Style {\n"
+        + "\\9\\9\\9\\9\\9\\9\\9end-decorator: InputArrow\n"
+        + "\\9\\9\\9\\9\\9\\9\\9color: black\n"
+        + "\\9\\9\\9\\9\\9\\9}\n"
+        + "\\9\\9\\9\\9\\9}\n"
+        + "\\9\\9\\9\\9}" | verify-true
+    get-property "isTextSelected()" | equals true | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

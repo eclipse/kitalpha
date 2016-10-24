@@ -1,0 +1,156 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.workspace
+Element-Name: workspace vp edge gen
+Element-Type: context
+Element-Version: 2.0
+Id: _HEhc0Jm6Eeau1tOlZGduxg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 10/24/16 9:24 AM
+
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.classpath-0196e96c-7ef0-300f-91b1-4d8a5f5d3841
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.classpath
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSVkMFqAjEQhs8t9B2W3J2tl9LDbqWU
+LShUi257lZgM69R0EieJ6NurpVLxIPQ2//DNx/BXg+23KzYokTzXqg/3qkA23hJ3tfpoX3uPavB0d1sZ
+p2MMOi0P4eYvISfZFStiWyvjWRXHZa28dIDGUYgIXzaB05nN8uCE0bSZv0zG7fNw3EzLS444obB2YHGR
+O8j0e4kCs6TZarGfb+0uYDnSGz1ren14UOW/XwoWwXhBEFxnErTvLnfE8ZoqijmpjuMV0ucUcjrBC+If
+uCrPK9wDUEsHCBjkRGvQAAAAeAEAAFBLAQIUABQACAgIAAAAIQAY5ERr0AAAAHgBAAAIAAAAAAAAAAAA
+AAAAAAAAAAAuY29udGVudFBLBQYAAAAAAQABADYAAAAGAQAAAAA=
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.classpath-0196e96c-7ef0-300f-91b1-4d8a5f5d3841--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/plugin.properties-93c45cf9-2356-37c0-8839-b7005d922239
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/plugin.properties
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRNzrFqAzEQhOH+nmLgat8buAkEVw4G
+Q3pxmjtvIq/Ean0ib28ZYmy22eYfvvFk+YezYzYGZ0QTv2ATtpJFHbEmGDdaJairKIexJ4XmwopFErFk
+Q7Z1KjkFq391+hUPqVzCtJWJkWs/7f9jaxhxDCoLq+PsJrpWDB83jYm7r3Al9vh8FAfqu4J1NikuWVH+
+wc/qmxo7YI/W2ovQPRjuUEsHCEfxNzqdAAAA3QAAAFBLAQIUABQACAgIAAAAIQBH8Tc6nQAAAN0AAAAI
+AAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYAAAAAAQABADYAAADTAAAAAAA=
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/plugin.properties-93c45cf9-2356-37c0-8839-b7005d922239--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/build.properties-4124c5a7-baf5-375c-b96e-8804b11bbd4f
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/build.properties
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnQrzi8tSk7V01OwVSguStbnyi8tKSgt
+AfOTMvP0uYCEXmZeck5pSmoxUMzXNcRR19PPTV8nhosTCPSgdG5+SmoOTDAzOT+vGMYpyClNB5pRUJRf
+kFpUkplajCpekZvDBQBQSwcIfJ1p3GAAAACEAAAAUEsBAhQAFAAICAgAAAAhAHydadxgAAAAhAAAAAgA
+AAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAAJYAAAAAAA==
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/build.properties-4124c5a7-baf5-375c-b96e-8804b11bbd4f--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/plugin.xml-e3029125-4a1d-37cf-bbb7-df0d66be87ac
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/plugin.xml
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnTdlMFSwyAQhs/NU2S4Czp68ECam76A
+emdgTRkJMCyJ9e2F2KSZ1M7YyanCafdf/t39DvB635qyh4Da2Yrc0VtSgpVOadtU5PXl6eaR1NuC1yCN
+9gjH0nv6MCjedI2226LYcNhHsFktNmU+3mkbK+JCQ70zIuAX0g8dhfE7QQOg64KEAB3CFCHZ5sd8jA9O
+6SjXCp369l6hIce8Vuc69J6CgiZdS4dXVAHKoH1MI84comhw8E3qLG1FCxUZHWaCF3FXEfbHpqx1Cgwb
+ks8/ydyHpT05m4glftcAcHSl0zroQZ6wfNPwOcx+gnNRvg5lNktKTNh+4XmVOJWI4gKci/J1OLPZP8Mp
+nX2/AOeifB3ObHYWJ2eHf/MbUEsHCE+y0kkYAQAAgQUAAFBLAQIUABQACAgIAAAAIQBPstJJGAEAAIEF
+AAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYAAAAAAQABADYAAABOAQAAAAA=
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/plugin.xml-e3029125-4a1d-37cf-bbb7-df0d66be87ac--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/META-INF/MANIFEST.MF-679e3ac8-7583-3704-b4fb-4e1461b06606
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/META-INF/MANIFEST.MF
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnR1jzFPw0AMhff8iiyMOVGGDkEsSFlQ
+y9BK3U3uNVhcfKnvLqL8eg7So12QFz9/z0/2loSPCLE5QAN7aeuVua+ek1iHZnuBf+yhkP15fPOO+1ca
+0dZeBzN5RxrOwXxwJDe9k5knA4shl+TeBvcYWAaHmJOeoiaUsCXk7kbVBR0g1usVLvoGX4/OdUrk+MjQ
+wje+z5Mvir+myaWBpbAdTokVtvtEn34MncysXkZIbOsXmmnfNSuzri7GZtn771tF8El7KFJA9Q1QSwcI
+RcB3SsYAAABXAQAAUEsBAhQAFAAICAgAAAAhAEXAd0rGAAAAVwEAAAgAAAAAAAAAAAAAAAAAAAAAAC5j
+b250ZW50UEsFBgAAAAABAAEANgAAAPwAAAAAAA==
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/META-INF/MANIFEST.MF-679e3ac8-7583-3704-b4fb-4e1461b06606--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.spec.vptext-cd210480-6c26-3a1c-8361-68f3429b4001
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.spec.vptext
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRljkFrwzAMhc/xrxA5bWHYSdeWkdNG
+B7sOCruLRHENjmVkZ6OM/fe5KdsOA4HE9/SeZJpGQQMHjmdx9pThZriFV/Yox3O6g03b7TU8eQ+rmkAo
+kbzTqKHYSlVvjj4iu5CBRrL0QuFCH3HJJ5Yejm273T3s7lc4YqYeutZstqbbXwOM+p8An6oKOJfd+gfV
+qloSJRgdWsEZ6ugxTyxzb6JfrAuGxWoavIuJNM1TmVkoM/ukR0rOBlPaIC5mx8GsquarUsKfMePvfV0e
+RVUdOEzOLoIXx584FKy+vgFQSwcIo8QM79sAAAA5AQAAUEsBAhQAFAAICAgAAAAhAKPEDO/bAAAAOQEA
+AAgAAAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAAABEBAAAAAA==
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.spec.vptext-cd210480-6c26-3a1c-8361-68f3429b4001--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.vpdesc-08f650c3-59f5-3845-be9d-6da8fa430bd8
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.vpdesc
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnStVl1v0zAUfUfiP0ThDWlxOyQeonYj
+WwMaYgitqOJtspzb1JDYnu2k3b/nxvnuWtRtqC+tfXx97r3nXHd2ucszrwRtuBRzfxpMfA8EkwkX6dyP
+ltc3N/7lxds3s1IlYFi44rBVkgvr7XIedufOq3MYSZgQ1+f+xloVErLdbgOZp4HUKfl1e9NBzBiy/eAQ
+55PJFGHflmwDOT3jwlgqGLSnmBRrnhaaWnfl4LySGdXm0bgof7ilmdpQQhNStmxJYjJCDcEsOE01zUkV
+jWC6PfFEsi8grl97y+JpmPE9parufnECT4nXrXl5RfBwG1DQHOY+JJACJuF7ZiO1/T5eRDV43mz1435B
+Ld07ESS4ViNqzHVGjQHTwKJ2a7R5HxkjGXelMh6KI7SPCtGN5L5JRjMHHeBaqlZGvseoRr3SjNvHuT8J
+gve+V0fQsAYNTkMuyk+qU7Bzn5BPDX/3peGBBSD/n9/VQX6n0JkO6cDOgkiMt8GcRq0GlnFlwHUa8nXl
+onMSM6nhHSFxJIS0NaM22Iz0dxzt1FUDd+CKWdf1yChgdlyHSpPhSPL7UgoqSCeMUo3AcQY5iEMx6wpF
+SmWcNXHr/fj2c5/QyeGQCNSYPbJKy9+YVa10rGRvoNY8QakCl0xa+UKYQvMTHNeZ5vlc7yADalC5nWVX
+gymNn4cCFbXmoAeQBQpSc1XPrn5WD5YHDtTwUHANSbwDVjgyouRaiorQxVda0mV8Ng0+zsg/ga2ojiT2
+ih4NqMqtgKSS4biDZA8RVyapatRM4EH00esRLupX4KgeJL5sW80trJa3aGJdgP+Muw68JCE+C0WVsft1
+7F5yUjWdJxsb1gtd/+/AyEKz3tiFgXbt6eRCE7WbvucErTJq11LnIVFZkXJBKi+0EwanC37HwWKlzEyA
+IXgqSNJri7jdQNY73QQ5yG5G9v9R4OJfUEsHCHoBUWPCAgAAjggAAFBLAQIUABQACAgIAAAAIQB6AVFj
+wgIAAI4IAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYAAAAAAQABADYAAAD4AgAAAAA=
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.vpdesc-08f650c3-59f5-3845-be9d-6da8fa430bd8--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.conf.vptext-aa328680-55ca-3c8b-a02a-70f83fd244ce
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.conf.vptext
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnRVUEtP4zAQPju/YtQTrVgnZaFa9bQI
+uouQEEhF3K1kmnpx7TCeJFSI/77jBFpQfMg8vtfks1kGM7gKzZ5svWU4KafwEJyh9T6ewlkxX2i4dA6G
+aQTCiNRhpUFg8tSTxb4J1jNghTX+RZ+6v03L20BLWBfF+cWvi59DszKMS5gX+dl5Pl+MBHl2FfzG1i0Z
+tsEfWHQpbXjLFBuqkWF19ydTDYV/WDIEqnWTTMZ91M+WjWu2RneNHtC1eFA+tmRhsmVulnne9/0RIOj8
+E5R/6k0yRejQREyiqkOKyY7Y1YV8L61xdmORZFZhLMk2PM4nxwtcHwdCp/AVy3YM5TtLwe/QywkFcms6
+s179mOuF7L1nShzjR/4kLncycCI/6i5U6JbA1GIqV5Xl71W68ca4ODQeMfKXMqlUofzSuZdYPVnGVRkI
+D0zTpGlNTWY3yh727iWrrf33zVC2Kcnod9gf6B7DDe/cUW2aor3/B1BLBwhwuLEzagEAAGECAABQSwEC
+FAAUAAgICAAAACEAcLixM2oBAABhAgAACAAAAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRQSwUGAAAAAAEA
+AQA2AAAAoAEAAAAA
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.conf.vptext-aa328680-55ca-3c8b-a02a-70f83fd244ce--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.data.vptext-54b7bd94-65cf-3735-86ba-ff52fd3af2db
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.data.vptext
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnQ9jktrAzEMhM9e6H/QsV3CPkLJYU/1
+po9DL4VCL6UHYauJwVjBUh9LyH+vd0MKOmi+YUZq67qCGrZ8mHLY7RWu3Q28cMT8OskK1l2/acDGCIsr
+kEkof5NvoMTKmLdAPwcOSYE87eiJ0kzv8Ev3nAd4xMlhBDs+24V7VBqg79r1bdtvzh1tdY+K//nGz+pY
+mW1EEbDzauhXKXkBcpypebApsaIGTlfFtCLswiJlKNoo2/LpJ2WB925Vf4A90xEcJ8WQLnws8VNlLrdG
+OM59Czz9AVBLBwjxJ+Uy0QAAABsBAABQSwECFAAUAAgICAAAACEA8SflMtEAAAAbAQAACAAAAAAAAAAA
+AAAAAAAAAAAALmNvbnRlbnRQSwUGAAAAAAEAAQA2AAAABwEAAAAA
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/model/edegeGen.data.vptext-54b7bd94-65cf-3735-86ba-ff52fd3af2db--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.settings/org.eclipse.jdt.core.prefs-c96ea47b-e24e-3247-8079-d20b66bb79c9
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.settings/org.eclipse.jdt.core.prefs
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSVjrEKAjEQRHvBXwnY2KWx08pfiJe5
+YyXZDbM5wb83gtaezTIs84aHqUhzhEbMIHSChwfoYhoP+51xCfhU7rmHyYhxapMCjpCxQINoEcXFeXp2
+vJ8Rmm4FeetAT1zQryX12VjjIRx/k7UVScN3S7vRhk4NyR3s5wztMgsYQRq30tC1/su6rfw6vgBQSwcI
+Cr5lb4oAAABsAQAAUEsBAhQAFAAICAgAAAAhAAq+ZW+KAAAAbAEAAAgAAAAAAAAAAAAAAAAAAAAAAC5j
+b250ZW50UEsFBgAAAAABAAEANgAAAMAAAAAAAA==
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.settings/org.eclipse.jdt.core.prefs-c96ea47b-e24e-3247-8079-d20b66bb79c9--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnSlVMFO4zAQva/EP1i+Y8Me0KpKQWjV
+QpHKHhZpV3tZufY0NTi2ZU/a8PdMuk1AK4WColxs5703z5M3Ka6ayrEtpGyDn/JzccYZeB2M9eWU17g+
+/cavLk++FCGVArSzMYNIOiIKjY3YhfSUo9Iw+dWtvgeP0CBrKjvpdb+2ulTJ5wmdT/kGMU6k3O12IlSl
+IHH5e7noIEdq9fQO09L3OEk42eM486oidH/AtpGBKYGV4DmzZsr/3s42+uyuupiBqs/xh/tzY+qm5HRj
+xgrdXsXjfkPbmMIjaMwH2dZlDE6l/JzFk0Xl4kaJbRRgoKTH09pkxw90ElhbBx1baKcyucINNbwBXaNa
+OTrHVAOXA5yDg48zVrV1pqVFSGghf5wZXV1aP4ZK3/IIJzhDAekulwGRUpdfG/af7ttYPBoKRUhABmF9
+xJs8FBqqvJw9XJ8u7ueDhZfX94v57OeDWM7HVVpZP9wAS3HLw6+rYMANWtxn7oYyRyJrCl47gu96HeIb
+hWoMP0fQY/g0M5D1uDbnpHt4Ibux/TfT8nWoC/nZnxqRXgBQSwcI1JlSiaEBAAAxBQAAUEsBAhQAFAAI
+CAgAAAAhANSZUomhAQAAMQUAAAgAAAAAAAAAAAAAAAAAAAAAAC5jb250ZW50UEsFBgAAAAABAAEANgAA
+ANcBAAAAAA==
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.project-8d382424-ac2f-30e4-ae2f-5a1e5a3e1092
+Content-Type: q7/binary
+Entry-Name: contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnS9Uz1PwzAQnUHiP1TZucDGkKYSVGyg
+SgV21z4SF8e2fE4I/x47H0BokTKgysu953v3zvY5W7WVWjToSBq9TK7hKlmg5kZIXSyT56f7y5tklV+c
+Z9aZPXK/RuJOWh+yA3uWaVZhblwB1ijm6IPgTXqmbMmgsYACi7B0iAWpLO2yo4ybqkLt8ywdo8gOHtSB
+dIJ2tVRia5FHNMC7IGVadMyPTpAraQmh9dh6qCVQyRyKHt9GIbrvVoKSuaKOPdCA0ymRpQdus/z3wgM3
+LgSsYbvT+VqB8MC0fEU65XGj7ZaXWLF/MR2Y8cmDn68dDtk9+GPumIBG4rs1UnsIYweErpEcCYaJgpdx
+e01q03OPXcXYclf5t8vRN9XzNPFiNqoupJ5pcnRwD7VjHO/k67dM/+cnUEsHCO8vW7UwAQAA3gMAAFBL
+AQIUABQACAgIAAAAIQDvL1u1MAEAAN4DAAAIAAAAAAAAAAAAAAAAAAAAAAAuY29udGVudFBLBQYAAAAA
+AQABADYAAABmAQAAAAA=
+------=_contents/org.polarsys.kitalpha.vp.edegegen.vpdsl/.project-8d382424-ac2f-30e4-ae2f-5a1e5a3e1092--
