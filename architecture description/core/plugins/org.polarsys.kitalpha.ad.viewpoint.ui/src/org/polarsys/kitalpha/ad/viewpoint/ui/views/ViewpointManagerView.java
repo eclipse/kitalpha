@@ -27,10 +27,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuListener;
@@ -50,7 +47,6 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
-import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -66,8 +62,10 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.IWorkbenchActionConstants;
+import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchPartSite;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.polarsys.kitalpha.ad.common.AD_Log;
@@ -280,6 +278,12 @@ public class ViewpointManagerView extends ViewPart {
 		});
 	}
 
+	@Override
+	protected void setPartName(String partName) {
+		// TODO Auto-generated method stub
+		super.setPartName(partName);
+	}
+
 	public void createViewer(final Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridLayout clayout = new GridLayout();
@@ -307,17 +311,17 @@ public class ViewpointManagerView extends ViewPart {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 
 		TableViewerColumn nameColumn = new TableViewerColumn(viewer, SWT.NONE);
-		layout.addColumnData(new ColumnWeightData(4, 100, true));
+		layout.addColumnData(new ColumnWeightData(5, 250, true));
 		nameColumn.getColumn().setText("Name");
 		nameColumn.getColumn().setResizable(true);
 
 		TableViewerColumn versionColumn = new TableViewerColumn(viewer, SWT.NONE);
-		layout.addColumnData(new ColumnWeightData(2, 50, true));
+		layout.addColumnData(new ColumnWeightData(3, 150, true));
 		versionColumn.getColumn().setText("Version");
 		versionColumn.getColumn().setResizable(true);
 
 		TableViewerColumn stateColumn = new TableViewerColumn(viewer, SWT.NONE);
-		layout.addColumnData(new ColumnWeightData(2, 50, true));
+		layout.addColumnData(new ColumnWeightData(1, 50, true));
 		stateColumn.getColumn().setText("State");
 		stateColumn.getColumn().setResizable(true);
 
