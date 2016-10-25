@@ -1,0 +1,43 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _lnV5AC4ZEeaC0oR9ToVRjQ,_3ky9EC4ZEeaC0oR9ToVRjQ
+Element-Name: viewpointEditor_00005
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _13ywcJw9EeaaEqA4EGGwqg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 10/27/16 2:25 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-editor "myviewpoint1.vp" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.viewpoint.myviewpointproject1\\/model\\/myviewpoint1.vp/Viewpoint \\[org.polarsys.kitalpha.viewpoint.myviewpoint1\\] My Viewpoint1/Metamodel" 
+    | click
+with [get-view Properties | get-tree] {
+    select Models | activate-cell-edit -column 1
+    get-button "..." | click
+}
+with [get-window "Models -- Metamodel"] {
+    get-table | get-property itemCount | equals 1 | verify-true
+    get-table -after [get-label Feature] | get-property itemCount | equals 0 | verify-true
+}
+get-window "Models -- Metamodel" | get-table | select my | double-click
+with [get-window "Models -- Metamodel"] {
+    get-table | get-property itemCount | equals 0 | verify-true
+    get-table -after [get-label Feature] | get-property itemCount | equals 1 | verify-true
+}
+get-window "Models -- Metamodel" | get-button OK | click
+with [get-view Properties | get-tree] {
+    get-item Models | get-property "values['Property']" | equals Models | verify-true
+    get-item Models | get-property "values['Value']" | equals my | verify-true
+}
+with [get-editor "myviewpoint1.vp" | get-tree] {
+    get-item "platform:\\/resource\\/vp.metamodel\\/My.ecore" | get-property caption 
+        | equals "platform:/resource/vp.metamodel/My.ecore" | verify-true
+    get-item "platform:\\/resource\\/vp.metamodel\\/My.ecore" | get-property index | equals 1 | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

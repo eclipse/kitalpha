@@ -6,7 +6,7 @@ Element-Type: context
 Element-Version: 2.0
 Id: _lnV5AC4ZEeaC0oR9ToVRjQ
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 6/9/16 3:05 PM
+Save-Time: 10/27/16 2:11 PM
 
 ------=_contents/vp.sirius/META-INF/MANIFEST.MF-42f6d854-ac8b-3755-8773-ce7b2177e6f8
 Content-Type: q7/binary
@@ -56,16 +56,27 @@ kiNOKKwdWFzkDjL9XqLALGm2WuznW7sLWI70Rs+aXh8eVPnvl4JFMF4QBNeZBO27yx1xvKaKYk6q43iF
 9DmFnE7wgvgHrsrzCvdQSwcI3YygLc8AAAB4AQAAUEsBAhQAFAAICAgAAAAhAN2MoC3PAAAAeAEAAAgA
 CQAAAAAAAAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAA4BAAAAAA==
 ------=_contents/vp.sirius/.classpath-cbddecec-ddd1-3a4d-9144-46a5b6c42226--
+------=_contents/vp.metamodel/.classpath-14231ea0-9747-35df-940e-56ba2141704f
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/.classpath
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACVkMFqAjEQhs8t9B2W
+3J2tp/awWyllCwrVotteJSbDOjWdxEki+vZqqVQ8CL3NP3zzMfzVYPvtig1KJM+16sO9KpCNt8RdrT7a
+196jGjzd3VbG6RiDTstDuPlLyEl2xYrY1sp4VsVxWSsvHaBxFCLCl03gdGazPDhhNG3mL5Nx+zwcN9Py
+kiNOKKwdWFzkDjL9XqLALGm2WuznW7sLWI70Rs+aXh8eVPnvl4JFMF4QBNeZBO27yx1xvKaKYk6q43iF
+9DmFnE7wgvgHrsrzCvdQSwcI3YygLc8AAAB4AQAAUEsBAhQAFAAICAgAAAAhAN2MoC3PAAAAeAEAAAgA
+CQAAAAAAAAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAA4BAAAAAA==
+------=_contents/vp.metamodel/.classpath-14231ea0-9747-35df-940e-56ba2141704f--
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/META-INF/MANIFEST.MF-eef7e399-58ab-3857-9b2b-19f71c366af8
 Content-Type: q7/binary
 Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/META-INF/MANIFEST.MF
 
-UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACdj7sOgkAQRfv9Cj5A
-NkJig7ExoTHBQhL7FQYc3Rezuyh/L4lAaGzMNJOcOyd3CqGxAefjK5BDo7Mo4Vt2DLqWEBcTXFg6k7NQ
-kEWGWm6NFOQGx5/ohbR3wXuElzWoPVfDslsyD6h8MgvKQd2MxOpv0d6hbiX4sdbBU4BZvP5jnC4IiQ0C
-zfwCXUCCOn9DFfyYzHWPZLQC7bPolJZ5nPAdm2Lx9+pXQ1GvSgbcsKi33CFhcIx9AFBLBwhvUb1/tgAA
-AFsBAABQSwECFAAUAAgICAAAACEAb1G9f7YAAABbAQAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRV
-VAUAAQAAAABQSwUGAAAAAAEAAQA/AAAA9QAAAAAA
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACdj70KwkAQhPt7ijyA
+OUzAJmIjpBFioWB/Jmtcvb/s7UXz9gY0ksZGthn4ZoeZSlm8QOD0BBTQ2SLJ5FJso200pNUHflk+kb0y
+UCSOWumdVhSGIO/ISvurkj3Cwzu0LM3w1Z7cDWrOpoDjYM5OY/130DqgbTXwWGvDFGEKnu8Yr4tK4wWB
+Jn6ALiJBUz6hjjw6S9sjOWvAcpHs8mOZZnIlPrb0/fWroWpmJSMuRNJ7GZAwhrc2wMq4BrQQL1BLBwh9
+fXWgvAAAAGoBAABQSwECFAAUAAgICAAAACEAfX11oLwAAABqAQAACAAJAAAAAAAAAAAAAAAAAAAALmNv
+bnRlbnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/AAAA+wAAAAAA
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/META-INF/MANIFEST.MF-eef7e399-58ab-3857-9b2b-19f71c366af8--
 ------=_contents/vp.sirius/src/vp/sirius/Activator.java-ee2e23e1-6cfe-33bd-b092-ed56d8fe1117
 Content-Type: q7/binary
@@ -127,6 +138,21 @@ Mz955sVE0KY/xQr/OKYB7UNtFnod+imw+B67ysx1IX7twnK/PgBQSwcILoDnyucAAACeAgAAUEsBAhQA
 FAAICAgAAAAhAC6A58rnAAAAngIAAAgACQAAAAAAAAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsF
 BgAAAAABAAEAPwAAACYBAAAAAA==
 ------=_contents/vp.sirius/.project-eae6321e-66e4-3ad5-ba67-e4ddaf996ee8--
+------=_contents/vp.metamodel/src/vp/metamodel/Activator.java-5e4ada52-a393-3a54-bbe0-d354a2929d3a
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/src/vp/metamodel/Activator.java
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACtU11LI0EQfN5A/kPj
++ZAEsss9Lwd6RiQiUfR8lnG2sxmczAwzPdFD7r/bsx9JVOROuZdd6K2qrurudUI+iBph4/I1kljbCnU5
+HAwHau2sJ7C+zlFq5QLmUeVOx1qZ/Pg+kBeSbudXTaF8hbehVvnSizU+Wv+Q/4ym0nhiDeETNdrFZDIc
+wAR+rRBYRW0EWQ9SixBAMs5bHYD4Y2o3VQa0WiLI31Jj4hXDgYv3WsmOcryV4AZoKq688QfPqW1WFE3L
+XnU+41qnFEgQv5bKCA035JWp4eri9my+uJvP4Acc7A/ooISiOFxcLqaLi5vp98N98bASHitQhhWNxNTB
+J3fYt9i5df3sskRPM8m6ofAQOECUjGqKxc7olj4ap1TZn7Z5Rx4Za6bnYiMqK8dt6Sgg/uMav7FFT6O/
+7XD81tPGqgpa7itgs8xE4GV6+xjg9EmiI2WbhWRZiA593hJ7aBpH1vrjsdNKhfL/p7TuyyGZ+qmM2ygm
+al3up2al/dB9xC7jNVL0pv0N3t8UdKgj38A+RBXvLnx3fjXSDJciaupOKevEdnfZeOLHC1BLBwjfl7sk
+qQEAACYEAABQSwECFAAUAAgICAAAACEA35e7JKkBAAAmBAAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRl
+bnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/AAAA6AEAAAAA
+------=_contents/vp.metamodel/src/vp/metamodel/Activator.java-5e4ada52-a393-3a54-bbe0-d354a2929d3a--
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/icons/view.gif-c7632524-06d2-32e0-8a45-0e599ade5dc3
 Content-Type: q7/binary
 Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/icons/view.gif
@@ -141,6 +167,22 @@ K3Bq6CjqaLAryAuJVk830rFgnG3IpqAnWM1paqrIwsSgbGLMas/Fv1dbwWwWs6qOqbq2234DHTUdA4UT
 9o4M1gBQSwcI+gtup3oBAACDAQAAUEsBAhQAFAAICAgAAAAhAPoLbqd6AQAAgwEAAAgACQAAAAAAAAAA
 AAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAALkBAAAAAA==
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/icons/view.gif-c7632524-06d2-32e0-8a45-0e599ade5dc3--
+------=_contents/vp.metamodel/bin/vp/metamodel/Activator.class-e0764cdd-fb68-36d0-bb43-40a14a4194a1
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/bin/vp/metamodel/Activator.class
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACFkt1u00AQhc8mTtIY
+N4WWhP5SWpqQBql7wWURUmkpihRVlUpzW23crVlwbMtehz4WPxeVuOABeCjE7MZKJQRFltazM+Nvzlnv
+z1/ffwB4gU4NJYbWJOFjqcU4vpQhP/C1mggdpzU4DJ04Dbj0Q5VkkueKJ2EeqIgfjDKdCl+f909tgqF+
+Ojh/2z+56B8xLA4+iIngoYgCfqZTFQX7DPOHcZRpEemhCHM5hzqDN0n2ZoMZqknBWh78XRFRqi9VpPQr
+hnJ3d8jgHFKHizLue/Awz7AwUJE8yccjmb4To1AaMbEvwqFIldkXSUe/VxlDhQSlmqHdHRifcRYofpWK
+sfwUpx/56zy6DCXJ1vJa75tx7ptrXyZakZMalhmWbn3OKkbNqoeHaNbBsO7BxT2Gmj/FMGz/fxTpy3Sc
+GNKWh000aXIg9ZG8EnlIiNXu7r9PyD2L89SXx8r4bMwqe0YqtkhSmX59CSuooEq7mt3NkUrSSbFDOTpJ
+Whv2ijB6gErvBgtfbOsDWl16gyw6aGKRIm/ahCWLYMY8dbQK3COLOqaM+crtPb/BSu8b1m55DStqnQgb
+qOOxZbam3QXTRBtUMXI276IzApsJT/6kt6m7Q/Rnd9Lr2MbTwvyOdUVTvmLt84xWtVluKSXrdsdG7d9Q
+SwcI7UxNE+wBAABWAwAAUEsBAhQAFAAICAgAAAAhAO1MTRPsAQAAVgMAAAgACQAAAAAAAAAAAAAAAAAA
+AC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAACsCAAAAAA==
+------=_contents/vp.metamodel/bin/vp/metamodel/Activator.class-e0764cdd-fb68-36d0-bb43-40a14a4194a1--
 ------=_contents/vp.sirius/build.properties-678318cc-38c7-3aa5-b402-3154238b6d8e
 Content-Type: q7/binary
 Entry-Name: contents/vp.sirius/build.properties
@@ -178,6 +220,27 @@ duDL9gbe8SnQloOphyTptDuAVJQMHraP3CX+PEF9cLKP/lF+RJo/N3gHUEsHCF3+X55jAQAABQQAAFBL
 AQIUABQACAgIAAAAIQBd/l+eYwEAAAUEAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVudFVUBQABAAAA
 AFBLBQYAAAAAAQABAD8AAACiAQAAAAA=
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/plugin.xml-2014c24d-ece2-39d5-89b2-bbcc76ffab55--
+------=_contents/vp.metamodel/.settings/org.eclipse.jdt.core.prefs-aeddea04-ff2d-3a10-8c5c-f9d0aef7bd56
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/.settings/org.eclipse.jdt.core.prefs
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACVjrEKAjEQRHvBXwlY
+WaWx08pfiJe5YyXZDbM5wb83gtaezTIs84aHqUhzhEbMIHSChwfoYhoP+51xCfhU7rmHyYhxapMCjpCx
+QINoEcXFeXp2vJ8Rmm4FeetAT1zQryX12VjjIRx/k7UVScN3S7vRhk4NyR3s5wztMgsYQRq30tC1/su6
+rfw6vgBQSwcI6+RCnYoAAABsAQAAUEsBAhQAFAAICAgAAAAhAOvkQp2KAAAAbAEAAAgACQAAAAAAAAAA
+AAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAMkAAAAAAA==
+------=_contents/vp.metamodel/.settings/org.eclipse.jdt.core.prefs-aeddea04-ff2d-3a10-8c5c-f9d0aef7bd56--
+------=_contents/vp.metamodel/META-INF/MANIFEST.MF-634392c8-3cc4-3420-8807-7e9d8e95e3f1
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/META-INF/MANIFEST.MF
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAABdj80KwjAQhO8F3yEP
+YIL1IuSm0ItQEQveY7rKQn7aNAnWp7fSptiyt/lmdnZLYfAJnad3cB1aw0nOdtkpmFoBLSc4s30iF6GB
+kxK80LYGleSq1w+rUI44NkyvHf81w7RBKHwiuMSP0mMU3rplnM16doM2oAM6Bjix7sVAKmw6YAG3m2yh
+SOuAuWA8akgd04a6eIMMfrimMBGdNRqM5+QsoqgKmrPD6qbBeP0913OixKfPvlBLBwj4CbrGswAAADsB
+AABQSwECFAAUAAgICAAAACEA+Am6xrMAAAA7AQAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUA
+AQAAAABQSwUGAAAAAAEAAQA/AAAA8gAAAAAA
+------=_contents/vp.metamodel/META-INF/MANIFEST.MF-634392c8-3cc4-3420-8807-7e9d8e95e3f1--
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/.classpath-54315058-74d2-376c-bedb-91a16dc83d56
 Content-Type: q7/binary
 Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/.classpath
@@ -189,6 +252,15 @@ HfXv1fDhulcZp2MMOq2P4eonISc5FB/EtlbGsypOy1p56QCNoxAR3m0CpzOb9dEJ43nz9jSdtI/Pk2Ze
 zynkdIZXxF9wVf4u8BNQSwcIT8MO5M8AAAB2AQAAUEsBAhQAFAAICAgAAAAhAE/DDuTPAAAAdgEAAAgA
 CQAAAAAAAAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAA4BAAAAAA==
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/.classpath-54315058-74d2-376c-bedb-91a16dc83d56--
+------=_contents/vp.metamodel/build.properties-eb09712a-be63-3a1c-ba70-315fc75f5045
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/build.properties
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAAArzi8tSk7V01OwVSgu
+Stbn5covLSkoLQELJGXmAQWApF5mXnJOaUpqMVDQ1zXEUdfTz01fJ4aXSwEV6PFyAQBQSwcI0ltg+z8A
+AABQAAAAUEsBAhQAFAAICAgAAAAhANJbYPs/AAAAUAAAAAgACQAAAAAAAAAAAAAAAAAAAC5jb250ZW50
+VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAH4AAAAAAA==
+------=_contents/vp.metamodel/build.properties-eb09712a-be63-3a1c-ba70-315fc75f5045--
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/model/myviewpoint1.vp-3e2085d4-9ff6-39df-933c-9217e08689d9
 Content-Type: q7/binary
 Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/model/myviewpoint1.vp
@@ -210,6 +282,18 @@ Stbnyi8tKSgtAfOTMvP0uYCEXmZeck5pSmoxUMzXNcRR19PPTV8nhosTCPSgdG5+SmqOPgBQSwcIMCGu
 LUIAAABNAAAAUEsBAhQAFAAICAgAAAAhADAhri1CAAAATQAAAAgACQAAAAAAAAAAAAAAAAAAAC5jb250
 ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAIEAAAAAAA==
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/build.properties-3ea2ee6f-1374-3ad1-b031-112455f331e3--
+------=_contents/vp.metamodel/.project-ae9d3f54-af30-366d-b695-619453b2aac1
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAAC9ksFOxCAQhs+a+A6b
+3hfWmwfaJmr2pjFZ9wEQxsoGBgK08fEFpGuaZhMPxtv8/8zPR2BY/2n0ZgIflMW2uSW7ZgMorFQ4tM3x
+db+9a/ru5po5b08g4iME4ZWLaTq5Vwy5gW5yxEDkxkrQjBYr94Q1BjB2jM5VdutBoQi6UG+j0vLgQGRV
+5UOKcpTFqTjrBwJCKxeAnGQkwvpU8ImXAPifK6QE98OY2aFqujQYXVF+xXUSyBNH9Q4h3v8v9iA+wPA/
+gVZnfvLEi6OHOv0tVvgXPQ4Kn0sz08vQpcDie3CVmetMPO/CcsW+AFBLBwjIdtGK6QAAAKECAABQSwEC
+FAAUAAgICAAAACEAyHbRiukAAAChAgAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUAAQAAAABQ
+SwUGAAAAAAEAAQA/AAAAKAEAAAAA
+------=_contents/vp.metamodel/.project-ae9d3f54-af30-366d-b695-619453b2aac1--
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/plugin.xml-24d18379-a39b-3985-8057-0daa2199857c
 Content-Type: q7/binary
 Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/plugin.xml
@@ -224,6 +308,16 @@ MplT7nyZTP9x+16rpZmzYK3Qb8dCUbuIETmATmm5hNSGJJcMBNm3QR2/zG7PVtnF6PkSqFnq+d2QT65u
 AQIUABQACAgIAAAAIQDIMKRcYwEAAAUEAAAIAAkAAAAAAAAAAAAAAAAAAAAuY29udGVudFVUBQABAAAA
 AFBLBQYAAAAAAQABAD8AAACiAQAAAAA=
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject1/plugin.xml-24d18379-a39b-3985-8057-0daa2199857c--
+------=_contents/vp.metamodel/My.ecore-a00cda6f-760a-3493-af07-2dbaaab60c9c
+Content-Type: q7/binary
+Entry-Name: contents/vp.metamodel/My.ecore
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAABVjrEKwjAURfdC/yG8
+3SZ2ktDaqYKD4KDgWuIzhvYlJSmm/r1pQcE7Xs653KqZaWAv9ME4W8O2EMDQKnc3VtdwvRw2O2j2eVah
+ch5le+5U32lkMxn5s8rFSjs2yNTX8JymUXIeYywc6cJ5zW+n4xdZl/4gVIMZA64g0oOXQpS8XTDIM5Zi
+O0oGvYGnKx9QSwcI9Xl3r40AAACzAAAAUEsBAhQAFAAICAgAAAAhAPV5d6+NAAAAswAAAAgACQAAAAAA
+AAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAMwAAAAAAA==
+------=_contents/vp.metamodel/My.ecore-a00cda6f-760a-3493-af07-2dbaaab60c9c--
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/META-INF/MANIFEST.MF-983b8530-ce74-38c7-a066-0a9d3cba669f
 Content-Type: q7/binary
 Entry-Name: contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/META-INF/MANIFEST.MF
@@ -272,17 +366,18 @@ AAAAAAAAAAAAAAAAAC5jb250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAAEcBAAAAAA==
 Content-Type: q7/binary
 Entry-Name: .q7.content
 
-UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADtVs9v2jAUvk/a/xD5
-XqegTdpQWIUqkDhQaS1qp10m45jwqGNb9kuA/34vHaGUkcHE2h7Wm+O878ezvyc5uVjmOiqVD2BNl7X4
-OYuUkTYFk3VZgdOzT+ziy/t3ifUZV1KDC4p76RC5xCVfWH8fnJCqc1evLq1BtcRomUNnw9uueEnJhA7t
-d9kM0XXieLFYcJtnnMjjb6NhXXJAawOvayr4Q11MdfGmjkVG5FQNBhCEvrtRKaD1LIK0y35oc/uxd/nh
-e1+Jy3N7/Xlsb6/nXxn1GkWJrJow+PBBn87buZIY1oSVP2e18GEV+D2g0G4meAlq4SwY5Plqs14jW2xN
-RWRT0Kpm4lKLQGZxRse+VLJAMdG0j75QLG7ArDmPR0wK0GkFc8ojqHA80ukiA8PpWg5grE7prmuHQSFS
-gMJj1zu82zc8T+l+rVdkUE0PeIvXQk3Ko/64dza8GjQKj3pXw0H/ZsxHg9OUJmCaDwAoP83NV+HgGUxP
-M5DbVOlGja0ItnjpTpMKXm7Kk7gehn82HO234XgbjlcajvbLDkfpeAAPRXjVyI9WnM4nQGaebUz+y8g/
-EXnyl0K29fP3DO1kYo/RnkQoBT1ffkXkj2b3G97bxDHpfpm25qIUz9TVzlgm8ePzLon/9mFLoJ9QSwcI
-1UVy0OkBAAA1CwAAUEsBAhQAFAAICAgAAAAhANVFctDpAQAANQsAAAgACQAAAAAAAAAAAAAAAAAAAC5j
-b250ZW50VVQFAAEAAAAAUEsFBgAAAAABAAEAPwAAACgCAAAAAA==
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAADtV9Fu2jAUfZ+0f4j8
+XqegTdpQWIUQSDxQaS1qp71MxjHhUse2bCfA3++mJZRSUqhoodN4i517zj3XPkdKootZKoNcWAdaNUmN
+npNAKK5jUEmTZH509o1c/Pj8KdI2oYJLME5Qy433lPsZnWp75wzjonFbPrW18mLmg1kKjSVvveDFTso1
+cL9Jxt6bRhhOp1Oq04Qiefir3ytLtvRawsuaAn5fF2JduKwjgWIpVoMCD0zeXosYvLYkgLhJ/kh187XV
+/vK7I1j7XF99H+ibq8lPgrMGQcSLIZS/X+DSWD0R3LsFYaHPaMmsmzt6B55JM2Y0BzE1GpSn6Xz5vEDW
+yIIKyUYgRclEuWQOxfoxHvtM8MyzocR9bzNBwgrMgnN3xDADGRcwI6wH4XZHGpkloCheyxaMljHedanQ
+Ce/RQO5x6jXe1RuexHi/2goUKEZbtIWLRlWd+51B66x32a1s3G9d9rqd6wHtd/frNARVfQCA/qkevjAH
+TWC0n4BUx0JW9lixYI3mZr9WzvJleRSWYXizcNRP4TiF40jhqB82HLmhqfBsTd4RXN+fo8XQV++Wk//S
+80+aPHmLLlt5+dyvz02xQWuLe8gZfsI8eORFvZs1b5xjF4cfbLIJy9k7DbZLOh1YyNyxo4nn5SBRp3B+
+iHCue+JF//47yXzVWIeLZRQ+/nxF4Wt/OxH0F1BLBwjFdcKfCQIAANMOAABQSwECFAAUAAgICAAAACEA
+xXXCnwkCAADTDgAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/
+AAAASAIAAAAA
 ------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
 ------=_contents/org.polarsys.kitalpha.viewpoint.myviewpointproject2/model/myviewpoint2.vp-fdabe810-5766-38b1-b421-af5b9ebd9b90
 Content-Type: q7/binary
