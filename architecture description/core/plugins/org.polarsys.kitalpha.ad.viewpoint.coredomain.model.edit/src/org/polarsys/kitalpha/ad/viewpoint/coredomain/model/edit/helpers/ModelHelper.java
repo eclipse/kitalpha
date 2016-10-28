@@ -83,6 +83,12 @@ public class ModelHelper  {
 
 		helper.collectFileInPlatform(pBundles, ecoreUris);
 		helper.collectFileInWorkspace(wsProjects, ecoreUris);
+		
+		for (URI uri : ecoreUris.toArray(new URI[ecoreUris.size()]))
+		{
+			if (DiscardedModels.isFiltered(uri))
+				ecoreUris.remove(uri);
+		}
 
 		return ecoreUris;
 	}
