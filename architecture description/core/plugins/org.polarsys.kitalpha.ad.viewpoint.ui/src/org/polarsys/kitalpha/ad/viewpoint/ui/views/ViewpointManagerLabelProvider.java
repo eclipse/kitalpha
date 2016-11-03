@@ -49,10 +49,10 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 			if (context == null)
 				return "N/A";
 			ViewpointManager instance = ViewpointManager.getInstance(context);
-			if (instance.isUsed(vp.getId())) {
-				return "Used" + (instance.isFiltered(vp.getId()) ? " & filtered" : "");
+			if (instance.isReferenced(vp.getId())) {
+				return instance.isInactive(vp.getId())? "Inactive" : "Active";
 			}
-			return "Unused";
+			return "Unreferenced";
 		case 1:
 			Version version = vp.getVersion();
 			return version == null ? "no version" : version.toString();

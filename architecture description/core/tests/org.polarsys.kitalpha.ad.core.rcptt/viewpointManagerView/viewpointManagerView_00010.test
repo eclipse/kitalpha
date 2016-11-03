@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _9NRlMJFFEeaqz_ZsAWABixA
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 10/13/16 3:24 PM
+Save-Time: 11/3/16 5:01 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -28,7 +28,7 @@ with [get-view "Viewpoint Manager"] {
         get-item "My Viewpoint" | get-property index | equals 6 | verify-true
         get-item "My Viewpoint" | get-property "values['Version']" | equals "no version" | verify-true
         get-item "My Viewpoint" | get-property "values['Name']" | equals "My Viewpoint" | verify-true
-        get-item "My Viewpoint" | get-property "values['State']" | equals Unused | verify-true
+        get-item "My Viewpoint" | get-property "values['State']" | equals Unreferenced | verify-true
     }
 }
 get-view "Viewpoint Manager" | get-table | select "My Viewpoint"
@@ -42,7 +42,7 @@ get-view "Viewpoint Manager" | get-table | select "My Viewpoint" | get-menu Refe
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "My Viewpoint" | get-property "values['Version']" | equals "no version" | verify-true
     get-item "My Viewpoint" | get-property "values['Name']" | equals "My Viewpoint" | verify-true
-    get-item "My Viewpoint" | get-property "values['State']" | equals Used | verify-true
+    get-item "My Viewpoint" | get-property "values['State']" | equals Active | verify-true
 }
 get-view "Viewpoint Manager" | get-table | select "My Viewpoint"
 with [get-view "Viewpoint Manager" | get-table] {
