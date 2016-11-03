@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -75,14 +75,14 @@ public class AbstractComponentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-						getString("_UI_AbstractComponent_use_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_use_feature", //$NON-NLS-1$//$NON-NLS-2$
-								"_UI_AbstractComponent_type"), //$NON-NLS-1$
-						ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__USE, true, false, true, null, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_AbstractComponent_use_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_use_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_AbstractComponent_type"), //$NON-NLS-1$
+				ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__USE, true, false, true, null, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -96,15 +96,15 @@ public class AbstractComponentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-						getString("_UI_AbstractComponent_type_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_type_feature", //$NON-NLS-1$//$NON-NLS-2$
-								"_UI_AbstractComponent_type"), //$NON-NLS-1$
-						ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__TYPE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_AbstractComponent_type_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_type_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_AbstractComponent_type"), //$NON-NLS-1$
+				ComponentSamplePackage.Literals.ABSTRACT_COMPONENT__TYPE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 

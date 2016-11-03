@@ -1,50 +1,57 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 /**
- * Copyright (c) PolarSys, 2015. All rights reserved. 
- *
  *	Viewpoint ComponentSample
  *	@author: S0020807
  *	@date: 14/09/15
  *
  */
 activity-explorer ComponentSample.activityexplorer {
-	
 	pages {
 		page ComponentSampleArchitecture {
 			file-extension "componentsample"
-			id org.polarsys.kitalpha.vp.componentsample.^activity.^explorer.architecture 
+			id org.polarsys.kitalpha.vp.componentsample.^activity.explorer.architecture
 			label "Component Sample Architecture"
 			index 1
 			Overview {
-				description "<p><b>Component Sample Architecture</b></p><p>Create a new Component Sample Architecture</p>"
-				image-on :  "csa_on.png"
-				image-off : "csa_off.png"
+				description "<p><b>Component Sample Architecture</b></p><p>Create a new Component Sample Diagram<br/>Set Name to the model</p>"
+				image-on : "componentsample_on.png"
+				image-off : "componentsample_off.png"
 			}
 			header {
-				image-on : "csa_on.png"
-				image-off : "csa_off.png"
+				image-on : "componentsample_on.png"
+				image-off : "componentsample_off.png"
 			}
-			tab-name  "Component Sample Architecture"
+			tab-name "Component Sample Architecture"
 			show-viewer : true
 			sections {
 				section DiagramsComponentSample {
 					description "<p>Create a new Component Sample Architecture Diagram</p>"
-					id org.polarsys.kitalpha.vp.componentsample.^activity.^explorer.architecture.^section
+					id org.polarsys.kitalpha.vp.componentsample.^activity.explorer.architecture.^section
 					label "Diagrams of Component Sample Architecture"
 					index 1
 					filtering : true
-					expanded : false
+					expanded : true
 					activities {
 						activity SetModelName {
 							description "Set a name to Component Sample Model"
-							id org.polarsys.kitalpha.vp.componentsample.^activity.^explorer.architecture.^name.setting.^activity
+							id org.polarsys.kitalpha.vp.componentsample.^activity.explorer.architecture.name.setting.^activity
 							label "Set Name To Component Sample Model"
 							index 1
 							predicated : false
-							icon : "set_name2.png"
+							icon : "id.png"
 						}
 						activity CreateNewDiagram {
 							description "Create a new Component sample Diagram"
-							id org.polarsys.kitalpha.vp.componentsample.^activity.^explorer.architecture.^activity
+							id org.polarsys.kitalpha.vp.componentsample.^activity.explorer.architecture.^activity
 							label "Create a new Diagram"
 							index 2
 							predicated : false
@@ -55,35 +62,4 @@ activity-explorer ComponentSample.activityexplorer {
 			}
 		}
 	}
-	
-	page-extensions {
-		extended-page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
-		section ComponentSampleViewpointActivation {
-			description "<p>Start/Stop Component sample Viewpoint</p>"
-			id org.polarsys.kitalpha.vp.componentsample.start.stop.^section
-			label "Component Sample Viewpoint"
-			index 3
-			filtering : false
-			expanded : false
-			activities {
-				activity StartComponentSampleViewpoint {
-					description "Start Component sample Viewpoint"
-					id org.polarsys.kitalpha.vp.componentsample.start.^activity
-					label "Start"
-					index 1
-					predicated : false
-					icon : "start.png"
-				}
-				activity StopComponentSampleViewpoint {
-					description "Stop Component sample Viewpoint"
-					id org.polarsys.kitalpha.vp.componentsample.start.^activity
-					label "Stop"
-					index 2
-					predicated : false
-					icon : "stop.png"
-				}
-			}
-		}
-	}
-	
 }

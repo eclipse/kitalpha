@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,7 +65,8 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ComponentSampleSafetyPatternPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.impl.ComponentSampleSafetyPatternPackageImpl.init();
+	ComponentSampleSafetyPatternPackage eINSTANCE = org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.impl.ComponentSampleSafetyPatternPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.impl.SafetyPackageImpl <em>Safety Package</em>}' class.
@@ -138,7 +140,7 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_MODE__OWNED_EXTENSIONS = ComponentSamplePackage.COMPONENT_ELEMENT__OWNED_EXTENSIONS;
+	int SAFETY_MODE__OWNED_EXTENSIONS = ComponentSampleSafetyPackage.SAFETY__OWNED_EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -147,7 +149,7 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_MODE__NAME = ComponentSamplePackage.COMPONENT_ELEMENT__NAME;
+	int SAFETY_MODE__NAME = ComponentSampleSafetyPackage.SAFETY__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -156,7 +158,34 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_MODE__DESCRIPTION = ComponentSamplePackage.COMPONENT_ELEMENT__DESCRIPTION;
+	int SAFETY_MODE__DESCRIPTION = ComponentSampleSafetyPackage.SAFETY__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Criticality</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY_MODE__CRITICALITY = ComponentSampleSafetyPackage.SAFETY__CRITICALITY;
+
+	/**
+	 * The feature id for the '<em><b>Dal</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY_MODE__DAL = ComponentSampleSafetyPackage.SAFETY__DAL;
+
+	/**
+	 * The feature id for the '<em><b>State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFETY_MODE__STATE = ComponentSampleSafetyPackage.SAFETY__STATE;
 
 	/**
 	 * The feature id for the '<em><b>Involved Components</b></em>' reference list.
@@ -165,7 +194,7 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_MODE__INVOLVED_COMPONENTS = ComponentSamplePackage.COMPONENT_ELEMENT_FEATURE_COUNT + 0;
+	int SAFETY_MODE__INVOLVED_COMPONENTS = ComponentSampleSafetyPackage.SAFETY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
@@ -174,7 +203,7 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_MODE__PATTERN = ComponentSamplePackage.COMPONENT_ELEMENT_FEATURE_COUNT + 1;
+	int SAFETY_MODE__PATTERN = ComponentSampleSafetyPackage.SAFETY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Safety Mode</em>' class.
@@ -183,7 +212,7 @@ public interface ComponentSampleSafetyPatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFETY_MODE_FEATURE_COUNT = ComponentSamplePackage.COMPONENT_ELEMENT_FEATURE_COUNT + 2;
+	int SAFETY_MODE_FEATURE_COUNT = ComponentSampleSafetyPackage.SAFETY_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN <em>SAFETY PATTERN</em>}' enum.

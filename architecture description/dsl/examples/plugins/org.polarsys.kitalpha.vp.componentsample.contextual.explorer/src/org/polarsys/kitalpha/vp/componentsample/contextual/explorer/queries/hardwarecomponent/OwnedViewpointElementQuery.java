@@ -1,4 +1,13 @@
-
+/*******************************************************************************
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ *   All rights reserved. This program and the accompanying materials
+ *   are made available under the terms of the Eclipse Public License v1.0
+ *   which accompanies this distribution, and is available at
+ *   http://www.eclipse.org/legal/epl-v10.html
+ *  
+ *  Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 // Generated on 02.10.2015 at 04:26:46 CEST by Viewpoint DSL Generator V 0.1
 
 package org.polarsys.kitalpha.vp.componentsample.contextual.explorer.queries.hardwarecomponent;
@@ -21,11 +30,11 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponen
 public class OwnedViewpointElementQuery implements IQuery {
 
 	/**
-	   * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	   * <!-- end-user-doc -->
-	   * Default constructor
-	   * @generated
-	   */
+	* Default constructor
+	* @generated
+	*/
 	public OwnedViewpointElementQuery() {
 		// TODO Auto-generated constructor stub
 	}

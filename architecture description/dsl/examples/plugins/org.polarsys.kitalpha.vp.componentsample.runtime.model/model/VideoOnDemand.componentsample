@@ -21,7 +21,6 @@
           maturityLevel="7" confidenceLevel="High">
         <measures criterion="" measureValue="3"/>
       </ownedExtensions>
-      <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_C"/>
       <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="VD Processor"
           use="#//@packages.0/@components.3/@abstractComponent.1">
         <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_C"/>
@@ -45,6 +44,7 @@
         <measures criterion="" measureValue="5"/>
       </ownedExtensions>
       <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_B" state="LOST"/>
+      <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_C"/>
       <abstractComponent xmi:type="ComponentSample:HardwareComponent" name="VS Hard Disk">
         <ownedExtensions xmi:type="ComponentSampleSafety:Safety" dal="DAL_B"/>
         <abstractComponent xmi:type="ComponentSample:SoftwareComponent" name="Data Manager">
@@ -59,6 +59,6 @@
     </components>
   </packages>
   <packages xmi:type="ComponentSampleSafetyPattern:SafetyPackage">
-    <modes involvedComponents="#//@packages.0/@components.3/@ownedExtensions.2"/>
+    <modes involvedComponents="#//@packages.0/@components.4/@ownedExtensions.3"/>
   </packages>
 </ComponentSample:ComponentModel>

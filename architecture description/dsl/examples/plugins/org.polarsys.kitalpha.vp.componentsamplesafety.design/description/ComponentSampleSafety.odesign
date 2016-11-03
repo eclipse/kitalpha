@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSampleSafety" version="10.1.0.201507101000">
-  <ownedViewpoints name="ComponentSampleSafety_ID" label="ComponentSampleSafety" modelFileExtension=" componentsample componentsamplesafety ">
-    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="ComponentSampleSafetyDiagram" viewpointURI="viewpoint:/org.polarsys.kitalpha.vp.componentsample.design/ComponentSample_ID" representationName="ComponentSampleDiagram">
-      <layers name="Component Sample Safety">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSampleSafety" version="11.0.0.201601261200">
+  <ownedViewpoints name="ComponentSampleSafety_ID" label="ComponentSampleSafety" modelFileExtension="">
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Component Sample Safety Diagram" viewpointURI="viewpoint:/org.polarsys.kitalpha.vp.componentsample.design/ComponentSample_ID" representationName="ComponentSampleDiagram">
+      <layers name="Component Sample Safety" icon="/org.polarsys.kitalpha.vp.componentsamplesafety.design/icons/Safety.png">
         <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentSampleSafety_Imported_CM" label="ComponentSampleSafety" semanticCandidatesExpression="feature:components">
-          <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_InnerHardwareComponentContainer']"/>
-          <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_SoftwareComponentNode']"/>
-          <dropDescriptions href="#//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@toolSections.0/@ownedTools[name='Drop_SafetyNode']"/>
-          <subNodeMappings name="SafetyNode_NM" label="SafetyNode" semanticCandidatesExpression="feature:ownedExtensions" domainClass="ComponentSampleSafety.Safety">
-            <style xsi:type="style:SquareDescription" labelExpression="feature:state" resizeKind="NSEW">
+          <borderedNodeMappings name="SafetyNode_BNM" label="SafetyNode" semanticCandidatesExpression="feature:ownedExtensions" domainClass="ComponentSampleSafety.Safety">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:state" labelAlignment="LEFT" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.vp.componentsamplesafety.design/icons/Safety.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
             </style>
-          </subNodeMappings>
+          </borderedNodeMappings>
+          <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_InnerHardwareComponentContainer']"/>
+          <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_SoftwareComponentNode']"/>
+          <dropDescriptions href="#//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='Component%20Sample%20Safety%20Diagram']/@layers[name='Component%20Sample%20Safety']/@toolSections.0/@ownedTools[name='Drop_SafetyNode']"/>
           <reusedNodeMappings href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']"/>
           <reusedContainerMappings href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']"/>
           <importedMapping href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
         </containerMappings>
-        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentPackageContainer_CM_Import" label="ComponentPackageContainer_Import" domainClass="ComponentSample.ComponentPackage" reusedContainerMappings="//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentPackageContainer_CM_Import" label="ComponentPackageContainer_Import" domainClass="ComponentSample.ComponentPackage" reusedContainerMappings="//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='Component%20Sample%20Safety%20Diagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']">
           <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_HardwareComponentContainer']"/>
           <importedMapping href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']"/>
         </containerMappings>
         <toolSections name="ComponentSampleSafety" label="ComponentSampleSafety">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SafetyNodeCreationTool" label="Safety" nodeMappings="//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@subNodeMappings[name='SafetyNode_NM']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SafetyNodeCreationTool" label="Safety" nodeMappings="//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='Component%20Sample%20Safety%20Diagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@borderedNodeMappings[name='SafetyNode_BNM']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -32,7 +31,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerDropDescription" name="Drop_SafetyNode" mappings="//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='ComponentSampleSafetyDiagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@subNodeMappings[name='SafetyNode_NM']">
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="Drop_SafetyNode" mappings="//@ownedViewpoints[name='ComponentSampleSafety_ID']/@ownedRepresentationExtensions[name='Component%20Sample%20Safety%20Diagram']/@layers[name='Component%20Sample%20Safety']/@containerMappings[name='ComponentSampleSafety_Imported_CM']/@borderedNodeMappings[name='SafetyNode_BNM']">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>
@@ -51,4 +50,7 @@
     </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsamplesafety.design.service.ComponentSampleSafetyOpenJavaService"/>
   </ownedViewpoints>
+  <userColorsPalettes name="Component Safety color">
+    <entries xsi:type="description:UserFixedColor" red="255" green="196" blue="26" name="SafetyColor"/>
+  </userColorsPalettes>
 </description:Group>

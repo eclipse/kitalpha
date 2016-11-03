@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -116,7 +116,8 @@ public class QualityMeasureImpl extends ComponentElementImpl implements QualityM
 		String oldCriterion = criterion;
 		criterion = newCriterion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__CRITERION, oldCriterion, criterion));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__CRITERION, oldCriterion, criterion));
 
 	}
 
@@ -142,7 +143,9 @@ public class QualityMeasureImpl extends ComponentElementImpl implements QualityM
 		int oldMeasureValue = measureValue;
 		measureValue = newMeasureValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__MEASURE_VALUE, oldMeasureValue, measureValue));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ComponentSampleQualityAssessmentPackage.QUALITY_MEASURE__MEASURE_VALUE, oldMeasureValue,
+					measureValue));
 
 	}
 

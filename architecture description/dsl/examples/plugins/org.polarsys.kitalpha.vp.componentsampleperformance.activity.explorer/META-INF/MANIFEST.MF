@@ -7,11 +7,12 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.Activator
 Require-Bundle: org.eclipse.ui.workbench,
  org.eclipse.core.runtime,
- org.eclipse.ui.forms,
- org.eclipse.ui,
  org.eclipse.amalgam.explorer.activity.ui,
+ org.eclipse.ui,
  org.eclipse.emf.ecore,
  org.eclipse.sirius,
- org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer;visibility:=reexport
+ org.eclipse.ui.forms,
+ org.polarsys.kitalpha.vp.componentsample.activity.explorer
 Export-Package: org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer,
- org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.activity
+ org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.activity,
+ org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.predicate

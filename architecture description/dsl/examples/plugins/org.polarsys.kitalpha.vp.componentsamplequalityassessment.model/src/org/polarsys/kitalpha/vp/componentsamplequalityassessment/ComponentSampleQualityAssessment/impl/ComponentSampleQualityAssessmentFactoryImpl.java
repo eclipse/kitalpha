@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -28,7 +28,8 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl implements ComponentSampleQualityAssessmentFactory {
+public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl
+		implements ComponentSampleQualityAssessmentFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -37,7 +38,8 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl im
 	 */
 	public static ComponentSampleQualityAssessmentFactory init() {
 		try {
-			ComponentSampleQualityAssessmentFactory theComponentSampleQualityAssessmentFactory = (ComponentSampleQualityAssessmentFactory) EPackage.Registry.INSTANCE.getEFactory(ComponentSampleQualityAssessmentPackage.eNS_URI);
+			ComponentSampleQualityAssessmentFactory theComponentSampleQualityAssessmentFactory = (ComponentSampleQualityAssessmentFactory) EPackage.Registry.INSTANCE
+					.getEFactory(ComponentSampleQualityAssessmentPackage.eNS_URI);
 			if (theComponentSampleQualityAssessmentFactory != null) {
 				return theComponentSampleQualityAssessmentFactory;
 			}
@@ -132,7 +134,8 @@ public class ComponentSampleQualityAssessmentFactoryImpl extends EFactoryImpl im
 	public confidenceLevel_Type createconfidenceLevel_TypeFromString(EDataType eDataType, String initialValue) {
 		confidenceLevel_Type result = confidenceLevel_Type.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

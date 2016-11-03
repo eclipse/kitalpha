@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -168,7 +168,8 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements Quali
 	public EList<QualityAssessment> getBasedOn() {
 
 		if (basedOn == null) {
-			basedOn = new EObjectResolvingEList<QualityAssessment>(QualityAssessment.class, this, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__BASED_ON);
+			basedOn = new EObjectResolvingEList<QualityAssessment>(QualityAssessment.class, this,
+					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__BASED_ON);
 		}
 		return basedOn;
 	}
@@ -182,7 +183,8 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements Quali
 	public EList<ComponentElement> getContext() {
 
 		if (context == null) {
-			context = new EObjectResolvingEList<ComponentElement>(ComponentElement.class, this, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONTEXT);
+			context = new EObjectResolvingEList<ComponentElement>(ComponentElement.class, this,
+					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONTEXT);
 		}
 		return context;
 	}
@@ -196,7 +198,8 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements Quali
 	public EList<QualityMeasure> getMeasures() {
 
 		if (measures == null) {
-			measures = new EObjectContainmentEList<QualityMeasure>(QualityMeasure.class, this, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES);
+			measures = new EObjectContainmentEList<QualityMeasure>(QualityMeasure.class, this,
+					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES);
 		}
 		return measures;
 	}
@@ -223,7 +226,9 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements Quali
 		String oldMaturityLevel = maturityLevel;
 		maturityLevel = newMaturityLevel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MATURITY_LEVEL, oldMaturityLevel, maturityLevel));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MATURITY_LEVEL, oldMaturityLevel,
+					maturityLevel));
 
 	}
 
@@ -249,7 +254,9 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements Quali
 		confidenceLevel_Type oldConfidenceLevel = confidenceLevel;
 		confidenceLevel = newConfidenceLevel == null ? CONFIDENCE_LEVEL_EDEFAULT : newConfidenceLevel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL, oldConfidenceLevel, confidenceLevel));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL, oldConfidenceLevel,
+					confidenceLevel));
 
 	}
 
@@ -275,7 +282,8 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements Quali
 		boolean oldAssessed = assessed;
 		assessed = newAssessed;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__ASSESSED, oldAssessed, assessed));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__ASSESSED, oldAssessed, assessed));
 
 	}
 
@@ -396,7 +404,8 @@ public class QualityAssessmentImpl extends ComponentElementImpl implements Quali
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MEASURES:
 			return measures != null && !measures.isEmpty();
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__MATURITY_LEVEL:
-			return MATURITY_LEVEL_EDEFAULT == null ? maturityLevel != null : !MATURITY_LEVEL_EDEFAULT.equals(maturityLevel);
+			return MATURITY_LEVEL_EDEFAULT == null ? maturityLevel != null
+					: !MATURITY_LEVEL_EDEFAULT.equals(maturityLevel);
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL:
 			return confidenceLevel != CONFIDENCE_LEVEL_EDEFAULT;
 		case ComponentSampleQualityAssessmentPackage.QUALITY_ASSESSMENT__ASSESSED:

@@ -25,5 +25,5 @@ JOB CONFIGURAITON:
 4. In "URL du repository" section, enter git http://ComponentSampleFramework/ComponentSampleFramework.git
 5. In "Repertoire local du module" section, enter "svn/svn_viewpoint"
 6. In "Build" section, click on "avanc�" button
-7. In "Fichier du build", enter E:/git/kitalpha4/kitalpha/architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.releng/releng-scripts/build_ComponentSampleFramework/releng/build.xml
+7. In "Fichier du build", enter C:/Users/S0045853/git/kitalpha/kitalpha/architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.releng/releng-scripts/build_ComponentSampleFramework/releng/build.xml
 8. Save the job and you are done.

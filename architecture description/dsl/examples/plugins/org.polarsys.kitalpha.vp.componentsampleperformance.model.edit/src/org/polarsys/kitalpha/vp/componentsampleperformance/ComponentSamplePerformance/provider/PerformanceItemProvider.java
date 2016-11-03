@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -39,7 +39,8 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * @generated
  */
-public class PerformanceItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PerformanceItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,12 +81,15 @@ public class PerformanceItemProvider extends ComponentElementItemProvider implem
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Performance_complexity_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_Performance_complexity_feature", "_UI_Performance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePerformancePackage.Literals.PERFORMANCE__COMPLEXITY, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Performance_complexity_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Performance_complexity_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_Performance_type"), //$NON-NLS-1$
+				ComponentSamplePerformancePackage.Literals.PERFORMANCE__COMPLEXITY, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -99,12 +103,14 @@ public class PerformanceItemProvider extends ComponentElementItemProvider implem
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Performance_cost_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_Performance_cost_feature", "_UI_Performance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePerformancePackage.Literals.PERFORMANCE__COST, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Performance_cost_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Performance_cost_feature", "_UI_Performance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ComponentSamplePerformancePackage.Literals.PERFORMANCE__COST, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -199,7 +205,9 @@ public class PerformanceItemProvider extends ComponentElementItemProvider implem
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
@@ -208,7 +216,9 @@ public class PerformanceItemProvider extends ComponentElementItemProvider implem
 
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(ComponentSamplePerformancePackage.Literals.PERFORMANCE__STATUS, ComponentSamplePerformanceFactory.eINSTANCE.createPerformanceStatus());
+			CommandParameter commandParameter = createChildParameter(
+					ComponentSamplePerformancePackage.Literals.PERFORMANCE__STATUS,
+					ComponentSamplePerformanceFactory.eINSTANCE.createPerformanceStatus());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

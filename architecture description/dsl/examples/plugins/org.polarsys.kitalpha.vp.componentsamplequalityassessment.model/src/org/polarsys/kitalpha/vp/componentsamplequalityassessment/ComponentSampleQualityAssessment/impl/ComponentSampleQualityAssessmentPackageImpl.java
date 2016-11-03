@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,7 +30,8 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl implements ComponentSampleQualityAssessmentPackage {
+public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
+		implements ComponentSampleQualityAssessmentPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,10 +93,13 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl im
 	 */
 	public static ComponentSampleQualityAssessmentPackage init() {
 		if (isInited)
-			return (ComponentSampleQualityAssessmentPackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSampleQualityAssessmentPackage.eNS_URI);
+			return (ComponentSampleQualityAssessmentPackage) EPackage.Registry.INSTANCE
+					.getEPackage(ComponentSampleQualityAssessmentPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentSampleQualityAssessmentPackageImpl theComponentSampleQualityAssessmentPackage = (ComponentSampleQualityAssessmentPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentSampleQualityAssessmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSampleQualityAssessmentPackageImpl());
+		ComponentSampleQualityAssessmentPackageImpl theComponentSampleQualityAssessmentPackage = (ComponentSampleQualityAssessmentPackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof ComponentSampleQualityAssessmentPackageImpl
+						? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSampleQualityAssessmentPackageImpl());
 
 		isInited = true;
 
@@ -112,7 +116,8 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl im
 		theComponentSampleQualityAssessmentPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ComponentSampleQualityAssessmentPackage.eNS_URI, theComponentSampleQualityAssessmentPackage);
+		EPackage.Registry.INSTANCE.put(ComponentSampleQualityAssessmentPackage.eNS_URI,
+				theComponentSampleQualityAssessmentPackage);
 		return theComponentSampleQualityAssessmentPackage;
 	}
 
@@ -285,7 +290,8 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl im
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSamplePackage.eNS_URI);
+		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE
+				.getEPackage(ComponentSamplePackage.eNS_URI);
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Create type parameters
@@ -298,17 +304,35 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl im
 		qualityMeasureEClass.getESuperTypes().add(theComponentSamplePackage.getComponentElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(qualityAssessmentEClass, QualityAssessment.class, "QualityAssessment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getQualityAssessment_BasedOn(), this.getQualityAssessment(), null, "basedOn", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getQualityAssessment_Context(), theComponentSamplePackage.getComponentElement(), null, "context", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getQualityAssessment_Measures(), this.getQualityMeasure(), null, "measures", null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getQualityAssessment_MaturityLevel(), ecorePackage.getEString(), "maturityLevel", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getQualityAssessment_ConfidenceLevel(), this.getconfidenceLevel_Type(), "confidenceLevel", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getQualityAssessment_Assessed(), ecorePackage.getEBoolean(), "assessed", null, 0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(qualityAssessmentEClass, QualityAssessment.class, "QualityAssessment", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQualityAssessment_BasedOn(), this.getQualityAssessment(), null, "basedOn", null, 0, -1, //$NON-NLS-1$
+				QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQualityAssessment_Context(), theComponentSamplePackage.getComponentElement(), null, "context", //$NON-NLS-1$
+				null, 0, -1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQualityAssessment_Measures(), this.getQualityMeasure(), null, "measures", null, 0, -1, //$NON-NLS-1$
+				QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityAssessment_MaturityLevel(), ecorePackage.getEString(), "maturityLevel", null, 0, 1, //$NON-NLS-1$
+				QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityAssessment_ConfidenceLevel(), this.getconfidenceLevel_Type(), "confidenceLevel", null, //$NON-NLS-1$
+				0, 1, QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityAssessment_Assessed(), ecorePackage.getEBoolean(), "assessed", null, 0, 1, //$NON-NLS-1$
+				QualityAssessment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(qualityMeasureEClass, QualityMeasure.class, "QualityMeasure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getQualityMeasure_Criterion(), ecorePackage.getEString(), "criterion", null, 0, 1, QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getQualityMeasure_MeasureValue(), ecorePackage.getEInt(), "measureValue", null, 0, 1, QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(qualityMeasureEClass, QualityMeasure.class, "QualityMeasure", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getQualityMeasure_Criterion(), ecorePackage.getEString(), "criterion", null, 0, 1, //$NON-NLS-1$
+				QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQualityMeasure_MeasureValue(), ecorePackage.getEInt(), "measureValue", null, 0, 1, //$NON-NLS-1$
+				QualityMeasure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(confidenceLevel_TypeEEnum, confidenceLevel_Type.class, "confidenceLevel_Type"); //$NON-NLS-1$
@@ -335,7 +359,8 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl im
 	 */
 	protected void createConstraintAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$	
-		addAnnotation(qualityAssessmentEClass, source, new String[] { "ExtendedElement", " http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		addAnnotation(qualityAssessmentEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
+				" http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$
 		});
 	}
 
@@ -347,7 +372,8 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl im
 	 */
 	protected void createConstraintMappingAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$	
-		addAnnotation(qualityAssessmentEClass, source, new String[] { "Mapping", " platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		addAnnotation(qualityAssessmentEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$
 		});
 	}
 

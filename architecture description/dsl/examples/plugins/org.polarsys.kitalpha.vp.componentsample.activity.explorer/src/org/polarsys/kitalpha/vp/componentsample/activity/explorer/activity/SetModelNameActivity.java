@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity;
 
 import java.util.Collections;
 
+import org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter;
 import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
@@ -29,29 +30,14 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
-import org.polarsys.kitalpha.vp.componentsampleframework.activity.explorer.activity.AbstractComponentsampleHyperLink;
 
-/**
- * 
- * @author Faycal Abka
- *
- */
-public class SetModelNameActivity extends AbstractComponentsampleHyperLink {
+public class SetModelNameActivity extends AbstractHyperlinkAdapter {
 
 	/**
-	* Default constructor
-	*/
+	 * Default constructor
+	 */
 	public SetModelNameActivity() {
 		super(ActivityExplorerManager.INSTANCE.getRootSemanticModel());
-	}
-
-	/**
-	* Constructor with parameters
-	* @param root the root model element ({@link EObject})
-	* @param session the associated {@link Session} with the activity explorer
-	*/
-	public SetModelNameActivity(EObject root, Session session) {
-		super(root);
 	}
 
 	/**
@@ -63,13 +49,12 @@ public class SetModelNameActivity extends AbstractComponentsampleHyperLink {
 		super(root);
 	}
 
+	/*
+	* (non-Javadoc)
+	* @see org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter#linkPressed(org.eclipse.ui.forms.events.HyperlinkEvent, org.eclipse.emf.ecore.EObject, org.eclipse.sirius.business.api.session.Session)
+	*/
 	@Override
 	protected void linkPressed(HyperlinkEvent event, EObject project_p, Session session) {
-		super.linkPressed(event, project_p, session);
-	}
-
-	@Override
-	public void linkActivated(HyperlinkEvent e) {
 		Shell activeShell = Display.getCurrent().getActiveShell();
 
 		final InputDialog input = new InputDialog(activeShell, "Name of Component Sample Model",
@@ -100,7 +85,5 @@ public class SetModelNameActivity extends AbstractComponentsampleHyperLink {
 				}
 			}
 		}
-
 	}
-
 }

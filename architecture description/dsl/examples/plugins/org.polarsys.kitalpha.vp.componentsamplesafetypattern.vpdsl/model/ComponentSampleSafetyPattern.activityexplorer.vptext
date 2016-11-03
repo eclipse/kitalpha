@@ -1,41 +1,55 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 /**
- * Copyright (c) PolarSys, 2015. All rights reserved. 
- *
  *	Viewpoint ComponentSampleSafetyPattern
- *	@author: S0020807
+ *	@author: Faycal ABKA
  *	@date: 14/09/15
  * 
  */
 activity-explorer ComponentSampleSafetyPattern.activityexplorer {
-	
 	page-extensions {
-		extended-page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
-		section ComponentSampleSafetyPatternViewpointActivation {
-			description "<p>Start/Stop Component sample Safety Pattern Viewpoint</p>"
+		extended-page org.polarsys.kitalpha.vp.componentsample.^activity.explorer.architecture
+		section ComponentSampleSafetyPatternViewpointSection {
+			description "<p>Reference/Unreference Component sample Safety Pattern Viewpoint</p>"
 			id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.start.stop.^section
-			label "Component Sample Safety Pattern Viewpoint"
-			index 7
-			filtering : false
-			expanded : false
+			label "Component Sample SafetyPattern"
+			index 5
+			filtering : true
+			expanded : true
 			activities {
-				activity StartComponentSampleSafetyPatternViewpoint {
-					description "Start Component sample Safety Pattern Viewpoint"
-					id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.start.^activity
-					label "Start"
+				activity CreateComponentSampleSafetyPatternDiagram {
+					description "Create Component sample Safety Pattern Diagram"
+					id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.creatediagram.^activity
+					label "Create New Safety Pattern Diagram"
 					index 1
-					predicated : false
-					icon : "start.png"
+					predicated : true
+					icon : "create_diagram.png"
 				}
-				activity StopComponentSampleSafetyPatternViewpoint {
-					description "Stop Component sample Safety Pattern Viewpoint"
-					id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.start.^activity
-					label "Stop"
+				activity ReferenceComponentSampleSafetyPatternViewpoint {
+					description "Reference Component sample Safety Pattern Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.reference.^activity
+					label "Reference"
 					index 2
-					predicated : false
-					icon : "stop.png"
+					predicated : true
+					icon : "reference.png"
+				}
+				activity UnreferenceComponentSampleSafetyPatternViewpoint {
+					description "Unreference Component sample Safety Pattern Viewpoint"
+					id org.polarsys.kitalpha.vp.ComponentSampleSafetyPattern.unreference.^activity
+					label "Unreference"
+					index 3
+					predicated : true
+					icon : "unreference.png"
 				}
 			}
 		}
 	}
-
 }

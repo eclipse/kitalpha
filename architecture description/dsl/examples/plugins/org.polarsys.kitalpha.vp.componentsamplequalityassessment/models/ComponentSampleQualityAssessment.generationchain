@@ -2,13 +2,11 @@
 <generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="ComponentSampleQualityAssessment" factoryComponentName="org.polarsys.kitalpha.vp.componentsamplequalityassessment">
   <elements xsi:type="generationChain:GenerationChain" name="ComponentSampleQualityAssessment">
     <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for ComponentSampleQualityAssessment" modelPath="/org.polarsys.kitalpha.vp.componentsamplequalityassessment/models/ComponentSampleQualityAssessment.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.vp.componentsamplequalityassessment.model" basePackage="org.polarsys.kitalpha.vp.componentsamplequalityassessment"/>
-    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for ComponentSampleQualityAssessment">
+    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for null">
       <additions>org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl</additions>
     </elements>
-    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for ComponentSampleQualityAssessment">
+    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for null">
       <additions>org.polarsys.kitalpha.vp.componentsamplequalityassessment.representation.feature</additions>
-      <additions>org.polarsys.kitalpha.vp.componentsamplequalityassessment.af.feature</additions>
-      <additions>org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.feature</additions>
     </elements>
   </elements>
 </generationChain:GenerationChain>

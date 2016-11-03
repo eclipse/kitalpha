@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" name="ComponentSampleSafetyPattern" version="10.1.0.201507101000">
-  <ownedViewpoints name="ComponentSampleSafetyPattern_ID" label="ComponentSampleSafetyPattern" modelFileExtension="componentsamplesafetypattern">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSampleSafetyPattern" version="11.0.0.201601261200">
+  <ownedViewpoints name="ComponentSampleSafetyPattern_ID" label="ComponentSampleSafetyPattern" modelFileExtension="">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ComponentSampleSafetyPatternDiagram" label="ComponentSampleSafetyPatternDiagram" domainClass="ComponentSample.ComponentModel">
+      <metamodel href="../../org.polarsys.kitalpha.vp.componentsamplesafetypattern/models/ComponentSampleSafetyPattern.ecore#/"/>
+      <defaultLayer name="Component Sample Safety Pattern" icon="/org.polarsys.kitalpha.vp.componentsamplesafetypattern.design/icons/SafetyPackage.png">
+        <containerMappings name="ComponentSafetyPatternPackageContainer_CM" label="ComponentSafetyPatternPackageContainer" semanticCandidatesExpression="feature:packages" domainClass="ComponentSampleSafetyPattern.SafetyPackage">
+          <subNodeMappings name="SafetyMode_NM" label="SafetyMode" semanticCandidatesExpression="feature:modes" domainClass="ComponentSampleSafetyPattern.SafetyMode">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="service:getSafetyModeName(diagram,view)" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Component%20Sample%20Safety%20Pattern%20Color']/@entries[name='SafetyModeColor']">
+              <borderColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" backgroundColor="//@userColorsPalettes[name='Component%20Sample%20Safety%20Pattern%20Color']/@entries[name='SafetyPatternPackageColor']" foregroundColor="//@userColorsPalettes[name='Component%20Sample%20Safety%20Pattern%20Color']/@entries[name='SafetyPatternPackageColor']">
+            <borderColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="ComponentSampleSafetyPattern" label="ComponentSampleSafetyPattern">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentSafetyPatternPackageContainerCreationTool" label="Safety Package" containerMappings="//@ownedViewpoints[name='ComponentSampleSafetyPattern_ID']/@ownedRepresentations[name='ComponentSampleSafetyPatternDiagram']/@defaultLayer/@containerMappings[name='ComponentSafetyPatternPackageContainer_CM']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="SafetyPackage" referenceName="packages"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SafetyModeCreationTool" label="Safety Mode" nodeMappings="//@ownedViewpoints[name='ComponentSampleSafetyPattern_ID']/@ownedRepresentations[name='ComponentSampleSafetyPatternDiagram']/@defaultLayer/@containerMappings[name='ComponentSafetyPatternPackageContainer_CM']/@subNodeMappings[name='SafetyMode_NM']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="SafetyMode" referenceName="modes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="SafetyPatternDiagramExtension" viewpointURI="viewpoint:/org.polarsys.kitalpha.vp.componentsample.design/ComponentSample_ID" representationName="ComponentSampleDiagram">
+      <layers name="Component Sample Safety Pattern" icon="/org.polarsys.kitalpha.vp.componentsamplesafetypattern.design/icons/SafetyPackage.png">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComponentSafetyPatternPackageContainer_Imported_CM" label="ComponentSafetyPatternPackageContainer" semanticCandidatesExpression="feature:packages" domainClass="ComponentSampleSafetyPattern.SafetyPackage">
+          <dropDescriptions href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_HardwareComponentContainer']"/>
+          <subNodeMappings name="SafetyMode_NM" label="SafetyMode" semanticCandidatesExpression="feature:modes" domainClass="ComponentSampleSafetyPattern.SafetyMode">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="service:getSafetyModeName(diagram,view)" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Component%20Sample%20Safety%20Pattern%20Color']/@entries[name='SafetyModeColor']">
+              <borderColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <reusedContainerMappings href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" backgroundColor="//@userColorsPalettes[name='Component%20Sample%20Safety%20Pattern%20Color']/@entries[name='SafetyPatternPackageColor']" foregroundColor="//@userColorsPalettes[name='Component%20Sample%20Safety%20Pattern%20Color']/@entries[name='SafetyPatternPackageColor']">
+            <borderColor xsi:type="description:UserFixedColor" href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <importedMapping href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']"/>
+        </containerMappings>
+        <toolSections name="ComponentSampleSafetyPattern" label="ComponentSampleSafetyPattern">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ComponentSafetyPatternPackageContainerCreationTool" label="Safety Package" containerMappings="//@ownedViewpoints[name='ComponentSampleSafetyPattern_ID']/@ownedRepresentationExtensions[name='SafetyPatternDiagramExtension']/@layers[name='Component%20Sample%20Safety%20Pattern']/@containerMappings[name='ComponentSafetyPatternPackageContainer_Imported_CM']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="SafetyPackage" referenceName="packages"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SafetyModeCreationTool" label="Safety Mode" nodeMappings="//@ownedViewpoints[name='ComponentSampleSafetyPattern_ID']/@ownedRepresentationExtensions[name='SafetyPatternDiagramExtension']/@layers[name='Component%20Sample%20Safety%20Pattern']/@containerMappings[name='ComponentSafetyPatternPackageContainer_Imported_CM']/@subNodeMappings[name='SafetyMode_NM']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="SafetyMode" referenceName="modes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service.ComponentSampleSafetyPatternOpenJavaService"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service.nodes.SafetyMode_Service"/>
   </ownedViewpoints>
+  <userColorsPalettes name="Component Sample Safety Pattern Color">
+    <entries xsi:type="description:UserFixedColor" red="173" green="230" blue="208" name="SafetyModeColor"/>
+    <entries xsi:type="description:UserFixedColor" red="228" green="267" blue="160" name="SafetyPatternPackageColor"/>
+  </userColorsPalettes>
 </description:Group>

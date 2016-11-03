@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -39,7 +39,8 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * @generated
  */
-public class QualityAssessmentItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class QualityAssessmentItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -83,12 +84,15 @@ public class QualityAssessmentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_QualityAssessment_basedOn_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_basedOn_feature", "_UI_QualityAssessment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__BASED_ON, true, false, true, null, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_QualityAssessment_basedOn_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_basedOn_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_QualityAssessment_type"), //$NON-NLS-1$
+				ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__BASED_ON, true, false, true, null,
+				null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -102,12 +106,15 @@ public class QualityAssessmentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_QualityAssessment_context_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_context_feature", "_UI_QualityAssessment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__CONTEXT, true, false, true, null, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_QualityAssessment_context_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_context_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_QualityAssessment_type"), //$NON-NLS-1$
+				ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__CONTEXT, true, false, true, null,
+				null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -121,12 +128,15 @@ public class QualityAssessmentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_QualityAssessment_maturityLevel_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_maturityLevel_feature", "_UI_QualityAssessment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__MATURITY_LEVEL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_QualityAssessment_maturityLevel_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_maturityLevel_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_QualityAssessment_type"), //$NON-NLS-1$
+				ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__MATURITY_LEVEL, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -140,12 +150,15 @@ public class QualityAssessmentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_QualityAssessment_confidenceLevel_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_confidenceLevel_feature", "_UI_QualityAssessment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_QualityAssessment_confidenceLevel_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_confidenceLevel_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_QualityAssessment_type"), //$NON-NLS-1$
+				ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__CONFIDENCE_LEVEL, true, false,
+				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -159,12 +172,15 @@ public class QualityAssessmentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_QualityAssessment_assessed_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_assessed_feature", "_UI_QualityAssessment_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__ASSESSED, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_QualityAssessment_assessed_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_QualityAssessment_assessed_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_QualityAssessment_type"), //$NON-NLS-1$
+				ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__ASSESSED, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -260,7 +276,9 @@ public class QualityAssessmentItemProvider extends ComponentElementItemProvider 
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSampleQualityAssessmentFactory.eINSTANCE.createQualityAssessment());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					ComponentSampleQualityAssessmentFactory.eINSTANCE.createQualityAssessment());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
@@ -269,7 +287,9 @@ public class QualityAssessmentItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__MEASURES, ComponentSampleQualityAssessmentFactory.eINSTANCE.createQualityMeasure());
+			CommandParameter commandParameter = createChildParameter(
+					ComponentSampleQualityAssessmentPackage.Literals.QUALITY_ASSESSMENT__MEASURES,
+					ComponentSampleQualityAssessmentFactory.eINSTANCE.createQualityMeasure());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_pDSwAGq1EeavhfGmuKDYTg" name="ComponentSample">
-  <jobs xmi:id="_pDchAGq1EeavhfGmuKDYTg" name="main">
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_pExWsGq1EeavhfGmuKDYTg" type="Result"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_pExWsWq1EeavhfGmuKDYTg" name="viewpoint_ComponentSample" id="viewpoint_ComponentSample" profile="SDKProfil"/>
+<buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_papkIJqZEea6gcUFdbtpjw" name="ComponentSample">
+  <jobs xmi:id="_pazVIJqZEea6gcUFdbtpjw" name="main">
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_pa8fEJqZEea6gcUFdbtpjw" type="Result"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_pa8fEZqZEea6gcUFdbtpjw" name="viewpoint_ComponentSample" id="viewpoint_ComponentSample" profile="SDKProfil"/>
   </jobs>
-  <jobs xmi:id="_pExWsmq1EeavhfGmuKDYTg" name="build_ComponentSample">
-    <properties xmi:id="_pExWs2q1EeavhfGmuKDYTg" key="target.location" value="D:/Eclipse/Platform/Kitalpha-0.5/kitalpha_juno_0.5.0-20140921_00-01-01/eclipse.exe" type="INLINED"/>
-    <properties xmi:id="_pExWtGq1EeavhfGmuKDYTg" key="repository.location" value="ComponentSample/ComponentSample.git"/>
-    <steps xsi:type="buildstep:CleanStep" xmi:id="_pExWtWq1EeavhfGmuKDYTg" type="Result"/>
-    <steps xsi:type="buildstep:BuildStep" xmi:id="_pExWtmq1EeavhfGmuKDYTg" name="ComponentSample">
-      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_pExWt2q1EeavhfGmuKDYTg" path="${target.location}"/>
-      <components xsi:type="buildstep:Feature" xmi:id="_pExWuGq1EeavhfGmuKDYTg" id="org.polarsys.kitalpha.vp"/>
+  <jobs xmi:id="_pa8fEpqZEea6gcUFdbtpjw" name="build_ComponentSample">
+    <properties xmi:id="_pa8fE5qZEea6gcUFdbtpjw" key="target.location" value="C:/eclipse.exe" type="INLINED"/>
+    <properties xmi:id="_pa8fFJqZEea6gcUFdbtpjw" key="repository.location" value="ComponentSample/ComponentSample.git"/>
+    <steps xsi:type="buildstep:CleanStep" xmi:id="_pa8fFZqZEea6gcUFdbtpjw" type="Result"/>
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_pa8fFpqZEea6gcUFdbtpjw" name="ComponentSample">
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_pa8fF5qZEea6gcUFdbtpjw" path="${target.location}"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_pa8fGJqZEea6gcUFdbtpjw" id="org.polarsys.kitalpha.vp"/>
     </steps>
-    <steps xsi:type="buildstep:PublishStep" xmi:id="_pExWuWq1EeavhfGmuKDYTg" component="_pExWuGq1EeavhfGmuKDYTg" generateSources="false" generateDropins="true"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_pExWumq1EeavhfGmuKDYTg" name="ComponentSample feature" id="viewpoint_ComponentSample" profile="SDKProfil"/>
-    <scms xsi:type="buildscm:SVN" xmi:id="_pHIuMGq1EeavhfGmuKDYTg">
-      <locations xmi:id="_pHIuMWq1EeavhfGmuKDYTg" protocol="svn+ssh://" url="${repository.location}" localPath="svn_viewpoint"/>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_pa8fGZqZEea6gcUFdbtpjw" component="_pa8fGJqZEea6gcUFdbtpjw" generateSources="false" generateDropins="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_pa8fGpqZEea6gcUFdbtpjw" name="ComponentSample feature" id="viewpoint_ComponentSample" profile="SDKProfil"/>
+    <scms xsi:type="buildscm:GIT" xmi:id="_pa8fG5qZEea6gcUFdbtpjw">
+      <locations xmi:id="_pa8fHJqZEea6gcUFdbtpjw" url="${repository.location}" localPath="git_viewpoint"/>
     </scms>
   </jobs>
 </buildcore:Chain>

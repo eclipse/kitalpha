@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -7,7 +7,8 @@
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/  
+ ******************************************************************************/
+// Generated on 26.10.2016 at 11:50:54 CEST by Viewpoint DSL Generator V 0.5.1 
 package org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;

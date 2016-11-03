@@ -1,37 +1,46 @@
-/**
- * Copyright (c) PolarSys, 2015. All rights reserved. 
- *
+/*******************************************************************************
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ 
+ /**
  *	Viewpoint ComponentSamplePerformance
- *	@author: S0020807
+ *	@author: Faycal ABKA
  *	@date: 14/09/15
  *
  */
 activity-explorer ComponentSamplePerformance.activityexplorer {
 	page-extensions {
-		extended-page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
-		section ComponentSamplePerformanceViewpointActivation {
-			description "<p>Start/Stop Component sample Performance Viewpoint</p>"
+		extended-page org.polarsys.kitalpha.vp.componentsample.^activity.explorer.architecture
+		section ComponentSamplePerformanceViewpointSection {
+			description "<p>Reference/Unreference Component sample Performance Viewpoint</p>"
 			id org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.stop.^section
-			label "Component Sample Performance Viewpoint"
-			index 4
-			filtering : false
-			expanded : false
+			label "Component Sample Performance"
+			index 2
+			filtering : true
+			expanded : true
 			activities {
-				activity StartComponentSamplePerformanceViewpoint {
-					description "Start Component sample Performance Viewpoint"
+				activity ReferenceComponentSamplePerformanceViewpoint {
+					description "Reference Component sample Performance Viewpoint"
 					id org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.^activity
-					label "Start"
+					label "Reference"
 					index 1
-					predicated : false
-					icon : "start.png"
+					predicated : true
+					icon : "reference.png"
 				}
-				activity StopComponentSamplePerformanceViewpoint {
-					description "Stop Component sample Performance Viewpoint"
+				activity UnreferenceComponentSamplePerformanceViewpoint {
+					description "Unreference Component sample Performance Viewpoint"
 					id org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.^activity
-					label "Stop"
+					label "Unreference"
 					index 2
-					predicated : false
-					icon : "stop.png"
+					predicated : true
+					icon : "unreference.png"
 				}
 			}
 		}
